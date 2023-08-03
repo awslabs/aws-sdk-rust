@@ -55,6 +55,10 @@ impl ChannelMembershipForAppInstanceUserSummaryBuilder {
         self.channel_summary = input;
         self
     }
+    /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
+    pub fn get_channel_summary(&self) -> &::std::option::Option<crate::types::ChannelSummary> {
+        &self.channel_summary
+    }
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
     pub fn app_instance_user_membership_summary(
         mut self,
@@ -70,6 +74,12 @@ impl ChannelMembershipForAppInstanceUserSummaryBuilder {
     ) -> Self {
         self.app_instance_user_membership_summary = input;
         self
+    }
+    /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
+    pub fn get_app_instance_user_membership_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceUserMembershipSummary> {
+        &self.app_instance_user_membership_summary
     }
     /// Consumes the builder and constructs a [`ChannelMembershipForAppInstanceUserSummary`](crate::types::ChannelMembershipForAppInstanceUserSummary).
     pub fn build(self) -> crate::types::ChannelMembershipForAppInstanceUserSummary {

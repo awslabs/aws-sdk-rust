@@ -36,6 +36,10 @@ impl CreateCustomDomainAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomDomainAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateCustomDomainAssociationFluentBuilder {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
+    /// <p>The custom domain name for a custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
+    }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
     pub fn custom_domain_certificate_arn(
         mut self,
@@ -148,6 +156,12 @@ impl CreateCustomDomainAssociationFluentBuilder {
         self.inner = self.inner.set_custom_domain_certificate_arn(input);
         self
     }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_certificate_arn()
+    }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
     pub fn cluster_identifier(
         mut self,
@@ -163,5 +177,9 @@ impl CreateCustomDomainAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The cluster identifier that the custom domain is associated with.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

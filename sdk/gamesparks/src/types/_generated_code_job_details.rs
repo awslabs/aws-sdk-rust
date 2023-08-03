@@ -74,6 +74,10 @@ impl GeneratedCodeJobDetailsBuilder {
         self.s3_url = input;
         self
     }
+    /// <p>A presigned URL that can be used to download the generated code.</p>
+    pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url
+    }
     /// <p>The status of the generated code job</p>
     pub fn status(mut self, input: crate::types::GeneratedCodeJobState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl GeneratedCodeJobDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the generated code job</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::GeneratedCodeJobState> {
+        &self.status
+    }
     /// <p>The description of the generated code job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GeneratedCodeJobDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the generated code job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
@@ -112,6 +124,11 @@ impl GeneratedCodeJobDetailsBuilder {
         self.expiration_time = input;
         self
     }
+    /// <p>The expiration date and time for the download URL.</p>
+    /// <p> The download URL us guaranteed to be available until at least this time. </p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
+    }
     /// <p>The identifier for the generated code job.</p>
     pub fn generated_code_job_id(
         mut self,
@@ -127,6 +144,10 @@ impl GeneratedCodeJobDetailsBuilder {
     ) -> Self {
         self.generated_code_job_id = input;
         self
+    }
+    /// <p>The identifier for the generated code job.</p>
+    pub fn get_generated_code_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_code_job_id
     }
     /// Consumes the builder and constructs a [`GeneratedCodeJobDetails`](crate::types::GeneratedCodeJobDetails).
     pub fn build(self) -> crate::types::GeneratedCodeJobDetails {

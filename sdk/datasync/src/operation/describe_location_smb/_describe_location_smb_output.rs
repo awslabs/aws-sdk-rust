@@ -97,6 +97,10 @@ impl DescribeLocationSmbOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the source SMB location that was described.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl DescribeLocationSmbOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URL of the source SMB location that was described.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -126,6 +134,10 @@ impl DescribeLocationSmbOutputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl DescribeLocationSmbOutputBuilder {
         self.user = input;
         self
     }
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
+    }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -145,6 +161,10 @@ impl DescribeLocationSmbOutputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
@@ -159,6 +179,10 @@ impl DescribeLocationSmbOutputBuilder {
         self.mount_options = input;
         self
     }
+    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
+        &self.mount_options
+    }
     /// <p>The time that the SMB location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -171,6 +195,10 @@ impl DescribeLocationSmbOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the SMB location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

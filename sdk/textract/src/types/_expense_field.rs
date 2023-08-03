@@ -82,6 +82,10 @@ impl ExpenseFieldBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExpenseType> {
+        &self.r#type
+    }
     /// <p>The explicitly stated label of a detected element.</p>
     pub fn label_detection(mut self, input: crate::types::ExpenseDetection) -> Self {
         self.label_detection = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl ExpenseFieldBuilder {
     ) -> Self {
         self.label_detection = input;
         self
+    }
+    /// <p>The explicitly stated label of a detected element.</p>
+    pub fn get_label_detection(&self) -> &::std::option::Option<crate::types::ExpenseDetection> {
+        &self.label_detection
     }
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
     pub fn value_detection(mut self, input: crate::types::ExpenseDetection) -> Self {
@@ -108,6 +116,10 @@ impl ExpenseFieldBuilder {
         self.value_detection = input;
         self
     }
+    /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
+    pub fn get_value_detection(&self) -> &::std::option::Option<crate::types::ExpenseDetection> {
+        &self.value_detection
+    }
     /// <p>The page number the value was detected on.</p>
     pub fn page_number(mut self, input: i32) -> Self {
         self.page_number = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl ExpenseFieldBuilder {
     pub fn set_page_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_number = input;
         self
+    }
+    /// <p>The page number the value was detected on.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i32> {
+        &self.page_number
     }
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
     pub fn currency(mut self, input: crate::types::ExpenseCurrency) -> Self {
@@ -130,6 +146,10 @@ impl ExpenseFieldBuilder {
     ) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::ExpenseCurrency> {
+        &self.currency
     }
     /// Appends an item to `group_properties`.
     ///
@@ -149,6 +169,12 @@ impl ExpenseFieldBuilder {
     ) -> Self {
         self.group_properties = input;
         self
+    }
+    /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
+    pub fn get_group_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>> {
+        &self.group_properties
     }
     /// Consumes the builder and constructs a [`ExpenseField`](crate::types::ExpenseField).
     pub fn build(self) -> crate::types::ExpenseField {

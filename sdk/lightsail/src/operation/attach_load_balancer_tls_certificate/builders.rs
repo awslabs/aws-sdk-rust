@@ -38,6 +38,10 @@ impl AttachLoadBalancerTlsCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachLoadBalancerTlsCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl AttachLoadBalancerTlsCertificateFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The name of your SSL/TLS certificate.</p>
     pub fn certificate_name(
         mut self,
@@ -123,5 +131,9 @@ impl AttachLoadBalancerTlsCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
+    }
+    /// <p>The name of your SSL/TLS certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
     }
 }

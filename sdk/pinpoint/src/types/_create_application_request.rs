@@ -56,6 +56,10 @@ impl CreateApplicationRequestBuilder {
         self.name = input;
         self
     }
+    /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -80,6 +84,14 @@ impl CreateApplicationRequestBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationRequest`](crate::types::CreateApplicationRequest).
     pub fn build(self) -> crate::types::CreateApplicationRequest {

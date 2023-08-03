@@ -63,6 +63,10 @@ impl UpdateRdsDbInstanceInputBuilder {
         self.rds_db_instance_arn = input;
         self
     }
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rds_db_instance_arn
+    }
     /// <p>The master user name.</p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateRdsDbInstanceInputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>The master user name.</p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>The database password.</p>
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_password = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateRdsDbInstanceInputBuilder {
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_password = input;
         self
+    }
+    /// <p>The database password.</p>
+    pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_password
     }
     /// Consumes the builder and constructs a [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
     pub fn build(

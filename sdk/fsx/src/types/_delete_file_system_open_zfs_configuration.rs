@@ -58,6 +58,10 @@ impl DeleteFileSystemOpenZfsConfigurationBuilder {
         self.skip_final_backup = input;
         self
     }
+    /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
+    pub fn get_skip_final_backup(&self) -> &::std::option::Option<bool> {
+        &self.skip_final_backup
+    }
     /// Appends an item to `final_backup_tags`.
     ///
     /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
@@ -77,6 +81,12 @@ impl DeleteFileSystemOpenZfsConfigurationBuilder {
         self.final_backup_tags = input;
         self
     }
+    /// <p>A list of tags to apply to the file system's final backup.</p>
+    pub fn get_final_backup_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.final_backup_tags
+    }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -95,6 +105,12 @@ impl DeleteFileSystemOpenZfsConfigurationBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsConfiguration`](crate::types::DeleteFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::DeleteFileSystemOpenZfsConfiguration {

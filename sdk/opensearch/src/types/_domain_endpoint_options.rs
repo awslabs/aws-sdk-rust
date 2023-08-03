@@ -82,6 +82,10 @@ impl DomainEndpointOptionsBuilder {
         self.enforce_https = input;
         self
     }
+    /// <p>True to require that all traffic to the domain arrive over HTTPS.</p>
+    pub fn get_enforce_https(&self) -> &::std::option::Option<bool> {
+        &self.enforce_https
+    }
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.</p>
     /// <p> Can be one of the following values:</p>
     /// <ul>
@@ -105,6 +109,17 @@ impl DomainEndpointOptionsBuilder {
         self.tls_security_policy = input;
         self
     }
+    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.</p>
+    /// <p> Can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 and higher.</p> </li>
+    /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2 </p> </li>
+    /// </ul>
+    pub fn get_tls_security_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {
+        &self.tls_security_policy
+    }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     pub fn custom_endpoint_enabled(mut self, input: bool) -> Self {
         self.custom_endpoint_enabled = ::std::option::Option::Some(input);
@@ -114,6 +129,10 @@ impl DomainEndpointOptionsBuilder {
     pub fn set_custom_endpoint_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.custom_endpoint_enabled = input;
         self
+    }
+    /// <p>Whether to enable a custom endpoint for the domain.</p>
+    pub fn get_custom_endpoint_enabled(&self) -> &::std::option::Option<bool> {
+        &self.custom_endpoint_enabled
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
     pub fn custom_endpoint(
@@ -131,6 +150,10 @@ impl DomainEndpointOptionsBuilder {
         self.custom_endpoint = input;
         self
     }
+    /// <p>The fully qualified URL for the custom endpoint.</p>
+    pub fn get_custom_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_endpoint
+    }
     /// <p>The ARN for your security certificate, managed in Amazon Web Services Certificate Manager (ACM).</p>
     pub fn custom_endpoint_certificate_arn(
         mut self,
@@ -146,6 +169,12 @@ impl DomainEndpointOptionsBuilder {
     ) -> Self {
         self.custom_endpoint_certificate_arn = input;
         self
+    }
+    /// <p>The ARN for your security certificate, managed in Amazon Web Services Certificate Manager (ACM).</p>
+    pub fn get_custom_endpoint_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_endpoint_certificate_arn
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
     pub fn build(self) -> crate::types::DomainEndpointOptions {

@@ -51,6 +51,12 @@ impl DefineAnalysisSchemeOutputBuilder {
         self.analysis_scheme = input;
         self
     }
+    /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
+    pub fn get_analysis_scheme(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisSchemeStatus> {
+        &self.analysis_scheme
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

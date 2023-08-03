@@ -44,6 +44,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSlackChannelConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_team_id(input);
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_team_id()
+    }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -118,6 +126,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_channel_id(input);
         self
     }
+    /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
+    }
     /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -127,6 +139,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
+    }
+    /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -141,6 +157,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_notify_on_create_or_reopen_case(input);
         self
     }
+    /// <p>Whether you want to get notified when a support case is created or reopened.</p>
+    pub fn get_notify_on_create_or_reopen_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_create_or_reopen_case()
+    }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
         self.inner = self.inner.notify_on_add_correspondence_to_case(input);
@@ -154,6 +174,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_notify_on_add_correspondence_to_case(input);
         self
     }
+    /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
+    pub fn get_notify_on_add_correspondence_to_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_add_correspondence_to_case()
+    }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
         self.inner = self.inner.notify_on_resolve_case(input);
@@ -163,6 +187,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     pub fn set_notify_on_resolve_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_resolve_case(input);
         self
+    }
+    /// <p>Whether you want to get notified when a support case is resolved.</p>
+    pub fn get_notify_on_resolve_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_resolve_case()
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
@@ -208,6 +236,26 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_notify_on_case_severity(input);
         self
     }
+    /// <p>The case severity for a support case that you want to receive notifications.</p>
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
+    /// <ul>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul>
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+    /// </note>
+    pub fn get_notify_on_case_severity(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
+        self.inner.get_notify_on_case_severity()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(
         mut self,
@@ -223,5 +271,9 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+    pub fn get_channel_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_role_arn()
     }
 }

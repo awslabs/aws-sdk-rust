@@ -36,6 +36,12 @@ impl UpdatePartnerStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePartnerStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdatePartnerStatusFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
     pub fn cluster_identifier(
         mut self,
@@ -141,6 +151,10 @@ impl UpdatePartnerStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
     pub fn database_name(
@@ -158,6 +172,10 @@ impl UpdatePartnerStatusFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the database whose partner integration status is being updated.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the partner whose integration status is being updated.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_name(input.into());
@@ -167,6 +185,10 @@ impl UpdatePartnerStatusFluentBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_name(input);
         self
+    }
+    /// <p>The name of the partner whose integration status is being updated.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_partner_name()
     }
     /// <p>The value of the updated status.</p>
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
@@ -180,6 +202,10 @@ impl UpdatePartnerStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The value of the updated status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PartnerIntegrationStatus> {
+        self.inner.get_status()
     }
     /// <p>The status message provided by the partner.</p>
     pub fn status_message(
@@ -196,5 +222,9 @@ impl UpdatePartnerStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_message(input);
         self
+    }
+    /// <p>The status message provided by the partner.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_message()
     }
 }

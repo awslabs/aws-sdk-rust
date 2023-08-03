@@ -60,6 +60,11 @@ impl DescribeProductsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -70,6 +75,10 @@ impl DescribeProductsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The ARN of the integration to return.</p>
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
@@ -79,6 +88,10 @@ impl DescribeProductsInputBuilder {
     pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_arn = input;
         self
+    }
+    /// <p>The ARN of the integration to return.</p>
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_arn
     }
     /// Consumes the builder and constructs a [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
     pub fn build(

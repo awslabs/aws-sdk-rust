@@ -55,6 +55,10 @@ impl GetRegistrationCodeOutputBuilder {
         self.registration_code = input;
         self
     }
+    /// <p>The CA certificate registration code.</p>
+    pub fn get_registration_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

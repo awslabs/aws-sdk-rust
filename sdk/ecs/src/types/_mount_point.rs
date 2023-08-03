@@ -62,6 +62,10 @@ impl MountPointBuilder {
         self.source_volume = input;
         self
     }
+    /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>.</p>
+    pub fn get_source_volume(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_volume
+    }
     /// <p>The path on the container to mount the host volume at.</p>
     pub fn container_path(
         mut self,
@@ -78,6 +82,10 @@ impl MountPointBuilder {
         self.container_path = input;
         self
     }
+    /// <p>The path on the container to mount the host volume at.</p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
+    }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl MountPointBuilder {
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
     }
     /// Consumes the builder and constructs a [`MountPoint`](crate::types::MountPoint).
     pub fn build(self) -> crate::types::MountPoint {

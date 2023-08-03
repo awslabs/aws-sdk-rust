@@ -56,6 +56,10 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
         self.actions_executed = input;
         self
     }
+    /// <p> The actions that were performed. </p>
+    pub fn get_actions_executed(&self) -> &::std::option::Option<i64> {
+        &self.actions_executed
+    }
     /// <p> The actions that were skipped. </p>
     pub fn actions_skipped(mut self, input: i64) -> Self {
         self.actions_skipped = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
         self.actions_skipped = input;
         self
     }
+    /// <p> The actions that were skipped. </p>
+    pub fn get_actions_skipped(&self) -> &::std::option::Option<i64> {
+        &self.actions_skipped
+    }
     /// <p> The actions that failed. </p>
     pub fn actions_failed(mut self, input: i64) -> Self {
         self.actions_failed = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     pub fn set_actions_failed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.actions_failed = input;
         self
+    }
+    /// <p> The actions that failed. </p>
+    pub fn get_actions_failed(&self) -> &::std::option::Option<i64> {
+        &self.actions_failed
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskStatistics`](crate::types::DetectMitigationActionsTaskStatistics).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskStatistics {

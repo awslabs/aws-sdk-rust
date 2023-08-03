@@ -136,6 +136,10 @@ impl ProcessDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the process.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The absolute path of the process executable file.</p>
     pub fn executable_path(
         mut self,
@@ -151,6 +155,10 @@ impl ProcessDetailsBuilder {
     ) -> Self {
         self.executable_path = input;
         self
+    }
+    /// <p>The absolute path of the process executable file.</p>
+    pub fn get_executable_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.executable_path
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
     pub fn executable_sha256(
@@ -168,6 +176,10 @@ impl ProcessDetailsBuilder {
         self.executable_sha256 = input;
         self
     }
+    /// <p>The <code>SHA256</code> hash of the process executable.</p>
+    pub fn get_executable_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.executable_sha256
+    }
     /// <p>The ID of the child process.</p>
     pub fn namespace_pid(mut self, input: i32) -> Self {
         self.namespace_pid = ::std::option::Option::Some(input);
@@ -177,6 +189,10 @@ impl ProcessDetailsBuilder {
     pub fn set_namespace_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.namespace_pid = input;
         self
+    }
+    /// <p>The ID of the child process.</p>
+    pub fn get_namespace_pid(&self) -> &::std::option::Option<i32> {
+        &self.namespace_pid
     }
     /// <p>The present working directory of the process.</p>
     pub fn pwd(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +204,10 @@ impl ProcessDetailsBuilder {
         self.pwd = input;
         self
     }
+    /// <p>The present working directory of the process.</p>
+    pub fn get_pwd(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pwd
+    }
     /// <p>The ID of the process.</p>
     pub fn pid(mut self, input: i32) -> Self {
         self.pid = ::std::option::Option::Some(input);
@@ -197,6 +217,10 @@ impl ProcessDetailsBuilder {
     pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid = input;
         self
+    }
+    /// <p>The ID of the process.</p>
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
     }
     /// <p>The time when the process started. This is in UTC format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,6 +235,10 @@ impl ProcessDetailsBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time when the process started. This is in UTC format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
@@ -220,6 +248,10 @@ impl ProcessDetailsBuilder {
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uuid = input;
         self
+    }
+    /// <p>The unique ID assigned to the process by GuardDuty.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     pub fn parent_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -231,6 +263,10 @@ impl ProcessDetailsBuilder {
         self.parent_uuid = input;
         self
     }
+    /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
+    pub fn get_parent_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_uuid
+    }
     /// <p>The user that executed the process.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -240,6 +276,10 @@ impl ProcessDetailsBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>The user that executed the process.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
     }
     /// <p>The unique ID of the user that executed the process.</p>
     pub fn user_id(mut self, input: i32) -> Self {
@@ -251,6 +291,10 @@ impl ProcessDetailsBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique ID of the user that executed the process.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<i32> {
+        &self.user_id
+    }
     /// <p>The effective user ID of the user that executed the process.</p>
     pub fn euid(mut self, input: i32) -> Self {
         self.euid = ::std::option::Option::Some(input);
@@ -260,6 +304,10 @@ impl ProcessDetailsBuilder {
     pub fn set_euid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.euid = input;
         self
+    }
+    /// <p>The effective user ID of the user that executed the process.</p>
+    pub fn get_euid(&self) -> &::std::option::Option<i32> {
+        &self.euid
     }
     /// Appends an item to `lineage`.
     ///
@@ -279,6 +327,12 @@ impl ProcessDetailsBuilder {
     ) -> Self {
         self.lineage = input;
         self
+    }
+    /// <p>Information about the process's lineage.</p>
+    pub fn get_lineage(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageObject>> {
+        &self.lineage
     }
     /// Consumes the builder and constructs a [`ProcessDetails`](crate::types::ProcessDetails).
     pub fn build(self) -> crate::types::ProcessDetails {

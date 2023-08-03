@@ -74,6 +74,12 @@ impl SearchNetworkProfilesOutputBuilder {
         self.network_profiles = input;
         self
     }
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
+    pub fn get_network_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkProfileData>> {
+        &self.network_profiles
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +90,10 @@ impl SearchNetworkProfilesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of network profiles returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl SearchNetworkProfilesOutputBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of network profiles returned.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

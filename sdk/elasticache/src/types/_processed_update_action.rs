@@ -70,6 +70,10 @@ impl ProcessedUpdateActionBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The ID of the replication group</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The ID of the cache cluster</p>
     pub fn cache_cluster_id(
         mut self,
@@ -85,6 +89,10 @@ impl ProcessedUpdateActionBuilder {
     ) -> Self {
         self.cache_cluster_id = input;
         self
+    }
+    /// <p>The ID of the cache cluster</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
@@ -102,6 +110,10 @@ impl ProcessedUpdateActionBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// <p>The status of the update action on the Redis cluster</p>
     pub fn update_action_status(mut self, input: crate::types::UpdateActionStatus) -> Self {
         self.update_action_status = ::std::option::Option::Some(input);
@@ -114,6 +126,12 @@ impl ProcessedUpdateActionBuilder {
     ) -> Self {
         self.update_action_status = input;
         self
+    }
+    /// <p>The status of the update action on the Redis cluster</p>
+    pub fn get_update_action_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateActionStatus> {
+        &self.update_action_status
     }
     /// Consumes the builder and constructs a [`ProcessedUpdateAction`](crate::types::ProcessedUpdateAction).
     pub fn build(self) -> crate::types::ProcessedUpdateAction {

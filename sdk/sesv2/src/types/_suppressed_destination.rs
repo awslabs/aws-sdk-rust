@@ -72,6 +72,10 @@ impl SuppressedDestinationBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that is on the suppression list for your account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The reason that the address was added to the suppression list for your account.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl SuppressedDestinationBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
+        &self.reason
     }
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,6 +106,10 @@ impl SuppressedDestinationBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
+    }
     /// <p>An optional value that can contain additional information about the reasons that the address was added to the suppression list for your account.</p>
     pub fn attributes(mut self, input: crate::types::SuppressedDestinationAttributes) -> Self {
         self.attributes = ::std::option::Option::Some(input);
@@ -110,6 +122,12 @@ impl SuppressedDestinationBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>An optional value that can contain additional information about the reasons that the address was added to the suppression list for your account.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuppressedDestinationAttributes> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`SuppressedDestination`](crate::types::SuppressedDestination).
     pub fn build(self) -> crate::types::SuppressedDestination {

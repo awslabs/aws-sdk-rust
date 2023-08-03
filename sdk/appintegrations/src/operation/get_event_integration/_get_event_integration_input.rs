@@ -41,6 +41,10 @@ impl GetEventIntegrationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event integration. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
     pub fn build(
         self,

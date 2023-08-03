@@ -88,6 +88,10 @@ impl UpdateExperimentTemplateActionInputItemBuilder {
         self.action_id = input;
         self
     }
+    /// <p>The ID of the action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>A description for the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl UpdateExperimentTemplateActionInputItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -123,6 +131,14 @@ impl UpdateExperimentTemplateActionInputItemBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameters for the action, if applicable.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -148,6 +164,14 @@ impl UpdateExperimentTemplateActionInputItemBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the action.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.targets
+    }
     /// Appends an item to `start_after`.
     ///
     /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
@@ -166,6 +190,12 @@ impl UpdateExperimentTemplateActionInputItemBuilder {
     ) -> Self {
         self.start_after = input;
         self
+    }
+    /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
+    pub fn get_start_after(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.start_after
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateActionInputItem`](crate::types::UpdateExperimentTemplateActionInputItem).
     pub fn build(self) -> crate::types::UpdateExperimentTemplateActionInputItem {

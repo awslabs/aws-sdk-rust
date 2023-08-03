@@ -48,6 +48,10 @@ impl AcceleratorEventBuilder {
         self.message = input;
         self
     }
+    /// <p>A string that contains an <code>Event</code> message describing changes or errors when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>A timestamp for when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AcceleratorEventBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>A timestamp for when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`AcceleratorEvent`](crate::types::AcceleratorEvent).
     pub fn build(self) -> crate::types::AcceleratorEvent {

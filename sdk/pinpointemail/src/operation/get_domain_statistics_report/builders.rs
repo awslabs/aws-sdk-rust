@@ -36,6 +36,10 @@ impl GetDomainStatisticsReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDomainStatisticsReport as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetDomainStatisticsReportFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The domain that you want to obtain deliverability metrics for.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date(input);
@@ -139,6 +147,10 @@ impl GetDomainStatisticsReportFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
+    }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
@@ -151,5 +163,9 @@ impl GetDomainStatisticsReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
     }
 }

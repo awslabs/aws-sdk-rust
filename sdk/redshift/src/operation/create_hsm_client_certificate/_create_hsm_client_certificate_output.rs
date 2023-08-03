@@ -51,6 +51,12 @@ impl CreateHsmClientCertificateOutputBuilder {
         self.hsm_client_certificate = input;
         self
     }
+    /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
+    pub fn get_hsm_client_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::HsmClientCertificate> {
+        &self.hsm_client_certificate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

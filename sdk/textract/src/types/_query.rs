@@ -70,6 +70,10 @@ impl QueryBuilder {
         self.text = input;
         self
     }
+    /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>Alias attached to the query, for ease of location.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl QueryBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>Alias attached to the query, for ease of location.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Appends an item to `pages`.
     ///
@@ -112,6 +120,17 @@ impl QueryBuilder {
     ) -> Self {
         self.pages = input;
         self
+    }
+    /// <p>Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of rules for using this parameter.</p>
+    /// <ul>
+    /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
+    /// <li> <p>The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5 6 7 8 9 - *</code>. No whitespace is allowed.</p> </li>
+    /// <li> <p>When using * to indicate all pages, it must be the only element in the list.</p> </li>
+    /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
+    /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
+    /// </ul>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pages
     }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
     pub fn build(self) -> crate::types::Query {

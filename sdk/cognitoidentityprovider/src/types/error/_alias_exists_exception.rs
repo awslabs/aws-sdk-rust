@@ -65,6 +65,10 @@ impl AliasExistsExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

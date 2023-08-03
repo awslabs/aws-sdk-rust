@@ -48,6 +48,10 @@ impl GlueConfigurationBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
     pub fn database_name(
         mut self,
@@ -63,6 +67,10 @@ impl GlueConfigurationBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Consumes the builder and constructs a [`GlueConfiguration`](crate::types::GlueConfiguration).
     pub fn build(self) -> crate::types::GlueConfiguration {

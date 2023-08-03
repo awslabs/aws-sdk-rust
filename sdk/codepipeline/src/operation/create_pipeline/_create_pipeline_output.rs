@@ -58,6 +58,10 @@ impl CreatePipelineOutputBuilder {
         self.pipeline = input;
         self
     }
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        &self.pipeline
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -76,6 +80,10 @@ impl CreatePipelineOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

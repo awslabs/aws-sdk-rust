@@ -71,6 +71,10 @@ impl ExportCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The base64 PEM-encoded certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
     pub fn certificate_chain(
         mut self,
@@ -87,6 +91,10 @@ impl ExportCertificateOutputBuilder {
         self.certificate_chain = input;
         self
     }
+    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
+    }
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ExportCertificateOutputBuilder {
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
+    }
+    /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

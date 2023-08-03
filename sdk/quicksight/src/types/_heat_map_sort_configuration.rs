@@ -84,6 +84,12 @@ impl HeatMapSortConfigurationBuilder {
         self.heat_map_row_sort = input;
         self
     }
+    /// <p>The field sort configuration of the rows fields.</p>
+    pub fn get_heat_map_row_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.heat_map_row_sort
+    }
     /// Appends an item to `heat_map_column_sort`.
     ///
     /// To override the contents of this collection use [`set_heat_map_column_sort`](Self::set_heat_map_column_sort).
@@ -103,6 +109,12 @@ impl HeatMapSortConfigurationBuilder {
         self.heat_map_column_sort = input;
         self
     }
+    /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
+    pub fn get_heat_map_column_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.heat_map_column_sort
+    }
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
     pub fn heat_map_row_items_limit_configuration(
         mut self,
@@ -119,6 +131,12 @@ impl HeatMapSortConfigurationBuilder {
         self.heat_map_row_items_limit_configuration = input;
         self
     }
+    /// <p>The limit on the number of rows that are displayed in a heat map.</p>
+    pub fn get_heat_map_row_items_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.heat_map_row_items_limit_configuration
+    }
     /// <p>The limit on the number of columns that are displayed in a heat map.</p>
     pub fn heat_map_column_items_limit_configuration(
         mut self,
@@ -134,6 +152,12 @@ impl HeatMapSortConfigurationBuilder {
     ) -> Self {
         self.heat_map_column_items_limit_configuration = input;
         self
+    }
+    /// <p>The limit on the number of columns that are displayed in a heat map.</p>
+    pub fn get_heat_map_column_items_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.heat_map_column_items_limit_configuration
     }
     /// Consumes the builder and constructs a [`HeatMapSortConfiguration`](crate::types::HeatMapSortConfiguration).
     pub fn build(self) -> crate::types::HeatMapSortConfiguration {

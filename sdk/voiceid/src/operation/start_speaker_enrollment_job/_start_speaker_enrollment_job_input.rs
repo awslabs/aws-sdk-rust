@@ -98,6 +98,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>A name for your speaker enrollment job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>A name for your speaker enrollment job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
+    }
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     pub fn data_access_role_arn(
@@ -134,6 +146,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     pub fn enrollment_config(mut self, input: crate::types::EnrollmentConfig) -> Self {
         self.enrollment_config = ::std::option::Option::Some(input);
@@ -146,6 +162,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     ) -> Self {
         self.enrollment_config = input;
         self
+    }
+    /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
+    pub fn get_enrollment_config(&self) -> &::std::option::Option<crate::types::EnrollmentConfig> {
+        &self.enrollment_config
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -160,6 +180,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -172,6 +196,10 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// Consumes the builder and constructs a [`StartSpeakerEnrollmentJobInput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput).
     pub fn build(

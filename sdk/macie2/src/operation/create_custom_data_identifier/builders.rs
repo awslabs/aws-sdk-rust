@@ -36,6 +36,10 @@ impl CreateCustomDataIdentifierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomDataIdentifier as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,11 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ignoreWords`.
     ///
@@ -155,6 +168,12 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self.inner = self.inner.set_ignore_words(input);
         self
     }
+    /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    pub fn get_ignore_words(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ignore_words()
+    }
     /// Appends an item to `keywords`.
     ///
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
@@ -172,6 +191,10 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self.inner = self.inner.set_keywords(input);
         self
     }
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_keywords()
+    }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub fn maximum_match_distance(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_match_distance(input);
@@ -181,6 +204,10 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn set_maximum_match_distance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_match_distance(input);
         self
+    }
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
+    pub fn get_maximum_match_distance(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_match_distance()
     }
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -194,6 +221,11 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex(input.into());
@@ -203,6 +235,10 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regex(input);
         self
+    }
+    /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regex()
     }
     /// Appends an item to `severityLevels`.
     ///
@@ -222,6 +258,13 @@ impl CreateCustomDataIdentifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_severity_levels(input);
         self
+    }
+    /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+    /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    pub fn get_severity_levels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
+        self.inner.get_severity_levels()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -247,5 +290,14 @@ impl CreateCustomDataIdentifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+    /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

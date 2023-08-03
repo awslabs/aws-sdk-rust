@@ -51,6 +51,10 @@ impl EvaluationFormScoringStrategyBuilder {
         self.mode = input;
         self
     }
+    /// <p>The scoring mode of the evaluation form.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringMode> {
+        &self.mode
+    }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn status(mut self, input: crate::types::EvaluationFormScoringStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl EvaluationFormScoringStrategyBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The scoring status of the evaluation form.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
     pub fn build(self) -> crate::types::EvaluationFormScoringStrategy {

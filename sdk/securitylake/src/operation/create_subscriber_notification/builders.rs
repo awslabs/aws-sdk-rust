@@ -36,6 +36,10 @@ impl CreateSubscriberNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSubscriberNotification as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateSubscriberNotificationFluentBuilder {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }
+    /// <p>The subscriber ID for the notification subscription.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscriber_id()
+    }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
     pub fn configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -144,5 +152,11 @@ impl CreateSubscriberNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        self.inner.get_configuration()
     }
 }

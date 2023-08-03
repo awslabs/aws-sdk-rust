@@ -80,6 +80,10 @@ impl PurchaseHostReservationOutputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl PurchaseHostReservationOutputBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
     }
     /// Appends an item to `purchase`.
     ///
@@ -112,6 +120,10 @@ impl PurchaseHostReservationOutputBuilder {
         self.purchase = input;
         self
     }
+    /// <p>Describes the details of the purchase.</p>
+    pub fn get_purchase(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Purchase>> {
+        &self.purchase
+    }
     /// <p>The total hourly price of the reservation calculated per hour.</p>
     pub fn total_hourly_price(
         mut self,
@@ -128,6 +140,10 @@ impl PurchaseHostReservationOutputBuilder {
         self.total_hourly_price = input;
         self
     }
+    /// <p>The total hourly price of the reservation calculated per hour.</p>
+    pub fn get_total_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_hourly_price
+    }
     /// <p>The total amount charged to your account when you purchase the reservation.</p>
     pub fn total_upfront_price(
         mut self,
@@ -143,6 +159,10 @@ impl PurchaseHostReservationOutputBuilder {
     ) -> Self {
         self.total_upfront_price = input;
         self
+    }
+    /// <p>The total amount charged to your account when you purchase the reservation.</p>
+    pub fn get_total_upfront_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_upfront_price
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

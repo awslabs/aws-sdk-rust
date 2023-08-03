@@ -39,6 +39,10 @@ impl GetCaseEventConfigurationInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// Consumes the builder and constructs a [`GetCaseEventConfigurationInput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput).
     pub fn build(
         self,

@@ -36,6 +36,13 @@ impl UpdateInstanceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInstanceProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateInstanceProfileFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The updated name for your instance profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +146,10 @@ impl UpdateInstanceProfileFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The updated name for your instance profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The updated description for your instance profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +161,10 @@ impl UpdateInstanceProfileFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The updated description for your instance profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(mut self, input: bool) -> Self {
         self.inner = self.inner.package_cleanup(input);
@@ -155,6 +174,10 @@ impl UpdateInstanceProfileFluentBuilder {
     pub fn set_package_cleanup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_package_cleanup(input);
         self
+    }
+    /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
+    pub fn get_package_cleanup(&self) -> &::std::option::Option<bool> {
+        self.inner.get_package_cleanup()
     }
     /// Appends an item to `excludeAppPackagesFromCleanup`.
     ///
@@ -178,6 +201,13 @@ impl UpdateInstanceProfileFluentBuilder {
         self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
         self
     }
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    pub fn get_exclude_app_packages_from_cleanup(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_exclude_app_packages_from_cleanup()
+    }
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(mut self, input: bool) -> Self {
         self.inner = self.inner.reboot_after_use(input);
@@ -187,5 +217,9 @@ impl UpdateInstanceProfileFluentBuilder {
     pub fn set_reboot_after_use(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reboot_after_use(input);
         self
+    }
+    /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
+    pub fn get_reboot_after_use(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reboot_after_use()
     }
 }

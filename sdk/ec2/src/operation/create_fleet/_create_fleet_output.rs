@@ -62,6 +62,10 @@ impl CreateFleetOutputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -81,6 +85,12 @@ impl CreateFleetOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetError>> {
+        &self.errors
+    }
     /// Appends an item to `instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -99,6 +109,12 @@ impl CreateFleetOutputBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateFleetInstance>> {
+        &self.instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

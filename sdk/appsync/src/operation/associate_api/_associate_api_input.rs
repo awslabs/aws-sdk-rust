@@ -47,6 +47,10 @@ impl AssociateApiInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl AssociateApiInputBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
+    }
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// Consumes the builder and constructs a [`AssociateApiInput`](crate::operation::associate_api::AssociateApiInput).
     pub fn build(

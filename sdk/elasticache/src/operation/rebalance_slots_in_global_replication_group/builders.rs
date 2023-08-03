@@ -36,6 +36,10 @@ impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebalanceSlotsInGlobalReplicationGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_id()
+    }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -115,5 +123,9 @@ impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>If <code>True</code>, redistribution is applied immediately.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
 }

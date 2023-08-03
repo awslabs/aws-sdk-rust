@@ -48,6 +48,10 @@ impl AwsApiGatewayAccessLogSettingsBuilder {
         self.format = input;
         self
     }
+    /// <p>A single-line format of the access logs of data, as specified by selected <code>$context</code> variables. The format must include at least <code>$context.requestId</code>.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
     pub fn destination_arn(
         mut self,
@@ -63,6 +67,10 @@ impl AwsApiGatewayAccessLogSettingsBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayAccessLogSettings`](crate::types::AwsApiGatewayAccessLogSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayAccessLogSettings {

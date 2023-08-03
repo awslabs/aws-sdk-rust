@@ -82,6 +82,10 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         self.accepted_route_count = input;
         self
     }
+    /// <p>The number of accepted routes.</p>
+    pub fn get_accepted_route_count(&self) -> &::std::option::Option<i32> {
+        &self.accepted_route_count
+    }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
     pub fn certificate_arn(
         mut self,
@@ -97,6 +101,10 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -116,6 +124,11 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         self.last_status_change = input;
         self
     }
+    /// <p>The date and time of the last change in status.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_status_change(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_status_change
+    }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
     pub fn outside_ip_address(
         mut self,
@@ -132,6 +145,10 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         self.outside_ip_address = input;
         self
     }
+    /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
+    pub fn get_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outside_ip_address
+    }
     /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -141,6 +158,10 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>If an error occurs, a description of the error.</p>
     pub fn status_message(
@@ -157,6 +178,10 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>If an error occurs, a description of the error.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::types::AwsEc2VpnConnectionVgwTelemetryDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionVgwTelemetryDetails {

@@ -69,6 +69,13 @@ impl GetLensVersionDifferenceInputBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The base version of the lens.</p>
     pub fn base_lens_version(
         mut self,
@@ -85,6 +92,10 @@ impl GetLensVersionDifferenceInputBuilder {
         self.base_lens_version = input;
         self
     }
+    /// <p>The base version of the lens.</p>
+    pub fn get_base_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_lens_version
+    }
     /// <p>The lens version to target a difference for.</p>
     pub fn target_lens_version(
         mut self,
@@ -100,6 +111,10 @@ impl GetLensVersionDifferenceInputBuilder {
     ) -> Self {
         self.target_lens_version = input;
         self
+    }
+    /// <p>The lens version to target a difference for.</p>
+    pub fn get_target_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_lens_version
     }
     /// Consumes the builder and constructs a [`GetLensVersionDifferenceInput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceInput).
     pub fn build(

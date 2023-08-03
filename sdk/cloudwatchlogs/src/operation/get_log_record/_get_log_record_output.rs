@@ -69,6 +69,14 @@ impl GetLogRecordOutputBuilder {
         self.log_record = input;
         self
     }
+    /// <p>The requested log event, as a JSON string.</p>
+    pub fn get_log_record(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.log_record
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

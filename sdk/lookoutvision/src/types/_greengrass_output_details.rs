@@ -62,6 +62,10 @@ impl GreengrassOutputDetailsBuilder {
         self.component_version_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the component. </p>
+    pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version_arn
+    }
     /// <p> The name of the component. </p>
     pub fn component_name(
         mut self,
@@ -78,6 +82,10 @@ impl GreengrassOutputDetailsBuilder {
         self.component_name = input;
         self
     }
+    /// <p> The name of the component. </p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p> The version of the component. </p>
     pub fn component_version(
         mut self,
@@ -93,6 +101,10 @@ impl GreengrassOutputDetailsBuilder {
     ) -> Self {
         self.component_version = input;
         self
+    }
+    /// <p> The version of the component. </p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
     }
     /// Consumes the builder and constructs a [`GreengrassOutputDetails`](crate::types::GreengrassOutputDetails).
     pub fn build(self) -> crate::types::GreengrassOutputDetails {

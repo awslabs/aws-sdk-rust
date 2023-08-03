@@ -46,6 +46,10 @@ impl UpdateAliasOutputBuilder {
         self.alias = input;
         self
     }
+    /// <p>The updated alias resource.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::Alias> {
+        &self.alias
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

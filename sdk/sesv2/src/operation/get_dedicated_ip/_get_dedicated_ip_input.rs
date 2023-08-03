@@ -40,6 +40,10 @@ impl GetDedicatedIpInputBuilder {
         self.ip = input;
         self
     }
+    /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::operation::get_dedicated_ip::GetDedicatedIpInput).
     pub fn build(
         self,

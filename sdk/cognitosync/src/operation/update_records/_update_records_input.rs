@@ -95,6 +95,10 @@ impl UpdateRecordsInputBuilder {
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +107,10 @@ impl UpdateRecordsInputBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl UpdateRecordsInputBuilder {
         self.dataset_name = input;
         self
     }
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl UpdateRecordsInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Appends an item to `record_patches`.
     ///
@@ -143,6 +159,12 @@ impl UpdateRecordsInputBuilder {
         self.record_patches = input;
         self
     }
+    /// A list of patch operations.
+    pub fn get_record_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>> {
+        &self.record_patches
+    }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     pub fn sync_session_token(
         mut self,
@@ -159,6 +181,10 @@ impl UpdateRecordsInputBuilder {
         self.sync_session_token = input;
         self
     }
+    /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+    pub fn get_sync_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_session_token
+    }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     pub fn client_context(
         mut self,
@@ -174,6 +200,10 @@ impl UpdateRecordsInputBuilder {
     ) -> Self {
         self.client_context = input;
         self
+    }
+    /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
+    pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_context
     }
     /// Consumes the builder and constructs a [`UpdateRecordsInput`](crate::operation::update_records::UpdateRecordsInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl KinesisVideoStreamBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`KinesisVideoStream`](crate::types::KinesisVideoStream).
     pub fn build(self) -> crate::types::KinesisVideoStream {
         crate::types::KinesisVideoStream { arn: self.arn }

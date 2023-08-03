@@ -71,6 +71,10 @@ impl ListAssetRelationshipsInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
@@ -90,6 +94,13 @@ impl ListAssetRelationshipsInputBuilder {
         self.traversal_type = input;
         self
     }
+    /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
+    /// </ul>
+    pub fn get_traversal_type(&self) -> &::std::option::Option<crate::types::TraversalType> {
+        &self.traversal_type
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +111,10 @@ impl ListAssetRelationshipsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -109,6 +124,10 @@ impl ListAssetRelationshipsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
     pub fn build(

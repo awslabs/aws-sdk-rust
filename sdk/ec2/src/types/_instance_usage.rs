@@ -48,6 +48,10 @@ impl InstanceUsageBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
     pub fn used_instance_count(mut self, input: i32) -> Self {
         self.used_instance_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InstanceUsageBuilder {
     pub fn set_used_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.used_instance_count = input;
         self
+    }
+    /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
+    pub fn get_used_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.used_instance_count
     }
     /// Consumes the builder and constructs a [`InstanceUsage`](crate::types::InstanceUsage).
     pub fn build(self) -> crate::types::InstanceUsage {

@@ -36,6 +36,13 @@ impl DescribeScheduledActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScheduledActions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
+    /// <p>The name of the scheduled action to retrieve. </p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_action_name()
+    }
     /// <p>The type of the scheduled actions to retrieve. </p>
     pub fn target_action_type(mut self, input: crate::types::ScheduledActionTypeValues) -> Self {
         self.inner = self.inner.target_action_type(input);
@@ -153,6 +164,12 @@ impl DescribeScheduledActionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_action_type(input);
         self
+    }
+    /// <p>The type of the scheduled actions to retrieve. </p>
+    pub fn get_target_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
+        self.inner.get_target_action_type()
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +184,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -180,6 +201,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
@@ -189,6 +214,10 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
+    }
+    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_active()
     }
     /// Appends an item to `Filters`.
     ///
@@ -207,6 +236,12 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>List of scheduled action filters. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -216,6 +251,10 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
@@ -230,5 +269,11 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

@@ -80,6 +80,10 @@ impl PromptBuilder {
         self.prompt_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    pub fn get_prompt_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_arn
+    }
     /// <p>A unique identifier for the prompt.</p>
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl PromptBuilder {
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_id = input;
         self
+    }
+    /// <p>A unique identifier for the prompt.</p>
+    pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_id
     }
     /// <p>The name of the prompt.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl PromptBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the prompt.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the prompt.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl PromptBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the prompt.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +150,14 @@ impl PromptBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Prompt`](crate::types::Prompt).
     pub fn build(self) -> crate::types::Prompt {

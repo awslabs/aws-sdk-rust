@@ -70,6 +70,10 @@ impl CalculationResultBuilder {
         self.std_out_s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
+    pub fn get_std_out_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.std_out_s3_uri
+    }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
     pub fn std_error_s3_uri(
         mut self,
@@ -85,6 +89,10 @@ impl CalculationResultBuilder {
     ) -> Self {
         self.std_error_s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
+    pub fn get_std_error_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.std_error_s3_uri
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
     pub fn result_s3_uri(
@@ -102,6 +110,10 @@ impl CalculationResultBuilder {
         self.result_s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the folder for the calculation results.</p>
+    pub fn get_result_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_s3_uri
+    }
     /// <p>The data format of the calculation result.</p>
     pub fn result_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_type = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl CalculationResultBuilder {
     pub fn set_result_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_type = input;
         self
+    }
+    /// <p>The data format of the calculation result.</p>
+    pub fn get_result_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_type
     }
     /// Consumes the builder and constructs a [`CalculationResult`](crate::types::CalculationResult).
     pub fn build(self) -> crate::types::CalculationResult {

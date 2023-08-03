@@ -43,6 +43,10 @@ impl PluginBuilder {
         self.custom_plugin = input;
         self
     }
+    /// <p>Details about a custom plugin.</p>
+    pub fn get_custom_plugin(&self) -> &::std::option::Option<crate::types::CustomPlugin> {
+        &self.custom_plugin
+    }
     /// Consumes the builder and constructs a [`Plugin`](crate::types::Plugin).
     pub fn build(self) -> crate::types::Plugin {
         crate::types::Plugin {

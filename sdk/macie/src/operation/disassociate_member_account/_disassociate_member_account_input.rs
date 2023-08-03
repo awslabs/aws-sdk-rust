@@ -45,6 +45,10 @@ impl DisassociateMemberAccountInputBuilder {
         self.member_account_id = input;
         self
     }
+    /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
+    }
     /// Consumes the builder and constructs a [`DisassociateMemberAccountInput`](crate::operation::disassociate_member_account::DisassociateMemberAccountInput).
     pub fn build(
         self,

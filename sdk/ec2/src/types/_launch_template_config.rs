@@ -59,6 +59,12 @@ impl LaunchTemplateConfigBuilder {
         self.launch_template_specification = input;
         self
     }
+    /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
+    pub fn get_launch_template_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetLaunchTemplateSpecification> {
+        &self.launch_template_specification
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -77,6 +83,12 @@ impl LaunchTemplateConfigBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`LaunchTemplateConfig`](crate::types::LaunchTemplateConfig).
     pub fn build(self) -> crate::types::LaunchTemplateConfig {

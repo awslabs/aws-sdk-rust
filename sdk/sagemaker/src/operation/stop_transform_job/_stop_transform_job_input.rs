@@ -46,6 +46,10 @@ impl StopTransformJobInputBuilder {
         self.transform_job_name = input;
         self
     }
+    /// <p>The name of the batch transform job to stop.</p>
+    pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_job_name
+    }
     /// Consumes the builder and constructs a [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
     pub fn build(
         self,

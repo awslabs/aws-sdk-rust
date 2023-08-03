@@ -48,6 +48,10 @@ impl CaptionSourceFramerateBuilder {
         self.framerate_denominator = input;
         self
     }
+    /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate. Use this setting along with the setting Framerate numerator.
+    pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_denominator
+    }
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate. Use this setting along with the setting Framerate denominator.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
         self.framerate_numerator = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CaptionSourceFramerateBuilder {
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_numerator = input;
         self
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate. Use this setting along with the setting Framerate denominator.
+    pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_numerator
     }
     /// Consumes the builder and constructs a [`CaptionSourceFramerate`](crate::types::CaptionSourceFramerate).
     pub fn build(self) -> crate::types::CaptionSourceFramerate {

@@ -40,6 +40,10 @@ impl PushDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PushDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::push_domain::builders::PushDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl PushDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p> Name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p> New IPS tag for the domain. </p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -131,5 +139,9 @@ impl PushDomainFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p> New IPS tag for the domain. </p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
     }
 }

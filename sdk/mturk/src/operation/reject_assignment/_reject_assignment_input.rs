@@ -54,6 +54,10 @@ impl RejectAssignmentInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(
         mut self,
@@ -69,6 +73,10 @@ impl RejectAssignmentInputBuilder {
     ) -> Self {
         self.requester_feedback = input;
         self
+    }
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_feedback
     }
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
     pub fn build(

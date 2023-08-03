@@ -106,6 +106,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         self.label = input;
         self
     }
+    /// <p> A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN. </p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p> Used to set CloudWatch Logs options. </p>
     pub fn logging_configuration(
         mut self,
@@ -124,6 +128,13 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         self.logging_configuration = input;
         self
     }
+    /// <p> Used to set CloudWatch Logs options. </p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>
+    {
+        &self.logging_configuration
+    }
     /// <p> The name of the state machine. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -134,6 +145,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the state machine. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -143,6 +158,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p> The ARN that identifies the state machine. </p>
     pub fn state_machine_arn(
@@ -160,6 +179,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p> The ARN that identifies the state machine. </p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p> The current status of the state machine. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -169,6 +192,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The current status of the state machine. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p> Specifies whether X-Ray tracing is enabled. </p>
     pub fn tracing_configuration(
@@ -188,6 +215,13 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p> Specifies whether X-Ray tracing is enabled. </p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>
+    {
+        &self.tracing_configuration
+    }
     /// <p> The type of the state machine (STANDARD or EXPRESS). </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -197,6 +231,10 @@ impl AwsStepFunctionStateMachineDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of the state machine (STANDARD or EXPRESS). </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineDetails`](crate::types::AwsStepFunctionStateMachineDetails).
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineDetails {

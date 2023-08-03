@@ -48,6 +48,10 @@ impl ExperimentTemplateStopConditionBuilder {
         self.source = input;
         self
     }
+    /// <p>The source for the stop condition.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ExperimentTemplateStopConditionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateStopCondition`](crate::types::ExperimentTemplateStopCondition).
     pub fn build(self) -> crate::types::ExperimentTemplateStopCondition {

@@ -140,6 +140,10 @@ impl DirectConnectGatewayAssociationBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
     pub fn direct_connect_gateway_owner_account(
         mut self,
@@ -155,6 +159,12 @@ impl DirectConnectGatewayAssociationBuilder {
     ) -> Self {
         self.direct_connect_gateway_owner_account = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
+    pub fn get_direct_connect_gateway_owner_account(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_owner_account
     }
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
@@ -186,6 +196,19 @@ impl DirectConnectGatewayAssociationBuilder {
         self.association_state = input;
         self
     }
+    /// <p>The state of the association. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
+    /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
+    /// </ul>
+    pub fn get_association_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationState> {
+        &self.association_state
+    }
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn state_change_error(
         mut self,
@@ -202,6 +225,10 @@ impl DirectConnectGatewayAssociationBuilder {
         self.state_change_error = input;
         self
     }
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub fn get_state_change_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_change_error
+    }
     /// <p>Information about the associated gateway.</p>
     pub fn associated_gateway(mut self, input: crate::types::AssociatedGateway) -> Self {
         self.associated_gateway = ::std::option::Option::Some(input);
@@ -214,6 +241,12 @@ impl DirectConnectGatewayAssociationBuilder {
     ) -> Self {
         self.associated_gateway = input;
         self
+    }
+    /// <p>Information about the associated gateway.</p>
+    pub fn get_associated_gateway(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociatedGateway> {
+        &self.associated_gateway
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn association_id(
@@ -230,6 +263,10 @@ impl DirectConnectGatewayAssociationBuilder {
     ) -> Self {
         self.association_id = input;
         self
+    }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
     }
     /// Appends an item to `allowed_prefixes_to_direct_connect_gateway`.
     ///
@@ -255,6 +292,12 @@ impl DirectConnectGatewayAssociationBuilder {
         self.allowed_prefixes_to_direct_connect_gateway = input;
         self
     }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn get_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        &self.allowed_prefixes_to_direct_connect_gateway
+    }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn virtual_gateway_id(
         mut self,
@@ -270,6 +313,10 @@ impl DirectConnectGatewayAssociationBuilder {
     ) -> Self {
         self.virtual_gateway_id = input;
         self
+    }
+    /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
     }
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
     pub fn virtual_gateway_region(
@@ -287,6 +334,10 @@ impl DirectConnectGatewayAssociationBuilder {
         self.virtual_gateway_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
+    pub fn get_virtual_gateway_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_region
+    }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     pub fn virtual_gateway_owner_account(
         mut self,
@@ -302,6 +353,12 @@ impl DirectConnectGatewayAssociationBuilder {
     ) -> Self {
         self.virtual_gateway_owner_account = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
+    pub fn get_virtual_gateway_owner_account(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_owner_account
     }
     /// Consumes the builder and constructs a [`DirectConnectGatewayAssociation`](crate::types::DirectConnectGatewayAssociation).
     pub fn build(self) -> crate::types::DirectConnectGatewayAssociation {

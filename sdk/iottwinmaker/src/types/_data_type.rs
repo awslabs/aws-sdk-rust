@@ -72,6 +72,10 @@ impl DataTypeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The underlying type of the data type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
+    }
     /// <p>The nested type in the data type.</p>
     pub fn nested_type(
         mut self,
@@ -87,6 +91,12 @@ impl DataTypeBuilder {
     ) -> Self {
         self.nested_type = input;
         self
+    }
+    /// <p>The nested type in the data type.</p>
+    pub fn get_nested_type(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::DataType>> {
+        &self.nested_type
     }
     /// Appends an item to `allowed_values`.
     ///
@@ -107,6 +117,12 @@ impl DataTypeBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The allowed values for this data type.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
+        &self.allowed_values
+    }
     /// <p>The unit of measure used in this data type.</p>
     pub fn unit_of_measure(
         mut self,
@@ -123,6 +139,10 @@ impl DataTypeBuilder {
         self.unit_of_measure = input;
         self
     }
+    /// <p>The unit of measure used in this data type.</p>
+    pub fn get_unit_of_measure(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit_of_measure
+    }
     /// <p>A relationship that associates a component with another component.</p>
     pub fn relationship(mut self, input: crate::types::Relationship) -> Self {
         self.relationship = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl DataTypeBuilder {
     ) -> Self {
         self.relationship = input;
         self
+    }
+    /// <p>A relationship that associates a component with another component.</p>
+    pub fn get_relationship(&self) -> &::std::option::Option<crate::types::Relationship> {
+        &self.relationship
     }
     /// Consumes the builder and constructs a [`DataType`](crate::types::DataType).
     pub fn build(self) -> crate::types::DataType {

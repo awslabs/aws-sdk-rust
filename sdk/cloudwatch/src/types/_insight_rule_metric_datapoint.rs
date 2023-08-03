@@ -114,6 +114,10 @@ impl InsightRuleMetricDatapointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp of the data point.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn unique_contributors(mut self, input: f64) -> Self {
@@ -125,6 +129,11 @@ impl InsightRuleMetricDatapointBuilder {
     pub fn set_unique_contributors(mut self, input: ::std::option::Option<f64>) -> Self {
         self.unique_contributors = input;
         self
+    }
+    /// <p>The number of unique contributors who published data during this timestamp.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_unique_contributors(&self) -> &::std::option::Option<f64> {
+        &self.unique_contributors
     }
     /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
@@ -138,6 +147,11 @@ impl InsightRuleMetricDatapointBuilder {
         self.max_contributor_value = input;
         self
     }
+    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_max_contributor_value(&self) -> &::std::option::Option<f64> {
+        &self.max_contributor_value
+    }
     /// <p>The number of occurrences that matched the rule during this data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn sample_count(mut self, input: f64) -> Self {
@@ -149,6 +163,11 @@ impl InsightRuleMetricDatapointBuilder {
     pub fn set_sample_count(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_count = input;
         self
+    }
+    /// <p>The number of occurrences that matched the rule during this data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_sample_count(&self) -> &::std::option::Option<f64> {
+        &self.sample_count
     }
     /// <p>The average value from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
@@ -162,6 +181,11 @@ impl InsightRuleMetricDatapointBuilder {
         self.average = input;
         self
     }
+    /// <p>The average value from all contributors during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
+    }
     /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn sum(mut self, input: f64) -> Self {
@@ -173,6 +197,11 @@ impl InsightRuleMetricDatapointBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
@@ -186,6 +215,11 @@ impl InsightRuleMetricDatapointBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
+    }
     /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -197,6 +231,11 @@ impl InsightRuleMetricDatapointBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
     }
     /// Consumes the builder and constructs a [`InsightRuleMetricDatapoint`](crate::types::InsightRuleMetricDatapoint).
     pub fn build(self) -> crate::types::InsightRuleMetricDatapoint {

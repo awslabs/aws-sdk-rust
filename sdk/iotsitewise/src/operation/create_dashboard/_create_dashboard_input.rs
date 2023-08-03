@@ -87,6 +87,10 @@ impl CreateDashboardInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project in which to create the dashboard.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>A friendly name for the dashboard.</p>
     pub fn dashboard_name(
         mut self,
@@ -102,6 +106,10 @@ impl CreateDashboardInputBuilder {
     ) -> Self {
         self.dashboard_name = input;
         self
+    }
+    /// <p>A friendly name for the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
     }
     /// <p>A description for the dashboard.</p>
     pub fn dashboard_description(
@@ -119,6 +127,10 @@ impl CreateDashboardInputBuilder {
         self.dashboard_description = input;
         self
     }
+    /// <p>A description for the dashboard.</p>
+    pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_description
+    }
     /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn dashboard_definition(
         mut self,
@@ -135,6 +147,10 @@ impl CreateDashboardInputBuilder {
         self.dashboard_definition = input;
         self
     }
+    /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_definition
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -144,6 +160,10 @@ impl CreateDashboardInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -169,6 +189,14 @@ impl CreateDashboardInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(

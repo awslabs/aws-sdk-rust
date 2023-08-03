@@ -64,6 +64,10 @@ impl ThumbnailBuilder {
         self.body = input;
         self
     }
+    /// The binary data for the latest thumbnail.
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// The content type for the latest thumbnail.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ThumbnailBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// The content type for the latest thumbnail.
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Thumbnail Type
     pub fn thumbnail_type(mut self, input: crate::types::ThumbnailType) -> Self {
@@ -87,6 +95,10 @@ impl ThumbnailBuilder {
         self.thumbnail_type = input;
         self
     }
+    /// Thumbnail Type
+    pub fn get_thumbnail_type(&self) -> &::std::option::Option<crate::types::ThumbnailType> {
+        &self.thumbnail_type
+    }
     /// Time stamp for the latest thumbnail.
     pub fn time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_stamp = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ThumbnailBuilder {
     ) -> Self {
         self.time_stamp = input;
         self
+    }
+    /// Time stamp for the latest thumbnail.
+    pub fn get_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_stamp
     }
     /// Consumes the builder and constructs a [`Thumbnail`](crate::types::Thumbnail).
     pub fn build(self) -> crate::types::Thumbnail {

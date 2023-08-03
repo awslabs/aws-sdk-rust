@@ -40,6 +40,10 @@ impl CreateGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGlobalReplicationGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,13 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_id_suffix(input);
         self
     }
+    /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>
+    /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
+    pub fn get_global_replication_group_id_suffix(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_id_suffix()
+    }
     /// <p>Provides details of the Global datastore</p>
     pub fn global_replication_group_description(
         mut self,
@@ -156,6 +167,12 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_description(input);
         self
     }
+    /// <p>Provides details of the Global datastore</p>
+    pub fn get_global_replication_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_description()
+    }
     /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
     pub fn primary_replication_group_id(
         mut self,
@@ -171,5 +188,11 @@ impl CreateGlobalReplicationGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_primary_replication_group_id(input);
         self
+    }
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    pub fn get_primary_replication_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_replication_group_id()
     }
 }

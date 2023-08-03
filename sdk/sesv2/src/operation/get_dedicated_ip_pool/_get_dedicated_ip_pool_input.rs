@@ -41,6 +41,10 @@ impl GetDedicatedIpPoolInputBuilder {
         self.pool_name = input;
         self
     }
+    /// <p>The name of the dedicated IP pool to retrieve.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
     /// Consumes the builder and constructs a [`GetDedicatedIpPoolInput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl InvalidSensorDataBuilder {
         self.affected_sensor_count = input;
         self
     }
+    /// <p> Indicates the number of sensors that have at least some invalid values. </p>
+    pub fn get_affected_sensor_count(&self) -> &::std::option::Option<i32> {
+        &self.affected_sensor_count
+    }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     pub fn total_number_of_invalid_values(mut self, input: i32) -> Self {
         self.total_number_of_invalid_values = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InvalidSensorDataBuilder {
     pub fn set_total_number_of_invalid_values(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_invalid_values = input;
         self
+    }
+    /// <p> Indicates the total number of invalid values across all the sensors. </p>
+    pub fn get_total_number_of_invalid_values(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_invalid_values
     }
     /// Consumes the builder and constructs a [`InvalidSensorData`](crate::types::InvalidSensorData).
     pub fn build(self) -> crate::types::InvalidSensorData {

@@ -46,6 +46,10 @@ impl DescribeCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,

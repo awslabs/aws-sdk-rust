@@ -40,6 +40,10 @@ impl AutoScalingGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup { name: self.name }

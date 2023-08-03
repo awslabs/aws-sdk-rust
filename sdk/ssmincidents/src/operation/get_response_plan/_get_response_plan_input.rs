@@ -39,6 +39,10 @@ impl GetResponsePlanInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
     pub fn build(
         self,

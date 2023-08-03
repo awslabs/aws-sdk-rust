@@ -71,6 +71,12 @@ impl ModifyDbClusterEndpointInputBuilder {
         self.db_cluster_endpoint_identifier = input;
         self
     }
+    /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_identifier
+    }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn endpoint_type(
         mut self,
@@ -86,6 +92,10 @@ impl ModifyDbClusterEndpointInputBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
     }
     /// Appends an item to `static_members`.
     ///
@@ -109,6 +119,12 @@ impl ModifyDbClusterEndpointInputBuilder {
         self.static_members = input;
         self
     }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_members
+    }
     /// Appends an item to `excluded_members`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
@@ -130,6 +146,12 @@ impl ModifyDbClusterEndpointInputBuilder {
     ) -> Self {
         self.excluded_members = input;
         self
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    pub fn get_excluded_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_members
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterEndpointInput`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput).
     pub fn build(

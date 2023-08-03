@@ -47,6 +47,13 @@ impl CreateNotebookInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNotebookInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_notebook_instance::builders::CreateNotebookInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
     }
+    /// <p>The name of the new notebook instance.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_name()
+    }
     /// <p>The type of ML compute instance to launch for the notebook instance.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.inner = self.inner.instance_type(input);
@@ -156,6 +167,10 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The type of ML compute instance to launch for the notebook instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        self.inner.get_instance_type()
+    }
     /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -165,6 +180,10 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -186,6 +205,12 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
@@ -200,6 +225,12 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -209,6 +240,10 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -227,6 +262,10 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     pub fn lifecycle_config_name(
         mut self,
@@ -243,6 +282,10 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_lifecycle_config_name(input);
         self
     }
+    /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    pub fn get_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lifecycle_config_name()
+    }
     /// <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
     pub fn direct_internet_access(mut self, input: crate::types::DirectInternetAccess) -> Self {
@@ -258,6 +301,13 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_direct_internet_access(input);
         self
     }
+    /// <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
+    pub fn get_direct_internet_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectInternetAccess> {
+        self.inner.get_direct_internet_access()
+    }
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.inner = self.inner.volume_size_in_gb(input);
@@ -267,6 +317,10 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_volume_size_in_gb(input);
         self
+    }
+    /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        self.inner.get_volume_size_in_gb()
     }
     /// Appends an item to `AcceleratorTypes`.
     ///
@@ -290,6 +344,13 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
+    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    pub fn get_accelerator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>
+    {
+        self.inner.get_accelerator_types()
+    }
     /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(
         mut self,
@@ -305,6 +366,10 @@ impl CreateNotebookInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_code_repository(input);
         self
+    }
+    /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    pub fn get_default_code_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_code_repository()
     }
     /// Appends an item to `AdditionalCodeRepositories`.
     ///
@@ -326,6 +391,12 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_additional_code_repositories(input);
         self
     }
+    /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    pub fn get_additional_code_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_additional_code_repositories()
+    }
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
@@ -343,6 +414,12 @@ impl CreateNotebookInstanceFluentBuilder {
         self.inner = self.inner.set_root_access(input);
         self
     }
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
+    /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
+    /// </note>
+    pub fn get_root_access(&self) -> &::std::option::Option<crate::types::RootAccess> {
+        self.inner.get_root_access()
+    }
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
     pub fn platform_identifier(
         mut self,
@@ -358,6 +435,10 @@ impl CreateNotebookInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform_identifier(input);
         self
+    }
+    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    pub fn get_platform_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_identifier()
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
     pub fn instance_metadata_service_configuration(
@@ -376,5 +457,11 @@ impl CreateNotebookInstanceFluentBuilder {
             .inner
             .set_instance_metadata_service_configuration(input);
         self
+    }
+    /// <p>Information on the IMDS configuration of the notebook instance</p>
+    pub fn get_instance_metadata_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataServiceConfiguration> {
+        self.inner.get_instance_metadata_service_configuration()
     }
 }

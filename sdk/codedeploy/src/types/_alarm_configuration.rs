@@ -64,6 +64,10 @@ impl AlarmConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether the alarm configuration is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
     /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
@@ -81,6 +85,14 @@ impl AlarmConfigurationBuilder {
     pub fn set_ignore_poll_alarm_failure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_poll_alarm_failure = input;
         self
+    }
+    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
+    /// <ul>
+    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// </ul>
+    pub fn get_ignore_poll_alarm_failure(&self) -> &::std::option::Option<bool> {
+        &self.ignore_poll_alarm_failure
     }
     /// Appends an item to `alarms`.
     ///
@@ -100,6 +112,10 @@ impl AlarmConfigurationBuilder {
     ) -> Self {
         self.alarms = input;
         self
+    }
+    /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+        &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     pub fn build(self) -> crate::types::AlarmConfiguration {

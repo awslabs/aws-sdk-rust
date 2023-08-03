@@ -37,6 +37,10 @@ impl DeleteEnvironmentConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEnvironmentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DeleteEnvironmentConfigurationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application the environment is associated with.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of the environment to delete the draft configuration from.</p>
     pub fn environment_name(
         mut self,
@@ -148,5 +156,9 @@ impl DeleteEnvironmentConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p>The name of the environment to delete the draft configuration from.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
 }

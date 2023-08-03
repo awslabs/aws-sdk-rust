@@ -40,6 +40,10 @@ impl VariantImportItemSourceBuilder {
         self.source = input;
         self
     }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`VariantImportItemSource`](crate::types::VariantImportItemSource).
     pub fn build(self) -> crate::types::VariantImportItemSource {
         crate::types::VariantImportItemSource {

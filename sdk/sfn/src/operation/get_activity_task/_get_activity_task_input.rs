@@ -47,6 +47,10 @@ impl GetActivityTaskInputBuilder {
         self.activity_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
+    }
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub fn worker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetActivityTaskInputBuilder {
     pub fn set_worker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_name = input;
         self
+    }
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+    pub fn get_worker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_name
     }
     /// Consumes the builder and constructs a [`GetActivityTaskInput`](crate::operation::get_activity_task::GetActivityTaskInput).
     pub fn build(

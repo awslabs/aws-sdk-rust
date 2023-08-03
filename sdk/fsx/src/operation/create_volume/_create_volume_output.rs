@@ -46,6 +46,10 @@ impl CreateVolumeOutputBuilder {
         self.volume = input;
         self
     }
+    /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
+        &self.volume
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

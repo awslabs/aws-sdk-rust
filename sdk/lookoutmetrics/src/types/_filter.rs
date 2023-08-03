@@ -54,6 +54,10 @@ impl FilterBuilder {
         self.dimension_value = input;
         self
     }
+    /// <p>The value that you want to include in the filter.</p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
+    }
     /// <p>The condition to apply.</p>
     pub fn filter_operation(mut self, input: crate::types::FilterOperation) -> Self {
         self.filter_operation = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FilterBuilder {
     ) -> Self {
         self.filter_operation = input;
         self
+    }
+    /// <p>The condition to apply.</p>
+    pub fn get_filter_operation(&self) -> &::std::option::Option<crate::types::FilterOperation> {
+        &self.filter_operation
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

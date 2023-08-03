@@ -63,6 +63,12 @@ impl GetRecordOutputBuilder {
         self.record = input;
         self
     }
+    /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+        &self.record
+    }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn expires_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expires_at = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl GetRecordOutputBuilder {
     pub fn set_expires_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expires_at = input;
         self
+    }
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expires_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

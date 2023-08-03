@@ -39,6 +39,10 @@ impl ConcurrencyBuilder {
         self.reserved_concurrent_executions = input;
         self
     }
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
+    pub fn get_reserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.reserved_concurrent_executions
+    }
     /// Consumes the builder and constructs a [`Concurrency`](crate::types::Concurrency).
     pub fn build(self) -> crate::types::Concurrency {
         crate::types::Concurrency {

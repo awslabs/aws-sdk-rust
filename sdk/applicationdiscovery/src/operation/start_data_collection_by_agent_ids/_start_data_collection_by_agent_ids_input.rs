@@ -48,6 +48,10 @@ impl StartDataCollectionByAgentIdsInputBuilder {
         self.agent_ids = input;
         self
     }
+    /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_ids
+    }
     /// Consumes the builder and constructs a [`StartDataCollectionByAgentIdsInput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput).
     pub fn build(
         self,

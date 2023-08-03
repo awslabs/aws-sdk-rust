@@ -104,6 +104,10 @@ impl EventBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The CloudTrail ID of the event returned.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The name of the event returned.</p>
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl EventBuilder {
         self.event_name = input;
         self
     }
+    /// <p>The name of the event returned.</p>
+    pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_name
+    }
     /// <p>Information about whether the event is a write event or a read event. </p>
     pub fn read_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.read_only = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl EventBuilder {
     pub fn set_read_only(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.read_only = input;
         self
+    }
+    /// <p>Information about whether the event is a write event or a read event. </p>
+    pub fn get_read_only(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_only
     }
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub fn access_key_id(
@@ -140,6 +152,10 @@ impl EventBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The date and time of the event returned.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl EventBuilder {
         self.event_time = input;
         self
     }
+    /// <p>The date and time of the event returned.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p>The Amazon Web Services service to which the request was made.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -163,6 +183,10 @@ impl EventBuilder {
         self.event_source = input;
         self
     }
+    /// <p>The Amazon Web Services service to which the request was made.</p>
+    pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source
+    }
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -172,6 +196,10 @@ impl EventBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>A user name or role name of the requester that called the API in the event returned.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `resources`.
     ///
@@ -192,6 +220,10 @@ impl EventBuilder {
         self.resources = input;
         self
     }
+    /// <p>A list of resources referenced by the event returned.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
+    }
     /// <p>A JSON string that contains a representation of the event returned.</p>
     pub fn cloud_trail_event(
         mut self,
@@ -207,6 +239,10 @@ impl EventBuilder {
     ) -> Self {
         self.cloud_trail_event = input;
         self
+    }
+    /// <p>A JSON string that contains a representation of the event returned.</p>
+    pub fn get_cloud_trail_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_trail_event
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

@@ -47,6 +47,10 @@ impl DeleteLicenseInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>Current version of the license.</p>
     pub fn source_version(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteLicenseInputBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>Current version of the license.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl TokenIdentifierBuilder {
         self.network = input;
         self
     }
+    /// <p>The blockchain network of the token.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
+    }
     /// <p>This is the token's contract address.</p>
     pub fn contract_address(
         mut self,
@@ -74,6 +78,10 @@ impl TokenIdentifierBuilder {
         self.contract_address = input;
         self
     }
+    /// <p>This is the token's contract address.</p>
+    pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contract_address
+    }
     /// <p>The unique identifier of the token.</p>
     pub fn token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl TokenIdentifierBuilder {
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_id = input;
         self
+    }
+    /// <p>The unique identifier of the token.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_id
     }
     /// Consumes the builder and constructs a [`TokenIdentifier`](crate::types::TokenIdentifier).
     pub fn build(self) -> crate::types::TokenIdentifier {

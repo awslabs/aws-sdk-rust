@@ -36,6 +36,12 @@ impl DescribeSolutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSolution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_solution::builders::DescribeSolutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeSolutionFluentBuilder {
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_solution_arn()
     }
 }

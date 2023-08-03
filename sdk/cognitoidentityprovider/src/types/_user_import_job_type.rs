@@ -156,6 +156,10 @@ impl UserImportJobTypeBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The job name for the user import job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The job ID for the user import job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -166,6 +170,10 @@ impl UserImportJobTypeBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID for the user import job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -175,6 +183,10 @@ impl UserImportJobTypeBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
     pub fn pre_signed_url(
@@ -192,6 +204,10 @@ impl UserImportJobTypeBuilder {
         self.pre_signed_url = input;
         self
     }
+    /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_signed_url
+    }
     /// <p>The date the user import job was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -204,6 +220,10 @@ impl UserImportJobTypeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the user import job was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date when the user import job was started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -218,6 +238,10 @@ impl UserImportJobTypeBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date when the user import job was started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The date when the user import job was completed.</p>
     pub fn completion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_date = ::std::option::Option::Some(input);
@@ -230,6 +254,10 @@ impl UserImportJobTypeBuilder {
     ) -> Self {
         self.completion_date = input;
         self
+    }
+    /// <p>The date when the user import job was completed.</p>
+    pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_date
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
@@ -264,6 +292,20 @@ impl UserImportJobTypeBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the user import job. One of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
+    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
+    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
+    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
+    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
+    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
+    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UserImportJobStatusType> {
+        &self.status
+    }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
     pub fn cloud_watch_logs_role_arn(
         mut self,
@@ -280,6 +322,10 @@ impl UserImportJobTypeBuilder {
         self.cloud_watch_logs_role_arn = input;
         self
     }
+    /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
+    pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_role_arn
+    }
     /// <p>The number of users that were successfully imported.</p>
     pub fn imported_users(mut self, input: i64) -> Self {
         self.imported_users = ::std::option::Option::Some(input);
@@ -289,6 +335,10 @@ impl UserImportJobTypeBuilder {
     pub fn set_imported_users(mut self, input: ::std::option::Option<i64>) -> Self {
         self.imported_users = input;
         self
+    }
+    /// <p>The number of users that were successfully imported.</p>
+    pub fn get_imported_users(&self) -> &::std::option::Option<i64> {
+        &self.imported_users
     }
     /// <p>The number of users that were skipped.</p>
     pub fn skipped_users(mut self, input: i64) -> Self {
@@ -300,6 +350,10 @@ impl UserImportJobTypeBuilder {
         self.skipped_users = input;
         self
     }
+    /// <p>The number of users that were skipped.</p>
+    pub fn get_skipped_users(&self) -> &::std::option::Option<i64> {
+        &self.skipped_users
+    }
     /// <p>The number of users that couldn't be imported.</p>
     pub fn failed_users(mut self, input: i64) -> Self {
         self.failed_users = ::std::option::Option::Some(input);
@@ -309,6 +363,10 @@ impl UserImportJobTypeBuilder {
     pub fn set_failed_users(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_users = input;
         self
+    }
+    /// <p>The number of users that couldn't be imported.</p>
+    pub fn get_failed_users(&self) -> &::std::option::Option<i64> {
+        &self.failed_users
     }
     /// <p>The message returned when the user import job is completed.</p>
     pub fn completion_message(
@@ -325,6 +383,10 @@ impl UserImportJobTypeBuilder {
     ) -> Self {
         self.completion_message = input;
         self
+    }
+    /// <p>The message returned when the user import job is completed.</p>
+    pub fn get_completion_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_message
     }
     /// Consumes the builder and constructs a [`UserImportJobType`](crate::types::UserImportJobType).
     pub fn build(self) -> crate::types::UserImportJobType {

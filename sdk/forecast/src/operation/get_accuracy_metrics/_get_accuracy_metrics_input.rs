@@ -46,6 +46,10 @@ impl GetAccuracyMetricsInputBuilder {
         self.predictor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
+    }
     /// Consumes the builder and constructs a [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
     pub fn build(
         self,

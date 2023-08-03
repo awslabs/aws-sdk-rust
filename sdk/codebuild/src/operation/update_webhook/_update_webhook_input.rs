@@ -79,6 +79,10 @@ impl UpdateWebhookInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
@@ -99,6 +103,12 @@ impl UpdateWebhookInputBuilder {
         self.branch_filter = input;
         self
     }
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// </note>
+    pub fn get_branch_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_filter
+    }
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
     pub fn rotate_secret(mut self, input: bool) -> Self {
         self.rotate_secret = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl UpdateWebhookInputBuilder {
     pub fn set_rotate_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotate_secret = input;
         self
+    }
+    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    pub fn get_rotate_secret(&self) -> &::std::option::Option<bool> {
+        &self.rotate_secret
     }
     /// Appends an item to `filter_groups`.
     ///
@@ -128,6 +142,12 @@ impl UpdateWebhookInputBuilder {
         self.filter_groups = input;
         self
     }
+    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    pub fn get_filter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
+        &self.filter_groups
+    }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn build_type(mut self, input: crate::types::WebhookBuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl UpdateWebhookInputBuilder {
     ) -> Self {
         self.build_type = input;
         self
+    }
+    /// <p>Specifies the type of build this webhook will trigger.</p>
+    pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
+        &self.build_type
     }
     /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl ListConformancePackComplianceScoresOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `conformance_pack_compliance_scores`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_compliance_scores`](Self::set_conformance_pack_compliance_scores).
@@ -79,6 +83,12 @@ impl ListConformancePackComplianceScoresOutputBuilder {
     ) -> Self {
         self.conformance_pack_compliance_scores = input;
         self
+    }
+    /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+    pub fn get_conformance_pack_compliance_scores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>> {
+        &self.conformance_pack_compliance_scores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

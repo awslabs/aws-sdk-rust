@@ -45,6 +45,10 @@ impl GetMonitoringSubscriptionInputBuilder {
         self.distribution_id = input;
         self
     }
+    /// <p>The ID of the distribution that you are getting metrics information for.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_id
+    }
     /// Consumes the builder and constructs a [`GetMonitoringSubscriptionInput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput).
     pub fn build(
         self,

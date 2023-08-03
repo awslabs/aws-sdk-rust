@@ -39,6 +39,12 @@ impl CreateChatTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChatToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl CreateChatTokenFluentBuilder {
         self.inner = self.inner.set_room_identifier(input);
         self
     }
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_identifier()
+    }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -144,6 +154,10 @@ impl CreateChatTokenFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// Appends an item to `capabilities`.
     ///
@@ -162,6 +176,12 @@ impl CreateChatTokenFluentBuilder {
         self.inner = self.inner.set_capabilities(input);
         self
     }
+    /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>> {
+        self.inner.get_capabilities()
+    }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
     pub fn session_duration_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.session_duration_in_minutes(input);
@@ -171,6 +191,10 @@ impl CreateChatTokenFluentBuilder {
     pub fn set_session_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_session_duration_in_minutes(input);
         self
+    }
+    /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
+    pub fn get_session_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_duration_in_minutes()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -194,5 +218,13 @@ impl CreateChatTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
     }
 }

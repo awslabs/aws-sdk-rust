@@ -89,6 +89,12 @@ impl SentimentFilterBuilder {
         self.sentiments = input;
         self
     }
+    /// <p>Specify the sentiments that you want to flag.</p>
+    pub fn get_sentiments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>> {
+        &self.sentiments
+    }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn absolute_time_range(mut self, input: crate::types::AbsoluteTimeRange) -> Self {
         self.absolute_time_range = ::std::option::Option::Some(input);
@@ -101,6 +107,12 @@ impl SentimentFilterBuilder {
     ) -> Self {
         self.absolute_time_range = input;
         self
+    }
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
+    pub fn get_absolute_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
+        &self.absolute_time_range
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn relative_time_range(mut self, input: crate::types::RelativeTimeRange) -> Self {
@@ -115,6 +127,12 @@ impl SentimentFilterBuilder {
         self.relative_time_range = input;
         self
     }
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
+    pub fn get_relative_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelativeTimeRange> {
+        &self.relative_time_range
+    }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl SentimentFilterBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
+    }
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     pub fn negate(mut self, input: bool) -> Self {
         self.negate = ::std::option::Option::Some(input);
@@ -137,6 +159,10 @@ impl SentimentFilterBuilder {
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
+    }
+    /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
+    pub fn get_negate(&self) -> &::std::option::Option<bool> {
+        &self.negate
     }
     /// Consumes the builder and constructs a [`SentimentFilter`](crate::types::SentimentFilter).
     pub fn build(self) -> crate::types::SentimentFilter {

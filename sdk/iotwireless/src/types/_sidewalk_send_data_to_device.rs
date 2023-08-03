@@ -56,6 +56,10 @@ impl SidewalkSendDataToDeviceBuilder {
         self.seq = input;
         self
     }
+    /// <p>The sequence number.</p>
+    pub fn get_seq(&self) -> &::std::option::Option<i32> {
+        &self.seq
+    }
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl SidewalkSendDataToDeviceBuilder {
         self.message_type = input;
         self
     }
+    /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
+    }
     /// <p>The duration of time in seconds to retry sending the ACK.</p>
     pub fn ack_mode_retry_duration_secs(mut self, input: i32) -> Self {
         self.ack_mode_retry_duration_secs = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl SidewalkSendDataToDeviceBuilder {
     pub fn set_ack_mode_retry_duration_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ack_mode_retry_duration_secs = input;
         self
+    }
+    /// <p>The duration of time in seconds to retry sending the ACK.</p>
+    pub fn get_ack_mode_retry_duration_secs(&self) -> &::std::option::Option<i32> {
+        &self.ack_mode_retry_duration_secs
     }
     /// Consumes the builder and constructs a [`SidewalkSendDataToDevice`](crate::types::SidewalkSendDataToDevice).
     pub fn build(self) -> crate::types::SidewalkSendDataToDevice {

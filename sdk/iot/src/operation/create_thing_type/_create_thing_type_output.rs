@@ -70,6 +70,10 @@ impl CreateThingTypeOutputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
     pub fn thing_type_arn(
         mut self,
@@ -86,6 +90,10 @@ impl CreateThingTypeOutputBuilder {
         self.thing_type_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
+    pub fn get_thing_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_arn
+    }
     /// <p>The thing type ID.</p>
     pub fn thing_type_id(
         mut self,
@@ -101,6 +109,10 @@ impl CreateThingTypeOutputBuilder {
     ) -> Self {
         self.thing_type_id = input;
         self
+    }
+    /// <p>The thing type ID.</p>
+    pub fn get_thing_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

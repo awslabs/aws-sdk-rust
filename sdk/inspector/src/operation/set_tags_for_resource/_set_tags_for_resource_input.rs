@@ -48,6 +48,10 @@ impl SetTagsForResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the assessment template that you want to set tags to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -66,6 +70,10 @@ impl SetTagsForResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
     pub fn build(

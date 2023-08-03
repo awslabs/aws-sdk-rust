@@ -36,6 +36,13 @@ impl UpdateServiceSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServiceSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,12 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner = self.inner.set_linux_subscriptions_discovery(input);
         self
     }
+    /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
+    pub fn get_linux_subscriptions_discovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
+        self.inner.get_linux_subscriptions_discovery()
+    }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub fn linux_subscriptions_discovery_settings(
         mut self,
@@ -148,6 +161,12 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner = self.inner.set_linux_subscriptions_discovery_settings(input);
         self
     }
+    /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    pub fn get_linux_subscriptions_discovery_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
+        self.inner.get_linux_subscriptions_discovery_settings()
+    }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub fn allow_update(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_update(input);
@@ -157,5 +176,9 @@ impl UpdateServiceSettingsFluentBuilder {
     pub fn set_allow_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_update(input);
         self
+    }
+    /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
+    pub fn get_allow_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_update()
     }
 }

@@ -37,6 +37,12 @@ impl StartFaceSearchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartFaceSearch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_face_search::builders::StartFaceSearchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl StartFaceSearchFluentBuilder {
         self.inner = self.inner.set_video(input);
         self
     }
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        self.inner.get_video()
+    }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(
         mut self,
@@ -143,6 +153,10 @@ impl StartFaceSearchFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
         self.inner = self.inner.face_match_threshold(input);
@@ -152,6 +166,10 @@ impl StartFaceSearchFluentBuilder {
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_face_match_threshold(input);
         self
+    }
+    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
+        self.inner.get_face_match_threshold()
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
     pub fn collection_id(
@@ -169,6 +187,10 @@ impl StartFaceSearchFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>ID of the collection that contains the faces you want to search for.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.inner = self.inner.notification_channel(input);
@@ -182,6 +204,12 @@ impl StartFaceSearchFluentBuilder {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        self.inner.get_notification_channel()
+    }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
@@ -191,5 +219,9 @@ impl StartFaceSearchFluentBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_tag()
     }
 }

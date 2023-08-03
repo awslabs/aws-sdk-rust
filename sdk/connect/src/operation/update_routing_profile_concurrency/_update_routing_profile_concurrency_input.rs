@@ -56,6 +56,10 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
     ) -> Self {
         self.routing_profile_id = input;
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
     }
     /// Appends an item to `media_concurrencies`.
     ///
@@ -90,6 +98,12 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
     ) -> Self {
         self.media_concurrencies = input;
         self
+    }
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    pub fn get_media_concurrencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+        &self.media_concurrencies
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileConcurrencyInput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput).
     pub fn build(

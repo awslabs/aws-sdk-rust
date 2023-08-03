@@ -36,6 +36,12 @@ impl ListAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssociations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_associations::builders::ListAssociationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_source_arn(input);
         self
     }
+    /// <p>A filter that returns only associations with the specified source ARN.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
     pub fn destination_arn(
         mut self,
@@ -153,6 +163,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
+    /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
+    }
     /// <p>A filter that returns only associations with the specified source type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_type(input.into());
@@ -162,6 +176,10 @@ impl ListAssociationsFluentBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
+    }
+    /// <p>A filter that returns only associations with the specified source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_type()
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
     pub fn destination_type(
@@ -179,6 +197,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_destination_type(input);
         self
     }
+    /// <p>A filter that returns only associations with the specified destination type.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_type()
+    }
     /// <p>A filter that returns only associations of the specified type.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
         self.inner = self.inner.association_type(input);
@@ -191,6 +213,12 @@ impl ListAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
+    }
+    /// <p>A filter that returns only associations of the specified type.</p>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+        self.inner.get_association_type()
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -205,6 +233,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_created_after(input);
         self
     }
+    /// <p>A filter that returns only associations created on or after the specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
+    }
     /// <p>A filter that returns only associations created on or before the specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -217,6 +249,10 @@ impl ListAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>A filter that returns only associations created on or before the specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortAssociationsBy) -> Self {
@@ -231,6 +267,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortAssociationsBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -240,6 +280,10 @@ impl ListAssociationsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -251,6 +295,10 @@ impl ListAssociationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -260,5 +308,9 @@ impl ListAssociationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

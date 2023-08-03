@@ -43,6 +43,12 @@ impl StreamingNotificationTargetBuilder {
         self.notification_target = input;
         self
     }
+    /// <p>The streaming notification target.</p>
+    pub fn get_notification_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationTarget> {
+        &self.notification_target
+    }
     /// Consumes the builder and constructs a [`StreamingNotificationTarget`](crate::types::StreamingNotificationTarget).
     pub fn build(self) -> crate::types::StreamingNotificationTarget {
         crate::types::StreamingNotificationTarget {

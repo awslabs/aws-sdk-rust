@@ -45,6 +45,10 @@ impl DescribeLifecycleConfigurationInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
     pub fn build(
         self,

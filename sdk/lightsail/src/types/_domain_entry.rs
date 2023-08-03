@@ -118,6 +118,10 @@ impl DomainEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the domain recordset entry.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl DomainEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
@@ -140,6 +148,11 @@ impl DomainEntryBuilder {
         self.target = input;
         self
     }
+    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer, Lightsail container service, Lightsail content delivery network (CDN) distribution, or another Amazon Web Services resource. You can include an alias (A type) record in your request, which points to the DNS name of a load balancer, container service, CDN distribution, or other Amazon Web Services resource and routes traffic to that resource.</p>
     pub fn is_alias(mut self, input: bool) -> Self {
         self.is_alias = ::std::option::Option::Some(input);
@@ -149,6 +162,10 @@ impl DomainEntryBuilder {
     pub fn set_is_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_alias = input;
         self
+    }
+    /// <p>When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer, Lightsail container service, Lightsail content delivery network (CDN) distribution, or another Amazon Web Services resource. You can include an alias (A type) record in your request, which points to the DNS name of a load balancer, container service, CDN distribution, or other Amazon Web Services resource and routes traffic to that resource.</p>
+    pub fn get_is_alias(&self) -> &::std::option::Option<bool> {
+        &self.is_alias
     }
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
@@ -182,6 +199,21 @@ impl DomainEntryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+    /// <p>The following domain entry types can be used:</p>
+    /// <ul>
+    /// <li> <p> <code>A</code> </p> </li>
+    /// <li> <p> <code>AAAA</code> </p> </li>
+    /// <li> <p> <code>CNAME</code> </p> </li>
+    /// <li> <p> <code>MX</code> </p> </li>
+    /// <li> <p> <code>NS</code> </p> </li>
+    /// <li> <p> <code>SOA</code> </p> </li>
+    /// <li> <p> <code>SRV</code> </p> </li>
+    /// <li> <p> <code>TXT</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Adds a key-value pair to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -212,6 +244,17 @@ impl DomainEntryBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>(Deprecated) The options for the domain entry.</p> <note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// </note>
+    #[deprecated]
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.options
     }
     /// Consumes the builder and constructs a [`DomainEntry`](crate::types::DomainEntry).
     pub fn build(self) -> crate::types::DomainEntry {

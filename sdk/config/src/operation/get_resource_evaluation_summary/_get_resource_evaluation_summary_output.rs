@@ -102,6 +102,10 @@ impl GetResourceEvaluationSummaryOutputBuilder {
         self.resource_evaluation_id = input;
         self
     }
+    /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_evaluation_id
+    }
     /// <p>Lists results of the mode that you requested to retrieve the resource evaluation summary. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl GetResourceEvaluationSummaryOutputBuilder {
     ) -> Self {
         self.evaluation_mode = input;
         self
+    }
+    /// <p>Lists results of the mode that you requested to retrieve the resource evaluation summary. The valid values are Detective or Proactive.</p>
+    pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.evaluation_mode
     }
     /// <p>Returns an <code>EvaluationStatus</code> object.</p>
     pub fn evaluation_status(mut self, input: crate::types::EvaluationStatus) -> Self {
@@ -128,6 +136,10 @@ impl GetResourceEvaluationSummaryOutputBuilder {
         self.evaluation_status = input;
         self
     }
+    /// <p>Returns an <code>EvaluationStatus</code> object.</p>
+    pub fn get_evaluation_status(&self) -> &::std::option::Option<crate::types::EvaluationStatus> {
+        &self.evaluation_status
+    }
     /// <p>The start timestamp when Config rule starts evaluating compliance for the provided resource details.</p>
     pub fn evaluation_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_start_timestamp = ::std::option::Option::Some(input);
@@ -140,6 +152,12 @@ impl GetResourceEvaluationSummaryOutputBuilder {
     ) -> Self {
         self.evaluation_start_timestamp = input;
         self
+    }
+    /// <p>The start timestamp when Config rule starts evaluating compliance for the provided resource details.</p>
+    pub fn get_evaluation_start_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_start_timestamp
     }
     /// <p>The compliance status of the resource evaluation summary.</p>
     pub fn compliance(mut self, input: crate::types::ComplianceType) -> Self {
@@ -154,6 +172,10 @@ impl GetResourceEvaluationSummaryOutputBuilder {
         self.compliance = input;
         self
     }
+    /// <p>The compliance status of the resource evaluation summary.</p>
+    pub fn get_compliance(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance
+    }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
     pub fn evaluation_context(mut self, input: crate::types::EvaluationContext) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input);
@@ -167,6 +189,12 @@ impl GetResourceEvaluationSummaryOutputBuilder {
         self.evaluation_context = input;
         self
     }
+    /// <p>Returns an <code>EvaluationContext</code> object.</p>
+    pub fn get_evaluation_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationContext> {
+        &self.evaluation_context
+    }
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
@@ -179,6 +207,10 @@ impl GetResourceEvaluationSummaryOutputBuilder {
     ) -> Self {
         self.resource_details = input;
         self
+    }
+    /// <p>Returns a <code>ResourceDetails</code> object.</p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.resource_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

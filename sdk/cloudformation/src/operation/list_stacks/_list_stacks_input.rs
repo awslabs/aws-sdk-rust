@@ -49,6 +49,10 @@ impl ListStacksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `stack_status_filter`.
     ///
     /// To override the contents of this collection use [`set_stack_status_filter`](Self::set_stack_status_filter).
@@ -67,6 +71,12 @@ impl ListStacksInputBuilder {
     ) -> Self {
         self.stack_status_filter = input;
         self
+    }
+    /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
+    pub fn get_stack_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
+        &self.stack_status_filter
     }
     /// Consumes the builder and constructs a [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
     pub fn build(

@@ -41,6 +41,10 @@ impl CancelPolicyGenerationInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
     pub fn build(
         self,

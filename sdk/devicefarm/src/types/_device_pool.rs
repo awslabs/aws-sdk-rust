@@ -92,6 +92,10 @@ impl DevicePoolBuilder {
         self.arn = input;
         self
     }
+    /// <p>The device pool's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The device pool's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl DevicePoolBuilder {
         self.name = input;
         self
     }
+    /// <p>The device pool's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The device pool's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl DevicePoolBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The device pool's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The device pool's type.</p>
     /// <p>Allowed values include:</p>
@@ -132,6 +144,15 @@ impl DevicePoolBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The device pool's type.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DevicePoolType> {
+        &self.r#type
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -151,6 +172,10 @@ impl DevicePoolBuilder {
         self.rules = input;
         self
     }
+    /// <p>Information about the device pool's rules.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
@@ -162,6 +187,11 @@ impl DevicePoolBuilder {
     pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_devices = input;
         self
+    }
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    pub fn get_max_devices(&self) -> &::std::option::Option<i32> {
+        &self.max_devices
     }
     /// Consumes the builder and constructs a [`DevicePool`](crate::types::DevicePool).
     pub fn build(self) -> crate::types::DevicePool {

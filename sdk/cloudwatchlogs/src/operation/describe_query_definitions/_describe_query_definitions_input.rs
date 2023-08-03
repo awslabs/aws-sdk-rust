@@ -63,6 +63,12 @@ impl DescribeQueryDefinitionsInputBuilder {
         self.query_definition_name_prefix = input;
         self
     }
+    /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
+    pub fn get_query_definition_name_prefix(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.query_definition_name_prefix
+    }
     /// <p>Limits the number of returned query definitions to the specified number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl DescribeQueryDefinitionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Limits the number of returned query definitions to the specified number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +92,10 @@ impl DescribeQueryDefinitionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeQueryDefinitionsInput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput).
     pub fn build(

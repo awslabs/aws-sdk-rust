@@ -48,6 +48,10 @@ impl TleEphemerisBuilder {
         self.s3_object = input;
         self
     }
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
+    }
     /// Appends an item to `tle_data`.
     ///
     /// To override the contents of this collection use [`set_tle_data`](Self::set_tle_data).
@@ -66,6 +70,10 @@ impl TleEphemerisBuilder {
     ) -> Self {
         self.tle_data = input;
         self
+    }
+    /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    pub fn get_tle_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TleData>> {
+        &self.tle_data
     }
     /// Consumes the builder and constructs a [`TleEphemeris`](crate::types::TleEphemeris).
     pub fn build(self) -> crate::types::TleEphemeris {

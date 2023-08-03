@@ -51,6 +51,10 @@ impl UpdateScheduledActionOutputBuilder {
         self.scheduled_action = input;
         self
     }
+    /// <p>Information about the rescheduled action.</p>
+    pub fn get_scheduled_action(&self) -> &::std::option::Option<crate::types::ScheduledAction> {
+        &self.scheduled_action
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

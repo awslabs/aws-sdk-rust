@@ -51,6 +51,10 @@ impl RegisterContainerImageOutputBuilder {
         self.container_image = input;
         self
     }
+    /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
+    pub fn get_container_image(&self) -> &::std::option::Option<crate::types::ContainerImage> {
+        &self.container_image
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

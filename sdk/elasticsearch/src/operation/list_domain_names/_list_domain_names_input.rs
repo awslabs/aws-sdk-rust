@@ -43,6 +43,10 @@ impl ListDomainNamesInputBuilder {
         self.engine_type = input;
         self
     }
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
     pub fn build(
         self,

@@ -39,6 +39,10 @@ impl CreateAccountInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Chime account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
     pub fn build(
         self,

@@ -37,6 +37,12 @@ impl UpdateElasticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateElasticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_elastic_ip::builders::UpdateElasticIpInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateElasticIpFluentBuilder {
         self.inner = self.inner.set_elastic_ip(input);
         self
     }
+    /// <p>The IP address for which you want to update the name.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elastic_ip()
+    }
     /// <p>The new name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,5 +146,9 @@ impl UpdateElasticIpFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

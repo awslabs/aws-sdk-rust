@@ -59,6 +59,10 @@ impl SensitiveDataItemBuilder {
         self.category = input;
         self
     }
+    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::SensitiveDataItemCategory> {
+        &self.category
+    }
     /// Appends an item to `detections`.
     ///
     /// To override the contents of this collection use [`set_detections`](Self::set_detections).
@@ -78,6 +82,12 @@ impl SensitiveDataItemBuilder {
         self.detections = input;
         self
     }
+    /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
+    pub fn get_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultDetection>> {
+        &self.detections
+    }
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl SensitiveDataItemBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of occurrences of the sensitive data that was detected.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`SensitiveDataItem`](crate::types::SensitiveDataItem).
     pub fn build(self) -> crate::types::SensitiveDataItem {

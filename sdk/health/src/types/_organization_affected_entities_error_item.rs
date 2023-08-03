@@ -76,6 +76,10 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
@@ -90,6 +94,12 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The name of the error.</p>
     pub fn error_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_name = ::std::option::Option::Some(input.into());
@@ -99,6 +109,10 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
     pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_name = input;
         self
+    }
+    /// <p>The name of the error.</p>
+    pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_name
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
@@ -117,6 +131,11 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error. Follow the error message and retry your request.</p>
+    /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`OrganizationAffectedEntitiesErrorItem`](crate::types::OrganizationAffectedEntitiesErrorItem).
     pub fn build(self) -> crate::types::OrganizationAffectedEntitiesErrorItem {

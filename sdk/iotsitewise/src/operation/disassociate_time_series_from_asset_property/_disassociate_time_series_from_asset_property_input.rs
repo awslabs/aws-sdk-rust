@@ -63,6 +63,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         self.alias = input;
         self
     }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         self.property_id = input;
         self
     }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -36,6 +36,10 @@ impl CreateSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSite as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_site::builders::CreateSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateSiteFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl CreateSiteFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateSiteFluentBuilder {
         self.inner = self.inner.set_country_code(input);
         self
     }
+    /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_country_code()
+    }
     /// A high-level description of the site.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,5 +163,9 @@ impl CreateSiteFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// A high-level description of the site.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

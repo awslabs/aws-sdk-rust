@@ -72,6 +72,12 @@ impl GeospatialPointStyleOptionsBuilder {
         self.selected_point_style = input;
         self
     }
+    /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
+    pub fn get_selected_point_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialSelectedPointStyle> {
+        &self.selected_point_style
+    }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
     pub fn cluster_marker_configuration(
         mut self,
@@ -88,6 +94,12 @@ impl GeospatialPointStyleOptionsBuilder {
         self.cluster_marker_configuration = input;
         self
     }
+    /// <p>The cluster marker configuration of the geospatial point style.</p>
+    pub fn get_cluster_marker_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterMarkerConfiguration> {
+        &self.cluster_marker_configuration
+    }
     /// <p>The heatmap configuration of the geospatial point style.</p>
     pub fn heatmap_configuration(
         mut self,
@@ -103,6 +115,12 @@ impl GeospatialPointStyleOptionsBuilder {
     ) -> Self {
         self.heatmap_configuration = input;
         self
+    }
+    /// <p>The heatmap configuration of the geospatial point style.</p>
+    pub fn get_heatmap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialHeatmapConfiguration> {
+        &self.heatmap_configuration
     }
     /// Consumes the builder and constructs a [`GeospatialPointStyleOptions`](crate::types::GeospatialPointStyleOptions).
     pub fn build(self) -> crate::types::GeospatialPointStyleOptions {

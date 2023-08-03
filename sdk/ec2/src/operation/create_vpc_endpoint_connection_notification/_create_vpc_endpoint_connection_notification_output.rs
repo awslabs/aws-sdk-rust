@@ -59,6 +59,12 @@ impl CreateVpcEndpointConnectionNotificationOutputBuilder {
         self.connection_notification = input;
         self
     }
+    /// <p>Information about the notification.</p>
+    pub fn get_connection_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionNotification> {
+        &self.connection_notification
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl CreateVpcEndpointConnectionNotificationOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

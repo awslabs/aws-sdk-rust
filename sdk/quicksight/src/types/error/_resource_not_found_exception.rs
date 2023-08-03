@@ -83,6 +83,10 @@ impl ResourceNotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The resource type for this request.</p>
     pub fn resource_type(mut self, input: crate::types::ExceptionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl ResourceNotFoundExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type for this request.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ExceptionResourceType> {
+        &self.resource_type
+    }
     /// <p>The Amazon Web Services request ID for this request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

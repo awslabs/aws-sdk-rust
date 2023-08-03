@@ -70,6 +70,10 @@ impl TableOptionsBuilder {
         self.orientation = input;
         self
     }
+    /// <p>The orientation (vertical, horizontal) for a table.</p>
+    pub fn get_orientation(&self) -> &::std::option::Option<crate::types::TableOrientation> {
+        &self.orientation
+    }
     /// <p>The table cell style of a table header.</p>
     pub fn header_style(mut self, input: crate::types::TableCellStyle) -> Self {
         self.header_style = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl TableOptionsBuilder {
         self.header_style = input;
         self
     }
+    /// <p>The table cell style of a table header.</p>
+    pub fn get_header_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.header_style
+    }
     /// <p>The table cell style of table cells.</p>
     pub fn cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
         self.cell_style = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl TableOptionsBuilder {
     ) -> Self {
         self.cell_style = input;
         self
+    }
+    /// <p>The table cell style of table cells.</p>
+    pub fn get_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.cell_style
     }
     /// <p>The row alternate color options (widget status, row alternate colors) for a table.</p>
     pub fn row_alternate_color_options(
@@ -111,6 +123,12 @@ impl TableOptionsBuilder {
     ) -> Self {
         self.row_alternate_color_options = input;
         self
+    }
+    /// <p>The row alternate color options (widget status, row alternate colors) for a table.</p>
+    pub fn get_row_alternate_color_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::RowAlternateColorOptions> {
+        &self.row_alternate_color_options
     }
     /// Consumes the builder and constructs a [`TableOptions`](crate::types::TableOptions).
     pub fn build(self) -> crate::types::TableOptions {

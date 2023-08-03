@@ -54,6 +54,10 @@ impl CanaryCodeOutputBuilder {
         self.source_location_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
+    pub fn get_source_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_arn
+    }
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub fn handler(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.handler = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CanaryCodeOutputBuilder {
     pub fn set_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.handler = input;
         self
+    }
+    /// <p>The entry point to use for the source code when running the canary.</p>
+    pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
+        &self.handler
     }
     /// Consumes the builder and constructs a [`CanaryCodeOutput`](crate::types::CanaryCodeOutput).
     pub fn build(self) -> crate::types::CanaryCodeOutput {

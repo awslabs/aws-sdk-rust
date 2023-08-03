@@ -36,6 +36,10 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFaceLivenessSessionResults as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
 }

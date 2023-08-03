@@ -48,6 +48,10 @@ impl DescribeDomainEndpointOptionsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DescribeDomainEndpointOptionsInputBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
+    }
+    /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
     pub fn build(

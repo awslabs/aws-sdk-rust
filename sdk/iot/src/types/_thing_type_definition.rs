@@ -72,6 +72,10 @@ impl ThingTypeDefinitionBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>The thing type ARN.</p>
     pub fn thing_type_arn(
         mut self,
@@ -88,6 +92,10 @@ impl ThingTypeDefinitionBuilder {
         self.thing_type_arn = input;
         self
     }
+    /// <p>The thing type ARN.</p>
+    pub fn get_thing_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_arn
+    }
     /// <p>The ThingTypeProperties for the thing type.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
         self.thing_type_properties = ::std::option::Option::Some(input);
@@ -101,6 +109,12 @@ impl ThingTypeDefinitionBuilder {
         self.thing_type_properties = input;
         self
     }
+    /// <p>The ThingTypeProperties for the thing type.</p>
+    pub fn get_thing_type_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingTypeProperties> {
+        &self.thing_type_properties
+    }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn thing_type_metadata(mut self, input: crate::types::ThingTypeMetadata) -> Self {
         self.thing_type_metadata = ::std::option::Option::Some(input);
@@ -113,6 +127,12 @@ impl ThingTypeDefinitionBuilder {
     ) -> Self {
         self.thing_type_metadata = input;
         self
+    }
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
+    pub fn get_thing_type_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingTypeMetadata> {
+        &self.thing_type_metadata
     }
     /// Consumes the builder and constructs a [`ThingTypeDefinition`](crate::types::ThingTypeDefinition).
     pub fn build(self) -> crate::types::ThingTypeDefinition {

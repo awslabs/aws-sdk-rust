@@ -64,6 +64,10 @@ impl ListEndpointAccessInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListEndpointAccessInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
     pub fn workgroup_name(
@@ -90,6 +98,10 @@ impl ListEndpointAccessInputBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ListEndpointAccessInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
     pub fn build(

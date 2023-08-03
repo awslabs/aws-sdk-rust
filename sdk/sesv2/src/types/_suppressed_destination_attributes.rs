@@ -48,6 +48,10 @@ impl SuppressedDestinationAttributesBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
     pub fn feedback_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SuppressedDestinationAttributesBuilder {
     pub fn set_feedback_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback_id = input;
         self
+    }
+    /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
+    pub fn get_feedback_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feedback_id
     }
     /// Consumes the builder and constructs a [`SuppressedDestinationAttributes`](crate::types::SuppressedDestinationAttributes).
     pub fn build(self) -> crate::types::SuppressedDestinationAttributes {

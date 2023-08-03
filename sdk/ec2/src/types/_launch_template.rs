@@ -94,6 +94,10 @@ impl LaunchTemplateBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>The ID of the launch template.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The name of the launch template.</p>
     pub fn launch_template_name(
         mut self,
@@ -110,6 +114,10 @@ impl LaunchTemplateBuilder {
         self.launch_template_name = input;
         self
     }
+    /// <p>The name of the launch template.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
+    }
     /// <p>The time launch template was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -123,6 +131,10 @@ impl LaunchTemplateBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time launch template was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The principal that created the launch template. </p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl LaunchTemplateBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The principal that created the launch template. </p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The version number of the default version of the launch template.</p>
     pub fn default_version_number(mut self, input: i64) -> Self {
@@ -143,6 +159,10 @@ impl LaunchTemplateBuilder {
         self.default_version_number = input;
         self
     }
+    /// <p>The version number of the default version of the launch template.</p>
+    pub fn get_default_version_number(&self) -> &::std::option::Option<i64> {
+        &self.default_version_number
+    }
     /// <p>The version number of the latest version of the launch template.</p>
     pub fn latest_version_number(mut self, input: i64) -> Self {
         self.latest_version_number = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl LaunchTemplateBuilder {
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latest_version_number = input;
         self
+    }
+    /// <p>The version number of the latest version of the launch template.</p>
+    pub fn get_latest_version_number(&self) -> &::std::option::Option<i64> {
+        &self.latest_version_number
     }
     /// Appends an item to `tags`.
     ///
@@ -171,6 +195,10 @@ impl LaunchTemplateBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the launch template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LaunchTemplate`](crate::types::LaunchTemplate).
     pub fn build(self) -> crate::types::LaunchTemplate {

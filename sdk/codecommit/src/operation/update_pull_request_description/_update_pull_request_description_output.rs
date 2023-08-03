@@ -49,6 +49,10 @@ impl UpdatePullRequestDescriptionOutputBuilder {
         self.pull_request = input;
         self
     }
+    /// <p>Information about the updated pull request.</p>
+    pub fn get_pull_request(&self) -> &::std::option::Option<crate::types::PullRequest> {
+        &self.pull_request
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

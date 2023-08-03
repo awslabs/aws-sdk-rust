@@ -39,6 +39,10 @@ impl GetDataQualityRulesetEvaluationRunInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunInput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

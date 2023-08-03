@@ -127,6 +127,10 @@ impl DatasetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the dataset.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl DatasetBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Appends an item to `actions`.
     ///
@@ -156,6 +164,12 @@ impl DatasetBuilder {
         self.actions = input;
         self
     }
+    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>> {
+        &self.actions
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -174,6 +188,12 @@ impl DatasetBuilder {
     ) -> Self {
         self.triggers = input;
         self
+    }
+    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
+        &self.triggers
     }
     /// Appends an item to `content_delivery_rules`.
     ///
@@ -197,6 +217,12 @@ impl DatasetBuilder {
         self.content_delivery_rules = input;
         self
     }
+    /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
+    pub fn get_content_delivery_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>> {
+        &self.content_delivery_rules
+    }
     /// <p>The status of the dataset.</p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -206,6 +232,10 @@ impl DatasetBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the dataset.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
     }
     /// <p>When the dataset was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +250,10 @@ impl DatasetBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the dataset was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the dataset was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -233,6 +267,10 @@ impl DatasetBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The last time the dataset was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
+    }
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -245,6 +283,10 @@ impl DatasetBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn versioning_configuration(
@@ -261,6 +303,12 @@ impl DatasetBuilder {
     ) -> Self {
         self.versioning_configuration = input;
         self
+    }
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    pub fn get_versioning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersioningConfiguration> {
+        &self.versioning_configuration
     }
     /// Appends an item to `late_data_rules`.
     ///
@@ -280,6 +328,12 @@ impl DatasetBuilder {
     ) -> Self {
         self.late_data_rules = input;
         self
+    }
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    pub fn get_late_data_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>> {
+        &self.late_data_rules
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {

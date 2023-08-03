@@ -49,6 +49,12 @@ impl CreateWorkspacesInputBuilder {
         self.workspaces = input;
         self
     }
+    /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_workspaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>> {
+        &self.workspaces
+    }
     /// Consumes the builder and constructs a [`CreateWorkspacesInput`](crate::operation::create_workspaces::CreateWorkspacesInput).
     pub fn build(
         self,

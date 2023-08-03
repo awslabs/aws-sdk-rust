@@ -62,6 +62,10 @@ impl GroundStationDataBuilder {
         self.ground_station_id = input;
         self
     }
+    /// <p>UUID of a ground station.</p>
+    pub fn get_ground_station_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ground_station_id
+    }
     /// <p>Name of a ground station.</p>
     pub fn ground_station_name(
         mut self,
@@ -78,6 +82,10 @@ impl GroundStationDataBuilder {
         self.ground_station_name = input;
         self
     }
+    /// <p>Name of a ground station.</p>
+    pub fn get_ground_station_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ground_station_name
+    }
     /// <p>Ground station Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl GroundStationDataBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>Ground station Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`GroundStationData`](crate::types::GroundStationData).
     pub fn build(self) -> crate::types::GroundStationData {

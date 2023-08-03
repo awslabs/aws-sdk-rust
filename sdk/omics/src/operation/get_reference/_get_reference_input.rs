@@ -71,6 +71,10 @@ impl GetReferenceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The reference's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The reference's store ID.</p>
     pub fn reference_store_id(
         mut self,
@@ -87,6 +91,10 @@ impl GetReferenceInputBuilder {
         self.reference_store_id = input;
         self
     }
+    /// <p>The reference's store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
+    }
     /// <p>The range to retrieve.</p>
     pub fn range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.range = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetReferenceInputBuilder {
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.range = input;
         self
+    }
+    /// <p>The range to retrieve.</p>
+    pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.range
     }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -107,6 +119,10 @@ impl GetReferenceInputBuilder {
         self.part_number = input;
         self
     }
+    /// <p>The part number to retrieve.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
+    }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReferenceFile) -> Self {
         self.file = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl GetReferenceInputBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<crate::types::ReferenceFile>) -> Self {
         self.file = input;
         self
+    }
+    /// <p>The file to retrieve.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ReferenceFile> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
     pub fn build(

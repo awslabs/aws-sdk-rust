@@ -56,6 +56,10 @@ impl DeleteConfigurationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl DeleteConfigurationOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

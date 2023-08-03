@@ -56,6 +56,10 @@ impl ReprocessingSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The status of the pipeline reprocessing.</p>
     pub fn status(mut self, input: crate::types::ReprocessingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ReprocessingSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the pipeline reprocessing.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReprocessingStatus> {
+        &self.status
+    }
     /// <p>The time the pipeline reprocessing was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ReprocessingSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time the pipeline reprocessing was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ReprocessingSummary`](crate::types::ReprocessingSummary).
     pub fn build(self) -> crate::types::ReprocessingSummary {

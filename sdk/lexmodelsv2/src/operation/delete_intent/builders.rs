@@ -37,6 +37,10 @@ impl DeleteIntentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIntent as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_intent::builders::DeleteIntentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteIntentFluentBuilder {
         self.inner = self.inner.set_intent_id(input);
         self
     }
+    /// <p>The unique identifier of the intent to delete.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_intent_id()
+    }
     /// <p>The identifier of the bot associated with the intent.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -128,6 +136,10 @@ impl DeleteIntentFluentBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
+    }
+    /// <p>The identifier of the bot associated with the intent.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
     }
     /// <p>The version of the bot associated with the intent.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl DeleteIntentFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The version of the bot associated with the intent.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -148,5 +164,9 @@ impl DeleteIntentFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
 }

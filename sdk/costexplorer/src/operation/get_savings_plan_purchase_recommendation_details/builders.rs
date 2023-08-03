@@ -36,6 +36,10 @@ impl GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSavingsPlanPurchaseRecommendationDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommendation_detail_id(input);
         self
+    }
+    /// <p>The ID that is associated with the Savings Plan recommendation.</p>
+    pub fn get_recommendation_detail_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommendation_detail_id()
     }
 }

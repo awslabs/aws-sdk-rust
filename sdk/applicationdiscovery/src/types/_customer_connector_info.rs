@@ -88,6 +88,10 @@ impl CustomerConnectorInfoBuilder {
         self.active_connectors = input;
         self
     }
+    /// <p>Number of active discovery connectors.</p>
+    pub fn get_active_connectors(&self) -> &::std::option::Option<i32> {
+        &self.active_connectors
+    }
     /// <p>Number of healthy discovery connectors.</p>
     pub fn healthy_connectors(mut self, input: i32) -> Self {
         self.healthy_connectors = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl CustomerConnectorInfoBuilder {
     pub fn set_healthy_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_connectors = input;
         self
+    }
+    /// <p>Number of healthy discovery connectors.</p>
+    pub fn get_healthy_connectors(&self) -> &::std::option::Option<i32> {
+        &self.healthy_connectors
     }
     /// <p>Number of blacklisted discovery connectors.</p>
     pub fn black_listed_connectors(mut self, input: i32) -> Self {
@@ -108,6 +116,10 @@ impl CustomerConnectorInfoBuilder {
         self.black_listed_connectors = input;
         self
     }
+    /// <p>Number of blacklisted discovery connectors.</p>
+    pub fn get_black_listed_connectors(&self) -> &::std::option::Option<i32> {
+        &self.black_listed_connectors
+    }
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
     pub fn shutdown_connectors(mut self, input: i32) -> Self {
         self.shutdown_connectors = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl CustomerConnectorInfoBuilder {
     pub fn set_shutdown_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_connectors = input;
         self
+    }
+    /// <p>Number of discovery connectors with status SHUTDOWN,</p>
+    pub fn get_shutdown_connectors(&self) -> &::std::option::Option<i32> {
+        &self.shutdown_connectors
     }
     /// <p>Number of unhealthy discovery connectors.</p>
     pub fn unhealthy_connectors(mut self, input: i32) -> Self {
@@ -128,6 +144,10 @@ impl CustomerConnectorInfoBuilder {
         self.unhealthy_connectors = input;
         self
     }
+    /// <p>Number of unhealthy discovery connectors.</p>
+    pub fn get_unhealthy_connectors(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_connectors
+    }
     /// <p>Total number of discovery connectors.</p>
     pub fn total_connectors(mut self, input: i32) -> Self {
         self.total_connectors = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl CustomerConnectorInfoBuilder {
         self.total_connectors = input;
         self
     }
+    /// <p>Total number of discovery connectors.</p>
+    pub fn get_total_connectors(&self) -> &::std::option::Option<i32> {
+        &self.total_connectors
+    }
     /// <p>Number of unknown discovery connectors.</p>
     pub fn unknown_connectors(mut self, input: i32) -> Self {
         self.unknown_connectors = ::std::option::Option::Some(input);
@@ -147,6 +171,10 @@ impl CustomerConnectorInfoBuilder {
     pub fn set_unknown_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_connectors = input;
         self
+    }
+    /// <p>Number of unknown discovery connectors.</p>
+    pub fn get_unknown_connectors(&self) -> &::std::option::Option<i32> {
+        &self.unknown_connectors
     }
     /// Consumes the builder and constructs a [`CustomerConnectorInfo`](crate::types::CustomerConnectorInfo).
     pub fn build(self) -> crate::types::CustomerConnectorInfo {

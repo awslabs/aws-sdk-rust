@@ -48,6 +48,10 @@ impl DatasetLabelStatsBuilder {
         self.entry_count = input;
         self
     }
+    /// <p> The total number of images that use the label. </p>
+    pub fn get_entry_count(&self) -> &::std::option::Option<i32> {
+        &self.entry_count
+    }
     /// <p> The total number of images that have the label assigned to a bounding box. </p>
     pub fn bounding_box_count(mut self, input: i32) -> Self {
         self.bounding_box_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DatasetLabelStatsBuilder {
     pub fn set_bounding_box_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bounding_box_count = input;
         self
+    }
+    /// <p> The total number of images that have the label assigned to a bounding box. </p>
+    pub fn get_bounding_box_count(&self) -> &::std::option::Option<i32> {
+        &self.bounding_box_count
     }
     /// Consumes the builder and constructs a [`DatasetLabelStats`](crate::types::DatasetLabelStats).
     pub fn build(self) -> crate::types::DatasetLabelStats {

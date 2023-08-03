@@ -39,6 +39,10 @@ impl CancelDataQualityRuleRecommendationRunInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// Consumes the builder and constructs a [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

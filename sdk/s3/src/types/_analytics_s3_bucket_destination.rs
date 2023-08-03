@@ -71,6 +71,10 @@ impl AnalyticsS3BucketDestinationBuilder {
         self.format = input;
         self
     }
+    /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalyticsS3ExportFileFormat> {
+        &self.format
+    }
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
@@ -91,6 +95,12 @@ impl AnalyticsS3BucketDestinationBuilder {
         self.bucket_account_id = input;
         self
     }
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
+    /// </note>
+    pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl AnalyticsS3BucketDestinationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl AnalyticsS3BucketDestinationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`AnalyticsS3BucketDestination`](crate::types::AnalyticsS3BucketDestination).
     pub fn build(self) -> crate::types::AnalyticsS3BucketDestination {

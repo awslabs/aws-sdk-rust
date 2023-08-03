@@ -46,6 +46,10 @@ impl BatchDetachFromIndexResponseBuilder {
         self.detached_object_identifier = input;
         self
     }
+    /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    pub fn get_detached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detached_object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchDetachFromIndexResponse`](crate::types::BatchDetachFromIndexResponse).
     pub fn build(self) -> crate::types::BatchDetachFromIndexResponse {
         crate::types::BatchDetachFromIndexResponse {

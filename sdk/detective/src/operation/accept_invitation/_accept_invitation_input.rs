@@ -44,6 +44,11 @@ impl AcceptInvitationInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
+    /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,

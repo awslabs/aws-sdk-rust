@@ -36,6 +36,12 @@ impl UpdateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_cdi_input_specification(input);
         self
     }
+    /// Specification of CDI inputs for this channel
+    pub fn get_cdi_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CdiInputSpecification> {
+        self.inner.get_cdi_input_specification()
+    }
     /// channel ID
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -130,6 +142,10 @@ impl UpdateChannelFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// channel ID
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
     /// Appends an item to `Destinations`.
     ///
@@ -148,6 +164,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_destinations(input);
         self
     }
+    /// A list of output destinations for this channel.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+        self.inner.get_destinations()
+    }
     /// The encoder settings for this channel.
     pub fn encoder_settings(mut self, input: crate::types::EncoderSettings) -> Self {
         self.inner = self.inner.encoder_settings(input);
@@ -160,6 +182,10 @@ impl UpdateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encoder_settings(input);
         self
+    }
+    /// The encoder settings for this channel.
+    pub fn get_encoder_settings(&self) -> &::std::option::Option<crate::types::EncoderSettings> {
+        self.inner.get_encoder_settings()
     }
     /// Appends an item to `InputAttachments`.
     ///
@@ -178,6 +204,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_input_attachments(input);
         self
     }
+    /// Placeholder documentation for __listOfInputAttachment
+    pub fn get_input_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+        self.inner.get_input_attachments()
+    }
     /// Specification of network and file inputs for this channel
     pub fn input_specification(mut self, input: crate::types::InputSpecification) -> Self {
         self.inner = self.inner.input_specification(input);
@@ -191,6 +223,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_input_specification(input);
         self
     }
+    /// Specification of network and file inputs for this channel
+    pub fn get_input_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputSpecification> {
+        self.inner.get_input_specification()
+    }
     /// The log level to write to CloudWatch Logs.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.inner = self.inner.log_level(input);
@@ -200,6 +238,10 @@ impl UpdateChannelFluentBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.inner = self.inner.set_log_level(input);
         self
+    }
+    /// The log level to write to CloudWatch Logs.
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        self.inner.get_log_level()
     }
     /// Maintenance settings for this channel.
     pub fn maintenance(mut self, input: crate::types::MaintenanceUpdateSettings) -> Self {
@@ -214,6 +256,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_maintenance(input);
         self
     }
+    /// Maintenance settings for this channel.
+    pub fn get_maintenance(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceUpdateSettings> {
+        self.inner.get_maintenance()
+    }
     /// The name of the channel.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -224,6 +272,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// The name of the channel.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -233,5 +285,9 @@ impl UpdateChannelFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

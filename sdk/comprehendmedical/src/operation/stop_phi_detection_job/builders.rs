@@ -36,6 +36,12 @@ impl StopPHIDetectionJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopPHIDetectionJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl StopPHIDetectionJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The identifier of the PHI detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

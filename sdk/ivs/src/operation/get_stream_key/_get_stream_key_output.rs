@@ -46,6 +46,10 @@ impl GetStreamKeyOutputBuilder {
         self.stream_key = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_stream_key(&self) -> &::std::option::Option<crate::types::StreamKey> {
+        &self.stream_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

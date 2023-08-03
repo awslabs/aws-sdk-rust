@@ -40,6 +40,10 @@ impl ExecutionPropertyBuilder {
         self.max_concurrent_runs = input;
         self
     }
+    /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
+    pub fn get_max_concurrent_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_runs
+    }
     /// Consumes the builder and constructs a [`ExecutionProperty`](crate::types::ExecutionProperty).
     pub fn build(self) -> crate::types::ExecutionProperty {
         crate::types::ExecutionProperty {

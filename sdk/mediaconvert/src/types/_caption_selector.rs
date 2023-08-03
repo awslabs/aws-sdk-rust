@@ -62,6 +62,10 @@ impl CaptionSelectorBuilder {
         self.custom_language_code = input;
         self
     }
+    /// The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific language with pass-through captions.
+    pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_language_code
+    }
     /// The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific language with pass-through captions.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl CaptionSelectorBuilder {
         self.language_code = input;
         self
     }
+    /// The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific language with pass-through captions.
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     pub fn source_settings(mut self, input: crate::types::CaptionSourceSettings) -> Self {
         self.source_settings = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl CaptionSelectorBuilder {
     ) -> Self {
         self.source_settings = input;
         self
+    }
+    /// If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+    pub fn get_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CaptionSourceSettings> {
+        &self.source_settings
     }
     /// Consumes the builder and constructs a [`CaptionSelector`](crate::types::CaptionSelector).
     pub fn build(self) -> crate::types::CaptionSelector {

@@ -43,6 +43,10 @@ impl InputFormatConfigurationBuilder {
         self.deserializer = input;
         self
     }
+    /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
+    pub fn get_deserializer(&self) -> &::std::option::Option<crate::types::Deserializer> {
+        &self.deserializer
+    }
     /// Consumes the builder and constructs a [`InputFormatConfiguration`](crate::types::InputFormatConfiguration).
     pub fn build(self) -> crate::types::InputFormatConfiguration {
         crate::types::InputFormatConfiguration {

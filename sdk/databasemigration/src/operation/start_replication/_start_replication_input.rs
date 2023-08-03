@@ -81,6 +81,10 @@ impl StartReplicationInputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     /// <p>The replication type.</p>
     pub fn start_replication_type(
         mut self,
@@ -97,6 +101,10 @@ impl StartReplicationInputBuilder {
         self.start_replication_type = input;
         self
     }
+    /// <p>The replication type.</p>
+    pub fn get_start_replication_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_replication_type
+    }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn cdc_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.cdc_start_time = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl StartReplicationInputBuilder {
     ) -> Self {
         self.cdc_start_time = input;
         self
+    }
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+    pub fn get_cdc_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cdc_start_time
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -128,6 +140,11 @@ impl StartReplicationInputBuilder {
         self.cdc_start_position = input;
         self
     }
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+    /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+    pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdc_start_position
+    }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     pub fn cdc_stop_position(
         mut self,
@@ -143,6 +160,10 @@ impl StartReplicationInputBuilder {
     ) -> Self {
         self.cdc_stop_position = input;
         self
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
+    pub fn get_cdc_stop_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdc_stop_position
     }
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl AnywhereConfigurationBuilder {
         self.cost = input;
         self
     }
+    /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
+    pub fn get_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost
+    }
     /// Consumes the builder and constructs a [`AnywhereConfiguration`](crate::types::AnywhereConfiguration).
     pub fn build(self) -> crate::types::AnywhereConfiguration {
         crate::types::AnywhereConfiguration { cost: self.cost }

@@ -56,6 +56,10 @@ impl QueryStatisticsBuilder {
         self.records_matched = input;
         self
     }
+    /// <p>The number of log events that matched the query string.</p>
+    pub fn get_records_matched(&self) -> &::std::option::Option<f64> {
+        &self.records_matched
+    }
     /// <p>The total number of log events scanned during the query.</p>
     pub fn records_scanned(mut self, input: f64) -> Self {
         self.records_scanned = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl QueryStatisticsBuilder {
         self.records_scanned = input;
         self
     }
+    /// <p>The total number of log events scanned during the query.</p>
+    pub fn get_records_scanned(&self) -> &::std::option::Option<f64> {
+        &self.records_scanned
+    }
     /// <p>The total number of bytes in the log events scanned during the query.</p>
     pub fn bytes_scanned(mut self, input: f64) -> Self {
         self.bytes_scanned = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl QueryStatisticsBuilder {
     pub fn set_bytes_scanned(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bytes_scanned = input;
         self
+    }
+    /// <p>The total number of bytes in the log events scanned during the query.</p>
+    pub fn get_bytes_scanned(&self) -> &::std::option::Option<f64> {
+        &self.bytes_scanned
     }
     /// Consumes the builder and constructs a [`QueryStatistics`](crate::types::QueryStatistics).
     pub fn build(self) -> crate::types::QueryStatistics {

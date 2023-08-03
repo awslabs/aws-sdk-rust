@@ -40,6 +40,12 @@ impl PutIdentityPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutIdentityPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_identity_policy::builders::PutIdentityPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,11 @@ impl PutIdentityPolicyFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
+    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity()
+    }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +155,11 @@ impl PutIdentityPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,5 +171,10 @@ impl PutIdentityPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

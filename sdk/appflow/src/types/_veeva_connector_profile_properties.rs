@@ -40,6 +40,10 @@ impl VeevaConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p> The location of the Veeva resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Consumes the builder and constructs a [`VeevaConnectorProfileProperties`](crate::types::VeevaConnectorProfileProperties).
     pub fn build(self) -> crate::types::VeevaConnectorProfileProperties {
         crate::types::VeevaConnectorProfileProperties {

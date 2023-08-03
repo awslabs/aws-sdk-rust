@@ -105,6 +105,10 @@ impl SourcePropertiesBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>Source server last update date and time.</p>
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date_time
+    }
     /// <p>Source server recommended instance type.</p>
     pub fn recommended_instance_type(
         mut self,
@@ -121,6 +125,10 @@ impl SourcePropertiesBuilder {
         self.recommended_instance_type = input;
         self
     }
+    /// <p>Source server recommended instance type.</p>
+    pub fn get_recommended_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_instance_type
+    }
     /// <p>Source server identification hints.</p>
     pub fn identification_hints(mut self, input: crate::types::IdentificationHints) -> Self {
         self.identification_hints = ::std::option::Option::Some(input);
@@ -133,6 +141,12 @@ impl SourcePropertiesBuilder {
     ) -> Self {
         self.identification_hints = input;
         self
+    }
+    /// <p>Source server identification hints.</p>
+    pub fn get_identification_hints(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentificationHints> {
+        &self.identification_hints
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -153,6 +167,12 @@ impl SourcePropertiesBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>Source server network interfaces.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
+    }
     /// Appends an item to `disks`.
     ///
     /// To override the contents of this collection use [`set_disks`](Self::set_disks).
@@ -171,6 +191,10 @@ impl SourcePropertiesBuilder {
     ) -> Self {
         self.disks = input;
         self
+    }
+    /// <p>Source Server disks.</p>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+        &self.disks
     }
     /// Appends an item to `cpus`.
     ///
@@ -191,6 +215,10 @@ impl SourcePropertiesBuilder {
         self.cpus = input;
         self
     }
+    /// <p>Source Server CPUs.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cpu>> {
+        &self.cpus
+    }
     /// <p>Source server RAM in bytes.</p>
     pub fn ram_bytes(mut self, input: i64) -> Self {
         self.ram_bytes = ::std::option::Option::Some(input);
@@ -201,6 +229,10 @@ impl SourcePropertiesBuilder {
         self.ram_bytes = input;
         self
     }
+    /// <p>Source server RAM in bytes.</p>
+    pub fn get_ram_bytes(&self) -> &::std::option::Option<i64> {
+        &self.ram_bytes
+    }
     /// <p>Source server OS.</p>
     pub fn os(mut self, input: crate::types::Os) -> Self {
         self.os = ::std::option::Option::Some(input);
@@ -210,6 +242,10 @@ impl SourcePropertiesBuilder {
     pub fn set_os(mut self, input: ::std::option::Option<crate::types::Os>) -> Self {
         self.os = input;
         self
+    }
+    /// <p>Source server OS.</p>
+    pub fn get_os(&self) -> &::std::option::Option<crate::types::Os> {
+        &self.os
     }
     /// Consumes the builder and constructs a [`SourceProperties`](crate::types::SourceProperties).
     pub fn build(self) -> crate::types::SourceProperties {

@@ -57,6 +57,11 @@ impl RequestCertificateOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

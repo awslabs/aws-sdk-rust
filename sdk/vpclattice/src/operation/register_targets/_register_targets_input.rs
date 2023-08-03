@@ -53,6 +53,10 @@ impl RegisterTargetsInputBuilder {
         self.target_group_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_identifier
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -71,6 +75,10 @@ impl RegisterTargetsInputBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The targets.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl ResourceConfigurationBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ResourceConfigurationBuilder {
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
+    }
+    /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.volume_size_in_gb
     }
     /// Consumes the builder and constructs a [`ResourceConfiguration`](crate::types::ResourceConfiguration).
     pub fn build(self) -> crate::types::ResourceConfiguration {

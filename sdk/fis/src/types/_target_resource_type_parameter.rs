@@ -48,6 +48,10 @@ impl TargetResourceTypeParameterBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TargetResourceTypeParameterBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Indicates whether the parameter is required.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// Consumes the builder and constructs a [`TargetResourceTypeParameter`](crate::types::TargetResourceTypeParameter).
     pub fn build(self) -> crate::types::TargetResourceTypeParameter {

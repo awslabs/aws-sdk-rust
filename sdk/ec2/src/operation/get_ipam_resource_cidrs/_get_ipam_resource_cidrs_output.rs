@@ -57,6 +57,10 @@ impl GetIpamResourceCidrsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ipam_resource_cidrs`.
     ///
     /// To override the contents of this collection use [`set_ipam_resource_cidrs`](Self::set_ipam_resource_cidrs).
@@ -75,6 +79,12 @@ impl GetIpamResourceCidrsOutputBuilder {
     ) -> Self {
         self.ipam_resource_cidrs = input;
         self
+    }
+    /// <p>The resource CIDRs.</p>
+    pub fn get_ipam_resource_cidrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>> {
+        &self.ipam_resource_cidrs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

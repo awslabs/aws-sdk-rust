@@ -104,6 +104,10 @@ impl UpdateEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The name to use for the event destination.</p>
     pub fn event_destination_name(
         mut self,
@@ -120,6 +124,10 @@ impl UpdateEventDestinationInputBuilder {
         self.event_destination_name = input;
         self
     }
+    /// <p>The name to use for the event destination.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
+    }
     /// <p>When set to true logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -129,6 +137,10 @@ impl UpdateEventDestinationInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>When set to true logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -149,6 +161,12 @@ impl UpdateEventDestinationInputBuilder {
         self.matching_event_types = input;
         self
     }
+    /// <p>An array of event types that determine which events to log.</p>
+    pub fn get_matching_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.matching_event_types
+    }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
     pub fn cloud_watch_logs_destination(
         mut self,
@@ -164,6 +182,12 @@ impl UpdateEventDestinationInputBuilder {
     ) -> Self {
         self.cloud_watch_logs_destination = input;
         self
+    }
+    /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
+    pub fn get_cloud_watch_logs_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+        &self.cloud_watch_logs_destination
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
     pub fn kinesis_firehose_destination(
@@ -181,6 +205,12 @@ impl UpdateEventDestinationInputBuilder {
         self.kinesis_firehose_destination = input;
         self
     }
+    /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    pub fn get_kinesis_firehose_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        &self.kinesis_firehose_destination
+    }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
         self.sns_destination = ::std::option::Option::Some(input);
@@ -193,6 +223,10 @@ impl UpdateEventDestinationInputBuilder {
     ) -> Self {
         self.sns_destination = input;
         self
+    }
+    /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        &self.sns_destination
     }
     /// Consumes the builder and constructs a [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
     pub fn build(

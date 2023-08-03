@@ -45,6 +45,10 @@ impl DescribeApplicationInstanceInputBuilder {
         self.application_instance_id = input;
         self
     }
+    /// <p>The application instance's ID.</p>
+    pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_instance_id
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationInstanceInput`](crate::operation::describe_application_instance::DescribeApplicationInstanceInput).
     pub fn build(
         self,

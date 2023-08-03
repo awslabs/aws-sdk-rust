@@ -47,6 +47,10 @@ impl CancelInstanceRefreshInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Consumes the builder and constructs a [`CancelInstanceRefreshInput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput).
     pub fn build(
         self,

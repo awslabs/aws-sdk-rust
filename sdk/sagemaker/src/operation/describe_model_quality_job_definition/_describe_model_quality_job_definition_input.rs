@@ -45,6 +45,10 @@ impl DescribeModelQualityJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DescribeModelQualityJobDefinitionInput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

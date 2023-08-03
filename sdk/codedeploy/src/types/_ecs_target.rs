@@ -95,6 +95,10 @@ impl EcsTargetBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl EcsTargetBuilder {
         self.target_id = input;
         self
     }
+    /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
+    }
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl EcsTargetBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// <p> The date and time when the target Amazon ECS application was updated by a deployment. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,6 +139,10 @@ impl EcsTargetBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p> The date and time when the target Amazon ECS application was updated by a deployment. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `lifecycle_events`.
     ///
@@ -147,6 +163,12 @@ impl EcsTargetBuilder {
         self.lifecycle_events = input;
         self
     }
+    /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
+    pub fn get_lifecycle_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+        &self.lifecycle_events
+    }
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl EcsTargetBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status an Amazon ECS deployment's target ECS application. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
+        &self.status
     }
     /// Appends an item to `task_sets_info`.
     ///
@@ -175,6 +201,12 @@ impl EcsTargetBuilder {
     ) -> Self {
         self.task_sets_info = input;
         self
+    }
+    /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
+    pub fn get_task_sets_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsTaskSet>> {
+        &self.task_sets_info
     }
     /// Consumes the builder and constructs a [`EcsTarget`](crate::types::EcsTarget).
     pub fn build(self) -> crate::types::EcsTarget {

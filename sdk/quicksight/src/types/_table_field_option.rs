@@ -72,6 +72,10 @@ impl TableFieldOptionBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID for a table field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The width for a table field.</p>
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.width = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl TableFieldOptionBuilder {
         self.width = input;
         self
     }
+    /// <p>The width for a table field.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
+    }
     /// <p>The custom label for a table field.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_label = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl TableFieldOptionBuilder {
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
+    }
+    /// <p>The custom label for a table field.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>The visibility of a table field.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -105,6 +117,10 @@ impl TableFieldOptionBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of a table field.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The URL configuration for a table field.</p>
     pub fn url_styling(mut self, input: crate::types::TableFieldUrlConfiguration) -> Self {
         self.url_styling = ::std::option::Option::Some(input);
@@ -117,6 +133,12 @@ impl TableFieldOptionBuilder {
     ) -> Self {
         self.url_styling = input;
         self
+    }
+    /// <p>The URL configuration for a table field.</p>
+    pub fn get_url_styling(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldUrlConfiguration> {
+        &self.url_styling
     }
     /// Consumes the builder and constructs a [`TableFieldOption`](crate::types::TableFieldOption).
     pub fn build(self) -> crate::types::TableFieldOption {

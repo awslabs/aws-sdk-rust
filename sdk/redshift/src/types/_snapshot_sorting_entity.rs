@@ -51,6 +51,10 @@ impl SnapshotSortingEntityBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The category for sorting the snapshots.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SnapshotAttributeToSortBy> {
+        &self.attribute
+    }
     /// <p>The order for listing the attributes.</p>
     pub fn sort_order(mut self, input: crate::types::SortByOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SnapshotSortingEntityBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order for listing the attributes.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortByOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`SnapshotSortingEntity`](crate::types::SnapshotSortingEntity).
     pub fn build(self) -> crate::types::SnapshotSortingEntity {

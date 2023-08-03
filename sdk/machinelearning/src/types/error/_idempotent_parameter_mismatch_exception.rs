@@ -80,6 +80,10 @@ impl IdempotentParameterMismatchExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -88,6 +92,10 @@ impl IdempotentParameterMismatchExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

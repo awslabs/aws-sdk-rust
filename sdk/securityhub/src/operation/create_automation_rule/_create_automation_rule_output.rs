@@ -47,6 +47,10 @@ impl CreateAutomationRuleOutputBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

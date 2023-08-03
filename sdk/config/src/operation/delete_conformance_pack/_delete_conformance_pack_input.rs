@@ -47,6 +47,10 @@ impl DeleteConformancePackInputBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>Name of the conformance pack you want to delete.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
     pub fn build(
         self,

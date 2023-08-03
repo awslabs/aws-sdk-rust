@@ -60,6 +60,10 @@ impl ListSolFunctionPackagesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `function_packages`.
     ///
     /// To override the contents of this collection use [`set_function_packages`](Self::set_function_packages).
@@ -78,6 +82,12 @@ impl ListSolFunctionPackagesOutputBuilder {
     ) -> Self {
         self.function_packages = input;
         self
+    }
+    /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
+    pub fn get_function_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>> {
+        &self.function_packages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

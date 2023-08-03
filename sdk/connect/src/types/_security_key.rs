@@ -62,6 +62,10 @@ impl SecurityKeyBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The key of the security key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl SecurityKeyBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The key of the security key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>When the security key was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl SecurityKeyBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the security key was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`SecurityKey`](crate::types::SecurityKey).
     pub fn build(self) -> crate::types::SecurityKey {

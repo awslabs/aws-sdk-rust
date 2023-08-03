@@ -36,6 +36,13 @@ impl UpdateFlowMediaStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFlowMediaStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,12 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// The attributes that you want to assign to the media stream.
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
+        self.inner.get_attributes()
+    }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
     pub fn clock_rate(mut self, input: i32) -> Self {
         self.inner = self.inner.clock_rate(input);
@@ -138,6 +151,10 @@ impl UpdateFlowMediaStreamFluentBuilder {
     pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_clock_rate(input);
         self
+    }
+    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    pub fn get_clock_rate(&self) -> &::std::option::Option<i32> {
+        self.inner.get_clock_rate()
     }
     /// Description
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +166,10 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// Description
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -158,6 +179,10 @@ impl UpdateFlowMediaStreamFluentBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
+    }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
     }
     /// The name of the media stream that you want to update.
     pub fn media_stream_name(
@@ -175,6 +200,10 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.inner = self.inner.set_media_stream_name(input);
         self
     }
+    /// The name of the media stream that you want to update.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_stream_name()
+    }
     /// The type of media stream.
     pub fn media_stream_type(mut self, input: crate::types::MediaStreamType) -> Self {
         self.inner = self.inner.media_stream_type(input);
@@ -188,6 +217,10 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.inner = self.inner.set_media_stream_type(input);
         self
     }
+    /// The type of media stream.
+    pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
+        self.inner.get_media_stream_type()
+    }
     /// The resolution of the video.
     pub fn video_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.video_format(input.into());
@@ -197,5 +230,9 @@ impl UpdateFlowMediaStreamFluentBuilder {
     pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_video_format(input);
         self
+    }
+    /// The resolution of the video.
+    pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_video_format()
     }
 }

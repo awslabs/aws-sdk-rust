@@ -36,6 +36,10 @@ impl GetExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_export::builders::GetExportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetExportFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the bot to export.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version of the bot to export.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -127,6 +135,10 @@ impl GetExportFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The version of the bot to export.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
     /// <p>The type of resource to export. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -141,6 +153,10 @@ impl GetExportFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of resource to export. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The format of the exported data.</p>
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
         self.inner = self.inner.export_type(input);
@@ -153,5 +169,9 @@ impl GetExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_type(input);
         self
+    }
+    /// <p>The format of the exported data.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        self.inner.get_export_type()
     }
 }

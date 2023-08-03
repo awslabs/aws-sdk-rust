@@ -43,6 +43,12 @@ impl DeleteArchiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteArchive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_archive::builders::DeleteArchiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl DeleteArchiveFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vault_name(input.into());
@@ -135,6 +145,10 @@ impl DeleteArchiveFluentBuilder {
         self.inner = self.inner.set_vault_name(input);
         self
     }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vault_name()
+    }
     /// <p>The ID of the archive to delete.</p>
     pub fn archive_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_id(input.into());
@@ -144,5 +158,9 @@ impl DeleteArchiveFluentBuilder {
     pub fn set_archive_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_archive_id(input);
         self
+    }
+    /// <p>The ID of the archive to delete.</p>
+    pub fn get_archive_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_archive_id()
     }
 }

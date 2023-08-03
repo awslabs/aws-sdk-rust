@@ -54,6 +54,10 @@ impl MinimumEngineVersionPerAllowedValueBuilder {
         self.allowed_value = input;
         self
     }
+    /// <p>The allowed value for an option setting.</p>
+    pub fn get_allowed_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_value
+    }
     /// <p>The minimum DB engine version required for the allowed value.</p>
     pub fn minimum_engine_version(
         mut self,
@@ -69,6 +73,10 @@ impl MinimumEngineVersionPerAllowedValueBuilder {
     ) -> Self {
         self.minimum_engine_version = input;
         self
+    }
+    /// <p>The minimum DB engine version required for the allowed value.</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
     }
     /// Consumes the builder and constructs a [`MinimumEngineVersionPerAllowedValue`](crate::types::MinimumEngineVersionPerAllowedValue).
     pub fn build(self) -> crate::types::MinimumEngineVersionPerAllowedValue {

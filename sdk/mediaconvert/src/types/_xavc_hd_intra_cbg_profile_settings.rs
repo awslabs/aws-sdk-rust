@@ -43,6 +43,12 @@ impl XavcHdIntraCbgProfileSettingsBuilder {
         self.xavc_class = input;
         self
     }
+    /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn get_xavc_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::XavcHdIntraCbgProfileClass> {
+        &self.xavc_class
+    }
     /// Consumes the builder and constructs a [`XavcHdIntraCbgProfileSettings`](crate::types::XavcHdIntraCbgProfileSettings).
     pub fn build(self) -> crate::types::XavcHdIntraCbgProfileSettings {
         crate::types::XavcHdIntraCbgProfileSettings {

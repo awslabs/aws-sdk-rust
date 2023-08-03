@@ -59,6 +59,10 @@ impl EnableMacieInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         mut self,
@@ -75,6 +79,12 @@ impl EnableMacieInputBuilder {
         self.finding_publishing_frequency = input;
         self
     }
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        &self.finding_publishing_frequency
+    }
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl EnableMacieInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`EnableMacieInput`](crate::operation::enable_macie::EnableMacieInput).
     pub fn build(

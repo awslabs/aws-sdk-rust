@@ -43,6 +43,10 @@ impl ProtectedQueryResultBuilder {
         self.output = input;
         self
     }
+    /// <p>The output of the protected query.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::ProtectedQueryOutput> {
+        &self.output
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
     pub fn build(self) -> crate::types::ProtectedQueryResult {
         crate::types::ProtectedQueryResult {

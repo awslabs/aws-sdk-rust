@@ -39,6 +39,10 @@ impl RegisterContainerInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterContainerInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl RegisterContainerInstanceFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
     pub fn instance_identity_document(
         mut self,
@@ -144,6 +152,10 @@ impl RegisterContainerInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_identity_document(input);
         self
+    }
+    /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
+    pub fn get_instance_identity_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_identity_document()
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
     pub fn instance_identity_document_signature(
@@ -163,6 +175,12 @@ impl RegisterContainerInstanceFluentBuilder {
         self.inner = self.inner.set_instance_identity_document_signature(input);
         self
     }
+    /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
+    pub fn get_instance_identity_document_signature(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_identity_document_signature()
+    }
     /// Appends an item to `totalResources`.
     ///
     /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
@@ -180,6 +198,12 @@ impl RegisterContainerInstanceFluentBuilder {
         self.inner = self.inner.set_total_resources(input);
         self
     }
+    /// <p>The resources available on the instance.</p>
+    pub fn get_total_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        self.inner.get_total_resources()
+    }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn version_info(mut self, input: crate::types::VersionInfo) -> Self {
         self.inner = self.inner.version_info(input);
@@ -192,6 +216,10 @@ impl RegisterContainerInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_info(input);
         self
+    }
+    /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
+    pub fn get_version_info(&self) -> &::std::option::Option<crate::types::VersionInfo> {
+        self.inner.get_version_info()
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub fn container_instance_arn(
@@ -208,6 +236,10 @@ impl RegisterContainerInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_instance_arn(input);
         self
+    }
+    /// <p>The ARN of the container instance (if it was previously registered).</p>
+    pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_instance_arn()
     }
     /// Appends an item to `attributes`.
     ///
@@ -226,6 +258,12 @@ impl RegisterContainerInstanceFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>The container instance attributes that this container instance supports.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_attributes()
+    }
     /// Appends an item to `platformDevices`.
     ///
     /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
@@ -242,6 +280,12 @@ impl RegisterContainerInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform_devices(input);
         self
+    }
+    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    pub fn get_platform_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
+        self.inner.get_platform_devices()
     }
     /// Appends an item to `tags`.
     ///
@@ -279,5 +323,19 @@ impl RegisterContainerInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

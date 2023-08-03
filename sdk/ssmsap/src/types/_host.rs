@@ -80,6 +80,10 @@ impl HostBuilder {
         self.host_name = input;
         self
     }
+    /// <p>The name of the Dedicated Host.</p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
+    }
     /// <p>The IP address of the Dedicated Host. </p>
     pub fn host_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_ip = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl HostBuilder {
     pub fn set_host_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_ip = input;
         self
+    }
+    /// <p>The IP address of the Dedicated Host. </p>
+    pub fn get_host_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_ip
     }
     /// <p>The ID of Amazon EC2 instance.</p>
     pub fn ec2_instance_id(
@@ -106,6 +114,10 @@ impl HostBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>The ID of Amazon EC2 instance.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>The instance ID of the instance on the Dedicated Host.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl HostBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID of the instance on the Dedicated Host.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The role of the Dedicated Host.</p>
     pub fn host_role(mut self, input: crate::types::HostRole) -> Self {
@@ -126,6 +142,10 @@ impl HostBuilder {
         self.host_role = input;
         self
     }
+    /// <p>The role of the Dedicated Host.</p>
+    pub fn get_host_role(&self) -> &::std::option::Option<crate::types::HostRole> {
+        &self.host_role
+    }
     /// <p>The version of the operating system.</p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_version = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl HostBuilder {
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_version = input;
         self
+    }
+    /// <p>The version of the operating system.</p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
     }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {

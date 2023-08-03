@@ -36,6 +36,12 @@ impl UpdateMailboxQuotaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMailboxQuota as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateMailboxQuotaFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -142,6 +152,10 @@ impl UpdateMailboxQuotaFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub fn mailbox_quota(mut self, input: i32) -> Self {
         self.inner = self.inner.mailbox_quota(input);
@@ -151,5 +165,9 @@ impl UpdateMailboxQuotaFluentBuilder {
     pub fn set_mailbox_quota(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_mailbox_quota(input);
         self
+    }
+    /// <p>The updated mailbox quota, in MB, for the specified user.</p>
+    pub fn get_mailbox_quota(&self) -> &::std::option::Option<i32> {
+        self.inner.get_mailbox_quota()
     }
 }

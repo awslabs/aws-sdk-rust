@@ -87,6 +87,10 @@ impl TelemetryRecordBuilder {
         self
     }
     /// <p></p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
+    /// <p></p>
     pub fn segments_received_count(mut self, input: i32) -> Self {
         self.segments_received_count = ::std::option::Option::Some(input);
         self
@@ -95,6 +99,10 @@ impl TelemetryRecordBuilder {
     pub fn set_segments_received_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segments_received_count = input;
         self
+    }
+    /// <p></p>
+    pub fn get_segments_received_count(&self) -> &::std::option::Option<i32> {
+        &self.segments_received_count
     }
     /// <p></p>
     pub fn segments_sent_count(mut self, input: i32) -> Self {
@@ -107,6 +115,10 @@ impl TelemetryRecordBuilder {
         self
     }
     /// <p></p>
+    pub fn get_segments_sent_count(&self) -> &::std::option::Option<i32> {
+        &self.segments_sent_count
+    }
+    /// <p></p>
     pub fn segments_spillover_count(mut self, input: i32) -> Self {
         self.segments_spillover_count = ::std::option::Option::Some(input);
         self
@@ -117,6 +129,10 @@ impl TelemetryRecordBuilder {
         self
     }
     /// <p></p>
+    pub fn get_segments_spillover_count(&self) -> &::std::option::Option<i32> {
+        &self.segments_spillover_count
+    }
+    /// <p></p>
     pub fn segments_rejected_count(mut self, input: i32) -> Self {
         self.segments_rejected_count = ::std::option::Option::Some(input);
         self
@@ -125,6 +141,10 @@ impl TelemetryRecordBuilder {
     pub fn set_segments_rejected_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segments_rejected_count = input;
         self
+    }
+    /// <p></p>
+    pub fn get_segments_rejected_count(&self) -> &::std::option::Option<i32> {
+        &self.segments_rejected_count
     }
     /// <p></p>
     pub fn backend_connection_errors(
@@ -141,6 +161,12 @@ impl TelemetryRecordBuilder {
     ) -> Self {
         self.backend_connection_errors = input;
         self
+    }
+    /// <p></p>
+    pub fn get_backend_connection_errors(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendConnectionErrors> {
+        &self.backend_connection_errors
     }
     /// Consumes the builder and constructs a [`TelemetryRecord`](crate::types::TelemetryRecord).
     pub fn build(self) -> crate::types::TelemetryRecord {

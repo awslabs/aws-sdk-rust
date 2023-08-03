@@ -55,6 +55,10 @@ impl PutContainerRecipePolicyInputBuilder {
         self.container_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_recipe_arn
+    }
     /// <p>The policy to apply to the container recipe.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl PutContainerRecipePolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy to apply to the container recipe.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutContainerRecipePolicyInput`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput).
     pub fn build(

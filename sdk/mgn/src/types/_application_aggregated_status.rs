@@ -72,6 +72,10 @@ impl ApplicationAggregatedStatusBuilder {
         self.last_update_date_time = input;
         self
     }
+    /// <p>Application aggregated status last update dateTime.</p>
+    pub fn get_last_update_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_date_time
+    }
     /// <p>Application aggregated status health status.</p>
     pub fn health_status(mut self, input: crate::types::ApplicationHealthStatus) -> Self {
         self.health_status = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl ApplicationAggregatedStatusBuilder {
     ) -> Self {
         self.health_status = input;
         self
+    }
+    /// <p>Application aggregated status health status.</p>
+    pub fn get_health_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationHealthStatus> {
+        &self.health_status
     }
     /// <p>Application aggregated status progress status.</p>
     pub fn progress_status(mut self, input: crate::types::ApplicationProgressStatus) -> Self {
@@ -98,6 +108,12 @@ impl ApplicationAggregatedStatusBuilder {
         self.progress_status = input;
         self
     }
+    /// <p>Application aggregated status progress status.</p>
+    pub fn get_progress_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationProgressStatus> {
+        &self.progress_status
+    }
     /// <p>Application aggregated status total source servers amount.</p>
     pub fn total_source_servers(mut self, input: i64) -> Self {
         self.total_source_servers = ::std::option::Option::Some(input);
@@ -107,6 +123,10 @@ impl ApplicationAggregatedStatusBuilder {
     pub fn set_total_source_servers(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_source_servers = input;
         self
+    }
+    /// <p>Application aggregated status total source servers amount.</p>
+    pub fn get_total_source_servers(&self) -> &::std::option::Option<i64> {
+        &self.total_source_servers
     }
     /// Consumes the builder and constructs a [`ApplicationAggregatedStatus`](crate::types::ApplicationAggregatedStatus).
     pub fn build(self) -> crate::types::ApplicationAggregatedStatus {

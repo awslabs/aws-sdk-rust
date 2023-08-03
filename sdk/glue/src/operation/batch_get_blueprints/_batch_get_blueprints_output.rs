@@ -64,6 +64,12 @@ impl BatchGetBlueprintsOutputBuilder {
         self.blueprints = input;
         self
     }
+    /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
+    pub fn get_blueprints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Blueprint>> {
+        &self.blueprints
+    }
     /// Appends an item to `missing_blueprints`.
     ///
     /// To override the contents of this collection use [`set_missing_blueprints`](Self::set_missing_blueprints).
@@ -85,6 +91,12 @@ impl BatchGetBlueprintsOutputBuilder {
     ) -> Self {
         self.missing_blueprints = input;
         self
+    }
+    /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
+    pub fn get_missing_blueprints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_blueprints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

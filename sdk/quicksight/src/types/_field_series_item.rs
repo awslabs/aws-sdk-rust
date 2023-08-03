@@ -56,6 +56,10 @@ impl FieldSeriesItemBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the field for which you are setting the axis binding.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The axis that you are binding the field to.</p>
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
         self.axis_binding = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FieldSeriesItemBuilder {
         self.axis_binding = input;
         self
     }
+    /// <p>The axis that you are binding the field to.</p>
+    pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
+        &self.axis_binding
+    }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn settings(mut self, input: crate::types::LineChartSeriesSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl FieldSeriesItemBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The options that determine the presentation of line series associated to the field.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::LineChartSeriesSettings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`FieldSeriesItem`](crate::types::FieldSeriesItem).
     pub fn build(self) -> crate::types::FieldSeriesItem {

@@ -54,6 +54,10 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `permission_sets`.
     ///
     /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
@@ -75,6 +79,12 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
     ) -> Self {
         self.permission_sets = input;
         self
+    }
+    /// <p>Defines the level of access that an AWS account has.</p>
+    pub fn get_permission_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permission_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

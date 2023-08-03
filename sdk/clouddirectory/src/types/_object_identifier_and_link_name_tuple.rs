@@ -54,6 +54,10 @@ impl ObjectIdentifierAndLinkNameTupleBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>The ID that is associated with the object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// <p>The name of the link between the parent and the child object.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ObjectIdentifierAndLinkNameTupleBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The name of the link between the parent and the child object.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`ObjectIdentifierAndLinkNameTuple`](crate::types::ObjectIdentifierAndLinkNameTuple).
     pub fn build(self) -> crate::types::ObjectIdentifierAndLinkNameTuple {

@@ -40,6 +40,10 @@ impl CreateReplicaActionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region of the replica to be added.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// Consumes the builder and constructs a [`CreateReplicaAction`](crate::types::CreateReplicaAction).
     pub fn build(self) -> crate::types::CreateReplicaAction {
         crate::types::CreateReplicaAction {

@@ -84,6 +84,10 @@ impl ClassificationResultBuilder {
         self.mime_type = input;
         self
     }
+    /// <p>The type of content that the finding applies to.</p>
+    pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mime_type
+    }
     /// <p>The total size in bytes of the affected data.</p>
     pub fn size_classified(mut self, input: i64) -> Self {
         self.size_classified = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl ClassificationResultBuilder {
         self.size_classified = input;
         self
     }
+    /// <p>The total size in bytes of the affected data.</p>
+    pub fn get_size_classified(&self) -> &::std::option::Option<i64> {
+        &self.size_classified
+    }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
     pub fn additional_occurrences(mut self, input: bool) -> Self {
         self.additional_occurrences = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl ClassificationResultBuilder {
     pub fn set_additional_occurrences(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_occurrences = input;
         self
+    }
+    /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
+    pub fn get_additional_occurrences(&self) -> &::std::option::Option<bool> {
+        &self.additional_occurrences
     }
     /// <p>The current status of the sensitive data detection.</p>
     pub fn status(mut self, input: crate::types::ClassificationStatus) -> Self {
@@ -116,6 +128,10 @@ impl ClassificationResultBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the sensitive data detection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClassificationStatus> {
+        &self.status
     }
     /// Appends an item to `sensitive_data`.
     ///
@@ -136,6 +152,12 @@ impl ClassificationResultBuilder {
         self.sensitive_data = input;
         self
     }
+    /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
+    pub fn get_sensitive_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>> {
+        &self.sensitive_data
+    }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub fn custom_data_identifiers(
         mut self,
@@ -151,6 +173,12 @@ impl ClassificationResultBuilder {
     ) -> Self {
         self.custom_data_identifiers = input;
         self
+    }
+    /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
+    pub fn get_custom_data_identifiers(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDataIdentifiersResult> {
+        &self.custom_data_identifiers
     }
     /// Consumes the builder and constructs a [`ClassificationResult`](crate::types::ClassificationResult).
     pub fn build(self) -> crate::types::ClassificationResult {

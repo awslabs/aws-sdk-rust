@@ -48,6 +48,10 @@ impl OtherNameBuilder {
         self.type_id = input;
         self
     }
+    /// <p>Specifies an OID. </p>
+    pub fn get_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_id
+    }
     /// <p>Specifies an OID value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OtherNameBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Specifies an OID value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`OtherName`](crate::types::OtherName).
     pub fn build(self) -> crate::types::OtherName {

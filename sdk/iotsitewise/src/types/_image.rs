@@ -52,6 +52,10 @@ impl ImageBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Contains an image file.</p>
     pub fn file(mut self, input: crate::types::ImageFile) -> Self {
         self.file = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ImageBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<crate::types::ImageFile>) -> Self {
         self.file = input;
         self
+    }
+    /// <p>Contains an image file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ImageFile> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {

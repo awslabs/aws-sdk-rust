@@ -53,6 +53,10 @@ impl AssociateConnectionWithLagInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The ID of the LAG with which to associate the connection.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl AssociateConnectionWithLagInputBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
+    }
+    /// <p>The ID of the LAG with which to associate the connection.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// Consumes the builder and constructs a [`AssociateConnectionWithLagInput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput).
     pub fn build(

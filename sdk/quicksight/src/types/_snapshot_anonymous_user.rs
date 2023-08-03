@@ -54,6 +54,13 @@ impl SnapshotAnonymousUserBuilder {
         self.row_level_permission_tags = input;
         self
     }
+    /// <p>The tags to be used for row-level security (RLS). Make sure that the relevant datasets have RLS tags configured before you start a snapshot export job. You can configure the RLS tags of a dataset with a <code>DataSet$RowLevelPermissionTagConfiguration</code> API call.</p>
+    /// <p>These are not the tags that are used for Amazon Web Services resource tagging. For more information on row level security in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_row_level_permission_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
+        &self.row_level_permission_tags
+    }
     /// Consumes the builder and constructs a [`SnapshotAnonymousUser`](crate::types::SnapshotAnonymousUser).
     pub fn build(self) -> crate::types::SnapshotAnonymousUser {
         crate::types::SnapshotAnonymousUser {

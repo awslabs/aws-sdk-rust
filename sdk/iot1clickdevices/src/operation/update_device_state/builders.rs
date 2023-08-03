@@ -36,6 +36,12 @@ impl UpdateDeviceStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeviceState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_device_state::builders::UpdateDeviceStateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDeviceStateFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -135,5 +145,9 @@ impl UpdateDeviceStateFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

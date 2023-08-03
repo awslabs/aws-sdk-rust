@@ -48,6 +48,10 @@ impl InboxPlacementTrackingOptionBuilder {
         self.global = input;
         self
     }
+    /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
+    pub fn get_global(&self) -> &::std::option::Option<bool> {
+        &self.global
+    }
     /// Appends an item to `tracked_isps`.
     ///
     /// To override the contents of this collection use [`set_tracked_isps`](Self::set_tracked_isps).
@@ -66,6 +70,12 @@ impl InboxPlacementTrackingOptionBuilder {
     ) -> Self {
         self.tracked_isps = input;
         self
+    }
+    /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
+    pub fn get_tracked_isps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tracked_isps
     }
     /// Consumes the builder and constructs a [`InboxPlacementTrackingOption`](crate::types::InboxPlacementTrackingOption).
     pub fn build(self) -> crate::types::InboxPlacementTrackingOption {

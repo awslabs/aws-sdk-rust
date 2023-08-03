@@ -46,6 +46,10 @@ impl LambdaDataSourceConfigBuilder {
         self.lambda_function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
+    }
     /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::types::LambdaDataSourceConfig).
     pub fn build(self) -> crate::types::LambdaDataSourceConfig {
         crate::types::LambdaDataSourceConfig {

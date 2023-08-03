@@ -40,6 +40,12 @@ impl RegisterInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl RegisterInstanceFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The ID of the stack that the instance is to be registered with.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// <p>The instance's hostname.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
@@ -139,6 +149,10 @@ impl RegisterInstanceFluentBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname(input);
         self
+    }
+    /// <p>The instance's hostname.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hostname()
     }
     /// <p>The instance's public IP address.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +164,10 @@ impl RegisterInstanceFluentBuilder {
         self.inner = self.inner.set_public_ip(input);
         self
     }
+    /// <p>The instance's public IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
+    }
     /// <p>The instance's private IP address.</p>
     pub fn private_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip(input.into());
@@ -159,6 +177,10 @@ impl RegisterInstanceFluentBuilder {
     pub fn set_private_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_private_ip(input);
         self
+    }
+    /// <p>The instance's private IP address.</p>
+    pub fn get_private_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_ip()
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
     pub fn rsa_public_key(
@@ -176,6 +198,10 @@ impl RegisterInstanceFluentBuilder {
         self.inner = self.inner.set_rsa_public_key(input);
         self
     }
+    /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
+    pub fn get_rsa_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rsa_public_key()
+    }
     /// <p>The instances public RSA key fingerprint.</p>
     pub fn rsa_public_key_fingerprint(
         mut self,
@@ -192,6 +218,10 @@ impl RegisterInstanceFluentBuilder {
         self.inner = self.inner.set_rsa_public_key_fingerprint(input);
         self
     }
+    /// <p>The instances public RSA key fingerprint.</p>
+    pub fn get_rsa_public_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rsa_public_key_fingerprint()
+    }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
     pub fn instance_identity(mut self, input: crate::types::InstanceIdentity) -> Self {
         self.inner = self.inner.instance_identity(input);
@@ -204,5 +234,9 @@ impl RegisterInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_identity(input);
         self
+    }
+    /// <p>An InstanceIdentity object that contains the instance's identity.</p>
+    pub fn get_instance_identity(&self) -> &::std::option::Option<crate::types::InstanceIdentity> {
+        self.inner.get_instance_identity()
     }
 }

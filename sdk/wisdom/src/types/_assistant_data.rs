@@ -120,6 +120,10 @@ impl AssistantDataBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(
         mut self,
@@ -136,6 +140,10 @@ impl AssistantDataBuilder {
         self.assistant_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    pub fn get_assistant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_arn
+    }
     /// <p>The name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -146,6 +154,10 @@ impl AssistantDataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of assistant.</p>
     pub fn r#type(mut self, input: crate::types::AssistantType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -155,6 +167,10 @@ impl AssistantDataBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AssistantType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of assistant.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AssistantType> {
+        &self.r#type
     }
     /// <p>The status of the assistant.</p>
     pub fn status(mut self, input: crate::types::AssistantStatus) -> Self {
@@ -169,6 +185,10 @@ impl AssistantDataBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the assistant.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssistantStatus> {
+        &self.status
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -178,6 +198,10 @@ impl AssistantDataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -204,6 +228,14 @@ impl AssistantDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The KMS key used for encryption.</p>
     pub fn server_side_encryption_configuration(
         mut self,
@@ -220,6 +252,12 @@ impl AssistantDataBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The configuration information for the Wisdom assistant integration.</p>
     pub fn integration_configuration(
         mut self,
@@ -235,6 +273,12 @@ impl AssistantDataBuilder {
     ) -> Self {
         self.integration_configuration = input;
         self
+    }
+    /// <p>The configuration information for the Wisdom assistant integration.</p>
+    pub fn get_integration_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssistantIntegrationConfiguration> {
+        &self.integration_configuration
     }
     /// Consumes the builder and constructs a [`AssistantData`](crate::types::AssistantData).
     pub fn build(self) -> crate::types::AssistantData {

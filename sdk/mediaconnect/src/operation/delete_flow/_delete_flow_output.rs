@@ -54,6 +54,10 @@ impl DeleteFlowOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that was deleted.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The status of the flow when the DeleteFlow process begins.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeleteFlowOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// The status of the flow when the DeleteFlow process begins.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

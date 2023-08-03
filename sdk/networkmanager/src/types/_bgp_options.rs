@@ -40,6 +40,10 @@ impl BgpOptionsBuilder {
         self.peer_asn = input;
         self
     }
+    /// <p>The Peer ASN of the BGP.</p>
+    pub fn get_peer_asn(&self) -> &::std::option::Option<i64> {
+        &self.peer_asn
+    }
     /// Consumes the builder and constructs a [`BgpOptions`](crate::types::BgpOptions).
     pub fn build(self) -> crate::types::BgpOptions {
         crate::types::BgpOptions {

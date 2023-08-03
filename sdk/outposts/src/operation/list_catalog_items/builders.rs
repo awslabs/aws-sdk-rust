@@ -37,6 +37,12 @@ impl ListCatalogItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCatalogItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListCatalogItemsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListCatalogItemsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `ItemClassFilter`.
     ///
@@ -165,6 +179,12 @@ impl ListCatalogItemsFluentBuilder {
         self.inner = self.inner.set_item_class_filter(input);
         self
     }
+    /// <p>Filters the results by item class.</p>
+    pub fn get_item_class_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
+        self.inner.get_item_class_filter()
+    }
     /// Appends an item to `SupportedStorageFilter`.
     ///
     /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
@@ -181,6 +201,12 @@ impl ListCatalogItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supported_storage_filter(input);
         self
+    }
+    /// <p>Filters the results by storage option.</p>
+    pub fn get_supported_storage_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+        self.inner.get_supported_storage_filter()
     }
     /// Appends an item to `EC2FamilyFilter`.
     ///
@@ -201,5 +227,11 @@ impl ListCatalogItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_family_filter(input);
         self
+    }
+    /// <p>Filters the results by EC2 family (for example, M5).</p>
+    pub fn get_ec2_family_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ec2_family_filter()
     }
 }

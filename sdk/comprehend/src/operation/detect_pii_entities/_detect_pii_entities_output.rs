@@ -56,6 +56,10 @@ impl DetectPiiEntitiesOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>> {
+        &self.entities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

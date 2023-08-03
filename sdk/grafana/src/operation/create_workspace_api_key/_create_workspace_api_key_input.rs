@@ -67,6 +67,10 @@ impl CreateWorkspaceApiKeyInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,6 +83,11 @@ impl CreateWorkspaceApiKeyInputBuilder {
         self.key_role = input;
         self
     }
+    /// <p>Specifies the permission level of the key.</p>
+    /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    pub fn get_key_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_role
+    }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
     pub fn seconds_to_live(mut self, input: i32) -> Self {
         self.seconds_to_live = ::std::option::Option::Some(input);
@@ -89,6 +98,10 @@ impl CreateWorkspaceApiKeyInputBuilder {
         self.seconds_to_live = input;
         self
     }
+    /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    pub fn get_seconds_to_live(&self) -> &::std::option::Option<i32> {
+        &self.seconds_to_live
+    }
     /// <p>The ID of the workspace to create an API key.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -98,6 +111,10 @@ impl CreateWorkspaceApiKeyInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace to create an API key.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
     pub fn build(

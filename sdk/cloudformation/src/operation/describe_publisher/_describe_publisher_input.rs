@@ -44,6 +44,11 @@ impl DescribePublisherInputBuilder {
         self.publisher_id = input;
         self
     }
+    /// <p>The ID of the extension publisher.</p>
+    /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_id
+    }
     /// Consumes the builder and constructs a [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateRouteResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRouteResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_route_response::builders::UpdateRouteResponseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
     pub fn model_selection_expression(
         mut self,
@@ -141,6 +151,10 @@ impl UpdateRouteResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_selection_expression(input);
         self
+    }
+    /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    pub fn get_model_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_selection_expression()
     }
     /// Adds a key-value pair to `ResponseModels`.
     ///
@@ -165,6 +179,14 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner = self.inner.set_response_models(input);
         self
     }
+    /// <p>The response models for the route response.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_models()
+    }
     /// Adds a key-value pair to `ResponseParameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
@@ -188,6 +210,14 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
+    /// <p>The route response parameters.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
+    > {
+        self.inner.get_response_parameters()
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_id(input.into());
@@ -197,6 +227,10 @@ impl UpdateRouteResponseFluentBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_id(input);
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_id()
     }
     /// <p>The route response ID.</p>
     pub fn route_response_id(
@@ -214,6 +248,10 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner = self.inner.set_route_response_id(input);
         self
     }
+    /// <p>The route response ID.</p>
+    pub fn get_route_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_response_id()
+    }
     /// <p>The route response key.</p>
     pub fn route_response_key(
         mut self,
@@ -229,5 +267,9 @@ impl UpdateRouteResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_route_response_key(input);
         self
+    }
+    /// <p>The route response key.</p>
+    pub fn get_route_response_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_response_key()
     }
 }

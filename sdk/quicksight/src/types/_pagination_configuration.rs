@@ -48,6 +48,10 @@ impl PaginationConfigurationBuilder {
         self.page_size = input;
         self
     }
+    /// <p>Indicates how many items render in one page.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i64> {
+        &self.page_size
+    }
     /// <p>Indicates the page number.</p>
     pub fn page_number(mut self, input: i64) -> Self {
         self.page_number = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PaginationConfigurationBuilder {
     pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.page_number = input;
         self
+    }
+    /// <p>Indicates the page number.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i64> {
+        &self.page_number
     }
     /// Consumes the builder and constructs a [`PaginationConfiguration`](crate::types::PaginationConfiguration).
     pub fn build(self) -> crate::types::PaginationConfiguration {

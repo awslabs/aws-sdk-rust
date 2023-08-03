@@ -126,6 +126,10 @@ impl GetRunTaskOutputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The task's ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The task's status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -135,6 +139,10 @@ impl GetRunTaskOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The task's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
     }
     /// <p>The task's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +154,10 @@ impl GetRunTaskOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The task's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The task's CPU usage.</p>
     pub fn cpus(mut self, input: i32) -> Self {
         self.cpus = ::std::option::Option::Some(input);
@@ -156,6 +168,10 @@ impl GetRunTaskOutputBuilder {
         self.cpus = input;
         self
     }
+    /// <p>The task's CPU usage.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<i32> {
+        &self.cpus
+    }
     /// <p>The task's memory use in gigabytes.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = ::std::option::Option::Some(input);
@@ -165,6 +181,10 @@ impl GetRunTaskOutputBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>The task's memory use in gigabytes.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// <p>When the task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,6 +199,10 @@ impl GetRunTaskOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The task's start time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -192,6 +216,10 @@ impl GetRunTaskOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The task's start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The task's stop time.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_time = ::std::option::Option::Some(input);
@@ -204,6 +232,10 @@ impl GetRunTaskOutputBuilder {
     ) -> Self {
         self.stop_time = input;
         self
+    }
+    /// <p>The task's stop time.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
     }
     /// <p>The task's status message.</p>
     pub fn status_message(
@@ -221,6 +253,10 @@ impl GetRunTaskOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The task's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The task's log stream.</p>
     pub fn log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream = ::std::option::Option::Some(input.into());
@@ -231,6 +267,10 @@ impl GetRunTaskOutputBuilder {
         self.log_stream = input;
         self
     }
+    /// <p>The task's log stream.</p>
+    pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream
+    }
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     pub fn gpus(mut self, input: i32) -> Self {
         self.gpus = ::std::option::Option::Some(input);
@@ -240,6 +280,10 @@ impl GetRunTaskOutputBuilder {
     pub fn set_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gpus = input;
         self
+    }
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    pub fn get_gpus(&self) -> &::std::option::Option<i32> {
+        &self.gpus
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

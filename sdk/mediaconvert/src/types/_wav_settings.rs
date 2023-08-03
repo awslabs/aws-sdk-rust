@@ -64,6 +64,10 @@ impl WavSettingsBuilder {
         self.bit_depth = input;
         self
     }
+    /// Specify Bit depth, in bits per sample, to choose the encoding quality for this audio track.
+    pub fn get_bit_depth(&self) -> &::std::option::Option<i32> {
+        &self.bit_depth
+    }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl WavSettingsBuilder {
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
+    }
+    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    pub fn get_channels(&self) -> &::std::option::Option<i32> {
+        &self.channels
     }
     /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
     pub fn format(mut self, input: crate::types::WavFormat) -> Self {
@@ -84,6 +92,10 @@ impl WavSettingsBuilder {
         self.format = input;
         self
     }
+    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::WavFormat> {
+        &self.format
+    }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl WavSettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// Sample rate in Hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.sample_rate
     }
     /// Consumes the builder and constructs a [`WavSettings`](crate::types::WavSettings).
     pub fn build(self) -> crate::types::WavSettings {

@@ -46,6 +46,10 @@ impl DeleteOpsMetadataInputBuilder {
         self.ops_metadata_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_metadata_arn
+    }
     /// Consumes the builder and constructs a [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
     pub fn build(
         self,

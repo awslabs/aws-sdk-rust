@@ -36,6 +36,10 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterOnPremisesInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeregisterOnPremisesInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p>The name of the on-premises instance to deregister.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
 }

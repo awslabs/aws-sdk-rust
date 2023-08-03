@@ -37,6 +37,12 @@ impl CreateActionTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateActionTarget as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_action_target::builders::CreateActionTargetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateActionTargetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description for the custom action target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +147,10 @@ impl CreateActionTargetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description for the custom action target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -146,5 +160,9 @@ impl CreateActionTargetFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

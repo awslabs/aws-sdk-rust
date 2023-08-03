@@ -58,6 +58,10 @@ impl FixedResponseActionConfigBuilder {
         self.message_body = input;
         self
     }
+    /// <p>The message.</p>
+    pub fn get_message_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_body
+    }
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl FixedResponseActionConfigBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
@@ -79,6 +87,11 @@ impl FixedResponseActionConfigBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type.</p>
+    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`FixedResponseActionConfig`](crate::types::FixedResponseActionConfig).
     pub fn build(self) -> crate::types::FixedResponseActionConfig {

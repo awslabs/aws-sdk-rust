@@ -51,6 +51,10 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CountOpenWorkflowExecutions as a reference.
+    pub fn as_input(&self) -> &crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain containing the workflow executions to count.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.inner = self.inner.start_time_filter(input);
@@ -153,6 +161,12 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
+    }
+    /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
+    pub fn get_start_time_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+        self.inner.get_start_time_filter()
     }
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -171,6 +185,12 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_type_filter(input);
         self
     }
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
+        self.inner.get_type_filter()
+    }
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
@@ -184,6 +204,12 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
+    }
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        self.inner.get_tag_filter()
     }
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -201,5 +227,13 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
+    }
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_execution_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+        self.inner.get_execution_filter()
     }
 }

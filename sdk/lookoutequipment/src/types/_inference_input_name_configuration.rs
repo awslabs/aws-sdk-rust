@@ -54,6 +54,10 @@ impl InferenceInputNameConfigurationBuilder {
         self.timestamp_format = input;
         self
     }
+    /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
+    pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_format
+    }
     /// <p>Indicates the delimiter character used between items in the data. </p>
     pub fn component_timestamp_delimiter(
         mut self,
@@ -69,6 +73,12 @@ impl InferenceInputNameConfigurationBuilder {
     ) -> Self {
         self.component_timestamp_delimiter = input;
         self
+    }
+    /// <p>Indicates the delimiter character used between items in the data. </p>
+    pub fn get_component_timestamp_delimiter(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.component_timestamp_delimiter
     }
     /// Consumes the builder and constructs a [`InferenceInputNameConfiguration`](crate::types::InferenceInputNameConfiguration).
     pub fn build(self) -> crate::types::InferenceInputNameConfiguration {

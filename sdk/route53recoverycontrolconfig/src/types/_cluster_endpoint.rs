@@ -52,6 +52,11 @@ impl ClusterEndpointBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -61,6 +66,10 @@ impl ClusterEndpointBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`ClusterEndpoint`](crate::types::ClusterEndpoint).
     pub fn build(self) -> crate::types::ClusterEndpoint {

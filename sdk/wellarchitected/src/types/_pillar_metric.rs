@@ -63,6 +63,11 @@ impl PillarMetricBuilder {
         self.pillar_id = input;
         self
     }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
+    }
     /// Adds a key-value pair to `risk_counts`.
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
@@ -82,6 +87,12 @@ impl PillarMetricBuilder {
         self.risk_counts = input;
         self
     }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
+    }
     /// Appends an item to `questions`.
     ///
     /// To override the contents of this collection use [`set_questions`](Self::set_questions).
@@ -100,6 +111,12 @@ impl PillarMetricBuilder {
     ) -> Self {
         self.questions = input;
         self
+    }
+    /// <p>The questions that have been identified as risks in the pillar.</p>
+    pub fn get_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>> {
+        &self.questions
     }
     /// Consumes the builder and constructs a [`PillarMetric`](crate::types::PillarMetric).
     pub fn build(self) -> crate::types::PillarMetric {

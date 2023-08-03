@@ -146,6 +146,10 @@ impl ResourceSharePermissionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission you want information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The version of the permission associated with this resource share.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -155,6 +159,10 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the permission associated with this resource share.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>Specifies whether the version of the managed permission used by this resource share is the default version for this managed permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
@@ -166,6 +174,10 @@ impl ResourceSharePermissionSummaryBuilder {
         self.default_version = input;
         self
     }
+    /// <p>Specifies whether the version of the managed permission used by this resource share is the default version for this managed permission.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<bool> {
+        &self.default_version
+    }
     /// <p>The name of this managed permission.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -175,6 +187,10 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of this managed permission.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of resource to which this permission applies. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
     pub fn resource_type(
@@ -192,6 +208,10 @@ impl ResourceSharePermissionSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource to which this permission applies. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The current status of the permission.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -201,6 +221,10 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the permission.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,6 +239,10 @@ impl ResourceSharePermissionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time when the permission was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time when the permission was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -228,6 +256,10 @@ impl ResourceSharePermissionSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time when the permission was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Specifies whether the managed permission associated with this resource share is the default managed permission for all resources of this resource type.</p>
     pub fn is_resource_type_default(mut self, input: bool) -> Self {
         self.is_resource_type_default = ::std::option::Option::Some(input);
@@ -237,6 +269,10 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn set_is_resource_type_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_resource_type_default = input;
         self
+    }
+    /// <p>Specifies whether the managed permission associated with this resource share is the default managed permission for all resources of this resource type.</p>
+    pub fn get_is_resource_type_default(&self) -> &::std::option::Option<bool> {
+        &self.is_resource_type_default
     }
     /// <p>The type of managed permission. This can be one of the following values:</p>
     /// <ul>
@@ -258,6 +294,14 @@ impl ResourceSharePermissionSummaryBuilder {
     ) -> Self {
         self.permission_type = input;
         self
+    }
+    /// <p>The type of managed permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
+    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
+    /// </ul>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -282,6 +326,15 @@ impl ResourceSharePermissionSummaryBuilder {
         self.feature_set = input;
         self
     }
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// </ul>
+    pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::PermissionFeatureSet> {
+        &self.feature_set
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -300,6 +353,10 @@ impl ResourceSharePermissionSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of the tag key value pairs currently attached to the permission.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceSharePermissionSummary`](crate::types::ResourceSharePermissionSummary).
     pub fn build(self) -> crate::types::ResourceSharePermissionSummary {

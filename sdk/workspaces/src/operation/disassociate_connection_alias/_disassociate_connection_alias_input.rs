@@ -39,6 +39,10 @@ impl DisassociateConnectionAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The identifier of the connection alias to disassociate.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// Consumes the builder and constructs a [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
     pub fn build(
         self,

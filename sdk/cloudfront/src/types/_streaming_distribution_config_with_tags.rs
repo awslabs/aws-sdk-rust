@@ -58,6 +58,12 @@ impl StreamingDistributionConfigWithTagsBuilder {
         self.streaming_distribution_config = input;
         self
     }
+    /// <p>A streaming distribution Configuration.</p>
+    pub fn get_streaming_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+        &self.streaming_distribution_config
+    }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl StreamingDistributionConfigWithTagsBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StreamingDistributionConfigWithTags`](crate::types::StreamingDistributionConfigWithTags).
     pub fn build(self) -> crate::types::StreamingDistributionConfigWithTags {

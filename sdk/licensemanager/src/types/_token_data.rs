@@ -88,6 +88,10 @@ impl TokenDataBuilder {
         self.token_id = input;
         self
     }
+    /// <p>Token ID.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_id
+    }
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
     pub fn token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_type = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl TokenDataBuilder {
         self.token_type = input;
         self
     }
+    /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
+    pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_type
+    }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl TokenDataBuilder {
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
     }
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
     pub fn expiration_time(
@@ -123,6 +135,10 @@ impl TokenDataBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// <p>Token expiration time, in ISO8601-UTC format.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_time
     }
     /// Appends an item to `token_properties`.
     ///
@@ -146,6 +162,12 @@ impl TokenDataBuilder {
         self.token_properties = input;
         self
     }
+    /// <p>Data specified by the caller.</p>
+    pub fn get_token_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_properties
+    }
     /// Appends an item to `role_arns`.
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
@@ -165,6 +187,10 @@ impl TokenDataBuilder {
         self.role_arns = input;
         self
     }
+    /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.role_arns
+    }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -174,6 +200,10 @@ impl TokenDataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`TokenData`](crate::types::TokenData).
     pub fn build(self) -> crate::types::TokenData {

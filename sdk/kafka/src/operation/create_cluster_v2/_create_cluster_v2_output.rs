@@ -71,6 +71,10 @@ impl CreateClusterV2OutputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The name of the MSK cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateClusterV2OutputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the MSK cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn state(mut self, input: crate::types::ClusterState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl CreateClusterV2OutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
     }
     /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
     pub fn cluster_type(mut self, input: crate::types::ClusterType) -> Self {
@@ -103,6 +115,10 @@ impl CreateClusterV2OutputBuilder {
     ) -> Self {
         self.cluster_type = input;
         self
+    }
+    /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::ClusterType> {
+        &self.cluster_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

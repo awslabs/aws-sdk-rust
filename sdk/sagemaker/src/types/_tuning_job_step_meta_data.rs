@@ -40,6 +40,10 @@ impl TuningJobStepMetaDataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`TuningJobStepMetaData`](crate::types::TuningJobStepMetaData).
     pub fn build(self) -> crate::types::TuningJobStepMetaData {
         crate::types::TuningJobStepMetaData { arn: self.arn }

@@ -57,6 +57,10 @@ impl JobMessagesBuilder {
         self.info = input;
         self
     }
+    /// List of messages that are informational only and don't indicate a problem with your job.
+    pub fn get_info(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.info
+    }
     /// Appends an item to `warning`.
     ///
     /// To override the contents of this collection use [`set_warning`](Self::set_warning).
@@ -75,6 +79,10 @@ impl JobMessagesBuilder {
     ) -> Self {
         self.warning = input;
         self
+    }
+    /// List of messages that warn about conditions that might cause your job not to run or to fail.
+    pub fn get_warning(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warning
     }
     /// Consumes the builder and constructs a [`JobMessages`](crate::types::JobMessages).
     pub fn build(self) -> crate::types::JobMessages {

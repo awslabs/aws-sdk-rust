@@ -41,6 +41,12 @@ impl DetectAnomaliesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectAnomalies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_anomalies::builders::DetectAnomaliesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl DetectAnomaliesFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the model version that you want to use.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The version of the model that you want to use.</p>
     pub fn model_version(
         mut self,
@@ -147,6 +157,10 @@ impl DetectAnomaliesFluentBuilder {
         self.inner = self.inner.set_model_version(input);
         self
     }
+    /// <p>The version of the model that you want to use.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_version()
+    }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.body(input);
@@ -160,6 +174,10 @@ impl DetectAnomaliesFluentBuilder {
         self.inner = self.inner.set_body(input);
         self
     }
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_body()
+    }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -169,5 +187,9 @@ impl DetectAnomaliesFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
 }

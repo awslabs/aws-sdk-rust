@@ -56,6 +56,10 @@ impl CloudwatchLogsActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role that allows access to the CloudWatch log.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The CloudWatch log group to which the action sends data.</p>
     pub fn log_group_name(
         mut self,
@@ -72,6 +76,10 @@ impl CloudwatchLogsActionBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The CloudWatch log group to which the action sends data.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
     pub fn batch_mode(mut self, input: bool) -> Self {
         self.batch_mode = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl CloudwatchLogsActionBuilder {
     pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_mode = input;
         self
+    }
+    /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
+    pub fn get_batch_mode(&self) -> &::std::option::Option<bool> {
+        &self.batch_mode
     }
     /// Consumes the builder and constructs a [`CloudwatchLogsAction`](crate::types::CloudwatchLogsAction).
     pub fn build(self) -> crate::types::CloudwatchLogsAction {

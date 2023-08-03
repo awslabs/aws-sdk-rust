@@ -39,6 +39,10 @@ impl DisassociateGatewayFromServerInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
     pub fn build(
         self,

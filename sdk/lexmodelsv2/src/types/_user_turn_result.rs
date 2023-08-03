@@ -120,6 +120,10 @@ impl UserTurnResultBuilder {
         self.input = input;
         self
     }
+    /// <p>Contains information about the user messages in the turn in the input.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::UserTurnInputSpecification> {
+        &self.input
+    }
     /// <p>Contains information about the expected output for the user turn.</p>
     pub fn expected_output(mut self, input: crate::types::UserTurnOutputSpecification) -> Self {
         self.expected_output = ::std::option::Option::Some(input);
@@ -132,6 +136,12 @@ impl UserTurnResultBuilder {
     ) -> Self {
         self.expected_output = input;
         self
+    }
+    /// <p>Contains information about the expected output for the user turn.</p>
+    pub fn get_expected_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserTurnOutputSpecification> {
+        &self.expected_output
     }
     /// <p>Contains information about the actual output for the user turn.</p>
     pub fn actual_output(mut self, input: crate::types::UserTurnOutputSpecification) -> Self {
@@ -146,6 +156,12 @@ impl UserTurnResultBuilder {
         self.actual_output = input;
         self
     }
+    /// <p>Contains information about the actual output for the user turn.</p>
+    pub fn get_actual_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserTurnOutputSpecification> {
+        &self.actual_output
+    }
     /// <p>Details about an error in an execution of a test set.</p>
     pub fn error_details(mut self, input: crate::types::ExecutionErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl UserTurnResultBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>Details about an error in an execution of a test set.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ExecutionErrorDetails> {
+        &self.error_details
     }
     /// <p>Specifies whether the expected and actual outputs match or not, or if there is an error in execution.</p>
     pub fn end_to_end_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
@@ -172,6 +192,12 @@ impl UserTurnResultBuilder {
         self.end_to_end_result = input;
         self
     }
+    /// <p>Specifies whether the expected and actual outputs match or not, or if there is an error in execution.</p>
+    pub fn get_end_to_end_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.end_to_end_result
+    }
     /// <p>Specifies whether the expected and actual intents match or not.</p>
     pub fn intent_match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.intent_match_result = ::std::option::Option::Some(input);
@@ -185,6 +211,12 @@ impl UserTurnResultBuilder {
         self.intent_match_result = input;
         self
     }
+    /// <p>Specifies whether the expected and actual intents match or not.</p>
+    pub fn get_intent_match_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.intent_match_result
+    }
     /// <p>Specifies whether the expected and actual slots match or not.</p>
     pub fn slot_match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.slot_match_result = ::std::option::Option::Some(input);
@@ -197,6 +229,12 @@ impl UserTurnResultBuilder {
     ) -> Self {
         self.slot_match_result = input;
         self
+    }
+    /// <p>Specifies whether the expected and actual slots match or not.</p>
+    pub fn get_slot_match_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.slot_match_result
     }
     /// <p>Specifies whether the expected and actual speech transcriptions match or not, or if there is an error in execution.</p>
     pub fn speech_transcription_result(
@@ -214,6 +252,12 @@ impl UserTurnResultBuilder {
         self.speech_transcription_result = input;
         self
     }
+    /// <p>Specifies whether the expected and actual speech transcriptions match or not, or if there is an error in execution.</p>
+    pub fn get_speech_transcription_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.speech_transcription_result
+    }
     /// <p>Contains information about the results related to the conversation associated with the user turn.</p>
     pub fn conversation_level_result(
         mut self,
@@ -229,6 +273,12 @@ impl UserTurnResultBuilder {
     ) -> Self {
         self.conversation_level_result = input;
         self
+    }
+    /// <p>Contains information about the results related to the conversation associated with the user turn.</p>
+    pub fn get_conversation_level_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLevelResultDetail> {
+        &self.conversation_level_result
     }
     /// Consumes the builder and constructs a [`UserTurnResult`](crate::types::UserTurnResult).
     pub fn build(self) -> crate::types::UserTurnResult {

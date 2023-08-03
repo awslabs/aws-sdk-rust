@@ -54,6 +54,10 @@ impl CreateUseCaseOutputBuilder {
         self.use_case_id = input;
         self
     }
+    /// <p>The identifier of the use case.</p>
+    pub fn get_use_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
     pub fn use_case_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.use_case_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateUseCaseOutputBuilder {
     pub fn set_use_case_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.use_case_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    pub fn get_use_case_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

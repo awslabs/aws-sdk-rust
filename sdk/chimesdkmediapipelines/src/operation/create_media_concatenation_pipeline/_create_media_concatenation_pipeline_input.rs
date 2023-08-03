@@ -80,6 +80,12 @@ impl CreateMediaConcatenationPipelineInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
+        &self.sources
+    }
     /// Appends an item to `sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -99,6 +105,12 @@ impl CreateMediaConcatenationPipelineInputBuilder {
         self.sinks = input;
         self
     }
+    /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+    pub fn get_sinks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
+        &self.sinks
+    }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
     pub fn client_request_token(
         mut self,
@@ -114,6 +126,10 @@ impl CreateMediaConcatenationPipelineInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -133,6 +149,10 @@ impl CreateMediaConcatenationPipelineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the media concatenation pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineInput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput, ::aws_smithy_http::operation::error::BuildError>{

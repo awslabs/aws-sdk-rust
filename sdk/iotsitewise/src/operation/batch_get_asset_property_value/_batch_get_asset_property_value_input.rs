@@ -62,6 +62,13 @@ impl BatchGetAssetPropertyValueInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>
+    {
+        &self.entries
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +78,10 @@ impl BatchGetAssetPropertyValueInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueInput`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueInput).
     pub fn build(

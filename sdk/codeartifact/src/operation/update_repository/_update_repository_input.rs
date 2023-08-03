@@ -72,6 +72,10 @@ impl UpdateRepositoryInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain associated with the repository to update. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateRepositoryInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> The name of the repository to update. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl UpdateRepositoryInputBuilder {
         self.repository = input;
         self
     }
+    /// <p> The name of the repository to update. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p> An updated repository description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl UpdateRepositoryInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> An updated repository description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `upstreams`.
     ///
@@ -120,6 +136,12 @@ impl UpdateRepositoryInputBuilder {
     ) -> Self {
         self.upstreams = input;
         self
+    }
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    pub fn get_upstreams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
+        &self.upstreams
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryInput`](crate::operation::update_repository::UpdateRepositoryInput).
     pub fn build(

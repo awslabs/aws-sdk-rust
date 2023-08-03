@@ -72,6 +72,10 @@ impl RecoverySnapshotBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the Recovery Snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     pub fn source_server_id(
         mut self,
@@ -87,6 +91,10 @@ impl RecoverySnapshotBuilder {
     ) -> Self {
         self.source_server_id = input;
         self
+    }
+    /// <p>The ID of the Source Server that the snapshot was taken for.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     pub fn expected_timestamp(
@@ -104,6 +112,10 @@ impl RecoverySnapshotBuilder {
         self.expected_timestamp = input;
         self
     }
+    /// <p>The timestamp of when we expect the snapshot to be taken.</p>
+    pub fn get_expected_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_timestamp
+    }
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl RecoverySnapshotBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The actual timestamp that the snapshot was taken.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// Appends an item to `ebs_snapshots`.
     ///
@@ -135,6 +151,12 @@ impl RecoverySnapshotBuilder {
     ) -> Self {
         self.ebs_snapshots = input;
         self
+    }
+    /// <p>A list of EBS snapshots.</p>
+    pub fn get_ebs_snapshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ebs_snapshots
     }
     /// Consumes the builder and constructs a [`RecoverySnapshot`](crate::types::RecoverySnapshot).
     pub fn build(self) -> crate::types::RecoverySnapshot {

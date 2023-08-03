@@ -40,6 +40,10 @@ impl GetClusterSnapshotInputBuilder {
         self.snapshot_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
+    }
     /// Consumes the builder and constructs a [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
     pub fn build(
         self,

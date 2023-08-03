@@ -48,6 +48,10 @@ impl SetFileModeEntryBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The full path to the file, including the name of the file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>The file mode for the file.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.file_mode = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SetFileModeEntryBuilder {
     ) -> Self {
         self.file_mode = input;
         self
+    }
+    /// <p>The file mode for the file.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        &self.file_mode
     }
     /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::types::SetFileModeEntry).
     pub fn build(self) -> crate::types::SetFileModeEntry {

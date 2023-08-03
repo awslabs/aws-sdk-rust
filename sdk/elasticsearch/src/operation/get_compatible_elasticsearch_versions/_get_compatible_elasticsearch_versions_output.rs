@@ -63,6 +63,12 @@ impl GetCompatibleElasticsearchVersionsOutputBuilder {
         self.compatible_elasticsearch_versions = input;
         self
     }
+    /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
+    pub fn get_compatible_elasticsearch_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
+        &self.compatible_elasticsearch_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

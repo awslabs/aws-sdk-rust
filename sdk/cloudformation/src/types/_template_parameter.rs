@@ -70,6 +70,10 @@ impl TemplateParameterBuilder {
         self.parameter_key = input;
         self
     }
+    /// <p>The name associated with the parameter.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
+    }
     /// <p>The default value associated with the parameter.</p>
     pub fn default_value(
         mut self,
@@ -86,6 +90,10 @@ impl TemplateParameterBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value associated with the parameter.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub fn no_echo(mut self, input: bool) -> Self {
         self.no_echo = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl TemplateParameterBuilder {
         self.no_echo = input;
         self
     }
+    /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
+    pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
+        &self.no_echo
+    }
     /// <p>User defined description associated with the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl TemplateParameterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>User defined description associated with the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`TemplateParameter`](crate::types::TemplateParameter).
     pub fn build(self) -> crate::types::TemplateParameter {

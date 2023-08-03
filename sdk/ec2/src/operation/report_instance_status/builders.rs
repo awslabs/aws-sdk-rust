@@ -37,6 +37,12 @@ impl ReportInstanceStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReportInstanceStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ReportInstanceStatusFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Descriptive text about the health state of your instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -136,6 +146,10 @@ impl ReportInstanceStatusFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The time at which the reported instance health state ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,6 +163,10 @@ impl ReportInstanceStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The time at which the reported instance health state ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// Appends an item to `Instances`.
     ///
@@ -166,6 +184,10 @@ impl ReportInstanceStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instances(input);
         self
+    }
+    /// <p>The instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instances()
     }
     /// Appends an item to `ReasonCodes`.
     ///
@@ -206,6 +228,23 @@ impl ReportInstanceStatusFluentBuilder {
         self.inner = self.inner.set_reason_codes(input);
         self
     }
+    /// <p>The reason codes that describe the health state of your instance.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a state.</p> </li>
+    /// <li> <p> <code>unresponsive</code>: My instance is unresponsive.</p> </li>
+    /// <li> <p> <code>not-accepting-credentials</code>: My instance is not accepting my credentials.</p> </li>
+    /// <li> <p> <code>password-not-available</code>: A password is not available for my instance.</p> </li>
+    /// <li> <p> <code>performance-network</code>: My instance is experiencing performance problems that I believe are network related.</p> </li>
+    /// <li> <p> <code>performance-instance-store</code>: My instance is experiencing performance problems that I believe are related to the instance stores.</p> </li>
+    /// <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing performance problems that I believe are related to an EBS volume.</p> </li>
+    /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
+    /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
+    /// </ul>
+    pub fn get_reason_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
+        self.inner.get_reason_codes()
+    }
     /// <p>The time at which the reported instance health state began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -219,6 +258,10 @@ impl ReportInstanceStatusFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The time at which the reported instance health state began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The status of all instances listed.</p>
     pub fn status(mut self, input: crate::types::ReportStatusType) -> Self {
         self.inner = self.inner.status(input);
@@ -231,5 +274,9 @@ impl ReportInstanceStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of all instances listed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
+        self.inner.get_status()
     }
 }

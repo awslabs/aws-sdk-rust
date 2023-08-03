@@ -64,6 +64,11 @@ impl UpdateGroupQueryInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
@@ -73,6 +78,10 @@ impl UpdateGroupQueryInputBuilder {
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
+    }
+    /// <p>The name or the ARN of the resource group to query.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
     }
     /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
@@ -90,6 +99,12 @@ impl UpdateGroupQueryInputBuilder {
     ) -> Self {
         self.resource_query = input;
         self
+    }
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
     }
     /// Consumes the builder and constructs a [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
     pub fn build(

@@ -37,6 +37,13 @@ impl ModifyAquaConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyAquaConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyAquaConfigurationFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The identifier of the cluster to be modified.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         mut self,
@@ -148,5 +159,11 @@ impl ModifyAquaConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aqua_configuration_status(input);
         self
+    }
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    pub fn get_aqua_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+        self.inner.get_aqua_configuration_status()
     }
 }

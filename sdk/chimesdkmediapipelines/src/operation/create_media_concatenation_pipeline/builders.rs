@@ -36,6 +36,10 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMediaConcatenationPipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
+        self.inner.get_sources()
+    }
     /// Appends an item to `Sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -124,6 +134,12 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
         self.inner = self.inner.set_sinks(input);
         self
     }
+    /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+    pub fn get_sinks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
+        self.inner.get_sinks()
+    }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
     pub fn client_request_token(
         mut self,
@@ -139,6 +155,10 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -156,5 +176,9 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with the media concatenation pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

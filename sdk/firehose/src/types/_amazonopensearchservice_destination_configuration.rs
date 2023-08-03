@@ -158,6 +158,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming the role specified in RoleARN. </p>
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming the role specified in RoleARN. </p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub fn cluster_endpoint(
@@ -184,6 +192,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.cluster_endpoint = input;
         self
     }
+    /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
+    pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_endpoint
+    }
     /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -194,6 +206,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time. </p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -203,6 +219,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time. </p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to facilitate the expiration of old data.</p>
     pub fn index_rotation_period(
@@ -220,6 +240,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.index_rotation_period = input;
         self
     }
+    /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to facilitate the expiration of old data.</p>
+    pub fn get_index_rotation_period(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
+        &self.index_rotation_period
+    }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used. </p>
     pub fn buffering_hints(
         mut self,
@@ -235,6 +261,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
     ) -> Self {
         self.buffering_hints = input;
         self
+    }
+    /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used. </p>
+    pub fn get_buffering_hints(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
+        &self.buffering_hints
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
     pub fn retry_options(
@@ -252,6 +284,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.retry_options = input;
         self
     }
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
+    pub fn get_retry_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
+        &self.retry_options
+    }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix. </p>
     pub fn s3_backup_mode(
         mut self,
@@ -268,6 +306,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.s3_backup_mode = input;
         self
     }
+    /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix. </p>
+    pub fn get_s3_backup_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode> {
+        &self.s3_backup_mode
+    }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub fn s3_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
@@ -280,6 +324,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
     ) -> Self {
         self.s3_configuration = input;
         self
+    }
+    /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    pub fn get_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        &self.s3_configuration
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn processing_configuration(
@@ -297,6 +347,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.processing_configuration = input;
         self
     }
+    /// <p>Describes a data processing configuration.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
+    }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
         mut self,
@@ -313,6 +369,12 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         self.cloud_watch_logging_options = input;
         self
     }
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
+    }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -325,6 +387,10 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationConfiguration`](crate::types::AmazonopensearchserviceDestinationConfiguration).
     pub fn build(self) -> crate::types::AmazonopensearchserviceDestinationConfiguration {

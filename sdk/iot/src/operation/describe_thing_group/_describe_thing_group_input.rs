@@ -46,6 +46,10 @@ impl DescribeThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The name of the thing group.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
     pub fn build(
         self,

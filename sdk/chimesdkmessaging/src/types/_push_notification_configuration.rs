@@ -63,6 +63,10 @@ impl PushNotificationConfigurationBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the push notification.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The body of the push notification.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PushNotificationConfigurationBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The body of the push notification.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn r#type(mut self, input: crate::types::PushNotificationType) -> Self {
@@ -85,6 +93,10 @@ impl PushNotificationConfigurationBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PushNotificationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`PushNotificationConfiguration`](crate::types::PushNotificationConfiguration).
     pub fn build(self) -> crate::types::PushNotificationConfiguration {

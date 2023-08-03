@@ -142,6 +142,10 @@ impl InstanceFleetBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the instance fleet.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A friendly name for the instance fleet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl InstanceFleetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name for the instance fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the instance fleet. </p>
     pub fn status(mut self, input: crate::types::InstanceFleetStatus) -> Self {
@@ -165,6 +173,10 @@ impl InstanceFleetBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the instance fleet. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceFleetStatus> {
+        &self.status
+    }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
     pub fn instance_fleet_type(mut self, input: crate::types::InstanceFleetType) -> Self {
         self.instance_fleet_type = ::std::option::Option::Some(input);
@@ -177,6 +189,12 @@ impl InstanceFleetBuilder {
     ) -> Self {
         self.instance_fleet_type = input;
         self
+    }
+    /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
+    pub fn get_instance_fleet_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetType> {
+        &self.instance_fleet_type
     }
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
@@ -192,6 +210,12 @@ impl InstanceFleetBuilder {
         self.target_on_demand_capacity = input;
         self
     }
+    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
+    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// </note>
+    pub fn get_target_on_demand_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_on_demand_capacity
+    }
     /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
@@ -206,6 +230,12 @@ impl InstanceFleetBuilder {
         self.target_spot_capacity = input;
         self
     }
+    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
+    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// </note>
+    pub fn get_target_spot_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_spot_capacity
+    }
     /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
     pub fn provisioned_on_demand_capacity(mut self, input: i32) -> Self {
         self.provisioned_on_demand_capacity = ::std::option::Option::Some(input);
@@ -216,6 +246,10 @@ impl InstanceFleetBuilder {
         self.provisioned_on_demand_capacity = input;
         self
     }
+    /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
+    pub fn get_provisioned_on_demand_capacity(&self) -> &::std::option::Option<i32> {
+        &self.provisioned_on_demand_capacity
+    }
     /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
     pub fn provisioned_spot_capacity(mut self, input: i32) -> Self {
         self.provisioned_spot_capacity = ::std::option::Option::Some(input);
@@ -225,6 +259,10 @@ impl InstanceFleetBuilder {
     pub fn set_provisioned_spot_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_spot_capacity = input;
         self
+    }
+    /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
+    pub fn get_provisioned_spot_capacity(&self) -> &::std::option::Option<i32> {
+        &self.provisioned_spot_capacity
     }
     /// Appends an item to `instance_type_specifications`.
     ///
@@ -248,6 +286,12 @@ impl InstanceFleetBuilder {
         self.instance_type_specifications = input;
         self
     }
+    /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
+    pub fn get_instance_type_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeSpecification>> {
+        &self.instance_type_specifications
+    }
     /// <p>Describes the launch specification for an instance fleet. </p>
     pub fn launch_specifications(
         mut self,
@@ -264,6 +308,12 @@ impl InstanceFleetBuilder {
         self.launch_specifications = input;
         self
     }
+    /// <p>Describes the launch specification for an instance fleet. </p>
+    pub fn get_launch_specifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications> {
+        &self.launch_specifications
+    }
     /// <p>The resize specification for the instance fleet.</p>
     pub fn resize_specifications(
         mut self,
@@ -279,6 +329,12 @@ impl InstanceFleetBuilder {
     ) -> Self {
         self.resize_specifications = input;
         self
+    }
+    /// <p>The resize specification for the instance fleet.</p>
+    pub fn get_resize_specifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
+        &self.resize_specifications
     }
     /// Consumes the builder and constructs a [`InstanceFleet`](crate::types::InstanceFleet).
     pub fn build(self) -> crate::types::InstanceFleet {

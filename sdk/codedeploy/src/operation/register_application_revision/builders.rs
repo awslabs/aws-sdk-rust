@@ -36,6 +36,10 @@ impl RegisterApplicationRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterApplicationRevision as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_application_revision::builders::RegisterApplicationRevisionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RegisterApplicationRevisionFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>A comment about the revision.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +149,10 @@ impl RegisterApplicationRevisionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A comment about the revision.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
@@ -154,5 +166,9 @@ impl RegisterApplicationRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revision(input);
         self
+    }
+    /// <p>Information about the application revision to register, including type and location.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        self.inner.get_revision()
     }
 }

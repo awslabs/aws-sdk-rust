@@ -46,6 +46,10 @@ impl ResetEbsDefaultKmsKeyIdOutputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

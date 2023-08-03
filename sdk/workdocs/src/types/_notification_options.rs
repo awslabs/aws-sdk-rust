@@ -54,6 +54,10 @@ impl NotificationOptionsBuilder {
         self.send_email = input;
         self
     }
+    /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
+    pub fn get_send_email(&self) -> &::std::option::Option<bool> {
+        &self.send_email
+    }
     /// <p>Text value to be included in the email body.</p>
     pub fn email_message(
         mut self,
@@ -69,6 +73,10 @@ impl NotificationOptionsBuilder {
     ) -> Self {
         self.email_message = input;
         self
+    }
+    /// <p>Text value to be included in the email body.</p>
+    pub fn get_email_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_message
     }
     /// Consumes the builder and constructs a [`NotificationOptions`](crate::types::NotificationOptions).
     pub fn build(self) -> crate::types::NotificationOptions {

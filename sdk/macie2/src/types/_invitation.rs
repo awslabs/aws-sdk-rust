@@ -64,6 +64,10 @@ impl InvitationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The unique identifier for the invitation.</p>
     pub fn invitation_id(
         mut self,
@@ -80,6 +84,10 @@ impl InvitationBuilder {
         self.invitation_id = input;
         self
     }
+    /// <p>The unique identifier for the invitation.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
     pub fn invited_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invited_at = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl InvitationBuilder {
         self.invited_at = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
+    pub fn get_invited_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invited_at
+    }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
         self.relationship_status = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl InvitationBuilder {
     ) -> Self {
         self.relationship_status = input;
         self
+    }
+    /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
+    pub fn get_relationship_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+        &self.relationship_status
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {

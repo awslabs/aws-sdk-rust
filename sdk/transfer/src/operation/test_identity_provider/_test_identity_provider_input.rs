@@ -95,6 +95,10 @@ impl TestIdentityProviderInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
@@ -122,6 +126,17 @@ impl TestIdentityProviderInputBuilder {
         self.server_protocol = input;
         self
     }
+    /// <p>The type of file transfer protocol to be tested.</p>
+    /// <p>The available protocols are:</p>
+    /// <ul>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
+    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// </ul>
+    pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.server_protocol
+    }
     /// <p>The source IP address of the account to be tested.</p>
     pub fn source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ip = ::std::option::Option::Some(input.into());
@@ -132,6 +147,10 @@ impl TestIdentityProviderInputBuilder {
         self.source_ip = input;
         self
     }
+    /// <p>The source IP address of the account to be tested.</p>
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip
+    }
     /// <p>The name of the account to be tested.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -141,6 +160,10 @@ impl TestIdentityProviderInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The name of the account to be tested.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>The password of the account to be tested.</p>
     pub fn user_password(
@@ -157,6 +180,10 @@ impl TestIdentityProviderInputBuilder {
     ) -> Self {
         self.user_password = input;
         self
+    }
+    /// <p>The password of the account to be tested.</p>
+    pub fn get_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_password
     }
     /// Consumes the builder and constructs a [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
     pub fn build(

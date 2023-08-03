@@ -101,6 +101,10 @@ impl CreateListenerInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl CreateListenerInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
@@ -124,6 +132,10 @@ impl CreateListenerInputBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The listener protocol HTTP or HTTPS.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
+        &self.protocol
+    }
     /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl CreateListenerInputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -147,6 +163,10 @@ impl CreateListenerInputBuilder {
         self.default_action = input;
         self
     }
+    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.default_action
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl CreateListenerInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -181,6 +205,14 @@ impl CreateListenerInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the listener.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
     pub fn build(

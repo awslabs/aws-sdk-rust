@@ -49,6 +49,12 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
         self.state_persistence = input;
         self
     }
+    /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
+    pub fn get_state_persistence(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
+        &self.state_persistence
+    }
     /// Consumes the builder and constructs a [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserConsoleFeatureConfigurations {
         crate::types::RegisteredUserConsoleFeatureConfigurations {

@@ -36,6 +36,12 @@ impl GetBatchPredictionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBatchPrediction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetBatchPredictionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
+    }
+    /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_id()
     }
 }

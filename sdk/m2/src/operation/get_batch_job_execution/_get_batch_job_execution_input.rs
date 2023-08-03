@@ -54,6 +54,10 @@ impl GetBatchJobExecutionInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetBatchJobExecutionInputBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>The unique identifier of the batch job execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// Consumes the builder and constructs a [`GetBatchJobExecutionInput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionInput).
     pub fn build(

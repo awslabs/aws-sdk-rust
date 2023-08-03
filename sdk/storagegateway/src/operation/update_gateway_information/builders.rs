@@ -38,6 +38,13 @@ impl UpdateGatewayInformationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGatewayInformation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UpdateGatewayInformationFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_name(input.into());
@@ -137,6 +148,10 @@ impl UpdateGatewayInformationFluentBuilder {
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_name(input);
         self
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_name()
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn gateway_timezone(
@@ -153,6 +168,10 @@ impl UpdateGatewayInformationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_timezone(input);
         self
+    }
+    /// <p>A value that indicates the time zone of the gateway.</p>
+    pub fn get_gateway_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_timezone()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
@@ -172,6 +191,11 @@ impl UpdateGatewayInformationFluentBuilder {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cloud_watch_log_group_arn()
+    }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub fn gateway_capacity(mut self, input: crate::types::GatewayCapacity) -> Self {
         self.inner = self.inner.gateway_capacity(input);
@@ -184,5 +208,9 @@ impl UpdateGatewayInformationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_capacity(input);
         self
+    }
+    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    pub fn get_gateway_capacity(&self) -> &::std::option::Option<crate::types::GatewayCapacity> {
+        self.inner.get_gateway_capacity()
     }
 }

@@ -190,6 +190,12 @@ impl CaptionDestinationSettingsBuilder {
         self.arib_destination_settings = input;
         self
     }
+    /// Arib Destination Settings
+    pub fn get_arib_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AribDestinationSettings> {
+        &self.arib_destination_settings
+    }
     /// Burn In Destination Settings
     pub fn burn_in_destination_settings(
         mut self,
@@ -205,6 +211,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.burn_in_destination_settings = input;
         self
+    }
+    /// Burn In Destination Settings
+    pub fn get_burn_in_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::BurnInDestinationSettings> {
+        &self.burn_in_destination_settings
     }
     /// Dvb Sub Destination Settings
     pub fn dvb_sub_destination_settings(
@@ -222,6 +234,12 @@ impl CaptionDestinationSettingsBuilder {
         self.dvb_sub_destination_settings = input;
         self
     }
+    /// Dvb Sub Destination Settings
+    pub fn get_dvb_sub_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DvbSubDestinationSettings> {
+        &self.dvb_sub_destination_settings
+    }
     /// Ebu Tt DDestination Settings
     pub fn ebu_tt_d_destination_settings(
         mut self,
@@ -237,6 +255,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.ebu_tt_d_destination_settings = input;
         self
+    }
+    /// Ebu Tt DDestination Settings
+    pub fn get_ebu_tt_d_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbuTtDDestinationSettings> {
+        &self.ebu_tt_d_destination_settings
     }
     /// Embedded Destination Settings
     pub fn embedded_destination_settings(
@@ -254,6 +278,12 @@ impl CaptionDestinationSettingsBuilder {
         self.embedded_destination_settings = input;
         self
     }
+    /// Embedded Destination Settings
+    pub fn get_embedded_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedDestinationSettings> {
+        &self.embedded_destination_settings
+    }
     /// Embedded Plus Scte20 Destination Settings
     pub fn embedded_plus_scte20_destination_settings(
         mut self,
@@ -269,6 +299,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.embedded_plus_scte20_destination_settings = input;
         self
+    }
+    /// Embedded Plus Scte20 Destination Settings
+    pub fn get_embedded_plus_scte20_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedPlusScte20DestinationSettings> {
+        &self.embedded_plus_scte20_destination_settings
     }
     /// Rtmp Caption Info Destination Settings
     pub fn rtmp_caption_info_destination_settings(
@@ -286,6 +322,12 @@ impl CaptionDestinationSettingsBuilder {
         self.rtmp_caption_info_destination_settings = input;
         self
     }
+    /// Rtmp Caption Info Destination Settings
+    pub fn get_rtmp_caption_info_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RtmpCaptionInfoDestinationSettings> {
+        &self.rtmp_caption_info_destination_settings
+    }
     /// Scte20 Plus Embedded Destination Settings
     pub fn scte20_plus_embedded_destination_settings(
         mut self,
@@ -301,6 +343,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.scte20_plus_embedded_destination_settings = input;
         self
+    }
+    /// Scte20 Plus Embedded Destination Settings
+    pub fn get_scte20_plus_embedded_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte20PlusEmbeddedDestinationSettings> {
+        &self.scte20_plus_embedded_destination_settings
     }
     /// Scte27 Destination Settings
     pub fn scte27_destination_settings(
@@ -318,6 +366,12 @@ impl CaptionDestinationSettingsBuilder {
         self.scte27_destination_settings = input;
         self
     }
+    /// Scte27 Destination Settings
+    pub fn get_scte27_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte27DestinationSettings> {
+        &self.scte27_destination_settings
+    }
     /// Smpte Tt Destination Settings
     pub fn smpte_tt_destination_settings(
         mut self,
@@ -333,6 +387,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.smpte_tt_destination_settings = input;
         self
+    }
+    /// Smpte Tt Destination Settings
+    pub fn get_smpte_tt_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmpteTtDestinationSettings> {
+        &self.smpte_tt_destination_settings
     }
     /// Teletext Destination Settings
     pub fn teletext_destination_settings(
@@ -350,6 +410,12 @@ impl CaptionDestinationSettingsBuilder {
         self.teletext_destination_settings = input;
         self
     }
+    /// Teletext Destination Settings
+    pub fn get_teletext_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TeletextDestinationSettings> {
+        &self.teletext_destination_settings
+    }
     /// Ttml Destination Settings
     pub fn ttml_destination_settings(
         mut self,
@@ -366,6 +432,12 @@ impl CaptionDestinationSettingsBuilder {
         self.ttml_destination_settings = input;
         self
     }
+    /// Ttml Destination Settings
+    pub fn get_ttml_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TtmlDestinationSettings> {
+        &self.ttml_destination_settings
+    }
     /// Webvtt Destination Settings
     pub fn webvtt_destination_settings(
         mut self,
@@ -381,6 +453,12 @@ impl CaptionDestinationSettingsBuilder {
     ) -> Self {
         self.webvtt_destination_settings = input;
         self
+    }
+    /// Webvtt Destination Settings
+    pub fn get_webvtt_destination_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::WebvttDestinationSettings> {
+        &self.webvtt_destination_settings
     }
     /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::types::CaptionDestinationSettings).
     pub fn build(self) -> crate::types::CaptionDestinationSettings {

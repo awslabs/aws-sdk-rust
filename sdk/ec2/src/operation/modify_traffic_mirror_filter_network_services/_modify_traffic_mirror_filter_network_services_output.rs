@@ -51,6 +51,12 @@ impl ModifyTrafficMirrorFilterNetworkServicesOutputBuilder {
         self.traffic_mirror_filter = input;
         self
     }
+    /// <p>The Traffic Mirror filter that the network service is associated with.</p>
+    pub fn get_traffic_mirror_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorFilter> {
+        &self.traffic_mirror_filter
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

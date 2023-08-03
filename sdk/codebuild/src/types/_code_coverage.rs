@@ -114,6 +114,10 @@ impl CodeCoverageBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the code coverage report.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the report.</p>
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl CodeCoverageBuilder {
     pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_arn = input;
         self
+    }
+    /// <p>The ARN of the report.</p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_arn
     }
     /// <p>The path of the test report file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +142,10 @@ impl CodeCoverageBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The path of the test report file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>The percentage of lines that are covered by your tests.</p>
     pub fn line_coverage_percentage(mut self, input: f64) -> Self {
         self.line_coverage_percentage = ::std::option::Option::Some(input);
@@ -143,6 +155,10 @@ impl CodeCoverageBuilder {
     pub fn set_line_coverage_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.line_coverage_percentage = input;
         self
+    }
+    /// <p>The percentage of lines that are covered by your tests.</p>
+    pub fn get_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        &self.line_coverage_percentage
     }
     /// <p>The number of lines that are covered by your tests.</p>
     pub fn lines_covered(mut self, input: i32) -> Self {
@@ -154,6 +170,10 @@ impl CodeCoverageBuilder {
         self.lines_covered = input;
         self
     }
+    /// <p>The number of lines that are covered by your tests.</p>
+    pub fn get_lines_covered(&self) -> &::std::option::Option<i32> {
+        &self.lines_covered
+    }
     /// <p>The number of lines that are not covered by your tests.</p>
     pub fn lines_missed(mut self, input: i32) -> Self {
         self.lines_missed = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl CodeCoverageBuilder {
     pub fn set_lines_missed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lines_missed = input;
         self
+    }
+    /// <p>The number of lines that are not covered by your tests.</p>
+    pub fn get_lines_missed(&self) -> &::std::option::Option<i32> {
+        &self.lines_missed
     }
     /// <p>The percentage of branches that are covered by your tests.</p>
     pub fn branch_coverage_percentage(mut self, input: f64) -> Self {
@@ -174,6 +198,10 @@ impl CodeCoverageBuilder {
         self.branch_coverage_percentage = input;
         self
     }
+    /// <p>The percentage of branches that are covered by your tests.</p>
+    pub fn get_branch_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        &self.branch_coverage_percentage
+    }
     /// <p>The number of conditional branches that are covered by your tests.</p>
     pub fn branches_covered(mut self, input: i32) -> Self {
         self.branches_covered = ::std::option::Option::Some(input);
@@ -184,6 +212,10 @@ impl CodeCoverageBuilder {
         self.branches_covered = input;
         self
     }
+    /// <p>The number of conditional branches that are covered by your tests.</p>
+    pub fn get_branches_covered(&self) -> &::std::option::Option<i32> {
+        &self.branches_covered
+    }
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub fn branches_missed(mut self, input: i32) -> Self {
         self.branches_missed = ::std::option::Option::Some(input);
@@ -193,6 +225,10 @@ impl CodeCoverageBuilder {
     pub fn set_branches_missed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.branches_missed = input;
         self
+    }
+    /// <p>The number of conditional branches that are not covered by your tests.</p>
+    pub fn get_branches_missed(&self) -> &::std::option::Option<i32> {
+        &self.branches_missed
     }
     /// <p>The date and time that the tests were run.</p>
     pub fn expired(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,6 +242,10 @@ impl CodeCoverageBuilder {
     ) -> Self {
         self.expired = input;
         self
+    }
+    /// <p>The date and time that the tests were run.</p>
+    pub fn get_expired(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expired
     }
     /// Consumes the builder and constructs a [`CodeCoverage`](crate::types::CodeCoverage).
     pub fn build(self) -> crate::types::CodeCoverage {

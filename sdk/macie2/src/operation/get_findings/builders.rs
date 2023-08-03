@@ -36,6 +36,10 @@ impl GetFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_findings::builders::GetFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl GetFindingsFluentBuilder {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
+    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_ids()
+    }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
         self.inner = self.inner.sort_criteria(input);
@@ -137,5 +147,9 @@ impl GetFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
+    }
+    /// <p>The criteria for sorting the results of the request.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        self.inner.get_sort_criteria()
     }
 }

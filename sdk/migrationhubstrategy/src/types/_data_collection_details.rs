@@ -99,6 +99,10 @@ impl DataCollectionDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the assessment. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
+        &self.status
+    }
     /// <p> The total number of servers in the assessment. </p>
     pub fn servers(mut self, input: i32) -> Self {
         self.servers = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl DataCollectionDetailsBuilder {
     pub fn set_servers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.servers = input;
         self
+    }
+    /// <p> The total number of servers in the assessment. </p>
+    pub fn get_servers(&self) -> &::std::option::Option<i32> {
+        &self.servers
     }
     /// <p> The number of failed servers in the assessment. </p>
     pub fn failed(mut self, input: i32) -> Self {
@@ -119,6 +127,10 @@ impl DataCollectionDetailsBuilder {
         self.failed = input;
         self
     }
+    /// <p> The number of failed servers in the assessment. </p>
+    pub fn get_failed(&self) -> &::std::option::Option<i32> {
+        &self.failed
+    }
     /// <p> The number of successful servers in the assessment. </p>
     pub fn success(mut self, input: i32) -> Self {
         self.success = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl DataCollectionDetailsBuilder {
         self.success = input;
         self
     }
+    /// <p> The number of successful servers in the assessment. </p>
+    pub fn get_success(&self) -> &::std::option::Option<i32> {
+        &self.success
+    }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
     pub fn in_progress(mut self, input: i32) -> Self {
         self.in_progress = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl DataCollectionDetailsBuilder {
     pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
+    }
+    /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
+    pub fn get_in_progress(&self) -> &::std::option::Option<i32> {
+        &self.in_progress
     }
     /// <p> The start time of assessment. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +172,10 @@ impl DataCollectionDetailsBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The start time of assessment. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The time the assessment completes. </p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -164,6 +188,10 @@ impl DataCollectionDetailsBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p> The time the assessment completes. </p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>The status message of the assessment.</p>
     pub fn status_message(
@@ -180,6 +208,10 @@ impl DataCollectionDetailsBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message of the assessment.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`DataCollectionDetails`](crate::types::DataCollectionDetails).
     pub fn build(self) -> crate::types::DataCollectionDetails {

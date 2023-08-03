@@ -36,6 +36,13 @@ impl DeleteReplicationTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_replication_task::builders::DeleteReplicationTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteReplicationTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_task_arn()
     }
 }

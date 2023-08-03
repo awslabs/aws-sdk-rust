@@ -72,6 +72,10 @@ impl DescribeConformancePackComplianceOutputBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>Name of the conformance pack.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// Appends an item to `conformance_pack_rule_compliance_list`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_rule_compliance_list`](Self::set_conformance_pack_rule_compliance_list).
@@ -96,6 +100,12 @@ impl DescribeConformancePackComplianceOutputBuilder {
         self.conformance_pack_rule_compliance_list = input;
         self
     }
+    /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
+    pub fn get_conformance_pack_rule_compliance_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackRuleCompliance>> {
+        &self.conformance_pack_rule_compliance_list
+    }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl DescribeConformancePackComplianceOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

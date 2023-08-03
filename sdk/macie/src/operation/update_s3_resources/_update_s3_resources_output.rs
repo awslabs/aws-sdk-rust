@@ -57,6 +57,12 @@ impl UpdateS3ResourcesOutputBuilder {
         self.failed_s3_resources = input;
         self
     }
+    /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
+    pub fn get_failed_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
+        &self.failed_s3_resources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

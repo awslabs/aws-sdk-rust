@@ -47,6 +47,10 @@ impl DeleteSessionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the session to be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the origin of the delete session request.</p>
     pub fn request_origin(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteSessionInputBuilder {
     ) -> Self {
         self.request_origin = input;
         self
+    }
+    /// <p>The name of the origin of the delete session request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(

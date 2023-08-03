@@ -40,6 +40,10 @@ impl JobStoppingConditionBuilder {
         self.max_runtime_in_seconds = input;
         self
     }
+    /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+    pub fn get_max_runtime_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_runtime_in_seconds
+    }
     /// Consumes the builder and constructs a [`JobStoppingCondition`](crate::types::JobStoppingCondition).
     pub fn build(self) -> crate::types::JobStoppingCondition {
         crate::types::JobStoppingCondition {

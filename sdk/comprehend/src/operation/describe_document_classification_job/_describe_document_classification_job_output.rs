@@ -56,6 +56,12 @@ impl DescribeDocumentClassificationJobOutputBuilder {
         self.document_classification_job_properties = input;
         self
     }
+    /// <p>An object that describes the properties associated with the document classification job.</p>
+    pub fn get_document_classification_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentClassificationJobProperties> {
+        &self.document_classification_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

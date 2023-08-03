@@ -36,6 +36,13 @@ impl ListWorkflowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWorkflowExecutions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListWorkflowExecutionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +158,10 @@ impl ListWorkflowExecutionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
     pub fn image_build_version_arn(
@@ -163,5 +178,9 @@ impl ListWorkflowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
+    }
+    /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_build_version_arn()
     }
 }

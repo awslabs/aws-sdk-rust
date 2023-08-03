@@ -62,6 +62,10 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The readiness at a rule level.</p>
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
     pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
         self.readiness = input;
         self
+    }
+    /// <p>The readiness at a rule level.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
     }
     /// Appends an item to `rules`.
     ///
@@ -90,6 +98,10 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>Details of the rule's results.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
+        &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl VpcConnectionInfoBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The owner of the VPC Connection.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl VpcConnectionInfoBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the VPC Connection.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Description of the requester that calls the API operation.</p>
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
@@ -93,6 +101,10 @@ impl VpcConnectionInfoBuilder {
         self.user_identity = input;
         self
     }
+    /// <p>Description of the requester that calls the API operation.</p>
+    pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
+        &self.user_identity
+    }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl VpcConnectionInfoBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`VpcConnectionInfo`](crate::types::VpcConnectionInfo).
     pub fn build(self) -> crate::types::VpcConnectionInfo {

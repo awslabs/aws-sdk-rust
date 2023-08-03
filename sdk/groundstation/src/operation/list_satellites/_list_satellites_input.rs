@@ -48,6 +48,10 @@ impl ListSatellitesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of satellites returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListSatellitesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSatellitesInput`](crate::operation::list_satellites::ListSatellitesInput).
     pub fn build(

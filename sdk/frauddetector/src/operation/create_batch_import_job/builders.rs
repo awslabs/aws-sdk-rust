@@ -36,6 +36,13 @@ impl CreateBatchImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBatchImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateBatchImportJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_path(input.into());
@@ -136,6 +147,10 @@ impl CreateBatchImportJobFluentBuilder {
         self.inner = self.inner.set_input_path(input);
         self
     }
+    /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_path()
+    }
     /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_path(input.into());
@@ -145,6 +160,10 @@ impl CreateBatchImportJobFluentBuilder {
     pub fn set_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_path(input);
         self
+    }
+    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    pub fn get_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_path()
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
@@ -162,6 +181,10 @@ impl CreateBatchImportJobFluentBuilder {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
+    }
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
     /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +196,11 @@ impl CreateBatchImportJobFluentBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
+    }
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
+    /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -190,5 +218,9 @@ impl CreateBatchImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key-value pairs associated with this request. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

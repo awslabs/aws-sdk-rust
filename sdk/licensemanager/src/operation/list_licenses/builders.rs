@@ -36,6 +36,10 @@ impl ListLicensesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLicenses as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_licenses::builders::ListLicensesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl ListLicensesFluentBuilder {
         self.inner = self.inner.set_license_arns(input);
         self
     }
+    /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    pub fn get_license_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_license_arns()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -154,6 +164,16 @@ impl ListLicensesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>Fingerprint</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,6 +184,10 @@ impl ListLicensesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -173,5 +197,9 @@ impl ListLicensesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

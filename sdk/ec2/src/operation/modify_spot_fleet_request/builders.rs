@@ -42,6 +42,13 @@ impl ModifySpotFleetRequestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySpotFleetRequest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,13 @@ impl ModifySpotFleetRequestFluentBuilder {
         self.inner = self.inner.set_excess_capacity_termination_policy(input);
         self
     }
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
+    pub fn get_excess_capacity_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExcessCapacityTerminationPolicy> {
+        self.inner.get_excess_capacity_termination_policy()
+    }
     /// Appends an item to `LaunchTemplateConfigs`.
     ///
     /// To override the contents of this collection use [`set_launch_template_configs`](Self::set_launch_template_configs).
@@ -157,6 +171,12 @@ impl ModifySpotFleetRequestFluentBuilder {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
+    /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
+    pub fn get_launch_template_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
+        self.inner.get_launch_template_configs()
+    }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn spot_fleet_request_id(
         mut self,
@@ -173,6 +193,10 @@ impl ModifySpotFleetRequestFluentBuilder {
         self.inner = self.inner.set_spot_fleet_request_id(input);
         self
     }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spot_fleet_request_id()
+    }
     /// <p>The size of the fleet.</p>
     pub fn target_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.target_capacity(input);
@@ -182,6 +206,10 @@ impl ModifySpotFleetRequestFluentBuilder {
     pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_target_capacity(input);
         self
+    }
+    /// <p>The size of the fleet.</p>
+    pub fn get_target_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_capacity()
     }
     /// <p>The number of On-Demand Instances in the fleet.</p>
     pub fn on_demand_target_capacity(mut self, input: i32) -> Self {
@@ -193,6 +221,10 @@ impl ModifySpotFleetRequestFluentBuilder {
         self.inner = self.inner.set_on_demand_target_capacity(input);
         self
     }
+    /// <p>The number of On-Demand Instances in the fleet.</p>
+    pub fn get_on_demand_target_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_on_demand_target_capacity()
+    }
     /// <p>Reserved.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context(input.into());
@@ -202,5 +234,9 @@ impl ModifySpotFleetRequestFluentBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context(input);
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
     }
 }

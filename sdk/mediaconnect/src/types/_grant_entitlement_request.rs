@@ -83,6 +83,10 @@ impl GrantEntitlementRequestBuilder {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
+        &self.data_transfer_subscriber_fee_percent
+    }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl GrantEntitlementRequestBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
@@ -106,6 +114,10 @@ impl GrantEntitlementRequestBuilder {
         self.encryption = input;
         self
     }
+    /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
+        &self.encryption
+    }
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
         self.entitlement_status = ::std::option::Option::Some(input);
@@ -119,6 +131,12 @@ impl GrantEntitlementRequestBuilder {
         self.entitlement_status = input;
         self
     }
+    /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+    pub fn get_entitlement_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntitlementStatus> {
+        &self.entitlement_status
+    }
     /// The name of the entitlement. This value must be unique within the current flow.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +146,10 @@ impl GrantEntitlementRequestBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the entitlement. This value must be unique within the current flow.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `subscribers`.
     ///
@@ -147,6 +169,12 @@ impl GrantEntitlementRequestBuilder {
     ) -> Self {
         self.subscribers = input;
         self
+    }
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subscribers
     }
     /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
     pub fn build(self) -> crate::types::GrantEntitlementRequest {

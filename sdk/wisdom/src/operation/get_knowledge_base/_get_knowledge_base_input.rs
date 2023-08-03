@@ -46,6 +46,10 @@ impl GetKnowledgeBaseInputBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// Consumes the builder and constructs a [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
     pub fn build(
         self,

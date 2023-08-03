@@ -38,6 +38,12 @@ impl CreateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,6 +139,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ID of the environment in which the service is created.</p>
     pub fn environment_identifier(
@@ -146,6 +160,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p>The ID of the environment in which the service is created.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p>The ID of the application which the service is created.</p>
     pub fn application_identifier(
         mut self,
@@ -162,6 +180,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
+    /// <p>The ID of the application which the service is created.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -171,6 +193,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
     pub fn endpoint_type(mut self, input: crate::types::ServiceEndpointType) -> Self {
@@ -185,6 +211,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }
+    /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ServiceEndpointType> {
+        self.inner.get_endpoint_type()
+    }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     pub fn url_endpoint(mut self, input: crate::types::UrlEndpointInput) -> Self {
         self.inner = self.inner.url_endpoint(input);
@@ -198,6 +228,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_url_endpoint(input);
         self
     }
+    /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
+    pub fn get_url_endpoint(&self) -> &::std::option::Option<crate::types::UrlEndpointInput> {
+        self.inner.get_url_endpoint()
+    }
     /// <p>The configuration for the Lambda endpoint type.</p>
     pub fn lambda_endpoint(mut self, input: crate::types::LambdaEndpointInput) -> Self {
         self.inner = self.inner.lambda_endpoint(input);
@@ -210,6 +244,10 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lambda_endpoint(input);
         self
+    }
+    /// <p>The configuration for the Lambda endpoint type.</p>
+    pub fn get_lambda_endpoint(&self) -> &::std::option::Option<crate::types::LambdaEndpointInput> {
+        self.inner.get_lambda_endpoint()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -234,6 +272,14 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -243,5 +289,9 @@ impl CreateServiceFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -40,6 +40,10 @@ impl GlueDataCatalogConfigurationDescriptionBuilder {
         self.database_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn
+    }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfigurationDescription`](crate::types::GlueDataCatalogConfigurationDescription).
     pub fn build(self) -> crate::types::GlueDataCatalogConfigurationDescription {
         crate::types::GlueDataCatalogConfigurationDescription {

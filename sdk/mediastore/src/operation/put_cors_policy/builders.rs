@@ -38,6 +38,12 @@ impl PutCorsPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutCorsPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_cors_policy::builders::PutCorsPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutCorsPolicyFluentBuilder {
         self.inner = self.inner.set_container_name(input);
         self
     }
+    /// <p>The name of the container that you want to assign the CORS policy to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
+    }
     /// Appends an item to `CorsPolicy`.
     ///
     /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
@@ -142,5 +152,11 @@ impl PutCorsPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cors_policy(input);
         self
+    }
+    /// <p>The CORS policy to apply to the container. </p>
+    pub fn get_cors_policy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+        self.inner.get_cors_policy()
     }
 }

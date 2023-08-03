@@ -64,6 +64,10 @@ impl ResourcePolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
     pub fn policy_document(
         mut self,
@@ -79,6 +83,10 @@ impl ResourcePolicyBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The resource policy document, which can be up to 5kb in size.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
     pub fn policy_revision_id(
@@ -96,6 +104,10 @@ impl ResourcePolicyBuilder {
         self.policy_revision_id = input;
         self
     }
+    /// <p>Returns the current policy revision id for this policy name.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
+    }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ResourcePolicyBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>When the policy was last updated, in Unix time seconds.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {

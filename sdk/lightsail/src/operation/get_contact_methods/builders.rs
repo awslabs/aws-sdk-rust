@@ -37,6 +37,12 @@ impl GetContactMethodsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContactMethods as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_contact_methods::builders::GetContactMethodsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,12 @@ impl GetContactMethodsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
+    }
+    /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
+    /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
+    pub fn get_protocols(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+        self.inner.get_protocols()
     }
 }

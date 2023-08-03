@@ -47,6 +47,10 @@ impl DescribeRuleInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeRuleInputBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>A unique identifier for the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`DescribeRuleInput`](crate::operation::describe_rule::DescribeRuleInput).
     pub fn build(

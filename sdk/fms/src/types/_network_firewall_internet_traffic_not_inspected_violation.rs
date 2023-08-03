@@ -164,6 +164,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The subnet ID.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The subnet Availability Zone.</p>
     pub fn subnet_availability_zone(
         mut self,
@@ -180,6 +184,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.subnet_availability_zone = input;
         self
     }
+    /// <p>The subnet Availability Zone.</p>
+    pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_availability_zone
+    }
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(
         mut self,
@@ -195,6 +203,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the route table ID.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Appends an item to `violating_routes`.
     ///
@@ -215,6 +227,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.violating_routes = input;
         self
     }
+    /// <p>The route or routes that are in violation.</p>
+    pub fn get_violating_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.violating_routes
+    }
     /// <p>Information about whether the route table is used in another Availability Zone.</p>
     pub fn is_route_table_used_in_different_az(mut self, input: bool) -> Self {
         self.is_route_table_used_in_different_az = ::std::option::Option::Some(input);
@@ -227,6 +245,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
     ) -> Self {
         self.is_route_table_used_in_different_az = input;
         self
+    }
+    /// <p>Information about whether the route table is used in another Availability Zone.</p>
+    pub fn get_is_route_table_used_in_different_az(&self) -> &::std::option::Option<bool> {
+        &self.is_route_table_used_in_different_az
     }
     /// <p>Information about the subnet route table for the current firewall.</p>
     pub fn current_firewall_subnet_route_table(
@@ -244,6 +266,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.current_firewall_subnet_route_table = input;
         self
     }
+    /// <p>Information about the subnet route table for the current firewall.</p>
+    pub fn get_current_firewall_subnet_route_table(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_firewall_subnet_route_table
+    }
     /// <p>The expected endpoint for the current firewall.</p>
     pub fn expected_firewall_endpoint(
         mut self,
@@ -260,6 +288,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.expected_firewall_endpoint = input;
         self
     }
+    /// <p>The expected endpoint for the current firewall.</p>
+    pub fn get_expected_firewall_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_firewall_endpoint
+    }
     /// <p>The firewall subnet ID.</p>
     pub fn firewall_subnet_id(
         mut self,
@@ -275,6 +307,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
     ) -> Self {
         self.firewall_subnet_id = input;
         self
+    }
+    /// <p>The firewall subnet ID.</p>
+    pub fn get_firewall_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_subnet_id
     }
     /// Appends an item to `expected_firewall_subnet_routes`.
     ///
@@ -295,6 +331,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.expected_firewall_subnet_routes = input;
         self
     }
+    /// <p>The firewall subnet routes that are expected.</p>
+    pub fn get_expected_firewall_subnet_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
+        &self.expected_firewall_subnet_routes
+    }
     /// Appends an item to `actual_firewall_subnet_routes`.
     ///
     /// To override the contents of this collection use [`set_actual_firewall_subnet_routes`](Self::set_actual_firewall_subnet_routes).
@@ -314,6 +356,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.actual_firewall_subnet_routes = input;
         self
     }
+    /// <p>The actual firewall subnet routes.</p>
+    pub fn get_actual_firewall_subnet_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.actual_firewall_subnet_routes
+    }
     /// <p>The internet gateway ID.</p>
     pub fn internet_gateway_id(
         mut self,
@@ -330,6 +378,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.internet_gateway_id = input;
         self
     }
+    /// <p>The internet gateway ID.</p>
+    pub fn get_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.internet_gateway_id
+    }
     /// <p>The current route table for the internet gateway.</p>
     pub fn current_internet_gateway_route_table(
         mut self,
@@ -345,6 +397,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
     ) -> Self {
         self.current_internet_gateway_route_table = input;
         self
+    }
+    /// <p>The current route table for the internet gateway.</p>
+    pub fn get_current_internet_gateway_route_table(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_internet_gateway_route_table
     }
     /// Appends an item to `expected_internet_gateway_routes`.
     ///
@@ -365,6 +423,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.expected_internet_gateway_routes = input;
         self
     }
+    /// <p>The internet gateway routes that are expected.</p>
+    pub fn get_expected_internet_gateway_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
+        &self.expected_internet_gateway_routes
+    }
     /// Appends an item to `actual_internet_gateway_routes`.
     ///
     /// To override the contents of this collection use [`set_actual_internet_gateway_routes`](Self::set_actual_internet_gateway_routes).
@@ -384,6 +448,12 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
         self.actual_internet_gateway_routes = input;
         self
     }
+    /// <p>The actual internet gateway routes.</p>
+    pub fn get_actual_internet_gateway_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.actual_internet_gateway_routes
+    }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -393,6 +463,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::types::NetworkFirewallInternetTrafficNotInspectedViolation).
     pub fn build(self) -> crate::types::NetworkFirewallInternetTrafficNotInspectedViolation {

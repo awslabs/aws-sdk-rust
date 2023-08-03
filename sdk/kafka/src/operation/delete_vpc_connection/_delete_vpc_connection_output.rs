@@ -62,6 +62,10 @@ impl DeleteVpcConnectionOutputBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The state of the VPC connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DeleteVpcConnectionOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the VPC connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

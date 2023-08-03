@@ -36,6 +36,12 @@ impl UpdateReservationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReservation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_reservation::builders::UpdateReservationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateReservationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Name of the reservation
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
         self.inner = self.inner.renewal_settings(input);
@@ -138,6 +148,10 @@ impl UpdateReservationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_renewal_settings(input);
         self
+    }
+    /// Renewal settings for the reservation
+    pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
+        self.inner.get_renewal_settings()
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(
@@ -154,5 +168,9 @@ impl UpdateReservationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reservation_id(input);
         self
+    }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reservation_id()
     }
 }

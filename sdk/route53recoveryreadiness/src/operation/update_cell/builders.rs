@@ -36,6 +36,10 @@ impl UpdateCellFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCell as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_cell::builders::UpdateCellInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateCellFluentBuilder {
         self.inner = self.inner.set_cell_name(input);
         self
     }
+    /// <p>The name of the cell.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cell_name()
+    }
     /// Appends an item to `Cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -134,5 +142,9 @@ impl UpdateCellFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cells(input);
         self
+    }
+    /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cells()
     }
 }

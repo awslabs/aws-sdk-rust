@@ -71,6 +71,10 @@ impl DbParameterGroupBuilder {
         self.db_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB parameter group.</p>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_name
+    }
     /// <p>The name of the DB parameter group family that this DB parameter group is compatible with.</p>
     pub fn db_parameter_group_family(
         mut self,
@@ -87,6 +91,10 @@ impl DbParameterGroupBuilder {
         self.db_parameter_group_family = input;
         self
     }
+    /// <p>The name of the DB parameter group family that this DB parameter group is compatible with.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
+    }
     /// <p>Provides the customer-specified description for this DB parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl DbParameterGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Provides the customer-specified description for this DB parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
     pub fn db_parameter_group_arn(
@@ -112,6 +124,10 @@ impl DbParameterGroupBuilder {
     ) -> Self {
         self.db_parameter_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+    pub fn get_db_parameter_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_arn
     }
     /// Consumes the builder and constructs a [`DbParameterGroup`](crate::types::DbParameterGroup).
     pub fn build(self) -> crate::types::DbParameterGroup {

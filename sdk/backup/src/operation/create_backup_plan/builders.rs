@@ -37,6 +37,12 @@ impl CreateBackupPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackupPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_backup_plan::builders::CreateBackupPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl CreateBackupPlanFluentBuilder {
         self.inner = self.inner.set_backup_plan(input);
         self
     }
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
+        self.inner.get_backup_plan()
+    }
     /// Adds a key-value pair to `BackupPlanTags`.
     ///
     /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
@@ -153,6 +163,14 @@ impl CreateBackupPlanFluentBuilder {
         self.inner = self.inner.set_backup_plan_tags(input);
         self
     }
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    pub fn get_backup_plan_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_backup_plan_tags()
+    }
     /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(
@@ -170,5 +188,10 @@ impl CreateBackupPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
+    }
+    /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
     }
 }

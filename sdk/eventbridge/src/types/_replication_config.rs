@@ -43,6 +43,10 @@ impl ReplicationConfigBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of event replication.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplicationState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`ReplicationConfig`](crate::types::ReplicationConfig).
     pub fn build(self) -> crate::types::ReplicationConfig {
         crate::types::ReplicationConfig { state: self.state }

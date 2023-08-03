@@ -51,6 +51,12 @@ impl ModifyDbProxyTargetGroupOutputBuilder {
         self.db_proxy_target_group = input;
         self
     }
+    /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
+    pub fn get_db_proxy_target_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbProxyTargetGroup> {
+        &self.db_proxy_target_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

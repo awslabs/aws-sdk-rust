@@ -51,6 +51,10 @@ impl BasicLayoutBuilder {
         self.top_panel = input;
         self
     }
+    /// <p>This represents sections in a panel of the page layout.</p>
+    pub fn get_top_panel(&self) -> &::std::option::Option<crate::types::LayoutSections> {
+        &self.top_panel
+    }
     /// <p>This represents sections in a tab of the page layout.</p>
     pub fn more_info(mut self, input: crate::types::LayoutSections) -> Self {
         self.more_info = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl BasicLayoutBuilder {
     ) -> Self {
         self.more_info = input;
         self
+    }
+    /// <p>This represents sections in a tab of the page layout.</p>
+    pub fn get_more_info(&self) -> &::std::option::Option<crate::types::LayoutSections> {
+        &self.more_info
     }
     /// Consumes the builder and constructs a [`BasicLayout`](crate::types::BasicLayout).
     pub fn build(self) -> crate::types::BasicLayout {

@@ -43,6 +43,10 @@ impl ArchiveRuleBuilder {
         self.retain_rule = input;
         self
     }
+    /// <p>Information about the retention period for the snapshot archiving rule.</p>
+    pub fn get_retain_rule(&self) -> &::std::option::Option<crate::types::ArchiveRetainRule> {
+        &self.retain_rule
+    }
     /// Consumes the builder and constructs a [`ArchiveRule`](crate::types::ArchiveRule).
     pub fn build(self) -> crate::types::ArchiveRule {
         crate::types::ArchiveRule {

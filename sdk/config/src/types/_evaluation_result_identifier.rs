@@ -65,6 +65,12 @@ impl EvaluationResultIdentifierBuilder {
         self.evaluation_result_qualifier = input;
         self
     }
+    /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
+    pub fn get_evaluation_result_qualifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationResultQualifier> {
+        &self.evaluation_result_qualifier
+    }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ordering_timestamp = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl EvaluationResultIdentifierBuilder {
     ) -> Self {
         self.ordering_timestamp = input;
         self
+    }
+    /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
+    pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ordering_timestamp
     }
     /// <p>A Unique ID for an evaluation result.</p>
     pub fn resource_evaluation_id(
@@ -93,6 +103,10 @@ impl EvaluationResultIdentifierBuilder {
     ) -> Self {
         self.resource_evaluation_id = input;
         self
+    }
+    /// <p>A Unique ID for an evaluation result.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_evaluation_id
     }
     /// Consumes the builder and constructs a [`EvaluationResultIdentifier`](crate::types::EvaluationResultIdentifier).
     pub fn build(self) -> crate::types::EvaluationResultIdentifier {

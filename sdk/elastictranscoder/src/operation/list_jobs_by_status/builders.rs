@@ -36,6 +36,12 @@ impl ListJobsByStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobsByStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_jobs_by_status::builders::ListJobsByStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListJobsByStatusFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
+    }
     /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     pub fn ascending(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ascending(input.into());
@@ -147,6 +157,10 @@ impl ListJobsByStatusFluentBuilder {
         self.inner = self.inner.set_ascending(input);
         self
     }
+    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ascending()
+    }
     /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -156,5 +170,9 @@ impl ListJobsByStatusFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

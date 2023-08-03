@@ -57,6 +57,12 @@ impl DataAggregationBuilder {
         self.dataset_row_date_granularity = input;
         self
     }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_dataset_row_date_granularity(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
+        &self.dataset_row_date_granularity
+    }
     /// <p>The column name for the default date.</p>
     pub fn default_date_column_name(
         mut self,
@@ -72,6 +78,10 @@ impl DataAggregationBuilder {
     ) -> Self {
         self.default_date_column_name = input;
         self
+    }
+    /// <p>The column name for the default date.</p>
+    pub fn get_default_date_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_date_column_name
     }
     /// Consumes the builder and constructs a [`DataAggregation`](crate::types::DataAggregation).
     pub fn build(self) -> crate::types::DataAggregation {

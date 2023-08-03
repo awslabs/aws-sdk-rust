@@ -51,6 +51,10 @@ impl CoverageStringFilterBuilder {
         self.comparison = input;
         self
     }
+    /// <p>The operator to compare strings on.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CoverageStringComparison> {
+        &self.comparison
+    }
     /// <p>The value to compare strings on.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl CoverageStringFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to compare strings on.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CoverageStringFilter`](crate::types::CoverageStringFilter).
     pub fn build(self) -> crate::types::CoverageStringFilter {

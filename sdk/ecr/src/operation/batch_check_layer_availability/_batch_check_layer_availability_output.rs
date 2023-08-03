@@ -63,6 +63,10 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
         self.layers = input;
         self
     }
+    /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layer>> {
+        &self.layers
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -81,6 +85,12 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateReplicationSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReplicationSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,14 @@ impl CreateReplicationSetFluentBuilder {
         self.inner = self.inner.set_regions(input);
         self
     }
+    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
+    pub fn get_regions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
+    > {
+        self.inner.get_regions()
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,6 +162,10 @@ impl CreateReplicationSetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -171,5 +189,13 @@ impl CreateReplicationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to add to the replication set.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

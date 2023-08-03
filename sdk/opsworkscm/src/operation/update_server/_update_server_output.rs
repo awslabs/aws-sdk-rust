@@ -46,6 +46,10 @@ impl UpdateServerOutputBuilder {
         self.server = input;
         self
     }
+    /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
+        &self.server
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

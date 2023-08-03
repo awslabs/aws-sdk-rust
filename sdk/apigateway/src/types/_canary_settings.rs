@@ -72,6 +72,10 @@ impl CanarySettingsBuilder {
         self.percent_traffic = input;
         self
     }
+    /// <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
+    pub fn get_percent_traffic(&self) -> &::std::option::Option<f64> {
+        &self.percent_traffic
+    }
     /// <p>The ID of the canary deployment.</p>
     pub fn deployment_id(
         mut self,
@@ -87,6 +91,10 @@ impl CanarySettingsBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the canary deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Adds a key-value pair to `stage_variable_overrides`.
     ///
@@ -113,6 +121,14 @@ impl CanarySettingsBuilder {
         self.stage_variable_overrides = input;
         self
     }
+    /// <p>Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
+    pub fn get_stage_variable_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variable_overrides
+    }
     /// <p>A Boolean flag to indicate whether the canary deployment uses the stage cache or not.</p>
     pub fn use_stage_cache(mut self, input: bool) -> Self {
         self.use_stage_cache = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl CanarySettingsBuilder {
     pub fn set_use_stage_cache(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_stage_cache = input;
         self
+    }
+    /// <p>A Boolean flag to indicate whether the canary deployment uses the stage cache or not.</p>
+    pub fn get_use_stage_cache(&self) -> &::std::option::Option<bool> {
+        &self.use_stage_cache
     }
     /// Consumes the builder and constructs a [`CanarySettings`](crate::types::CanarySettings).
     pub fn build(self) -> crate::types::CanarySettings {

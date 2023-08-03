@@ -92,6 +92,10 @@ impl ConnectorRuntimeSettingBuilder {
         self.key = input;
         self
     }
+    /// <p>Contains value information about the connector runtime setting.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Data type of the connector runtime setting.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl ConnectorRuntimeSettingBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>Data type of the connector runtime setting.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>Indicates whether this connector runtime setting is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
@@ -112,6 +120,10 @@ impl ConnectorRuntimeSettingBuilder {
         self.is_required = input;
         self
     }
+    /// <p>Indicates whether this connector runtime setting is required.</p>
+    pub fn get_is_required(&self) -> &::std::option::Option<bool> {
+        &self.is_required
+    }
     /// <p>A label used for connector runtime setting.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -121,6 +133,10 @@ impl ConnectorRuntimeSettingBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>A label used for connector runtime setting.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>A description about the connector runtime setting.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +148,10 @@ impl ConnectorRuntimeSettingBuilder {
         self.description = input;
         self
     }
+    /// <p>A description about the connector runtime setting.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates the scope of the connector runtime setting.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scope = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl ConnectorRuntimeSettingBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>Indicates the scope of the connector runtime setting.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
     }
     /// Appends an item to `connector_supplied_value_options`.
     ///
@@ -163,6 +187,12 @@ impl ConnectorRuntimeSettingBuilder {
     ) -> Self {
         self.connector_supplied_value_options = input;
         self
+    }
+    /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
+    pub fn get_connector_supplied_value_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connector_supplied_value_options
     }
     /// Consumes the builder and constructs a [`ConnectorRuntimeSetting`](crate::types::ConnectorRuntimeSetting).
     pub fn build(self) -> crate::types::ConnectorRuntimeSetting {

@@ -85,6 +85,10 @@ impl ServerCertificateScopeBuilder {
         self.sources = input;
         self
     }
+    /// <p>The source IP addresses and address ranges to decrypt for inspection, in CIDR notation. If not specified, this matches with any source address.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.sources
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -103,6 +107,12 @@ impl ServerCertificateScopeBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>The destination IP addresses and address ranges to decrypt for inspection, in CIDR notation. If not specified, this matches with any destination address.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.destinations
     }
     /// Appends an item to `source_ports`.
     ///
@@ -125,6 +135,13 @@ impl ServerCertificateScopeBuilder {
         self.source_ports = input;
         self
     }
+    /// <p>The source ports to decrypt for inspection, in Transmission Control Protocol (TCP) format. If not specified, this matches with any source port.</p>
+    /// <p>You can specify individual ports, for example <code>1994</code>, and you can specify port ranges, such as <code>1990:1994</code>.</p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.source_ports
+    }
     /// Appends an item to `destination_ports`.
     ///
     /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
@@ -146,6 +163,13 @@ impl ServerCertificateScopeBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>The destination ports to decrypt for inspection, in Transmission Control Protocol (TCP) format. If not specified, this matches with any destination port.</p>
+    /// <p>You can specify individual ports, for example <code>1994</code>, and you can specify port ranges, such as <code>1990:1994</code>.</p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.destination_ports
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -161,6 +185,10 @@ impl ServerCertificateScopeBuilder {
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.protocols
     }
     /// Consumes the builder and constructs a [`ServerCertificateScope`](crate::types::ServerCertificateScope).
     pub fn build(self) -> crate::types::ServerCertificateScope {

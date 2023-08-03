@@ -37,6 +37,12 @@ impl UpdateInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_instance::builders::UpdateInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -136,6 +146,10 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_layer_ids(input);
         self
     }
+    /// <p>The instance's layer IDs.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
+    }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(
         mut self,
@@ -152,6 +166,10 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub fn auto_scaling_type(mut self, input: crate::types::AutoScalingType) -> Self {
         self.inner = self.inner.auto_scaling_type(input);
@@ -165,6 +183,10 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_auto_scaling_type(input);
         self
     }
+    /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    pub fn get_auto_scaling_type(&self) -> &::std::option::Option<crate::types::AutoScalingType> {
+        self.inner.get_auto_scaling_type()
+    }
     /// <p>The instance host name.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
@@ -174,6 +196,10 @@ impl UpdateInstanceFluentBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname(input);
         self
+    }
+    /// <p>The instance host name.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hostname()
     }
     /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
     /// <ul>
@@ -207,6 +233,21 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_os(input);
         self
     }
+    /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
+    /// <ul>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
+    /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+    /// </note>
+    pub fn get_os(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_os()
+    }
     /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ami_id(input.into());
@@ -217,6 +258,10 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_ami_id(input);
         self
     }
+    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ami_id()
+    }
     /// <p>The instance's Amazon EC2 key name.</p>
     pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_key_name(input.into());
@@ -226,6 +271,10 @@ impl UpdateInstanceFluentBuilder {
     pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_key_name(input);
         self
+    }
+    /// <p>The instance's Amazon EC2 key name.</p>
+    pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_key_name()
     }
     /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -239,6 +288,10 @@ impl UpdateInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
+    }
+    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_architecture()
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
@@ -254,6 +307,12 @@ impl UpdateInstanceFluentBuilder {
         self.inner = self.inner.set_install_updates_on_boot(input);
         self
     }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// </note>
+    pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_install_updates_on_boot()
+    }
     /// <p>This property cannot be updated.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.inner = self.inner.ebs_optimized(input);
@@ -263,6 +322,10 @@ impl UpdateInstanceFluentBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ebs_optimized(input);
         self
+    }
+    /// <p>This property cannot be updated.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ebs_optimized()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -291,5 +354,15 @@ impl UpdateInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
+    /// </ul>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
+    /// <p>AgentVersion cannot be set to Chef 12.2.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_version()
     }
 }

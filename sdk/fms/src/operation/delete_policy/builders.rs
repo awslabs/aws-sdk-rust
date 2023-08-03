@@ -36,6 +36,10 @@ impl DeletePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_policy::builders::DeletePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeletePolicyFluentBuilder {
         self.inner = self.inner.set_policy_id(input);
         self
     }
+    /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
+    }
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
     /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
     /// <ul>
@@ -151,5 +159,21 @@ impl DeletePolicyFluentBuilder {
     pub fn set_delete_all_policy_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_all_policy_resources(input);
         self
+    }
+    /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
+    /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
+    /// <ul>
+    /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+    /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+    /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
+    /// </ul>
+    /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
+    /// <ul>
+    /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+    /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
+    /// </ul>
+    /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
+    pub fn get_delete_all_policy_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_all_policy_resources()
     }
 }

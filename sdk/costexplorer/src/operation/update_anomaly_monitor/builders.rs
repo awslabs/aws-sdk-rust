@@ -36,6 +36,12 @@ impl UpdateAnomalyMonitorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnomalyMonitor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateAnomalyMonitorFluentBuilder {
         self.inner = self.inner.set_monitor_arn(input);
         self
     }
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_arn()
+    }
     /// <p>The new name for the cost anomaly monitor. </p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
@@ -135,5 +145,9 @@ impl UpdateAnomalyMonitorFluentBuilder {
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
+    }
+    /// <p>The new name for the cost anomaly monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_name()
     }
 }

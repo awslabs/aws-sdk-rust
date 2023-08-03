@@ -121,6 +121,10 @@ impl RoutingProfileBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The name of the routing profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl RoutingProfileBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the routing profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     pub fn routing_profile_arn(
@@ -147,6 +155,10 @@ impl RoutingProfileBuilder {
         self.routing_profile_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn get_routing_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_arn
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -163,6 +175,10 @@ impl RoutingProfileBuilder {
         self.routing_profile_id = input;
         self
     }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
+    }
     /// <p>The description of the routing profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +188,10 @@ impl RoutingProfileBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the routing profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `media_concurrencies`.
     ///
@@ -192,6 +212,12 @@ impl RoutingProfileBuilder {
         self.media_concurrencies = input;
         self
     }
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    pub fn get_media_concurrencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+        &self.media_concurrencies
+    }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     pub fn default_outbound_queue_id(
         mut self,
@@ -207,6 +233,10 @@ impl RoutingProfileBuilder {
     ) -> Self {
         self.default_outbound_queue_id = input;
         self
+    }
+    /// <p>The identifier of the default outbound queue for this routing profile.</p>
+    pub fn get_default_outbound_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_outbound_queue_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -233,6 +263,14 @@ impl RoutingProfileBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The number of associated queues in routing profile.</p>
     pub fn number_of_associated_queues(mut self, input: i64) -> Self {
         self.number_of_associated_queues = ::std::option::Option::Some(input);
@@ -243,6 +281,10 @@ impl RoutingProfileBuilder {
         self.number_of_associated_queues = input;
         self
     }
+    /// <p>The number of associated queues in routing profile.</p>
+    pub fn get_number_of_associated_queues(&self) -> &::std::option::Option<i64> {
+        &self.number_of_associated_queues
+    }
     /// <p>The number of associated users in routing profile.</p>
     pub fn number_of_associated_users(mut self, input: i64) -> Self {
         self.number_of_associated_users = ::std::option::Option::Some(input);
@@ -252,6 +294,10 @@ impl RoutingProfileBuilder {
     pub fn set_number_of_associated_users(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_associated_users = input;
         self
+    }
+    /// <p>The number of associated users in routing profile.</p>
+    pub fn get_number_of_associated_users(&self) -> &::std::option::Option<i64> {
+        &self.number_of_associated_users
     }
     /// Consumes the builder and constructs a [`RoutingProfile`](crate::types::RoutingProfile).
     pub fn build(self) -> crate::types::RoutingProfile {

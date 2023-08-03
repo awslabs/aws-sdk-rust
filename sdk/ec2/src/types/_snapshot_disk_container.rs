@@ -74,6 +74,10 @@ impl SnapshotDiskContainerBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the disk image being imported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The format of the disk image being imported.</p>
     /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +90,11 @@ impl SnapshotDiskContainerBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the disk image being imported.</p>
+    /// <p>Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon S3 URL (s3://..).</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -95,6 +104,10 @@ impl SnapshotDiskContainerBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon S3 URL (s3://..).</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The Amazon S3 bucket for the disk image.</p>
     pub fn user_bucket(mut self, input: crate::types::UserBucket) -> Self {
@@ -108,6 +121,10 @@ impl SnapshotDiskContainerBuilder {
     ) -> Self {
         self.user_bucket = input;
         self
+    }
+    /// <p>The Amazon S3 bucket for the disk image.</p>
+    pub fn get_user_bucket(&self) -> &::std::option::Option<crate::types::UserBucket> {
+        &self.user_bucket
     }
     /// Consumes the builder and constructs a [`SnapshotDiskContainer`](crate::types::SnapshotDiskContainer).
     pub fn build(self) -> crate::types::SnapshotDiskContainer {

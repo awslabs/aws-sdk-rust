@@ -40,6 +40,10 @@ impl SslPropertiesBuilder {
         self.disable_ssl = input;
         self
     }
+    /// <p>A Boolean option to control whether SSL should be disabled.</p>
+    pub fn get_disable_ssl(&self) -> &::std::option::Option<bool> {
+        &self.disable_ssl
+    }
     /// Consumes the builder and constructs a [`SslProperties`](crate::types::SslProperties).
     pub fn build(self) -> crate::types::SslProperties {
         crate::types::SslProperties {

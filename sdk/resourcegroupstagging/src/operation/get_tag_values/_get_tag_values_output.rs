@@ -60,6 +60,10 @@ impl GetTagValuesOutputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -78,6 +82,10 @@ impl GetTagValuesOutputBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

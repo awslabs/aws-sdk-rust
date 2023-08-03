@@ -145,6 +145,10 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the simulation application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -155,6 +159,10 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the simulation application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the simulation application.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -164,6 +172,10 @@ impl DescribeSimulationApplicationOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the simulation application.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `sources`.
     ///
@@ -184,6 +196,10 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The sources of the simulation application.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
+        &self.sources
+    }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn simulation_software_suite(
         mut self,
@@ -200,6 +216,12 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.simulation_software_suite = input;
         self
     }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn get_simulation_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+        &self.simulation_software_suite
+    }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
@@ -212,6 +234,12 @@ impl DescribeSimulationApplicationOutputBuilder {
     ) -> Self {
         self.robot_software_suite = input;
         self
+    }
+    /// <p>Information about the robot software suite (ROS distribution).</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        &self.robot_software_suite
     }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn rendering_engine(mut self, input: crate::types::RenderingEngine) -> Self {
@@ -226,6 +254,10 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.rendering_engine = input;
         self
     }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn get_rendering_engine(&self) -> &::std::option::Option<crate::types::RenderingEngine> {
+        &self.rendering_engine
+    }
     /// <p>The revision id of the simulation application.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -235,6 +267,10 @@ impl DescribeSimulationApplicationOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision id of the simulation application.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -248,6 +284,10 @@ impl DescribeSimulationApplicationOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -274,6 +314,14 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of all tags added to the specified simulation application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -287,6 +335,10 @@ impl DescribeSimulationApplicationOutputBuilder {
         self.environment = input;
         self
     }
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
+    }
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -296,6 +348,10 @@ impl DescribeSimulationApplicationOutputBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

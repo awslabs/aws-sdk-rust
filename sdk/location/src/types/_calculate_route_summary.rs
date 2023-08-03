@@ -143,6 +143,20 @@ impl CalculateRouteSummaryBuilder {
         self.route_b_box = input;
         self
     }
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <ul>
+    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
+    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// </ul>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <ul>
+    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
+    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// </ul>
+    pub fn get_route_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.route_b_box
+    }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
@@ -165,6 +179,16 @@ impl CalculateRouteSummaryBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
+    }
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
@@ -179,6 +203,12 @@ impl CalculateRouteSummaryBuilder {
         self.distance = input;
         self
     }
+    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    pub fn get_distance(&self) -> &::std::option::Option<f64> {
+        &self.distance
+    }
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -188,6 +218,10 @@ impl CalculateRouteSummaryBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<f64> {
+        &self.duration_seconds
     }
     /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
@@ -201,6 +235,10 @@ impl CalculateRouteSummaryBuilder {
     ) -> Self {
         self.distance_unit = input;
         self
+    }
+    /// <p>The unit of measurement for route distances.</p>
+    pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
+        &self.distance_unit
     }
     /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::types::CalculateRouteSummary).
     pub fn build(self) -> crate::types::CalculateRouteSummary {

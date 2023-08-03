@@ -62,6 +62,12 @@ impl DescribeEventCategoriesOutputBuilder {
         self.event_category_group_list = input;
         self
     }
+    /// <p>A list of event categories.</p>
+    pub fn get_event_category_group_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventCategoryGroup>> {
+        &self.event_category_group_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

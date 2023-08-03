@@ -56,6 +56,10 @@ impl CpuBuilder {
         self.frequency = input;
         self
     }
+    /// <p>The CPU's frequency.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frequency
+    }
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CpuBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The CPU's architecture (for example, x86 or ARM).</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub fn clock(mut self, input: f64) -> Self {
         self.clock = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl CpuBuilder {
     pub fn set_clock(mut self, input: ::std::option::Option<f64>) -> Self {
         self.clock = input;
         self
+    }
+    /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
+    pub fn get_clock(&self) -> &::std::option::Option<f64> {
+        &self.clock
     }
     /// Consumes the builder and constructs a [`Cpu`](crate::types::Cpu).
     pub fn build(self) -> crate::types::Cpu {

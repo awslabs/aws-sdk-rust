@@ -36,6 +36,13 @@ impl UpdateRouteCalculatorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRouteCalculator as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_route_calculator::builders::UpdateRouteCalculatorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateRouteCalculatorFluentBuilder {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
+    /// <p>The name of the route calculator resource to update.</p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculator_name()
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -153,6 +164,14 @@ impl UpdateRouteCalculatorFluentBuilder {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        self.inner.get_pricing_plan()
+    }
     /// <p>Updates the description for the route calculator resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -162,5 +181,9 @@ impl UpdateRouteCalculatorFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Updates the description for the route calculator resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

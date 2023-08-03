@@ -39,6 +39,10 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
         self.webhook_name = input;
         self
     }
+    /// <p>The name of the webhook you want to deregister.</p>
+    pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_name
+    }
     /// Consumes the builder and constructs a [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
     pub fn build(
         self,

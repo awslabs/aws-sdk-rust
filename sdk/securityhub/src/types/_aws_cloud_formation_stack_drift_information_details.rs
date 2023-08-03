@@ -47,6 +47,10 @@ impl AwsCloudFormationStackDriftInformationDetailsBuilder {
         self.stack_drift_status = input;
         self
     }
+    /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
+    pub fn get_stack_drift_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_drift_status
+    }
     /// Consumes the builder and constructs a [`AwsCloudFormationStackDriftInformationDetails`](crate::types::AwsCloudFormationStackDriftInformationDetails).
     pub fn build(self) -> crate::types::AwsCloudFormationStackDriftInformationDetails {
         crate::types::AwsCloudFormationStackDriftInformationDetails {

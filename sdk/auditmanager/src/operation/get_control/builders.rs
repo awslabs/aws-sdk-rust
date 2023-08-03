@@ -36,6 +36,10 @@ impl GetControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetControl as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_control::builders::GetControlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetControlFluentBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_id(input);
         self
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_id()
     }
 }

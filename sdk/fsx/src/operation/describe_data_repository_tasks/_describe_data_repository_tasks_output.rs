@@ -67,6 +67,12 @@ impl DescribeDataRepositoryTasksOutputBuilder {
         self.data_repository_tasks = input;
         self
     }
+    /// <p>The collection of data repository task descriptions returned.</p>
+    pub fn get_data_repository_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>> {
+        &self.data_repository_tasks
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeDataRepositoryTasksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

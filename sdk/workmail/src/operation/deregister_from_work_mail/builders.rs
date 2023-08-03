@@ -37,6 +37,13 @@ impl DeregisterFromWorkMailFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterFromWorkMail as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeregisterFromWorkMailFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier for the member (user or group) to be updated.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -142,5 +153,9 @@ impl DeregisterFromWorkMailFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The identifier for the member (user or group) to be updated.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
 }

@@ -56,6 +56,12 @@ impl EvidenceBuilder {
         self.threat_intelligence_details = input;
         self
     }
+    /// <p>A list of threat intelligence details related to the evidence.</p>
+    pub fn get_threat_intelligence_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>> {
+        &self.threat_intelligence_details
+    }
     /// Consumes the builder and constructs a [`Evidence`](crate::types::Evidence).
     pub fn build(self) -> crate::types::Evidence {
         crate::types::Evidence {

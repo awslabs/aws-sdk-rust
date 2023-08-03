@@ -38,6 +38,10 @@ impl PutStorageLensConfigurationTaggingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutStorageLensConfigurationTagging as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl PutStorageLensConfigurationTaggingFluentBuilder {
         self.inner = self.inner.set_config_id(input);
         self
     }
+    /// <p>The ID of the S3 Storage Lens configuration.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_id()
+    }
     /// <p>The account ID of the requester.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -111,6 +119,10 @@ impl PutStorageLensConfigurationTaggingFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -132,5 +144,13 @@ impl PutStorageLensConfigurationTaggingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
+    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// </note>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
+        self.inner.get_tags()
     }
 }

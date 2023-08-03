@@ -75,6 +75,10 @@ impl ThrottlingExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message associated with the exception.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The payload associated with the exception.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ThrottlingExceptionBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The payload associated with the exception.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

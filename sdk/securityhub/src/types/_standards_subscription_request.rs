@@ -62,6 +62,10 @@ impl StandardsSubscriptionRequestBuilder {
         self.standards_arn = input;
         self
     }
+    /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
+    }
     /// Adds a key-value pair to `standards_input`.
     ///
     /// To override the contents of this collection use [`set_standards_input`](Self::set_standards_input).
@@ -86,6 +90,14 @@ impl StandardsSubscriptionRequestBuilder {
     ) -> Self {
         self.standards_input = input;
         self
+    }
+    /// <p>A key-value pair of input for the standard.</p>
+    pub fn get_standards_input(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.standards_input
     }
     /// Consumes the builder and constructs a [`StandardsSubscriptionRequest`](crate::types::StandardsSubscriptionRequest).
     pub fn build(self) -> crate::types::StandardsSubscriptionRequest {

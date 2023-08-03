@@ -37,6 +37,12 @@ impl CreateDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_detector::builders::CreateDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateDetectorFluentBuilder {
         self.inner = self.inner.set_enable(input);
         self
     }
+    /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable()
+    }
     /// <p>The idempotency token for the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -128,6 +138,10 @@ impl CreateDetectorFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
     pub fn finding_publishing_frequency(
@@ -145,6 +159,12 @@ impl CreateDetectorFluentBuilder {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
+    /// <p>A value that specifies how frequently updated findings are exported.</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        self.inner.get_finding_publishing_frequency()
+    }
     /// <p>Describes which data sources will be enabled for the detector.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -161,6 +181,14 @@ impl CreateDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
+    }
+    /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+        self.inner.get_data_sources()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -185,6 +213,14 @@ impl CreateDetectorFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to be added to a new detector resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -201,5 +237,11 @@ impl CreateDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
+    }
+    /// <p>A list of features that will be configured for the detector.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+        self.inner.get_features()
     }
 }

@@ -58,6 +58,10 @@ impl UpdateProjectDataDeliveryInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
     pub fn s3_destination(mut self, input: crate::types::S3DestinationConfig) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl UpdateProjectDataDeliveryInputBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+        &self.s3_destination
     }
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
     pub fn cloud_watch_logs(
@@ -86,6 +94,12 @@ impl UpdateProjectDataDeliveryInputBuilder {
     ) -> Self {
         self.cloud_watch_logs = input;
         self
+    }
+    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationConfig> {
+        &self.cloud_watch_logs
     }
     /// Consumes the builder and constructs a [`UpdateProjectDataDeliveryInput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryInput).
     pub fn build(

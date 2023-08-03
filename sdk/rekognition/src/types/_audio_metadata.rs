@@ -64,6 +64,10 @@ impl AudioMetadataBuilder {
         self.codec = input;
         self
     }
+    /// <p>The audio codec used to encode or decode the audio stream. </p>
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codec
+    }
     /// <p>The duration of the audio stream in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AudioMetadataBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p>The duration of the audio stream in milliseconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// <p>The sample rate for the audio stream.</p>
     pub fn sample_rate(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl AudioMetadataBuilder {
         self.sample_rate = input;
         self
     }
+    /// <p>The sample rate for the audio stream.</p>
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i64> {
+        &self.sample_rate
+    }
     /// <p>The number of audio channels in the segment.</p>
     pub fn number_of_channels(mut self, input: i64) -> Self {
         self.number_of_channels = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl AudioMetadataBuilder {
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_channels = input;
         self
+    }
+    /// <p>The number of audio channels in the segment.</p>
+    pub fn get_number_of_channels(&self) -> &::std::option::Option<i64> {
+        &self.number_of_channels
     }
     /// Consumes the builder and constructs a [`AudioMetadata`](crate::types::AudioMetadata).
     pub fn build(self) -> crate::types::AudioMetadata {

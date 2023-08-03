@@ -51,6 +51,10 @@ impl DescribeCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The details for the specified certificate, returned as an object.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::DescribedCertificate> {
+        &self.certificate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

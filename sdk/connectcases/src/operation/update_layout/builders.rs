@@ -40,6 +40,10 @@ impl UpdateLayoutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLayout as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_layout::builders::UpdateLayoutInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl UpdateLayoutFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The unique identifier of the layout.</p>
     pub fn layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layout_id(input.into());
@@ -132,6 +140,10 @@ impl UpdateLayoutFluentBuilder {
         self.inner = self.inner.set_layout_id(input);
         self
     }
+    /// <p>The unique identifier of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layout_id()
+    }
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +153,10 @@ impl UpdateLayoutFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the layout. It must be unique per domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
@@ -154,5 +170,9 @@ impl UpdateLayoutFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
+        self.inner.get_content()
     }
 }

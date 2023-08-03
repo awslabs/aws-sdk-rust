@@ -71,6 +71,10 @@ impl ListThingsInThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The thing group name.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>When true, list things in this thing group and in all child groups as well.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListThingsInThingGroupInputBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
+    }
+    /// <p>When true, list things in this thing group and in all child groups as well.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ListThingsInThingGroupInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListThingsInThingGroupInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThingsInThingGroupInput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput).
     pub fn build(

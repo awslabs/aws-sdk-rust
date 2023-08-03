@@ -51,6 +51,10 @@ impl SubnetAssociationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The state of the subnet association.</p>
     pub fn state(
         mut self,
@@ -66,6 +70,12 @@ impl SubnetAssociationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the subnet association.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`SubnetAssociation`](crate::types::SubnetAssociation).
     pub fn build(self) -> crate::types::SubnetAssociation {

@@ -36,6 +36,12 @@ impl StartAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartAssessmentRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartAssessmentRunFluentBuilder {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }
+    /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_template_arn()
+    }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     pub fn assessment_run_name(
         mut self,
@@ -147,5 +157,9 @@ impl StartAssessmentRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_run_name(input);
         self
+    }
+    /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
+    pub fn get_assessment_run_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_run_name()
     }
 }

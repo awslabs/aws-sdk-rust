@@ -60,6 +60,10 @@ impl DescribeConfigurationSetInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set to describe.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Appends an item to `configuration_set_attribute_names`.
     ///
     /// To override the contents of this collection use [`set_configuration_set_attribute_names`](Self::set_configuration_set_attribute_names).
@@ -81,6 +85,12 @@ impl DescribeConfigurationSetInputBuilder {
     ) -> Self {
         self.configuration_set_attribute_names = input;
         self
+    }
+    /// <p>A list of configuration set attributes to return.</p>
+    pub fn get_configuration_set_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>> {
+        &self.configuration_set_attribute_names
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSetInput`](crate::operation::describe_configuration_set::DescribeConfigurationSetInput).
     pub fn build(

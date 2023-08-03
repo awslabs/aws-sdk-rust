@@ -59,6 +59,10 @@ impl UpsolverDestinationPropertiesBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(
         mut self,
@@ -75,6 +79,10 @@ impl UpsolverDestinationPropertiesBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
     pub fn s3_output_format_config(
         mut self,
@@ -90,6 +98,12 @@ impl UpsolverDestinationPropertiesBuilder {
     ) -> Self {
         self.s3_output_format_config = input;
         self
+    }
+    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
+    pub fn get_s3_output_format_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpsolverS3OutputFormatConfig> {
+        &self.s3_output_format_config
     }
     /// Consumes the builder and constructs a [`UpsolverDestinationProperties`](crate::types::UpsolverDestinationProperties).
     pub fn build(self) -> crate::types::UpsolverDestinationProperties {

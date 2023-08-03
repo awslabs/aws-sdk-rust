@@ -37,6 +37,12 @@ impl CreateInsightFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInsight as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_insight::builders::CreateInsightInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateInsightFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the custom insight to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -131,6 +141,10 @@ impl CreateInsightFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
+        self.inner.get_filters()
     }
     /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn group_by_attribute(
@@ -147,5 +161,9 @@ impl CreateInsightFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_by_attribute(input);
         self
+    }
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
+    pub fn get_group_by_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_by_attribute()
     }
 }

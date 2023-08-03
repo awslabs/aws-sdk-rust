@@ -60,6 +60,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
         self.prefix = input;
         self
     }
+    /// <p>Prefix text for matching objects.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>A tag that is assigned to matching objects.</p>
     pub fn tag(
         mut self,
@@ -76,6 +80,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
         self.tag = input;
         self
     }
+    /// <p>A tag that is assigned to matching objects.</p>
+    pub fn get_tag(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
+    > {
+        &self.tag
+    }
     /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -85,6 +97,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsB
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
     pub fn build(

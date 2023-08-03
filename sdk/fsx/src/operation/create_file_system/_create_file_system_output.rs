@@ -51,6 +51,10 @@ impl CreateFileSystemOutputBuilder {
         self.file_system = input;
         self
     }
+    /// <p>The configuration of the file system that was created.</p>
+    pub fn get_file_system(&self) -> &::std::option::Option<crate::types::FileSystem> {
+        &self.file_system
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email identity that you want to change the DKIM settings for.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
     pub fn signing_enabled(mut self, input: bool) -> Self {
@@ -67,6 +71,11 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
     pub fn set_signing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.signing_enabled = input;
         self
+    }
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+    pub fn get_signing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.signing_enabled
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesInput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput).
     pub fn build(

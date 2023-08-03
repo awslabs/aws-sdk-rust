@@ -89,6 +89,12 @@ impl LambdaFunctionAggregationBuilder {
         self.resource_ids = input;
         self
     }
+    /// <p>The resource IDs to include in the aggregation results.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_ids
+    }
     /// Appends an item to `function_names`.
     ///
     /// To override the contents of this collection use [`set_function_names`](Self::set_function_names).
@@ -107,6 +113,12 @@ impl LambdaFunctionAggregationBuilder {
     ) -> Self {
         self.function_names = input;
         self
+    }
+    /// <p>The AWS Lambda function names to include in the aggregation results.</p>
+    pub fn get_function_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.function_names
     }
     /// Appends an item to `runtimes`.
     ///
@@ -127,6 +139,12 @@ impl LambdaFunctionAggregationBuilder {
         self.runtimes = input;
         self
     }
+    /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+    pub fn get_runtimes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.runtimes
+    }
     /// Appends an item to `function_tags`.
     ///
     /// To override the contents of this collection use [`set_function_tags`](Self::set_function_tags).
@@ -146,6 +164,12 @@ impl LambdaFunctionAggregationBuilder {
         self.function_tags = input;
         self
     }
+    /// <p>The tags to include in the aggregation results.</p>
+    pub fn get_function_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.function_tags
+    }
     /// <p>The order to use for sorting the results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl LambdaFunctionAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to use for sorting the results.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The finding severity to use for sorting the results.</p>
     pub fn sort_by(mut self, input: crate::types::LambdaFunctionSortBy) -> Self {
@@ -168,6 +196,10 @@ impl LambdaFunctionAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The finding severity to use for sorting the results.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::LambdaFunctionSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAggregation`](crate::types::LambdaFunctionAggregation).
     pub fn build(self) -> crate::types::LambdaFunctionAggregation {

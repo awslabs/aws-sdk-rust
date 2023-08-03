@@ -71,6 +71,10 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub fn target(mut self, input: crate::types::AuditMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl StartAuditMitigationActionsTaskInputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
+        &self.target
     }
     /// Adds a key-value pair to `audit_check_to_actions_mapping`.
     ///
@@ -112,6 +122,14 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         self.audit_check_to_actions_mapping = input;
         self
     }
+    /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
+    pub fn get_audit_check_to_actions_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.audit_check_to_actions_mapping
+    }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
     pub fn client_request_token(
         mut self,
@@ -127,6 +145,10 @@ impl StartAuditMitigationActionsTaskInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartAuditMitigationActionsTaskInput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput).
     pub fn build(

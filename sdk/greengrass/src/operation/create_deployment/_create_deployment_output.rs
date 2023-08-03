@@ -61,6 +61,10 @@ impl CreateDeploymentOutputBuilder {
         self.deployment_arn = input;
         self
     }
+    /// The ARN of the deployment.
+    pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_arn
+    }
     /// The ID of the deployment.
     pub fn deployment_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateDeploymentOutputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// The ID of the deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl AnalyticsUtteranceAttributeResultBuilder {
         self.last_used_intent = input;
         self
     }
+    /// <p>The intent that the bot mapped the utterance to.</p>
+    pub fn get_last_used_intent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_used_intent
+    }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceAttributeResult`](crate::types::AnalyticsUtteranceAttributeResult).
     pub fn build(self) -> crate::types::AnalyticsUtteranceAttributeResult {
         crate::types::AnalyticsUtteranceAttributeResult {

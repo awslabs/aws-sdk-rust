@@ -73,6 +73,10 @@ impl ApplicationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the application.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ApplicationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `args`.
     ///
@@ -101,6 +109,10 @@ impl ApplicationBuilder {
     ) -> Self {
         self.args = input;
         self
+    }
+    /// <p>Arguments for Amazon EMR to pass to the application.</p>
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.args
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -126,6 +138,14 @@ impl ApplicationBuilder {
     ) -> Self {
         self.additional_info = input;
         self
+    }
+    /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_info
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {

@@ -81,6 +81,10 @@ impl AuthParameterBuilder {
         self.key = input;
         self
     }
+    /// <p>The authentication key required to authenticate with the connector.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Indicates whether this authentication parameter is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
         self.is_required = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl AuthParameterBuilder {
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
+    }
+    /// <p>Indicates whether this authentication parameter is required.</p>
+    pub fn get_is_required(&self) -> &::std::option::Option<bool> {
+        &self.is_required
     }
     /// <p>Label used for authentication parameter.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl AuthParameterBuilder {
         self.label = input;
         self
     }
+    /// <p>Label used for authentication parameter.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p>A description about the authentication parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl AuthParameterBuilder {
         self.description = input;
         self
     }
+    /// <p>A description about the authentication parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
     pub fn is_sensitive_field(mut self, input: bool) -> Self {
         self.is_sensitive_field = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl AuthParameterBuilder {
     pub fn set_is_sensitive_field(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_sensitive_field = input;
         self
+    }
+    /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
+    pub fn get_is_sensitive_field(&self) -> &::std::option::Option<bool> {
+        &self.is_sensitive_field
     }
     /// Appends an item to `connector_supplied_values`.
     ///
@@ -142,6 +162,12 @@ impl AuthParameterBuilder {
     ) -> Self {
         self.connector_supplied_values = input;
         self
+    }
+    /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    pub fn get_connector_supplied_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connector_supplied_values
     }
     /// Consumes the builder and constructs a [`AuthParameter`](crate::types::AuthParameter).
     pub fn build(self) -> crate::types::AuthParameter {

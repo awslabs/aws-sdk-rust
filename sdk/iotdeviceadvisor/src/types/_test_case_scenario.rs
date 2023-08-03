@@ -108,6 +108,10 @@ impl TestCaseScenarioBuilder {
         self.test_case_scenario_id = input;
         self
     }
+    /// <p>Provides test case scenario ID.</p>
+    pub fn get_test_case_scenario_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_case_scenario_id
+    }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
     /// <li> <p>Advanced</p> </li>
@@ -128,6 +132,16 @@ impl TestCaseScenarioBuilder {
     ) -> Self {
         self.test_case_scenario_type = input;
         self
+    }
+    /// <p>Provides test case scenario type. Type is one of the following:</p>
+    /// <ul>
+    /// <li> <p>Advanced</p> </li>
+    /// <li> <p>Basic</p> </li>
+    /// </ul>
+    pub fn get_test_case_scenario_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestCaseScenarioType> {
+        &self.test_case_scenario_type
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
@@ -162,6 +176,20 @@ impl TestCaseScenarioBuilder {
         self.status = input;
         self
     }
+    /// <p>Provides the test case scenario status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TestCaseScenarioStatus> {
+        &self.status
+    }
     /// <p>Provides test case scenario failure result.</p>
     pub fn failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure = ::std::option::Option::Some(input.into());
@@ -171,6 +199,10 @@ impl TestCaseScenarioBuilder {
     pub fn set_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure = input;
         self
+    }
+    /// <p>Provides test case scenario failure result.</p>
+    pub fn get_failure(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure
     }
     /// <p>Provides test case scenario system messages if any.</p>
     pub fn system_message(
@@ -187,6 +219,10 @@ impl TestCaseScenarioBuilder {
     ) -> Self {
         self.system_message = input;
         self
+    }
+    /// <p>Provides test case scenario system messages if any.</p>
+    pub fn get_system_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.system_message
     }
     /// Consumes the builder and constructs a [`TestCaseScenario`](crate::types::TestCaseScenario).
     pub fn build(self) -> crate::types::TestCaseScenario {

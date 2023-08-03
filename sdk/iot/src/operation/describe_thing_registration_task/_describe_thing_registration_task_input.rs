@@ -39,6 +39,10 @@ impl DescribeThingRegistrationTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The task ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`DescribeThingRegistrationTaskInput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskInput).
     pub fn build(
         self,

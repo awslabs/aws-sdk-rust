@@ -78,6 +78,10 @@ impl LineageGroupSummaryBuilder {
         self.lineage_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_arn
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn lineage_group_name(
         mut self,
@@ -94,6 +98,10 @@ impl LineageGroupSummaryBuilder {
         self.lineage_group_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn get_lineage_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_name
+    }
     /// <p>The display name of the lineage group summary.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl LineageGroupSummaryBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the lineage group summary.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The creation time of the lineage group summary.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +129,10 @@ impl LineageGroupSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the lineage group summary.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last modified time of the lineage group summary.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl LineageGroupSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last modified time of the lineage group summary.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`LineageGroupSummary`](crate::types::LineageGroupSummary).
     pub fn build(self) -> crate::types::LineageGroupSummary {

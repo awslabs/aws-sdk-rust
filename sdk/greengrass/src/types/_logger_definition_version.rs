@@ -49,6 +49,10 @@ impl LoggerDefinitionVersionBuilder {
         self.loggers = input;
         self
     }
+    /// A list of loggers.
+    pub fn get_loggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Logger>> {
+        &self.loggers
+    }
     /// Consumes the builder and constructs a [`LoggerDefinitionVersion`](crate::types::LoggerDefinitionVersion).
     pub fn build(self) -> crate::types::LoggerDefinitionVersion {
         crate::types::LoggerDefinitionVersion {

@@ -85,6 +85,16 @@ impl DescribePatchGroupsOutputBuilder {
         self.mappings = input;
         self
     }
+    /// <p>Each entry in the array contains:</p>
+    /// <ul>
+    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
+    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
+    /// </ul>
+    pub fn get_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>> {
+        &self.mappings
+    }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +104,10 @@ impl DescribePatchGroupsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

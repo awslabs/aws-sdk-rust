@@ -72,6 +72,10 @@ impl GatewayBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the gateway.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the gateway.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl GatewayBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the gateway.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GatewayBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the gateway.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
     pub fn gateway_group_arn(
@@ -108,6 +120,10 @@ impl GatewayBuilder {
         self.gateway_group_arn = input;
         self
     }
+    /// <p>The ARN of the gateway group that the gateway is associated to.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_group_arn
+    }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(
         mut self,
@@ -123,6 +139,10 @@ impl GatewayBuilder {
     ) -> Self {
         self.software_version = input;
         self
+    }
+    /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
     }
     /// Consumes the builder and constructs a [`Gateway`](crate::types::Gateway).
     pub fn build(self) -> crate::types::Gateway {

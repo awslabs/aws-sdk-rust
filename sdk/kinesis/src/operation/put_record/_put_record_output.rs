@@ -71,6 +71,10 @@ impl PutRecordOutputBuilder {
         self.shard_id = input;
         self
     }
+    /// <p>The shard ID of the shard where the data record was placed.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
+    }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
     pub fn sequence_number(
         mut self,
@@ -86,6 +90,10 @@ impl PutRecordOutputBuilder {
     ) -> Self {
         self.sequence_number = input;
         self
+    }
+    /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_number
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
@@ -107,6 +115,14 @@ impl PutRecordOutputBuilder {
     ) -> Self {
         self.encryption_type = input;
         self
+    }
+    /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// </ul>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

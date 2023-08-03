@@ -39,6 +39,12 @@ impl ListFunctionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFunctions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_functions::builders::ListFunctionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListFunctionsFluentBuilder {
         self.inner = self.inner.set_master_region(input);
         self
     }
+    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    pub fn get_master_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_region()
+    }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
     pub fn function_version(mut self, input: crate::types::FunctionVersion) -> Self {
         self.inner = self.inner.function_version(input);
@@ -151,6 +161,10 @@ impl ListFunctionsFluentBuilder {
         self.inner = self.inner.set_function_version(input);
         self
     }
+    /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<crate::types::FunctionVersion> {
+        self.inner.get_function_version()
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -161,6 +175,10 @@ impl ListFunctionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -170,5 +188,9 @@ impl ListFunctionsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

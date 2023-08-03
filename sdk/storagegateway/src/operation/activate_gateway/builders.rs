@@ -38,6 +38,12 @@ impl ActivateGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivateGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_gateway::builders::ActivateGatewayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,11 @@ impl ActivateGatewayFluentBuilder {
         self.inner = self.inner.set_activation_key(input);
         self
     }
+    /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
+    pub fn get_activation_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_activation_key()
+    }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_name(input.into());
@@ -145,6 +156,10 @@ impl ActivateGatewayFluentBuilder {
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_name(input);
         self
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_name()
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
     pub fn gateway_timezone(
@@ -161,6 +176,10 @@ impl ActivateGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_timezone(input);
         self
+    }
+    /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
+    pub fn get_gateway_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_timezone()
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
@@ -180,6 +199,11 @@ impl ActivateGatewayFluentBuilder {
         self.inner = self.inner.set_gateway_region(input);
         self
     }
+    /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_gateway_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_region()
+    }
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
     pub fn gateway_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,6 +215,11 @@ impl ActivateGatewayFluentBuilder {
     pub fn set_gateway_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_type(input);
         self
+    }
+    /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
+    /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_type()
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
@@ -210,6 +239,11 @@ impl ActivateGatewayFluentBuilder {
         self.inner = self.inner.set_tape_drive_type(input);
         self
     }
+    /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
+    /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
+    pub fn get_tape_drive_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tape_drive_type()
+    }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
     pub fn medium_changer_type(
@@ -227,6 +261,11 @@ impl ActivateGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_medium_changer_type(input);
         self
+    }
+    /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
+    /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
+    pub fn get_medium_changer_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_medium_changer_type()
     }
     /// Appends an item to `Tags`.
     ///
@@ -248,5 +287,11 @@ impl ActivateGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

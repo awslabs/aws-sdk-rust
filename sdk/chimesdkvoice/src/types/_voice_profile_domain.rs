@@ -115,6 +115,10 @@ impl VoiceProfileDomainBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The ID of the voice profile domain.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
     pub fn voice_profile_domain_arn(
         mut self,
@@ -131,6 +135,10 @@ impl VoiceProfileDomainBuilder {
         self.voice_profile_domain_arn = input;
         self
     }
+    /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
+    pub fn get_voice_profile_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_arn
+    }
     /// <p>The name of the voice profile domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -141,6 +149,10 @@ impl VoiceProfileDomainBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the voice profile domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the voice profile domain.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -150,6 +162,10 @@ impl VoiceProfileDomainBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the voice profile domain.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
     pub fn server_side_encryption_configuration(
@@ -167,6 +183,12 @@ impl VoiceProfileDomainBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>A structure that contains the configuration settings for server-side encryption.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The time at which the voice profile domain was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -180,6 +202,10 @@ impl VoiceProfileDomainBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the voice profile domain was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the voice profile was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -192,6 +218,10 @@ impl VoiceProfileDomainBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the voice profile was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`VoiceProfileDomain`](crate::types::VoiceProfileDomain).
     pub fn build(self) -> crate::types::VoiceProfileDomain {

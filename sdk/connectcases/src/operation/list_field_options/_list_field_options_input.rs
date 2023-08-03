@@ -72,6 +72,10 @@ impl ListFieldOptionsInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ListFieldOptionsInputBuilder {
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
+    }
+    /// <p>The unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl ListFieldOptionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ListFieldOptionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `values`.
     ///
@@ -120,6 +136,10 @@ impl ListFieldOptionsInputBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
     pub fn build(

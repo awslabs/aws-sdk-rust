@@ -63,6 +63,10 @@ impl DeleteTargetGroupOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteTargetGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
     pub fn status(mut self, input: crate::types::TargetGroupStatus) -> Self {
@@ -85,6 +93,10 @@ impl DeleteTargetGroupOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetGroupStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

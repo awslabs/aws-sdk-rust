@@ -36,6 +36,10 @@ impl PutCaseEventConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutCaseEventConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutCaseEventConfigurationFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn event_bridge(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
         self.inner = self.inner.event_bridge(input);
@@ -138,5 +146,11 @@ impl PutCaseEventConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bridge(input);
         self
+    }
+    /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
+    pub fn get_event_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+        self.inner.get_event_bridge()
     }
 }

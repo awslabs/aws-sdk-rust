@@ -37,6 +37,12 @@ impl UpdatePipelineStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePipelineStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdatePipelineStatusFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the pipeline to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
@@ -144,5 +154,13 @@ impl UpdatePipelineStatusFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The desired status of the pipeline:</p>
+    /// <ul>
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
     }
 }

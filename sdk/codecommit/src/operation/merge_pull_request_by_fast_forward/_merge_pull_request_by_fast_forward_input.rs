@@ -61,6 +61,10 @@ impl MergePullRequestByFastForwardInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn repository_name(
         mut self,
@@ -77,6 +81,10 @@ impl MergePullRequestByFastForwardInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn source_commit_id(
         mut self,
@@ -92,6 +100,10 @@ impl MergePullRequestByFastForwardInputBuilder {
     ) -> Self {
         self.source_commit_id = input;
         self
+    }
+    /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_id
     }
     /// Consumes the builder and constructs a [`MergePullRequestByFastForwardInput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput).
     pub fn build(

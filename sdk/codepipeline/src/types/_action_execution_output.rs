@@ -74,6 +74,12 @@ impl ActionExecutionOutputBuilder {
         self.output_artifacts = input;
         self
     }
+    /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>> {
+        &self.output_artifacts
+    }
     /// <p>Execution result information listed in the output details for an action execution.</p>
     pub fn execution_result(mut self, input: crate::types::ActionExecutionResult) -> Self {
         self.execution_result = ::std::option::Option::Some(input);
@@ -86,6 +92,12 @@ impl ActionExecutionOutputBuilder {
     ) -> Self {
         self.execution_result = input;
         self
+    }
+    /// <p>Execution result information listed in the output details for an action execution.</p>
+    pub fn get_execution_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActionExecutionResult> {
+        &self.execution_result
     }
     /// Adds a key-value pair to `output_variables`.
     ///
@@ -111,6 +123,14 @@ impl ActionExecutionOutputBuilder {
     ) -> Self {
         self.output_variables = input;
         self
+    }
+    /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
+    pub fn get_output_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.output_variables
     }
     /// Consumes the builder and constructs a [`ActionExecutionOutput`](crate::types::ActionExecutionOutput).
     pub fn build(self) -> crate::types::ActionExecutionOutput {

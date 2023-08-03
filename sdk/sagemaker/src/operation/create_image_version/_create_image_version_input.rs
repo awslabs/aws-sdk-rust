@@ -182,6 +182,18 @@ impl CreateImageVersionInputBuilder {
         self.base_image = input;
         self
     }
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p> <code>
+    /// <acct-id>
+    /// .dkr.ecr.
+    /// <region>
+    /// .amazonaws.com/
+    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
+    /// </region>
+    /// </acct-id></code> </p>
+    pub fn get_base_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_image
+    }
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -192,6 +204,10 @@ impl CreateImageVersionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
@@ -201,6 +217,10 @@ impl CreateImageVersionInputBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_name = input;
         self
+    }
+    /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// Appends an item to `aliases`.
     ///
@@ -220,6 +240,10 @@ impl CreateImageVersionInputBuilder {
     ) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>A list of aliases created with the image version.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases
     }
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
@@ -246,6 +270,16 @@ impl CreateImageVersionInputBuilder {
         self.vendor_guidance = input;
         self
     }
+    /// <p>The stability of the image version, specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
+        &self.vendor_guidance
+    }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
     /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
@@ -266,6 +300,15 @@ impl CreateImageVersionInputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn ml_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_framework = ::std::option::Option::Some(input.into());
@@ -275,6 +318,10 @@ impl CreateImageVersionInputBuilder {
     pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_framework = input;
         self
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn get_ml_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
     pub fn programming_lang(
@@ -291,6 +338,10 @@ impl CreateImageVersionInputBuilder {
     ) -> Self {
         self.programming_lang = input;
         self
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn get_programming_lang(&self) -> &::std::option::Option<::std::string::String> {
+        &self.programming_lang
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
@@ -310,6 +361,14 @@ impl CreateImageVersionInputBuilder {
         self.processor = input;
         self
     }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn get_processor(&self) -> &::std::option::Option<crate::types::Processor> {
+        &self.processor
+    }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn horovod(mut self, input: bool) -> Self {
         self.horovod = ::std::option::Option::Some(input);
@@ -319,6 +378,10 @@ impl CreateImageVersionInputBuilder {
     pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
         self.horovod = input;
         self
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn get_horovod(&self) -> &::std::option::Option<bool> {
+        &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn release_notes(
@@ -335,6 +398,10 @@ impl CreateImageVersionInputBuilder {
     ) -> Self {
         self.release_notes = input;
         self
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_notes
     }
     /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
     pub fn build(

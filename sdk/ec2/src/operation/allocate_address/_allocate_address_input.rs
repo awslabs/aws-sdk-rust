@@ -92,6 +92,10 @@ impl AllocateAddressInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The network (<code>vpc</code>).</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainType> {
+        &self.domain
+    }
     /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl AllocateAddressInputBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
     pub fn public_ipv4_pool(
@@ -117,6 +125,10 @@ impl AllocateAddressInputBuilder {
     ) -> Self {
         self.public_ipv4_pool = input;
         self
+    }
+    /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
+    pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv4_pool
     }
     /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
     /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
@@ -138,6 +150,12 @@ impl AllocateAddressInputBuilder {
         self.network_border_group = input;
         self
     }
+    /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
+    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
+    /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an <code>InvalidParameterCombination</code> error.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
     pub fn customer_owned_ipv4_pool(
         mut self,
@@ -154,6 +172,10 @@ impl AllocateAddressInputBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
+    /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl AllocateAddressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -182,6 +208,12 @@ impl AllocateAddressInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to assign to the Elastic IP address.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
     pub fn build(

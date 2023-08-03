@@ -72,6 +72,10 @@ impl ImpactBuilder {
         self.max_impact = input;
         self
     }
+    /// <p>The maximum dollar value that's observed for an anomaly.</p>
+    pub fn get_max_impact(&self) -> &::std::option::Option<f64> {
+        &self.max_impact
+    }
     /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
     pub fn total_impact(mut self, input: f64) -> Self {
         self.total_impact = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ImpactBuilder {
     pub fn set_total_impact(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_impact = input;
         self
+    }
+    /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
+    pub fn get_total_impact(&self) -> &::std::option::Option<f64> {
+        &self.total_impact
     }
     /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
     pub fn total_actual_spend(mut self, input: f64) -> Self {
@@ -92,6 +100,10 @@ impl ImpactBuilder {
         self.total_actual_spend = input;
         self
     }
+    /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
+    pub fn get_total_actual_spend(&self) -> &::std::option::Option<f64> {
+        &self.total_actual_spend
+    }
     /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
     pub fn total_expected_spend(mut self, input: f64) -> Self {
         self.total_expected_spend = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ImpactBuilder {
         self.total_expected_spend = input;
         self
     }
+    /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
+    pub fn get_total_expected_spend(&self) -> &::std::option::Option<f64> {
+        &self.total_expected_spend
+    }
     /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
     pub fn total_impact_percentage(mut self, input: f64) -> Self {
         self.total_impact_percentage = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl ImpactBuilder {
     pub fn set_total_impact_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_impact_percentage = input;
         self
+    }
+    /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
+    pub fn get_total_impact_percentage(&self) -> &::std::option::Option<f64> {
+        &self.total_impact_percentage
     }
     /// Consumes the builder and constructs a [`Impact`](crate::types::Impact).
     pub fn build(self) -> crate::types::Impact {

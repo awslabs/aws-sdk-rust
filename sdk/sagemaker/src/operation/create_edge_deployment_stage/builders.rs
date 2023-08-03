@@ -36,6 +36,10 @@ impl CreateEdgeDeploymentStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEdgeDeploymentStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateEdgeDeploymentStageFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// Appends an item to `Stages`.
     ///
     /// To override the contents of this collection use [`set_stages`](Self::set_stages).
@@ -148,5 +156,11 @@ impl CreateEdgeDeploymentStageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stages(input);
         self
+    }
+    /// <p>List of stages to be added to the edge deployment plan.</p>
+    pub fn get_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+        self.inner.get_stages()
     }
 }

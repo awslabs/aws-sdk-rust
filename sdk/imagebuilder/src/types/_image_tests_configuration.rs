@@ -52,6 +52,10 @@ impl ImageTestsConfigurationBuilder {
         self.image_tests_enabled = input;
         self
     }
+    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    pub fn get_image_tests_enabled(&self) -> &::std::option::Option<bool> {
+        &self.image_tests_enabled
+    }
     /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
@@ -65,6 +69,12 @@ impl ImageTestsConfigurationBuilder {
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_minutes = input;
         self
+    }
+    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+    /// </note>
+    pub fn get_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_minutes
     }
     /// Consumes the builder and constructs a [`ImageTestsConfiguration`](crate::types::ImageTestsConfiguration).
     pub fn build(self) -> crate::types::ImageTestsConfiguration {

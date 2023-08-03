@@ -39,6 +39,10 @@ impl DeleteCellInputBuilder {
         self.cell_name = input;
         self
     }
+    /// <p>The name of the cell.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_name
+    }
     /// Consumes the builder and constructs a [`DeleteCellInput`](crate::operation::delete_cell::DeleteCellInput).
     pub fn build(
         self,

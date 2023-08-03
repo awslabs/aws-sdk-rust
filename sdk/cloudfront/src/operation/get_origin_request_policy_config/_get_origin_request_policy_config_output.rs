@@ -64,6 +64,12 @@ impl GetOriginRequestPolicyConfigOutputBuilder {
         self.origin_request_policy_config = input;
         self
     }
+    /// <p>The origin request policy configuration.</p>
+    pub fn get_origin_request_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+        &self.origin_request_policy_config
+    }
     /// <p>The current version of the origin request policy.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetOriginRequestPolicyConfigOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The current version of the origin request policy.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

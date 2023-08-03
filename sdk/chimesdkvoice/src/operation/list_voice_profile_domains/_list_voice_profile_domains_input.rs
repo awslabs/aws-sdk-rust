@@ -49,6 +49,10 @@ impl ListVoiceProfileDomainsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token used to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl ListVoiceProfileDomainsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListVoiceProfileDomainsInput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsInput).
     pub fn build(

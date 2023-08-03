@@ -40,6 +40,10 @@ impl StartMultiplexInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// Consumes the builder and constructs a [`StartMultiplexInput`](crate::operation::start_multiplex::StartMultiplexInput).
     pub fn build(
         self,

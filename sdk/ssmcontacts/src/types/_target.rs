@@ -51,6 +51,12 @@ impl TargetBuilder {
         self.channel_target_info = input;
         self
     }
+    /// <p>Information about the contact channel Incident Manager is engaging.</p>
+    pub fn get_channel_target_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelTargetInfo> {
+        &self.channel_target_info
+    }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
     pub fn contact_target_info(mut self, input: crate::types::ContactTargetInfo) -> Self {
         self.contact_target_info = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl TargetBuilder {
     ) -> Self {
         self.contact_target_info = input;
         self
+    }
+    /// <p>Information about the contact that Incident Manager is engaging.</p>
+    pub fn get_contact_target_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactTargetInfo> {
+        &self.contact_target_info
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

@@ -40,6 +40,10 @@ impl TextInputSpecificationBuilder {
         self.start_timeout_ms = input;
         self
     }
+    /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
+    pub fn get_start_timeout_ms(&self) -> &::std::option::Option<i32> {
+        &self.start_timeout_ms
+    }
     /// Consumes the builder and constructs a [`TextInputSpecification`](crate::types::TextInputSpecification).
     pub fn build(self) -> crate::types::TextInputSpecification {
         crate::types::TextInputSpecification {

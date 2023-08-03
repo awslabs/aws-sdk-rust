@@ -65,6 +65,17 @@ impl PipeTargetLambdaFunctionParametersBuilder {
         self.invocation_type = input;
         self
     }
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+    /// </ul>
+    pub fn get_invocation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
+        &self.invocation_type
+    }
     /// Consumes the builder and constructs a [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).
     pub fn build(self) -> crate::types::PipeTargetLambdaFunctionParameters {
         crate::types::PipeTargetLambdaFunctionParameters {

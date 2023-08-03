@@ -71,6 +71,10 @@ impl StatementBuilder {
         self.source_policy_id = input;
         self
     }
+    /// <p>The identifier of the policy that was provided as an input.</p>
+    pub fn get_source_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_policy_id
+    }
     /// <p>The type of the policy.</p>
     pub fn source_policy_type(mut self, input: crate::types::PolicySourceType) -> Self {
         self.source_policy_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl StatementBuilder {
     ) -> Self {
         self.source_policy_type = input;
         self
+    }
+    /// <p>The type of the policy.</p>
+    pub fn get_source_policy_type(&self) -> &::std::option::Option<crate::types::PolicySourceType> {
+        &self.source_policy_type
     }
     /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM policy.</p>
     pub fn start_position(mut self, input: crate::types::Position) -> Self {
@@ -97,6 +105,10 @@ impl StatementBuilder {
         self.start_position = input;
         self
     }
+    /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM policy.</p>
+    pub fn get_start_position(&self) -> &::std::option::Option<crate::types::Position> {
+        &self.start_position
+    }
     /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
     pub fn end_position(mut self, input: crate::types::Position) -> Self {
         self.end_position = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl StatementBuilder {
     ) -> Self {
         self.end_position = input;
         self
+    }
+    /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
+    pub fn get_end_position(&self) -> &::std::option::Option<crate::types::Position> {
+        &self.end_position
     }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     pub fn build(self) -> crate::types::Statement {

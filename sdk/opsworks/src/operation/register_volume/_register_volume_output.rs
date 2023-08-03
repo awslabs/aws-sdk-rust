@@ -47,6 +47,10 @@ impl RegisterVolumeOutputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

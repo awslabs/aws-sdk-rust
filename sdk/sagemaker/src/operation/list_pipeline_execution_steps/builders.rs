@@ -36,6 +36,10 @@ impl ListPipelineExecutionStepsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPipelineExecutionSteps as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListPipelineExecutionStepsFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_arn()
+    }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +155,10 @@ impl ListPipelineExecutionStepsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -158,6 +170,10 @@ impl ListPipelineExecutionStepsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of pipeline execution steps to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -167,5 +183,9 @@ impl ListPipelineExecutionStepsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

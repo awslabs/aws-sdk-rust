@@ -79,6 +79,17 @@ impl LustreLogConfigurationBuilder {
         self.level = input;
         self
     }
+    /// <p>The data repository events that are logged by Amazon FSx.</p>
+    /// <ul>
+    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
+    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
+    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// </ul>
+    /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
+    pub fn get_level(&self) -> &::std::option::Option<crate::types::LustreAccessAuditLogLevel> {
+        &self.level
+    }
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs. The destination can be any Amazon CloudWatch Logs log group ARN. The destination ARN must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -88,6 +99,10 @@ impl LustreLogConfigurationBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs. The destination can be any Amazon CloudWatch Logs log group ARN. The destination ARN must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`LustreLogConfiguration`](crate::types::LustreLogConfiguration).
     pub fn build(self) -> crate::types::LustreLogConfiguration {

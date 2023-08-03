@@ -202,6 +202,10 @@ impl SimulationJobBatchSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the batch.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -215,6 +219,10 @@ impl SimulationJobBatchSummaryBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -227,6 +235,10 @@ impl SimulationJobBatchSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -355,6 +367,67 @@ impl SimulationJobBatchSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// InProgress
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Completing
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationJobBatchStatus> {
+        &self.status
+    }
     /// <p>The number of failed simulation job requests.</p>
     pub fn failed_request_count(mut self, input: i32) -> Self {
         self.failed_request_count = ::std::option::Option::Some(input);
@@ -364,6 +437,10 @@ impl SimulationJobBatchSummaryBuilder {
     pub fn set_failed_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_request_count = input;
         self
+    }
+    /// <p>The number of failed simulation job requests.</p>
+    pub fn get_failed_request_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_request_count
     }
     /// <p>The number of pending simulation job requests.</p>
     pub fn pending_request_count(mut self, input: i32) -> Self {
@@ -375,6 +452,10 @@ impl SimulationJobBatchSummaryBuilder {
         self.pending_request_count = input;
         self
     }
+    /// <p>The number of pending simulation job requests.</p>
+    pub fn get_pending_request_count(&self) -> &::std::option::Option<i32> {
+        &self.pending_request_count
+    }
     /// <p>The number of created simulation job requests.</p>
     pub fn created_request_count(mut self, input: i32) -> Self {
         self.created_request_count = ::std::option::Option::Some(input);
@@ -384,6 +465,10 @@ impl SimulationJobBatchSummaryBuilder {
     pub fn set_created_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.created_request_count = input;
         self
+    }
+    /// <p>The number of created simulation job requests.</p>
+    pub fn get_created_request_count(&self) -> &::std::option::Option<i32> {
+        &self.created_request_count
     }
     /// Consumes the builder and constructs a [`SimulationJobBatchSummary`](crate::types::SimulationJobBatchSummary).
     pub fn build(self) -> crate::types::SimulationJobBatchSummary {

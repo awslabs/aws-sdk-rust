@@ -107,6 +107,12 @@ impl CloudWatchAlarmDefinitionBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
     pub fn evaluation_periods(mut self, input: i32) -> Self {
         self.evaluation_periods = ::std::option::Option::Some(input);
@@ -116,6 +122,10 @@ impl CloudWatchAlarmDefinitionBuilder {
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_periods = input;
         self
+    }
+    /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
+    pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_periods
     }
     /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +137,10 @@ impl CloudWatchAlarmDefinitionBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -136,6 +150,10 @@ impl CloudWatchAlarmDefinitionBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -147,6 +165,10 @@ impl CloudWatchAlarmDefinitionBuilder {
         self.period = input;
         self
     }
+    /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl CloudWatchAlarmDefinitionBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.statistic = input;
         self
+    }
+    /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        &self.statistic
     }
     /// <p>The value against which the specified statistic is compared.</p>
     pub fn threshold(mut self, input: f64) -> Self {
@@ -167,6 +193,10 @@ impl CloudWatchAlarmDefinitionBuilder {
         self.threshold = input;
         self
     }
+    /// <p>The value against which the specified statistic is compared.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f64> {
+        &self.threshold
+    }
     /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -176,6 +206,10 @@ impl CloudWatchAlarmDefinitionBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
     }
     /// Appends an item to `dimensions`.
     ///
@@ -195,6 +229,12 @@ impl CloudWatchAlarmDefinitionBuilder {
     ) -> Self {
         self.dimensions = input;
         self
+    }
+    /// <p>A CloudWatch metric dimension.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+        &self.dimensions
     }
     /// Consumes the builder and constructs a [`CloudWatchAlarmDefinition`](crate::types::CloudWatchAlarmDefinition).
     pub fn build(self) -> crate::types::CloudWatchAlarmDefinition {

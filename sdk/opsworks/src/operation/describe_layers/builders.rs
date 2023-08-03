@@ -39,6 +39,12 @@ impl DescribeLayersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLayers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_layers::builders::DescribeLayersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl DescribeLayersFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -137,5 +147,9 @@ impl DescribeLayersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
+    }
+    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
     }
 }

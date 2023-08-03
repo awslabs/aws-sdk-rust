@@ -48,6 +48,10 @@ impl IpRuleItemBuilder {
         self.ip_rule = input;
         self
     }
+    /// <p>The IP address range, in CIDR notation.</p>
+    pub fn get_ip_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_rule
+    }
     /// <p>The description.</p>
     pub fn rule_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_desc = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IpRuleItemBuilder {
     pub fn set_rule_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_desc = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_rule_desc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_desc
     }
     /// Consumes the builder and constructs a [`IpRuleItem`](crate::types::IpRuleItem).
     pub fn build(self) -> crate::types::IpRuleItem {

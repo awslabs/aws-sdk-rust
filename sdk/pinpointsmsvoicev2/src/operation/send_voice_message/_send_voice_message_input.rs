@@ -137,6 +137,10 @@ impl SendVoiceMessageInputBuilder {
         self.destination_phone_number = input;
         self
     }
+    /// <p>The destination phone number in E.164 format.</p>
+    pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_phone_number
+    }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
     pub fn origination_identity(
         mut self,
@@ -153,6 +157,10 @@ impl SendVoiceMessageInputBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>The text to convert to a voice message.</p>
     pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_body = ::std::option::Option::Some(input.into());
@@ -162,6 +170,10 @@ impl SendVoiceMessageInputBuilder {
     pub fn set_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_body = input;
         self
+    }
+    /// <p>The text to convert to a voice message.</p>
+    pub fn get_message_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_body
     }
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
@@ -184,6 +196,16 @@ impl SendVoiceMessageInputBuilder {
         self.message_body_text_type = input;
         self
     }
+    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
+    /// <ul>
+    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
+    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
+    /// </ul>
+    pub fn get_message_body_text_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceMessageBodyTextType> {
+        &self.message_body_text_type
+    }
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
@@ -193,6 +215,10 @@ impl SendVoiceMessageInputBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
+        &self.voice_id
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn configuration_set_name(
@@ -210,6 +236,10 @@ impl SendVoiceMessageInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
     pub fn max_price_per_minute(
         mut self,
@@ -226,6 +256,10 @@ impl SendVoiceMessageInputBuilder {
         self.max_price_per_minute = input;
         self
     }
+    /// <p>The maximum amount to spend per voice message, in US dollars.</p>
+    pub fn get_max_price_per_minute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_price_per_minute
+    }
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
@@ -235,6 +269,10 @@ impl SendVoiceMessageInputBuilder {
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_to_live = input;
         self
+    }
+    /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
+    pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
+        &self.time_to_live
     }
     /// Adds a key-value pair to `context`.
     ///
@@ -261,6 +299,14 @@ impl SendVoiceMessageInputBuilder {
         self.context = input;
         self
     }
+    /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.context
+    }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -270,6 +316,10 @@ impl SendVoiceMessageInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
     pub fn build(

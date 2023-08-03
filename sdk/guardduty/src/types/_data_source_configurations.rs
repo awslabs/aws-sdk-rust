@@ -62,6 +62,10 @@ impl DataSourceConfigurationsBuilder {
         self.s3_logs = input;
         self
     }
+    /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3LogsConfiguration> {
+        &self.s3_logs
+    }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub fn kubernetes(mut self, input: crate::types::KubernetesConfiguration) -> Self {
         self.kubernetes = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DataSourceConfigurationsBuilder {
     ) -> Self {
         self.kubernetes = input;
         self
+    }
+    /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    pub fn get_kubernetes(&self) -> &::std::option::Option<crate::types::KubernetesConfiguration> {
+        &self.kubernetes
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     pub fn malware_protection(
@@ -90,6 +98,12 @@ impl DataSourceConfigurationsBuilder {
     ) -> Self {
         self.malware_protection = input;
         self
+    }
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MalwareProtectionConfiguration> {
+        &self.malware_protection
     }
     /// Consumes the builder and constructs a [`DataSourceConfigurations`](crate::types::DataSourceConfigurations).
     pub fn build(self) -> crate::types::DataSourceConfigurations {

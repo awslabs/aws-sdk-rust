@@ -36,6 +36,10 @@ impl UpdateEmergencyContactSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEmergencyContactSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_emergency_contact_settings::builders::UpdateEmergencyContactSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,5 +112,12 @@ impl UpdateEmergencyContactSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_emergency_contact_list(input);
         self
+    }
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
+    pub fn get_emergency_contact_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+        self.inner.get_emergency_contact_list()
     }
 }

@@ -101,6 +101,10 @@ impl TimestreamConfigurationBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Name of Timestream database to which the query result will be written.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl TimestreamConfigurationBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
     pub fn time_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_column = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl TimestreamConfigurationBuilder {
     pub fn set_time_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_column = input;
         self
+    }
+    /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
+    pub fn get_time_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_column
     }
     /// Appends an item to `dimension_mappings`.
     ///
@@ -140,6 +152,12 @@ impl TimestreamConfigurationBuilder {
         self.dimension_mappings = input;
         self
     }
+    /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
+    pub fn get_dimension_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
+        &self.dimension_mappings
+    }
     /// <p>Multi-measure mappings.</p>
     pub fn multi_measure_mappings(mut self, input: crate::types::MultiMeasureMappings) -> Self {
         self.multi_measure_mappings = ::std::option::Option::Some(input);
@@ -152,6 +170,12 @@ impl TimestreamConfigurationBuilder {
     ) -> Self {
         self.multi_measure_mappings = input;
         self
+    }
+    /// <p>Multi-measure mappings.</p>
+    pub fn get_multi_measure_mappings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
+        &self.multi_measure_mappings
     }
     /// Appends an item to `mixed_measure_mappings`.
     ///
@@ -172,6 +196,12 @@ impl TimestreamConfigurationBuilder {
         self.mixed_measure_mappings = input;
         self
     }
+    /// <p>Specifies how to map measures to multi-measure records.</p>
+    pub fn get_mixed_measure_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
+        &self.mixed_measure_mappings
+    }
     /// <p>Name of the measure column.</p>
     pub fn measure_name_column(
         mut self,
@@ -187,6 +217,10 @@ impl TimestreamConfigurationBuilder {
     ) -> Self {
         self.measure_name_column = input;
         self
+    }
+    /// <p>Name of the measure column.</p>
+    pub fn get_measure_name_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_name_column
     }
     /// Consumes the builder and constructs a [`TimestreamConfiguration`](crate::types::TimestreamConfiguration).
     pub fn build(self) -> crate::types::TimestreamConfiguration {

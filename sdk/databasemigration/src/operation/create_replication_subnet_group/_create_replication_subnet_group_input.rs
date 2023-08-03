@@ -78,6 +78,14 @@ impl CreateReplicationSubnetGroupInputBuilder {
         self.replication_subnet_group_identifier = input;
         self
     }
+    /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
+    pub fn get_replication_subnet_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_identifier
+    }
     /// <p>The description for the subnet group.</p>
     pub fn replication_subnet_group_description(
         mut self,
@@ -93,6 +101,12 @@ impl CreateReplicationSubnetGroupInputBuilder {
     ) -> Self {
         self.replication_subnet_group_description = input;
         self
+    }
+    /// <p>The description for the subnet group.</p>
+    pub fn get_replication_subnet_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -113,6 +127,10 @@ impl CreateReplicationSubnetGroupInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -131,6 +149,10 @@ impl CreateReplicationSubnetGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more tags to be assigned to the subnet group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicationSubnetGroupInput`](crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput).
     pub fn build(

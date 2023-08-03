@@ -37,6 +37,12 @@ impl DescribeResizeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResize as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_resize::builders::DescribeResizeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,10 @@ impl DescribeResizeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
+    /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

@@ -40,6 +40,10 @@ impl HttpPropertiesBuilder {
         self.http_name = input;
         self
     }
+    /// <p>The name of an HTTP namespace.</p>
+    pub fn get_http_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_name
+    }
     /// Consumes the builder and constructs a [`HttpProperties`](crate::types::HttpProperties).
     pub fn build(self) -> crate::types::HttpProperties {
         crate::types::HttpProperties {

@@ -62,6 +62,10 @@ impl ParameterizedStatementBuilder {
         self.statement = input;
         self
     }
+    /// <p> A PartiQL statment that uses parameters. </p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -81,6 +85,12 @@ impl ParameterizedStatementBuilder {
         self.parameters = input;
         self
     }
+    /// <p> The parameter values. </p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+        &self.parameters
+    }
     /// <p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
     pub fn return_values_on_condition_check_failure(
@@ -98,6 +108,13 @@ impl ParameterizedStatementBuilder {
     ) -> Self {
         self.return_values_on_condition_check_failure = input;
         self
+    }
+    /// <p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn get_return_values_on_condition_check_failure(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure> {
+        &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`ParameterizedStatement`](crate::types::ParameterizedStatement).
     pub fn build(self) -> crate::types::ParameterizedStatement {

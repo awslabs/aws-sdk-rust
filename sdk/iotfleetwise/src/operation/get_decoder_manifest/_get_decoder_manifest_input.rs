@@ -40,6 +40,10 @@ impl GetDecoderManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the decoder manifest to retrieve information about. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
     pub fn build(
         self,

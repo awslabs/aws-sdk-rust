@@ -72,6 +72,10 @@ impl UngroupResourcesOutputBuilder {
         self.succeeded = input;
         self
     }
+    /// <p>A list of resources that were successfully removed from the group by this operation.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.succeeded
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -91,6 +95,12 @@ impl UngroupResourcesOutputBuilder {
         self.failed = input;
         self
     }
+    /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
+        &self.failed
+    }
     /// Appends an item to `pending`.
     ///
     /// To override the contents of this collection use [`set_pending`](Self::set_pending).
@@ -109,6 +119,12 @@ impl UngroupResourcesOutputBuilder {
     ) -> Self {
         self.pending = input;
         self
+    }
+    /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
+    pub fn get_pending(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
+        &self.pending
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

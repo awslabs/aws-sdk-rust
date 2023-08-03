@@ -40,6 +40,10 @@ impl S3TableOutputOptionsBuilder {
         self.location = input;
         self
     }
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.location
+    }
     /// Consumes the builder and constructs a [`S3TableOutputOptions`](crate::types::S3TableOutputOptions).
     pub fn build(self) -> crate::types::S3TableOutputOptions {
         crate::types::S3TableOutputOptions {

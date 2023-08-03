@@ -58,6 +58,12 @@ impl DescribeVirtualGatewaysOutputBuilder {
         self.virtual_gateways = input;
         self
     }
+    /// <p>The virtual private gateways.</p>
+    pub fn get_virtual_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>> {
+        &self.virtual_gateways
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -37,6 +37,12 @@ impl ListOperationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOperations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_operations::builders::ListOperationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl ListOperationsFluentBuilder {
         self.inner = self.inner.set_submitted_since(input);
         self
     }
+    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_submitted_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_submitted_since()
+    }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -142,6 +152,10 @@ impl ListOperationsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
@@ -154,6 +168,11 @@ impl ListOperationsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>Number of domains to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
     /// Appends an item to `Status`.
     ///
@@ -172,6 +191,12 @@ impl ListOperationsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p> The status of the operations. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+        self.inner.get_status()
+    }
     /// Appends an item to `Type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
@@ -189,6 +214,10 @@ impl ListOperationsFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p> An arrays of the domains operation types. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
+        self.inner.get_type()
+    }
     /// <p> The sort type for returned values. </p>
     pub fn sort_by(mut self, input: crate::types::ListOperationsSortAttributeName) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -202,6 +231,12 @@ impl ListOperationsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p> The sort type for returned values. </p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
+        self.inner.get_sort_by()
+    }
     /// <p> The sort order ofr returned values, either ascending or descending. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -211,5 +246,9 @@ impl ListOperationsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

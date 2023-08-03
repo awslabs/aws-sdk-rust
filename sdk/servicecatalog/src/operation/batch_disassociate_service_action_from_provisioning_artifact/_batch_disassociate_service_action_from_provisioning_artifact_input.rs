@@ -71,6 +71,12 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
         self.service_action_associations = input;
         self
     }
+    /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    pub fn get_service_action_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>> {
+        &self.service_action_associations
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
@@ -94,6 +100,14 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     ) -> Self {
         self.accept_language = input;
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
     }
     /// Consumes the builder and constructs a [`BatchDisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput, ::aws_smithy_http::operation::error::BuildError>{

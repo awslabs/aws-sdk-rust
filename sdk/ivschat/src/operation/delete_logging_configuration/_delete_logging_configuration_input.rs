@@ -39,6 +39,10 @@ impl DeleteLoggingConfigurationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Identifier of the logging configuration to be deleted.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
     pub fn build(
         self,

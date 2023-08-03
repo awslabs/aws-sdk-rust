@@ -48,6 +48,10 @@ impl GroupConfigurationParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl GroupConfigurationParameterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`GroupConfigurationParameter`](crate::types::GroupConfigurationParameter).
     pub fn build(self) -> crate::types::GroupConfigurationParameter {

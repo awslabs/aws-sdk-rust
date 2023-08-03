@@ -50,6 +50,12 @@ impl OrganizationKubernetesConfigurationBuilder {
         self.audit_logs = input;
         self
     }
+    /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
+    pub fn get_audit_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration> {
+        &self.audit_logs
+    }
     /// Consumes the builder and constructs a [`OrganizationKubernetesConfiguration`](crate::types::OrganizationKubernetesConfiguration).
     pub fn build(self) -> crate::types::OrganizationKubernetesConfiguration {
         crate::types::OrganizationKubernetesConfiguration {

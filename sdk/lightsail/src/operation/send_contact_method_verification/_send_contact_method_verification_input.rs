@@ -44,6 +44,12 @@ impl SendContactMethodVerificationInputBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    pub fn get_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactMethodVerificationProtocol> {
+        &self.protocol
+    }
     /// Consumes the builder and constructs a [`SendContactMethodVerificationInput`](crate::operation::send_contact_method_verification::SendContactMethodVerificationInput).
     pub fn build(
         self,

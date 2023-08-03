@@ -47,6 +47,10 @@ impl GetCognitoEventsInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>The Cognito Identity Pool ID for the request</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Consumes the builder and constructs a [`GetCognitoEventsInput`](crate::operation::get_cognito_events::GetCognitoEventsInput).
     pub fn build(
         self,

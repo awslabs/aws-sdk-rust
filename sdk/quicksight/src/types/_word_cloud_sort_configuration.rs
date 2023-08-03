@@ -54,6 +54,12 @@ impl WordCloudSortConfigurationBuilder {
         self.category_items_limit = input;
         self
     }
+    /// <p>The limit on the number of groups that are displayed in a word cloud.</p>
+    pub fn get_category_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.category_items_limit
+    }
     /// Appends an item to `category_sort`.
     ///
     /// To override the contents of this collection use [`set_category_sort`](Self::set_category_sort).
@@ -72,6 +78,12 @@ impl WordCloudSortConfigurationBuilder {
     ) -> Self {
         self.category_sort = input;
         self
+    }
+    /// <p>The sort configuration of group by fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
     }
     /// Consumes the builder and constructs a [`WordCloudSortConfiguration`](crate::types::WordCloudSortConfiguration).
     pub fn build(self) -> crate::types::WordCloudSortConfiguration {

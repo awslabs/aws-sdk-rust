@@ -40,6 +40,10 @@ impl SecurityProfileTargetBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the security profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`SecurityProfileTarget`](crate::types::SecurityProfileTarget).
     pub fn build(self) -> crate::types::SecurityProfileTarget {
         crate::types::SecurityProfileTarget { arn: self.arn }

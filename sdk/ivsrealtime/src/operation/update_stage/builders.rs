@@ -36,6 +36,10 @@ impl UpdateStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_stage::builders::UpdateStageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateStageFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>ARN of the stage to be updated.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>Name of the stage to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,5 +135,9 @@ impl UpdateStageFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Name of the stage to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

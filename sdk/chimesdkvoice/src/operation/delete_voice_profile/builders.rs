@@ -36,6 +36,12 @@ impl DeleteVoiceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVoiceProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteVoiceProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_profile_id(input);
         self
+    }
+    /// <p>The voice profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_profile_id()
     }
 }

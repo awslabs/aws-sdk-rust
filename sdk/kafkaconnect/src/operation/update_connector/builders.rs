@@ -36,6 +36,12 @@ impl UpdateConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateConnectorFluentBuilder {
         self.inner = self.inner.set_capacity(input);
         self
     }
+    /// <p>The target capacity.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<crate::types::CapacityUpdate> {
+        self.inner.get_capacity()
+    }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub fn connector_arn(
         mut self,
@@ -145,6 +155,10 @@ impl UpdateConnectorFluentBuilder {
         self.inner = self.inner.set_connector_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_arn()
+    }
     /// <p>The current version of the connector that you want to update.</p>
     pub fn current_version(
         mut self,
@@ -160,5 +174,9 @@ impl UpdateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The current version of the connector that you want to update.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
     }
 }

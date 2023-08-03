@@ -47,6 +47,10 @@ impl DescribeHumanTaskUiInputBuilder {
         self.human_task_ui_name = input;
         self
     }
+    /// <p>The name of the human task user interface (worker task template) you want information about.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_name
+    }
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
     pub fn build(
         self,

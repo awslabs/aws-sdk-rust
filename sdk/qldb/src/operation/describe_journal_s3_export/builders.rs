@@ -40,6 +40,13 @@ impl DescribeJournalS3ExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJournalS3Export as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl DescribeJournalS3ExportFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_id(input.into());
@@ -139,5 +150,9 @@ impl DescribeJournalS3ExportFluentBuilder {
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_id(input);
         self
+    }
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_id()
     }
 }

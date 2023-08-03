@@ -63,6 +63,10 @@ impl ListImportsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of imports to display on a single page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The ARN of the destination event data store. </p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListImportsInputBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p> The ARN of the destination event data store. </p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -86,6 +94,10 @@ impl ListImportsInputBuilder {
         self.import_status = input;
         self
     }
+    /// <p> The status of the import. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
+    }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl ListImportsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token you can use to get the next page of import results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
     pub fn build(

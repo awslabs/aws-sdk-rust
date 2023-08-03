@@ -36,6 +36,13 @@ impl UpdateResourceDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateResourceDefinitionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// The ID of the resource definition.
     pub fn resource_definition_id(
         mut self,
@@ -141,5 +152,9 @@ impl UpdateResourceDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_definition_id(input);
         self
+    }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_definition_id()
     }
 }

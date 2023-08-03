@@ -36,6 +36,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSavingsPlansPurchaseRecommendation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,12 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self.inner = self.inner.set_savings_plans_type(input);
         self
     }
+    /// <p>The Savings Plans recommendation type that's requested.</p>
+    pub fn get_savings_plans_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+        self.inner.get_savings_plans_type()
+    }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
         self.inner = self.inner.term_in_years(input);
@@ -115,6 +125,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_term_in_years(input);
         self
+    }
+    /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
+    pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
+        self.inner.get_term_in_years()
     }
     /// <p>The payment option that's used to generate these recommendations.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -129,6 +143,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self.inner = self.inner.set_payment_option(input);
         self
     }
+    /// <p>The payment option that's used to generate these recommendations.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        self.inner.get_payment_option()
+    }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub fn account_scope(mut self, input: crate::types::AccountScope) -> Self {
         self.inner = self.inner.account_scope(input);
@@ -141,6 +159,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_scope(input);
         self
+    }
+    /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        self.inner.get_account_scope()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
@@ -158,6 +180,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_page_token()
+    }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -167,6 +193,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The number of recommendations that you want returned in a single response object.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
@@ -181,6 +211,12 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self.inner = self.inner.set_lookback_period_in_days(input);
         self
     }
+    /// <p>The lookback period that's used to generate the recommendation.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        self.inner.get_lookback_period_in_days()
+    }
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
     /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
@@ -192,5 +228,10 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
+    /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        self.inner.get_filter()
     }
 }

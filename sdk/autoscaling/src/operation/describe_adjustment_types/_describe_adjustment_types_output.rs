@@ -58,6 +58,12 @@ impl DescribeAdjustmentTypesOutputBuilder {
         self.adjustment_types = input;
         self
     }
+    /// <p>The policy adjustment types.</p>
+    pub fn get_adjustment_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>> {
+        &self.adjustment_types
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

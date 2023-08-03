@@ -103,6 +103,10 @@ impl UpdateClientCertificateOutputBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of the client certificate.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// <p>The description of the client certificate.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl UpdateClientCertificateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the client certificate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub fn pem_encoded_certificate(
@@ -129,6 +137,10 @@ impl UpdateClientCertificateOutputBuilder {
         self.pem_encoded_certificate = input;
         self
     }
+    /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
+    pub fn get_pem_encoded_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pem_encoded_certificate
+    }
     /// <p>The timestamp when the client certificate was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl UpdateClientCertificateOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the client certificate was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The timestamp when the client certificate will expire.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl UpdateClientCertificateOutputBuilder {
     ) -> Self {
         self.expiration_date = input;
         self
+    }
+    /// <p>The timestamp when the client certificate will expire.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +199,14 @@ impl UpdateClientCertificateOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

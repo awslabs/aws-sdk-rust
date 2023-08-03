@@ -51,6 +51,10 @@ impl VpcDerivedInfoStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The VPC options for the specified domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcDerivedInfo> {
+        &self.options
+    }
     /// <p>The status of the VPC options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl VpcDerivedInfoStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the VPC options for the specified domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VpcDerivedInfoStatus`](crate::types::VpcDerivedInfoStatus).
     pub fn build(self) -> crate::types::VpcDerivedInfoStatus {

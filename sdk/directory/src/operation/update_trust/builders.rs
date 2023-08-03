@@ -36,6 +36,10 @@ impl UpdateTrustFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrust as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_trust::builders::UpdateTrustInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateTrustFluentBuilder {
         self.inner = self.inner.set_trust_id(input);
         self
     }
+    /// <p>Identifier of the trust relationship.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_id()
+    }
     /// <p>Updates selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
         self.inner = self.inner.selective_auth(input);
@@ -130,5 +138,9 @@ impl UpdateTrustFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_selective_auth(input);
         self
+    }
+    /// <p>Updates selective authentication for the trust.</p>
+    pub fn get_selective_auth(&self) -> &::std::option::Option<crate::types::SelectiveAuth> {
+        self.inner.get_selective_auth()
     }
 }

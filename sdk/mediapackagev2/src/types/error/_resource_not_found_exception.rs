@@ -77,6 +77,10 @@ impl ResourceNotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The specified resource type wasn't found.</p>
     pub fn resource_type_not_found(mut self, input: crate::types::ResourceTypeNotFound) -> Self {
         self.resource_type_not_found = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl ResourceNotFoundExceptionBuilder {
     ) -> Self {
         self.resource_type_not_found = input;
         self
+    }
+    /// <p>The specified resource type wasn't found.</p>
+    pub fn get_resource_type_not_found(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceTypeNotFound> {
+        &self.resource_type_not_found
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

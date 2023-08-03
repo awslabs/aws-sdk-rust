@@ -55,6 +55,10 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `vpc_ids`.
     ///
@@ -83,6 +91,10 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     ) -> Self {
         self.vpc_ids = input;
         self
+    }
+    /// <p>The IDs of the VPCs.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_ids
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput, ::aws_smithy_http::operation::error::BuildError>{

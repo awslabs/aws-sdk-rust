@@ -36,6 +36,13 @@ impl CreateWorldExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorldExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_world_export_job::builders::CreateWorldExportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateWorldExportJobFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `worlds`.
     ///
     /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
@@ -149,6 +160,10 @@ impl CreateWorldExportJobFluentBuilder {
         self.inner = self.inner.set_worlds(input);
         self
     }
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_worlds()
+    }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.inner = self.inner.output_location(input);
@@ -162,6 +177,10 @@ impl CreateWorldExportJobFluentBuilder {
         self.inner = self.inner.set_output_location(input);
         self
     }
+    /// <p>The output location.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        self.inner.get_output_location()
+    }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role(input.into());
@@ -171,6 +190,10 @@ impl CreateWorldExportJobFluentBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role(input);
         self
+    }
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,5 +217,13 @@ impl CreateWorldExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

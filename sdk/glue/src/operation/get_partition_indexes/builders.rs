@@ -36,6 +36,12 @@ impl GetPartitionIndexesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPartitionIndexes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetPartitionIndexesFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
     pub fn database_name(
         mut self,
@@ -153,6 +163,10 @@ impl GetPartitionIndexesFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -163,6 +177,10 @@ impl GetPartitionIndexesFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -172,5 +190,9 @@ impl GetPartitionIndexesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

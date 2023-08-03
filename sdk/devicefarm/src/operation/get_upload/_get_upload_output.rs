@@ -47,6 +47,10 @@ impl GetUploadOutputBuilder {
         self.upload = input;
         self
     }
+    /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
+    pub fn get_upload(&self) -> &::std::option::Option<crate::types::Upload> {
+        &self.upload
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

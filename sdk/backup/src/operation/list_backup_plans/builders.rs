@@ -36,6 +36,12 @@ impl ListBackupPlansFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBackupPlans as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_backup_plans::builders::ListBackupPlansInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListBackupPlansFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListBackupPlansFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
     pub fn include_deleted(mut self, input: bool) -> Self {
         self.inner = self.inner.include_deleted(input);
@@ -156,5 +170,9 @@ impl ListBackupPlansFluentBuilder {
     pub fn set_include_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_deleted(input);
         self
+    }
+    /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
+    pub fn get_include_deleted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_deleted()
     }
 }

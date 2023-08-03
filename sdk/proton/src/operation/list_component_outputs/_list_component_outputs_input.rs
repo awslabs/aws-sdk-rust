@@ -62,6 +62,10 @@ impl ListComponentOutputsInputBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component whose outputs you want.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListComponentOutputsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn deployment_id(
@@ -87,6 +95,10 @@ impl ListComponentOutputsInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
     pub fn build(

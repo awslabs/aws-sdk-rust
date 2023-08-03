@@ -36,6 +36,13 @@ impl BatchGetAccountStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetAccountStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_account_status::builders::BatchGetAccountStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,11 @@ impl BatchGetAccountStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

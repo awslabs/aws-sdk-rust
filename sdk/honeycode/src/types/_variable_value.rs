@@ -45,6 +45,10 @@ impl VariableValueBuilder {
         self.raw_value = input;
         self
     }
+    /// <p>Raw value of the variable.</p>
+    pub fn get_raw_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_value
+    }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     pub fn build(self) -> crate::types::VariableValue {
         crate::types::VariableValue {

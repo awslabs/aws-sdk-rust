@@ -65,6 +65,10 @@ impl GetEndpointInputBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>The thing ARN of the device. This is an optional parameter.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn certificate_arn(
         mut self,
@@ -80,6 +84,10 @@ impl GetEndpointInputBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
     pub fn device_role_arn(
@@ -97,6 +105,10 @@ impl GetEndpointInputBuilder {
         self.device_role_arn = input;
         self
     }
+    /// <p>The device role ARN of the device. This is an optional parameter.</p>
+    pub fn get_device_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_role_arn
+    }
     /// <p>The authentication method used during the device connection.</p>
     pub fn authentication_method(mut self, input: crate::types::AuthenticationMethod) -> Self {
         self.authentication_method = ::std::option::Option::Some(input);
@@ -109,6 +121,12 @@ impl GetEndpointInputBuilder {
     ) -> Self {
         self.authentication_method = input;
         self
+    }
+    /// <p>The authentication method used during the device connection.</p>
+    pub fn get_authentication_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMethod> {
+        &self.authentication_method
     }
     /// Consumes the builder and constructs a [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
     pub fn build(

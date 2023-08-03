@@ -46,6 +46,10 @@ impl DeleteComponentOutputBuilder {
         self.component = input;
         self
     }
+    /// <p>The detailed data of the component being deleted.</p>
+    pub fn get_component(&self) -> &::std::option::Option<crate::types::Component> {
+        &self.component
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl DescribeTargetHealthInputBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -72,6 +76,12 @@ impl DescribeTargetHealthInputBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The targets.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
     pub fn build(

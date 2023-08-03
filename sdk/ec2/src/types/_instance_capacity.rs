@@ -56,6 +56,10 @@ impl InstanceCapacityBuilder {
         self.available_capacity = input;
         self
     }
+    /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
+    pub fn get_available_capacity(&self) -> &::std::option::Option<i32> {
+        &self.available_capacity
+    }
     /// <p>The instance type supported by the Dedicated Host.</p>
     pub fn instance_type(
         mut self,
@@ -72,6 +76,10 @@ impl InstanceCapacityBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type supported by the Dedicated Host.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
     pub fn total_capacity(mut self, input: i32) -> Self {
         self.total_capacity = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl InstanceCapacityBuilder {
     pub fn set_total_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_capacity = input;
         self
+    }
+    /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
+    pub fn get_total_capacity(&self) -> &::std::option::Option<i32> {
+        &self.total_capacity
     }
     /// Consumes the builder and constructs a [`InstanceCapacity`](crate::types::InstanceCapacity).
     pub fn build(self) -> crate::types::InstanceCapacity {

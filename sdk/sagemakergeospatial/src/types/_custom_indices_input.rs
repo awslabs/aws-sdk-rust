@@ -49,6 +49,12 @@ impl CustomIndicesInputBuilder {
         self.operations = input;
         self
     }
+    /// <p>A list of BandMath indices to compute.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+        &self.operations
+    }
     /// Consumes the builder and constructs a [`CustomIndicesInput`](crate::types::CustomIndicesInput).
     pub fn build(self) -> crate::types::CustomIndicesInput {
         crate::types::CustomIndicesInput {

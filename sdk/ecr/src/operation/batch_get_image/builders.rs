@@ -37,6 +37,12 @@ impl BatchGetImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_image::builders::BatchGetImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl BatchGetImageFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The repository that contains the images to describe.</p>
     pub fn repository_name(
         mut self,
@@ -134,6 +144,10 @@ impl BatchGetImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The repository that contains the images to describe.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
     /// Appends an item to `imageIds`.
     ///
@@ -151,6 +165,12 @@ impl BatchGetImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
+    }
+    /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+    pub fn get_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+        self.inner.get_image_ids()
     }
     /// Appends an item to `acceptedMediaTypes`.
     ///
@@ -173,5 +193,12 @@ impl BatchGetImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accepted_media_types(input);
         self
+    }
+    /// <p>The accepted media types for the request.</p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    pub fn get_accepted_media_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_accepted_media_types()
     }
 }

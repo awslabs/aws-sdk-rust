@@ -54,6 +54,10 @@ impl CreateUserPoolDomainOutputBuilder {
         self.cloud_front_domain = input;
         self
     }
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
+    pub fn get_cloud_front_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_front_domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

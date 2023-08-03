@@ -38,6 +38,10 @@ impl AcceptQualificationRequestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptQualificationRequest as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl AcceptQualificationRequestFluentBuilder {
         self.inner = self.inner.set_qualification_request_id(input);
         self
     }
+    /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
+    pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualification_request_id()
+    }
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.inner = self.inner.integer_value(input);
@@ -143,5 +151,9 @@ impl AcceptQualificationRequestFluentBuilder {
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_integer_value(input);
         self
+    }
+    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        self.inner.get_integer_value()
     }
 }

@@ -62,6 +62,10 @@ impl CreateTokenOutputBuilder {
         self.token_id = input;
         self
     }
+    /// <p>Token ID.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_id
+    }
     /// <p>Token type.</p>
     pub fn token_type(mut self, input: crate::types::TokenType) -> Self {
         self.token_type = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreateTokenOutputBuilder {
         self.token_type = input;
         self
     }
+    /// <p>Token type.</p>
+    pub fn get_token_type(&self) -> &::std::option::Option<crate::types::TokenType> {
+        &self.token_type
+    }
     /// <p>Refresh token, encoded as a JWT token.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl CreateTokenOutputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>Refresh token, encoded as a JWT token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl AssociateUserToPermissionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateUserToPermissionGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AssociateUserToPermissionGroupFluentBuilder {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_group_id()
+    }
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -116,6 +124,10 @@ impl AssociateUserToPermissionGroupFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The unique identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -125,5 +137,9 @@ impl AssociateUserToPermissionGroupFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

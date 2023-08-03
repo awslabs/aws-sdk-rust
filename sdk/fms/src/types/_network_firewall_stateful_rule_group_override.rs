@@ -43,6 +43,12 @@ impl NetworkFirewallStatefulRuleGroupOverrideBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFirewallOverrideAction> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`NetworkFirewallStatefulRuleGroupOverride`](crate::types::NetworkFirewallStatefulRuleGroupOverride).
     pub fn build(self) -> crate::types::NetworkFirewallStatefulRuleGroupOverride {
         crate::types::NetworkFirewallStatefulRuleGroupOverride {

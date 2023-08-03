@@ -103,6 +103,10 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with the job name are truncated at 40 characters.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
     pub fn job_type(mut self, input: crate::types::RecommendationJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::RecommendationJobType> {
+        &self.job_type
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl CreateInferenceRecommendationsJobInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
     pub fn input_config(mut self, input: crate::types::RecommendationJobInputConfig) -> Self {
@@ -138,6 +150,12 @@ impl CreateInferenceRecommendationsJobInputBuilder {
     ) -> Self {
         self.input_config = input;
         self
+    }
+    /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
+    pub fn get_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobInputConfig> {
+        &self.input_config
     }
     /// <p>Description of the recommendation job.</p>
     pub fn job_description(
@@ -155,6 +173,10 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self.job_description = input;
         self
     }
+    /// <p>Description of the recommendation job.</p>
+    pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_description
+    }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
     pub fn stopping_conditions(
         mut self,
@@ -171,6 +193,12 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self.stopping_conditions = input;
         self
     }
+    /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
+    pub fn get_stopping_conditions(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobStoppingConditions> {
+        &self.stopping_conditions
+    }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
     pub fn output_config(mut self, input: crate::types::RecommendationJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -183,6 +211,12 @@ impl CreateInferenceRecommendationsJobInputBuilder {
     ) -> Self {
         self.output_config = input;
         self
+    }
+    /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationJobOutputConfig> {
+        &self.output_config
     }
     /// Appends an item to `tags`.
     ///
@@ -202,6 +236,10 @@ impl CreateInferenceRecommendationsJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInferenceRecommendationsJobInput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput, ::aws_smithy_http::operation::error::BuildError>{

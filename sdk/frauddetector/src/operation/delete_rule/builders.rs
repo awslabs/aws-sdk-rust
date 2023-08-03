@@ -37,6 +37,10 @@ impl DeleteRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_rule::builders::DeleteRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl DeleteRuleFluentBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
         self.inner = self.inner.set_rule(input);
         self
+    }
+    /// <p>A rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        self.inner.get_rule()
     }
 }

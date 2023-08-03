@@ -150,6 +150,10 @@ impl WorkspaceSummaryBuilder {
         self.created = input;
         self
     }
+    /// <p>The date that the workspace was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The customer-entered description of the workspace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -160,6 +164,10 @@ impl WorkspaceSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The customer-entered description of the workspace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -169,6 +177,10 @@ impl WorkspaceSummaryBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>The Grafana version that the workspace is running.</p>
     pub fn grafana_version(
@@ -186,6 +198,10 @@ impl WorkspaceSummaryBuilder {
         self.grafana_version = input;
         self
     }
+    /// <p>The Grafana version that the workspace is running.</p>
+    pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_version
+    }
     /// <p>The unique ID of the workspace.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -195,6 +211,10 @@ impl WorkspaceSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique ID of the workspace.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,6 +229,10 @@ impl WorkspaceSummaryBuilder {
         self.modified = input;
         self
     }
+    /// <p>The most recent date that the workspace was modified.</p>
+    pub fn get_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified
+    }
     /// <p>The name of the workspace.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -218,6 +242,10 @@ impl WorkspaceSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `notification_destinations`.
     ///
@@ -241,6 +269,12 @@ impl WorkspaceSummaryBuilder {
         self.notification_destinations = input;
         self
     }
+    /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
+    pub fn get_notification_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+        &self.notification_destinations
+    }
     /// <p>The current status of the workspace.</p>
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -254,6 +288,10 @@ impl WorkspaceSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the workspace.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
+        &self.status
+    }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
         self.authentication = ::std::option::Option::Some(input);
@@ -266,6 +304,12 @@ impl WorkspaceSummaryBuilder {
     ) -> Self {
         self.authentication = input;
         self
+    }
+    /// <p>A structure containing information about the authentication methods used in the workspace.</p>
+    pub fn get_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationSummary> {
+        &self.authentication
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -291,6 +335,14 @@ impl WorkspaceSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags associated with the workspace.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
     pub fn build(self) -> crate::types::WorkspaceSummary {

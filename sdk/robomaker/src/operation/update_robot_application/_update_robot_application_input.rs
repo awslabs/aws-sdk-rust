@@ -73,6 +73,10 @@ impl UpdateRobotApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -92,6 +96,12 @@ impl UpdateRobotApplicationInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The sources of the robot application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        &self.sources
+    }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
@@ -104,6 +114,12 @@ impl UpdateRobotApplicationInputBuilder {
     ) -> Self {
         self.robot_software_suite = input;
         self
+    }
+    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        &self.robot_software_suite
     }
     /// <p>The revision id for the robot application.</p>
     pub fn current_revision_id(
@@ -121,6 +137,10 @@ impl UpdateRobotApplicationInputBuilder {
         self.current_revision_id = input;
         self
     }
+    /// <p>The revision id for the robot application.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_revision_id
+    }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -133,6 +153,10 @@ impl UpdateRobotApplicationInputBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>The object that contains the Docker image URI for your robot application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
     pub fn build(

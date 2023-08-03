@@ -36,6 +36,12 @@ impl ListPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to include in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl ListPermissionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -157,6 +171,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_user_type(input);
         self
     }
+    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        self.inner.get_user_type()
+    }
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -166,6 +184,10 @@ impl ListPermissionsFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +199,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -186,5 +212,9 @@ impl ListPermissionsFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
 }

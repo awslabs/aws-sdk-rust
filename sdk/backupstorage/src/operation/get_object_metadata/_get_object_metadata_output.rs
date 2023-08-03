@@ -86,6 +86,10 @@ impl GetObjectMetadataOutputBuilder {
         self.metadata_string = input;
         self
     }
+    /// Metadata string.
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_string
+    }
     /// Metadata blob.
     pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.metadata_blob = ::std::option::Option::Some(input);
@@ -99,6 +103,12 @@ impl GetObjectMetadataOutputBuilder {
         self.metadata_blob = input;
         self
     }
+    /// Metadata blob.
+    pub fn get_metadata_blob(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.metadata_blob
+    }
     /// The size of MetadataBlob.
     pub fn metadata_blob_length(mut self, input: i64) -> Self {
         self.metadata_blob_length = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl GetObjectMetadataOutputBuilder {
     pub fn set_metadata_blob_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.metadata_blob_length = input;
         self
+    }
+    /// The size of MetadataBlob.
+    pub fn get_metadata_blob_length(&self) -> &::std::option::Option<i64> {
+        &self.metadata_blob_length
     }
     /// MetadataBlob checksum.
     pub fn metadata_blob_checksum(
@@ -125,6 +139,10 @@ impl GetObjectMetadataOutputBuilder {
         self.metadata_blob_checksum = input;
         self
     }
+    /// MetadataBlob checksum.
+    pub fn get_metadata_blob_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_blob_checksum
+    }
     /// Checksum algorithm.
     pub fn metadata_blob_checksum_algorithm(
         mut self,
@@ -140,6 +158,12 @@ impl GetObjectMetadataOutputBuilder {
     ) -> Self {
         self.metadata_blob_checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm.
+    pub fn get_metadata_blob_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.metadata_blob_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

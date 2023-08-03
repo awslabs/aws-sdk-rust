@@ -45,6 +45,10 @@ impl DeleteLicenseConfigurationInputBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>ID of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLicenseConfigurationInput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput).
     pub fn build(
         self,

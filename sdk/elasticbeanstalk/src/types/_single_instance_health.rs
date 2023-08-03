@@ -112,6 +112,10 @@ impl SingleInstanceHealthBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(
         mut self,
@@ -128,6 +132,10 @@ impl SingleInstanceHealthBuilder {
         self.health_status = input;
         self
     }
+    /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_status
+    }
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl SingleInstanceHealthBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// Appends an item to `causes`.
     ///
@@ -157,6 +169,10 @@ impl SingleInstanceHealthBuilder {
         self.causes = input;
         self
     }
+    /// <p>Represents the causes, which provide more information about the current health status.</p>
+    pub fn get_causes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.causes
+    }
     /// <p>The time at which the EC2 instance was launched.</p>
     pub fn launched_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.launched_at = ::std::option::Option::Some(input);
@@ -169,6 +185,10 @@ impl SingleInstanceHealthBuilder {
     ) -> Self {
         self.launched_at = input;
         self
+    }
+    /// <p>The time at which the EC2 instance was launched.</p>
+    pub fn get_launched_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.launched_at
     }
     /// <p>Request metrics from your application.</p>
     pub fn application_metrics(mut self, input: crate::types::ApplicationMetrics) -> Self {
@@ -183,6 +203,12 @@ impl SingleInstanceHealthBuilder {
         self.application_metrics = input;
         self
     }
+    /// <p>Request metrics from your application.</p>
+    pub fn get_application_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationMetrics> {
+        &self.application_metrics
+    }
     /// <p>Operating system metrics from the instance.</p>
     pub fn system(mut self, input: crate::types::SystemStatus) -> Self {
         self.system = ::std::option::Option::Some(input);
@@ -192,6 +218,10 @@ impl SingleInstanceHealthBuilder {
     pub fn set_system(mut self, input: ::std::option::Option<crate::types::SystemStatus>) -> Self {
         self.system = input;
         self
+    }
+    /// <p>Operating system metrics from the instance.</p>
+    pub fn get_system(&self) -> &::std::option::Option<crate::types::SystemStatus> {
+        &self.system
     }
     /// <p>Information about the most recent deployment to an instance.</p>
     pub fn deployment(mut self, input: crate::types::Deployment) -> Self {
@@ -205,6 +235,10 @@ impl SingleInstanceHealthBuilder {
     ) -> Self {
         self.deployment = input;
         self
+    }
+    /// <p>Information about the most recent deployment to an instance.</p>
+    pub fn get_deployment(&self) -> &::std::option::Option<crate::types::Deployment> {
+        &self.deployment
     }
     /// <p>The availability zone in which the instance runs.</p>
     pub fn availability_zone(
@@ -222,6 +256,10 @@ impl SingleInstanceHealthBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The availability zone in which the instance runs.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The instance's type.</p>
     pub fn instance_type(
         mut self,
@@ -237,6 +275,10 @@ impl SingleInstanceHealthBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The instance's type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// Consumes the builder and constructs a [`SingleInstanceHealth`](crate::types::SingleInstanceHealth).
     pub fn build(self) -> crate::types::SingleInstanceHealth {

@@ -77,6 +77,10 @@ impl SamlConfigurationBuilder {
         self.idp_metadata = input;
         self
     }
+    /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
+    pub fn get_idp_metadata(&self) -> &::std::option::Option<crate::types::IdpMetadata> {
+        &self.idp_metadata
+    }
     /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
     pub fn assertion_attributes(mut self, input: crate::types::AssertionAttributes) -> Self {
         self.assertion_attributes = ::std::option::Option::Some(input);
@@ -90,6 +94,12 @@ impl SamlConfigurationBuilder {
         self.assertion_attributes = input;
         self
     }
+    /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
+    pub fn get_assertion_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssertionAttributes> {
+        &self.assertion_attributes
+    }
     /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     pub fn role_values(mut self, input: crate::types::RoleValues) -> Self {
         self.role_values = ::std::option::Option::Some(input);
@@ -102,6 +112,10 @@ impl SamlConfigurationBuilder {
     ) -> Self {
         self.role_values = input;
         self
+    }
+    /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
+    pub fn get_role_values(&self) -> &::std::option::Option<crate::types::RoleValues> {
+        &self.role_values
     }
     /// Appends an item to `allowed_organizations`.
     ///
@@ -125,6 +139,12 @@ impl SamlConfigurationBuilder {
         self.allowed_organizations = input;
         self
     }
+    /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
+    pub fn get_allowed_organizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_organizations
+    }
     /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
     pub fn login_validity_duration(mut self, input: i32) -> Self {
         self.login_validity_duration = ::std::option::Option::Some(input);
@@ -134,6 +154,10 @@ impl SamlConfigurationBuilder {
     pub fn set_login_validity_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.login_validity_duration = input;
         self
+    }
+    /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
+    pub fn get_login_validity_duration(&self) -> &::std::option::Option<i32> {
+        &self.login_validity_duration
     }
     /// Consumes the builder and constructs a [`SamlConfiguration`](crate::types::SamlConfiguration).
     pub fn build(self) -> crate::types::SamlConfiguration {

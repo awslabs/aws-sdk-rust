@@ -81,6 +81,12 @@ impl RotationShiftBuilder {
         self.contact_ids = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
+    pub fn get_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contact_ids
+    }
     /// <p>The time a shift rotation begins.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -93,6 +99,10 @@ impl RotationShiftBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time a shift rotation begins.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time a shift rotation ends.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -107,6 +117,10 @@ impl RotationShiftBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time a shift rotation ends.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The type of shift rotation.</p>
     pub fn r#type(mut self, input: crate::types::ShiftType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl RotationShiftBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ShiftType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of shift rotation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ShiftType> {
+        &self.r#type
     }
     /// <p>Additional information about an on-call rotation shift.</p>
     pub fn shift_details(mut self, input: crate::types::ShiftDetails) -> Self {
@@ -129,6 +147,10 @@ impl RotationShiftBuilder {
     ) -> Self {
         self.shift_details = input;
         self
+    }
+    /// <p>Additional information about an on-call rotation shift.</p>
+    pub fn get_shift_details(&self) -> &::std::option::Option<crate::types::ShiftDetails> {
+        &self.shift_details
     }
     /// Consumes the builder and constructs a [`RotationShift`](crate::types::RotationShift).
     pub fn build(self) -> crate::types::RotationShift {

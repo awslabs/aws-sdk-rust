@@ -53,6 +53,10 @@ impl DescribeVirtualInterfacesInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The ID of the virtual interface.</p>
     pub fn virtual_interface_id(
         mut self,
@@ -68,6 +72,10 @@ impl DescribeVirtualInterfacesInputBuilder {
     ) -> Self {
         self.virtual_interface_id = input;
         self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// Consumes the builder and constructs a [`DescribeVirtualInterfacesInput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput).
     pub fn build(

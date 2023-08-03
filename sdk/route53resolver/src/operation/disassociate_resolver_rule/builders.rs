@@ -38,6 +38,13 @@ impl DisassociateResolverRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateResolverRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DisassociateResolverRuleFluentBuilder {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
+    /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
+    }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
     pub fn resolver_rule_id(
         mut self,
@@ -143,5 +154,9 @@ impl DisassociateResolverRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
+    }
+    /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_rule_id()
     }
 }

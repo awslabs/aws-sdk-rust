@@ -48,6 +48,10 @@ impl DeleteBackupInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup that you want to delete.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteBackupInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
     pub fn build(

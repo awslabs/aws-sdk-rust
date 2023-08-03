@@ -49,6 +49,10 @@ impl BatchGetBuildBatchesInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>An array that contains the batch build identifiers to retrieve.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Consumes the builder and constructs a [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
     pub fn build(
         self,

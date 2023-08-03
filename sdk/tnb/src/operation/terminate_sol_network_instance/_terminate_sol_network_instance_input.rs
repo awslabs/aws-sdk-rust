@@ -67,6 +67,10 @@ impl TerminateSolNetworkInstanceInputBuilder {
         self.ns_instance_id = input;
         self
     }
+    /// <p>ID of the network instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -91,6 +95,14 @@ impl TerminateSolNetworkInstanceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TerminateSolNetworkInstanceInput`](crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput).
     pub fn build(

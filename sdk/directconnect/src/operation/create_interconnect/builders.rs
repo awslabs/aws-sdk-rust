@@ -41,6 +41,12 @@ impl CreateInterconnectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInterconnect as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl CreateInterconnectFluentBuilder {
         self.inner = self.inner.set_interconnect_name(input);
         self
     }
+    /// <p>The name of the interconnect.</p>
+    pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_interconnect_name()
+    }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth(input.into());
@@ -146,6 +156,10 @@ impl CreateInterconnectFluentBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
+    }
+    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bandwidth()
     }
     /// <p>The location of the interconnect.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +171,10 @@ impl CreateInterconnectFluentBuilder {
         self.inner = self.inner.set_location(input);
         self
     }
+    /// <p>The location of the interconnect.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_id(input.into());
@@ -166,6 +184,10 @@ impl CreateInterconnectFluentBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lag_id(input);
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_id()
     }
     /// Appends an item to `tags`.
     ///
@@ -184,6 +206,10 @@ impl CreateInterconnectFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to associate with the interconnect.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(
         mut self,
@@ -199,5 +225,9 @@ impl CreateInterconnectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
+    }
+    /// <p>The name of the service provider associated with the interconnect.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
     }
 }

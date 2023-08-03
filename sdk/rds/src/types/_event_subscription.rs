@@ -124,6 +124,10 @@ impl EventSubscriptionBuilder {
         self.customer_aws_id = input;
         self
     }
+    /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
+    pub fn get_customer_aws_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_aws_id
+    }
     /// <p>The RDS event notification subscription Id.</p>
     pub fn cust_subscription_id(
         mut self,
@@ -139,6 +143,10 @@ impl EventSubscriptionBuilder {
     ) -> Self {
         self.cust_subscription_id = input;
         self
+    }
+    /// <p>The RDS event notification subscription Id.</p>
+    pub fn get_cust_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cust_subscription_id
     }
     /// <p>The topic ARN of the RDS event notification subscription.</p>
     pub fn sns_topic_arn(
@@ -156,6 +164,10 @@ impl EventSubscriptionBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The topic ARN of the RDS event notification subscription.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The status of the RDS event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
@@ -171,6 +183,13 @@ impl EventSubscriptionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the RDS event notification subscription.</p>
+    /// <p>Constraints:</p>
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
+    /// <p>The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The time the RDS event notification subscription was created.</p>
     pub fn subscription_creation_time(
@@ -188,6 +207,10 @@ impl EventSubscriptionBuilder {
         self.subscription_creation_time = input;
         self
     }
+    /// <p>The time the RDS event notification subscription was created.</p>
+    pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_creation_time
+    }
     /// <p>The source type for the RDS event notification subscription.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
@@ -197,6 +220,10 @@ impl EventSubscriptionBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The source type for the RDS event notification subscription.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// Appends an item to `source_ids_list`.
     ///
@@ -220,6 +247,12 @@ impl EventSubscriptionBuilder {
         self.source_ids_list = input;
         self
     }
+    /// <p>A list of source IDs for the RDS event notification subscription.</p>
+    pub fn get_source_ids_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_ids_list
+    }
     /// Appends an item to `event_categories_list`.
     ///
     /// To override the contents of this collection use [`set_event_categories_list`](Self::set_event_categories_list).
@@ -242,6 +275,12 @@ impl EventSubscriptionBuilder {
         self.event_categories_list = input;
         self
     }
+    /// <p>A list of event categories for the RDS event notification subscription.</p>
+    pub fn get_event_categories_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories_list
+    }
     /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -251,6 +290,10 @@ impl EventSubscriptionBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub fn event_subscription_arn(
@@ -267,6 +310,10 @@ impl EventSubscriptionBuilder {
     ) -> Self {
         self.event_subscription_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+    pub fn get_event_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_subscription_arn
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
     pub fn build(self) -> crate::types::EventSubscription {

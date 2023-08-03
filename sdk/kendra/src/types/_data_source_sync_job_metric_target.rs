@@ -58,6 +58,10 @@ impl DataSourceSyncJobMetricTargetBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID of the data source that is running the sync job.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
@@ -77,6 +81,12 @@ impl DataSourceSyncJobMetricTargetBuilder {
     ) -> Self {
         self.data_source_sync_job_id = input;
         self
+    }
+    /// <p>The ID of the sync job that is running on the data source.</p>
+    /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
+    /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
+    pub fn get_data_source_sync_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_sync_job_id
     }
     /// Consumes the builder and constructs a [`DataSourceSyncJobMetricTarget`](crate::types::DataSourceSyncJobMetricTarget).
     pub fn build(self) -> crate::types::DataSourceSyncJobMetricTarget {

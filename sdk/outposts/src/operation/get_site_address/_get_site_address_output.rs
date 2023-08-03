@@ -62,6 +62,10 @@ impl GetSiteAddressOutputBuilder {
         self.site_id = input;
         self
     }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The type of the address you receive. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl GetSiteAddressOutputBuilder {
         self.address_type = input;
         self
     }
+    /// <p>The type of the address you receive. </p>
+    pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
+        &self.address_type
+    }
     /// <p> Information about the address. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl GetSiteAddressOutputBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
+    }
+    /// <p> Information about the address. </p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

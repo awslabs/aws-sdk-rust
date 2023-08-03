@@ -84,6 +84,10 @@ impl AttachNetworkInterfaceInputBuilder {
         self.device_index = input;
         self
     }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        &self.device_index
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl AttachNetworkInterfaceInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl AttachNetworkInterfaceInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
@@ -120,6 +132,10 @@ impl AttachNetworkInterfaceInputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
         self.network_card_index = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl AttachNetworkInterfaceInputBuilder {
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
+    }
+    /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
+    pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
+        &self.network_card_index
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn ena_srd_specification(mut self, input: crate::types::EnaSrdSpecification) -> Self {
@@ -142,6 +162,12 @@ impl AttachNetworkInterfaceInputBuilder {
     ) -> Self {
         self.ena_srd_specification = input;
         self
+    }
+    /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
+    pub fn get_ena_srd_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+        &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
     pub fn build(

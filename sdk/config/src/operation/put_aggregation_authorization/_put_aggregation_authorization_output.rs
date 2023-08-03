@@ -55,6 +55,12 @@ impl PutAggregationAuthorizationOutputBuilder {
         self.aggregation_authorization = input;
         self
     }
+    /// <p>Returns an AggregationAuthorization object. </p>
+    pub fn get_aggregation_authorization(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationAuthorization> {
+        &self.aggregation_authorization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

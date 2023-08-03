@@ -36,6 +36,12 @@ impl AcknowledgeJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcknowledgeJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::acknowledge_job::builders::AcknowledgeJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl AcknowledgeJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nonce(input.into());
@@ -127,5 +137,9 @@ impl AcknowledgeJobFluentBuilder {
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nonce(input);
         self
+    }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nonce()
     }
 }

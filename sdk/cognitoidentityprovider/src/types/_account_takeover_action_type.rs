@@ -62,6 +62,10 @@ impl AccountTakeoverActionTypeBuilder {
         self.notify = input;
         self
     }
+    /// <p>Flag specifying whether to send a notification.</p>
+    pub fn get_notify(&self) -> &::std::option::Option<bool> {
+        &self.notify
+    }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
@@ -86,6 +90,18 @@ impl AccountTakeoverActionTypeBuilder {
     ) -> Self {
         self.event_action = input;
         self
+    }
+    /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
+    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
+    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
+    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// </ul>
+    pub fn get_event_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountTakeoverEventActionType> {
+        &self.event_action
     }
     /// Consumes the builder and constructs a [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
     pub fn build(self) -> crate::types::AccountTakeoverActionType {

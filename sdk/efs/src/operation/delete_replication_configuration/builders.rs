@@ -36,6 +36,10 @@ impl DeleteReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteReplicationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_file_system_id(input);
         self
+    }
+    /// <p>The ID of the source file system in the replication configuration.</p>
+    pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_file_system_id()
     }
 }

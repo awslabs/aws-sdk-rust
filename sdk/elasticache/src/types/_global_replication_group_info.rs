@@ -54,6 +54,10 @@ impl GlobalReplicationGroupInfoBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
     pub fn global_replication_group_member_role(
         mut self,
@@ -69,6 +73,12 @@ impl GlobalReplicationGroupInfoBuilder {
     ) -> Self {
         self.global_replication_group_member_role = input;
         self
+    }
+    /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
+    pub fn get_global_replication_group_member_role(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_member_role
     }
     /// Consumes the builder and constructs a [`GlobalReplicationGroupInfo`](crate::types::GlobalReplicationGroupInfo).
     pub fn build(self) -> crate::types::GlobalReplicationGroupInfo {

@@ -71,6 +71,14 @@ impl ListDomainNamesOutputBuilder {
         self.domain_names = input;
         self
     }
+    /// <p>The names of the search domains owned by an account.</p>
+    pub fn get_domain_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.domain_names
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

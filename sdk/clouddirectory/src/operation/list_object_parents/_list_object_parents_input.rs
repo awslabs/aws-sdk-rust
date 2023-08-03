@@ -86,6 +86,10 @@ impl ListObjectParentsInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The reference that identifies the object for which parent objects are being listed.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ListObjectParentsInputBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>The reference that identifies the object for which parent objects are being listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl ListObjectParentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl ListObjectParentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -132,6 +148,10 @@ impl ListObjectParentsInputBuilder {
         self.consistency_level = input;
         self
     }
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
+    }
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
     pub fn include_all_links_to_each_parent(mut self, input: bool) -> Self {
         self.include_all_links_to_each_parent = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl ListObjectParentsInputBuilder {
     ) -> Self {
         self.include_all_links_to_each_parent = input;
         self
+    }
+    /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
+    pub fn get_include_all_links_to_each_parent(&self) -> &::std::option::Option<bool> {
+        &self.include_all_links_to_each_parent
     }
     /// Consumes the builder and constructs a [`ListObjectParentsInput`](crate::operation::list_object_parents::ListObjectParentsInput).
     pub fn build(

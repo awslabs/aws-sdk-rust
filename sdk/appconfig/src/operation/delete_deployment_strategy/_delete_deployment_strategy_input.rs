@@ -47,6 +47,10 @@ impl DeleteDeploymentStrategyInputBuilder {
         self.deployment_strategy_id = input;
         self
     }
+    /// <p>The ID of the deployment strategy you want to delete.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_strategy_id
+    }
     /// Consumes the builder and constructs a [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
     pub fn build(
         self,

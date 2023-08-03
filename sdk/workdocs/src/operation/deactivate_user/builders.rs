@@ -36,6 +36,12 @@ impl DeactivateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeactivateUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deactivate_user::builders::DeactivateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeactivateUserFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
         mut self,
@@ -133,5 +143,9 @@ impl DeactivateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
     }
 }

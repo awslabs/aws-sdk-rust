@@ -40,6 +40,10 @@ impl DescribeElasticsearchDomainConfigInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The Elasticsearch domain that you want to get information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainConfigInput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -80,6 +80,10 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn status(mut self, input: crate::types::ServiceNetworkVpcAssociationStatus) -> Self {
@@ -103,6 +111,12 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
+        &self.status
+    }
     /// <p>The account that created the association.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The account that created the association.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -134,6 +152,12 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

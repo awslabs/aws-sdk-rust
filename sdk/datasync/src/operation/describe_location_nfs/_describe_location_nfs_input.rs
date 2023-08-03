@@ -42,6 +42,10 @@ impl DescribeLocationNfsInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationNfsInput`](crate::operation::describe_location_nfs::DescribeLocationNfsInput).
     pub fn build(
         self,

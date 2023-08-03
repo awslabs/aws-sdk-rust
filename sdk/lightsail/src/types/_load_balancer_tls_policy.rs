@@ -75,6 +75,10 @@ impl LoadBalancerTlsPolicyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the TLS security policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl LoadBalancerTlsPolicyBuilder {
         self.is_default = input;
         self
     }
+    /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// <p>The description of the TLS security policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl LoadBalancerTlsPolicyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the TLS security policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `protocols`.
     ///
@@ -113,6 +125,10 @@ impl LoadBalancerTlsPolicyBuilder {
     ) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocols used in a given TLS security policy.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.protocols
     }
     /// Appends an item to `ciphers`.
     ///
@@ -134,6 +150,11 @@ impl LoadBalancerTlsPolicyBuilder {
     ) -> Self {
         self.ciphers = input;
         self
+    }
+    /// <p>The ciphers used by the TLS security policy.</p>
+    /// <p>The ciphers are listed in order of preference.</p>
+    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ciphers
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsPolicy`](crate::types::LoadBalancerTlsPolicy).
     pub fn build(self) -> crate::types::LoadBalancerTlsPolicy {

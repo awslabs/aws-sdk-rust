@@ -58,6 +58,10 @@ impl ServerGroupReplicationConfigurationBuilder {
         self.server_group_id = input;
         self
     }
+    /// <p>The ID of the server group with which this replication configuration is associated.</p>
+    pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_group_id
+    }
     /// Appends an item to `server_replication_configurations`.
     ///
     /// To override the contents of this collection use [`set_server_replication_configurations`](Self::set_server_replication_configurations).
@@ -79,6 +83,12 @@ impl ServerGroupReplicationConfigurationBuilder {
     ) -> Self {
         self.server_replication_configurations = input;
         self
+    }
+    /// <p>The replication configuration for servers in the server group.</p>
+    pub fn get_server_replication_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>> {
+        &self.server_replication_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupReplicationConfiguration`](crate::types::ServerGroupReplicationConfiguration).
     pub fn build(self) -> crate::types::ServerGroupReplicationConfiguration {

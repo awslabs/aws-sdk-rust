@@ -36,6 +36,10 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendPipelineExecutionStepSuccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
         self.inner = self.inner.set_callback_token(input);
         self
     }
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_callback_token()
+    }
     /// Appends an item to `OutputParameters`.
     ///
     /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
@@ -123,6 +131,12 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
         self.inner = self.inner.set_output_parameters(input);
         self
     }
+    /// <p>A list of the output parameters of the callback step.</p>
+    pub fn get_output_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+        self.inner.get_output_parameters()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(
         mut self,
@@ -138,5 +152,9 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

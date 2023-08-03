@@ -47,6 +47,10 @@ impl S3ConfigBuilder {
         self.bucket_access_role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    pub fn get_bucket_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_access_role_arn
+    }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     pub fn build(self) -> crate::types::S3Config {
         crate::types::S3Config {

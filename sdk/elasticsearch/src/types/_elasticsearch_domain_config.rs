@@ -185,6 +185,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.elasticsearch_version = input;
         self
     }
+    /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+    pub fn get_elasticsearch_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchVersionStatus> {
+        &self.elasticsearch_version
+    }
     /// <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.</p>
     pub fn elasticsearch_cluster_config(
         mut self,
@@ -201,6 +207,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.elasticsearch_cluster_config = input;
         self
     }
+    /// <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.</p>
+    pub fn get_elasticsearch_cluster_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchClusterConfigStatus> {
+        &self.elasticsearch_cluster_config
+    }
     /// <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptionsStatus) -> Self {
         self.ebs_options = ::std::option::Option::Some(input);
@@ -213,6 +225,10 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.ebs_options = input;
         self
+    }
+    /// <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
+    pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptionsStatus> {
+        &self.ebs_options
     }
     /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn access_policies(mut self, input: crate::types::AccessPoliciesStatus) -> Self {
@@ -227,6 +243,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.access_policies = input;
         self
     }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn get_access_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
+        &self.access_policies
+    }
     /// <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptionsStatus) -> Self {
         self.snapshot_options = ::std::option::Option::Some(input);
@@ -239,6 +261,12 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.snapshot_options = input;
         self
+    }
+    /// <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
+    pub fn get_snapshot_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnapshotOptionsStatus> {
+        &self.snapshot_options
     }
     /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcDerivedInfoStatus) -> Self {
@@ -253,6 +281,10 @@ impl ElasticsearchDomainConfigBuilder {
         self.vpc_options = input;
         self
     }
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcDerivedInfoStatus> {
+        &self.vpc_options
+    }
     /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
     pub fn cognito_options(mut self, input: crate::types::CognitoOptionsStatus) -> Self {
         self.cognito_options = ::std::option::Option::Some(input);
@@ -265,6 +297,12 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.cognito_options = input;
         self
+    }
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+    pub fn get_cognito_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CognitoOptionsStatus> {
+        &self.cognito_options
     }
     /// <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>
     pub fn encryption_at_rest_options(
@@ -282,6 +320,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.encryption_at_rest_options = input;
         self
     }
+    /// <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>
+    pub fn get_encryption_at_rest_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAtRestOptionsStatus> {
+        &self.encryption_at_rest_options
+    }
     /// <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>
     pub fn node_to_node_encryption_options(
         mut self,
@@ -298,6 +342,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.node_to_node_encryption_options = input;
         self
     }
+    /// <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>
+    pub fn get_node_to_node_encryption_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus> {
+        &self.node_to_node_encryption_options
+    }
     /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
     pub fn advanced_options(mut self, input: crate::types::AdvancedOptionsStatus) -> Self {
         self.advanced_options = ::std::option::Option::Some(input);
@@ -310,6 +360,12 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.advanced_options = input;
         self
+    }
+    /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
+    pub fn get_advanced_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedOptionsStatus> {
+        &self.advanced_options
     }
     /// <p>Log publishing options for the given domain.</p>
     pub fn log_publishing_options(
@@ -327,6 +383,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.log_publishing_options = input;
         self
     }
+    /// <p>Log publishing options for the given domain.</p>
+    pub fn get_log_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogPublishingOptionsStatus> {
+        &self.log_publishing_options
+    }
     /// <p>Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.</p>
     pub fn domain_endpoint_options(
         mut self,
@@ -342,6 +404,12 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.domain_endpoint_options = input;
         self
+    }
+    /// <p>Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.</p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
+        &self.domain_endpoint_options
     }
     /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
     pub fn advanced_security_options(
@@ -359,6 +427,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.advanced_security_options = input;
         self
     }
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    pub fn get_advanced_security_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsStatus> {
+        &self.advanced_security_options
+    }
     /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptionsStatus) -> Self {
         self.auto_tune_options = ::std::option::Option::Some(input);
@@ -372,6 +446,12 @@ impl ElasticsearchDomainConfigBuilder {
         self.auto_tune_options = input;
         self
     }
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    pub fn get_auto_tune_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoTuneOptionsStatus> {
+        &self.auto_tune_options
+    }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
         self.change_progress_details = ::std::option::Option::Some(input);
@@ -384,6 +464,12 @@ impl ElasticsearchDomainConfigBuilder {
     ) -> Self {
         self.change_progress_details = input;
         self
+    }
+    /// <p>Specifies change details of the domain configuration change.</p>
+    pub fn get_change_progress_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+        &self.change_progress_details
     }
     /// Consumes the builder and constructs a [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
     pub fn build(self) -> crate::types::ElasticsearchDomainConfig {

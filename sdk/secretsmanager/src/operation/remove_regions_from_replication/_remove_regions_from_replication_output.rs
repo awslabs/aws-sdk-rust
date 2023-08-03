@@ -58,6 +58,10 @@ impl RemoveRegionsFromReplicationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the primary secret.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `replication_status`.
     ///
     /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
@@ -76,6 +80,12 @@ impl RemoveRegionsFromReplicationOutputBuilder {
     ) -> Self {
         self.replication_status = input;
         self
+    }
+    /// <p>The status of replicas for this secret after you remove Regions.</p>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+        &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

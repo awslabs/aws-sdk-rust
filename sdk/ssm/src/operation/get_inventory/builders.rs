@@ -36,6 +36,10 @@ impl GetInventoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInventory as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_inventory::builders::GetInventoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl GetInventoryFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `Aggregators`.
     ///
     /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
@@ -152,6 +162,12 @@ impl GetInventoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
+    }
+    /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
+    pub fn get_aggregators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+        self.inner.get_aggregators()
     }
     /// Appends an item to `ResultAttributes`.
     ///
@@ -170,6 +186,12 @@ impl GetInventoryFluentBuilder {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
+    /// <p>The list of inventory item types to return.</p>
+    pub fn get_result_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
+        self.inner.get_result_attributes()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,6 +202,10 @@ impl GetInventoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -189,5 +215,9 @@ impl GetInventoryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -106,6 +106,12 @@ impl OrganizationConformancePackBuilder {
         self.organization_conformance_pack_name = input;
         self
     }
+    /// <p>The name you assign to an organization conformance pack.</p>
+    pub fn get_organization_conformance_pack_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_conformance_pack_name
+    }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
     pub fn organization_conformance_pack_arn(
         mut self,
@@ -121,6 +127,12 @@ impl OrganizationConformancePackBuilder {
     ) -> Self {
         self.organization_conformance_pack_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
+    pub fn get_organization_conformance_pack_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_conformance_pack_arn
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
@@ -142,6 +154,12 @@ impl OrganizationConformancePackBuilder {
         self.delivery_s3_bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_s3_bucket
+    }
     /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -161,6 +179,12 @@ impl OrganizationConformancePackBuilder {
     ) -> Self {
         self.delivery_s3_key_prefix = input;
         self
+    }
+    /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_s3_key_prefix
     }
     /// Appends an item to `conformance_pack_input_parameters`.
     ///
@@ -184,6 +208,12 @@ impl OrganizationConformancePackBuilder {
         self.conformance_pack_input_parameters = input;
         self
     }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn get_conformance_pack_input_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+        &self.conformance_pack_input_parameters
+    }
     /// Appends an item to `excluded_accounts`.
     ///
     /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
@@ -206,6 +236,12 @@ impl OrganizationConformancePackBuilder {
         self.excluded_accounts = input;
         self
     }
+    /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
+    pub fn get_excluded_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_accounts
+    }
     /// <p>Last time when organization conformation pack was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -218,6 +254,10 @@ impl OrganizationConformancePackBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>Last time when organization conformation pack was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConformancePack`](crate::types::OrganizationConformancePack).
     pub fn build(self) -> crate::types::OrganizationConformancePack {

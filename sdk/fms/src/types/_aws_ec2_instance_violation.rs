@@ -58,6 +58,10 @@ impl AwsEc2InstanceViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>The resource ID of the EC2 instance.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// Appends an item to `aws_ec2_network_interface_violations`.
     ///
     /// To override the contents of this collection use [`set_aws_ec2_network_interface_violations`](Self::set_aws_ec2_network_interface_violations).
@@ -83,6 +87,13 @@ impl AwsEc2InstanceViolationBuilder {
     ) -> Self {
         self.aws_ec2_network_interface_violations = input;
         self
+    }
+    /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
+    pub fn get_aws_ec2_network_interface_violations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>
+    {
+        &self.aws_ec2_network_interface_violations
     }
     /// Consumes the builder and constructs a [`AwsEc2InstanceViolation`](crate::types::AwsEc2InstanceViolation).
     pub fn build(self) -> crate::types::AwsEc2InstanceViolation {

@@ -40,6 +40,10 @@ impl StatementOutputDataBuilder {
         self.text_plain = input;
         self
     }
+    /// <p>The code execution output in text format.</p>
+    pub fn get_text_plain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_plain
+    }
     /// Consumes the builder and constructs a [`StatementOutputData`](crate::types::StatementOutputData).
     pub fn build(self) -> crate::types::StatementOutputData {
         crate::types::StatementOutputData {

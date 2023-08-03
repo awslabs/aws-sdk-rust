@@ -61,6 +61,13 @@ impl SourceIpConfigBuilder {
         self.cidrs = input;
         self
     }
+    /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
+    /// <p>Maximum: Ten CIDR values</p> <note>
+    /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
+    /// </note>
+    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidrs
+    }
     /// Consumes the builder and constructs a [`SourceIpConfig`](crate::types::SourceIpConfig).
     pub fn build(self) -> crate::types::SourceIpConfig {
         crate::types::SourceIpConfig { cidrs: self.cidrs }

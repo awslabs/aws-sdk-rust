@@ -62,6 +62,10 @@ impl CandidateArtifactLocationsBuilder {
         self.explainability = input;
         self
     }
+    /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
+    pub fn get_explainability(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability
+    }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     pub fn model_insights(
         mut self,
@@ -78,6 +82,10 @@ impl CandidateArtifactLocationsBuilder {
         self.model_insights = input;
         self
     }
+    /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
+    pub fn get_model_insights(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_insights
+    }
     /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
     pub fn backtest_results(
         mut self,
@@ -93,6 +101,10 @@ impl CandidateArtifactLocationsBuilder {
     ) -> Self {
         self.backtest_results = input;
         self
+    }
+    /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
+    pub fn get_backtest_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backtest_results
     }
     /// Consumes the builder and constructs a [`CandidateArtifactLocations`](crate::types::CandidateArtifactLocations).
     pub fn build(self) -> crate::types::CandidateArtifactLocations {

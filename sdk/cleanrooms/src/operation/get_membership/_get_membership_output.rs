@@ -49,6 +49,10 @@ impl GetMembershipOutputBuilder {
         self.membership = input;
         self
     }
+    /// <p>The membership retrieved for the provided identifier.</p>
+    pub fn get_membership(&self) -> &::std::option::Option<crate::types::Membership> {
+        &self.membership
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

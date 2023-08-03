@@ -50,6 +50,12 @@ impl StreamProcessingStartSelectorBuilder {
         self.kvs_stream_start_selector = input;
         self
     }
+    /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
+    pub fn get_kvs_stream_start_selector(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamStartSelector> {
+        &self.kvs_stream_start_selector
+    }
     /// Consumes the builder and constructs a [`StreamProcessingStartSelector`](crate::types::StreamProcessingStartSelector).
     pub fn build(self) -> crate::types::StreamProcessingStartSelector {
         crate::types::StreamProcessingStartSelector {

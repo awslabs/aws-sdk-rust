@@ -60,6 +60,10 @@ impl ClusterIamRoleBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
@@ -81,6 +85,16 @@ impl ClusterIamRoleBuilder {
     pub fn set_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_status = input;
         self
+    }
+    /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
+    /// <p>The following are possible statuses and descriptions.</p>
+    /// <ul>
+    /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li>
+    /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
+    /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
+    /// </ul>
+    pub fn get_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_status
     }
     /// Consumes the builder and constructs a [`ClusterIamRole`](crate::types::ClusterIamRole).
     pub fn build(self) -> crate::types::ClusterIamRole {

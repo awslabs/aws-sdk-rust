@@ -52,6 +52,10 @@ impl ScalingActionBuilder {
         self.market = input;
         self
     }
+    /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
+    pub fn get_market(&self) -> &::std::option::Option<crate::types::MarketType> {
+        &self.market
+    }
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
     pub fn simple_scaling_policy_configuration(
         mut self,
@@ -67,6 +71,12 @@ impl ScalingActionBuilder {
     ) -> Self {
         self.simple_scaling_policy_configuration = input;
         self
+    }
+    /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
+    pub fn get_simple_scaling_policy_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimpleScalingPolicyConfiguration> {
+        &self.simple_scaling_policy_configuration
     }
     /// Consumes the builder and constructs a [`ScalingAction`](crate::types::ScalingAction).
     pub fn build(self) -> crate::types::ScalingAction {

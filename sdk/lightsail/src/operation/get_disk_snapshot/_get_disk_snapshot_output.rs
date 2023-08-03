@@ -50,6 +50,10 @@ impl GetDiskSnapshotOutputBuilder {
         self.disk_snapshot = input;
         self
     }
+    /// <p>An object containing information about the disk snapshot.</p>
+    pub fn get_disk_snapshot(&self) -> &::std::option::Option<crate::types::DiskSnapshot> {
+        &self.disk_snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

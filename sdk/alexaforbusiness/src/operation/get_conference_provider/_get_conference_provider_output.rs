@@ -51,6 +51,12 @@ impl GetConferenceProviderOutputBuilder {
         self.conference_provider = input;
         self
     }
+    /// <p>The conference provider.</p>
+    pub fn get_conference_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConferenceProvider> {
+        &self.conference_provider
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

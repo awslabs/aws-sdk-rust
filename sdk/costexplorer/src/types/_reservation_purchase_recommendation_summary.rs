@@ -63,6 +63,12 @@ impl ReservationPurchaseRecommendationSummaryBuilder {
         self.total_estimated_monthly_savings_amount = input;
         self
     }
+    /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
+    pub fn get_total_estimated_monthly_savings_amount(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.total_estimated_monthly_savings_amount
+    }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
     pub fn total_estimated_monthly_savings_percentage(
         mut self,
@@ -79,6 +85,12 @@ impl ReservationPurchaseRecommendationSummaryBuilder {
         self.total_estimated_monthly_savings_percentage = input;
         self
     }
+    /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
+    pub fn get_total_estimated_monthly_savings_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.total_estimated_monthly_savings_percentage
+    }
     /// <p>The currency code used for this recommendation.</p>
     pub fn currency_code(
         mut self,
@@ -94,6 +106,10 @@ impl ReservationPurchaseRecommendationSummaryBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency code used for this recommendation.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationSummary`](crate::types::ReservationPurchaseRecommendationSummary).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendationSummary {

@@ -63,6 +63,10 @@ impl ClusterPendingUpdatesBuilder {
         self.resharding = input;
         self
     }
+    /// <p>The status of an online resharding operation.</p>
+    pub fn get_resharding(&self) -> &::std::option::Option<crate::types::ReshardingStatus> {
+        &self.resharding
+    }
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
     pub fn ac_ls(mut self, input: crate::types::AcLsUpdateStatus) -> Self {
         self.ac_ls = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ClusterPendingUpdatesBuilder {
     ) -> Self {
         self.ac_ls = input;
         self
+    }
+    /// <p>A list of ACLs associated with the cluster that are being updated</p>
+    pub fn get_ac_ls(&self) -> &::std::option::Option<crate::types::AcLsUpdateStatus> {
+        &self.ac_ls
     }
     /// Appends an item to `service_updates`.
     ///
@@ -94,6 +102,12 @@ impl ClusterPendingUpdatesBuilder {
     ) -> Self {
         self.service_updates = input;
         self
+    }
+    /// <p>A list of service updates being applied to the cluster</p>
+    pub fn get_service_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingModifiedServiceUpdate>> {
+        &self.service_updates
     }
     /// Consumes the builder and constructs a [`ClusterPendingUpdates`](crate::types::ClusterPendingUpdates).
     pub fn build(self) -> crate::types::ClusterPendingUpdates {

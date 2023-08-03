@@ -76,6 +76,10 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason provided for the termination.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The details provided for the termination.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>The details provided for the termination.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -111,6 +119,16 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
         self.child_policy = input;
         self
     }
+    /// <p>The policy used for the child workflow executions of this workflow execution.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul>
+    pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        &self.child_policy
+    }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub fn cause(mut self, input: crate::types::WorkflowExecutionTerminatedCause) -> Self {
         self.cause = ::std::option::Option::Some(input);
@@ -123,6 +141,12 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     ) -> Self {
         self.cause = input;
         self
+    }
+    /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
+    pub fn get_cause(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionTerminatedCause> {
+        &self.cause
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionTerminatedEventAttributes {

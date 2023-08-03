@@ -36,6 +36,10 @@ impl ListAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_accounts::builders::ListAccountsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListAccountsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Amazon Chime account name prefix with which to filter results.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>User email address with which to filter results.</p>
     pub fn user_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_email(input.into());
@@ -138,6 +146,10 @@ impl ListAccountsFluentBuilder {
     pub fn set_user_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_email(input);
         self
+    }
+    /// <p>User email address with which to filter results.</p>
+    pub fn get_user_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_email()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +161,10 @@ impl ListAccountsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,5 +174,9 @@ impl ListAccountsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

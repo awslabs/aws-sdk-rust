@@ -115,6 +115,10 @@ impl PasswordPolicyBuilder {
         self.minimum_password_length = input;
         self
     }
+    /// <p>Minimum length to require for IAM user passwords.</p>
+    pub fn get_minimum_password_length(&self) -> &::std::option::Option<i32> {
+        &self.minimum_password_length
+    }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
     pub fn require_symbols(mut self, input: bool) -> Self {
@@ -127,6 +131,11 @@ impl PasswordPolicyBuilder {
         self.require_symbols = input;
         self
     }
+    /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    pub fn get_require_symbols(&self) -> &::std::option::Option<bool> {
+        &self.require_symbols
+    }
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     pub fn require_numbers(mut self, input: bool) -> Self {
         self.require_numbers = ::std::option::Option::Some(input);
@@ -136,6 +145,10 @@ impl PasswordPolicyBuilder {
     pub fn set_require_numbers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_numbers = input;
         self
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
+    pub fn get_require_numbers(&self) -> &::std::option::Option<bool> {
+        &self.require_numbers
     }
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
     pub fn require_uppercase_characters(mut self, input: bool) -> Self {
@@ -147,6 +160,10 @@ impl PasswordPolicyBuilder {
         self.require_uppercase_characters = input;
         self
     }
+    /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
+    pub fn get_require_uppercase_characters(&self) -> &::std::option::Option<bool> {
+        &self.require_uppercase_characters
+    }
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
     pub fn require_lowercase_characters(mut self, input: bool) -> Self {
         self.require_lowercase_characters = ::std::option::Option::Some(input);
@@ -156,6 +173,10 @@ impl PasswordPolicyBuilder {
     pub fn set_require_lowercase_characters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_lowercase_characters = input;
         self
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
+    pub fn get_require_lowercase_characters(&self) -> &::std::option::Option<bool> {
+        &self.require_lowercase_characters
     }
     /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
     pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
@@ -170,6 +191,10 @@ impl PasswordPolicyBuilder {
         self.allow_users_to_change_password = input;
         self
     }
+    /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
+    pub fn get_allow_users_to_change_password(&self) -> &::std::option::Option<bool> {
+        &self.allow_users_to_change_password
+    }
     /// <p>Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.</p>
     pub fn expire_passwords(mut self, input: bool) -> Self {
         self.expire_passwords = ::std::option::Option::Some(input);
@@ -179,6 +204,10 @@ impl PasswordPolicyBuilder {
     pub fn set_expire_passwords(mut self, input: ::std::option::Option<bool>) -> Self {
         self.expire_passwords = input;
         self
+    }
+    /// <p>Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.</p>
+    pub fn get_expire_passwords(&self) -> &::std::option::Option<bool> {
+        &self.expire_passwords
     }
     /// <p>The number of days that an IAM user password is valid.</p>
     pub fn max_password_age(mut self, input: i32) -> Self {
@@ -190,6 +219,10 @@ impl PasswordPolicyBuilder {
         self.max_password_age = input;
         self
     }
+    /// <p>The number of days that an IAM user password is valid.</p>
+    pub fn get_max_password_age(&self) -> &::std::option::Option<i32> {
+        &self.max_password_age
+    }
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     pub fn password_reuse_prevention(mut self, input: i32) -> Self {
         self.password_reuse_prevention = ::std::option::Option::Some(input);
@@ -200,6 +233,10 @@ impl PasswordPolicyBuilder {
         self.password_reuse_prevention = input;
         self
     }
+    /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
+    pub fn get_password_reuse_prevention(&self) -> &::std::option::Option<i32> {
+        &self.password_reuse_prevention
+    }
     /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
     pub fn hard_expiry(mut self, input: bool) -> Self {
         self.hard_expiry = ::std::option::Option::Some(input);
@@ -209,6 +246,10 @@ impl PasswordPolicyBuilder {
     pub fn set_hard_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hard_expiry = input;
         self
+    }
+    /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
+    pub fn get_hard_expiry(&self) -> &::std::option::Option<bool> {
+        &self.hard_expiry
     }
     /// Consumes the builder and constructs a [`PasswordPolicy`](crate::types::PasswordPolicy).
     pub fn build(self) -> crate::types::PasswordPolicy {

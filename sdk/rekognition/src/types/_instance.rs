@@ -59,6 +59,10 @@ impl InstanceBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>The position of the label instance on the image.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl InstanceBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Appends an item to `dominant_colors`.
     ///
@@ -87,6 +95,12 @@ impl InstanceBuilder {
     ) -> Self {
         self.dominant_colors = input;
         self
+    }
+    /// <p>The dominant colors found in an individual instance of a label.</p>
+    pub fn get_dominant_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
+        &self.dominant_colors
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

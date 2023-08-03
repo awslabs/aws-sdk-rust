@@ -57,6 +57,10 @@ impl ExecutionSucceededEventDetailsBuilder {
         self.output = input;
         self
     }
+    /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
+    }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
         self.output_details = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ExecutionSucceededEventDetailsBuilder {
     ) -> Self {
         self.output_details = input;
         self
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn get_output_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+        &self.output_details
     }
     /// Consumes the builder and constructs a [`ExecutionSucceededEventDetails`](crate::types::ExecutionSucceededEventDetails).
     pub fn build(self) -> crate::types::ExecutionSucceededEventDetails {

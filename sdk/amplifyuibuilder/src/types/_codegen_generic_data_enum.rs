@@ -49,6 +49,10 @@ impl CodegenGenericDataEnumBuilder {
         self.values = input;
         self
     }
+    /// <p>The list of enum values in the generic data schema.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`CodegenGenericDataEnum`](crate::types::CodegenGenericDataEnum).
     pub fn build(self) -> crate::types::CodegenGenericDataEnum {
         crate::types::CodegenGenericDataEnum {

@@ -52,6 +52,10 @@ impl CreateVirtualMfaDeviceOutputBuilder {
         self.virtual_mfa_device = input;
         self
     }
+    /// <p>A structure containing details about the new virtual MFA device.</p>
+    pub fn get_virtual_mfa_device(&self) -> &::std::option::Option<crate::types::VirtualMfaDevice> {
+        &self.virtual_mfa_device
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

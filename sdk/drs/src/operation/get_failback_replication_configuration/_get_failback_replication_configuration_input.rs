@@ -45,6 +45,10 @@ impl GetFailbackReplicationConfigurationInputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// Consumes the builder and constructs a [`GetFailbackReplicationConfigurationInput`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

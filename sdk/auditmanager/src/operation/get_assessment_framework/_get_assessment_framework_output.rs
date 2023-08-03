@@ -48,6 +48,10 @@ impl GetAssessmentFrameworkOutputBuilder {
         self.framework = input;
         self
     }
+    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
+        &self.framework
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

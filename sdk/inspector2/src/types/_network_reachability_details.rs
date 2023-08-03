@@ -59,6 +59,10 @@ impl NetworkReachabilityDetailsBuilder {
         self.open_port_range = input;
         self
     }
+    /// <p>An object that contains details about the open port range associated with a finding.</p>
+    pub fn get_open_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.open_port_range
+    }
     /// <p>The protocol associated with a finding.</p>
     pub fn protocol(mut self, input: crate::types::NetworkProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl NetworkReachabilityDetailsBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol associated with a finding.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::NetworkProtocol> {
+        &self.protocol
+    }
     /// <p>An object that contains details about a network path associated with a finding.</p>
     pub fn network_path(mut self, input: crate::types::NetworkPath) -> Self {
         self.network_path = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl NetworkReachabilityDetailsBuilder {
     ) -> Self {
         self.network_path = input;
         self
+    }
+    /// <p>An object that contains details about a network path associated with a finding.</p>
+    pub fn get_network_path(&self) -> &::std::option::Option<crate::types::NetworkPath> {
+        &self.network_path
     }
     /// Consumes the builder and constructs a [`NetworkReachabilityDetails`](crate::types::NetworkReachabilityDetails).
     pub fn build(self) -> crate::types::NetworkReachabilityDetails {

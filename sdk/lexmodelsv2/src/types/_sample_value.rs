@@ -40,6 +40,10 @@ impl SampleValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value that can be used for a slot type.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`SampleValue`](crate::types::SampleValue).
     pub fn build(self) -> crate::types::SampleValue {
         crate::types::SampleValue { value: self.value }

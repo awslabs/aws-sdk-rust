@@ -134,6 +134,10 @@ impl MergeBranchesByThreeWayInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(
         mut self,
@@ -151,6 +155,10 @@ impl MergeBranchesByThreeWayInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_specifier
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -165,6 +173,12 @@ impl MergeBranchesByThreeWayInputBuilder {
     ) -> Self {
         self.destination_commit_specifier = input;
         self
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_destination_commit_specifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_specifier
     }
     /// <p>The branch where the merge is applied. </p>
     pub fn target_branch(
@@ -182,6 +196,10 @@ impl MergeBranchesByThreeWayInputBuilder {
         self.target_branch = input;
         self
     }
+    /// <p>The branch where the merge is applied. </p>
+    pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_branch
+    }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn conflict_detail_level(
         mut self,
@@ -197,6 +215,12 @@ impl MergeBranchesByThreeWayInputBuilder {
     ) -> Self {
         self.conflict_detail_level = input;
         self
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    pub fn get_conflict_detail_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+        &self.conflict_detail_level
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn conflict_resolution_strategy(
@@ -214,6 +238,12 @@ impl MergeBranchesByThreeWayInputBuilder {
         self.conflict_resolution_strategy = input;
         self
     }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn get_conflict_resolution_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+        &self.conflict_resolution_strategy
+    }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author_name = ::std::option::Option::Some(input.into());
@@ -224,6 +254,10 @@ impl MergeBranchesByThreeWayInputBuilder {
         self.author_name = input;
         self
     }
+    /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author_name
+    }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -233,6 +267,10 @@ impl MergeBranchesByThreeWayInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
     pub fn commit_message(
@@ -250,6 +288,10 @@ impl MergeBranchesByThreeWayInputBuilder {
         self.commit_message = input;
         self
     }
+    /// <p>The commit message to include in the commit information for the merge.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_message
+    }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn keep_empty_folders(mut self, input: bool) -> Self {
         self.keep_empty_folders = ::std::option::Option::Some(input);
@@ -259,6 +301,10 @@ impl MergeBranchesByThreeWayInputBuilder {
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.keep_empty_folders = input;
         self
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
+        &self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -272,6 +318,12 @@ impl MergeBranchesByThreeWayInputBuilder {
     ) -> Self {
         self.conflict_resolution = input;
         self
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        &self.conflict_resolution
     }
     /// Consumes the builder and constructs a [`MergeBranchesByThreeWayInput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayInput).
     pub fn build(

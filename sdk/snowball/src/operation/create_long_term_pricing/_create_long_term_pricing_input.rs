@@ -62,6 +62,12 @@ impl CreateLongTermPricingInputBuilder {
         self.long_term_pricing_type = input;
         self
     }
+    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
+    pub fn get_long_term_pricing_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LongTermPricingType> {
+        &self.long_term_pricing_type
+    }
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
         self.is_long_term_pricing_auto_renew = ::std::option::Option::Some(input);
@@ -75,6 +81,10 @@ impl CreateLongTermPricingInputBuilder {
         self.is_long_term_pricing_auto_renew = input;
         self
     }
+    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    pub fn get_is_long_term_pricing_auto_renew(&self) -> &::std::option::Option<bool> {
+        &self.is_long_term_pricing_auto_renew
+    }
     /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
         self.snowball_type = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl CreateLongTermPricingInputBuilder {
     ) -> Self {
         self.snowball_type = input;
         self
+    }
+    /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
+    pub fn get_snowball_type(&self) -> &::std::option::Option<crate::types::SnowballType> {
+        &self.snowball_type
     }
     /// Consumes the builder and constructs a [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
     pub fn build(

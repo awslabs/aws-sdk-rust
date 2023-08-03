@@ -51,6 +51,12 @@ impl InterpolationParametersBuilder {
         self.interpolation_type = input;
         self
     }
+    /// <p>The interpolation type.</p>
+    pub fn get_interpolation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InterpolationType> {
+        &self.interpolation_type
+    }
     /// <p>The interpolation time interval in seconds.</p>
     pub fn interval_in_seconds(mut self, input: i64) -> Self {
         self.interval_in_seconds = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl InterpolationParametersBuilder {
     pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.interval_in_seconds = input;
         self
+    }
+    /// <p>The interpolation time interval in seconds.</p>
+    pub fn get_interval_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.interval_in_seconds
     }
     /// Consumes the builder and constructs a [`InterpolationParameters`](crate::types::InterpolationParameters).
     pub fn build(self) -> crate::types::InterpolationParameters {

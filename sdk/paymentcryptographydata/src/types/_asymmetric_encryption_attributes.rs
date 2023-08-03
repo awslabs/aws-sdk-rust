@@ -43,6 +43,10 @@ impl AsymmetricEncryptionAttributesBuilder {
         self.padding_type = input;
         self
     }
+    /// <p>The padding to be included with the data.</p>
+    pub fn get_padding_type(&self) -> &::std::option::Option<crate::types::PaddingType> {
+        &self.padding_type
+    }
     /// Consumes the builder and constructs a [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
     pub fn build(self) -> crate::types::AsymmetricEncryptionAttributes {
         crate::types::AsymmetricEncryptionAttributes {

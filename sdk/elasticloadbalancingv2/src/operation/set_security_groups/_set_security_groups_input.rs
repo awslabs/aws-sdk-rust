@@ -54,6 +54,10 @@ impl SetSecurityGroupsInputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -75,6 +79,12 @@ impl SetSecurityGroupsInputBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`SetSecurityGroupsInput`](crate::operation::set_security_groups::SetSecurityGroupsInput).
     pub fn build(

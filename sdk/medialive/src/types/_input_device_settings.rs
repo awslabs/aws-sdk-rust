@@ -40,6 +40,10 @@ impl InputDeviceSettingsBuilder {
         self.id = input;
         self
     }
+    /// The unique ID for the device.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`InputDeviceSettings`](crate::types::InputDeviceSettings).
     pub fn build(self) -> crate::types::InputDeviceSettings {
         crate::types::InputDeviceSettings { id: self.id }

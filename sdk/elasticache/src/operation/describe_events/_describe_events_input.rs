@@ -102,6 +102,10 @@ impl DescribeEventsInputBuilder {
         self.source_identifier = input;
         self
     }
+    /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identifier
+    }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl DescribeEventsInputBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
@@ -130,6 +138,11 @@ impl DescribeEventsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +158,11 @@ impl DescribeEventsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The number of minutes worth of events to retrieve.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -154,6 +172,10 @@ impl DescribeEventsInputBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The number of minutes worth of events to retrieve.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -169,6 +191,12 @@ impl DescribeEventsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -178,6 +206,10 @@ impl DescribeEventsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(

@@ -56,6 +56,13 @@ impl UpdateSizeConstraintSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSizeConstraintSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +159,10 @@ impl UpdateSizeConstraintSetFluentBuilder {
         self.inner = self.inner.set_size_constraint_set_id(input);
         self
     }
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_size_constraint_set_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -161,6 +172,10 @@ impl UpdateSizeConstraintSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
     /// Appends an item to `Updates`.
     ///
@@ -188,5 +203,16 @@ impl UpdateSizeConstraintSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_updates(input);
         self
+    }
+    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>> {
+        self.inner.get_updates()
     }
 }

@@ -66,6 +66,12 @@ impl ListPlaceIndexesOutputBuilder {
         self.entries = input;
         self
     }
+    /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>> {
+        &self.entries
+    }
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListPlaceIndexesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

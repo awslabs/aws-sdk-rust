@@ -115,6 +115,10 @@ impl DescribeFolderContentsInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl DescribeFolderContentsInputBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_id = input;
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// <p>The sorting criteria.</p>
     pub fn sort(mut self, input: crate::types::ResourceSortType) -> Self {
@@ -138,6 +146,10 @@ impl DescribeFolderContentsInputBuilder {
         self.sort = input;
         self
     }
+    /// <p>The sorting criteria.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::ResourceSortType> {
+        &self.sort
+    }
     /// <p>The order for the contents of the folder.</p>
     pub fn order(mut self, input: crate::types::OrderType) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl DescribeFolderContentsInputBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order for the contents of the folder.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderType> {
+        &self.order
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -158,6 +174,10 @@ impl DescribeFolderContentsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl DescribeFolderContentsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The type of items.</p>
     pub fn r#type(mut self, input: crate::types::FolderContentType) -> Self {
@@ -181,6 +205,10 @@ impl DescribeFolderContentsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of items.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FolderContentType> {
+        &self.r#type
+    }
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn include(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.include = ::std::option::Option::Some(input.into());
@@ -190,6 +218,10 @@ impl DescribeFolderContentsInputBuilder {
     pub fn set_include(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.include = input;
         self
+    }
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::string::String> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeFolderContentsInput`](crate::operation::describe_folder_contents::DescribeFolderContentsInput).
     pub fn build(

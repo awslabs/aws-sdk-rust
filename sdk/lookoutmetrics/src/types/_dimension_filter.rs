@@ -54,6 +54,10 @@ impl DimensionFilterBuilder {
         self.dimension_name = input;
         self
     }
+    /// <p>The name of the dimension to filter on.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_name
+    }
     /// Appends an item to `dimension_value_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_value_list`](Self::set_dimension_value_list).
@@ -75,6 +79,12 @@ impl DimensionFilterBuilder {
     ) -> Self {
         self.dimension_value_list = input;
         self
+    }
+    /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+    pub fn get_dimension_value_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dimension_value_list
     }
     /// Consumes the builder and constructs a [`DimensionFilter`](crate::types::DimensionFilter).
     pub fn build(self) -> crate::types::DimensionFilter {

@@ -37,6 +37,12 @@ impl SearchProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_profiles::builders::SearchProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl SearchProfilesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token from the previous SearchProfiles API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -131,6 +141,11 @@ impl SearchProfilesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects returned per page.</p>
+    /// <p>The default is 20 if this parameter is not included in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -141,6 +156,10 @@ impl SearchProfilesFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
@@ -150,6 +169,10 @@ impl SearchProfilesFluentBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
+    }
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
     }
     /// Appends an item to `Values`.
     ///
@@ -168,6 +191,10 @@ impl SearchProfilesFluentBuilder {
         self.inner = self.inner.set_values(input);
         self
     }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_values()
+    }
     /// Appends an item to `AdditionalSearchKeys`.
     ///
     /// To override the contents of this collection use [`set_additional_search_keys`](Self::set_additional_search_keys).
@@ -184,6 +211,12 @@ impl SearchProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_search_keys(input);
         self
+    }
+    /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
+    pub fn get_additional_search_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>> {
+        self.inner.get_additional_search_keys()
     }
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
@@ -209,5 +242,15 @@ impl SearchProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logical_operator(input);
         self
+    }
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
+    /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
+    pub fn get_logical_operator(&self) -> &::std::option::Option<crate::types::LogicalOperator> {
+        self.inner.get_logical_operator()
     }
 }

@@ -39,6 +39,10 @@ impl GetControlInputBuilder {
         self.control_id = input;
         self
     }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
+    }
     /// Consumes the builder and constructs a [`GetControlInput`](crate::operation::get_control::GetControlInput).
     pub fn build(
         self,

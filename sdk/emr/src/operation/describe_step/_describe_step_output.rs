@@ -47,6 +47,10 @@ impl DescribeStepOutputBuilder {
         self.step = input;
         self
     }
+    /// <p>The step details for the requested step identifier.</p>
+    pub fn get_step(&self) -> &::std::option::Option<crate::types::Step> {
+        &self.step
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

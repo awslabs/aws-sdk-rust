@@ -173,6 +173,10 @@ impl ComponentSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -182,6 +186,10 @@ impl ComponentSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
     pub fn environment_name(
@@ -199,6 +207,10 @@ impl ComponentSummaryBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the Proton environment that this component is associated with.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -208,6 +220,10 @@ impl ComponentSummaryBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn service_instance_name(
@@ -225,6 +241,10 @@ impl ComponentSummaryBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The time when the component was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -237,6 +257,10 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time when the component was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time when the component was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -251,6 +275,10 @@ impl ComponentSummaryBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The time when the component was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The time when a deployment of the component was last attempted.</p>
     pub fn last_deployment_attempted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_deployment_attempted_at = ::std::option::Option::Some(input);
@@ -263,6 +291,12 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.last_deployment_attempted_at = input;
         self
+    }
+    /// <p>The time when a deployment of the component was last attempted.</p>
+    pub fn get_last_deployment_attempted_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_deployment_attempted_at
     }
     /// <p>The time when the component was last deployed successfully.</p>
     pub fn last_deployment_succeeded_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -277,6 +311,12 @@ impl ComponentSummaryBuilder {
         self.last_deployment_succeeded_at = input;
         self
     }
+    /// <p>The time when the component was last deployed successfully.</p>
+    pub fn get_last_deployment_succeeded_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_deployment_succeeded_at
+    }
     /// <p>The component deployment status.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -289,6 +329,10 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>The component deployment status.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.deployment_status
     }
     /// <p>The message associated with the component deployment status.</p>
     pub fn deployment_status_message(
@@ -306,6 +350,10 @@ impl ComponentSummaryBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>The message associated with the component deployment status.</p>
+    pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status_message
+    }
     /// <p>The ID of the last attempted deployment of this component.</p>
     pub fn last_attempted_deployment_id(
         mut self,
@@ -322,6 +370,12 @@ impl ComponentSummaryBuilder {
         self.last_attempted_deployment_id = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this component.</p>
+    pub fn get_last_attempted_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_attempted_deployment_id
+    }
     /// <p>The ID of the last successful deployment of this component.</p>
     pub fn last_succeeded_deployment_id(
         mut self,
@@ -337,6 +391,12 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.last_succeeded_deployment_id = input;
         self
+    }
+    /// <p>The ID of the last successful deployment of this component.</p>
+    pub fn get_last_succeeded_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_succeeded_deployment_id
     }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {

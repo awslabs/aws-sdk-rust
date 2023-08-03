@@ -64,6 +64,12 @@ impl ListBrokersOutputBuilder {
         self.broker_summaries = input;
         self
     }
+    /// <p>A list of information about all brokers.</p>
+    pub fn get_broker_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>> {
+        &self.broker_summaries
+    }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListBrokersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

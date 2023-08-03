@@ -62,6 +62,11 @@ impl GetMetricDataOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `metric_results`.
     ///
     /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
@@ -82,6 +87,13 @@ impl GetMetricDataOutputBuilder {
     ) -> Self {
         self.metric_results = input;
         self
+    }
+    /// <p>Information about the historical metrics.</p>
+    /// <p>If no grouping is specified, a summary of metric data is returned.</p>
+    pub fn get_metric_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>> {
+        &self.metric_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

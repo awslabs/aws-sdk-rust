@@ -40,6 +40,10 @@ impl DocumentServiceWarningBuilder {
         self.message = input;
         self
     }
+    /// <p>The description for a warning returned by the document service.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`DocumentServiceWarning`](crate::types::DocumentServiceWarning).
     pub fn build(self) -> crate::types::DocumentServiceWarning {
         crate::types::DocumentServiceWarning {

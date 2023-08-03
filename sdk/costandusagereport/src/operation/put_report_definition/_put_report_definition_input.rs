@@ -45,6 +45,10 @@ impl PutReportDefinitionInputBuilder {
         self.report_definition = input;
         self
     }
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
+        &self.report_definition
+    }
     /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
     pub fn build(
         self,

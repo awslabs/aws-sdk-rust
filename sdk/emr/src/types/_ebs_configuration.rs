@@ -61,6 +61,12 @@ impl EbsConfigurationBuilder {
         self.ebs_block_device_configs = input;
         self
     }
+    /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
+    pub fn get_ebs_block_device_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>> {
+        &self.ebs_block_device_configs
+    }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl EbsConfigurationBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
+    }
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        &self.ebs_optimized
     }
     /// Consumes the builder and constructs a [`EbsConfiguration`](crate::types::EbsConfiguration).
     pub fn build(self) -> crate::types::EbsConfiguration {

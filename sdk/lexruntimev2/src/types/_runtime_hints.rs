@@ -88,6 +88,19 @@ impl RuntimeHintsBuilder {
         self.slot_hints = input;
         self
     }
+    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
+    /// <p>The intent name and slot name must exist.</p>
+    pub fn get_slot_hints(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
+        >,
+    > {
+        &self.slot_hints
+    }
     /// Consumes the builder and constructs a [`RuntimeHints`](crate::types::RuntimeHints).
     pub fn build(self) -> crate::types::RuntimeHints {
         crate::types::RuntimeHints {

@@ -36,6 +36,12 @@ impl CreatePartnerInputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePartnerInput as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_partner_input::builders::CreatePartnerInputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreatePartnerInputFluentBuilder {
         self.inner = self.inner.set_input_id(input);
         self
     }
+    /// Unique ID of the input.
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_id()
+    }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -135,6 +145,10 @@ impl CreatePartnerInputFluentBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
+    }
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -158,5 +172,13 @@ impl CreatePartnerInputFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

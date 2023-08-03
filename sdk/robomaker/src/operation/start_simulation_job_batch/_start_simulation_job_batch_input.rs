@@ -83,6 +83,10 @@ impl StartSimulationJobBatchInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The batch policy.</p>
     pub fn batch_policy(mut self, input: crate::types::BatchPolicy) -> Self {
         self.batch_policy = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl StartSimulationJobBatchInputBuilder {
     ) -> Self {
         self.batch_policy = input;
         self
+    }
+    /// <p>The batch policy.</p>
+    pub fn get_batch_policy(&self) -> &::std::option::Option<crate::types::BatchPolicy> {
+        &self.batch_policy
     }
     /// Appends an item to `create_simulation_job_requests`.
     ///
@@ -117,6 +125,12 @@ impl StartSimulationJobBatchInputBuilder {
     ) -> Self {
         self.create_simulation_job_requests = input;
         self
+    }
+    /// <p>A list of simulation job requests to create in the batch.</p>
+    pub fn get_create_simulation_job_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>> {
+        &self.create_simulation_job_requests
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -142,6 +156,14 @@ impl StartSimulationJobBatchInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartSimulationJobBatchInput`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchInput).
     pub fn build(

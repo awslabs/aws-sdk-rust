@@ -49,6 +49,10 @@ impl RevokeVpcEndpointAccessInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the OpenSearch Service domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The account ID to revoke access from.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl RevokeVpcEndpointAccessInputBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>The account ID to revoke access from.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessInput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl RemoveTagsFromResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_key_list`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
@@ -71,6 +75,13 @@ impl RemoveTagsFromResourceInputBuilder {
     ) -> Self {
         self.tag_key_list = input;
         self
+    }
+    /// <p>The tag key or keys to remove.</p>
+    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
     pub fn build(

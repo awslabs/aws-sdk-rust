@@ -107,6 +107,10 @@ impl DescribeAccessPolicyOutputBuilder {
         self.access_policy_id = input;
         self
     }
+    /// <p>The ID of the access policy.</p>
+    pub fn get_access_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(
@@ -125,6 +129,11 @@ impl DescribeAccessPolicyOutputBuilder {
         self.access_policy_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    pub fn get_access_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy_arn
+    }
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     pub fn access_policy_identity(mut self, input: crate::types::Identity) -> Self {
         self.access_policy_identity = ::std::option::Option::Some(input);
@@ -137,6 +146,10 @@ impl DescribeAccessPolicyOutputBuilder {
     ) -> Self {
         self.access_policy_identity = input;
         self
+    }
+    /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
+    pub fn get_access_policy_identity(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.access_policy_identity
     }
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     pub fn access_policy_resource(mut self, input: crate::types::Resource) -> Self {
@@ -151,6 +164,10 @@ impl DescribeAccessPolicyOutputBuilder {
         self.access_policy_resource = input;
         self
     }
+    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
+    pub fn get_access_policy_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.access_policy_resource
+    }
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn access_policy_permission(mut self, input: crate::types::Permission) -> Self {
         self.access_policy_permission = ::std::option::Option::Some(input);
@@ -163,6 +180,10 @@ impl DescribeAccessPolicyOutputBuilder {
     ) -> Self {
         self.access_policy_permission = input;
         self
+    }
+    /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    pub fn get_access_policy_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.access_policy_permission
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn access_policy_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +198,12 @@ impl DescribeAccessPolicyOutputBuilder {
         self.access_policy_creation_date = input;
         self
     }
+    /// <p>The date the access policy was created, in Unix epoch time.</p>
+    pub fn get_access_policy_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.access_policy_creation_date
+    }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn access_policy_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.access_policy_last_update_date = ::std::option::Option::Some(input);
@@ -189,6 +216,12 @@ impl DescribeAccessPolicyOutputBuilder {
     ) -> Self {
         self.access_policy_last_update_date = input;
         self
+    }
+    /// <p>The date the access policy was last updated, in Unix epoch time.</p>
+    pub fn get_access_policy_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.access_policy_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

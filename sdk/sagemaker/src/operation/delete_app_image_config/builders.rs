@@ -36,6 +36,13 @@ impl DeleteAppImageConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAppImageConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_app_image_config::builders::DeleteAppImageConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteAppImageConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_image_config_name(input);
         self
+    }
+    /// <p>The name of the AppImageConfig to delete.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_image_config_name()
     }
 }

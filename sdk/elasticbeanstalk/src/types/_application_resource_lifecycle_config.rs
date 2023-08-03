@@ -56,6 +56,11 @@ impl ApplicationResourceLifecycleConfigBuilder {
         self.service_role = input;
         self
     }
+    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+    /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     /// <p>Defines lifecycle settings for application versions.</p>
     pub fn version_lifecycle_config(
         mut self,
@@ -71,6 +76,12 @@ impl ApplicationResourceLifecycleConfigBuilder {
     ) -> Self {
         self.version_lifecycle_config = input;
         self
+    }
+    /// <p>Defines lifecycle settings for application versions.</p>
+    pub fn get_version_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationVersionLifecycleConfig> {
+        &self.version_lifecycle_config
     }
     /// Consumes the builder and constructs a [`ApplicationResourceLifecycleConfig`](crate::types::ApplicationResourceLifecycleConfig).
     pub fn build(self) -> crate::types::ApplicationResourceLifecycleConfig {

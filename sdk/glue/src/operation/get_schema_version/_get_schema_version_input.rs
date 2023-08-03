@@ -74,6 +74,14 @@ impl GetSchemaVersionInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
     pub fn schema_version_id(
         mut self,
@@ -90,6 +98,10 @@ impl GetSchemaVersionInputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.schema_version_number = ::std::option::Option::Some(input);
@@ -102,6 +114,12 @@ impl GetSchemaVersionInputBuilder {
     ) -> Self {
         self.schema_version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        &self.schema_version_number
     }
     /// Consumes the builder and constructs a [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
     pub fn build(

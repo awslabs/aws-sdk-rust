@@ -83,6 +83,10 @@ impl CalculationStatusBuilder {
         self.submission_date_time = input;
         self
     }
+    /// <p>The date and time the calculation was submitted for processing.</p>
+    pub fn get_submission_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submission_date_time
+    }
     /// <p>The date and time the calculation completed processing.</p>
     pub fn completion_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_date_time = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl CalculationStatusBuilder {
     ) -> Self {
         self.completion_date_time = input;
         self
+    }
+    /// <p>The date and time the calculation completed processing.</p>
+    pub fn get_completion_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_date_time
     }
     /// <p>The state of the calculation execution. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
@@ -125,6 +133,18 @@ impl CalculationStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the calculation execution. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CalculationExecutionState> {
+        &self.state
+    }
     /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
     pub fn state_change_reason(
         mut self,
@@ -140,6 +160,10 @@ impl CalculationStatusBuilder {
     ) -> Self {
         self.state_change_reason = input;
         self
+    }
+    /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_change_reason
     }
     /// Consumes the builder and constructs a [`CalculationStatus`](crate::types::CalculationStatus).
     pub fn build(self) -> crate::types::CalculationStatus {

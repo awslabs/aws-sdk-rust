@@ -49,6 +49,10 @@ impl CreateDatasetOutputBuilder {
         self.dataset_metadata = input;
         self
     }
+    /// <p>Information about the dataset.</p>
+    pub fn get_dataset_metadata(&self) -> &::std::option::Option<crate::types::DatasetMetadata> {
+        &self.dataset_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

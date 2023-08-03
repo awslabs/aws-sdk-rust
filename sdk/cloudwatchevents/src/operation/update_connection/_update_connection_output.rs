@@ -85,6 +85,10 @@ impl UpdateConnectionOutputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The ARN of the connection that was updated.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The state of the connection that was updated.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.connection_state = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl UpdateConnectionOutputBuilder {
     ) -> Self {
         self.connection_state = input;
         self
+    }
+    /// <p>The state of the connection that was updated.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.connection_state
     }
     /// <p>A time stamp for the time that the connection was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +119,10 @@ impl UpdateConnectionOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A time stamp for the time that the connection was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl UpdateConnectionOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A time stamp for the time that the connection was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn last_authorized_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_authorized_time = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl UpdateConnectionOutputBuilder {
     ) -> Self {
         self.last_authorized_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn get_last_authorized_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_authorized_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

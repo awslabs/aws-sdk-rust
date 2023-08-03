@@ -54,6 +54,10 @@ impl CreatePortalOutputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub fn portal_endpoint(
         mut self,
@@ -69,6 +73,10 @@ impl CreatePortalOutputBuilder {
     ) -> Self {
         self.portal_endpoint = input;
         self
+    }
+    /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    pub fn get_portal_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -85,6 +85,10 @@ impl UpdateThemeInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl UpdateThemeInputBuilder {
         self.theme_id = input;
         self
     }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
+    }
     /// <p>The name for the theme.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl UpdateThemeInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(
@@ -121,6 +133,10 @@ impl UpdateThemeInputBuilder {
         self.base_theme_id = input;
         self
     }
+    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_theme_id
+    }
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
     pub fn version_description(
         mut self,
@@ -137,6 +153,10 @@ impl UpdateThemeInputBuilder {
         self.version_description = input;
         self
     }
+    /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
+    }
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl UpdateThemeInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The theme configuration, which contains the theme display properties.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ThemeConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
     pub fn build(

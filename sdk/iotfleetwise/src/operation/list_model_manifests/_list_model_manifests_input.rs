@@ -64,6 +64,10 @@ impl ListModelManifestsInputBuilder {
         self.signal_catalog_arn = input;
         self
     }
+    /// <p> The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_catalog_arn
+    }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +80,11 @@ impl ListModelManifestsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token for the next set of results.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -85,6 +94,10 @@ impl ListModelManifestsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
     pub fn build(

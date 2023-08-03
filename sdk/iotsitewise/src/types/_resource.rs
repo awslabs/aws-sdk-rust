@@ -51,6 +51,10 @@ impl ResourceBuilder {
         self.portal = input;
         self
     }
+    /// <p>A portal resource.</p>
+    pub fn get_portal(&self) -> &::std::option::Option<crate::types::PortalResource> {
+        &self.portal
+    }
     /// <p>A project resource.</p>
     pub fn project(mut self, input: crate::types::ProjectResource) -> Self {
         self.project = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.project = input;
         self
+    }
+    /// <p>A project resource.</p>
+    pub fn get_project(&self) -> &::std::option::Option<crate::types::ProjectResource> {
+        &self.project
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

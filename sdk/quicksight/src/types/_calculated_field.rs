@@ -69,6 +69,10 @@ impl CalculatedFieldBuilder {
         self.data_set_identifier = input;
         self
     }
+    /// <p>The data set that is used in this calculated field.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
+    }
     /// <p>The name of the calculated field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CalculatedFieldBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the calculated field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The expression of the calculated field.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CalculatedFieldBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The expression of the calculated field.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`CalculatedField`](crate::types::CalculatedField).
     pub fn build(self) -> crate::types::CalculatedField {

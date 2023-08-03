@@ -62,6 +62,10 @@ impl CustomAuthCredentialsBuilder {
         self.custom_authentication_type = input;
         self
     }
+    /// <p>The custom authentication type that the connector uses.</p>
+    pub fn get_custom_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_authentication_type
+    }
     /// Adds a key-value pair to `credentials_map`.
     ///
     /// To override the contents of this collection use [`set_credentials_map`](Self::set_credentials_map).
@@ -86,6 +90,14 @@ impl CustomAuthCredentialsBuilder {
     ) -> Self {
         self.credentials_map = input;
         self
+    }
+    /// <p>A map that holds custom authentication credentials.</p>
+    pub fn get_credentials_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.credentials_map
     }
     /// Consumes the builder and constructs a [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
     pub fn build(self) -> crate::types::CustomAuthCredentials {

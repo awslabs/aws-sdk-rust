@@ -59,6 +59,12 @@ impl BatchGetDeploymentsOutputBuilder {
         self.deployments_info = input;
         self
     }
+    /// <p> Information about the deployments. </p>
+    pub fn get_deployments_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>> {
+        &self.deployments_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

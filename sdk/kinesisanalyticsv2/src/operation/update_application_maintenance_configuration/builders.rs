@@ -41,6 +41,10 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplicationMaintenanceConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,6 +115,10 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application for which you want to update the maintenance configuration.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>Describes the application maintenance configuration update.</p>
     pub fn application_maintenance_configuration_update(
         mut self,
@@ -130,5 +138,12 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
             .inner
             .set_application_maintenance_configuration_update(input);
         self
+    }
+    /// <p>Describes the application maintenance configuration update.</p>
+    pub fn get_application_maintenance_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate> {
+        self.inner
+            .get_application_maintenance_configuration_update()
     }
 }

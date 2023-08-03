@@ -36,6 +36,13 @@ impl DescribeExplainabilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExplainability as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeExplainabilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_explainability_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_explainability_arn()
     }
 }

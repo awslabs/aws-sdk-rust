@@ -53,6 +53,12 @@ impl VectorEnrichmentJobExportErrorDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType> {
+        &self.r#type
+    }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl VectorEnrichmentJobExportErrorDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`VectorEnrichmentJobExportErrorDetails`](crate::types::VectorEnrichmentJobExportErrorDetails).
     pub fn build(self) -> crate::types::VectorEnrichmentJobExportErrorDetails {

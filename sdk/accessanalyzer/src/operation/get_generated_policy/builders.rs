@@ -36,6 +36,12 @@ impl GetGeneratedPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGeneratedPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetGeneratedPolicyFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub fn include_resource_placeholders(mut self, input: bool) -> Self {
@@ -137,6 +147,11 @@ impl GetGeneratedPolicyFluentBuilder {
     pub fn set_include_resource_placeholders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_resource_placeholders(input);
         self
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    pub fn get_include_resource_placeholders(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_resource_placeholders()
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
@@ -152,5 +167,10 @@ impl GetGeneratedPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include_service_level_template(input);
         self
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
+    pub fn get_include_service_level_template(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_service_level_template()
     }
 }

@@ -92,6 +92,10 @@ impl SlotSummaryBuilder {
         self.slot_id = input;
         self
     }
+    /// <p>The unique identifier of the slot.</p>
+    pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_id
+    }
     /// <p>The name given to the slot.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl SlotSummaryBuilder {
         self.slot_name = input;
         self
     }
+    /// <p>The name given to the slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
+    }
     /// <p>The description of the slot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl SlotSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the slot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
@@ -125,6 +137,10 @@ impl SlotSummaryBuilder {
         self.slot_constraint = input;
         self
     }
+    /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
+    pub fn get_slot_constraint(&self) -> &::std::option::Option<crate::types::SlotConstraint> {
+        &self.slot_constraint
+    }
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
@@ -134,6 +150,10 @@ impl SlotSummaryBuilder {
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_type_id = input;
         self
+    }
+    /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
     }
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
     pub fn value_elicitation_prompt_specification(
@@ -151,6 +171,12 @@ impl SlotSummaryBuilder {
         self.value_elicitation_prompt_specification = input;
         self
     }
+    /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
+    pub fn get_value_elicitation_prompt_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PromptSpecification> {
+        &self.value_elicitation_prompt_specification
+    }
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -163,6 +189,12 @@ impl SlotSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The timestamp of the last date and time that the slot was updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`SlotSummary`](crate::types::SlotSummary).
     pub fn build(self) -> crate::types::SlotSummary {

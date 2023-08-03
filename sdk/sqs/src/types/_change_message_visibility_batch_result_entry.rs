@@ -40,6 +40,10 @@ impl ChangeMessageVisibilityBatchResultEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::types::ChangeMessageVisibilityBatchResultEntry).
     pub fn build(self) -> crate::types::ChangeMessageVisibilityBatchResultEntry {
         crate::types::ChangeMessageVisibilityBatchResultEntry { id: self.id }

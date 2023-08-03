@@ -58,6 +58,10 @@ impl GetReusableDelegationSetLimitOutputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<crate::types::ReusableDelegationSetLimit> {
+        &self.limit
+    }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetReusableDelegationSetLimitOutputBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

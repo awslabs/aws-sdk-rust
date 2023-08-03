@@ -56,6 +56,10 @@ impl SnomedctDetailsBuilder {
         self.edition = input;
         self
     }
+    /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+    pub fn get_edition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edition
+    }
     /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SnomedctDetailsBuilder {
         self.language = input;
         self
     }
+    /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p> The version date of the SNOMED-CT ontology used. </p>
     pub fn version_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_date = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl SnomedctDetailsBuilder {
     pub fn set_version_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_date = input;
         self
+    }
+    /// <p> The version date of the SNOMED-CT ontology used. </p>
+    pub fn get_version_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_date
     }
     /// Consumes the builder and constructs a [`SnomedctDetails`](crate::types::SnomedctDetails).
     pub fn build(self) -> crate::types::SnomedctDetails {

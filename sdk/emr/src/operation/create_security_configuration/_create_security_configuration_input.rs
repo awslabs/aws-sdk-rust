@@ -47,6 +47,10 @@ impl CreateSecurityConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn security_configuration(
         mut self,
@@ -62,6 +66,10 @@ impl CreateSecurityConfigurationInputBuilder {
     ) -> Self {
         self.security_configuration = input;
         self
+    }
+    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
     pub fn build(

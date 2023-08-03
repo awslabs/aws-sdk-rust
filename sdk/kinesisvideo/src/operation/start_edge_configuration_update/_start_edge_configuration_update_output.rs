@@ -94,6 +94,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream from which the edge configuration was updated.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +125,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub fn sync_status(mut self, input: crate::types::SyncStatus) -> Self {
         self.sync_status = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
     ) -> Self {
         self.sync_status = input;
         self
+    }
+    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    pub fn get_sync_status(&self) -> &::std::option::Option<crate::types::SyncStatus> {
+        &self.sync_status
     }
     /// <p>A description of the generated failure status.</p>
     pub fn failed_status_details(
@@ -159,6 +179,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self.failed_status_details = input;
         self
     }
+    /// <p>A description of the generated failure status.</p>
+    pub fn get_failed_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failed_status_details
+    }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     pub fn edge_config(mut self, input: crate::types::EdgeConfig) -> Self {
         self.edge_config = ::std::option::Option::Some(input);
@@ -171,6 +195,10 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
     ) -> Self {
         self.edge_config = input;
         self
+    }
+    /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    pub fn get_edge_config(&self) -> &::std::option::Option<crate::types::EdgeConfig> {
+        &self.edge_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

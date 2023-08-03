@@ -64,6 +64,10 @@ impl ProcessingInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name for the processing job input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>When <code>True</code>, input operations such as data download are managed natively by the processing job application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.</p>
     pub fn app_managed(mut self, input: bool) -> Self {
         self.app_managed = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ProcessingInputBuilder {
     pub fn set_app_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.app_managed = input;
         self
+    }
+    /// <p>When <code>True</code>, input operations such as data download are managed natively by the processing job application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.</p>
+    pub fn get_app_managed(&self) -> &::std::option::Option<bool> {
+        &self.app_managed
     }
     /// <p>Configuration for downloading input data from Amazon S3 into the processing container.</p>
     pub fn s3_input(mut self, input: crate::types::ProcessingS3Input) -> Self {
@@ -87,6 +95,10 @@ impl ProcessingInputBuilder {
         self.s3_input = input;
         self
     }
+    /// <p>Configuration for downloading input data from Amazon S3 into the processing container.</p>
+    pub fn get_s3_input(&self) -> &::std::option::Option<crate::types::ProcessingS3Input> {
+        &self.s3_input
+    }
     /// <p>Configuration for a Dataset Definition input. </p>
     pub fn dataset_definition(mut self, input: crate::types::DatasetDefinition) -> Self {
         self.dataset_definition = ::std::option::Option::Some(input);
@@ -99,6 +111,12 @@ impl ProcessingInputBuilder {
     ) -> Self {
         self.dataset_definition = input;
         self
+    }
+    /// <p>Configuration for a Dataset Definition input. </p>
+    pub fn get_dataset_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetDefinition> {
+        &self.dataset_definition
     }
     /// Consumes the builder and constructs a [`ProcessingInput`](crate::types::ProcessingInput).
     pub fn build(self) -> crate::types::ProcessingInput {

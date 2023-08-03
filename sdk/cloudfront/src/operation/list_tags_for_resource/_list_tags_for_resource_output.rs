@@ -48,6 +48,10 @@ impl ListTagsForResourceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -39,6 +39,10 @@ impl GetPortalServiceProviderMetadataInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// Consumes the builder and constructs a [`GetPortalServiceProviderMetadataInput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

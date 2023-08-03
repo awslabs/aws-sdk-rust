@@ -88,6 +88,10 @@ impl StartDeviceAuthorizationOutputBuilder {
         self.device_code = input;
         self
     }
+    /// <p>The short-lived code that is used by the device when polling for a session token.</p>
+    pub fn get_device_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_code
+    }
     /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_code = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl StartDeviceAuthorizationOutputBuilder {
     pub fn set_user_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_code = input;
         self
+    }
+    /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
+    pub fn get_user_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_code
     }
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
     pub fn verification_uri(
@@ -114,6 +122,10 @@ impl StartDeviceAuthorizationOutputBuilder {
         self.verification_uri = input;
         self
     }
+    /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
+    pub fn get_verification_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_uri
+    }
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
     pub fn verification_uri_complete(
         mut self,
@@ -130,6 +142,10 @@ impl StartDeviceAuthorizationOutputBuilder {
         self.verification_uri_complete = input;
         self
     }
+    /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
+    pub fn get_verification_uri_complete(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_uri_complete
+    }
     /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl StartDeviceAuthorizationOutputBuilder {
         self.expires_in = input;
         self
     }
+    /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
+        &self.expires_in
+    }
     /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl StartDeviceAuthorizationOutputBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

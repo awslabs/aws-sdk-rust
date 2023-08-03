@@ -51,6 +51,10 @@ impl MeshSpecBuilder {
         self.egress_filter = input;
         self
     }
+    /// <p>The egress filter rules for the service mesh.</p>
+    pub fn get_egress_filter(&self) -> &::std::option::Option<crate::types::EgressFilter> {
+        &self.egress_filter
+    }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     pub fn service_discovery(mut self, input: crate::types::MeshServiceDiscovery) -> Self {
         self.service_discovery = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl MeshSpecBuilder {
     ) -> Self {
         self.service_discovery = input;
         self
+    }
+    /// <p>An object that represents the service discovery information for a service mesh.</p>
+    pub fn get_service_discovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeshServiceDiscovery> {
+        &self.service_discovery
     }
     /// Consumes the builder and constructs a [`MeshSpec`](crate::types::MeshSpec).
     pub fn build(self) -> crate::types::MeshSpec {

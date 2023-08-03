@@ -52,6 +52,11 @@ impl GetIntrospectionSchemaOutputBuilder {
         self.schema = input;
         self
     }
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.schema
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl CompleteReadSetUploadPartListItemBuilder {
         self.part_number = input;
         self
     }
+    /// <p> A number identifying the part in a read set upload. </p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
+    }
     /// <p> The source file of the part being uploaded. </p>
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.part_source = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CompleteReadSetUploadPartListItemBuilder {
         self.part_source = input;
         self
     }
+    /// <p> The source file of the part being uploaded. </p>
+    pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
+        &self.part_source
+    }
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl CompleteReadSetUploadPartListItemBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Consumes the builder and constructs a [`CompleteReadSetUploadPartListItem`](crate::types::CompleteReadSetUploadPartListItem).
     pub fn build(self) -> crate::types::CompleteReadSetUploadPartListItem {

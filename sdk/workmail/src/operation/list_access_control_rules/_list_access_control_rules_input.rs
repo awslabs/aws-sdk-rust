@@ -47,6 +47,10 @@ impl ListAccessControlRulesInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`ListAccessControlRulesInput`](crate::operation::list_access_control_rules::ListAccessControlRulesInput).
     pub fn build(
         self,

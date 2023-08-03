@@ -47,6 +47,10 @@ impl DescribeClusterOperationInputBuilder {
         self.cluster_operation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    pub fn get_cluster_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_operation_arn
+    }
     /// Consumes the builder and constructs a [`DescribeClusterOperationInput`](crate::operation::describe_cluster_operation::DescribeClusterOperationInput).
     pub fn build(
         self,

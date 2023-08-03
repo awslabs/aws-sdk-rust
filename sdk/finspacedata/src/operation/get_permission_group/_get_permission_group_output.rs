@@ -50,6 +50,10 @@ impl GetPermissionGroupOutputBuilder {
         self.permission_group = input;
         self
     }
+    /// <p>The structure for a permission group.</p>
+    pub fn get_permission_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.permission_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

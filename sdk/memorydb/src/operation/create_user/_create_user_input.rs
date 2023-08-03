@@ -63,6 +63,10 @@ impl CreateUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.authentication_mode = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.authentication_mode = input;
         self
+    }
+    /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
@@ -91,6 +101,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.access_string = input;
         self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Appends an item to `tags`.
     ///
@@ -110,6 +124,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

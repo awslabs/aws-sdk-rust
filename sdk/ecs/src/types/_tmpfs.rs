@@ -64,6 +64,10 @@ impl TmpfsBuilder {
         self.container_path = input;
         self
     }
+    /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
+    }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl TmpfsBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// Appends an item to `mount_options`.
     ///
@@ -97,6 +105,13 @@ impl TmpfsBuilder {
     ) -> Self {
         self.mount_options = input;
         self
+    }
+    /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
+    pub fn get_mount_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.mount_options
     }
     /// Consumes the builder and constructs a [`Tmpfs`](crate::types::Tmpfs).
     pub fn build(self) -> crate::types::Tmpfs {

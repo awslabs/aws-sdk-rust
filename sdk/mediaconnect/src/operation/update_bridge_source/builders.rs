@@ -36,6 +36,12 @@ impl UpdateBridgeSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBridgeSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_bridge_source::builders::UpdateBridgeSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBridgeSourceFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     /// Update the flow source of the bridge.
     pub fn flow_source(mut self, input: crate::types::UpdateBridgeFlowSourceRequest) -> Self {
         self.inner = self.inner.flow_source(input);
@@ -138,6 +148,12 @@ impl UpdateBridgeSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flow_source(input);
         self
+    }
+    /// Update the flow source of the bridge.
+    pub fn get_flow_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest> {
+        self.inner.get_flow_source()
     }
     /// Update the network source of the bridge.
     pub fn network_source(mut self, input: crate::types::UpdateBridgeNetworkSourceRequest) -> Self {
@@ -152,6 +168,12 @@ impl UpdateBridgeSourceFluentBuilder {
         self.inner = self.inner.set_network_source(input);
         self
     }
+    /// Update the network source of the bridge.
+    pub fn get_network_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest> {
+        self.inner.get_network_source()
+    }
     /// The name of the source that you want to update.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_name(input.into());
@@ -161,5 +183,9 @@ impl UpdateBridgeSourceFluentBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_name(input);
         self
+    }
+    /// The name of the source that you want to update.
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_name()
     }
 }

@@ -36,6 +36,10 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeviceDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ID of the device definition.
     pub fn device_definition_id(
         mut self,
@@ -147,6 +155,10 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_definition_id(input);
         self
+    }
+    /// The ID of the device definition.
+    pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_definition_id()
     }
     /// Appends an item to `Devices`.
     ///
@@ -164,5 +176,9 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_devices(input);
         self
+    }
+    /// A list of devices in the definition version.
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+        self.inner.get_devices()
     }
 }

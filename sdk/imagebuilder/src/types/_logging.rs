@@ -40,6 +40,10 @@ impl LoggingBuilder {
         self.s3_logs = input;
         self
     }
+    /// <p>The Amazon S3 logging configuration.</p>
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3Logs> {
+        &self.s3_logs
+    }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
         crate::types::Logging {

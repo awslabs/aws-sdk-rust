@@ -37,6 +37,10 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyLoadBalancerAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_arn()
+    }
     /// Appends an item to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -149,5 +157,11 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The load balancer attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
+        self.inner.get_attributes()
     }
 }

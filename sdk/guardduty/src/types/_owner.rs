@@ -40,6 +40,10 @@ impl OwnerBuilder {
         self.id = input;
         self
     }
+    /// <p>The canonical user ID of the bucket owner. For information about locating your canonical user ID see <a href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding Your Account Canonical User ID.</a> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`Owner`](crate::types::Owner).
     pub fn build(self) -> crate::types::Owner {
         crate::types::Owner { id: self.id }

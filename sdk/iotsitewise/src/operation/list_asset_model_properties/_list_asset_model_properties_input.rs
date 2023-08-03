@@ -81,6 +81,10 @@ impl ListAssetModelPropertiesInputBuilder {
         self.asset_model_id = input;
         self
     }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ListAssetModelPropertiesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl ListAssetModelPropertiesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
     /// <ul>
@@ -123,6 +135,17 @@ impl ListAssetModelPropertiesInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
     pub fn build(

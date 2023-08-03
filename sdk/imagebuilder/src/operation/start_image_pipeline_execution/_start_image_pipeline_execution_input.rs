@@ -53,6 +53,10 @@ impl StartImagePipelineExecutionInputBuilder {
         self.image_pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
+    }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl StartImagePipelineExecutionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
     pub fn build(

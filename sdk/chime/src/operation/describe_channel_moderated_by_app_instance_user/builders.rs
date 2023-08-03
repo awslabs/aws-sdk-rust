@@ -44,6 +44,10 @@ impl DescribeChannelModeratedByAppInstanceUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeChannelModeratedByAppInstanceUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl DescribeChannelModeratedByAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the moderated channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
     pub fn app_instance_user_arn(
         mut self,
@@ -124,6 +132,10 @@ impl DescribeChannelModeratedByAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -133,5 +145,9 @@ impl DescribeChannelModeratedByAppInstanceUserFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

@@ -39,6 +39,10 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`DeregisterWorkspaceDirectoryInput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput).
     pub fn build(
         self,

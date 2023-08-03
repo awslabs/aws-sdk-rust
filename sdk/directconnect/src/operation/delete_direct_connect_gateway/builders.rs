@@ -36,6 +36,10 @@ impl DeleteDirectConnectGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDirectConnectGateway as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteDirectConnectGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
     }
 }

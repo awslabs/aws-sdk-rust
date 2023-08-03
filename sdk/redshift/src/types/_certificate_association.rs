@@ -54,6 +54,10 @@ impl CertificateAssociationBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name for the certificate association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The cluster identifier for the certificate association.</p>
     pub fn cluster_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl CertificateAssociationBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The cluster identifier for the certificate association.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`CertificateAssociation`](crate::types::CertificateAssociation).
     pub fn build(self) -> crate::types::CertificateAssociation {

@@ -48,6 +48,10 @@ impl CustomLogSourceProviderBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CustomLogSourceProviderBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`CustomLogSourceProvider`](crate::types::CustomLogSourceProvider).
     pub fn build(self) -> crate::types::CustomLogSourceProvider {

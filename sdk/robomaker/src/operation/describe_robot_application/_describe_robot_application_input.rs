@@ -49,6 +49,10 @@ impl DescribeRobotApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The version of the robot application to describe.</p>
     pub fn application_version(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeRobotApplicationInputBuilder {
     ) -> Self {
         self.application_version = input;
         self
+    }
+    /// <p>The version of the robot application to describe.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
     }
     /// Consumes the builder and constructs a [`DescribeRobotApplicationInput`](crate::operation::describe_robot_application::DescribeRobotApplicationInput).
     pub fn build(

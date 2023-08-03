@@ -53,6 +53,10 @@ impl DeleteInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance to delete.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub fn force_delete_add_ons(mut self, input: bool) -> Self {
         self.force_delete_add_ons = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DeleteInstanceInputBuilder {
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete_add_ons = input;
         self
+    }
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
+    pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
     pub fn build(

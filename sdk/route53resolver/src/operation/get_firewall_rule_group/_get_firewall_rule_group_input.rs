@@ -46,6 +46,10 @@ impl GetFirewallRuleGroupInputBuilder {
         self.firewall_rule_group_id = input;
         self
     }
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
     pub fn build(
         self,

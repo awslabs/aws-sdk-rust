@@ -118,6 +118,10 @@ impl AssociatedPermissionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The version of the permission currently associated with the resource share.</p>
     pub fn permission_version(
         mut self,
@@ -134,6 +138,10 @@ impl AssociatedPermissionBuilder {
         self.permission_version = input;
         self
     }
+    /// <p>The version of the permission currently associated with the resource share.</p>
+    pub fn get_permission_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_version
+    }
     /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
         self.default_version = ::std::option::Option::Some(input);
@@ -143,6 +151,10 @@ impl AssociatedPermissionBuilder {
     pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_version = input;
         self
+    }
+    /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<bool> {
+        &self.default_version
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn resource_type(
@@ -159,6 +171,10 @@ impl AssociatedPermissionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type to which this permission applies.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
@@ -181,6 +197,16 @@ impl AssociatedPermissionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
+    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
+    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -205,6 +231,15 @@ impl AssociatedPermissionBuilder {
         self.feature_set = input;
         self
     }
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// </ul>
+    pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::PermissionFeatureSet> {
+        &self.feature_set
+    }
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -217,6 +252,10 @@ impl AssociatedPermissionBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
     pub fn resource_share_arn(
@@ -233,6 +272,10 @@ impl AssociatedPermissionBuilder {
     ) -> Self {
         self.resource_share_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
     }
     /// Consumes the builder and constructs a [`AssociatedPermission`](crate::types::AssociatedPermission).
     pub fn build(self) -> crate::types::AssociatedPermission {

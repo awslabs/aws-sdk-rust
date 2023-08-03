@@ -36,6 +36,12 @@ impl RemovePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemovePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RemovePermissionFluentBuilder {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
+    /// <p>The name of the profiling group.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
+    }
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
         self.inner = self.inner.action_group(input);
@@ -145,6 +155,10 @@ impl RemovePermissionFluentBuilder {
         self.inner = self.inner.set_action_group(input);
         self
     }
+    /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    pub fn get_action_group(&self) -> &::std::option::Option<crate::types::ActionGroup> {
+        self.inner.get_action_group()
+    }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -154,5 +168,9 @@ impl RemovePermissionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

@@ -40,6 +40,10 @@ impl ImageSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the image.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ImageSource`](crate::types::ImageSource).
     pub fn build(self) -> crate::types::ImageSource {
         crate::types::ImageSource {

@@ -54,6 +54,10 @@ impl FleetAdvisorLsaAnalysisResponseBuilder {
         self.lsa_analysis_id = input;
         self
     }
+    /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub fn get_lsa_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lsa_analysis_id
+    }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl FleetAdvisorLsaAnalysisResponseBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`FleetAdvisorLsaAnalysisResponse`](crate::types::FleetAdvisorLsaAnalysisResponse).
     pub fn build(self) -> crate::types::FleetAdvisorLsaAnalysisResponse {

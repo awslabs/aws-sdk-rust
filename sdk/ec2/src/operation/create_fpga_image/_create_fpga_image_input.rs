@@ -88,6 +88,10 @@ impl CreateFpgaImageInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
     pub fn input_storage_location(mut self, input: crate::types::StorageLocation) -> Self {
         self.input_storage_location = ::std::option::Option::Some(input);
@@ -100,6 +104,12 @@ impl CreateFpgaImageInputBuilder {
     ) -> Self {
         self.input_storage_location = input;
         self
+    }
+    /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
+    pub fn get_input_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLocation> {
+        &self.input_storage_location
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
     pub fn logs_storage_location(mut self, input: crate::types::StorageLocation) -> Self {
@@ -114,6 +124,12 @@ impl CreateFpgaImageInputBuilder {
         self.logs_storage_location = input;
         self
     }
+    /// <p>The location in Amazon S3 for the output logs.</p>
+    pub fn get_logs_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageLocation> {
+        &self.logs_storage_location
+    }
     /// <p>A description for the AFI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl CreateFpgaImageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the AFI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A name for the AFI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +154,10 @@ impl CreateFpgaImageInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the AFI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -143,6 +167,10 @@ impl CreateFpgaImageInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -162,6 +190,12 @@ impl CreateFpgaImageInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to apply to the FPGA image during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
     pub fn build(

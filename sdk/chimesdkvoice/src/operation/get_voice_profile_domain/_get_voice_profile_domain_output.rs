@@ -51,6 +51,12 @@ impl GetVoiceProfileDomainOutputBuilder {
         self.voice_profile_domain = input;
         self
     }
+    /// <p>The details of the voice profile domain.</p>
+    pub fn get_voice_profile_domain(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceProfileDomain> {
+        &self.voice_profile_domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

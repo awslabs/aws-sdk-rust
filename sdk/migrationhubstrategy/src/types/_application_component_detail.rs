@@ -231,6 +231,10 @@ impl ApplicationComponentDetailBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of the application component. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of application component. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -240,6 +244,10 @@ impl ApplicationComponentDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of application component. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The top recommendation set for the application component. </p>
     pub fn recommendation_set(mut self, input: crate::types::RecommendationSet) -> Self {
@@ -254,6 +262,12 @@ impl ApplicationComponentDetailBuilder {
         self.recommendation_set = input;
         self
     }
+    /// <p> The top recommendation set for the application component. </p>
+    pub fn get_recommendation_set(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationSet> {
+        &self.recommendation_set
+    }
     /// <p> The status of analysis, if the application component has source code or an associated database. </p>
     pub fn analysis_status(mut self, input: crate::types::SrcCodeOrDbAnalysisStatus) -> Self {
         self.analysis_status = ::std::option::Option::Some(input);
@@ -266,6 +280,12 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.analysis_status = input;
         self
+    }
+    /// <p> The status of analysis, if the application component has source code or an associated database. </p>
+    pub fn get_analysis_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus> {
+        &self.analysis_status
     }
     /// <p> A detailed description of the analysis status and any failure message. </p>
     pub fn status_message(
@@ -282,6 +302,10 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p> A detailed description of the analysis status and any failure message. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `list_antipattern_severity_summary`.
     ///
@@ -305,6 +329,12 @@ impl ApplicationComponentDetailBuilder {
         self.list_antipattern_severity_summary = input;
         self
     }
+    /// <p> A list of anti-pattern severity summaries. </p>
+    pub fn get_list_antipattern_severity_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
+        &self.list_antipattern_severity_summary
+    }
     /// <p> Configuration details for the database associated with the application component. </p>
     pub fn database_config_detail(mut self, input: crate::types::DatabaseConfigDetail) -> Self {
         self.database_config_detail = ::std::option::Option::Some(input);
@@ -317,6 +347,12 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.database_config_detail = input;
         self
+    }
+    /// <p> Configuration details for the database associated with the application component. </p>
+    pub fn get_database_config_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseConfigDetail> {
+        &self.database_config_detail
     }
     /// Appends an item to `source_code_repositories`.
     ///
@@ -337,6 +373,12 @@ impl ApplicationComponentDetailBuilder {
         self.source_code_repositories = input;
         self
     }
+    /// <p> Details about the source code repository associated with the application component. </p>
+    pub fn get_source_code_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>> {
+        &self.source_code_repositories
+    }
     /// <p> The type of application component. </p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -346,6 +388,10 @@ impl ApplicationComponentDetailBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
+    }
+    /// <p> The type of application component. </p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
     }
     /// <p> The application component subtype.</p>
     pub fn resource_sub_type(mut self, input: crate::types::ResourceSubType) -> Self {
@@ -360,6 +406,10 @@ impl ApplicationComponentDetailBuilder {
         self.resource_sub_type = input;
         self
     }
+    /// <p> The application component subtype.</p>
+    pub fn get_resource_sub_type(&self) -> &::std::option::Option<crate::types::ResourceSubType> {
+        &self.resource_sub_type
+    }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(mut self, input: crate::types::InclusionStatus) -> Self {
         self.inclusion_status = ::std::option::Option::Some(input);
@@ -373,6 +423,10 @@ impl ApplicationComponentDetailBuilder {
         self.inclusion_status = input;
         self
     }
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
+        &self.inclusion_status
+    }
     /// <p> The S3 bucket name and the Amazon S3 key name for the anti-pattern report. </p>
     pub fn antipattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.antipattern_report_s3_object = ::std::option::Option::Some(input);
@@ -385,6 +439,12 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.antipattern_report_s3_object = input;
         self
+    }
+    /// <p> The S3 bucket name and the Amazon S3 key name for the anti-pattern report. </p>
+    pub fn get_antipattern_report_s3_object(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Object> {
+        &self.antipattern_report_s3_object
     }
     /// <p> The status of the anti-pattern report generation.</p>
     pub fn antipattern_report_status(
@@ -402,6 +462,12 @@ impl ApplicationComponentDetailBuilder {
         self.antipattern_report_status = input;
         self
     }
+    /// <p> The status of the anti-pattern report generation.</p>
+    pub fn get_antipattern_report_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
+        &self.antipattern_report_status
+    }
     /// <p> The status message for the anti-pattern. </p>
     pub fn antipattern_report_status_message(
         mut self,
@@ -418,6 +484,12 @@ impl ApplicationComponentDetailBuilder {
         self.antipattern_report_status_message = input;
         self
     }
+    /// <p> The status message for the anti-pattern. </p>
+    pub fn get_antipattern_report_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.antipattern_report_status_message
+    }
     /// <p> OS version. </p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_version = ::std::option::Option::Some(input.into());
@@ -428,6 +500,10 @@ impl ApplicationComponentDetailBuilder {
         self.os_version = input;
         self
     }
+    /// <p> OS version. </p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
+    }
     /// <p> OS driver. </p>
     pub fn os_driver(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_driver = ::std::option::Option::Some(input.into());
@@ -437,6 +513,10 @@ impl ApplicationComponentDetailBuilder {
     pub fn set_os_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_driver = input;
         self
+    }
+    /// <p> OS driver. </p>
+    pub fn get_os_driver(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_driver
     }
     /// <p> The timestamp of when the application component was assessed. </p>
     pub fn last_analyzed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -450,6 +530,12 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.last_analyzed_timestamp = input;
         self
+    }
+    /// <p> The timestamp of when the application component was assessed. </p>
+    pub fn get_last_analyzed_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_timestamp
     }
     /// <p> The ID of the server that the application component is running on. </p>
     pub fn associated_server_id(
@@ -467,6 +553,10 @@ impl ApplicationComponentDetailBuilder {
         self.associated_server_id = input;
         self
     }
+    /// <p> The ID of the server that the application component is running on. </p>
+    pub fn get_associated_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_server_id
+    }
     /// <p> Set to true if the application component is running on multiple servers.</p>
     pub fn more_server_association_exists(mut self, input: bool) -> Self {
         self.more_server_association_exists = ::std::option::Option::Some(input);
@@ -480,6 +570,10 @@ impl ApplicationComponentDetailBuilder {
         self.more_server_association_exists = input;
         self
     }
+    /// <p> Set to true if the application component is running on multiple servers.</p>
+    pub fn get_more_server_association_exists(&self) -> &::std::option::Option<bool> {
+        &self.more_server_association_exists
+    }
     /// <p>The status of the application unit.</p>
     pub fn runtime_status(mut self, input: crate::types::RuntimeAnalysisStatus) -> Self {
         self.runtime_status = ::std::option::Option::Some(input);
@@ -492,6 +586,12 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.runtime_status = input;
         self
+    }
+    /// <p>The status of the application unit.</p>
+    pub fn get_runtime_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeAnalysisStatus> {
+        &self.runtime_status
     }
     /// <p>The status message for the application unit.</p>
     pub fn runtime_status_message(
@@ -509,6 +609,10 @@ impl ApplicationComponentDetailBuilder {
         self.runtime_status_message = input;
         self
     }
+    /// <p>The status message for the application unit.</p>
+    pub fn get_runtime_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_status_message
+    }
     /// <p>The error in the analysis of the source code or database.</p>
     pub fn app_unit_error(mut self, input: crate::types::AppUnitError) -> Self {
         self.app_unit_error = ::std::option::Option::Some(input);
@@ -521,6 +625,10 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.app_unit_error = input;
         self
+    }
+    /// <p>The error in the analysis of the source code or database.</p>
+    pub fn get_app_unit_error(&self) -> &::std::option::Option<crate::types::AppUnitError> {
+        &self.app_unit_error
     }
     /// Appends an item to `result_list`.
     ///
@@ -540,6 +648,10 @@ impl ApplicationComponentDetailBuilder {
     ) -> Self {
         self.result_list = input;
         self
+    }
+    /// <p>A list of the analysis results.</p>
+    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+        &self.result_list
     }
     /// Consumes the builder and constructs a [`ApplicationComponentDetail`](crate::types::ApplicationComponentDetail).
     pub fn build(self) -> crate::types::ApplicationComponentDetail {

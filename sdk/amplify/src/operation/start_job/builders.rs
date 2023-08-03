@@ -36,6 +36,10 @@ impl StartJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_job::builders::StartJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartJobFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The branch name for the job. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -127,6 +135,10 @@ impl StartJobFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p> The branch name for the job. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl StartJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
@@ -147,6 +163,10 @@ impl StartJobFluentBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
+    }
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        self.inner.get_job_type()
     }
     /// <p> A descriptive reason for starting this job. </p>
     pub fn job_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +178,10 @@ impl StartJobFluentBuilder {
         self.inner = self.inner.set_job_reason(input);
         self
     }
+    /// <p> A descriptive reason for starting this job. </p>
+    pub fn get_job_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_reason()
+    }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_id(input.into());
@@ -167,6 +191,10 @@ impl StartJobFluentBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_id(input);
         self
+    }
+    /// <p> The commit ID from a third-party repository provider for the job. </p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_id()
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
     pub fn commit_message(
@@ -184,6 +212,10 @@ impl StartJobFluentBuilder {
         self.inner = self.inner.set_commit_message(input);
         self
     }
+    /// <p> The commit message from a third-party repository provider for the job. </p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_message()
+    }
     /// <p> The commit date and time for the job. </p>
     pub fn commit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.commit_time(input);
@@ -196,5 +228,9 @@ impl StartJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_commit_time(input);
         self
+    }
+    /// <p> The commit date and time for the job. </p>
+    pub fn get_commit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_commit_time()
     }
 }

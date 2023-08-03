@@ -56,6 +56,10 @@ impl TrailInfoBuilder {
         self.trail_arn = input;
         self
     }
+    /// <p>The ARN of a trail.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// <p>The name of a trail.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl TrailInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a trail.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl TrailInfoBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region in which a trail was created.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// Consumes the builder and constructs a [`TrailInfo`](crate::types::TrailInfo).
     pub fn build(self) -> crate::types::TrailInfo {

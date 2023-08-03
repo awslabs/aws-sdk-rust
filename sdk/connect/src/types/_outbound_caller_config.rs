@@ -62,6 +62,10 @@ impl OutboundCallerConfigBuilder {
         self.outbound_caller_id_name = input;
         self
     }
+    /// <p>The caller ID name.</p>
+    pub fn get_outbound_caller_id_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outbound_caller_id_name
+    }
     /// <p>The caller ID number.</p>
     pub fn outbound_caller_id_number_id(
         mut self,
@@ -78,6 +82,12 @@ impl OutboundCallerConfigBuilder {
         self.outbound_caller_id_number_id = input;
         self
     }
+    /// <p>The caller ID number.</p>
+    pub fn get_outbound_caller_id_number_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.outbound_caller_id_number_id
+    }
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
     pub fn outbound_flow_id(
         mut self,
@@ -93,6 +103,10 @@ impl OutboundCallerConfigBuilder {
     ) -> Self {
         self.outbound_flow_id = input;
         self
+    }
+    /// <p>The outbound whisper flow to be used during an outbound call.</p>
+    pub fn get_outbound_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outbound_flow_id
     }
     /// Consumes the builder and constructs a [`OutboundCallerConfig`](crate::types::OutboundCallerConfig).
     pub fn build(self) -> crate::types::OutboundCallerConfig {

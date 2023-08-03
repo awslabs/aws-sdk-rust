@@ -40,6 +40,10 @@ impl DimensionDetailBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of a dimension.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DimensionDetail`](crate::types::DimensionDetail).
     pub fn build(self) -> crate::types::DimensionDetail {
         crate::types::DimensionDetail {

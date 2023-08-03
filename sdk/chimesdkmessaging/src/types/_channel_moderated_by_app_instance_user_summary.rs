@@ -43,6 +43,10 @@ impl ChannelModeratedByAppInstanceUserSummaryBuilder {
         self.channel_summary = input;
         self
     }
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub fn get_channel_summary(&self) -> &::std::option::Option<crate::types::ChannelSummary> {
+        &self.channel_summary
+    }
     /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::types::ChannelModeratedByAppInstanceUserSummary).
     pub fn build(self) -> crate::types::ChannelModeratedByAppInstanceUserSummary {
         crate::types::ChannelModeratedByAppInstanceUserSummary {

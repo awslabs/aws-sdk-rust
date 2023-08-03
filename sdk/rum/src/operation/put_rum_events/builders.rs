@@ -37,6 +37,12 @@ impl PutRumEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRumEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_rum_events::builders::PutRumEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl PutRumEventsFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the app monitor that is sending this data.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A unique identifier for this batch of RUM event data.</p>
     pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_id(input.into());
@@ -128,6 +138,10 @@ impl PutRumEventsFluentBuilder {
     pub fn set_batch_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_id(input);
         self
+    }
+    /// <p>A unique identifier for this batch of RUM event data.</p>
+    pub fn get_batch_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_id()
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
     pub fn app_monitor_details(mut self, input: crate::types::AppMonitorDetails) -> Self {
@@ -142,6 +156,12 @@ impl PutRumEventsFluentBuilder {
         self.inner = self.inner.set_app_monitor_details(input);
         self
     }
+    /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
+    pub fn get_app_monitor_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppMonitorDetails> {
+        self.inner.get_app_monitor_details()
+    }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
     pub fn user_details(mut self, input: crate::types::UserDetails) -> Self {
         self.inner = self.inner.user_details(input);
@@ -154,6 +174,10 @@ impl PutRumEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_details(input);
         self
+    }
+    /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
+    pub fn get_user_details(&self) -> &::std::option::Option<crate::types::UserDetails> {
+        self.inner.get_user_details()
     }
     /// Appends an item to `RumEvents`.
     ///
@@ -171,5 +195,11 @@ impl PutRumEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rum_events(input);
         self
+    }
+    /// <p>An array of structures that contain the telemetry event data.</p>
+    pub fn get_rum_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
+        self.inner.get_rum_events()
     }
 }

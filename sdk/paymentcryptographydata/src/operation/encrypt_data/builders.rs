@@ -47,6 +47,10 @@ impl EncryptDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EncryptData as a reference.
+    pub fn as_input(&self) -> &crate::operation::encrypt_data::builders::EncryptDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl EncryptDataFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The plaintext to be encrypted.</p>
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.plain_text(input.into());
@@ -144,6 +152,10 @@ impl EncryptDataFluentBuilder {
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_plain_text(input);
         self
+    }
+    /// <p>The plaintext to be encrypted.</p>
+    pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_plain_text()
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub fn encryption_attributes(
@@ -160,5 +172,11 @@ impl EncryptDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_attributes(input);
         self
+    }
+    /// <p>The encryption key type and attributes for plaintext encryption.</p>
+    pub fn get_encryption_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+        self.inner.get_encryption_attributes()
     }
 }

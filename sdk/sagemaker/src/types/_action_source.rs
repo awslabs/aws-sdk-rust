@@ -56,6 +56,10 @@ impl ActionSourceBuilder {
         self.source_uri = input;
         self
     }
+    /// <p>The URI of the source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     /// <p>The type of the source.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ActionSourceBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The type of the source.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// <p>The ID of the source.</p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ActionSourceBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The ID of the source.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// Consumes the builder and constructs a [`ActionSource`](crate::types::ActionSource).
     pub fn build(self) -> crate::types::ActionSource {

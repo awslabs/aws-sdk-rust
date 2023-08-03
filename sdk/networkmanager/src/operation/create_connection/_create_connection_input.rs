@@ -96,6 +96,10 @@ impl CreateConnectionInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the first device in the connection.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl CreateConnectionInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The ID of the first device in the connection.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The ID of the second device in the connection.</p>
     pub fn connected_device_id(
@@ -122,6 +130,10 @@ impl CreateConnectionInputBuilder {
         self.connected_device_id = input;
         self
     }
+    /// <p>The ID of the second device in the connection.</p>
+    pub fn get_connected_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_device_id
+    }
     /// <p>The ID of the link for the first device.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl CreateConnectionInputBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
+    }
+    /// <p>The ID of the link for the first device.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// <p>The ID of the link for the second device.</p>
     pub fn connected_link_id(
@@ -148,6 +164,10 @@ impl CreateConnectionInputBuilder {
         self.connected_link_id = input;
         self
     }
+    /// <p>The ID of the link for the second device.</p>
+    pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_link_id
+    }
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +179,11 @@ impl CreateConnectionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the connection.</p>
+    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -178,6 +203,10 @@ impl CreateConnectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(

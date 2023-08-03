@@ -79,6 +79,10 @@ impl FpgaImageAttributeBuilder {
         self.fpga_image_id = input;
         self
     }
+    /// <p>The ID of the AFI.</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
+    }
     /// <p>The name of the AFI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl FpgaImageAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the AFI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the AFI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl FpgaImageAttributeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the AFI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `load_permissions`.
     ///
@@ -118,6 +130,12 @@ impl FpgaImageAttributeBuilder {
         self.load_permissions = input;
         self
     }
+    /// <p>The load permissions.</p>
+    pub fn get_load_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermission>> {
+        &self.load_permissions
+    }
     /// Appends an item to `product_codes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
@@ -136,6 +154,12 @@ impl FpgaImageAttributeBuilder {
     ) -> Self {
         self.product_codes = input;
         self
+    }
+    /// <p>The product codes.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
     }
     /// Consumes the builder and constructs a [`FpgaImageAttribute`](crate::types::FpgaImageAttribute).
     pub fn build(self) -> crate::types::FpgaImageAttribute {

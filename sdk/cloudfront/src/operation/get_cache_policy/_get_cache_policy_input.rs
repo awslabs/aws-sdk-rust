@@ -39,6 +39,10 @@ impl GetCachePolicyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetCachePolicyInput`](crate::operation::get_cache_policy::GetCachePolicyInput).
     pub fn build(
         self,

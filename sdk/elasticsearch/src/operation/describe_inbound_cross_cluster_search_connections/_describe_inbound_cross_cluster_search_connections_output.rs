@@ -73,6 +73,13 @@ impl DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
         self.cross_cluster_search_connections = input;
         self
     }
+    /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
+    pub fn get_cross_cluster_search_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>
+    {
+        &self.cross_cluster_search_connections
+    }
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +89,10 @@ impl DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

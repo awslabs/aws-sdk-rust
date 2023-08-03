@@ -50,6 +50,10 @@ impl GetStageSessionOutputBuilder {
         self.stage_session = input;
         self
     }
+    /// <p>The stage session that is returned.</p>
+    pub fn get_stage_session(&self) -> &::std::option::Option<crate::types::StageSession> {
+        &self.stage_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

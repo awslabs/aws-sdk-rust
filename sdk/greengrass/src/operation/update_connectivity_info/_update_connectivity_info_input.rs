@@ -60,6 +60,12 @@ impl UpdateConnectivityInfoInputBuilder {
         self.connectivity_info = input;
         self
     }
+    /// A list of connectivity info.
+    pub fn get_connectivity_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+        &self.connectivity_info
+    }
     /// The thing name.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl UpdateConnectivityInfoInputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// The thing name.
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
     pub fn build(

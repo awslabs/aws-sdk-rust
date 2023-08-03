@@ -52,6 +52,10 @@ impl EnableDirectoryOutputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the enabled directory.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

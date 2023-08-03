@@ -210,6 +210,10 @@ impl PendingModifiedValuesBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The name of the compute and memory capacity class for the DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>The allocated storage size for the DB instance specified in gibibytes (GiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -219,6 +223,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>The allocated storage size for the DB instance specified in gibibytes (GiB).</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>The master credentials for the DB instance.</p>
     pub fn master_user_password(
@@ -236,6 +244,10 @@ impl PendingModifiedValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The master credentials for the DB instance.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>The port for the DB instance.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -245,6 +257,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port for the DB instance.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The number of days for which automated backups are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
@@ -256,6 +272,10 @@ impl PendingModifiedValuesBuilder {
         self.backup_retention_period = input;
         self
     }
+    /// <p>The number of days for which automated backups are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
     /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -265,6 +285,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>The database engine version.</p>
     pub fn engine_version(
@@ -281,6 +305,10 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The license model for the DB instance.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
@@ -300,6 +328,11 @@ impl PendingModifiedValuesBuilder {
         self.license_model = input;
         self
     }
+    /// <p>The license model for the DB instance.</p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>The Provisioned IOPS value for the DB instance.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -309,6 +342,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The Provisioned IOPS value for the DB instance.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The database identifier for the DB instance.</p>
     pub fn db_instance_identifier(
@@ -326,6 +363,10 @@ impl PendingModifiedValuesBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The database identifier for the DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The storage type of the DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -335,6 +376,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The storage type of the DB instance.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>The identifier of the CA certificate for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -354,6 +399,11 @@ impl PendingModifiedValuesBuilder {
         self.ca_certificate_identifier = input;
         self
     }
+    /// <p>The identifier of the CA certificate for the DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// <p>The DB subnet group for the DB instance.</p>
     pub fn db_subnet_group_name(
         mut self,
@@ -370,6 +420,10 @@ impl PendingModifiedValuesBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>The DB subnet group for the DB instance.</p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
     pub fn pending_cloudwatch_logs_exports(
         mut self,
@@ -385,6 +439,12 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.pending_cloudwatch_logs_exports = input;
         self
+    }
+    /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
+    pub fn get_pending_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
+        &self.pending_cloudwatch_logs_exports
     }
     /// Appends an item to `processor_features`.
     ///
@@ -405,6 +465,12 @@ impl PendingModifiedValuesBuilder {
         self.processor_features = input;
         self
     }
+    /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+    pub fn get_processor_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+        &self.processor_features
+    }
     /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
@@ -417,6 +483,10 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.iam_database_authentication_enabled = input;
         self
+    }
+    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
     }
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub fn automation_mode(mut self, input: crate::types::AutomationMode) -> Self {
@@ -431,6 +501,10 @@ impl PendingModifiedValuesBuilder {
         self.automation_mode = input;
         self
     }
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub fn get_automation_mode(&self) -> &::std::option::Option<crate::types::AutomationMode> {
+        &self.automation_mode
+    }
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub fn resume_full_automation_mode_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resume_full_automation_mode_time = ::std::option::Option::Some(input);
@@ -444,6 +518,12 @@ impl PendingModifiedValuesBuilder {
         self.resume_full_automation_mode_time = input;
         self
     }
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub fn get_resume_full_automation_mode_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resume_full_automation_mode_time
+    }
     /// <p>The storage throughput of the DB instance.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
         self.storage_throughput = ::std::option::Option::Some(input);
@@ -454,6 +534,10 @@ impl PendingModifiedValuesBuilder {
         self.storage_throughput = input;
         self
     }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// <p>The database engine of the DB instance.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -463,6 +547,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The database engine of the DB instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {

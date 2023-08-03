@@ -36,6 +36,10 @@ impl UpdateSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSite as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_site::builders::UpdateSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateSiteFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of your site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateSiteFluentBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
+    }
+    /// <p>The ID of your site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
     }
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -145,6 +157,11 @@ impl UpdateSiteFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of your site.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The site location:</p>
     /// <ul>
@@ -165,5 +182,14 @@ impl UpdateSiteFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
+    /// </ul>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        self.inner.get_location()
     }
 }

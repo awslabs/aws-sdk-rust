@@ -36,6 +36,10 @@ impl UpdateComponentConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateComponentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -148,6 +156,10 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner = self.inner.set_component_name(input);
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
+    }
     /// <p>Indicates whether the application component is monitored.</p>
     pub fn monitor(mut self, input: bool) -> Self {
         self.inner = self.inner.monitor(input);
@@ -158,6 +170,10 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner = self.inner.set_monitor(input);
         self
     }
+    /// <p>Indicates whether the application component is monitored.</p>
+    pub fn get_monitor(&self) -> &::std::option::Option<bool> {
+        self.inner.get_monitor()
+    }
     /// <p>The tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.inner = self.inner.tier(input);
@@ -167,6 +183,10 @@ impl UpdateComponentConfigurationFluentBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>The tier of the application component.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
+        self.inner.get_tier()
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub fn component_configuration(
@@ -184,6 +204,10 @@ impl UpdateComponentConfigurationFluentBuilder {
         self.inner = self.inner.set_component_configuration(input);
         self
     }
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+    pub fn get_component_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_configuration()
+    }
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_config_enabled(input);
@@ -193,5 +217,9 @@ impl UpdateComponentConfigurationFluentBuilder {
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_config_enabled(input);
         self
+    }
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
+    pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_config_enabled()
     }
 }

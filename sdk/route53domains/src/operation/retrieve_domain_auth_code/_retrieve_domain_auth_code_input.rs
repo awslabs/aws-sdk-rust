@@ -42,6 +42,10 @@ impl RetrieveDomainAuthCodeInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to get an authorization code for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
     pub fn build(
         self,

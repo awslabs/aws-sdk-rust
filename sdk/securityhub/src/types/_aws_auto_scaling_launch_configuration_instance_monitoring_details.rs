@@ -46,6 +46,11 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
+    /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
         crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {

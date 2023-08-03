@@ -41,6 +41,10 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetAggregateResourceConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,6 +115,12 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// Appends an item to `ResourceIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
@@ -130,5 +140,11 @@ impl BatchGetAggregateResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifiers(input);
         self
+    }
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+        self.inner.get_resource_identifiers()
     }
 }

@@ -40,6 +40,10 @@ impl BudgetDetailBuilder {
         self.budget_name = input;
         self
     }
+    /// <p>Name of the associated budget.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
+    }
     /// Consumes the builder and constructs a [`BudgetDetail`](crate::types::BudgetDetail).
     pub fn build(self) -> crate::types::BudgetDetail {
         crate::types::BudgetDetail {

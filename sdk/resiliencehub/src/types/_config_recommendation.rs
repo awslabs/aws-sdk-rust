@@ -150,6 +150,10 @@ impl ConfigRecommendationBuilder {
         self.cost = input;
         self
     }
+    /// <p>The cost for the application.</p>
+    pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
+        &self.cost
+    }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(
         mut self,
@@ -165,6 +169,10 @@ impl ConfigRecommendationBuilder {
     ) -> Self {
         self.app_component_name = input;
         self
+    }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_name
     }
     /// Adds a key-value pair to `compliance`.
     ///
@@ -194,6 +202,17 @@ impl ConfigRecommendationBuilder {
         self.compliance = input;
         self
     }
+    /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
+    pub fn get_compliance(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
+    > {
+        &self.compliance
+    }
     /// Adds a key-value pair to `recommendation_compliance`.
     ///
     /// To override the contents of this collection use [`set_recommendation_compliance`](Self::set_recommendation_compliance).
@@ -222,6 +241,17 @@ impl ConfigRecommendationBuilder {
         self.recommendation_compliance = input;
         self
     }
+    /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
+    pub fn get_recommendation_compliance(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::RecommendationDisruptionCompliance,
+        >,
+    > {
+        &self.recommendation_compliance
+    }
     /// <p>The type of optimization.</p>
     pub fn optimization_type(
         mut self,
@@ -238,6 +268,12 @@ impl ConfigRecommendationBuilder {
         self.optimization_type = input;
         self
     }
+    /// <p>The type of optimization.</p>
+    pub fn get_optimization_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigRecommendationOptimizationType> {
+        &self.optimization_type
+    }
     /// <p>The name of the recommendation configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -248,6 +284,10 @@ impl ConfigRecommendationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recommendation configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The optional description for an app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -257,6 +297,10 @@ impl ConfigRecommendationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description for an app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `suggested_changes`.
     ///
@@ -280,6 +324,12 @@ impl ConfigRecommendationBuilder {
         self.suggested_changes = input;
         self
     }
+    /// <p>List of the suggested configuration changes.</p>
+    pub fn get_suggested_changes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.suggested_changes
+    }
     /// <p>The architecture type.</p>
     pub fn ha_architecture(mut self, input: crate::types::HaArchitecture) -> Self {
         self.ha_architecture = ::std::option::Option::Some(input);
@@ -293,6 +343,10 @@ impl ConfigRecommendationBuilder {
         self.ha_architecture = input;
         self
     }
+    /// <p>The architecture type.</p>
+    pub fn get_ha_architecture(&self) -> &::std::option::Option<crate::types::HaArchitecture> {
+        &self.ha_architecture
+    }
     /// <p>The reference identifier for the recommendation configuration.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
@@ -302,6 +356,10 @@ impl ConfigRecommendationBuilder {
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
+    }
+    /// <p>The reference identifier for the recommendation configuration.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
     }
     /// Consumes the builder and constructs a [`ConfigRecommendation`](crate::types::ConfigRecommendation).
     pub fn build(self) -> crate::types::ConfigRecommendation {

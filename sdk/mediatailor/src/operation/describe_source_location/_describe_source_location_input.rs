@@ -47,6 +47,10 @@ impl DescribeSourceLocationInputBuilder {
         self.source_location_name = input;
         self
     }
+    /// <p>The name of the source location.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
+    }
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
     pub fn build(
         self,

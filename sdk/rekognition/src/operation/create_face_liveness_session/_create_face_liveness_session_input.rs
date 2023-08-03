@@ -58,6 +58,10 @@ impl CreateFaceLivenessSessionInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
     pub fn settings(
         mut self,
@@ -74,6 +78,12 @@ impl CreateFaceLivenessSessionInputBuilder {
         self.settings = input;
         self
     }
+    /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings> {
+        &self.settings
+    }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
     pub fn client_request_token(
         mut self,
@@ -89,6 +99,10 @@ impl CreateFaceLivenessSessionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateFaceLivenessSessionInput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput).
     pub fn build(

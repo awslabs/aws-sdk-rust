@@ -46,6 +46,10 @@ impl HttpUrlDestinationPropertiesBuilder {
         self.confirmation_url = input;
         self
     }
+    /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
+    }
     /// Consumes the builder and constructs a [`HttpUrlDestinationProperties`](crate::types::HttpUrlDestinationProperties).
     pub fn build(self) -> crate::types::HttpUrlDestinationProperties {
         crate::types::HttpUrlDestinationProperties {

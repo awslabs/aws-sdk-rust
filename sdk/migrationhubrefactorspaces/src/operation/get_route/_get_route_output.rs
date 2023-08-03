@@ -229,6 +229,12 @@ impl GetRouteOutputBuilder {
         self.route_id = input;
         self
     }
+    /// <p>The unique identifier of the route.</p>
+    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -238,6 +244,10 @@ impl GetRouteOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the route.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Web Services account ID of the route owner.</p>
     pub fn owner_account_id(
@@ -255,6 +265,10 @@ impl GetRouteOutputBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the route owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The Amazon Web Services account ID of the route creator.</p>
     pub fn created_by_account_id(
         mut self,
@@ -271,6 +285,10 @@ impl GetRouteOutputBuilder {
         self.created_by_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the route creator.</p>
+    pub fn get_created_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_account_id
+    }
     /// <p>The type of route.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.route_type = ::std::option::Option::Some(input);
@@ -281,6 +299,10 @@ impl GetRouteOutputBuilder {
         self.route_type = input;
         self
     }
+    /// <p>The type of route.</p>
+    pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        &self.route_type
+    }
     /// <p>The unique identifier of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -290,6 +312,10 @@ impl GetRouteOutputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The unique identifier of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The ID of the application that the route belongs to. </p>
     pub fn application_id(
@@ -307,6 +333,10 @@ impl GetRouteOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application that the route belongs to. </p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Unique identifier of the environment.</p>
     pub fn environment_id(
         mut self,
@@ -323,6 +353,10 @@ impl GetRouteOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>Unique identifier of the environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_path = ::std::option::Option::Some(input.into());
@@ -332,6 +366,10 @@ impl GetRouteOutputBuilder {
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
+    }
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
     }
     /// Appends an item to `methods`.
     ///
@@ -352,6 +390,10 @@ impl GetRouteOutputBuilder {
         self.methods = input;
         self
     }
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    pub fn get_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>> {
+        &self.methods
+    }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(mut self, input: bool) -> Self {
         self.include_child_paths = ::std::option::Option::Some(input);
@@ -361,6 +403,10 @@ impl GetRouteOutputBuilder {
     pub fn set_include_child_paths(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_child_paths = input;
         self
+    }
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    pub fn get_include_child_paths(&self) -> &::std::option::Option<bool> {
+        &self.include_child_paths
     }
     /// Adds a key-value pair to `path_resource_to_id`.
     ///
@@ -387,6 +433,14 @@ impl GetRouteOutputBuilder {
         self.path_resource_to_id = input;
         self
     }
+    /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    pub fn get_path_resource_to_id(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.path_resource_to_id
+    }
     /// <p>The current state of the route. </p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -396,6 +450,10 @@ impl GetRouteOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the route. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -422,6 +480,14 @@ impl GetRouteOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Any error associated with the route resource. </p>
     pub fn error(mut self, input: crate::types::ErrorResponse) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -431,6 +497,10 @@ impl GetRouteOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Any error associated with the route resource. </p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorResponse> {
+        &self.error
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -445,6 +515,10 @@ impl GetRouteOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the route was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The timestamp of when the route is created. </p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -458,6 +532,10 @@ impl GetRouteOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp of when the route is created. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub fn append_source_path(mut self, input: bool) -> Self {
         self.append_source_path = ::std::option::Option::Some(input);
@@ -467,6 +545,10 @@ impl GetRouteOutputBuilder {
     pub fn set_append_source_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.append_source_path = input;
         self
+    }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn get_append_source_path(&self) -> &::std::option::Option<bool> {
+        &self.append_source_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

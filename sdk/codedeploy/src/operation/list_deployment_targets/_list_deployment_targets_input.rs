@@ -88,6 +88,10 @@ impl ListDeploymentTargetsInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ListDeploymentTargetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Adds a key-value pair to `target_filters`.
     ///
@@ -133,6 +141,21 @@ impl ListDeploymentTargetsInputBuilder {
     ) -> Self {
         self.target_filters = input;
         self
+    }
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
+    /// </ul>
+    pub fn get_target_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::TargetFilterName,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.target_filters
     }
     /// Consumes the builder and constructs a [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
     pub fn build(

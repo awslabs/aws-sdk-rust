@@ -49,6 +49,10 @@ impl DateTimeHierarchyBuilder {
         self.hierarchy_id = input;
         self
     }
+    /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
+    }
     /// Appends an item to `drill_down_filters`.
     ///
     /// To override the contents of this collection use [`set_drill_down_filters`](Self::set_drill_down_filters).
@@ -67,6 +71,12 @@ impl DateTimeHierarchyBuilder {
     ) -> Self {
         self.drill_down_filters = input;
         self
+    }
+    /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
+    pub fn get_drill_down_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>> {
+        &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`DateTimeHierarchy`](crate::types::DateTimeHierarchy).
     pub fn build(self) -> crate::types::DateTimeHierarchy {

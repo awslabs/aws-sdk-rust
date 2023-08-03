@@ -137,6 +137,10 @@ impl DescribeLocationHdfsOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of the HDFS cluster location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URI of the HDFS cluster location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -146,6 +150,10 @@ impl DescribeLocationHdfsOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URI of the HDFS cluster location.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Appends an item to `name_nodes`.
     ///
@@ -166,6 +174,12 @@ impl DescribeLocationHdfsOutputBuilder {
         self.name_nodes = input;
         self
     }
+    /// <p>The NameNode that manage the HDFS namespace. </p>
+    pub fn get_name_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
+        &self.name_nodes
+    }
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.block_size = ::std::option::Option::Some(input);
@@ -176,6 +190,10 @@ impl DescribeLocationHdfsOutputBuilder {
         self.block_size = input;
         self
     }
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub fn get_block_size(&self) -> &::std::option::Option<i32> {
+        &self.block_size
+    }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.replication_factor = ::std::option::Option::Some(input);
@@ -185,6 +203,10 @@ impl DescribeLocationHdfsOutputBuilder {
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replication_factor = input;
         self
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
+        &self.replication_factor
     }
     /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(
@@ -202,6 +224,10 @@ impl DescribeLocationHdfsOutputBuilder {
         self.kms_key_provider_uri = input;
         self
     }
+    /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_provider_uri
+    }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn qop_configuration(mut self, input: crate::types::QopConfiguration) -> Self {
         self.qop_configuration = ::std::option::Option::Some(input);
@@ -214,6 +240,10 @@ impl DescribeLocationHdfsOutputBuilder {
     ) -> Self {
         self.qop_configuration = input;
         self
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
+    pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
+        &self.qop_configuration
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
@@ -228,6 +258,12 @@ impl DescribeLocationHdfsOutputBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
     pub fn simple_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simple_user = ::std::option::Option::Some(input.into());
@@ -237,6 +273,10 @@ impl DescribeLocationHdfsOutputBuilder {
     pub fn set_simple_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.simple_user = input;
         self
+    }
+    /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+    pub fn get_simple_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simple_user
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
     pub fn kerberos_principal(
@@ -253,6 +293,10 @@ impl DescribeLocationHdfsOutputBuilder {
     ) -> Self {
         self.kerberos_principal = input;
         self
+    }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
+    pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kerberos_principal
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -273,6 +317,10 @@ impl DescribeLocationHdfsOutputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>The time that the HDFS location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -285,6 +333,10 @@ impl DescribeLocationHdfsOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the HDFS location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

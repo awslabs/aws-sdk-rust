@@ -49,6 +49,10 @@ impl GetStatisticsOutputBuilder {
         self.statistics = input;
         self
     }
+    /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::Statistics> {
+        &self.statistics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl DeleteContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_content::builders::DeleteContentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteContentFluentBuilder {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_knowledge_base_id()
+    }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_id(input.into());
@@ -133,5 +143,9 @@ impl DeleteContentFluentBuilder {
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_id(input);
         self
+    }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_id()
     }
 }

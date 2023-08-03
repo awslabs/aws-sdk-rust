@@ -66,6 +66,10 @@ impl CreateRequestValidatorInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the to-be-created RequestValidator.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl CreateRequestValidatorInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the to-be-created RequestValidator.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
@@ -86,6 +94,10 @@ impl CreateRequestValidatorInputBuilder {
         self.validate_request_body = input;
         self
     }
+    /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn get_validate_request_body(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_body
+    }
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
         self.validate_request_parameters = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl CreateRequestValidatorInputBuilder {
     pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_request_parameters = input;
         self
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
+    pub fn get_validate_request_parameters(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_parameters
     }
     /// Consumes the builder and constructs a [`CreateRequestValidatorInput`](crate::operation::create_request_validator::CreateRequestValidatorInput).
     pub fn build(

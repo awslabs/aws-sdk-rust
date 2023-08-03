@@ -77,6 +77,10 @@ impl RemediationExecutionStatusBuilder {
         self.resource_key = input;
         self
     }
+    /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
+    pub fn get_resource_key(&self) -> &::std::option::Option<crate::types::ResourceKey> {
+        &self.resource_key
+    }
     /// <p>ENUM of the values.</p>
     pub fn state(mut self, input: crate::types::RemediationExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl RemediationExecutionStatusBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>ENUM of the values.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RemediationExecutionState> {
+        &self.state
     }
     /// Appends an item to `step_details`.
     ///
@@ -109,6 +117,12 @@ impl RemediationExecutionStatusBuilder {
         self.step_details = input;
         self
     }
+    /// <p>Details of every step.</p>
+    pub fn get_step_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStep>> {
+        &self.step_details
+    }
     /// <p>Start time when the remediation was executed.</p>
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_time = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl RemediationExecutionStatusBuilder {
         self.invocation_time = input;
         self
     }
+    /// <p>Start time when the remediation was executed.</p>
+    pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invocation_time
+    }
     /// <p>The time when the remediation execution was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl RemediationExecutionStatusBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time when the remediation execution was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`RemediationExecutionStatus`](crate::types::RemediationExecutionStatus).
     pub fn build(self) -> crate::types::RemediationExecutionStatus {

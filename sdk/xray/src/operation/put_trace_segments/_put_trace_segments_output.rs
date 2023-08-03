@@ -63,6 +63,12 @@ impl PutTraceSegmentsOutputBuilder {
         self.unprocessed_trace_segments = input;
         self
     }
+    /// <p>Segments that failed processing.</p>
+    pub fn get_unprocessed_trace_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedTraceSegment>> {
+        &self.unprocessed_trace_segments
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl ErrorInfoBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Specifies the error message that appears if a flow fails. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Specifies the type of error.</p>
     pub fn error_type(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ErrorInfoBuilder {
     ) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p>Specifies the type of error.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_type
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {

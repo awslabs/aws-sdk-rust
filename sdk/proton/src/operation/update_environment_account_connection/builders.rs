@@ -37,6 +37,10 @@ impl UpdateEnvironmentAccountConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironmentAccountConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl UpdateEnvironmentAccountConnectionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the environment account connection to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -110,6 +118,10 @@ impl UpdateEnvironmentAccountConnectionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
@@ -131,6 +143,12 @@ impl UpdateEnvironmentAccountConnectionFluentBuilder {
         self.inner = self.inner.set_component_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_component_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_role_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
     pub fn codebuild_role_arn(
         mut self,
@@ -146,5 +164,9 @@ impl UpdateEnvironmentAccountConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_codebuild_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    pub fn get_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_codebuild_role_arn()
     }
 }

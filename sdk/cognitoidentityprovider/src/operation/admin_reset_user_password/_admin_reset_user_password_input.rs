@@ -91,6 +91,10 @@ impl AdminResetUserPasswordInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name of the user whose password you want to reset.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl AdminResetUserPasswordInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name of the user whose password you want to reset.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Adds a key-value pair to `client_metadata`.
     ///
@@ -143,6 +151,23 @@ impl AdminResetUserPasswordInputBuilder {
     ) -> Self {
         self.client_metadata = input;
         self
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <ul>
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_client_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.client_metadata
     }
     /// Consumes the builder and constructs a [`AdminResetUserPasswordInput`](crate::operation::admin_reset_user_password::AdminResetUserPasswordInput).
     pub fn build(

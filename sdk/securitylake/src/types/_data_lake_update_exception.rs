@@ -48,6 +48,10 @@ impl DataLakeUpdateExceptionBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DataLakeUpdateExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`DataLakeUpdateException`](crate::types::DataLakeUpdateException).
     pub fn build(self) -> crate::types::DataLakeUpdateException {

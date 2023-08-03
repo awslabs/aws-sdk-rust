@@ -40,6 +40,10 @@ impl MessagingSessionEndpointBuilder {
         self.url = input;
         self
     }
+    /// <p>The endpoint to which you establish a websocket connection.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// Consumes the builder and constructs a [`MessagingSessionEndpoint`](crate::types::MessagingSessionEndpoint).
     pub fn build(self) -> crate::types::MessagingSessionEndpoint {
         crate::types::MessagingSessionEndpoint { url: self.url }

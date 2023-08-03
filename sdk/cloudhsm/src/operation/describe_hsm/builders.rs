@@ -38,6 +38,10 @@ impl DescribeHsmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHsm as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_hsm::builders::DescribeHsmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl DescribeHsmFluentBuilder {
         self.inner = self.inner.set_hsm_arn(input);
         self
     }
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_arn()
+    }
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
     pub fn hsm_serial_number(
         mut self,
@@ -135,5 +143,9 @@ impl DescribeHsmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hsm_serial_number(input);
         self
+    }
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_serial_number()
     }
 }

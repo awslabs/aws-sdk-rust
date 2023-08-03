@@ -36,6 +36,12 @@ impl UpdateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project to be updated.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>An optional user-defined description for the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl UpdateProjectFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional user-defined description for the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub fn placement_template(mut self, input: crate::types::PlacementTemplate) -> Self {
@@ -140,5 +154,11 @@ impl UpdateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_placement_template(input);
         self
+    }
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
+    pub fn get_placement_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+        self.inner.get_placement_template()
     }
 }

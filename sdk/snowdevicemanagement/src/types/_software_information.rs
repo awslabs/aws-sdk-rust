@@ -62,6 +62,10 @@ impl SoftwareInformationBuilder {
         self.installed_version = input;
         self
     }
+    /// <p>The version of the software currently installed on the device.</p>
+    pub fn get_installed_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.installed_version
+    }
     /// <p>The version of the software being installed on the device.</p>
     pub fn installing_version(
         mut self,
@@ -78,6 +82,10 @@ impl SoftwareInformationBuilder {
         self.installing_version = input;
         self
     }
+    /// <p>The version of the software being installed on the device.</p>
+    pub fn get_installing_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.installing_version
+    }
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
     pub fn install_state(
         mut self,
@@ -93,6 +101,10 @@ impl SoftwareInformationBuilder {
     ) -> Self {
         self.install_state = input;
         self
+    }
+    /// <p>The state of the software that is installed or that is being installed on the device.</p>
+    pub fn get_install_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.install_state
     }
     /// Consumes the builder and constructs a [`SoftwareInformation`](crate::types::SoftwareInformation).
     pub fn build(self) -> crate::types::SoftwareInformation {

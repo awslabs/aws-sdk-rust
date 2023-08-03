@@ -53,6 +53,10 @@ impl EnableOrganizationAdminAccountInputBuilder {
         self.admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl EnableOrganizationAdminAccountInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountInput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput).
     pub fn build(

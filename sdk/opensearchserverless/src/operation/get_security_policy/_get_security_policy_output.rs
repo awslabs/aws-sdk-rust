@@ -52,6 +52,12 @@ impl GetSecurityPolicyOutputBuilder {
         self.security_policy_detail = input;
         self
     }
+    /// <p>Details about the requested security policy.</p>
+    pub fn get_security_policy_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityPolicyDetail> {
+        &self.security_policy_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

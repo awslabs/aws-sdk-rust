@@ -53,6 +53,10 @@ impl ResolutionTechniquesBuilder {
         self.resolution_type = input;
         self
     }
+    /// <p>There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code> </p>
+    pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
+        &self.resolution_type
+    }
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub fn rule_based_properties(mut self, input: crate::types::RuleBasedProperties) -> Self {
         self.rule_based_properties = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl ResolutionTechniquesBuilder {
     ) -> Self {
         self.rule_based_properties = input;
         self
+    }
+    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    pub fn get_rule_based_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleBasedProperties> {
+        &self.rule_based_properties
     }
     /// Consumes the builder and constructs a [`ResolutionTechniques`](crate::types::ResolutionTechniques).
     pub fn build(self) -> crate::types::ResolutionTechniques {

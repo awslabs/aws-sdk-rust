@@ -137,6 +137,12 @@ impl JobSummaryBuilder {
         self.bucket_criteria = input;
         self
     }
+    /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+    pub fn get_bucket_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketCriteriaForJob> {
+        &self.bucket_criteria
+    }
     /// Appends an item to `bucket_definitions`.
     ///
     /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
@@ -156,6 +162,12 @@ impl JobSummaryBuilder {
         self.bucket_definitions = input;
         self
     }
+    /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    pub fn get_bucket_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>> {
+        &self.bucket_definitions
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -169,6 +181,10 @@ impl JobSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The unique identifier for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -178,6 +194,10 @@ impl JobSummaryBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -205,6 +225,18 @@ impl JobSummaryBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
+    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
+    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
+    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
+    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+    /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+    /// </ul>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - The job runs only once.</p></li>
@@ -223,6 +255,14 @@ impl JobSummaryBuilder {
         self.job_type = input;
         self
     }
+    /// <p>The schedule for running the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ONE_TIME - The job runs only once.</p></li>
+    /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis.</p></li>
+    /// </ul>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub fn last_run_error_status(mut self, input: crate::types::LastRunErrorStatus) -> Self {
         self.last_run_error_status = ::std::option::Option::Some(input);
@@ -236,6 +276,12 @@ impl JobSummaryBuilder {
         self.last_run_error_status = input;
         self
     }
+    /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
+    pub fn get_last_run_error_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LastRunErrorStatus> {
+        &self.last_run_error_status
+    }
     /// <p>The custom name of the job.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -245,6 +291,10 @@ impl JobSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The custom name of the job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     pub fn user_paused_details(mut self, input: crate::types::UserPausedDetails) -> Self {
@@ -258,6 +308,12 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.user_paused_details = input;
         self
+    }
+    /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
+    pub fn get_user_paused_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserPausedDetails> {
+        &self.user_paused_details
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {

@@ -37,6 +37,13 @@ impl DeleteResourceDataSyncFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourceDataSync as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteResourceDataSyncFluentBuilder {
         self.inner = self.inner.set_sync_name(input);
         self
     }
+    /// <p>The name of the configuration to delete.</p>
+    pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_name()
+    }
     /// <p>Specify the type of resource data sync to delete.</p>
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_type(input.into());
@@ -136,5 +147,9 @@ impl DeleteResourceDataSyncFluentBuilder {
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
+    }
+    /// <p>Specify the type of resource data sync to delete.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_type()
     }
 }

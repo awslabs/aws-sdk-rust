@@ -81,6 +81,10 @@ impl UpdatePartnerStatusInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
     pub fn cluster_identifier(
         mut self,
@@ -96,6 +100,10 @@ impl UpdatePartnerStatusInputBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
     pub fn database_name(
@@ -113,6 +121,10 @@ impl UpdatePartnerStatusInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database whose partner integration status is being updated.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partner whose integration status is being updated.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl UpdatePartnerStatusInputBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
+    }
+    /// <p>The name of the partner whose integration status is being updated.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_name
     }
     /// <p>The value of the updated status.</p>
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
@@ -135,6 +151,10 @@ impl UpdatePartnerStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The value of the updated status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PartnerIntegrationStatus> {
+        &self.status
     }
     /// <p>The status message provided by the partner.</p>
     pub fn status_message(
@@ -151,6 +171,10 @@ impl UpdatePartnerStatusInputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message provided by the partner.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
     pub fn build(

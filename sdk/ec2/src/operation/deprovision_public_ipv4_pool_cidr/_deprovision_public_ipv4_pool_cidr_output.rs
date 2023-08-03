@@ -55,6 +55,10 @@ impl DeprovisionPublicIpv4PoolCidrOutputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// Appends an item to `deprovisioned_addresses`.
     ///
     /// To override the contents of this collection use [`set_deprovisioned_addresses`](Self::set_deprovisioned_addresses).
@@ -76,6 +80,12 @@ impl DeprovisionPublicIpv4PoolCidrOutputBuilder {
     ) -> Self {
         self.deprovisioned_addresses = input;
         self
+    }
+    /// <p>The deprovisioned CIDRs.</p>
+    pub fn get_deprovisioned_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deprovisioned_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

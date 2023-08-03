@@ -64,6 +64,11 @@ impl PredicateBuilder {
         self.negated = input;
         self
     }
+    /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+    /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
+    pub fn get_negated(&self) -> &::std::option::Option<bool> {
+        &self.negated
+    }
     /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
     pub fn r#type(mut self, input: crate::types::PredicateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -74,6 +79,10 @@ impl PredicateBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PredicateType> {
+        &self.r#type
+    }
     /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
     pub fn data_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_id = ::std::option::Option::Some(input.into());
@@ -83,6 +92,10 @@ impl PredicateBuilder {
     pub fn set_data_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_id = input;
         self
+    }
+    /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
+    pub fn get_data_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_id
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     pub fn build(self) -> crate::types::Predicate {

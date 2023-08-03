@@ -40,6 +40,10 @@ impl OidcBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The issuer URL for the OIDC identity provider.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// Consumes the builder and constructs a [`Oidc`](crate::types::Oidc).
     pub fn build(self) -> crate::types::Oidc {
         crate::types::Oidc {

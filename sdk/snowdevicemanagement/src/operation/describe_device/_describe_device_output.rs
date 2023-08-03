@@ -141,6 +141,10 @@ impl DescribeDeviceOutputBuilder {
         self.last_reached_out_at = input;
         self
     }
+    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
+    pub fn get_last_reached_out_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_reached_out_at
+    }
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -153,6 +157,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +187,14 @@ impl DescribeDeviceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ID of the device that you checked the information for.</p>
     pub fn managed_device_id(
         mut self,
@@ -194,6 +210,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.managed_device_id = input;
         self
+    }
+    /// <p>The ID of the device that you checked the information for.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn managed_device_arn(
@@ -211,6 +231,10 @@ impl DescribeDeviceOutputBuilder {
         self.managed_device_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_managed_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_arn
+    }
     /// <p>The type of Amazon Web Services Snow Family device.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
@@ -220,6 +244,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_type = input;
         self
+    }
+    /// <p>The type of Amazon Web Services Snow Family device.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
     }
     /// <p>The ID of the job used when ordering the device.</p>
     pub fn associated_with_job(
@@ -237,6 +265,10 @@ impl DescribeDeviceOutputBuilder {
         self.associated_with_job = input;
         self
     }
+    /// <p>The ID of the job used when ordering the device.</p>
+    pub fn get_associated_with_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_with_job
+    }
     /// <p>The current state of the device.</p>
     pub fn device_state(mut self, input: crate::types::UnlockState) -> Self {
         self.device_state = ::std::option::Option::Some(input);
@@ -249,6 +281,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.device_state = input;
         self
+    }
+    /// <p>The current state of the device.</p>
+    pub fn get_device_state(&self) -> &::std::option::Option<crate::types::UnlockState> {
+        &self.device_state
     }
     /// Appends an item to `physical_network_interfaces`.
     ///
@@ -272,6 +308,12 @@ impl DescribeDeviceOutputBuilder {
         self.physical_network_interfaces = input;
         self
     }
+    /// <p>The network interfaces available on the device.</p>
+    pub fn get_physical_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalNetworkInterface>> {
+        &self.physical_network_interfaces
+    }
     /// Appends an item to `device_capacities`.
     ///
     /// To override the contents of this collection use [`set_device_capacities`](Self::set_device_capacities).
@@ -291,6 +333,12 @@ impl DescribeDeviceOutputBuilder {
         self.device_capacities = input;
         self
     }
+    /// <p>The hardware specifications of the device. </p>
+    pub fn get_device_capacities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capacity>> {
+        &self.device_capacities
+    }
     /// <p>The software installed on the device.</p>
     pub fn software(mut self, input: crate::types::SoftwareInformation) -> Self {
         self.software = ::std::option::Option::Some(input);
@@ -303,6 +351,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.software = input;
         self
+    }
+    /// <p>The software installed on the device.</p>
+    pub fn get_software(&self) -> &::std::option::Option<crate::types::SoftwareInformation> {
+        &self.software
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl GetDatabasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDatabases as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_databases::builders::GetDatabasesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl GetDatabasesFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -139,6 +147,10 @@ impl GetDatabasesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of databases to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +160,10 @@ impl GetDatabasesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of databases to return in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
@@ -171,5 +187,16 @@ impl GetDatabasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_share_type(input);
         self
+    }
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
+    /// </ul>
+    pub fn get_resource_share_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+        self.inner.get_resource_share_type()
     }
 }

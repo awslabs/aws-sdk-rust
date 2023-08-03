@@ -54,6 +54,10 @@ impl ParticipantTokenCredentialsBuilder {
         self.participant_token = input;
         self
     }
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
+    pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_token
+    }
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiry = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ParticipantTokenCredentialsBuilder {
     pub fn set_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiry = input;
         self
+    }
+    /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiry
     }
     /// Consumes the builder and constructs a [`ParticipantTokenCredentials`](crate::types::ParticipantTokenCredentials).
     pub fn build(self) -> crate::types::ParticipantTokenCredentials {

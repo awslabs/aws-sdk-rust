@@ -51,6 +51,10 @@ impl InternetGatewayAttachmentBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached to a VPC; otherwise, this value is not returned.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
+        &self.state
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl InternetGatewayAttachmentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`InternetGatewayAttachment`](crate::types::InternetGatewayAttachment).
     pub fn build(self) -> crate::types::InternetGatewayAttachment {

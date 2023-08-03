@@ -45,6 +45,10 @@ impl FilterBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The event pattern.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {

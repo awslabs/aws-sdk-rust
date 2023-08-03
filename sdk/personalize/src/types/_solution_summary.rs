@@ -90,6 +90,10 @@ impl SolutionSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the solution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl SolutionSummaryBuilder {
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
     }
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -120,6 +128,15 @@ impl SolutionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the solution.</p>
+    /// <p>A solution can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -132,6 +149,10 @@ impl SolutionSummaryBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the solution was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +167,12 @@ impl SolutionSummaryBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -155,6 +182,10 @@ impl SolutionSummaryBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
     }
     /// Consumes the builder and constructs a [`SolutionSummary`](crate::types::SolutionSummary).
     pub fn build(self) -> crate::types::SolutionSummary {

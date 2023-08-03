@@ -72,6 +72,10 @@ impl EnvironmentStateBuilder {
         self.spec = input;
         self
     }
+    /// <p>The environment spec that was used to create the environment.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
+    }
     /// <p>The name of the environment template that was used to create the environment.</p>
     pub fn template_name(
         mut self,
@@ -87,6 +91,10 @@ impl EnvironmentStateBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the environment template that was used to create the environment.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The major version of the environment template that was used to create the environment.</p>
     pub fn template_major_version(
@@ -104,6 +112,10 @@ impl EnvironmentStateBuilder {
         self.template_major_version = input;
         self
     }
+    /// <p>The major version of the environment template that was used to create the environment.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
+    }
     /// <p>The minor version of the environment template that was used to create the environment.</p>
     pub fn template_minor_version(
         mut self,
@@ -119,6 +131,10 @@ impl EnvironmentStateBuilder {
     ) -> Self {
         self.template_minor_version = input;
         self
+    }
+    /// <p>The minor version of the environment template that was used to create the environment.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
     }
     /// Consumes the builder and constructs a [`EnvironmentState`](crate::types::EnvironmentState).
     pub fn build(self) -> crate::types::EnvironmentState {

@@ -49,6 +49,10 @@ impl DisassociateVehicleFleetInputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p> The unique ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DisassociateVehicleFleetInputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p> The unique ID of a fleet. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
     pub fn build(

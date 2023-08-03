@@ -74,6 +74,15 @@ impl ComparisonConfigurationBuilder {
         self.comparison_method = input;
         self
     }
+    /// <p>The method of the comparison. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
+    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// </ul>
+    pub fn get_comparison_method(&self) -> &::std::option::Option<crate::types::ComparisonMethod> {
+        &self.comparison_method
+    }
     /// <p>The format of the comparison.</p>
     pub fn comparison_format(mut self, input: crate::types::ComparisonFormatConfiguration) -> Self {
         self.comparison_format = ::std::option::Option::Some(input);
@@ -86,6 +95,12 @@ impl ComparisonConfigurationBuilder {
     ) -> Self {
         self.comparison_format = input;
         self
+    }
+    /// <p>The format of the comparison.</p>
+    pub fn get_comparison_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonFormatConfiguration> {
+        &self.comparison_format
     }
     /// Consumes the builder and constructs a [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).
     pub fn build(self) -> crate::types::ComparisonConfiguration {

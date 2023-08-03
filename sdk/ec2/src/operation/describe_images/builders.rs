@@ -38,6 +38,12 @@ impl DescribeImagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeImages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -151,6 +157,17 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_executable_users(input);
         self
     }
+    /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
+    /// <ul>
+    /// <li> <p>If you specify an Amazon Web Services account ID that is not your own, only AMIs shared with that specific Amazon Web Services account ID are returned. However, AMIs that are shared with the account’s organization or organizational unit (OU) are not returned.</p> </li>
+    /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
+    /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
+    /// </ul>
+    pub fn get_executable_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_executable_users()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -248,6 +265,50 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code> | <code>x86_64_mac</code> | <code>arm64_mac</code>).</p> </li>
+    /// <li> <p> <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS volume is deleted on instance termination.</p> </li>
+    /// <li> <p> <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
+    /// <li> <p> <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.</p> </li>
+    /// <li> <p> <code>block-device-mapping.volume-size</code> - The volume size of the Amazon EBS volume, in GiB.</p> </li>
+    /// <li> <p> <code>block-device-mapping.volume-type</code> - The volume type of the Amazon EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> | <code>gp3</code> | <code>sc1 </code>| <code>st1</code> | <code>standard</code>).</p> </li>
+    /// <li> <p> <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS volume is encrypted.</p> </li>
+    /// <li> <p> <code>creation-date</code> - The time when the image was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
+    /// <li> <p> <code>description</code> - The description of the image (provided during image creation).</p> </li>
+    /// <li> <p> <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p> </li>
+    /// <li> <p> <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li>
+    /// <li> <p> <code>image-id</code> - The ID of the image.</p> </li>
+    /// <li> <p> <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+    /// <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is public.</p> </li>
+    /// <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+    /// <li> <p> <code>manifest-location</code> - The location of the image manifest.</p> </li>
+    /// <li> <p> <code>name</code> - The name of the AMI (provided during image creation).</p> </li>
+    /// <li> <p> <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.</p> </li>
+    /// <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <b>Owner</b> request parameter instead of this filter.</p> </li>
+    /// <li> <p> <code>platform</code> - The platform. The only supported value is <code>windows</code>.</p> </li>
+    /// <li> <p> <code>product-code</code> - The product code.</p> </li>
+    /// <li> <p> <code>product-code.type</code> - The type of the product code (<code>marketplace</code>).</p> </li>
+    /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
+    /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
+    /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+    /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+    /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
+    /// <li> <p> <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
@@ -267,6 +328,11 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_image_ids(input);
         self
     }
+    /// <p>The image IDs.</p>
+    /// <p>Default: Describes all images available to you.</p>
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_image_ids()
+    }
     /// Appends an item to `Owners`.
     ///
     /// To override the contents of this collection use [`set_owners`](Self::set_owners).
@@ -284,6 +350,10 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_owners(input);
         self
     }
+    /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_owners()
+    }
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p> <note>
     /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
@@ -300,6 +370,13 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_include_deprecated(input);
         self
     }
+    /// <p>Specifies whether to include deprecated AMIs.</p>
+    /// <p>Default: No deprecated AMIs are included in the response.</p> <note>
+    /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
+    /// </note>
+    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_deprecated()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -309,6 +386,10 @@ impl DescribeImagesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -320,6 +401,10 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -329,5 +414,9 @@ impl DescribeImagesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

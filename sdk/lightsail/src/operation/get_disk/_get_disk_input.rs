@@ -39,6 +39,10 @@ impl GetDiskInputBuilder {
         self.disk_name = input;
         self
     }
+    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
+    }
     /// Consumes the builder and constructs a [`GetDiskInput`](crate::operation::get_disk::GetDiskInput).
     pub fn build(
         self,

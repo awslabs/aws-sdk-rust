@@ -42,6 +42,10 @@ impl DeleteReportDefinitionInputBuilder {
         self.report_name = input;
         self
     }
+    /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
+    }
     /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::operation::delete_report_definition::DeleteReportDefinitionInput).
     pub fn build(
         self,

@@ -65,6 +65,10 @@ impl DescribeGroupMembershipInputBuilder {
         self.member_name = input;
         self
     }
+    /// <p>The user name of the user that you want to search for.</p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_name
+    }
     /// <p>The name of the group that you want to search.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DescribeGroupMembershipInputBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the group that you want to search.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
@@ -91,6 +99,10 @@ impl DescribeGroupMembershipInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The namespace that includes the group you are searching within.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl DescribeGroupMembershipInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace that includes the group you are searching within.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipInput`](crate::operation::describe_group_membership::DescribeGroupMembershipInput).
     pub fn build(

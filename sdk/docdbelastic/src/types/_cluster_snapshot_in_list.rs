@@ -78,6 +78,10 @@ impl ClusterSnapshotInListBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl ClusterSnapshotInListBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The arn of the Elastic DocumentDB snapshot</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl ClusterSnapshotInListBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl ClusterSnapshotInListBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Elastic DocumentDB snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
     pub fn snapshot_creation_time(
@@ -123,6 +139,10 @@ impl ClusterSnapshotInListBuilder {
     ) -> Self {
         self.snapshot_creation_time = input;
         self
+    }
+    /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
+    pub fn get_snapshot_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_creation_time
     }
     /// Consumes the builder and constructs a [`ClusterSnapshotInList`](crate::types::ClusterSnapshotInList).
     pub fn build(self) -> crate::types::ClusterSnapshotInList {

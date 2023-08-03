@@ -88,6 +88,10 @@ impl StudioSummaryBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>The name of the Amazon EMR Studio.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl StudioSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Amazon EMR Studio.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl StudioSummaryBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl StudioSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The detailed description of the Amazon EMR Studio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +144,10 @@ impl StudioSummaryBuilder {
         self.url = input;
         self
     }
+    /// <p>The unique access URL of the Amazon EMR Studio.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.auth_mode = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl StudioSummaryBuilder {
     pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.auth_mode = input;
         self
+    }
+    /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
+    pub fn get_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
+        &self.auth_mode
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +174,10 @@ impl StudioSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the Amazon EMR Studio was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`StudioSummary`](crate::types::StudioSummary).
     pub fn build(self) -> crate::types::StudioSummary {

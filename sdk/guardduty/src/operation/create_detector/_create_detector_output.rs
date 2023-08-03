@@ -57,6 +57,10 @@ impl CreateDetectorOutputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the created detector.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     pub fn unprocessed_data_sources(
         mut self,
@@ -72,6 +76,12 @@ impl CreateDetectorOutputBuilder {
     ) -> Self {
         self.unprocessed_data_sources = input;
         self
+    }
+    /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
+    pub fn get_unprocessed_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::UnprocessedDataSourcesResult> {
+        &self.unprocessed_data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

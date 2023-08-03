@@ -91,6 +91,12 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         self.token_identifier = input;
         self
     }
+    /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
+    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// </note>
+    pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
+        &self.token_identifier
+    }
     /// <p>The container for the identifier of the owner.</p>
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.owner_identifier = ::std::option::Option::Some(input);
@@ -103,6 +109,10 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     ) -> Self {
         self.owner_identifier = input;
         self
+    }
+    /// <p>The container for the identifier of the owner.</p>
+    pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
+        &self.owner_identifier
     }
     /// <p>The container for time.</p>
     pub fn at_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
@@ -117,6 +127,12 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         self.at_blockchain_instant = input;
         self
     }
+    /// <p>The container for time.</p>
+    pub fn get_at_blockchain_instant(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        &self.at_blockchain_instant
+    }
     /// <p>The error code associated with the error.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code associated with the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The message associated with the error.</p>
     pub fn error_message(
@@ -143,6 +163,10 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The message associated with the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The type of error.</p>
     pub fn error_type(mut self, input: crate::types::ErrorType) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -152,6 +176,10 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::ErrorType>) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p>The type of error.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<crate::types::ErrorType> {
+        &self.error_type
     }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceErrorItem`](crate::types::BatchGetTokenBalanceErrorItem).
     pub fn build(self) -> crate::types::BatchGetTokenBalanceErrorItem {

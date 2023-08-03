@@ -47,6 +47,10 @@ impl AnalyticsMetadataTypeBuilder {
         self.analytics_endpoint_id = input;
         self
     }
+    /// <p>The endpoint ID.</p>
+    pub fn get_analytics_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analytics_endpoint_id
+    }
     /// Consumes the builder and constructs a [`AnalyticsMetadataType`](crate::types::AnalyticsMetadataType).
     pub fn build(self) -> crate::types::AnalyticsMetadataType {
         crate::types::AnalyticsMetadataType {

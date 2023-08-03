@@ -56,6 +56,10 @@ impl MetricLevelImpactBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the measure.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The number of anomalous metrics for the measure.</p>
     pub fn num_time_series(mut self, input: i32) -> Self {
         self.num_time_series = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl MetricLevelImpactBuilder {
     pub fn set_num_time_series(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_time_series = input;
         self
+    }
+    /// <p>The number of anomalous metrics for the measure.</p>
+    pub fn get_num_time_series(&self) -> &::std::option::Option<i32> {
+        &self.num_time_series
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn contribution_matrix(mut self, input: crate::types::ContributionMatrix) -> Self {
@@ -78,6 +86,12 @@ impl MetricLevelImpactBuilder {
     ) -> Self {
         self.contribution_matrix = input;
         self
+    }
+    /// <p>Details about the dimensions that contributed to the anomaly.</p>
+    pub fn get_contribution_matrix(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContributionMatrix> {
+        &self.contribution_matrix
     }
     /// Consumes the builder and constructs a [`MetricLevelImpact`](crate::types::MetricLevelImpact).
     pub fn build(self) -> crate::types::MetricLevelImpact {

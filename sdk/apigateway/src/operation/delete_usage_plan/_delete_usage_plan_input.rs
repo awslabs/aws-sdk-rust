@@ -46,6 +46,10 @@ impl DeleteUsagePlanInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the to-be-deleted usage plan.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
     pub fn build(
         self,

@@ -58,6 +58,10 @@ impl DescribeDbClusterEndpointsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_cluster_endpoints`.
     ///
     /// To override the contents of this collection use [`set_db_cluster_endpoints`](Self::set_db_cluster_endpoints).
@@ -76,6 +80,12 @@ impl DescribeDbClusterEndpointsOutputBuilder {
     ) -> Self {
         self.db_cluster_endpoints = input;
         self
+    }
+    /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
+    pub fn get_db_cluster_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>> {
+        &self.db_cluster_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

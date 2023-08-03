@@ -55,6 +55,10 @@ impl GetDataSetImportTaskInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetDataSetImportTaskInputBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// Consumes the builder and constructs a [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
     pub fn build(

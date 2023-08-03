@@ -40,6 +40,10 @@ impl GetContactPolicyInputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// Consumes the builder and constructs a [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
     pub fn build(
         self,

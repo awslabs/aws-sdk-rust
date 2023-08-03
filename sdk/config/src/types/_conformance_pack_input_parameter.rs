@@ -54,6 +54,10 @@ impl ConformancePackInputParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>One part of a key-value pair.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>Another part of the key-value pair. </p>
     pub fn parameter_value(
         mut self,
@@ -69,6 +73,10 @@ impl ConformancePackInputParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>Another part of the key-value pair. </p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ConformancePackInputParameter`](crate::types::ConformancePackInputParameter).
     pub fn build(self) -> crate::types::ConformancePackInputParameter {

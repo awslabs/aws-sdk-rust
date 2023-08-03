@@ -48,6 +48,10 @@ impl DestinationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        &self.r#type
+    }
     /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DestinationBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

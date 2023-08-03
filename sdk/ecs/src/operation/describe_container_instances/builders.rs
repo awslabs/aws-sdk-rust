@@ -36,6 +36,10 @@ impl DescribeContainerInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeContainerInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeContainerInstancesFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `containerInstances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
@@ -146,6 +154,12 @@ impl DescribeContainerInstancesFluentBuilder {
         self.inner = self.inner.set_container_instances(input);
         self
     }
+    /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
+    pub fn get_container_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_container_instances()
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -162,5 +176,11 @@ impl DescribeContainerInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include(input);
         self
+    }
+    /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
+        self.inner.get_include()
     }
 }

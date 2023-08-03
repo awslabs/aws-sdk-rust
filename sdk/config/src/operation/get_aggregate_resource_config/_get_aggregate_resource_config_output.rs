@@ -49,6 +49,12 @@ impl GetAggregateResourceConfigOutputBuilder {
         self.configuration_item = input;
         self
     }
+    /// <p>Returns a <code>ConfigurationItem</code> object.</p>
+    pub fn get_configuration_item(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationItem> {
+        &self.configuration_item
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

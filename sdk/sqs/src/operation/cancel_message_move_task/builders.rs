@@ -41,6 +41,13 @@ impl CancelMessageMoveTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelMessageMoveTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_message_move_task::builders::CancelMessageMoveTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl CancelMessageMoveTaskFluentBuilder {
     pub fn set_task_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_handle(input);
         self
+    }
+    /// <p>An identifier associated with a message movement task.</p>
+    pub fn get_task_handle(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_handle()
     }
 }

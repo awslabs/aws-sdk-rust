@@ -91,6 +91,10 @@ impl CreateGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The filter expression defining criteria by which to group traces.</p>
     pub fn filter_expression(
         mut self,
@@ -106,6 +110,10 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.filter_expression = input;
         self
+    }
+    /// <p>The filter expression defining criteria by which to group traces.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
@@ -127,6 +135,16 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.insights_configuration = input;
         self
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
+    /// </ul>
+    pub fn get_insights_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InsightsConfiguration> {
+        &self.insights_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -164,6 +182,19 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(

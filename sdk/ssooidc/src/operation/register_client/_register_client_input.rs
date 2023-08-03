@@ -55,6 +55,10 @@ impl RegisterClientInputBuilder {
         self.client_name = input;
         self
     }
+    /// <p>The friendly name of the client.</p>
+    pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_name
+    }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
     pub fn client_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_type = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RegisterClientInputBuilder {
     pub fn set_client_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_type = input;
         self
+    }
+    /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    pub fn get_client_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_type
     }
     /// Appends an item to `scopes`.
     ///
@@ -83,6 +91,10 @@ impl RegisterClientInputBuilder {
     ) -> Self {
         self.scopes = input;
         self
+    }
+    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scopes
     }
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
     pub fn build(

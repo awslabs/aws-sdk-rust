@@ -71,6 +71,10 @@ impl UpdateAlertInputBuilder {
         self.alert_arn = input;
         self
     }
+    /// <p>The ARN of the alert to update.</p>
+    pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_arn
+    }
     /// <p>A description of the alert.</p>
     pub fn alert_description(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateAlertInputBuilder {
         self.alert_description = input;
         self
     }
+    /// <p>A description of the alert.</p>
+    pub fn get_alert_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_description
+    }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
     pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
         self.alert_sensitivity_threshold = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl UpdateAlertInputBuilder {
         self.alert_sensitivity_threshold = input;
         self
     }
+    /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    pub fn get_alert_sensitivity_threshold(&self) -> &::std::option::Option<i32> {
+        &self.alert_sensitivity_threshold
+    }
     /// <p>Action that will be triggered when there is an alert.</p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl UpdateAlertInputBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
     pub fn alert_filters(mut self, input: crate::types::AlertFilters) -> Self {
@@ -119,6 +135,10 @@ impl UpdateAlertInputBuilder {
     ) -> Self {
         self.alert_filters = input;
         self
+    }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub fn get_alert_filters(&self) -> &::std::option::Option<crate::types::AlertFilters> {
+        &self.alert_filters
     }
     /// Consumes the builder and constructs a [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
     pub fn build(

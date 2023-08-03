@@ -54,6 +54,10 @@ impl TagDeliveryStreamInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -72,6 +76,10 @@ impl TagDeliveryStreamInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A set of key-value pairs to use to create the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagDeliveryStreamInput`](crate::operation::tag_delivery_stream::TagDeliveryStreamInput).
     pub fn build(

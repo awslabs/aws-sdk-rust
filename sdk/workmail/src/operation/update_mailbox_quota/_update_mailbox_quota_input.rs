@@ -62,6 +62,10 @@ impl UpdateMailboxQuotaInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateMailboxQuotaInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub fn mailbox_quota(mut self, input: i32) -> Self {
         self.mailbox_quota = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl UpdateMailboxQuotaInputBuilder {
     pub fn set_mailbox_quota(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mailbox_quota = input;
         self
+    }
+    /// <p>The updated mailbox quota, in MB, for the specified user.</p>
+    pub fn get_mailbox_quota(&self) -> &::std::option::Option<i32> {
+        &self.mailbox_quota
     }
     /// Consumes the builder and constructs a [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
     pub fn build(

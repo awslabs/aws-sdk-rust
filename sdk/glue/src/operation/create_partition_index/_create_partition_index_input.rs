@@ -64,6 +64,10 @@ impl CreatePartitionIndexInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
     pub fn database_name(
         mut self,
@@ -80,6 +84,10 @@ impl CreatePartitionIndexInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Specifies the name of a database in which you want to create a partition index.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl CreatePartitionIndexInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Specifies the name of a table in which you want to create a partition index.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
     pub fn partition_index(mut self, input: crate::types::PartitionIndex) -> Self {
@@ -102,6 +114,10 @@ impl CreatePartitionIndexInputBuilder {
     ) -> Self {
         self.partition_index = input;
         self
+    }
+    /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    pub fn get_partition_index(&self) -> &::std::option::Option<crate::types::PartitionIndex> {
+        &self.partition_index
     }
     /// Consumes the builder and constructs a [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
     pub fn build(

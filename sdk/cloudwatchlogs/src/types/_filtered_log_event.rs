@@ -78,6 +78,10 @@ impl FilteredLogEventBuilder {
         self.log_stream_name = input;
         self
     }
+    /// <p>The name of the log stream to which this event belongs.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
+    }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl FilteredLogEventBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
     }
     /// <p>The data contained in the log event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl FilteredLogEventBuilder {
         self.message = input;
         self
     }
+    /// <p>The data contained in the log event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn ingestion_time(mut self, input: i64) -> Self {
         self.ingestion_time = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl FilteredLogEventBuilder {
         self.ingestion_time = input;
         self
     }
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_ingestion_time(&self) -> &::std::option::Option<i64> {
+        &self.ingestion_time
+    }
     /// <p>The ID of the event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl FilteredLogEventBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The ID of the event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// Consumes the builder and constructs a [`FilteredLogEvent`](crate::types::FilteredLogEvent).
     pub fn build(self) -> crate::types::FilteredLogEvent {

@@ -36,6 +36,12 @@ impl SetUserSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetUserSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_user_settings::builders::SetUserSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl SetUserSettingsFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// Appends an item to `MFAOptions`.
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
@@ -142,5 +152,11 @@ impl SetUserSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mfa_options(input);
         self
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        self.inner.get_mfa_options()
     }
 }

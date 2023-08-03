@@ -146,6 +146,10 @@ impl GetLaunchConfigurationOutputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Launch configuration Source Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Launch configuration name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -155,6 +159,10 @@ impl GetLaunchConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Launch configuration name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Launch configuration EC2 Launch template ID.</p>
     pub fn ec2_launch_template_id(
@@ -172,6 +180,10 @@ impl GetLaunchConfigurationOutputBuilder {
         self.ec2_launch_template_id = input;
         self
     }
+    /// <p>Launch configuration EC2 Launch template ID.</p>
+    pub fn get_ec2_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_launch_template_id
+    }
     /// <p>Launch disposition for launch configuration.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.launch_disposition = ::std::option::Option::Some(input);
@@ -184,6 +196,12 @@ impl GetLaunchConfigurationOutputBuilder {
     ) -> Self {
         self.launch_disposition = input;
         self
+    }
+    /// <p>Launch disposition for launch configuration.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        &self.launch_disposition
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -201,6 +219,12 @@ impl GetLaunchConfigurationOutputBuilder {
         self.target_instance_type_right_sizing_method = input;
         self
     }
+    /// <p>Launch configuration Target instance type right sizing method.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        &self.target_instance_type_right_sizing_method
+    }
     /// <p>Copy Private IP during Launch Configuration.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.copy_private_ip = ::std::option::Option::Some(input);
@@ -210,6 +234,10 @@ impl GetLaunchConfigurationOutputBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_private_ip = input;
         self
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        &self.copy_private_ip
     }
     /// <p>Copy Tags during Launch Configuration.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -221,6 +249,10 @@ impl GetLaunchConfigurationOutputBuilder {
         self.copy_tags = input;
         self
     }
+    /// <p>Copy Tags during Launch Configuration.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
+    }
     /// <p>Launch configuration OS licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.licensing = ::std::option::Option::Some(input);
@@ -231,6 +263,10 @@ impl GetLaunchConfigurationOutputBuilder {
         self.licensing = input;
         self
     }
+    /// <p>Launch configuration OS licensing.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        &self.licensing
+    }
     /// <p>Launch configuration boot mode.</p>
     pub fn boot_mode(mut self, input: crate::types::BootMode) -> Self {
         self.boot_mode = ::std::option::Option::Some(input);
@@ -240,6 +276,10 @@ impl GetLaunchConfigurationOutputBuilder {
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootMode>) -> Self {
         self.boot_mode = input;
         self
+    }
+    /// <p>Launch configuration boot mode.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
+        &self.boot_mode
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
     pub fn post_launch_actions(mut self, input: crate::types::PostLaunchActions) -> Self {
@@ -254,6 +294,12 @@ impl GetLaunchConfigurationOutputBuilder {
         self.post_launch_actions = input;
         self
     }
+    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    pub fn get_post_launch_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostLaunchActions> {
+        &self.post_launch_actions
+    }
     /// <p>Enable map auto tagging.</p>
     pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
         self.enable_map_auto_tagging = ::std::option::Option::Some(input);
@@ -263,6 +309,10 @@ impl GetLaunchConfigurationOutputBuilder {
     pub fn set_enable_map_auto_tagging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_map_auto_tagging = input;
         self
+    }
+    /// <p>Enable map auto tagging.</p>
+    pub fn get_enable_map_auto_tagging(&self) -> &::std::option::Option<bool> {
+        &self.enable_map_auto_tagging
     }
     /// <p>Map auto tagging MPE ID.</p>
     pub fn map_auto_tagging_mpe_id(
@@ -279,6 +329,10 @@ impl GetLaunchConfigurationOutputBuilder {
     ) -> Self {
         self.map_auto_tagging_mpe_id = input;
         self
+    }
+    /// <p>Map auto tagging MPE ID.</p>
+    pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_auto_tagging_mpe_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

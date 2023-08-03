@@ -80,6 +80,10 @@ impl StandardBuilder {
         self.standards_arn = input;
         self
     }
+    /// <p>The ARN of a standard.</p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
+    }
     /// <p>The name of the standard.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl StandardBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the standard.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the standard.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl StandardBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the standard.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
@@ -112,6 +124,11 @@ impl StandardBuilder {
         self.enabled_by_default = input;
         self
     }
+    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    pub fn get_enabled_by_default(&self) -> &::std::option::Option<bool> {
+        &self.enabled_by_default
+    }
     /// <p>Provides details about the management of a standard. </p>
     pub fn standards_managed_by(mut self, input: crate::types::StandardsManagedBy) -> Self {
         self.standards_managed_by = ::std::option::Option::Some(input);
@@ -124,6 +141,12 @@ impl StandardBuilder {
     ) -> Self {
         self.standards_managed_by = input;
         self
+    }
+    /// <p>Provides details about the management of a standard. </p>
+    pub fn get_standards_managed_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandardsManagedBy> {
+        &self.standards_managed_by
     }
     /// Consumes the builder and constructs a [`Standard`](crate::types::Standard).
     pub fn build(self) -> crate::types::Standard {

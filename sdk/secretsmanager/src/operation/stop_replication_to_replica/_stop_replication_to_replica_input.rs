@@ -41,6 +41,10 @@ impl StopReplicationToReplicaInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN of the primary secret. </p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// Consumes the builder and constructs a [`StopReplicationToReplicaInput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput).
     pub fn build(
         self,

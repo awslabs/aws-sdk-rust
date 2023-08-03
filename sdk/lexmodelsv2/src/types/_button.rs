@@ -48,6 +48,10 @@ impl ButtonBuilder {
         self.text = input;
         self
     }
+    /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ButtonBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Button`](crate::types::Button).
     pub fn build(self) -> crate::types::Button {

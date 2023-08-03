@@ -106,6 +106,10 @@ impl GetCloudFormationTemplateOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The date and time this resource was created.</p>
     pub fn creation_time(
         mut self,
@@ -122,6 +126,10 @@ impl GetCloudFormationTemplateOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time this resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub fn expiration_time(
         mut self,
@@ -137,6 +145,10 @@ impl GetCloudFormationTemplateOutputBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_time
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -156,6 +168,11 @@ impl GetCloudFormationTemplateOutputBuilder {
         self.semantic_version = input;
         self
     }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
+    }
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -167,6 +184,11 @@ impl GetCloudFormationTemplateOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -180,6 +202,11 @@ impl GetCloudFormationTemplateOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub fn template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_url = ::std::option::Option::Some(input.into());
@@ -189,6 +216,10 @@ impl GetCloudFormationTemplateOutputBuilder {
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_url = input;
         self
+    }
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
+    pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

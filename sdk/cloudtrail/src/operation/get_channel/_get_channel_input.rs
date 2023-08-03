@@ -39,6 +39,10 @@ impl GetChannelInputBuilder {
         self.channel = input;
         self
     }
+    /// <p>The ARN or <code>UUID</code> of a channel.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
     pub fn build(
         self,

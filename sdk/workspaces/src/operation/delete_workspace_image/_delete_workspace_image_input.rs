@@ -40,6 +40,10 @@ impl DeleteWorkspaceImageInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// Consumes the builder and constructs a [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl GetDeviceRegistrationOutputBuilder {
         self.device_registration = input;
         self
     }
+    /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
+    pub fn get_device_registration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_registration
+    }
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     pub fn cache_ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_ttl = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl GetDeviceRegistrationOutputBuilder {
     pub fn set_cache_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_ttl = input;
         self
+    }
+    /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
+    pub fn get_cache_ttl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_ttl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl UpdateRouteCalculatorInputBuilder {
         self.calculator_name = input;
         self
     }
+    /// <p>The name of the route calculator resource to update.</p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculator_name
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -92,6 +96,14 @@ impl UpdateRouteCalculatorInputBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>Updates the description for the route calculator resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl UpdateRouteCalculatorInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Updates the description for the route calculator resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRouteCalculatorInput`](crate::operation::update_route_calculator::UpdateRouteCalculatorInput).
     pub fn build(

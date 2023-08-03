@@ -98,6 +98,10 @@ impl InputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>Name prefix to use when creating an in-application stream. Suppose that you specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. </p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
     pub fn input_processing_configuration(
         mut self,
@@ -114,6 +118,12 @@ impl InputBuilder {
         self.input_processing_configuration = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    pub fn get_input_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+        &self.input_processing_configuration
+    }
     /// <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
     pub fn kinesis_streams_input(mut self, input: crate::types::KinesisStreamsInput) -> Self {
@@ -129,6 +139,13 @@ impl InputBuilder {
         self.kinesis_streams_input = input;
         self
     }
+    /// <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+    /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    pub fn get_kinesis_streams_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamsInput> {
+        &self.kinesis_streams_input
+    }
     /// <p>If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
     pub fn kinesis_firehose_input(mut self, input: crate::types::KinesisFirehoseInput) -> Self {
@@ -143,6 +160,13 @@ impl InputBuilder {
     ) -> Self {
         self.kinesis_firehose_input = input;
         self
+    }
+    /// <p>If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+    /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    pub fn get_kinesis_firehose_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseInput> {
+        &self.kinesis_firehose_input
     }
     /// <p>Describes the number of in-application streams to create. </p>
     /// <p>Data from your source is routed to these in-application input streams.</p>
@@ -161,6 +185,12 @@ impl InputBuilder {
         self.input_parallelism = input;
         self
     }
+    /// <p>Describes the number of in-application streams to create. </p>
+    /// <p>Data from your source is routed to these in-application input streams.</p>
+    /// <p> (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    pub fn get_input_parallelism(&self) -> &::std::option::Option<crate::types::InputParallelism> {
+        &self.input_parallelism
+    }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
     pub fn input_schema(mut self, input: crate::types::SourceSchema) -> Self {
@@ -175,6 +205,11 @@ impl InputBuilder {
     ) -> Self {
         self.input_schema = input;
         self
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
+    /// <p>Also used to describe the format of the reference data source.</p>
+    pub fn get_input_schema(&self) -> &::std::option::Option<crate::types::SourceSchema> {
+        &self.input_schema
     }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {

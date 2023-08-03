@@ -71,6 +71,10 @@ impl UpdateFormInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateFormInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID for the form.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateFormInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the form.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl UpdateFormInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The request accepts the following data in JSON format.</p>
     pub fn updated_form(mut self, input: crate::types::UpdateFormData) -> Self {
@@ -119,6 +135,10 @@ impl UpdateFormInputBuilder {
     ) -> Self {
         self.updated_form = input;
         self
+    }
+    /// <p>The request accepts the following data in JSON format.</p>
+    pub fn get_updated_form(&self) -> &::std::option::Option<crate::types::UpdateFormData> {
+        &self.updated_form
     }
     /// Consumes the builder and constructs a [`UpdateFormInput`](crate::operation::update_form::UpdateFormInput).
     pub fn build(

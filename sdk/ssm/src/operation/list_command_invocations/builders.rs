@@ -36,6 +36,13 @@ impl ListCommandInvocationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCommandInvocations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListCommandInvocationsFluentBuilder {
         self.inner = self.inner.set_command_id(input);
         self
     }
+    /// <p>(Optional) The invocations for a specific command ID.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_command_id()
+    }
     /// <p>(Optional) The command execution details for a specific managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -147,6 +158,10 @@ impl ListCommandInvocationsFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>(Optional) The command execution details for a specific managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -158,6 +173,10 @@ impl ListCommandInvocationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +186,10 @@ impl ListCommandInvocationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `Filters`.
     ///
@@ -185,6 +208,12 @@ impl ListCommandInvocationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn details(mut self, input: bool) -> Self {
         self.inner = self.inner.details(input);
@@ -194,5 +223,9 @@ impl ListCommandInvocationsFluentBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_details(input);
         self
+    }
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
+    pub fn get_details(&self) -> &::std::option::Option<bool> {
+        self.inner.get_details()
     }
 }

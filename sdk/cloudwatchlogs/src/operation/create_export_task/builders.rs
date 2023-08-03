@@ -42,6 +42,12 @@ impl CreateExportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExportTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_export_task::builders::CreateExportTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateExportTaskFluentBuilder {
         self.inner = self.inner.set_task_name(input);
         self
     }
+    /// <p>The name of the export task.</p>
+    pub fn get_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_name()
+    }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(
         mut self,
@@ -147,6 +157,10 @@ impl CreateExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
+    }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
     pub fn log_stream_name_prefix(
@@ -164,6 +178,10 @@ impl CreateExportTaskFluentBuilder {
         self.inner = self.inner.set_log_stream_name_prefix(input);
         self
     }
+    /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_stream_name_prefix()
+    }
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
     pub fn from(mut self, input: i64) -> Self {
         self.inner = self.inner.from(input);
@@ -173,6 +191,10 @@ impl CreateExportTaskFluentBuilder {
     pub fn set_from(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_from(input);
         self
+    }
+    /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
+    pub fn get_from(&self) -> &::std::option::Option<i64> {
+        self.inner.get_from()
     }
     /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
@@ -186,6 +208,11 @@ impl CreateExportTaskFluentBuilder {
         self.inner = self.inner.set_to(input);
         self
     }
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
+    /// <p>You must specify a time that is not earlier than when this log group was created.</p>
+    pub fn get_to(&self) -> &::std::option::Option<i64> {
+        self.inner.get_to()
+    }
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
@@ -195,6 +222,10 @@ impl CreateExportTaskFluentBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination()
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     pub fn destination_prefix(
@@ -211,5 +242,9 @@ impl CreateExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_prefix(input);
         self
+    }
+    /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    pub fn get_destination_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_prefix()
     }
 }

@@ -96,6 +96,10 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
         self.crawl_attachments = input;
         self
     }
+    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_attachments
+    }
     /// Appends an item to `include_attachment_file_patterns`.
     ///
     /// To override the contents of this collection use [`set_include_attachment_file_patterns`](Self::set_include_attachment_file_patterns).
@@ -119,6 +123,13 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     ) -> Self {
         self.include_attachment_file_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    /// <p>The regex is applied to the file name of the attachment.</p>
+    pub fn get_include_attachment_file_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.include_attachment_file_patterns
     }
     /// Appends an item to `exclude_attachment_file_patterns`.
     ///
@@ -144,6 +155,13 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
         self.exclude_attachment_file_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    /// <p>The regex is applied to the file name of the attachment.</p>
+    pub fn get_exclude_attachment_file_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_attachment_file_patterns
+    }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
     pub fn document_data_field_name(
         mut self,
@@ -160,6 +178,10 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
         self.document_data_field_name = input;
         self
     }
+    /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
+    pub fn get_document_data_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_data_field_name
+    }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub fn document_title_field_name(
         mut self,
@@ -175,6 +197,10 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     ) -> Self {
         self.document_title_field_name = input;
         self
+    }
+    /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
+    pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_field_name
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -194,6 +220,12 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Consumes the builder and constructs a [`ServiceNowServiceCatalogConfiguration`](crate::types::ServiceNowServiceCatalogConfiguration).
     pub fn build(self) -> crate::types::ServiceNowServiceCatalogConfiguration {

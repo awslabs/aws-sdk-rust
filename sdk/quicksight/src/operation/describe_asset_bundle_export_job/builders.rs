@@ -38,6 +38,10 @@ impl DescribeAssetBundleExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAssetBundleExportJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DescribeAssetBundleExportJobFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account the export job is executed in. </p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn asset_bundle_export_job_id(
         mut self,
@@ -149,5 +157,9 @@ impl DescribeAssetBundleExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_bundle_export_job_id(input);
         self
+    }
+    /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
+    pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_bundle_export_job_id()
     }
 }

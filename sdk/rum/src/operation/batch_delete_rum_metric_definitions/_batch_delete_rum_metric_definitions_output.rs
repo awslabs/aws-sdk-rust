@@ -69,6 +69,13 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>An array of error objects, if the operation caused any errors.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>
+    {
+        &self.errors
+    }
     /// Appends an item to `metric_definition_ids`.
     ///
     /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
@@ -90,6 +97,12 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
     ) -> Self {
         self.metric_definition_ids = input;
         self
+    }
+    /// <p>The IDs of the metric definitions that were deleted.</p>
+    pub fn get_metric_definition_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_definition_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

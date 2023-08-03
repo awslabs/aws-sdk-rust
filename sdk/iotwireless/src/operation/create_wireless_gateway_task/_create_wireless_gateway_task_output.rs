@@ -60,6 +60,12 @@ impl CreateWirelessGatewayTaskOutputBuilder {
         self.wireless_gateway_task_definition_id = input;
         self
     }
+    /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    pub fn get_wireless_gateway_task_definition_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_task_definition_id
+    }
     /// <p>The status of the request.</p>
     pub fn status(mut self, input: crate::types::WirelessGatewayTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl CreateWirelessGatewayTaskOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WirelessGatewayTaskStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

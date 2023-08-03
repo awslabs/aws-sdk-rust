@@ -53,6 +53,10 @@ impl WarningBuilder {
         self.code = input;
         self
     }
+    /// <p>The code of the cross-regional warning.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
@@ -66,6 +70,12 @@ impl WarningBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
+    /// </note>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {

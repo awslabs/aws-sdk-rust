@@ -80,6 +80,10 @@ impl ArtifactRevisionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an action is created.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The revision ID of the artifact.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ArtifactRevisionBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision ID of the artifact.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
     pub fn revision_change_identifier(
@@ -106,6 +114,10 @@ impl ArtifactRevisionBuilder {
         self.revision_change_identifier = input;
         self
     }
+    /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
+    pub fn get_revision_change_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_change_identifier
+    }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
     pub fn revision_summary(
         mut self,
@@ -122,6 +134,10 @@ impl ArtifactRevisionBuilder {
         self.revision_summary = input;
         self
     }
+    /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
+    pub fn get_revision_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_summary
+    }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl ArtifactRevisionBuilder {
         self.created = input;
         self
     }
+    /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub fn revision_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_url = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl ArtifactRevisionBuilder {
     pub fn set_revision_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_url = input;
         self
+    }
+    /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID is linked to a commit details page.</p>
+    pub fn get_revision_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_url
     }
     /// Consumes the builder and constructs a [`ArtifactRevision`](crate::types::ArtifactRevision).
     pub fn build(self) -> crate::types::ArtifactRevision {

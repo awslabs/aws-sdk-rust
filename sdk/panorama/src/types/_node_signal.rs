@@ -54,6 +54,10 @@ impl NodeSignalBuilder {
         self.node_instance_id = input;
         self
     }
+    /// <p>The camera node's name, from the application manifest.</p>
+    pub fn get_node_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_instance_id
+    }
     /// <p>The signal value.</p>
     pub fn signal(mut self, input: crate::types::NodeSignalValue) -> Self {
         self.signal = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl NodeSignalBuilder {
     ) -> Self {
         self.signal = input;
         self
+    }
+    /// <p>The signal value.</p>
+    pub fn get_signal(&self) -> &::std::option::Option<crate::types::NodeSignalValue> {
+        &self.signal
     }
     /// Consumes the builder and constructs a [`NodeSignal`](crate::types::NodeSignal).
     pub fn build(self) -> crate::types::NodeSignal {

@@ -36,6 +36,10 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFirewallRuleGroupAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
         self.inner = self.inner.set_firewall_rule_group_association_id(input);
         self
     }
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    pub fn get_firewall_rule_group_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_association_id()
+    }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -117,6 +127,11 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+    /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub fn mutation_protection(mut self, input: crate::types::MutationProtectionStatus) -> Self {
@@ -131,6 +146,12 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
         self.inner = self.inner.set_mutation_protection(input);
         self
     }
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
+    pub fn get_mutation_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+        self.inner.get_mutation_protection()
+    }
     /// <p>The name of the rule group association.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -140,5 +161,9 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the rule group association.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

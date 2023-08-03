@@ -45,6 +45,10 @@ impl StopBackupJobInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// Consumes the builder and constructs a [`StopBackupJobInput`](crate::operation::stop_backup_job::StopBackupJobInput).
     pub fn build(
         self,

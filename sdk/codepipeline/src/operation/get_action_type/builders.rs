@@ -36,6 +36,12 @@ impl GetActionTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetActionType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_action_type::builders::GetActionTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,18 @@ impl GetActionTypeFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        self.inner.get_category()
+    }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner(input.into());
@@ -146,6 +164,10 @@ impl GetActionTypeFluentBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
+    }
+    /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +179,10 @@ impl GetActionTypeFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider()
+    }
     /// <p>A string that describes the action type version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -166,5 +192,9 @@ impl GetActionTypeFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>A string that describes the action type version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

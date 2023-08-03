@@ -57,6 +57,12 @@ impl PushNotificationPreferencesBuilder {
         self.allow_notifications = input;
         self
     }
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+    pub fn get_allow_notifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowNotifications> {
+        &self.allow_notifications
+    }
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
     pub fn filter_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_rule = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl PushNotificationPreferencesBuilder {
     pub fn set_filter_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_rule = input;
         self
+    }
+    /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+    pub fn get_filter_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_rule
     }
     /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::types::PushNotificationPreferences).
     pub fn build(self) -> crate::types::PushNotificationPreferences {

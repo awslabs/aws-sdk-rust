@@ -40,6 +40,10 @@ impl MetricGranularityTypeBuilder {
         self.granularity = input;
         self
     }
+    /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.granularity
+    }
     /// Consumes the builder and constructs a [`MetricGranularityType`](crate::types::MetricGranularityType).
     pub fn build(self) -> crate::types::MetricGranularityType {
         crate::types::MetricGranularityType {

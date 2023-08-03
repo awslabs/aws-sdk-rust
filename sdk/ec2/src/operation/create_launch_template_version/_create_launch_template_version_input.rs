@@ -105,6 +105,10 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +120,11 @@ impl CreateLaunchTemplateVersionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Constraint: Maximum 128 ASCII characters.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
@@ -135,6 +144,11 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn launch_template_name(
@@ -153,6 +167,11 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self.launch_template_name = input;
         self
     }
+    /// <p>The name of the launch template.</p>
+    /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
+    }
     /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
     pub fn source_version(
         mut self,
@@ -168,6 +187,10 @@ impl CreateLaunchTemplateVersionInputBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// <p>A description for the version of the launch template.</p>
     pub fn version_description(
@@ -185,6 +208,10 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self.version_description = input;
         self
     }
+    /// <p>A description for the version of the launch template.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
+    }
     /// <p>The information for the launch template.</p>
     pub fn launch_template_data(mut self, input: crate::types::RequestLaunchTemplateData) -> Self {
         self.launch_template_data = ::std::option::Option::Some(input);
@@ -198,6 +225,12 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self.launch_template_data = input;
         self
     }
+    /// <p>The information for the launch template.</p>
+    pub fn get_launch_template_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
+        &self.launch_template_data
+    }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageID</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn resolve_alias(mut self, input: bool) -> Self {
@@ -209,6 +242,11 @@ impl CreateLaunchTemplateVersionInputBuilder {
     pub fn set_resolve_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.resolve_alias = input;
         self
+    }
+    /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageID</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_resolve_alias(&self) -> &::std::option::Option<bool> {
+        &self.resolve_alias
     }
     /// Consumes the builder and constructs a [`CreateLaunchTemplateVersionInput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionInput).
     pub fn build(

@@ -54,6 +54,11 @@ impl SendMessageBatchInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -72,6 +77,12 @@ impl SendMessageBatchInputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
     pub fn build(

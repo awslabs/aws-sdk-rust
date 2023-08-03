@@ -46,6 +46,10 @@ impl CloudWatchLoggingOptionBuilder {
         self.log_stream_arn = input;
         self
     }
+    /// <p>The ARN of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn
+    }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
     pub fn build(self) -> crate::types::CloudWatchLoggingOption {
         crate::types::CloudWatchLoggingOption {

@@ -63,6 +63,10 @@ impl ListTypesOutputBuilder {
         self.types = input;
         self
     }
+    /// <p>The <code>Type</code> objects.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Type>> {
+        &self.types
+    }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListTypesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

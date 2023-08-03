@@ -51,6 +51,12 @@ impl GetCampaignActivitiesOutputBuilder {
         self.activities_response = input;
         self
     }
+    /// <p>Provides information about the activities that were performed by a campaign.</p>
+    pub fn get_activities_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActivitiesResponse> {
+        &self.activities_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

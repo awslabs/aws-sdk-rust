@@ -39,6 +39,10 @@ impl ListSpacesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
     pub fn build(
         self,

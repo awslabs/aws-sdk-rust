@@ -46,6 +46,10 @@ impl PropertyNameQueryBuilder {
         self.property_name_hint = input;
         self
     }
+    /// <p>Text that begins a property's name.</p>
+    pub fn get_property_name_hint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_name_hint
+    }
     /// Consumes the builder and constructs a [`PropertyNameQuery`](crate::types::PropertyNameQuery).
     pub fn build(self) -> crate::types::PropertyNameQuery {
         crate::types::PropertyNameQuery {

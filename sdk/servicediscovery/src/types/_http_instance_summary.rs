@@ -82,6 +82,10 @@ impl HttpInstanceSummaryBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of an instance that matches the values that you specified in the request.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p> <code></code> <code></code> <code></code> </p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn namespace_name(
@@ -100,6 +104,11 @@ impl HttpInstanceSummaryBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p> <code></code> <code></code> <code></code> </p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -109,6 +118,10 @@ impl HttpInstanceSummaryBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service that you specified when you registered the instance.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
     pub fn health_status(mut self, input: crate::types::HealthStatus) -> Self {
@@ -122,6 +135,10 @@ impl HttpInstanceSummaryBuilder {
     ) -> Self {
         self.health_status = input;
         self
+    }
+    /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::HealthStatus> {
+        &self.health_status
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -147,6 +164,14 @@ impl HttpInstanceSummaryBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`HttpInstanceSummary`](crate::types::HttpInstanceSummary).
     pub fn build(self) -> crate::types::HttpInstanceSummary {

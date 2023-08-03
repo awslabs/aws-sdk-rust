@@ -55,6 +55,10 @@ impl UpdateEndpointAccessInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the VPC endpoint to update.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Appends an item to `vpc_security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -76,6 +80,12 @@ impl UpdateEndpointAccessInputBuilder {
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
+    }
+    /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateEndpointAccessInput`](crate::operation::update_endpoint_access::UpdateEndpointAccessInput).
     pub fn build(

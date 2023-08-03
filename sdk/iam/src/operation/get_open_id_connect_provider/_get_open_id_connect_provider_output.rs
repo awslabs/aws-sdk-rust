@@ -79,6 +79,10 @@ impl GetOpenIdConnectProviderOutputBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// Appends an item to `client_id_list`.
     ///
     /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
@@ -100,6 +104,12 @@ impl GetOpenIdConnectProviderOutputBuilder {
     ) -> Self {
         self.client_id_list = input;
         self
+    }
+    /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    pub fn get_client_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_id_list
     }
     /// Appends an item to `thumbprint_list`.
     ///
@@ -123,6 +133,12 @@ impl GetOpenIdConnectProviderOutputBuilder {
         self.thumbprint_list = input;
         self
     }
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
+    pub fn get_thumbprint_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.thumbprint_list
+    }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl GetOpenIdConnectProviderOutputBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Appends an item to `tags`.
     ///
@@ -154,6 +174,10 @@ impl GetOpenIdConnectProviderOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

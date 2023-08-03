@@ -63,6 +63,10 @@ impl ListConnectionsInputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The state of the connection.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.connection_state = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ListConnectionsInputBuilder {
         self.connection_state = input;
         self
     }
+    /// <p>The state of the connection.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.connection_state
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ListConnectionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of connections to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ListConnectionsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of connections to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(

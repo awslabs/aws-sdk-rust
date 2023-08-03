@@ -78,6 +78,10 @@ impl ValidateConfigurationSettingsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application that the configuration template or environment belongs to.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
     pub fn template_name(
@@ -95,6 +99,11 @@ impl ValidateConfigurationSettingsInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the configuration template to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and an environment name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
@@ -114,6 +123,11 @@ impl ValidateConfigurationSettingsInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and a configuration template name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// Appends an item to `option_settings`.
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
@@ -132,6 +146,12 @@ impl ValidateConfigurationSettingsInputBuilder {
     ) -> Self {
         self.option_settings = input;
         self
+    }
+    /// <p>A list of the options and desired values to evaluate.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        &self.option_settings
     }
     /// Consumes the builder and constructs a [`ValidateConfigurationSettingsInput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsInput).
     pub fn build(

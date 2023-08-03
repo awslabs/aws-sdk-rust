@@ -54,6 +54,10 @@ impl UpdateScheduledQueryInputBuilder {
         self.scheduled_query_arn = input;
         self
     }
+    /// <p>ARN of the scheuled query.</p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_query_arn
+    }
     /// <p>State of the scheduled query. </p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateScheduledQueryInputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State of the scheduled query. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`UpdateScheduledQueryInput`](crate::operation::update_scheduled_query::UpdateScheduledQueryInput).
     pub fn build(

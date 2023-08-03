@@ -36,6 +36,12 @@ impl DescribeDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_detector::builders::DescribeDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeDetectorFluentBuilder {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_name()
+    }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_value(input.into());
@@ -141,5 +151,9 @@ impl DescribeDetectorFluentBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_value(input);
         self
+    }
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_value()
     }
 }

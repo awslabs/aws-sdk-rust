@@ -49,6 +49,12 @@ impl HistogramAggregatedFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`HistogramAggregatedFieldWells`](crate::types::HistogramAggregatedFieldWells).
     pub fn build(self) -> crate::types::HistogramAggregatedFieldWells {
         crate::types::HistogramAggregatedFieldWells {

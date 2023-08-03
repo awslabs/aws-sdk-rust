@@ -46,6 +46,10 @@ impl AwsIotAnalyticsParametersBuilder {
         self.data_set_name = input;
         self
     }
+    /// <p>Dataset name.</p>
+    pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_name
+    }
     /// Consumes the builder and constructs a [`AwsIotAnalyticsParameters`](crate::types::AwsIotAnalyticsParameters).
     pub fn build(self) -> crate::types::AwsIotAnalyticsParameters {
         crate::types::AwsIotAnalyticsParameters {

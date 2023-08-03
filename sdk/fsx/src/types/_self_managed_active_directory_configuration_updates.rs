@@ -101,6 +101,11 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         self.user_name = input;
         self
     }
+    /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
+    /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -110,6 +115,10 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Appends an item to `dns_ips`.
     ///
@@ -130,6 +139,10 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         self.dns_ips = input;
         self
     }
+    /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ips
+    }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -139,6 +152,10 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
     pub fn organizational_unit_distinguished_name(
@@ -156,6 +173,12 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         self.organizational_unit_distinguished_name = input;
         self
     }
+    /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_distinguished_name
+    }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
     pub fn file_system_administrators_group(
         mut self,
@@ -171,6 +194,12 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     ) -> Self {
         self.file_system_administrators_group = input;
         self
+    }
+    /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
+    pub fn get_file_system_administrators_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_administrators_group
     }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryConfigurationUpdates {

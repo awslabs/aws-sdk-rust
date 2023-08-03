@@ -36,6 +36,12 @@ impl UpdateNamedQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNamedQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateNamedQueryFluentBuilder {
         self.inner = self.inner.set_named_query_id(input);
         self
     }
+    /// <p>The unique identifier (UUID) of the query.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_named_query_id()
+    }
     /// <p>The name of the query.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +151,10 @@ impl UpdateNamedQueryFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the query.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl UpdateNamedQueryFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The query description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The contents of the query with all query statements.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -161,5 +179,9 @@ impl UpdateNamedQueryFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The contents of the query with all query statements.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
 }

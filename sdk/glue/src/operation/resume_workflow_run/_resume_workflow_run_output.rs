@@ -55,6 +55,10 @@ impl ResumeWorkflowRunOutputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// Appends an item to `node_ids`.
     ///
     /// To override the contents of this collection use [`set_node_ids`](Self::set_node_ids).
@@ -73,6 +77,10 @@ impl ResumeWorkflowRunOutputBuilder {
     ) -> Self {
         self.node_ids = input;
         self
+    }
+    /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
+    pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.node_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

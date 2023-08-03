@@ -57,6 +57,10 @@ impl DescribeScheduleInputBuilder {
         self.channel_id = input;
         self
     }
+    /// Id of the channel whose schedule is being updated.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Placeholder documentation for MaxResults
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl DescribeScheduleInputBuilder {
         self.max_results = input;
         self
     }
+    /// Placeholder documentation for MaxResults
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl DescribeScheduleInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Placeholder documentation for __string
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
     pub fn build(

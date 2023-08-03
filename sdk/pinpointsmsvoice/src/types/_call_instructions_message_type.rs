@@ -40,6 +40,10 @@ impl CallInstructionsMessageTypeBuilder {
         self.text = input;
         self
     }
+    /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`CallInstructionsMessageType`](crate::types::CallInstructionsMessageType).
     pub fn build(self) -> crate::types::CallInstructionsMessageType {
         crate::types::CallInstructionsMessageType { text: self.text }

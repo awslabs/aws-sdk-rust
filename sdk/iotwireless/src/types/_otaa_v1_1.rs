@@ -56,6 +56,10 @@ impl OtaaV11Builder {
         self.app_key = input;
         self
     }
+    /// <p>The AppKey value.</p>
+    pub fn get_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_key
+    }
     /// <p>The NwkKey value.</p>
     pub fn nwk_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nwk_key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl OtaaV11Builder {
         self.nwk_key = input;
         self
     }
+    /// <p>The NwkKey value.</p>
+    pub fn get_nwk_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nwk_key
+    }
     /// <p>The JoinEUI value.</p>
     pub fn join_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.join_eui = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl OtaaV11Builder {
     pub fn set_join_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.join_eui = input;
         self
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn get_join_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.join_eui
     }
     /// Consumes the builder and constructs a [`OtaaV11`](crate::types::OtaaV11).
     pub fn build(self) -> crate::types::OtaaV11 {

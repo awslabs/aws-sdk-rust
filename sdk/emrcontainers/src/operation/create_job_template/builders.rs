@@ -36,6 +36,12 @@ impl CreateJobTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJobTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The specified name of the job template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The client token of the job template.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -135,6 +145,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token of the job template.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub fn job_template_data(mut self, input: crate::types::JobTemplateData) -> Self {
@@ -148,6 +162,10 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_template_data(input);
         self
+    }
+    /// <p>The job template data which holds values of StartJobRun API request.</p>
+    pub fn get_job_template_data(&self) -> &::std::option::Option<crate::types::JobTemplateData> {
+        self.inner.get_job_template_data()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -172,6 +190,14 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags that are associated with the job template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -181,5 +207,9 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
+    }
+    /// <p>The KMS key ARN used to encrypt the job template.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
     }
 }

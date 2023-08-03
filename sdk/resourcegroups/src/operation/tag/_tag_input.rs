@@ -55,6 +55,10 @@ impl TagInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the resource group to which to add tags.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +83,14 @@ impl TagInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagInput`](crate::operation::tag::TagInput).
     pub fn build(

@@ -69,6 +69,15 @@ impl ReceiptFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the IP address filter. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub fn ip_filter(mut self, input: crate::types::ReceiptIpFilter) -> Self {
         self.ip_filter = ::std::option::Option::Some(input);
@@ -81,6 +90,10 @@ impl ReceiptFilterBuilder {
     ) -> Self {
         self.ip_filter = input;
         self
+    }
+    /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
+    pub fn get_ip_filter(&self) -> &::std::option::Option<crate::types::ReceiptIpFilter> {
+        &self.ip_filter
     }
     /// Consumes the builder and constructs a [`ReceiptFilter`](crate::types::ReceiptFilter).
     pub fn build(self) -> crate::types::ReceiptFilter {

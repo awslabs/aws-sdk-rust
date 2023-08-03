@@ -37,6 +37,13 @@ impl DeletePreparedStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePreparedStatement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_prepared_statement::builders::DeletePreparedStatementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeletePreparedStatementFluentBuilder {
         self.inner = self.inner.set_statement_name(input);
         self
     }
+    /// <p>The name of the prepared statement to delete.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_name()
+    }
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -142,5 +153,9 @@ impl DeletePreparedStatementFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The workgroup to which the statement to be deleted belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
 }

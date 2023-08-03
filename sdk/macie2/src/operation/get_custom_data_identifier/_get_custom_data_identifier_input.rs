@@ -41,6 +41,10 @@ impl GetCustomDataIdentifierInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetCustomDataIdentifierInput`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierInput).
     pub fn build(
         self,

@@ -38,6 +38,12 @@ impl AddInstanceFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddInstanceFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl AddInstanceFleetFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>Specifies the configuration of the instance fleet.</p>
     pub fn instance_fleet(mut self, input: crate::types::InstanceFleetConfig) -> Self {
         self.inner = self.inner.instance_fleet(input);
@@ -140,5 +150,9 @@ impl AddInstanceFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_fleet(input);
         self
+    }
+    /// <p>Specifies the configuration of the instance fleet.</p>
+    pub fn get_instance_fleet(&self) -> &::std::option::Option<crate::types::InstanceFleetConfig> {
+        self.inner.get_instance_fleet()
     }
 }

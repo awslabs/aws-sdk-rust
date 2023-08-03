@@ -39,6 +39,10 @@ impl CancelQueryInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
     pub fn build(
         self,

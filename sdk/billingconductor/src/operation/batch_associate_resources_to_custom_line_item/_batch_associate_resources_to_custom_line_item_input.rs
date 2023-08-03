@@ -58,6 +58,10 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p> A percentage custom line item ARN to associate the resources to. </p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -80,6 +84,12 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p> A list containing the ARNs of the resources to be associated. </p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
@@ -95,6 +105,12 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
     ) -> Self {
         self.billing_period_range = input;
         self
+    }
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`BatchAssociateResourcesToCustomLineItemInput`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>{

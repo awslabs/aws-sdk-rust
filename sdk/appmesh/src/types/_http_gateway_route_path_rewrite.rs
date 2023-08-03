@@ -40,6 +40,10 @@ impl HttpGatewayRoutePathRewriteBuilder {
         self.exact = input;
         self
     }
+    /// <p>The exact path to rewrite.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exact
+    }
     /// Consumes the builder and constructs a [`HttpGatewayRoutePathRewrite`](crate::types::HttpGatewayRoutePathRewrite).
     pub fn build(self) -> crate::types::HttpGatewayRoutePathRewrite {
         crate::types::HttpGatewayRoutePathRewrite { exact: self.exact }

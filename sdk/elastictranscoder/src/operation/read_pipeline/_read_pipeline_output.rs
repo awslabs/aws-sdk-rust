@@ -57,6 +57,10 @@ impl ReadPipelineOutputBuilder {
         self.pipeline = input;
         self
     }
+    /// <p>A section of the response body that provides information about the pipeline.</p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::Pipeline> {
+        &self.pipeline
+    }
     /// Appends an item to `warnings`.
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
@@ -77,6 +81,11 @@ impl ReadPipelineOutputBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

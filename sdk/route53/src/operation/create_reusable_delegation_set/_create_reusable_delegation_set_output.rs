@@ -57,6 +57,10 @@ impl CreateReusableDelegationSetOutputBuilder {
         self.delegation_set = input;
         self
     }
+    /// <p>A complex type that contains name server information.</p>
+    pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
+        &self.delegation_set
+    }
     /// <p>The unique URL representing the new reusable delegation set.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateReusableDelegationSetOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The unique URL representing the new reusable delegation set.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

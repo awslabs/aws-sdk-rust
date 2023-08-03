@@ -48,6 +48,10 @@ impl ProductionVariantServerlessUpdateConfigBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
+    }
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
     pub fn provisioned_concurrency(mut self, input: i32) -> Self {
         self.provisioned_concurrency = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ProductionVariantServerlessUpdateConfigBuilder {
     pub fn set_provisioned_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_concurrency = input;
         self
+    }
+    /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    pub fn get_provisioned_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.provisioned_concurrency
     }
     /// Consumes the builder and constructs a [`ProductionVariantServerlessUpdateConfig`](crate::types::ProductionVariantServerlessUpdateConfig).
     pub fn build(self) -> crate::types::ProductionVariantServerlessUpdateConfig {

@@ -60,6 +60,10 @@ impl GenerateCredentialReportOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>Information about the state of the credential report.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReportStateType> {
+        &self.state
+    }
     /// <p>Information about the credential report.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl GenerateCredentialReportOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Information about the credential report.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

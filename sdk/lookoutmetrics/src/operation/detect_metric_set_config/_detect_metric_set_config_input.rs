@@ -59,6 +59,10 @@ impl DetectMetricSetConfigInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>An anomaly detector ARN.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>A data source.</p>
     pub fn auto_detection_metric_source(
         mut self,
@@ -74,6 +78,12 @@ impl DetectMetricSetConfigInputBuilder {
     ) -> Self {
         self.auto_detection_metric_source = input;
         self
+    }
+    /// <p>A data source.</p>
+    pub fn get_auto_detection_metric_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoDetectionMetricSource> {
+        &self.auto_detection_metric_source
     }
     /// Consumes the builder and constructs a [`DetectMetricSetConfigInput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigInput).
     pub fn build(

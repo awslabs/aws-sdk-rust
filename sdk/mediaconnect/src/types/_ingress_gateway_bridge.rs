@@ -55,6 +55,10 @@ impl IngressGatewayBridgeBuilder {
         self.instance_id = input;
         self
     }
+    /// The ID of the instance running this bridge.
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// The maximum expected bitrate (in bps) of the ingress bridge.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl IngressGatewayBridgeBuilder {
         self.max_bitrate = input;
         self
     }
+    /// The maximum expected bitrate (in bps) of the ingress bridge.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// The maximum number of outputs on the ingress bridge.
     pub fn max_outputs(mut self, input: i32) -> Self {
         self.max_outputs = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl IngressGatewayBridgeBuilder {
     pub fn set_max_outputs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_outputs = input;
         self
+    }
+    /// The maximum number of outputs on the ingress bridge.
+    pub fn get_max_outputs(&self) -> &::std::option::Option<i32> {
+        &self.max_outputs
     }
     /// Consumes the builder and constructs a [`IngressGatewayBridge`](crate::types::IngressGatewayBridge).
     pub fn build(self) -> crate::types::IngressGatewayBridge {

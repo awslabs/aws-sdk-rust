@@ -105,6 +105,12 @@ impl WriteApplicationSettingsRequestBuilder {
         self.campaign_hook = input;
         self
     }
+    /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
+    pub fn get_campaign_hook(&self) -> &::std::option::Option<crate::types::CampaignHook> {
+        &self.campaign_hook
+    }
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_metrics_enabled = ::std::option::Option::Some(input);
@@ -115,6 +121,10 @@ impl WriteApplicationSettingsRequestBuilder {
         self.cloud_watch_metrics_enabled = input;
         self
     }
+    /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
+    pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_metrics_enabled
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn event_tagging_enabled(mut self, input: bool) -> Self {
         self.event_tagging_enabled = ::std::option::Option::Some(input);
@@ -124,6 +134,10 @@ impl WriteApplicationSettingsRequestBuilder {
     pub fn set_event_tagging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.event_tagging_enabled = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_event_tagging_enabled(&self) -> &::std::option::Option<bool> {
+        &self.event_tagging_enabled
     }
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
@@ -141,6 +155,12 @@ impl WriteApplicationSettingsRequestBuilder {
     ) -> Self {
         self.limits = input;
         self
+    }
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
+    pub fn get_limits(&self) -> &::std::option::Option<crate::types::CampaignLimits> {
+        &self.limits
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
@@ -169,6 +189,19 @@ impl WriteApplicationSettingsRequestBuilder {
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
         self.quiet_time = input;
         self
+    }
+    /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
+    /// <ul>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
+    /// <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
+    /// </ul>
+    /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
+    pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
+        &self.quiet_time
     }
     /// Consumes the builder and constructs a [`WriteApplicationSettingsRequest`](crate::types::WriteApplicationSettingsRequest).
     pub fn build(self) -> crate::types::WriteApplicationSettingsRequest {

@@ -61,6 +61,12 @@ impl ObjectTypeKeyBuilder {
         self.standard_identifiers = input;
         self
     }
+    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
+    pub fn get_standard_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardIdentifier>> {
+        &self.standard_identifiers
+    }
     /// Appends an item to `field_names`.
     ///
     /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
@@ -79,6 +85,12 @@ impl ObjectTypeKeyBuilder {
     ) -> Self {
         self.field_names = input;
         self
+    }
+    /// <p>The reference for the key name of the fields map.</p>
+    pub fn get_field_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.field_names
     }
     /// Consumes the builder and constructs a [`ObjectTypeKey`](crate::types::ObjectTypeKey).
     pub fn build(self) -> crate::types::ObjectTypeKey {

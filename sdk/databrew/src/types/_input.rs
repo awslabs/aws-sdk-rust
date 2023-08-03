@@ -74,6 +74,10 @@ impl InputBuilder {
         self.s3_input_definition = input;
         self
     }
+    /// <p>The Amazon S3 location where the data is stored.</p>
+    pub fn get_s3_input_definition(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_input_definition
+    }
     /// <p>The Glue Data Catalog parameters for the data.</p>
     pub fn data_catalog_input_definition(
         mut self,
@@ -89,6 +93,12 @@ impl InputBuilder {
     ) -> Self {
         self.data_catalog_input_definition = input;
         self
+    }
+    /// <p>The Glue Data Catalog parameters for the data.</p>
+    pub fn get_data_catalog_input_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCatalogInputDefinition> {
+        &self.data_catalog_input_definition
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
     pub fn database_input_definition(
@@ -106,6 +116,12 @@ impl InputBuilder {
         self.database_input_definition = input;
         self
     }
+    /// <p>Connection information for dataset input files stored in a database.</p>
+    pub fn get_database_input_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseInputDefinition> {
+        &self.database_input_definition
+    }
     /// <p>Contains additional resource information needed for specific datasets.</p>
     pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -115,6 +131,10 @@ impl InputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Contains additional resource information needed for specific datasets.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {

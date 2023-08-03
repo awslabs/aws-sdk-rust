@@ -36,6 +36,12 @@ impl ReserveContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReserveContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reserve_contact::builders::ReserveContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ReserveContactFluentBuilder {
         self.inner = self.inner.set_mission_profile_arn(input);
         self
     }
+    /// <p>ARN of a mission profile.</p>
+    pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mission_profile_arn()
+    }
     /// <p>ARN of a satellite</p>
     pub fn satellite_arn(
         mut self,
@@ -140,6 +150,10 @@ impl ReserveContactFluentBuilder {
         self.inner = self.inner.set_satellite_arn(input);
         self
     }
+    /// <p>ARN of a satellite</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_satellite_arn()
+    }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -153,6 +167,10 @@ impl ReserveContactFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>Start time of a contact in UTC.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>End time of a contact in UTC.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -165,6 +183,10 @@ impl ReserveContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>End time of a contact in UTC.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>Name of a ground station.</p>
     pub fn ground_station(
@@ -181,6 +203,10 @@ impl ReserveContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ground_station(input);
         self
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn get_ground_station(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ground_station()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -204,5 +230,13 @@ impl ReserveContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

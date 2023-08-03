@@ -93,6 +93,10 @@ impl ListImagesInputBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        &self.owner
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -126,6 +130,17 @@ impl ListImagesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.by_name = ::std::option::Option::Some(input);
@@ -135,6 +150,10 @@ impl ListImagesInputBuilder {
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.by_name = input;
         self
+    }
+    /// <p>Requests a list of images with a specific recipe name.</p>
+    pub fn get_by_name(&self) -> &::std::option::Option<bool> {
+        &self.by_name
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -146,6 +165,10 @@ impl ListImagesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -156,6 +179,10 @@ impl ListImagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Includes deprecated images in the response list.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
         self.include_deprecated = ::std::option::Option::Some(input);
@@ -165,6 +192,10 @@ impl ListImagesInputBuilder {
     pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deprecated = input;
         self
+    }
+    /// <p>Includes deprecated images in the response list.</p>
+    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
+        &self.include_deprecated
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
     pub fn build(

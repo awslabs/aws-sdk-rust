@@ -89,6 +89,10 @@ impl ConfigurationEventBuilder {
         self.monitored_resource_arn = input;
         self
     }
+    /// <p> The resource monitored by Application Insights. </p>
+    pub fn get_monitored_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitored_resource_arn
+    }
     /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
     pub fn event_status(mut self, input: crate::types::ConfigurationEventStatus) -> Self {
         self.event_status = ::std::option::Option::Some(input);
@@ -101,6 +105,12 @@ impl ConfigurationEventBuilder {
     ) -> Self {
         self.event_status = input;
         self
+    }
+    /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
+    pub fn get_event_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
+        &self.event_status
     }
     /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
     pub fn event_resource_type(
@@ -118,6 +128,12 @@ impl ConfigurationEventBuilder {
         self.event_resource_type = input;
         self
     }
+    /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
+    pub fn get_event_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationEventResourceType> {
+        &self.event_resource_type
+    }
     /// <p> The timestamp of the event. </p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl ConfigurationEventBuilder {
         self.event_time = input;
         self
     }
+    /// <p> The timestamp of the event. </p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p> The details of the event in plain text. </p>
     pub fn event_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_detail = ::std::option::Option::Some(input.into());
@@ -140,6 +160,10 @@ impl ConfigurationEventBuilder {
     pub fn set_event_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_detail = input;
         self
+    }
+    /// <p> The details of the event in plain text. </p>
+    pub fn get_event_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_detail
     }
     /// <p> The name of the resource Application Insights attempted to configure. </p>
     pub fn event_resource_name(
@@ -156,6 +180,10 @@ impl ConfigurationEventBuilder {
     ) -> Self {
         self.event_resource_name = input;
         self
+    }
+    /// <p> The name of the resource Application Insights attempted to configure. </p>
+    pub fn get_event_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_resource_name
     }
     /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     pub fn build(self) -> crate::types::ConfigurationEvent {

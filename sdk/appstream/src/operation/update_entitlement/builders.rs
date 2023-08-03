@@ -36,6 +36,12 @@ impl UpdateEntitlementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEntitlement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_entitlement::builders::UpdateEntitlementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateEntitlementFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -136,6 +146,10 @@ impl UpdateEntitlementFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The description of the entitlement.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl UpdateEntitlementFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the entitlement.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Specifies whether all or only selected apps are entitled.</p>
     pub fn app_visibility(mut self, input: crate::types::AppVisibility) -> Self {
@@ -158,6 +176,10 @@ impl UpdateEntitlementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_visibility(input);
         self
+    }
+    /// <p>Specifies whether all or only selected apps are entitled.</p>
+    pub fn get_app_visibility(&self) -> &::std::option::Option<crate::types::AppVisibility> {
+        self.inner.get_app_visibility()
     }
     /// Appends an item to `Attributes`.
     ///
@@ -175,5 +197,11 @@ impl UpdateEntitlementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The attributes of the entitlement.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+        self.inner.get_attributes()
     }
 }

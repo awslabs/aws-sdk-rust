@@ -48,6 +48,10 @@ impl ProcessorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of processor.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProcessorType> {
+        &self.r#type
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -66,6 +70,12 @@ impl ProcessorBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The processor parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Processor`](crate::types::Processor).
     pub fn build(self) -> crate::types::Processor {

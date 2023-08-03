@@ -56,6 +56,10 @@ impl AdmChannelRequestBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
     pub fn client_secret(
         mut self,
@@ -72,6 +76,10 @@ impl AdmChannelRequestBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl AdmChannelRequestBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable the ADM channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AdmChannelRequest`](crate::types::AdmChannelRequest).
     pub fn build(self) -> crate::types::AdmChannelRequest {

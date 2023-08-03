@@ -46,6 +46,10 @@ impl EventBridgeDataSourceConfigBuilder {
         self.event_bus_arn = input;
         self
     }
+    /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
+    pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_arn
+    }
     /// Consumes the builder and constructs a [`EventBridgeDataSourceConfig`](crate::types::EventBridgeDataSourceConfig).
     pub fn build(self) -> crate::types::EventBridgeDataSourceConfig {
         crate::types::EventBridgeDataSourceConfig {

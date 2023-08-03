@@ -48,6 +48,10 @@ impl SchemaColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of data in the column.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SchemaColumnBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The type of data in the column.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`SchemaColumn`](crate::types::SchemaColumn).
     pub fn build(self) -> crate::types::SchemaColumn {

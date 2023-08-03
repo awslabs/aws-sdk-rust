@@ -65,6 +65,10 @@ impl PrefixListBuilder {
         self.cidrs = input;
         self
     }
+    /// <p>The IP address range of the Amazon Web Service.</p>
+    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidrs
+    }
     /// <p>The ID of the prefix.</p>
     pub fn prefix_list_id(
         mut self,
@@ -81,6 +85,10 @@ impl PrefixListBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The name of the prefix.</p>
     pub fn prefix_list_name(
         mut self,
@@ -96,6 +104,10 @@ impl PrefixListBuilder {
     ) -> Self {
         self.prefix_list_name = input;
         self
+    }
+    /// <p>The name of the prefix.</p>
+    pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_name
     }
     /// Consumes the builder and constructs a [`PrefixList`](crate::types::PrefixList).
     pub fn build(self) -> crate::types::PrefixList {

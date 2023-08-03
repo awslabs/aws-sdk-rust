@@ -144,6 +144,10 @@ impl NamespaceBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a namespace.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -154,6 +158,10 @@ impl NamespaceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -163,6 +171,10 @@ impl NamespaceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the namespace, such as <code>example.com</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
     /// <dl>
@@ -214,6 +226,30 @@ impl NamespaceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
+    /// <dl>
+    /// <dt>
+    /// HTTP
+    /// </dt>
+    /// <dd>
+    /// <p>Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.</p>
+    /// </dd>
+    /// <dt>
+    /// DNS_PUBLIC
+    /// </dt>
+    /// <dd>
+    /// <p>Instances can be discovered using public DNS queries and using the <code>DiscoverInstances</code> API.</p>
+    /// </dd>
+    /// <dt>
+    /// DNS_PRIVATE
+    /// </dt>
+    /// <dd>
+    /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code> API.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NamespaceType> {
+        &self.r#type
+    }
     /// <p>The description that you specify for the namespace when you create it.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -224,6 +260,10 @@ impl NamespaceBuilder {
         self.description = input;
         self
     }
+    /// <p>The description that you specify for the namespace when you create it.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The number of services that are associated with the namespace.</p>
     pub fn service_count(mut self, input: i32) -> Self {
         self.service_count = ::std::option::Option::Some(input);
@@ -233,6 +273,10 @@ impl NamespaceBuilder {
     pub fn set_service_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.service_count = input;
         self
+    }
+    /// <p>The number of services that are associated with the namespace.</p>
+    pub fn get_service_count(&self) -> &::std::option::Option<i32> {
+        &self.service_count
     }
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
     pub fn properties(mut self, input: crate::types::NamespaceProperties) -> Self {
@@ -247,6 +291,10 @@ impl NamespaceBuilder {
         self.properties = input;
         self
     }
+    /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::NamespaceProperties> {
+        &self.properties
+    }
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -259,6 +307,10 @@ impl NamespaceBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn creator_request_id(
@@ -275,6 +327,10 @@ impl NamespaceBuilder {
     ) -> Self {
         self.creator_request_id = input;
         self
+    }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
     }
     /// Consumes the builder and constructs a [`Namespace`](crate::types::Namespace).
     pub fn build(self) -> crate::types::Namespace {

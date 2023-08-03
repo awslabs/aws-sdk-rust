@@ -65,6 +65,10 @@ impl PipeTargetSqsQueueParametersBuilder {
         self.message_group_id = input;
         self
     }
+    /// <p>The FIFO message group ID to use as the target.</p>
+    pub fn get_message_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_group_id
+    }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
     pub fn message_deduplication_id(
@@ -82,6 +86,11 @@ impl PipeTargetSqsQueueParametersBuilder {
     ) -> Self {
         self.message_deduplication_id = input;
         self
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+    /// <p>The token used for deduplication of sent messages.</p>
+    pub fn get_message_deduplication_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_deduplication_id
     }
     /// Consumes the builder and constructs a [`PipeTargetSqsQueueParameters`](crate::types::PipeTargetSqsQueueParameters).
     pub fn build(self) -> crate::types::PipeTargetSqsQueueParameters {

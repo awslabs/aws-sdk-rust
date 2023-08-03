@@ -65,6 +65,10 @@ impl PermissionTypeMismatchExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>There is a mismatch between the SupportedPermissionType used in the query request and the permissions defined on the target table.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

@@ -43,6 +43,10 @@ impl VpcEndpointFiltersBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`VpcEndpointFilters`](crate::types::VpcEndpointFilters).
     pub fn build(self) -> crate::types::VpcEndpointFilters {
         crate::types::VpcEndpointFilters {

@@ -36,6 +36,12 @@ impl GetExtensionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetExtensionVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetExtensionVersionFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl GetExtensionVersionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The version of the extension.</p>
     pub fn extension_version(
@@ -151,5 +165,9 @@ impl GetExtensionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_extension_version(input);
         self
+    }
+    /// <p>The version of the extension.</p>
+    pub fn get_extension_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_extension_version()
     }
 }

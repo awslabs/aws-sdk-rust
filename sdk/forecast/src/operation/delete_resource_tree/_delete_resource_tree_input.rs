@@ -40,6 +40,10 @@ impl DeleteResourceTreeInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DeleteResourceTreeInput`](crate::operation::delete_resource_tree::DeleteResourceTreeInput).
     pub fn build(
         self,

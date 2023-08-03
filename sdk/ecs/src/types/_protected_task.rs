@@ -56,6 +56,10 @@ impl ProtectedTaskBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The task ARN.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     pub fn protection_enabled(mut self, input: bool) -> Self {
         self.protection_enabled = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ProtectedTaskBuilder {
     pub fn set_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.protection_enabled = input;
         self
+    }
+    /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+    pub fn get_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.protection_enabled
     }
     /// <p>The epoch time when protection for the task will expire.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl ProtectedTaskBuilder {
     ) -> Self {
         self.expiration_date = input;
         self
+    }
+    /// <p>The epoch time when protection for the task will expire.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
     }
     /// Consumes the builder and constructs a [`ProtectedTask`](crate::types::ProtectedTask).
     pub fn build(self) -> crate::types::ProtectedTask {

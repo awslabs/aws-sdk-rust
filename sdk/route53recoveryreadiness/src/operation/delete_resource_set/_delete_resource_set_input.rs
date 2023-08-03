@@ -46,6 +46,10 @@ impl DeleteResourceSetInputBuilder {
         self.resource_set_name = input;
         self
     }
+    /// <p>Name of a resource set.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_name
+    }
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
     pub fn build(
         self,

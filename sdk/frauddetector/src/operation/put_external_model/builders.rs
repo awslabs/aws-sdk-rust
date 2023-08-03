@@ -36,6 +36,12 @@ impl PutExternalModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutExternalModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_external_model::builders::PutExternalModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutExternalModelFluentBuilder {
         self.inner = self.inner.set_model_endpoint(input);
         self
     }
+    /// <p>The model endpoints name.</p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_endpoint()
+    }
     /// <p>The source of the model.</p>
     pub fn model_source(mut self, input: crate::types::ModelSource) -> Self {
         self.inner = self.inner.model_source(input);
@@ -144,6 +154,10 @@ impl PutExternalModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_source(input);
         self
+    }
+    /// <p>The source of the model.</p>
+    pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
+        self.inner.get_model_source()
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
     pub fn invoke_model_endpoint_role_arn(
@@ -161,6 +175,12 @@ impl PutExternalModelFluentBuilder {
         self.inner = self.inner.set_invoke_model_endpoint_role_arn(input);
         self
     }
+    /// <p>The IAM role used to invoke the model endpoint.</p>
+    pub fn get_invoke_model_endpoint_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invoke_model_endpoint_role_arn()
+    }
     /// <p>The model endpoint input configuration.</p>
     pub fn input_configuration(mut self, input: crate::types::ModelInputConfiguration) -> Self {
         self.inner = self.inner.input_configuration(input);
@@ -173,6 +193,12 @@ impl PutExternalModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_configuration(input);
         self
+    }
+    /// <p>The model endpoint input configuration.</p>
+    pub fn get_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelInputConfiguration> {
+        self.inner.get_input_configuration()
     }
     /// <p>The model endpoint output configuration.</p>
     pub fn output_configuration(mut self, input: crate::types::ModelOutputConfiguration) -> Self {
@@ -187,6 +213,12 @@ impl PutExternalModelFluentBuilder {
         self.inner = self.inner.set_output_configuration(input);
         self
     }
+    /// <p>The model endpoint output configuration.</p>
+    pub fn get_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelOutputConfiguration> {
+        self.inner.get_output_configuration()
+    }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
     pub fn model_endpoint_status(mut self, input: crate::types::ModelEndpointStatus) -> Self {
         self.inner = self.inner.model_endpoint_status(input);
@@ -199,6 +231,12 @@ impl PutExternalModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_endpoint_status(input);
         self
+    }
+    /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+    pub fn get_model_endpoint_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelEndpointStatus> {
+        self.inner.get_model_endpoint_status()
     }
     /// Appends an item to `tags`.
     ///
@@ -216,5 +254,9 @@ impl PutExternalModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

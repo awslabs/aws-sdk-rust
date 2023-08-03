@@ -65,6 +65,12 @@ impl GetAnomalyMonitorsOutputBuilder {
         self.anomaly_monitors = input;
         self
     }
+    /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
+    pub fn get_anomaly_monitors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>> {
+        &self.anomaly_monitors
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(
         mut self,
@@ -80,6 +86,10 @@ impl GetAnomalyMonitorsOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

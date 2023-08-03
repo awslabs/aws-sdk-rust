@@ -37,6 +37,10 @@ impl AssociateSkillWithSkillGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSkillWithSkillGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl AssociateSkillWithSkillGroupFluentBuilder {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
+    /// <p>The ARN of the skill group to associate the skill to. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_arn()
+    }
     /// <p>The unique identifier of the skill.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
@@ -142,5 +150,9 @@ impl AssociateSkillWithSkillGroupFluentBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
+    }
+    /// <p>The unique identifier of the skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
     }
 }

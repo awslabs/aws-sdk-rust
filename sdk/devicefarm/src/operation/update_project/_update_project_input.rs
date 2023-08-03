@@ -64,6 +64,10 @@ impl UpdateProjectInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A string that represents the new name of the project that you are updating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A string that represents the new name of the project that you are updating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl UpdateProjectInputBuilder {
         self.default_job_timeout_minutes = input;
         self
     }
+    /// <p>The number of minutes a test run in the project executes before it times out.</p>
+    pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.default_job_timeout_minutes
+    }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(

@@ -39,6 +39,12 @@ impl DeleteMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_message::builders::DeleteMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +129,11 @@ impl DeleteMessageFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// <p>The receipt handle associated with the message to delete.</p>
     pub fn receipt_handle(
         mut self,
@@ -138,5 +149,9 @@ impl DeleteMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_receipt_handle(input);
         self
+    }
+    /// <p>The receipt handle associated with the message to delete.</p>
+    pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_receipt_handle()
     }
 }

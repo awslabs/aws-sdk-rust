@@ -136,6 +136,10 @@ impl VoiceTemplateResponseBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The text of the script that's used in messages that are based on the message template, in plain text format.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl VoiceTemplateResponseBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The text of the script that's used in messages that are based on the message template, in plain text format.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
     pub fn creation_date(
@@ -162,6 +170,10 @@ impl VoiceTemplateResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
     pub fn default_substitutions(
         mut self,
@@ -177,6 +189,10 @@ impl VoiceTemplateResponseBuilder {
     ) -> Self {
         self.default_substitutions = input;
         self
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
     }
     /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn language_code(
@@ -194,6 +210,10 @@ impl VoiceTemplateResponseBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -209,6 +229,10 @@ impl VoiceTemplateResponseBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -235,6 +259,14 @@ impl VoiceTemplateResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The custom description of the message template.</p>
     pub fn template_description(
         mut self,
@@ -250,6 +282,10 @@ impl VoiceTemplateResponseBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The name of the message template.</p>
     pub fn template_name(
@@ -267,6 +303,10 @@ impl VoiceTemplateResponseBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of channel that the message template is designed for. For a voice template, this value is VOICE.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -280,6 +320,10 @@ impl VoiceTemplateResponseBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of channel that the message template is designed for. For a voice template, this value is VOICE.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -290,6 +334,10 @@ impl VoiceTemplateResponseBuilder {
         self.version = input;
         self
     }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
@@ -299,6 +347,10 @@ impl VoiceTemplateResponseBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
     }
     /// Consumes the builder and constructs a [`VoiceTemplateResponse`](crate::types::VoiceTemplateResponse).
     pub fn build(self) -> crate::types::VoiceTemplateResponse {

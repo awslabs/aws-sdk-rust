@@ -36,6 +36,10 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetNetworkInterfaceAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -116,6 +124,10 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
     pub fn source_dest_check(
         mut self,
@@ -131,5 +143,9 @@ impl ResetNetworkInterfaceAttributeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_dest_check(input);
         self
+    }
+    /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_dest_check()
     }
 }

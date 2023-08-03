@@ -45,6 +45,10 @@ impl DeleteModelPackageGroupPolicyInputBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group for which to delete the policy.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelPackageGroupPolicyInput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyInput).
     pub fn build(
         self,

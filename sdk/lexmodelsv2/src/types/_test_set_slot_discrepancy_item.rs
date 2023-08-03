@@ -56,6 +56,10 @@ impl TestSetSlotDiscrepancyItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent associated with the slot in the discrepancy report.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The name of the slot in the discrepancy report.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl TestSetSlotDiscrepancyItemBuilder {
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
+    }
+    /// <p>The name of the slot in the discrepancy report.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl TestSetSlotDiscrepancyItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`TestSetSlotDiscrepancyItem`](crate::types::TestSetSlotDiscrepancyItem).
     pub fn build(self) -> crate::types::TestSetSlotDiscrepancyItem {

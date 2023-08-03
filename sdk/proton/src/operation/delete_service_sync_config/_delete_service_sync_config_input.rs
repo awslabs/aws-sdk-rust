@@ -41,6 +41,10 @@ impl DeleteServiceSyncConfigInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that you want to delete the service sync configuration for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
     pub fn build(
         self,

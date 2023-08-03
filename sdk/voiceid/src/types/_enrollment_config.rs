@@ -61,6 +61,12 @@ impl EnrollmentConfigBuilder {
         self.existing_enrollment_action = input;
         self
     }
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    pub fn get_existing_enrollment_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExistingEnrollmentAction> {
+        &self.existing_enrollment_action
+    }
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fn fraud_detection_config(
         mut self,
@@ -76,6 +82,12 @@ impl EnrollmentConfigBuilder {
     ) -> Self {
         self.fraud_detection_config = input;
         self
+    }
+    /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
+    pub fn get_fraud_detection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig> {
+        &self.fraud_detection_config
     }
     /// Consumes the builder and constructs a [`EnrollmentConfig`](crate::types::EnrollmentConfig).
     pub fn build(self) -> crate::types::EnrollmentConfig {

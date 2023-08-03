@@ -74,6 +74,10 @@ impl ListOutpostsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ListOutpostsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `life_cycle_status_filter`.
     ///
@@ -106,6 +114,12 @@ impl ListOutpostsInputBuilder {
         self.life_cycle_status_filter = input;
         self
     }
+    /// <p>Filters the results by the lifecycle status.</p>
+    pub fn get_life_cycle_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.life_cycle_status_filter
+    }
     /// Appends an item to `availability_zone_filter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
@@ -128,6 +142,12 @@ impl ListOutpostsInputBuilder {
         self.availability_zone_filter = input;
         self
     }
+    /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
+    pub fn get_availability_zone_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_filter
+    }
     /// Appends an item to `availability_zone_id_filter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
@@ -149,6 +169,12 @@ impl ListOutpostsInputBuilder {
     ) -> Self {
         self.availability_zone_id_filter = input;
         self
+    }
+    /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
+    pub fn get_availability_zone_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_id_filter
     }
     /// Consumes the builder and constructs a [`ListOutpostsInput`](crate::operation::list_outposts::ListOutpostsInput).
     pub fn build(

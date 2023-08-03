@@ -51,6 +51,10 @@ impl DeserializerBuilder {
         self.open_x_json_ser_de = input;
         self
     }
+    /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
+    pub fn get_open_x_json_ser_de(&self) -> &::std::option::Option<crate::types::OpenXJsonSerDe> {
+        &self.open_x_json_ser_de
+    }
     /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
     pub fn hive_json_ser_de(mut self, input: crate::types::HiveJsonSerDe) -> Self {
         self.hive_json_ser_de = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeserializerBuilder {
     ) -> Self {
         self.hive_json_ser_de = input;
         self
+    }
+    /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
+    pub fn get_hive_json_ser_de(&self) -> &::std::option::Option<crate::types::HiveJsonSerDe> {
+        &self.hive_json_ser_de
     }
     /// Consumes the builder and constructs a [`Deserializer`](crate::types::Deserializer).
     pub fn build(self) -> crate::types::Deserializer {

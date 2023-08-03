@@ -48,6 +48,10 @@ impl ExpressionStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The expression that is evaluated for sorting while processing a search request.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.options
+    }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ExpressionStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ExpressionStatus`](crate::types::ExpressionStatus).
     pub fn build(self) -> crate::types::ExpressionStatus {

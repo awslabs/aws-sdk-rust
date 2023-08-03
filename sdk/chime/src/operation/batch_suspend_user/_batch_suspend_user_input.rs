@@ -48,6 +48,10 @@ impl BatchSuspendUserInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `user_id_list`.
     ///
     /// To override the contents of this collection use [`set_user_id_list`](Self::set_user_id_list).
@@ -66,6 +70,12 @@ impl BatchSuspendUserInputBuilder {
     ) -> Self {
         self.user_id_list = input;
         self
+    }
+    /// <p>The request containing the user IDs to suspend.</p>
+    pub fn get_user_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_id_list
     }
     /// Consumes the builder and constructs a [`BatchSuspendUserInput`](crate::operation::batch_suspend_user::BatchSuspendUserInput).
     pub fn build(

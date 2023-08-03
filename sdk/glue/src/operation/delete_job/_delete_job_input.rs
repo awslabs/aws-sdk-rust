@@ -39,6 +39,10 @@ impl DeleteJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition to delete.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
     pub fn build(
         self,

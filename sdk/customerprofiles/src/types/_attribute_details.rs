@@ -57,6 +57,12 @@ impl AttributeDetailsBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A list of attribute items specified in the mathematical expression.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>> {
+        &self.attributes
+    }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl AttributeDetailsBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`AttributeDetails`](crate::types::AttributeDetails).
     pub fn build(self) -> crate::types::AttributeDetails {

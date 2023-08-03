@@ -180,6 +180,10 @@ impl AccessPreviewFindingBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
     pub fn existing_finding_id(
         mut self,
@@ -196,6 +200,10 @@ impl AccessPreviewFindingBuilder {
         self.existing_finding_id = input;
         self
     }
+    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
+    pub fn get_existing_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.existing_finding_id
+    }
     /// <p>The existing status of the finding, provided only for existing findings.</p>
     pub fn existing_finding_status(mut self, input: crate::types::FindingStatus) -> Self {
         self.existing_finding_status = ::std::option::Option::Some(input);
@@ -208,6 +216,12 @@ impl AccessPreviewFindingBuilder {
     ) -> Self {
         self.existing_finding_status = input;
         self
+    }
+    /// <p>The existing status of the finding, provided only for existing findings.</p>
+    pub fn get_existing_finding_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingStatus> {
+        &self.existing_finding_status
     }
     /// Adds a key-value pair to `principal`.
     ///
@@ -234,6 +248,14 @@ impl AccessPreviewFindingBuilder {
         self.principal = input;
         self
     }
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    pub fn get_principal(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.principal
+    }
     /// Appends an item to `action`.
     ///
     /// To override the contents of this collection use [`set_action`](Self::set_action).
@@ -252,6 +274,10 @@ impl AccessPreviewFindingBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action
     }
     /// Adds a key-value pair to `condition`.
     ///
@@ -278,6 +304,14 @@ impl AccessPreviewFindingBuilder {
         self.condition = input;
         self
     }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn get_condition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.condition
+    }
     /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -288,6 +322,10 @@ impl AccessPreviewFindingBuilder {
         self.resource = input;
         self
     }
+    /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub fn is_public(mut self, input: bool) -> Self {
         self.is_public = ::std::option::Option::Some(input);
@@ -297,6 +335,10 @@ impl AccessPreviewFindingBuilder {
     pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_public = input;
         self
+    }
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
     }
     /// <p>The type of the resource that can be accessed in the finding.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -311,6 +353,10 @@ impl AccessPreviewFindingBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource that can be accessed in the finding.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The time at which the access preview finding was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -323,6 +369,10 @@ impl AccessPreviewFindingBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which the access preview finding was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
@@ -349,6 +399,16 @@ impl AccessPreviewFindingBuilder {
         self.change_type = input;
         self
     }
+    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
+    /// <ul>
+    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
+    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
+    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
+    /// </ul>
+    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    pub fn get_change_type(&self) -> &::std::option::Option<crate::types::FindingChangeType> {
+        &self.change_type
+    }
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -358,6 +418,10 @@ impl AccessPreviewFindingBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
+        &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub fn resource_owner_account(
@@ -375,6 +439,10 @@ impl AccessPreviewFindingBuilder {
         self.resource_owner_account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+    pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_account
+    }
     /// <p>An error.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -384,6 +452,10 @@ impl AccessPreviewFindingBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// Appends an item to `sources`.
     ///
@@ -403,6 +475,12 @@ impl AccessPreviewFindingBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`AccessPreviewFinding`](crate::types::AccessPreviewFinding).
     pub fn build(self) -> crate::types::AccessPreviewFinding {

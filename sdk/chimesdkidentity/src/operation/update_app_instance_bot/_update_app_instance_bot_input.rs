@@ -78,6 +78,10 @@ impl UpdateAppInstanceBotInputBuilder {
         self.app_instance_bot_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_bot_arn
+    }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateAppInstanceBotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>AppInstanceBot</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateAppInstanceBotInputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The configuration for the bot update.</p>
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
@@ -110,6 +122,10 @@ impl UpdateAppInstanceBotInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The configuration for the bot update.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
     pub fn build(

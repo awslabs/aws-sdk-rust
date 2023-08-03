@@ -56,6 +56,10 @@ impl SubscriberBuilder {
         self.address = input;
         self
     }
+    /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The notification delivery channel. </p>
     pub fn r#type(mut self, input: crate::types::SubscriberType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SubscriberBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SubscriberType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The notification delivery channel. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SubscriberType> {
+        &self.r#type
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     pub fn status(mut self, input: crate::types::SubscriberStatus) -> Self {
@@ -78,6 +86,10 @@ impl SubscriberBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates if the subscriber accepts the notifications. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriberStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`Subscriber`](crate::types::Subscriber).
     pub fn build(self) -> crate::types::Subscriber {

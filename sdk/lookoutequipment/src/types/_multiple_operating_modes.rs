@@ -43,6 +43,10 @@ impl MultipleOperatingModesBuilder {
         self.status = input;
         self
     }
+    /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
     pub fn build(self) -> crate::types::MultipleOperatingModes {
         crate::types::MultipleOperatingModes {

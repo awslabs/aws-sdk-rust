@@ -96,6 +96,10 @@ impl VirtualClusterBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the virtual cluster.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the virtual cluster.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl VirtualClusterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the virtual cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the virtual cluster.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl VirtualClusterBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the virtual cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The state of the virtual cluster.</p>
     pub fn state(mut self, input: crate::types::VirtualClusterState) -> Self {
@@ -129,6 +141,10 @@ impl VirtualClusterBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the virtual cluster.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VirtualClusterState> {
+        &self.state
+    }
     /// <p>The container provider of the virtual cluster.</p>
     pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
         self.container_provider = ::std::option::Option::Some(input);
@@ -142,6 +158,12 @@ impl VirtualClusterBuilder {
         self.container_provider = input;
         self
     }
+    /// <p>The container provider of the virtual cluster.</p>
+    pub fn get_container_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerProvider> {
+        &self.container_provider
+    }
     /// <p>The date and time when the virtual cluster is created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl VirtualClusterBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time when the virtual cluster is created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +205,14 @@ impl VirtualClusterBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The assigned tags of the virtual cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VirtualCluster`](crate::types::VirtualCluster).
     pub fn build(self) -> crate::types::VirtualCluster {

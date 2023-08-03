@@ -37,6 +37,13 @@ impl CreateSignalingChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSignalingChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateSignalingChannelFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
         self.inner = self.inner.channel_type(input);
@@ -139,6 +150,10 @@ impl CreateSignalingChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_type(input);
         self
+    }
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        self.inner.get_channel_type()
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
     pub fn single_master_configuration(
@@ -156,6 +171,12 @@ impl CreateSignalingChannelFluentBuilder {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    pub fn get_single_master_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+        self.inner.get_single_master_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -172,5 +193,9 @@ impl CreateSignalingChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

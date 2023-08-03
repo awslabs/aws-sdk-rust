@@ -40,6 +40,10 @@ impl EntityRecognizerEntityListBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`EntityRecognizerEntityList`](crate::types::EntityRecognizerEntityList).
     pub fn build(self) -> crate::types::EntityRecognizerEntityList {
         crate::types::EntityRecognizerEntityList {

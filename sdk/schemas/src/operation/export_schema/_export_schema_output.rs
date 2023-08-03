@@ -79,6 +79,10 @@ impl ExportSchemaOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +93,10 @@ impl ExportSchemaOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +105,10 @@ impl ExportSchemaOutputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn schema_version(
@@ -115,6 +127,10 @@ impl ExportSchemaOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +139,10 @@ impl ExportSchemaOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

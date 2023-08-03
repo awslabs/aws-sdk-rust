@@ -98,6 +98,10 @@ impl ListModelCardsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Only list model cards that were created after the time specified.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Only list model cards that were created before the time specified.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl ListModelCardsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>Only list model cards that were created before the time specified.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>The maximum number of model cards to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -120,6 +128,10 @@ impl ListModelCardsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of model cards to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Only list model cards with names that contain the specified string.</p>
     pub fn name_contains(
@@ -137,6 +149,10 @@ impl ListModelCardsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>Only list model cards with names that contain the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>Only list model cards with the specified approval status.</p>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl ListModelCardsInputBuilder {
         self.model_card_status = input;
         self
     }
+    /// <p>Only list model cards with the specified approval status.</p>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
+    }
     /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl ListModelCardsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
     pub fn sort_by(mut self, input: crate::types::ModelCardSortBy) -> Self {
@@ -173,6 +197,10 @@ impl ListModelCardsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelCardSortBy> {
+        &self.sort_by
+    }
     /// <p>Sort model cards by ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::ModelCardSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl ListModelCardsInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Sort model cards by ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ModelCardSortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListModelCardsInput`](crate::operation::list_model_cards::ListModelCardsInput).
     pub fn build(

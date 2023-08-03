@@ -83,6 +83,12 @@ impl QueryExecutionStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
+    /// <p>Athena automatically retries your queries in cases of certain transient errors. As a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
+    /// </note>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::QueryExecutionState> {
+        &self.state
+    }
     /// <p>Further detail about the status of the query.</p>
     pub fn state_change_reason(
         mut self,
@@ -99,6 +105,10 @@ impl QueryExecutionStatusBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>Further detail about the status of the query.</p>
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_change_reason
+    }
     /// <p>The date and time that the query was submitted.</p>
     pub fn submission_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submission_date_time = ::std::option::Option::Some(input);
@@ -111,6 +121,10 @@ impl QueryExecutionStatusBuilder {
     ) -> Self {
         self.submission_date_time = input;
         self
+    }
+    /// <p>The date and time that the query was submitted.</p>
+    pub fn get_submission_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submission_date_time
     }
     /// <p>The date and time that the query completed.</p>
     pub fn completion_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,6 +139,10 @@ impl QueryExecutionStatusBuilder {
         self.completion_date_time = input;
         self
     }
+    /// <p>The date and time that the query completed.</p>
+    pub fn get_completion_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_date_time
+    }
     /// <p>Provides information about an Athena query error.</p>
     pub fn athena_error(mut self, input: crate::types::AthenaError) -> Self {
         self.athena_error = ::std::option::Option::Some(input);
@@ -137,6 +155,10 @@ impl QueryExecutionStatusBuilder {
     ) -> Self {
         self.athena_error = input;
         self
+    }
+    /// <p>Provides information about an Athena query error.</p>
+    pub fn get_athena_error(&self) -> &::std::option::Option<crate::types::AthenaError> {
+        &self.athena_error
     }
     /// Consumes the builder and constructs a [`QueryExecutionStatus`](crate::types::QueryExecutionStatus).
     pub fn build(self) -> crate::types::QueryExecutionStatus {

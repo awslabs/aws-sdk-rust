@@ -60,6 +60,10 @@ impl WirelessGatewayLogOptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The wireless gateway type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayType> {
+        &self.r#type
+    }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl WirelessGatewayLogOptionBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Appends an item to `events`.
     ///
@@ -88,6 +96,12 @@ impl WirelessGatewayLogOptionBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>The list of wireless gateway event log options.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`WirelessGatewayLogOption`](crate::types::WirelessGatewayLogOption).
     pub fn build(self) -> crate::types::WirelessGatewayLogOption {

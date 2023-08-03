@@ -61,6 +61,11 @@ impl ListResolverConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `resolver_configs`.
     ///
     /// To override the contents of this collection use [`set_resolver_configs`](Self::set_resolver_configs).
@@ -79,6 +84,12 @@ impl ListResolverConfigsOutputBuilder {
     ) -> Self {
         self.resolver_configs = input;
         self
+    }
+    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
+    pub fn get_resolver_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>> {
+        &self.resolver_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

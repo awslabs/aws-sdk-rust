@@ -80,6 +80,10 @@ impl CreateOrganizationInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The AWS Directory Service directory ID.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The organization alias.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CreateOrganizationInputBuilder {
         self.alias = input;
         self
     }
+    /// <p>The organization alias.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// <p>The idempotency token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl CreateOrganizationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `domains`.
     ///
@@ -119,6 +131,10 @@ impl CreateOrganizationInputBuilder {
         self.domains = input;
         self
     }
+    /// <p>The email domains to associate with the organization.</p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Domain>> {
+        &self.domains
+    }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl CreateOrganizationInputBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     pub fn enable_interoperability(mut self, input: bool) -> Self {
         self.enable_interoperability = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl CreateOrganizationInputBuilder {
     pub fn set_enable_interoperability(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_interoperability = input;
         self
+    }
+    /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
+    pub fn get_enable_interoperability(&self) -> &::std::option::Option<bool> {
+        &self.enable_interoperability
     }
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
     pub fn build(

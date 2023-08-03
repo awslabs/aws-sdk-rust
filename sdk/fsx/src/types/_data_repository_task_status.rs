@@ -72,6 +72,10 @@ impl DataRepositoryTaskStatusBuilder {
         self.total_count = input;
         self
     }
+    /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
+    }
     /// <p>A running total of the number of files that the task has successfully processed.</p>
     pub fn succeeded_count(mut self, input: i64) -> Self {
         self.succeeded_count = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DataRepositoryTaskStatusBuilder {
         self.succeeded_count = input;
         self
     }
+    /// <p>A running total of the number of files that the task has successfully processed.</p>
+    pub fn get_succeeded_count(&self) -> &::std::option::Option<i64> {
+        &self.succeeded_count
+    }
     /// <p>A running total of the number of files that the task failed to process.</p>
     pub fn failed_count(mut self, input: i64) -> Self {
         self.failed_count = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl DataRepositoryTaskStatusBuilder {
     pub fn set_failed_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_count = input;
         self
+    }
+    /// <p>A running total of the number of files that the task failed to process.</p>
+    pub fn get_failed_count(&self) -> &::std::option::Option<i64> {
+        &self.failed_count
     }
     /// <p>The time at which the task status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl DataRepositoryTaskStatusBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time at which the task status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub fn released_capacity(mut self, input: i64) -> Self {
         self.released_capacity = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl DataRepositoryTaskStatusBuilder {
     pub fn set_released_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.released_capacity = input;
         self
+    }
+    /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+    pub fn get_released_capacity(&self) -> &::std::option::Option<i64> {
+        &self.released_capacity
     }
     /// Consumes the builder and constructs a [`DataRepositoryTaskStatus`](crate::types::DataRepositoryTaskStatus).
     pub fn build(self) -> crate::types::DataRepositoryTaskStatus {

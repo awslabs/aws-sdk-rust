@@ -85,6 +85,12 @@ impl RegisterAccountOutputBuilder {
         self.register_account_status = input;
         self
     }
+    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    pub fn get_register_account_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.register_account_status
+    }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     pub fn timestream_resources(mut self, input: crate::types::TimestreamResources) -> Self {
         self.timestream_resources = ::std::option::Option::Some(input);
@@ -97,6 +103,12 @@ impl RegisterAccountOutputBuilder {
     ) -> Self {
         self.timestream_resources = input;
         self
+    }
+    /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    pub fn get_timestream_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimestreamResources> {
+        &self.timestream_resources
     }
     /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
     pub fn iam_resources(mut self, input: crate::types::IamResources) -> Self {
@@ -111,6 +123,10 @@ impl RegisterAccountOutputBuilder {
         self.iam_resources = input;
         self
     }
+    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    pub fn get_iam_resources(&self) -> &::std::option::Option<crate::types::IamResources> {
+        &self.iam_resources
+    }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -124,6 +140,10 @@ impl RegisterAccountOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -136,6 +156,12 @@ impl RegisterAccountOutputBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

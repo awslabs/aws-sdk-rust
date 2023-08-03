@@ -39,6 +39,10 @@ impl GetRequestedServiceQuotaChangeInputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The ID of the quota increase request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Consumes the builder and constructs a [`GetRequestedServiceQuotaChangeInput`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput).
     pub fn build(
         self,

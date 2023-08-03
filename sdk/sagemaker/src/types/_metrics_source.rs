@@ -56,6 +56,10 @@ impl MetricsSourceBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The metric source content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The hash key used for the metrics source.</p>
     pub fn content_digest(
         mut self,
@@ -72,6 +76,10 @@ impl MetricsSourceBuilder {
         self.content_digest = input;
         self
     }
+    /// <p>The hash key used for the metrics source.</p>
+    pub fn get_content_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_digest
+    }
     /// <p>The S3 URI for the metrics source.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl MetricsSourceBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The S3 URI for the metrics source.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`MetricsSource`](crate::types::MetricsSource).
     pub fn build(self) -> crate::types::MetricsSource {

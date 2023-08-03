@@ -58,6 +58,12 @@ impl DescribeIndexFieldsOutputBuilder {
         self.index_fields = input;
         self
     }
+    /// <p>The index fields configured for the domain.</p>
+    pub fn get_index_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>> {
+        &self.index_fields
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

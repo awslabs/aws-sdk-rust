@@ -36,6 +36,12 @@ impl ModifyVpcEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVpcEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the endpoint.</p>
     pub fn vpc_endpoint_id(
         mut self,
@@ -142,6 +152,10 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_vpc_endpoint_id(input);
         self
     }
+    /// <p>The ID of the endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_endpoint_id()
+    }
     /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
     pub fn reset_policy(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_policy(input);
@@ -151,6 +165,10 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn set_reset_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_policy(input);
         self
+    }
+    /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
+    pub fn get_reset_policy(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_policy()
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
     pub fn policy_document(
@@ -167,6 +185,10 @@ impl ModifyVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
     /// Appends an item to `AddRouteTableIds`.
     ///
@@ -188,6 +210,12 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_add_route_table_ids(input);
         self
     }
+    /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
+    pub fn get_add_route_table_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_route_table_ids()
+    }
     /// Appends an item to `RemoveRouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
@@ -207,6 +235,12 @@ impl ModifyVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_route_table_ids(input);
         self
+    }
+    /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
+    pub fn get_remove_route_table_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_route_table_ids()
     }
     /// Appends an item to `AddSubnetIds`.
     ///
@@ -228,6 +262,12 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_add_subnet_ids(input);
         self
     }
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    pub fn get_add_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_subnet_ids()
+    }
     /// Appends an item to `RemoveSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_remove_subnet_ids`](Self::set_remove_subnet_ids).
@@ -247,6 +287,12 @@ impl ModifyVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_subnet_ids(input);
         self
+    }
+    /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
+    pub fn get_remove_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_subnet_ids()
     }
     /// Appends an item to `AddSecurityGroupIds`.
     ///
@@ -268,6 +314,12 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_add_security_group_ids(input);
         self
     }
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    pub fn get_add_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_security_group_ids()
+    }
     /// Appends an item to `RemoveSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
@@ -288,6 +340,12 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_remove_security_group_ids(input);
         self
     }
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    pub fn get_remove_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_security_group_ids()
+    }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
@@ -300,6 +358,10 @@ impl ModifyVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>The IP address type for the endpoint.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
     /// <p>The DNS options for the endpoint.</p>
     pub fn dns_options(mut self, input: crate::types::DnsOptionsSpecification) -> Self {
@@ -314,6 +376,10 @@ impl ModifyVpcEndpointFluentBuilder {
         self.inner = self.inner.set_dns_options(input);
         self
     }
+    /// <p>The DNS options for the endpoint.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptionsSpecification> {
+        self.inner.get_dns_options()
+    }
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub fn private_dns_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.private_dns_enabled(input);
@@ -323,5 +389,9 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_private_dns_enabled(input);
         self
+    }
+    /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_private_dns_enabled()
     }
 }

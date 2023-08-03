@@ -81,6 +81,10 @@ impl DiscoverInputSchemaInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ARN of the role that is used to access the streaming source.</p>
     pub fn service_execution_role(
         mut self,
@@ -96,6 +100,10 @@ impl DiscoverInputSchemaInputBuilder {
     ) -> Self {
         self.service_execution_role = input;
         self
+    }
+    /// <p>The ARN of the role that is used to access the streaming source.</p>
+    pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_execution_role
     }
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
     pub fn input_starting_position_configuration(
@@ -113,6 +121,12 @@ impl DiscoverInputSchemaInputBuilder {
         self.input_starting_position_configuration = input;
         self
     }
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    pub fn get_input_starting_position_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+        &self.input_starting_position_configuration
+    }
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub fn s3_configuration(mut self, input: crate::types::S3Configuration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl DiscoverInputSchemaInputBuilder {
     ) -> Self {
         self.s3_configuration = input;
         self
+    }
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
+        &self.s3_configuration
     }
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
     pub fn input_processing_configuration(
@@ -141,6 +159,12 @@ impl DiscoverInputSchemaInputBuilder {
     ) -> Self {
         self.input_processing_configuration = input;
         self
+    }
+    /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
+    pub fn get_input_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+        &self.input_processing_configuration
     }
     /// Consumes the builder and constructs a [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
     pub fn build(

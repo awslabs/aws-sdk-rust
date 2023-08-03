@@ -65,6 +65,10 @@ impl DeleteNetworkAclEntryInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Indicates whether the rule is an egress rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DeleteNetworkAclEntryInputBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(
@@ -91,6 +99,10 @@ impl DeleteNetworkAclEntryInputBuilder {
         self.network_acl_id = input;
         self
     }
+    /// <p>The ID of the network ACL.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_id
+    }
     /// <p>The rule number of the entry to delete.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl DeleteNetworkAclEntryInputBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The rule number of the entry to delete.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
     pub fn build(

@@ -37,6 +37,13 @@ impl DeleteManagedPrefixListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteManagedPrefixList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -142,5 +153,9 @@ impl DeleteManagedPrefixListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
+    }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_id()
     }
 }

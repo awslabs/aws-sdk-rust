@@ -53,6 +53,12 @@ impl TerminateWorkspacesInputBuilder {
         self.terminate_workspace_requests = input;
         self
     }
+    /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_terminate_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
+        &self.terminate_workspace_requests
+    }
     /// Consumes the builder and constructs a [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
     pub fn build(
         self,

@@ -40,6 +40,12 @@ impl ReleaseAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReleaseAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::release_address::builders::ReleaseAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl ReleaseAddressFluentBuilder {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
+    /// <p>The allocation ID. This parameter is required.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_allocation_id()
+    }
     /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
@@ -137,6 +147,10 @@ impl ReleaseAddressFluentBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
     }
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
@@ -158,6 +172,12 @@ impl ReleaseAddressFluentBuilder {
         self.inner = self.inner.set_network_border_group(input);
         self
     }
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
+    /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
+    /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you receive an <code>InvalidParameterCombination</code> error.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_border_group()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -167,5 +187,9 @@ impl ReleaseAddressFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

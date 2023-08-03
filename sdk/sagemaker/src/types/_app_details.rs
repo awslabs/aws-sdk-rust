@@ -88,6 +88,10 @@ impl AppDetailsBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The user profile name.</p>
     pub fn user_profile_name(
         mut self,
@@ -104,6 +108,10 @@ impl AppDetailsBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The user profile name.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl AppDetailsBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
+    }
+    /// <p>The type of app.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
     }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +136,10 @@ impl AppDetailsBuilder {
         self.app_name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::AppStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl AppDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatus> {
+        &self.status
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,6 +167,10 @@ impl AppDetailsBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -156,6 +180,10 @@ impl AppDetailsBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// Consumes the builder and constructs a [`AppDetails`](crate::types::AppDetails).
     pub fn build(self) -> crate::types::AppDetails {

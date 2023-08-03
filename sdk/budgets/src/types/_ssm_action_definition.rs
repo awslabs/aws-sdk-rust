@@ -59,6 +59,10 @@ impl SsmActionDefinitionBuilder {
         self.action_sub_type = input;
         self
     }
+    /// <p>The action subType. </p>
+    pub fn get_action_sub_type(&self) -> &::std::option::Option<crate::types::ActionSubType> {
+        &self.action_sub_type
+    }
     /// <p>The Region to run the SSM document. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl SsmActionDefinitionBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Region to run the SSM document. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -87,6 +95,12 @@ impl SsmActionDefinitionBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>The EC2 and RDS instance IDs. </p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`SsmActionDefinition`](crate::types::SsmActionDefinition).
     pub fn build(self) -> crate::types::SsmActionDefinition {

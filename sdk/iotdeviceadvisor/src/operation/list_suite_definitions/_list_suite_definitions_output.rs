@@ -71,6 +71,12 @@ impl ListSuiteDefinitionsOutputBuilder {
         self.suite_definition_information_list = input;
         self
     }
+    /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
+    pub fn get_suite_definition_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>> {
+        &self.suite_definition_information_list
+    }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListSuiteDefinitionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

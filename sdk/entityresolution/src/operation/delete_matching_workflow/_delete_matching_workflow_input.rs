@@ -47,6 +47,10 @@ impl DeleteMatchingWorkflowInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow to be retrieved.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// Consumes the builder and constructs a [`DeleteMatchingWorkflowInput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput).
     pub fn build(
         self,

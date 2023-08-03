@@ -69,6 +69,10 @@ impl AppInstanceBotSummaryBuilder {
         self.app_instance_bot_arn = input;
         self
     }
+    /// <p>The ARN of the AppInstanceBot.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_bot_arn
+    }
     /// <p>The name of the AppInstanceBox.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl AppInstanceBotSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the AppInstanceBox.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The metadata of the AppInstanceBot.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl AppInstanceBotSummaryBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the AppInstanceBot.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`AppInstanceBotSummary`](crate::types::AppInstanceBotSummary).
     pub fn build(self) -> crate::types::AppInstanceBotSummary {

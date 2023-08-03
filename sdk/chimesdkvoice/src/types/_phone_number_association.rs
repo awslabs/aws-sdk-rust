@@ -56,6 +56,10 @@ impl PhoneNumberAssociationBuilder {
         self.value = input;
         self
     }
+    /// <p>Contains the ID for the entity specified in Name.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>Defines the association with an Amazon Chime SDK account ID, user ID, Voice Connector ID, or Voice Connector group ID.</p>
     pub fn name(mut self, input: crate::types::PhoneNumberAssociationName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl PhoneNumberAssociationBuilder {
         self.name = input;
         self
     }
+    /// <p>Defines the association with an Amazon Chime SDK account ID, user ID, Voice Connector ID, or Voice Connector group ID.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
+        &self.name
+    }
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub fn associated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.associated_timestamp = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl PhoneNumberAssociationBuilder {
     ) -> Self {
         self.associated_timestamp = input;
         self
+    }
+    /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
+    pub fn get_associated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.associated_timestamp
     }
     /// Consumes the builder and constructs a [`PhoneNumberAssociation`](crate::types::PhoneNumberAssociation).
     pub fn build(self) -> crate::types::PhoneNumberAssociation {

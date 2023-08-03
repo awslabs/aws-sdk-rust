@@ -120,6 +120,10 @@ impl OutpostResolverBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the Resolver on an Outpost.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date and time that the Outpost Resolver was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(
         mut self,
@@ -135,6 +139,10 @@ impl OutpostResolverBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that the Outpost Resolver was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
     }
     /// <p>The date and time that the Outpost Resolver was modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
@@ -152,6 +160,10 @@ impl OutpostResolverBuilder {
         self.modification_time = input;
         self
     }
+    /// <p>The date and time that the Outpost Resolver was modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
+    }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn creator_request_id(
         mut self,
@@ -168,6 +180,10 @@ impl OutpostResolverBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The ID of the Resolver on Outpost.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -178,6 +194,10 @@ impl OutpostResolverBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the Resolver on Outpost.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Amazon EC2 instance count for the Resolver on the Outpost.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl OutpostResolverBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Amazon EC2 instance count for the Resolver on the Outpost.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p> The Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(
@@ -204,6 +228,10 @@ impl OutpostResolverBuilder {
         self.preferred_instance_type = input;
         self
     }
+    /// <p> The Amazon EC2 instance type. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_instance_type
+    }
     /// <p>Name of the Resolver.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -213,6 +241,10 @@ impl OutpostResolverBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of the Resolver.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Status of the Resolver.</p>
     pub fn status(mut self, input: crate::types::OutpostResolverStatus) -> Self {
@@ -226,6 +258,10 @@ impl OutpostResolverBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the Resolver.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OutpostResolverStatus> {
+        &self.status
     }
     /// <p>A detailed description of the Resolver.</p>
     pub fn status_message(
@@ -243,6 +279,10 @@ impl OutpostResolverBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A detailed description of the Resolver.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -252,6 +292,10 @@ impl OutpostResolverBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Consumes the builder and constructs a [`OutpostResolver`](crate::types::OutpostResolver).
     pub fn build(self) -> crate::types::OutpostResolver {

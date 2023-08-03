@@ -126,6 +126,10 @@ impl DescribeDeviceOutputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The unique identifier of the device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl DescribeDeviceOutputBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>A description of the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the fleet the device belongs to.</p>
     pub fn device_fleet_name(
@@ -162,6 +174,10 @@ impl DescribeDeviceOutputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet the device belongs to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
     pub fn iot_thing_name(
         mut self,
@@ -178,6 +194,10 @@ impl DescribeDeviceOutputBuilder {
         self.iot_thing_name = input;
         self
     }
+    /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
+    pub fn get_iot_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_thing_name
+    }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub fn registration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.registration_time = ::std::option::Option::Some(input);
@@ -191,6 +211,10 @@ impl DescribeDeviceOutputBuilder {
         self.registration_time = input;
         self
     }
+    /// <p>The timestamp of the last registration or de-reregistration.</p>
+    pub fn get_registration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.registration_time
+    }
     /// <p>The last heartbeat received from the device.</p>
     pub fn latest_heartbeat(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_heartbeat = ::std::option::Option::Some(input);
@@ -203,6 +227,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.latest_heartbeat = input;
         self
+    }
+    /// <p>The last heartbeat received from the device.</p>
+    pub fn get_latest_heartbeat(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_heartbeat
     }
     /// Appends an item to `models`.
     ///
@@ -223,6 +251,10 @@ impl DescribeDeviceOutputBuilder {
         self.models = input;
         self
     }
+    /// <p>Models on the device.</p>
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>> {
+        &self.models
+    }
     /// <p>The maximum number of models.</p>
     pub fn max_models(mut self, input: i32) -> Self {
         self.max_models = ::std::option::Option::Some(input);
@@ -233,6 +265,10 @@ impl DescribeDeviceOutputBuilder {
         self.max_models = input;
         self
     }
+    /// <p>The maximum number of models.</p>
+    pub fn get_max_models(&self) -> &::std::option::Option<i32> {
+        &self.max_models
+    }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -242,6 +278,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Edge Manager agent version.</p>
     pub fn agent_version(
@@ -258,6 +298,10 @@ impl DescribeDeviceOutputBuilder {
     ) -> Self {
         self.agent_version = input;
         self
+    }
+    /// <p>Edge Manager agent version.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

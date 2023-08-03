@@ -52,6 +52,12 @@ impl DeleteApplicationsInputBuilder {
         self.configuration_ids = input;
         self
     }
+    /// <p>Configuration ID of an application to be deleted.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_ids
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
     pub fn build(
         self,

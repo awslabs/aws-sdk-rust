@@ -40,6 +40,10 @@ impl MemoryInfoBuilder {
         self.size_in_mi_b = input;
         self
     }
+    /// <p>The size of the memory, in MiB.</p>
+    pub fn get_size_in_mi_b(&self) -> &::std::option::Option<i64> {
+        &self.size_in_mi_b
+    }
     /// Consumes the builder and constructs a [`MemoryInfo`](crate::types::MemoryInfo).
     pub fn build(self) -> crate::types::MemoryInfo {
         crate::types::MemoryInfo {

@@ -50,6 +50,12 @@ impl FreeFormSectionLayoutConfigurationBuilder {
         self.elements = input;
         self
     }
+    /// <p>The elements that are included in the free-form layout.</p>
+    pub fn get_elements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>> {
+        &self.elements
+    }
     /// Consumes the builder and constructs a [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
     pub fn build(self) -> crate::types::FreeFormSectionLayoutConfiguration {
         crate::types::FreeFormSectionLayoutConfiguration {

@@ -40,6 +40,10 @@ impl DescribePlaceIndexInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the place index resource.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// Consumes the builder and constructs a [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
     pub fn build(
         self,

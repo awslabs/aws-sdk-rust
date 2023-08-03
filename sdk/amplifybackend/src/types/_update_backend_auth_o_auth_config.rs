@@ -92,6 +92,10 @@ impl UpdateBackendAuthOAuthConfigBuilder {
         self.domain_prefix = input;
         self
     }
+    /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
+    pub fn get_domain_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_prefix
+    }
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
     pub fn o_auth_grant_type(mut self, input: crate::types::OAuthGrantType) -> Self {
         self.o_auth_grant_type = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     ) -> Self {
         self.o_auth_grant_type = input;
         self
+    }
+    /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
+    pub fn get_o_auth_grant_type(&self) -> &::std::option::Option<crate::types::OAuthGrantType> {
+        &self.o_auth_grant_type
     }
     /// Appends an item to `o_auth_scopes`.
     ///
@@ -123,6 +131,12 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     ) -> Self {
         self.o_auth_scopes = input;
         self
+    }
+    /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>> {
+        &self.o_auth_scopes
     }
     /// Appends an item to `redirect_sign_in_ur_is`.
     ///
@@ -146,6 +160,12 @@ impl UpdateBackendAuthOAuthConfigBuilder {
         self.redirect_sign_in_ur_is = input;
         self
     }
+    /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+    pub fn get_redirect_sign_in_ur_is(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.redirect_sign_in_ur_is
+    }
     /// Appends an item to `redirect_sign_out_ur_is`.
     ///
     /// To override the contents of this collection use [`set_redirect_sign_out_ur_is`](Self::set_redirect_sign_out_ur_is).
@@ -168,6 +188,12 @@ impl UpdateBackendAuthOAuthConfigBuilder {
         self.redirect_sign_out_ur_is = input;
         self
     }
+    /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+    pub fn get_redirect_sign_out_ur_is(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.redirect_sign_out_ur_is
+    }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub fn social_provider_settings(mut self, input: crate::types::SocialProviderSettings) -> Self {
         self.social_provider_settings = ::std::option::Option::Some(input);
@@ -180,6 +206,12 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     ) -> Self {
         self.social_provider_settings = input;
         self
+    }
+    /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
+    pub fn get_social_provider_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SocialProviderSettings> {
+        &self.social_provider_settings
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthOAuthConfig`](crate::types::UpdateBackendAuthOAuthConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthOAuthConfig {

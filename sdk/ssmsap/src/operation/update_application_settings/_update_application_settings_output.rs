@@ -54,6 +54,10 @@ impl UpdateApplicationSettingsOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>The update message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `operation_ids`.
     ///
     /// To override the contents of this collection use [`set_operation_ids`](Self::set_operation_ids).
@@ -75,6 +79,12 @@ impl UpdateApplicationSettingsOutputBuilder {
     ) -> Self {
         self.operation_ids = input;
         self
+    }
+    /// <p>The IDs of the operations.</p>
+    pub fn get_operation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.operation_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl AddApplicationOutputOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl AddApplicationOutputOutputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Appends an item to `output_descriptions`.
     ///
@@ -99,6 +107,12 @@ impl AddApplicationOutputOutputBuilder {
     ) -> Self {
         self.output_descriptions = input;
         self
+    }
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
+    pub fn get_output_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
+        &self.output_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

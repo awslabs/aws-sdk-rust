@@ -57,6 +57,10 @@ impl LabelParameterVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The parameter name on which you want to attach one or more labels.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.parameter_version = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LabelParameterVersionInputBuilder {
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.parameter_version = input;
         self
+    }
+    /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
+    pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
+        &self.parameter_version
     }
     /// Appends an item to `labels`.
     ///
@@ -85,6 +93,10 @@ impl LabelParameterVersionInputBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>One or more labels to attach to the specified parameter version.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
     pub fn build(

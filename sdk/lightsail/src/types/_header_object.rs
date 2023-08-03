@@ -73,6 +73,16 @@ impl HeaderObjectBuilder {
         self.option = input;
         self
     }
+    /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
+    /// <p>You can configure your distribution to do one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>all</code> </b> - Forward all headers to your origin.</p> </li>
+    /// <li> <p> <b> <code>none</code> </b> - Forward only the default headers.</p> </li>
+    /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
+    /// </ul>
+    pub fn get_option(&self) -> &::std::option::Option<crate::types::ForwardValues> {
+        &self.option
+    }
     /// Appends an item to `headers_allow_list`.
     ///
     /// To override the contents of this collection use [`set_headers_allow_list`](Self::set_headers_allow_list).
@@ -91,6 +101,12 @@ impl HeaderObjectBuilder {
     ) -> Self {
         self.headers_allow_list = input;
         self
+    }
+    /// <p>The specific headers to forward to your distribution's origin.</p>
+    pub fn get_headers_allow_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>> {
+        &self.headers_allow_list
     }
     /// Consumes the builder and constructs a [`HeaderObject`](crate::types::HeaderObject).
     pub fn build(self) -> crate::types::HeaderObject {

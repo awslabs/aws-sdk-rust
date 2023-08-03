@@ -150,6 +150,17 @@ impl ThingIndexingConfigurationBuilder {
         self.thing_indexing_mode = input;
         self
     }
+    /// <p>Thing indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains registry data only.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
+    /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
+    /// </ul>
+    pub fn get_thing_indexing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingIndexingMode> {
+        &self.thing_indexing_mode
+    }
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
     /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
@@ -173,6 +184,16 @@ impl ThingIndexingConfigurationBuilder {
     ) -> Self {
         self.thing_connectivity_indexing_mode = input;
         self
+    }
+    /// <p>Thing connectivity indexing mode. Valid values are: </p>
+    /// <ul>
+    /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
+    /// </ul>
+    pub fn get_thing_connectivity_indexing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingConnectivityIndexingMode> {
+        &self.thing_connectivity_indexing_mode
     }
     /// <p>Device Defender indexing mode. Valid values are:</p>
     /// <ul>
@@ -200,6 +221,17 @@ impl ThingIndexingConfigurationBuilder {
         self.device_defender_indexing_mode = input;
         self
     }
+    /// <p>Device Defender indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
+    /// </ul>
+    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
+    pub fn get_device_defender_indexing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceDefenderIndexingMode> {
+        &self.device_defender_indexing_mode
+    }
     /// <p>Named shadow indexing mode. Valid values are:</p>
     /// <ul>
     /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
@@ -226,6 +258,17 @@ impl ThingIndexingConfigurationBuilder {
         self.named_shadow_indexing_mode = input;
         self
     }
+    /// <p>Named shadow indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
+    /// </ul>
+    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
+    pub fn get_named_shadow_indexing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::NamedShadowIndexingMode> {
+        &self.named_shadow_indexing_mode
+    }
     /// Appends an item to `managed_fields`.
     ///
     /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
@@ -244,6 +287,12 @@ impl ThingIndexingConfigurationBuilder {
     ) -> Self {
         self.managed_fields = input;
         self
+    }
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+    pub fn get_managed_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.managed_fields
     }
     /// Appends an item to `custom_fields`.
     ///
@@ -264,6 +313,12 @@ impl ThingIndexingConfigurationBuilder {
         self.custom_fields = input;
         self
     }
+    /// <p>Contains custom field names and their data type.</p>
+    pub fn get_custom_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.custom_fields
+    }
     /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
     pub fn filter(mut self, input: crate::types::IndexingFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -276,6 +331,10 @@ impl ThingIndexingConfigurationBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::IndexingFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ThingIndexingConfiguration`](crate::types::ThingIndexingConfiguration).
     pub fn build(self) -> crate::types::ThingIndexingConfiguration {

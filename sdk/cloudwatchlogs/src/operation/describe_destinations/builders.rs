@@ -36,6 +36,12 @@ impl DescribeDestinationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDestinations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_destinations::builders::DescribeDestinationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl DescribeDestinationsFluentBuilder {
         self.inner = self.inner.set_destination_name_prefix(input);
         self
     }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_destination_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_name_prefix()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +163,10 @@ impl DescribeDestinationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -162,5 +176,9 @@ impl DescribeDestinationsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

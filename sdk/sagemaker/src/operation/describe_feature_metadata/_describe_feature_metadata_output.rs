@@ -110,6 +110,10 @@ impl DescribeFeatureMetadataOutputBuilder {
         self.feature_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+    pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_arn
+    }
     /// <p>The name of the feature group that you've specified.</p>
     pub fn feature_group_name(
         mut self,
@@ -126,6 +130,10 @@ impl DescribeFeatureMetadataOutputBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name of the feature group that you've specified.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// <p>The name of the feature that you've specified.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl DescribeFeatureMetadataOutputBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature that you've specified.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// <p>The data type of the feature.</p>
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
@@ -149,6 +161,10 @@ impl DescribeFeatureMetadataOutputBuilder {
         self.feature_type = input;
         self
     }
+    /// <p>The data type of the feature.</p>
+    pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FeatureType> {
+        &self.feature_type
+    }
     /// <p>A timestamp indicating when the feature was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -161,6 +177,10 @@ impl DescribeFeatureMetadataOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp indicating when the feature was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -175,6 +195,10 @@ impl DescribeFeatureMetadataOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The description you added to describe the feature.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -184,6 +208,10 @@ impl DescribeFeatureMetadataOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description you added to describe the feature.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `parameters`.
     ///
@@ -203,6 +231,12 @@ impl DescribeFeatureMetadataOutputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The key-value pairs that you added to describe the feature.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+        &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

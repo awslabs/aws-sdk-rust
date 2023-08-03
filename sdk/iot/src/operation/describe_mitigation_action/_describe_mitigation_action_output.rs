@@ -104,6 +104,10 @@ impl DescribeMitigationActionOutputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The type of mitigation action.</p>
     pub fn action_type(mut self, input: crate::types::MitigationActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl DescribeMitigationActionOutputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of mitigation action.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::MitigationActionType> {
+        &self.action_type
+    }
     /// <p>The ARN that identifies this migration action.</p>
     pub fn action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl DescribeMitigationActionOutputBuilder {
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_arn = input;
         self
+    }
+    /// <p>The ARN that identifies this migration action.</p>
+    pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_arn
     }
     /// <p>A unique identifier for this action.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +149,10 @@ impl DescribeMitigationActionOutputBuilder {
         self.action_id = input;
         self
     }
+    /// <p>A unique identifier for this action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>The ARN of the IAM role used to apply this action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -146,6 +162,10 @@ impl DescribeMitigationActionOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role used to apply this action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -160,6 +180,12 @@ impl DescribeMitigationActionOutputBuilder {
         self.action_params = input;
         self
     }
+    /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
+    pub fn get_action_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        &self.action_params
+    }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -173,6 +199,10 @@ impl DescribeMitigationActionOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date and time when the mitigation action was last changed.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -185,6 +215,10 @@ impl DescribeMitigationActionOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date and time when the mitigation action was last changed.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

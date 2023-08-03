@@ -131,6 +131,10 @@ impl UpdateGraphqlApiInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -141,6 +145,10 @@ impl UpdateGraphqlApiInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The new name for the <code>GraphqlApi</code> object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
         self.log_config = ::std::option::Option::Some(input);
@@ -150,6 +158,10 @@ impl UpdateGraphqlApiInputBuilder {
     pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.log_config = input;
         self
+    }
+    /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        &self.log_config
     }
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -164,6 +176,12 @@ impl UpdateGraphqlApiInputBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
     pub fn user_pool_config(mut self, input: crate::types::UserPoolConfig) -> Self {
         self.user_pool_config = ::std::option::Option::Some(input);
@@ -177,6 +195,10 @@ impl UpdateGraphqlApiInputBuilder {
         self.user_pool_config = input;
         self
     }
+    /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
+    pub fn get_user_pool_config(&self) -> &::std::option::Option<crate::types::UserPoolConfig> {
+        &self.user_pool_config
+    }
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
         self.open_id_connect_config = ::std::option::Option::Some(input);
@@ -189,6 +211,12 @@ impl UpdateGraphqlApiInputBuilder {
     ) -> Self {
         self.open_id_connect_config = input;
         self
+    }
+    /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
+    pub fn get_open_id_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
+        &self.open_id_connect_config
     }
     /// Appends an item to `additional_authentication_providers`.
     ///
@@ -214,6 +242,13 @@ impl UpdateGraphqlApiInputBuilder {
         self.additional_authentication_providers = input;
         self
     }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    pub fn get_additional_authentication_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>
+    {
+        &self.additional_authentication_providers
+    }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(mut self, input: bool) -> Self {
         self.xray_enabled = ::std::option::Option::Some(input);
@@ -223,6 +258,10 @@ impl UpdateGraphqlApiInputBuilder {
     pub fn set_xray_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.xray_enabled = input;
         self
+    }
+    /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    pub fn get_xray_enabled(&self) -> &::std::option::Option<bool> {
+        &self.xray_enabled
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
@@ -236,6 +275,12 @@ impl UpdateGraphqlApiInputBuilder {
     ) -> Self {
         self.lambda_authorizer_config = input;
         self
+    }
+    /// <p>Configuration for Lambda function authorization.</p>
+    pub fn get_lambda_authorizer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
+        &self.lambda_authorizer_config
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn merged_api_execution_role_arn(
@@ -252,6 +297,12 @@ impl UpdateGraphqlApiInputBuilder {
     ) -> Self {
         self.merged_api_execution_role_arn = input;
         self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn get_merged_api_execution_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.merged_api_execution_role_arn
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
@@ -270,6 +321,11 @@ impl UpdateGraphqlApiInputBuilder {
     ) -> Self {
         self.owner_contact = input;
         self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn get_owner_contact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_contact
     }
     /// Consumes the builder and constructs a [`UpdateGraphqlApiInput`](crate::operation::update_graphql_api::UpdateGraphqlApiInput).
     pub fn build(

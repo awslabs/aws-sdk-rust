@@ -47,6 +47,10 @@ impl RollbackInstanceRefreshInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Consumes the builder and constructs a [`RollbackInstanceRefreshInput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput).
     pub fn build(
         self,

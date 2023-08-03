@@ -143,6 +143,10 @@ impl ExperimentTemplateBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description for the experiment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -152,6 +156,10 @@ impl ExperimentTemplateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the experiment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `targets`.
     ///
@@ -181,6 +189,14 @@ impl ExperimentTemplateBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the experiment.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateTarget>,
+    > {
+        &self.targets
+    }
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -209,6 +225,14 @@ impl ExperimentTemplateBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions for the experiment.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateAction>,
+    > {
+        &self.actions
+    }
     /// Appends an item to `stop_conditions`.
     ///
     /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
@@ -230,6 +254,13 @@ impl ExperimentTemplateBuilder {
         self.stop_conditions = input;
         self
     }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn get_stop_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateStopCondition>>
+    {
+        &self.stop_conditions
+    }
     /// <p>The time the experiment template was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -242,6 +273,10 @@ impl ExperimentTemplateBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time the experiment template was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time the experiment template was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -256,6 +291,10 @@ impl ExperimentTemplateBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The time the experiment template was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -265,6 +304,10 @@ impl ExperimentTemplateBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -291,6 +334,14 @@ impl ExperimentTemplateBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the experiment template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration for experiment logging.</p>
     pub fn log_configuration(
         mut self,
@@ -306,6 +357,12 @@ impl ExperimentTemplateBuilder {
     ) -> Self {
         self.log_configuration = input;
         self
+    }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentTemplateLogConfiguration> {
+        &self.log_configuration
     }
     /// Consumes the builder and constructs a [`ExperimentTemplate`](crate::types::ExperimentTemplate).
     pub fn build(self) -> crate::types::ExperimentTemplate {

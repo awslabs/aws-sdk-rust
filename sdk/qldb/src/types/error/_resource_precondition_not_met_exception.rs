@@ -87,6 +87,10 @@ impl ResourcePreconditionNotMetExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of resource.</p>
     pub fn resource_type(
         mut self,
@@ -103,6 +107,10 @@ impl ResourcePreconditionNotMetExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
         mut self,
@@ -118,6 +126,10 @@ impl ResourcePreconditionNotMetExceptionBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

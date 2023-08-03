@@ -64,6 +64,10 @@ impl PutStudioMembersInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID of the identity store.</p>
     pub fn identity_store_id(
         mut self,
@@ -79,6 +83,10 @@ impl PutStudioMembersInputBuilder {
     ) -> Self {
         self.identity_store_id = input;
         self
+    }
+    /// <p>The ID of the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
     }
     /// Appends an item to `members`.
     ///
@@ -99,6 +107,12 @@ impl PutStudioMembersInputBuilder {
         self.members = input;
         self
     }
+    /// <p>A list of members.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
+        &self.members
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl PutStudioMembersInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`PutStudioMembersInput`](crate::operation::put_studio_members::PutStudioMembersInput).
     pub fn build(

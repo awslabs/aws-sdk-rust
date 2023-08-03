@@ -57,6 +57,12 @@ impl StartBgpFailoverTestOutputBuilder {
         self.virtual_interface_test = input;
         self
     }
+    /// <p>Information about the virtual interface failover test.</p>
+    pub fn get_virtual_interface_test(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualInterfaceTestHistory> {
+        &self.virtual_interface_test
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

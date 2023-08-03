@@ -36,6 +36,10 @@ impl GetDistributionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDistributionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl GetDistributionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_configuration_arn()
     }
 }

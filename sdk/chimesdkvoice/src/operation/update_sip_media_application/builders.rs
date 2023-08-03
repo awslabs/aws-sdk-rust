@@ -36,6 +36,10 @@ impl UpdateSipMediaApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSipMediaApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateSipMediaApplicationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
+    }
     /// <p>The new name for the specified SIP media application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +149,10 @@ impl UpdateSipMediaApplicationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name for the specified SIP media application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Endpoints`.
     ///
@@ -158,5 +170,11 @@ impl UpdateSipMediaApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoints(input);
         self
+    }
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        self.inner.get_endpoints()
     }
 }

@@ -49,6 +49,10 @@ impl DeleteResourceDataSyncInputBuilder {
         self.sync_name = input;
         self
     }
+    /// <p>The name of the configuration to delete.</p>
+    pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_name
+    }
     /// <p>Specify the type of resource data sync to delete.</p>
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_type = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteResourceDataSyncInputBuilder {
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_type = input;
         self
+    }
+    /// <p>Specify the type of resource data sync to delete.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_type
     }
     /// Consumes the builder and constructs a [`DeleteResourceDataSyncInput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput).
     pub fn build(

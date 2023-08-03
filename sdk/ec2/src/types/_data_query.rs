@@ -80,6 +80,10 @@ impl DataQueryBuilder {
         self.id = input;
         self
     }
+    /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DataQueryBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl DataQueryBuilder {
         self.destination = input;
         self
     }
+    /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl DataQueryBuilder {
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -123,6 +139,10 @@ impl DataQueryBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
+    }
     /// <p>The aggregation period used for the data query.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl DataQueryBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The aggregation period used for the data query.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::PeriodType> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`DataQuery`](crate::types::DataQuery).
     pub fn build(self) -> crate::types::DataQuery {

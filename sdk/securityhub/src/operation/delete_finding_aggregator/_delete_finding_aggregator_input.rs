@@ -47,6 +47,10 @@ impl DeleteFindingAggregatorInputBuilder {
         self.finding_aggregator_arn = input;
         self
     }
+    /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
+    }
     /// Consumes the builder and constructs a [`DeleteFindingAggregatorInput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput).
     pub fn build(
         self,

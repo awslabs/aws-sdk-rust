@@ -47,6 +47,10 @@ impl DeleteDataIntegrationInputBuilder {
         self.data_integration_identifier = input;
         self
     }
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn get_data_integration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_integration_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteDataIntegrationInput`](crate::operation::delete_data_integration::DeleteDataIntegrationInput).
     pub fn build(
         self,

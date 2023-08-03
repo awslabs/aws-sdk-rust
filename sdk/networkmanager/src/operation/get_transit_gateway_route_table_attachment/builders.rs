@@ -36,6 +36,10 @@ impl GetTransitGatewayRouteTableAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTransitGatewayRouteTableAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetTransitGatewayRouteTableAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
+    }
+    /// <p>The ID of the transit gateway route table attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attachment_id()
     }
 }

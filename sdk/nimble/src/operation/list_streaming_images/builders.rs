@@ -37,6 +37,12 @@ impl ListStreamingImagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreamingImages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_streaming_images::builders::ListStreamingImagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListStreamingImagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Filter this request to streaming images with the given owner</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner(input.into());
@@ -148,6 +158,10 @@ impl ListStreamingImagesFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>Filter this request to streaming images with the given owner</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -157,5 +171,9 @@ impl ListStreamingImagesFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

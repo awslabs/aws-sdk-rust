@@ -37,6 +37,10 @@ impl CreateInstanceExportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInstanceExportTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateInstanceExportTaskFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The format and location for an export instance task.</p>
     pub fn export_to_s3_task(mut self, input: crate::types::ExportToS3TaskSpecification) -> Self {
         self.inner = self.inner.export_to_s3_task(input);
@@ -140,6 +148,12 @@ impl CreateInstanceExportTaskFluentBuilder {
         self.inner = self.inner.set_export_to_s3_task(input);
         self
     }
+    /// <p>The format and location for an export instance task.</p>
+    pub fn get_export_to_s3_task(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
+        self.inner.get_export_to_s3_task()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -149,6 +163,10 @@ impl CreateInstanceExportTaskFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The target virtualization environment.</p>
     pub fn target_environment(mut self, input: crate::types::ExportEnvironment) -> Self {
@@ -162,6 +180,12 @@ impl CreateInstanceExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_environment(input);
         self
+    }
+    /// <p>The target virtualization environment.</p>
+    pub fn get_target_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportEnvironment> {
+        self.inner.get_target_environment()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -179,5 +203,11 @@ impl CreateInstanceExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to apply to the export instance task during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

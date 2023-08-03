@@ -52,6 +52,12 @@ impl DeleteBackendEnvironmentOutputBuilder {
         self.backend_environment = input;
         self
     }
+    /// <p> Describes the backend environment for an Amplify app. </p>
+    pub fn get_backend_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendEnvironment> {
+        &self.backend_environment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

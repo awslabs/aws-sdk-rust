@@ -64,6 +64,10 @@ impl OpenIdConnectConfigBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl OpenIdConnectConfigBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
     pub fn iat_ttl(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl OpenIdConnectConfigBuilder {
         self.iat_ttl = input;
         self
     }
+    /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
+    pub fn get_iat_ttl(&self) -> &::std::option::Option<i64> {
+        &self.iat_ttl
+    }
     /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
     pub fn auth_ttl(mut self, input: i64) -> Self {
         self.auth_ttl = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl OpenIdConnectConfigBuilder {
     pub fn set_auth_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.auth_ttl = input;
         self
+    }
+    /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
+    pub fn get_auth_ttl(&self) -> &::std::option::Option<i64> {
+        &self.auth_ttl
     }
     /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::types::OpenIdConnectConfig).
     pub fn build(self) -> crate::types::OpenIdConnectConfig {

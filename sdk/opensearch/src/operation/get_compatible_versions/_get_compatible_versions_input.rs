@@ -42,6 +42,10 @@ impl GetCompatibleVersionsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetCompatibleVersionsInput`](crate::operation::get_compatible_versions::GetCompatibleVersionsInput).
     pub fn build(
         self,

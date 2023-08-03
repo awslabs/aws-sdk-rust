@@ -39,6 +39,10 @@ impl DeleteMonitorInputBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
     pub fn build(
         self,

@@ -63,6 +63,10 @@ impl PutSigningProfileOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The version of the signing profile being created.</p>
     pub fn profile_version(
         mut self,
@@ -79,6 +83,10 @@ impl PutSigningProfileOutputBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The version of the signing profile being created.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>The signing profile ARN, including the profile version.</p>
     pub fn profile_version_arn(
         mut self,
@@ -94,6 +102,10 @@ impl PutSigningProfileOutputBuilder {
     ) -> Self {
         self.profile_version_arn = input;
         self
+    }
+    /// <p>The signing profile ARN, including the profile version.</p>
+    pub fn get_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

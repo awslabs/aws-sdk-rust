@@ -64,6 +64,10 @@ impl MergeHunkBuilder {
         self.is_conflict = input;
         self
     }
+    /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
+    pub fn get_is_conflict(&self) -> &::std::option::Option<bool> {
+        &self.is_conflict
+    }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
     pub fn source(mut self, input: crate::types::MergeHunkDetail) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl MergeHunkBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::MergeHunkDetail> {
+        &self.source
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: crate::types::MergeHunkDetail) -> Self {
@@ -90,6 +98,10 @@ impl MergeHunkBuilder {
         self.destination = input;
         self
     }
+    /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MergeHunkDetail> {
+        &self.destination
+    }
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
     pub fn base(mut self, input: crate::types::MergeHunkDetail) -> Self {
         self.base = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl MergeHunkBuilder {
     pub fn set_base(mut self, input: ::std::option::Option<crate::types::MergeHunkDetail>) -> Self {
         self.base = input;
         self
+    }
+    /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
+    pub fn get_base(&self) -> &::std::option::Option<crate::types::MergeHunkDetail> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`MergeHunk`](crate::types::MergeHunk).
     pub fn build(self) -> crate::types::MergeHunk {

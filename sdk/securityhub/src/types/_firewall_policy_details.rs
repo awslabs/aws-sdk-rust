@@ -115,6 +115,14 @@ impl FirewallPolicyDetailsBuilder {
         self.stateful_rule_group_references = input;
         self
     }
+    /// <p>The stateful rule groups that are used in the firewall policy.</p>
+    pub fn get_stateful_rule_group_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>,
+    > {
+        &self.stateful_rule_group_references
+    }
     /// Appends an item to `stateless_custom_actions`.
     ///
     /// To override the contents of this collection use [`set_stateless_custom_actions`](Self::set_stateless_custom_actions).
@@ -138,6 +146,14 @@ impl FirewallPolicyDetailsBuilder {
     ) -> Self {
         self.stateless_custom_actions = input;
         self
+    }
+    /// <p>The custom action definitions that are available to use in the firewall policy's <code>StatelessDefaultActions</code> setting.</p>
+    pub fn get_stateless_custom_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FirewallPolicyStatelessCustomActionsDetails>,
+    > {
+        &self.stateless_custom_actions
     }
     /// Appends an item to `stateless_default_actions`.
     ///
@@ -163,6 +179,13 @@ impl FirewallPolicyDetailsBuilder {
         self.stateless_default_actions = input;
         self
     }
+    /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    pub fn get_stateless_default_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stateless_default_actions
+    }
     /// Appends an item to `stateless_fragment_default_actions`.
     ///
     /// To override the contents of this collection use [`set_stateless_fragment_default_actions`](Self::set_stateless_fragment_default_actions).
@@ -187,6 +210,13 @@ impl FirewallPolicyDetailsBuilder {
         self.stateless_fragment_default_actions = input;
         self
     }
+    /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    pub fn get_stateless_fragment_default_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stateless_fragment_default_actions
+    }
     /// Appends an item to `stateless_rule_group_references`.
     ///
     /// To override the contents of this collection use [`set_stateless_rule_group_references`](Self::set_stateless_rule_group_references).
@@ -210,6 +240,14 @@ impl FirewallPolicyDetailsBuilder {
     ) -> Self {
         self.stateless_rule_group_references = input;
         self
+    }
+    /// <p>The stateless rule groups that are used in the firewall policy.</p>
+    pub fn get_stateless_rule_group_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails>,
+    > {
+        &self.stateless_rule_group_references
     }
     /// Consumes the builder and constructs a [`FirewallPolicyDetails`](crate::types::FirewallPolicyDetails).
     pub fn build(self) -> crate::types::FirewallPolicyDetails {

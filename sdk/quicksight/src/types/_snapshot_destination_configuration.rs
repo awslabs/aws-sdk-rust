@@ -58,6 +58,13 @@ impl SnapshotDestinationConfigurationBuilder {
         self.s3_destinations = input;
         self
     }
+    /// <p> A list of <code>SnapshotS3DestinationConfiguration</code> objects that contain Amazon S3 destination configurations. This structure can hold a maximum of 1 <code>S3DestinationConfiguration</code>. </p>
+    pub fn get_s3_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotS3DestinationConfiguration>>
+    {
+        &self.s3_destinations
+    }
     /// Consumes the builder and constructs a [`SnapshotDestinationConfiguration`](crate::types::SnapshotDestinationConfiguration).
     pub fn build(self) -> crate::types::SnapshotDestinationConfiguration {
         crate::types::SnapshotDestinationConfiguration {

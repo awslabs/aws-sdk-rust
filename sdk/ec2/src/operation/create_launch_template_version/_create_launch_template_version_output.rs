@@ -59,6 +59,12 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self.launch_template_version = input;
         self
     }
+    /// <p>Information about the launch template version.</p>
+    pub fn get_launch_template_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateVersion> {
+        &self.launch_template_version
+    }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub fn warning(mut self, input: crate::types::ValidationWarning) -> Self {
         self.warning = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl CreateLaunchTemplateVersionOutputBuilder {
     ) -> Self {
         self.warning = input;
         self
+    }
+    /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
+    pub fn get_warning(&self) -> &::std::option::Option<crate::types::ValidationWarning> {
+        &self.warning
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

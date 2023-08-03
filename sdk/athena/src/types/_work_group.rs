@@ -72,6 +72,10 @@ impl WorkGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The workgroup name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl WorkGroupBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkGroupState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkGroupState> {
+        &self.state
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(mut self, input: crate::types::WorkGroupConfiguration) -> Self {
@@ -95,6 +103,12 @@ impl WorkGroupBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
+        &self.configuration
+    }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -104,6 +118,10 @@ impl WorkGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The workgroup description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time the workgroup was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +135,10 @@ impl WorkGroupBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time the workgroup was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`WorkGroup`](crate::types::WorkGroup).
     pub fn build(self) -> crate::types::WorkGroup {

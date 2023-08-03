@@ -56,6 +56,10 @@ impl WorkforceVpcConfigRequestBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl WorkforceVpcConfigRequestBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -96,6 +106,10 @@ impl WorkforceVpcConfigRequestBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`WorkforceVpcConfigRequest`](crate::types::WorkforceVpcConfigRequest).
     pub fn build(self) -> crate::types::WorkforceVpcConfigRequest {

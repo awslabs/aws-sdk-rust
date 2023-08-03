@@ -98,6 +98,14 @@ impl GetEcsServiceRecommendationsInputBuilder {
         self.service_arns = input;
         self
     }
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    pub fn get_service_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_arns
+    }
     /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl GetEcsServiceRecommendationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The maximum number of Amazon ECS service recommendations to return with a single request. </p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -119,6 +131,11 @@ impl GetEcsServiceRecommendationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of Amazon ECS service recommendations to return with a single request. </p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -138,6 +155,12 @@ impl GetEcsServiceRecommendationsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
+        &self.filters
     }
     /// Appends an item to `account_ids`.
     ///
@@ -161,6 +184,14 @@ impl GetEcsServiceRecommendationsInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
+    /// <p>You can only specify one account ID per request.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetEcsServiceRecommendationsInput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsInput).
     pub fn build(

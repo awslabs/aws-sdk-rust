@@ -64,6 +64,10 @@ impl FastLaunchLaunchTemplateSpecificationBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
     pub fn launch_template_name(
         mut self,
@@ -80,6 +84,10 @@ impl FastLaunchLaunchTemplateSpecificationBuilder {
         self.launch_template_name = input;
         self
     }
+    /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
+    }
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
     pub fn launch_template_version(
         mut self,
@@ -95,6 +103,10 @@ impl FastLaunchLaunchTemplateSpecificationBuilder {
     ) -> Self {
         self.launch_template_version = input;
         self
+    }
+    /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn get_launch_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_version
     }
     /// Consumes the builder and constructs a [`FastLaunchLaunchTemplateSpecification`](crate::types::FastLaunchLaunchTemplateSpecification).
     pub fn build(self) -> crate::types::FastLaunchLaunchTemplateSpecification {

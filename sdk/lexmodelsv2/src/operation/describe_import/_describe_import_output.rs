@@ -113,6 +113,10 @@ impl DescribeImportOutputBuilder {
         self.import_id = input;
         self
     }
+    /// <p>The unique identifier of the described import.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
     pub fn resource_specification(
         mut self,
@@ -128,6 +132,12 @@ impl DescribeImportOutputBuilder {
     ) -> Self {
         self.resource_specification = input;
         self
+    }
+    /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+        &self.resource_specification
     }
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
     pub fn imported_resource_id(
@@ -145,6 +155,10 @@ impl DescribeImportOutputBuilder {
         self.imported_resource_id = input;
         self
     }
+    /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
+    pub fn get_imported_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imported_resource_id
+    }
     /// <p>The name of the imported resource.</p>
     pub fn imported_resource_name(
         mut self,
@@ -161,6 +175,10 @@ impl DescribeImportOutputBuilder {
         self.imported_resource_name = input;
         self
     }
+    /// <p>The name of the imported resource.</p>
+    pub fn get_imported_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imported_resource_name
+    }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
@@ -174,6 +192,10 @@ impl DescribeImportOutputBuilder {
         self.merge_strategy = input;
         self
     }
+    /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        &self.merge_strategy
+    }
     /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
         self.import_status = ::std::option::Option::Some(input);
@@ -186,6 +208,10 @@ impl DescribeImportOutputBuilder {
     ) -> Self {
         self.import_status = input;
         self
+    }
+    /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -209,6 +235,12 @@ impl DescribeImportOutputBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// <p>The date and time that the import was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -222,6 +254,10 @@ impl DescribeImportOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time that the import was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time that the import was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -234,6 +270,12 @@ impl DescribeImportOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time that the import was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

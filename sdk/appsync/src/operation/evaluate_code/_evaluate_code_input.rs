@@ -66,6 +66,10 @@ impl EvaluateCodeInputBuilder {
         self.runtime = input;
         self
     }
+    /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AppSyncRuntime> {
+        &self.runtime
+    }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl EvaluateCodeInputBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl EvaluateCodeInputBuilder {
         self.context = input;
         self
     }
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl EvaluateCodeInputBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function = input;
         self
+    }
+    /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function
     }
     /// Consumes the builder and constructs a [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
     pub fn build(

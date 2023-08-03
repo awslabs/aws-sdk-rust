@@ -64,6 +64,10 @@ impl EvaluationMetadataBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn evaluator_arn(
         mut self,
@@ -79,6 +83,10 @@ impl EvaluationMetadataBuilder {
     ) -> Self {
         self.evaluator_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
+    pub fn get_evaluator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluator_arn
     }
     /// <p>The identifier of the agent who performed the contact.</p>
     pub fn contact_agent_id(
@@ -96,6 +104,10 @@ impl EvaluationMetadataBuilder {
         self.contact_agent_id = input;
         self
     }
+    /// <p>The identifier of the agent who performed the contact.</p>
+    pub fn get_contact_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_agent_id
+    }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl EvaluationMetadataBuilder {
     ) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The overall score of the contact evaluation.</p>
+    pub fn get_score(&self) -> &::std::option::Option<crate::types::EvaluationScore> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`EvaluationMetadata`](crate::types::EvaluationMetadata).
     pub fn build(self) -> crate::types::EvaluationMetadata {

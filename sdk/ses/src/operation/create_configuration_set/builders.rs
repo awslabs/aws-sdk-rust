@@ -38,6 +38,13 @@ impl CreateConfigurationSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl CreateConfigurationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set(input);
         self
+    }
+    /// <p>A data structure that contains the name of the configuration set.</p>
+    pub fn get_configuration_set(&self) -> &::std::option::Option<crate::types::ConfigurationSet> {
+        self.inner.get_configuration_set()
     }
 }

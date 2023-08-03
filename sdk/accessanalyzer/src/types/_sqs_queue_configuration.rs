@@ -40,6 +40,10 @@ impl SqsQueueConfigurationBuilder {
         self.queue_policy = input;
         self
     }
+    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    pub fn get_queue_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_policy
+    }
     /// Consumes the builder and constructs a [`SqsQueueConfiguration`](crate::types::SqsQueueConfiguration).
     pub fn build(self) -> crate::types::SqsQueueConfiguration {
         crate::types::SqsQueueConfiguration {

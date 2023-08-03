@@ -63,6 +63,10 @@ impl ListCrawlersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListCrawlersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -97,6 +105,14 @@ impl ListCrawlersInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListCrawlersInput`](crate::operation::list_crawlers::ListCrawlersInput).
     pub fn build(

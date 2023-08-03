@@ -36,6 +36,12 @@ impl UpdateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>A string that represents the new name of the project that you are updating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +137,10 @@ impl UpdateProjectFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A string that represents the new name of the project that you are updating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
@@ -138,6 +152,10 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_default_job_timeout_minutes(input);
         self
     }
+    /// <p>The number of minutes a test run in the project executes before it times out.</p>
+    pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_default_job_timeout_minutes()
+    }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -147,5 +165,9 @@ impl UpdateProjectFluentBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
     }
 }

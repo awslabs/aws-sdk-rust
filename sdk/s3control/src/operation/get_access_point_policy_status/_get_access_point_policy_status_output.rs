@@ -49,6 +49,10 @@ impl GetAccessPointPolicyStatusOutputBuilder {
         self.policy_status = input;
         self
     }
+    /// <p>Indicates the current policy status of the specified access point.</p>
+    pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
+        &self.policy_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

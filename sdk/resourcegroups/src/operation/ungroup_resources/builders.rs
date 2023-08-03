@@ -41,6 +41,12 @@ impl UngroupResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UngroupResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl UngroupResourcesFluentBuilder {
         self.inner = self.inner.set_group(input);
         self
     }
+    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group()
+    }
     /// Appends an item to `ResourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -150,5 +160,11 @@ impl UngroupResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
+    }
+    /// <p>The ARNs of the resources to be removed from the group.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
     }
 }

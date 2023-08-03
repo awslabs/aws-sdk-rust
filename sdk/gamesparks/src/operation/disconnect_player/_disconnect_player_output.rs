@@ -67,6 +67,12 @@ impl DisconnectPlayerOutputBuilder {
         self.disconnect_successes = input;
         self
     }
+    /// <p>The list of the connection ids that were disconnected.</p>
+    pub fn get_disconnect_successes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disconnect_successes
+    }
     /// Appends an item to `disconnect_failures`.
     ///
     /// To override the contents of this collection use [`set_disconnect_failures`](Self::set_disconnect_failures).
@@ -88,6 +94,12 @@ impl DisconnectPlayerOutputBuilder {
     ) -> Self {
         self.disconnect_failures = input;
         self
+    }
+    /// <p>The list of the connection ids that could not be disconnected.</p>
+    pub fn get_disconnect_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disconnect_failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

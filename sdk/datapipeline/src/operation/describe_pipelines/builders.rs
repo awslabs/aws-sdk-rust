@@ -44,6 +44,12 @@ impl DescribePipelinesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePipelines as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_pipelines::builders::DescribePipelinesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,5 +146,11 @@ impl DescribePipelinesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_ids(input);
         self
+    }
+    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
+    pub fn get_pipeline_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pipeline_ids()
     }
 }

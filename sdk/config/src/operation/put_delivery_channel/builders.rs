@@ -40,6 +40,12 @@ impl PutDeliveryChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDeliveryChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl PutDeliveryChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_channel(input);
         self
+    }
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    pub fn get_delivery_channel(&self) -> &::std::option::Option<crate::types::DeliveryChannel> {
+        self.inner.get_delivery_channel()
     }
 }

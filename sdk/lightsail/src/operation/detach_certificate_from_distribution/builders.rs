@@ -37,6 +37,10 @@ impl DetachCertificateFromDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachCertificateFromDistribution as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,5 +112,10 @@ impl DetachCertificateFromDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
+    }
+    /// <p>The name of the distribution from which to detach the certificate.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_name()
     }
 }

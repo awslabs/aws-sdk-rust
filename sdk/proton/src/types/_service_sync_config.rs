@@ -72,6 +72,10 @@ impl ServiceSyncConfigBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that the service instance is added to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl ServiceSyncConfigBuilder {
     ) -> Self {
         self.repository_provider = input;
         self
+    }
+    /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
     pub fn repository_name(
@@ -101,6 +111,10 @@ impl ServiceSyncConfigBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl ServiceSyncConfigBuilder {
         self.branch = input;
         self
     }
+    /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
+    }
     /// <p>The file path to the service sync configuration file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl ServiceSyncConfigBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The file path to the service sync configuration file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// Consumes the builder and constructs a [`ServiceSyncConfig`](crate::types::ServiceSyncConfig).
     pub fn build(self) -> crate::types::ServiceSyncConfig {

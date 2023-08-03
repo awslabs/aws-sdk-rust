@@ -39,6 +39,10 @@ impl GetRuleInputBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
     pub fn build(
         self,

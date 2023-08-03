@@ -94,6 +94,10 @@ impl TemplateVersionResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>A JSON object that specifies the default values that are used for message variables in the version of the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
     pub fn default_substitutions(
         mut self,
@@ -109,6 +113,10 @@ impl TemplateVersionResponseBuilder {
     ) -> Self {
         self.default_substitutions = input;
         self
+    }
+    /// <p>A JSON object that specifies the default values that are used for message variables in the version of the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
     }
     /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
     pub fn last_modified_date(
@@ -126,6 +134,10 @@ impl TemplateVersionResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The custom description of the version of the message template.</p>
     pub fn template_description(
         mut self,
@@ -141,6 +153,10 @@ impl TemplateVersionResponseBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>The custom description of the version of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The name of the message template.</p>
     pub fn template_name(
@@ -158,6 +174,10 @@ impl TemplateVersionResponseBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn template_type(
         mut self,
@@ -174,6 +194,10 @@ impl TemplateVersionResponseBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_type
+    }
     /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -183,6 +207,10 @@ impl TemplateVersionResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`TemplateVersionResponse`](crate::types::TemplateVersionResponse).
     pub fn build(self) -> crate::types::TemplateVersionResponse {

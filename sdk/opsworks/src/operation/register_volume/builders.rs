@@ -37,6 +37,12 @@ impl RegisterVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterVolume as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_volume::builders::RegisterVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl RegisterVolumeFluentBuilder {
         self.inner = self.inner.set_ec2_volume_id(input);
         self
     }
+    /// <p>The Amazon EBS volume ID.</p>
+    pub fn get_ec2_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_volume_id()
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -134,5 +144,9 @@ impl RegisterVolumeFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
 }

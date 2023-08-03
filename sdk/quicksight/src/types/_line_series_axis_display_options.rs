@@ -55,6 +55,10 @@ impl LineSeriesAxisDisplayOptionsBuilder {
         self.axis_options = input;
         self
     }
+    /// <p>The options that determine the presentation of the line series axis.</p>
+    pub fn get_axis_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+        &self.axis_options
+    }
     /// Appends an item to `missing_data_configurations`.
     ///
     /// To override the contents of this collection use [`set_missing_data_configurations`](Self::set_missing_data_configurations).
@@ -76,6 +80,12 @@ impl LineSeriesAxisDisplayOptionsBuilder {
     ) -> Self {
         self.missing_data_configurations = input;
         self
+    }
+    /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
+    pub fn get_missing_data_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MissingDataConfiguration>> {
+        &self.missing_data_configurations
     }
     /// Consumes the builder and constructs a [`LineSeriesAxisDisplayOptions`](crate::types::LineSeriesAxisDisplayOptions).
     pub fn build(self) -> crate::types::LineSeriesAxisDisplayOptions {

@@ -45,6 +45,10 @@ impl DetachStaticIpInputBuilder {
         self.static_ip_name = input;
         self
     }
+    /// <p>The name of the static IP to detach from the instance.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_ip_name
+    }
     /// Consumes the builder and constructs a [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
     pub fn build(
         self,

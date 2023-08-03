@@ -162,6 +162,10 @@ impl DescribePortalOutputBuilder {
         self.portal_id = input;
         self
     }
+    /// <p>The ID of the portal.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +178,11 @@ impl DescribePortalOutputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The name of the portal.</p>
     pub fn portal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_name = ::std::option::Option::Some(input.into());
@@ -183,6 +192,10 @@ impl DescribePortalOutputBuilder {
     pub fn set_portal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_name = input;
         self
+    }
+    /// <p>The name of the portal.</p>
+    pub fn get_portal_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_name
     }
     /// <p>The portal's description.</p>
     pub fn portal_description(
@@ -200,6 +213,10 @@ impl DescribePortalOutputBuilder {
         self.portal_description = input;
         self
     }
+    /// <p>The portal's description.</p>
+    pub fn get_portal_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_description
+    }
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub fn portal_client_id(
         mut self,
@@ -215,6 +232,10 @@ impl DescribePortalOutputBuilder {
     ) -> Self {
         self.portal_client_id = input;
         self
+    }
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    pub fn get_portal_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_client_id
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(
@@ -232,6 +253,10 @@ impl DescribePortalOutputBuilder {
         self.portal_start_url = input;
         self
     }
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    pub fn get_portal_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_start_url
+    }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub fn portal_contact_email(
         mut self,
@@ -248,6 +273,10 @@ impl DescribePortalOutputBuilder {
         self.portal_contact_email = input;
         self
     }
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
+    pub fn get_portal_contact_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_contact_email
+    }
     /// <p>The current status of the portal, which contains a state and any error message.</p>
     pub fn portal_status(mut self, input: crate::types::PortalStatus) -> Self {
         self.portal_status = ::std::option::Option::Some(input);
@@ -260,6 +289,10 @@ impl DescribePortalOutputBuilder {
     ) -> Self {
         self.portal_status = input;
         self
+    }
+    /// <p>The current status of the portal, which contains a state and any error message.</p>
+    pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
+        &self.portal_status
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub fn portal_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -274,6 +307,10 @@ impl DescribePortalOutputBuilder {
         self.portal_creation_date = input;
         self
     }
+    /// <p>The date the portal was created, in Unix epoch time.</p>
+    pub fn get_portal_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.portal_creation_date
+    }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub fn portal_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.portal_last_update_date = ::std::option::Option::Some(input);
@@ -286,6 +323,12 @@ impl DescribePortalOutputBuilder {
     ) -> Self {
         self.portal_last_update_date = input;
         self
+    }
+    /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    pub fn get_portal_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.portal_last_update_date
     }
     /// <p>The portal's logo image, which is available at a URL.</p>
     pub fn portal_logo_image_location(mut self, input: crate::types::ImageLocation) -> Self {
@@ -300,6 +343,12 @@ impl DescribePortalOutputBuilder {
         self.portal_logo_image_location = input;
         self
     }
+    /// <p>The portal's logo image, which is available at a URL.</p>
+    pub fn get_portal_logo_image_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageLocation> {
+        &self.portal_logo_image_location
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -309,6 +358,10 @@ impl DescribePortalOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The service to use to authenticate users to the portal.</p>
     pub fn portal_auth_mode(mut self, input: crate::types::AuthMode) -> Self {
@@ -322,6 +375,10 @@ impl DescribePortalOutputBuilder {
     ) -> Self {
         self.portal_auth_mode = input;
         self
+    }
+    /// <p>The service to use to authenticate users to the portal.</p>
+    pub fn get_portal_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
+        &self.portal_auth_mode
     }
     /// <p>The email address that sends alarm notifications.</p>
     pub fn notification_sender_email(
@@ -339,6 +396,10 @@ impl DescribePortalOutputBuilder {
         self.notification_sender_email = input;
         self
     }
+    /// <p>The email address that sends alarm notifications.</p>
+    pub fn get_notification_sender_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_sender_email
+    }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
     pub fn alarms(mut self, input: crate::types::Alarms) -> Self {
         self.alarms = ::std::option::Option::Some(input);
@@ -348,6 +409,10 @@ impl DescribePortalOutputBuilder {
     pub fn set_alarms(mut self, input: ::std::option::Option<crate::types::Alarms>) -> Self {
         self.alarms = input;
         self
+    }
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<crate::types::Alarms> {
+        &self.alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

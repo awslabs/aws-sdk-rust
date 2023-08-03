@@ -65,6 +65,10 @@ impl UpdateRescoreExecutionPlanInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the rescore execution plan that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A new name for the rescore execution plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateRescoreExecutionPlanInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A new name for the rescore execution plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A new description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl UpdateRescoreExecutionPlanInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for the rescore execution plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -97,6 +109,12 @@ impl UpdateRescoreExecutionPlanInputBuilder {
     ) -> Self {
         self.capacity_units = input;
         self
+    }
+    /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        &self.capacity_units
     }
     /// Consumes the builder and constructs a [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
     pub fn build(

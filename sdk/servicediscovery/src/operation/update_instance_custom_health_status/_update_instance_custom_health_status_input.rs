@@ -55,6 +55,10 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
         self.service_id = input;
         self
     }
+    /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
+    }
     /// <p>The ID of the instance that you want to change the health status for.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance that you want to change the health status for.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub fn status(mut self, input: crate::types::CustomHealthStatus) -> Self {
@@ -77,6 +85,10 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomHealthStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput, ::aws_smithy_http::operation::error::BuildError>{

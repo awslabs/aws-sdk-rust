@@ -36,6 +36,12 @@ impl ModifyClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_cluster::builders::ModifyClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,12 @@ impl ModifyClusterFluentBuilder {
         self.inner = self.inner.set_backup_retention_policy(input);
         self
     }
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn get_backup_retention_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
+        self.inner.get_backup_retention_policy()
+    }
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
@@ -130,5 +142,9 @@ impl ModifyClusterFluentBuilder {
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self
+    }
+    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
     }
 }

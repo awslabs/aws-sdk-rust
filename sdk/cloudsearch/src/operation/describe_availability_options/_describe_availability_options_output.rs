@@ -52,6 +52,12 @@ impl DescribeAvailabilityOptionsOutputBuilder {
         self.availability_options = input;
         self
     }
+    /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
+    pub fn get_availability_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailabilityOptionsStatus> {
+        &self.availability_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

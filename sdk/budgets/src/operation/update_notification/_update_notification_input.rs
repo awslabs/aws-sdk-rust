@@ -65,6 +65,10 @@ impl UpdateNotificationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the budget whose notification you want to update.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UpdateNotificationInputBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p>The name of the budget whose notification you want to update.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>The previous notification that is associated with a budget.</p>
     pub fn old_notification(mut self, input: crate::types::Notification) -> Self {
@@ -88,6 +96,10 @@ impl UpdateNotificationInputBuilder {
         self.old_notification = input;
         self
     }
+    /// <p>The previous notification that is associated with a budget.</p>
+    pub fn get_old_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.old_notification
+    }
     /// <p>The updated notification to be associated with a budget.</p>
     pub fn new_notification(mut self, input: crate::types::Notification) -> Self {
         self.new_notification = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl UpdateNotificationInputBuilder {
     ) -> Self {
         self.new_notification = input;
         self
+    }
+    /// <p>The updated notification to be associated with a budget.</p>
+    pub fn get_new_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.new_notification
     }
     /// Consumes the builder and constructs a [`UpdateNotificationInput`](crate::operation::update_notification::UpdateNotificationInput).
     pub fn build(

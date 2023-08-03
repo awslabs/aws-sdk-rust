@@ -60,6 +60,10 @@ impl DataSetConfigurationBuilder {
         self.placeholder = input;
         self
     }
+    /// <p>Placeholder.</p>
+    pub fn get_placeholder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placeholder
+    }
     /// <p>Dataset schema.</p>
     pub fn data_set_schema(mut self, input: crate::types::DataSetSchema) -> Self {
         self.data_set_schema = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DataSetConfigurationBuilder {
     ) -> Self {
         self.data_set_schema = input;
         self
+    }
+    /// <p>Dataset schema.</p>
+    pub fn get_data_set_schema(&self) -> &::std::option::Option<crate::types::DataSetSchema> {
+        &self.data_set_schema
     }
     /// Appends an item to `column_group_schema_list`.
     ///
@@ -91,6 +99,12 @@ impl DataSetConfigurationBuilder {
     ) -> Self {
         self.column_group_schema_list = input;
         self
+    }
+    /// <p>A structure containing the list of column group schemas.</p>
+    pub fn get_column_group_schema_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>> {
+        &self.column_group_schema_list
     }
     /// Consumes the builder and constructs a [`DataSetConfiguration`](crate::types::DataSetConfiguration).
     pub fn build(self) -> crate::types::DataSetConfiguration {

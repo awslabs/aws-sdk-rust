@@ -53,6 +53,10 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Appends an item to `credentials`.
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
@@ -71,6 +75,12 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>The termination SIP credentials.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Credential>> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{

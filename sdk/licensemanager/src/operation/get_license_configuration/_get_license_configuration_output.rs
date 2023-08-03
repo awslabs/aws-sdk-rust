@@ -200,6 +200,10 @@ impl GetLicenseConfigurationOutputBuilder {
         self.license_configuration_id = input;
         self
     }
+    /// <p>Unique ID for the license configuration.</p>
+    pub fn get_license_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_id
+    }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn license_configuration_arn(
         mut self,
@@ -216,6 +220,10 @@ impl GetLicenseConfigurationOutputBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// <p>Name of the license configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -226,6 +234,10 @@ impl GetLicenseConfigurationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the license configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Description of the license configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -235,6 +247,10 @@ impl GetLicenseConfigurationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the license configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Dimension for which the licenses are counted.</p>
     pub fn license_counting_type(mut self, input: crate::types::LicenseCountingType) -> Self {
@@ -248,6 +264,12 @@ impl GetLicenseConfigurationOutputBuilder {
     ) -> Self {
         self.license_counting_type = input;
         self
+    }
+    /// <p>Dimension for which the licenses are counted.</p>
+    pub fn get_license_counting_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseCountingType> {
+        &self.license_counting_type
     }
     /// Appends an item to `license_rules`.
     ///
@@ -271,6 +293,12 @@ impl GetLicenseConfigurationOutputBuilder {
         self.license_rules = input;
         self
     }
+    /// <p>License rules.</p>
+    pub fn get_license_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_rules
+    }
     /// <p>Number of available licenses.</p>
     pub fn license_count(mut self, input: i64) -> Self {
         self.license_count = ::std::option::Option::Some(input);
@@ -280,6 +308,10 @@ impl GetLicenseConfigurationOutputBuilder {
     pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.license_count = input;
         self
+    }
+    /// <p>Number of available licenses.</p>
+    pub fn get_license_count(&self) -> &::std::option::Option<i64> {
+        &self.license_count
     }
     /// <p>Sets the number of available licenses as a hard limit.</p>
     pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -291,6 +323,10 @@ impl GetLicenseConfigurationOutputBuilder {
         self.license_count_hard_limit = input;
         self
     }
+    /// <p>Sets the number of available licenses as a hard limit.</p>
+    pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
+        &self.license_count_hard_limit
+    }
     /// <p>Number of licenses assigned to resources.</p>
     pub fn consumed_licenses(mut self, input: i64) -> Self {
         self.consumed_licenses = ::std::option::Option::Some(input);
@@ -301,6 +337,10 @@ impl GetLicenseConfigurationOutputBuilder {
         self.consumed_licenses = input;
         self
     }
+    /// <p>Number of licenses assigned to resources.</p>
+    pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
+        &self.consumed_licenses
+    }
     /// <p>License configuration status.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -310,6 +350,10 @@ impl GetLicenseConfigurationOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>License configuration status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Account ID of the owner of the license configuration.</p>
     pub fn owner_account_id(
@@ -326,6 +370,10 @@ impl GetLicenseConfigurationOutputBuilder {
     ) -> Self {
         self.owner_account_id = input;
         self
+    }
+    /// <p>Account ID of the owner of the license configuration.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
     }
     /// Appends an item to `consumed_license_summary_list`.
     ///
@@ -349,6 +397,12 @@ impl GetLicenseConfigurationOutputBuilder {
         self.consumed_license_summary_list = input;
         self
     }
+    /// <p>Summaries of the licenses consumed by resources.</p>
+    pub fn get_consumed_license_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>> {
+        &self.consumed_license_summary_list
+    }
     /// Appends an item to `managed_resource_summary_list`.
     ///
     /// To override the contents of this collection use [`set_managed_resource_summary_list`](Self::set_managed_resource_summary_list).
@@ -371,6 +425,12 @@ impl GetLicenseConfigurationOutputBuilder {
         self.managed_resource_summary_list = input;
         self
     }
+    /// <p>Summaries of the managed resources.</p>
+    pub fn get_managed_resource_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>> {
+        &self.managed_resource_summary_list
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -389,6 +449,10 @@ impl GetLicenseConfigurationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags for the license configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `product_information_list`.
     ///
@@ -409,6 +473,12 @@ impl GetLicenseConfigurationOutputBuilder {
         self.product_information_list = input;
         self
     }
+    /// <p>Product information.</p>
+    pub fn get_product_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+        &self.product_information_list
+    }
     /// <p>Automated discovery information.</p>
     pub fn automated_discovery_information(
         mut self,
@@ -425,6 +495,12 @@ impl GetLicenseConfigurationOutputBuilder {
         self.automated_discovery_information = input;
         self
     }
+    /// <p>Automated discovery information.</p>
+    pub fn get_automated_discovery_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomatedDiscoveryInformation> {
+        &self.automated_discovery_information
+    }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
         self.disassociate_when_not_found = ::std::option::Option::Some(input);
@@ -434,6 +510,10 @@ impl GetLicenseConfigurationOutputBuilder {
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disassociate_when_not_found = input;
         self
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
+        &self.disassociate_when_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

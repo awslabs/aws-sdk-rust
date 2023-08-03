@@ -52,6 +52,10 @@ impl RestoreTableOutputBuilder {
         self.restored_table_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
+    pub fn get_restored_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restored_table_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

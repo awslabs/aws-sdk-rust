@@ -65,6 +65,14 @@ impl LegGeometryBuilder {
         self.line_string = input;
         self
     }
+    /// <p>An ordered list of positions used to plot a route on a map. </p>
+    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+    /// </ul>
+    pub fn get_line_string(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+        &self.line_string
+    }
     /// Consumes the builder and constructs a [`LegGeometry`](crate::types::LegGeometry).
     pub fn build(self) -> crate::types::LegGeometry {
         crate::types::LegGeometry {

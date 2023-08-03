@@ -55,6 +55,10 @@ impl CreatePackageInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>A name for the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +83,14 @@ impl CreatePackageInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags for the package.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(

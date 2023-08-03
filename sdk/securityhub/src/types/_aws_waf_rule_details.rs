@@ -68,6 +68,10 @@ impl AwsWafRuleDetailsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metrics for this rule. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>A descriptive name for the rule. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl AwsWafRuleDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive name for the rule. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `predicate_list`.
     ///
@@ -97,6 +105,12 @@ impl AwsWafRuleDetailsBuilder {
         self.predicate_list = input;
         self
     }
+    /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
+    pub fn get_predicate_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>> {
+        &self.predicate_list
+    }
     /// <p>The ID of the WAF rule. </p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -106,6 +120,10 @@ impl AwsWafRuleDetailsBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>The ID of the WAF rule. </p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`AwsWafRuleDetails`](crate::types::AwsWafRuleDetails).
     pub fn build(self) -> crate::types::AwsWafRuleDetails {

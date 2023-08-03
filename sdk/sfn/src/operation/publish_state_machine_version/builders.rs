@@ -43,6 +43,10 @@ impl PublishStateMachineVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishStateMachineVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,10 @@ impl PublishStateMachineVersionFluentBuilder {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_arn()
+    }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
     /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p> <note>
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
@@ -155,6 +163,13 @@ impl PublishStateMachineVersionFluentBuilder {
         self.inner = self.inner.set_revision_id(input);
         self
     }
+    /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
+    /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p> <note>
+    /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
+    /// </note>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
+    }
     /// <p>An optional description of the state machine version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -164,5 +179,9 @@ impl PublishStateMachineVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of the state machine version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

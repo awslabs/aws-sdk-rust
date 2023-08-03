@@ -85,6 +85,10 @@ impl ProtectionBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the protection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ProtectionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl ProtectionBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `health_check_ids`.
     ///
@@ -127,6 +139,12 @@ impl ProtectionBuilder {
         self.health_check_ids = input;
         self
     }
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    pub fn get_health_check_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.health_check_ids
+    }
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub fn protection_arn(
         mut self,
@@ -142,6 +160,10 @@ impl ProtectionBuilder {
     ) -> Self {
         self.protection_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the protection.</p>
+    pub fn get_protection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_arn
     }
     /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
     pub fn application_layer_automatic_response_configuration(
@@ -159,6 +181,12 @@ impl ProtectionBuilder {
     ) -> Self {
         self.application_layer_automatic_response_configuration = input;
         self
+    }
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    pub fn get_application_layer_automatic_response_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationLayerAutomaticResponseConfiguration> {
+        &self.application_layer_automatic_response_configuration
     }
     /// Consumes the builder and constructs a [`Protection`](crate::types::Protection).
     pub fn build(self) -> crate::types::Protection {

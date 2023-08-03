@@ -36,6 +36,10 @@ impl GetReservationUtilizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReservationUtilization as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl GetReservationUtilizationFluentBuilder {
         self.inner = self.inner.set_time_period(input);
         self
     }
+    /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        self.inner.get_time_period()
+    }
     /// Appends an item to `GroupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
@@ -146,6 +154,12 @@ impl GetReservationUtilizationFluentBuilder {
         self.inner = self.inner.set_group_by(input);
         self
     }
+    /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+        self.inner.get_group_by()
+    }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
@@ -160,6 +174,11 @@ impl GetReservationUtilizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
+    }
+    /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
+    /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
+        self.inner.get_granularity()
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
@@ -198,6 +217,24 @@ impl GetReservationUtilizationFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <ul>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>SCOPE</p> </li>
+    /// <li> <p>TENANCY</p> </li>
+    /// </ul>
+    /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        self.inner.get_filter()
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -254,6 +291,31 @@ impl GetReservationUtilizationFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>UtilizationPercentageInUnits</code> </p> </li>
+    /// <li> <p> <code>PurchasedHours</code> </p> </li>
+    /// <li> <p> <code>PurchasedUnits</code> </p> </li>
+    /// <li> <p> <code>TotalActualHours</code> </p> </li>
+    /// <li> <p> <code>TotalActualUnits</code> </p> </li>
+    /// <li> <p> <code>UnusedHours</code> </p> </li>
+    /// <li> <p> <code>UnusedUnits</code> </p> </li>
+    /// <li> <p> <code>OnDemandCostOfRIHoursUsed</code> </p> </li>
+    /// <li> <p> <code>NetRISavings</code> </p> </li>
+    /// <li> <p> <code>TotalPotentialRISavings</code> </p> </li>
+    /// <li> <p> <code>AmortizedUpfrontFee</code> </p> </li>
+    /// <li> <p> <code>AmortizedRecurringFee</code> </p> </li>
+    /// <li> <p> <code>TotalAmortizedFee</code> </p> </li>
+    /// <li> <p> <code>RICostForUnusedHours</code> </p> </li>
+    /// <li> <p> <code>RealizedSavings</code> </p> </li>
+    /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
+    /// </ul>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        self.inner.get_sort_by()
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
         mut self,
@@ -270,6 +332,10 @@ impl GetReservationUtilizationFluentBuilder {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_page_token()
+    }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -279,5 +345,9 @@ impl GetReservationUtilizationFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

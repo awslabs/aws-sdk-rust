@@ -56,6 +56,10 @@ impl Ec2ReplaceRouteTableAssociationActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the association ID.</p>
     pub fn association_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.association_id = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl Ec2ReplaceRouteTableAssociationActionBuilder {
         self.association_id = input;
         self
     }
+    /// <p>Information about the association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.association_id
+    }
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl Ec2ReplaceRouteTableAssociationActionBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the ID of the new route table to associate with the subnet.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2ReplaceRouteTableAssociationAction`](crate::types::Ec2ReplaceRouteTableAssociationAction).
     pub fn build(self) -> crate::types::Ec2ReplaceRouteTableAssociationAction {

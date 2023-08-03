@@ -51,6 +51,12 @@ impl UpdateApprovalRuleTemplateContentOutputBuilder {
         self.approval_rule_template = input;
         self
     }
+    /// <p>Returns information about an approval rule template.</p>
+    pub fn get_approval_rule_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApprovalRuleTemplate> {
+        &self.approval_rule_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

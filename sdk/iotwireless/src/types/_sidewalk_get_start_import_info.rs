@@ -61,6 +61,12 @@ impl SidewalkGetStartImportInfoBuilder {
         self.device_creation_file_list = input;
         self
     }
+    /// <p>List of Sidewalk devices that are added to the import task.</p>
+    pub fn get_device_creation_file_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_creation_file_list
+    }
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl SidewalkGetStartImportInfoBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`SidewalkGetStartImportInfo`](crate::types::SidewalkGetStartImportInfo).
     pub fn build(self) -> crate::types::SidewalkGetStartImportInfo {

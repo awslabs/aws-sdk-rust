@@ -36,6 +36,12 @@ impl CreateComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -147,6 +157,10 @@ impl CreateComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
     }
     /// Appends an item to `ResourceList`.
     ///
@@ -167,5 +181,11 @@ impl CreateComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_list(input);
         self
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn get_resource_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_list()
     }
 }

@@ -115,6 +115,10 @@ impl JobTemplateDataBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The execution role ARN of the job run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p> The release version of Amazon EMR.</p>
     pub fn release_label(
         mut self,
@@ -130,6 +134,10 @@ impl JobTemplateDataBuilder {
     ) -> Self {
         self.release_label = input;
         self
+    }
+    /// <p> The release version of Amazon EMR.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
     pub fn configuration_overrides(
@@ -147,6 +155,12 @@ impl JobTemplateDataBuilder {
         self.configuration_overrides = input;
         self
     }
+    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParametricConfigurationOverrides> {
+        &self.configuration_overrides
+    }
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.job_driver = ::std::option::Option::Some(input);
@@ -156,6 +170,10 @@ impl JobTemplateDataBuilder {
     pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
         self.job_driver = input;
         self
+    }
+    /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
+    pub fn get_job_driver(&self) -> &::std::option::Option<crate::types::JobDriver> {
+        &self.job_driver
     }
     /// Adds a key-value pair to `parameter_configuration`.
     ///
@@ -185,6 +203,17 @@ impl JobTemplateDataBuilder {
         self.parameter_configuration = input;
         self
     }
+    /// <p>The configuration of parameters existing in the job template.</p>
+    pub fn get_parameter_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TemplateParameterConfiguration,
+        >,
+    > {
+        &self.parameter_configuration
+    }
     /// Adds a key-value pair to `job_tags`.
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
@@ -209,6 +238,14 @@ impl JobTemplateDataBuilder {
     ) -> Self {
         self.job_tags = input;
         self
+    }
+    /// <p>The tags assigned to jobs started using the job template.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.job_tags
     }
     /// Consumes the builder and constructs a [`JobTemplateData`](crate::types::JobTemplateData).
     pub fn build(self) -> crate::types::JobTemplateData {

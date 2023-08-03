@@ -50,6 +50,10 @@ impl GetMetricsSummaryOutputBuilder {
         self.metrics_summary = input;
         self
     }
+    /// <p>The summary metrics from the specified date.</p>
+    pub fn get_metrics_summary(&self) -> &::std::option::Option<crate::types::MetricsSummary> {
+        &self.metrics_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -46,6 +46,10 @@ impl StartObjectOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// Upload Id for a given upload.
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

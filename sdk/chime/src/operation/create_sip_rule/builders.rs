@@ -40,6 +40,12 @@ impl CreateSipRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSipRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl CreateSipRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the SIP rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub fn trigger_type(mut self, input: crate::types::SipRuleTriggerType) -> Self {
         self.inner = self.inner.trigger_type(input);
@@ -134,6 +144,10 @@ impl CreateSipRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trigger_type(input);
         self
+    }
+    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
+    pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::SipRuleTriggerType> {
+        self.inner.get_trigger_type()
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
     pub fn trigger_value(
@@ -151,6 +165,10 @@ impl CreateSipRuleFluentBuilder {
         self.inner = self.inner.set_trigger_value(input);
         self
     }
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
+    pub fn get_trigger_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trigger_value()
+    }
     /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
@@ -160,6 +178,10 @@ impl CreateSipRuleFluentBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
+    }
+    /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disabled()
     }
     /// Appends an item to `TargetApplications`.
     ///
@@ -177,5 +199,11 @@ impl CreateSipRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self
+    }
+    /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
+    pub fn get_target_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+        self.inner.get_target_applications()
     }
 }

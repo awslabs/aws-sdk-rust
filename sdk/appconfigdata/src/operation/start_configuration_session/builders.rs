@@ -36,6 +36,10 @@ impl StartConfigurationSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartConfigurationSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl StartConfigurationSessionFluentBuilder {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
+    /// <p>The application ID or the application name.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
+    }
     /// <p>The environment ID or the environment name.</p>
     pub fn environment_identifier(
         mut self,
@@ -147,6 +155,10 @@ impl StartConfigurationSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
+    }
+    /// <p>The environment ID or the environment name.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub fn configuration_profile_identifier(
@@ -164,6 +176,12 @@ impl StartConfigurationSessionFluentBuilder {
         self.inner = self.inner.set_configuration_profile_identifier(input);
         self
     }
+    /// <p>The configuration profile ID or the configuration profile name.</p>
+    pub fn get_configuration_profile_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_profile_identifier()
+    }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.required_minimum_poll_interval_in_seconds(input);
@@ -178,5 +196,9 @@ impl StartConfigurationSessionFluentBuilder {
             .inner
             .set_required_minimum_poll_interval_in_seconds(input);
         self
+    }
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
+    pub fn get_required_minimum_poll_interval_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_required_minimum_poll_interval_in_seconds()
     }
 }

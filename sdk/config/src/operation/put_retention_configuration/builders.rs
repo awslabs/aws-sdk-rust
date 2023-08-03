@@ -38,6 +38,10 @@ impl PutRetentionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRetentionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl PutRetentionConfigurationFluentBuilder {
     pub fn set_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period_in_days(input);
         self
+    }
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
+    /// </note>
+    pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period_in_days()
     }
 }

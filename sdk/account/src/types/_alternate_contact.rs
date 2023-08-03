@@ -83,6 +83,10 @@ impl AlternateContactBuilder {
         self.name = input;
         self
     }
+    /// <p>The name associated with this alternate contact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The title associated with this alternate contact.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl AlternateContactBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title associated with this alternate contact.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The email address associated with this alternate contact.</p>
     pub fn email_address(
@@ -109,6 +117,10 @@ impl AlternateContactBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address associated with this alternate contact.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The phone number associated with this alternate contact.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl AlternateContactBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number associated with this alternate contact.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The type of alternate contact.</p>
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
@@ -131,6 +147,12 @@ impl AlternateContactBuilder {
     ) -> Self {
         self.alternate_contact_type = input;
         self
+    }
+    /// <p>The type of alternate contact.</p>
+    pub fn get_alternate_contact_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+        &self.alternate_contact_type
     }
     /// Consumes the builder and constructs a [`AlternateContact`](crate::types::AlternateContact).
     pub fn build(self) -> crate::types::AlternateContact {

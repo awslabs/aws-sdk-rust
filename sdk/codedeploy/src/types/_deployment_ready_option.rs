@@ -67,6 +67,16 @@ impl DeploymentReadyOptionBuilder {
         self.action_on_timeout = input;
         self
     }
+    /// <p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p>
+    /// <ul>
+    /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
+    /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
+    /// </ul>
+    pub fn get_action_on_timeout(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentReadyAction> {
+        &self.action_on_timeout
+    }
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
     pub fn wait_time_in_minutes(mut self, input: i32) -> Self {
         self.wait_time_in_minutes = ::std::option::Option::Some(input);
@@ -76,6 +86,10 @@ impl DeploymentReadyOptionBuilder {
     pub fn set_wait_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_time_in_minutes = input;
         self
+    }
+    /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
+    pub fn get_wait_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.wait_time_in_minutes
     }
     /// Consumes the builder and constructs a [`DeploymentReadyOption`](crate::types::DeploymentReadyOption).
     pub fn build(self) -> crate::types::DeploymentReadyOption {

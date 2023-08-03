@@ -40,6 +40,10 @@ impl PropertyFilterBuilder {
         self.property = input;
         self
     }
+    /// <p>Represents a single property to match with when searching a raster data collection.</p>
+    pub fn get_property(&self) -> &::std::option::Option<crate::types::Property> {
+        &self.property
+    }
     /// Consumes the builder and constructs a [`PropertyFilter`](crate::types::PropertyFilter).
     pub fn build(self) -> crate::types::PropertyFilter {
         crate::types::PropertyFilter {

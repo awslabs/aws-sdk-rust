@@ -66,6 +66,10 @@ impl Ec2TagFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The tag filter key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The tag filter value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl Ec2TagFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The tag filter value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The tag filter type:</p>
     /// <ul>
@@ -98,6 +106,15 @@ impl Ec2TagFilterBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The tag filter type:</p>
+    /// <ul>
+    /// <li> <p> <code>KEY_ONLY</code>: Key only.</p> </li>
+    /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
+    /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Ec2TagFilterType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Ec2TagFilter`](crate::types::Ec2TagFilter).
     pub fn build(self) -> crate::types::Ec2TagFilter {

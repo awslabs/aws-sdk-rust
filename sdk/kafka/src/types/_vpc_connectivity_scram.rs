@@ -40,6 +40,10 @@ impl VpcConnectivityScramBuilder {
         self.enabled = input;
         self
     }
+    /// <p>SASL/SCRAM authentication is on or off for VPC connectivity.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
     pub fn build(self) -> crate::types::VpcConnectivityScram {
         crate::types::VpcConnectivityScram {

@@ -37,6 +37,12 @@ impl CreateKeyGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKeyGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_key_group::builders::CreateKeyGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,9 @@ impl CreateKeyGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_group_config(input);
         self
+    }
+    /// <p>A key group configuration.</p>
+    pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
+        self.inner.get_key_group_config()
     }
 }

@@ -54,6 +54,10 @@ impl ListTablesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `tables`.
     ///
     /// To override the contents of this collection use [`set_tables`](Self::set_tables).
@@ -72,6 +76,12 @@ impl ListTablesOutputBuilder {
     ) -> Self {
         self.tables = input;
         self
+    }
+    /// <p>A list of tables.</p>
+    pub fn get_tables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableSummary>> {
+        &self.tables
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

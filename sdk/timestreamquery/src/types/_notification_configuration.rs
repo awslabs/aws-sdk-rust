@@ -43,6 +43,10 @@ impl NotificationConfigurationBuilder {
         self.sns_configuration = input;
         self
     }
+    /// <p>Details on SNS configuration. </p>
+    pub fn get_sns_configuration(&self) -> &::std::option::Option<crate::types::SnsConfiguration> {
+        &self.sns_configuration
+    }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {

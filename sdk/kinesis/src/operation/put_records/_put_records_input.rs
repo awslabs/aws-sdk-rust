@@ -66,6 +66,12 @@ impl PutRecordsInputBuilder {
         self.records = input;
         self
     }
+    /// <p>The records associated with the request.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>> {
+        &self.records
+    }
     /// <p>The stream name associated with the request.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl PutRecordsInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The stream name associated with the request.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +95,10 @@ impl PutRecordsInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
     pub fn build(

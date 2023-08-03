@@ -68,6 +68,10 @@ impl UnsuccessfulFaceAssociationBuilder {
         self.face_id = input;
         self
     }
+    /// <p>A unique identifier assigned to the face. </p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// <p>A provided ID for the UserID. Unique within the collection. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl UnsuccessfulFaceAssociationBuilder {
         self.user_id = input;
         self
     }
+    /// <p>A provided ID for the UserID. Unique within the collection. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UnsuccessfulFaceAssociationBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Appends an item to `reasons`.
     ///
@@ -108,6 +120,13 @@ impl UnsuccessfulFaceAssociationBuilder {
     ) -> Self {
         self.reasons = input;
         self
+    }
+    /// <p> The reason why the association was unsuccessful. </p>
+    pub fn get_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>
+    {
+        &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceAssociation`](crate::types::UnsuccessfulFaceAssociation).
     pub fn build(self) -> crate::types::UnsuccessfulFaceAssociation {

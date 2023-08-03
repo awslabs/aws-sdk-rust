@@ -46,6 +46,10 @@ impl DeleteCoreNetworkInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The network ID of the deleted core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// Consumes the builder and constructs a [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
     pub fn build(
         self,

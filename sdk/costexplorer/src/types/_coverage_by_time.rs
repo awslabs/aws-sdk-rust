@@ -60,6 +60,10 @@ impl CoverageByTimeBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The period that this coverage was used over.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -79,6 +83,12 @@ impl CoverageByTimeBuilder {
         self.groups = input;
         self
     }
+    /// <p>The groups of instances that the reservation covered.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>> {
+        &self.groups
+    }
     /// <p>The total reservation coverage, in hours.</p>
     pub fn total(mut self, input: crate::types::Coverage) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl CoverageByTimeBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total reservation coverage, in hours.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Coverage> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`CoverageByTime`](crate::types::CoverageByTime).
     pub fn build(self) -> crate::types::CoverageByTime {

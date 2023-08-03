@@ -54,6 +54,10 @@ impl DeleteAnalyzerInputBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The name of the analyzer to delete.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteAnalyzerInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
     pub fn build(

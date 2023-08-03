@@ -36,6 +36,12 @@ impl CreateWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkflow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl CreateWorkflowFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>An engine for the workflow.</p>
     pub fn engine(mut self, input: crate::types::WorkflowEngine) -> Self {
@@ -141,6 +155,10 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>An engine for the workflow.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::WorkflowEngine> {
+        self.inner.get_engine()
+    }
     /// <p>A ZIP archive for the workflow.</p>
     pub fn definition_zip(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.definition_zip(input);
@@ -153,6 +171,10 @@ impl CreateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition_zip(input);
         self
+    }
+    /// <p>A ZIP archive for the workflow.</p>
+    pub fn get_definition_zip(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_definition_zip()
     }
     /// <p>The URI of a definition for the workflow.</p>
     pub fn definition_uri(
@@ -170,6 +192,10 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_definition_uri(input);
         self
     }
+    /// <p>The URI of a definition for the workflow.</p>
+    pub fn get_definition_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_definition_uri()
+    }
     /// <p>The path of the main definition file for the workflow.</p>
     pub fn main(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.main(input.into());
@@ -179,6 +205,10 @@ impl CreateWorkflowFluentBuilder {
     pub fn set_main(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_main(input);
         self
+    }
+    /// <p>The path of the main definition file for the workflow.</p>
+    pub fn get_main(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_main()
     }
     /// Adds a key-value pair to `parameterTemplate`.
     ///
@@ -203,6 +233,14 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_parameter_template(input);
         self
     }
+    /// <p>A parameter template for the workflow.</p>
+    pub fn get_parameter_template(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
+    > {
+        self.inner.get_parameter_template()
+    }
     /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
@@ -212,6 +250,10 @@ impl CreateWorkflowFluentBuilder {
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
+    }
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_capacity()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -236,6 +278,14 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the workflow.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -245,6 +295,10 @@ impl CreateWorkflowFluentBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
+    }
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
@@ -258,5 +312,9 @@ impl CreateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accelerators(input);
         self
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
+        self.inner.get_accelerators()
     }
 }

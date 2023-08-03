@@ -51,6 +51,10 @@ impl DescribeDomainConfigOutputBuilder {
         self.domain_config = input;
         self
     }
+    /// <p>Container for the configuration of the OpenSearch Service domain.</p>
+    pub fn get_domain_config(&self) -> &::std::option::Option<crate::types::DomainConfig> {
+        &self.domain_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

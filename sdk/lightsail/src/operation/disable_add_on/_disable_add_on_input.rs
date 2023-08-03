@@ -50,6 +50,10 @@ impl DisableAddOnInputBuilder {
         self.add_on_type = input;
         self
     }
+    /// <p>The add-on type to disable.</p>
+    pub fn get_add_on_type(&self) -> &::std::option::Option<crate::types::AddOnType> {
+        &self.add_on_type
+    }
     /// <p>The name of the source resource for which to disable the add-on.</p>
     pub fn resource_name(
         mut self,
@@ -65,6 +69,10 @@ impl DisableAddOnInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of the source resource for which to disable the add-on.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`DisableAddOnInput`](crate::operation::disable_add_on::DisableAddOnInput).
     pub fn build(

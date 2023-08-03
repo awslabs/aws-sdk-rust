@@ -39,6 +39,12 @@ impl PutAlternateContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAlternateContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl PutAlternateContactFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Specifies a name for the alternate contact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies a title for the alternate contact.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -138,6 +148,10 @@ impl PutAlternateContactFluentBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
+    }
+    /// <p>Specifies a title for the alternate contact.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
     }
     /// <p>Specifies an email address for the alternate contact. </p>
     pub fn email_address(
@@ -155,6 +169,10 @@ impl PutAlternateContactFluentBuilder {
         self.inner = self.inner.set_email_address(input);
         self
     }
+    /// <p>Specifies an email address for the alternate contact. </p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
+    }
     /// <p>Specifies a phone number for the alternate contact.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number(input.into());
@@ -164,6 +182,10 @@ impl PutAlternateContactFluentBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
+    }
+    /// <p>Specifies a phone number for the alternate contact.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number()
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
@@ -177,6 +199,12 @@ impl PutAlternateContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alternate_contact_type(input);
         self
+    }
+    /// <p>Specifies which alternate contact you want to create or update.</p>
+    pub fn get_alternate_contact_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+        self.inner.get_alternate_contact_type()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -197,5 +225,14 @@ impl PutAlternateContactFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+    /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+    /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+    /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
+    /// </note>
+    /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

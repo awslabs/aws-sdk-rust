@@ -86,6 +86,10 @@ impl ClusterSubnetGroupBuilder {
         self.cluster_subnet_group_name = input;
         self
     }
+    /// <p>The name of the cluster subnet group.</p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_subnet_group_name
+    }
     /// <p>The description of the cluster subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl ClusterSubnetGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the cluster subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The VPC ID of the cluster subnet group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ClusterSubnetGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID of the cluster subnet group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
     pub fn subnet_group_status(
@@ -121,6 +133,10 @@ impl ClusterSubnetGroupBuilder {
     ) -> Self {
         self.subnet_group_status = input;
         self
+    }
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    pub fn get_subnet_group_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_status
     }
     /// Appends an item to `subnets`.
     ///
@@ -141,6 +157,10 @@ impl ClusterSubnetGroupBuilder {
         self.subnets = input;
         self
     }
+    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+        &self.subnets
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -159,6 +179,10 @@ impl ClusterSubnetGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags for the cluster subnet group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ClusterSubnetGroup`](crate::types::ClusterSubnetGroup).
     pub fn build(self) -> crate::types::ClusterSubnetGroup {

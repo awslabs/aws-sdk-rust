@@ -53,6 +53,12 @@ impl BatchGetAutomationRulesInputBuilder {
         self.automation_rules_arns = input;
         self
     }
+    /// <p> A list of rule ARNs to get details for. </p>
+    pub fn get_automation_rules_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.automation_rules_arns
+    }
     /// Consumes the builder and constructs a [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
     pub fn build(
         self,

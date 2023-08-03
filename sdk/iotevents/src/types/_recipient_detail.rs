@@ -43,6 +43,10 @@ impl RecipientDetailBuilder {
         self.sso_identity = input;
         self
     }
+    /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
+    pub fn get_sso_identity(&self) -> &::std::option::Option<crate::types::SsoIdentity> {
+        &self.sso_identity
+    }
     /// Consumes the builder and constructs a [`RecipientDetail`](crate::types::RecipientDetail).
     pub fn build(self) -> crate::types::RecipientDetail {
         crate::types::RecipientDetail {

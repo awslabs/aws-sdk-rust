@@ -48,6 +48,10 @@ impl QueueInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the queue.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub fn enqueue_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.enqueue_timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl QueueInfoBuilder {
     ) -> Self {
         self.enqueue_timestamp = input;
         self
+    }
+    /// <p>The timestamp when the contact was added to the queue.</p>
+    pub fn get_enqueue_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enqueue_timestamp
     }
     /// Consumes the builder and constructs a [`QueueInfo`](crate::types::QueueInfo).
     pub fn build(self) -> crate::types::QueueInfo {

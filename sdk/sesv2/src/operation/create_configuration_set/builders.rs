@@ -36,6 +36,13 @@ impl CreateConfigurationSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateConfigurationSetFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn tracking_options(mut self, input: crate::types::TrackingOptions) -> Self {
         self.inner = self.inner.tracking_options(input);
@@ -144,6 +155,10 @@ impl CreateConfigurationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tracking_options(input);
         self
+    }
+    /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    pub fn get_tracking_options(&self) -> &::std::option::Option<crate::types::TrackingOptions> {
+        self.inner.get_tracking_options()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
@@ -158,6 +173,10 @@ impl CreateConfigurationSetFluentBuilder {
         self.inner = self.inner.set_delivery_options(input);
         self
     }
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
+        self.inner.get_delivery_options()
+    }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
         self.inner = self.inner.reputation_options(input);
@@ -171,6 +190,12 @@ impl CreateConfigurationSetFluentBuilder {
         self.inner = self.inner.set_reputation_options(input);
         self
     }
+    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
+    pub fn get_reputation_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReputationOptions> {
+        self.inner.get_reputation_options()
+    }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     pub fn sending_options(mut self, input: crate::types::SendingOptions) -> Self {
         self.inner = self.inner.sending_options(input);
@@ -183,6 +208,10 @@ impl CreateConfigurationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sending_options(input);
         self
+    }
+    /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
+    pub fn get_sending_options(&self) -> &::std::option::Option<crate::types::SendingOptions> {
+        self.inner.get_sending_options()
     }
     /// Appends an item to `Tags`.
     ///
@@ -201,6 +230,10 @@ impl CreateConfigurationSetFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn suppression_options(mut self, input: crate::types::SuppressionOptions) -> Self {
         self.inner = self.inner.suppression_options(input);
@@ -214,6 +247,12 @@ impl CreateConfigurationSetFluentBuilder {
         self.inner = self.inner.set_suppression_options(input);
         self
     }
+    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    pub fn get_suppression_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuppressionOptions> {
+        self.inner.get_suppression_options()
+    }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     pub fn vdm_options(mut self, input: crate::types::VdmOptions) -> Self {
         self.inner = self.inner.vdm_options(input);
@@ -226,5 +265,9 @@ impl CreateConfigurationSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vdm_options(input);
         self
+    }
+    /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
+    pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
+        self.inner.get_vdm_options()
     }
 }

@@ -43,6 +43,12 @@ impl AccountLevelPermissionsBuilder {
         self.block_public_access = input;
         self
     }
+    /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
+    pub fn get_block_public_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockPublicAccess> {
+        &self.block_public_access
+    }
     /// Consumes the builder and constructs a [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
     pub fn build(self) -> crate::types::AccountLevelPermissions {
         crate::types::AccountLevelPermissions {

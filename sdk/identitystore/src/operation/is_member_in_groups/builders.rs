@@ -36,6 +36,12 @@ impl IsMemberInGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the IsMemberInGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl IsMemberInGroupsFluentBuilder {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_store_id()
+    }
     /// <p>An object containing the identifier of a group member.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.inner = self.inner.member_id(input);
@@ -141,6 +151,10 @@ impl IsMemberInGroupsFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>An object containing the identifier of a group member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
+        self.inner.get_member_id()
     }
     /// Appends an item to `GroupIds`.
     ///
@@ -158,5 +172,9 @@ impl IsMemberInGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
+    }
+    /// <p>A list of identifiers for groups in the identity store.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_ids()
     }
 }

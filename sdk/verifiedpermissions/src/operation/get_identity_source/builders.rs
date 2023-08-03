@@ -36,6 +36,12 @@ impl GetIdentitySourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentitySource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetIdentitySourceFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>Specifies the ID of the identity source you want information about.</p>
     pub fn identity_source_id(
         mut self,
@@ -147,5 +157,9 @@ impl GetIdentitySourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_source_id(input);
         self
+    }
+    /// <p>Specifies the ID of the identity source you want information about.</p>
+    pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_source_id()
     }
 }

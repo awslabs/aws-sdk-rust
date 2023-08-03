@@ -63,6 +63,10 @@ impl CreateRevisionInputBuilder {
         self.comment = input;
         self
     }
+    /// <p>An optional comment about the revision.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateRevisionInputBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -97,6 +105,14 @@ impl CreateRevisionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRevisionInput`](crate::operation::create_revision::CreateRevisionInput).
     pub fn build(

@@ -46,6 +46,10 @@ impl PromoteResourceShareCreatedFromPolicyOutputBuilder {
         self.return_value = input;
         self
     }
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

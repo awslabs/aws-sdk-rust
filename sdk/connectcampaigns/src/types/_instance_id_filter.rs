@@ -48,6 +48,10 @@ impl InstanceIdFilterBuilder {
         self.value = input;
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Operators for Connect instance identifier filter
     pub fn operator(mut self, input: crate::types::InstanceIdFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InstanceIdFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// Operators for Connect instance identifier filter
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::InstanceIdFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`InstanceIdFilter`](crate::types::InstanceIdFilter).
     pub fn build(self) -> crate::types::InstanceIdFilter {

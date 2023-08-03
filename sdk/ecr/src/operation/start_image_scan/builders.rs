@@ -36,6 +36,12 @@ impl StartImageScanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImageScan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_image_scan::builders::StartImageScanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartImageScanFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository that contains the images to scan.</p>
     pub fn repository_name(
         mut self,
@@ -142,6 +152,10 @@ impl StartImageScanFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that contains the images to scan.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.inner = self.inner.image_id(input);
@@ -154,5 +168,9 @@ impl StartImageScanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        self.inner.get_image_id()
     }
 }

@@ -53,6 +53,10 @@ impl ImportDecoderManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the decoder manifest to import. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `network_file_definitions`.
     ///
     /// To override the contents of this collection use [`set_network_file_definitions`](Self::set_network_file_definitions).
@@ -71,6 +75,12 @@ impl ImportDecoderManifestInputBuilder {
     ) -> Self {
         self.network_file_definitions = input;
         self
+    }
+    /// <p> The file to load into an Amazon Web Services account. </p>
+    pub fn get_network_file_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
+        &self.network_file_definitions
     }
     /// Consumes the builder and constructs a [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
     pub fn build(

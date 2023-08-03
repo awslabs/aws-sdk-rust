@@ -72,6 +72,10 @@ impl StageSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>Stage ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Stage name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl StageSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Stage name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>ID of the active session within the stage.</p>
     pub fn active_session_id(
@@ -97,6 +105,10 @@ impl StageSummaryBuilder {
     ) -> Self {
         self.active_session_id = input;
         self
+    }
+    /// <p>ID of the active session within the stage.</p>
+    pub fn get_active_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_session_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,6 +134,14 @@ impl StageSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StageSummary`](crate::types::StageSummary).
     pub fn build(self) -> crate::types::StageSummary {

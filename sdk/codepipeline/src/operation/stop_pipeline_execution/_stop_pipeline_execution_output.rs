@@ -54,6 +54,10 @@ impl StopPipelineExecutionOutputBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

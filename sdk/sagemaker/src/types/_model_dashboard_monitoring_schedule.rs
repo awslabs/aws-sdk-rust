@@ -139,6 +139,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.monitoring_schedule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
+    pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_arn
+    }
     /// <p>The name of a monitoring schedule.</p>
     pub fn monitoring_schedule_name(
         mut self,
@@ -155,6 +159,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The status of the monitoring schedule.</p>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
@@ -168,6 +176,12 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.monitoring_schedule_status = input;
         self
     }
+    /// <p>The status of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleStatus> {
+        &self.monitoring_schedule_status
+    }
     /// <p>The monitor type of a model monitor.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
         self.monitoring_type = ::std::option::Option::Some(input);
@@ -180,6 +194,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
     ) -> Self {
         self.monitoring_type = input;
         self
+    }
+    /// <p>The monitor type of a model monitor.</p>
+    pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
+        &self.monitoring_type
     }
     /// <p>If a monitoring job failed, provides the reason.</p>
     pub fn failure_reason(
@@ -197,6 +215,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If a monitoring job failed, provides the reason.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -210,6 +232,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -222,6 +248,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
@@ -239,6 +269,12 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.monitoring_schedule_config = input;
         self
     }
+    /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
+    pub fn get_monitoring_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+        &self.monitoring_schedule_config
+    }
     /// <p>The endpoint which is monitored.</p>
     pub fn endpoint_name(
         mut self,
@@ -254,6 +290,10 @@ impl ModelDashboardMonitoringScheduleBuilder {
     ) -> Self {
         self.endpoint_name = input;
         self
+    }
+    /// <p>The endpoint which is monitored.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
     }
     /// Appends an item to `monitoring_alert_summaries`.
     ///
@@ -277,6 +317,12 @@ impl ModelDashboardMonitoringScheduleBuilder {
         self.monitoring_alert_summaries = input;
         self
     }
+    /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
+    pub fn get_monitoring_alert_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>> {
+        &self.monitoring_alert_summaries
+    }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn last_monitoring_execution_summary(
         mut self,
@@ -292,6 +338,12 @@ impl ModelDashboardMonitoringScheduleBuilder {
     ) -> Self {
         self.last_monitoring_execution_summary = input;
         self
+    }
+    /// <p>Summary of information about the last monitoring job to run.</p>
+    pub fn get_last_monitoring_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringExecutionSummary> {
+        &self.last_monitoring_execution_summary
     }
     /// Consumes the builder and constructs a [`ModelDashboardMonitoringSchedule`](crate::types::ModelDashboardMonitoringSchedule).
     pub fn build(self) -> crate::types::ModelDashboardMonitoringSchedule {

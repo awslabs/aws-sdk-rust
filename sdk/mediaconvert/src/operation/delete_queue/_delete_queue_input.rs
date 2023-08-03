@@ -39,6 +39,10 @@ impl DeleteQueueInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the queue that you want to delete.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
     pub fn build(
         self,

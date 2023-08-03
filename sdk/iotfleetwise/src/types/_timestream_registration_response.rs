@@ -86,6 +86,10 @@ impl TimestreamRegistrationResponseBuilder {
         self.timestream_database_name = input;
         self
     }
+    /// <p>The name of the Timestream database.</p>
+    pub fn get_timestream_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_database_name
+    }
     /// <p>The name of the Timestream database table.</p>
     pub fn timestream_table_name(
         mut self,
@@ -101,6 +105,10 @@ impl TimestreamRegistrationResponseBuilder {
     ) -> Self {
         self.timestream_table_name = input;
         self
+    }
+    /// <p>The name of the Timestream database table.</p>
+    pub fn get_timestream_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_table_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
     pub fn timestream_database_arn(
@@ -118,6 +126,10 @@ impl TimestreamRegistrationResponseBuilder {
         self.timestream_database_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
+    pub fn get_timestream_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_database_arn
+    }
     /// <p>The ARN of the Timestream database table.</p>
     pub fn timestream_table_arn(
         mut self,
@@ -134,6 +146,10 @@ impl TimestreamRegistrationResponseBuilder {
         self.timestream_table_arn = input;
         self
     }
+    /// <p>The ARN of the Timestream database table.</p>
+    pub fn get_timestream_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestream_table_arn
+    }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
@@ -146,6 +162,12 @@ impl TimestreamRegistrationResponseBuilder {
     ) -> Self {
         self.registration_status = input;
         self
+    }
+    /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
+    pub fn get_registration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(
@@ -162,6 +184,10 @@ impl TimestreamRegistrationResponseBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message associated with a registration error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`TimestreamRegistrationResponse`](crate::types::TimestreamRegistrationResponse).
     pub fn build(self) -> crate::types::TimestreamRegistrationResponse {

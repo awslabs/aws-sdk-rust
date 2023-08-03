@@ -110,6 +110,10 @@ impl DescribeDeviceOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the device.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.status
+    }
     /// <p>The model of the device.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl DescribeDeviceOutputBuilder {
         self.model = input;
         self
     }
+    /// <p>The model of the device.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
     /// <p>The manufacturer of the device.</p>
     pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manufacturer = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer = input;
         self
+    }
+    /// <p>The manufacturer of the device.</p>
+    pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer
     }
     /// <p>The operating system of the device.</p>
     pub fn operating_system(
@@ -146,6 +158,10 @@ impl DescribeDeviceOutputBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>The operating system of the device.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system
+    }
     /// <p>The operating system version of the device.</p>
     pub fn operating_system_version(
         mut self,
@@ -162,6 +178,10 @@ impl DescribeDeviceOutputBuilder {
         self.operating_system_version = input;
         self
     }
+    /// <p>The operating system version of the device.</p>
+    pub fn get_operating_system_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system_version
+    }
     /// <p>The operating system patch level of the device.</p>
     pub fn patch_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_level = ::std::option::Option::Some(input.into());
@@ -171,6 +191,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_patch_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_level = input;
         self
+    }
+    /// <p>The operating system patch level of the device.</p>
+    pub fn get_patch_level(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_level
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
     pub fn first_accessed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -185,6 +209,10 @@ impl DescribeDeviceOutputBuilder {
         self.first_accessed_time = input;
         self
     }
+    /// <p>The date that the device first signed in to Amazon WorkLink.</p>
+    pub fn get_first_accessed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_accessed_time
+    }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
     pub fn last_accessed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed_time = ::std::option::Option::Some(input);
@@ -198,6 +226,10 @@ impl DescribeDeviceOutputBuilder {
         self.last_accessed_time = input;
         self
     }
+    /// <p>The date that the device last accessed Amazon WorkLink.</p>
+    pub fn get_last_accessed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_time
+    }
     /// <p>The user name associated with the device.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -207,6 +239,10 @@ impl DescribeDeviceOutputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name associated with the device.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

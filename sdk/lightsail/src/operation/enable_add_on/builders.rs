@@ -36,6 +36,10 @@ impl EnableAddOnFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableAddOn as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_add_on::builders::EnableAddOnInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl EnableAddOnFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The name of the source resource for which to enable or modify the add-on.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub fn add_on_request(mut self, input: crate::types::AddOnRequest) -> Self {
         self.inner = self.inner.add_on_request(input);
@@ -136,5 +144,9 @@ impl EnableAddOnFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_on_request(input);
         self
+    }
+    /// <p>An array of strings representing the add-on to enable or modify.</p>
+    pub fn get_add_on_request(&self) -> &::std::option::Option<crate::types::AddOnRequest> {
+        self.inner.get_add_on_request()
     }
 }

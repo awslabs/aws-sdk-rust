@@ -51,6 +51,10 @@ impl CreatePlayerSessionOutputBuilder {
         self.player_session = input;
         self
     }
+    /// <p>Object that describes the newly created player session record.</p>
+    pub fn get_player_session(&self) -> &::std::option::Option<crate::types::PlayerSession> {
+        &self.player_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

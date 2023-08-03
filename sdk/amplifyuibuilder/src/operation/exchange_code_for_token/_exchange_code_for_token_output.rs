@@ -72,6 +72,10 @@ impl ExchangeCodeForTokenOutputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>The access token.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The date and time when the new access token expires.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ExchangeCodeForTokenOutputBuilder {
     pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expires_in = input;
         self
+    }
+    /// <p>The date and time when the new access token expires.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
+        &self.expires_in
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     pub fn refresh_token(
@@ -97,6 +105,10 @@ impl ExchangeCodeForTokenOutputBuilder {
     ) -> Self {
         self.refresh_token = input;
         self
+    }
+    /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

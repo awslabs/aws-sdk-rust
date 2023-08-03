@@ -61,6 +61,12 @@ impl ColumnHierarchyBuilder {
         self.explicit_hierarchy = input;
         self
     }
+    /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
+    pub fn get_explicit_hierarchy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExplicitHierarchy> {
+        &self.explicit_hierarchy
+    }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
     pub fn date_time_hierarchy(mut self, input: crate::types::DateTimeHierarchy) -> Self {
         self.date_time_hierarchy = ::std::option::Option::Some(input);
@@ -74,6 +80,12 @@ impl ColumnHierarchyBuilder {
         self.date_time_hierarchy = input;
         self
     }
+    /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
+    pub fn get_date_time_hierarchy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateTimeHierarchy> {
+        &self.date_time_hierarchy
+    }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
     pub fn predefined_hierarchy(mut self, input: crate::types::PredefinedHierarchy) -> Self {
         self.predefined_hierarchy = ::std::option::Option::Some(input);
@@ -86,6 +98,12 @@ impl ColumnHierarchyBuilder {
     ) -> Self {
         self.predefined_hierarchy = input;
         self
+    }
+    /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
+    pub fn get_predefined_hierarchy(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredefinedHierarchy> {
+        &self.predefined_hierarchy
     }
     /// Consumes the builder and constructs a [`ColumnHierarchy`](crate::types::ColumnHierarchy).
     pub fn build(self) -> crate::types::ColumnHierarchy {

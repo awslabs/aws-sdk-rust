@@ -37,6 +37,10 @@ impl CreateNotificationSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNotificationSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateNotificationSubscriptionFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint(input.into());
@@ -142,6 +150,10 @@ impl CreateNotificationSubscriptionFluentBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint(input);
         self
+    }
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint()
     }
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub fn protocol(mut self, input: crate::types::SubscriptionProtocolType) -> Self {
@@ -156,6 +168,10 @@ impl CreateNotificationSubscriptionFluentBuilder {
         self.inner = self.inner.set_protocol(input);
         self
     }
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::SubscriptionProtocolType> {
+        self.inner.get_protocol()
+    }
     /// <p>The notification type.</p>
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.inner = self.inner.subscription_type(input);
@@ -168,5 +184,9 @@ impl CreateNotificationSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscription_type(input);
         self
+    }
+    /// <p>The notification type.</p>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
+        self.inner.get_subscription_type()
     }
 }

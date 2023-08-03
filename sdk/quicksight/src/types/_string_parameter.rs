@@ -48,6 +48,10 @@ impl StringParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for a string parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl StringParameterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values of a string parameter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`StringParameter`](crate::types::StringParameter).
     pub fn build(self) -> crate::types::StringParameter {

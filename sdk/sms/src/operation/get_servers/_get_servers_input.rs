@@ -59,6 +59,10 @@ impl GetServersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetServersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `vm_server_address_list`.
     ///
@@ -87,6 +95,12 @@ impl GetServersInputBuilder {
     ) -> Self {
         self.vm_server_address_list = input;
         self
+    }
+    /// <p>The server addresses.</p>
+    pub fn get_vm_server_address_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>> {
+        &self.vm_server_address_list
     }
     /// Consumes the builder and constructs a [`GetServersInput`](crate::operation::get_servers::GetServersInput).
     pub fn build(

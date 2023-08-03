@@ -48,6 +48,10 @@ impl ColumnRowFilterBuilder {
         self.column_name = input;
         self
     }
+    /// <p>A string containing the name of the column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>A string containing the row-level filter expression.</p>
     pub fn row_filter_expression(
         mut self,
@@ -63,6 +67,10 @@ impl ColumnRowFilterBuilder {
     ) -> Self {
         self.row_filter_expression = input;
         self
+    }
+    /// <p>A string containing the row-level filter expression.</p>
+    pub fn get_row_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_filter_expression
     }
     /// Consumes the builder and constructs a [`ColumnRowFilter`](crate::types::ColumnRowFilter).
     pub fn build(self) -> crate::types::ColumnRowFilter {

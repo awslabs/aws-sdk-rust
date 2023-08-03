@@ -76,6 +76,10 @@ impl ActionTypeBuilder {
         self.id = input;
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.id
+    }
     /// <p>The settings for the action type.</p>
     pub fn settings(mut self, input: crate::types::ActionTypeSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl ActionTypeBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The settings for the action type.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::ActionTypeSettings> {
+        &self.settings
     }
     /// Appends an item to `action_configuration_properties`.
     ///
@@ -111,6 +119,12 @@ impl ActionTypeBuilder {
         self.action_configuration_properties = input;
         self
     }
+    /// <p>The configuration properties for the action type.</p>
+    pub fn get_action_configuration_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
+        &self.action_configuration_properties
+    }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     pub fn input_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.input_artifact_details = ::std::option::Option::Some(input);
@@ -124,6 +138,12 @@ impl ActionTypeBuilder {
         self.input_artifact_details = input;
         self
     }
+    /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    pub fn get_input_artifact_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+        &self.input_artifact_details
+    }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
     pub fn output_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.output_artifact_details = ::std::option::Option::Some(input);
@@ -136,6 +156,12 @@ impl ActionTypeBuilder {
     ) -> Self {
         self.output_artifact_details = input;
         self
+    }
+    /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    pub fn get_output_artifact_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+        &self.output_artifact_details
     }
     /// Consumes the builder and constructs a [`ActionType`](crate::types::ActionType).
     pub fn build(self) -> crate::types::ActionType {

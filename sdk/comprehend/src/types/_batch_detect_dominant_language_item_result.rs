@@ -48,6 +48,10 @@ impl BatchDetectDominantLanguageItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `languages`.
     ///
     /// To override the contents of this collection use [`set_languages`](Self::set_languages).
@@ -66,6 +70,12 @@ impl BatchDetectDominantLanguageItemResultBuilder {
     ) -> Self {
         self.languages = input;
         self
+    }
+    /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
+    pub fn get_languages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>> {
+        &self.languages
     }
     /// Consumes the builder and constructs a [`BatchDetectDominantLanguageItemResult`](crate::types::BatchDetectDominantLanguageItemResult).
     pub fn build(self) -> crate::types::BatchDetectDominantLanguageItemResult {

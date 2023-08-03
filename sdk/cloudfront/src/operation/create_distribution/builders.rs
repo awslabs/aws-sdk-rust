@@ -36,6 +36,12 @@ impl CreateDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDistribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,11 @@ impl CreateDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_config(input);
         self
+    }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+        self.inner.get_distribution_config()
     }
 }

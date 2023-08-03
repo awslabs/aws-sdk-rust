@@ -47,6 +47,10 @@ impl UpdateDocumentDefaultVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a custom document that you want to set as the default version.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of a custom document that you want to set as the default version.</p>
     pub fn document_version(
         mut self,
@@ -62,6 +66,10 @@ impl UpdateDocumentDefaultVersionInputBuilder {
     ) -> Self {
         self.document_version = input;
         self
+    }
+    /// <p>The version of a custom document that you want to set as the default version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
     }
     /// Consumes the builder and constructs a [`UpdateDocumentDefaultVersionInput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput).
     pub fn build(

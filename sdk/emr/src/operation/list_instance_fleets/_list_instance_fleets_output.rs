@@ -64,6 +64,12 @@ impl ListInstanceFleetsOutputBuilder {
         self.instance_fleets = input;
         self
     }
+    /// <p>The list of instance fleets for the cluster and given filters.</p>
+    pub fn get_instance_fleets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>> {
+        &self.instance_fleets
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListInstanceFleetsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

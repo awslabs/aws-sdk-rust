@@ -51,6 +51,10 @@ impl RealTimeInferenceConfigBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type the model is deployed to.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RealTimeInferenceConfigBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Consumes the builder and constructs a [`RealTimeInferenceConfig`](crate::types::RealTimeInferenceConfig).
     pub fn build(self) -> crate::types::RealTimeInferenceConfig {

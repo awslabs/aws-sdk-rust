@@ -232,6 +232,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
+    /// <p>The name of a hyperparameter tuning job.</p>
+    pub fn get_hyper_parameter_tuning_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_arn(
         mut self,
@@ -247,6 +253,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.hyper_parameter_tuning_job_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a hyperparameter tuning job.</p>
+    pub fn get_hyper_parameter_tuning_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_arn
     }
     /// <p>Configures a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_config(
@@ -264,6 +276,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.hyper_parameter_tuning_job_config = input;
         self
     }
+    /// <p>Configures a hyperparameter tuning job.</p>
+    pub fn get_hyper_parameter_tuning_job_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
+        &self.hyper_parameter_tuning_job_config
+    }
     /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
     pub fn training_job_definition(
         mut self,
@@ -279,6 +297,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.training_job_definition = input;
         self
+    }
+    /// <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+    pub fn get_training_job_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobDefinition> {
+        &self.training_job_definition
     }
     /// Appends an item to `training_job_definitions`.
     ///
@@ -304,6 +328,13 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.training_job_definitions = input;
         self
     }
+    /// <p>The job definitions included in a hyperparameter tuning job.</p>
+    pub fn get_training_job_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>
+    {
+        &self.training_job_definitions
+    }
     /// <p>The status of a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_status(
         mut self,
@@ -320,6 +351,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.hyper_parameter_tuning_job_status = input;
         self
     }
+    /// <p>The status of a hyperparameter tuning job.</p>
+    pub fn get_hyper_parameter_tuning_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
+        &self.hyper_parameter_tuning_job_status
+    }
     /// <p>The time that a hyperparameter tuning job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -332,6 +369,10 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that a hyperparameter tuning job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time that a hyperparameter tuning job ended.</p>
     pub fn hyper_parameter_tuning_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -346,6 +387,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.hyper_parameter_tuning_end_time = input;
         self
     }
+    /// <p>The time that a hyperparameter tuning job ended.</p>
+    pub fn get_hyper_parameter_tuning_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.hyper_parameter_tuning_end_time
+    }
     /// <p>The time that a hyperparameter tuning job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -358,6 +405,10 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time that a hyperparameter tuning job was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
     pub fn training_job_status_counters(
@@ -375,6 +426,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.training_job_status_counters = input;
         self
     }
+    /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+    pub fn get_training_job_status_counters(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingJobStatusCounters> {
+        &self.training_job_status_counters
+    }
     /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
     pub fn objective_status_counters(
         mut self,
@@ -390,6 +447,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.objective_status_counters = input;
         self
+    }
+    /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+    pub fn get_objective_status_counters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectiveStatusCounters> {
+        &self.objective_status_counters
     }
     /// <p>The container for the summary information about a training job.</p>
     pub fn best_training_job(
@@ -408,6 +471,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self
     }
     /// <p>The container for the summary information about a training job.</p>
+    pub fn get_best_training_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
+        &self.best_training_job
+    }
+    /// <p>The container for the summary information about a training job.</p>
     pub fn overall_best_training_job(
         mut self,
         input: crate::types::HyperParameterTrainingJobSummary,
@@ -422,6 +491,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.overall_best_training_job = input;
         self
+    }
+    /// <p>The container for the summary information about a training job.</p>
+    pub fn get_overall_best_training_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTrainingJobSummary> {
+        &self.overall_best_training_job
     }
     /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
     /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
@@ -445,6 +520,15 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.warm_start_config = input;
         self
     }
+    /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+    /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+    /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
+    /// </note>
+    pub fn get_warm_start_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig> {
+        &self.warm_start_config
+    }
     /// <p>The error that was created when a hyperparameter tuning job failed.</p>
     pub fn failure_reason(
         mut self,
@@ -460,6 +544,10 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The error that was created when a hyperparameter tuning job failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Appends an item to `tags`.
     ///
@@ -480,6 +568,10 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
     pub fn tuning_job_completion_details(
         mut self,
@@ -496,6 +588,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
         self.tuning_job_completion_details = input;
         self
     }
+    /// <p>Information about either a current or completed hyperparameter tuning job.</p>
+    pub fn get_tuning_job_completion_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails> {
+        &self.tuning_job_completion_details
+    }
     /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
     pub fn consumed_resources(
         mut self,
@@ -511,6 +609,12 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     ) -> Self {
         self.consumed_resources = input;
         self
+    }
+    /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+    pub fn get_consumed_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources> {
+        &self.consumed_resources
     }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobSearchEntity`](crate::types::HyperParameterTuningJobSearchEntity).
     pub fn build(self) -> crate::types::HyperParameterTuningJobSearchEntity {

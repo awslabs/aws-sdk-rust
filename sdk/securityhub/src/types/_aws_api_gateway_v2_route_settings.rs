@@ -78,6 +78,10 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
         self.detailed_metrics_enabled = input;
         self
     }
+    /// <p>Indicates whether detailed metrics are enabled.</p>
+    pub fn get_detailed_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.detailed_metrics_enabled
+    }
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
@@ -100,6 +104,13 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
         self.logging_level = input;
         self
     }
+    /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
+    /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
+    /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
+    /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
+    pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logging_level
+    }
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     pub fn data_trace_enabled(mut self, input: bool) -> Self {
         self.data_trace_enabled = ::std::option::Option::Some(input);
@@ -109,6 +120,10 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     pub fn set_data_trace_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_trace_enabled = input;
         self
+    }
+    /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
+    pub fn get_data_trace_enabled(&self) -> &::std::option::Option<bool> {
+        &self.data_trace_enabled
     }
     /// <p>The throttling burst limit.</p>
     pub fn throttling_burst_limit(mut self, input: i32) -> Self {
@@ -120,6 +135,10 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
         self.throttling_burst_limit = input;
         self
     }
+    /// <p>The throttling burst limit.</p>
+    pub fn get_throttling_burst_limit(&self) -> &::std::option::Option<i32> {
+        &self.throttling_burst_limit
+    }
     /// <p>The throttling rate limit.</p>
     pub fn throttling_rate_limit(mut self, input: f64) -> Self {
         self.throttling_rate_limit = ::std::option::Option::Some(input);
@@ -129,6 +148,10 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     pub fn set_throttling_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throttling_rate_limit = input;
         self
+    }
+    /// <p>The throttling rate limit.</p>
+    pub fn get_throttling_rate_limit(&self) -> &::std::option::Option<f64> {
+        &self.throttling_rate_limit
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayV2RouteSettings`](crate::types::AwsApiGatewayV2RouteSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayV2RouteSettings {

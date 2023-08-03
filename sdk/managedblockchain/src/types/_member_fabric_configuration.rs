@@ -60,6 +60,10 @@ impl MemberFabricConfigurationBuilder {
         self.admin_username = input;
         self
     }
+    /// <p>The user name for the member's initial administrative user.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_username
+    }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
     pub fn admin_password(
         mut self,
@@ -75,6 +79,10 @@ impl MemberFabricConfigurationBuilder {
     ) -> Self {
         self.admin_password = input;
         self
+    }
+    /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
+    pub fn get_admin_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password
     }
     /// Consumes the builder and constructs a [`MemberFabricConfiguration`](crate::types::MemberFabricConfiguration).
     pub fn build(self) -> crate::types::MemberFabricConfiguration {

@@ -96,6 +96,10 @@ impl DataSourceSyncJobBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>A identifier for the synchronization job.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>The Unix timestamp when the synchronization job started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl DataSourceSyncJobBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The Unix timestamp when the synchronization job started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The Unix timestamp when the synchronization job completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +130,10 @@ impl DataSourceSyncJobBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The Unix timestamp when the synchronization job completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
     pub fn status(mut self, input: crate::types::DataSourceSyncJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl DataSourceSyncJobBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
+        &self.status
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     pub fn error_message(
@@ -151,6 +167,10 @@ impl DataSourceSyncJobBuilder {
         self.error_message = input;
         self
     }
+    /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl DataSourceSyncJobBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
     pub fn data_source_error_code(
@@ -177,6 +201,10 @@ impl DataSourceSyncJobBuilder {
         self.data_source_error_code = input;
         self
     }
+    /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
+    pub fn get_data_source_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_error_code
+    }
     /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
     pub fn metrics(mut self, input: crate::types::DataSourceSyncJobMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl DataSourceSyncJobBuilder {
     ) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobMetrics> {
+        &self.metrics
     }
     /// Consumes the builder and constructs a [`DataSourceSyncJob`](crate::types::DataSourceSyncJob).
     pub fn build(self) -> crate::types::DataSourceSyncJob {

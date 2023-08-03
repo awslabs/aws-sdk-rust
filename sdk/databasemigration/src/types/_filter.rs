@@ -48,6 +48,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter as specified for a <code>Describe*</code> or similar operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl FilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The filter value, which can specify one or more values used to narrow the returned results.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

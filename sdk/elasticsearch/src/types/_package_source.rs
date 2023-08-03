@@ -54,6 +54,10 @@ impl PackageSourceBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>Name of the bucket containing the package.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>Key (file name) of the package.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl PackageSourceBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>Key (file name) of the package.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`PackageSource`](crate::types::PackageSource).
     pub fn build(self) -> crate::types::PackageSource {

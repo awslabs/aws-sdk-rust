@@ -46,6 +46,10 @@ impl DeleteEndpointAccessInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The Redshift-managed VPC endpoint to delete.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`DeleteEndpointAccessInput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateApiKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApiKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_api_key::builders::UpdateApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateApiKeyFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The ID for the GraphQL API.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The API key ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -127,6 +137,10 @@ impl UpdateApiKeyFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The API key ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl UpdateApiKeyFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
         self.inner = self.inner.expires(input);
@@ -147,5 +165,9 @@ impl UpdateApiKeyFluentBuilder {
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expires(input);
         self
+    }
+    /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expires()
     }
 }

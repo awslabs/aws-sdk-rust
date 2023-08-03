@@ -63,6 +63,10 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
         self.master_user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the master user. </p>
+    pub fn get_master_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_arn
+    }
     /// <p>The username for the master user. </p>
     pub fn master_user_name(
         mut self,
@@ -79,6 +83,10 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
         self.master_user_name = input;
         self
     }
+    /// <p>The username for the master user. </p>
+    pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_name
+    }
     /// <p>The password for the master user. </p>
     pub fn master_user_password(
         mut self,
@@ -94,6 +102,10 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
     ) -> Self {
         self.master_user_password = input;
         self
+    }
+    /// <p>The password for the master user. </p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails {

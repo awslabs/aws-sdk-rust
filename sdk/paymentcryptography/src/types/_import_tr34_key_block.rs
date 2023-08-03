@@ -104,6 +104,12 @@ impl ImportTr34KeyBlockBuilder {
         self.certificate_authority_public_key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
+    pub fn get_certificate_authority_public_key_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_public_key_identifier
+    }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 wrapped key block.</p>
     pub fn signing_key_certificate(
         mut self,
@@ -120,6 +126,10 @@ impl ImportTr34KeyBlockBuilder {
         self.signing_key_certificate = input;
         self
     }
+    /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 wrapped key block.</p>
+    pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_key_certificate
+    }
     /// <p>The import token that initiates key import into Amazon Web Services Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
@@ -129,6 +139,10 @@ impl ImportTr34KeyBlockBuilder {
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_token = input;
         self
+    }
+    /// <p>The import token that initiates key import into Amazon Web Services Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_token
     }
     /// <p>The TR-34 wrapped key block to import.</p>
     pub fn wrapped_key_block(
@@ -146,6 +160,10 @@ impl ImportTr34KeyBlockBuilder {
         self.wrapped_key_block = input;
         self
     }
+    /// <p>The TR-34 wrapped key block to import.</p>
+    pub fn get_wrapped_key_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapped_key_block
+    }
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
     pub fn key_block_format(mut self, input: crate::types::Tr34KeyBlockFormat) -> Self {
         self.key_block_format = ::std::option::Option::Some(input);
@@ -159,6 +177,10 @@ impl ImportTr34KeyBlockBuilder {
         self.key_block_format = input;
         self
     }
+    /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
+    pub fn get_key_block_format(&self) -> &::std::option::Option<crate::types::Tr34KeyBlockFormat> {
+        &self.key_block_format
+    }
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn random_nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.random_nonce = ::std::option::Option::Some(input.into());
@@ -168,6 +190,10 @@ impl ImportTr34KeyBlockBuilder {
     pub fn set_random_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.random_nonce = input;
         self
+    }
+    /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
+    pub fn get_random_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.random_nonce
     }
     /// Consumes the builder and constructs a [`ImportTr34KeyBlock`](crate::types::ImportTr34KeyBlock).
     pub fn build(self) -> crate::types::ImportTr34KeyBlock {

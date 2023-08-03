@@ -57,6 +57,12 @@ impl DescribeDeliveryStreamOutputBuilder {
         self.delivery_stream_description = input;
         self
     }
+    /// <p>Information about the delivery stream.</p>
+    pub fn get_delivery_stream_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliveryStreamDescription> {
+        &self.delivery_stream_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

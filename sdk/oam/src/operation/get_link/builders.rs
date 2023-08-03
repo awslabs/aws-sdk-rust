@@ -37,6 +37,10 @@ impl GetLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLink as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_link::builders::GetLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl GetLinkFluentBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
+    }
+    /// <p>The ARN of the link to retrieve information for.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
 }

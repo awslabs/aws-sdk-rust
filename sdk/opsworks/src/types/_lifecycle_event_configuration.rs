@@ -43,6 +43,10 @@ impl LifecycleEventConfigurationBuilder {
         self.shutdown = input;
         self
     }
+    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
+    pub fn get_shutdown(&self) -> &::std::option::Option<crate::types::ShutdownEventConfiguration> {
+        &self.shutdown
+    }
     /// Consumes the builder and constructs a [`LifecycleEventConfiguration`](crate::types::LifecycleEventConfiguration).
     pub fn build(self) -> crate::types::LifecycleEventConfiguration {
         crate::types::LifecycleEventConfiguration {

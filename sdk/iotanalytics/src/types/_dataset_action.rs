@@ -56,6 +56,10 @@ impl DatasetActionBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
     pub fn query_action(mut self, input: crate::types::SqlQueryDatasetAction) -> Self {
         self.query_action = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DatasetActionBuilder {
         self.query_action = input;
         self
     }
+    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
+    pub fn get_query_action(&self) -> &::std::option::Option<crate::types::SqlQueryDatasetAction> {
+        &self.query_action
+    }
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
     pub fn container_action(mut self, input: crate::types::ContainerDatasetAction) -> Self {
         self.container_action = ::std::option::Option::Some(input);
@@ -81,6 +89,12 @@ impl DatasetActionBuilder {
     ) -> Self {
         self.container_action = input;
         self
+    }
+    /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
+    pub fn get_container_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerDatasetAction> {
+        &self.container_action
     }
     /// Consumes the builder and constructs a [`DatasetAction`](crate::types::DatasetAction).
     pub fn build(self) -> crate::types::DatasetAction {

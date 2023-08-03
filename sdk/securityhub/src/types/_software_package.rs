@@ -120,6 +120,10 @@ impl SoftwarePackageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the software package.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the software package.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl SoftwarePackageBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the software package.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The epoch of the software package.</p>
     pub fn epoch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl SoftwarePackageBuilder {
         self.epoch = input;
         self
     }
+    /// <p>The epoch of the software package.</p>
+    pub fn get_epoch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.epoch
+    }
     /// <p>The release of the software package.</p>
     pub fn release(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release = ::std::option::Option::Some(input.into());
@@ -150,6 +162,10 @@ impl SoftwarePackageBuilder {
         self.release = input;
         self
     }
+    /// <p>The release of the software package.</p>
+    pub fn get_release(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release
+    }
     /// <p>The architecture used for the software package.</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
@@ -159,6 +175,10 @@ impl SoftwarePackageBuilder {
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The architecture used for the software package.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
     }
     /// <p>The source of the package.</p>
     pub fn package_manager(
@@ -176,6 +196,10 @@ impl SoftwarePackageBuilder {
         self.package_manager = input;
         self
     }
+    /// <p>The source of the package.</p>
+    pub fn get_package_manager(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_manager
+    }
     /// <p>The file system path to the package manager inventory file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -185,6 +209,10 @@ impl SoftwarePackageBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The file system path to the package manager inventory file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// <p>The version of the software package in which the vulnerability has been resolved. </p>
     pub fn fixed_in_version(
@@ -202,6 +230,10 @@ impl SoftwarePackageBuilder {
         self.fixed_in_version = input;
         self
     }
+    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    pub fn get_fixed_in_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fixed_in_version
+    }
     /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
     pub fn remediation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation = ::std::option::Option::Some(input.into());
@@ -211,6 +243,10 @@ impl SoftwarePackageBuilder {
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation = input;
         self
+    }
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remediation
     }
     /// <p>The source layer hash of the vulnerable package. </p>
     pub fn source_layer_hash(
@@ -228,6 +264,10 @@ impl SoftwarePackageBuilder {
         self.source_layer_hash = input;
         self
     }
+    /// <p>The source layer hash of the vulnerable package. </p>
+    pub fn get_source_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_layer_hash
+    }
     /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
     pub fn source_layer_arn(
         mut self,
@@ -243,6 +283,10 @@ impl SoftwarePackageBuilder {
     ) -> Self {
         self.source_layer_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
+    pub fn get_source_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_layer_arn
     }
     /// Consumes the builder and constructs a [`SoftwarePackage`](crate::types::SoftwarePackage).
     pub fn build(self) -> crate::types::SoftwarePackage {

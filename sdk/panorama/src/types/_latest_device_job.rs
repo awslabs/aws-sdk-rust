@@ -62,6 +62,10 @@ impl LatestDeviceJobBuilder {
         self.image_version = input;
         self
     }
+    /// <p>The target version of the device software.</p>
+    pub fn get_image_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_version
+    }
     /// <p>Status of the latest device job.</p>
     pub fn status(mut self, input: crate::types::UpdateProgress) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl LatestDeviceJobBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the latest device job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateProgress> {
+        &self.status
+    }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl LatestDeviceJobBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p>The job's type.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     /// Consumes the builder and constructs a [`LatestDeviceJob`](crate::types::LatestDeviceJob).
     pub fn build(self) -> crate::types::LatestDeviceJob {

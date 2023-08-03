@@ -46,6 +46,10 @@ impl DescribeDomainOutputBuilder {
         self.domain = input;
         self
     }
+    /// <p>Information about the specified domain.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

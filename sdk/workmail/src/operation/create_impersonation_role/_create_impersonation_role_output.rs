@@ -54,6 +54,10 @@ impl CreateImpersonationRoleOutputBuilder {
         self.impersonation_role_id = input;
         self
     }
+    /// <p>The new impersonation role ID.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_role_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

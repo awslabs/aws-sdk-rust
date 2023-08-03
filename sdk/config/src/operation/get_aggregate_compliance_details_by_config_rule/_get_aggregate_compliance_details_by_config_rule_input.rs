@@ -97,6 +97,12 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(
         mut self,
@@ -113,6 +119,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule for which you want compliance information.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>The 12-digit account ID of the source account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -123,6 +133,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -132,6 +146,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The resource compliance status.</p> <note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
@@ -150,6 +168,12 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The resource compliance status.</p> <note>
+    /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
+    /// </note>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -160,6 +184,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -169,6 +197,10 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAggregateComplianceDetailsByConfigRuleInput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput, ::aws_smithy_http::operation::error::BuildError>{

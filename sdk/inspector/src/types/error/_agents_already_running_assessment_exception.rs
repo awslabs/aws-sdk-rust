@@ -97,6 +97,10 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Details of the exception error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `agents`.
     ///
     /// To override the contents of this collection use [`set_agents`](Self::set_agents).
@@ -117,6 +121,12 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
         self
     }
     /// <p></p>
+    pub fn get_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>> {
+        &self.agents
+    }
+    /// <p></p>
     pub fn agents_truncated(mut self, input: bool) -> Self {
         self.agents_truncated = ::std::option::Option::Some(input);
         self
@@ -125,6 +135,10 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     pub fn set_agents_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.agents_truncated = input;
         self
+    }
+    /// <p></p>
+    pub fn get_agents_truncated(&self) -> &::std::option::Option<bool> {
+        &self.agents_truncated
     }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
@@ -135,6 +149,10 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
+        &self.can_retry
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

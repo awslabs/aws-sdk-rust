@@ -72,6 +72,10 @@ impl DashboardSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the dashboard.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the dashboard</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DashboardSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dashboard</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The dashboard's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl DashboardSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The dashboard's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl DashboardSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the dashboard was created, in Unix epoch time.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl DashboardSummaryBuilder {
     ) -> Self {
         self.last_update_date = input;
         self
+    }
+    /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
+    pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date
     }
     /// Consumes the builder and constructs a [`DashboardSummary`](crate::types::DashboardSummary).
     pub fn build(self) -> crate::types::DashboardSummary {

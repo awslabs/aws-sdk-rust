@@ -91,6 +91,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
         self.hard_limit = input;
         self
     }
+    /// <p>The hard limit for the ulimit type.</p>
+    pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
+        &self.hard_limit
+    }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>core</code> </p> </li>
@@ -135,6 +139,27 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn soft_limit(mut self, input: i32) -> Self {
         self.soft_limit = ::std::option::Option::Some(input);
@@ -144,6 +169,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.soft_limit = input;
         self
+    }
+    /// <p>The soft limit for the ulimit type.</p>
+    pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
+        &self.soft_limit
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {

@@ -99,6 +99,10 @@ impl GetExpenseAnalysisOutputBuilder {
         self.document_metadata = input;
         self
     }
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
+    }
     /// <p>The current status of the text detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl GetExpenseAnalysisOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the text detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl GetExpenseAnalysisOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `expense_documents`.
     ///
@@ -138,6 +150,12 @@ impl GetExpenseAnalysisOutputBuilder {
         self.expense_documents = input;
         self
     }
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub fn get_expense_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>> {
+        &self.expense_documents
+    }
     /// Appends an item to `warnings`.
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
@@ -157,6 +175,10 @@ impl GetExpenseAnalysisOutputBuilder {
         self.warnings = input;
         self
     }
+    /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
+        &self.warnings
+    }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     pub fn status_message(
         mut self,
@@ -173,6 +195,10 @@ impl GetExpenseAnalysisOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The current model version of AnalyzeExpense.</p>
     pub fn analyze_expense_model_version(
         mut self,
@@ -188,6 +214,12 @@ impl GetExpenseAnalysisOutputBuilder {
     ) -> Self {
         self.analyze_expense_model_version = input;
         self
+    }
+    /// <p>The current model version of AnalyzeExpense.</p>
+    pub fn get_analyze_expense_model_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.analyze_expense_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

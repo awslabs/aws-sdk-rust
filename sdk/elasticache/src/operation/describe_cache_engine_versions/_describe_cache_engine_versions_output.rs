@@ -59,6 +59,10 @@ impl DescribeCacheEngineVersionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `cache_engine_versions`.
     ///
     /// To override the contents of this collection use [`set_cache_engine_versions`](Self::set_cache_engine_versions).
@@ -77,6 +81,12 @@ impl DescribeCacheEngineVersionsOutputBuilder {
     ) -> Self {
         self.cache_engine_versions = input;
         self
+    }
+    /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    pub fn get_cache_engine_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>> {
+        &self.cache_engine_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

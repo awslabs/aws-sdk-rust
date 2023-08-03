@@ -70,6 +70,10 @@ impl WorkspaceConnectionStatusBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.connection_state = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl WorkspaceConnectionStatusBuilder {
         self.connection_state = input;
         self
     }
+    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.connection_state
+    }
     /// <p>The timestamp of the connection status check.</p>
     pub fn connection_state_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connection_state_check_timestamp = ::std::option::Option::Some(input);
@@ -95,6 +103,12 @@ impl WorkspaceConnectionStatusBuilder {
     ) -> Self {
         self.connection_state_check_timestamp = input;
         self
+    }
+    /// <p>The timestamp of the connection status check.</p>
+    pub fn get_connection_state_check_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connection_state_check_timestamp
     }
     /// <p>The timestamp of the last known user connection.</p>
     pub fn last_known_user_connection_timestamp(
@@ -111,6 +125,12 @@ impl WorkspaceConnectionStatusBuilder {
     ) -> Self {
         self.last_known_user_connection_timestamp = input;
         self
+    }
+    /// <p>The timestamp of the last known user connection.</p>
+    pub fn get_last_known_user_connection_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_known_user_connection_timestamp
     }
     /// Consumes the builder and constructs a [`WorkspaceConnectionStatus`](crate::types::WorkspaceConnectionStatus).
     pub fn build(self) -> crate::types::WorkspaceConnectionStatus {

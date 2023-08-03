@@ -54,6 +54,10 @@ impl CreateDatasetImportJobOutputBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The ARN of the dataset import job.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,10 @@ impl ClaimDeviceInputBuilder {
         self.id = input;
         self
     }
+    /// The id of the device you want to claim.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
     pub fn build(
         self,

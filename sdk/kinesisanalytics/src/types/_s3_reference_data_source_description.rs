@@ -56,6 +56,10 @@ impl S3ReferenceDataSourceDescriptionBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>Amazon S3 object key name.</p>
     pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_key = input;
         self
+    }
+    /// <p>Amazon S3 object key name.</p>
+    pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_key
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p>
     pub fn reference_role_arn(
@@ -81,6 +89,10 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     ) -> Self {
         self.reference_role_arn = input;
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p>
+    pub fn get_reference_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_role_arn
     }
     /// Consumes the builder and constructs a [`S3ReferenceDataSourceDescription`](crate::types::S3ReferenceDataSourceDescription).
     pub fn build(self) -> crate::types::S3ReferenceDataSourceDescription {

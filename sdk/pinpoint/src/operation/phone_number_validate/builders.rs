@@ -36,6 +36,12 @@ impl PhoneNumberValidateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PhoneNumberValidate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,11 @@ impl PhoneNumberValidateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_number_validate_request(input);
         self
+    }
+    /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    pub fn get_number_validate_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberValidateRequest> {
+        self.inner.get_number_validate_request()
     }
 }

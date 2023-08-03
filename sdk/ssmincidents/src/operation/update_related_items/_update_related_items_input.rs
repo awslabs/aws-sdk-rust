@@ -56,6 +56,10 @@ impl UpdateRelatedItemsInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn incident_record_arn(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateRelatedItemsInputBuilder {
         self.incident_record_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_record_arn
+    }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
         self.related_items_update = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl UpdateRelatedItemsInputBuilder {
     ) -> Self {
         self.related_items_update = input;
         self
+    }
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
+    pub fn get_related_items_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
+        &self.related_items_update
     }
     /// Consumes the builder and constructs a [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
     pub fn build(

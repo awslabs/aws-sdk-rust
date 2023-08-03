@@ -109,6 +109,10 @@ impl InputDeviceUhdSettingsBuilder {
         self.active_input = input;
         self
     }
+    /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
+    pub fn get_active_input(&self) -> &::std::option::Option<crate::types::InputDeviceActiveInput> {
+        &self.active_input
+    }
     /// The source at the input device that is currently active. You can specify this source.
     pub fn configured_input(mut self, input: crate::types::InputDeviceConfiguredInput) -> Self {
         self.configured_input = ::std::option::Option::Some(input);
@@ -121,6 +125,12 @@ impl InputDeviceUhdSettingsBuilder {
     ) -> Self {
         self.configured_input = input;
         self
+    }
+    /// The source at the input device that is currently active. You can specify this source.
+    pub fn get_configured_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
+        &self.configured_input
     }
     /// The state of the input device.
     pub fn device_state(mut self, input: crate::types::InputDeviceState) -> Self {
@@ -135,6 +145,10 @@ impl InputDeviceUhdSettingsBuilder {
         self.device_state = input;
         self
     }
+    /// The state of the input device.
+    pub fn get_device_state(&self) -> &::std::option::Option<crate::types::InputDeviceState> {
+        &self.device_state
+    }
     /// The frame rate of the video source.
     pub fn framerate(mut self, input: f64) -> Self {
         self.framerate = ::std::option::Option::Some(input);
@@ -144,6 +158,10 @@ impl InputDeviceUhdSettingsBuilder {
     pub fn set_framerate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.framerate = input;
         self
+    }
+    /// The frame rate of the video source.
+    pub fn get_framerate(&self) -> &::std::option::Option<f64> {
+        &self.framerate
     }
     /// The height of the video source, in pixels.
     pub fn height(mut self, input: i32) -> Self {
@@ -155,6 +173,10 @@ impl InputDeviceUhdSettingsBuilder {
         self.height = input;
         self
     }
+    /// The height of the video source, in pixels.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
+    }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -164,6 +186,10 @@ impl InputDeviceUhdSettingsBuilder {
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_bitrate = input;
         self
+    }
+    /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// The scan type of the video source.
     pub fn scan_type(mut self, input: crate::types::InputDeviceScanType) -> Self {
@@ -178,6 +204,10 @@ impl InputDeviceUhdSettingsBuilder {
         self.scan_type = input;
         self
     }
+    /// The scan type of the video source.
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::InputDeviceScanType> {
+        &self.scan_type
+    }
     /// The width of the video source, in pixels.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -188,6 +218,10 @@ impl InputDeviceUhdSettingsBuilder {
         self.width = input;
         self
     }
+    /// The width of the video source, in pixels.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
+    }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub fn latency_ms(mut self, input: i32) -> Self {
         self.latency_ms = ::std::option::Option::Some(input);
@@ -197,6 +231,10 @@ impl InputDeviceUhdSettingsBuilder {
     pub fn set_latency_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.latency_ms = input;
         self
+    }
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
+        &self.latency_ms
     }
     /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
     pub fn build(self) -> crate::types::InputDeviceUhdSettings {

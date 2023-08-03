@@ -103,6 +103,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The resource's ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl ConflictExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource's ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource's type.</p>
     pub fn resource_type(
@@ -129,6 +137,10 @@ impl ConflictExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource's type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>A unique ID for the error.</p>
     pub fn error_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_id = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl ConflictExceptionBuilder {
     pub fn set_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_id = input;
         self
+    }
+    /// <p>A unique ID for the error.</p>
+    pub fn get_error_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_id
     }
     /// Appends an item to `error_arguments`.
     ///
@@ -157,6 +173,12 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.error_arguments = input;
         self
+    }
+    /// <p>A list of attributes that led to the exception and their values.</p>
+    pub fn get_error_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>> {
+        &self.error_arguments
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

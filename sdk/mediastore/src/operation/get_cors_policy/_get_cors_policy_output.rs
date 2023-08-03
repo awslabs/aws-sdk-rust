@@ -55,6 +55,12 @@ impl GetCorsPolicyOutputBuilder {
         self.cors_policy = input;
         self
     }
+    /// <p>The CORS policy assigned to the container.</p>
+    pub fn get_cors_policy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+        &self.cors_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

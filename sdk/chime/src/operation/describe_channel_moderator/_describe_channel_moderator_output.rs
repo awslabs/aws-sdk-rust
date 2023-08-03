@@ -51,6 +51,10 @@ impl DescribeChannelModeratorOutputBuilder {
         self.channel_moderator = input;
         self
     }
+    /// <p>The details of the channel moderator.</p>
+    pub fn get_channel_moderator(&self) -> &::std::option::Option<crate::types::ChannelModerator> {
+        &self.channel_moderator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

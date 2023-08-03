@@ -39,6 +39,10 @@ impl DescribeImageInputBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image to describe.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// Consumes the builder and constructs a [`DescribeImageInput`](crate::operation::describe_image::DescribeImageInput).
     pub fn build(
         self,

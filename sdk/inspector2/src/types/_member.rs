@@ -64,6 +64,10 @@ impl MemberBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of the member account.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
         self.relationship_status = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl MemberBuilder {
     ) -> Self {
         self.relationship_status = input;
         self
+    }
+    /// <p>The status of the member account.</p>
+    pub fn get_relationship_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+        &self.relationship_status
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
     pub fn delegated_admin_account_id(
@@ -93,6 +103,10 @@ impl MemberBuilder {
         self.delegated_admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
+    }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl MemberBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>A timestamp showing when the status of this member was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {

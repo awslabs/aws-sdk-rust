@@ -51,6 +51,10 @@ impl TimeWindowBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of an execution.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time of an execution. The end time must be after the start date.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TimeWindowBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time of an execution. The end time must be after the start date.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`TimeWindow`](crate::types::TimeWindow).
     pub fn build(self) -> crate::types::TimeWindow {

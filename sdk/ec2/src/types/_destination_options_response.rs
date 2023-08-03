@@ -59,6 +59,10 @@ impl DestinationOptionsResponseBuilder {
         self.file_format = input;
         self
     }
+    /// <p>The format for the flow log.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::DestinationFileFormat> {
+        &self.file_format
+    }
     /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
     pub fn hive_compatible_partitions(mut self, input: bool) -> Self {
         self.hive_compatible_partitions = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DestinationOptionsResponseBuilder {
         self.hive_compatible_partitions = input;
         self
     }
+    /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
+    pub fn get_hive_compatible_partitions(&self) -> &::std::option::Option<bool> {
+        &self.hive_compatible_partitions
+    }
     /// <p>Indicates whether to partition the flow log per hour.</p>
     pub fn per_hour_partition(mut self, input: bool) -> Self {
         self.per_hour_partition = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl DestinationOptionsResponseBuilder {
     pub fn set_per_hour_partition(mut self, input: ::std::option::Option<bool>) -> Self {
         self.per_hour_partition = input;
         self
+    }
+    /// <p>Indicates whether to partition the flow log per hour.</p>
+    pub fn get_per_hour_partition(&self) -> &::std::option::Option<bool> {
+        &self.per_hour_partition
     }
     /// Consumes the builder and constructs a [`DestinationOptionsResponse`](crate::types::DestinationOptionsResponse).
     pub fn build(self) -> crate::types::DestinationOptionsResponse {

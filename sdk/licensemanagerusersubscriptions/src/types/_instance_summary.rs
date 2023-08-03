@@ -72,6 +72,10 @@ impl InstanceSummaryBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The status of an EC2 instance resource.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl InstanceSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of an EC2 instance resource.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `products`.
     ///
@@ -101,6 +109,10 @@ impl InstanceSummaryBuilder {
         self.products = input;
         self
     }
+    /// <p>A list of provided user-based subscription products.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.products
+    }
     /// <p>The date of the last status check.</p>
     pub fn last_status_check_date(
         mut self,
@@ -117,6 +129,10 @@ impl InstanceSummaryBuilder {
         self.last_status_check_date = input;
         self
     }
+    /// <p>The date of the last status check.</p>
+    pub fn get_last_status_check_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_status_check_date
+    }
     /// <p>The status message for an EC2 instance.</p>
     pub fn status_message(
         mut self,
@@ -132,6 +148,10 @@ impl InstanceSummaryBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message for an EC2 instance.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {

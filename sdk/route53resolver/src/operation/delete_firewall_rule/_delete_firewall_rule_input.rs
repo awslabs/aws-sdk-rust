@@ -54,6 +54,10 @@ impl DeleteFirewallRuleInputBuilder {
         self.firewall_rule_group_id = input;
         self
     }
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
     /// <p>The ID of the domain list that's used in the rule. </p>
     pub fn firewall_domain_list_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteFirewallRuleInputBuilder {
     ) -> Self {
         self.firewall_domain_list_id = input;
         self
+    }
+    /// <p>The ID of the domain list that's used in the rule. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_domain_list_id
     }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
     pub fn build(

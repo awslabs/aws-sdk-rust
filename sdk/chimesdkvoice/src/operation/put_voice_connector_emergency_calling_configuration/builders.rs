@@ -36,6 +36,10 @@ impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVoiceConnectorEmergencyCallingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The configuration being updated.</p>
     pub fn emergency_calling_configuration(
         mut self,
@@ -121,5 +129,11 @@ impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_emergency_calling_configuration(input);
         self
+    }
+    /// <p>The configuration being updated.</p>
+    pub fn get_emergency_calling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
+        self.inner.get_emergency_calling_configuration()
     }
 }

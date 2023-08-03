@@ -39,6 +39,10 @@ impl GetAppMonitorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The app monitor to retrieve information for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
     pub fn build(
         self,

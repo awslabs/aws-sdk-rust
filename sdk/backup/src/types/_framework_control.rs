@@ -60,6 +60,10 @@ impl FrameworkControlBuilder {
         self.control_name = input;
         self
     }
+    /// <p>The name of a control. This name is between 1 and 256 characters.</p>
+    pub fn get_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_name
+    }
     /// Appends an item to `control_input_parameters`.
     ///
     /// To override the contents of this collection use [`set_control_input_parameters`](Self::set_control_input_parameters).
@@ -79,6 +83,12 @@ impl FrameworkControlBuilder {
         self.control_input_parameters = input;
         self
     }
+    /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
+    pub fn get_control_input_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>> {
+        &self.control_input_parameters
+    }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
     pub fn control_scope(mut self, input: crate::types::ControlScope) -> Self {
         self.control_scope = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl FrameworkControlBuilder {
     ) -> Self {
         self.control_scope = input;
         self
+    }
+    /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
+    pub fn get_control_scope(&self) -> &::std::option::Option<crate::types::ControlScope> {
+        &self.control_scope
     }
     /// Consumes the builder and constructs a [`FrameworkControl`](crate::types::FrameworkControl).
     pub fn build(self) -> crate::types::FrameworkControl {

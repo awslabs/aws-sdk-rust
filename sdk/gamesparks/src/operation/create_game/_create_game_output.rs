@@ -46,6 +46,10 @@ impl CreateGameOutputBuilder {
         self.game = input;
         self
     }
+    /// <p>Details about the game that was created.</p>
+    pub fn get_game(&self) -> &::std::option::Option<crate::types::GameDetails> {
+        &self.game
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

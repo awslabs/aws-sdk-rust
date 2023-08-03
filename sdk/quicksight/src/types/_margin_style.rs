@@ -40,6 +40,10 @@ impl MarginStyleBuilder {
         self.show = input;
         self
     }
+    /// <p>This Boolean value controls whether to display sheet margins.</p>
+    pub fn get_show(&self) -> &::std::option::Option<bool> {
+        &self.show
+    }
     /// Consumes the builder and constructs a [`MarginStyle`](crate::types::MarginStyle).
     pub fn build(self) -> crate::types::MarginStyle {
         crate::types::MarginStyle { show: self.show }

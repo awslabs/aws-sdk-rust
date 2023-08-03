@@ -108,6 +108,10 @@ impl GetCapacityReservationUsageOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the Capacity Reservation.</p>
     pub fn capacity_reservation_id(
         mut self,
@@ -123,6 +127,10 @@ impl GetCapacityReservationUsageOutputBuilder {
     ) -> Self {
         self.capacity_reservation_id = input;
         self
+    }
+    /// <p>The ID of the Capacity Reservation.</p>
+    pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_id
     }
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
     pub fn instance_type(
@@ -140,6 +148,10 @@ impl GetCapacityReservationUsageOutputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The number of instances for which the Capacity Reservation reserves capacity.</p>
     pub fn total_instance_count(mut self, input: i32) -> Self {
         self.total_instance_count = ::std::option::Option::Some(input);
@@ -150,6 +162,10 @@ impl GetCapacityReservationUsageOutputBuilder {
         self.total_instance_count = input;
         self
     }
+    /// <p>The number of instances for which the Capacity Reservation reserves capacity.</p>
+    pub fn get_total_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.total_instance_count
+    }
     /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
     pub fn available_instance_count(mut self, input: i32) -> Self {
         self.available_instance_count = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl GetCapacityReservationUsageOutputBuilder {
     pub fn set_available_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_instance_count = input;
         self
+    }
+    /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
+    pub fn get_available_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.available_instance_count
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
@@ -187,6 +207,17 @@ impl GetCapacityReservationUsageOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
+        &self.state
+    }
     /// Appends an item to `instance_usages`.
     ///
     /// To override the contents of this collection use [`set_instance_usages`](Self::set_instance_usages).
@@ -205,6 +236,12 @@ impl GetCapacityReservationUsageOutputBuilder {
     ) -> Self {
         self.instance_usages = input;
         self
+    }
+    /// <p>Information about the Capacity Reservation usage.</p>
+    pub fn get_instance_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>> {
+        &self.instance_usages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

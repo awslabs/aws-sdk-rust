@@ -50,6 +50,12 @@ impl BatchScheduleActionCreateRequestBuilder {
         self.schedule_actions = input;
         self
     }
+    /// A list of schedule actions to create.
+    pub fn get_schedule_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+        &self.schedule_actions
+    }
     /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).
     pub fn build(self) -> crate::types::BatchScheduleActionCreateRequest {
         crate::types::BatchScheduleActionCreateRequest {

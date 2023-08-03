@@ -51,6 +51,10 @@ impl SnomedctTraitBuilder {
         self.name = input;
         self
     }
+    /// <p> The name or contextual description of a detected trait. </p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SnomedctTraitName> {
+        &self.name
+    }
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SnomedctTraitBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`SnomedctTrait`](crate::types::SnomedctTrait).
     pub fn build(self) -> crate::types::SnomedctTrait {

@@ -80,6 +80,10 @@ impl PrincipalBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the principal that can be associated with a resource share.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
     pub fn resource_share_arn(
         mut self,
@@ -96,6 +100,10 @@ impl PrincipalBuilder {
         self.resource_share_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// <p>The date and time when the principal was associated with the resource share.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl PrincipalBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time when the principal was associated with the resource share.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl PrincipalBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
@@ -139,6 +155,14 @@ impl PrincipalBuilder {
     pub fn set_external(mut self, input: ::std::option::Option<bool>) -> Self {
         self.external = input;
         self
+    }
+    /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
+    /// <ul>
+    /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
+    /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
+    /// </ul>
+    pub fn get_external(&self) -> &::std::option::Option<bool> {
+        &self.external
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {

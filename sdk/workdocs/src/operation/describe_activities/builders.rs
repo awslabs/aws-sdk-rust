@@ -36,6 +36,12 @@ impl DescribeActivitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeActivities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -156,6 +166,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -168,6 +182,10 @@ impl DescribeActivitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn organization_id(
@@ -185,6 +203,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn activity_types(
         mut self,
@@ -201,6 +223,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_activity_types(input);
         self
     }
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
+    pub fn get_activity_types(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_activity_types()
+    }
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -210,6 +236,10 @@ impl DescribeActivitiesFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The document or folder ID for which to describe activity types.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,6 +251,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn include_indirect_activities(mut self, input: bool) -> Self {
         self.inner = self.inner.include_indirect_activities(input);
@@ -230,6 +264,10 @@ impl DescribeActivitiesFluentBuilder {
     pub fn set_include_indirect_activities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_indirect_activities(input);
         self
+    }
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    pub fn get_include_indirect_activities(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_indirect_activities()
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -241,6 +279,10 @@ impl DescribeActivitiesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -250,5 +292,9 @@ impl DescribeActivitiesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

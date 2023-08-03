@@ -106,6 +106,10 @@ impl ListPreviewRotationShiftsInputBuilder {
         self.rotation_start_time = input;
         self
     }
+    /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
+    pub fn get_rotation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.rotation_start_time
+    }
     /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl ListPreviewRotationShiftsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Used to filter the range of calculated shifts before sending the response back to the user. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time a rotation shift would end.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl ListPreviewRotationShiftsInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The date and time a rotation shift would end.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `members`.
     ///
@@ -151,6 +163,10 @@ impl ListPreviewRotationShiftsInputBuilder {
         self.members = input;
         self
     }
+    /// <p>The contacts that would be assigned to a rotation.</p>
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.members
+    }
     /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
@@ -160,6 +176,10 @@ impl ListPreviewRotationShiftsInputBuilder {
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone_id = input;
         self
+    }
+    /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
     }
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -173,6 +193,10 @@ impl ListPreviewRotationShiftsInputBuilder {
     ) -> Self {
         self.recurrence = input;
         self
+    }
+    /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
+        &self.recurrence
     }
     /// Appends an item to `overrides`.
     ///
@@ -193,6 +217,12 @@ impl ListPreviewRotationShiftsInputBuilder {
         self.overrides = input;
         self
     }
+    /// <p>Information about changes that would be made in a rotation override.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
+        &self.overrides
+    }
     /// <p>A token to start the list. This token is used to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -203,6 +233,10 @@ impl ListPreviewRotationShiftsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to start the list. This token is used to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that can be specified in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -212,6 +246,10 @@ impl ListPreviewRotationShiftsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that can be specified in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPreviewRotationShiftsInput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput).
     pub fn build(

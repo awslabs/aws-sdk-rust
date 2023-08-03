@@ -47,6 +47,10 @@ impl UntagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_key_list`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
@@ -65,6 +69,12 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_key_list = input;
         self
+    }
+    /// <p>A list of the keys of the tags that you want to remove.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

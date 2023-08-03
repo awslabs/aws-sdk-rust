@@ -36,6 +36,13 @@ impl DescribeReservedNodesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedNodes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl DescribeReservedNodesFluentBuilder {
         self.inner = self.inner.set_reservation_id(input);
         self
     }
+    /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reservation_id()
+    }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
     pub fn reserved_nodes_offering_id(
         mut self,
@@ -159,6 +170,10 @@ impl DescribeReservedNodesFluentBuilder {
         self.inner = self.inner.set_reserved_nodes_offering_id(input);
         self
     }
+    /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    pub fn get_reserved_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_nodes_offering_id()
+    }
     /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
@@ -169,6 +184,10 @@ impl DescribeReservedNodesFluentBuilder {
         self.inner = self.inner.set_node_type(input);
         self
     }
+    /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_type()
+    }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.duration(input.into());
@@ -178,6 +197,10 @@ impl DescribeReservedNodesFluentBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_duration(input);
         self
+    }
+    /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_duration()
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
     pub fn offering_type(
@@ -195,6 +218,10 @@ impl DescribeReservedNodesFluentBuilder {
         self.inner = self.inner.set_offering_type(input);
         self
     }
+    /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_type()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -205,6 +232,10 @@ impl DescribeReservedNodesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -214,5 +245,9 @@ impl DescribeReservedNodesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

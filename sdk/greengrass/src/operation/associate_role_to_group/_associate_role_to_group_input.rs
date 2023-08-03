@@ -48,6 +48,10 @@ impl AssociateRoleToGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AssociateRoleToGroupInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
     pub fn build(

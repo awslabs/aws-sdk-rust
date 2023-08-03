@@ -48,6 +48,10 @@ impl CreateEventActionInputBuilder {
         self.action = input;
         self
     }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>What occurs to start an action.</p>
     pub fn event(mut self, input: crate::types::Event) -> Self {
         self.event = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CreateEventActionInputBuilder {
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
         self.event = input;
         self
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        &self.event
     }
     /// Consumes the builder and constructs a [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
     pub fn build(

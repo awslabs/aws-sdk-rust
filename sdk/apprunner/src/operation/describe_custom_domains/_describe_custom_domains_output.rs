@@ -80,6 +80,10 @@ impl DescribeCustomDomainsOutputBuilder {
         self.dns_target = input;
         self
     }
+    /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
+    pub fn get_dns_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_target
+    }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DescribeCustomDomainsOutputBuilder {
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// Appends an item to `custom_domains`.
     ///
@@ -109,6 +117,12 @@ impl DescribeCustomDomainsOutputBuilder {
         self.custom_domains = input;
         self
     }
+    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
+    pub fn get_custom_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>> {
+        &self.custom_domains
+    }
     /// Appends an item to `vpc_dns_targets`.
     ///
     /// To override the contents of this collection use [`set_vpc_dns_targets`](Self::set_vpc_dns_targets).
@@ -128,6 +142,12 @@ impl DescribeCustomDomainsOutputBuilder {
         self.vpc_dns_targets = input;
         self
     }
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    pub fn get_vpc_dns_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
+        &self.vpc_dns_targets
+    }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -137,6 +157,10 @@ impl DescribeCustomDomainsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

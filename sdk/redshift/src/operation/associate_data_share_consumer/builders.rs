@@ -36,6 +36,10 @@ impl AssociateDataShareConsumerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDataShareConsumer as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AssociateDataShareConsumerFluentBuilder {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_share_arn()
+    }
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
     pub fn associate_entire_account(mut self, input: bool) -> Self {
         self.inner = self.inner.associate_entire_account(input);
@@ -142,6 +150,10 @@ impl AssociateDataShareConsumerFluentBuilder {
         self.inner = self.inner.set_associate_entire_account(input);
         self
     }
+    /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+    pub fn get_associate_entire_account(&self) -> &::std::option::Option<bool> {
+        self.inner.get_associate_entire_account()
+    }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
@@ -151,6 +163,10 @@ impl AssociateDataShareConsumerFluentBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_arn()
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn consumer_region(
@@ -167,5 +183,9 @@ impl AssociateDataShareConsumerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consumer_region(input);
         self
+    }
+    /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub fn get_consumer_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_region()
     }
 }

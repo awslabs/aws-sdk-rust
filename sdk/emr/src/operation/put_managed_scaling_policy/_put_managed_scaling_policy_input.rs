@@ -51,6 +51,10 @@ impl PutManagedScalingPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>Specifies the constraints for the managed scaling policy. </p>
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
         self.managed_scaling_policy = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl PutManagedScalingPolicyInputBuilder {
     ) -> Self {
         self.managed_scaling_policy = input;
         self
+    }
+    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    pub fn get_managed_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
+        &self.managed_scaling_policy
     }
     /// Consumes the builder and constructs a [`PutManagedScalingPolicyInput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyInput).
     pub fn build(

@@ -53,6 +53,10 @@ impl DisassociateAppBlockBuilderAppBlockInputBuilder {
         self.app_block_arn = input;
         self
     }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_arn
+    }
     /// <p>The name of the app block builder.</p>
     pub fn app_block_builder_name(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateAppBlockBuilderAppBlockInputBuilder {
     ) -> Self {
         self.app_block_builder_name = input;
         self
+    }
+    /// <p>The name of the app block builder.</p>
+    pub fn get_app_block_builder_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_builder_name
     }
     /// Consumes the builder and constructs a [`DisassociateAppBlockBuilderAppBlockInput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockInput, ::aws_smithy_http::operation::error::BuildError>{

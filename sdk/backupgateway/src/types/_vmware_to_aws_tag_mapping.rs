@@ -70,6 +70,10 @@ impl VmwareToAwsTagMappingBuilder {
         self.vmware_category = input;
         self
     }
+    /// <p>The is the category of VMware.</p>
+    pub fn get_vmware_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vmware_category
+    }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn vmware_tag_name(
         mut self,
@@ -86,6 +90,10 @@ impl VmwareToAwsTagMappingBuilder {
         self.vmware_tag_name = input;
         self
     }
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    pub fn get_vmware_tag_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vmware_tag_name
+    }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
     pub fn aws_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_tag_key = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl VmwareToAwsTagMappingBuilder {
     pub fn set_aws_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_tag_key = input;
         self
+    }
+    /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+    pub fn get_aws_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_tag_key
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
     pub fn aws_tag_value(
@@ -111,6 +123,10 @@ impl VmwareToAwsTagMappingBuilder {
     ) -> Self {
         self.aws_tag_value = input;
         self
+    }
+    /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+    pub fn get_aws_tag_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_tag_value
     }
     /// Consumes the builder and constructs a [`VmwareToAwsTagMapping`](crate::types::VmwareToAwsTagMapping).
     pub fn build(self) -> crate::types::VmwareToAwsTagMapping {

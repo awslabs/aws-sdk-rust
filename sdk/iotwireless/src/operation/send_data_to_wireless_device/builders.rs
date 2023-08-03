@@ -36,6 +36,10 @@ impl SendDataToWirelessDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendDataToWirelessDevice as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl SendDataToWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the wireless device to receive the data.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn transmit_mode(mut self, input: i32) -> Self {
         self.inner = self.inner.transmit_mode(input);
@@ -136,6 +144,10 @@ impl SendDataToWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_transmit_mode(input);
         self
     }
+    /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    pub fn get_transmit_mode(&self) -> &::std::option::Option<i32> {
+        self.inner.get_transmit_mode()
+    }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn payload_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_data(input.into());
@@ -145,6 +157,10 @@ impl SendDataToWirelessDeviceFluentBuilder {
     pub fn set_payload_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_data(input);
         self
+    }
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub fn get_payload_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_payload_data()
     }
     /// <p>Metadata about the message request.</p>
     pub fn wireless_metadata(mut self, input: crate::types::WirelessMetadata) -> Self {
@@ -158,5 +174,9 @@ impl SendDataToWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_metadata(input);
         self
+    }
+    /// <p>Metadata about the message request.</p>
+    pub fn get_wireless_metadata(&self) -> &::std::option::Option<crate::types::WirelessMetadata> {
+        self.inner.get_wireless_metadata()
     }
 }

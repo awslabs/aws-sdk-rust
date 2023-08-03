@@ -36,6 +36,10 @@ impl GetJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetJobRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_job_run::builders::GetJobRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetJobRunFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>Name of the job definition being run.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The ID of the job run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -128,6 +136,10 @@ impl GetJobRunFluentBuilder {
         self.inner = self.inner.set_run_id(input);
         self
     }
+    /// <p>The ID of the job run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
+    }
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub fn predecessors_included(mut self, input: bool) -> Self {
         self.inner = self.inner.predecessors_included(input);
@@ -137,5 +149,9 @@ impl GetJobRunFluentBuilder {
     pub fn set_predecessors_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_predecessors_included(input);
         self
+    }
+    /// <p>True if a list of predecessor runs should be returned.</p>
+    pub fn get_predecessors_included(&self) -> &::std::option::Option<bool> {
+        self.inner.get_predecessors_included()
     }
 }

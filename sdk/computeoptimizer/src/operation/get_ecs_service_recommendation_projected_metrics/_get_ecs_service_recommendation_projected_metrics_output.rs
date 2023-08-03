@@ -68,6 +68,14 @@ impl GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
         self.recommended_option_projected_metrics = input;
         self
     }
+    /// <p> An array of objects that describes the projected metrics. </p>
+    pub fn get_recommended_option_projected_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>,
+    > {
+        &self.recommended_option_projected_metrics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

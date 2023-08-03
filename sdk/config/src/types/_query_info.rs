@@ -49,6 +49,12 @@ impl QueryInfoBuilder {
         self.select_fields = input;
         self
     }
+    /// <p>Returns a <code>FieldInfo</code> object.</p>
+    pub fn get_select_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldInfo>> {
+        &self.select_fields
+    }
     /// Consumes the builder and constructs a [`QueryInfo`](crate::types::QueryInfo).
     pub fn build(self) -> crate::types::QueryInfo {
         crate::types::QueryInfo {

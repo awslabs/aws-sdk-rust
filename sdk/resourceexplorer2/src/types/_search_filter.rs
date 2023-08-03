@@ -51,6 +51,10 @@ impl SearchFilterBuilder {
         self.filter_string = input;
         self
     }
+    /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
+    pub fn get_filter_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_string
+    }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
     pub fn build(self) -> crate::types::SearchFilter {
         crate::types::SearchFilter {

@@ -36,6 +36,10 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetServiceLinkedRoleDeletionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -119,5 +123,16 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deletion_task_id(input);
         self
+    }
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
+    /// /
+    /// <role-name>
+    /// /
+    /// <task-uuid></task-uuid>
+    /// </role-name>
+    /// </service-principal-name></code>.</p>
+    pub fn get_deletion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deletion_task_id()
     }
 }

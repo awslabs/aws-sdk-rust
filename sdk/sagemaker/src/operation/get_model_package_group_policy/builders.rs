@@ -36,6 +36,10 @@ impl GetModelPackageGroupPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetModelPackageGroupPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetModelPackageGroupPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
+    }
+    /// <p>The name of the model group for which to get the resource policy.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_package_group_name()
     }
 }

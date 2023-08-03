@@ -118,6 +118,10 @@ impl CostCategoryBuilder {
         self.cost_category_arn = input;
         self
     }
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_arn
+    }
     /// <p>The effective start date of your Cost Category.</p>
     pub fn effective_start(
         mut self,
@@ -133,6 +137,10 @@ impl CostCategoryBuilder {
     ) -> Self {
         self.effective_start = input;
         self
+    }
+    /// <p>The effective start date of your Cost Category.</p>
+    pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_start
     }
     /// <p>The effective end date of your Cost Category.</p>
     pub fn effective_end(
@@ -150,6 +158,10 @@ impl CostCategoryBuilder {
         self.effective_end = input;
         self
     }
+    /// <p>The effective end date of your Cost Category.</p>
+    pub fn get_effective_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_end
+    }
     /// <p>The unique name of the Cost Category.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl CostCategoryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
@@ -172,6 +188,12 @@ impl CostCategoryBuilder {
     ) -> Self {
         self.rule_version = input;
         self
+    }
+    /// <p>The rule schema version in this particular Cost Category.</p>
+    pub fn get_rule_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
+        &self.rule_version
     }
     /// Appends an item to `rules`.
     ///
@@ -192,6 +214,12 @@ impl CostCategoryBuilder {
         self.rules = input;
         self
     }
+    /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
+        &self.rules
+    }
     /// Appends an item to `split_charge_rules`.
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
@@ -210,6 +238,12 @@ impl CostCategoryBuilder {
     ) -> Self {
         self.split_charge_rules = input;
         self
+    }
+    /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    pub fn get_split_charge_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
+        &self.split_charge_rules
     }
     /// Appends an item to `processing_status`.
     ///
@@ -230,6 +264,12 @@ impl CostCategoryBuilder {
         self.processing_status = input;
         self
     }
+    /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    pub fn get_processing_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>> {
+        &self.processing_status
+    }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(
         mut self,
@@ -245,6 +285,10 @@ impl CostCategoryBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value for the cost category.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`CostCategory`](crate::types::CostCategory).
     pub fn build(self) -> crate::types::CostCategory {

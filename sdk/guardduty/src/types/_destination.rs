@@ -62,6 +62,10 @@ impl DestinationBuilder {
         self.destination_id = input;
         self
     }
+    /// <p>The unique ID of the publishing destination.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
+    }
     /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DestinationBuilder {
         self.destination_type = input;
         self
     }
+    /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
+        &self.destination_type
+    }
     /// <p>The status of the publishing destination.</p>
     pub fn status(mut self, input: crate::types::PublishingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl DestinationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the publishing destination.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PublishingStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

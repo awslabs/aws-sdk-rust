@@ -56,6 +56,10 @@ impl GetOpenIdTokenInputBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// Adds a key-value pair to `logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -80,6 +84,14 @@ impl GetOpenIdTokenInputBuilder {
     ) -> Self {
         self.logins = input;
         self
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.logins
     }
     /// Consumes the builder and constructs a [`GetOpenIdTokenInput`](crate::operation::get_open_id_token::GetOpenIdTokenInput).
     pub fn build(

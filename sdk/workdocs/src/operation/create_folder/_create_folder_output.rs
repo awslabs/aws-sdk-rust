@@ -49,6 +49,10 @@ impl CreateFolderOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The metadata of the folder.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::FolderMetadata> {
+        &self.metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

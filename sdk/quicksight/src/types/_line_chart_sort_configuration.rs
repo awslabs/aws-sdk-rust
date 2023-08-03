@@ -96,6 +96,12 @@ impl LineChartSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of the category fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The limit on the number of categories that are displayed in a line chart.</p>
     pub fn category_items_limit_configuration(
         mut self,
@@ -112,6 +118,12 @@ impl LineChartSortConfigurationBuilder {
         self.category_items_limit_configuration = input;
         self
     }
+    /// <p>The limit on the number of categories that are displayed in a line chart.</p>
+    pub fn get_category_items_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.category_items_limit_configuration
+    }
     /// <p>The limit on the number of lines that are displayed in a line chart.</p>
     pub fn color_items_limit_configuration(
         mut self,
@@ -127,6 +139,12 @@ impl LineChartSortConfigurationBuilder {
     ) -> Self {
         self.color_items_limit_configuration = input;
         self
+    }
+    /// <p>The limit on the number of lines that are displayed in a line chart.</p>
+    pub fn get_color_items_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.color_items_limit_configuration
     }
     /// Appends an item to `small_multiples_sort`.
     ///
@@ -147,6 +165,12 @@ impl LineChartSortConfigurationBuilder {
         self.small_multiples_sort = input;
         self
     }
+    /// <p>The sort configuration of the small multiples field.</p>
+    pub fn get_small_multiples_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.small_multiples_sort
+    }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     pub fn small_multiples_limit_configuration(
         mut self,
@@ -162,6 +186,12 @@ impl LineChartSortConfigurationBuilder {
     ) -> Self {
         self.small_multiples_limit_configuration = input;
         self
+    }
+    /// <p>The limit on the number of small multiples panels that are displayed.</p>
+    pub fn get_small_multiples_limit_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.small_multiples_limit_configuration
     }
     /// Consumes the builder and constructs a [`LineChartSortConfiguration`](crate::types::LineChartSortConfiguration).
     pub fn build(self) -> crate::types::LineChartSortConfiguration {

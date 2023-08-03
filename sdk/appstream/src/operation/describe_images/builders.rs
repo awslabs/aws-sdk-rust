@@ -36,6 +36,12 @@ impl DescribeImagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeImages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>The names of the public or private images to describe.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// Appends an item to `Arns`.
     ///
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).
@@ -153,6 +163,10 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_arns(input);
         self
     }
+    /// <p>The ARNs of the public, private, and shared images to describe.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_arns()
+    }
     /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(mut self, input: crate::types::VisibilityType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -162,6 +176,10 @@ impl DescribeImagesFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::VisibilityType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of image (public, private, or shared) to describe. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::VisibilityType> {
+        self.inner.get_type()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +191,10 @@ impl DescribeImagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +204,9 @@ impl DescribeImagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

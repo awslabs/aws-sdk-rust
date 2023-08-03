@@ -45,6 +45,10 @@ impl PromoteResourceShareCreatedFromPolicyInputBuilder {
         self.resource_share_arn = input;
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyInput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

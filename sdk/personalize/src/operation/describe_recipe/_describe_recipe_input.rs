@@ -39,6 +39,10 @@ impl DescribeRecipeInputBuilder {
         self.recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
+    }
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,

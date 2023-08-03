@@ -77,6 +77,10 @@ impl ListResourcesForTagOptionInputBuilder {
         self.tag_option_id = input;
         self
     }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_tag_option_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_option_id
+    }
     /// <p>The resource type.</p>
     /// <ul>
     /// <li> <p> <code>Portfolio</code> </p> </li>
@@ -101,6 +105,14 @@ impl ListResourcesForTagOptionInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    /// <ul>
+    /// <li> <p> <code>Portfolio</code> </p> </li>
+    /// <li> <p> <code>Product</code> </p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl ListResourcesForTagOptionInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl ListResourcesForTagOptionInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`ListResourcesForTagOptionInput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput).
     pub fn build(

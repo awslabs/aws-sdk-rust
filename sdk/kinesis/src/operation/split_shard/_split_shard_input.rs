@@ -64,6 +64,10 @@ impl SplitShardInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream for the shard split.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The shard ID of the shard to split.</p>
     pub fn shard_to_split(
         mut self,
@@ -79,6 +83,10 @@ impl SplitShardInputBuilder {
     ) -> Self {
         self.shard_to_split = input;
         self
+    }
+    /// <p>The shard ID of the shard to split.</p>
+    pub fn get_shard_to_split(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_to_split
     }
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
     pub fn new_starting_hash_key(
@@ -96,6 +104,10 @@ impl SplitShardInputBuilder {
         self.new_starting_hash_key = input;
         self
     }
+    /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
+    pub fn get_new_starting_hash_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_starting_hash_key
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl SplitShardInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
     pub fn build(

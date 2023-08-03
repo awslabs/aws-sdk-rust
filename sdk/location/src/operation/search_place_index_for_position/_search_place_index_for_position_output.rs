@@ -60,6 +60,12 @@ impl SearchPlaceIndexForPositionOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
+    pub fn get_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary> {
+        &self.summary
+    }
     /// Appends an item to `results`.
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
@@ -78,6 +84,12 @@ impl SearchPlaceIndexForPositionOutputBuilder {
     ) -> Self {
         self.results = input;
         self
+    }
+    /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchForPositionResult>> {
+        &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

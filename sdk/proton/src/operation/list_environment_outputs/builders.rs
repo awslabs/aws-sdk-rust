@@ -36,6 +36,13 @@ impl ListEnvironmentOutputsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEnvironmentOutputs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl ListEnvironmentOutputsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The environment name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +164,10 @@ impl ListEnvironmentOutputsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn deployment_id(
@@ -169,5 +184,9 @@ impl ListEnvironmentOutputsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
     }
 }

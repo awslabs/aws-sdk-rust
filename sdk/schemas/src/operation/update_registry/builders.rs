@@ -36,6 +36,12 @@ impl UpdateRegistryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRegistry as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_registry::builders::UpdateRegistryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateRegistryFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the registry to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
         mut self,
@@ -133,5 +143,9 @@ impl UpdateRegistryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
+    }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name()
     }
 }

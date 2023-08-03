@@ -70,6 +70,10 @@ impl AddonVersionInfoBuilder {
         self.addon_version = input;
         self
     }
+    /// <p>The version of the add-on.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_version
+    }
     /// Appends an item to `architecture`.
     ///
     /// To override the contents of this collection use [`set_architecture`](Self::set_architecture).
@@ -88,6 +92,12 @@ impl AddonVersionInfoBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The architectures that the version supports.</p>
+    pub fn get_architecture(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.architecture
     }
     /// Appends an item to `compatibilities`.
     ///
@@ -108,6 +118,12 @@ impl AddonVersionInfoBuilder {
         self.compatibilities = input;
         self
     }
+    /// <p>An object representing the compatibilities of a version.</p>
+    pub fn get_compatibilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+        &self.compatibilities
+    }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn requires_configuration(mut self, input: bool) -> Self {
         self.requires_configuration = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl AddonVersionInfoBuilder {
     pub fn set_requires_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requires_configuration = input;
         self
+    }
+    /// <p>Whether the add-on requires configuration.</p>
+    pub fn get_requires_configuration(&self) -> &::std::option::Option<bool> {
+        &self.requires_configuration
     }
     /// Consumes the builder and constructs a [`AddonVersionInfo`](crate::types::AddonVersionInfo).
     pub fn build(self) -> crate::types::AddonVersionInfo {

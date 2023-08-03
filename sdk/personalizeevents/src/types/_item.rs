@@ -56,6 +56,10 @@ impl ItemBuilder {
         self.item_id = input;
         self
     }
+    /// <p>The ID associated with the item.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_id
+    }
     /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl ItemBuilder {
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {

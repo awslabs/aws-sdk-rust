@@ -64,6 +64,10 @@ impl MappingRuleBuilder {
         self.claim = input;
         self
     }
+    /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
+    pub fn get_claim(&self) -> &::std::option::Option<::std::string::String> {
+        &self.claim
+    }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub fn match_type(mut self, input: crate::types::MappingRuleMatchType) -> Self {
         self.match_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl MappingRuleBuilder {
         self.match_type = input;
         self
     }
+    /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
+    pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MappingRuleMatchType> {
+        &self.match_type
+    }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl MappingRuleBuilder {
         self.value = input;
         self
     }
+    /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl MappingRuleBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`MappingRule`](crate::types::MappingRule).
     pub fn build(self) -> crate::types::MappingRule {

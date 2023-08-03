@@ -46,6 +46,10 @@ impl DescribeWorkflowExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeWorkflowExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl DescribeWorkflowExecutionFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain containing the workflow execution.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The workflow execution to describe.</p>
     pub fn execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.inner = self.inner.execution(input);
@@ -148,5 +156,9 @@ impl DescribeWorkflowExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution(input);
         self
+    }
+    /// <p>The workflow execution to describe.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        self.inner.get_execution()
     }
 }

@@ -48,6 +48,10 @@ impl SocketAddressBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of a socket address.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Port of a socket address.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SocketAddressBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>Port of a socket address.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`SocketAddress`](crate::types::SocketAddress).
     pub fn build(self) -> crate::types::SocketAddress {

@@ -40,6 +40,10 @@ impl FontBuilder {
         self.font_family = input;
         self
     }
+    /// <p>Determines the font family settings.</p>
+    pub fn get_font_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_family
+    }
     /// Consumes the builder and constructs a [`Font`](crate::types::Font).
     pub fn build(self) -> crate::types::Font {
         crate::types::Font {

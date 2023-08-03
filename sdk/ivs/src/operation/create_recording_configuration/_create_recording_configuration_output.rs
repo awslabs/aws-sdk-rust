@@ -51,6 +51,12 @@ impl CreateRecordingConfigurationOutputBuilder {
         self.recording_configuration = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_recording_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecordingConfiguration> {
+        &self.recording_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

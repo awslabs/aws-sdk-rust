@@ -37,6 +37,10 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOrganizationPortfolioAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -121,6 +125,14 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());
@@ -130,6 +142,10 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portfolio_id(input);
         self
+    }
+    /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
@@ -154,6 +170,17 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_organization_node_type(input);
         self
     }
+    /// <p>The organization node type that will be returned in the output.</p>
+    /// <ul>
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
+    /// </ul>
+    pub fn get_organization_node_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationNodeType> {
+        self.inner.get_organization_node_type()
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -164,6 +191,10 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_page_token(input);
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -173,5 +204,9 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

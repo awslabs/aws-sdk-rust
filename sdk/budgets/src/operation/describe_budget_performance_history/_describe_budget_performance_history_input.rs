@@ -71,6 +71,10 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
@@ -94,6 +102,10 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::TimePeriod> {
+        &self.time_period
+    }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +129,10 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryInput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput, ::aws_smithy_http::operation::error::BuildError>{

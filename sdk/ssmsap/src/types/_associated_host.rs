@@ -56,6 +56,10 @@ impl AssociatedHostBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The name of the host.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn ec2_instance_id(
         mut self,
@@ -72,6 +76,10 @@ impl AssociatedHostBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon EC2 instance.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>The version of the operating system.</p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_version = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl AssociatedHostBuilder {
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_version = input;
         self
+    }
+    /// <p>The version of the operating system.</p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
     }
     /// Consumes the builder and constructs a [`AssociatedHost`](crate::types::AssociatedHost).
     pub fn build(self) -> crate::types::AssociatedHost {

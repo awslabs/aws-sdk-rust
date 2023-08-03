@@ -40,6 +40,10 @@ impl DisableDomainTransferLockInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to remove the transfer lock for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DisableDomainTransferLockInput`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput).
     pub fn build(
         self,

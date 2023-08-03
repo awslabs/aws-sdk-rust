@@ -62,6 +62,12 @@ impl ModifyReplicationSubnetGroupInputBuilder {
         self.replication_subnet_group_identifier = input;
         self
     }
+    /// <p>The name of the replication instance subnet group.</p>
+    pub fn get_replication_subnet_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_identifier
+    }
     /// <p>A description for the replication instance subnet group.</p>
     pub fn replication_subnet_group_description(
         mut self,
@@ -77,6 +83,12 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     ) -> Self {
         self.replication_subnet_group_description = input;
         self
+    }
+    /// <p>A description for the replication instance subnet group.</p>
+    pub fn get_replication_subnet_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -96,6 +108,10 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyReplicationSubnetGroupInput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput).
     pub fn build(

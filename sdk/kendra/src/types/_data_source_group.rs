@@ -48,6 +48,10 @@ impl DataSourceGroupBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
     pub fn data_source_id(
         mut self,
@@ -63,6 +67,10 @@ impl DataSourceGroupBuilder {
     ) -> Self {
         self.data_source_id = input;
         self
+    }
+    /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// Consumes the builder and constructs a [`DataSourceGroup`](crate::types::DataSourceGroup).
     pub fn build(self) -> crate::types::DataSourceGroup {

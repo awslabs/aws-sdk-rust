@@ -47,6 +47,10 @@ impl GetMasterAccountOutputBuilder {
         self.master = input;
         self
     }
+    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    pub fn get_master(&self) -> &::std::option::Option<crate::types::Invitation> {
+        &self.master
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

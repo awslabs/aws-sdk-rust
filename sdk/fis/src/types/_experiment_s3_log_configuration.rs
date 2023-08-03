@@ -48,6 +48,10 @@ impl ExperimentS3LogConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the destination bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The bucket prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ExperimentS3LogConfigurationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`ExperimentS3LogConfiguration`](crate::types::ExperimentS3LogConfiguration).
     pub fn build(self) -> crate::types::ExperimentS3LogConfiguration {

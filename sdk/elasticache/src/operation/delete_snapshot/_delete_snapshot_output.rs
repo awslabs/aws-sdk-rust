@@ -46,6 +46,10 @@ impl DeleteSnapshotOutputBuilder {
         self.snapshot = input;
         self
     }
+    /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    pub fn get_snapshot(&self) -> &::std::option::Option<crate::types::Snapshot> {
+        &self.snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

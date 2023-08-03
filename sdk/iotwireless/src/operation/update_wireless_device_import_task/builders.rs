@@ -36,6 +36,10 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWirelessDeviceImportTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the import task to be updated.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateImportInfo) -> Self {
         self.inner = self.inner.sidewalk(input);
@@ -112,5 +120,9 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
+    }
+    /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateImportInfo> {
+        self.inner.get_sidewalk()
     }
 }

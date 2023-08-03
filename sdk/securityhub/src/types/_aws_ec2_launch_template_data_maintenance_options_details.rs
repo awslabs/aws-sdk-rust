@@ -47,6 +47,10 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
         self.auto_recovery = input;
         self
     }
+    /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_recovery
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {

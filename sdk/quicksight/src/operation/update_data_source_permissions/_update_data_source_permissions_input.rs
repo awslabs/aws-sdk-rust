@@ -72,6 +72,10 @@ impl UpdateDataSourcePermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn data_source_id(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateDataSourcePermissionsInputBuilder {
     ) -> Self {
         self.data_source_id = input;
         self
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -107,6 +115,12 @@ impl UpdateDataSourcePermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>A list of resource permissions that you want to grant on the data source.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -125,6 +139,12 @@ impl UpdateDataSourcePermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>A list of resource permissions that you want to revoke on the data source.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateDataSourcePermissionsInput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsInput).
     pub fn build(

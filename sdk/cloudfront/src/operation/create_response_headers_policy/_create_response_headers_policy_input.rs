@@ -49,6 +49,12 @@ impl CreateResponseHeadersPolicyInputBuilder {
         self.response_headers_policy_config = input;
         self
     }
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+        &self.response_headers_policy_config
+    }
     /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyInput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput).
     pub fn build(
         self,

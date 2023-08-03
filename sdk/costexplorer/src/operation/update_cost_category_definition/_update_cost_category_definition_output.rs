@@ -60,6 +60,10 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
         self.cost_category_arn = input;
         self
     }
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_arn
+    }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(
         mut self,
@@ -75,6 +79,10 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
     ) -> Self {
         self.effective_start = input;
         self
+    }
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_start
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -66,6 +66,12 @@ impl GetAppInstanceRetentionSettingsOutputBuilder {
         self.app_instance_retention_settings = input;
         self
     }
+    /// <p>The retention settings for the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceRetentionSettings> {
+        &self.app_instance_retention_settings
+    }
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     pub fn initiate_deletion_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.initiate_deletion_timestamp = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl GetAppInstanceRetentionSettingsOutputBuilder {
     ) -> Self {
         self.initiate_deletion_timestamp = input;
         self
+    }
+    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
+    pub fn get_initiate_deletion_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiate_deletion_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

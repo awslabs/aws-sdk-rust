@@ -47,6 +47,10 @@ impl DeviceEventBuilder {
         self.device = input;
         self
     }
+    /// <p>An object representing the device associated with the event.</p>
+    pub fn get_device(&self) -> &::std::option::Option<crate::types::Device> {
+        &self.device
+    }
     /// <p>A serialized JSON object representing the device-type specific event.</p>
     pub fn std_event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.std_event = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeviceEventBuilder {
     pub fn set_std_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.std_event = input;
         self
+    }
+    /// <p>A serialized JSON object representing the device-type specific event.</p>
+    pub fn get_std_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.std_event
     }
     /// Consumes the builder and constructs a [`DeviceEvent`](crate::types::DeviceEvent).
     pub fn build(self) -> crate::types::DeviceEvent {

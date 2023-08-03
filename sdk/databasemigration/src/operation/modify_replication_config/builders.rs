@@ -38,6 +38,13 @@ impl ModifyReplicationConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyReplicationConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_replication_config::builders::ModifyReplicationConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl ModifyReplicationConfigFluentBuilder {
         self.inner = self.inner.set_replication_config_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name of the replication to modify.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_config_arn()
+    }
     /// <p>The new replication config to apply to the replication.</p>
     pub fn replication_config_identifier(
         mut self,
@@ -150,6 +161,12 @@ impl ModifyReplicationConfigFluentBuilder {
         self.inner = self.inner.set_replication_config_identifier(input);
         self
     }
+    /// <p>The new replication config to apply to the replication.</p>
+    pub fn get_replication_config_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_config_identifier()
+    }
     /// <p>The type of replication.</p>
     pub fn replication_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.inner = self.inner.replication_type(input);
@@ -162,6 +179,10 @@ impl ModifyReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_type(input);
         self
+    }
+    /// <p>The type of replication.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
+        self.inner.get_replication_type()
     }
     /// <p>Table mappings specified in the replication.</p>
     pub fn table_mappings(
@@ -179,6 +200,10 @@ impl ModifyReplicationConfigFluentBuilder {
         self.inner = self.inner.set_table_mappings(input);
         self
     }
+    /// <p>Table mappings specified in the replication.</p>
+    pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_mappings()
+    }
     /// <p>The settings for the replication.</p>
     pub fn replication_settings(
         mut self,
@@ -194,6 +219,10 @@ impl ModifyReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_settings(input);
         self
+    }
+    /// <p>The settings for the replication.</p>
+    pub fn get_replication_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_settings()
     }
     /// <p>Additional settings for the replication.</p>
     pub fn supplemental_settings(
@@ -211,6 +240,10 @@ impl ModifyReplicationConfigFluentBuilder {
         self.inner = self.inner.set_supplemental_settings(input);
         self
     }
+    /// <p>Additional settings for the replication.</p>
+    pub fn get_supplemental_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_supplemental_settings()
+    }
     /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
     pub fn compute_config(mut self, input: crate::types::ComputeConfig) -> Self {
         self.inner = self.inner.compute_config(input);
@@ -223,6 +256,10 @@ impl ModifyReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compute_config(input);
         self
+    }
+    /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfig> {
+        self.inner.get_compute_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
     pub fn source_endpoint_arn(
@@ -240,6 +277,10 @@ impl ModifyReplicationConfigFluentBuilder {
         self.inner = self.inner.set_source_endpoint_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
+    pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_endpoint_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
     pub fn target_endpoint_arn(
         mut self,
@@ -255,5 +296,9 @@ impl ModifyReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_endpoint_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
+    pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_endpoint_arn()
     }
 }

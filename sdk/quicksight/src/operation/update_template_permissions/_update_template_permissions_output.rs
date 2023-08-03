@@ -79,6 +79,10 @@ impl UpdateTemplatePermissionsOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>The ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateTemplatePermissionsOutputBuilder {
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
     }
     /// Appends an item to `permissions`.
     ///
@@ -108,6 +116,12 @@ impl UpdateTemplatePermissionsOutputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>A list of resource permissions to be set on the template.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -118,6 +132,10 @@ impl UpdateTemplatePermissionsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -127,6 +145,10 @@ impl UpdateTemplatePermissionsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

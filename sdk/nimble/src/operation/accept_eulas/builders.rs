@@ -36,6 +36,10 @@ impl AcceptEulasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptEulas as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_eulas::builders::AcceptEulasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl AcceptEulasFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// Appends an item to `eulaIds`.
     ///
     /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
@@ -135,6 +143,10 @@ impl AcceptEulasFluentBuilder {
         self.inner = self.inner.set_eula_ids(input);
         self
     }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_eula_ids()
+    }
     /// <p>The studio ID.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -144,5 +156,9 @@ impl AcceptEulasFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

@@ -89,6 +89,13 @@ impl CalculateRouteMatrixOutputBuilder {
         self.route_matrix = input;
         self
     }
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+    pub fn get_route_matrix(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>>
+    {
+        &self.route_matrix
+    }
     /// Appends an item to `snapped_departure_positions`.
     ///
     /// To override the contents of this collection use [`set_snapped_departure_positions`](Self::set_snapped_departure_positions).
@@ -107,6 +114,12 @@ impl CalculateRouteMatrixOutputBuilder {
     ) -> Self {
         self.snapped_departure_positions = input;
         self
+    }
+    /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+    pub fn get_snapped_departure_positions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+        &self.snapped_departure_positions
     }
     /// Appends an item to `snapped_destination_positions`.
     ///
@@ -127,6 +140,12 @@ impl CalculateRouteMatrixOutputBuilder {
         self.snapped_destination_positions = input;
         self
     }
+    /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+    pub fn get_snapped_destination_positions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+        &self.snapped_destination_positions
+    }
     /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
     pub fn summary(mut self, input: crate::types::CalculateRouteMatrixSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
@@ -139,6 +158,10 @@ impl CalculateRouteMatrixOutputBuilder {
     ) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::CalculateRouteMatrixSummary> {
+        &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

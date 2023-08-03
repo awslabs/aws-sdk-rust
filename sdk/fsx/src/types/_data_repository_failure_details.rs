@@ -40,6 +40,10 @@ impl DataRepositoryFailureDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`DataRepositoryFailureDetails`](crate::types::DataRepositoryFailureDetails).
     pub fn build(self) -> crate::types::DataRepositoryFailureDetails {
         crate::types::DataRepositoryFailureDetails {

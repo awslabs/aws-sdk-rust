@@ -37,6 +37,10 @@ impl DescribeDBClusterSnapshotAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBClusterSnapshotAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,11 @@ impl DescribeDBClusterSnapshotAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
+    }
+    /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_snapshot_identifier()
     }
 }

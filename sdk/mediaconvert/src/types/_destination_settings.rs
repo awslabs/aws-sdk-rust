@@ -43,6 +43,10 @@ impl DestinationSettingsBuilder {
         self.s3_settings = input;
         self
     }
+    /// Settings associated with S3 destination
+    pub fn get_s3_settings(&self) -> &::std::option::Option<crate::types::S3DestinationSettings> {
+        &self.s3_settings
+    }
     /// Consumes the builder and constructs a [`DestinationSettings`](crate::types::DestinationSettings).
     pub fn build(self) -> crate::types::DestinationSettings {
         crate::types::DestinationSettings {

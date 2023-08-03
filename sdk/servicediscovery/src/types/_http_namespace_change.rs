@@ -40,6 +40,10 @@ impl HttpNamespaceChangeBuilder {
         self.description = input;
         self
     }
+    /// <p>An updated description for the HTTP namespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`HttpNamespaceChange`](crate::types::HttpNamespaceChange).
     pub fn build(self) -> crate::types::HttpNamespaceChange {
         crate::types::HttpNamespaceChange {

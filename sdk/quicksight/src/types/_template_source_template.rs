@@ -40,6 +40,10 @@ impl TemplateSourceTemplateBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`TemplateSourceTemplate`](crate::types::TemplateSourceTemplate).
     pub fn build(self) -> crate::types::TemplateSourceTemplate {
         crate::types::TemplateSourceTemplate { arn: self.arn }

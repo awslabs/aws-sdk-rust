@@ -65,6 +65,10 @@ impl UpdateWorldTemplateInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
+    }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UpdateWorldTemplateInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The world template body.</p>
     pub fn template_body(
@@ -91,6 +99,10 @@ impl UpdateWorldTemplateInputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The world template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>The location of the world template.</p>
     pub fn template_location(mut self, input: crate::types::TemplateLocation) -> Self {
         self.template_location = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl UpdateWorldTemplateInputBuilder {
     ) -> Self {
         self.template_location = input;
         self
+    }
+    /// <p>The location of the world template.</p>
+    pub fn get_template_location(&self) -> &::std::option::Option<crate::types::TemplateLocation> {
+        &self.template_location
     }
     /// Consumes the builder and constructs a [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
     pub fn build(

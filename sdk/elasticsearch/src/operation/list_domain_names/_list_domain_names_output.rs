@@ -57,6 +57,12 @@ impl ListDomainNamesOutputBuilder {
         self.domain_names = input;
         self
     }
+    /// <p>List of domain names and respective engine types.</p>
+    pub fn get_domain_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
+        &self.domain_names
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl StartApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Appends an item to `input_configurations`.
     ///
     /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
@@ -77,6 +81,12 @@ impl StartApplicationInputBuilder {
     ) -> Self {
         self.input_configurations = input;
         self
+    }
+    /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
+    pub fn get_input_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputConfiguration>> {
+        &self.input_configurations
     }
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(

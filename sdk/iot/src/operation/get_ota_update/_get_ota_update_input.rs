@@ -45,6 +45,10 @@ impl GetOtaUpdateInputBuilder {
         self.ota_update_id = input;
         self
     }
+    /// <p>The OTA update ID.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_id
+    }
     /// Consumes the builder and constructs a [`GetOtaUpdateInput`](crate::operation::get_ota_update::GetOtaUpdateInput).
     pub fn build(
         self,

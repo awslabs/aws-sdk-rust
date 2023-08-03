@@ -78,6 +78,10 @@ impl UpgradeHistoryBuilder {
         self.upgrade_name = input;
         self
     }
+    /// <p>A string that describes the update briefly</p>
+    pub fn get_upgrade_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgrade_name
+    }
     /// <p>UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl UpgradeHistoryBuilder {
     ) -> Self {
         self.start_timestamp = input;
         self
+    }
+    /// <p>UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_timestamp
     }
     /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
@@ -118,6 +126,17 @@ impl UpgradeHistoryBuilder {
         self.upgrade_status = input;
         self
     }
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_upgrade_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
+        &self.upgrade_status
+    }
     /// Appends an item to `steps_list`.
     ///
     /// To override the contents of this collection use [`set_steps_list`](Self::set_steps_list).
@@ -136,6 +155,12 @@ impl UpgradeHistoryBuilder {
     ) -> Self {
         self.steps_list = input;
         self
+    }
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
+    pub fn get_steps_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>> {
+        &self.steps_list
     }
     /// Consumes the builder and constructs a [`UpgradeHistory`](crate::types::UpgradeHistory).
     pub fn build(self) -> crate::types::UpgradeHistory {

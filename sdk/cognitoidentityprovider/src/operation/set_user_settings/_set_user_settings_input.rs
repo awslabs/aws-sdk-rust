@@ -54,6 +54,10 @@ impl SetUserSettingsInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// Appends an item to `mfa_options`.
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
@@ -72,6 +76,12 @@ impl SetUserSettingsInputBuilder {
     ) -> Self {
         self.mfa_options = input;
         self
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        &self.mfa_options
     }
     /// Consumes the builder and constructs a [`SetUserSettingsInput`](crate::operation::set_user_settings::SetUserSettingsInput).
     pub fn build(

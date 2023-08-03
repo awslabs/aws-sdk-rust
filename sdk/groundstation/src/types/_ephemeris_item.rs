@@ -92,6 +92,10 @@ impl EphemerisItemBuilder {
         self.ephemeris_id = input;
         self
     }
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_id
+    }
     /// <p>The status of the ephemeris.</p>
     pub fn status(mut self, input: crate::types::EphemerisStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl EphemerisItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the ephemeris.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
+        &self.status
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -119,6 +127,12 @@ impl EphemerisItemBuilder {
         self.priority = input;
         self
     }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl EphemerisItemBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,6 +160,10 @@ impl EphemerisItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -151,6 +173,10 @@ impl EphemerisItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Source S3 object used for the ephemeris.</p>
     pub fn source_s3_object(mut self, input: crate::types::S3Object) -> Self {
@@ -164,6 +190,10 @@ impl EphemerisItemBuilder {
     ) -> Self {
         self.source_s3_object = input;
         self
+    }
+    /// <p>Source S3 object used for the ephemeris.</p>
+    pub fn get_source_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.source_s3_object
     }
     /// Consumes the builder and constructs a [`EphemerisItem`](crate::types::EphemerisItem).
     pub fn build(self) -> crate::types::EphemerisItem {

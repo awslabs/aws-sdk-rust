@@ -48,6 +48,10 @@ impl UpdateDatasetEntriesInputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p> The changes that you want to make to the dataset. </p>
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
         self.changes = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateDatasetEntriesInputBuilder {
     ) -> Self {
         self.changes = input;
         self
+    }
+    /// <p> The changes that you want to make to the dataset. </p>
+    pub fn get_changes(&self) -> &::std::option::Option<crate::types::DatasetChanges> {
+        &self.changes
     }
     /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
     pub fn build(

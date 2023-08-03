@@ -87,6 +87,14 @@ impl CreateReplicationSetInputBuilder {
         self.regions = input;
         self
     }
+    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
+    pub fn get_regions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
+    > {
+        &self.regions
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl CreateReplicationSetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -121,6 +133,14 @@ impl CreateReplicationSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to add to the replication set.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
     pub fn build(

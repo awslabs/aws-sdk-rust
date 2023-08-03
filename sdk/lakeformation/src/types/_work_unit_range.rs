@@ -56,6 +56,10 @@ impl WorkUnitRangeBuilder {
         self.work_unit_id_max = input;
         self
     }
+    /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
+    pub fn get_work_unit_id_max(&self) -> &::std::option::Option<i64> {
+        &self.work_unit_id_max
+    }
     /// <p>Defines the minimum work unit ID in the range.</p>
     pub fn work_unit_id_min(mut self, input: i64) -> Self {
         self.work_unit_id_min = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl WorkUnitRangeBuilder {
     pub fn set_work_unit_id_min(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_unit_id_min = input;
         self
+    }
+    /// <p>Defines the minimum work unit ID in the range.</p>
+    pub fn get_work_unit_id_min(&self) -> &::std::option::Option<i64> {
+        &self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
     pub fn work_unit_token(
@@ -81,6 +89,10 @@ impl WorkUnitRangeBuilder {
     ) -> Self {
         self.work_unit_token = input;
         self
+    }
+    /// <p>A work token used to query the execution service.</p>
+    pub fn get_work_unit_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_unit_token
     }
     /// Consumes the builder and constructs a [`WorkUnitRange`](crate::types::WorkUnitRange).
     pub fn build(self) -> crate::types::WorkUnitRange {

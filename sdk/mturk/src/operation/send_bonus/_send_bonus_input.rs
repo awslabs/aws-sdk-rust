@@ -71,6 +71,10 @@ impl SendBonusInputBuilder {
         self.worker_id = input;
         self
     }
+    /// <p>The ID of the Worker being paid the bonus.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
+    }
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
     pub fn bonus_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bonus_amount = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl SendBonusInputBuilder {
     pub fn set_bonus_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bonus_amount = input;
         self
+    }
+    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    pub fn get_bonus_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bonus_amount
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
     pub fn assignment_id(
@@ -97,6 +105,10 @@ impl SendBonusInputBuilder {
         self.assignment_id = input;
         self
     }
+    /// <p>The ID of the assignment for which this bonus is paid.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
+    }
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl SendBonusInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
     pub fn unique_request_token(
@@ -122,6 +138,10 @@ impl SendBonusInputBuilder {
     ) -> Self {
         self.unique_request_token = input;
         self
+    }
+    /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
+    pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unique_request_token
     }
     /// Consumes the builder and constructs a [`SendBonusInput`](crate::operation::send_bonus::SendBonusInput).
     pub fn build(

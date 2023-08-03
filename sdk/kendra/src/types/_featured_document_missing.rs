@@ -40,6 +40,10 @@ impl FeaturedDocumentMissingBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`FeaturedDocumentMissing`](crate::types::FeaturedDocumentMissing).
     pub fn build(self) -> crate::types::FeaturedDocumentMissing {
         crate::types::FeaturedDocumentMissing { id: self.id }

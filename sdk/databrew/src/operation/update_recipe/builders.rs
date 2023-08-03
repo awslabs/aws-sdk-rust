@@ -36,6 +36,10 @@ impl UpdateRecipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRecipe as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_recipe::builders::UpdateRecipeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateRecipeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the recipe to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateRecipeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the recipe to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Steps`.
     ///
@@ -144,5 +156,9 @@ impl UpdateRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_steps(input);
         self
+    }
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        self.inner.get_steps()
     }
 }

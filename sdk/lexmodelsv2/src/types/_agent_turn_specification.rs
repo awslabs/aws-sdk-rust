@@ -40,6 +40,10 @@ impl AgentTurnSpecificationBuilder {
         self.agent_prompt = input;
         self
     }
+    /// <p>The agent prompt for the agent turn in a test set.</p>
+    pub fn get_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_prompt
+    }
     /// Consumes the builder and constructs a [`AgentTurnSpecification`](crate::types::AgentTurnSpecification).
     pub fn build(self) -> crate::types::AgentTurnSpecification {
         crate::types::AgentTurnSpecification {

@@ -56,6 +56,10 @@ impl FormatOptionsBuilder {
         self.json = input;
         self
     }
+    /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
+    pub fn get_json(&self) -> &::std::option::Option<crate::types::JsonOptions> {
+        &self.json
+    }
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
     pub fn excel(mut self, input: crate::types::ExcelOptions) -> Self {
         self.excel = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FormatOptionsBuilder {
         self.excel = input;
         self
     }
+    /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
+    pub fn get_excel(&self) -> &::std::option::Option<crate::types::ExcelOptions> {
+        &self.excel
+    }
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
     pub fn csv(mut self, input: crate::types::CsvOptions) -> Self {
         self.csv = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl FormatOptionsBuilder {
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOptions>) -> Self {
         self.csv = input;
         self
+    }
+    /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOptions> {
+        &self.csv
     }
     /// Consumes the builder and constructs a [`FormatOptions`](crate::types::FormatOptions).
     pub fn build(self) -> crate::types::FormatOptions {

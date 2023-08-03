@@ -130,6 +130,10 @@ impl AppBlockBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app block.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the app block.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl AppBlockBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description of the app block.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +158,10 @@ impl AppBlockBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the app block.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The display name of the app block.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl AppBlockBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the app block.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The source S3 location of the app block.</p>
     pub fn source_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -172,6 +188,10 @@ impl AppBlockBuilder {
     ) -> Self {
         self.source_s3_location = input;
         self
+    }
+    /// <p>The source S3 location of the app block.</p>
+    pub fn get_source_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.source_s3_location
     }
     /// <p>The setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
@@ -188,6 +208,11 @@ impl AppBlockBuilder {
         self.setup_script_details = input;
         self
     }
+    /// <p>The setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
+    pub fn get_setup_script_details(&self) -> &::std::option::Option<crate::types::ScriptDetails> {
+        &self.setup_script_details
+    }
     /// <p>The created time of the app block.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -200,6 +225,10 @@ impl AppBlockBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The created time of the app block.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The post setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
@@ -216,6 +245,13 @@ impl AppBlockBuilder {
         self.post_setup_script_details = input;
         self
     }
+    /// <p>The post setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+    pub fn get_post_setup_script_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScriptDetails> {
+        &self.post_setup_script_details
+    }
     /// <p>The packaging type of the app block.</p>
     pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
         self.packaging_type = ::std::option::Option::Some(input);
@@ -228,6 +264,10 @@ impl AppBlockBuilder {
     ) -> Self {
         self.packaging_type = input;
         self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn get_packaging_type(&self) -> &::std::option::Option<crate::types::PackagingType> {
+        &self.packaging_type
     }
     /// <p>The state of the app block.</p>
     /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
@@ -242,6 +282,12 @@ impl AppBlockBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AppBlockState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the app block.</p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AppBlockState> {
+        &self.state
     }
     /// Appends an item to `app_block_errors`.
     ///
@@ -261,6 +307,12 @@ impl AppBlockBuilder {
     ) -> Self {
         self.app_block_errors = input;
         self
+    }
+    /// <p>The errors of the app block.</p>
+    pub fn get_app_block_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>> {
+        &self.app_block_errors
     }
     /// Consumes the builder and constructs a [`AppBlock`](crate::types::AppBlock).
     pub fn build(self) -> crate::types::AppBlock {

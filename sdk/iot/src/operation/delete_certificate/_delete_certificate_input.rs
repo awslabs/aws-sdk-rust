@@ -55,6 +55,10 @@ impl DeleteCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl DeleteCertificateInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(

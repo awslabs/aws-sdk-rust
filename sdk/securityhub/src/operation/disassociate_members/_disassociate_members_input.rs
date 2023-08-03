@@ -49,6 +49,12 @@ impl DisassociateMembersInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
     pub fn build(
         self,

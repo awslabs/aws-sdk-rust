@@ -56,6 +56,12 @@ impl EnvironmentParameterRangesBuilder {
         self.categorical_parameter_ranges = input;
         self
     }
+    /// <p>Specified a list of parameters for each category.</p>
+    pub fn get_categorical_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameter>> {
+        &self.categorical_parameter_ranges
+    }
     /// Consumes the builder and constructs a [`EnvironmentParameterRanges`](crate::types::EnvironmentParameterRanges).
     pub fn build(self) -> crate::types::EnvironmentParameterRanges {
         crate::types::EnvironmentParameterRanges {

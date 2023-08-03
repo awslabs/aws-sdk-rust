@@ -36,6 +36,12 @@ impl CreateDomainNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDomainName as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// Appends an item to `DomainNameConfigurations`.
     ///
     /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
@@ -146,6 +156,12 @@ impl CreateDomainNameFluentBuilder {
         self.inner = self.inner.set_domain_name_configurations(input);
         self
     }
+    /// <p>The domain name configurations.</p>
+    pub fn get_domain_name_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
+        self.inner.get_domain_name_configurations()
+    }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(
         mut self,
@@ -161,6 +177,12 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mutual_tls_authentication(input);
         self
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    pub fn get_mutual_tls_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
+        self.inner.get_mutual_tls_authentication()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -184,5 +206,13 @@ impl CreateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The collection of tags associated with a domain name.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

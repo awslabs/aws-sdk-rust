@@ -65,6 +65,10 @@ impl DescribeAttachmentLimitExceededBuilder {
         self.message = input;
         self
     }
+    /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

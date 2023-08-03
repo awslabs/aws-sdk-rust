@@ -43,6 +43,12 @@ impl CreateCachePolicyInputBuilder {
         self.cache_policy_config = input;
         self
     }
+    /// <p>A cache policy configuration.</p>
+    pub fn get_cache_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+        &self.cache_policy_config
+    }
     /// Consumes the builder and constructs a [`CreateCachePolicyInput`](crate::operation::create_cache_policy::CreateCachePolicyInput).
     pub fn build(
         self,

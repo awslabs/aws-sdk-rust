@@ -39,6 +39,10 @@ impl DeleteProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The identifier of the profile that you are deleting.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
     pub fn build(
         self,

@@ -70,6 +70,10 @@ impl CreateSubnetGroupInputBuilder {
         self.subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group.</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_name
+    }
     /// <p>A description for the subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateSubnetGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -99,6 +107,10 @@ impl CreateSubnetGroupInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of VPC subnet IDs for the subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -117,6 +129,10 @@ impl CreateSubnetGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
     pub fn build(

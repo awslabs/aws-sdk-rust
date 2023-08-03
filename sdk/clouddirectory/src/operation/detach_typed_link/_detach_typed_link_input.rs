@@ -53,6 +53,10 @@ impl DetachTypedLinkInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl DetachTypedLinkInputBuilder {
     ) -> Self {
         self.typed_link_specifier = input;
         self
+    }
+    /// <p>Used to accept a typed link specifier as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
     }
     /// Consumes the builder and constructs a [`DetachTypedLinkInput`](crate::operation::detach_typed_link::DetachTypedLinkInput).
     pub fn build(

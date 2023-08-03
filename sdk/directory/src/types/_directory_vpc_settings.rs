@@ -48,6 +48,10 @@ impl DirectoryVpcSettingsBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The identifier of the VPC in which to create the directory.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -66,6 +70,10 @@ impl DirectoryVpcSettingsBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`DirectoryVpcSettings`](crate::types::DirectoryVpcSettings).
     pub fn build(self) -> crate::types::DirectoryVpcSettings {

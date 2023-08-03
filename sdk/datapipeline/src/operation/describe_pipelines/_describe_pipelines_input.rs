@@ -50,6 +50,12 @@ impl DescribePipelinesInputBuilder {
         self.pipeline_ids = input;
         self
     }
+    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
+    pub fn get_pipeline_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pipeline_ids
+    }
     /// Consumes the builder and constructs a [`DescribePipelinesInput`](crate::operation::describe_pipelines::DescribePipelinesInput).
     pub fn build(
         self,

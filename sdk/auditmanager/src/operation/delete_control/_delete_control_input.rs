@@ -39,6 +39,10 @@ impl DeleteControlInputBuilder {
         self.control_id = input;
         self
     }
+    /// <p> The unique identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
+    }
     /// Consumes the builder and constructs a [`DeleteControlInput`](crate::operation::delete_control::DeleteControlInput).
     pub fn build(
         self,

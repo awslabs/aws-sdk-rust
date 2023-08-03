@@ -47,6 +47,10 @@ impl StopInferenceSchedulerInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler to be stopped. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// Consumes the builder and constructs a [`StopInferenceSchedulerInput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput).
     pub fn build(
         self,

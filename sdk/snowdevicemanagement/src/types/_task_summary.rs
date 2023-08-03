@@ -72,6 +72,10 @@ impl TaskSummaryBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The task ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl TaskSummaryBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>The state of the task assigned to one or many devices.</p>
     pub fn state(mut self, input: crate::types::TaskState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl TaskSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TaskState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the task assigned to one or many devices.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TaskState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -116,6 +128,14 @@ impl TaskSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TaskSummary`](crate::types::TaskSummary).
     pub fn build(self) -> crate::types::TaskSummary {

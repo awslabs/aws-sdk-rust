@@ -78,6 +78,10 @@ impl UnprocessedUpdateActionBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The replication group ID</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The ID of the cache cluster</p>
     pub fn cache_cluster_id(
         mut self,
@@ -93,6 +97,10 @@ impl UnprocessedUpdateActionBuilder {
     ) -> Self {
         self.cache_cluster_id = input;
         self
+    }
+    /// <p>The ID of the cache cluster</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
@@ -110,6 +118,10 @@ impl UnprocessedUpdateActionBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// <p>The error type for requests that are not processed</p>
     pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_type = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl UnprocessedUpdateActionBuilder {
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p>The error type for requests that are not processed</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
     }
     /// <p>The error message that describes the reason the request was not processed</p>
     pub fn error_message(
@@ -135,6 +151,10 @@ impl UnprocessedUpdateActionBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message that describes the reason the request was not processed</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedUpdateAction`](crate::types::UnprocessedUpdateAction).
     pub fn build(self) -> crate::types::UnprocessedUpdateAction {

@@ -37,6 +37,13 @@ impl ConnectAppAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConnectAppAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ConnectAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     pub fn app_authorization_identifier(
         mut self,
@@ -149,6 +160,12 @@ impl ConnectAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    pub fn get_app_authorization_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_authorization_identifier()
+    }
     /// <p>Contains OAuth2 authorization information.</p>
     /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
     pub fn auth_request(mut self, input: crate::types::AuthRequest) -> Self {
@@ -163,5 +180,10 @@ impl ConnectAppAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auth_request(input);
         self
+    }
+    /// <p>Contains OAuth2 authorization information.</p>
+    /// <p>This is required if the app authorization for the request is configured with an OAuth2 (<code>oauth2</code>) authorization type.</p>
+    pub fn get_auth_request(&self) -> &::std::option::Option<crate::types::AuthRequest> {
+        self.inner.get_auth_request()
     }
 }

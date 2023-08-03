@@ -62,6 +62,10 @@ impl DisassociateLinkInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DisassociateLinkInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DisassociateLinkInputBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
+    }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// Consumes the builder and constructs a [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
     pub fn build(

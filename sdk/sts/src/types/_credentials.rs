@@ -78,6 +78,10 @@ impl CredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The access key ID that identifies the temporary security credentials.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The secret access key that can be used to sign requests.</p>
     pub fn secret_access_key(
         mut self,
@@ -93,6 +97,10 @@ impl CredentialsBuilder {
     ) -> Self {
         self.secret_access_key = input;
         self
+    }
+    /// <p>The secret access key that can be used to sign requests.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn session_token(
@@ -110,6 +118,10 @@ impl CredentialsBuilder {
         self.session_token = input;
         self
     }
+    /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p>The date on which the current credentials expire.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl CredentialsBuilder {
     ) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>The date on which the current credentials expire.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {

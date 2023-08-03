@@ -78,6 +78,10 @@ impl WaveAggregatedStatusBuilder {
         self.last_update_date_time = input;
         self
     }
+    /// <p>Wave aggregated status last update dateTime.</p>
+    pub fn get_last_update_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_date_time
+    }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
     pub fn replication_started_date_time(
         mut self,
@@ -94,6 +98,12 @@ impl WaveAggregatedStatusBuilder {
         self.replication_started_date_time = input;
         self
     }
+    /// <p>DateTime marking when the first source server in the wave started replication.</p>
+    pub fn get_replication_started_date_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_started_date_time
+    }
     /// <p>Wave aggregated status health status.</p>
     pub fn health_status(mut self, input: crate::types::WaveHealthStatus) -> Self {
         self.health_status = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl WaveAggregatedStatusBuilder {
     ) -> Self {
         self.health_status = input;
         self
+    }
+    /// <p>Wave aggregated status health status.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::WaveHealthStatus> {
+        &self.health_status
     }
     /// <p>Wave aggregated status progress status.</p>
     pub fn progress_status(mut self, input: crate::types::WaveProgressStatus) -> Self {
@@ -120,6 +134,10 @@ impl WaveAggregatedStatusBuilder {
         self.progress_status = input;
         self
     }
+    /// <p>Wave aggregated status progress status.</p>
+    pub fn get_progress_status(&self) -> &::std::option::Option<crate::types::WaveProgressStatus> {
+        &self.progress_status
+    }
     /// <p>Wave aggregated status total applications amount.</p>
     pub fn total_applications(mut self, input: i64) -> Self {
         self.total_applications = ::std::option::Option::Some(input);
@@ -129,6 +147,10 @@ impl WaveAggregatedStatusBuilder {
     pub fn set_total_applications(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_applications = input;
         self
+    }
+    /// <p>Wave aggregated status total applications amount.</p>
+    pub fn get_total_applications(&self) -> &::std::option::Option<i64> {
+        &self.total_applications
     }
     /// Consumes the builder and constructs a [`WaveAggregatedStatus`](crate::types::WaveAggregatedStatus).
     pub fn build(self) -> crate::types::WaveAggregatedStatus {

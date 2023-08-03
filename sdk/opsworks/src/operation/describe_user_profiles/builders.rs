@@ -37,6 +37,12 @@ impl DescribeUserProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeUserProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +142,11 @@ impl DescribeUserProfilesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_iam_user_arns(input);
         self
+    }
+    /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    pub fn get_iam_user_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_iam_user_arns()
     }
 }

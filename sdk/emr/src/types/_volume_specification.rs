@@ -64,6 +64,10 @@ impl VolumeSpecificationBuilder {
         self.volume_type = input;
         self
     }
+    /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
+    }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl VolumeSpecificationBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl VolumeSpecificationBuilder {
         self.size_in_gb = input;
         self
     }
+    /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
+    }
     /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl VolumeSpecificationBuilder {
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
+    }
+    /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i32> {
+        &self.throughput
     }
     /// Consumes the builder and constructs a [`VolumeSpecification`](crate::types::VolumeSpecification).
     pub fn build(self) -> crate::types::VolumeSpecification {

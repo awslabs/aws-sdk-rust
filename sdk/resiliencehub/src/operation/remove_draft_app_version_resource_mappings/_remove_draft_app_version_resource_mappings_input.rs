@@ -93,6 +93,10 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// Appends an item to `resource_names`.
     ///
     /// To override the contents of this collection use [`set_resource_names`](Self::set_resource_names).
@@ -114,6 +118,12 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     ) -> Self {
         self.resource_names = input;
         self
+    }
+    /// <p>The names of the resources you want to remove from the resource mappings.</p>
+    pub fn get_resource_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_names
     }
     /// Appends an item to `logical_stack_names`.
     ///
@@ -137,6 +147,12 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         self.logical_stack_names = input;
         self
     }
+    /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
+    pub fn get_logical_stack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logical_stack_names
+    }
     /// Appends an item to `app_registry_app_names`.
     ///
     /// To override the contents of this collection use [`set_app_registry_app_names`](Self::set_app_registry_app_names).
@@ -158,6 +174,12 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     ) -> Self {
         self.app_registry_app_names = input;
         self
+    }
+    /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
+    pub fn get_app_registry_app_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.app_registry_app_names
     }
     /// Appends an item to `resource_group_names`.
     ///
@@ -181,6 +203,12 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         self.resource_group_names = input;
         self
     }
+    /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
+    pub fn get_resource_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_group_names
+    }
     /// Appends an item to `terraform_source_names`.
     ///
     /// To override the contents of this collection use [`set_terraform_source_names`](Self::set_terraform_source_names).
@@ -202,6 +230,12 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     ) -> Self {
         self.terraform_source_names = input;
         self
+    }
+    /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
+    pub fn get_terraform_source_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.terraform_source_names
     }
     /// Appends an item to `eks_source_names`.
     ///
@@ -228,6 +262,14 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     ) -> Self {
         self.eks_source_names = input;
         self
+    }
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// </note>
+    pub fn get_eks_source_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eks_source_names
     }
     /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsInput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput, ::aws_smithy_http::operation::error::BuildError>{

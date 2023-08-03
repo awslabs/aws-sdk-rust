@@ -43,6 +43,10 @@ impl ServiceTypeDetailBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The type of service.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.service_type
+    }
     /// Consumes the builder and constructs a [`ServiceTypeDetail`](crate::types::ServiceTypeDetail).
     pub fn build(self) -> crate::types::ServiceTypeDetail {
         crate::types::ServiceTypeDetail {

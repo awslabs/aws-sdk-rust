@@ -42,6 +42,10 @@ impl GetSettingsInputBuilder {
         self.attribute = input;
         self
     }
+    /// <p> The list of setting attribute enum values. </p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SettingAttribute> {
+        &self.attribute
+    }
     /// Consumes the builder and constructs a [`GetSettingsInput`](crate::operation::get_settings::GetSettingsInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl ReportWithRawDataBuilder {
         self.report_arn = input;
         self
     }
+    /// <p>The ARN of the report.</p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_arn
+    }
     /// <p>The value of the requested data field from the report.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ReportWithRawDataBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The value of the requested data field from the report.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`ReportWithRawData`](crate::types::ReportWithRawData).
     pub fn build(self) -> crate::types::ReportWithRawData {

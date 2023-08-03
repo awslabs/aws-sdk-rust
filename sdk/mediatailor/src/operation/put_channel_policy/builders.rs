@@ -36,6 +36,12 @@ impl PutChannelPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutChannelPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutChannelPolicyFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The channel name associated with this Channel Policy.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -135,5 +145,9 @@ impl PutChannelPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

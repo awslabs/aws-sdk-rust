@@ -88,6 +88,10 @@ impl ScheduleSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the schedule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ScheduleSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the schedule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the schedule group associated with this schedule.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ScheduleSummaryBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the schedule group associated with this schedule.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
     pub fn state(mut self, input: crate::types::ScheduleState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl ScheduleSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Specifies whether the schedule is enabled or disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
+        &self.state
     }
     /// <p>The time at which the schedule was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -131,6 +147,10 @@ impl ScheduleSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The time at which the schedule was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The time at which the schedule was last modified.</p>
     pub fn last_modification_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_date = ::std::option::Option::Some(input);
@@ -144,6 +164,12 @@ impl ScheduleSummaryBuilder {
         self.last_modification_date = input;
         self
     }
+    /// <p>The time at which the schedule was last modified.</p>
+    pub fn get_last_modification_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_date
+    }
     /// <p>The schedule's target details.</p>
     pub fn target(mut self, input: crate::types::TargetSummary) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -153,6 +179,10 @@ impl ScheduleSummaryBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TargetSummary>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The schedule's target details.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TargetSummary> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`ScheduleSummary`](crate::types::ScheduleSummary).
     pub fn build(self) -> crate::types::ScheduleSummary {

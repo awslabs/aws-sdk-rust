@@ -187,6 +187,10 @@ impl DescribeUserOutputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -196,6 +200,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `external_ids`.
     ///
@@ -216,6 +224,12 @@ impl DescribeUserOutputBuilder {
         self.external_ids = input;
         self
     }
+    /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
+    pub fn get_external_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
+        &self.external_ids
+    }
     /// <p>The name of the user.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -225,6 +239,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Name>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
+        &self.name
     }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,6 +254,10 @@ impl DescribeUserOutputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>An alternative descriptive name for the user.</p>
     pub fn nick_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nick_name = ::std::option::Option::Some(input.into());
@@ -246,6 +268,10 @@ impl DescribeUserOutputBuilder {
         self.nick_name = input;
         self
     }
+    /// <p>An alternative descriptive name for the user.</p>
+    pub fn get_nick_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nick_name
+    }
     /// <p>A URL link for the user's profile.</p>
     pub fn profile_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_url = ::std::option::Option::Some(input.into());
@@ -255,6 +281,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_profile_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_url = input;
         self
+    }
+    /// <p>A URL link for the user's profile.</p>
+    pub fn get_profile_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_url
     }
     /// Appends an item to `emails`.
     ///
@@ -275,6 +305,10 @@ impl DescribeUserOutputBuilder {
         self.emails = input;
         self
     }
+    /// <p>The email address of the user.</p>
+    pub fn get_emails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Email>> {
+        &self.emails
+    }
     /// Appends an item to `addresses`.
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
@@ -293,6 +327,10 @@ impl DescribeUserOutputBuilder {
     ) -> Self {
         self.addresses = input;
         self
+    }
+    /// <p>The physical address of the user.</p>
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.addresses
     }
     /// Appends an item to `phone_numbers`.
     ///
@@ -313,6 +351,12 @@ impl DescribeUserOutputBuilder {
         self.phone_numbers = input;
         self
     }
+    /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+        &self.phone_numbers
+    }
     /// <p>A string indicating the type of user.</p>
     pub fn user_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_type = ::std::option::Option::Some(input.into());
@@ -323,6 +367,10 @@ impl DescribeUserOutputBuilder {
         self.user_type = input;
         self
     }
+    /// <p>A string indicating the type of user.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_type
+    }
     /// <p>A string containing the title of the user.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -332,6 +380,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A string containing the title of the user.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The preferred language of the user.</p>
     pub fn preferred_language(
@@ -349,6 +401,10 @@ impl DescribeUserOutputBuilder {
         self.preferred_language = input;
         self
     }
+    /// <p>The preferred language of the user.</p>
+    pub fn get_preferred_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_language
+    }
     /// <p>A string containing the geographical region or location of the user.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -359,6 +415,10 @@ impl DescribeUserOutputBuilder {
         self.locale = input;
         self
     }
+    /// <p>A string containing the geographical region or location of the user.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The time zone for a user.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -368,6 +428,10 @@ impl DescribeUserOutputBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone for a user.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(
@@ -384,6 +448,10 @@ impl DescribeUserOutputBuilder {
     ) -> Self {
         self.identity_store_id = input;
         self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -42,6 +42,10 @@ impl PutVoiceConnectorStreamingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVoiceConnectorStreamingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl PutVoiceConnectorStreamingConfigurationFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The streaming configuration details to add.</p>
     pub fn streaming_configuration(mut self, input: crate::types::StreamingConfiguration) -> Self {
         self.inner = self.inner.streaming_configuration(input);
@@ -124,5 +132,11 @@ impl PutVoiceConnectorStreamingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_streaming_configuration(input);
         self
+    }
+    /// <p>The streaming configuration details to add.</p>
+    pub fn get_streaming_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingConfiguration> {
+        self.inner.get_streaming_configuration()
     }
 }

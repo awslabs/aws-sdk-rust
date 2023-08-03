@@ -56,6 +56,10 @@ impl SuggestionMatchBuilder {
         self.suggestion = input;
         self
     }
+    /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
+    pub fn get_suggestion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suggestion
+    }
     /// <p>The relevance score of a suggested match.</p>
     pub fn score(mut self, input: i64) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SuggestionMatchBuilder {
         self.score = input;
         self
     }
+    /// <p>The relevance score of a suggested match.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i64> {
+        &self.score
+    }
     /// <p>The document ID of the suggested document.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl SuggestionMatchBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The document ID of the suggested document.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`SuggestionMatch`](crate::types::SuggestionMatch).
     pub fn build(self) -> crate::types::SuggestionMatch {

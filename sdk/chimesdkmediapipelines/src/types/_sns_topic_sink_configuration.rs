@@ -51,6 +51,10 @@ impl SnsTopicSinkConfigurationBuilder {
         self.insights_target = input;
         self
     }
+    /// <p>The ARN of the SNS sink.</p>
+    pub fn get_insights_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insights_target
+    }
     /// Consumes the builder and constructs a [`SnsTopicSinkConfiguration`](crate::types::SnsTopicSinkConfiguration).
     pub fn build(self) -> crate::types::SnsTopicSinkConfiguration {
         crate::types::SnsTopicSinkConfiguration {

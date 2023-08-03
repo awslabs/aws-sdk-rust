@@ -36,6 +36,13 @@ impl BatchAssociateResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl BatchAssociateResourceFluentBuilder {
         self.inner = self.inner.set_resource_set_identifier(input);
         self
     }
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn get_resource_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_set_identifier()
+    }
     /// Appends an item to `Items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -148,5 +159,9 @@ impl BatchAssociateResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_items(input);
         self
+    }
+    /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_items()
     }
 }

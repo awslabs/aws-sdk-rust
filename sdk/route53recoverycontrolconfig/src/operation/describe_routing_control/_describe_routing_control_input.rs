@@ -47,6 +47,10 @@ impl DescribeRoutingControlInputBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// Consumes the builder and constructs a [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
     pub fn build(
         self,

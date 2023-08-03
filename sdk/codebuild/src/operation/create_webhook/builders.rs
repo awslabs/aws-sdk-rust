@@ -38,6 +38,12 @@ impl CreateWebhookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWebhook as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_webhook::builders::CreateWebhookInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl CreateWebhookFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
@@ -140,6 +150,12 @@ impl CreateWebhookFluentBuilder {
         self.inner = self.inner.set_branch_filter(input);
         self
     }
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// </note>
+    pub fn get_branch_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_filter()
+    }
     /// Appends an item to `filterGroups`.
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
@@ -159,6 +175,13 @@ impl CreateWebhookFluentBuilder {
         self.inner = self.inner.set_filter_groups(input);
         self
     }
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
+    pub fn get_filter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
+        self.inner.get_filter_groups()
+    }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn build_type(mut self, input: crate::types::WebhookBuildType) -> Self {
         self.inner = self.inner.build_type(input);
@@ -171,5 +194,9 @@ impl CreateWebhookFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_build_type(input);
         self
+    }
+    /// <p>Specifies the type of build this webhook will trigger.</p>
+    pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
+        self.inner.get_build_type()
     }
 }

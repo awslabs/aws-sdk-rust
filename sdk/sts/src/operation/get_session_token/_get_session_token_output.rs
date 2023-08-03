@@ -65,6 +65,12 @@ impl GetSessionTokenOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

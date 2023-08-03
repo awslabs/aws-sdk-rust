@@ -67,6 +67,15 @@ impl TagsModelBuilder {
         self.tags = input;
         self
     }
+    /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p>
+    /// <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`TagsModel`](crate::types::TagsModel).
     pub fn build(self) -> crate::types::TagsModel {
         crate::types::TagsModel { tags: self.tags }

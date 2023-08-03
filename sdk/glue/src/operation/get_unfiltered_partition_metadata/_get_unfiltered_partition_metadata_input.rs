@@ -83,6 +83,10 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog ID where the partition resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
     pub fn database_name(
         mut self,
@@ -99,6 +103,10 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>(Required) Specifies the name of a database that contains the partition.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>(Required) Specifies the name of a table that contains the partition.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>(Required) Specifies the name of a table that contains the partition.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partition_values`.
     ///
@@ -131,6 +143,12 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         self.partition_values = input;
         self
     }
+    /// <p>(Required) A list of partition key values.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
+    }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
         self.audit_context = ::std::option::Option::Some(input);
@@ -143,6 +161,10 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     ) -> Self {
         self.audit_context = input;
         self
+    }
+    /// <p>A structure containing Lake Formation audit context information.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
     }
     /// Appends an item to `supported_permission_types`.
     ///
@@ -162,6 +184,12 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     ) -> Self {
         self.supported_permission_types = input;
         self
+    }
+    /// <p>(Required) A list of supported permission types. </p>
+    pub fn get_supported_permission_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+        &self.supported_permission_types
     }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
     pub fn build(

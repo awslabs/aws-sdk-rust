@@ -42,6 +42,10 @@ impl WriteRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the WriteRecords as a reference.
+    pub fn as_input(&self) -> &crate::operation::write_records::builders::WriteRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl WriteRecordsFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the Timestream database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the Timestream table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -139,6 +147,10 @@ impl WriteRecordsFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the Timestream table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names. </p>
     pub fn common_attributes(mut self, input: crate::types::Record) -> Self {
@@ -152,6 +164,10 @@ impl WriteRecordsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_common_attributes(input);
         self
+    }
+    /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names. </p>
+    pub fn get_common_attributes(&self) -> &::std::option::Option<crate::types::Record> {
+        self.inner.get_common_attributes()
     }
     /// Appends an item to `Records`.
     ///
@@ -169,5 +185,9 @@ impl WriteRecordsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_records(input);
         self
+    }
+    /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point. </p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        self.inner.get_records()
     }
 }

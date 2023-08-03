@@ -54,6 +54,10 @@ impl ListStudiosOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `studios`.
     ///
     /// To override the contents of this collection use [`set_studios`](Self::set_studios).
@@ -72,6 +76,10 @@ impl ListStudiosOutputBuilder {
     ) -> Self {
         self.studios = input;
         self
+    }
+    /// <p>A collection of studios.</p>
+    pub fn get_studios(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Studio>> {
+        &self.studios
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -45,6 +45,10 @@ impl ReferenceLineStaticDataConfigurationBuilder {
         self.value = input;
         self
     }
+    /// <p>The double input of the static data.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`ReferenceLineStaticDataConfiguration`](crate::types::ReferenceLineStaticDataConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineStaticDataConfiguration {
         crate::types::ReferenceLineStaticDataConfiguration {

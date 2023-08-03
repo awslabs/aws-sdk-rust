@@ -247,6 +247,10 @@ impl GetDomainDetailOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of a domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `nameservers`.
     ///
     /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
@@ -266,6 +270,12 @@ impl GetDomainDetailOutputBuilder {
         self.nameservers = input;
         self
     }
+    /// <p>The name servers of the domain.</p>
+    pub fn get_nameservers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+        &self.nameservers
+    }
     /// <p>Specifies whether the domain registration is set to renew automatically.</p>
     pub fn auto_renew(mut self, input: bool) -> Self {
         self.auto_renew = ::std::option::Option::Some(input);
@@ -275,6 +285,10 @@ impl GetDomainDetailOutputBuilder {
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_renew = input;
         self
+    }
+    /// <p>Specifies whether the domain registration is set to renew automatically.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
+        &self.auto_renew
     }
     /// <p>Provides details about the domain administrative contact.</p>
     pub fn admin_contact(mut self, input: crate::types::ContactDetail) -> Self {
@@ -289,6 +303,10 @@ impl GetDomainDetailOutputBuilder {
         self.admin_contact = input;
         self
     }
+    /// <p>Provides details about the domain administrative contact.</p>
+    pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.admin_contact
+    }
     /// <p>Provides details about the domain registrant.</p>
     pub fn registrant_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.registrant_contact = ::std::option::Option::Some(input);
@@ -301,6 +319,10 @@ impl GetDomainDetailOutputBuilder {
     ) -> Self {
         self.registrant_contact = input;
         self
+    }
+    /// <p>Provides details about the domain registrant.</p>
+    pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.registrant_contact
     }
     /// <p>Provides details about the domain technical contact.</p>
     pub fn tech_contact(mut self, input: crate::types::ContactDetail) -> Self {
@@ -315,6 +337,10 @@ impl GetDomainDetailOutputBuilder {
         self.tech_contact = input;
         self
     }
+    /// <p>Provides details about the domain technical contact.</p>
+    pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.tech_contact
+    }
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn admin_privacy(mut self, input: bool) -> Self {
         self.admin_privacy = ::std::option::Option::Some(input);
@@ -324,6 +350,10 @@ impl GetDomainDetailOutputBuilder {
     pub fn set_admin_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.admin_privacy = input;
         self
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    pub fn get_admin_privacy(&self) -> &::std::option::Option<bool> {
+        &self.admin_privacy
     }
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn registrant_privacy(mut self, input: bool) -> Self {
@@ -335,6 +365,10 @@ impl GetDomainDetailOutputBuilder {
         self.registrant_privacy = input;
         self
     }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    pub fn get_registrant_privacy(&self) -> &::std::option::Option<bool> {
+        &self.registrant_privacy
+    }
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn tech_privacy(mut self, input: bool) -> Self {
         self.tech_privacy = ::std::option::Option::Some(input);
@@ -344,6 +378,10 @@ impl GetDomainDetailOutputBuilder {
     pub fn set_tech_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tech_privacy = input;
         self
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    pub fn get_tech_privacy(&self) -> &::std::option::Option<bool> {
+        &self.tech_privacy
     }
     /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
     pub fn registrar_name(
@@ -361,6 +399,10 @@ impl GetDomainDetailOutputBuilder {
         self.registrar_name = input;
         self
     }
+    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+    pub fn get_registrar_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registrar_name
+    }
     /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
     pub fn who_is_server(
         mut self,
@@ -376,6 +418,10 @@ impl GetDomainDetailOutputBuilder {
     ) -> Self {
         self.who_is_server = input;
         self
+    }
+    /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
+    pub fn get_who_is_server(&self) -> &::std::option::Option<::std::string::String> {
+        &self.who_is_server
     }
     /// <p>Web address of the registrar.</p>
     pub fn registrar_url(
@@ -393,6 +439,10 @@ impl GetDomainDetailOutputBuilder {
         self.registrar_url = input;
         self
     }
+    /// <p>Web address of the registrar.</p>
+    pub fn get_registrar_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registrar_url
+    }
     /// <p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
     pub fn abuse_contact_email(
         mut self,
@@ -408,6 +458,10 @@ impl GetDomainDetailOutputBuilder {
     ) -> Self {
         self.abuse_contact_email = input;
         self
+    }
+    /// <p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
+    pub fn get_abuse_contact_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.abuse_contact_email
     }
     /// <p>Phone number for reporting abuse.</p>
     pub fn abuse_contact_phone(
@@ -425,6 +479,10 @@ impl GetDomainDetailOutputBuilder {
         self.abuse_contact_phone = input;
         self
     }
+    /// <p>Phone number for reporting abuse.</p>
+    pub fn get_abuse_contact_phone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.abuse_contact_phone
+    }
     /// <p>Reserved for future use.</p>
     pub fn registry_domain_id(
         mut self,
@@ -441,6 +499,10 @@ impl GetDomainDetailOutputBuilder {
         self.registry_domain_id = input;
         self
     }
+    /// <p>Reserved for future use.</p>
+    pub fn get_registry_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_domain_id
+    }
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -453,6 +515,10 @@ impl GetDomainDetailOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -467,6 +533,10 @@ impl GetDomainDetailOutputBuilder {
         self.updated_date = input;
         self
     }
+    /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_date
+    }
     /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
@@ -480,6 +550,10 @@ impl GetDomainDetailOutputBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
+    }
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     pub fn reseller(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reseller = ::std::option::Option::Some(input.into());
@@ -490,6 +564,10 @@ impl GetDomainDetailOutputBuilder {
         self.reseller = input;
         self
     }
+    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+    pub fn get_reseller(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reseller
+    }
     /// <p>Deprecated.</p>
     pub fn dns_sec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_sec = ::std::option::Option::Some(input.into());
@@ -499,6 +577,10 @@ impl GetDomainDetailOutputBuilder {
     pub fn set_dns_sec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_sec = input;
         self
+    }
+    /// <p>Deprecated.</p>
+    pub fn get_dns_sec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_sec
     }
     /// Appends an item to `status_list`.
     ///
@@ -523,6 +605,14 @@ impl GetDomainDetailOutputBuilder {
         self.status_list = input;
         self
     }
+    /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
+    /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>
+    /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
+    pub fn get_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.status_list
+    }
     /// Appends an item to `dnssec_keys`.
     ///
     /// To override the contents of this collection use [`set_dnssec_keys`](Self::set_dnssec_keys).
@@ -541,6 +631,12 @@ impl GetDomainDetailOutputBuilder {
     ) -> Self {
         self.dnssec_keys = input;
         self
+    }
+    /// <p>A complex type that contains information about the DNSSEC configuration.</p>
+    pub fn get_dnssec_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnssecKey>> {
+        &self.dnssec_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

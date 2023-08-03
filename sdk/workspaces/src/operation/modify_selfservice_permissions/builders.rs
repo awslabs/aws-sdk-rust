@@ -36,6 +36,10 @@ impl ModifySelfservicePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySelfservicePermissions as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ModifySelfservicePermissionsFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub fn selfservice_permissions(mut self, input: crate::types::SelfservicePermissions) -> Self {
         self.inner = self.inner.selfservice_permissions(input);
@@ -138,5 +146,11 @@ impl ModifySelfservicePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_selfservice_permissions(input);
         self
+    }
+    /// <p>The permissions to enable or disable self-service capabilities.</p>
+    pub fn get_selfservice_permissions(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfservicePermissions> {
+        self.inner.get_selfservice_permissions()
     }
 }

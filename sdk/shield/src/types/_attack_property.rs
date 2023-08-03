@@ -82,6 +82,11 @@ impl AttackPropertyBuilder {
         self.attack_layer = input;
         self
     }
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_attack_layer(&self) -> &::std::option::Option<crate::types::AttackLayer> {
+        &self.attack_layer
+    }
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub fn attack_property_identifier(
         mut self,
@@ -97,6 +102,12 @@ impl AttackPropertyBuilder {
     ) -> Self {
         self.attack_property_identifier = input;
         self
+    }
+    /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
+    pub fn get_attack_property_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttackPropertyIdentifier> {
+        &self.attack_property_identifier
     }
     /// Appends an item to `top_contributors`.
     ///
@@ -117,6 +128,12 @@ impl AttackPropertyBuilder {
         self.top_contributors = input;
         self
     }
+    /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
+    pub fn get_top_contributors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Contributor>> {
+        &self.top_contributors
+    }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -127,6 +144,10 @@ impl AttackPropertyBuilder {
         self.unit = input;
         self
     }
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
+    }
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub fn total(mut self, input: i64) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -136,6 +157,10 @@ impl AttackPropertyBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total contributions made to this Shield event by all contributors.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i64> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`AttackProperty`](crate::types::AttackProperty).
     pub fn build(self) -> crate::types::AttackProperty {

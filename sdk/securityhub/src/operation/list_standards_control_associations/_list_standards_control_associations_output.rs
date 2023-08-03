@@ -74,6 +74,13 @@ impl ListStandardsControlAssociationsOutputBuilder {
         self.standards_control_association_summaries = input;
         self
     }
+    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    pub fn get_standards_control_association_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>
+    {
+        &self.standards_control_association_summaries
+    }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl ListStandardsControlAssociationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

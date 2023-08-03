@@ -84,6 +84,10 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
         self.collector_referenced_id = input;
         self
     }
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+    pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_referenced_id
+    }
     /// <p>The name of the new Fleet Advisor collector.</p>
     pub fn collector_name(
         mut self,
@@ -100,6 +104,10 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
         self.collector_name = input;
         self
     }
+    /// <p>The name of the new Fleet Advisor collector.</p>
+    pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_name
+    }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn service_access_role_arn(
@@ -126,6 +138,10 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -141,6 +157,10 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
     ) -> Self {
         self.s3_bucket_name = input;
         self
+    }
+    /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

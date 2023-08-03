@@ -56,6 +56,10 @@ impl CapacityBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>The total number of read capacity units consumed on a table or an index.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<f64> {
+        &self.read_capacity_units
+    }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
     pub fn write_capacity_units(mut self, input: f64) -> Self {
         self.write_capacity_units = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CapacityBuilder {
         self.write_capacity_units = input;
         self
     }
+    /// <p>The total number of write capacity units consumed on a table or an index.</p>
+    pub fn get_write_capacity_units(&self) -> &::std::option::Option<f64> {
+        &self.write_capacity_units
+    }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub fn capacity_units(mut self, input: f64) -> Self {
         self.capacity_units = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl CapacityBuilder {
     pub fn set_capacity_units(mut self, input: ::std::option::Option<f64>) -> Self {
         self.capacity_units = input;
         self
+    }
+    /// <p>The total number of capacity units consumed on a table or an index.</p>
+    pub fn get_capacity_units(&self) -> &::std::option::Option<f64> {
+        &self.capacity_units
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {

@@ -64,6 +64,10 @@ impl RecommendationItemBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource identifier.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The target account identifier.</p>
     pub fn target_account_id(
         mut self,
@@ -79,6 +83,10 @@ impl RecommendationItemBuilder {
     ) -> Self {
         self.target_account_id = input;
         self
+    }
+    /// <p>The target account identifier.</p>
+    pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_account_id
     }
     /// <p>The target region.</p>
     pub fn target_region(
@@ -96,6 +104,10 @@ impl RecommendationItemBuilder {
         self.target_region = input;
         self
     }
+    /// <p>The target region.</p>
+    pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_region
+    }
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub fn already_implemented(mut self, input: bool) -> Self {
         self.already_implemented = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl RecommendationItemBuilder {
     pub fn set_already_implemented(mut self, input: ::std::option::Option<bool>) -> Self {
         self.already_implemented = input;
         self
+    }
+    /// <p>Specifies if the recommendation has already been implemented.</p>
+    pub fn get_already_implemented(&self) -> &::std::option::Option<bool> {
+        &self.already_implemented
     }
     /// Consumes the builder and constructs a [`RecommendationItem`](crate::types::RecommendationItem).
     pub fn build(self) -> crate::types::RecommendationItem {

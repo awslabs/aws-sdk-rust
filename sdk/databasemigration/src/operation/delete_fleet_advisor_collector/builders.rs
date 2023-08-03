@@ -36,6 +36,10 @@ impl DeleteFleetAdvisorCollectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFleetAdvisorCollector as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteFleetAdvisorCollectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_collector_referenced_id(input);
         self
+    }
+    /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collector_referenced_id()
     }
 }

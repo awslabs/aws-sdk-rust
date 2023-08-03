@@ -37,6 +37,12 @@ impl CreateTopicRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTopicRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_topic_rule::builders::CreateTopicRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateTopicRuleFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>The rule payload.</p>
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.inner = self.inner.topic_rule_payload(input);
@@ -139,6 +149,10 @@ impl CreateTopicRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_topic_rule_payload(input);
         self
+    }
+    /// <p>The rule payload.</p>
+    pub fn get_topic_rule_payload(&self) -> &::std::option::Option<crate::types::TopicRulePayload> {
+        self.inner.get_topic_rule_payload()
     }
     /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
@@ -157,5 +171,13 @@ impl CreateTopicRuleFluentBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tags()
     }
 }

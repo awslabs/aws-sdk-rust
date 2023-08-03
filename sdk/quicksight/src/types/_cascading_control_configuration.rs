@@ -53,6 +53,12 @@ impl CascadingControlConfigurationBuilder {
         self.source_controls = input;
         self
     }
+    /// <p>A list of source controls that determine the values that are used in the current control.</p>
+    pub fn get_source_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>> {
+        &self.source_controls
+    }
     /// Consumes the builder and constructs a [`CascadingControlConfiguration`](crate::types::CascadingControlConfiguration).
     pub fn build(self) -> crate::types::CascadingControlConfiguration {
         crate::types::CascadingControlConfiguration {

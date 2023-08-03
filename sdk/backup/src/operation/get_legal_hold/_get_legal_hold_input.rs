@@ -45,6 +45,10 @@ impl GetLegalHoldInputBuilder {
         self.legal_hold_id = input;
         self
     }
+    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_id
+    }
     /// Consumes the builder and constructs a [`GetLegalHoldInput`](crate::operation::get_legal_hold::GetLegalHoldInput).
     pub fn build(
         self,

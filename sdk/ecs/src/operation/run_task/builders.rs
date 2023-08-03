@@ -46,6 +46,10 @@ impl RunTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RunTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::run_task::builders::RunTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +148,15 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
+    /// <p>The capacity provider strategy to use for the task.</p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    pub fn get_capacity_provider_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+        self.inner.get_capacity_provider_strategy()
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -153,6 +166,10 @@ impl RunTaskFluentBuilder {
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
     }
     /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -164,6 +181,10 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_count(input);
         self
     }
+    /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_count()
+    }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_ecs_managed_tags(input);
@@ -173,6 +194,10 @@ impl RunTaskFluentBuilder {
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_ecs_managed_tags(input);
         self
+    }
+    /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_ecs_managed_tags()
     }
     /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
@@ -186,6 +211,11 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_enable_execute_command(input);
         self
     }
+    /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+    /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_execute_command()
+    }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
@@ -195,6 +225,10 @@ impl RunTaskFluentBuilder {
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
+    }
+    /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group()
     }
     /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
@@ -223,6 +257,17 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_launch_type(input);
         self
     }
+    /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// </note>
+    /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
+    /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
+    /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+    /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
+        self.inner.get_launch_type()
+    }
     /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.inner = self.inner.network_configuration(input);
@@ -235,6 +280,12 @@ impl RunTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
+    }
+    /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        self.inner.get_network_configuration()
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
@@ -250,6 +301,11 @@ impl RunTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
+    }
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::TaskOverride> {
+        self.inner.get_overrides()
     }
     /// Appends an item to `placementConstraints`.
     ///
@@ -268,6 +324,12 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_placement_constraints(input);
         self
     }
+    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
+    pub fn get_placement_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+        self.inner.get_placement_constraints()
+    }
     /// Appends an item to `placementStrategy`.
     ///
     /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
@@ -285,6 +347,12 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_placement_strategy(input);
         self
     }
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
+    pub fn get_placement_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+        self.inner.get_placement_strategy()
+    }
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(
         mut self,
@@ -300,6 +368,10 @@ impl RunTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform_version(input);
         self
+    }
+    /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_version()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p> <note>
     /// <p>An error will be received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -318,6 +390,12 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_propagate_tags(input);
         self
     }
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p> <note>
+    /// <p>An error will be received if you specify the <code>SERVICE</code> option when running a task.</p>
+    /// </note>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
+        self.inner.get_propagate_tags()
+    }
     /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_id(input.into());
@@ -327,6 +405,10 @@ impl RunTaskFluentBuilder {
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_id(input);
         self
+    }
+    /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reference_id()
     }
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
@@ -339,6 +421,11 @@ impl RunTaskFluentBuilder {
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_started_by(input);
         self
+    }
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+    /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
+    pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_started_by()
     }
     /// Appends an item to `tags`.
     ///
@@ -377,6 +464,20 @@ impl RunTaskFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
     /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
@@ -402,5 +503,14 @@ impl RunTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
+    }
+    /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+    /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
+    /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's permissions policy.</p>
+    /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+    /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_definition()
     }
 }

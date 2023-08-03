@@ -36,6 +36,10 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetRepositoryScanningConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
+    }
+    /// <p>One or more repository names to get the scanning configuration for.</p>
+    pub fn get_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_repository_names()
     }
 }

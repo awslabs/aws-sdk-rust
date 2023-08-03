@@ -90,6 +90,10 @@ impl ListAlgorithmsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl ListAlgorithmsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>The maximum number of algorithms to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl ListAlgorithmsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of algorithms to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
     pub fn name_contains(
@@ -129,6 +141,10 @@ impl ListAlgorithmsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl ListAlgorithmsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::AlgorithmSortBy) -> Self {
@@ -152,6 +172,10 @@ impl ListAlgorithmsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AlgorithmSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -161,6 +185,10 @@ impl ListAlgorithmsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListAlgorithmsInput`](crate::operation::list_algorithms::ListAlgorithmsInput).
     pub fn build(

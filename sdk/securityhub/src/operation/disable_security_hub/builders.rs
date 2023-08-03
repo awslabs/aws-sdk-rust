@@ -39,6 +39,12 @@ impl DisableSecurityHubFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableSecurityHub as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

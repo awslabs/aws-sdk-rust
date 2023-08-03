@@ -54,6 +54,11 @@ impl ScalableTargetActionBuilder {
         self.min_capacity = input;
         self
     }
+    /// <p>The minimum capacity.</p>
+    /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
+    pub fn get_min_capacity(&self) -> &::std::option::Option<i32> {
+        &self.min_capacity
+    }
     /// <p>The maximum capacity.</p>
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
@@ -65,6 +70,11 @@ impl ScalableTargetActionBuilder {
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity = input;
         self
+    }
+    /// <p>The maximum capacity.</p>
+    /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
     }
     /// Consumes the builder and constructs a [`ScalableTargetAction`](crate::types::ScalableTargetAction).
     pub fn build(self) -> crate::types::ScalableTargetAction {

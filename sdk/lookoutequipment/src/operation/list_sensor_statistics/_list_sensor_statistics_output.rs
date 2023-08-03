@@ -71,6 +71,12 @@ impl ListSensorStatisticsOutputBuilder {
         self.sensor_statistics_summaries = input;
         self
     }
+    /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
+    pub fn get_sensor_statistics_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>> {
+        &self.sensor_statistics_summaries
+    }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListSensorStatisticsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

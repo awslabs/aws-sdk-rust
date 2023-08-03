@@ -63,6 +63,10 @@ impl BatchGetBuildsOutputBuilder {
         self.builds = input;
         self
     }
+    /// <p>Information about the requested builds.</p>
+    pub fn get_builds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Build>> {
+        &self.builds
+    }
     /// Appends an item to `builds_not_found`.
     ///
     /// To override the contents of this collection use [`set_builds_not_found`](Self::set_builds_not_found).
@@ -84,6 +88,12 @@ impl BatchGetBuildsOutputBuilder {
     ) -> Self {
         self.builds_not_found = input;
         self
+    }
+    /// <p>The IDs of builds for which information could not be found.</p>
+    pub fn get_builds_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.builds_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

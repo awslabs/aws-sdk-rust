@@ -151,6 +151,11 @@ impl StartCallAnalyticsJobInputBuilder {
         self.call_analytics_job_name = input;
         self
     }
+    /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.call_analytics_job_name
+    }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
@@ -160,6 +165,10 @@ impl StartCallAnalyticsJobInputBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
+    }
+    /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        &self.media
     }
     /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
     /// <ol>
@@ -192,6 +201,18 @@ impl StartCallAnalyticsJobInputBuilder {
     ) -> Self {
         self.output_location = input;
         self
+    }
+    /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
+    /// <ol>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+    /// </ol>
+    /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_location
     }
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -239,6 +260,27 @@ impl StartCallAnalyticsJobInputBuilder {
         self.output_encryption_kms_key_id = input;
         self
     }
+    /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+    /// <ol>
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+    /// <ol>
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    pub fn get_output_encryption_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.output_encryption_kms_key_id
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
@@ -259,6 +301,12 @@ impl StartCallAnalyticsJobInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub fn settings(mut self, input: crate::types::CallAnalyticsJobSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -271,6 +319,10 @@ impl StartCallAnalyticsJobInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobSettings> {
+        &self.settings
     }
     /// Appends an item to `channel_definitions`.
     ///
@@ -290,6 +342,12 @@ impl StartCallAnalyticsJobInputBuilder {
     ) -> Self {
         self.channel_definitions = input;
         self
+    }
+    /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+    pub fn get_channel_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+        &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StartCallAnalyticsJobInput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput).
     pub fn build(

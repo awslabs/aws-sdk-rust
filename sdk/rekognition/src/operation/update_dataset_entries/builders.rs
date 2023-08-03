@@ -42,6 +42,12 @@ impl UpdateDatasetEntriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDatasetEntries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateDatasetEntriesFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// <p> The changes that you want to make to the dataset. </p>
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
         self.inner = self.inner.changes(input);
@@ -144,5 +154,9 @@ impl UpdateDatasetEntriesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_changes(input);
         self
+    }
+    /// <p> The changes that you want to make to the dataset. </p>
+    pub fn get_changes(&self) -> &::std::option::Option<crate::types::DatasetChanges> {
+        self.inner.get_changes()
     }
 }

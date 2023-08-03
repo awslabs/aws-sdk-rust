@@ -50,6 +50,10 @@ impl Ipv6RangeBuilder {
         self.cidr_ipv6 = input;
         self
     }
+    /// <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv6 address, use the /128 prefix length.</p>
+    pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv6
+    }
     /// <p>A description for the security group rule that references this IPv6 address range.</p>
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl Ipv6RangeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the security group rule that references this IPv6 address range.</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`Ipv6Range`](crate::types::Ipv6Range).
     pub fn build(self) -> crate::types::Ipv6Range {

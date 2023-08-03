@@ -40,6 +40,10 @@ impl TerminateSessionInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The ID of the session to terminate.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
     pub fn build(
         self,

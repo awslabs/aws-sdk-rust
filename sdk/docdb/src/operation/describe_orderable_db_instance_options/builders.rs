@@ -36,6 +36,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrderableDBInstanceOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>The name of the engine to retrieve instance options for.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
     pub fn engine_version(
         mut self,
@@ -121,6 +129,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
+    }
+    /// <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
     }
     /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
     pub fn db_instance_class(
@@ -138,6 +150,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
+    /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_class()
+    }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
     pub fn license_model(
         mut self,
@@ -154,6 +170,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_license_model(input);
         self
     }
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_model()
+    }
     /// <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.inner = self.inner.vpc(input);
@@ -163,6 +183,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
+    }
+    /// <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<bool> {
+        self.inner.get_vpc()
     }
     /// Appends an item to `Filters`.
     ///
@@ -181,6 +205,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -195,6 +223,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -204,5 +238,9 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

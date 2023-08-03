@@ -90,6 +90,10 @@ impl CommitBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full SHA ID of the specified commit. </p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>Tree information for the specified commit.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tree_id = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CommitBuilder {
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tree_id = input;
         self
+    }
+    /// <p>Tree information for the specified commit.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
     }
     /// Appends an item to `parents`.
     ///
@@ -119,6 +127,10 @@ impl CommitBuilder {
         self.parents = input;
         self
     }
+    /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parents
+    }
     /// <p>The commit message associated with the specified commit.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl CommitBuilder {
         self.message = input;
         self
     }
+    /// <p>The commit message associated with the specified commit.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
     pub fn author(mut self, input: crate::types::UserInfo) -> Self {
         self.author = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl CommitBuilder {
     pub fn set_author(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
         self.author = input;
         self
+    }
+    /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
+    pub fn get_author(&self) -> &::std::option::Option<crate::types::UserInfo> {
+        &self.author
     }
     /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
     /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
@@ -150,6 +170,11 @@ impl CommitBuilder {
     pub fn set_committer(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
         self.committer = input;
         self
+    }
+    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+    /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+    pub fn get_committer(&self) -> &::std::option::Option<crate::types::UserInfo> {
+        &self.committer
     }
     /// <p>Any other data associated with the specified commit.</p>
     pub fn additional_data(
@@ -166,6 +191,10 @@ impl CommitBuilder {
     ) -> Self {
         self.additional_data = input;
         self
+    }
+    /// <p>Any other data associated with the specified commit.</p>
+    pub fn get_additional_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_data
     }
     /// Consumes the builder and constructs a [`Commit`](crate::types::Commit).
     pub fn build(self) -> crate::types::Commit {

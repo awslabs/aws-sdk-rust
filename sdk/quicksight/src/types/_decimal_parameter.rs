@@ -48,6 +48,10 @@ impl DecimalParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for the decimal parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -63,6 +67,10 @@ impl DecimalParameterBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values for the decimal parameter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`DecimalParameter`](crate::types::DecimalParameter).
     pub fn build(self) -> crate::types::DecimalParameter {

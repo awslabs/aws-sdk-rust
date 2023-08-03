@@ -36,6 +36,12 @@ impl ListDeviceEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeviceEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn from_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.from_time_stamp(input);
@@ -139,6 +149,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_from_time_stamp(input);
         self
     }
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    pub fn get_from_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_from_time_stamp()
+    }
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +163,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,6 +176,10 @@ impl ListDeviceEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn to_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,5 +193,9 @@ impl ListDeviceEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_to_time_stamp(input);
         self
+    }
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    pub fn get_to_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_to_time_stamp()
     }
 }

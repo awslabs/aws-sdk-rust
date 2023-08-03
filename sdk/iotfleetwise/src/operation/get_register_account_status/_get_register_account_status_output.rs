@@ -109,6 +109,10 @@ impl GetRegisterAccountStatusOutputBuilder {
         self.customer_account_id = input;
         self
     }
+    /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
+    pub fn get_customer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_account_id
+    }
     /// <p> The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
     /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
@@ -132,6 +136,15 @@ impl GetRegisterAccountStatusOutputBuilder {
         self.account_status = input;
         self
     }
+    /// <p> The status of registering your account and resources. The status can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
+    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
+    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
+    /// </ul>
+    pub fn get_account_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.account_status
+    }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
     pub fn timestream_registration_response(
         mut self,
@@ -147,6 +160,12 @@ impl GetRegisterAccountStatusOutputBuilder {
     ) -> Self {
         self.timestream_registration_response = input;
         self
+    }
+    /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
+    pub fn get_timestream_registration_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimestreamRegistrationResponse> {
+        &self.timestream_registration_response
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
     pub fn iam_registration_response(
@@ -164,6 +183,12 @@ impl GetRegisterAccountStatusOutputBuilder {
         self.iam_registration_response = input;
         self
     }
+    /// <p> Information about the registered IAM resources or errors, if any. </p>
+    pub fn get_iam_registration_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamRegistrationResponse> {
+        &self.iam_registration_response
+    }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -177,6 +202,10 @@ impl GetRegisterAccountStatusOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -189,6 +218,12 @@ impl GetRegisterAccountStatusOutputBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

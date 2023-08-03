@@ -46,6 +46,10 @@ impl GetJobDocumentOutputBuilder {
         self.document = input;
         self
     }
+    /// <p>The job document content.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

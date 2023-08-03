@@ -54,6 +54,10 @@ impl DeleteComponentOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The ARN of the component build version that this request deleted.</p>
     pub fn component_build_version_arn(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteComponentOutputBuilder {
     ) -> Self {
         self.component_build_version_arn = input;
         self
+    }
+    /// <p>The ARN of the component build version that this request deleted.</p>
+    pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_build_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

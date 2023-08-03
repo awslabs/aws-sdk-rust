@@ -63,6 +63,10 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The load balancer name.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The SSL/TLS certificate name.</p>
     pub fn certificate_name(
         mut self,
@@ -79,6 +83,10 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The SSL/TLS certificate name.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -90,6 +98,11 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerTlsCertificateInput`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput, ::aws_smithy_http::operation::error::BuildError>{

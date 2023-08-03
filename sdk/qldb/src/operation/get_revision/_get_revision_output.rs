@@ -61,6 +61,10 @@ impl GetRevisionOutputBuilder {
         self.proof = input;
         self
     }
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
+    pub fn get_proof(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        &self.proof
+    }
     /// <p>The document revision data object in Amazon Ion format.</p>
     pub fn revision(mut self, input: crate::types::ValueHolder) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl GetRevisionOutputBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The document revision data object in Amazon Ion format.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        &self.revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

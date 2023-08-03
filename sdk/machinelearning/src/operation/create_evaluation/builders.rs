@@ -38,6 +38,12 @@ impl CreateEvaluationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEvaluation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl CreateEvaluationFluentBuilder {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_id()
+    }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
     pub fn evaluation_name(
         mut self,
@@ -150,6 +160,10 @@ impl CreateEvaluationFluentBuilder {
         self.inner = self.inner.set_evaluation_name(input);
         self
     }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+    pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_name()
+    }
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +175,11 @@ impl CreateEvaluationFluentBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
+    }
+    /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+    /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub fn evaluation_data_source_id(
@@ -177,5 +196,9 @@ impl CreateEvaluationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evaluation_data_source_id(input);
         self
+    }
+    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+    pub fn get_evaluation_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_data_source_id()
     }
 }

@@ -55,6 +55,10 @@ impl ActivateContactChannelInputBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn activation_code(
         mut self,
@@ -70,6 +74,10 @@ impl ActivateContactChannelInputBuilder {
     ) -> Self {
         self.activation_code = input;
         self
+    }
+    /// <p>The code sent to the contact channel when it was created in the contact.</p>
+    pub fn get_activation_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_code
     }
     /// Consumes the builder and constructs a [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
     pub fn build(

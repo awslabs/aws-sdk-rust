@@ -63,6 +63,10 @@ impl CreateContainerServiceDeploymentInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to create the deployment.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Adds a key-value pair to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -88,6 +92,14 @@ impl CreateContainerServiceDeploymentInputBuilder {
         self.containers = input;
         self
     }
+    /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
+        &self.containers
+    }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
     pub fn public_endpoint(mut self, input: crate::types::EndpointRequest) -> Self {
         self.public_endpoint = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl CreateContainerServiceDeploymentInputBuilder {
     ) -> Self {
         self.public_endpoint = input;
         self
+    }
+    /// <p>An object that describes the settings of the public endpoint for the container service.</p>
+    pub fn get_public_endpoint(&self) -> &::std::option::Option<crate::types::EndpointRequest> {
+        &self.public_endpoint
     }
     /// Consumes the builder and constructs a [`CreateContainerServiceDeploymentInput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput, ::aws_smithy_http::operation::error::BuildError>{

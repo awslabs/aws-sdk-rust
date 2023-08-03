@@ -75,6 +75,10 @@ impl ResourceNotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The ARN of the scheduled query.</p>
     pub fn scheduled_query_arn(
         mut self,
@@ -90,6 +94,10 @@ impl ResourceNotFoundExceptionBuilder {
     ) -> Self {
         self.scheduled_query_arn = input;
         self
+    }
+    /// <p>The ARN of the scheduled query.</p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_query_arn
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

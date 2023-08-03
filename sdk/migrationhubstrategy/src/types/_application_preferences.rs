@@ -45,6 +45,12 @@ impl ApplicationPreferencesBuilder {
         self.management_preference = input;
         self
     }
+    /// <p> Application preferences that you specify to prefer managed environment. </p>
+    pub fn get_management_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagementPreference> {
+        &self.management_preference
+    }
     /// Consumes the builder and constructs a [`ApplicationPreferences`](crate::types::ApplicationPreferences).
     pub fn build(self) -> crate::types::ApplicationPreferences {
         crate::types::ApplicationPreferences {

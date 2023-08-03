@@ -49,6 +49,10 @@ impl UpdateRevealConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

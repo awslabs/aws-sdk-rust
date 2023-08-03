@@ -40,6 +40,10 @@ impl GetSoftwareUpdatesInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
     pub fn build(
         self,

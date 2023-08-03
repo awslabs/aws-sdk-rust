@@ -38,6 +38,13 @@ impl AddThingToBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddThingToBillingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,12 @@ impl AddThingToBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
+    /// </note>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_name()
+    }
     /// <p>The ARN of the billing group.</p>
     pub fn billing_group_arn(
         mut self,
@@ -154,6 +167,10 @@ impl AddThingToBillingGroupFluentBuilder {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }
+    /// <p>The ARN of the billing group.</p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_group_arn()
+    }
     /// <p>The name of the thing to be added to the billing group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -164,6 +181,10 @@ impl AddThingToBillingGroupFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to be added to the billing group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The ARN of the thing to be added to the billing group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_arn(input.into());
@@ -173,5 +194,9 @@ impl AddThingToBillingGroupFluentBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_arn(input);
         self
+    }
+    /// <p>The ARN of the thing to be added to the billing group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_arn()
     }
 }

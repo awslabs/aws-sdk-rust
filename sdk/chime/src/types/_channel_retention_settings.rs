@@ -40,6 +40,10 @@ impl ChannelRetentionSettingsBuilder {
         self.retention_days = input;
         self
     }
+    /// <p>The time in days to retain the messages in a channel.</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_days
+    }
     /// Consumes the builder and constructs a [`ChannelRetentionSettings`](crate::types::ChannelRetentionSettings).
     pub fn build(self) -> crate::types::ChannelRetentionSettings {
         crate::types::ChannelRetentionSettings {

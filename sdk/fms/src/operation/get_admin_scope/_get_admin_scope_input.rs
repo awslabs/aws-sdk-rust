@@ -45,6 +45,10 @@ impl GetAdminScopeInputBuilder {
         self.admin_account = input;
         self
     }
+    /// <p>The administator account that you want to get the details for.</p>
+    pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account
+    }
     /// Consumes the builder and constructs a [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
     pub fn build(
         self,

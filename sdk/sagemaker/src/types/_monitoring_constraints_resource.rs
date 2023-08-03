@@ -40,6 +40,10 @@ impl MonitoringConstraintsResourceBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 URI for the constraints resource.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`MonitoringConstraintsResource`](crate::types::MonitoringConstraintsResource).
     pub fn build(self) -> crate::types::MonitoringConstraintsResource {
         crate::types::MonitoringConstraintsResource {

@@ -36,6 +36,12 @@ impl CancelExportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelExportTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl CancelExportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_task_identifier(input);
         self
+    }
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
+    pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_export_task_identifier()
     }
 }

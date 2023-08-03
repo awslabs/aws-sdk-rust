@@ -39,6 +39,10 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityProviderConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_identity_provider_configuration::builders::UpdateIdentityProviderConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The type of identity provider.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.inner = self.inner.identity_provider_type(input);
@@ -115,6 +123,12 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_type(input);
         self
+    }
+    /// <p>The type of identity provider.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        self.inner.get_identity_provider_type()
     }
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn identity_provider_saml_metadata(
@@ -131,5 +145,11 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_saml_metadata(input);
         self
+    }
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
+    pub fn get_identity_provider_saml_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_saml_metadata()
     }
 }

@@ -62,6 +62,10 @@ impl WebsiteCaSummaryBuilder {
         self.website_ca_id = input;
         self
     }
+    /// <p>A unique identifier for the CA.</p>
+    pub fn get_website_ca_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_ca_id
+    }
     /// <p>The time when the CA was added.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl WebsiteCaSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time when the CA was added.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl WebsiteCaSummaryBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`WebsiteCaSummary`](crate::types::WebsiteCaSummary).
     pub fn build(self) -> crate::types::WebsiteCaSummary {

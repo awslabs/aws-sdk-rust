@@ -57,6 +57,10 @@ impl UpdatePublishingDestinationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector associated with the publishing destinations to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The ID of the publishing destination to update.</p>
     pub fn destination_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdatePublishingDestinationInputBuilder {
         self.destination_id = input;
         self
     }
+    /// <p>The ID of the publishing destination to update.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
+    }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
         self.destination_properties = ::std::option::Option::Some(input);
@@ -85,6 +93,12 @@ impl UpdatePublishingDestinationInputBuilder {
     ) -> Self {
         self.destination_properties = input;
         self
+    }
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+        &self.destination_properties
     }
     /// Consumes the builder and constructs a [`UpdatePublishingDestinationInput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationInput).
     pub fn build(

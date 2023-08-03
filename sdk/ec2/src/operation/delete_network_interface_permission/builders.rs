@@ -36,6 +36,10 @@ impl DeleteNetworkInterfacePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNetworkInterfacePermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl DeleteNetworkInterfacePermissionFluentBuilder {
         self.inner = self.inner.set_network_interface_permission_id(input);
         self
     }
+    /// <p>The ID of the network interface permission.</p>
+    pub fn get_network_interface_permission_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_permission_id()
+    }
     /// <p>Specify <code>true</code> to remove the permission even if the network interface is attached to an instance.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -116,6 +126,10 @@ impl DeleteNetworkInterfacePermissionFluentBuilder {
         self.inner = self.inner.set_force(input);
         self
     }
+    /// <p>Specify <code>true</code> to remove the permission even if the network interface is attached to an instance.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -125,5 +139,9 @@ impl DeleteNetworkInterfacePermissionFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

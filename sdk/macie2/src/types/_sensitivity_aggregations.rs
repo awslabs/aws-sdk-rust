@@ -70,6 +70,11 @@ impl SensitivityAggregationsBuilder {
         self.classifiable_size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    pub fn get_classifiable_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.classifiable_size_in_bytes
+    }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn publicly_accessible_count(mut self, input: i64) -> Self {
         self.publicly_accessible_count = ::std::option::Option::Some(input);
@@ -80,6 +85,10 @@ impl SensitivityAggregationsBuilder {
         self.publicly_accessible_count = input;
         self
     }
+    /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
+    pub fn get_publicly_accessible_count(&self) -> &::std::option::Option<i64> {
+        &self.publicly_accessible_count
+    }
     /// <p>The total number of buckets.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -89,6 +98,10 @@ impl SensitivityAggregationsBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of buckets.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
@@ -101,6 +114,11 @@ impl SensitivityAggregationsBuilder {
     pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_size_in_bytes = input;
         self
+    }
+    /// <p>The total storage size, in bytes, of the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    pub fn get_total_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.total_size_in_bytes
     }
     /// Consumes the builder and constructs a [`SensitivityAggregations`](crate::types::SensitivityAggregations).
     pub fn build(self) -> crate::types::SensitivityAggregations {

@@ -36,6 +36,10 @@ impl UpdateAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_app::builders::UpdateAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The new name of the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateAppFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The new description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The new description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
@@ -147,6 +163,10 @@ impl UpdateAppFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
     /// Appends an item to `serverGroups`.
     ///
@@ -165,6 +185,12 @@ impl UpdateAppFluentBuilder {
         self.inner = self.inner.set_server_groups(input);
         self
     }
+    /// <p>The server groups in the application to update.</p>
+    pub fn get_server_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+        self.inner.get_server_groups()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -181,5 +207,9 @@ impl UpdateAppFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to associate with the application.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

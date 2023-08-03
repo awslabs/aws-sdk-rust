@@ -112,6 +112,10 @@ impl ActionBuilder {
         self.action_id = input;
         self
     }
+    /// <p>A system-generated universally unique identifier (UUID) for the action. </p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl ActionBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
@@ -135,6 +143,10 @@ impl ActionBuilder {
         self.notification_type = input;
         self
     }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        &self.notification_type
+    }
     /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl ActionBuilder {
     ) -> Self {
         self.action_type = input;
         self
+    }
+    /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
     }
     /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
@@ -161,6 +177,10 @@ impl ActionBuilder {
         self.action_threshold = input;
         self
     }
+    /// <p>The trigger threshold of the action. </p>
+    pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
+        &self.action_threshold
+    }
     /// <p>Where you specify all of the type-specific parameters. </p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -173,6 +193,10 @@ impl ActionBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>Where you specify all of the type-specific parameters. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        &self.definition
     }
     /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(
@@ -190,6 +214,10 @@ impl ActionBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
         self.approval_model = ::std::option::Option::Some(input);
@@ -203,6 +231,10 @@ impl ActionBuilder {
         self.approval_model = input;
         self
     }
+    /// <p>This specifies if the action needs manual or automatic approval. </p>
+    pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
+        &self.approval_model
+    }
     /// <p>The status of the action. </p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -212,6 +244,10 @@ impl ActionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the action. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// Appends an item to `subscribers`.
     ///
@@ -231,6 +267,12 @@ impl ActionBuilder {
     ) -> Self {
         self.subscribers = input;
         self
+    }
+    /// <p> A list of subscribers.</p>
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        &self.subscribers
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

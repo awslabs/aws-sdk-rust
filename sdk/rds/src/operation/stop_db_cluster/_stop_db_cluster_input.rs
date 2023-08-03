@@ -45,6 +45,10 @@ impl StopDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
     pub fn build(
         self,

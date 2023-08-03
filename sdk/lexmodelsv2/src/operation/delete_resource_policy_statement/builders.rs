@@ -36,6 +36,10 @@ impl DeleteResourcePolicyStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourcePolicyStatement as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteResourcePolicyStatementFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The name of the statement (SID) to delete from the policy.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_id(input.into());
@@ -135,6 +143,10 @@ impl DeleteResourcePolicyStatementFluentBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_id(input);
         self
+    }
+    /// <p>The name of the statement (SID) to delete from the policy.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
@@ -153,5 +165,10 @@ impl DeleteResourcePolicyStatementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
+    }
+    /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_revision_id()
     }
 }

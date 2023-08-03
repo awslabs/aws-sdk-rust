@@ -40,6 +40,10 @@ impl MarketoConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p> The location of the Marketo resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Consumes the builder and constructs a [`MarketoConnectorProfileProperties`](crate::types::MarketoConnectorProfileProperties).
     pub fn build(self) -> crate::types::MarketoConnectorProfileProperties {
         crate::types::MarketoConnectorProfileProperties {

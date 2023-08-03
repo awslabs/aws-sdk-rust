@@ -51,6 +51,12 @@ impl GetSmsTemplateOutputBuilder {
         self.sms_template_response = input;
         self
     }
+    /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    pub fn get_sms_template_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmsTemplateResponse> {
+        &self.sms_template_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

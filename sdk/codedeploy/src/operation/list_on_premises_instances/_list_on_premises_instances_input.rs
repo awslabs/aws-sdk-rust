@@ -77,6 +77,16 @@ impl ListOnPremisesInstancesInputBuilder {
         self.registration_status = input;
         self
     }
+    /// <p>The registration status of the on-premises instances:</p>
+    /// <ul>
+    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
+    /// </ul>
+    pub fn get_registration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.registration_status
+    }
     /// Appends an item to `tag_filters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
@@ -96,6 +106,12 @@ impl ListOnPremisesInstancesInputBuilder {
         self.tag_filters = input;
         self
     }
+    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
+    pub fn get_tag_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        &self.tag_filters
+    }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +121,10 @@ impl ListOnPremisesInstancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
     pub fn build(

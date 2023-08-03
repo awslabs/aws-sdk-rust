@@ -64,6 +64,10 @@ impl ModelQualityJobInputBuilder {
         self.endpoint_input = input;
         self
     }
+    /// <p>Input object for the endpoint</p>
+    pub fn get_endpoint_input(&self) -> &::std::option::Option<crate::types::EndpointInput> {
+        &self.endpoint_input
+    }
     /// <p>Input object for the batch transform job.</p>
     pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
         self.batch_transform_input = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ModelQualityJobInputBuilder {
     ) -> Self {
         self.batch_transform_input = input;
         self
+    }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn get_batch_transform_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchTransformInput> {
+        &self.batch_transform_input
     }
     /// <p>The ground truth label provided for the model.</p>
     pub fn ground_truth_s3_input(
@@ -92,6 +102,12 @@ impl ModelQualityJobInputBuilder {
     ) -> Self {
         self.ground_truth_s3_input = input;
         self
+    }
+    /// <p>The ground truth label provided for the model.</p>
+    pub fn get_ground_truth_s3_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringGroundTruthS3Input> {
+        &self.ground_truth_s3_input
     }
     /// Consumes the builder and constructs a [`ModelQualityJobInput`](crate::types::ModelQualityJobInput).
     pub fn build(self) -> crate::types::ModelQualityJobInput {

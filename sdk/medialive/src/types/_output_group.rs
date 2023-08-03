@@ -58,6 +58,10 @@ impl OutputGroupBuilder {
         self.name = input;
         self
     }
+    /// Custom output group name optionally defined by the user.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Settings associated with the output group.
     pub fn output_group_settings(mut self, input: crate::types::OutputGroupSettings) -> Self {
         self.output_group_settings = ::std::option::Option::Some(input);
@@ -70,6 +74,12 @@ impl OutputGroupBuilder {
     ) -> Self {
         self.output_group_settings = input;
         self
+    }
+    /// Settings associated with the output group.
+    pub fn get_output_group_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputGroupSettings> {
+        &self.output_group_settings
     }
     /// Appends an item to `outputs`.
     ///
@@ -89,6 +99,10 @@ impl OutputGroupBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// Placeholder documentation for __listOfOutput
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`OutputGroup`](crate::types::OutputGroup).
     pub fn build(self) -> crate::types::OutputGroup {

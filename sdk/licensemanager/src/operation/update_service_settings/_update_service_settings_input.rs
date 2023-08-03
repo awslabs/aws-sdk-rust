@@ -74,6 +74,10 @@ impl UpdateServiceSettingsInputBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
+    }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -89,6 +93,10 @@ impl UpdateServiceSettingsInputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
     pub fn organization_configuration(
@@ -106,6 +114,12 @@ impl UpdateServiceSettingsInputBuilder {
         self.organization_configuration = input;
         self
     }
+    /// <p>Enables integration with Organizations for cross-account discovery.</p>
+    pub fn get_organization_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+        &self.organization_configuration
+    }
     /// <p>Activates cross-account discovery.</p>
     pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
         self.enable_cross_accounts_discovery = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl UpdateServiceSettingsInputBuilder {
     ) -> Self {
         self.enable_cross_accounts_discovery = input;
         self
+    }
+    /// <p>Activates cross-account discovery.</p>
+    pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
+        &self.enable_cross_accounts_discovery
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn build(

@@ -52,6 +52,12 @@ impl RegisterWorkflowTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterWorkflowType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_workflow_type::builders::RegisterWorkflowTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl RegisterWorkflowTypeFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain in which to register the workflow type.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The name of the workflow type.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +163,11 @@ impl RegisterWorkflowTypeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the workflow type.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The version of the workflow type.</p> <note>
     /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
@@ -170,6 +185,13 @@ impl RegisterWorkflowTypeFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
+    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
+    /// </note>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
+    }
     /// <p>Textual description of the workflow type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -179,6 +201,10 @@ impl RegisterWorkflowTypeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Textual description of the workflow type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -197,6 +223,13 @@ impl RegisterWorkflowTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_task_start_to_close_timeout(input);
         self
+    }
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn get_default_task_start_to_close_timeout(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_task_start_to_close_timeout()
     }
     /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
@@ -220,6 +253,13 @@ impl RegisterWorkflowTypeFluentBuilder {
             .set_default_execution_start_to_close_timeout(input);
         self
     }
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
+    pub fn get_default_execution_start_to_close_timeout(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_execution_start_to_close_timeout()
+    }
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     pub fn default_task_list(mut self, input: crate::types::TaskList) -> Self {
         self.inner = self.inner.default_task_list(input);
@@ -232,6 +272,10 @@ impl RegisterWorkflowTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_task_list(input);
         self
+    }
+    /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    pub fn get_default_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        self.inner.get_default_task_list()
     }
     /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -250,6 +294,11 @@ impl RegisterWorkflowTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_task_priority(input);
         self
+    }
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn get_default_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_task_priority()
     }
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -276,6 +325,16 @@ impl RegisterWorkflowTypeFluentBuilder {
         self.inner = self.inner.set_default_child_policy(input);
         self
     }
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul>
+    pub fn get_default_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        self.inner.get_default_child_policy()
+    }
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
@@ -295,5 +354,11 @@ impl RegisterWorkflowTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_lambda_role(input);
         self
+    }
+    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// </note>
+    pub fn get_default_lambda_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_lambda_role()
     }
 }

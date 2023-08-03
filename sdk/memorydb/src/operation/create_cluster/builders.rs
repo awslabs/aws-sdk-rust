@@ -36,6 +36,12 @@ impl CreateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
@@ -127,6 +137,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_type(input);
         self
+    }
+    /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_type()
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn parameter_group_name(
@@ -144,6 +158,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
+    /// <p>The name of the parameter group associated with the cluster.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
+    }
     /// <p>An optional description of the cluster.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -153,6 +171,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description of the cluster.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The number of shards the cluster will contain. The default value is 1. </p>
     pub fn num_shards(mut self, input: i32) -> Self {
@@ -164,6 +186,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_num_shards(input);
         self
     }
+    /// <p>The number of shards the cluster will contain. The default value is 1. </p>
+    pub fn get_num_shards(&self) -> &::std::option::Option<i32> {
+        self.inner.get_num_shards()
+    }
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
     pub fn num_replicas_per_shard(mut self, input: i32) -> Self {
         self.inner = self.inner.num_replicas_per_shard(input);
@@ -173,6 +199,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_num_replicas_per_shard(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_replicas_per_shard(input);
         self
+    }
+    /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
+    pub fn get_num_replicas_per_shard(&self) -> &::std::option::Option<i32> {
+        self.inner.get_num_replicas_per_shard()
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub fn subnet_group_name(
@@ -189,6 +219,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
+    }
+    /// <p>The name of the subnet group to be used for the cluster.</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_group_name()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -209,6 +243,12 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
+    }
+    /// <p>A list of security group names to associate with this cluster.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -248,6 +288,21 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_maintenance_window(input);
         self
     }
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_maintenance_window()
+    }
     /// <p>The port number on which each of the nodes accepts connections.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -257,6 +312,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The port number on which each of the nodes accepts connections.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
     pub fn sns_topic_arn(
@@ -274,6 +333,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
+    }
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
     pub fn tls_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.tls_enabled(input);
@@ -284,6 +347,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_tls_enabled(input);
         self
     }
+    /// <p>A flag to enable in-transit encryption on the cluster.</p>
+    pub fn get_tls_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_tls_enabled()
+    }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -293,6 +360,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The ID of the KMS key used to encrypt the cluster.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Appends an item to `SnapshotArns`.
     ///
@@ -314,6 +385,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
+    /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
+    pub fn get_snapshot_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_snapshot_arns()
+    }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
     pub fn snapshot_name(
         mut self,
@@ -330,6 +407,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.inner = self.inner.snapshot_retention_limit(input);
@@ -339,6 +420,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_snapshot_retention_limit(input);
         self
+    }
+    /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_snapshot_retention_limit()
     }
     /// Appends an item to `Tags`.
     ///
@@ -356,6 +441,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
@@ -377,6 +466,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_snapshot_window(input);
         self
     }
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_window()
+    }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.acl_name(input.into());
@@ -386,6 +481,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_acl_name(input);
         self
+    }
+    /// <p>The name of the Access Control List to associate with the cluster.</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_acl_name()
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
     pub fn engine_version(
@@ -403,6 +502,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
@@ -413,6 +516,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
+    /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_minor_version_upgrade()
+    }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(mut self, input: bool) -> Self {
         self.inner = self.inner.data_tiering(input);
@@ -422,5 +529,9 @@ impl CreateClusterFluentBuilder {
     pub fn set_data_tiering(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_data_tiering(input);
         self
+    }
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    pub fn get_data_tiering(&self) -> &::std::option::Option<bool> {
+        self.inner.get_data_tiering()
     }
 }

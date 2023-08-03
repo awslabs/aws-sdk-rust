@@ -40,6 +40,10 @@ impl JourneyEmailMessageBuilder {
         self.from_address = input;
         self
     }
+    /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
+    pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_address
+    }
     /// Consumes the builder and constructs a [`JourneyEmailMessage`](crate::types::JourneyEmailMessage).
     pub fn build(self) -> crate::types::JourneyEmailMessage {
         crate::types::JourneyEmailMessage {

@@ -72,6 +72,10 @@ impl EntityDescriptionBuilder {
         self.id = input;
         self
     }
+    /// <p>The entity ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The entity ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl EntityDescriptionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The entity ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The entity type.</p>
     pub fn r#type(mut self, input: crate::types::EntityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl EntityDescriptionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The entity type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.r#type
     }
     /// <p>The time at which the entity was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl EntityDescriptionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time at which the entity was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The definition document of the entity.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl EntityDescriptionBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The definition document of the entity.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`EntityDescription`](crate::types::EntityDescription).
     pub fn build(self) -> crate::types::EntityDescription {

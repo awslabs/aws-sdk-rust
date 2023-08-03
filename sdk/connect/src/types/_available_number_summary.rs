@@ -59,6 +59,10 @@ impl AvailableNumberSummaryBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The ISO country code.</p>
     pub fn phone_number_country_code(
         mut self,
@@ -75,6 +79,12 @@ impl AvailableNumberSummaryBuilder {
         self.phone_number_country_code = input;
         self
     }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+        &self.phone_number_country_code
+    }
     /// <p>The type of phone number.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.phone_number_type = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl AvailableNumberSummaryBuilder {
     ) -> Self {
         self.phone_number_type = input;
         self
+    }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.phone_number_type
     }
     /// Consumes the builder and constructs a [`AvailableNumberSummary`](crate::types::AvailableNumberSummary).
     pub fn build(self) -> crate::types::AvailableNumberSummary {

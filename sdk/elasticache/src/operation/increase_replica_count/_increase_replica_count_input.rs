@@ -71,6 +71,10 @@ impl IncreaseReplicaCountInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The id of the replication group to which you want to add replica nodes.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.new_replica_count = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl IncreaseReplicaCountInputBuilder {
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replica_count = input;
         self
+    }
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
+        &self.new_replica_count
     }
     /// Appends an item to `replica_configuration`.
     ///
@@ -100,6 +108,12 @@ impl IncreaseReplicaCountInputBuilder {
         self.replica_configuration = input;
         self
     }
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    pub fn get_replica_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+        &self.replica_configuration
+    }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl IncreaseReplicaCountInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`IncreaseReplicaCountInput`](crate::operation::increase_replica_count::IncreaseReplicaCountInput).
     pub fn build(

@@ -99,6 +99,10 @@ impl AccessDeniedExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The SDK default error code associated with the access denied exception.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl AccessDeniedExceptionBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The SDK default error code associated with the access denied exception.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The SDK default explanation of why access was denied.</p>
     pub fn error_code_reason(
@@ -125,6 +133,10 @@ impl AccessDeniedExceptionBuilder {
         self.error_code_reason = input;
         self
     }
+    /// <p>The SDK default explanation of why access was denied.</p>
+    pub fn get_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code_reason
+    }
     /// <p>The error code associated with the access denied exception.</p>
     pub fn sub_error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.sub_error_code = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl AccessDeniedExceptionBuilder {
     ) -> Self {
         self.sub_error_code = input;
         self
+    }
+    /// <p>The error code associated with the access denied exception.</p>
+    pub fn get_sub_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.sub_error_code
     }
     /// <p> An explanation of why access was denied.</p>
     pub fn sub_error_code_reason(
@@ -153,6 +169,10 @@ impl AccessDeniedExceptionBuilder {
     ) -> Self {
         self.sub_error_code_reason = input;
         self
+    }
+    /// <p> An explanation of why access was denied.</p>
+    pub fn get_sub_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_error_code_reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

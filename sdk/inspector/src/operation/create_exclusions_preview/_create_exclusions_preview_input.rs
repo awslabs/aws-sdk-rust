@@ -47,6 +47,10 @@ impl CreateExclusionsPreviewInputBuilder {
         self.assessment_template_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_template_arn
+    }
     /// Consumes the builder and constructs a [`CreateExclusionsPreviewInput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput).
     pub fn build(
         self,

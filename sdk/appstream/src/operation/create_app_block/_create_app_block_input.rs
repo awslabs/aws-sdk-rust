@@ -103,6 +103,10 @@ impl CreateAppBlockInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app block.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the app block.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl CreateAppBlockInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the app block.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The display name of the app block. This is not displayed to the user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl CreateAppBlockInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the app block. This is not displayed to the user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The source S3 location of the app block.</p>
     pub fn source_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -136,6 +148,10 @@ impl CreateAppBlockInputBuilder {
         self.source_s3_location = input;
         self
     }
+    /// <p>The source S3 location of the app block.</p>
+    pub fn get_source_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.source_s3_location
+    }
     /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.setup_script_details = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl CreateAppBlockInputBuilder {
     ) -> Self {
         self.setup_script_details = input;
         self
+    }
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
+    pub fn get_setup_script_details(&self) -> &::std::option::Option<crate::types::ScriptDetails> {
+        &self.setup_script_details
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -174,6 +194,14 @@ impl CreateAppBlockInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the app block.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
     pub fn post_setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.post_setup_script_details = ::std::option::Option::Some(input);
@@ -187,6 +215,12 @@ impl CreateAppBlockInputBuilder {
         self.post_setup_script_details = input;
         self
     }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn get_post_setup_script_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScriptDetails> {
+        &self.post_setup_script_details
+    }
     /// <p>The packaging type of the app block.</p>
     pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
         self.packaging_type = ::std::option::Option::Some(input);
@@ -199,6 +233,10 @@ impl CreateAppBlockInputBuilder {
     ) -> Self {
         self.packaging_type = input;
         self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn get_packaging_type(&self) -> &::std::option::Option<crate::types::PackagingType> {
+        &self.packaging_type
     }
     /// Consumes the builder and constructs a [`CreateAppBlockInput`](crate::operation::create_app_block::CreateAppBlockInput).
     pub fn build(

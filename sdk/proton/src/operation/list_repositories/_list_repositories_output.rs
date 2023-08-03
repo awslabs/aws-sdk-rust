@@ -56,6 +56,10 @@ impl ListRepositoriesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `repositories`.
     ///
     /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
@@ -74,6 +78,12 @@ impl ListRepositoriesOutputBuilder {
     ) -> Self {
         self.repositories = input;
         self
+    }
+    /// <p>An array of repository links.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
+        &self.repositories
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

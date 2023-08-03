@@ -79,6 +79,10 @@ impl UpdateAssessmentControlInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -95,6 +99,10 @@ impl UpdateAssessmentControlInputBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The unique identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl UpdateAssessmentControlInputBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
     }
     /// <p> The status of the control. </p>
     pub fn control_status(mut self, input: crate::types::ControlStatus) -> Self {
@@ -118,6 +130,10 @@ impl UpdateAssessmentControlInputBuilder {
         self.control_status = input;
         self
     }
+    /// <p> The status of the control. </p>
+    pub fn get_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
+        &self.control_status
+    }
     /// <p> The comment body text for the control. </p>
     pub fn comment_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_body = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl UpdateAssessmentControlInputBuilder {
     pub fn set_comment_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment_body = input;
         self
+    }
+    /// <p> The comment body text for the control. </p>
+    pub fn get_comment_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_body
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentControlInput`](crate::operation::update_assessment_control::UpdateAssessmentControlInput).
     pub fn build(

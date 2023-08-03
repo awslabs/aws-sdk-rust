@@ -40,6 +40,10 @@ impl OnFailureBuilder {
         self.destination = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`OnFailure`](crate::types::OnFailure).
     pub fn build(self) -> crate::types::OnFailure {
         crate::types::OnFailure {

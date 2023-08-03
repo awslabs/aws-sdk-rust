@@ -77,6 +77,12 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
         self.asset_destinations = input;
         self
     }
+    /// <p>The destination in Amazon S3 where the asset is exported.</p>
+    pub fn get_asset_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>> {
+        &self.asset_destinations
+    }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -86,6 +92,10 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>Encryption configuration of the export job.</p>
     pub fn encryption(mut self, input: crate::types::ExportServerSideEncryption) -> Self {
@@ -100,6 +110,12 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
         self.encryption = input;
         self
     }
+    /// <p>Encryption configuration of the export job.</p>
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+        &self.encryption
+    }
     /// <p>The unique identifier for the revision associated with this export response.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -109,6 +125,10 @@ impl ExportAssetsToS3ResponseDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision associated with this export response.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ExportAssetsToS3ResponseDetails`](crate::types::ExportAssetsToS3ResponseDetails).
     pub fn build(self) -> crate::types::ExportAssetsToS3ResponseDetails {

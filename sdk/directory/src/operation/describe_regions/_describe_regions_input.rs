@@ -55,6 +55,10 @@ impl DescribeRegionsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeRegionsInputBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl DescribeRegionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
     pub fn build(

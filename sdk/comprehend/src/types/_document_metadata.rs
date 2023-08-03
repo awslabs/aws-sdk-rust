@@ -52,6 +52,10 @@ impl DocumentMetadataBuilder {
         self.pages = input;
         self
     }
+    /// <p>Number of pages in the document.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<i32> {
+        &self.pages
+    }
     /// Appends an item to `extracted_characters`.
     ///
     /// To override the contents of this collection use [`set_extracted_characters`](Self::set_extracted_characters).
@@ -73,6 +77,12 @@ impl DocumentMetadataBuilder {
     ) -> Self {
         self.extracted_characters = input;
         self
+    }
+    /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
+    pub fn get_extracted_characters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtractedCharactersListItem>> {
+        &self.extracted_characters
     }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     pub fn build(self) -> crate::types::DocumentMetadata {

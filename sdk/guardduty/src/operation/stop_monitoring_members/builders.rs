@@ -37,6 +37,13 @@ impl StopMonitoringMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopMonitoringMembers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_monitoring_members::builders::StopMonitoringMembersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl StopMonitoringMembersFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -143,5 +154,11 @@ impl StopMonitoringMembersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

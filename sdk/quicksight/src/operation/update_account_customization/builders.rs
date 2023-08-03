@@ -37,6 +37,10 @@ impl UpdateAccountCustomizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountCustomization as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateAccountCustomizationFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -142,6 +150,10 @@ impl UpdateAccountCustomizationFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
@@ -155,5 +167,11 @@ impl UpdateAccountCustomizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_customization(input);
         self
+    }
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    pub fn get_account_customization(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+        self.inner.get_account_customization()
     }
 }

@@ -36,6 +36,13 @@ impl DescribeLoggingStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoggingStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,10 @@ impl DescribeLoggingStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

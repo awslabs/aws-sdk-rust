@@ -79,6 +79,12 @@ impl DeploymentTargetBuilder {
         self.deployment_target_type = input;
         self
     }
+    /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
+    pub fn get_deployment_target_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentTargetType> {
+        &self.deployment_target_type
+    }
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
     pub fn instance_target(mut self, input: crate::types::InstanceTarget) -> Self {
         self.instance_target = ::std::option::Option::Some(input);
@@ -91,6 +97,10 @@ impl DeploymentTargetBuilder {
     ) -> Self {
         self.instance_target = input;
         self
+    }
+    /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
+    pub fn get_instance_target(&self) -> &::std::option::Option<crate::types::InstanceTarget> {
+        &self.instance_target
     }
     /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
     pub fn lambda_target(mut self, input: crate::types::LambdaTarget) -> Self {
@@ -105,6 +115,10 @@ impl DeploymentTargetBuilder {
         self.lambda_target = input;
         self
     }
+    /// <p> Information about the target for a deployment that uses the Lambda compute platform. </p>
+    pub fn get_lambda_target(&self) -> &::std::option::Option<crate::types::LambdaTarget> {
+        &self.lambda_target
+    }
     /// <p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>
     pub fn ecs_target(mut self, input: crate::types::EcsTarget) -> Self {
         self.ecs_target = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl DeploymentTargetBuilder {
     pub fn set_ecs_target(mut self, input: ::std::option::Option<crate::types::EcsTarget>) -> Self {
         self.ecs_target = input;
         self
+    }
+    /// <p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>
+    pub fn get_ecs_target(&self) -> &::std::option::Option<crate::types::EcsTarget> {
+        &self.ecs_target
     }
     /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
     pub fn cloud_formation_target(mut self, input: crate::types::CloudFormationTarget) -> Self {
@@ -127,6 +145,12 @@ impl DeploymentTargetBuilder {
     ) -> Self {
         self.cloud_formation_target = input;
         self
+    }
+    /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+    pub fn get_cloud_formation_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudFormationTarget> {
+        &self.cloud_formation_target
     }
     /// Consumes the builder and constructs a [`DeploymentTarget`](crate::types::DeploymentTarget).
     pub fn build(self) -> crate::types::DeploymentTarget {

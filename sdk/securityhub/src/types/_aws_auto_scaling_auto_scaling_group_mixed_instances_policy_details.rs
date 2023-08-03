@@ -60,6 +60,10 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsBuilder {
         self.instances_distribution = input;
         self
     }
+    /// <p>The instances distribution. The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p>
+    pub fn get_instances_distribution(&self) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>{
+        &self.instances_distribution
+    }
     /// <p>The launch template to use and the instance types (overrides) to use to provision EC2 instances to fulfill On-Demand and Spot capacities.</p>
     pub fn launch_template(
         mut self,
@@ -77,6 +81,14 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsBuilder {
     ) -> Self {
         self.launch_template = input;
         self
+    }
+    /// <p>The launch template to use and the instance types (overrides) to use to provision EC2 instances to fulfill On-Demand and Spot capacities.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails,
+    > {
+        &self.launch_template
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {

@@ -82,6 +82,10 @@ impl EvaluationBuilder {
         self.compliance_resource_type = input;
         self
     }
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
+    pub fn get_compliance_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_resource_type
+    }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn compliance_resource_id(
         mut self,
@@ -97,6 +101,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.compliance_resource_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn get_compliance_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_resource_id
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
@@ -115,6 +123,12 @@ impl EvaluationBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
+    /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
+    /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation = ::std::option::Option::Some(input.into());
@@ -124,6 +138,10 @@ impl EvaluationBuilder {
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation = input;
         self
+    }
+    /// <p>Supplementary information about how the evaluation determined the compliance.</p>
+    pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +155,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.ordering_timestamp = input;
         self
+    }
+    /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
+    pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ordering_timestamp
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     pub fn build(self) -> crate::types::Evaluation {

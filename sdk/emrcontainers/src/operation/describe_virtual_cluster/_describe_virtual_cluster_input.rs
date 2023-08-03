@@ -41,6 +41,10 @@ impl DescribeVirtualClusterInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the virtual cluster that will be described.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
     pub fn build(
         self,

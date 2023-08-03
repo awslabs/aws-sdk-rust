@@ -47,6 +47,10 @@ impl GetAppsInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
+    }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetAppsInputBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`GetAppsInput`](crate::operation::get_apps::GetAppsInput).
     pub fn build(

@@ -45,6 +45,10 @@ impl LayoutBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration that determines what the type of layout for a sheet.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`Layout`](crate::types::Layout).
     pub fn build(self) -> crate::types::Layout {
         crate::types::Layout {

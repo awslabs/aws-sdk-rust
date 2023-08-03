@@ -53,6 +53,12 @@ impl GetAutomationExecutionOutputBuilder {
         self.automation_execution = input;
         self
     }
+    /// <p>Detailed information about the current state of an automation execution.</p>
+    pub fn get_automation_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomationExecution> {
+        &self.automation_execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

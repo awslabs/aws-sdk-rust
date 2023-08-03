@@ -71,6 +71,10 @@ impl DestinationFlowConfigBuilder {
         self.connector_type = input;
         self
     }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        &self.connector_type
+    }
     /// <p>The API version that the destination connector uses.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_version = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl DestinationFlowConfigBuilder {
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_version = input;
         self
+    }
+    /// <p>The API version that the destination connector uses.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_version
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub fn connector_profile_name(
@@ -97,6 +105,10 @@ impl DestinationFlowConfigBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p> This stores the information that is required to query a particular connector. </p>
     pub fn destination_connector_properties(
         mut self,
@@ -112,6 +124,12 @@ impl DestinationFlowConfigBuilder {
     ) -> Self {
         self.destination_connector_properties = input;
         self
+    }
+    /// <p> This stores the information that is required to query a particular connector. </p>
+    pub fn get_destination_connector_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConnectorProperties> {
+        &self.destination_connector_properties
     }
     /// Consumes the builder and constructs a [`DestinationFlowConfig`](crate::types::DestinationFlowConfig).
     pub fn build(self) -> crate::types::DestinationFlowConfig {

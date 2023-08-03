@@ -48,6 +48,10 @@ impl AttributeKeyAndValueBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the attribute.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::AttributeKey> {
+        &self.key
+    }
     /// <p>The value of the attribute.</p>
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AttributeKeyAndValueBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AttributeKeyAndValue`](crate::types::AttributeKeyAndValue).
     pub fn build(self) -> crate::types::AttributeKeyAndValue {

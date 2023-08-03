@@ -45,6 +45,10 @@ impl DecodeAuthorizationMessageInputBuilder {
         self.encoded_message = input;
         self
     }
+    /// <p>The encoded message that was returned with the response.</p>
+    pub fn get_encoded_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_message
+    }
     /// Consumes the builder and constructs a [`DecodeAuthorizationMessageInput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput).
     pub fn build(
         self,

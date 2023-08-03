@@ -136,6 +136,10 @@ impl CreateVpcInputBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
     pub fn amazon_provided_ipv6_cidr_block(mut self, input: bool) -> Self {
         self.amazon_provided_ipv6_cidr_block = ::std::option::Option::Some(input);
@@ -149,6 +153,10 @@ impl CreateVpcInputBuilder {
         self.amazon_provided_ipv6_cidr_block = input;
         self
     }
+    /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</p>
+    pub fn get_amazon_provided_ipv6_cidr_block(&self) -> &::std::option::Option<bool> {
+        &self.amazon_provided_ipv6_cidr_block
+    }
     /// <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.</p>
     pub fn ipv6_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_pool = ::std::option::Option::Some(input.into());
@@ -158,6 +166,10 @@ impl CreateVpcInputBuilder {
     pub fn set_ipv6_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_pool = input;
         self
+    }
+    /// <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.</p>
+    pub fn get_ipv6_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_pool
     }
     /// <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.</p>
     /// <p>To let Amazon choose the IPv6 CIDR block for you, omit this parameter.</p>
@@ -177,6 +189,11 @@ impl CreateVpcInputBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.</p>
+    /// <p>To let Amazon choose the IPv6 CIDR block for you, omit this parameter.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn ipv4_ipam_pool_id(
         mut self,
@@ -193,6 +210,10 @@ impl CreateVpcInputBuilder {
         self.ipv4_ipam_pool_id = input;
         self
     }
+    /// <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+    pub fn get_ipv4_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_ipam_pool_id
+    }
     /// <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn ipv4_netmask_length(mut self, input: i32) -> Self {
         self.ipv4_netmask_length = ::std::option::Option::Some(input);
@@ -202,6 +223,10 @@ impl CreateVpcInputBuilder {
     pub fn set_ipv4_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv4_netmask_length = input;
         self
+    }
+    /// <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_ipv4_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_netmask_length
     }
     /// <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn ipv6_ipam_pool_id(
@@ -219,6 +244,10 @@ impl CreateVpcInputBuilder {
         self.ipv6_ipam_pool_id = input;
         self
     }
+    /// <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_ipv6_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_ipam_pool_id
+    }
     /// <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn ipv6_netmask_length(mut self, input: i32) -> Self {
         self.ipv6_netmask_length = ::std::option::Option::Some(input);
@@ -229,6 +258,10 @@ impl CreateVpcInputBuilder {
         self.ipv6_netmask_length = input;
         self
     }
+    /// <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_netmask_length
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -238,6 +271,10 @@ impl CreateVpcInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC. </p>
     /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
@@ -255,6 +292,12 @@ impl CreateVpcInputBuilder {
     ) -> Self {
         self.instance_tenancy = input;
         self
+    }
+    /// <p>The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <code>dedicated</code> or <code>host</code> into a dedicated tenancy VPC. </p>
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>Default: <code>default</code> </p>
+    pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        &self.instance_tenancy
     }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to this location.</p>
     /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
@@ -274,6 +317,13 @@ impl CreateVpcInputBuilder {
         self.ipv6_cidr_block_network_border_group = input;
         self
     }
+    /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to this location.</p>
+    /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
+    pub fn get_ipv6_cidr_block_network_border_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block_network_border_group
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -292,6 +342,12 @@ impl CreateVpcInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to assign to the VPC.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcInput`](crate::operation::create_vpc::CreateVpcInput).
     pub fn build(

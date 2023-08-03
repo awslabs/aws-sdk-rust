@@ -69,6 +69,10 @@ impl TooltipOptionsBuilder {
         self.tooltip_visibility = input;
         self
     }
+    /// <p>Determines whether or not the tooltip is visible.</p>
+    pub fn get_tooltip_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.tooltip_visibility
+    }
     /// <p>The selected type for the tooltip. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
@@ -90,6 +94,16 @@ impl TooltipOptionsBuilder {
         self.selected_tooltip_type = input;
         self
     }
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
+    /// </ul>
+    pub fn get_selected_tooltip_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectedTooltipType> {
+        &self.selected_tooltip_type
+    }
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
     pub fn field_based_tooltip(mut self, input: crate::types::FieldBasedTooltip) -> Self {
         self.field_based_tooltip = ::std::option::Option::Some(input);
@@ -102,6 +116,12 @@ impl TooltipOptionsBuilder {
     ) -> Self {
         self.field_based_tooltip = input;
         self
+    }
+    /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
+    pub fn get_field_based_tooltip(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldBasedTooltip> {
+        &self.field_based_tooltip
     }
     /// Consumes the builder and constructs a [`TooltipOptions`](crate::types::TooltipOptions).
     pub fn build(self) -> crate::types::TooltipOptions {

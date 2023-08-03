@@ -65,6 +65,10 @@ impl OperationLimitExceededBuilder {
         self.message = input;
         self
     }
+    /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

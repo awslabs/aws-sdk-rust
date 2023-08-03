@@ -36,6 +36,12 @@ impl RemoveFlowOutputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveFlowOutput as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemoveFlowOutputFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to remove an output from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// The ARN of the output that you want to remove.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_arn(input.into());
@@ -135,5 +145,9 @@ impl RemoveFlowOutputFluentBuilder {
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_arn(input);
         self
+    }
+    /// The ARN of the output that you want to remove.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_arn()
     }
 }

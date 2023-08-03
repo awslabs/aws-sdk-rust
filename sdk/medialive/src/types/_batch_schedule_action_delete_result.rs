@@ -50,6 +50,12 @@ impl BatchScheduleActionDeleteResultBuilder {
         self.schedule_actions = input;
         self
     }
+    /// List of actions that have been deleted from the schedule.
+    pub fn get_schedule_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+        &self.schedule_actions
+    }
     /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).
     pub fn build(self) -> crate::types::BatchScheduleActionDeleteResult {
         crate::types::BatchScheduleActionDeleteResult {

@@ -40,6 +40,10 @@ impl GetDataIntegrationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A unique identifier.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
     pub fn build(
         self,

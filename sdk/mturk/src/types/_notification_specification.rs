@@ -84,6 +84,15 @@ impl NotificationSpecificationBuilder {
         self.destination = input;
         self
     }
+    /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
+    /// <ul>
+    /// <li> <p>When Transport is Email, the Destination is your email address.</p> </li>
+    /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
+    /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
+    /// </ul>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
     pub fn transport(mut self, input: crate::types::NotificationTransport) -> Self {
         self.transport = ::std::option::Option::Some(input);
@@ -97,6 +106,10 @@ impl NotificationSpecificationBuilder {
         self.transport = input;
         self
     }
+    /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
+    pub fn get_transport(&self) -> &::std::option::Option<crate::types::NotificationTransport> {
+        &self.transport
+    }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -106,6 +119,10 @@ impl NotificationSpecificationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `event_types`.
     ///
@@ -125,6 +142,12 @@ impl NotificationSpecificationBuilder {
     ) -> Self {
         self.event_types = input;
         self
+    }
+    /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
+    pub fn get_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.event_types
     }
     /// Consumes the builder and constructs a [`NotificationSpecification`](crate::types::NotificationSpecification).
     pub fn build(self) -> crate::types::NotificationSpecification {

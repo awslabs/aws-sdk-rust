@@ -39,6 +39,10 @@ impl InferSnomedctInputBuilder {
         self.text = input;
         self
     }
+    /// <p>The input text to be analyzed using InferSNOMEDCT.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
     pub fn build(
         self,

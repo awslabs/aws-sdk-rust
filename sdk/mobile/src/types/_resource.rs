@@ -80,6 +80,10 @@ impl ResourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ResourceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl ResourceBuilder {
         self.arn = input;
         self
     }
+    /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ResourceBuilder {
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature = input;
         self
+    }
+    /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -134,6 +150,14 @@ impl ResourceBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p> Key-value attribute pairs. </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

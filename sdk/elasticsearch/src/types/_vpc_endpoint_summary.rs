@@ -70,6 +70,10 @@ impl VpcEndpointSummaryBuilder {
         self.vpc_endpoint_id = input;
         self
     }
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// <p>The creator of the endpoint.</p>
     pub fn vpc_endpoint_owner(
         mut self,
@@ -86,6 +90,10 @@ impl VpcEndpointSummaryBuilder {
         self.vpc_endpoint_owner = input;
         self
     }
+    /// <p>The creator of the endpoint.</p>
+    pub fn get_vpc_endpoint_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_owner
+    }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl VpcEndpointSummaryBuilder {
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
     }
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -108,6 +120,10 @@ impl VpcEndpointSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VpcEndpointSummary`](crate::types::VpcEndpointSummary).
     pub fn build(self) -> crate::types::VpcEndpointSummary {

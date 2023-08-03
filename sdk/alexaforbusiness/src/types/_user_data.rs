@@ -80,6 +80,10 @@ impl UserDataBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The ARN of a user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The first name of a user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UserDataBuilder {
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
+    }
+    /// <p>The first name of a user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
     }
     /// <p>The last name of a user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl UserDataBuilder {
         self.last_name = input;
         self
     }
+    /// <p>The last name of a user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
     /// <p>The email of a user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl UserDataBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email of a user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The enrollment status of a user.</p>
     pub fn enrollment_status(mut self, input: crate::types::EnrollmentStatus) -> Self {
@@ -122,6 +138,10 @@ impl UserDataBuilder {
     ) -> Self {
         self.enrollment_status = input;
         self
+    }
+    /// <p>The enrollment status of a user.</p>
+    pub fn get_enrollment_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
+        &self.enrollment_status
     }
     /// <p>The enrollment ARN of a user.</p>
     pub fn enrollment_id(
@@ -138,6 +158,10 @@ impl UserDataBuilder {
     ) -> Self {
         self.enrollment_id = input;
         self
+    }
+    /// <p>The enrollment ARN of a user.</p>
+    pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enrollment_id
     }
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {

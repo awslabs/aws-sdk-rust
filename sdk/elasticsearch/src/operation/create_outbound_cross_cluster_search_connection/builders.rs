@@ -36,6 +36,10 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOutboundCrossClusterSearchConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,12 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
         self.inner = self.inner.set_source_domain_info(input);
         self
     }
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    pub fn get_source_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformation> {
+        self.inner.get_source_domain_info()
+    }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
         self.inner = self.inner.destination_domain_info(input);
@@ -115,6 +125,12 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_domain_info(input);
         self
+    }
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    pub fn get_destination_domain_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainInformation> {
+        self.inner.get_destination_domain_info()
     }
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
     pub fn connection_alias(
@@ -131,5 +147,9 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_alias(input);
         self
+    }
+    /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
+    pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_alias()
     }
 }

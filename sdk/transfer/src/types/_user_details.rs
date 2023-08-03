@@ -56,6 +56,10 @@ impl UserDetailsBuilder {
         self.user_name = input;
         self
     }
+    /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UserDetailsBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UserDetailsBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`UserDetails`](crate::types::UserDetails).
     pub fn build(self) -> crate::types::UserDetails {

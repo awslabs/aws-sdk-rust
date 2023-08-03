@@ -112,6 +112,10 @@ impl InstanceBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>The AMI ID used to launch the instance.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The instance ID of the resource.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl InstanceBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID of the resource.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The instance type of the resource.</p>
     pub fn instance_type(
@@ -138,6 +146,10 @@ impl InstanceBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type of the resource.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The account ID which owns the instance.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl InstanceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID which owns the instance.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The status of the instance.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +174,10 @@ impl InstanceBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the instance.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The Region the instance is running in.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl InstanceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Region the instance is running in.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
     pub fn usage_operation(
@@ -183,6 +207,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.usage_operation = input;
         self
+    }
+    /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_operation
     }
     /// Appends an item to `product_code`.
     ///
@@ -203,6 +231,12 @@ impl InstanceBuilder {
         self.product_code = input;
         self
     }
+    /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
+    pub fn get_product_code(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.product_code
+    }
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub fn last_updated_time(
         mut self,
@@ -219,6 +253,10 @@ impl InstanceBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time in which the last discovery updated the instance details.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>The name of the subscription being used by the instance.</p>
     pub fn subscription_name(
         mut self,
@@ -234,6 +272,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.subscription_name = input;
         self
+    }
+    /// <p>The name of the subscription being used by the instance.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_name
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

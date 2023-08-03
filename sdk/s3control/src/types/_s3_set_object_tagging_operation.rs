@@ -49,6 +49,10 @@ impl S3SetObjectTaggingOperationBuilder {
         self.tag_set = input;
         self
     }
+    /// <p></p>
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+        &self.tag_set
+    }
     /// Consumes the builder and constructs a [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
     pub fn build(self) -> crate::types::S3SetObjectTaggingOperation {
         crate::types::S3SetObjectTaggingOperation {

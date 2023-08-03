@@ -49,6 +49,10 @@ impl AllowedStatisticsBuilder {
         self.statistics = input;
         self
     }
+    /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.statistics
+    }
     /// Consumes the builder and constructs a [`AllowedStatistics`](crate::types::AllowedStatistics).
     pub fn build(self) -> crate::types::AllowedStatistics {
         crate::types::AllowedStatistics {

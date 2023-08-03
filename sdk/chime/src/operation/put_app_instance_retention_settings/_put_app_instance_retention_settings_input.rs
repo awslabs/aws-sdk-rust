@@ -57,6 +57,10 @@ impl PutAppInstanceRetentionSettingsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The time in days to retain data. Data type: number.</p>
     pub fn app_instance_retention_settings(
         mut self,
@@ -72,6 +76,12 @@ impl PutAppInstanceRetentionSettingsInputBuilder {
     ) -> Self {
         self.app_instance_retention_settings = input;
         self
+    }
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn get_app_instance_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceRetentionSettings> {
+        &self.app_instance_retention_settings
     }
     /// Consumes the builder and constructs a [`PutAppInstanceRetentionSettingsInput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl DeleteCustomLogSourceInputBuilder {
         self.source_name = input;
         self
     }
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
+    }
     /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
     pub fn source_version(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteCustomLogSourceInputBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// Consumes the builder and constructs a [`DeleteCustomLogSourceInput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput).
     pub fn build(

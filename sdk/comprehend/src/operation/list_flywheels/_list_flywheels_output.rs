@@ -65,6 +65,12 @@ impl ListFlywheelsOutputBuilder {
         self.flywheel_summary_list = input;
         self
     }
+    /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
+    pub fn get_flywheel_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>> {
+        &self.flywheel_summary_list
+    }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListFlywheelsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

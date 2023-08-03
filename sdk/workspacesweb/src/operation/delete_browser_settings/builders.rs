@@ -36,6 +36,13 @@ impl DeleteBrowserSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBrowserSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteBrowserSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_browser_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_browser_settings_arn()
     }
 }

@@ -46,6 +46,10 @@ impl DeleteDeviceFleetInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet to delete.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// Consumes the builder and constructs a [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
     pub fn build(
         self,

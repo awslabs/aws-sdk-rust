@@ -51,6 +51,10 @@ impl PutProtocolsListInputBuilder {
         self.protocols_list = input;
         self
     }
+    /// <p>The details of the Firewall Manager protocols list to be created.</p>
+    pub fn get_protocols_list(&self) -> &::std::option::Option<crate::types::ProtocolsListData> {
+        &self.protocols_list
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -69,6 +73,10 @@ impl PutProtocolsListInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>The tags associated with the resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
     pub fn build(

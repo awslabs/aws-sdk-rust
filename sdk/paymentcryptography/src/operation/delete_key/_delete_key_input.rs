@@ -53,6 +53,10 @@ impl DeleteKeyInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
     pub fn delete_key_in_days(mut self, input: i32) -> Self {
         self.delete_key_in_days = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DeleteKeyInputBuilder {
     pub fn set_delete_key_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.delete_key_in_days = input;
         self
+    }
+    /// <p>The waiting period for key deletion. The default value is seven days.</p>
+    pub fn get_delete_key_in_days(&self) -> &::std::option::Option<i32> {
+        &self.delete_key_in_days
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
     pub fn build(

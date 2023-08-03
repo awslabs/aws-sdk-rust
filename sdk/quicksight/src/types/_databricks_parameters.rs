@@ -56,6 +56,10 @@ impl DatabricksParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>The host name of the Databricks data source.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The port for the Databricks data source.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DatabricksParametersBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port for the Databricks data source.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
     pub fn sql_endpoint_path(
@@ -81,6 +89,10 @@ impl DatabricksParametersBuilder {
     ) -> Self {
         self.sql_endpoint_path = input;
         self
+    }
+    /// <p>The HTTP path of the Databricks data source.</p>
+    pub fn get_sql_endpoint_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_endpoint_path
     }
     /// Consumes the builder and constructs a [`DatabricksParameters`](crate::types::DatabricksParameters).
     pub fn build(self) -> crate::types::DatabricksParameters {

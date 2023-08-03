@@ -67,6 +67,10 @@ impl GetRelationalDatabaseEventsInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of the database from which to get events.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
     /// <p>Default: <code>60</code> </p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
@@ -81,6 +85,12 @@ impl GetRelationalDatabaseEventsInputBuilder {
         self.duration_in_minutes = input;
         self
     }
+    /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
+    /// <p>Default: <code>60</code> </p>
+    /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_minutes
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +102,11 @@ impl GetRelationalDatabaseEventsInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseEventsInput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput).
     pub fn build(

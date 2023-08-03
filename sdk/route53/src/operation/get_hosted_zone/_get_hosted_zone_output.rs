@@ -66,6 +66,10 @@ impl GetHostedZoneOutputBuilder {
         self.hosted_zone = input;
         self
     }
+    /// <p>A complex type that contains general information about the specified hosted zone.</p>
+    pub fn get_hosted_zone(&self) -> &::std::option::Option<crate::types::HostedZone> {
+        &self.hosted_zone
+    }
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
         self.delegation_set = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl GetHostedZoneOutputBuilder {
     ) -> Self {
         self.delegation_set = input;
         self
+    }
+    /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
+    pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
+        &self.delegation_set
     }
     /// Appends an item to `vp_cs`.
     ///
@@ -97,6 +105,10 @@ impl GetHostedZoneOutputBuilder {
     ) -> Self {
         self.vp_cs = input;
         self
+    }
+    /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    pub fn get_vp_cs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
+        &self.vp_cs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

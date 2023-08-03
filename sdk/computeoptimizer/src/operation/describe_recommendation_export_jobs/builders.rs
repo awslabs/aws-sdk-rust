@@ -37,6 +37,10 @@ impl DescribeRecommendationExportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRecommendationExportJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -118,6 +122,12 @@ impl DescribeRecommendationExportJobsFluentBuilder {
         self.inner = self.inner.set_job_ids(input);
         self
     }
+    /// <p>The identification numbers of the export jobs to return.</p>
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+    /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
+    pub fn get_job_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_ids()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -135,6 +145,10 @@ impl DescribeRecommendationExportJobsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token to advance to the next page of export jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,6 +158,10 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of export jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of export jobs to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -156,5 +174,10 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

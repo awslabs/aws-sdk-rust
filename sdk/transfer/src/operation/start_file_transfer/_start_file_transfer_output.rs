@@ -47,6 +47,10 @@ impl StartFileTransferOutputBuilder {
         self.transfer_id = input;
         self
     }
+    /// <p>Returns the unique identifier for the file transfer.</p>
+    pub fn get_transfer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

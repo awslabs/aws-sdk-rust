@@ -72,6 +72,10 @@ impl NewBgpPeerBuilder {
         self.asn = input;
         self
     }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
+    }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_key = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl NewBgpPeerBuilder {
     pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_key = input;
         self
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn get_auth_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_key
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
@@ -94,6 +102,10 @@ impl NewBgpPeerBuilder {
     ) -> Self {
         self.address_family = input;
         self
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
+        &self.address_family
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
     pub fn amazon_address(
@@ -111,6 +123,10 @@ impl NewBgpPeerBuilder {
         self.amazon_address = input;
         self
     }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn get_amazon_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_address
+    }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(
         mut self,
@@ -126,6 +142,10 @@ impl NewBgpPeerBuilder {
     ) -> Self {
         self.customer_address = input;
         self
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_address
     }
     /// Consumes the builder and constructs a [`NewBgpPeer`](crate::types::NewBgpPeer).
     pub fn build(self) -> crate::types::NewBgpPeer {

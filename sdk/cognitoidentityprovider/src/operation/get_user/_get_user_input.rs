@@ -45,6 +45,10 @@ impl GetUserInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A non-expired access token for the user whose information you want to query.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
     pub fn build(
         self,

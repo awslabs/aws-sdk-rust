@@ -69,6 +69,11 @@ impl AccessKeyLastUsedBuilder {
         self.last_used_date = input;
         self
     }
+    /// <p>The date and time when the access key was most recently used.</p>
+    /// <p>This value is null if the access key has not been used.</p>
+    pub fn get_last_used_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_used_date
+    }
     /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,6 +86,11 @@ impl AccessKeyLastUsedBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
+    /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +102,11 @@ impl AccessKeyLastUsedBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
+    /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`AccessKeyLastUsed`](crate::types::AccessKeyLastUsed).
     pub fn build(self) -> crate::types::AccessKeyLastUsed {

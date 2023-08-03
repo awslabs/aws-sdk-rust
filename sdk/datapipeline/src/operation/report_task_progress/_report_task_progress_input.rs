@@ -49,6 +49,10 @@ impl ReportTaskProgressInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -67,6 +71,10 @@ impl ReportTaskProgressInputBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
     pub fn build(

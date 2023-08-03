@@ -48,6 +48,10 @@ impl MemberIdArnPairBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The ID of the member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MemberIdArnPairBuilder {
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the member.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_arn
     }
     /// Consumes the builder and constructs a [`MemberIdArnPair`](crate::types::MemberIdArnPair).
     pub fn build(self) -> crate::types::MemberIdArnPair {

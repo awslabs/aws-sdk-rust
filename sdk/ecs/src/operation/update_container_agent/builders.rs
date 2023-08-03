@@ -41,6 +41,12 @@ impl UpdateContainerAgentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContainerAgent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl UpdateContainerAgentFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub fn container_instance(
         mut self,
@@ -146,5 +156,9 @@ impl UpdateContainerAgentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_instance(input);
         self
+    }
+    /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
+    pub fn get_container_instance(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_instance()
     }
 }

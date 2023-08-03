@@ -60,6 +60,13 @@ impl DescribeDbClusterSnapshotAttributesOutputBuilder {
         self.db_cluster_snapshot_attributes_result = input;
         self
     }
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    pub fn get_db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbClusterSnapshotAttributesResult> {
+        &self.db_cluster_snapshot_attributes_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

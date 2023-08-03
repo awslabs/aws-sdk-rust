@@ -49,6 +49,10 @@ impl AssetBundleImportJobDashboardOverrideParametersBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard that you want to apply overrides to.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>A new name for the dashboard.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssetBundleImportJobDashboardOverrideParametersBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A new name for the dashboard.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDashboardOverrideParameters`](crate::types::AssetBundleImportJobDashboardOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobDashboardOverrideParameters {

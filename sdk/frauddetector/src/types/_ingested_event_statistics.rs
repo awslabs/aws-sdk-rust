@@ -72,6 +72,10 @@ impl IngestedEventStatisticsBuilder {
         self.number_of_events = input;
         self
     }
+    /// <p>The number of stored events.</p>
+    pub fn get_number_of_events(&self) -> &::std::option::Option<i64> {
+        &self.number_of_events
+    }
     /// <p>The total size of the stored events.</p>
     pub fn event_data_size_in_bytes(mut self, input: i64) -> Self {
         self.event_data_size_in_bytes = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl IngestedEventStatisticsBuilder {
     pub fn set_event_data_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_data_size_in_bytes = input;
         self
+    }
+    /// <p>The total size of the stored events.</p>
+    pub fn get_event_data_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.event_data_size_in_bytes
     }
     /// <p>The oldest stored event.</p>
     pub fn least_recent_event(
@@ -98,6 +106,10 @@ impl IngestedEventStatisticsBuilder {
         self.least_recent_event = input;
         self
     }
+    /// <p>The oldest stored event.</p>
+    pub fn get_least_recent_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.least_recent_event
+    }
     /// <p>The newest stored event.</p>
     pub fn most_recent_event(
         mut self,
@@ -114,6 +126,10 @@ impl IngestedEventStatisticsBuilder {
         self.most_recent_event = input;
         self
     }
+    /// <p>The newest stored event.</p>
+    pub fn get_most_recent_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.most_recent_event
+    }
     /// <p>Timestamp of when the stored event was last updated. </p>
     pub fn last_updated_time(
         mut self,
@@ -129,6 +145,10 @@ impl IngestedEventStatisticsBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>Timestamp of when the stored event was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`IngestedEventStatistics`](crate::types::IngestedEventStatistics).
     pub fn build(self) -> crate::types::IngestedEventStatistics {

@@ -39,6 +39,10 @@ impl PurchaseProvisionedCapacityInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
     pub fn build(
         self,

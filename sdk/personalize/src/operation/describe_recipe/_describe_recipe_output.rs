@@ -46,6 +46,10 @@ impl DescribeRecipeOutputBuilder {
         self.recipe = input;
         self
     }
+    /// <p>An object that describes the recipe.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<crate::types::Recipe> {
+        &self.recipe
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

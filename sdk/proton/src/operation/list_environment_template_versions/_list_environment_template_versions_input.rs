@@ -65,6 +65,10 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of major or minor versions of an environment template to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The name of the environment template.</p>
     pub fn template_name(
@@ -90,6 +98,10 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
@@ -108,6 +120,11 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
     ) -> Self {
         self.major_version = input;
         self
+    }
+    /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplateVersionsInput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput).
     pub fn build(

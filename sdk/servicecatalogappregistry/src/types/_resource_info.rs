@@ -64,6 +64,10 @@ impl ResourceInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ResourceInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -87,6 +95,10 @@ impl ResourceInfoBuilder {
         self.resource_type = input;
         self
     }
+    /// <p> Provides information about the Service Catalog App Registry resource type. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p> The details related to the resource. </p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ResourceInfoBuilder {
     ) -> Self {
         self.resource_details = input;
         self
+    }
+    /// <p> The details related to the resource. </p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.resource_details
     }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {

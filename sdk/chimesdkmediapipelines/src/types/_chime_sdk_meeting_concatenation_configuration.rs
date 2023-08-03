@@ -50,6 +50,12 @@ impl ChimeSdkMeetingConcatenationConfigurationBuilder {
         self.artifacts_configuration = input;
         self
     }
+    /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
+    pub fn get_artifacts_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArtifactsConcatenationConfiguration> {
+        &self.artifacts_configuration
+    }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingConcatenationConfiguration`](crate::types::ChimeSdkMeetingConcatenationConfiguration).
     pub fn build(self) -> crate::types::ChimeSdkMeetingConcatenationConfiguration {
         crate::types::ChimeSdkMeetingConcatenationConfiguration {

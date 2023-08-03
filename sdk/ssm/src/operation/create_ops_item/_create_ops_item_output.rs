@@ -54,6 +54,10 @@ impl CreateOpsItemOutputBuilder {
         self.ops_item_id = input;
         self
     }
+    /// <p>The ID of the OpsItem.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
+    }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateOpsItemOutputBuilder {
     pub fn set_ops_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_arn = input;
         self
+    }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn get_ops_item_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

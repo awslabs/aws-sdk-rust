@@ -150,6 +150,10 @@ impl DescribeRecipeOutputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who created the recipe.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The date and time that the recipe was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -162,6 +166,10 @@ impl DescribeRecipeOutputBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time that the recipe was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
     pub fn last_modified_by(
@@ -179,6 +187,10 @@ impl DescribeRecipeOutputBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who last modified the recipe.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The date and time that the recipe was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -192,6 +204,10 @@ impl DescribeRecipeOutputBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time that the recipe was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The name of the project associated with this recipe.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -202,6 +218,10 @@ impl DescribeRecipeOutputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project associated with this recipe.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
     pub fn published_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_by = ::std::option::Option::Some(input.into());
@@ -211,6 +231,10 @@ impl DescribeRecipeOutputBuilder {
     pub fn set_published_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.published_by = input;
         self
+    }
+    /// <p>The identifier (user name) of the user who last published the recipe.</p>
+    pub fn get_published_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.published_by
     }
     /// <p>The date and time when the recipe was last published.</p>
     pub fn published_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,6 +249,10 @@ impl DescribeRecipeOutputBuilder {
         self.published_date = input;
         self
     }
+    /// <p>The date and time when the recipe was last published.</p>
+    pub fn get_published_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.published_date
+    }
     /// <p>The description of the recipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -235,6 +263,10 @@ impl DescribeRecipeOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -244,6 +276,10 @@ impl DescribeRecipeOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `steps`.
     ///
@@ -263,6 +299,10 @@ impl DescribeRecipeOutputBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        &self.steps
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -289,6 +329,14 @@ impl DescribeRecipeOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags associated with this project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ARN of the recipe.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -298,6 +346,10 @@ impl DescribeRecipeOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the recipe.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The recipe version identifier.</p>
     pub fn recipe_version(
@@ -314,6 +366,10 @@ impl DescribeRecipeOutputBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The recipe version identifier.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

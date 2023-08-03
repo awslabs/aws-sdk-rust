@@ -90,6 +90,10 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier for the bot for which you want to retrieve utterance analytics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance analytics.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl ListUtteranceAnalyticsDataInputBuilder {
     ) -> Self {
         self.start_date_time = input;
         self
+    }
+    /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance analytics.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance analytics.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +124,10 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self.end_date_time = input;
         self
     }
+    /// <p>The date and time that marks the end of the range of time for which you want to see utterance analytics.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
+    }
     /// <p>An object specifying the measure and method by which to sort the utterance analytics data.</p>
     pub fn sort_by(mut self, input: crate::types::UtteranceDataSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl ListUtteranceAnalyticsDataInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>An object specifying the measure and method by which to sort the utterance analytics data.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::UtteranceDataSortBy> {
+        &self.sort_by
     }
     /// Appends an item to `filters`.
     ///
@@ -148,6 +164,12 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -157,6 +179,10 @@ impl ListUtteranceAnalyticsDataInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
@@ -169,6 +195,11 @@ impl ListUtteranceAnalyticsDataInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUtteranceAnalyticsDataInput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput).
     pub fn build(

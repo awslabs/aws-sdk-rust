@@ -40,6 +40,10 @@ impl EnaSrdUdpSpecificationBuilder {
         self.ena_srd_udp_enabled = input;
         self
     }
+    /// <p>Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
+    pub fn get_ena_srd_udp_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ena_srd_udp_enabled
+    }
     /// Consumes the builder and constructs a [`EnaSrdUdpSpecification`](crate::types::EnaSrdUdpSpecification).
     pub fn build(self) -> crate::types::EnaSrdUdpSpecification {
         crate::types::EnaSrdUdpSpecification {

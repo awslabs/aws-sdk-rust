@@ -50,6 +50,12 @@ impl BatchUpdateVehicleInputBuilder {
         self.vehicles = input;
         self
     }
+    /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
+    pub fn get_vehicles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+        &self.vehicles
+    }
     /// Consumes the builder and constructs a [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
     pub fn build(
         self,

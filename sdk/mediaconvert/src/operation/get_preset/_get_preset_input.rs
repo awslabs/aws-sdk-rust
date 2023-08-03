@@ -39,6 +39,10 @@ impl GetPresetInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the preset.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetPresetInput`](crate::operation::get_preset::GetPresetInput).
     pub fn build(
         self,

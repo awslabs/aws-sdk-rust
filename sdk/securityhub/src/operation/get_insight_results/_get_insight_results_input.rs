@@ -40,6 +40,10 @@ impl GetInsightResultsInputBuilder {
         self.insight_arn = input;
         self
     }
+    /// <p>The ARN of the insight for which to return results.</p>
+    pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_arn
+    }
     /// Consumes the builder and constructs a [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
     pub fn build(
         self,

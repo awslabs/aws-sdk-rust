@@ -36,6 +36,12 @@ impl GetFirewallConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFirewallConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetFirewallConfigFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
 }

@@ -50,6 +50,10 @@ impl DescribeChannelBanOutputBuilder {
         self.channel_ban = input;
         self
     }
+    /// <p>The details of the ban.</p>
+    pub fn get_channel_ban(&self) -> &::std::option::Option<crate::types::ChannelBan> {
+        &self.channel_ban
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

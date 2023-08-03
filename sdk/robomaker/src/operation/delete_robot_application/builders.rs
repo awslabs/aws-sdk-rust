@@ -36,6 +36,13 @@ impl DeleteRobotApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRobotApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteRobotApplicationFluentBuilder {
         self.inner = self.inner.set_application(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application()
+    }
     /// <p>The version of the robot application to delete.</p>
     pub fn application_version(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteRobotApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_version(input);
         self
+    }
+    /// <p>The version of the robot application to delete.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_version()
     }
 }

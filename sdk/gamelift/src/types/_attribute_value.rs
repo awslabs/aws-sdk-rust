@@ -66,6 +66,10 @@ impl AttributeValueBuilder {
         self.s = input;
         self
     }
+    /// <p>For single string values. Maximum string length is 100 characters.</p>
+    pub fn get_s(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s
+    }
     /// <p>For number values, expressed as double.</p>
     pub fn n(mut self, input: f64) -> Self {
         self.n = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AttributeValueBuilder {
     pub fn set_n(mut self, input: ::std::option::Option<f64>) -> Self {
         self.n = input;
         self
+    }
+    /// <p>For number values, expressed as double.</p>
+    pub fn get_n(&self) -> &::std::option::Option<f64> {
+        &self.n
     }
     /// Appends an item to `sl`.
     ///
@@ -95,6 +103,10 @@ impl AttributeValueBuilder {
         self.sl = input;
         self
     }
+    /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
+    pub fn get_sl(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sl
+    }
     /// Adds a key-value pair to `sdm`.
     ///
     /// To override the contents of this collection use [`set_sdm`](Self::set_sdm).
@@ -113,6 +125,12 @@ impl AttributeValueBuilder {
     ) -> Self {
         self.sdm = input;
         self
+    }
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
+    pub fn get_sdm(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.sdm
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {

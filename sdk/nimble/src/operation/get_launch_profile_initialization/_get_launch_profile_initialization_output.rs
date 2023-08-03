@@ -56,6 +56,12 @@ impl GetLaunchProfileInitializationOutputBuilder {
         self.launch_profile_initialization = input;
         self
     }
+    /// <p>The launch profile initialization.</p>
+    pub fn get_launch_profile_initialization(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchProfileInitialization> {
+        &self.launch_profile_initialization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

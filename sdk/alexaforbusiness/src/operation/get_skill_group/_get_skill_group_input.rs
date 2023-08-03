@@ -45,6 +45,10 @@ impl GetSkillGroupInputBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The ARN of the skill group for which to get details. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// Consumes the builder and constructs a [`GetSkillGroupInput`](crate::operation::get_skill_group::GetSkillGroupInput).
     pub fn build(
         self,

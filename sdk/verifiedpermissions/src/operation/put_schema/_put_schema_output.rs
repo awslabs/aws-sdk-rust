@@ -76,6 +76,10 @@ impl PutSchemaOutputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>The unique ID of the policy store that contains the schema.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// Appends an item to `namespaces`.
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
@@ -95,6 +99,10 @@ impl PutSchemaOutputBuilder {
         self.namespaces = input;
         self
     }
+    /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespaces
+    }
     /// <p>The date and time that the schema was originally created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl PutSchemaOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time that the schema was originally created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date and time that the schema was last updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl PutSchemaOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time that the schema was last updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -180,6 +180,10 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window the target should be registered with.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The type of target being registered with the maintenance window.</p>
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -192,6 +196,12 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of target being registered with the maintenance window.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `targets`.
     ///
@@ -292,6 +302,50 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
+    /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
+    /// </note>
+    /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
+    /// <p> <b>Example 1</b>: Specify managed node IDs</p>
+    /// <p> <code>Key=InstanceIds,Values=
+    /// <instance-id-1>
+    /// ,
+    /// <instance-id-2>
+    /// ,
+    /// <instance-id-3></instance-id-3>
+    /// </instance-id-2>
+    /// </instance-id-1></code> </p>
+    /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+    /// <p> <code>Key=tag:
+    /// <my-tag-key>
+    /// ,Values=
+    /// <my-tag-value-1>
+    /// ,
+    /// <my-tag-value-2></my-tag-value-2>
+    /// </my-tag-value-1>
+    /// </my-tag-key></code> </p>
+    /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+    /// <p> <code>Key=tag-key,Values=
+    /// <my-tag-key-1>
+    /// ,
+    /// <my-tag-key-2></my-tag-key-2>
+    /// </my-tag-key-1></code> </p>
+    /// <p> <b>Example 4</b>: Use resource group names</p>
+    /// <p> <code>Key=resource-groups:Name,Values=
+    /// <resource-group-name></resource-group-name></code> </p>
+    /// <p> <b>Example 5</b>: Use filters for resource group types</p>
+    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+    /// <resource-type-1>
+    /// ,
+    /// <resource-type-2></resource-type-2>
+    /// </resource-type-1></code> </p> <note>
+    /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
+    /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
+    /// </note>
+    /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(
         mut self,
@@ -308,6 +362,10 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         self.owner_information = input;
         self
     }
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_information
+    }
     /// <p>An optional name for the target.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -317,6 +375,10 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>An optional name for the target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An optional description for the target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -328,6 +390,10 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         self.description = input;
         self
     }
+    /// <p>An optional description for the target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>User-provided idempotency token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -337,6 +403,10 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`RegisterTargetWithMaintenanceWindowInput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{

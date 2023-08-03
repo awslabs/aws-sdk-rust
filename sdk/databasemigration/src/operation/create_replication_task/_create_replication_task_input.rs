@@ -186,6 +186,16 @@ impl CreateReplicationTaskInputBuilder {
         self.replication_task_identifier = input;
         self
     }
+    /// <p>An identifier for the replication task.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    pub fn get_replication_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_identifier
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
     pub fn source_endpoint_arn(
         mut self,
@@ -201,6 +211,10 @@ impl CreateReplicationTaskInputBuilder {
     ) -> Self {
         self.source_endpoint_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
+    pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_endpoint_arn
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
     pub fn target_endpoint_arn(
@@ -218,6 +232,10 @@ impl CreateReplicationTaskInputBuilder {
         self.target_endpoint_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
+    pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_endpoint_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -234,6 +252,10 @@ impl CreateReplicationTaskInputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
     pub fn migration_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.migration_type = ::std::option::Option::Some(input);
@@ -246,6 +268,10 @@ impl CreateReplicationTaskInputBuilder {
     ) -> Self {
         self.migration_type = input;
         self
+    }
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+    pub fn get_migration_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
+        &self.migration_type
     }
     /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn table_mappings(
@@ -263,6 +289,10 @@ impl CreateReplicationTaskInputBuilder {
         self.table_mappings = input;
         self
     }
+    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_mappings
+    }
     /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn replication_task_settings(
         mut self,
@@ -279,6 +309,10 @@ impl CreateReplicationTaskInputBuilder {
         self.replication_task_settings = input;
         self
     }
+    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
+    pub fn get_replication_task_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_settings
+    }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub fn cdc_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -293,6 +327,11 @@ impl CreateReplicationTaskInputBuilder {
     ) -> Self {
         self.cdc_start_time = input;
         self
+    }
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+    /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    pub fn get_cdc_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cdc_start_time
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -322,6 +361,16 @@ impl CreateReplicationTaskInputBuilder {
         self.cdc_start_position = input;
         self
     }
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
+    /// </note>
+    pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdc_start_position
+    }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
@@ -342,6 +391,12 @@ impl CreateReplicationTaskInputBuilder {
         self.cdc_stop_position = input;
         self
     }
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
+    /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    pub fn get_cdc_stop_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdc_stop_position
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -361,6 +416,10 @@ impl CreateReplicationTaskInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more tags to be assigned to the replication task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn task_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_data = ::std::option::Option::Some(input.into());
@@ -370,6 +429,10 @@ impl CreateReplicationTaskInputBuilder {
     pub fn set_task_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_data = input;
         self
+    }
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    pub fn get_task_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_data
     }
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn resource_identifier(
@@ -386,6 +449,10 @@ impl CreateReplicationTaskInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`CreateReplicationTaskInput`](crate::operation::create_replication_task::CreateReplicationTaskInput).
     pub fn build(

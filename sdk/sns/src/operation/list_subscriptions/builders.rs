@@ -37,6 +37,12 @@ impl ListSubscriptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSubscriptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_subscriptions::builders::ListSubscriptionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +143,9 @@ impl ListSubscriptionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

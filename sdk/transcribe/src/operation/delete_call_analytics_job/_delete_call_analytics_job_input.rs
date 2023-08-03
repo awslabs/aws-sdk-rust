@@ -47,6 +47,10 @@ impl DeleteCallAnalyticsJobInputBuilder {
         self.call_analytics_job_name = input;
         self
     }
+    /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
+    pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.call_analytics_job_name
+    }
     /// Consumes the builder and constructs a [`DeleteCallAnalyticsJobInput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput).
     pub fn build(
         self,

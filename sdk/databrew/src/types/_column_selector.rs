@@ -48,6 +48,10 @@ impl ColumnSelectorBuilder {
         self.regex = input;
         self
     }
+    /// <p>A regular expression for selecting a column from a dataset.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex
+    }
     /// <p>The name of a column from a dataset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ColumnSelectorBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a column from a dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ColumnSelector`](crate::types::ColumnSelector).
     pub fn build(self) -> crate::types::ColumnSelector {

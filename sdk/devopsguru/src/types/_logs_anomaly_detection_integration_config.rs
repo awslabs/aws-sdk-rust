@@ -43,6 +43,10 @@ impl LogsAnomalyDetectionIntegrationConfigBuilder {
         self.opt_in_status = input;
         self
     }
+    /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::OptInStatus> {
+        &self.opt_in_status
+    }
     /// Consumes the builder and constructs a [`LogsAnomalyDetectionIntegrationConfig`](crate::types::LogsAnomalyDetectionIntegrationConfig).
     pub fn build(self) -> crate::types::LogsAnomalyDetectionIntegrationConfig {
         crate::types::LogsAnomalyDetectionIntegrationConfig {

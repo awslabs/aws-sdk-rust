@@ -58,6 +58,10 @@ impl AnalyzeExpenseOutputBuilder {
         self.document_metadata = input;
         self
     }
+    /// <p>Information about the input document.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
+    }
     /// Appends an item to `expense_documents`.
     ///
     /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
@@ -76,6 +80,12 @@ impl AnalyzeExpenseOutputBuilder {
     ) -> Self {
         self.expense_documents = input;
         self
+    }
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub fn get_expense_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>> {
+        &self.expense_documents
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

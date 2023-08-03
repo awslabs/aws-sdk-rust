@@ -40,6 +40,10 @@ impl RetryStrategyBuilder {
         self.maximum_retry_attempts = input;
         self
     }
+    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+    pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.maximum_retry_attempts
+    }
     /// Consumes the builder and constructs a [`RetryStrategy`](crate::types::RetryStrategy).
     pub fn build(self) -> crate::types::RetryStrategy {
         crate::types::RetryStrategy {

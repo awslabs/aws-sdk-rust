@@ -57,6 +57,10 @@ impl UpdatePipelineStatusInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the pipeline to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
@@ -74,6 +78,14 @@ impl UpdatePipelineStatusInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The desired status of the pipeline:</p>
+    /// <ul>
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
     pub fn build(

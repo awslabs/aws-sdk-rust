@@ -52,6 +52,10 @@ impl SnsActionBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is UTF-8.</p>
     pub fn encoding(mut self, input: crate::types::SnsActionEncoding) -> Self {
         self.encoding = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SnsActionBuilder {
     ) -> Self {
         self.encoding = input;
         self
+    }
+    /// <p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is UTF-8.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<crate::types::SnsActionEncoding> {
+        &self.encoding
     }
     /// Consumes the builder and constructs a [`SnsAction`](crate::types::SnsAction).
     pub fn build(self) -> crate::types::SnsAction {

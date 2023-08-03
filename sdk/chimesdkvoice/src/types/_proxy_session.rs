@@ -145,6 +145,10 @@ impl ProxySessionBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(
         mut self,
@@ -161,6 +165,10 @@ impl ProxySessionBuilder {
         self.proxy_session_id = input;
         self
     }
+    /// <p>The proxy session ID.</p>
+    pub fn get_proxy_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proxy_session_id
+    }
     /// <p>The proxy session name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -170,6 +178,10 @@ impl ProxySessionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The proxy session name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The proxy session status.</p>
     pub fn status(mut self, input: crate::types::ProxySessionStatus) -> Self {
@@ -184,6 +196,10 @@ impl ProxySessionBuilder {
         self.status = input;
         self
     }
+    /// <p>The proxy session status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProxySessionStatus> {
+        &self.status
+    }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.expiry_minutes = ::std::option::Option::Some(input);
@@ -193,6 +209,10 @@ impl ProxySessionBuilder {
     pub fn set_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiry_minutes = input;
         self
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn get_expiry_minutes(&self) -> &::std::option::Option<i32> {
+        &self.expiry_minutes
     }
     /// Appends an item to `capabilities`.
     ///
@@ -213,6 +233,12 @@ impl ProxySessionBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>The proxy session capabilities.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        &self.capabilities
+    }
     /// <p>The created time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -225,6 +251,10 @@ impl ProxySessionBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The created time stamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The updated time stamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -239,6 +269,10 @@ impl ProxySessionBuilder {
         self.updated_timestamp = input;
         self
     }
+    /// <p>The updated time stamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
+    }
     /// <p>The ended time stamp, in ISO 8601 format.</p>
     pub fn ended_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_timestamp = ::std::option::Option::Some(input);
@@ -251,6 +285,10 @@ impl ProxySessionBuilder {
     ) -> Self {
         self.ended_timestamp = input;
         self
+    }
+    /// <p>The ended time stamp, in ISO 8601 format.</p>
+    pub fn get_ended_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_timestamp
     }
     /// Appends an item to `participants`.
     ///
@@ -271,6 +309,12 @@ impl ProxySessionBuilder {
         self.participants = input;
         self
     }
+    /// <p>The proxy session participants.</p>
+    pub fn get_participants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Participant>> {
+        &self.participants
+    }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(
         mut self,
@@ -287,6 +331,12 @@ impl ProxySessionBuilder {
         self.number_selection_behavior = input;
         self
     }
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    pub fn get_number_selection_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberSelectionBehavior> {
+        &self.number_selection_behavior
+    }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(mut self, input: crate::types::GeoMatchLevel) -> Self {
         self.geo_match_level = ::std::option::Option::Some(input);
@@ -300,6 +350,10 @@ impl ProxySessionBuilder {
         self.geo_match_level = input;
         self
     }
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    pub fn get_geo_match_level(&self) -> &::std::option::Option<crate::types::GeoMatchLevel> {
+        &self.geo_match_level
+    }
     /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(mut self, input: crate::types::GeoMatchParams) -> Self {
         self.geo_match_params = ::std::option::Option::Some(input);
@@ -312,6 +366,10 @@ impl ProxySessionBuilder {
     ) -> Self {
         self.geo_match_params = input;
         self
+    }
+    /// <p>The country and area code for the proxy phone number.</p>
+    pub fn get_geo_match_params(&self) -> &::std::option::Option<crate::types::GeoMatchParams> {
+        &self.geo_match_params
     }
     /// Consumes the builder and constructs a [`ProxySession`](crate::types::ProxySession).
     pub fn build(self) -> crate::types::ProxySession {

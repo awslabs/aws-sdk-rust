@@ -46,6 +46,10 @@ impl KinesisStreamsOutputUpdateBuilder {
         self.resource_arn_update = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
+    pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn_update
+    }
     /// Consumes the builder and constructs a [`KinesisStreamsOutputUpdate`](crate::types::KinesisStreamsOutputUpdate).
     pub fn build(self) -> crate::types::KinesisStreamsOutputUpdate {
         crate::types::KinesisStreamsOutputUpdate {

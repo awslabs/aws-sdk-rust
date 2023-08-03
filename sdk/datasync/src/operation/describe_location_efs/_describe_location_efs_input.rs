@@ -42,6 +42,10 @@ impl DescribeLocationEfsInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
     pub fn build(
         self,

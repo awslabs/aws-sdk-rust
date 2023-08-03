@@ -36,6 +36,13 @@ impl GetInsightImpactGraphFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInsightImpactGraph as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetInsightImpactGraphFluentBuilder {
         self.inner = self.inner.set_insight_id(input);
         self
     }
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_insight_id()
+    }
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -138,6 +149,10 @@ impl GetInsightImpactGraphFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +167,10 @@ impl GetInsightImpactGraphFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,5 +180,9 @@ impl GetInsightImpactGraphFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

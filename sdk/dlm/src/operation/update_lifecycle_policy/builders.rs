@@ -37,6 +37,13 @@ impl UpdateLifecyclePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLifecyclePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.inner = self.inner.set_policy_id(input);
         self
     }
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(
         mut self,
@@ -143,6 +154,10 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub fn state(mut self, input: crate::types::SettablePolicyStateValues) -> Self {
         self.inner = self.inner.state(input);
@@ -156,6 +171,10 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.inner = self.inner.set_state(input);
         self
     }
+    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SettablePolicyStateValues> {
+        self.inner.get_state()
+    }
     /// <p>A description of the lifecycle policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -165,6 +184,10 @@ impl UpdateLifecyclePolicyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the lifecycle policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
@@ -178,5 +201,9 @@ impl UpdateLifecyclePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_details(input);
         self
+    }
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
+    pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
+        self.inner.get_policy_details()
     }
 }

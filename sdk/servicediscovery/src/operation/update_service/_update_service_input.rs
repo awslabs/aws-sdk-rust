@@ -47,6 +47,10 @@ impl UpdateServiceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the service that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A complex type that contains the new settings for the service.</p>
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
         self.service = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateServiceInputBuilder {
     ) -> Self {
         self.service = input;
         self
+    }
+    /// <p>A complex type that contains the new settings for the service.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceChange> {
+        &self.service
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(

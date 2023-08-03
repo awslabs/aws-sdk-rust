@@ -88,6 +88,15 @@ impl EcsServiceProjectedMetricBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the projected metric. </p>
+    /// <p>The following metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p> </li>
+    /// <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::EcsServiceMetricName> {
+        &self.name
+    }
     /// Appends an item to `timestamps`.
     ///
     /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
@@ -106,6 +115,12 @@ impl EcsServiceProjectedMetricBuilder {
     ) -> Self {
         self.timestamps = input;
         self
+    }
+    /// <p> The timestamps of the projected metric. </p>
+    pub fn get_timestamps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
     }
     /// Appends an item to `upper_bound_values`.
     ///
@@ -126,6 +141,10 @@ impl EcsServiceProjectedMetricBuilder {
         self.upper_bound_values = input;
         self
     }
+    /// <p> The upper bound values for the projected metric. </p>
+    pub fn get_upper_bound_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.upper_bound_values
+    }
     /// Appends an item to `lower_bound_values`.
     ///
     /// To override the contents of this collection use [`set_lower_bound_values`](Self::set_lower_bound_values).
@@ -144,6 +163,10 @@ impl EcsServiceProjectedMetricBuilder {
     ) -> Self {
         self.lower_bound_values = input;
         self
+    }
+    /// <p> The lower bound values for the projected metric. </p>
+    pub fn get_lower_bound_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.lower_bound_values
     }
     /// Consumes the builder and constructs a [`EcsServiceProjectedMetric`](crate::types::EcsServiceProjectedMetric).
     pub fn build(self) -> crate::types::EcsServiceProjectedMetric {

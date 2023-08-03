@@ -49,6 +49,10 @@ impl RelationshipBuilder {
         self
     }
     /// <p>The ARN of the resource.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
+    }
+    /// <p>The ARN of the resource.</p>
     pub fn to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +61,10 @@ impl RelationshipBuilder {
     pub fn set_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to = input;
         self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to
     }
     /// Consumes the builder and constructs a [`Relationship`](crate::types::Relationship).
     pub fn build(self) -> crate::types::Relationship {

@@ -40,6 +40,10 @@ impl GetMaintenanceWindowInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
     pub fn build(
         self,

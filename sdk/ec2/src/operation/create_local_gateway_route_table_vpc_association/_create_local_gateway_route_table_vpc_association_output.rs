@@ -56,6 +56,12 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
         self.local_gateway_route_table_vpc_association = input;
         self
     }
+    /// <p>Information about the association.</p>
+    pub fn get_local_gateway_route_table_vpc_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation> {
+        &self.local_gateway_route_table_vpc_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

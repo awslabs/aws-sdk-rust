@@ -36,6 +36,12 @@ impl ListChangeSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListChangeSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_change_sets::builders::ListChangeSetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListChangeSetsFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +156,9 @@ impl ListChangeSetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

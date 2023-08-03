@@ -56,6 +56,10 @@ impl PutPartnerEventsOutputBuilder {
         self.failed_entry_count = input;
         self
     }
+    /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
+    pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_entry_count
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -74,6 +78,12 @@ impl PutPartnerEventsOutputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>> {
+        &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

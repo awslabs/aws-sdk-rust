@@ -66,6 +66,12 @@ impl ListRotationOverridesOutputBuilder {
         self.rotation_overrides = input;
         self
     }
+    /// <p>A list of rotation overrides in the specified time range.</p>
+    pub fn get_rotation_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>> {
+        &self.rotation_overrides
+    }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListRotationOverridesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

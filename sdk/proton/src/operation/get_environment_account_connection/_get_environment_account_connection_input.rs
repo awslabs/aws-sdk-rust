@@ -39,6 +39,10 @@ impl GetEnvironmentAccountConnectionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
     pub fn build(
         self,

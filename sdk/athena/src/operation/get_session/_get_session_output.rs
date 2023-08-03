@@ -114,6 +114,10 @@ impl GetSessionOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The session description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl GetSessionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The session description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -133,6 +141,10 @@ impl GetSessionOutputBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The workgroup to which the session belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
     pub fn engine_version(
@@ -150,6 +162,10 @@ impl GetSessionOutputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>Contains engine configuration information like DPU usage.</p>
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
         self.engine_configuration = ::std::option::Option::Some(input);
@@ -162,6 +178,12 @@ impl GetSessionOutputBuilder {
     ) -> Self {
         self.engine_configuration = input;
         self
+    }
+    /// <p>Contains engine configuration information like DPU usage.</p>
+    pub fn get_engine_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        &self.engine_configuration
     }
     /// <p>The notebook version.</p>
     pub fn notebook_version(
@@ -179,6 +201,10 @@ impl GetSessionOutputBuilder {
         self.notebook_version = input;
         self
     }
+    /// <p>The notebook version.</p>
+    pub fn get_notebook_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_version
+    }
     /// <p>Contains the workgroup configuration information used by the session.</p>
     pub fn session_configuration(mut self, input: crate::types::SessionConfiguration) -> Self {
         self.session_configuration = ::std::option::Option::Some(input);
@@ -192,6 +218,12 @@ impl GetSessionOutputBuilder {
         self.session_configuration = input;
         self
     }
+    /// <p>Contains the workgroup configuration information used by the session.</p>
+    pub fn get_session_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionConfiguration> {
+        &self.session_configuration
+    }
     /// <p>Contains information about the status of the session.</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -201,6 +233,10 @@ impl GetSessionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Contains information about the status of the session.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
+        &self.status
     }
     /// <p>Contains the DPU execution time.</p>
     pub fn statistics(mut self, input: crate::types::SessionStatistics) -> Self {
@@ -214,6 +250,10 @@ impl GetSessionOutputBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Contains the DPU execution time.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::SessionStatistics> {
+        &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

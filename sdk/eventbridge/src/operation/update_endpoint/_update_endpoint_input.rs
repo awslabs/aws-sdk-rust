@@ -79,6 +79,10 @@ impl UpdateEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateEndpointInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the endpoint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configure the routing policy, including the health check and secondary Region.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -102,6 +110,10 @@ impl UpdateEndpointInputBuilder {
         self.routing_config = input;
         self
     }
+    /// <p>Configure the routing policy, including the health check and secondary Region.</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::RoutingConfig> {
+        &self.routing_config
+    }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.replication_config = ::std::option::Option::Some(input);
@@ -114,6 +126,12 @@ impl UpdateEndpointInputBuilder {
     ) -> Self {
         self.replication_config = input;
         self
+    }
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        &self.replication_config
     }
     /// Appends an item to `event_buses`.
     ///
@@ -134,6 +152,12 @@ impl UpdateEndpointInputBuilder {
         self.event_buses = input;
         self
     }
+    /// <p>Define event buses used for replication.</p>
+    pub fn get_event_buses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+        &self.event_buses
+    }
     /// <p>The ARN of the role used by event replication for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -143,6 +167,10 @@ impl UpdateEndpointInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(

@@ -110,6 +110,10 @@ impl CreateTemplateInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl CreateTemplateInputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>A display name for the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl CreateTemplateInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A display name for the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `permissions`.
     ///
@@ -149,6 +161,12 @@ impl CreateTemplateInputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>A list of resource permissions to be set on the template. </p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
@@ -165,6 +183,12 @@ impl CreateTemplateInputBuilder {
     ) -> Self {
         self.source_entity = input;
         self
+    }
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
+    pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::TemplateSourceEntity> {
+        &self.source_entity
     }
     /// Appends an item to `tags`.
     ///
@@ -185,6 +209,10 @@ impl CreateTemplateInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(
         mut self,
@@ -200,6 +228,10 @@ impl CreateTemplateInputBuilder {
     ) -> Self {
         self.version_description = input;
         self
+    }
+    /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
     }
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -217,6 +249,14 @@ impl CreateTemplateInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The definition of a template.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(

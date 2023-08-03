@@ -56,6 +56,10 @@ impl FailedResourceBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The error message text associated with the failure.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl FailedResourceBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message text associated with the failure.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The error code associated with the failure.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl FailedResourceBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code associated with the failure.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`FailedResource`](crate::types::FailedResource).
     pub fn build(self) -> crate::types::FailedResource {

@@ -49,6 +49,10 @@ impl DescribeModelOutputBuilder {
         self.model_description = input;
         self
     }
+    /// <p>Contains the description of the model.</p>
+    pub fn get_model_description(&self) -> &::std::option::Option<crate::types::ModelDescription> {
+        &self.model_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl AssociateRoutingProfileQueuesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -74,6 +78,10 @@ impl AssociateRoutingProfileQueuesInputBuilder {
     ) -> Self {
         self.routing_profile_id = input;
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_profile_id
     }
     /// Appends an item to `queue_configs`.
     ///
@@ -93,6 +101,12 @@ impl AssociateRoutingProfileQueuesInputBuilder {
     ) -> Self {
         self.queue_configs = input;
         self
+    }
+    /// <p>The queues to associate with this routing profile.</p>
+    pub fn get_queue_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+        &self.queue_configs
     }
     /// Consumes the builder and constructs a [`AssociateRoutingProfileQueuesInput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput).
     pub fn build(

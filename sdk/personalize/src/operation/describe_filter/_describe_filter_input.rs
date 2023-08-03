@@ -39,6 +39,10 @@ impl DescribeFilterInputBuilder {
         self.filter_arn = input;
         self
     }
+    /// <p>The ARN of the filter to describe.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
+    }
     /// Consumes the builder and constructs a [`DescribeFilterInput`](crate::operation::describe_filter::DescribeFilterInput).
     pub fn build(
         self,

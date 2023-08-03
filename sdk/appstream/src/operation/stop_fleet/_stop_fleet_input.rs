@@ -39,6 +39,10 @@ impl StopFleetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopFleetInput`](crate::operation::stop_fleet::StopFleetInput).
     pub fn build(
         self,

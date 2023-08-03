@@ -46,6 +46,10 @@ impl ComputationPreferenceBuilder {
         self.pricing_plan_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan_arn
+    }
     /// Consumes the builder and constructs a [`ComputationPreference`](crate::types::ComputationPreference).
     pub fn build(self) -> crate::types::ComputationPreference {
         crate::types::ComputationPreference {

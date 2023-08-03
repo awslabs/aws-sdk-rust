@@ -51,6 +51,12 @@ impl GetRequestedServiceQuotaChangeOutputBuilder {
         self.requested_quota = input;
         self
     }
+    /// <p>Information about the quota increase request.</p>
+    pub fn get_requested_quota(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestedServiceQuotaChange> {
+        &self.requested_quota
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

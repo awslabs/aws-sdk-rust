@@ -63,6 +63,10 @@ impl UpdateLongTermPricingInputBuilder {
         self.long_term_pricing_id = input;
         self
     }
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn get_long_term_pricing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.long_term_pricing_id
+    }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub fn replacement_job(
         mut self,
@@ -79,6 +83,10 @@ impl UpdateLongTermPricingInputBuilder {
         self.replacement_job = input;
         self
     }
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    pub fn get_replacement_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replacement_job
+    }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
         self.is_long_term_pricing_auto_renew = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl UpdateLongTermPricingInputBuilder {
     ) -> Self {
         self.is_long_term_pricing_auto_renew = input;
         self
+    }
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
+    pub fn get_is_long_term_pricing_auto_renew(&self) -> &::std::option::Option<bool> {
+        &self.is_long_term_pricing_auto_renew
     }
     /// Consumes the builder and constructs a [`UpdateLongTermPricingInput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingInput).
     pub fn build(

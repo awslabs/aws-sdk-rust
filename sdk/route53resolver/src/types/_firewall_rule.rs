@@ -156,6 +156,10 @@ impl FirewallRuleBuilder {
         self.firewall_rule_group_id = input;
         self
     }
+    /// <p>The unique identifier of the firewall rule group of the rule. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
     /// <p>The ID of the domain list that's used in the rule. </p>
     pub fn firewall_domain_list_id(
         mut self,
@@ -172,6 +176,10 @@ impl FirewallRuleBuilder {
         self.firewall_domain_list_id = input;
         self
     }
+    /// <p>The ID of the domain list that's used in the rule. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_domain_list_id
+    }
     /// <p>The name of the rule. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -182,6 +190,10 @@ impl FirewallRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The priority of the rule in the rule group. This value must be unique within the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -191,6 +203,10 @@ impl FirewallRuleBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the rule in the rule group. This value must be unique within the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
@@ -211,6 +227,15 @@ impl FirewallRuleBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+    /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+    /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
@@ -235,6 +260,15 @@ impl FirewallRuleBuilder {
         self.block_response = input;
         self
     }
+    /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p> </li>
+    /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
+    /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
+    /// </ul>
+    pub fn get_block_response(&self) -> &::std::option::Option<crate::types::BlockResponse> {
+        &self.block_response
+    }
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     pub fn block_override_domain(
         mut self,
@@ -251,6 +285,10 @@ impl FirewallRuleBuilder {
         self.block_override_domain = input;
         self
     }
+    /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn get_block_override_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.block_override_domain
+    }
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     pub fn block_override_dns_type(mut self, input: crate::types::BlockOverrideDnsType) -> Self {
         self.block_override_dns_type = ::std::option::Option::Some(input);
@@ -264,6 +302,12 @@ impl FirewallRuleBuilder {
         self.block_override_dns_type = input;
         self
     }
+    /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn get_block_override_dns_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockOverrideDnsType> {
+        &self.block_override_dns_type
+    }
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     pub fn block_override_ttl(mut self, input: i32) -> Self {
         self.block_override_ttl = ::std::option::Option::Some(input);
@@ -273,6 +317,10 @@ impl FirewallRuleBuilder {
     pub fn set_block_override_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_override_ttl = input;
         self
+    }
+    /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn get_block_override_ttl(&self) -> &::std::option::Option<i32> {
+        &self.block_override_ttl
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn creator_request_id(
@@ -290,6 +338,10 @@ impl FirewallRuleBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn creation_time(
         mut self,
@@ -306,6 +358,10 @@ impl FirewallRuleBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
         mut self,
@@ -321,6 +377,10 @@ impl FirewallRuleBuilder {
     ) -> Self {
         self.modification_time = input;
         self
+    }
+    /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
     }
     /// Consumes the builder and constructs a [`FirewallRule`](crate::types::FirewallRule).
     pub fn build(self) -> crate::types::FirewallRule {

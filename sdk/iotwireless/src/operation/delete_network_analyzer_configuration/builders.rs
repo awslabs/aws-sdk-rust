@@ -36,6 +36,10 @@ impl DeleteNetworkAnalyzerConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNetworkAnalyzerConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DeleteNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
+    }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_name()
     }
 }

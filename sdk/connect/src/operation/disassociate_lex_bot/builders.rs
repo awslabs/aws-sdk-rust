@@ -37,6 +37,12 @@ impl DisassociateLexBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateLexBot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DisassociateLexBotFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -137,6 +147,10 @@ impl DisassociateLexBotFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
     pub fn lex_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lex_region(input.into());
@@ -146,5 +160,9 @@ impl DisassociateLexBotFluentBuilder {
     pub fn set_lex_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lex_region(input);
         self
+    }
+    /// <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
+    pub fn get_lex_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lex_region()
     }
 }

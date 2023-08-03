@@ -37,6 +37,13 @@ impl ListFunctionDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFunctionDefinitions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_function_definitions::builders::ListFunctionDefinitionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ListFunctionDefinitionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// The maximum number of results to be returned per request.
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_max_results()
+    }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -136,5 +147,9 @@ impl ListFunctionDefinitionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

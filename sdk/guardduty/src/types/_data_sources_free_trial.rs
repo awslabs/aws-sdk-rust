@@ -89,6 +89,10 @@ impl DataSourcesFreeTrialBuilder {
         self.cloud_trail = input;
         self
     }
+    /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
+    pub fn get_cloud_trail(&self) -> &::std::option::Option<crate::types::DataSourceFreeTrial> {
+        &self.cloud_trail
+    }
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
     pub fn dns_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
         self.dns_logs = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl DataSourcesFreeTrialBuilder {
     ) -> Self {
         self.dns_logs = input;
         self
+    }
+    /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+    pub fn get_dns_logs(&self) -> &::std::option::Option<crate::types::DataSourceFreeTrial> {
+        &self.dns_logs
     }
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
     pub fn flow_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
@@ -115,6 +123,10 @@ impl DataSourcesFreeTrialBuilder {
         self.flow_logs = input;
         self
     }
+    /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+    pub fn get_flow_logs(&self) -> &::std::option::Option<crate::types::DataSourceFreeTrial> {
+        &self.flow_logs
+    }
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
     pub fn s3_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl DataSourcesFreeTrialBuilder {
         self.s3_logs = input;
         self
     }
+    /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::DataSourceFreeTrial> {
+        &self.s3_logs
+    }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub fn kubernetes(mut self, input: crate::types::KubernetesDataSourceFreeTrial) -> Self {
         self.kubernetes = ::std::option::Option::Some(input);
@@ -140,6 +156,12 @@ impl DataSourcesFreeTrialBuilder {
     ) -> Self {
         self.kubernetes = input;
         self
+    }
+    /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    pub fn get_kubernetes(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesDataSourceFreeTrial> {
+        &self.kubernetes
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     pub fn malware_protection(
@@ -156,6 +178,12 @@ impl DataSourcesFreeTrialBuilder {
     ) -> Self {
         self.malware_protection = input;
         self
+    }
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial> {
+        &self.malware_protection
     }
     /// Consumes the builder and constructs a [`DataSourcesFreeTrial`](crate::types::DataSourcesFreeTrial).
     pub fn build(self) -> crate::types::DataSourcesFreeTrial {

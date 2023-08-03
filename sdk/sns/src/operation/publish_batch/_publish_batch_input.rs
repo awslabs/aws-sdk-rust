@@ -51,6 +51,10 @@ impl PublishBatchInputBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Appends an item to `publish_batch_request_entries`.
     ///
     /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
@@ -72,6 +76,12 @@ impl PublishBatchInputBuilder {
     ) -> Self {
         self.publish_batch_request_entries = input;
         self
+    }
+    /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    pub fn get_publish_batch_request_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
+        &self.publish_batch_request_entries
     }
     /// Consumes the builder and constructs a [`PublishBatchInput`](crate::operation::publish_batch::PublishBatchInput).
     pub fn build(

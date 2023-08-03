@@ -53,6 +53,12 @@ impl WarningsBuilder {
         self.unrecognized_resource_types = input;
         self
     }
+    /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
+    pub fn get_unrecognized_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unrecognized_resource_types
+    }
     /// Consumes the builder and constructs a [`Warnings`](crate::types::Warnings).
     pub fn build(self) -> crate::types::Warnings {
         crate::types::Warnings {

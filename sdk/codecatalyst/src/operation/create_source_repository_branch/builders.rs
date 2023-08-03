@@ -38,6 +38,10 @@ impl CreateSourceRepositoryBranchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSourceRepositoryBranch as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self.inner = self.inner.set_space_name(input);
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -137,6 +145,10 @@ impl CreateSourceRepositoryBranchFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
     /// <p>The name of the repository where you want to create a branch.</p>
     pub fn source_repository_name(
@@ -154,6 +166,10 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self.inner = self.inner.set_source_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you want to create a branch.</p>
+    pub fn get_source_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_repository_name()
+    }
     /// <p>The name for the branch you're creating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -163,6 +179,10 @@ impl CreateSourceRepositoryBranchFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the branch you're creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
     pub fn head_commit_id(
@@ -179,5 +199,9 @@ impl CreateSourceRepositoryBranchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_head_commit_id(input);
         self
+    }
+    /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
+    pub fn get_head_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_head_commit_id()
     }
 }

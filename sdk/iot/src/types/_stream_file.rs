@@ -48,6 +48,10 @@ impl StreamFileBuilder {
         self.file_id = input;
         self
     }
+    /// <p>The file ID.</p>
+    pub fn get_file_id(&self) -> &::std::option::Option<i32> {
+        &self.file_id
+    }
     /// <p>The location of the file in S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StreamFileBuilder {
     ) -> Self {
         self.s3_location = input;
         self
+    }
+    /// <p>The location of the file in S3.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
     }
     /// Consumes the builder and constructs a [`StreamFile`](crate::types::StreamFile).
     pub fn build(self) -> crate::types::StreamFile {

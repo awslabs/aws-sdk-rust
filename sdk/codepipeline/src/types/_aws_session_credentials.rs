@@ -69,6 +69,10 @@ impl AwsSessionCredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The access key for the session.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The secret access key for the session.</p>
     pub fn secret_access_key(
         mut self,
@@ -85,6 +89,10 @@ impl AwsSessionCredentialsBuilder {
         self.secret_access_key = input;
         self
     }
+    /// <p>The secret access key for the session.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
+    }
     /// <p>The token for the session.</p>
     pub fn session_token(
         mut self,
@@ -100,6 +108,10 @@ impl AwsSessionCredentialsBuilder {
     ) -> Self {
         self.session_token = input;
         self
+    }
+    /// <p>The token for the session.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
     }
     /// Consumes the builder and constructs a [`AwsSessionCredentials`](crate::types::AwsSessionCredentials).
     pub fn build(self) -> crate::types::AwsSessionCredentials {

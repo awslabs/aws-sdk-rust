@@ -83,6 +83,12 @@ impl GetSamplingTargetsOutputBuilder {
         self.sampling_target_documents = input;
         self
     }
+    /// <p>Updated rules that the service should use to sample requests.</p>
+    pub fn get_sampling_target_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingTargetDocument>> {
+        &self.sampling_target_documents
+    }
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     pub fn last_rule_modification(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_rule_modification = ::std::option::Option::Some(input);
@@ -95,6 +101,12 @@ impl GetSamplingTargetsOutputBuilder {
     ) -> Self {
         self.last_rule_modification = input;
         self
+    }
+    /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+    pub fn get_last_rule_modification(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_rule_modification
     }
     /// Appends an item to `unprocessed_statistics`.
     ///
@@ -114,6 +126,12 @@ impl GetSamplingTargetsOutputBuilder {
     ) -> Self {
         self.unprocessed_statistics = input;
         self
+    }
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
+    pub fn get_unprocessed_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>> {
+        &self.unprocessed_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

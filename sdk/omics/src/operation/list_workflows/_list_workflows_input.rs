@@ -63,6 +63,10 @@ impl ListWorkflowsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The workflows' type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.r#type
+    }
     /// <p>The workflows' name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The workflows' name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
@@ -89,6 +97,10 @@ impl ListWorkflowsInputBuilder {
         self.starting_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_token
+    }
     /// <p>The maximum number of workflows to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of workflows to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(

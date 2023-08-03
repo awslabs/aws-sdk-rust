@@ -96,6 +96,10 @@ impl SubnetCidrReservationBuilder {
         self.subnet_cidr_reservation_id = input;
         self
     }
+    /// <p>The ID of the subnet CIDR reservation.</p>
+    pub fn get_subnet_cidr_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_cidr_reservation_id
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl SubnetCidrReservationBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The CIDR that has been reserved.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SubnetCidrReservationBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>The CIDR that has been reserved.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p>The type of reservation. </p>
     pub fn reservation_type(mut self, input: crate::types::SubnetCidrReservationType) -> Self {
@@ -129,6 +141,12 @@ impl SubnetCidrReservationBuilder {
         self.reservation_type = input;
         self
     }
+    /// <p>The type of reservation. </p>
+    pub fn get_reservation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
+        &self.reservation_type
+    }
     /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -139,6 +157,10 @@ impl SubnetCidrReservationBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The description assigned to the subnet CIDR reservation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +170,10 @@ impl SubnetCidrReservationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description assigned to the subnet CIDR reservation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -167,6 +193,10 @@ impl SubnetCidrReservationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the subnet CIDR reservation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SubnetCidrReservation`](crate::types::SubnetCidrReservation).
     pub fn build(self) -> crate::types::SubnetCidrReservation {

@@ -139,6 +139,14 @@ impl S3LogsConfigBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the S3 build logs. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
+    /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LogsConfigStatusType> {
+        &self.status
+    }
     /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -149,6 +157,10 @@ impl S3LogsConfigBuilder {
         self.location = input;
         self
     }
+    /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted. </p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
         self.encryption_disabled = ::std::option::Option::Some(input);
@@ -158,6 +170,10 @@ impl S3LogsConfigBuilder {
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
+    }
+    /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted. </p>
+    pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
+        &self.encryption_disabled
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -227,6 +243,40 @@ impl S3LogsConfigBuilder {
     ) -> Self {
         self.bucket_owner_access = input;
         self
+    }
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
+    /// </note>
+    /// <p>This property can be one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// NONE
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
+    /// </dd>
+    /// <dt>
+    /// READ_ONLY
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
+    /// </dd>
+    /// <dt>
+    /// FULL
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
+    /// <ul>
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// </ul>
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_bucket_owner_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
+        &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`S3LogsConfig`](crate::types::S3LogsConfig).
     pub fn build(self) -> crate::types::S3LogsConfig {

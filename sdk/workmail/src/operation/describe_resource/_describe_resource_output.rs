@@ -103,6 +103,10 @@ impl DescribeResourceOutputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the described resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The email of the described resource.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl DescribeResourceOutputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email of the described resource.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The name of the described resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +131,10 @@ impl DescribeResourceOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the described resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the described resource.</p>
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl DescribeResourceOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the described resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.r#type
     }
     /// <p>The booking options for the described resource.</p>
     pub fn booking_options(mut self, input: crate::types::BookingOptions) -> Self {
@@ -146,6 +162,10 @@ impl DescribeResourceOutputBuilder {
         self.booking_options = input;
         self
     }
+    /// <p>The booking options for the described resource.</p>
+    pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
+        &self.booking_options
+    }
     /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -155,6 +175,10 @@ impl DescribeResourceOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
+        &self.state
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -169,6 +193,10 @@ impl DescribeResourceOutputBuilder {
         self.enabled_date = input;
         self
     }
+    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
+    pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enabled_date
+    }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disabled_date = ::std::option::Option::Some(input);
@@ -181,6 +209,10 @@ impl DescribeResourceOutputBuilder {
     ) -> Self {
         self.disabled_date = input;
         self
+    }
+    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
+    pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disabled_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

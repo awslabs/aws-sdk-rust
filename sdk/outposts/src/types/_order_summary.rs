@@ -111,6 +111,10 @@ impl OrderSummaryBuilder {
         self.outpost_id = input;
         self
     }
+    /// <p> The ID of the Outpost. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
+    }
     /// <p> The ID of the order. </p>
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl OrderSummaryBuilder {
         self.order_id = input;
         self
     }
+    /// <p> The ID of the order. </p>
+    pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_id
+    }
     /// <p> The type of order. </p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
@@ -130,6 +138,10 @@ impl OrderSummaryBuilder {
     pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self
+    }
+    /// <p> The type of order. </p>
+    pub fn get_order_type(&self) -> &::std::option::Option<crate::types::OrderType> {
+        &self.order_type
     }
     /// <p>The status of the order.</p>
     /// <ul>
@@ -159,6 +171,19 @@ impl OrderSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the order.</p>
+    /// <ul>
+    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrderStatus> {
+        &self.status
+    }
     /// Adds a key-value pair to `line_item_counts_by_status`.
     ///
     /// To override the contents of this collection use [`set_line_item_counts_by_status`](Self::set_line_item_counts_by_status).
@@ -180,6 +205,13 @@ impl OrderSummaryBuilder {
         self.line_item_counts_by_status = input;
         self
     }
+    /// <p> The status of all line items in the order. </p>
+    pub fn get_line_item_counts_by_status(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>
+    {
+        &self.line_item_counts_by_status
+    }
     /// <p> The submission date for the order. </p>
     pub fn order_submission_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.order_submission_date = ::std::option::Option::Some(input);
@@ -193,6 +225,12 @@ impl OrderSummaryBuilder {
         self.order_submission_date = input;
         self
     }
+    /// <p> The submission date for the order. </p>
+    pub fn get_order_submission_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.order_submission_date
+    }
     /// <p> The fulfilment date for the order. </p>
     pub fn order_fulfilled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.order_fulfilled_date = ::std::option::Option::Some(input);
@@ -205,6 +243,10 @@ impl OrderSummaryBuilder {
     ) -> Self {
         self.order_fulfilled_date = input;
         self
+    }
+    /// <p> The fulfilment date for the order. </p>
+    pub fn get_order_fulfilled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.order_fulfilled_date
     }
     /// Consumes the builder and constructs a [`OrderSummary`](crate::types::OrderSummary).
     pub fn build(self) -> crate::types::OrderSummary {

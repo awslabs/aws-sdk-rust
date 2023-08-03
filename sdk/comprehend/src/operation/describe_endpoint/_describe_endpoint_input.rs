@@ -40,6 +40,10 @@ impl DescribeEndpointInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,

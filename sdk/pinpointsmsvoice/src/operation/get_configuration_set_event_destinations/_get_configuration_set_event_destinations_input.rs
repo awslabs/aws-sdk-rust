@@ -45,6 +45,10 @@ impl GetConfigurationSetEventDestinationsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// ConfigurationSetName
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsInput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

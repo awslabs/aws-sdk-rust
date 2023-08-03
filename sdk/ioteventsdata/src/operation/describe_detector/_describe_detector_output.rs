@@ -47,6 +47,10 @@ impl DescribeDetectorOutputBuilder {
         self.detector = input;
         self
     }
+    /// <p>Information about the detector (instance).</p>
+    pub fn get_detector(&self) -> &::std::option::Option<crate::types::Detector> {
+        &self.detector
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

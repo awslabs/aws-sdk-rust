@@ -65,6 +65,10 @@ impl ResourceAlreadyExistsExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

@@ -76,6 +76,10 @@ impl ValidateE911AddressOutputBuilder {
         self.validation_result = input;
         self
     }
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    pub fn get_validation_result(&self) -> &::std::option::Option<i32> {
+        &self.validation_result
+    }
     /// <p>The ID that represents the address.</p>
     pub fn address_external_id(
         mut self,
@@ -92,6 +96,10 @@ impl ValidateE911AddressOutputBuilder {
         self.address_external_id = input;
         self
     }
+    /// <p>The ID that represents the address.</p>
+    pub fn get_address_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_external_id
+    }
     /// <p>The validated address.</p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl ValidateE911AddressOutputBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>The validated address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.address
     }
     /// Appends an item to `candidate_address_list`.
     ///
@@ -120,6 +132,12 @@ impl ValidateE911AddressOutputBuilder {
     ) -> Self {
         self.candidate_address_list = input;
         self
+    }
+    /// <p>The list of address suggestions..</p>
+    pub fn get_candidate_address_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>> {
+        &self.candidate_address_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

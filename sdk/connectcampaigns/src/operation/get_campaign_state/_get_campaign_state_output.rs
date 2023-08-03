@@ -48,6 +48,10 @@ impl GetCampaignStateOutputBuilder {
         self.state = input;
         self
     }
+    /// State of a campaign
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
+        &self.state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

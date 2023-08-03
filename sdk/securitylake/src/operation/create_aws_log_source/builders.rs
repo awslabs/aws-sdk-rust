@@ -37,6 +37,12 @@ impl CreateAwsLogSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAwsLogSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl CreateAwsLogSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+        self.inner.get_sources()
     }
 }

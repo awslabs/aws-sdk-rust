@@ -116,6 +116,10 @@ impl BridgeBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Appends an item to `bridge_messages`.
     ///
     /// To override the contents of this collection use [`set_bridge_messages`](Self::set_bridge_messages).
@@ -135,6 +139,12 @@ impl BridgeBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bridge_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
+        &self.bridge_messages
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn bridge_state(mut self, input: crate::types::BridgeState) -> Self {
         self.bridge_state = ::std::option::Option::Some(input);
         self
@@ -146,6 +156,10 @@ impl BridgeBuilder {
     ) -> Self {
         self.bridge_state = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bridge_state(&self) -> &::std::option::Option<crate::types::BridgeState> {
+        &self.bridge_state
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn egress_gateway_bridge(mut self, input: crate::types::EgressGatewayBridge) -> Self {
@@ -161,6 +175,12 @@ impl BridgeBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_egress_gateway_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::EgressGatewayBridge> {
+        &self.egress_gateway_bridge
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn ingress_gateway_bridge(mut self, input: crate::types::IngressGatewayBridge) -> Self {
         self.ingress_gateway_bridge = ::std::option::Option::Some(input);
         self
@@ -173,6 +193,12 @@ impl BridgeBuilder {
         self.ingress_gateway_bridge = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_ingress_gateway_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressGatewayBridge> {
+        &self.ingress_gateway_bridge
+    }
     /// The name of the bridge.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -182,6 +208,10 @@ impl BridgeBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the bridge.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `outputs`.
     ///
@@ -202,6 +232,12 @@ impl BridgeBuilder {
         self.outputs = input;
         self
     }
+    /// The outputs on this bridge.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>> {
+        &self.outputs
+    }
     /// The placement Amazon Resource Number (ARN) of the bridge.
     pub fn placement_arn(
         mut self,
@@ -218,6 +254,10 @@ impl BridgeBuilder {
         self.placement_arn = input;
         self
     }
+    /// The placement Amazon Resource Number (ARN) of the bridge.
+    pub fn get_placement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_arn
+    }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
         self.source_failover_config = ::std::option::Option::Some(input);
@@ -230,6 +270,12 @@ impl BridgeBuilder {
     ) -> Self {
         self.source_failover_config = input;
         self
+    }
+    /// The settings for source failover.
+    pub fn get_source_failover_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FailoverConfig> {
+        &self.source_failover_config
     }
     /// Appends an item to `sources`.
     ///
@@ -249,6 +295,12 @@ impl BridgeBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// The sources on this bridge.
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`Bridge`](crate::types::Bridge).
     pub fn build(self) -> crate::types::Bridge {

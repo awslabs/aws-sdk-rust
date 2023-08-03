@@ -53,6 +53,12 @@ impl EbsStorageInfoBuilder {
         self.provisioned_throughput = input;
         self
     }
+    /// <p>EBS volume provisioned throughput information.</p>
+    pub fn get_provisioned_throughput(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        &self.provisioned_throughput
+    }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl EbsStorageInfoBuilder {
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
+    }
+    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
     }
     /// Consumes the builder and constructs a [`EbsStorageInfo`](crate::types::EbsStorageInfo).
     pub fn build(self) -> crate::types::EbsStorageInfo {

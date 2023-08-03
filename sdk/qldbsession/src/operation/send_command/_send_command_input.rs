@@ -113,6 +113,11 @@ impl SendCommandInputBuilder {
         self.session_token = input;
         self
     }
+    /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+    /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
     pub fn start_session(mut self, input: crate::types::StartSessionRequest) -> Self {
         self.start_session = ::std::option::Option::Some(input);
@@ -125,6 +130,10 @@ impl SendCommandInputBuilder {
     ) -> Self {
         self.start_session = input;
         self
+    }
+    /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
+    pub fn get_start_session(&self) -> &::std::option::Option<crate::types::StartSessionRequest> {
+        &self.start_session
     }
     /// <p>Command to start a new transaction.</p>
     pub fn start_transaction(mut self, input: crate::types::StartTransactionRequest) -> Self {
@@ -139,6 +148,12 @@ impl SendCommandInputBuilder {
         self.start_transaction = input;
         self
     }
+    /// <p>Command to start a new transaction.</p>
+    pub fn get_start_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartTransactionRequest> {
+        &self.start_transaction
+    }
     /// <p>Command to end the current session.</p>
     pub fn end_session(mut self, input: crate::types::EndSessionRequest) -> Self {
         self.end_session = ::std::option::Option::Some(input);
@@ -151,6 +166,10 @@ impl SendCommandInputBuilder {
     ) -> Self {
         self.end_session = input;
         self
+    }
+    /// <p>Command to end the current session.</p>
+    pub fn get_end_session(&self) -> &::std::option::Option<crate::types::EndSessionRequest> {
+        &self.end_session
     }
     /// <p>Command to commit the specified transaction.</p>
     pub fn commit_transaction(mut self, input: crate::types::CommitTransactionRequest) -> Self {
@@ -165,6 +184,12 @@ impl SendCommandInputBuilder {
         self.commit_transaction = input;
         self
     }
+    /// <p>Command to commit the specified transaction.</p>
+    pub fn get_commit_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitTransactionRequest> {
+        &self.commit_transaction
+    }
     /// <p>Command to abort the current transaction.</p>
     pub fn abort_transaction(mut self, input: crate::types::AbortTransactionRequest) -> Self {
         self.abort_transaction = ::std::option::Option::Some(input);
@@ -177,6 +202,12 @@ impl SendCommandInputBuilder {
     ) -> Self {
         self.abort_transaction = input;
         self
+    }
+    /// <p>Command to abort the current transaction.</p>
+    pub fn get_abort_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbortTransactionRequest> {
+        &self.abort_transaction
     }
     /// <p>Command to execute a statement in the specified transaction.</p>
     pub fn execute_statement(mut self, input: crate::types::ExecuteStatementRequest) -> Self {
@@ -191,6 +222,12 @@ impl SendCommandInputBuilder {
         self.execute_statement = input;
         self
     }
+    /// <p>Command to execute a statement in the specified transaction.</p>
+    pub fn get_execute_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecuteStatementRequest> {
+        &self.execute_statement
+    }
     /// <p>Command to fetch a page.</p>
     pub fn fetch_page(mut self, input: crate::types::FetchPageRequest) -> Self {
         self.fetch_page = ::std::option::Option::Some(input);
@@ -203,6 +240,10 @@ impl SendCommandInputBuilder {
     ) -> Self {
         self.fetch_page = input;
         self
+    }
+    /// <p>Command to fetch a page.</p>
+    pub fn get_fetch_page(&self) -> &::std::option::Option<crate::types::FetchPageRequest> {
+        &self.fetch_page
     }
     /// Consumes the builder and constructs a [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
     pub fn build(

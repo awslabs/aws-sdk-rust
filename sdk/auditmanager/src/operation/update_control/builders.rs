@@ -36,6 +36,12 @@ impl UpdateControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateControl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_control::builders::UpdateControlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateControlFluentBuilder {
         self.inner = self.inner.set_control_id(input);
         self
     }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_id()
+    }
     /// <p> The name of the updated control. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl UpdateControlFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the updated control. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The optional description of the control. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +151,10 @@ impl UpdateControlFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The optional description of the control. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The steps that you should follow to determine if the control is met. </p>
     pub fn testing_information(
@@ -154,6 +172,10 @@ impl UpdateControlFluentBuilder {
         self.inner = self.inner.set_testing_information(input);
         self
     }
+    /// <p> The steps that you should follow to determine if the control is met. </p>
+    pub fn get_testing_information(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_testing_information()
+    }
     /// <p> The title of the action plan for remediating the control. </p>
     pub fn action_plan_title(
         mut self,
@@ -169,6 +191,10 @@ impl UpdateControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_plan_title(input);
         self
+    }
+    /// <p> The title of the action plan for remediating the control. </p>
+    pub fn get_action_plan_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_plan_title()
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     pub fn action_plan_instructions(
@@ -186,6 +212,10 @@ impl UpdateControlFluentBuilder {
         self.inner = self.inner.set_action_plan_instructions(input);
         self
     }
+    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    pub fn get_action_plan_instructions(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_plan_instructions()
+    }
     /// Appends an item to `controlMappingSources`.
     ///
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
@@ -202,5 +232,11 @@ impl UpdateControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_mapping_sources(input);
         self
+    }
+    /// <p> The data mapping sources for the control. </p>
+    pub fn get_control_mapping_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>> {
+        self.inner.get_control_mapping_sources()
     }
 }

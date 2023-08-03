@@ -105,6 +105,10 @@ impl GetJobOutputOutputBuilder {
         self.body = input;
         self
     }
+    /// <p>The job data, either archive data or inventory data.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
+    }
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
     /// <ul>
     /// <li> <p>You get the entire range of the archive.</p> </li>
@@ -125,6 +129,15 @@ impl GetJobOutputOutputBuilder {
         self.checksum = input;
         self
     }
+    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
+    /// <ul>
+    /// <li> <p>You get the entire range of the archive.</p> </li>
+    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// </ul>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
+    }
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +147,10 @@ impl GetJobOutputOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
     pub fn content_range(
@@ -151,6 +168,10 @@ impl GetJobOutputOutputBuilder {
         self.content_range = input;
         self
     }
+    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+    pub fn get_content_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_range
+    }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
     pub fn accept_ranges(
         mut self,
@@ -167,6 +188,10 @@ impl GetJobOutputOutputBuilder {
         self.accept_ranges = input;
         self
     }
+    /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
+    pub fn get_accept_ranges(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_ranges
+    }
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -176,6 +201,10 @@ impl GetJobOutputOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The description of an archive.</p>
     pub fn archive_description(
@@ -192,6 +221,10 @@ impl GetJobOutputOutputBuilder {
     ) -> Self {
         self.archive_description = input;
         self
+    }
+    /// <p>The description of an archive.</p>
+    pub fn get_archive_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

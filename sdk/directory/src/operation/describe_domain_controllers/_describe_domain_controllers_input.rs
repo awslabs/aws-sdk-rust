@@ -63,6 +63,10 @@ impl DescribeDomainControllersInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `domain_controller_ids`.
     ///
     /// To override the contents of this collection use [`set_domain_controller_ids`](Self::set_domain_controller_ids).
@@ -85,6 +89,12 @@ impl DescribeDomainControllersInputBuilder {
         self.domain_controller_ids = input;
         self
     }
+    /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
+    pub fn get_domain_controller_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_controller_ids
+    }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl DescribeDomainControllersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -104,6 +118,10 @@ impl DescribeDomainControllersInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDomainControllersInput`](crate::operation::describe_domain_controllers::DescribeDomainControllersInput).
     pub fn build(

@@ -43,6 +43,10 @@ impl SecondaryValueOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>Determines the visibility of the secondary value.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`SecondaryValueOptions`](crate::types::SecondaryValueOptions).
     pub fn build(self) -> crate::types::SecondaryValueOptions {
         crate::types::SecondaryValueOptions {

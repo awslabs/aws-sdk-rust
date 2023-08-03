@@ -40,6 +40,10 @@ impl CreateLagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLag as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_lag::builders::CreateLagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl CreateLagFluentBuilder {
         self.inner = self.inner.set_number_of_connections(input);
         self
     }
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
+    pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_connections()
+    }
     /// <p>The location for the LAG.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -131,6 +139,10 @@ impl CreateLagFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The location for the LAG.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(
@@ -148,6 +160,10 @@ impl CreateLagFluentBuilder {
         self.inner = self.inner.set_connections_bandwidth(input);
         self
     }
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connections_bandwidth()
+    }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_name(input.into());
@@ -157,6 +173,10 @@ impl CreateLagFluentBuilder {
     pub fn set_lag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lag_name(input);
         self
+    }
+    /// <p>The name of the LAG.</p>
+    pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_name()
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
     pub fn connection_id(
@@ -173,6 +193,10 @@ impl CreateLagFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
+    }
+    /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
     }
     /// Appends an item to `tags`.
     ///
@@ -191,6 +215,10 @@ impl CreateLagFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to associate with the LAG.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `childConnectionTags`.
     ///
     /// To override the contents of this collection use [`set_child_connection_tags`](Self::set_child_connection_tags).
@@ -208,6 +236,12 @@ impl CreateLagFluentBuilder {
         self.inner = self.inner.set_child_connection_tags(input);
         self
     }
+    /// <p>The tags to associate with the automtically created LAGs.</p>
+    pub fn get_child_connection_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_child_connection_tags()
+    }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn provider_name(
         mut self,
@@ -224,6 +258,10 @@ impl CreateLagFluentBuilder {
         self.inner = self.inner.set_provider_name(input);
         self
     }
+    /// <p>The name of the service provider associated with the LAG.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
+    }
     /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
@@ -237,5 +275,11 @@ impl CreateLagFluentBuilder {
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_request_mac_sec(input);
         self
+    }
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// </note>
+    pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
+        self.inner.get_request_mac_sec()
     }
 }

@@ -69,6 +69,10 @@ impl RenderUiTemplateInputBuilder {
         self.ui_template = input;
         self
     }
+    /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
+    pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplate> {
+        &self.ui_template
+    }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
     pub fn task(mut self, input: crate::types::RenderableTask) -> Self {
         self.task = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl RenderUiTemplateInputBuilder {
         self.task = input;
         self
     }
+    /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
+    pub fn get_task(&self) -> &::std::option::Option<crate::types::RenderableTask> {
+        &self.task
+    }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl RenderUiTemplateInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
@@ -106,6 +118,11 @@ impl RenderUiTemplateInputBuilder {
     ) -> Self {
         self.human_task_ui_arn = input;
         self
+    }
+    /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+    /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
+    pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_arn
     }
     /// Consumes the builder and constructs a [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
     pub fn build(

@@ -69,6 +69,10 @@ impl CapacityProviderStrategyItemBuilder {
         self.capacity_provider = input;
         self
     }
+    /// <p>The short name of the capacity provider.</p>
+    pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_provider
+    }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl CapacityProviderStrategyItemBuilder {
         self.weight = input;
         self
     }
+    /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
+    }
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(mut self, input: i32) -> Self {
         self.base = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl CapacityProviderStrategyItemBuilder {
     pub fn set_base(mut self, input: ::std::option::Option<i32>) -> Self {
         self.base = input;
         self
+    }
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
+    pub fn get_base(&self) -> &::std::option::Option<i32> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
     pub fn build(self) -> crate::types::CapacityProviderStrategyItem {

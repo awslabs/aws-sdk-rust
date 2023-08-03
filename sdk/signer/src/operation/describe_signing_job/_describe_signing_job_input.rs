@@ -40,6 +40,10 @@ impl DescribeSigningJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the signing job on input.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
     pub fn build(
         self,

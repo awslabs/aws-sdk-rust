@@ -40,6 +40,10 @@ impl SigninDelegateGroupBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`SigninDelegateGroup`](crate::types::SigninDelegateGroup).
     pub fn build(self) -> crate::types::SigninDelegateGroup {
         crate::types::SigninDelegateGroup {

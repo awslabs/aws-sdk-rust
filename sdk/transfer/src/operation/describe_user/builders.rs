@@ -37,6 +37,10 @@ impl DescribeUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_user::builders::DescribeUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DescribeUserFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -128,5 +136,9 @@ impl DescribeUserFluentBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
+    }
+    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
     }
 }

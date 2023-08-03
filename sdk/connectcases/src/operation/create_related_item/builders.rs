@@ -38,6 +38,12 @@ impl CreateRelatedItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRelatedItem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateRelatedItemFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
@@ -138,6 +148,10 @@ impl CreateRelatedItemFluentBuilder {
         self.inner = self.inner.set_case_id(input);
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
+    }
     /// <p>The type of a related item.</p>
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -147,6 +161,10 @@ impl CreateRelatedItemFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of a related item.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
+        self.inner.get_type()
     }
     /// <p>The content of a related item to be created.</p>
     pub fn content(mut self, input: crate::types::RelatedItemInputContent) -> Self {
@@ -160,5 +178,9 @@ impl CreateRelatedItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The content of a related item to be created.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemInputContent> {
+        self.inner.get_content()
     }
 }

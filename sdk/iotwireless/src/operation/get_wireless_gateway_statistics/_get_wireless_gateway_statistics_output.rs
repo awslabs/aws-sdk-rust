@@ -72,6 +72,10 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
         self.wireless_gateway_id = input;
         self
     }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn get_wireless_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_id
+    }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
@@ -92,6 +96,12 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
         self.last_uplink_received_at = input;
         self
     }
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
+    pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_uplink_received_at
+    }
     /// <p>The connection status of the wireless gateway.</p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
@@ -104,6 +114,10 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
     ) -> Self {
         self.connection_status = input;
         self
+    }
+    /// <p>The connection status of the wireless gateway.</p>
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.connection_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl DescribeExportTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExportTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeExportTasksFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
     pub fn status_code(mut self, input: crate::types::ExportTaskStatusCode) -> Self {
         self.inner = self.inner.status_code(input);
@@ -139,6 +149,10 @@ impl DescribeExportTasksFluentBuilder {
         self.inner = self.inner.set_status_code(input);
         self
     }
+    /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ExportTaskStatusCode> {
+        self.inner.get_status_code()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,6 +163,10 @@ impl DescribeExportTasksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -158,5 +176,9 @@ impl DescribeExportTasksFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -45,6 +45,10 @@ impl DeleteVoiceConnectorStreamingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorStreamingConfigurationInput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

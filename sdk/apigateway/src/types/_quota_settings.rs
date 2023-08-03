@@ -56,6 +56,10 @@ impl QuotaSettingsBuilder {
         self.limit = input;
         self
     }
+    /// <p>The target maximum number of requests that can be made in a given time period.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl QuotaSettingsBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
     pub fn period(mut self, input: crate::types::QuotaPeriodType) -> Self {
@@ -78,6 +86,10 @@ impl QuotaSettingsBuilder {
     ) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::QuotaPeriodType> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`QuotaSettings`](crate::types::QuotaSettings).
     pub fn build(self) -> crate::types::QuotaSettings {

@@ -52,6 +52,12 @@ impl CreateVerifiedAccessEndpointOutputBuilder {
         self.verified_access_endpoint = input;
         self
     }
+    /// <p>The ID of the Verified Access endpoint.</p>
+    pub fn get_verified_access_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpoint> {
+        &self.verified_access_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

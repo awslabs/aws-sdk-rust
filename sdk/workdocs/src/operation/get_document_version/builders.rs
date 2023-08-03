@@ -36,6 +36,12 @@ impl GetDocumentVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDocumentVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetDocumentVersionFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_id(input.into());
@@ -141,6 +151,10 @@ impl GetDocumentVersionFluentBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_id(input);
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_id()
     }
     /// <p>The version ID of the document.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl GetDocumentVersionFluentBuilder {
         self.inner = self.inner.set_version_id(input);
         self
     }
+    /// <p>The version ID of the document.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
+    }
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fields(input.into());
@@ -162,6 +180,10 @@ impl GetDocumentVersionFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fields()
+    }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub fn include_custom_metadata(mut self, input: bool) -> Self {
         self.inner = self.inner.include_custom_metadata(input);
@@ -171,5 +193,9 @@ impl GetDocumentVersionFluentBuilder {
     pub fn set_include_custom_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_custom_metadata(input);
         self
+    }
+    /// <p>Set this to TRUE to include custom metadata in the response.</p>
+    pub fn get_include_custom_metadata(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_custom_metadata()
     }
 }

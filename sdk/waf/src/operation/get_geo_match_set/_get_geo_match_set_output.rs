@@ -49,6 +49,10 @@ impl GetGeoMatchSetOutputBuilder {
         self.geo_match_set = input;
         self
     }
+    /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
+    pub fn get_geo_match_set(&self) -> &::std::option::Option<crate::types::GeoMatchSet> {
+        &self.geo_match_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

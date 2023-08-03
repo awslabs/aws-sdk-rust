@@ -84,6 +84,10 @@ impl GetRetainedMessageOutputBuilder {
         self.topic = input;
         self
     }
+    /// <p>The topic name to which the retained message was published.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl GetRetainedMessageOutputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The Base64-encoded message payload of the retained message body.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn qos(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl GetRetainedMessageOutputBuilder {
         self.qos = input;
         self
     }
+    /// <p>The quality of service (QoS) level used to publish the retained message.</p>
+    pub fn get_qos(&self) -> &::std::option::Option<i32> {
+        &self.qos
+    }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl GetRetainedMessageOutputBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
@@ -130,6 +146,12 @@ impl GetRetainedMessageOutputBuilder {
     ) -> Self {
         self.user_properties = input;
         self
+    }
+    /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    pub fn get_user_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.user_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

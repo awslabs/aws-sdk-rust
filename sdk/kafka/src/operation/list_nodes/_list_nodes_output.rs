@@ -54,6 +54,10 @@ impl ListNodesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `node_info_list`.
     ///
     /// To override the contents of this collection use [`set_node_info_list`](Self::set_node_info_list).
@@ -72,6 +76,12 @@ impl ListNodesOutputBuilder {
     ) -> Self {
         self.node_info_list = input;
         self
+    }
+    /// <p>List containing a NodeInfo object.</p>
+    pub fn get_node_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>> {
+        &self.node_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -41,6 +41,10 @@ impl GetPipelineStateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pipeline about which you want to get information.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
     pub fn build(
         self,

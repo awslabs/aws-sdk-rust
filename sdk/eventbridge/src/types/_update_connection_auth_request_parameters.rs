@@ -85,6 +85,12 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         self.basic_auth_parameters = input;
         self
     }
+    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    pub fn get_basic_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters> {
+        &self.basic_auth_parameters
+    }
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     pub fn o_auth_parameters(
         mut self,
@@ -100,6 +106,12 @@ impl UpdateConnectionAuthRequestParametersBuilder {
     ) -> Self {
         self.o_auth_parameters = input;
         self
+    }
+    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    pub fn get_o_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters> {
+        &self.o_auth_parameters
     }
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     pub fn api_key_auth_parameters(
@@ -117,6 +129,12 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         self.api_key_auth_parameters = input;
         self
     }
+    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    pub fn get_api_key_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters> {
+        &self.api_key_auth_parameters
+    }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     pub fn invocation_http_parameters(
         mut self,
@@ -132,6 +150,12 @@ impl UpdateConnectionAuthRequestParametersBuilder {
     ) -> Self {
         self.invocation_http_parameters = input;
         self
+    }
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    pub fn get_invocation_http_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
+        &self.invocation_http_parameters
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAuthRequestParameters`](crate::types::UpdateConnectionAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionAuthRequestParameters {

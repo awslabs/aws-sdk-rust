@@ -40,6 +40,10 @@ impl CodeSourceBuilder {
         self.s3 = input;
         self
     }
+    /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`CodeSource`](crate::types::CodeSource).
     pub fn build(self) -> crate::types::CodeSource {
         crate::types::CodeSource { s3: self.s3 }

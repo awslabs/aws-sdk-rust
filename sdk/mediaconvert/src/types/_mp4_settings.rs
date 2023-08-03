@@ -83,6 +83,10 @@ impl Mp4SettingsBuilder {
         self.audio_duration = input;
         self
     }
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::CmfcAudioDuration> {
+        &self.audio_duration
+    }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub fn cslg_atom(mut self, input: crate::types::Mp4CslgAtom) -> Self {
         self.cslg_atom = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl Mp4SettingsBuilder {
         self.cslg_atom = input;
         self
     }
+    /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+    pub fn get_cslg_atom(&self) -> &::std::option::Option<crate::types::Mp4CslgAtom> {
+        &self.cslg_atom
+    }
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
     pub fn ctts_version(mut self, input: i32) -> Self {
         self.ctts_version = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl Mp4SettingsBuilder {
     pub fn set_ctts_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ctts_version = input;
         self
+    }
+    /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+    pub fn get_ctts_version(&self) -> &::std::option::Option<i32> {
+        &self.ctts_version
     }
     /// Inserts a free-space box immediately after the moov box.
     pub fn free_space_box(mut self, input: crate::types::Mp4FreeSpaceBox) -> Self {
@@ -119,6 +131,10 @@ impl Mp4SettingsBuilder {
         self.free_space_box = input;
         self
     }
+    /// Inserts a free-space box immediately after the moov box.
+    pub fn get_free_space_box(&self) -> &::std::option::Option<crate::types::Mp4FreeSpaceBox> {
+        &self.free_space_box
+    }
     /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
     pub fn moov_placement(mut self, input: crate::types::Mp4MoovPlacement) -> Self {
         self.moov_placement = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl Mp4SettingsBuilder {
     ) -> Self {
         self.moov_placement = input;
         self
+    }
+    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    pub fn get_moov_placement(&self) -> &::std::option::Option<crate::types::Mp4MoovPlacement> {
+        &self.moov_placement
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub fn mp4_major_brand(
@@ -147,6 +167,10 @@ impl Mp4SettingsBuilder {
     ) -> Self {
         self.mp4_major_brand = input;
         self
+    }
+    /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
+    pub fn get_mp4_major_brand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mp4_major_brand
     }
     /// Consumes the builder and constructs a [`Mp4Settings`](crate::types::Mp4Settings).
     pub fn build(self) -> crate::types::Mp4Settings {

@@ -72,6 +72,10 @@ impl VeevaSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Veeva flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn document_type(
         mut self,
@@ -88,6 +92,10 @@ impl VeevaSourcePropertiesBuilder {
         self.document_type = input;
         self
     }
+    /// <p>The document type specified in the Veeva document extract flow.</p>
+    pub fn get_document_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_type
+    }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn include_source_files(mut self, input: bool) -> Self {
         self.include_source_files = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl VeevaSourcePropertiesBuilder {
     pub fn set_include_source_files(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_source_files = input;
         self
+    }
+    /// <p>Boolean value to include source files in Veeva document extract flow.</p>
+    pub fn get_include_source_files(&self) -> &::std::option::Option<bool> {
+        &self.include_source_files
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn include_renditions(mut self, input: bool) -> Self {
@@ -108,6 +120,10 @@ impl VeevaSourcePropertiesBuilder {
         self.include_renditions = input;
         self
     }
+    /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+    pub fn get_include_renditions(&self) -> &::std::option::Option<bool> {
+        &self.include_renditions
+    }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn include_all_versions(mut self, input: bool) -> Self {
         self.include_all_versions = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl VeevaSourcePropertiesBuilder {
     pub fn set_include_all_versions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_versions = input;
         self
+    }
+    /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
+    pub fn get_include_all_versions(&self) -> &::std::option::Option<bool> {
+        &self.include_all_versions
     }
     /// Consumes the builder and constructs a [`VeevaSourceProperties`](crate::types::VeevaSourceProperties).
     pub fn build(self) -> crate::types::VeevaSourceProperties {

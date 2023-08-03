@@ -37,6 +37,10 @@ impl PauseServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PauseService as a reference.
+    pub fn as_input(&self) -> &crate::operation::pause_service::builders::PauseServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl PauseServiceFluentBuilder {
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_arn()
     }
 }

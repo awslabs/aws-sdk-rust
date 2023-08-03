@@ -123,6 +123,10 @@ impl ContactMethodBuilder {
         self.contact_endpoint = input;
         self
     }
+    /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
+    pub fn get_contact_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_endpoint
+    }
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
@@ -148,6 +152,16 @@ impl ContactMethodBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the contact method.</p>
+    /// <p>A contact method has the following possible status:</p>
+    /// <ul>
+    /// <li> <p> <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p> </li>
+    /// <li> <p> <code>Valid</code> - The contact method has been verified.</p> </li>
+    /// <li> <p> <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactMethodStatus> {
+        &self.status
+    }
     /// <p>The protocol of the contact method, such as email or SMS (text messaging).</p>
     pub fn protocol(mut self, input: crate::types::ContactProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -161,6 +175,10 @@ impl ContactMethodBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol of the contact method, such as email or SMS (text messaging).</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactProtocol> {
+        &self.protocol
+    }
     /// <p>The name of the contact method.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -171,6 +189,10 @@ impl ContactMethodBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the contact method.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -180,6 +202,10 @@ impl ContactMethodBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The timestamp when the contact method was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -194,6 +220,10 @@ impl ContactMethodBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the contact method was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -206,6 +236,10 @@ impl ContactMethodBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
     }
     /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -220,6 +254,10 @@ impl ContactMethodBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail contact method. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -229,6 +267,10 @@ impl ContactMethodBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail contact method. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// Consumes the builder and constructs a [`ContactMethod`](crate::types::ContactMethod).
     pub fn build(self) -> crate::types::ContactMethod {

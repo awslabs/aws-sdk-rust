@@ -46,6 +46,10 @@ impl CreateAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_alias::builders::CreateAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl CreateAliasFluentBuilder {
         self.inner = self.inner.set_alias_name(input);
         self
     }
+    /// <p>A friendly name that you can use to refer a key. An alias must begin with <code>alias/</code> followed by a name, for example <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).</p> <important>
+    /// <p>Don't include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
+    }
     /// <p>The <code>KeyARN</code> of the key to associate with the alias.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_arn(input.into());
@@ -141,5 +151,9 @@ impl CreateAliasFluentBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_arn(input);
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key to associate with the alias.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_arn()
     }
 }

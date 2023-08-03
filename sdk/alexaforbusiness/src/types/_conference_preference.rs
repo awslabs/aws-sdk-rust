@@ -46,6 +46,12 @@ impl ConferencePreferenceBuilder {
         self.default_conference_provider_arn = input;
         self
     }
+    /// <p>The ARN of the default conference provider.</p>
+    pub fn get_default_conference_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_conference_provider_arn
+    }
     /// Consumes the builder and constructs a [`ConferencePreference`](crate::types::ConferencePreference).
     pub fn build(self) -> crate::types::ConferencePreference {
         crate::types::ConferencePreference {

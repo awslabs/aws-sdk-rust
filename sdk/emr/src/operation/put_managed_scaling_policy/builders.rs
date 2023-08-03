@@ -37,6 +37,13 @@ impl PutManagedScalingPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutManagedScalingPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl PutManagedScalingPolicyFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>Specifies the constraints for the managed scaling policy. </p>
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
         self.inner = self.inner.managed_scaling_policy(input);
@@ -139,5 +150,11 @@ impl PutManagedScalingPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_managed_scaling_policy(input);
         self
+    }
+    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    pub fn get_managed_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
+        self.inner.get_managed_scaling_policy()
     }
 }

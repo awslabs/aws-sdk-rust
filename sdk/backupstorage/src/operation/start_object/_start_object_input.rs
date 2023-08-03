@@ -61,6 +61,10 @@ impl StartObjectInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// Name for the object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl StartObjectInputBuilder {
         self.object_name = input;
         self
     }
+    /// Name for the object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_name
+    }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
         self.throw_on_duplicate = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl StartObjectInputBuilder {
     pub fn set_throw_on_duplicate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.throw_on_duplicate = input;
         self
+    }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
     pub fn build(

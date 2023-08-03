@@ -54,6 +54,10 @@ impl ComponentVersionBuilder {
         self.component_type = input;
         self
     }
+    /// <p>Component type.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
+    }
     /// Appends an item to `versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -72,6 +76,10 @@ impl ComponentVersionBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>List of versions.</p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.versions
     }
     /// Consumes the builder and constructs a [`ComponentVersion`](crate::types::ComponentVersion).
     pub fn build(self) -> crate::types::ComponentVersion {

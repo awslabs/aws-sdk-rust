@@ -51,6 +51,12 @@ impl GetMultiRegionAccessPointPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The policy associated with the specified Multi-Region Access Point.</p>
+    pub fn get_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

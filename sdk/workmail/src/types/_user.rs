@@ -96,6 +96,10 @@ impl UserBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the user.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The email of the user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl UserBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email of the user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The name of the user.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl UserBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl UserBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the user.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
@@ -136,6 +152,10 @@ impl UserBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
+        &self.state
+    }
     /// <p>The role of the user.</p>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
         self.user_role = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl UserBuilder {
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.user_role = input;
         self
+    }
+    /// <p>The role of the user.</p>
+    pub fn get_user_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        &self.user_role
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +183,10 @@ impl UserBuilder {
         self.enabled_date = input;
         self
     }
+    /// <p>The date indicating when the user was enabled for WorkMail use.</p>
+    pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enabled_date
+    }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disabled_date = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl UserBuilder {
     ) -> Self {
         self.disabled_date = input;
         self
+    }
+    /// <p>The date indicating when the user was disabled from WorkMail use.</p>
+    pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disabled_date
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

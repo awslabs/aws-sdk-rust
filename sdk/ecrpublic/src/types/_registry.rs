@@ -72,6 +72,10 @@ impl RegistryBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RegistryBuilder {
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
     pub fn registry_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl RegistryBuilder {
         self.registry_uri = input;
         self
     }
+    /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
+    pub fn get_registry_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_uri
+    }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl RegistryBuilder {
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified = input;
         self
+    }
+    /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
+    pub fn get_verified(&self) -> &::std::option::Option<bool> {
+        &self.verified
     }
     /// Appends an item to `aliases`.
     ///
@@ -120,6 +136,12 @@ impl RegistryBuilder {
     ) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>An array of objects that represents the aliases for a public registry.</p>
+    pub fn get_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>> {
+        &self.aliases
     }
     /// Consumes the builder and constructs a [`Registry`](crate::types::Registry).
     pub fn build(self) -> crate::types::Registry {

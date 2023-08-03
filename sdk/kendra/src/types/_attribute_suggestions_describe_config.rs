@@ -64,6 +64,12 @@ impl AttributeSuggestionsDescribeConfigBuilder {
         self.suggestable_config_list = input;
         self
     }
+    /// <p>The list of fields/attributes that you want to set as suggestible for query suggestions.</p>
+    pub fn get_suggestable_config_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>> {
+        &self.suggestable_config_list
+    }
     /// <p>The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code> for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
     pub fn attribute_suggestions_mode(
         mut self,
@@ -79,6 +85,12 @@ impl AttributeSuggestionsDescribeConfigBuilder {
     ) -> Self {
         self.attribute_suggestions_mode = input;
         self
+    }
+    /// <p>The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code> for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
+    pub fn get_attribute_suggestions_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeSuggestionsMode> {
+        &self.attribute_suggestions_mode
     }
     /// Consumes the builder and constructs a [`AttributeSuggestionsDescribeConfig`](crate::types::AttributeSuggestionsDescribeConfig).
     pub fn build(self) -> crate::types::AttributeSuggestionsDescribeConfig {

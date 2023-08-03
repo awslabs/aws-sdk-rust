@@ -64,6 +64,12 @@ impl DetachInstancesInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -80,6 +86,10 @@ impl DetachInstancesInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.should_decrement_desired_capacity = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl DetachInstancesInputBuilder {
     ) -> Self {
         self.should_decrement_desired_capacity = input;
         self
+    }
+    /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
+    pub fn get_should_decrement_desired_capacity(&self) -> &::std::option::Option<bool> {
+        &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`DetachInstancesInput`](crate::operation::detach_instances::DetachInstancesInput).
     pub fn build(

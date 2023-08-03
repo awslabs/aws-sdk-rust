@@ -70,6 +70,12 @@ impl DomainSettingsForUpdateBuilder {
         self.r_studio_server_pro_domain_settings_for_update = input;
         self
     }
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
+    pub fn get_r_studio_server_pro_domain_settings_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate> {
+        &self.r_studio_server_pro_domain_settings_for_update
+    }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
     pub fn execution_role_identity_config(
         mut self,
@@ -85,6 +91,12 @@ impl DomainSettingsForUpdateBuilder {
     ) -> Self {
         self.execution_role_identity_config = input;
         self
+    }
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
+    pub fn get_execution_role_identity_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
+        &self.execution_role_identity_config
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -107,6 +119,12 @@ impl DomainSettingsForUpdateBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
     pub fn build(self) -> crate::types::DomainSettingsForUpdate {

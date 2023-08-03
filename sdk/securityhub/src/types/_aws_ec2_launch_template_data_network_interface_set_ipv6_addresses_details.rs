@@ -40,6 +40,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetailsBuilder {
         self.ipv6_address = input;
         self
     }
+    /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
     pub fn build(
         self,

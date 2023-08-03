@@ -36,6 +36,10 @@ impl CreateCustomRoutingListenerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomRoutingListener as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateCustomRoutingListenerFluentBuilder {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accelerator_arn()
+    }
     /// Appends an item to `PortRanges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
@@ -151,6 +159,13 @@ impl CreateCustomRoutingListenerFluentBuilder {
         self.inner = self.inner.set_port_ranges(input);
         self
     }
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    pub fn get_port_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        self.inner.get_port_ranges()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(
         mut self,
@@ -166,5 +181,9 @@ impl CreateCustomRoutingListenerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

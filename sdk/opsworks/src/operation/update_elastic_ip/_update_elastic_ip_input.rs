@@ -47,6 +47,10 @@ impl UpdateElasticIpInputBuilder {
         self.elastic_ip = input;
         self
     }
+    /// <p>The IP address for which you want to update the name.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
+    }
     /// <p>The new name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateElasticIpInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The new name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateElasticIpInput`](crate::operation::update_elastic_ip::UpdateElasticIpInput).
     pub fn build(

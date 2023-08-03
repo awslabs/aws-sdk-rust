@@ -43,6 +43,10 @@ impl IntegrationsBuilder {
         self.resource_group = input;
         self
     }
+    /// <p> The information about the resource group integration.</p>
+    pub fn get_resource_group(&self) -> &::std::option::Option<crate::types::ResourceGroup> {
+        &self.resource_group
+    }
     /// Consumes the builder and constructs a [`Integrations`](crate::types::Integrations).
     pub fn build(self) -> crate::types::Integrations {
         crate::types::Integrations {

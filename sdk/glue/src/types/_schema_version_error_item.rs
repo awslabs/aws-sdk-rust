@@ -48,6 +48,10 @@ impl SchemaVersionErrorItemBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
+    }
     /// <p>The details of the error for the schema version.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SchemaVersionErrorItemBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>The details of the error for the schema version.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
     pub fn build(self) -> crate::types::SchemaVersionErrorItem {

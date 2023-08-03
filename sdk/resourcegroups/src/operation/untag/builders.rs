@@ -41,6 +41,10 @@ impl UntagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Untag as a reference.
+    pub fn as_input(&self) -> &crate::operation::untag::builders::UntagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl UntagFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `Keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -139,5 +147,9 @@ impl UntagFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_keys(input);
         self
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_keys()
     }
 }

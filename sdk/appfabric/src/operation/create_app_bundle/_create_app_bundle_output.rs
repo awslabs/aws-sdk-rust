@@ -47,6 +47,10 @@ impl CreateAppBundleOutputBuilder {
         self.app_bundle = input;
         self
     }
+    /// <p>Contains information about an app bundle.</p>
+    pub fn get_app_bundle(&self) -> &::std::option::Option<crate::types::AppBundle> {
+        &self.app_bundle
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

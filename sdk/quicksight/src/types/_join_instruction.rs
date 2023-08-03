@@ -84,6 +84,10 @@ impl JoinInstructionBuilder {
         self.left_operand = input;
         self
     }
+    /// <p>The operand on the left side of a join.</p>
+    pub fn get_left_operand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.left_operand
+    }
     /// <p>The operand on the right side of a join.</p>
     pub fn right_operand(
         mut self,
@@ -100,6 +104,10 @@ impl JoinInstructionBuilder {
         self.right_operand = input;
         self
     }
+    /// <p>The operand on the right side of a join.</p>
+    pub fn get_right_operand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.right_operand
+    }
     /// <p>Join key properties of the left operand.</p>
     pub fn left_join_key_properties(mut self, input: crate::types::JoinKeyProperties) -> Self {
         self.left_join_key_properties = ::std::option::Option::Some(input);
@@ -112,6 +120,12 @@ impl JoinInstructionBuilder {
     ) -> Self {
         self.left_join_key_properties = input;
         self
+    }
+    /// <p>Join key properties of the left operand.</p>
+    pub fn get_left_join_key_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::JoinKeyProperties> {
+        &self.left_join_key_properties
     }
     /// <p>Join key properties of the right operand.</p>
     pub fn right_join_key_properties(mut self, input: crate::types::JoinKeyProperties) -> Self {
@@ -126,6 +140,12 @@ impl JoinInstructionBuilder {
         self.right_join_key_properties = input;
         self
     }
+    /// <p>Join key properties of the right operand.</p>
+    pub fn get_right_join_key_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::JoinKeyProperties> {
+        &self.right_join_key_properties
+    }
     /// <p>The type of join that it is.</p>
     pub fn r#type(mut self, input: crate::types::JoinType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -136,6 +156,10 @@ impl JoinInstructionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of join that it is.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::JoinType> {
+        &self.r#type
+    }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
     pub fn on_clause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_clause = ::std::option::Option::Some(input.into());
@@ -145,6 +169,10 @@ impl JoinInstructionBuilder {
     pub fn set_on_clause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_clause = input;
         self
+    }
+    /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
+    pub fn get_on_clause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_clause
     }
     /// Consumes the builder and constructs a [`JoinInstruction`](crate::types::JoinInstruction).
     pub fn build(self) -> crate::types::JoinInstruction {

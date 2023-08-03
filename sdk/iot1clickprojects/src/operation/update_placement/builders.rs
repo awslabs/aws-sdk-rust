@@ -36,6 +36,12 @@ impl UpdatePlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePlacement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_placement::builders::UpdatePlacementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdatePlacementFluentBuilder {
         self.inner = self.inner.set_placement_name(input);
         self
     }
+    /// <p>The name of the placement to update.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
+    }
     /// <p>The name of the project containing the placement to be updated.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -141,6 +151,10 @@ impl UpdatePlacementFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The name of the project containing the placement to be updated.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -164,5 +178,13 @@ impl UpdatePlacementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
     }
 }

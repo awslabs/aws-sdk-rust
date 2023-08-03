@@ -56,6 +56,10 @@ impl UserInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user who made the specified commit.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The email address associated with the user who made the commit, if any.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UserInfoBuilder {
         self.email = input;
         self
     }
+    /// <p>The email address associated with the user who made the commit, if any.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
     pub fn date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UserInfoBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date = input;
         self
+    }
+    /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date
     }
     /// Consumes the builder and constructs a [`UserInfo`](crate::types::UserInfo).
     pub fn build(self) -> crate::types::UserInfo {

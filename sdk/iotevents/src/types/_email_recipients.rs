@@ -51,6 +51,10 @@ impl EmailRecipientsBuilder {
         self.to = input;
         self
     }
+    /// <p>Specifies one or more recipients who receive the email.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>> {
+        &self.to
+    }
     /// Consumes the builder and constructs a [`EmailRecipients`](crate::types::EmailRecipients).
     pub fn build(self) -> crate::types::EmailRecipients {
         crate::types::EmailRecipients { to: self.to }

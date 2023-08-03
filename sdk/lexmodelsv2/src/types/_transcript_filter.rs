@@ -45,6 +45,12 @@ impl TranscriptFilterBuilder {
         self.lex_transcript_filter = input;
         self
     }
+    /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
+    pub fn get_lex_transcript_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::LexTranscriptFilter> {
+        &self.lex_transcript_filter
+    }
     /// Consumes the builder and constructs a [`TranscriptFilter`](crate::types::TranscriptFilter).
     pub fn build(self) -> crate::types::TranscriptFilter {
         crate::types::TranscriptFilter {

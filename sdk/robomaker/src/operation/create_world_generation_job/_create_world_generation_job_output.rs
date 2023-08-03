@@ -280,6 +280,10 @@ impl CreateWorldGenerationJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the world generator job.</p>
     /// <dl>
     /// <dt>
@@ -381,6 +385,54 @@ impl CreateWorldGenerationJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the world generator job.</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// Running
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorldGenerationJobStatus> {
+        &self.status
+    }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -393,6 +445,10 @@ impl CreateWorldGenerationJobOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
@@ -471,6 +527,44 @@ impl CreateWorldGenerationJobOutputBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code of the world generator job if it failed:</p>
+    /// <dl>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
+    /// <dd>
+    /// <p>Internal service error.</p>
+    /// </dd>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// </dd>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
+    /// <dd>
+    /// <p>The specified resource could not be found. </p>
+    /// </dd>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
+    /// <dd>
+    /// <p>The request was throttled.</p>
+    /// </dd>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
+    /// <dd>
+    /// <p>An input parameter in the request is not valid.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
         mut self,
@@ -487,6 +581,10 @@ impl CreateWorldGenerationJobOutputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
@@ -496,6 +594,10 @@ impl CreateWorldGenerationJobOutputBuilder {
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
     }
     /// <p>Information about the world count. </p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
@@ -509,6 +611,10 @@ impl CreateWorldGenerationJobOutputBuilder {
     ) -> Self {
         self.world_count = input;
         self
+    }
+    /// <p>Information about the world count. </p>
+    pub fn get_world_count(&self) -> &::std::option::Option<crate::types::WorldCount> {
+        &self.world_count
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -535,6 +641,14 @@ impl CreateWorldGenerationJobOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Adds a key-value pair to `world_tags`.
     ///
     /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
@@ -559,6 +673,14 @@ impl CreateWorldGenerationJobOutputBuilder {
     ) -> Self {
         self.world_tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    pub fn get_world_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.world_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

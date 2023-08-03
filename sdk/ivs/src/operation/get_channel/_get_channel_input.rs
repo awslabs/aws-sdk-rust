@@ -39,6 +39,10 @@ impl GetChannelInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
     pub fn build(
         self,

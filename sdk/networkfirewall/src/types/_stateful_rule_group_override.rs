@@ -43,6 +43,10 @@ impl StatefulRuleGroupOverrideBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::OverrideAction> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`StatefulRuleGroupOverride`](crate::types::StatefulRuleGroupOverride).
     pub fn build(self) -> crate::types::StatefulRuleGroupOverride {
         crate::types::StatefulRuleGroupOverride {

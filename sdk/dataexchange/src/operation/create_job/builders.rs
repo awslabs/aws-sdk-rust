@@ -36,6 +36,10 @@ impl CreateJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_job::builders::CreateJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_details(input);
         self
     }
+    /// <p>The details for the CreateJob request.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::RequestDetails> {
+        self.inner.get_details()
+    }
     /// <p>The type of job to be created.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -130,5 +138,9 @@ impl CreateJobFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of job to be created.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
 }

@@ -36,6 +36,12 @@ impl GetAssignmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAssignment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_assignment::builders::GetAssignmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl GetAssignmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
+    }
+    /// <p>The ID of the Assignment to be retrieved.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_id()
     }
 }

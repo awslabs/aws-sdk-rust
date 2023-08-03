@@ -37,6 +37,10 @@ impl DeleteDomainConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDomainConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl DeleteDomainConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
+    }
+    /// <p>The name of the domain configuration to be deleted.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_configuration_name()
     }
 }

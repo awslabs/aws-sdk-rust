@@ -39,6 +39,10 @@ impl DeleteBusinessReportScheduleInputBuilder {
         self.schedule_arn = input;
         self
     }
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_arn
+    }
     /// Consumes the builder and constructs a [`DeleteBusinessReportScheduleInput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput).
     pub fn build(
         self,

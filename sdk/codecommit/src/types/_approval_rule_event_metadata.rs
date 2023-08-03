@@ -62,6 +62,10 @@ impl ApprovalRuleEventMetadataBuilder {
         self.approval_rule_name = input;
         self
     }
+    /// <p>The name of the approval rule.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_name
+    }
     /// <p>The system-generated ID of the approval rule.</p>
     pub fn approval_rule_id(
         mut self,
@@ -78,6 +82,10 @@ impl ApprovalRuleEventMetadataBuilder {
         self.approval_rule_id = input;
         self
     }
+    /// <p>The system-generated ID of the approval rule.</p>
+    pub fn get_approval_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_id
+    }
     /// <p>The content of the approval rule.</p>
     pub fn approval_rule_content(
         mut self,
@@ -93,6 +101,10 @@ impl ApprovalRuleEventMetadataBuilder {
     ) -> Self {
         self.approval_rule_content = input;
         self
+    }
+    /// <p>The content of the approval rule.</p>
+    pub fn get_approval_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_content
     }
     /// Consumes the builder and constructs a [`ApprovalRuleEventMetadata`](crate::types::ApprovalRuleEventMetadata).
     pub fn build(self) -> crate::types::ApprovalRuleEventMetadata {

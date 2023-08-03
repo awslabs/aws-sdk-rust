@@ -55,6 +55,10 @@ impl ListTestGridSessionActionsInputBuilder {
         self.session_arn = input;
         self
     }
+    /// <p>The ARN of the session to retrieve.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
+    }
     /// <p>The maximum number of sessions to return per response.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.max_result = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListTestGridSessionActionsInputBuilder {
         self.max_result = input;
         self
     }
+    /// <p>The maximum number of sessions to return per response.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        &self.max_result
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListTestGridSessionActionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionActionsInput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput).
     pub fn build(

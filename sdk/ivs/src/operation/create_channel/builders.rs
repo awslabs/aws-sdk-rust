@@ -36,6 +36,12 @@ impl CreateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Channel name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
     pub fn latency_mode(mut self, input: crate::types::ChannelLatencyMode) -> Self {
         self.inner = self.inner.latency_mode(input);
@@ -130,6 +140,10 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_latency_mode(input);
         self
+    }
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
+    pub fn get_latency_mode(&self) -> &::std::option::Option<crate::types::ChannelLatencyMode> {
+        self.inner.get_latency_mode()
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Some types generate multiple qualities (renditions) from the original input; this automatically gives viewers the best experience for their devices and network conditions. Some types provide transcoded video; transcoding allows higher playback quality across a range of download speeds. Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
@@ -163,6 +177,21 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Some types generate multiple qualities (renditions) from the original input; this automatically gives viewers the best experience for their devices and network conditions. Some types provide transcoded video; transcoding allows higher playback quality across a range of download speeds. Default: <code>STANDARD</code>. Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input quality to viewers. The viewer’s video-quality choice is limited to the original input. Input resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p. Original audio is passed through.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default when you create a channel.</p> </li>
+    /// <li> <p> <code>ADVANCED_SD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at SD quality (480p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li>
+    /// <li> <p> <code>ADVANCED_HD</code>: Video is transcoded; multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Input resolution can be up to 1080p and bitrate can be up to 8.5 Mbps; output is capped at HD quality (720p). You can select an optional transcode preset (see below). Audio for all renditions is transcoded, and an audio-only rendition is available.</p> </li>
+    /// </ul>
+    /// <p>Optional <i>transcode presets</i> (available for the <code>ADVANCED</code> types) allow you to trade off available download bandwidth and video quality, to optimize the viewing experience. There are two presets:</p>
+    /// <ul>
+    /// <li> <p> <i>Constrained bandwidth delivery</i> uses a lower bitrate for each quality level. Use it if you have low download bandwidth and/or simple video content (e.g., talking heads)</p> </li>
+    /// <li> <p> <i>Higher bandwidth delivery</i> uses a higher bitrate for each quality level. Use it if you have high download bandwidth and/or complex video content (e.g., flashes and quick scene changes).</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        self.inner.get_type()
+    }
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub fn authorized(mut self, input: bool) -> Self {
         self.inner = self.inner.authorized(input);
@@ -172,6 +201,10 @@ impl CreateChannelFluentBuilder {
     pub fn set_authorized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_authorized(input);
         self
+    }
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+    pub fn get_authorized(&self) -> &::std::option::Option<bool> {
+        self.inner.get_authorized()
     }
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
     pub fn recording_configuration_arn(
@@ -188,6 +221,10 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recording_configuration_arn(input);
         self
+    }
+    /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
+    pub fn get_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recording_configuration_arn()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -212,6 +249,14 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(mut self, input: bool) -> Self {
         self.inner = self.inner.insecure_ingest(input);
@@ -221,6 +266,10 @@ impl CreateChannelFluentBuilder {
     pub fn set_insecure_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_insecure_ingest(input);
         self
+    }
+    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
+        self.inner.get_insecure_ingest()
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub fn preset(mut self, input: crate::types::TranscodePreset) -> Self {
@@ -234,5 +283,9 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preset(input);
         self
+    }
+    /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
+    pub fn get_preset(&self) -> &::std::option::Option<crate::types::TranscodePreset> {
+        self.inner.get_preset()
     }
 }

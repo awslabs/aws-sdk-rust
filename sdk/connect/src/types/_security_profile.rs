@@ -113,6 +113,10 @@ impl SecurityProfileBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the security profile.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The organization resource identifier for the security profile.</p>
     pub fn organization_resource_id(
         mut self,
@@ -129,6 +133,10 @@ impl SecurityProfileBuilder {
         self.organization_resource_id = input;
         self
     }
+    /// <p>The organization resource identifier for the security profile.</p>
+    pub fn get_organization_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_resource_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -138,6 +146,10 @@ impl SecurityProfileBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name for the security profile.</p>
     pub fn security_profile_name(
@@ -155,6 +167,10 @@ impl SecurityProfileBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name for the security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The description of the security profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +180,10 @@ impl SecurityProfileBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the security profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -190,6 +210,14 @@ impl SecurityProfileBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Adds a key-value pair to `allowed_access_control_tags`.
     ///
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
@@ -215,6 +243,14 @@ impl SecurityProfileBuilder {
         self.allowed_access_control_tags = input;
         self
     }
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn get_allowed_access_control_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.allowed_access_control_tags
+    }
     /// Appends an item to `tag_restricted_resources`.
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
@@ -236,6 +272,12 @@ impl SecurityProfileBuilder {
     ) -> Self {
         self.tag_restricted_resources = input;
         self
+    }
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    pub fn get_tag_restricted_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_restricted_resources
     }
     /// Consumes the builder and constructs a [`SecurityProfile`](crate::types::SecurityProfile).
     pub fn build(self) -> crate::types::SecurityProfile {

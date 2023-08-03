@@ -54,6 +54,10 @@ impl CreateCaseOutputBuilder {
         self.case_id = input;
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
     pub fn case_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateCaseOutputBuilder {
     pub fn set_case_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the case.</p>
+    pub fn get_case_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

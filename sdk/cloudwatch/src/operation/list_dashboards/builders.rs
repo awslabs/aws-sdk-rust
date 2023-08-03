@@ -37,6 +37,12 @@ impl ListDashboardsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDashboards as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_dashboards::builders::ListDashboardsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl ListDashboardsFluentBuilder {
         self.inner = self.inner.set_dashboard_name_prefix(input);
         self
     }
+    /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
+    pub fn get_dashboard_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_name_prefix()
+    }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,5 +155,9 @@ impl ListDashboardsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

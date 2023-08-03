@@ -64,6 +64,10 @@ impl UserTurnSlotOutputBuilder {
         self.value = input;
         self
     }
+    /// <p>The value output by the slot recognition.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -82,6 +86,12 @@ impl UserTurnSlotOutputBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>Values that are output by the slot recognition.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>> {
+        &self.values
     }
     /// Adds a key-value pair to `sub_slots`.
     ///
@@ -107,6 +117,14 @@ impl UserTurnSlotOutputBuilder {
     ) -> Self {
         self.sub_slots = input;
         self
+    }
+    /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
+    pub fn get_sub_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
+    > {
+        &self.sub_slots
     }
     /// Consumes the builder and constructs a [`UserTurnSlotOutput`](crate::types::UserTurnSlotOutput).
     pub fn build(self) -> crate::types::UserTurnSlotOutput {

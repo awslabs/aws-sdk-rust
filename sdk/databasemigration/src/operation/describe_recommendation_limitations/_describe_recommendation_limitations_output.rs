@@ -54,6 +54,10 @@ impl DescribeRecommendationLimitationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `limitations`.
     ///
     /// To override the contents of this collection use [`set_limitations`](Self::set_limitations).
@@ -72,6 +76,12 @@ impl DescribeRecommendationLimitationsOutputBuilder {
     ) -> Self {
         self.limitations = input;
         self
+    }
+    /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
+    pub fn get_limitations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Limitation>> {
+        &self.limitations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

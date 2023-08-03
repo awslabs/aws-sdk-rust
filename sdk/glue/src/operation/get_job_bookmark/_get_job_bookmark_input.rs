@@ -47,6 +47,10 @@ impl GetJobBookmarkInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job in question.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The unique run identifier associated with this job run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetJobBookmarkInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The unique run identifier associated with this job run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`GetJobBookmarkInput`](crate::operation::get_job_bookmark::GetJobBookmarkInput).
     pub fn build(

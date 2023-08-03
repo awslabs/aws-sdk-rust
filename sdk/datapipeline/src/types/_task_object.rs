@@ -72,6 +72,10 @@ impl TaskObjectBuilder {
         self.task_id = input;
         self
     }
+    /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The ID of the pipeline that provided the task.</p>
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl TaskObjectBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline that provided the task.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     pub fn attempt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attempt_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl TaskObjectBuilder {
     pub fn set_attempt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attempt_id = input;
         self
+    }
+    /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
+    pub fn get_attempt_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attempt_id
     }
     /// Adds a key-value pair to `objects`.
     ///
@@ -116,6 +128,14 @@ impl TaskObjectBuilder {
     ) -> Self {
         self.objects = input;
         self
+    }
+    /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    pub fn get_objects(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
+    > {
+        &self.objects
     }
     /// Consumes the builder and constructs a [`TaskObject`](crate::types::TaskObject).
     pub fn build(self) -> crate::types::TaskObject {

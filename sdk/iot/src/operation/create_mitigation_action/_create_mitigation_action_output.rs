@@ -56,6 +56,10 @@ impl CreateMitigationActionOutputBuilder {
         self.action_arn = input;
         self
     }
+    /// <p>The ARN for the new mitigation action.</p>
+    pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_arn
+    }
     /// <p>A unique identifier for the new mitigation action.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CreateMitigationActionOutputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>A unique identifier for the new mitigation action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

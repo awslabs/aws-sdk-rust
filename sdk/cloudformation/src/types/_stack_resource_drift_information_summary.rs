@@ -81,6 +81,18 @@ impl StackResourceDriftInformationSummaryBuilder {
         self.stack_resource_drift_status = input;
         self
     }
+    /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the resource differs from its expected configuration.</p> <p>Any resources that don't currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information about skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
+    /// </ul>
+    pub fn get_stack_resource_drift_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
+        &self.stack_resource_drift_status
+    }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn last_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_check_timestamp = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl StackResourceDriftInformationSummaryBuilder {
     ) -> Self {
         self.last_check_timestamp = input;
         self
+    }
+    /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
+    pub fn get_last_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_check_timestamp
     }
     /// Consumes the builder and constructs a [`StackResourceDriftInformationSummary`](crate::types::StackResourceDriftInformationSummary).
     pub fn build(self) -> crate::types::StackResourceDriftInformationSummary {

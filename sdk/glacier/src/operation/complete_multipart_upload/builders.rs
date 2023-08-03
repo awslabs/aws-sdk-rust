@@ -42,6 +42,13 @@ impl CompleteMultipartUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CompleteMultipartUpload as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CompleteMultipartUploadFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vault_name(input.into());
@@ -141,6 +152,10 @@ impl CompleteMultipartUploadFluentBuilder {
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vault_name(input);
         self
+    }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vault_name()
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +167,10 @@ impl CompleteMultipartUploadFluentBuilder {
         self.inner = self.inner.set_upload_id(input);
         self
     }
+    /// <p>The upload ID of the multipart upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
+    }
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
     pub fn archive_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_size(input.into());
@@ -162,6 +181,10 @@ impl CompleteMultipartUploadFluentBuilder {
         self.inner = self.inner.set_archive_size(input);
         self
     }
+    /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    pub fn get_archive_size(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_archive_size()
+    }
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
@@ -171,5 +194,9 @@ impl CompleteMultipartUploadFluentBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checksum(input);
         self
+    }
+    /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
     }
 }

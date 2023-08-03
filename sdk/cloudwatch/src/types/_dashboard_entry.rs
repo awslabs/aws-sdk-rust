@@ -70,6 +70,10 @@ impl DashboardEntryBuilder {
         self.dashboard_name = input;
         self
     }
+    /// <p>The name of the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn dashboard_arn(
         mut self,
@@ -86,6 +90,10 @@ impl DashboardEntryBuilder {
         self.dashboard_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_arn
+    }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DashboardEntryBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The size of the dashboard, in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl DashboardEntryBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the dashboard, in bytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`DashboardEntry`](crate::types::DashboardEntry).
     pub fn build(self) -> crate::types::DashboardEntry {

@@ -72,6 +72,10 @@ impl ExportAssetToSignedUrlResponseDetailsBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The unique identifier for the asset associated with this export job.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ExportAssetToSignedUrlResponseDetailsBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>The unique identifier for the revision associated with this export response.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ExportAssetToSignedUrlResponseDetailsBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The unique identifier for the revision associated with this export response.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The signed URL for the export request.</p>
     pub fn signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signed_url = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ExportAssetToSignedUrlResponseDetailsBuilder {
     pub fn set_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signed_url = input;
         self
+    }
+    /// <p>The signed URL for the export request.</p>
+    pub fn get_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signed_url
     }
     /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
     pub fn signed_url_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +130,12 @@ impl ExportAssetToSignedUrlResponseDetailsBuilder {
     ) -> Self {
         self.signed_url_expires_at = input;
         self
+    }
+    /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
+    pub fn get_signed_url_expires_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.signed_url_expires_at
     }
     /// Consumes the builder and constructs a [`ExportAssetToSignedUrlResponseDetails`](crate::types::ExportAssetToSignedUrlResponseDetails).
     pub fn build(self) -> crate::types::ExportAssetToSignedUrlResponseDetails {

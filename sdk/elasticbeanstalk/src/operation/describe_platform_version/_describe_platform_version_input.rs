@@ -41,6 +41,10 @@ impl DescribePlatformVersionInputBuilder {
         self.platform_arn = input;
         self
     }
+    /// <p>The ARN of the platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
+    }
     /// Consumes the builder and constructs a [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
     pub fn build(
         self,

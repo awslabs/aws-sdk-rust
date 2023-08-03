@@ -48,6 +48,10 @@ impl DescribeExecutionInputBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeExecutionInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(

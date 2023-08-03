@@ -36,6 +36,10 @@ impl GetContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContact as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_contact::builders::GetContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetContactFluentBuilder {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
+    /// <p>The name of the contact list to which the contact belongs.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_list_name()
+    }
     /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
@@ -139,5 +147,9 @@ impl GetContactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
+    }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
     }
 }

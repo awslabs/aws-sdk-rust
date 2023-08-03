@@ -77,6 +77,12 @@ impl DescribeProductOutputBuilder {
         self.product_view_summary = input;
         self
     }
+    /// <p>Summary information about the product view.</p>
+    pub fn get_product_view_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductViewSummary> {
+        &self.product_view_summary
+    }
     /// Appends an item to `provisioning_artifacts`.
     ///
     /// To override the contents of this collection use [`set_provisioning_artifacts`](Self::set_provisioning_artifacts).
@@ -95,6 +101,12 @@ impl DescribeProductOutputBuilder {
     ) -> Self {
         self.provisioning_artifacts = input;
         self
+    }
+    /// <p>Information about the provisioning artifacts for the specified product.</p>
+    pub fn get_provisioning_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>> {
+        &self.provisioning_artifacts
     }
     /// Appends an item to `budgets`.
     ///
@@ -115,6 +127,12 @@ impl DescribeProductOutputBuilder {
         self.budgets = input;
         self
     }
+    /// <p>Information about the associated budgets.</p>
+    pub fn get_budgets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+        &self.budgets
+    }
     /// Appends an item to `launch_paths`.
     ///
     /// To override the contents of this collection use [`set_launch_paths`](Self::set_launch_paths).
@@ -133,6 +151,12 @@ impl DescribeProductOutputBuilder {
     ) -> Self {
         self.launch_paths = input;
         self
+    }
+    /// <p>Information about the associated launch paths.</p>
+    pub fn get_launch_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPath>> {
+        &self.launch_paths
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

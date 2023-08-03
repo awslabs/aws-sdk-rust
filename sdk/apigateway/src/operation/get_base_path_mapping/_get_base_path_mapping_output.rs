@@ -65,6 +65,10 @@ impl GetBasePathMappingOutputBuilder {
         self.base_path = input;
         self
     }
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path
+    }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl GetBasePathMappingOutputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the associated stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl GetBasePathMappingOutputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The name of the associated stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

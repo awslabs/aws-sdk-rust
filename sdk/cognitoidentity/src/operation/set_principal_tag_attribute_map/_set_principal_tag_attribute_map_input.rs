@@ -77,6 +77,10 @@ impl SetPrincipalTagAttributeMapInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>The provider name you want to use for attribute mappings.</p>
     pub fn identity_provider_name(
         mut self,
@@ -93,6 +97,10 @@ impl SetPrincipalTagAttributeMapInputBuilder {
         self.identity_provider_name = input;
         self
     }
+    /// <p>The provider name you want to use for attribute mappings.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_name
+    }
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
     pub fn use_defaults(mut self, input: bool) -> Self {
         self.use_defaults = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl SetPrincipalTagAttributeMapInputBuilder {
     pub fn set_use_defaults(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_defaults = input;
         self
+    }
+    /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
+    pub fn get_use_defaults(&self) -> &::std::option::Option<bool> {
+        &self.use_defaults
     }
     /// Adds a key-value pair to `principal_tags`.
     ///
@@ -127,6 +139,14 @@ impl SetPrincipalTagAttributeMapInputBuilder {
     ) -> Self {
         self.principal_tags = input;
         self
+    }
+    /// <p>You can use this operation to add principal tags.</p>
+    pub fn get_principal_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.principal_tags
     }
     /// Consumes the builder and constructs a [`SetPrincipalTagAttributeMapInput`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapInput).
     pub fn build(

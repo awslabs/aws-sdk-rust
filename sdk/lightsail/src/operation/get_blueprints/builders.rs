@@ -38,6 +38,12 @@ impl GetBlueprintsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBlueprints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl GetBlueprintsFluentBuilder {
         self.inner = self.inner.set_include_inactive(input);
         self
     }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_inactive()
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +141,11 @@ impl GetBlueprintsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
     /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
@@ -148,5 +163,11 @@ impl GetBlueprintsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
+    }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// </important>
+    pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {
+        self.inner.get_app_category()
     }
 }

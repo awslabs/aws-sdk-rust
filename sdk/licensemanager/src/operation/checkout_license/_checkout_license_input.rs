@@ -87,6 +87,10 @@ impl CheckoutLicenseInputBuilder {
         self.product_sku = input;
         self
     }
+    /// <p>Product SKU.</p>
+    pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_sku
+    }
     /// <p>Checkout type.</p>
     pub fn checkout_type(mut self, input: crate::types::CheckoutType) -> Self {
         self.checkout_type = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl CheckoutLicenseInputBuilder {
     ) -> Self {
         self.checkout_type = input;
         self
+    }
+    /// <p>Checkout type.</p>
+    pub fn get_checkout_type(&self) -> &::std::option::Option<crate::types::CheckoutType> {
+        &self.checkout_type
     }
     /// <p>Key fingerprint identifying the license.</p>
     pub fn key_fingerprint(
@@ -115,6 +123,10 @@ impl CheckoutLicenseInputBuilder {
     ) -> Self {
         self.key_fingerprint = input;
         self
+    }
+    /// <p>Key fingerprint identifying the license.</p>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
     }
     /// Appends an item to `entitlements`.
     ///
@@ -135,6 +147,12 @@ impl CheckoutLicenseInputBuilder {
         self.entitlements = input;
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+        &self.entitlements
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -144,6 +162,10 @@ impl CheckoutLicenseInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +177,10 @@ impl CheckoutLicenseInputBuilder {
         self.beneficiary = input;
         self
     }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.beneficiary
+    }
     /// <p>Node ID.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -164,6 +190,10 @@ impl CheckoutLicenseInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>Node ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
     pub fn build(

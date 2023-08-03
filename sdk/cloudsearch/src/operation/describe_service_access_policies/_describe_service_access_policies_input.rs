@@ -48,6 +48,10 @@ impl DescribeServiceAccessPoliciesInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DescribeServiceAccessPoliciesInputBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeServiceAccessPoliciesInput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput).
     pub fn build(

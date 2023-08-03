@@ -40,6 +40,10 @@ impl DescribeRoleAliasInputBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias to describe.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
     pub fn build(
         self,

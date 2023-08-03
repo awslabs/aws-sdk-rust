@@ -75,6 +75,17 @@ impl DestinationOptionsBuilder {
         self.column_map = input;
         self
     }
+    /// <p>A map of the column id to the import properties for each column.</p>
+    pub fn get_column_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SourceDataColumnProperties,
+        >,
+    > {
+        &self.column_map
+    }
     /// Consumes the builder and constructs a [`DestinationOptions`](crate::types::DestinationOptions).
     pub fn build(self) -> crate::types::DestinationOptions {
         crate::types::DestinationOptions {

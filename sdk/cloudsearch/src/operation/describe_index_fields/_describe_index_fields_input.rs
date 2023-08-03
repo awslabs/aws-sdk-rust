@@ -58,6 +58,10 @@ impl DescribeIndexFieldsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `field_names`.
     ///
     /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
@@ -77,6 +81,12 @@ impl DescribeIndexFieldsInputBuilder {
         self.field_names = input;
         self
     }
+    /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
+    pub fn get_field_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.field_names
+    }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl DescribeIndexFieldsInputBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
     pub fn build(

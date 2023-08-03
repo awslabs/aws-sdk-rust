@@ -45,6 +45,12 @@ impl ActiveSpeakerOnlyConfigurationBuilder {
         self.active_speaker_position = input;
         self
     }
+    /// <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
+    pub fn get_active_speaker_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveSpeakerPosition> {
+        &self.active_speaker_position
+    }
     /// Consumes the builder and constructs a [`ActiveSpeakerOnlyConfiguration`](crate::types::ActiveSpeakerOnlyConfiguration).
     pub fn build(self) -> crate::types::ActiveSpeakerOnlyConfiguration {
         crate::types::ActiveSpeakerOnlyConfiguration {

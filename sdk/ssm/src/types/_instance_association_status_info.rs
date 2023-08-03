@@ -134,6 +134,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The name of the association.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl InstanceAssociationStatusInfoBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the association.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The association document versions.</p>
     pub fn document_version(
@@ -160,6 +168,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The association document versions.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The version of the association applied to the managed node.</p>
     pub fn association_version(
         mut self,
@@ -176,6 +188,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.association_version = input;
         self
     }
+    /// <p>The version of the association applied to the managed node.</p>
+    pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_version
+    }
     /// <p>The managed node ID where the association was created.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -185,6 +201,10 @@ impl InstanceAssociationStatusInfoBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The managed node ID where the association was created.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The date the association ran. </p>
     pub fn execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -199,6 +219,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.execution_date = input;
         self
     }
+    /// <p>The date the association ran. </p>
+    pub fn get_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_date
+    }
     /// <p>Status information about the association.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -208,6 +232,10 @@ impl InstanceAssociationStatusInfoBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status information about the association.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Detailed status information about the association.</p>
     pub fn detailed_status(
@@ -225,6 +253,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.detailed_status = input;
         self
     }
+    /// <p>Detailed status information about the association.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_status
+    }
     /// <p>Summary information about association execution.</p>
     pub fn execution_summary(
         mut self,
@@ -241,6 +273,10 @@ impl InstanceAssociationStatusInfoBuilder {
         self.execution_summary = input;
         self
     }
+    /// <p>Summary information about association execution.</p>
+    pub fn get_execution_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_summary
+    }
     /// <p>An error code returned by the request to create the association.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -250,6 +286,10 @@ impl InstanceAssociationStatusInfoBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code returned by the request to create the association.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     pub fn output_url(mut self, input: crate::types::InstanceAssociationOutputUrl) -> Self {
@@ -263,6 +303,12 @@ impl InstanceAssociationStatusInfoBuilder {
     ) -> Self {
         self.output_url = input;
         self
+    }
+    /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
+    pub fn get_output_url(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAssociationOutputUrl> {
+        &self.output_url
     }
     /// <p>The name of the association applied to the managed node.</p>
     pub fn association_name(
@@ -279,6 +325,10 @@ impl InstanceAssociationStatusInfoBuilder {
     ) -> Self {
         self.association_name = input;
         self
+    }
+    /// <p>The name of the association applied to the managed node.</p>
+    pub fn get_association_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_name
     }
     /// Consumes the builder and constructs a [`InstanceAssociationStatusInfo`](crate::types::InstanceAssociationStatusInfo).
     pub fn build(self) -> crate::types::InstanceAssociationStatusInfo {

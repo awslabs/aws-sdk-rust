@@ -215,6 +215,10 @@ impl FindingBuilder {
         self.finding_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+    pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_arn
+    }
     /// <p>The Amazon Web Services account ID associated with the finding.</p>
     pub fn aws_account_id(
         mut self,
@@ -231,6 +235,10 @@ impl FindingBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the finding.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The type of the finding.</p>
     pub fn r#type(mut self, input: crate::types::FindingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -240,6 +248,10 @@ impl FindingBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the finding.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingType> {
+        &self.r#type
     }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -251,6 +263,10 @@ impl FindingBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The title of the finding.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -260,6 +276,10 @@ impl FindingBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the finding.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
     pub fn remediation(mut self, input: crate::types::Remediation) -> Self {
@@ -274,6 +294,10 @@ impl FindingBuilder {
         self.remediation = input;
         self
     }
+    /// <p>An object that contains the details about how to remediate a finding.</p>
+    pub fn get_remediation(&self) -> &::std::option::Option<crate::types::Remediation> {
+        &self.remediation
+    }
     /// <p>The severity of the finding.</p>
     pub fn severity(mut self, input: crate::types::Severity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -283,6 +307,10 @@ impl FindingBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of the finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
+        &self.severity
     }
     /// <p>The date and time that the finding was first observed.</p>
     pub fn first_observed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -297,6 +325,10 @@ impl FindingBuilder {
         self.first_observed_at = input;
         self
     }
+    /// <p>The date and time that the finding was first observed.</p>
+    pub fn get_first_observed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_observed_at
+    }
     /// <p>The date and time that the finding was last observed.</p>
     pub fn last_observed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_observed_at = ::std::option::Option::Some(input);
@@ -309,6 +341,10 @@ impl FindingBuilder {
     ) -> Self {
         self.last_observed_at = input;
         self
+    }
+    /// <p>The date and time that the finding was last observed.</p>
+    pub fn get_last_observed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_observed_at
     }
     /// <p>The date and time the finding was last updated at.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -323,6 +359,10 @@ impl FindingBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The date and time the finding was last updated at.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The status of the finding.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -332,6 +372,10 @@ impl FindingBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the finding.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
+        &self.status
     }
     /// Appends an item to `resources`.
     ///
@@ -352,6 +396,10 @@ impl FindingBuilder {
         self.resources = input;
         self
     }
+    /// <p>Contains information on the resources involved in a finding.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
+    }
     /// <p>The Amazon Inspector score given to the finding.</p>
     pub fn inspector_score(mut self, input: f64) -> Self {
         self.inspector_score = ::std::option::Option::Some(input);
@@ -361,6 +409,10 @@ impl FindingBuilder {
     pub fn set_inspector_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inspector_score = input;
         self
+    }
+    /// <p>The Amazon Inspector score given to the finding.</p>
+    pub fn get_inspector_score(&self) -> &::std::option::Option<f64> {
+        &self.inspector_score
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
     pub fn inspector_score_details(mut self, input: crate::types::InspectorScoreDetails) -> Self {
@@ -374,6 +426,12 @@ impl FindingBuilder {
     ) -> Self {
         self.inspector_score_details = input;
         self
+    }
+    /// <p>An object that contains details of the Amazon Inspector score.</p>
+    pub fn get_inspector_score_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::InspectorScoreDetails> {
+        &self.inspector_score_details
     }
     /// <p>An object that contains the details of a network reachability finding.</p>
     pub fn network_reachability_details(
@@ -391,6 +449,12 @@ impl FindingBuilder {
         self.network_reachability_details = input;
         self
     }
+    /// <p>An object that contains the details of a network reachability finding.</p>
+    pub fn get_network_reachability_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkReachabilityDetails> {
+        &self.network_reachability_details
+    }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
     pub fn package_vulnerability_details(
         mut self,
@@ -407,6 +471,12 @@ impl FindingBuilder {
         self.package_vulnerability_details = input;
         self
     }
+    /// <p>An object that contains the details of a package vulnerability finding.</p>
+    pub fn get_package_vulnerability_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVulnerabilityDetails> {
+        &self.package_vulnerability_details
+    }
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
     pub fn fix_available(mut self, input: crate::types::FixAvailable) -> Self {
         self.fix_available = ::std::option::Option::Some(input);
@@ -419,6 +489,10 @@ impl FindingBuilder {
     ) -> Self {
         self.fix_available = input;
         self
+    }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn get_fix_available(&self) -> &::std::option::Option<crate::types::FixAvailable> {
+        &self.fix_available
     }
     /// <p>If a finding discovered in your environment has an exploit available.</p>
     pub fn exploit_available(mut self, input: crate::types::ExploitAvailable) -> Self {
@@ -433,6 +507,10 @@ impl FindingBuilder {
         self.exploit_available = input;
         self
     }
+    /// <p>If a finding discovered in your environment has an exploit available.</p>
+    pub fn get_exploit_available(&self) -> &::std::option::Option<crate::types::ExploitAvailable> {
+        &self.exploit_available
+    }
     /// <p>The details of an exploit available for a finding discovered in your environment.</p>
     pub fn exploitability_details(mut self, input: crate::types::ExploitabilityDetails) -> Self {
         self.exploitability_details = ::std::option::Option::Some(input);
@@ -445,6 +523,12 @@ impl FindingBuilder {
     ) -> Self {
         self.exploitability_details = input;
         self
+    }
+    /// <p>The details of an exploit available for a finding discovered in your environment.</p>
+    pub fn get_exploitability_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExploitabilityDetails> {
+        &self.exploitability_details
     }
     /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
     pub fn code_vulnerability_details(
@@ -462,6 +546,12 @@ impl FindingBuilder {
         self.code_vulnerability_details = input;
         self
     }
+    /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
+    pub fn get_code_vulnerability_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeVulnerabilityDetails> {
+        &self.code_vulnerability_details
+    }
     /// <p>The finding's EPSS score.</p>
     pub fn epss(mut self, input: crate::types::EpssDetails) -> Self {
         self.epss = ::std::option::Option::Some(input);
@@ -471,6 +561,10 @@ impl FindingBuilder {
     pub fn set_epss(mut self, input: ::std::option::Option<crate::types::EpssDetails>) -> Self {
         self.epss = input;
         self
+    }
+    /// <p>The finding's EPSS score.</p>
+    pub fn get_epss(&self) -> &::std::option::Option<crate::types::EpssDetails> {
+        &self.epss
     }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {

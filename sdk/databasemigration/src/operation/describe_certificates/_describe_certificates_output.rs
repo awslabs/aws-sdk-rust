@@ -55,6 +55,10 @@ impl DescribeCertificatesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `certificates`.
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
@@ -73,6 +77,12 @@ impl DescribeCertificatesOutputBuilder {
     ) -> Self {
         self.certificates = input;
         self
+    }
+    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

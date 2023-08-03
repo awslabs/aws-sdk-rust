@@ -48,6 +48,10 @@ impl ConnectorConfigRequestBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub fn provider(mut self, input: crate::types::ConnectorConfigProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ConnectorConfigRequestBuilder {
     ) -> Self {
         self.provider = input;
         self
+    }
+    /// <p>The cloud provider for the target cluster to connect.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::ConnectorConfigProvider> {
+        &self.provider
     }
     /// Consumes the builder and constructs a [`ConnectorConfigRequest`](crate::types::ConnectorConfigRequest).
     pub fn build(self) -> crate::types::ConnectorConfigRequest {

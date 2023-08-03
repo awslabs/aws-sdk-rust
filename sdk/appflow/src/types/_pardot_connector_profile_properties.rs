@@ -56,6 +56,10 @@ impl PardotConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p>The location of the Salesforce Pardot resource.</p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
     pub fn is_sandbox_environment(mut self, input: bool) -> Self {
         self.is_sandbox_environment = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PardotConnectorProfilePropertiesBuilder {
     pub fn set_is_sandbox_environment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_sandbox_environment = input;
         self
+    }
+    /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
+    pub fn get_is_sandbox_environment(&self) -> &::std::option::Option<bool> {
+        &self.is_sandbox_environment
     }
     /// <p>The business unit id of Salesforce Pardot instance.</p>
     pub fn business_unit_id(
@@ -81,6 +89,10 @@ impl PardotConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.business_unit_id = input;
         self
+    }
+    /// <p>The business unit id of Salesforce Pardot instance.</p>
+    pub fn get_business_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.business_unit_id
     }
     /// Consumes the builder and constructs a [`PardotConnectorProfileProperties`](crate::types::PardotConnectorProfileProperties).
     pub fn build(self) -> crate::types::PardotConnectorProfileProperties {

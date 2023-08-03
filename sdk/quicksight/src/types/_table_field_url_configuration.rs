@@ -56,6 +56,12 @@ impl TableFieldUrlConfigurationBuilder {
         self.link_configuration = input;
         self
     }
+    /// <p>The link configuration of a table field URL.</p>
+    pub fn get_link_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldLinkConfiguration> {
+        &self.link_configuration
+    }
     /// <p>The image configuration of a table field URL.</p>
     pub fn image_configuration(
         mut self,
@@ -71,6 +77,12 @@ impl TableFieldUrlConfigurationBuilder {
     ) -> Self {
         self.image_configuration = input;
         self
+    }
+    /// <p>The image configuration of a table field URL.</p>
+    pub fn get_image_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldImageConfiguration> {
+        &self.image_configuration
     }
     /// Consumes the builder and constructs a [`TableFieldUrlConfiguration`](crate::types::TableFieldUrlConfiguration).
     pub fn build(self) -> crate::types::TableFieldUrlConfiguration {

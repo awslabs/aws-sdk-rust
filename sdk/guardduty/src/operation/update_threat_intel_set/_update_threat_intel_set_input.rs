@@ -72,6 +72,10 @@ impl UpdateThreatIntelSetInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn threat_intel_set_id(
         mut self,
@@ -89,6 +93,10 @@ impl UpdateThreatIntelSetInputBuilder {
         self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn get_threat_intel_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_intel_set_id
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +105,10 @@ impl UpdateThreatIntelSetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +120,10 @@ impl UpdateThreatIntelSetInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub fn activate(mut self, input: bool) -> Self {
         self.activate = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl UpdateThreatIntelSetInputBuilder {
     pub fn set_activate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.activate = input;
         self
+    }
+    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
+    pub fn get_activate(&self) -> &::std::option::Option<bool> {
+        &self.activate
     }
     /// Consumes the builder and constructs a [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
     pub fn build(

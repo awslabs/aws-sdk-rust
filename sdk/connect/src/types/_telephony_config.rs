@@ -49,6 +49,12 @@ impl TelephonyConfigBuilder {
         self.distributions = input;
         self
     }
+    /// <p>Information about traffic distributions.</p>
+    pub fn get_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        &self.distributions
+    }
     /// Consumes the builder and constructs a [`TelephonyConfig`](crate::types::TelephonyConfig).
     pub fn build(self) -> crate::types::TelephonyConfig {
         crate::types::TelephonyConfig {

@@ -38,6 +38,13 @@ impl CreateEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEventDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl CreateEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The name that identifies the event destination.</p>
     pub fn event_destination_name(
         mut self,
@@ -149,6 +160,10 @@ impl CreateEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
+    }
+    /// <p>The name that identifies the event destination.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_destination_name()
     }
     /// Appends an item to `MatchingEventTypes`.
     ///
@@ -167,6 +182,12 @@ impl CreateEventDestinationFluentBuilder {
         self.inner = self.inner.set_matching_event_types(input);
         self
     }
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    pub fn get_matching_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        self.inner.get_matching_event_types()
+    }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub fn cloud_watch_logs_destination(
         mut self,
@@ -182,6 +203,12 @@ impl CreateEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_destination(input);
         self
+    }
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    pub fn get_cloud_watch_logs_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+        self.inner.get_cloud_watch_logs_destination()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
     pub fn kinesis_firehose_destination(
@@ -199,6 +226,12 @@ impl CreateEventDestinationFluentBuilder {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
     }
+    /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    pub fn get_kinesis_firehose_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        self.inner.get_kinesis_firehose_destination()
+    }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
         self.inner = self.inner.sns_destination(input);
@@ -212,6 +245,10 @@ impl CreateEventDestinationFluentBuilder {
         self.inner = self.inner.set_sns_destination(input);
         self
     }
+    /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        self.inner.get_sns_destination()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -221,5 +258,9 @@ impl CreateEventDestinationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

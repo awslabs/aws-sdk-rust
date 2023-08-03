@@ -54,6 +54,10 @@ impl AnomalyGroupTimeSeriesBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The ID of the metric.</p>
     pub fn time_series_id(
         mut self,
@@ -69,6 +73,10 @@ impl AnomalyGroupTimeSeriesBuilder {
     ) -> Self {
         self.time_series_id = input;
         self
+    }
+    /// <p>The ID of the metric.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
     }
     /// Consumes the builder and constructs a [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
     pub fn build(self) -> crate::types::AnomalyGroupTimeSeries {

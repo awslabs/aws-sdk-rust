@@ -48,6 +48,10 @@ impl OutputLocationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The S3 bucket for output.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OutputLocationBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
+    }
+    /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`OutputLocation`](crate::types::OutputLocation).
     pub fn build(self) -> crate::types::OutputLocation {

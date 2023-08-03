@@ -48,6 +48,10 @@ impl ApplicationSettingsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub fn settings_group(
         mut self,
@@ -63,6 +67,10 @@ impl ApplicationSettingsBuilder {
     ) -> Self {
         self.settings_group = input;
         self
+    }
+    /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
+    pub fn get_settings_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.settings_group
     }
     /// Consumes the builder and constructs a [`ApplicationSettings`](crate::types::ApplicationSettings).
     pub fn build(self) -> crate::types::ApplicationSettings {

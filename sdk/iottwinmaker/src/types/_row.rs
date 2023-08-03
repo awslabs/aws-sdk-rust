@@ -49,6 +49,12 @@ impl RowBuilder {
         self.row_data = input;
         self
     }
+    /// <p>The data in a row of query results.</p>
+    pub fn get_row_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+        &self.row_data
+    }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
         crate::types::Row {

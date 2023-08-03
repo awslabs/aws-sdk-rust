@@ -52,6 +52,10 @@ impl StopRecommenderOutputBuilder {
         self.recommender_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

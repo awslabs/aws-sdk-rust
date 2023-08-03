@@ -108,6 +108,10 @@ impl DelegatedAdministratorBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl DelegatedAdministratorBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +136,10 @@ impl DelegatedAdministratorBuilder {
         self.email = input;
         self
     }
+    /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The friendly name of the delegated administrator's account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl DelegatedAdministratorBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the delegated administrator's account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the delegated administrator's account in the organization.</p>
     pub fn status(mut self, input: crate::types::AccountStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl DelegatedAdministratorBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the delegated administrator's account in the organization.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
+        &self.status
     }
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
     pub fn joined_method(mut self, input: crate::types::AccountJoinedMethod) -> Self {
@@ -161,6 +181,10 @@ impl DelegatedAdministratorBuilder {
         self.joined_method = input;
         self
     }
+    /// <p>The method by which the delegated administrator's account joined the organization.</p>
+    pub fn get_joined_method(&self) -> &::std::option::Option<crate::types::AccountJoinedMethod> {
+        &self.joined_method
+    }
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
     pub fn joined_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.joined_timestamp = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl DelegatedAdministratorBuilder {
         self.joined_timestamp = input;
         self
     }
+    /// <p>The date when the delegated administrator's account became a part of the organization.</p>
+    pub fn get_joined_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.joined_timestamp
+    }
     /// <p>The date when the account was made a delegated administrator.</p>
     pub fn delegation_enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delegation_enabled_date = ::std::option::Option::Some(input);
@@ -186,6 +214,12 @@ impl DelegatedAdministratorBuilder {
     ) -> Self {
         self.delegation_enabled_date = input;
         self
+    }
+    /// <p>The date when the account was made a delegated administrator.</p>
+    pub fn get_delegation_enabled_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delegation_enabled_date
     }
     /// Consumes the builder and constructs a [`DelegatedAdministrator`](crate::types::DelegatedAdministrator).
     pub fn build(self) -> crate::types::DelegatedAdministrator {

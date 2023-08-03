@@ -63,6 +63,10 @@ impl ResponseHeadersPolicyBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the response headers policy.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the response headers policy was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ResponseHeadersPolicyBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time when the response headers policy was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>A response headers policy configuration.</p>
     pub fn response_headers_policy_config(
@@ -91,6 +99,12 @@ impl ResponseHeadersPolicyBuilder {
     ) -> Self {
         self.response_headers_policy_config = input;
         self
+    }
+    /// <p>A response headers policy configuration.</p>
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+        &self.response_headers_policy_config
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicy`](crate::types::ResponseHeadersPolicy).
     pub fn build(self) -> crate::types::ResponseHeadersPolicy {

@@ -96,6 +96,10 @@ impl AssessmentControlSetBuilder {
         self.id = input;
         self
     }
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The description for the control set. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AssessmentControlSetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description for the control set. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The current status of the control set. </p>
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
@@ -118,6 +126,10 @@ impl AssessmentControlSetBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The current status of the control set. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlSetStatus> {
+        &self.status
     }
     /// Appends an item to `roles`.
     ///
@@ -138,6 +150,10 @@ impl AssessmentControlSetBuilder {
         self.roles = input;
         self
     }
+    /// <p> The roles that are associated with the control set. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
+    }
     /// Appends an item to `controls`.
     ///
     /// To override the contents of this collection use [`set_controls`](Self::set_controls).
@@ -156,6 +172,12 @@ impl AssessmentControlSetBuilder {
     ) -> Self {
         self.controls = input;
         self
+    }
+    /// <p> The list of controls that's contained with the control set. </p>
+    pub fn get_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentControl>> {
+        &self.controls
     }
     /// Appends an item to `delegations`.
     ///
@@ -176,6 +198,12 @@ impl AssessmentControlSetBuilder {
         self.delegations = input;
         self
     }
+    /// <p> The delegations that are associated with the control set. </p>
+    pub fn get_delegations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
+        &self.delegations
+    }
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub fn system_evidence_count(mut self, input: i32) -> Self {
         self.system_evidence_count = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl AssessmentControlSetBuilder {
         self.system_evidence_count = input;
         self
     }
+    /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
+    pub fn get_system_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.system_evidence_count
+    }
     /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub fn manual_evidence_count(mut self, input: i32) -> Self {
         self.manual_evidence_count = ::std::option::Option::Some(input);
@@ -195,6 +227,10 @@ impl AssessmentControlSetBuilder {
     pub fn set_manual_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_evidence_count = input;
         self
+    }
+    /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
+    pub fn get_manual_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.manual_evidence_count
     }
     /// Consumes the builder and constructs a [`AssessmentControlSet`](crate::types::AssessmentControlSet).
     pub fn build(self) -> crate::types::AssessmentControlSet {

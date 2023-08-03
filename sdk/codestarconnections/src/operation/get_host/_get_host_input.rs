@@ -39,6 +39,10 @@ impl GetHostInputBuilder {
         self.host_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
+    }
     /// Consumes the builder and constructs a [`GetHostInput`](crate::operation::get_host::GetHostInput).
     pub fn build(
         self,

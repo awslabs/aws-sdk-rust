@@ -48,6 +48,10 @@ impl FleetMetricNameAndArnBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The fleet metric name.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The fleet metric ARN.</p>
     pub fn metric_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl FleetMetricNameAndArnBuilder {
     pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_arn = input;
         self
+    }
+    /// <p>The fleet metric ARN.</p>
+    pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_arn
     }
     /// Consumes the builder and constructs a [`FleetMetricNameAndArn`](crate::types::FleetMetricNameAndArn).
     pub fn build(self) -> crate::types::FleetMetricNameAndArn {

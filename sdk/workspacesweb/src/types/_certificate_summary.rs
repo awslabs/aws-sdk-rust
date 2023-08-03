@@ -72,6 +72,10 @@ impl CertificateSummaryBuilder {
         self.thumbprint = input;
         self
     }
+    /// <p>A hexadecimal identifier for the certificate.</p>
+    pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbprint
+    }
     /// <p>The entity the certificate belongs to.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CertificateSummaryBuilder {
         self.subject = input;
         self
     }
+    /// <p>The entity the certificate belongs to.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>The entity that issued the certificate.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CertificateSummaryBuilder {
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
+    }
+    /// <p>The entity that issued the certificate.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
     }
     /// <p>The certificate is not valid before this date.</p>
     pub fn not_valid_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl CertificateSummaryBuilder {
         self.not_valid_before = input;
         self
     }
+    /// <p>The certificate is not valid before this date.</p>
+    pub fn get_not_valid_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_valid_before
+    }
     /// <p>The certificate is not valid after this date.</p>
     pub fn not_valid_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.not_valid_after = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.not_valid_after = input;
         self
+    }
+    /// <p>The certificate is not valid after this date.</p>
+    pub fn get_not_valid_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_valid_after
     }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {

@@ -50,6 +50,10 @@ impl GetAnalyzerOutputBuilder {
         self.analyzer = input;
         self
     }
+    /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
+    pub fn get_analyzer(&self) -> &::std::option::Option<crate::types::AnalyzerSummary> {
+        &self.analyzer
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl DeleteProfileShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProfileShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_profile_share::builders::DeleteProfileShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteProfileShareFluentBuilder {
         self.inner = self.inner.set_share_id(input);
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_share_id()
+    }
     /// <p>The profile ARN.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_arn(input.into());
@@ -135,6 +145,10 @@ impl DeleteProfileShareFluentBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_arn(input);
         self
+    }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -157,5 +171,12 @@ impl DeleteProfileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

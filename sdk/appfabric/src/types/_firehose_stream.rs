@@ -40,6 +40,10 @@ impl FirehoseStreamBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// Consumes the builder and constructs a [`FirehoseStream`](crate::types::FirehoseStream).
     pub fn build(self) -> crate::types::FirehoseStream {
         crate::types::FirehoseStream {

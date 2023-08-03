@@ -112,6 +112,10 @@ impl SmsMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The body of the SMS message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl SmsMessageBuilder {
         self.keyword = input;
         self
     }
+    /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
+    }
     /// <p>This field is reserved for future use.</p>
     pub fn media_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_url = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl SmsMessageBuilder {
     pub fn set_media_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_url = input;
         self
+    }
+    /// <p>This field is reserved for future use.</p>
+    pub fn get_media_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_url
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -144,6 +156,10 @@ impl SmsMessageBuilder {
     ) -> Self {
         self.message_type = input;
         self
+    }
+    /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
     pub fn origination_number(
@@ -161,6 +177,10 @@ impl SmsMessageBuilder {
         self.origination_number = input;
         self
     }
+    /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
+    pub fn get_origination_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_number
+    }
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
@@ -170,6 +190,10 @@ impl SmsMessageBuilder {
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
+    }
+    /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -199,6 +223,14 @@ impl SmsMessageBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -209,6 +241,10 @@ impl SmsMessageBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -218,6 +254,10 @@ impl SmsMessageBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Consumes the builder and constructs a [`SmsMessage`](crate::types::SmsMessage).
     pub fn build(self) -> crate::types::SmsMessage {

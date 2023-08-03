@@ -83,6 +83,10 @@ impl AddonInfoBuilder {
         self.addon_name = input;
         self
     }
+    /// <p>The name of the add-on.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
+    }
     /// <p>The type of the add-on.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl AddonInfoBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the add-on.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `addon_versions`.
     ///
@@ -112,6 +120,12 @@ impl AddonInfoBuilder {
         self.addon_versions = input;
         self
     }
+    /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
+    pub fn get_addon_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>> {
+        &self.addon_versions
+    }
     /// <p>The publisher of the add-on.</p>
     pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher = ::std::option::Option::Some(input.into());
@@ -122,6 +136,10 @@ impl AddonInfoBuilder {
         self.publisher = input;
         self
     }
+    /// <p>The publisher of the add-on.</p>
+    pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher
+    }
     /// <p>The owner of the add-on.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -131,6 +149,10 @@ impl AddonInfoBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the add-on.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
     pub fn marketplace_information(mut self, input: crate::types::MarketplaceInformation) -> Self {
@@ -144,6 +166,12 @@ impl AddonInfoBuilder {
     ) -> Self {
         self.marketplace_information = input;
         self
+    }
+    /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+    pub fn get_marketplace_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::MarketplaceInformation> {
+        &self.marketplace_information
     }
     /// Consumes the builder and constructs a [`AddonInfo`](crate::types::AddonInfo).
     pub fn build(self) -> crate::types::AddonInfo {

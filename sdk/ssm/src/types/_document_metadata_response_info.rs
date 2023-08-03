@@ -56,6 +56,12 @@ impl DocumentMetadataResponseInfoBuilder {
         self.reviewer_response = input;
         self
     }
+    /// <p>Details about a reviewer's response to a document review request.</p>
+    pub fn get_reviewer_response(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>> {
+        &self.reviewer_response
+    }
     /// Consumes the builder and constructs a [`DocumentMetadataResponseInfo`](crate::types::DocumentMetadataResponseInfo).
     pub fn build(self) -> crate::types::DocumentMetadataResponseInfo {
         crate::types::DocumentMetadataResponseInfo {

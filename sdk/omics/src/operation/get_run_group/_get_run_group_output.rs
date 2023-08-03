@@ -118,6 +118,10 @@ impl GetRunGroupOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The group's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The group's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl GetRunGroupOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The group's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +146,10 @@ impl GetRunGroupOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The group's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The group's maximum number of CPUs to use.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
         self.max_cpus = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl GetRunGroupOutputBuilder {
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_cpus = input;
         self
+    }
+    /// <p>The group's maximum number of CPUs to use.</p>
+    pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
+        &self.max_cpus
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
@@ -158,6 +174,10 @@ impl GetRunGroupOutputBuilder {
         self.max_runs = input;
         self
     }
+    /// <p>The maximum number of concurrent runs for the group.</p>
+    pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_runs
+    }
     /// <p>The group's maximum run time in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.max_duration = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl GetRunGroupOutputBuilder {
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_duration = input;
         self
+    }
+    /// <p>The group's maximum run time in minutes.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_duration
     }
     /// <p>When the group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -180,6 +204,10 @@ impl GetRunGroupOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -206,6 +234,14 @@ impl GetRunGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The group's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.max_gpus = ::std::option::Option::Some(input);
@@ -215,6 +251,10 @@ impl GetRunGroupOutputBuilder {
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_gpus = input;
         self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
+        &self.max_gpus
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

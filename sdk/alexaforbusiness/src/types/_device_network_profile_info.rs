@@ -64,6 +64,10 @@ impl DeviceNetworkProfileInfoBuilder {
         self.network_profile_arn = input;
         self
     }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
+    }
     /// <p>The ARN of the certificate associated with a device.</p>
     pub fn certificate_arn(
         mut self,
@@ -80,6 +84,10 @@ impl DeviceNetworkProfileInfoBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the certificate associated with a device.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The time (in epoch) when the certificate expires.</p>
     pub fn certificate_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.certificate_expiration_time = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl DeviceNetworkProfileInfoBuilder {
     ) -> Self {
         self.certificate_expiration_time = input;
         self
+    }
+    /// <p>The time (in epoch) when the certificate expires.</p>
+    pub fn get_certificate_expiration_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.certificate_expiration_time
     }
     /// Consumes the builder and constructs a [`DeviceNetworkProfileInfo`](crate::types::DeviceNetworkProfileInfo).
     pub fn build(self) -> crate::types::DeviceNetworkProfileInfo {

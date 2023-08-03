@@ -50,6 +50,10 @@ impl GetAccountPasswordPolicyOutputBuilder {
         self.password_policy = input;
         self
     }
+    /// <p>A structure that contains details about the account's password policy.</p>
+    pub fn get_password_policy(&self) -> &::std::option::Option<crate::types::PasswordPolicy> {
+        &self.password_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

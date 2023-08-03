@@ -52,6 +52,12 @@ impl GetInAppTemplateOutputBuilder {
         self.in_app_template_response = input;
         self
     }
+    /// <p>In-App Template Response.</p>
+    pub fn get_in_app_template_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::InAppTemplateResponse> {
+        &self.in_app_template_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

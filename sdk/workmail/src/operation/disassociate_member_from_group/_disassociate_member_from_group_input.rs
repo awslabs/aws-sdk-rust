@@ -61,6 +61,10 @@ impl DisassociateMemberFromGroupInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the group exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the group from which members are removed.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DisassociateMemberFromGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier for the group from which members are removed.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The identifier for the member to be removed to the group.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DisassociateMemberFromGroupInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The identifier for the member to be removed to the group.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`DisassociateMemberFromGroupInput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput).
     pub fn build(

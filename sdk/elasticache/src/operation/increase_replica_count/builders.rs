@@ -36,6 +36,12 @@ impl IncreaseReplicaCountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the IncreaseReplicaCount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl IncreaseReplicaCountFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The id of the replication group to which you want to add replica nodes.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.inner = self.inner.new_replica_count(input);
@@ -141,6 +151,10 @@ impl IncreaseReplicaCountFluentBuilder {
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_new_replica_count(input);
         self
+    }
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_new_replica_count()
     }
     /// Appends an item to `ReplicaConfiguration`.
     ///
@@ -159,6 +173,12 @@ impl IncreaseReplicaCountFluentBuilder {
         self.inner = self.inner.set_replica_configuration(input);
         self
     }
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    pub fn get_replica_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+        self.inner.get_replica_configuration()
+    }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -168,5 +188,9 @@ impl IncreaseReplicaCountFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
 }

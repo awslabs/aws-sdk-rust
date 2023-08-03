@@ -36,6 +36,12 @@ impl DeleteUserSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUserSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_user_settings::builders::DeleteUserSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteUserSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the user settings.</p>
+    pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_settings_arn()
     }
 }

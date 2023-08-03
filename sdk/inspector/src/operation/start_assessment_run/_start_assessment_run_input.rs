@@ -54,6 +54,10 @@ impl StartAssessmentRunInputBuilder {
         self.assessment_template_arn = input;
         self
     }
+    /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_template_arn
+    }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     pub fn assessment_run_name(
         mut self,
@@ -69,6 +73,10 @@ impl StartAssessmentRunInputBuilder {
     ) -> Self {
         self.assessment_run_name = input;
         self
+    }
+    /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
+    pub fn get_assessment_run_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_run_name
     }
     /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
     pub fn build(

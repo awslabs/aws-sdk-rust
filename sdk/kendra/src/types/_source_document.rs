@@ -60,6 +60,10 @@ impl SourceDocumentBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The identifier of the document used for a query suggestion.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// Appends an item to `suggestion_attributes`.
     ///
     /// To override the contents of this collection use [`set_suggestion_attributes`](Self::set_suggestion_attributes).
@@ -82,6 +86,12 @@ impl SourceDocumentBuilder {
         self.suggestion_attributes = input;
         self
     }
+    /// <p>The document fields/attributes used for a query suggestion.</p>
+    pub fn get_suggestion_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.suggestion_attributes
+    }
     /// Appends an item to `additional_attributes`.
     ///
     /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
@@ -100,6 +110,12 @@ impl SourceDocumentBuilder {
     ) -> Self {
         self.additional_attributes = input;
         self
+    }
+    /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
+    pub fn get_additional_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+        &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`SourceDocument`](crate::types::SourceDocument).
     pub fn build(self) -> crate::types::SourceDocument {

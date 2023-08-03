@@ -47,6 +47,10 @@ impl DescribeWebsiteCertificateAuthorityInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>A unique identifier for the certificate authority.</p>
     pub fn website_ca_id(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeWebsiteCertificateAuthorityInputBuilder {
     ) -> Self {
         self.website_ca_id = input;
         self
+    }
+    /// <p>A unique identifier for the certificate authority.</p>
+    pub fn get_website_ca_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_ca_id
     }
     /// Consumes the builder and constructs a [`DescribeWebsiteCertificateAuthorityInput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError>{

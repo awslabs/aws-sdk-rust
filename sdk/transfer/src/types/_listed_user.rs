@@ -88,6 +88,10 @@ impl ListedUserBuilder {
         self.arn = input;
         self
     }
+    /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub fn home_directory(
@@ -106,6 +110,11 @@ impl ListedUserBuilder {
         self.home_directory = input;
         self
     }
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn get_home_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_directory
+    }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(mut self, input: crate::types::HomeDirectoryType) -> Self {
         self.home_directory_type = ::std::option::Option::Some(input);
@@ -118,6 +127,12 @@ impl ListedUserBuilder {
     ) -> Self {
         self.home_directory_type = input;
         self
+    }
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    pub fn get_home_directory_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HomeDirectoryType> {
+        &self.home_directory_type
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
     /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
@@ -135,6 +150,13 @@ impl ListedUserBuilder {
         self.role = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
+    /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
+    /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
+    /// </note>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>Specifies the number of SSH public keys stored for the user you specified.</p>
     pub fn ssh_public_key_count(mut self, input: i32) -> Self {
         self.ssh_public_key_count = ::std::option::Option::Some(input);
@@ -145,6 +167,10 @@ impl ListedUserBuilder {
         self.ssh_public_key_count = input;
         self
     }
+    /// <p>Specifies the number of SSH public keys stored for the user you specified.</p>
+    pub fn get_ssh_public_key_count(&self) -> &::std::option::Option<i32> {
+        &self.ssh_public_key_count
+    }
     /// <p>Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -154,6 +180,10 @@ impl ListedUserBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`ListedUser`](crate::types::ListedUser).
     pub fn build(self) -> crate::types::ListedUser {

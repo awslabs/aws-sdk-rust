@@ -87,6 +87,17 @@ impl StatefulRuleBuilder {
         self.action = input;
         self
     }
+    /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow. </p>
+    /// <p>The actions for a stateful rule are defined as follows: </p>
+    /// <ul>
+    /// <li> <p> <b>PASS</b> - Permits the packets to go to the intended destination.</p> </li>
+    /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
+    /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+    /// <li> <p> <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and a <code>RST</code> bit contained in the TCP header flags. Also sends an alert log mesage if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p> <code>REJECT</code> isn't currently available for use with IMAP and FTP protocols.</p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::StatefulAction> {
+        &self.action
+    }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
     pub fn header(mut self, input: crate::types::Header) -> Self {
         self.header = ::std::option::Option::Some(input);
@@ -96,6 +107,10 @@ impl StatefulRuleBuilder {
     pub fn set_header(mut self, input: ::std::option::Option<crate::types::Header>) -> Self {
         self.header = input;
         self
+    }
+    /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
+    pub fn get_header(&self) -> &::std::option::Option<crate::types::Header> {
+        &self.header
     }
     /// Appends an item to `rule_options`.
     ///
@@ -115,6 +130,12 @@ impl StatefulRuleBuilder {
     ) -> Self {
         self.rule_options = input;
         self
+    }
+    /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
+    pub fn get_rule_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+        &self.rule_options
     }
     /// Consumes the builder and constructs a [`StatefulRule`](crate::types::StatefulRule).
     pub fn build(self) -> crate::types::StatefulRule {

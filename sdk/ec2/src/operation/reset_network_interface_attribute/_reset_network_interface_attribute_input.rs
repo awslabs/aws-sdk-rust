@@ -56,6 +56,10 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -72,6 +76,10 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
     pub fn source_dest_check(
         mut self,
@@ -87,6 +95,10 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
     ) -> Self {
         self.source_dest_check = input;
         self
+    }
+    /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_dest_check
     }
     /// Consumes the builder and constructs a [`ResetNetworkInterfaceAttributeInput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput).
     pub fn build(

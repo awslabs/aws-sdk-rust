@@ -105,6 +105,10 @@ impl GetTableObjectsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database containing the governed table.</p>
     pub fn database_name(
         mut self,
@@ -121,6 +125,10 @@ impl GetTableObjectsInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The database containing the governed table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The governed table for which to retrieve objects.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl GetTableObjectsInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The governed table for which to retrieve objects.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
     pub fn transaction_id(
@@ -147,6 +159,10 @@ impl GetTableObjectsInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.query_as_of_time = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl GetTableObjectsInputBuilder {
     ) -> Self {
         self.query_as_of_time = input;
         self
+    }
+    /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.query_as_of_time
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
@@ -186,6 +206,15 @@ impl GetTableObjectsInputBuilder {
         self.partition_predicate = input;
         self
     }
+    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+    /// <ul>
+    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+    /// <li> <p>The logical operators supported are: AND</p> </li>
+    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
+    /// </ul>
+    pub fn get_partition_predicate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_predicate
+    }
     /// <p>Specifies how many values to return in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -196,6 +225,10 @@ impl GetTableObjectsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Specifies how many values to return in a page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -205,6 +238,10 @@ impl GetTableObjectsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetTableObjectsInput`](crate::operation::get_table_objects::GetTableObjectsInput).
     pub fn build(

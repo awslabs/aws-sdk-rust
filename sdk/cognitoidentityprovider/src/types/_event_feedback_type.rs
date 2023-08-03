@@ -59,6 +59,10 @@ impl EventFeedbackTypeBuilder {
         self.feedback_value = input;
         self
     }
+    /// <p>The event feedback value.</p>
+    pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
+        &self.feedback_value
+    }
     /// <p>The provider.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl EventFeedbackTypeBuilder {
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self
+    }
+    /// <p>The provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
     }
     /// <p>The event feedback date.</p>
     pub fn feedback_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -81,6 +89,10 @@ impl EventFeedbackTypeBuilder {
     ) -> Self {
         self.feedback_date = input;
         self
+    }
+    /// <p>The event feedback date.</p>
+    pub fn get_feedback_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.feedback_date
     }
     /// Consumes the builder and constructs a [`EventFeedbackType`](crate::types::EventFeedbackType).
     pub fn build(self) -> crate::types::EventFeedbackType {

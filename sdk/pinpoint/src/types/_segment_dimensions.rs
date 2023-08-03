@@ -119,6 +119,14 @@ impl SegmentDimensionsBuilder {
         self.attributes = input;
         self
     }
+    /// <p>One or more custom attributes to use as criteria for the segment.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
+    > {
+        &self.attributes
+    }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
     pub fn behavior(mut self, input: crate::types::SegmentBehaviors) -> Self {
         self.behavior = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl SegmentDimensionsBuilder {
     ) -> Self {
         self.behavior = input;
         self
+    }
+    /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
+    pub fn get_behavior(&self) -> &::std::option::Option<crate::types::SegmentBehaviors> {
+        &self.behavior
     }
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
     pub fn demographic(mut self, input: crate::types::SegmentDemographics) -> Self {
@@ -145,6 +157,10 @@ impl SegmentDimensionsBuilder {
         self.demographic = input;
         self
     }
+    /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
+    pub fn get_demographic(&self) -> &::std::option::Option<crate::types::SegmentDemographics> {
+        &self.demographic
+    }
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
     pub fn location(mut self, input: crate::types::SegmentLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -157,6 +173,10 @@ impl SegmentDimensionsBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::SegmentLocation> {
+        &self.location
     }
     /// Adds a key-value pair to `metrics`.
     ///
@@ -183,6 +203,14 @@ impl SegmentDimensionsBuilder {
         self.metrics = input;
         self
     }
+    /// <p>One or more custom metrics to use as criteria for the segment.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
+    > {
+        &self.metrics
+    }
     /// Adds a key-value pair to `user_attributes`.
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
@@ -207,6 +235,14 @@ impl SegmentDimensionsBuilder {
     ) -> Self {
         self.user_attributes = input;
         self
+    }
+    /// <p>One or more custom user attributes to use as criteria for the segment.</p>
+    pub fn get_user_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
+    > {
+        &self.user_attributes
     }
     /// Consumes the builder and constructs a [`SegmentDimensions`](crate::types::SegmentDimensions).
     pub fn build(self) -> crate::types::SegmentDimensions {

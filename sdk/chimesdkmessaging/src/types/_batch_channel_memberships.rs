@@ -72,6 +72,10 @@ impl BatchChannelMembershipsBuilder {
         self.invited_by = input;
         self
     }
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn get_invited_by(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.invited_by
+    }
     /// <p>The membership types set for the channel members.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl BatchChannelMembershipsBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The membership types set for the channel members.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        &self.r#type
     }
     /// Appends an item to `members`.
     ///
@@ -104,6 +112,10 @@ impl BatchChannelMembershipsBuilder {
         self.members = input;
         self
     }
+    /// <p>The users successfully added to the request.</p>
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Identity>> {
+        &self.members
+    }
     /// <p>The ARN of the channel to which you're adding members.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl BatchChannelMembershipsBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
+    }
+    /// <p>The ARN of the channel to which you're adding members.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The ID of the SubChannel.</p>
     pub fn sub_channel_id(
@@ -129,6 +145,10 @@ impl BatchChannelMembershipsBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`BatchChannelMemberships`](crate::types::BatchChannelMemberships).
     pub fn build(self) -> crate::types::BatchChannelMemberships {

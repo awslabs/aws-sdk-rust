@@ -39,6 +39,10 @@ impl StartClockInputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// Consumes the builder and constructs a [`StartClockInput`](crate::operation::start_clock::StartClockInput).
     pub fn build(
         self,

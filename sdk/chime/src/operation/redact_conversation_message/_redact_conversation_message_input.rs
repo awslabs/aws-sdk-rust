@@ -55,6 +55,10 @@ impl RedactConversationMessageInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The conversation ID.</p>
     pub fn conversation_id(
         mut self,
@@ -71,6 +75,10 @@ impl RedactConversationMessageInputBuilder {
         self.conversation_id = input;
         self
     }
+    /// <p>The conversation ID.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversation_id
+    }
     /// <p>The message ID.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl RedactConversationMessageInputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The message ID.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// Consumes the builder and constructs a [`RedactConversationMessageInput`](crate::operation::redact_conversation_message::RedactConversationMessageInput).
     pub fn build(

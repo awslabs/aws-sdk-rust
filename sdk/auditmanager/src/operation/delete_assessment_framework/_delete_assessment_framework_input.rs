@@ -39,6 +39,10 @@ impl DeleteAssessmentFrameworkInputBuilder {
         self.framework_id = input;
         self
     }
+    /// <p> The identifier for the custom framework. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_id
+    }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
     pub fn build(
         self,

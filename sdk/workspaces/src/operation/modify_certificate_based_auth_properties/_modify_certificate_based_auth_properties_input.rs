@@ -63,6 +63,10 @@ impl ModifyCertificateBasedAuthPropertiesInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The properties of the certificate-based authentication.</p>
     pub fn certificate_based_auth_properties(
         mut self,
@@ -78,6 +82,12 @@ impl ModifyCertificateBasedAuthPropertiesInputBuilder {
     ) -> Self {
         self.certificate_based_auth_properties = input;
         self
+    }
+    /// <p>The properties of the certificate-based authentication.</p>
+    pub fn get_certificate_based_auth_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+        &self.certificate_based_auth_properties
     }
     /// Appends an item to `properties_to_delete`.
     ///
@@ -102,6 +112,13 @@ impl ModifyCertificateBasedAuthPropertiesInputBuilder {
     ) -> Self {
         self.properties_to_delete = input;
         self
+    }
+    /// <p>The properties of the certificate-based authentication you want to delete.</p>
+    pub fn get_properties_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>
+    {
+        &self.properties_to_delete
     }
     /// Consumes the builder and constructs a [`ModifyCertificateBasedAuthPropertiesInput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{

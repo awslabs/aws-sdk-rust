@@ -36,6 +36,12 @@ impl VerifyEmailAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifyEmailAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl VerifyEmailAddressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
+    }
+    /// <p>The email address to be verified.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
     }
 }

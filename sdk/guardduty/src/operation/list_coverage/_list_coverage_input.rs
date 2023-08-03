@@ -71,6 +71,10 @@ impl ListCoverageInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ListCoverageInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ListCoverageInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
@@ -104,6 +116,12 @@ impl ListCoverageInputBuilder {
         self.filter_criteria = input;
         self
     }
+    /// <p>Represents the criteria used to filter the coverage details.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        &self.filter_criteria
+    }
     /// <p>Represents the criteria used to sort the coverage details.</p>
     pub fn sort_criteria(mut self, input: crate::types::CoverageSortCriteria) -> Self {
         self.sort_criteria = ::std::option::Option::Some(input);
@@ -116,6 +134,10 @@ impl ListCoverageInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>Represents the criteria used to sort the coverage details.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::CoverageSortCriteria> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
     pub fn build(

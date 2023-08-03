@@ -60,6 +60,10 @@ impl PossibleRemediationActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the list of remediation actions.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `ordered_remediation_actions`.
     ///
     /// To override the contents of this collection use [`set_ordered_remediation_actions`](Self::set_ordered_remediation_actions).
@@ -82,6 +86,12 @@ impl PossibleRemediationActionBuilder {
         self.ordered_remediation_actions = input;
         self
     }
+    /// <p>The ordered list of remediation actions.</p>
+    pub fn get_ordered_remediation_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>> {
+        &self.ordered_remediation_actions
+    }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn is_default_action(mut self, input: bool) -> Self {
         self.is_default_action = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl PossibleRemediationActionBuilder {
     pub fn set_is_default_action(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_action = input;
         self
+    }
+    /// <p>Information about whether an action is taken by default.</p>
+    pub fn get_is_default_action(&self) -> &::std::option::Option<bool> {
+        &self.is_default_action
     }
     /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
     pub fn build(self) -> crate::types::PossibleRemediationAction {

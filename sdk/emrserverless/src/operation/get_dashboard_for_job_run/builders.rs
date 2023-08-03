@@ -39,6 +39,13 @@ impl GetDashboardForJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDashboardForJobRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl GetDashboardForJobRunFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The ID of the job run.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_run_id(input.into());
@@ -144,5 +155,9 @@ impl GetDashboardForJobRunFluentBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_run_id(input);
         self
+    }
+    /// <p>The ID of the job run.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_run_id()
     }
 }

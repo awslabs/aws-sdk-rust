@@ -61,6 +61,10 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -76,6 +80,10 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     ) -> Self {
         self.evidence_folder_id = input;
         self
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evidence_folder_id
     }
     /// Appends an item to `evidence_ids`.
     ///
@@ -95,6 +103,12 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     ) -> Self {
         self.evidence_ids = input;
         self
+    }
+    /// <p> The list of evidence identifiers. </p>
+    pub fn get_evidence_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.evidence_ids
     }
     /// Consumes the builder and constructs a [`BatchAssociateAssessmentReportEvidenceInput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput, ::aws_smithy_http::operation::error::BuildError>{

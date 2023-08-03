@@ -65,6 +65,12 @@ impl AnomalySourceDetailsBuilder {
         self.cloud_watch_metrics = input;
         self
     }
+    /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
+    pub fn get_cloud_watch_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>> {
+        &self.cloud_watch_metrics
+    }
     /// Appends an item to `performance_insights_metrics`.
     ///
     /// To override the contents of this collection use [`set_performance_insights_metrics`](Self::set_performance_insights_metrics).
@@ -88,6 +94,13 @@ impl AnomalySourceDetailsBuilder {
     ) -> Self {
         self.performance_insights_metrics = input;
         self
+    }
+    /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
+    pub fn get_performance_insights_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>
+    {
+        &self.performance_insights_metrics
     }
     /// Consumes the builder and constructs a [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).
     pub fn build(self) -> crate::types::AnomalySourceDetails {

@@ -53,6 +53,10 @@ impl GetComponentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetComponentInputBuilder {
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
     pub fn build(

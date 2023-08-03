@@ -81,6 +81,10 @@ impl UpdateThemePermissionsOutputBuilder {
         self.theme_id = input;
         self
     }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl UpdateThemePermissionsOutputBuilder {
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_arn
     }
     /// Appends an item to `permissions`.
     ///
@@ -110,6 +118,12 @@ impl UpdateThemePermissionsOutputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The resulting list of resource permissions for the theme.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -120,6 +134,10 @@ impl UpdateThemePermissionsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -129,6 +147,10 @@ impl UpdateThemePermissionsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

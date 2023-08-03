@@ -48,6 +48,10 @@ impl RemoveBridgeSourceInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// The name of the bridge source that you want to remove.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RemoveBridgeSourceInputBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// The name of the bridge source that you want to remove.
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// Consumes the builder and constructs a [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
     pub fn build(

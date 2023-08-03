@@ -45,6 +45,10 @@ impl StartDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`StartDbClusterInput`](crate::operation::start_db_cluster::StartDbClusterInput).
     pub fn build(
         self,

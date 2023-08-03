@@ -73,6 +73,14 @@ impl GetIdentityDkimAttributesOutputBuilder {
         self.dkim_attributes = input;
         self
     }
+    /// <p>The DKIM attributes for an email address or a domain.</p>
+    pub fn get_dkim_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
+    > {
+        &self.dkim_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

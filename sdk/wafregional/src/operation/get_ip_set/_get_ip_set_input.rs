@@ -39,6 +39,10 @@ impl GetIpSetInputBuilder {
         self.ip_set_id = input;
         self
     }
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_set_id
+    }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
     pub fn build(
         self,

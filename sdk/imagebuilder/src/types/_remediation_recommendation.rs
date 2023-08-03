@@ -48,6 +48,10 @@ impl RemediationRecommendationBuilder {
         self.text = input;
         self
     }
+    /// <p>The recommended course of action to remediate the finding.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>A link to more information about the recommended remediation for this vulnerability.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RemediationRecommendationBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>A link to more information about the recommended remediation for this vulnerability.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`RemediationRecommendation`](crate::types::RemediationRecommendation).
     pub fn build(self) -> crate::types::RemediationRecommendation {

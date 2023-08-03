@@ -83,6 +83,10 @@ impl DeliverabilityTestReportBuilder {
         self.report_id = input;
         self
     }
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
     pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_name = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl DeliverabilityTestReportBuilder {
         self.report_name = input;
         self
     }
+    /// <p>A name that helps you identify a predictive inbox placement test report.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
+    }
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl DeliverabilityTestReportBuilder {
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
+    }
+    /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
     }
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub fn from_email_address(
@@ -119,6 +131,10 @@ impl DeliverabilityTestReportBuilder {
         self.from_email_address = input;
         self
     }
+    /// <p>The sender address that you specified for the predictive inbox placement test.</p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_email_address
+    }
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl DeliverabilityTestReportBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub fn deliverability_test_status(
@@ -147,6 +167,12 @@ impl DeliverabilityTestReportBuilder {
     ) -> Self {
         self.deliverability_test_status = input;
         self
+    }
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    pub fn get_deliverability_test_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliverabilityTestStatus> {
+        &self.deliverability_test_status
     }
     /// Consumes the builder and constructs a [`DeliverabilityTestReport`](crate::types::DeliverabilityTestReport).
     pub fn build(self) -> crate::types::DeliverabilityTestReport {

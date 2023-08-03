@@ -48,6 +48,10 @@ impl FolderMemberBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The ID of an asset in the folder.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The type of asset that it is.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FolderMemberBuilder {
     ) -> Self {
         self.member_type = input;
         self
+    }
+    /// <p>The type of asset that it is.</p>
+    pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.member_type
     }
     /// Consumes the builder and constructs a [`FolderMember`](crate::types::FolderMember).
     pub fn build(self) -> crate::types::FolderMember {

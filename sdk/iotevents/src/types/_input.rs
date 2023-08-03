@@ -51,6 +51,12 @@ impl InputBuilder {
         self.input_configuration = input;
         self
     }
+    /// <p>Information about the configuration of an input.</p>
+    pub fn get_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputConfiguration> {
+        &self.input_configuration
+    }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.input_definition = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl InputBuilder {
     ) -> Self {
         self.input_definition = input;
         self
+    }
+    /// <p>The definition of the input.</p>
+    pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
+        &self.input_definition
     }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {

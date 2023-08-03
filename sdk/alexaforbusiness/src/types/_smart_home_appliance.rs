@@ -62,6 +62,10 @@ impl SmartHomeApplianceBuilder {
         self.friendly_name = input;
         self
     }
+    /// <p>The friendly name of the smart home appliance.</p>
+    pub fn get_friendly_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.friendly_name
+    }
     /// <p>The description of the smart home appliance.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl SmartHomeApplianceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the smart home appliance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub fn manufacturer_name(
@@ -87,6 +95,10 @@ impl SmartHomeApplianceBuilder {
     ) -> Self {
         self.manufacturer_name = input;
         self
+    }
+    /// <p>The name of the manufacturer of the smart home appliance.</p>
+    pub fn get_manufacturer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer_name
     }
     /// Consumes the builder and constructs a [`SmartHomeAppliance`](crate::types::SmartHomeAppliance).
     pub fn build(self) -> crate::types::SmartHomeAppliance {

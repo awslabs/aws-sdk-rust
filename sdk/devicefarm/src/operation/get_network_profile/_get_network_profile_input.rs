@@ -40,6 +40,10 @@ impl GetNetworkProfileInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the network profile to return information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
     pub fn build(
         self,

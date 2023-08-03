@@ -78,6 +78,13 @@ impl BatchGetRepositoryScanningConfigurationOutputBuilder {
         self.scanning_configurations = input;
         self
     }
+    /// <p>The scanning configuration for the requested repositories.</p>
+    pub fn get_scanning_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>
+    {
+        &self.scanning_configurations
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -98,6 +105,13 @@ impl BatchGetRepositoryScanningConfigurationOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>
+    {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

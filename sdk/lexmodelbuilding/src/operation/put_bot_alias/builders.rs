@@ -37,6 +37,10 @@ impl PutBotAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBotAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bot_alias::builders::PutBotAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl PutBotAliasFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl PutBotAliasFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The version of the bot.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl PutBotAliasFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The version of the bot.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -148,6 +164,10 @@ impl PutBotAliasFluentBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
+    }
+    /// <p>The name of the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -163,6 +183,12 @@ impl PutBotAliasFluentBuilder {
         self.inner = self.inner.set_checksum(input);
         self
     }
+    /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+    /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+    /// <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
+    }
     /// <p>Settings for conversation logs for the alias.</p>
     pub fn conversation_logs(mut self, input: crate::types::ConversationLogsRequest) -> Self {
         self.inner = self.inner.conversation_logs(input);
@@ -175,6 +201,12 @@ impl PutBotAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conversation_logs(input);
         self
+    }
+    /// <p>Settings for conversation logs for the alias.</p>
+    pub fn get_conversation_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
+        self.inner.get_conversation_logs()
     }
     /// Appends an item to `tags`.
     ///
@@ -192,5 +224,9 @@ impl PutBotAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -54,6 +54,10 @@ impl ListPermissionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -72,6 +76,12 @@ impl ListPermissionsOutputBuilder {
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The permissions returned by the operation.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>> {
+        &self.permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

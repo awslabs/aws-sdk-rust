@@ -147,6 +147,10 @@ impl UpdateProfileInputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The ARN of the room profile to update. Required.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>The updated name for the room profile.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The updated name for the room profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
     pub fn is_default(mut self, input: bool) -> Self {
@@ -167,6 +175,10 @@ impl UpdateProfileInputBuilder {
         self.is_default = input;
         self
     }
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// <p>The updated timezone for the room profile.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -177,6 +189,10 @@ impl UpdateProfileInputBuilder {
         self.timezone = input;
         self
     }
+    /// <p>The updated timezone for the room profile.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
+    }
     /// <p>The updated address for the room profile.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
@@ -186,6 +202,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>The updated address for the room profile.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// <p>The updated distance unit for the room profile.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
@@ -200,6 +220,10 @@ impl UpdateProfileInputBuilder {
         self.distance_unit = input;
         self
     }
+    /// <p>The updated distance unit for the room profile.</p>
+    pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
+        &self.distance_unit
+    }
     /// <p>The updated temperature unit for the room profile.</p>
     pub fn temperature_unit(mut self, input: crate::types::TemperatureUnit) -> Self {
         self.temperature_unit = ::std::option::Option::Some(input);
@@ -213,6 +237,10 @@ impl UpdateProfileInputBuilder {
         self.temperature_unit = input;
         self
     }
+    /// <p>The updated temperature unit for the room profile.</p>
+    pub fn get_temperature_unit(&self) -> &::std::option::Option<crate::types::TemperatureUnit> {
+        &self.temperature_unit
+    }
     /// <p>The updated wake word for the room profile.</p>
     pub fn wake_word(mut self, input: crate::types::WakeWord) -> Self {
         self.wake_word = ::std::option::Option::Some(input);
@@ -222,6 +250,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_wake_word(mut self, input: ::std::option::Option<crate::types::WakeWord>) -> Self {
         self.wake_word = input;
         self
+    }
+    /// <p>The updated wake word for the room profile.</p>
+    pub fn get_wake_word(&self) -> &::std::option::Option<crate::types::WakeWord> {
+        &self.wake_word
     }
     /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,6 +265,10 @@ impl UpdateProfileInputBuilder {
         self.locale = input;
         self
     }
+    /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>Whether the setup mode of the profile is enabled.</p>
     pub fn setup_mode_disabled(mut self, input: bool) -> Self {
         self.setup_mode_disabled = ::std::option::Option::Some(input);
@@ -242,6 +278,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_setup_mode_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.setup_mode_disabled = input;
         self
+    }
+    /// <p>Whether the setup mode of the profile is enabled.</p>
+    pub fn get_setup_mode_disabled(&self) -> &::std::option::Option<bool> {
+        &self.setup_mode_disabled
     }
     /// <p>The updated maximum volume limit for the room profile.</p>
     pub fn max_volume_limit(mut self, input: i32) -> Self {
@@ -253,6 +293,10 @@ impl UpdateProfileInputBuilder {
         self.max_volume_limit = input;
         self
     }
+    /// <p>The updated maximum volume limit for the room profile.</p>
+    pub fn get_max_volume_limit(&self) -> &::std::option::Option<i32> {
+        &self.max_volume_limit
+    }
     /// <p>Whether the PSTN setting of the room profile is enabled.</p>
     pub fn pstn_enabled(mut self, input: bool) -> Self {
         self.pstn_enabled = ::std::option::Option::Some(input);
@@ -263,6 +307,10 @@ impl UpdateProfileInputBuilder {
         self.pstn_enabled = input;
         self
     }
+    /// <p>Whether the PSTN setting of the room profile is enabled.</p>
+    pub fn get_pstn_enabled(&self) -> &::std::option::Option<bool> {
+        &self.pstn_enabled
+    }
     /// <p>Whether data retention of the profile is enabled.</p>
     pub fn data_retention_opt_in(mut self, input: bool) -> Self {
         self.data_retention_opt_in = ::std::option::Option::Some(input);
@@ -272,6 +320,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_data_retention_opt_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_retention_opt_in = input;
         self
+    }
+    /// <p>Whether data retention of the profile is enabled.</p>
+    pub fn get_data_retention_opt_in(&self) -> &::std::option::Option<bool> {
+        &self.data_retention_opt_in
     }
     /// <p>The updated meeting room settings of a room profile.</p>
     pub fn meeting_room_configuration(
@@ -288,6 +340,12 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.meeting_room_configuration = input;
         self
+    }
+    /// <p>The updated meeting room settings of a room profile.</p>
+    pub fn get_meeting_room_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateMeetingRoomConfiguration> {
+        &self.meeting_room_configuration
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(

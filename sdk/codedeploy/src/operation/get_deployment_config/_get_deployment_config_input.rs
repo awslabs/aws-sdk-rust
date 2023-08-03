@@ -48,6 +48,10 @@ impl GetDeploymentConfigInputBuilder {
         self.deployment_config_name = input;
         self
     }
+    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_config_name
+    }
     /// Consumes the builder and constructs a [`GetDeploymentConfigInput`](crate::operation::get_deployment_config::GetDeploymentConfigInput).
     pub fn build(
         self,

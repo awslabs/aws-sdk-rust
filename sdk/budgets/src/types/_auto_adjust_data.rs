@@ -59,6 +59,10 @@ impl AutoAdjustDataBuilder {
         self.auto_adjust_type = input;
         self
     }
+    /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
+    pub fn get_auto_adjust_type(&self) -> &::std::option::Option<crate::types::AutoAdjustType> {
+        &self.auto_adjust_type
+    }
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
     pub fn historical_options(mut self, input: crate::types::HistoricalOptions) -> Self {
         self.historical_options = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl AutoAdjustDataBuilder {
         self.historical_options = input;
         self
     }
+    /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
+    pub fn get_historical_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistoricalOptions> {
+        &self.historical_options
+    }
     /// <p>The last time that your budget was auto-adjusted.</p>
     pub fn last_auto_adjust_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_auto_adjust_time = ::std::option::Option::Some(input);
@@ -84,6 +94,12 @@ impl AutoAdjustDataBuilder {
     ) -> Self {
         self.last_auto_adjust_time = input;
         self
+    }
+    /// <p>The last time that your budget was auto-adjusted.</p>
+    pub fn get_last_auto_adjust_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_auto_adjust_time
     }
     /// Consumes the builder and constructs a [`AutoAdjustData`](crate::types::AutoAdjustData).
     pub fn build(self) -> crate::types::AutoAdjustData {

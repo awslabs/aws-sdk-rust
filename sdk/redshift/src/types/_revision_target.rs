@@ -64,6 +64,10 @@ impl RevisionTargetBuilder {
         self.database_revision = input;
         self
     }
+    /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
+    pub fn get_database_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_revision
+    }
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RevisionTargetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date on which the database revision was released.</p>
     pub fn database_revision_release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -86,6 +94,12 @@ impl RevisionTargetBuilder {
     ) -> Self {
         self.database_revision_release_date = input;
         self
+    }
+    /// <p>The date on which the database revision was released.</p>
+    pub fn get_database_revision_release_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.database_revision_release_date
     }
     /// Consumes the builder and constructs a [`RevisionTarget`](crate::types::RevisionTarget).
     pub fn build(self) -> crate::types::RevisionTarget {

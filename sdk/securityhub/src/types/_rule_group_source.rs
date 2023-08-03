@@ -78,6 +78,12 @@ impl RuleGroupSourceBuilder {
         self.rules_source_list = input;
         self
     }
+    /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
+    pub fn get_rules_source_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupSourceListDetails> {
+        &self.rules_source_list
+    }
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
     pub fn rules_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rules_string = ::std::option::Option::Some(input.into());
@@ -87,6 +93,10 @@ impl RuleGroupSourceBuilder {
     pub fn set_rules_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rules_string = input;
         self
+    }
+    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
+    pub fn get_rules_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rules_string
     }
     /// Appends an item to `stateful_rules`.
     ///
@@ -112,6 +122,13 @@ impl RuleGroupSourceBuilder {
         self.stateful_rules = input;
         self
     }
+    /// <p>Suricata rule specifications.</p>
+    pub fn get_stateful_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>>
+    {
+        &self.stateful_rules
+    }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
     pub fn stateless_rules_and_custom_actions(
         mut self,
@@ -129,6 +146,13 @@ impl RuleGroupSourceBuilder {
     ) -> Self {
         self.stateless_rules_and_custom_actions = input;
         self
+    }
+    /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
+    pub fn get_stateless_rules_and_custom_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>
+    {
+        &self.stateless_rules_and_custom_actions
     }
     /// Consumes the builder and constructs a [`RuleGroupSource`](crate::types::RuleGroupSource).
     pub fn build(self) -> crate::types::RuleGroupSource {

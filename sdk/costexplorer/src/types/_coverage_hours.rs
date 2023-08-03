@@ -70,6 +70,10 @@ impl CoverageHoursBuilder {
         self.on_demand_hours = input;
         self
     }
+    /// <p>The number of instance running hours that On-Demand Instances covered.</p>
+    pub fn get_on_demand_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_hours
+    }
     /// <p>The number of instance running hours that reservations covered.</p>
     pub fn reserved_hours(
         mut self,
@@ -85,6 +89,10 @@ impl CoverageHoursBuilder {
     ) -> Self {
         self.reserved_hours = input;
         self
+    }
+    /// <p>The number of instance running hours that reservations covered.</p>
+    pub fn get_reserved_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_hours
     }
     /// <p>The total instance usage, in hours.</p>
     pub fn total_running_hours(
@@ -102,6 +110,10 @@ impl CoverageHoursBuilder {
         self.total_running_hours = input;
         self
     }
+    /// <p>The total instance usage, in hours.</p>
+    pub fn get_total_running_hours(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_running_hours
+    }
     /// <p>The percentage of instance hours that a reservation covered.</p>
     pub fn coverage_hours_percentage(
         mut self,
@@ -117,6 +129,10 @@ impl CoverageHoursBuilder {
     ) -> Self {
         self.coverage_hours_percentage = input;
         self
+    }
+    /// <p>The percentage of instance hours that a reservation covered.</p>
+    pub fn get_coverage_hours_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coverage_hours_percentage
     }
     /// Consumes the builder and constructs a [`CoverageHours`](crate::types::CoverageHours).
     pub fn build(self) -> crate::types::CoverageHours {

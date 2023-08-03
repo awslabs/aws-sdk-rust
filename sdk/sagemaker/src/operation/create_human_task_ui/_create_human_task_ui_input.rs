@@ -62,6 +62,10 @@ impl CreateHumanTaskUiInputBuilder {
         self.human_task_ui_name = input;
         self
     }
+    /// <p>The name of the user interface you are creating.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_name
+    }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn ui_template(mut self, input: crate::types::UiTemplate) -> Self {
         self.ui_template = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CreateHumanTaskUiInputBuilder {
     ) -> Self {
         self.ui_template = input;
         self
+    }
+    /// <p>The Liquid template for the worker user interface.</p>
+    pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplate> {
+        &self.ui_template
     }
     /// Appends an item to `tags`.
     ///
@@ -93,6 +101,10 @@ impl CreateHumanTaskUiInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
     pub fn build(

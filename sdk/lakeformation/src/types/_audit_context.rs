@@ -46,6 +46,10 @@ impl AuditContextBuilder {
         self.additional_audit_context = input;
         self
     }
+    /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn get_additional_audit_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_audit_context
+    }
     /// Consumes the builder and constructs a [`AuditContext`](crate::types::AuditContext).
     pub fn build(self) -> crate::types::AuditContext {
         crate::types::AuditContext {

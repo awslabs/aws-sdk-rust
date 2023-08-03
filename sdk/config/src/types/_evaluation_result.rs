@@ -92,6 +92,12 @@ impl EvaluationResultBuilder {
         self.evaluation_result_identifier = input;
         self
     }
+    /// <p>Uniquely identifies the evaluation result.</p>
+    pub fn get_evaluation_result_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
+        &self.evaluation_result_identifier
+    }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
@@ -107,6 +113,11 @@ impl EvaluationResultBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
+    /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The time when Config recorded the evaluation result.</p>
     pub fn result_recorded_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.result_recorded_time = ::std::option::Option::Some(input);
@@ -119,6 +130,10 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.result_recorded_time = input;
         self
+    }
+    /// <p>The time when Config recorded the evaluation result.</p>
+    pub fn get_result_recorded_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.result_recorded_time
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
     pub fn config_rule_invoked_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -133,6 +148,12 @@ impl EvaluationResultBuilder {
         self.config_rule_invoked_time = input;
         self
     }
+    /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
+    pub fn get_config_rule_invoked_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.config_rule_invoked_time
+    }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation = ::std::option::Option::Some(input.into());
@@ -143,6 +164,10 @@ impl EvaluationResultBuilder {
         self.annotation = input;
         self
     }
+    /// <p>Supplementary information about how the evaluation determined the compliance.</p>
+    pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation
+    }
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
     pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_token = ::std::option::Option::Some(input.into());
@@ -152,6 +177,10 @@ impl EvaluationResultBuilder {
     pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_token = input;
         self
+    }
+    /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
+    pub fn get_result_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_token
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {

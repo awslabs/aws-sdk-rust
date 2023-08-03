@@ -56,6 +56,12 @@ impl GetTransitGatewayRouteTableAttachmentOutputBuilder {
         self.transit_gateway_route_table_attachment = input;
         self
     }
+    /// <p>Returns information about the transit gateway route table attachment.</p>
+    pub fn get_transit_gateway_route_table_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAttachment> {
+        &self.transit_gateway_route_table_attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

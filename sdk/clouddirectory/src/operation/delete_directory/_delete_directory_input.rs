@@ -45,6 +45,10 @@ impl DeleteDirectoryInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory to delete.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
     pub fn build(
         self,

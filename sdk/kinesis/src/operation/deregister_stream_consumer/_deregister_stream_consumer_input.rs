@@ -57,6 +57,10 @@ impl DeregisterStreamConsumerInputBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The name that you gave to the consumer.</p>
     pub fn consumer_name(
         mut self,
@@ -73,6 +77,10 @@ impl DeregisterStreamConsumerInputBuilder {
         self.consumer_name = input;
         self
     }
+    /// <p>The name that you gave to the consumer.</p>
+    pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_name
+    }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeregisterStreamConsumerInputBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_arn = input;
         self
+    }
+    /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_arn
     }
     /// Consumes the builder and constructs a [`DeregisterStreamConsumerInput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput).
     pub fn build(

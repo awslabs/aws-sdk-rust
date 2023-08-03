@@ -37,6 +37,12 @@ impl TestAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_authorization::builders::TestAuthorizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl TestAuthorizationFluentBuilder {
         self.inner = self.inner.set_principal(input);
         self
     }
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
+    }
     /// <p>The Cognito identity pool ID.</p>
     pub fn cognito_identity_pool_id(
         mut self,
@@ -142,6 +152,10 @@ impl TestAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cognito_identity_pool_id(input);
         self
+    }
+    /// <p>The Cognito identity pool ID.</p>
+    pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cognito_identity_pool_id()
     }
     /// Appends an item to `authInfos`.
     ///
@@ -160,6 +174,12 @@ impl TestAuthorizationFluentBuilder {
         self.inner = self.inner.set_auth_infos(input);
         self
     }
+    /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
+    pub fn get_auth_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>> {
+        self.inner.get_auth_infos()
+    }
     /// <p>The MQTT client ID.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -169,6 +189,10 @@ impl TestAuthorizationFluentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
+    }
+    /// <p>The MQTT client ID.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
     }
     /// Appends an item to `policyNamesToAdd`.
     ///
@@ -190,6 +214,12 @@ impl TestAuthorizationFluentBuilder {
         self.inner = self.inner.set_policy_names_to_add(input);
         self
     }
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
+    pub fn get_policy_names_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_names_to_add()
+    }
     /// Appends an item to `policyNamesToSkip`.
     ///
     /// To override the contents of this collection use [`set_policy_names_to_skip`](Self::set_policy_names_to_skip).
@@ -209,5 +239,11 @@ impl TestAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_names_to_skip(input);
         self
+    }
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
+    pub fn get_policy_names_to_skip(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_names_to_skip()
     }
 }

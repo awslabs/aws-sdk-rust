@@ -43,6 +43,12 @@ impl IntegrationConfigBuilder {
         self.appflow_integration = input;
         self
     }
+    /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+    pub fn get_appflow_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppflowIntegration> {
+        &self.appflow_integration
+    }
     /// Consumes the builder and constructs a [`IntegrationConfig`](crate::types::IntegrationConfig).
     pub fn build(self) -> crate::types::IntegrationConfig {
         crate::types::IntegrationConfig {

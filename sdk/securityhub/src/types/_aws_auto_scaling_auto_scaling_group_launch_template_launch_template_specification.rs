@@ -62,6 +62,10 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
         self.launch_template_id = input;
         self
     }
+    /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
     pub fn launch_template_name(
         mut self,
@@ -78,6 +82,10 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
         self.launch_template_name = input;
         self
     }
+    /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
+    }
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
     pub fn build(

@@ -96,6 +96,10 @@ impl NotificationBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the notification. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -111,6 +115,10 @@ impl NotificationBuilder {
     ) -> Self {
         self.assessment_id = input;
         self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// <p> The name of the related assessment. </p>
     pub fn assessment_name(
@@ -128,6 +136,10 @@ impl NotificationBuilder {
         self.assessment_name = input;
         self
     }
+    /// <p> The name of the related assessment. </p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
+    }
     /// <p> The identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -143,6 +155,10 @@ impl NotificationBuilder {
     ) -> Self {
         self.control_set_id = input;
         self
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
     }
     /// <p> Specifies the name of the control set that the notification is about. </p>
     pub fn control_set_name(
@@ -160,6 +176,10 @@ impl NotificationBuilder {
         self.control_set_name = input;
         self
     }
+    /// <p> Specifies the name of the control set that the notification is about. </p>
+    pub fn get_control_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_name
+    }
     /// <p> The description of the notification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -169,6 +189,10 @@ impl NotificationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the notification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The time when the notification was sent. </p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,6 +207,10 @@ impl NotificationBuilder {
         self.event_time = input;
         self
     }
+    /// <p> The time when the notification was sent. </p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p> The sender of the notification. </p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -192,6 +220,10 @@ impl NotificationBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p> The sender of the notification. </p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {

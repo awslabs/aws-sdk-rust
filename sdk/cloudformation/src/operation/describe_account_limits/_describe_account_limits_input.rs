@@ -42,6 +42,10 @@ impl DescribeAccountLimitsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
     pub fn build(
         self,

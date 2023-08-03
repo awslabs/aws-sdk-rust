@@ -73,6 +73,10 @@ impl CreateConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the connection to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the connection to create.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateConnectionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the connection to create.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of authorization to use for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
@@ -100,6 +108,14 @@ impl CreateConnectionInputBuilder {
         self.authorization_type = input;
         self
     }
+    /// <p>The type of authorization to use for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
+    pub fn get_authorization_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
+        &self.authorization_type
+    }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub fn auth_parameters(
         mut self,
@@ -115,6 +131,12 @@ impl CreateConnectionInputBuilder {
     ) -> Self {
         self.auth_parameters = input;
         self
+    }
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
+    pub fn get_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
+        &self.auth_parameters
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(

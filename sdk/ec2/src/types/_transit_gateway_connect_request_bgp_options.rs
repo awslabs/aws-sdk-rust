@@ -40,6 +40,10 @@ impl TransitGatewayConnectRequestBgpOptionsBuilder {
         self.peer_asn = input;
         self
     }
+    /// <p>The peer Autonomous System Number (ASN).</p>
+    pub fn get_peer_asn(&self) -> &::std::option::Option<i64> {
+        &self.peer_asn
+    }
     /// Consumes the builder and constructs a [`TransitGatewayConnectRequestBgpOptions`](crate::types::TransitGatewayConnectRequestBgpOptions).
     pub fn build(self) -> crate::types::TransitGatewayConnectRequestBgpOptions {
         crate::types::TransitGatewayConnectRequestBgpOptions {

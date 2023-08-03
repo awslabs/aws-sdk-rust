@@ -51,6 +51,10 @@ impl CreateServiceInstanceOutputBuilder {
         self.service_instance = input;
         self
     }
+    /// <p>The detailed data of the service instance being created.</p>
+    pub fn get_service_instance(&self) -> &::std::option::Option<crate::types::ServiceInstance> {
+        &self.service_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -62,6 +62,12 @@ impl TrainingImageConfigBuilder {
         self.training_repository_access_mode = input;
         self
     }
+    /// <p>The method that your training job will use to gain access to the images in your private Docker registry. For access to an image in a private Docker registry, set to <code>Vpc</code>.</p>
+    pub fn get_training_repository_access_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingRepositoryAccessMode> {
+        &self.training_repository_access_mode
+    }
     /// <p>An object containing authentication information for a private Docker registry containing your training images.</p>
     pub fn training_repository_auth_config(
         mut self,
@@ -77,6 +83,12 @@ impl TrainingImageConfigBuilder {
     ) -> Self {
         self.training_repository_auth_config = input;
         self
+    }
+    /// <p>An object containing authentication information for a private Docker registry containing your training images.</p>
+    pub fn get_training_repository_auth_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingRepositoryAuthConfig> {
+        &self.training_repository_auth_config
     }
     /// Consumes the builder and constructs a [`TrainingImageConfig`](crate::types::TrainingImageConfig).
     pub fn build(self) -> crate::types::TrainingImageConfig {

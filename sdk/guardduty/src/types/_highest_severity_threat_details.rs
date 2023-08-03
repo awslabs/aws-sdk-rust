@@ -56,6 +56,10 @@ impl HighestSeverityThreatDetailsBuilder {
         self.severity = input;
         self
     }
+    /// <p>Severity level of the highest severity threat detected.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
+    }
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
     pub fn threat_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl HighestSeverityThreatDetailsBuilder {
         self.threat_name = input;
         self
     }
+    /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+    pub fn get_threat_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_name
+    }
     /// <p>Total number of infected files with the highest severity threat detected.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl HighestSeverityThreatDetailsBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>Total number of infected files with the highest severity threat detected.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`HighestSeverityThreatDetails`](crate::types::HighestSeverityThreatDetails).
     pub fn build(self) -> crate::types::HighestSeverityThreatDetails {

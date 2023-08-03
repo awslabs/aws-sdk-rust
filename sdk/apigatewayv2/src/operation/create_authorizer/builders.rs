@@ -36,6 +36,12 @@ impl CreateAuthorizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAuthorizer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     pub fn authorizer_credentials_arn(
         mut self,
@@ -141,6 +151,10 @@ impl CreateAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_credentials_arn(input);
         self
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    pub fn get_authorizer_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_credentials_arn()
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     pub fn authorizer_payload_format_version(
@@ -158,6 +172,12 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_authorizer_payload_format_version(input);
         self
     }
+    /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    pub fn get_authorizer_payload_format_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_payload_format_version()
+    }
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
     pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.authorizer_result_ttl_in_seconds(input);
@@ -171,6 +191,10 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_authorizer_result_ttl_in_seconds(input);
         self
     }
+    /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    pub fn get_authorizer_result_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_authorizer_result_ttl_in_seconds()
+    }
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
     pub fn authorizer_type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.inner = self.inner.authorizer_type(input);
@@ -183,6 +207,10 @@ impl CreateAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_type(input);
         self
+    }
+    /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
+        self.inner.get_authorizer_type()
     }
     /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
     /// {account_id}
@@ -216,6 +244,18 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_authorizer_uri(input);
         self
     }
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+    /// {account_id}
+    /// </replaceable>:function:<replaceable>
+    /// {lambda_function_name}
+    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+    /// {region}
+    /// </replaceable>:lambda:path/<replaceable>
+    /// {service_api}
+    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    pub fn get_authorizer_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_uri()
+    }
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
     pub fn enable_simple_responses(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_simple_responses(input);
@@ -225,6 +265,10 @@ impl CreateAuthorizerFluentBuilder {
     pub fn set_enable_simple_responses(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_simple_responses(input);
         self
+    }
+    /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    pub fn get_enable_simple_responses(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_simple_responses()
     }
     /// Appends an item to `IdentitySource`.
     ///
@@ -250,6 +294,14 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_identity_source(input);
         self
     }
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    pub fn get_identity_source(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identity_source()
+    }
     /// <p>This parameter is not used.</p>
     pub fn identity_validation_expression(
         mut self,
@@ -266,6 +318,12 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_identity_validation_expression(input);
         self
     }
+    /// <p>This parameter is not used.</p>
+    pub fn get_identity_validation_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_validation_expression()
+    }
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
     pub fn jwt_configuration(mut self, input: crate::types::JwtConfiguration) -> Self {
         self.inner = self.inner.jwt_configuration(input);
@@ -279,6 +337,10 @@ impl CreateAuthorizerFluentBuilder {
         self.inner = self.inner.set_jwt_configuration(input);
         self
     }
+    /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    pub fn get_jwt_configuration(&self) -> &::std::option::Option<crate::types::JwtConfiguration> {
+        self.inner.get_jwt_configuration()
+    }
     /// <p>The name of the authorizer.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -288,5 +350,9 @@ impl CreateAuthorizerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the authorizer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

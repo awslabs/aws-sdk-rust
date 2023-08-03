@@ -60,6 +60,10 @@ impl StartConditionBuilder {
         self.description = input;
         self
     }
+    /// <p>The custom description of the condition.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
     pub fn event_start_condition(mut self, input: crate::types::EventStartCondition) -> Self {
         self.event_start_condition = ::std::option::Option::Some(input);
@@ -73,6 +77,12 @@ impl StartConditionBuilder {
         self.event_start_condition = input;
         self
     }
+    /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
+    pub fn get_event_start_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventStartCondition> {
+        &self.event_start_condition
+    }
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     pub fn segment_start_condition(mut self, input: crate::types::SegmentCondition) -> Self {
         self.segment_start_condition = ::std::option::Option::Some(input);
@@ -85,6 +95,12 @@ impl StartConditionBuilder {
     ) -> Self {
         self.segment_start_condition = input;
         self
+    }
+    /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
+    pub fn get_segment_start_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::SegmentCondition> {
+        &self.segment_start_condition
     }
     /// Consumes the builder and constructs a [`StartCondition`](crate::types::StartCondition).
     pub fn build(self) -> crate::types::StartCondition {

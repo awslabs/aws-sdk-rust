@@ -40,6 +40,10 @@ impl GetCloudFrontOriginAccessIdentityInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identity's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetCloudFrontOriginAccessIdentityInput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

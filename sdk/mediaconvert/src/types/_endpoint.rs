@@ -40,6 +40,10 @@ impl EndpointBuilder {
         self.url = input;
         self
     }
+    /// URL of endpoint
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint { url: self.url }

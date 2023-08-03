@@ -64,6 +64,10 @@ impl MergeShardsInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream for the merge.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     pub fn shard_to_merge(
         mut self,
@@ -79,6 +83,10 @@ impl MergeShardsInputBuilder {
     ) -> Self {
         self.shard_to_merge = input;
         self
+    }
+    /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
+    pub fn get_shard_to_merge(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_to_merge
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
     pub fn adjacent_shard_to_merge(
@@ -96,6 +104,10 @@ impl MergeShardsInputBuilder {
         self.adjacent_shard_to_merge = input;
         self
     }
+    /// <p>The shard ID of the adjacent shard for the merge.</p>
+    pub fn get_adjacent_shard_to_merge(&self) -> &::std::option::Option<::std::string::String> {
+        &self.adjacent_shard_to_merge
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl MergeShardsInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
     pub fn build(

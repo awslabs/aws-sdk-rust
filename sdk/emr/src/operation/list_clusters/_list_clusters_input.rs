@@ -67,6 +67,10 @@ impl ListClustersInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The creation date and time beginning value filter for listing clusters.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The creation date and time end value filter for listing clusters.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ListClustersInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The creation date and time end value filter for listing clusters.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Appends an item to `cluster_states`.
     ///
@@ -99,6 +107,12 @@ impl ListClustersInputBuilder {
         self.cluster_states = input;
         self
     }
+    /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
+    pub fn get_cluster_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
+        &self.cluster_states
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl ListClustersInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
     pub fn build(

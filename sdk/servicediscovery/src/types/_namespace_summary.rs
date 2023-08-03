@@ -96,6 +96,10 @@ impl NamespaceSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the namespace.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl NamespaceSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl NamespaceSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the namespace, either public or private.</p>
     pub fn r#type(mut self, input: crate::types::NamespaceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl NamespaceSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NamespaceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the namespace, either public or private.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NamespaceType> {
+        &self.r#type
     }
     /// <p>A description for the namespace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +152,10 @@ impl NamespaceSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the namespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The number of services that were created using the namespace.</p>
     pub fn service_count(mut self, input: i32) -> Self {
         self.service_count = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl NamespaceSummaryBuilder {
     pub fn set_service_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.service_count = input;
         self
+    }
+    /// <p>The number of services that were created using the namespace.</p>
+    pub fn get_service_count(&self) -> &::std::option::Option<i32> {
+        &self.service_count
     }
     /// <p>The properties of the namespace.</p>
     pub fn properties(mut self, input: crate::types::NamespaceProperties) -> Self {
@@ -159,6 +183,10 @@ impl NamespaceSummaryBuilder {
         self.properties = input;
         self
     }
+    /// <p>The properties of the namespace.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::NamespaceProperties> {
+        &self.properties
+    }
     /// <p>The date and time that the namespace was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl NamespaceSummaryBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time that the namespace was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Consumes the builder and constructs a [`NamespaceSummary`](crate::types::NamespaceSummary).
     pub fn build(self) -> crate::types::NamespaceSummary {

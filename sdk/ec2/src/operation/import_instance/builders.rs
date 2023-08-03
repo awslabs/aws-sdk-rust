@@ -42,6 +42,12 @@ impl ImportInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_instance::builders::ImportInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ImportInstanceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the instance being imported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `DiskImages`.
     ///
     /// To override the contents of this collection use [`set_disk_images`](Self::set_disk_images).
@@ -141,6 +151,12 @@ impl ImportInstanceFluentBuilder {
         self.inner = self.inner.set_disk_images(input);
         self
     }
+    /// <p>The disk image.</p>
+    pub fn get_disk_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
+        self.inner.get_disk_images()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -150,6 +166,10 @@ impl ImportInstanceFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The launch specification.</p>
     pub fn launch_specification(
@@ -167,6 +187,12 @@ impl ImportInstanceFluentBuilder {
         self.inner = self.inner.set_launch_specification(input);
         self
     }
+    /// <p>The launch specification.</p>
+    pub fn get_launch_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
+        self.inner.get_launch_specification()
+    }
     /// <p>The instance operating system.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.inner = self.inner.platform(input);
@@ -179,5 +205,9 @@ impl ImportInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform(input);
         self
+    }
+    /// <p>The instance operating system.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        self.inner.get_platform()
     }
 }

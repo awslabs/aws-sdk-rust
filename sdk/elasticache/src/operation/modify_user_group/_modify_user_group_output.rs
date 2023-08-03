@@ -109,6 +109,10 @@ impl ModifyUserGroupOutputBuilder {
         self.user_group_id = input;
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_group_id
+    }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl ModifyUserGroupOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl ModifyUserGroupOutputBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Appends an item to `user_ids`.
     ///
@@ -148,6 +160,10 @@ impl ModifyUserGroupOutputBuilder {
         self.user_ids = input;
         self
     }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
+    }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
     pub fn minimum_engine_version(
         mut self,
@@ -164,6 +180,10 @@ impl ModifyUserGroupOutputBuilder {
         self.minimum_engine_version = input;
         self
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
+    }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(mut self, input: crate::types::UserGroupPendingChanges) -> Self {
         self.pending_changes = ::std::option::Option::Some(input);
@@ -176,6 +196,12 @@ impl ModifyUserGroupOutputBuilder {
     ) -> Self {
         self.pending_changes = input;
         self
+    }
+    /// <p>A list of updates being applied to the user group.</p>
+    pub fn get_pending_changes(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserGroupPendingChanges> {
+        &self.pending_changes
     }
     /// Appends an item to `replication_groups`.
     ///
@@ -199,6 +225,12 @@ impl ModifyUserGroupOutputBuilder {
         self.replication_groups = input;
         self
     }
+    /// <p>A list of replication groups that the user group can access.</p>
+    pub fn get_replication_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_groups
+    }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -208,6 +240,10 @@ impl ModifyUserGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

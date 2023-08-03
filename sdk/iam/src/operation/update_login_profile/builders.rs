@@ -37,6 +37,12 @@ impl UpdateLoginProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLoginProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_login_profile::builders::UpdateLoginProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,11 @@ impl UpdateLoginProfileFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user whose password you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The new password for the specified IAM user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
     /// <ul>
@@ -153,6 +164,17 @@ impl UpdateLoginProfileFluentBuilder {
         self.inner = self.inner.set_password(input);
         self
     }
+    /// <p>The new password for the specified IAM user.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+    /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
+    /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
+    /// </ul>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
+    }
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub fn password_reset_required(mut self, input: bool) -> Self {
         self.inner = self.inner.password_reset_required(input);
@@ -162,5 +184,9 @@ impl UpdateLoginProfileFluentBuilder {
     pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_password_reset_required(input);
         self
+    }
+    /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
+    pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_password_reset_required()
     }
 }

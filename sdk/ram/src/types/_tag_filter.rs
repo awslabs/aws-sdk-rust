@@ -48,6 +48,10 @@ impl TagFilterBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The tag key. This must have a valid string value and can't be empty.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -66,6 +70,10 @@ impl TagFilterBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`TagFilter`](crate::types::TagFilter).
     pub fn build(self) -> crate::types::TagFilter {

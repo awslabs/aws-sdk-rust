@@ -37,6 +37,10 @@ impl CreateConnectClientAddInFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnectClientAddIn as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateConnectClientAddInFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The directory identifier for which to configure the client add-in.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The name of the client add-in.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +145,10 @@ impl CreateConnectClientAddInFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the client add-in.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
@@ -146,5 +158,9 @@ impl CreateConnectClientAddInFluentBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
+    }
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_url()
     }
 }

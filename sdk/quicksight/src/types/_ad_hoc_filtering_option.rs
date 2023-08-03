@@ -43,6 +43,12 @@ impl AdHocFilteringOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>Availability status.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).
     pub fn build(self) -> crate::types::AdHocFilteringOption {
         crate::types::AdHocFilteringOption {

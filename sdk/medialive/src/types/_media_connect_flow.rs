@@ -40,6 +40,10 @@ impl MediaConnectFlowBuilder {
         self.flow_arn = input;
         self
     }
+    /// The unique ARN of the MediaConnect Flow being used as a source.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::types::MediaConnectFlow).
     pub fn build(self) -> crate::types::MediaConnectFlow {
         crate::types::MediaConnectFlow {

@@ -48,6 +48,10 @@ impl MultiplexProgramChannelDestinationSettingsBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The program name of the Multiplex program that the encoder is providing output to.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MultiplexProgramChannelDestinationSettingsBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The program name of the Multiplex program that the encoder is providing output to.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`MultiplexProgramChannelDestinationSettings`](crate::types::MultiplexProgramChannelDestinationSettings).
     pub fn build(self) -> crate::types::MultiplexProgramChannelDestinationSettings {

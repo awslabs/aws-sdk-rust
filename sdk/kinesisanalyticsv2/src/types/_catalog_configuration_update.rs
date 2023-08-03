@@ -50,6 +50,12 @@ impl CatalogConfigurationUpdateBuilder {
         self.glue_data_catalog_configuration_update = input;
         self
     }
+    /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_glue_data_catalog_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate> {
+        &self.glue_data_catalog_configuration_update
+    }
     /// Consumes the builder and constructs a [`CatalogConfigurationUpdate`](crate::types::CatalogConfigurationUpdate).
     pub fn build(self) -> crate::types::CatalogConfigurationUpdate {
         crate::types::CatalogConfigurationUpdate {

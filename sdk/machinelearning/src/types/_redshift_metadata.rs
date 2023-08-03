@@ -59,6 +59,10 @@ impl RedshiftMetadataBuilder {
         self.redshift_database = input;
         self
     }
+    /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
+    pub fn get_redshift_database(&self) -> &::std::option::Option<crate::types::RedshiftDatabase> {
+        &self.redshift_database
+    }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn database_user_name(
         mut self,
@@ -75,6 +79,10 @@ impl RedshiftMetadataBuilder {
         self.database_user_name = input;
         self
     }
+    /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
+    pub fn get_database_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_user_name
+    }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
     pub fn select_sql_query(
         mut self,
@@ -90,6 +98,10 @@ impl RedshiftMetadataBuilder {
     ) -> Self {
         self.select_sql_query = input;
         self
+    }
+    /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    pub fn get_select_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.select_sql_query
     }
     /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::types::RedshiftMetadata).
     pub fn build(self) -> crate::types::RedshiftMetadata {

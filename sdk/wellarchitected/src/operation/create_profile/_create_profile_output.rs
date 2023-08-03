@@ -54,6 +54,10 @@ impl CreateProfileOutputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>Version of the profile.</p>
     pub fn profile_version(
         mut self,
@@ -69,6 +73,10 @@ impl CreateProfileOutputBuilder {
     ) -> Self {
         self.profile_version = input;
         self
+    }
+    /// <p>Version of the profile.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

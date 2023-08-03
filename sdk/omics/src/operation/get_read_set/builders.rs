@@ -36,6 +36,10 @@ impl GetReadSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReadSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_read_set::builders::GetReadSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetReadSetFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The read set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(
         mut self,
@@ -134,6 +142,10 @@ impl GetReadSetFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReadSetFile) -> Self {
         self.inner = self.inner.file(input);
@@ -144,6 +156,10 @@ impl GetReadSetFluentBuilder {
         self.inner = self.inner.set_file(input);
         self
     }
+    /// <p>The file to retrieve.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ReadSetFile> {
+        self.inner.get_file()
+    }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
         self.inner = self.inner.part_number(input);
@@ -153,5 +169,9 @@ impl GetReadSetFluentBuilder {
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_part_number(input);
         self
+    }
+    /// <p>The part number to retrieve.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_part_number()
     }
 }

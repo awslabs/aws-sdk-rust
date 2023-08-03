@@ -48,6 +48,10 @@ impl InsightsConfigurationBuilder {
         self.insights_enabled = input;
         self
     }
+    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
+    pub fn get_insights_enabled(&self) -> &::std::option::Option<bool> {
+        &self.insights_enabled
+    }
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub fn notifications_enabled(mut self, input: bool) -> Self {
         self.notifications_enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InsightsConfigurationBuilder {
     pub fn set_notifications_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notifications_enabled = input;
         self
+    }
+    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
+    pub fn get_notifications_enabled(&self) -> &::std::option::Option<bool> {
+        &self.notifications_enabled
     }
     /// Consumes the builder and constructs a [`InsightsConfiguration`](crate::types::InsightsConfiguration).
     pub fn build(self) -> crate::types::InsightsConfiguration {

@@ -122,6 +122,12 @@ impl ResourceFilterCriteriaBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account IDs used as resource filter criteria.</p>
+    pub fn get_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.account_id
+    }
     /// Appends an item to `resource_id`.
     ///
     /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
@@ -140,6 +146,12 @@ impl ResourceFilterCriteriaBuilder {
     ) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource IDs used as resource filter criteria.</p>
+    pub fn get_resource_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.resource_id
     }
     /// Appends an item to `resource_type`.
     ///
@@ -160,6 +172,12 @@ impl ResourceFilterCriteriaBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource types used as resource filter criteria.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.resource_type
+    }
     /// Appends an item to `ecr_repository_name`.
     ///
     /// To override the contents of this collection use [`set_ecr_repository_name`](Self::set_ecr_repository_name).
@@ -178,6 +196,12 @@ impl ResourceFilterCriteriaBuilder {
     ) -> Self {
         self.ecr_repository_name = input;
         self
+    }
+    /// <p>The ECR repository names used as resource filter criteria.</p>
+    pub fn get_ecr_repository_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.ecr_repository_name
     }
     /// Appends an item to `lambda_function_name`.
     ///
@@ -198,6 +222,12 @@ impl ResourceFilterCriteriaBuilder {
         self.lambda_function_name = input;
         self
     }
+    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    pub fn get_lambda_function_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.lambda_function_name
+    }
     /// Appends an item to `ecr_image_tags`.
     ///
     /// To override the contents of this collection use [`set_ecr_image_tags`](Self::set_ecr_image_tags).
@@ -216,6 +246,12 @@ impl ResourceFilterCriteriaBuilder {
     ) -> Self {
         self.ecr_image_tags = input;
         self
+    }
+    /// <p>The ECR image tags used as resource filter criteria.</p>
+    pub fn get_ecr_image_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+        &self.ecr_image_tags
     }
     /// Appends an item to `ec2_instance_tags`.
     ///
@@ -236,6 +272,12 @@ impl ResourceFilterCriteriaBuilder {
         self.ec2_instance_tags = input;
         self
     }
+    /// <p>The EC2 instance tags used as resource filter criteria.</p>
+    pub fn get_ec2_instance_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>> {
+        &self.ec2_instance_tags
+    }
     /// Appends an item to `lambda_function_tags`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_tags`](Self::set_lambda_function_tags).
@@ -254,6 +296,12 @@ impl ResourceFilterCriteriaBuilder {
     ) -> Self {
         self.lambda_function_tags = input;
         self
+    }
+    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    pub fn get_lambda_function_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>> {
+        &self.lambda_function_tags
     }
     /// Consumes the builder and constructs a [`ResourceFilterCriteria`](crate::types::ResourceFilterCriteria).
     pub fn build(self) -> crate::types::ResourceFilterCriteria {

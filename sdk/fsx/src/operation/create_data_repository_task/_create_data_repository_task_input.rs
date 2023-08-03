@@ -100,6 +100,10 @@ impl CreateDataRepositoryTaskInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the type of data repository task to create.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskType> {
+        &self.r#type
+    }
     /// Appends an item to `paths`.
     ///
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
@@ -127,6 +131,14 @@ impl CreateDataRepositoryTaskInputBuilder {
         self.paths = input;
         self
     }
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <ul>
+    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// </ul>
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.paths
+    }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn file_system_id(
         mut self,
@@ -143,6 +155,10 @@ impl CreateDataRepositoryTaskInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
     pub fn report(mut self, input: crate::types::CompletionReport) -> Self {
         self.report = ::std::option::Option::Some(input);
@@ -155,6 +171,10 @@ impl CreateDataRepositoryTaskInputBuilder {
     ) -> Self {
         self.report = input;
         self
+    }
+    /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::CompletionReport> {
+        &self.report
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
@@ -171,6 +191,10 @@ impl CreateDataRepositoryTaskInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -191,6 +215,10 @@ impl CreateDataRepositoryTaskInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn capacity_to_release(mut self, input: i64) -> Self {
         self.capacity_to_release = ::std::option::Option::Some(input);
@@ -200,6 +228,10 @@ impl CreateDataRepositoryTaskInputBuilder {
     pub fn set_capacity_to_release(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity_to_release = input;
         self
+    }
+    /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
+    pub fn get_capacity_to_release(&self) -> &::std::option::Option<i64> {
+        &self.capacity_to_release
     }
     /// Consumes the builder and constructs a [`CreateDataRepositoryTaskInput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput).
     pub fn build(

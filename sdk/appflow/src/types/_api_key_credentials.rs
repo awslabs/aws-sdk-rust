@@ -54,6 +54,10 @@ impl ApiKeyCredentialsBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The API key required for API key authentication.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn api_secret_key(
         mut self,
@@ -69,6 +73,10 @@ impl ApiKeyCredentialsBuilder {
     ) -> Self {
         self.api_secret_key = input;
         self
+    }
+    /// <p>The API secret key required for API key authentication.</p>
+    pub fn get_api_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_secret_key
     }
     /// Consumes the builder and constructs a [`ApiKeyCredentials`](crate::types::ApiKeyCredentials).
     pub fn build(self) -> crate::types::ApiKeyCredentials {

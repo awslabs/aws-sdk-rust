@@ -39,6 +39,13 @@ impl CreateOrganizationalUnitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOrganizationalUnit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,15 @@ impl CreateOrganizationalUnitFluentBuilder {
         self.inner = self.inner.set_parent_id(input);
         self
     }
+    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+    /// </ul>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_id()
+    }
     /// <p>The friendly name to assign to the new OU.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -148,6 +164,10 @@ impl CreateOrganizationalUnitFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The friendly name to assign to the new OU.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -169,5 +189,11 @@ impl CreateOrganizationalUnitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

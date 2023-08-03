@@ -178,6 +178,10 @@ impl TableInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the table.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -188,6 +192,10 @@ impl TableInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the table.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -197,6 +205,10 @@ impl TableInputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The last time that the table was accessed.</p>
     pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,6 +223,10 @@ impl TableInputBuilder {
         self.last_access_time = input;
         self
     }
+    /// <p>The last time that the table was accessed.</p>
+    pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access_time
+    }
     /// <p>The last time that column statistics were computed for this table.</p>
     pub fn last_analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_analyzed_time = ::std::option::Option::Some(input);
@@ -224,6 +240,10 @@ impl TableInputBuilder {
         self.last_analyzed_time = input;
         self
     }
+    /// <p>The last time that column statistics were computed for this table.</p>
+    pub fn get_last_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_time
+    }
     /// <p>The retention time for this table.</p>
     pub fn retention(mut self, input: i32) -> Self {
         self.retention = ::std::option::Option::Some(input);
@@ -233,6 +253,10 @@ impl TableInputBuilder {
     pub fn set_retention(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention = input;
         self
+    }
+    /// <p>The retention time for this table.</p>
+    pub fn get_retention(&self) -> &::std::option::Option<i32> {
+        &self.retention
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
@@ -246,6 +270,12 @@ impl TableInputBuilder {
     ) -> Self {
         self.storage_descriptor = input;
         self
+    }
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
+    pub fn get_storage_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageDescriptor> {
+        &self.storage_descriptor
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -270,6 +300,14 @@ impl TableInputBuilder {
         self.partition_keys = input;
         self
     }
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.partition_keys
+    }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(
         mut self,
@@ -286,6 +324,10 @@ impl TableInputBuilder {
         self.view_original_text = input;
         self
     }
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
+    pub fn get_view_original_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_original_text
+    }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn view_expanded_text(
         mut self,
@@ -301,6 +343,10 @@ impl TableInputBuilder {
     ) -> Self {
         self.view_expanded_text = input;
         self
+    }
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
+    pub fn get_view_expanded_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_expanded_text
     }
     /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
@@ -342,6 +388,25 @@ impl TableInputBuilder {
         self.table_type = input;
         self
     }
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_table_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_type
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -367,6 +432,14 @@ impl TableInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>These key-value pairs define properties associated with the table.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub fn target_table(mut self, input: crate::types::TableIdentifier) -> Self {
         self.target_table = ::std::option::Option::Some(input);
@@ -379,6 +452,10 @@ impl TableInputBuilder {
     ) -> Self {
         self.target_table = input;
         self
+    }
+    /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<crate::types::TableIdentifier> {
+        &self.target_table
     }
     /// Consumes the builder and constructs a [`TableInput`](crate::types::TableInput).
     pub fn build(self) -> crate::types::TableInput {

@@ -54,6 +54,10 @@ impl ControlInputParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub fn parameter_value(
         mut self,
@@ -69,6 +73,10 @@ impl ControlInputParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The value of parameter, for example, <code>hourly</code>.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ControlInputParameter`](crate::types::ControlInputParameter).
     pub fn build(self) -> crate::types::ControlInputParameter {

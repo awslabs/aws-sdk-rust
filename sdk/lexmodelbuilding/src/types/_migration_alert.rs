@@ -83,6 +83,14 @@ impl MigrationAlertBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MigrationAlertType> {
+        &self.r#type
+    }
     /// <p>A message that describes why the alert was issued.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl MigrationAlertBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message that describes why the alert was issued.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `details`.
     ///
@@ -111,6 +123,10 @@ impl MigrationAlertBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Additional details about the alert.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.details
     }
     /// Appends an item to `reference_ur_ls`.
     ///
@@ -133,6 +149,12 @@ impl MigrationAlertBuilder {
     ) -> Self {
         self.reference_ur_ls = input;
         self
+    }
+    /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
+    pub fn get_reference_ur_ls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reference_ur_ls
     }
     /// Consumes the builder and constructs a [`MigrationAlert`](crate::types::MigrationAlert).
     pub fn build(self) -> crate::types::MigrationAlert {

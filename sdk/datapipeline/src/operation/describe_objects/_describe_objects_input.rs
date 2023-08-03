@@ -64,6 +64,10 @@ impl DescribeObjectsInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline that contains the object definitions.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Appends an item to `object_ids`.
     ///
     /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
@@ -83,6 +87,10 @@ impl DescribeObjectsInputBuilder {
         self.object_ids = input;
         self
     }
+    /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.object_ids
+    }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn evaluate_expressions(mut self, input: bool) -> Self {
         self.evaluate_expressions = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl DescribeObjectsInputBuilder {
         self.evaluate_expressions = input;
         self
     }
+    /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
+    pub fn get_evaluate_expressions(&self) -> &::std::option::Option<bool> {
+        &self.evaluate_expressions
+    }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl DescribeObjectsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
     pub fn build(

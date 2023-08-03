@@ -56,6 +56,10 @@ impl EffectivePolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The policy ARN.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl EffectivePolicyBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The policy ARN.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// <p>The IAM policy document.</p>
     pub fn policy_document(
@@ -81,6 +89,10 @@ impl EffectivePolicyBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The IAM policy document.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Consumes the builder and constructs a [`EffectivePolicy`](crate::types::EffectivePolicy).
     pub fn build(self) -> crate::types::EffectivePolicy {

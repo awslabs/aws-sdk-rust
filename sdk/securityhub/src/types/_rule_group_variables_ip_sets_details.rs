@@ -49,6 +49,10 @@ impl RuleGroupVariablesIpSetsDetailsBuilder {
         self.definition = input;
         self
     }
+    /// <p>The list of IP addresses and ranges.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.definition
+    }
     /// Consumes the builder and constructs a [`RuleGroupVariablesIpSetsDetails`](crate::types::RuleGroupVariablesIpSetsDetails).
     pub fn build(self) -> crate::types::RuleGroupVariablesIpSetsDetails {
         crate::types::RuleGroupVariablesIpSetsDetails {

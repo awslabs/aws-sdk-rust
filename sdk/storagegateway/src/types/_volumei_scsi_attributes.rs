@@ -72,6 +72,10 @@ impl VolumeiScsiAttributesBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The network interface identifier.</p>
     pub fn network_interface_id(
         mut self,
@@ -88,6 +92,10 @@ impl VolumeiScsiAttributesBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The network interface identifier.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The port used to communicate with iSCSI targets.</p>
     pub fn network_interface_port(mut self, input: i32) -> Self {
         self.network_interface_port = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl VolumeiScsiAttributesBuilder {
     pub fn set_network_interface_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_interface_port = input;
         self
+    }
+    /// <p>The port used to communicate with iSCSI targets.</p>
+    pub fn get_network_interface_port(&self) -> &::std::option::Option<i32> {
+        &self.network_interface_port
     }
     /// <p>The logical disk number.</p>
     pub fn lun_number(mut self, input: i32) -> Self {
@@ -108,6 +120,10 @@ impl VolumeiScsiAttributesBuilder {
         self.lun_number = input;
         self
     }
+    /// <p>The logical disk number.</p>
+    pub fn get_lun_number(&self) -> &::std::option::Option<i32> {
+        &self.lun_number
+    }
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub fn chap_enabled(mut self, input: bool) -> Self {
         self.chap_enabled = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl VolumeiScsiAttributesBuilder {
     pub fn set_chap_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.chap_enabled = input;
         self
+    }
+    /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
+    pub fn get_chap_enabled(&self) -> &::std::option::Option<bool> {
+        &self.chap_enabled
     }
     /// Consumes the builder and constructs a [`VolumeiScsiAttributes`](crate::types::VolumeiScsiAttributes).
     pub fn build(self) -> crate::types::VolumeiScsiAttributes {

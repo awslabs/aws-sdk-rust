@@ -40,6 +40,10 @@ impl FormInputBindingPropertiesValuePropertiesBuilder {
         self.model = input;
         self
     }
+    /// <p>An Amplify DataStore model.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
     /// Consumes the builder and constructs a [`FormInputBindingPropertiesValueProperties`](crate::types::FormInputBindingPropertiesValueProperties).
     pub fn build(self) -> crate::types::FormInputBindingPropertiesValueProperties {
         crate::types::FormInputBindingPropertiesValueProperties { model: self.model }

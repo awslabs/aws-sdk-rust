@@ -56,6 +56,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The policy ID.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The policy ID.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash = input;
         self
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(

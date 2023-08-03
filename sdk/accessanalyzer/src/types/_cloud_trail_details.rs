@@ -73,6 +73,10 @@ impl CloudTrailDetailsBuilder {
         self.trails = input;
         self
     }
+    /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
+    pub fn get_trails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trail>> {
+        &self.trails
+    }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_role = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CloudTrailDetailsBuilder {
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_role = input;
         self
+    }
+    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
+    pub fn get_access_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl CloudTrailDetailsBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl CloudTrailDetailsBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`CloudTrailDetails`](crate::types::CloudTrailDetails).
     pub fn build(self) -> crate::types::CloudTrailDetails {

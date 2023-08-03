@@ -40,6 +40,10 @@ impl HistoryEventExecutionDataDetailsBuilder {
         self.truncated = input;
         self
     }
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
+    }
     /// Consumes the builder and constructs a [`HistoryEventExecutionDataDetails`](crate::types::HistoryEventExecutionDataDetails).
     pub fn build(self) -> crate::types::HistoryEventExecutionDataDetails {
         crate::types::HistoryEventExecutionDataDetails {

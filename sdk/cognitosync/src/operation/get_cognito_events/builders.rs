@@ -37,6 +37,12 @@ impl GetCognitoEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCognitoEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_cognito_events::builders::GetCognitoEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl GetCognitoEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
+    }
+    /// <p>The Cognito Identity Pool ID for the request</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
     }
 }

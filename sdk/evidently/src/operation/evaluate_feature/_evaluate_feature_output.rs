@@ -70,6 +70,10 @@ impl EvaluateFeatureOutputBuilder {
         self.variation = input;
         self
     }
+    /// <p>The name of the variation that was served to the user session.</p>
+    pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variation
+    }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn value(mut self, input: crate::types::VariableValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl EvaluateFeatureOutputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
+        &self.value
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl EvaluateFeatureOutputBuilder {
         self.reason = input;
         self
     }
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl EvaluateFeatureOutputBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

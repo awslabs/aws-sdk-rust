@@ -48,6 +48,10 @@ impl UntagColumnOperationBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The column that this operation acts on.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// Appends an item to `tag_names`.
     ///
     /// To override the contents of this collection use [`set_tag_names`](Self::set_tag_names).
@@ -66,6 +70,12 @@ impl UntagColumnOperationBuilder {
     ) -> Self {
         self.tag_names = input;
         self
+    }
+    /// <p>The column tags to remove from this column.</p>
+    pub fn get_tag_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnTagName>> {
+        &self.tag_names
     }
     /// Consumes the builder and constructs a [`UntagColumnOperation`](crate::types::UntagColumnOperation).
     pub fn build(self) -> crate::types::UntagColumnOperation {

@@ -49,6 +49,10 @@ impl GetChannelsOutputBuilder {
         self.channels_response = input;
         self
     }
+    /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
+    pub fn get_channels_response(&self) -> &::std::option::Option<crate::types::ChannelsResponse> {
+        &self.channels_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

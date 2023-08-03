@@ -88,6 +88,10 @@ impl UpdateStreamProcessorInputBuilder {
         self.name = input;
         self
     }
+    /// <p> Name of the stream processor that you want to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
     pub fn settings_for_update(
         mut self,
@@ -103,6 +107,12 @@ impl UpdateStreamProcessorInputBuilder {
     ) -> Self {
         self.settings_for_update = input;
         self
+    }
+    /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+    pub fn get_settings_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamProcessorSettingsForUpdate> {
+        &self.settings_for_update
     }
     /// Appends an item to `regions_of_interest_for_update`.
     ///
@@ -123,6 +133,12 @@ impl UpdateStreamProcessorInputBuilder {
         self.regions_of_interest_for_update = input;
         self
     }
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    pub fn get_regions_of_interest_for_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+        &self.regions_of_interest_for_update
+    }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference_for_update(
         mut self,
@@ -138,6 +154,12 @@ impl UpdateStreamProcessorInputBuilder {
     ) -> Self {
         self.data_sharing_preference_for_update = input;
         self
+    }
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    pub fn get_data_sharing_preference_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
+        &self.data_sharing_preference_for_update
     }
     /// Appends an item to `parameters_to_delete`.
     ///
@@ -162,6 +184,13 @@ impl UpdateStreamProcessorInputBuilder {
     ) -> Self {
         self.parameters_to_delete = input;
         self
+    }
+    /// <p> A list of parameters you want to delete from the stream processor. </p>
+    pub fn get_parameters_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamProcessorParameterToDelete>>
+    {
+        &self.parameters_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateStreamProcessorInput`](crate::operation::update_stream_processor::UpdateStreamProcessorInput).
     pub fn build(

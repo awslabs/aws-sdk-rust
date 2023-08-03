@@ -41,6 +41,10 @@ impl GetDataLakeSettingsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`GetDataLakeSettingsInput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsInput).
     pub fn build(
         self,

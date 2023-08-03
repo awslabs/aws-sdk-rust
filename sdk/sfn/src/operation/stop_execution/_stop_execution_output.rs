@@ -49,6 +49,10 @@ impl StopExecutionOutputBuilder {
         self.stop_date = input;
         self
     }
+    /// <p>The date the execution is stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

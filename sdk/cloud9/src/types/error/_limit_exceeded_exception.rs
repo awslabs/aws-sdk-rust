@@ -84,6 +84,10 @@ impl LimitExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn class_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.class_name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,10 @@ impl LimitExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_class_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.class_name
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -102,6 +110,10 @@ impl LimitExceededExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

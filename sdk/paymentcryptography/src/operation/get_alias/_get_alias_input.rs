@@ -39,6 +39,10 @@ impl GetAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// Consumes the builder and constructs a [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
     pub fn build(
         self,

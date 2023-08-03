@@ -45,6 +45,10 @@ impl StopTrainingJobInputBuilder {
         self.training_job_name = input;
         self
     }
+    /// <p>The name of the training job to stop.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_job_name
+    }
     /// Consumes the builder and constructs a [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
     pub fn build(
         self,

@@ -37,6 +37,10 @@ impl CreateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user::builders::CreateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -128,6 +136,10 @@ impl CreateUserFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
     /// <p>The information about the identity of the user.</p>
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfo) -> Self {
@@ -142,6 +154,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_identity_info(input);
         self
     }
+    /// <p>The information about the identity of the user.</p>
+    pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
+        self.inner.get_identity_info()
+    }
     /// <p>The phone settings for the user.</p>
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
         self.inner = self.inner.phone_config(input);
@@ -154,6 +170,10 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_phone_config(input);
         self
+    }
+    /// <p>The phone settings for the user.</p>
+    pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
+        self.inner.get_phone_config()
     }
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
@@ -172,6 +192,11 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_directory_user_id(input);
         self
+    }
+    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+    /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+    pub fn get_directory_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_user_id()
     }
     /// Appends an item to `SecurityProfileIds`.
     ///
@@ -193,6 +218,12 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_security_profile_ids(input);
         self
     }
+    /// <p>The identifier of the security profile for the user.</p>
+    pub fn get_security_profile_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_profile_ids()
+    }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn routing_profile_id(
         mut self,
@@ -208,6 +239,10 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
+    }
+    /// <p>The identifier of the routing profile for the user.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_profile_id()
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub fn hierarchy_group_id(
@@ -225,6 +260,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_hierarchy_group_id(input);
         self
     }
+    /// <p>The identifier of the hierarchy group for the user.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hierarchy_group_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -234,6 +273,10 @@ impl CreateUserFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -257,5 +300,13 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

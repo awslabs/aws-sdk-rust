@@ -41,6 +41,10 @@ impl DetailedStatusCodesMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// Consumes the builder and constructs a [`DetailedStatusCodesMetrics`](crate::types::DetailedStatusCodesMetrics).
     pub fn build(self) -> crate::types::DetailedStatusCodesMetrics {
         crate::types::DetailedStatusCodesMetrics {

@@ -48,6 +48,10 @@ impl EbsOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
+        &self.options
+    }
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EbsOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`EbsOptionsStatus`](crate::types::EbsOptionsStatus).
     pub fn build(self) -> crate::types::EbsOptionsStatus {

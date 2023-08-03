@@ -54,6 +54,12 @@ impl DeleteConnectionInputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(
         self,

@@ -42,6 +42,10 @@ impl UpdateAccountConfigurationInputBuilder {
         self.encryption_config = input;
         self
     }
+    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
+    }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
     pub fn build(
         self,

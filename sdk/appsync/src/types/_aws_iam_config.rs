@@ -54,6 +54,10 @@ impl AwsIamConfigBuilder {
         self.signing_region = input;
         self
     }
+    /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
+    pub fn get_signing_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_region
+    }
     /// <p>The signing service name for IAM authorization.</p>
     pub fn signing_service_name(
         mut self,
@@ -69,6 +73,10 @@ impl AwsIamConfigBuilder {
     ) -> Self {
         self.signing_service_name = input;
         self
+    }
+    /// <p>The signing service name for IAM authorization.</p>
+    pub fn get_signing_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_service_name
     }
     /// Consumes the builder and constructs a [`AwsIamConfig`](crate::types::AwsIamConfig).
     pub fn build(self) -> crate::types::AwsIamConfig {

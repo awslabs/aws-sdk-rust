@@ -54,6 +54,12 @@ impl CalculatedLifecycleBuilder {
         self.move_to_cold_storage_at = input;
         self
     }
+    /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
+    pub fn get_move_to_cold_storage_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.move_to_cold_storage_at
+    }
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
     pub fn delete_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delete_at = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl CalculatedLifecycleBuilder {
     ) -> Self {
         self.delete_at = input;
         self
+    }
+    /// <p>A timestamp that specifies when to delete a recovery point.</p>
+    pub fn get_delete_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delete_at
     }
     /// Consumes the builder and constructs a [`CalculatedLifecycle`](crate::types::CalculatedLifecycle).
     pub fn build(self) -> crate::types::CalculatedLifecycle {

@@ -47,6 +47,10 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The ID of the gateway that defines the capability configuration.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn capability_namespace(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
     ) -> Self {
         self.capability_namespace = input;
         self
+    }
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_namespace
     }
     /// Consumes the builder and constructs a [`DescribeGatewayCapabilityConfigurationInput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

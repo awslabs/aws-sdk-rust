@@ -167,6 +167,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.event_id = input;
         self
     }
+    /// <p> The event ID. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p> The event type associated with the detector specified for this prediction. </p>
     pub fn event_type_name(
         mut self,
@@ -183,6 +187,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p> The event type associated with the detector specified for this prediction. </p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p> The entity ID. </p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -193,6 +201,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p> The entity ID. </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p> The entity type. </p>
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
@@ -202,6 +214,10 @@ impl GetEventPredictionMetadataOutputBuilder {
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_type = input;
         self
+    }
+    /// <p> The entity type. </p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
     }
     /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
     pub fn event_timestamp(
@@ -219,6 +235,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.event_timestamp = input;
         self
     }
+    /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+    pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_timestamp
+    }
     /// <p> The detector ID. </p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
@@ -228,6 +248,10 @@ impl GetEventPredictionMetadataOutputBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
+    }
+    /// <p> The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(
@@ -245,6 +269,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.detector_version_id = input;
         self
     }
+    /// <p> The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
+    }
     /// <p> The status of the detector version. </p>
     pub fn detector_version_status(
         mut self,
@@ -260,6 +288,10 @@ impl GetEventPredictionMetadataOutputBuilder {
     ) -> Self {
         self.detector_version_status = input;
         self
+    }
+    /// <p> The status of the detector version. </p>
+    pub fn get_detector_version_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_status
     }
     /// Appends an item to `event_variables`.
     ///
@@ -280,6 +312,12 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.event_variables = input;
         self
     }
+    /// <p> A list of event variables that influenced the prediction scores. </p>
+    pub fn get_event_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventVariableSummary>> {
+        &self.event_variables
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -299,6 +337,12 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.rules = input;
         self
     }
+    /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatedRule>> {
+        &self.rules
+    }
     /// <p> The execution mode of the rule used for evaluating variable values. </p>
     pub fn rule_execution_mode(mut self, input: crate::types::RuleExecutionMode) -> Self {
         self.rule_execution_mode = ::std::option::Option::Some(input);
@@ -311,6 +355,12 @@ impl GetEventPredictionMetadataOutputBuilder {
     ) -> Self {
         self.rule_execution_mode = input;
         self
+    }
+    /// <p> The execution mode of the rule used for evaluating variable values. </p>
+    pub fn get_rule_execution_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+        &self.rule_execution_mode
     }
     /// Appends an item to `outcomes`.
     ///
@@ -331,6 +381,10 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.outcomes = input;
         self
     }
+    /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
+    }
     /// Appends an item to `evaluated_model_versions`.
     ///
     /// To override the contents of this collection use [`set_evaluated_model_versions`](Self::set_evaluated_model_versions).
@@ -349,6 +403,12 @@ impl GetEventPredictionMetadataOutputBuilder {
     ) -> Self {
         self.evaluated_model_versions = input;
         self
+    }
+    /// <p> Model versions that were evaluated for generating predictions. </p>
+    pub fn get_evaluated_model_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatedModelVersion>> {
+        &self.evaluated_model_versions
     }
     /// Appends an item to `evaluated_external_models`.
     ///
@@ -372,6 +432,12 @@ impl GetEventPredictionMetadataOutputBuilder {
         self.evaluated_external_models = input;
         self
     }
+    /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+    pub fn get_evaluated_external_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatedExternalModel>> {
+        &self.evaluated_external_models
+    }
     /// <p>The timestamp that defines when the prediction was generated. </p>
     pub fn prediction_timestamp(
         mut self,
@@ -387,6 +453,10 @@ impl GetEventPredictionMetadataOutputBuilder {
     ) -> Self {
         self.prediction_timestamp = input;
         self
+    }
+    /// <p>The timestamp that defines when the prediction was generated. </p>
+    pub fn get_prediction_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prediction_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

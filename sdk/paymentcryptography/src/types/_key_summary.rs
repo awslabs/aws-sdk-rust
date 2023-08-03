@@ -80,6 +80,10 @@ impl KeySummaryBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the key.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
     pub fn key_state(mut self, input: crate::types::KeyState) -> Self {
         self.key_state = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl KeySummaryBuilder {
     pub fn set_key_state(mut self, input: ::std::option::Option<crate::types::KeyState>) -> Self {
         self.key_state = input;
         self
+    }
+    /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
+    pub fn get_key_state(&self) -> &::std::option::Option<crate::types::KeyState> {
+        &self.key_state
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn key_attributes(mut self, input: crate::types::KeyAttributes) -> Self {
@@ -102,6 +110,10 @@ impl KeySummaryBuilder {
     ) -> Self {
         self.key_attributes = input;
         self
+    }
+    /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
+    pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
+        &self.key_attributes
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     pub fn key_check_value(
@@ -119,6 +131,10 @@ impl KeySummaryBuilder {
         self.key_check_value = input;
         self
     }
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_check_value
+    }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn exportable(mut self, input: bool) -> Self {
         self.exportable = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl KeySummaryBuilder {
         self.exportable = input;
         self
     }
+    /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
+    pub fn get_exportable(&self) -> &::std::option::Option<bool> {
+        &self.exportable
+    }
     /// <p>Specifies whether the key is enabled. </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl KeySummaryBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the key is enabled. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`KeySummary`](crate::types::KeySummary).
     pub fn build(self) -> crate::types::KeySummary {

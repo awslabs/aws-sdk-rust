@@ -48,6 +48,10 @@ impl AudioHlsRenditionSelectionBuilder {
         self.group_id = input;
         self
     }
+    /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AudioHlsRenditionSelectionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AudioHlsRenditionSelection`](crate::types::AudioHlsRenditionSelection).
     pub fn build(self) -> crate::types::AudioHlsRenditionSelection {

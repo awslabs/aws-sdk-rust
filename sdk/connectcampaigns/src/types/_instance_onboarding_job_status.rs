@@ -64,6 +64,10 @@ impl InstanceOnboardingJobStatusBuilder {
         self.connect_instance_id = input;
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
+    }
     /// Enumeration of the possible states for instance onboarding job
     pub fn status(mut self, input: crate::types::InstanceOnboardingJobStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl InstanceOnboardingJobStatusBuilder {
         self.status = input;
         self
     }
+    /// Enumeration of the possible states for instance onboarding job
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceOnboardingJobStatusCode> {
+        &self.status
+    }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn failure_code(mut self, input: crate::types::InstanceOnboardingJobFailureCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -89,6 +99,12 @@ impl InstanceOnboardingJobStatusBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// Enumeration of the possible failure codes for instance onboarding job
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceOnboardingJobFailureCode> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`InstanceOnboardingJobStatus`](crate::types::InstanceOnboardingJobStatus).
     pub fn build(self) -> crate::types::InstanceOnboardingJobStatus {

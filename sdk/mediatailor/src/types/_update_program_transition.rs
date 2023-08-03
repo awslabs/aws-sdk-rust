@@ -48,6 +48,10 @@ impl UpdateProgramTransitionBuilder {
         self.scheduled_start_time_millis = input;
         self
     }
+    /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
+    pub fn get_scheduled_start_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_start_time_millis
+    }
     /// <p>The duration of the live program in seconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UpdateProgramTransitionBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p>The duration of the live program in seconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// Consumes the builder and constructs a [`UpdateProgramTransition`](crate::types::UpdateProgramTransition).
     pub fn build(self) -> crate::types::UpdateProgramTransition {

@@ -51,6 +51,10 @@ impl ListTargetsFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute you want to use to filter the returned targets.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ListTargetsFilterName> {
+        &self.name
+    }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ListTargetsFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::types::ListTargetsFilter).
     pub fn build(self) -> crate::types::ListTargetsFilter {

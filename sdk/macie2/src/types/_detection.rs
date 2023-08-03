@@ -80,6 +80,10 @@ impl DetectionBuilder {
         self.arn = input;
         self
     }
+    /// <p>If the sensitive data was detected by a custom data identifier, the Amazon Resource Name (ARN) of the custom data identifier that detected the data. Otherwise, this value is null.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The total number of occurrences of the sensitive data.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DetectionBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The total number of occurrences of the sensitive data.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl DetectionBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl DetectionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
     pub fn suppressed(mut self, input: bool) -> Self {
         self.suppressed = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl DetectionBuilder {
     pub fn set_suppressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppressed = input;
         self
+    }
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    pub fn get_suppressed(&self) -> &::std::option::Option<bool> {
+        &self.suppressed
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub fn r#type(mut self, input: crate::types::DataIdentifierType) -> Self {
@@ -132,6 +152,10 @@ impl DetectionBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataIdentifierType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Detection`](crate::types::Detection).
     pub fn build(self) -> crate::types::Detection {

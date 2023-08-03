@@ -59,6 +59,10 @@ impl ResourceCountFiltersBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the Amazon Web Services resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The 12-digit ID of the account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ResourceCountFiltersBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit ID of the account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The region where the account is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl ResourceCountFiltersBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The region where the account is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`ResourceCountFilters`](crate::types::ResourceCountFilters).
     pub fn build(self) -> crate::types::ResourceCountFilters {

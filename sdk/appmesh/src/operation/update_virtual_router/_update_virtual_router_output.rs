@@ -51,6 +51,10 @@ impl UpdateVirtualRouterOutputBuilder {
         self.virtual_router = input;
         self
     }
+    /// <p>A full description of the virtual router that was updated.</p>
+    pub fn get_virtual_router(&self) -> &::std::option::Option<crate::types::VirtualRouterData> {
+        &self.virtual_router
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

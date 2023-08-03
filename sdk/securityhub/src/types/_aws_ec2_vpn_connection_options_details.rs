@@ -55,6 +55,10 @@ impl AwsEc2VpnConnectionOptionsDetailsBuilder {
         self.static_routes_only = input;
         self
     }
+    /// <p>Whether the VPN connection uses static routes only.</p>
+    pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
+        &self.static_routes_only
+    }
     /// Appends an item to `tunnel_options`.
     ///
     /// To override the contents of this collection use [`set_tunnel_options`](Self::set_tunnel_options).
@@ -78,6 +82,14 @@ impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     ) -> Self {
         self.tunnel_options = input;
         self
+    }
+    /// <p>The VPN tunnel options.</p>
+    pub fn get_tunnel_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
+    > {
+        &self.tunnel_options
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionOptionsDetails {

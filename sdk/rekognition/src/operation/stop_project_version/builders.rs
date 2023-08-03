@@ -37,6 +37,12 @@ impl StopProjectVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopProjectVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,10 @@ impl StopProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_version_arn()
     }
 }

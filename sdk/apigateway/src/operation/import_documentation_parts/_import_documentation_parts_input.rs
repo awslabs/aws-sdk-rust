@@ -66,6 +66,10 @@ impl ImportDocumentationPartsInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
     pub fn mode(mut self, input: crate::types::PutMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ImportDocumentationPartsInputBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
+        &self.mode
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
@@ -86,6 +94,10 @@ impl ImportDocumentationPartsInputBuilder {
         self.fail_on_warnings = input;
         self
     }
+    /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        &self.fail_on_warnings
+    }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl ImportDocumentationPartsInputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`ImportDocumentationPartsInput`](crate::operation::import_documentation_parts::ImportDocumentationPartsInput).
     pub fn build(

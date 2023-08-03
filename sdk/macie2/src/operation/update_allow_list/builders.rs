@@ -36,6 +36,12 @@ impl UpdateAllowListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAllowList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_allow_list::builders::UpdateAllowListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,11 @@ impl UpdateAllowListFluentBuilder {
         self.inner = self.inner.set_criteria(input);
         self
     }
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
+    /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AllowListCriteria> {
+        self.inner.get_criteria()
+    }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -140,6 +151,10 @@ impl UpdateAllowListFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +166,10 @@ impl UpdateAllowListFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -160,5 +179,9 @@ impl UpdateAllowListFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

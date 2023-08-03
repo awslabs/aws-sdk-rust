@@ -62,6 +62,10 @@ impl EngineVersionInfoBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The engine version</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The patched engine version</p>
     pub fn engine_patch_version(
         mut self,
@@ -78,6 +82,10 @@ impl EngineVersionInfoBuilder {
         self.engine_patch_version = input;
         self
     }
+    /// <p>The patched engine version</p>
+    pub fn get_engine_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_patch_version
+    }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub fn parameter_group_family(
         mut self,
@@ -93,6 +101,10 @@ impl EngineVersionInfoBuilder {
     ) -> Self {
         self.parameter_group_family = input;
         self
+    }
+    /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
+    pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_family
     }
     /// Consumes the builder and constructs a [`EngineVersionInfo`](crate::types::EngineVersionInfo).
     pub fn build(self) -> crate::types::EngineVersionInfo {

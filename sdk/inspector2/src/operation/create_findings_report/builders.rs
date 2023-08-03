@@ -36,6 +36,12 @@ impl CreateFindingsReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFindingsReport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateFindingsReportFluentBuilder {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
+    /// <p>The filter criteria to apply to the results of the finding report.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        self.inner.get_filter_criteria()
+    }
     /// <p>The format to generate the report in.</p>
     pub fn report_format(mut self, input: crate::types::ReportFormat) -> Self {
         self.inner = self.inner.report_format(input);
@@ -142,6 +152,10 @@ impl CreateFindingsReportFluentBuilder {
         self.inner = self.inner.set_report_format(input);
         self
     }
+    /// <p>The format to generate the report in.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        self.inner.get_report_format()
+    }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.inner = self.inner.s3_destination(input);
@@ -154,5 +168,9 @@ impl CreateFindingsReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
+    }
+    /// <p>The Amazon S3 export destination for the report.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        self.inner.get_s3_destination()
     }
 }

@@ -48,6 +48,10 @@ impl CollectionFiltersBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CollectionFiltersBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the collection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CollectionFilters`](crate::types::CollectionFilters).
     pub fn build(self) -> crate::types::CollectionFilters {

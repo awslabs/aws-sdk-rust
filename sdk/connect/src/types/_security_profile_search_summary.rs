@@ -88,6 +88,10 @@ impl SecurityProfileSearchSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the security profile.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The organization resource identifier.</p>
     pub fn organization_resource_id(
         mut self,
@@ -104,6 +108,10 @@ impl SecurityProfileSearchSummaryBuilder {
         self.organization_resource_id = input;
         self
     }
+    /// <p>The organization resource identifier.</p>
+    pub fn get_organization_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_resource_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl SecurityProfileSearchSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the security profile.</p>
     pub fn security_profile_name(
@@ -130,6 +142,10 @@ impl SecurityProfileSearchSummaryBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name of the security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The description of the security profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -139,6 +155,10 @@ impl SecurityProfileSearchSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the security profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,6 +184,14 @@ impl SecurityProfileSearchSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SecurityProfileSearchSummary`](crate::types::SecurityProfileSearchSummary).
     pub fn build(self) -> crate::types::SecurityProfileSearchSummary {

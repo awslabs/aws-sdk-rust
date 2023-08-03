@@ -48,6 +48,10 @@ impl BatchPutMessageInputBuilder {
         self.messages = input;
         self
     }
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        &self.messages
+    }
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
     pub fn build(
         self,

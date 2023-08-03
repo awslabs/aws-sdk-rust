@@ -51,6 +51,10 @@ impl DeleteSyncJobInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The workspace ID.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
@@ -64,6 +68,12 @@ impl DeleteSyncJobInputBuilder {
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
+    }
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     /// Consumes the builder and constructs a [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
     pub fn build(

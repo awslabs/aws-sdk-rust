@@ -50,6 +50,10 @@ impl GetQueryExecutionOutputBuilder {
         self.query_execution = input;
         self
     }
+    /// <p>Information about the query execution.</p>
+    pub fn get_query_execution(&self) -> &::std::option::Option<crate::types::QueryExecution> {
+        &self.query_execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

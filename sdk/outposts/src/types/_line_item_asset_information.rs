@@ -48,6 +48,10 @@ impl LineItemAssetInformationBuilder {
         self.asset_id = input;
         self
     }
+    /// <p> The ID of the asset. </p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// Appends an item to `mac_address_list`.
     ///
     /// To override the contents of this collection use [`set_mac_address_list`](Self::set_mac_address_list).
@@ -69,6 +73,12 @@ impl LineItemAssetInformationBuilder {
     ) -> Self {
         self.mac_address_list = input;
         self
+    }
+    /// <p> The MAC addresses of the asset. </p>
+    pub fn get_mac_address_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.mac_address_list
     }
     /// Consumes the builder and constructs a [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).
     pub fn build(self) -> crate::types::LineItemAssetInformation {

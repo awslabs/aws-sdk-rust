@@ -83,6 +83,10 @@ impl UpdateAccessControlConfigurationInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl UpdateAccessControlConfigurationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the access control configuration you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,6 +111,10 @@ impl UpdateAccessControlConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A new name for the access control configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A new description for the access control configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl UpdateAccessControlConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for the access control configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `access_control_list`.
     ///
@@ -131,6 +147,12 @@ impl UpdateAccessControlConfigurationInputBuilder {
     ) -> Self {
         self.access_control_list = input;
         self
+    }
+    /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn get_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
     ///
@@ -153,6 +175,12 @@ impl UpdateAccessControlConfigurationInputBuilder {
     ) -> Self {
         self.hierarchical_access_control_list = input;
         self
+    }
+    /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn get_hierarchical_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+        &self.hierarchical_access_control_list
     }
     /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationInput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

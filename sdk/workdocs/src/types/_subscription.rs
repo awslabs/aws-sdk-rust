@@ -62,6 +62,10 @@ impl SubscriptionBuilder {
         self.subscription_id = input;
         self
     }
+    /// <p>The ID of the subscription.</p>
+    pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_id
+    }
     /// <p>The endpoint of the subscription.</p>
     pub fn end_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_point = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl SubscriptionBuilder {
     pub fn set_end_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_point = input;
         self
+    }
+    /// <p>The endpoint of the subscription.</p>
+    pub fn get_end_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_point
     }
     /// <p>The protocol of the subscription.</p>
     pub fn protocol(mut self, input: crate::types::SubscriptionProtocolType) -> Self {
@@ -84,6 +92,10 @@ impl SubscriptionBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol of the subscription.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::SubscriptionProtocolType> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

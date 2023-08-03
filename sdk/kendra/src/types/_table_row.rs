@@ -49,6 +49,10 @@ impl TableRowBuilder {
         self.cells = input;
         self
     }
+    /// <p>A list of table cells in a row.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableCell>> {
+        &self.cells
+    }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
     pub fn build(self) -> crate::types::TableRow {
         crate::types::TableRow { cells: self.cells }

@@ -38,6 +38,10 @@ impl DeleteCacheSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCacheSecurityGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_cache_security_group::builders::DeleteCacheSecurityGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +141,11 @@ impl DeleteCacheSecurityGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
+    }
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
+    /// </note>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_security_group_name()
     }
 }

@@ -105,6 +105,12 @@ impl OrganizationConfigRuleStatusBuilder {
         self.organization_config_rule_name = input;
         self
     }
+    /// <p>The name that you assign to organization Config rule.</p>
+    pub fn get_organization_config_rule_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_config_rule_name
+    }
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
@@ -142,6 +148,24 @@ impl OrganizationConfigRuleStatusBuilder {
         self.organization_rule_status = input;
         self
     }
+    /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Config sets the state of the rule to:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
+    /// </ul>
+    pub fn get_organization_rule_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationRuleStatus> {
+        &self.organization_rule_status
+    }
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -151,6 +175,10 @@ impl OrganizationConfigRuleStatusBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
     pub fn error_message(
@@ -168,6 +196,10 @@ impl OrganizationConfigRuleStatusBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -180,6 +212,10 @@ impl OrganizationConfigRuleStatusBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The timestamp of the last update.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConfigRuleStatus`](crate::types::OrganizationConfigRuleStatus).
     pub fn build(self) -> crate::types::OrganizationConfigRuleStatus {

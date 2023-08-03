@@ -103,6 +103,10 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the additional Inference specification</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the additional Inference specification</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `containers`.
     ///
@@ -134,6 +142,13 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
         self.containers = input;
         self
     }
+    /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>
+    {
+        &self.containers
+    }
     /// Appends an item to `supported_transform_instance_types`.
     ///
     /// To override the contents of this collection use [`set_supported_transform_instance_types`](Self::set_supported_transform_instance_types).
@@ -155,6 +170,12 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     ) -> Self {
         self.supported_transform_instance_types = input;
         self
+    }
+    /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
+    pub fn get_supported_transform_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>> {
+        &self.supported_transform_instance_types
     }
     /// Appends an item to `supported_realtime_inference_instance_types`.
     ///
@@ -180,6 +201,12 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
         self.supported_realtime_inference_instance_types = input;
         self
     }
+    /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+    pub fn get_supported_realtime_inference_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>> {
+        &self.supported_realtime_inference_instance_types
+    }
     /// Appends an item to `supported_content_types`.
     ///
     /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
@@ -202,6 +229,12 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
         self.supported_content_types = input;
         self
     }
+    /// <p>The supported MIME types for the input data.</p>
+    pub fn get_supported_content_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_content_types
+    }
     /// Appends an item to `supported_response_mime_types`.
     ///
     /// To override the contents of this collection use [`set_supported_response_mime_types`](Self::set_supported_response_mime_types).
@@ -223,6 +256,12 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     ) -> Self {
         self.supported_response_mime_types = input;
         self
+    }
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn get_supported_response_mime_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_response_mime_types
     }
     /// Consumes the builder and constructs a [`AdditionalInferenceSpecificationDefinition`](crate::types::AdditionalInferenceSpecificationDefinition).
     pub fn build(self) -> crate::types::AdditionalInferenceSpecificationDefinition {

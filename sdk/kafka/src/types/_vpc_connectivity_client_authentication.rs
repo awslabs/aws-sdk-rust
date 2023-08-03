@@ -51,6 +51,10 @@ impl VpcConnectivityClientAuthenticationBuilder {
         self.sasl = input;
         self
     }
+    /// <p>SASL authentication type details for VPC connectivity.</p>
+    pub fn get_sasl(&self) -> &::std::option::Option<crate::types::VpcConnectivitySasl> {
+        &self.sasl
+    }
     /// <p>TLS authentication type details for VPC connectivity.</p>
     pub fn tls(mut self, input: crate::types::VpcConnectivityTls) -> Self {
         self.tls = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl VpcConnectivityClientAuthenticationBuilder {
     ) -> Self {
         self.tls = input;
         self
+    }
+    /// <p>TLS authentication type details for VPC connectivity.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::VpcConnectivityTls> {
+        &self.tls
     }
     /// Consumes the builder and constructs a [`VpcConnectivityClientAuthentication`](crate::types::VpcConnectivityClientAuthentication).
     pub fn build(self) -> crate::types::VpcConnectivityClientAuthentication {

@@ -48,6 +48,10 @@ impl StreamProcessorBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the Amazon Rekognition stream processor. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     pub fn status(mut self, input: crate::types::StreamProcessorStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StreamProcessorBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Current status of the Amazon Rekognition stream processor.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StreamProcessorStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`StreamProcessor`](crate::types::StreamProcessor).
     pub fn build(self) -> crate::types::StreamProcessor {

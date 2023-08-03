@@ -88,6 +88,10 @@ impl WorkspaceSummaryBuilder {
         self.workspace_id = input;
         self
     }
+    /// Unique string identifying this workspace.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Alias of this workspace.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl WorkspaceSummaryBuilder {
         self.alias = input;
         self
     }
+    /// Alias of this workspace.
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// The AmazonResourceName of this workspace.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl WorkspaceSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// The AmazonResourceName of this workspace.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// The status of this workspace.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
@@ -121,6 +133,10 @@ impl WorkspaceSummaryBuilder {
         self.status = input;
         self
     }
+    /// The status of this workspace.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
+        &self.status
+    }
     /// The time when the workspace was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl WorkspaceSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// The time when the workspace was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -158,6 +178,14 @@ impl WorkspaceSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags of this workspace.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
     pub fn build(self) -> crate::types::WorkspaceSummary {

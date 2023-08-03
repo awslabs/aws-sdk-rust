@@ -51,6 +51,12 @@ impl GetChangeTokenStatusOutputBuilder {
         self.change_token_status = input;
         self
     }
+    /// <p>The status of the change token.</p>
+    pub fn get_change_token_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeTokenStatus> {
+        &self.change_token_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

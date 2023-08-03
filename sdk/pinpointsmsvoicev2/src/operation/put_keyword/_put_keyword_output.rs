@@ -84,6 +84,10 @@ impl PutKeywordOutputBuilder {
         self.origination_identity_arn = input;
         self
     }
+    /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
+    pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity_arn
+    }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
     pub fn origination_identity(
         mut self,
@@ -100,6 +104,10 @@ impl PutKeywordOutputBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>The keyword that was added.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl PutKeywordOutputBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword = input;
         self
+    }
+    /// <p>The keyword that was added.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
     }
     /// <p>The message associated with the keyword.</p>
     pub fn keyword_message(
@@ -126,6 +138,10 @@ impl PutKeywordOutputBuilder {
         self.keyword_message = input;
         self
     }
+    /// <p>The message associated with the keyword.</p>
+    pub fn get_keyword_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword_message
+    }
     /// <p>The action to perform when the keyword is used.</p>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.keyword_action = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl PutKeywordOutputBuilder {
     ) -> Self {
         self.keyword_action = input;
         self
+    }
+    /// <p>The action to perform when the keyword is used.</p>
+    pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
+        &self.keyword_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

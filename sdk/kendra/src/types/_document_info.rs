@@ -72,6 +72,10 @@ impl DocumentInfoBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The identifier of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -114,6 +118,24 @@ impl DocumentInfoBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Attributes that identify a specific version of a document to check.</p>
+    /// <p>The only valid attributes are:</p>
+    /// <ul>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
+    /// </ul>
+    /// <p>The attributes follow these rules:</p>
+    /// <ul>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
+    /// </ul>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`DocumentInfo`](crate::types::DocumentInfo).
     pub fn build(self) -> crate::types::DocumentInfo {

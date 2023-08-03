@@ -48,6 +48,10 @@ impl SecurityConfigurationSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date and time the security configuration was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SecurityConfigurationSummaryBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time the security configuration was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// Consumes the builder and constructs a [`SecurityConfigurationSummary`](crate::types::SecurityConfigurationSummary).
     pub fn build(self) -> crate::types::SecurityConfigurationSummary {

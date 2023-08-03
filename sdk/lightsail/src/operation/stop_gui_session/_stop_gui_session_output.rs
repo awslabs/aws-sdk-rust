@@ -55,6 +55,12 @@ impl StopGuiSessionOutputBuilder {
         self.operations = input;
         self
     }
+    /// <p>The available API operations.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+        &self.operations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

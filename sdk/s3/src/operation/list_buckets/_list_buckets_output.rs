@@ -70,6 +70,10 @@ impl ListBucketsOutputBuilder {
         self.buckets = input;
         self
     }
+    /// <p>The list of buckets owned by the requester.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
+        &self.buckets
+    }
     /// <p>The owner of the buckets listed.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ListBucketsOutputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the buckets listed.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

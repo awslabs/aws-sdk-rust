@@ -48,6 +48,10 @@ impl CodegenFeatureFlagsBuilder {
         self.is_relationship_supported = input;
         self
     }
+    /// <p>Specifes whether a code generation job supports data relationships.</p>
+    pub fn get_is_relationship_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_relationship_supported
+    }
     /// <p>Specifies whether a code generation job supports non models.</p>
     pub fn is_non_model_supported(mut self, input: bool) -> Self {
         self.is_non_model_supported = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CodegenFeatureFlagsBuilder {
     pub fn set_is_non_model_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_non_model_supported = input;
         self
+    }
+    /// <p>Specifies whether a code generation job supports non models.</p>
+    pub fn get_is_non_model_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_non_model_supported
     }
     /// Consumes the builder and constructs a [`CodegenFeatureFlags`](crate::types::CodegenFeatureFlags).
     pub fn build(self) -> crate::types::CodegenFeatureFlags {

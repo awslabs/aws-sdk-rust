@@ -62,6 +62,10 @@ impl CreateRowDataBuilder {
         self.batch_item_id = input;
         self
     }
+    /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
+    pub fn get_batch_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_item_id
+    }
     /// Adds a key-value pair to `cells_to_create`.
     ///
     /// To override the contents of this collection use [`set_cells_to_create`](Self::set_cells_to_create).
@@ -86,6 +90,14 @@ impl CreateRowDataBuilder {
     ) -> Self {
         self.cells_to_create = input;
         self
+    }
+    /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
+    pub fn get_cells_to_create(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
+    > {
+        &self.cells_to_create
     }
     /// Consumes the builder and constructs a [`CreateRowData`](crate::types::CreateRowData).
     pub fn build(self) -> crate::types::CreateRowData {

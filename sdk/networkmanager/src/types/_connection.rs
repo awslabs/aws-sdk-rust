@@ -126,6 +126,10 @@ impl ConnectionBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub fn connection_arn(
         mut self,
@@ -141,6 +145,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.connection_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connection.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(
@@ -158,6 +166,10 @@ impl ConnectionBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the first device in the connection.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -167,6 +179,10 @@ impl ConnectionBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The ID of the first device in the connection.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The ID of the second device in the connection.</p>
     pub fn connected_device_id(
@@ -184,6 +200,10 @@ impl ConnectionBuilder {
         self.connected_device_id = input;
         self
     }
+    /// <p>The ID of the second device in the connection.</p>
+    pub fn get_connected_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_device_id
+    }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
@@ -193,6 +213,10 @@ impl ConnectionBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
+    }
+    /// <p>The ID of the link for the first device in the connection.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn connected_link_id(
@@ -210,6 +234,10 @@ impl ConnectionBuilder {
         self.connected_link_id = input;
         self
     }
+    /// <p>The ID of the link for the second device in the connection.</p>
+    pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_link_id
+    }
     /// <p>The description of the connection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -219,6 +247,10 @@ impl ConnectionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the connection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the connection was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -233,6 +265,10 @@ impl ConnectionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the connection was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The state of the connection.</p>
     pub fn state(mut self, input: crate::types::ConnectionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -245,6 +281,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -264,6 +304,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the connection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {

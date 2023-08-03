@@ -62,6 +62,10 @@ impl NodePropertiesBuilder {
         self.num_nodes = input;
         self
     }
+    /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
+    pub fn get_num_nodes(&self) -> &::std::option::Option<i32> {
+        &self.num_nodes
+    }
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
     pub fn main_node(mut self, input: i32) -> Self {
         self.main_node = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl NodePropertiesBuilder {
     pub fn set_main_node(mut self, input: ::std::option::Option<i32>) -> Self {
         self.main_node = input;
         self
+    }
+    /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
+    pub fn get_main_node(&self) -> &::std::option::Option<i32> {
+        &self.main_node
     }
     /// Appends an item to `node_range_properties`.
     ///
@@ -90,6 +98,12 @@ impl NodePropertiesBuilder {
     ) -> Self {
         self.node_range_properties = input;
         self
+    }
+    /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
+    pub fn get_node_range_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeRangeProperty>> {
+        &self.node_range_properties
     }
     /// Consumes the builder and constructs a [`NodeProperties`](crate::types::NodeProperties).
     pub fn build(self) -> crate::types::NodeProperties {

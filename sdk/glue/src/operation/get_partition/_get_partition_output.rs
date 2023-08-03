@@ -46,6 +46,10 @@ impl GetPartitionOutputBuilder {
         self.partition = input;
         self
     }
+    /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
+        &self.partition
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

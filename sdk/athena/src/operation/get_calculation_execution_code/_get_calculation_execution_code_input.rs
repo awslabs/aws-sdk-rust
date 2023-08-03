@@ -45,6 +45,10 @@ impl GetCalculationExecutionCodeInputBuilder {
         self.calculation_execution_id = input;
         self
     }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculation_execution_id
+    }
     /// Consumes the builder and constructs a [`GetCalculationExecutionCodeInput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput).
     pub fn build(
         self,

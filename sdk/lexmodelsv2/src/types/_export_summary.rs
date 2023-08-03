@@ -83,6 +83,10 @@ impl ExportSummaryBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// <p>Information about the bot or bot locale that was exported.</p>
     pub fn resource_specification(
         mut self,
@@ -99,6 +103,12 @@ impl ExportSummaryBuilder {
         self.resource_specification = input;
         self
     }
+    /// <p>Information about the bot or bot locale that was exported.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+        &self.resource_specification
+    }
     /// <p>The file format used in the export files.</p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
@@ -111,6 +121,10 @@ impl ExportSummaryBuilder {
     ) -> Self {
         self.file_format = input;
         self
+    }
+    /// <p>The file format used in the export files.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
+        &self.file_format
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
@@ -125,6 +139,10 @@ impl ExportSummaryBuilder {
         self.export_status = input;
         self
     }
+    /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
+        &self.export_status
+    }
     /// <p>The date and time that the export was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl ExportSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time that the export was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time that the export was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -150,6 +172,12 @@ impl ExportSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time that the export was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`ExportSummary`](crate::types::ExportSummary).
     pub fn build(self) -> crate::types::ExportSummary {

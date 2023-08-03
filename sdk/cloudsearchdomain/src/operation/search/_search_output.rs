@@ -87,6 +87,10 @@ impl SearchOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status information returned for the search request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SearchStatus> {
+        &self.status
+    }
     /// <p>The documents that match the search criteria.</p>
     pub fn hits(mut self, input: crate::types::Hits) -> Self {
         self.hits = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl SearchOutputBuilder {
     pub fn set_hits(mut self, input: ::std::option::Option<crate::types::Hits>) -> Self {
         self.hits = input;
         self
+    }
+    /// <p>The documents that match the search criteria.</p>
+    pub fn get_hits(&self) -> &::std::option::Option<crate::types::Hits> {
+        &self.hits
     }
     /// Adds a key-value pair to `facets`.
     ///
@@ -122,6 +130,14 @@ impl SearchOutputBuilder {
         self.facets = input;
         self
     }
+    /// <p>The requested facet information.</p>
+    pub fn get_facets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>,
+    > {
+        &self.facets
+    }
     /// Adds a key-value pair to `stats`.
     ///
     /// To override the contents of this collection use [`set_stats`](Self::set_stats).
@@ -146,6 +162,14 @@ impl SearchOutputBuilder {
     ) -> Self {
         self.stats = input;
         self
+    }
+    /// <p>The requested field statistics information.</p>
+    pub fn get_stats(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldStats>,
+    > {
+        &self.stats
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

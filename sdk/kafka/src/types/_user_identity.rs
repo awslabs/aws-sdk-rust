@@ -51,6 +51,10 @@ impl UserIdentityBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The identity type of the requester that calls the API operation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
+        &self.r#type
+    }
     /// <p>A unique identifier for the requester that calls the API operation.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl UserIdentityBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>A unique identifier for the requester that calls the API operation.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {

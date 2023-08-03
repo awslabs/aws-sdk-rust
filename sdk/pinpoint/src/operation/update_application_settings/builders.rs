@@ -36,6 +36,10 @@ impl UpdateApplicationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplicationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the default settings for an application.</p>
     pub fn write_application_settings_request(
         mut self,
@@ -147,5 +155,11 @@ impl UpdateApplicationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_write_application_settings_request(input);
         self
+    }
+    /// <p>Specifies the default settings for an application.</p>
+    pub fn get_write_application_settings_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteApplicationSettingsRequest> {
+        self.inner.get_write_application_settings_request()
     }
 }

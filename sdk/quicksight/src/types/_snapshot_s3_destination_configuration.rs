@@ -45,6 +45,12 @@ impl SnapshotS3DestinationConfigurationBuilder {
         self.bucket_configuration = input;
         self
     }
+    /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
+    pub fn get_bucket_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketConfiguration> {
+        &self.bucket_configuration
+    }
     /// Consumes the builder and constructs a [`SnapshotS3DestinationConfiguration`](crate::types::SnapshotS3DestinationConfiguration).
     pub fn build(self) -> crate::types::SnapshotS3DestinationConfiguration {
         crate::types::SnapshotS3DestinationConfiguration {

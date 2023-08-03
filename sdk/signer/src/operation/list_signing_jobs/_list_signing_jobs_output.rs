@@ -64,6 +64,10 @@ impl ListSigningJobsOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of your signing jobs.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningJob>> {
+        &self.jobs
+    }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListSigningJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

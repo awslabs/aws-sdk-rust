@@ -82,6 +82,10 @@ impl GetServiceGraphOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time frame for which the graph was generated.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time frame for which the graph was generated.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl GetServiceGraphOutputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time frame for which the graph was generated.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `services`.
     ///
@@ -114,6 +122,10 @@ impl GetServiceGraphOutputBuilder {
         self.services = input;
         self
     }
+    /// <p>The services that have processed a traced request during the specified time frame.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Service>> {
+        &self.services
+    }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(mut self, input: bool) -> Self {
         self.contains_old_group_versions = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl GetServiceGraphOutputBuilder {
         self.contains_old_group_versions = input;
         self
     }
+    /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
+    pub fn get_contains_old_group_versions(&self) -> &::std::option::Option<bool> {
+        &self.contains_old_group_versions
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl GetServiceGraphOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl GetGatewayOutputBuilder {
         self.gateway = input;
         self
     }
+    /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
+    pub fn get_gateway(&self) -> &::std::option::Option<crate::types::GatewayDetails> {
+        &self.gateway
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

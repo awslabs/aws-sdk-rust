@@ -48,6 +48,10 @@ impl ItemizedMetricStatsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the measure.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The number of times that the measure appears.</p>
     pub fn occurrence_count(mut self, input: i32) -> Self {
         self.occurrence_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ItemizedMetricStatsBuilder {
     pub fn set_occurrence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.occurrence_count = input;
         self
+    }
+    /// <p>The number of times that the measure appears.</p>
+    pub fn get_occurrence_count(&self) -> &::std::option::Option<i32> {
+        &self.occurrence_count
     }
     /// Consumes the builder and constructs a [`ItemizedMetricStats`](crate::types::ItemizedMetricStats).
     pub fn build(self) -> crate::types::ItemizedMetricStats {

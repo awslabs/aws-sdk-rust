@@ -36,6 +36,12 @@ impl BatchGetBlueprintsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetBlueprints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl BatchGetBlueprintsFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>A list of blueprint names.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn include_blueprint(mut self, input: bool) -> Self {
         self.inner = self.inner.include_blueprint(input);
@@ -143,6 +153,10 @@ impl BatchGetBlueprintsFluentBuilder {
         self.inner = self.inner.set_include_blueprint(input);
         self
     }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn get_include_blueprint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_blueprint()
+    }
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
     pub fn include_parameter_spec(mut self, input: bool) -> Self {
         self.inner = self.inner.include_parameter_spec(input);
@@ -152,5 +166,9 @@ impl BatchGetBlueprintsFluentBuilder {
     pub fn set_include_parameter_spec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_parameter_spec(input);
         self
+    }
+    /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
+    pub fn get_include_parameter_spec(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_parameter_spec()
     }
 }

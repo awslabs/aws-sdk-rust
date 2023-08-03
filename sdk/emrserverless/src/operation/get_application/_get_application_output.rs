@@ -49,6 +49,10 @@ impl GetApplicationOutputBuilder {
         self.application = input;
         self
     }
+    /// <p>The output displays information about the specified application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<crate::types::Application> {
+        &self.application
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

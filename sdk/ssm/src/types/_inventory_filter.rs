@@ -60,6 +60,10 @@ impl InventoryFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -79,6 +83,10 @@ impl InventoryFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
@@ -95,6 +103,12 @@ impl InventoryFilterBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of filter.</p> <note>
+    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InventoryQueryOperatorType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {

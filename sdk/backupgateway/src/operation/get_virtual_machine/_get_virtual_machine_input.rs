@@ -40,6 +40,10 @@ impl GetVirtualMachineInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
     pub fn build(
         self,

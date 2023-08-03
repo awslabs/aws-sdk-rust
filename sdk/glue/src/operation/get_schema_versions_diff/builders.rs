@@ -37,6 +37,13 @@ impl GetSchemaVersionsDiffFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchemaVersionsDiff as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,14 @@ impl GetSchemaVersionsDiffFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The first of the two schema versions to be compared.</p>
     pub fn first_schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.inner = self.inner.first_schema_version_number(input);
@@ -147,6 +162,12 @@ impl GetSchemaVersionsDiffFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_first_schema_version_number(input);
         self
+    }
+    /// <p>The first of the two schema versions to be compared.</p>
+    pub fn get_first_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_first_schema_version_number()
     }
     /// <p>The second of the two schema versions to be compared.</p>
     pub fn second_schema_version_number(
@@ -164,6 +185,12 @@ impl GetSchemaVersionsDiffFluentBuilder {
         self.inner = self.inner.set_second_schema_version_number(input);
         self
     }
+    /// <p>The second of the two schema versions to be compared.</p>
+    pub fn get_second_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_second_schema_version_number()
+    }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
     pub fn schema_diff_type(mut self, input: crate::types::SchemaDiffType) -> Self {
         self.inner = self.inner.schema_diff_type(input);
@@ -176,5 +203,9 @@ impl GetSchemaVersionsDiffFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_diff_type(input);
         self
+    }
+    /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
+    pub fn get_schema_diff_type(&self) -> &::std::option::Option<crate::types::SchemaDiffType> {
+        self.inner.get_schema_diff_type()
     }
 }

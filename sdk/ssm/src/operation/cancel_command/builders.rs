@@ -36,6 +36,12 @@ impl CancelCommandFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelCommand as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_command::builders::CancelCommandInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CancelCommandFluentBuilder {
         self.inner = self.inner.set_command_id(input);
         self
     }
+    /// <p>The ID of the command you want to cancel.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_command_id()
+    }
     /// Appends an item to `InstanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -134,5 +144,11 @@ impl CancelCommandFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
+    }
+    /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
     }
 }

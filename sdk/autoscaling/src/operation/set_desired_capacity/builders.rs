@@ -38,6 +38,12 @@ impl SetDesiredCapacityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetDesiredCapacity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl SetDesiredCapacityFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_capacity(input);
@@ -144,6 +154,10 @@ impl SetDesiredCapacityFluentBuilder {
         self.inner = self.inner.set_desired_capacity(input);
         self
     }
+    /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_desired_capacity()
+    }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn honor_cooldown(mut self, input: bool) -> Self {
         self.inner = self.inner.honor_cooldown(input);
@@ -153,5 +167,9 @@ impl SetDesiredCapacityFluentBuilder {
     pub fn set_honor_cooldown(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_honor_cooldown(input);
         self
+    }
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
+    pub fn get_honor_cooldown(&self) -> &::std::option::Option<bool> {
+        self.inner.get_honor_cooldown()
     }
 }

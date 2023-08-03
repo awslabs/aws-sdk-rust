@@ -73,6 +73,10 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn protection(mut self, input: bool) -> Self {
@@ -85,6 +89,11 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
         self.protection = input;
         self
     }
+    /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
+    /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub fn get_protection(&self) -> &::std::option::Option<bool> {
+        &self.protection
+    }
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn mode_block(mut self, input: bool) -> Self {
@@ -96,6 +105,11 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     pub fn set_mode_block(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mode_block = input;
         self
+    }
+    /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
+    /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub fn get_mode_block(&self) -> &::std::option::Option<bool> {
+        &self.mode_block
     }
     /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
@@ -110,6 +124,12 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     pub fn set_report_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_uri = input;
         self
+    }
+    /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the <code>X-XSS-Protection</code> header.</p>
+    /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
+    /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub fn get_report_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_uri
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyXssProtection`](crate::types::ResponseHeadersPolicyXssProtection).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyXssProtection {

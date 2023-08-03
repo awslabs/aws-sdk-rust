@@ -37,6 +37,10 @@ impl AdminDeleteUserAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminDeleteUserAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl AdminDeleteUserAttributesFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user name of the user from which you would like to delete attributes.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -136,6 +144,10 @@ impl AdminDeleteUserAttributesFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user name of the user from which you would like to delete attributes.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// Appends an item to `UserAttributeNames`.
     ///
@@ -158,5 +170,12 @@ impl AdminDeleteUserAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_attribute_names(input);
         self
+    }
+    /// <p>An array of strings representing the user attribute names you want to delete.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    pub fn get_user_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_attribute_names()
     }
 }

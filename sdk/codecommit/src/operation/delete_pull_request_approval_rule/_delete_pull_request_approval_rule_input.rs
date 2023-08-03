@@ -53,6 +53,10 @@ impl DeletePullRequestApprovalRuleInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The name of the approval rule you want to delete.</p>
     pub fn approval_rule_name(
         mut self,
@@ -68,6 +72,10 @@ impl DeletePullRequestApprovalRuleInputBuilder {
     ) -> Self {
         self.approval_rule_name = input;
         self
+    }
+    /// <p>The name of the approval rule you want to delete.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_name
     }
     /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleInput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput).
     pub fn build(

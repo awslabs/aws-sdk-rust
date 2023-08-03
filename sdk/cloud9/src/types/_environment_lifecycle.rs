@@ -87,6 +87,17 @@ impl EnvironmentLifecycleBuilder {
         self.status = input;
         self
     }
+    /// <p>The current creation or deletion lifecycle state of the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycleStatus> {
+        &self.status
+    }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -96,6 +107,10 @@ impl EnvironmentLifecycleBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Any informational message about the lifecycle state of the environment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub fn failure_resource(
@@ -112,6 +127,10 @@ impl EnvironmentLifecycleBuilder {
     ) -> Self {
         self.failure_resource = input;
         self
+    }
+    /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
+    pub fn get_failure_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_resource
     }
     /// Consumes the builder and constructs a [`EnvironmentLifecycle`](crate::types::EnvironmentLifecycle).
     pub fn build(self) -> crate::types::EnvironmentLifecycle {

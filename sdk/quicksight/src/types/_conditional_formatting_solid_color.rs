@@ -54,6 +54,10 @@ impl ConditionalFormattingSolidColorBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression that determines the formatting configuration for solid color.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>Determines the color.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ConditionalFormattingSolidColorBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>Determines the color.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingSolidColor`](crate::types::ConditionalFormattingSolidColor).
     pub fn build(self) -> crate::types::ConditionalFormattingSolidColor {

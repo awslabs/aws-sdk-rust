@@ -60,6 +60,10 @@ impl DynamoDBv2ActionBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the DynamoDB table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
@@ -71,6 +75,11 @@ impl DynamoDBv2ActionBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>Information needed to configure the payload.</p>
+    /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
     pub fn build(self) -> crate::types::DynamoDBv2Action {

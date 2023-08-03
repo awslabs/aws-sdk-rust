@@ -128,6 +128,14 @@ impl ListPrincipalsInputBuilder {
         self.resource_owner = input;
         self
     }
+    /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
+    }
     /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl ListPrincipalsInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `principals`.
     ///
@@ -177,6 +189,20 @@ impl ListPrincipalsInputBuilder {
         self.principals = input;
         self
     }
+    /// <p>Specifies that you want to list information for only the listed principals.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(
@@ -194,6 +220,11 @@ impl ListPrincipalsInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+    /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `resource_share_arns`.
     ///
@@ -217,6 +248,12 @@ impl ListPrincipalsInputBuilder {
         self.resource_share_arns = input;
         self
     }
+    /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_resource_share_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_share_arns
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -227,6 +264,10 @@ impl ListPrincipalsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -236,6 +277,10 @@ impl ListPrincipalsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPrincipalsInput`](crate::operation::list_principals::ListPrincipalsInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl DescribeGlobalReplicationGroupsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `global_replication_groups`.
     ///
     /// To override the contents of this collection use [`set_global_replication_groups`](Self::set_global_replication_groups).
@@ -79,6 +83,12 @@ impl DescribeGlobalReplicationGroupsOutputBuilder {
     ) -> Self {
         self.global_replication_groups = input;
         self
+    }
+    /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    pub fn get_global_replication_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>> {
+        &self.global_replication_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

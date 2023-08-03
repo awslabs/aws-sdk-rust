@@ -115,6 +115,10 @@ impl DescribeFleetMetadataOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the fleet was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time that the fleet was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -128,6 +132,10 @@ impl DescribeFleetMetadataOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time that the fleet was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The name of the fleet.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
@@ -138,6 +146,10 @@ impl DescribeFleetMetadataOutputBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl DescribeFleetMetadataOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -161,6 +177,10 @@ impl DescribeFleetMetadataOutputBuilder {
         self.optimize_for_end_user_location = input;
         self
     }
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
+        &self.optimize_for_end_user_location
+    }
     /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
     pub fn company_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.company_code = ::std::option::Option::Some(input.into());
@@ -170,6 +190,10 @@ impl DescribeFleetMetadataOutputBuilder {
     pub fn set_company_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.company_code = input;
         self
+    }
+    /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
+    pub fn get_company_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company_code
     }
     /// <p>The current state of the fleet.</p>
     pub fn fleet_status(mut self, input: crate::types::FleetStatus) -> Self {
@@ -183,6 +207,10 @@ impl DescribeFleetMetadataOutputBuilder {
     ) -> Self {
         self.fleet_status = input;
         self
+    }
+    /// <p>The current state of the fleet.</p>
+    pub fn get_fleet_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
+        &self.fleet_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -208,6 +236,14 @@ impl DescribeFleetMetadataOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

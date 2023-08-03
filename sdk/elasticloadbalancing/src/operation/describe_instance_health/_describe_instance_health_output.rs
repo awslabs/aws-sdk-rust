@@ -58,6 +58,12 @@ impl DescribeInstanceHealthOutputBuilder {
         self.instance_states = input;
         self
     }
+    /// <p>Information about the health of the instances.</p>
+    pub fn get_instance_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
+        &self.instance_states
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

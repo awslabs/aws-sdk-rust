@@ -55,6 +55,10 @@ impl BatchUpdateObjectAttributesBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>Reference that identifies the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// Appends an item to `attribute_updates`.
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
@@ -73,6 +77,12 @@ impl BatchUpdateObjectAttributesBuilder {
     ) -> Self {
         self.attribute_updates = input;
         self
+    }
+    /// <p>Attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+        &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).
     pub fn build(self) -> crate::types::BatchUpdateObjectAttributes {

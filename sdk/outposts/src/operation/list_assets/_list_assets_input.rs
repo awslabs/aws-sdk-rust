@@ -77,6 +77,10 @@ impl ListAssetsInputBuilder {
         self.outpost_identifier = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_identifier
+    }
     /// Appends an item to `host_id_filter`.
     ///
     /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
@@ -99,6 +103,12 @@ impl ListAssetsInputBuilder {
         self.host_id_filter = input;
         self
     }
+    /// <p>Filters the results by the host ID of a Dedicated Host.</p>
+    pub fn get_host_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_id_filter
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -109,6 +119,10 @@ impl ListAssetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -118,6 +132,10 @@ impl ListAssetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `status_filter`.
     ///
@@ -137,6 +155,12 @@ impl ListAssetsInputBuilder {
     ) -> Self {
         self.status_filter = input;
         self
+    }
+    /// <p>Filters the results by state.</p>
+    pub fn get_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
+        &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
     pub fn build(

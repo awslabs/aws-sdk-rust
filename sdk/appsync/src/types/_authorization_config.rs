@@ -63,6 +63,15 @@ impl AuthorizationConfigBuilder {
         self.authorization_type = input;
         self
     }
+    /// <p>The authorization type that the HTTP endpoint requires.</p>
+    /// <ul>
+    /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+    /// </ul>
+    pub fn get_authorization_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationType> {
+        &self.authorization_type
+    }
     /// <p>The Identity and Access Management (IAM) settings.</p>
     pub fn aws_iam_config(mut self, input: crate::types::AwsIamConfig) -> Self {
         self.aws_iam_config = ::std::option::Option::Some(input);
@@ -75,6 +84,10 @@ impl AuthorizationConfigBuilder {
     ) -> Self {
         self.aws_iam_config = input;
         self
+    }
+    /// <p>The Identity and Access Management (IAM) settings.</p>
+    pub fn get_aws_iam_config(&self) -> &::std::option::Option<crate::types::AwsIamConfig> {
+        &self.aws_iam_config
     }
     /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::types::AuthorizationConfig).
     pub fn build(self) -> crate::types::AuthorizationConfig {

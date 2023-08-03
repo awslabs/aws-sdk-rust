@@ -128,6 +128,12 @@ impl CreateStorageVirtualMachineInputBuilder {
         self.active_directory_configuration = input;
         self
     }
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    pub fn get_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration> {
+        &self.active_directory_configuration
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -143,6 +149,10 @@ impl CreateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn file_system_id(
@@ -160,6 +170,10 @@ impl CreateStorageVirtualMachineInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The name of the SVM.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -169,6 +183,10 @@ impl CreateStorageVirtualMachineInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the SVM.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
     pub fn svm_admin_password(
@@ -185,6 +203,10 @@ impl CreateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.svm_admin_password = input;
         self
+    }
+    /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
+    pub fn get_svm_admin_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.svm_admin_password
     }
     /// Appends an item to `tags`.
     ///
@@ -204,6 +226,10 @@ impl CreateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
@@ -230,6 +256,17 @@ impl CreateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.root_volume_security_style = input;
         self
+    }
+    /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// </ul>
+    pub fn get_root_volume_security_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+        &self.root_volume_security_style
     }
     /// Consumes the builder and constructs a [`CreateStorageVirtualMachineInput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput).
     pub fn build(

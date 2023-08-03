@@ -36,6 +36,10 @@ impl CreateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user::builders::CreateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.inner = self.inner.authentication_mode(input);
@@ -130,6 +138,12 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
+    }
+    /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        self.inner.get_authentication_mode()
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
@@ -147,6 +161,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_access_string(input);
         self
     }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_string()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -163,5 +181,9 @@ impl CreateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

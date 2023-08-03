@@ -44,6 +44,12 @@ impl DetectCustomLabelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectCustomLabels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl DetectCustomLabelsFluentBuilder {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }
+    /// <p>The ARN of the model version that you want to use.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_version_arn()
+    }
     /// <p>Provides the input image either as bytes or an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
     /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
@@ -162,6 +172,16 @@ impl DetectCustomLabelsFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>Provides the input image either as bytes or an S3 object.</p>
+    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+    /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -172,6 +192,10 @@ impl DetectCustomLabelsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub fn min_confidence(mut self, input: f32) -> Self {
         self.inner = self.inner.min_confidence(input);
@@ -181,5 +205,9 @@ impl DetectCustomLabelsFluentBuilder {
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        self.inner.get_min_confidence()
     }
 }

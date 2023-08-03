@@ -46,6 +46,10 @@ impl TlsConfigBuilder {
         self.security_policy = input;
         self
     }
+    /// <p>The security policy for a domain configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy
+    }
     /// Consumes the builder and constructs a [`TlsConfig`](crate::types::TlsConfig).
     pub fn build(self) -> crate::types::TlsConfig {
         crate::types::TlsConfig {

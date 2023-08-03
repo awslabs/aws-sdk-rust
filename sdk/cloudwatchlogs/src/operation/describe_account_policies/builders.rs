@@ -37,6 +37,13 @@ impl DescribeAccountPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl DescribeAccountPoliciesFluentBuilder {
         self.inner = self.inner.set_policy_type(input);
         self
     }
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        self.inner.get_policy_type()
+    }
     /// <p>Use this parameter to limit the returned policies to only the policy with the name that you specify.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -139,6 +150,10 @@ impl DescribeAccountPoliciesFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>Use this parameter to limit the returned policies to only the policy with the name that you specify.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// Appends an item to `accountIdentifiers`.
     ///
@@ -161,5 +176,12 @@ impl DescribeAccountPoliciesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_identifiers(input);
         self
+    }
+    /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
+    /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
+    pub fn get_account_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_identifiers()
     }
 }

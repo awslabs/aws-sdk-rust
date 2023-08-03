@@ -72,6 +72,10 @@ impl VideoSelectorBuilder {
         self.color_space = input;
         self
     }
+    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    pub fn get_color_space(&self) -> &::std::option::Option<crate::types::VideoSelectorColorSpace> {
+        &self.color_space
+    }
     /// Color space settings
     pub fn color_space_settings(
         mut self,
@@ -88,6 +92,12 @@ impl VideoSelectorBuilder {
         self.color_space_settings = input;
         self
     }
+    /// Color space settings
+    pub fn get_color_space_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoSelectorColorSpaceSettings> {
+        &self.color_space_settings
+    }
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
     pub fn color_space_usage(mut self, input: crate::types::VideoSelectorColorSpaceUsage) -> Self {
         self.color_space_usage = ::std::option::Option::Some(input);
@@ -101,6 +111,12 @@ impl VideoSelectorBuilder {
         self.color_space_usage = input;
         self
     }
+    /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
+    pub fn get_color_space_usage(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoSelectorColorSpaceUsage> {
+        &self.color_space_usage
+    }
     /// The video selector settings.
     pub fn selector_settings(mut self, input: crate::types::VideoSelectorSettings) -> Self {
         self.selector_settings = ::std::option::Option::Some(input);
@@ -113,6 +129,12 @@ impl VideoSelectorBuilder {
     ) -> Self {
         self.selector_settings = input;
         self
+    }
+    /// The video selector settings.
+    pub fn get_selector_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoSelectorSettings> {
+        &self.selector_settings
     }
     /// Consumes the builder and constructs a [`VideoSelector`](crate::types::VideoSelector).
     pub fn build(self) -> crate::types::VideoSelector {

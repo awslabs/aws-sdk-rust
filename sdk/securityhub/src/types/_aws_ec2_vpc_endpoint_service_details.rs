@@ -143,6 +143,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.acceptance_required = input;
         self
     }
+    /// <p>Whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        &self.acceptance_required
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -164,6 +168,12 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones where the service is available.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Appends an item to `base_endpoint_dns_names`.
     ///
@@ -187,6 +197,12 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.base_endpoint_dns_names = input;
         self
     }
+    /// <p>The DNS names for the service.</p>
+    pub fn get_base_endpoint_dns_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.base_endpoint_dns_names
+    }
     /// <p>Whether the service manages its VPC endpoints.</p>
     pub fn manages_vpc_endpoints(mut self, input: bool) -> Self {
         self.manages_vpc_endpoints = ::std::option::Option::Some(input);
@@ -196,6 +212,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     pub fn set_manages_vpc_endpoints(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manages_vpc_endpoints = input;
         self
+    }
+    /// <p>Whether the service manages its VPC endpoints.</p>
+    pub fn get_manages_vpc_endpoints(&self) -> &::std::option::Option<bool> {
+        &self.manages_vpc_endpoints
     }
     /// Appends an item to `gateway_load_balancer_arns`.
     ///
@@ -219,6 +239,12 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.gateway_load_balancer_arns = input;
         self
     }
+    /// <p>The ARNs of the Gateway Load Balancers for the service.</p>
+    pub fn get_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.gateway_load_balancer_arns
+    }
     /// Appends an item to `network_load_balancer_arns`.
     ///
     /// To override the contents of this collection use [`set_network_load_balancer_arns`](Self::set_network_load_balancer_arns).
@@ -241,6 +267,12 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.network_load_balancer_arns = input;
         self
     }
+    /// <p>The ARNs of the Network Load Balancers for the service.</p>
+    pub fn get_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_load_balancer_arns
+    }
     /// <p>The private DNS name for the service.</p>
     pub fn private_dns_name(
         mut self,
@@ -257,6 +289,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The private DNS name for the service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The identifier of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -267,6 +303,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.service_id = input;
         self
     }
+    /// <p>The identifier of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
+    }
     /// <p>The name of the service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -276,6 +316,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
@@ -307,6 +351,17 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
         self.service_state = input;
         self
     }
+    /// <p>The current state of the service. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
+    /// </ul>
+    pub fn get_service_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_state
+    }
     /// Appends an item to `service_type`.
     ///
     /// To override the contents of this collection use [`set_service_type`](Self::set_service_type).
@@ -330,6 +385,14 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     ) -> Self {
         self.service_type = input;
         self
+    }
+    /// <p>The types for the service.</p>
+    pub fn get_service_type(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails>,
+    > {
+        &self.service_type
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceDetails`](crate::types::AwsEc2VpcEndpointServiceDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcEndpointServiceDetails {

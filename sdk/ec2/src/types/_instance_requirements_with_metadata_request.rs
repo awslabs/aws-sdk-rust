@@ -74,6 +74,12 @@ impl InstanceRequirementsWithMetadataRequestBuilder {
         self.architecture_types = input;
         self
     }
+    /// <p>The architecture type.</p>
+    pub fn get_architecture_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+        &self.architecture_types
+    }
     /// Appends an item to `virtualization_types`.
     ///
     /// To override the contents of this collection use [`set_virtualization_types`](Self::set_virtualization_types).
@@ -93,6 +99,12 @@ impl InstanceRequirementsWithMetadataRequestBuilder {
         self.virtualization_types = input;
         self
     }
+    /// <p>The virtualization type.</p>
+    pub fn get_virtualization_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
+        &self.virtualization_types
+    }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     pub fn instance_requirements(
         mut self,
@@ -108,6 +120,12 @@ impl InstanceRequirementsWithMetadataRequestBuilder {
     ) -> Self {
         self.instance_requirements = input;
         self
+    }
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
+    pub fn get_instance_requirements(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+        &self.instance_requirements
     }
     /// Consumes the builder and constructs a [`InstanceRequirementsWithMetadataRequest`](crate::types::InstanceRequirementsWithMetadataRequest).
     pub fn build(self) -> crate::types::InstanceRequirementsWithMetadataRequest {

@@ -172,6 +172,10 @@ impl ClusterMetadataBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The optional description of the cluster.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -181,6 +185,10 @@ impl ClusterMetadataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description of the cluster.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +200,10 @@ impl ClusterMetadataBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -201,6 +213,10 @@ impl ClusterMetadataBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The current status of the cluster.</p>
     pub fn cluster_state(mut self, input: crate::types::ClusterState) -> Self {
@@ -215,6 +231,10 @@ impl ClusterMetadataBuilder {
         self.cluster_state = input;
         self
     }
+    /// <p>The current status of the cluster.</p>
+    pub fn get_cluster_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.cluster_state
+    }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -224,6 +244,10 @@ impl ClusterMetadataBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
@@ -242,6 +266,12 @@ impl ClusterMetadataBuilder {
         self.snowball_type = input;
         self
     }
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
+    pub fn get_snowball_type(&self) -> &::std::option::Option<crate::types::SnowballType> {
+        &self.snowball_type
+    }
     /// <p>The creation date for this cluster.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -254,6 +284,10 @@ impl ClusterMetadataBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date for this cluster.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
@@ -268,6 +302,10 @@ impl ClusterMetadataBuilder {
         self.resources = input;
         self
     }
+    /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
+        &self.resources
+    }
     /// <p>The automatically generated ID for a specific address.</p>
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_id = ::std::option::Option::Some(input.into());
@@ -277,6 +315,10 @@ impl ClusterMetadataBuilder {
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_id = input;
         self
+    }
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -303,6 +345,16 @@ impl ClusterMetadataBuilder {
         self.shipping_option = input;
         self
     }
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// </ul>
+    pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
+        &self.shipping_option
+    }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
@@ -315,6 +367,10 @@ impl ClusterMetadataBuilder {
     ) -> Self {
         self.notification = input;
         self
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(
@@ -332,6 +388,10 @@ impl ClusterMetadataBuilder {
         self.forwarding_address_id = input;
         self
     }
+    /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
+    pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forwarding_address_id
+    }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(mut self, input: crate::types::TaxDocuments) -> Self {
         self.tax_documents = ::std::option::Option::Some(input);
@@ -344,6 +404,10 @@ impl ClusterMetadataBuilder {
     ) -> Self {
         self.tax_documents = input;
         self
+    }
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
+    pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
+        &self.tax_documents
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     pub fn on_device_service_configuration(
@@ -360,6 +424,12 @@ impl ClusterMetadataBuilder {
     ) -> Self {
         self.on_device_service_configuration = input;
         self
+    }
+    /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
+    pub fn get_on_device_service_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+        &self.on_device_service_configuration
     }
     /// Consumes the builder and constructs a [`ClusterMetadata`](crate::types::ClusterMetadata).
     pub fn build(self) -> crate::types::ClusterMetadata {

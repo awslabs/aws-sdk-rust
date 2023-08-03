@@ -47,6 +47,10 @@ impl DisableGatewayOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

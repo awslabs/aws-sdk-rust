@@ -57,6 +57,10 @@ impl ListFirewallConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `firewall_configs`.
     ///
     /// To override the contents of this collection use [`set_firewall_configs`](Self::set_firewall_configs).
@@ -75,6 +79,12 @@ impl ListFirewallConfigsOutputBuilder {
     ) -> Self {
         self.firewall_configs = input;
         self
+    }
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    pub fn get_firewall_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>> {
+        &self.firewall_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -87,6 +87,10 @@ impl LineChartLineStyleSettingsBuilder {
         self.line_visibility = input;
         self
     }
+    /// <p>Configuration option that determines whether to show the line for the series.</p>
+    pub fn get_line_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.line_visibility
+    }
     /// <p>Interpolation style for line series.</p>
     /// <ul>
     /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
@@ -109,6 +113,17 @@ impl LineChartLineStyleSettingsBuilder {
     ) -> Self {
         self.line_interpolation = input;
         self
+    }
+    /// <p>Interpolation style for line series.</p>
+    /// <ul>
+    /// <li> <p> <code>LINEAR</code>: Show as default, linear style.</p> </li>
+    /// <li> <p> <code>SMOOTH</code>: Show as a smooth curve.</p> </li>
+    /// <li> <p> <code>STEPPED</code>: Show steps in line.</p> </li>
+    /// </ul>
+    pub fn get_line_interpolation(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineInterpolation> {
+        &self.line_interpolation
     }
     /// <p>Line style for line series.</p>
     /// <ul>
@@ -133,6 +148,15 @@ impl LineChartLineStyleSettingsBuilder {
         self.line_style = input;
         self
     }
+    /// <p>Line style for line series.</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code>: Show as a solid line.</p> </li>
+    /// <li> <p> <code>DOTTED</code>: Show as a dotted line.</p> </li>
+    /// <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li>
+    /// </ul>
+    pub fn get_line_style(&self) -> &::std::option::Option<crate::types::LineChartLineStyle> {
+        &self.line_style
+    }
     /// <p>Width that determines the line thickness.</p>
     pub fn line_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.line_width = ::std::option::Option::Some(input.into());
@@ -142,6 +166,10 @@ impl LineChartLineStyleSettingsBuilder {
     pub fn set_line_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.line_width = input;
         self
+    }
+    /// <p>Width that determines the line thickness.</p>
+    pub fn get_line_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.line_width
     }
     /// Consumes the builder and constructs a [`LineChartLineStyleSettings`](crate::types::LineChartLineStyleSettings).
     pub fn build(self) -> crate::types::LineChartLineStyleSettings {

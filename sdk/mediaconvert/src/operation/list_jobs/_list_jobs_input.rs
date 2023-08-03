@@ -71,6 +71,10 @@ impl ListJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Optional. Number of jobs, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -91,6 +99,10 @@ impl ListJobsInputBuilder {
         self.order = input;
         self
     }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
+    }
     /// Optional. Provide a queue name to get back only jobs from that queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ListJobsInputBuilder {
         self.queue = input;
         self
     }
+    /// Optional. Provide a queue name to get back only jobs from that queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue
+    }
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl ListJobsInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(

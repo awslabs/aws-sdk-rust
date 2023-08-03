@@ -65,6 +65,10 @@ impl UpdateResourceServerInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The identifier for the resource server.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateResourceServerInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier for the resource server.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The name of the resource server.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl UpdateResourceServerInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the resource server.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `scopes`.
     ///
@@ -103,6 +115,12 @@ impl UpdateResourceServerInputBuilder {
     ) -> Self {
         self.scopes = input;
         self
+    }
+    /// <p>The scope values to be set for the resource server.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+        &self.scopes
     }
     /// Consumes the builder and constructs a [`UpdateResourceServerInput`](crate::operation::update_resource_server::UpdateResourceServerInput).
     pub fn build(

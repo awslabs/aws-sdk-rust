@@ -63,6 +63,10 @@ impl ExportProjectOutputBuilder {
         self.download_url = input;
         self
     }
+    /// <p> URL which can be used to download the exported project configuation file(s). </p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
+    }
     /// <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>
     pub fn share_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_url = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ExportProjectOutputBuilder {
         self.share_url = input;
         self
     }
+    /// <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>
+    pub fn get_share_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_url
+    }
     /// <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ExportProjectOutputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

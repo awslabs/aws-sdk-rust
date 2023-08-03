@@ -55,6 +55,10 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
     pub fn permission_set_arn(
         mut self,
@@ -71,6 +75,10 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
         self.permission_set_arn = input;
         self
     }
+    /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
+    }
     /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
     pub fn managed_policy_arn(
         mut self,
@@ -86,6 +94,10 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
     ) -> Self {
         self.managed_policy_arn = input;
         self
+    }
+    /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
+    pub fn get_managed_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_policy_arn
     }
     /// Consumes the builder and constructs a [`DetachManagedPolicyFromPermissionSetInput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{

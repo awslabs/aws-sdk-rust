@@ -59,6 +59,12 @@ impl StartInstancesOutputBuilder {
         self.starting_instances = input;
         self
     }
+    /// <p>Information about the started instances.</p>
+    pub fn get_starting_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+        &self.starting_instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

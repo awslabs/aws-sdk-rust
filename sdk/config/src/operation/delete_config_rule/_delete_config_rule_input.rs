@@ -47,6 +47,10 @@ impl DeleteConfigRuleInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule that you want to delete.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Consumes the builder and constructs a [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
     pub fn build(
         self,

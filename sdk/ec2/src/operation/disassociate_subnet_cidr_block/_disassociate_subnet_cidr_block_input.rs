@@ -45,6 +45,10 @@ impl DisassociateSubnetCidrBlockInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID for the CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// Consumes the builder and constructs a [`DisassociateSubnetCidrBlockInput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput).
     pub fn build(
         self,

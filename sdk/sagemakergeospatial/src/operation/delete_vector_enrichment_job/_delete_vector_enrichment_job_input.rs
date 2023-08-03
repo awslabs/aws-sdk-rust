@@ -39,6 +39,10 @@ impl DeleteVectorEnrichmentJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteVectorEnrichmentJobInput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput).
     pub fn build(
         self,

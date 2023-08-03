@@ -36,6 +36,12 @@ impl CreatePartitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePartition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_partition::builders::CreatePartitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreatePartitionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl CreatePartitionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +165,10 @@ impl CreatePartitionFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the metadata table in which the partition is to be created.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
@@ -164,5 +182,9 @@ impl CreatePartitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partition_input(input);
         self
+    }
+    /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+    pub fn get_partition_input(&self) -> &::std::option::Option<crate::types::PartitionInput> {
+        self.inner.get_partition_input()
     }
 }

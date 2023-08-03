@@ -57,6 +57,12 @@ impl AssessmentReportsDestinationBuilder {
         self.destination_type = input;
         self
     }
+    /// <p> The destination type, such as Amazon S3. </p>
+    pub fn get_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportDestinationType> {
+        &self.destination_type
+    }
     /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl AssessmentReportsDestinationBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
     pub fn build(self) -> crate::types::AssessmentReportsDestination {

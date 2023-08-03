@@ -56,6 +56,10 @@ impl StepOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the step output.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl StepOutputBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The data type of the step output.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
+        &self.data_type
+    }
     /// <p>Determine if an output is required from a step.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl StepOutputBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Determine if an output is required from a step.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// Consumes the builder and constructs a [`StepOutput`](crate::types::StepOutput).
     pub fn build(self) -> crate::types::StepOutput {

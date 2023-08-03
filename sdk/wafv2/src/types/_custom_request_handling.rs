@@ -55,6 +55,13 @@ impl CustomRequestHandlingBuilder {
         self.insert_headers = input;
         self
     }
+    /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_insert_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+        &self.insert_headers
+    }
     /// Consumes the builder and constructs a [`CustomRequestHandling`](crate::types::CustomRequestHandling).
     pub fn build(self) -> crate::types::CustomRequestHandling {
         crate::types::CustomRequestHandling {

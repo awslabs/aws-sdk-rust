@@ -59,6 +59,10 @@ impl RepositoryBranchInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl RepositoryBranchInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl RepositoryBranchInputBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// Consumes the builder and constructs a [`RepositoryBranchInput`](crate::types::RepositoryBranchInput).
     pub fn build(self) -> crate::types::RepositoryBranchInput {

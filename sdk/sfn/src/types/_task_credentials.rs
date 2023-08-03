@@ -40,6 +40,10 @@ impl TaskCredentialsBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of an IAM role that Step Functions assumes for the task. The role can allow cross-account access to resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`TaskCredentials`](crate::types::TaskCredentials).
     pub fn build(self) -> crate::types::TaskCredentials {
         crate::types::TaskCredentials {

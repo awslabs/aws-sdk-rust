@@ -69,6 +69,10 @@ impl CreateDeploymentOutputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateDeploymentOutputBuilder {
         self.iot_job_id = input;
         self
     }
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_arn = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CreateDeploymentOutputBuilder {
     pub fn set_iot_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_job_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

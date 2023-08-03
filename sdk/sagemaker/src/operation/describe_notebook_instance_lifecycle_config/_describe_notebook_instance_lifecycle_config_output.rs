@@ -101,6 +101,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self.notebook_instance_lifecycle_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_arn
+    }
     /// <p>The name of the lifecycle configuration.</p>
     pub fn notebook_instance_lifecycle_config_name(
         mut self,
@@ -116,6 +122,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
     ) -> Self {
         self.notebook_instance_lifecycle_config_name = input;
         self
+    }
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
     }
     /// Appends an item to `on_create`.
     ///
@@ -136,6 +148,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self.on_create = input;
         self
     }
+    /// <p>The shell script that runs only once, when you create a notebook instance.</p>
+    pub fn get_on_create(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        &self.on_create
+    }
     /// Appends an item to `on_start`.
     ///
     /// To override the contents of this collection use [`set_on_start`](Self::set_on_start).
@@ -155,6 +173,12 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self.on_start = input;
         self
     }
+    /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
+    pub fn get_on_start(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        &self.on_start
+    }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -180,6 +208,10 @@ impl DescribeNotebookInstanceLifecycleConfigOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

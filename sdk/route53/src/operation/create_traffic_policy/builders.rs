@@ -36,6 +36,12 @@ impl CreateTrafficPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrafficPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_traffic_policy::builders::CreateTrafficPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateTrafficPolicyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the traffic policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document(input.into());
@@ -136,6 +146,10 @@ impl CreateTrafficPolicyFluentBuilder {
         self.inner = self.inner.set_document(input);
         self
     }
+    /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document()
+    }
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -145,5 +159,9 @@ impl CreateTrafficPolicyFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

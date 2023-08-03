@@ -36,6 +36,13 @@ impl UpdateResourceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateResourceProfileFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
     pub fn sensitivity_score_override(mut self, input: i32) -> Self {
         self.inner = self.inner.sensitivity_score_override(input);
@@ -135,5 +146,9 @@ impl UpdateResourceProfileFluentBuilder {
     pub fn set_sensitivity_score_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_sensitivity_score_override(input);
         self
+    }
+    /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
+    pub fn get_sensitivity_score_override(&self) -> &::std::option::Option<i32> {
+        self.inner.get_sensitivity_score_override()
     }
 }

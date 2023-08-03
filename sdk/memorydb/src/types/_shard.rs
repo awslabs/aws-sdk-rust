@@ -72,6 +72,10 @@ impl ShardBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the shard</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ShardBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The keyspace for this shard.</p>
     pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slots = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ShardBuilder {
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>The keyspace for this shard.</p>
+    pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots
     }
     /// Appends an item to `nodes`.
     ///
@@ -111,6 +123,10 @@ impl ShardBuilder {
         self.nodes = input;
         self
     }
+    /// <p>A list containing information about individual nodes within the shard</p>
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.nodes
+    }
     /// <p>The number of nodes in the shard</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl ShardBuilder {
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
+    }
+    /// <p>The number of nodes in the shard</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
     }
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     pub fn build(self) -> crate::types::Shard {

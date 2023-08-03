@@ -49,6 +49,10 @@ impl TaggingBuilder {
         self.tag_set = input;
         self
     }
+    /// <p>A collection for a set of tags</p>
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_set
+    }
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
     pub fn build(self) -> crate::types::Tagging {
         crate::types::Tagging {

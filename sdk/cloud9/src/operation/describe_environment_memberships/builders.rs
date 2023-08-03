@@ -36,6 +36,10 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironmentMemberships as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self.inner = self.inner.set_user_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
+    }
     /// <p>The ID of the environment to get environment member information about.</p>
     pub fn environment_id(
         mut self,
@@ -147,6 +155,10 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>The ID of the environment to get environment member information about.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
     /// Appends an item to `permissions`.
     ///
@@ -177,6 +189,18 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>The type of environment member permissions to get information about. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// </ul>
+    /// <p>If no value is specified, information about all environment members are returned.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {
+        self.inner.get_permissions()
+    }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -187,6 +211,10 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of environment members to get information about.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -196,5 +224,9 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of environment members to get information about.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -40,6 +40,10 @@ impl DeleteGraphqlApiInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// Consumes the builder and constructs a [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
     pub fn build(
         self,

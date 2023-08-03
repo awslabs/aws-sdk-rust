@@ -106,6 +106,10 @@ impl TranslatePinDataInputBuilder {
         self.incoming_key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incoming_key_identifier
+    }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
     pub fn outgoing_key_identifier(
         mut self,
@@ -121,6 +125,10 @@ impl TranslatePinDataInputBuilder {
     ) -> Self {
         self.outgoing_key_identifier = input;
         self
+    }
+    /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    pub fn get_outgoing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outgoing_key_identifier
     }
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
     pub fn incoming_translation_attributes(
@@ -138,6 +146,12 @@ impl TranslatePinDataInputBuilder {
         self.incoming_translation_attributes = input;
         self
     }
+    /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_incoming_translation_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
+        &self.incoming_translation_attributes
+    }
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
     pub fn outgoing_translation_attributes(
         mut self,
@@ -153,6 +167,12 @@ impl TranslatePinDataInputBuilder {
     ) -> Self {
         self.outgoing_translation_attributes = input;
         self
+    }
+    /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
+    pub fn get_outgoing_translation_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
+        &self.outgoing_translation_attributes
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
     pub fn encrypted_pin_block(
@@ -170,6 +190,10 @@ impl TranslatePinDataInputBuilder {
         self.encrypted_pin_block = input;
         self
     }
+    /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
+    pub fn get_encrypted_pin_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encrypted_pin_block
+    }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
     pub fn incoming_dukpt_attributes(
         mut self,
@@ -186,6 +210,12 @@ impl TranslatePinDataInputBuilder {
         self.incoming_dukpt_attributes = input;
         self
     }
+    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
+    pub fn get_incoming_dukpt_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
+        &self.incoming_dukpt_attributes
+    }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub fn outgoing_dukpt_attributes(
         mut self,
@@ -201,6 +231,12 @@ impl TranslatePinDataInputBuilder {
     ) -> Self {
         self.outgoing_dukpt_attributes = input;
         self
+    }
+    /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
+    pub fn get_outgoing_dukpt_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
+        &self.outgoing_dukpt_attributes
     }
     /// Consumes the builder and constructs a [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
     pub fn build(

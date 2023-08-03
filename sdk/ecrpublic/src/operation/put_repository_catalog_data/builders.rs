@@ -36,6 +36,10 @@ impl PutRepositoryCatalogDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRepositoryCatalogData as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository to create or update the catalog data for.</p>
     pub fn repository_name(
         mut self,
@@ -142,6 +150,10 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository to create or update the catalog data for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(mut self, input: crate::types::RepositoryCatalogDataInput) -> Self {
         self.inner = self.inner.catalog_data(input);
@@ -154,5 +166,11 @@ impl PutRepositoryCatalogDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_catalog_data(input);
         self
+    }
+    /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
+    pub fn get_catalog_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
+        self.inner.get_catalog_data()
     }
 }

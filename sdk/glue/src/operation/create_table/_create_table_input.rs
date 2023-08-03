@@ -82,6 +82,10 @@ impl CreateTableInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -98,6 +102,10 @@ impl CreateTableInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
@@ -110,6 +118,10 @@ impl CreateTableInputBuilder {
     ) -> Self {
         self.table_input = input;
         self
+    }
+    /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
+    pub fn get_table_input(&self) -> &::std::option::Option<crate::types::TableInput> {
+        &self.table_input
     }
     /// Appends an item to `partition_indexes`.
     ///
@@ -130,6 +142,12 @@ impl CreateTableInputBuilder {
         self.partition_indexes = input;
         self
     }
+    /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
+    pub fn get_partition_indexes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>> {
+        &self.partition_indexes
+    }
     /// <p>The ID of the transaction.</p>
     pub fn transaction_id(
         mut self,
@@ -146,6 +164,10 @@ impl CreateTableInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The ID of the transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
     pub fn open_table_format_input(mut self, input: crate::types::OpenTableFormatInput) -> Self {
         self.open_table_format_input = ::std::option::Option::Some(input);
@@ -158,6 +180,12 @@ impl CreateTableInputBuilder {
     ) -> Self {
         self.open_table_format_input = input;
         self
+    }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn get_open_table_format_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenTableFormatInput> {
+        &self.open_table_format_input
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(

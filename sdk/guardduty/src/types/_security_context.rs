@@ -40,6 +40,10 @@ impl SecurityContextBuilder {
         self.privileged = input;
         self
     }
+    /// <p>Whether the container is privileged.</p>
+    pub fn get_privileged(&self) -> &::std::option::Option<bool> {
+        &self.privileged
+    }
     /// Consumes the builder and constructs a [`SecurityContext`](crate::types::SecurityContext).
     pub fn build(self) -> crate::types::SecurityContext {
         crate::types::SecurityContext {

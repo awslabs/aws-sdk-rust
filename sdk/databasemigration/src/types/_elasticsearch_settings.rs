@@ -80,6 +80,10 @@ impl ElasticsearchSettingsBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_uri = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ElasticsearchSettingsBuilder {
     pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_uri = input;
         self
+    }
+    /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
+    pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_uri
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
@@ -102,6 +110,11 @@ impl ElasticsearchSettingsBuilder {
         self.full_load_error_percentage = input;
         self
     }
+    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+    /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
+    pub fn get_full_load_error_percentage(&self) -> &::std::option::Option<i32> {
+        &self.full_load_error_percentage
+    }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub fn error_retry_duration(mut self, input: i32) -> Self {
         self.error_retry_duration = ::std::option::Option::Some(input);
@@ -112,6 +125,10 @@ impl ElasticsearchSettingsBuilder {
         self.error_retry_duration = input;
         self
     }
+    /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
+    pub fn get_error_retry_duration(&self) -> &::std::option::Option<i32> {
+        &self.error_retry_duration
+    }
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn use_new_mapping_type(mut self, input: bool) -> Self {
         self.use_new_mapping_type = ::std::option::Option::Some(input);
@@ -121,6 +138,10 @@ impl ElasticsearchSettingsBuilder {
     pub fn set_use_new_mapping_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_new_mapping_type = input;
         self
+    }
+    /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
+    pub fn get_use_new_mapping_type(&self) -> &::std::option::Option<bool> {
+        &self.use_new_mapping_type
     }
     /// Consumes the builder and constructs a [`ElasticsearchSettings`](crate::types::ElasticsearchSettings).
     pub fn build(self) -> crate::types::ElasticsearchSettings {

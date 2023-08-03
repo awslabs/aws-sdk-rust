@@ -59,6 +59,10 @@ impl DeleteTargetInputBuilder {
         self.target_address = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_address
+    }
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     pub fn force_unsubscribe_all(mut self, input: bool) -> Self {
         self.force_unsubscribe_all = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl DeleteTargetInputBuilder {
     pub fn set_force_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_unsubscribe_all = input;
         self
+    }
+    /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
+    pub fn get_force_unsubscribe_all(&self) -> &::std::option::Option<bool> {
+        &self.force_unsubscribe_all
     }
     /// Consumes the builder and constructs a [`DeleteTargetInput`](crate::operation::delete_target::DeleteTargetInput).
     pub fn build(

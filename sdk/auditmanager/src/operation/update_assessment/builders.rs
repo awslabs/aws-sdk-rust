@@ -36,6 +36,12 @@ impl UpdateAssessmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateAssessmentFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The name of the assessment to be updated. </p>
     pub fn assessment_name(
         mut self,
@@ -147,6 +157,10 @@ impl UpdateAssessmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_name(input);
         self
+    }
+    /// <p> The name of the assessment to be updated. </p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_name()
     }
     /// <p> The description of the assessment. </p>
     pub fn assessment_description(
@@ -164,6 +178,10 @@ impl UpdateAssessmentFluentBuilder {
         self.inner = self.inner.set_assessment_description(input);
         self
     }
+    /// <p> The description of the assessment. </p>
+    pub fn get_assessment_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_description()
+    }
     /// <p> The scope of the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
@@ -173,6 +191,10 @@ impl UpdateAssessmentFluentBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
+    }
+    /// <p> The scope of the assessment. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
     pub fn assessment_reports_destination(
@@ -190,6 +212,12 @@ impl UpdateAssessmentFluentBuilder {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
+    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    pub fn get_assessment_reports_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+        self.inner.get_assessment_reports_destination()
+    }
     /// Appends an item to `roles`.
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
@@ -206,5 +234,9 @@ impl UpdateAssessmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_roles(input);
         self
+    }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        self.inner.get_roles()
     }
 }

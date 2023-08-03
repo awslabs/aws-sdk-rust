@@ -37,6 +37,12 @@ impl SearchChannelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchChannels as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_channels::builders::SearchChannelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl SearchChannelsFluentBuilder {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }
+    /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
+    }
     /// Appends an item to `Fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -147,6 +157,10 @@ impl SearchChannelsFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
+    /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchField>> {
+        self.inner.get_fields()
+    }
     /// <p>The maximum number of channels that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,6 +171,10 @@ impl SearchChannelsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of channels that you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,5 +184,9 @@ impl SearchChannelsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

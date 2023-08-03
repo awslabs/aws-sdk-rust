@@ -72,6 +72,11 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to advance to the next page of volume recommendations.</p>
+    /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `volume_recommendations`.
     ///
     /// To override the contents of this collection use [`set_volume_recommendations`](Self::set_volume_recommendations).
@@ -90,6 +95,12 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
     ) -> Self {
         self.volume_recommendations = input;
         self
+    }
+    /// <p>An array of objects that describe volume recommendations.</p>
+    pub fn get_volume_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>> {
+        &self.volume_recommendations
     }
     /// Appends an item to `errors`.
     ///
@@ -111,6 +122,13 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>An array of objects that describe errors of the request.</p>
+    /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

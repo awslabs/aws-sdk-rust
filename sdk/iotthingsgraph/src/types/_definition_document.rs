@@ -51,6 +51,10 @@ impl DefinitionDocumentBuilder {
         self.language = input;
         self
     }
+    /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::DefinitionLanguage> {
+        &self.language
+    }
     /// <p>The GraphQL text that defines the entity.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DefinitionDocumentBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The GraphQL text that defines the entity.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`DefinitionDocument`](crate::types::DefinitionDocument).
     pub fn build(self) -> crate::types::DefinitionDocument {

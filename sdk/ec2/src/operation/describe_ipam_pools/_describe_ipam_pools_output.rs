@@ -55,6 +55,10 @@ impl DescribeIpamPoolsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ipam_pools`.
     ///
     /// To override the contents of this collection use [`set_ipam_pools`](Self::set_ipam_pools).
@@ -73,6 +77,12 @@ impl DescribeIpamPoolsOutputBuilder {
     ) -> Self {
         self.ipam_pools = input;
         self
+    }
+    /// <p>Information about the IPAM pools.</p>
+    pub fn get_ipam_pools(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPool>> {
+        &self.ipam_pools
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

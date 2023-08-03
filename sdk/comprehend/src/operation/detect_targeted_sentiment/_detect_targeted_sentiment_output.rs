@@ -64,6 +64,12 @@ impl DetectTargetedSentimentOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+        &self.entities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -140,6 +140,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p> The sequence store ID for the store that the read set will be created in. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p> he ID for the initiated multipart upload. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p> he ID for the initiated multipart upload. </p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// <p> The file type of the read set source. </p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
@@ -163,6 +171,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.source_file_type = input;
         self
     }
+    /// <p> The file type of the read set source. </p>
+    pub fn get_source_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.source_file_type
+    }
     /// <p> The source's subject ID. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
@@ -173,6 +185,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.subject_id = input;
         self
     }
+    /// <p> The source's subject ID. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
+    }
     /// <p> The source's sample ID. </p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
@@ -182,6 +198,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_id = input;
         self
+    }
+    /// <p> The source's sample ID. </p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_id
     }
     /// <p> The source of the read set. </p>
     pub fn generated_from(
@@ -199,6 +219,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.generated_from = input;
         self
     }
+    /// <p> The source of the read set. </p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_from
+    }
     /// <p> The read set source's reference ARN. </p>
     pub fn reference_arn(
         mut self,
@@ -215,6 +239,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.reference_arn = input;
         self
     }
+    /// <p> The read set source's reference ARN. </p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
+    }
     /// <p> The name of the read set. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -225,6 +253,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the read set. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the read set. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -234,6 +266,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the read set. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -260,6 +296,14 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p> The tags to add to the read set. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p> The creation time of the multipart upload. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -272,6 +316,10 @@ impl CreateMultipartReadSetUploadOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p> The creation time of the multipart upload. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

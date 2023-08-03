@@ -47,6 +47,10 @@ impl AssociateWirelessGatewayWithCertificateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
     pub fn iot_certificate_id(
         mut self,
@@ -62,6 +66,10 @@ impl AssociateWirelessGatewayWithCertificateInputBuilder {
     ) -> Self {
         self.iot_certificate_id = input;
         self
+    }
+    /// <p>The ID of the certificate to associate with the wireless gateway.</p>
+    pub fn get_iot_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_certificate_id
     }
     /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithCertificateInput`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput, ::aws_smithy_http::operation::error::BuildError>{

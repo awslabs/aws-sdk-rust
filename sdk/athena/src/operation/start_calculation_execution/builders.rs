@@ -36,6 +36,10 @@ impl StartCalculationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartCalculationExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartCalculationExecutionFluentBuilder {
         self.inner = self.inner.set_session_id(input);
         self
     }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
     /// <p>A description of the calculation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +143,10 @@ impl StartCalculationExecutionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the calculation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
@@ -154,6 +166,13 @@ impl StartCalculationExecutionFluentBuilder {
         self.inner = self.inner.set_calculation_configuration(input);
         self
     }
+    /// <p>Contains configuration information for the calculation.</p>
+    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    pub fn get_calculation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CalculationConfiguration> {
+        self.inner.get_calculation_configuration()
+    }
     /// <p>A string that contains the code of the calculation.</p>
     pub fn code_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_block(input.into());
@@ -163,6 +182,10 @@ impl StartCalculationExecutionFluentBuilder {
     pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_block(input);
         self
+    }
+    /// <p>A string that contains the code of the calculation.</p>
+    pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_block()
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -183,5 +206,11 @@ impl StartCalculationExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

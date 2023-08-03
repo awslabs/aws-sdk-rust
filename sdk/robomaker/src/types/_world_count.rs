@@ -49,6 +49,10 @@ impl WorldCountBuilder {
         self.floorplan_count = input;
         self
     }
+    /// <p>The number of unique floorplans.</p>
+    pub fn get_floorplan_count(&self) -> &::std::option::Option<i32> {
+        &self.floorplan_count
+    }
     /// <p>The number of unique interiors per floorplan.</p>
     pub fn interior_count_per_floorplan(mut self, input: i32) -> Self {
         self.interior_count_per_floorplan = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl WorldCountBuilder {
     pub fn set_interior_count_per_floorplan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interior_count_per_floorplan = input;
         self
+    }
+    /// <p>The number of unique interiors per floorplan.</p>
+    pub fn get_interior_count_per_floorplan(&self) -> &::std::option::Option<i32> {
+        &self.interior_count_per_floorplan
     }
     /// Consumes the builder and constructs a [`WorldCount`](crate::types::WorldCount).
     pub fn build(self) -> crate::types::WorldCount {

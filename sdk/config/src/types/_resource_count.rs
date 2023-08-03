@@ -51,6 +51,10 @@ impl ResourceCountBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The number of resources.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ResourceCountBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of resources.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ResourceCount`](crate::types::ResourceCount).
     pub fn build(self) -> crate::types::ResourceCount {

@@ -92,6 +92,10 @@ impl IncidentTemplateBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the incident. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The impact of the incident on your customers and applications. </p>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl IncidentTemplateBuilder {
         self.impact = input;
         self
     }
+    /// <p>The impact of the incident on your customers and applications. </p>
+    pub fn get_impact(&self) -> &::std::option::Option<i32> {
+        &self.impact
+    }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl IncidentTemplateBuilder {
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
     }
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
     pub fn dedupe_string(
@@ -127,6 +139,10 @@ impl IncidentTemplateBuilder {
     ) -> Self {
         self.dedupe_string = input;
         self
+    }
+    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    pub fn get_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dedupe_string
     }
     /// Appends an item to `notification_targets`.
     ///
@@ -146,6 +162,12 @@ impl IncidentTemplateBuilder {
     ) -> Self {
         self.notification_targets = input;
         self
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    pub fn get_notification_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+        &self.notification_targets
     }
     /// Adds a key-value pair to `incident_tags`.
     ///
@@ -171,6 +193,14 @@ impl IncidentTemplateBuilder {
     ) -> Self {
         self.incident_tags = input;
         self
+    }
+    /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
+    pub fn get_incident_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.incident_tags
     }
     /// Consumes the builder and constructs a [`IncidentTemplate`](crate::types::IncidentTemplate).
     pub fn build(self) -> crate::types::IncidentTemplate {

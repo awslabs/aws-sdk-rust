@@ -40,6 +40,10 @@ impl OutputFormatOptionsBuilder {
         self.csv = input;
         self
     }
+    /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutputOptions> {
+        &self.csv
+    }
     /// Consumes the builder and constructs a [`OutputFormatOptions`](crate::types::OutputFormatOptions).
     pub fn build(self) -> crate::types::OutputFormatOptions {
         crate::types::OutputFormatOptions { csv: self.csv }

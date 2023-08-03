@@ -40,6 +40,13 @@ impl PutConfigurationRecorderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationRecorder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,11 @@ impl PutConfigurationRecorderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_recorder(input);
         self
+    }
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    pub fn get_configuration_recorder(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
+        self.inner.get_configuration_recorder()
     }
 }

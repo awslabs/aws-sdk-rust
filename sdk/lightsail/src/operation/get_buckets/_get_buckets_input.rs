@@ -61,6 +61,11 @@ impl GetBucketsInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket for which to return information.</p>
+    /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,6 +78,11 @@ impl GetBucketsInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub fn include_connected_resources(mut self, input: bool) -> Self {
         self.include_connected_resources = ::std::option::Option::Some(input);
@@ -82,6 +92,10 @@ impl GetBucketsInputBuilder {
     pub fn set_include_connected_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_connected_resources = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
+    pub fn get_include_connected_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_connected_resources
     }
     /// Consumes the builder and constructs a [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
     pub fn build(

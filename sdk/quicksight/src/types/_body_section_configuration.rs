@@ -68,6 +68,10 @@ impl BodySectionConfigurationBuilder {
         self.section_id = input;
         self
     }
+    /// <p>The unique identifier of a body section.</p>
+    pub fn get_section_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.section_id
+    }
     /// <p>The configuration of content in a body section.</p>
     pub fn content(mut self, input: crate::types::BodySectionContent) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl BodySectionConfigurationBuilder {
         self.content = input;
         self
     }
+    /// <p>The configuration of content in a body section.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::BodySectionContent> {
+        &self.content
+    }
     /// <p>The style options of a body section.</p>
     pub fn style(mut self, input: crate::types::SectionStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl BodySectionConfigurationBuilder {
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::SectionStyle>) -> Self {
         self.style = input;
         self
+    }
+    /// <p>The style options of a body section.</p>
+    pub fn get_style(&self) -> &::std::option::Option<crate::types::SectionStyle> {
+        &self.style
     }
     /// <p>The configuration of a page break for a section.</p>
     pub fn page_break_configuration(
@@ -106,6 +118,12 @@ impl BodySectionConfigurationBuilder {
     ) -> Self {
         self.page_break_configuration = input;
         self
+    }
+    /// <p>The configuration of a page break for a section.</p>
+    pub fn get_page_break_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SectionPageBreakConfiguration> {
+        &self.page_break_configuration
     }
     /// Consumes the builder and constructs a [`BodySectionConfiguration`](crate::types::BodySectionConfiguration).
     pub fn build(self) -> crate::types::BodySectionConfiguration {

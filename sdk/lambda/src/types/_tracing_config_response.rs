@@ -40,6 +40,10 @@ impl TracingConfigResponseBuilder {
         self.mode = input;
         self
     }
+    /// <p>The tracing mode.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::TracingMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`TracingConfigResponse`](crate::types::TracingConfigResponse).
     pub fn build(self) -> crate::types::TracingConfigResponse {
         crate::types::TracingConfigResponse { mode: self.mode }

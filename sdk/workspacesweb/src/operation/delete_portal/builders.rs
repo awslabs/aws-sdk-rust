@@ -36,6 +36,10 @@ impl DeletePortalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePortal as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_portal::builders::DeletePortalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeletePortalFluentBuilder {
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_arn(input);
         self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
     }
 }

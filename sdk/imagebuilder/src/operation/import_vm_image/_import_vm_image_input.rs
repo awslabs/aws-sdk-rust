@@ -133,6 +133,10 @@ impl ImportVmImageInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the base image that is created by the import process.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
@@ -179,6 +183,25 @@ impl ImportVmImageInputBuilder {
         self.semantic_version = input;
         self
     }
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
+    }
     /// <p>The description for the base image that is created by the import process.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -188,6 +211,10 @@ impl ImportVmImageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the base image that is created by the import process.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The operating system platform for the imported VM.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -199,6 +226,10 @@ impl ImportVmImageInputBuilder {
         self.platform = input;
         self
     }
+    /// <p>The operating system platform for the imported VM.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The operating system version for the imported VM.</p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_version = ::std::option::Option::Some(input.into());
@@ -208,6 +239,10 @@ impl ImportVmImageInputBuilder {
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_version = input;
         self
+    }
+    /// <p>The operating system version for the imported VM.</p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
     }
     /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
     pub fn vm_import_task_id(
@@ -224,6 +259,10 @@ impl ImportVmImageInputBuilder {
     ) -> Self {
         self.vm_import_task_id = input;
         self
+    }
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    pub fn get_vm_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_import_task_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -250,6 +289,14 @@ impl ImportVmImageInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags that are attached to the import resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -259,6 +306,10 @@ impl ImportVmImageInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ImportVmImageInput`](crate::operation::import_vm_image::ImportVmImageInput).
     pub fn build(

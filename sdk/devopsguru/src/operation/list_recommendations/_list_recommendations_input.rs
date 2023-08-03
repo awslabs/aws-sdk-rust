@@ -64,6 +64,10 @@ impl ListRecommendationsInputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p> The ID of the requested insight. </p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListRecommendationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -84,6 +92,10 @@ impl ListRecommendationsInputBuilder {
         self.locale = input;
         self
     }
+    /// <p>A locale that specifies the language to use for recommendations.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
+    }
     /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ListRecommendationsInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(

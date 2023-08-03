@@ -59,6 +59,10 @@ impl EventsBatchBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>A set of properties and attributes that are associated with the endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::PublicEndpoint> {
+        &self.endpoint
+    }
     /// Adds a key-value pair to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -83,6 +87,14 @@ impl EventsBatchBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>A set of properties that are associated with the event.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Event>,
+    > {
+        &self.events
     }
     /// Consumes the builder and constructs a [`EventsBatch`](crate::types::EventsBatch).
     pub fn build(self) -> crate::types::EventsBatch {

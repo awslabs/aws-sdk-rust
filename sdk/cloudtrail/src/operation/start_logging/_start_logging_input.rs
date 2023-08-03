@@ -44,6 +44,11 @@ impl StartLoggingInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartLoggingInput`](crate::operation::start_logging::StartLoggingInput).
     pub fn build(
         self,

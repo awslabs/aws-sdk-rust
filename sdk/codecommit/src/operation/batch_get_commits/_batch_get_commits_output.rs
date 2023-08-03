@@ -64,6 +64,10 @@ impl BatchGetCommitsOutputBuilder {
         self.commits = input;
         self
     }
+    /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
+    pub fn get_commits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Commit>> {
+        &self.commits
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -82,6 +86,12 @@ impl BatchGetCommitsOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

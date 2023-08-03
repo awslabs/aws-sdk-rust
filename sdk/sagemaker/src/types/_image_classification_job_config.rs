@@ -46,6 +46,12 @@ impl ImageClassificationJobConfigBuilder {
         self.completion_criteria = input;
         self
     }
+    /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
+    pub fn get_completion_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+        &self.completion_criteria
+    }
     /// Consumes the builder and constructs a [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
     pub fn build(self) -> crate::types::ImageClassificationJobConfig {
         crate::types::ImageClassificationJobConfig {

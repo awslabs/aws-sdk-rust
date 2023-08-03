@@ -276,6 +276,12 @@ impl DistributionConfigBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
+    /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
         self.aliases = ::std::option::Option::Some(input);
@@ -285,6 +291,10 @@ impl DistributionConfigBuilder {
     pub fn set_aliases(mut self, input: ::std::option::Option<crate::types::Aliases>) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<crate::types::Aliases> {
+        &self.aliases
     }
     /// <p>The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root object avoids exposing the contents of your distribution.</p>
     /// <p>Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -312,6 +322,15 @@ impl DistributionConfigBuilder {
         self.default_root_object = input;
         self
     }
+    /// <p>The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root object avoids exposing the contents of your distribution.</p>
+    /// <p>Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
+    /// <p>If you don't want to specify a default root object when you create a distribution, include an empty <code>DefaultRootObject</code> element.</p>
+    /// <p>To delete the default root object from an existing distribution, update the distribution configuration and include an empty <code>DefaultRootObject</code> element.</p>
+    /// <p>To replace the default root object, update the distribution configuration and specify the new object.</p>
+    /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_default_root_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_root_object
+    }
     /// <p>A complex type that contains information about origins for this distribution.</p>
     pub fn origins(mut self, input: crate::types::Origins) -> Self {
         self.origins = ::std::option::Option::Some(input);
@@ -321,6 +340,10 @@ impl DistributionConfigBuilder {
     pub fn set_origins(mut self, input: ::std::option::Option<crate::types::Origins>) -> Self {
         self.origins = input;
         self
+    }
+    /// <p>A complex type that contains information about origins for this distribution.</p>
+    pub fn get_origins(&self) -> &::std::option::Option<crate::types::Origins> {
+        &self.origins
     }
     /// <p>A complex type that contains information about origin groups for this distribution.</p>
     pub fn origin_groups(mut self, input: crate::types::OriginGroups) -> Self {
@@ -335,6 +358,10 @@ impl DistributionConfigBuilder {
         self.origin_groups = input;
         self
     }
+    /// <p>A complex type that contains information about origin groups for this distribution.</p>
+    pub fn get_origin_groups(&self) -> &::std::option::Option<crate::types::OriginGroups> {
+        &self.origin_groups
+    }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
     pub fn default_cache_behavior(mut self, input: crate::types::DefaultCacheBehavior) -> Self {
         self.default_cache_behavior = ::std::option::Option::Some(input);
@@ -348,6 +375,12 @@ impl DistributionConfigBuilder {
         self.default_cache_behavior = input;
         self
     }
+    /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    pub fn get_default_cache_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultCacheBehavior> {
+        &self.default_cache_behavior
+    }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviors) -> Self {
         self.cache_behaviors = ::std::option::Option::Some(input);
@@ -360,6 +393,10 @@ impl DistributionConfigBuilder {
     ) -> Self {
         self.cache_behaviors = input;
         self
+    }
+    /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<crate::types::CacheBehaviors> {
+        &self.cache_behaviors
     }
     /// <p>A complex type that controls the following:</p>
     /// <ul>
@@ -384,6 +421,17 @@ impl DistributionConfigBuilder {
         self.custom_error_responses = input;
         self
     }
+    /// <p>A complex type that controls the following:</p>
+    /// <ul>
+    /// <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li>
+    /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
+    /// </ul>
+    /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_custom_error_responses(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomErrorResponses> {
+        &self.custom_error_responses
+    }
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -393,6 +441,10 @@ impl DistributionConfigBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -408,6 +460,11 @@ impl DistributionConfigBuilder {
     ) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>A complex type that controls whether access logs are written for the distribution.</p>
+    /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
+        &self.logging
     }
     /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your objects from all CloudFront edge locations.</p>
     /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your objects from the CloudFront edge location that has the lowest latency among the edge locations in your price class. Viewers who are in or near regions that are excluded from your specified price class may encounter slower performance.</p>
@@ -426,6 +483,12 @@ impl DistributionConfigBuilder {
         self.price_class = input;
         self
     }
+    /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your objects from all CloudFront edge locations.</p>
+    /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your objects from the CloudFront edge location that has the lowest latency among the edge locations in your price class. Viewers who are in or near regions that are excluded from your specified price class may encounter slower performance.</p>
+    /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.</p>
+    pub fn get_price_class(&self) -> &::std::option::Option<crate::types::PriceClass> {
+        &self.price_class
+    }
     /// <p>From this field, you can enable or disable the selected distribution.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -435,6 +498,10 @@ impl DistributionConfigBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>From this field, you can enable or disable the selected distribution.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
     pub fn viewer_certificate(mut self, input: crate::types::ViewerCertificate) -> Self {
@@ -449,6 +516,12 @@ impl DistributionConfigBuilder {
         self.viewer_certificate = input;
         self
     }
+    /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
+    pub fn get_viewer_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::ViewerCertificate> {
+        &self.viewer_certificate
+    }
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
     pub fn restrictions(mut self, input: crate::types::Restrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
@@ -462,6 +535,10 @@ impl DistributionConfigBuilder {
         self.restrictions = input;
         self
     }
+    /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::Restrictions> {
+        &self.restrictions
+    }
     /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
     /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>.</p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -473,6 +550,11 @@ impl DistributionConfigBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
+    }
+    /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+    /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
     }
     /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
     /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
@@ -490,6 +572,12 @@ impl DistributionConfigBuilder {
     ) -> Self {
         self.http_version = input;
         self
+    }
+    /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
+    /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
+    /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
+    pub fn get_http_version(&self) -> &::std::option::Option<crate::types::HttpVersion> {
+        &self.http_version
     }
     /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second request, for an IPv4 address for your distribution.</p>
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -517,6 +605,18 @@ impl DistributionConfigBuilder {
         self.is_ipv6_enabled = input;
         self
     }
+    /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second request, for an IPv4 address for your distribution.</p>
+    /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>If you're using an Route&nbsp;53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront distribution, you need to create a second alias resource record set when both of the following are true:</p>
+    /// <ul>
+    /// <li> <p>You enable IPv6 for the distribution</p> </li>
+    /// <li> <p>You're using alternate domain names in the URLs for your objects</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
+    /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
+    pub fn get_is_ipv6_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_ipv6_enabled
+    }
     /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
     pub fn continuous_deployment_policy_id(
         mut self,
@@ -533,6 +633,12 @@ impl DistributionConfigBuilder {
         self.continuous_deployment_policy_id = input;
         self
     }
+    /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
+    pub fn get_continuous_deployment_policy_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.continuous_deployment_policy_id
+    }
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub fn staging(mut self, input: bool) -> Self {
         self.staging = ::std::option::Option::Some(input);
@@ -542,6 +648,10 @@ impl DistributionConfigBuilder {
     pub fn set_staging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.staging = input;
         self
+    }
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
+    pub fn get_staging(&self) -> &::std::option::Option<bool> {
+        &self.staging
     }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
     pub fn build(self) -> crate::types::DistributionConfig {

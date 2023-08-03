@@ -58,6 +58,10 @@ impl DnssecSigningAttributesBuilder {
         self.algorithm = input;
         self
     }
+    /// <p> Algorithm which was used to generate the digest from the public key. </p>
+    pub fn get_algorithm(&self) -> &::std::option::Option<i32> {
+        &self.algorithm
+    }
     /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn flags(mut self, input: i32) -> Self {
@@ -70,6 +74,11 @@ impl DnssecSigningAttributesBuilder {
         self.flags = input;
         self
     }
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    pub fn get_flags(&self) -> &::std::option::Option<i32> {
+        &self.flags
+    }
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
     pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key = ::std::option::Option::Some(input.into());
@@ -79,6 +88,10 @@ impl DnssecSigningAttributesBuilder {
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key = input;
         self
+    }
+    /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
+    pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key
     }
     /// Consumes the builder and constructs a [`DnssecSigningAttributes`](crate::types::DnssecSigningAttributes).
     pub fn build(self) -> crate::types::DnssecSigningAttributes {

@@ -40,6 +40,10 @@ impl TcpTimeoutBuilder {
         self.idle = input;
         self
     }
+    /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    pub fn get_idle(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.idle
+    }
     /// Consumes the builder and constructs a [`TcpTimeout`](crate::types::TcpTimeout).
     pub fn build(self) -> crate::types::TcpTimeout {
         crate::types::TcpTimeout { idle: self.idle }

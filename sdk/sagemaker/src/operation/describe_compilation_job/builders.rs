@@ -37,6 +37,13 @@ impl DescribeCompilationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCompilationJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_compilation_job::builders::DescribeCompilationJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DescribeCompilationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
+    }
+    /// <p>The name of the model compilation job that you want information about.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compilation_job_name()
     }
 }

@@ -37,6 +37,12 @@ impl StopExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_execution::builders::StopExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl StopExecutionFluentBuilder {
         self.inner = self.inner.set_execution_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_arn()
+    }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.error(input.into());
@@ -135,6 +145,10 @@ impl StopExecutionFluentBuilder {
         self.inner = self.inner.set_error(input);
         self
     }
+    /// <p>The error code of the failure.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_error()
+    }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cause(input.into());
@@ -144,5 +158,9 @@ impl StopExecutionFluentBuilder {
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cause(input);
         self
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cause()
     }
 }

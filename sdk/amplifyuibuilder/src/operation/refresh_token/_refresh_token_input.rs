@@ -52,6 +52,10 @@ impl RefreshTokenInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::TokenProviders> {
+        &self.provider
+    }
     /// <p>Information about the refresh token request.</p>
     pub fn refresh_token_body(mut self, input: crate::types::RefreshTokenRequestBody) -> Self {
         self.refresh_token_body = ::std::option::Option::Some(input);
@@ -64,6 +68,12 @@ impl RefreshTokenInputBuilder {
     ) -> Self {
         self.refresh_token_body = input;
         self
+    }
+    /// <p>Information about the refresh token request.</p>
+    pub fn get_refresh_token_body(
+        &self,
+    ) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
+        &self.refresh_token_body
     }
     /// Consumes the builder and constructs a [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
     pub fn build(

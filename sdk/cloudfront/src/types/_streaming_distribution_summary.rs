@@ -122,6 +122,10 @@ impl StreamingDistributionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl StreamingDistributionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -141,6 +149,10 @@ impl StreamingDistributionSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time the distribution was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +167,10 @@ impl StreamingDistributionSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time the distribution was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -164,6 +180,10 @@ impl StreamingDistributionSummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn s3_origin(mut self, input: crate::types::S3Origin) -> Self {
@@ -175,6 +195,10 @@ impl StreamingDistributionSummaryBuilder {
         self.s3_origin = input;
         self
     }
+    /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+    pub fn get_s3_origin(&self) -> &::std::option::Option<crate::types::S3Origin> {
+        &self.s3_origin
+    }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
         self.aliases = ::std::option::Option::Some(input);
@@ -184,6 +208,10 @@ impl StreamingDistributionSummaryBuilder {
     pub fn set_aliases(mut self, input: ::std::option::Option<crate::types::Aliases>) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<crate::types::Aliases> {
+        &self.aliases
     }
     /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -200,6 +228,11 @@ impl StreamingDistributionSummaryBuilder {
         self.trusted_signers = input;
         self
     }
+    /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_trusted_signers(&self) -> &::std::option::Option<crate::types::TrustedSigners> {
+        &self.trusted_signers
+    }
     /// <p>The comment originally specified when this distribution was created.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -209,6 +242,10 @@ impl StreamingDistributionSummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment originally specified when this distribution was created.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
@@ -223,6 +260,10 @@ impl StreamingDistributionSummaryBuilder {
         self.price_class = input;
         self
     }
+    /// <p>A complex type that contains information about price class for this streaming distribution.</p>
+    pub fn get_price_class(&self) -> &::std::option::Option<crate::types::PriceClass> {
+        &self.price_class
+    }
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -232,6 +273,10 @@ impl StreamingDistributionSummaryBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`StreamingDistributionSummary`](crate::types::StreamingDistributionSummary).
     pub fn build(self) -> crate::types::StreamingDistributionSummary {

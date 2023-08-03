@@ -54,6 +54,11 @@ impl DescribeEventCategoriesInputBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The type of source that is generating the events.</p>
+    /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -72,6 +77,10 @@ impl DescribeEventCategoriesInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
     pub fn build(

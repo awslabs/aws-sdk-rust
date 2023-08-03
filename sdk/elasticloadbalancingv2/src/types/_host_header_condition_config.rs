@@ -53,6 +53,11 @@ impl HostHeaderConditionConfigBuilder {
         self.values = input;
         self
     }
+    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`HostHeaderConditionConfig`](crate::types::HostHeaderConditionConfig).
     pub fn build(self) -> crate::types::HostHeaderConditionConfig {
         crate::types::HostHeaderConditionConfig {

@@ -46,6 +46,10 @@ impl StopApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the running application to stop.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
     pub fn build(
         self,

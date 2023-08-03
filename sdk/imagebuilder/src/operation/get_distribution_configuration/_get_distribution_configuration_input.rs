@@ -45,6 +45,12 @@ impl GetDistributionConfigurationInputBuilder {
         self.distribution_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_configuration_arn
+    }
     /// Consumes the builder and constructs a [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
     pub fn build(
         self,

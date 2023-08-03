@@ -116,6 +116,13 @@ impl MqttHeadersBuilder {
         self.payload_format_indicator = input;
         self
     }
+    /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.</p>
+    /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn get_payload_format_indicator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_format_indicator
+    }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
@@ -129,6 +136,12 @@ impl MqttHeadersBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
@@ -149,6 +162,12 @@ impl MqttHeadersBuilder {
     ) -> Self {
         self.response_topic = input;
         self
+    }
+    /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn get_response_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_topic
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
@@ -174,6 +193,14 @@ impl MqttHeadersBuilder {
         self.correlation_data = input;
         self
     }
+    /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
+    /// <p> This binary data must be based64-encoded. </p>
+    /// </note>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn get_correlation_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.correlation_data
+    }
     /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
     pub fn message_expiry(
@@ -191,6 +218,11 @@ impl MqttHeadersBuilder {
     ) -> Self {
         self.message_expiry = input;
         self
+    }
+    /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn get_message_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_expiry
     }
     /// Appends an item to `user_properties`.
     ///
@@ -210,6 +242,12 @@ impl MqttHeadersBuilder {
     ) -> Self {
         self.user_properties = input;
         self
+    }
+    /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
+    pub fn get_user_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProperty>> {
+        &self.user_properties
     }
     /// Consumes the builder and constructs a [`MqttHeaders`](crate::types::MqttHeaders).
     pub fn build(self) -> crate::types::MqttHeaders {

@@ -77,6 +77,12 @@ impl RecommendationDisruptionComplianceBuilder {
         self.expected_compliance_status = input;
         self
     }
+    /// <p>The expected compliance status after applying the recommended configuration change.</p>
+    pub fn get_expected_compliance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.expected_compliance_status
+    }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub fn expected_rto_in_secs(mut self, input: i32) -> Self {
         self.expected_rto_in_secs = ::std::option::Option::Some(input);
@@ -86,6 +92,10 @@ impl RecommendationDisruptionComplianceBuilder {
     pub fn set_expected_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expected_rto_in_secs = input;
         self
+    }
+    /// <p>The expected RTO after applying the recommended configuration change.</p>
+    pub fn get_expected_rto_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.expected_rto_in_secs
     }
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
     pub fn expected_rto_description(
@@ -103,6 +113,10 @@ impl RecommendationDisruptionComplianceBuilder {
         self.expected_rto_description = input;
         self
     }
+    /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
+    pub fn get_expected_rto_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_rto_description
+    }
     /// <p>The expected RPO after applying the recommended configuration change.</p>
     pub fn expected_rpo_in_secs(mut self, input: i32) -> Self {
         self.expected_rpo_in_secs = ::std::option::Option::Some(input);
@@ -112,6 +126,10 @@ impl RecommendationDisruptionComplianceBuilder {
     pub fn set_expected_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expected_rpo_in_secs = input;
         self
+    }
+    /// <p>The expected RPO after applying the recommended configuration change.</p>
+    pub fn get_expected_rpo_in_secs(&self) -> &::std::option::Option<i32> {
+        &self.expected_rpo_in_secs
     }
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub fn expected_rpo_description(
@@ -128,6 +146,10 @@ impl RecommendationDisruptionComplianceBuilder {
     ) -> Self {
         self.expected_rpo_description = input;
         self
+    }
+    /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
+    pub fn get_expected_rpo_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_rpo_description
     }
     /// Consumes the builder and constructs a [`RecommendationDisruptionCompliance`](crate::types::RecommendationDisruptionCompliance).
     pub fn build(self) -> crate::types::RecommendationDisruptionCompliance {

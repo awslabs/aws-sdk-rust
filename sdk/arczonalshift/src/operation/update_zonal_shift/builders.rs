@@ -36,6 +36,12 @@ impl UpdateZonalShiftFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateZonalShift as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateZonalShiftFluentBuilder {
         self.inner = self.inner.set_zonal_shift_id(input);
         self
     }
+    /// <p>The identifier of a zonal shift.</p>
+    pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_zonal_shift_id()
+    }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -141,6 +151,10 @@ impl UpdateZonalShiftFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
     /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
@@ -165,5 +179,16 @@ impl UpdateZonalShiftFluentBuilder {
     pub fn set_expires_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expires_in(input);
         self
+    }
+    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
+    /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
+    /// <ul>
+    /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li>
+    /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
+    /// </ul>
+    /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expires_in()
     }
 }

@@ -64,6 +64,10 @@ impl ListImageScanFindingsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Appends an item to `findings`.
     ///
     /// To override the contents of this collection use [`set_findings`](Self::set_findings).
@@ -83,6 +87,12 @@ impl ListImageScanFindingsOutputBuilder {
         self.findings = input;
         self
     }
+    /// <p>The image scan findings for your account that meet your request filter criteria.</p>
+    pub fn get_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
+        &self.findings
+    }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ListImageScanFindingsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

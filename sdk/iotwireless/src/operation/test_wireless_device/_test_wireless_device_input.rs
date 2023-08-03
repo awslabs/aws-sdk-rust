@@ -40,6 +40,10 @@ impl TestWirelessDeviceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the wireless device to test.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
     pub fn build(
         self,

@@ -49,6 +49,10 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
         self.delete_at = input;
         self
     }
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    pub fn get_delete_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delete_at
+    }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
     pub fn move_to_cold_storage_at(
         mut self,
@@ -64,6 +68,10 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     ) -> Self {
         self.move_to_cold_storage_at = input;
         self
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    pub fn get_move_to_cold_storage_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.move_to_cold_storage_at
     }
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails {

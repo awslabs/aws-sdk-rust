@@ -129,6 +129,10 @@ impl AssociateFileSystemInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The password of the user credential.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl AssociateFileSystemInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The password of the user credential.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +157,10 @@ impl AssociateFileSystemInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
@@ -159,6 +171,10 @@ impl AssociateFileSystemInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
@@ -168,6 +184,10 @@ impl AssociateFileSystemInputBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -188,6 +208,10 @@ impl AssociateFileSystemInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(
         mut self,
@@ -204,6 +228,10 @@ impl AssociateFileSystemInputBuilder {
         self.audit_destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_destination_arn
+    }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
         self.cache_attributes = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl AssociateFileSystemInputBuilder {
     ) -> Self {
         self.cache_attributes = input;
         self
+    }
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
+        &self.cache_attributes
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
@@ -236,6 +268,14 @@ impl AssociateFileSystemInputBuilder {
     ) -> Self {
         self.endpoint_network_configuration = input;
         self
+    }
+    /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// </note>
+    pub fn get_endpoint_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
+        &self.endpoint_network_configuration
     }
     /// Consumes the builder and constructs a [`AssociateFileSystemInput`](crate::operation::associate_file_system::AssociateFileSystemInput).
     pub fn build(

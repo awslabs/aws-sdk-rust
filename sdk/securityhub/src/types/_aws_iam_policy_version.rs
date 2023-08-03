@@ -58,6 +58,10 @@ impl AwsIamPolicyVersionBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The identifier of the policy version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>Whether the version is the default version.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl AwsIamPolicyVersionBuilder {
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
+    }
+    /// <p>Whether the version is the default version.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -79,6 +87,11 @@ impl AwsIamPolicyVersionBuilder {
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>Indicates when the version was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_date
     }
     /// Consumes the builder and constructs a [`AwsIamPolicyVersion`](crate::types::AwsIamPolicyVersion).
     pub fn build(self) -> crate::types::AwsIamPolicyVersion {

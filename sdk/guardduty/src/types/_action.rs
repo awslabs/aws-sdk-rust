@@ -96,6 +96,10 @@ impl ActionBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The GuardDuty finding activity type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_type
+    }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
     pub fn aws_api_call_action(mut self, input: crate::types::AwsApiCallAction) -> Self {
         self.aws_api_call_action = ::std::option::Option::Some(input);
@@ -109,6 +113,12 @@ impl ActionBuilder {
         self.aws_api_call_action = input;
         self
     }
+    /// <p>Information about the AWS_API_CALL action described in this finding.</p>
+    pub fn get_aws_api_call_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiCallAction> {
+        &self.aws_api_call_action
+    }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
     pub fn dns_request_action(mut self, input: crate::types::DnsRequestAction) -> Self {
         self.dns_request_action = ::std::option::Option::Some(input);
@@ -121,6 +131,10 @@ impl ActionBuilder {
     ) -> Self {
         self.dns_request_action = input;
         self
+    }
+    /// <p>Information about the DNS_REQUEST action described in this finding.</p>
+    pub fn get_dns_request_action(&self) -> &::std::option::Option<crate::types::DnsRequestAction> {
+        &self.dns_request_action
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
     pub fn network_connection_action(
@@ -138,6 +152,12 @@ impl ActionBuilder {
         self.network_connection_action = input;
         self
     }
+    /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
+    pub fn get_network_connection_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConnectionAction> {
+        &self.network_connection_action
+    }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     pub fn port_probe_action(mut self, input: crate::types::PortProbeAction) -> Self {
         self.port_probe_action = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl ActionBuilder {
     ) -> Self {
         self.port_probe_action = input;
         self
+    }
+    /// <p>Information about the PORT_PROBE action described in this finding.</p>
+    pub fn get_port_probe_action(&self) -> &::std::option::Option<crate::types::PortProbeAction> {
+        &self.port_probe_action
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     pub fn kubernetes_api_call_action(
@@ -167,6 +191,12 @@ impl ActionBuilder {
         self.kubernetes_api_call_action = input;
         self
     }
+    /// <p>Information about the Kubernetes API call action described in this finding.</p>
+    pub fn get_kubernetes_api_call_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesApiCallAction> {
+        &self.kubernetes_api_call_action
+    }
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     pub fn rds_login_attempt_action(mut self, input: crate::types::RdsLoginAttemptAction) -> Self {
         self.rds_login_attempt_action = ::std::option::Option::Some(input);
@@ -179,6 +209,12 @@ impl ActionBuilder {
     ) -> Self {
         self.rds_login_attempt_action = input;
         self
+    }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn get_rds_login_attempt_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::RdsLoginAttemptAction> {
+        &self.rds_login_attempt_action
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

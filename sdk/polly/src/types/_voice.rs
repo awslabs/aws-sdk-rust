@@ -94,6 +94,10 @@ impl VoiceBuilder {
         self.gender = input;
         self
     }
+    /// <p>Gender of the voice.</p>
+    pub fn get_gender(&self) -> &::std::option::Option<crate::types::Gender> {
+        &self.gender
+    }
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
     pub fn id(mut self, input: crate::types::VoiceId) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl VoiceBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
+        &self.id
     }
     /// <p>Language code of the voice.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -116,6 +124,10 @@ impl VoiceBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>Language code of the voice.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Human readable name of the language in English.</p>
     pub fn language_name(
@@ -133,6 +145,10 @@ impl VoiceBuilder {
         self.language_name = input;
         self
     }
+    /// <p>Human readable name of the language in English.</p>
+    pub fn get_language_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_name
+    }
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -142,6 +158,10 @@ impl VoiceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `additional_language_codes`.
     ///
@@ -164,6 +184,13 @@ impl VoiceBuilder {
         self.additional_language_codes = input;
         self
     }
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
+    pub fn get_additional_language_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+        &self.additional_language_codes
+    }
     /// Appends an item to `supported_engines`.
     ///
     /// To override the contents of this collection use [`set_supported_engines`](Self::set_supported_engines).
@@ -182,6 +209,12 @@ impl VoiceBuilder {
     ) -> Self {
         self.supported_engines = input;
         self
+    }
+    /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
+    pub fn get_supported_engines(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Engine>> {
+        &self.supported_engines
     }
     /// Consumes the builder and constructs a [`Voice`](crate::types::Voice).
     pub fn build(self) -> crate::types::Voice {

@@ -56,6 +56,10 @@ impl UnprocessedAutomationRuleBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) for the unprocessed automation rule. </p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p> The error code associated with the unprocessed automation rule. </p>
     pub fn error_code(mut self, input: i32) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl UnprocessedAutomationRuleBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p> The error code associated with the unprocessed automation rule. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<i32> {
+        &self.error_code
     }
     /// <p> An error message describing why a request didn't process a specific rule. </p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl UnprocessedAutomationRuleBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p> An error message describing why a request didn't process a specific rule. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedAutomationRule`](crate::types::UnprocessedAutomationRule).
     pub fn build(self) -> crate::types::UnprocessedAutomationRule {

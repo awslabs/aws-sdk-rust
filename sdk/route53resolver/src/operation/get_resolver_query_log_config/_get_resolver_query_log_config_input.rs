@@ -45,6 +45,12 @@ impl GetResolverQueryLogConfigInputBuilder {
         self.resolver_query_log_config_id = input;
         self
     }
+    /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
+    pub fn get_resolver_query_log_config_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_query_log_config_id
+    }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigInput`](crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigInput).
     pub fn build(
         self,

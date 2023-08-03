@@ -62,6 +62,10 @@ impl DescribeSecurityConfigurationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The security configuration details in JSON format.</p>
     pub fn security_configuration(
         mut self,
@@ -78,6 +82,10 @@ impl DescribeSecurityConfigurationOutputBuilder {
         self.security_configuration = input;
         self
     }
+    /// <p>The security configuration details in JSON format.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
+    }
     /// <p>The date and time the security configuration was created</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl DescribeSecurityConfigurationOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time the security configuration was created</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -118,6 +118,12 @@ impl TreatmentResourceBuilder {
         self.custom_delivery_configuration = input;
         self
     }
+    /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
+    pub fn get_custom_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
+        &self.custom_delivery_configuration
+    }
     /// <p>The unique identifier for the treatment.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -127,6 +133,10 @@ impl TreatmentResourceBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the treatment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The message configuration settings for the treatment.</p>
     pub fn message_configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
@@ -141,6 +151,12 @@ impl TreatmentResourceBuilder {
         self.message_configuration = input;
         self
     }
+    /// <p>The message configuration settings for the treatment.</p>
+    pub fn get_message_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        &self.message_configuration
+    }
     /// <p>The schedule settings for the treatment.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl TreatmentResourceBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.schedule = input;
         self
+    }
+    /// <p>The schedule settings for the treatment.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        &self.schedule
     }
     /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
     pub fn size_percent(mut self, input: i32) -> Self {
@@ -161,6 +181,10 @@ impl TreatmentResourceBuilder {
         self.size_percent = input;
         self
     }
+    /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
+    pub fn get_size_percent(&self) -> &::std::option::Option<i32> {
+        &self.size_percent
+    }
     /// <p>The current status of the treatment.</p>
     pub fn state(mut self, input: crate::types::CampaignState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl TreatmentResourceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current status of the treatment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
+        &self.state
     }
     /// <p>The message template to use for the treatment.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
@@ -183,6 +211,12 @@ impl TreatmentResourceBuilder {
     ) -> Self {
         self.template_configuration = input;
         self
+    }
+    /// <p>The message template to use for the treatment.</p>
+    pub fn get_template_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateConfiguration> {
+        &self.template_configuration
     }
     /// <p>The custom description of the treatment.</p>
     pub fn treatment_description(
@@ -200,6 +234,10 @@ impl TreatmentResourceBuilder {
         self.treatment_description = input;
         self
     }
+    /// <p>The custom description of the treatment.</p>
+    pub fn get_treatment_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_description
+    }
     /// <p>The custom name of the treatment.</p>
     pub fn treatment_name(
         mut self,
@@ -215,6 +253,10 @@ impl TreatmentResourceBuilder {
     ) -> Self {
         self.treatment_name = input;
         self
+    }
+    /// <p>The custom name of the treatment.</p>
+    pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_name
     }
     /// Consumes the builder and constructs a [`TreatmentResource`](crate::types::TreatmentResource).
     pub fn build(self) -> crate::types::TreatmentResource {

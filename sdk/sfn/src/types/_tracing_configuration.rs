@@ -40,6 +40,10 @@ impl TracingConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`TracingConfiguration`](crate::types::TracingConfiguration).
     pub fn build(self) -> crate::types::TracingConfiguration {
         crate::types::TracingConfiguration {

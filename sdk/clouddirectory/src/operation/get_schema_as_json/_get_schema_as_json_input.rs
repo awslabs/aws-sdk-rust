@@ -40,6 +40,10 @@ impl GetSchemaAsJsonInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema to retrieve.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl StartActivityStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartActivityStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartActivityStreamFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
     pub fn mode(mut self, input: crate::types::ActivityStreamMode) -> Self {
         self.inner = self.inner.mode(input);
@@ -139,6 +149,10 @@ impl StartActivityStreamFluentBuilder {
         self.inner = self.inner.set_mode(input);
         self
     }
+    /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ActivityStreamMode> {
+        self.inner.get_mode()
+    }
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -149,6 +163,10 @@ impl StartActivityStreamFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -158,6 +176,10 @@ impl StartActivityStreamFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
@@ -171,5 +193,9 @@ impl StartActivityStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_native_audit_fields_included(input);
         self
+    }
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
+    pub fn get_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
+        self.inner.get_engine_native_audit_fields_included()
     }
 }

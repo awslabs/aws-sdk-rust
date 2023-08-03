@@ -40,6 +40,10 @@ impl PrimaryBuilder {
         self.health_check = input;
         self
     }
+    /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check
+    }
     /// Consumes the builder and constructs a [`Primary`](crate::types::Primary).
     pub fn build(self) -> crate::types::Primary {
         crate::types::Primary {

@@ -49,6 +49,12 @@ impl UpdateCustomRoutingAcceleratorOutputBuilder {
         self.accelerator = input;
         self
     }
+    /// <p>Information about the updated custom routing accelerator.</p>
+    pub fn get_accelerator(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomRoutingAccelerator> {
+        &self.accelerator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

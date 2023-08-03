@@ -39,6 +39,10 @@ impl GetFieldLevelEncryptionProfileConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>Get the ID for the field-level encryption profile configuration information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionProfileConfigInput`](crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

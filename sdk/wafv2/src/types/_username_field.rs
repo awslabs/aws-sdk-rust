@@ -61,6 +61,15 @@ impl UsernameFieldBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The name of the username field. </p>
+    /// <p>How you specify this depends on the request inspection payload type.</p>
+    /// <ul>
+    /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
+    /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
+    /// </ul>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`UsernameField`](crate::types::UsernameField).
     pub fn build(self) -> crate::types::UsernameField {
         crate::types::UsernameField {

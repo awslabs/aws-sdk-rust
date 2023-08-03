@@ -36,6 +36,12 @@ impl UpdateReplicationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReplicationJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateReplicationJobFluentBuilder {
         self.inner = self.inner.set_replication_job_id(input);
         self
     }
+    /// <p>The ID of the replication job.</p>
+    pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_job_id()
+    }
     /// <p>The time between consecutive replication runs, in hours.</p>
     pub fn frequency(mut self, input: i32) -> Self {
         self.inner = self.inner.frequency(input);
@@ -141,6 +151,10 @@ impl UpdateReplicationJobFluentBuilder {
     pub fn set_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
+    }
+    /// <p>The time between consecutive replication runs, in hours.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<i32> {
+        self.inner.get_frequency()
     }
     /// <p>The start time of the next replication run.</p>
     pub fn next_replication_run_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +169,12 @@ impl UpdateReplicationJobFluentBuilder {
         self.inner = self.inner.set_next_replication_run_start_time(input);
         self
     }
+    /// <p>The start time of the next replication run.</p>
+    pub fn get_next_replication_run_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_next_replication_run_start_time()
+    }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.inner = self.inner.license_type(input);
@@ -168,6 +188,10 @@ impl UpdateReplicationJobFluentBuilder {
         self.inner = self.inner.set_license_type(input);
         self
     }
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        self.inner.get_license_type()
+    }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
@@ -177,6 +201,10 @@ impl UpdateReplicationJobFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the IAM role to be used by Server Migration Service.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
     /// <p>The description of the replication job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +216,10 @@ impl UpdateReplicationJobFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the replication job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_recent_amis_to_keep(input);
@@ -198,6 +230,10 @@ impl UpdateReplicationJobFluentBuilder {
         self.inner = self.inner.set_number_of_recent_amis_to_keep(input);
         self
     }
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    pub fn get_number_of_recent_amis_to_keep(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_recent_amis_to_keep()
+    }
     /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.encrypted(input);
@@ -207,6 +243,10 @@ impl UpdateReplicationJobFluentBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
+    }
+    /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_encrypted()
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -231,5 +271,16 @@ impl UpdateReplicationJobFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

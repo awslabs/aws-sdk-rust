@@ -54,6 +54,10 @@ impl ModifyVerifiedAccessGroupPolicyOutputBuilder {
         self.policy_enabled = input;
         self
     }
+    /// <p>The status of the Verified Access policy.</p>
+    pub fn get_policy_enabled(&self) -> &::std::option::Option<bool> {
+        &self.policy_enabled
+    }
     /// <p>The Verified Access policy document.</p>
     pub fn policy_document(
         mut self,
@@ -69,6 +73,10 @@ impl ModifyVerifiedAccessGroupPolicyOutputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The Verified Access policy document.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

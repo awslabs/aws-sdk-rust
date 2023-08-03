@@ -60,6 +60,10 @@ impl S3ResourceBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
     pub fn key_range(mut self, input: crate::types::KeyRange) -> Self {
         self.key_range = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl S3ResourceBuilder {
     pub fn set_key_range(mut self, input: ::std::option::Option<crate::types::KeyRange>) -> Self {
         self.key_range = input;
         self
+    }
+    /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+    pub fn get_key_range(&self) -> &::std::option::Option<crate::types::KeyRange> {
+        &self.key_range
     }
     /// Appends an item to `target_on_device_services`.
     ///
@@ -88,6 +96,12 @@ impl S3ResourceBuilder {
     ) -> Self {
         self.target_on_device_services = input;
         self
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn get_target_on_device_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>> {
+        &self.target_on_device_services
     }
     /// Consumes the builder and constructs a [`S3Resource`](crate::types::S3Resource).
     pub fn build(self) -> crate::types::S3Resource {

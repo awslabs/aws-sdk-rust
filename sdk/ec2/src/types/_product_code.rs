@@ -54,6 +54,10 @@ impl ProductCodeBuilder {
         self.product_code_id = input;
         self
     }
+    /// <p>The product code.</p>
+    pub fn get_product_code_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code_id
+    }
     /// <p>The type of product code.</p>
     pub fn product_code_type(mut self, input: crate::types::ProductCodeValues) -> Self {
         self.product_code_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ProductCodeBuilder {
     ) -> Self {
         self.product_code_type = input;
         self
+    }
+    /// <p>The type of product code.</p>
+    pub fn get_product_code_type(&self) -> &::std::option::Option<crate::types::ProductCodeValues> {
+        &self.product_code_type
     }
     /// Consumes the builder and constructs a [`ProductCode`](crate::types::ProductCode).
     pub fn build(self) -> crate::types::ProductCode {

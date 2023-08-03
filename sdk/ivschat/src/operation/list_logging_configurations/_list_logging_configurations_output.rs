@@ -70,6 +70,12 @@ impl ListLoggingConfigurationsOutputBuilder {
         self.logging_configurations = input;
         self
     }
+    /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
+    pub fn get_logging_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>> {
+        &self.logging_configurations
+    }
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListLoggingConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

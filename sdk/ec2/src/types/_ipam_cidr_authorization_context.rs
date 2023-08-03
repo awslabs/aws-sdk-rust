@@ -48,6 +48,10 @@ impl IpamCidrAuthorizationContextBuilder {
         self.message = input;
         self
     }
+    /// <p>The plain-text authorization message for the prefix and account.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IpamCidrAuthorizationContextBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
+    }
+    /// <p>The signed authorization message for the prefix and account.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
     }
     /// Consumes the builder and constructs a [`IpamCidrAuthorizationContext`](crate::types::IpamCidrAuthorizationContext).
     pub fn build(self) -> crate::types::IpamCidrAuthorizationContext {

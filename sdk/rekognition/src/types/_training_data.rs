@@ -49,6 +49,10 @@ impl TrainingDataBuilder {
         self.assets = input;
         self
     }
+    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+        &self.assets
+    }
     /// Consumes the builder and constructs a [`TrainingData`](crate::types::TrainingData).
     pub fn build(self) -> crate::types::TrainingData {
         crate::types::TrainingData {

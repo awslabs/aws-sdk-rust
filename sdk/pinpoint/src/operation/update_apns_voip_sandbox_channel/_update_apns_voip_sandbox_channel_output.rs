@@ -56,6 +56,12 @@ impl UpdateApnsVoipSandboxChannelOutputBuilder {
         self.apns_voip_sandbox_channel_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn get_apns_voip_sandbox_channel_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse> {
+        &self.apns_voip_sandbox_channel_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

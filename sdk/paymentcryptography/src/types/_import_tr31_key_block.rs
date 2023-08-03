@@ -54,6 +54,10 @@ impl ImportTr31KeyBlockBuilder {
         self.wrapping_key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
+    pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_identifier
+    }
     /// <p>The TR-34 wrapped key block to import.</p>
     pub fn wrapped_key_block(
         mut self,
@@ -69,6 +73,10 @@ impl ImportTr31KeyBlockBuilder {
     ) -> Self {
         self.wrapped_key_block = input;
         self
+    }
+    /// <p>The TR-34 wrapped key block to import.</p>
+    pub fn get_wrapped_key_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapped_key_block
     }
     /// Consumes the builder and constructs a [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
     pub fn build(self) -> crate::types::ImportTr31KeyBlock {

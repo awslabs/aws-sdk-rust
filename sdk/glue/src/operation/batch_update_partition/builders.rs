@@ -36,6 +36,12 @@ impl BatchUpdatePartitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdatePartition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl BatchUpdatePartitionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl BatchUpdatePartitionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the metadata database in which the partition is to be updated.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +165,10 @@ impl BatchUpdatePartitionFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the metadata table in which the partition is to be updated.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Appends an item to `Entries`.
     ///
@@ -170,5 +188,12 @@ impl BatchUpdatePartitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>
+    {
+        self.inner.get_entries()
     }
 }

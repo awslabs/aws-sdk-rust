@@ -56,6 +56,10 @@ impl FieldSortBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The sort configuration target field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The sort direction. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ASC</code>: Ascending</p> </li>
@@ -76,6 +80,14 @@ impl FieldSortBuilder {
     ) -> Self {
         self.direction = input;
         self
+    }
+    /// <p>The sort direction. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ASC</code>: Ascending</p> </li>
+    /// <li> <p> <code>DESC</code>: Descending</p> </li>
+    /// </ul>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
+        &self.direction
     }
     /// Consumes the builder and constructs a [`FieldSort`](crate::types::FieldSort).
     pub fn build(self) -> crate::types::FieldSort {

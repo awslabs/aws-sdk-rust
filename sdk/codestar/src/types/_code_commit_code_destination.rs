@@ -40,6 +40,10 @@ impl CodeCommitCodeDestinationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CodeCommitCodeDestination`](crate::types::CodeCommitCodeDestination).
     pub fn build(self) -> crate::types::CodeCommitCodeDestination {
         crate::types::CodeCommitCodeDestination { name: self.name }

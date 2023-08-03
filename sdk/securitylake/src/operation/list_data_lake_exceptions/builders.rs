@@ -37,6 +37,13 @@ impl ListDataLakeExceptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDataLakeExceptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +153,10 @@ impl ListDataLakeExceptionsFluentBuilder {
         self.inner = self.inner.set_regions(input);
         self
     }
+    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_regions()
+    }
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,6 +166,10 @@ impl ListDataLakeExceptionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>List the maximum number of failures in Security Lake.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
@@ -167,5 +182,10 @@ impl ListDataLakeExceptionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

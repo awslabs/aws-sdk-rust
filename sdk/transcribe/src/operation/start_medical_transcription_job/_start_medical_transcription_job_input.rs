@@ -225,6 +225,13 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.medical_transcription_job_name = input;
         self
     }
+    /// <p>A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    pub fn get_medical_transcription_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.medical_transcription_job_name
+    }
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -238,6 +245,10 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -249,6 +260,11 @@ impl StartMedicalTranscriptionJobInputBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
+    }
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
+    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate_hertz
     }
     /// <p>Specify the format of your input media file.</p>
     pub fn media_format(mut self, input: crate::types::MediaFormat) -> Self {
@@ -263,6 +279,10 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.media_format = input;
         self
     }
+    /// <p>Specify the format of your input media file.</p>
+    pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
+        &self.media_format
+    }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
@@ -274,6 +294,11 @@ impl StartMedicalTranscriptionJobInputBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
+    }
+    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        &self.media
     }
     /// <p>The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
@@ -296,6 +321,13 @@ impl StartMedicalTranscriptionJobInputBuilder {
     ) -> Self {
         self.output_bucket_name = input;
         self
+    }
+    /// <p>The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
+    /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
+    /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
+    /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
+    pub fn get_output_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_bucket_name
     }
     /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).</p>
     /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
@@ -322,6 +354,18 @@ impl StartMedicalTranscriptionJobInputBuilder {
     pub fn set_output_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_key = input;
         self
+    }
+    /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).</p>
+    /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
+    /// <ul>
+    /// <li> <p>If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.</p> </li>
+    /// <li> <p>If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.</p> </li>
+    /// <li> <p>If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.</p> </li>
+    /// <li> <p>If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.</p> </li>
+    /// </ul>
+    /// <p>If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.</p>
+    pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_key
     }
     /// <p>The KMS key you want to use to encrypt your medical transcription output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -369,6 +413,27 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.output_encryption_kms_key_id = input;
         self
     }
+    /// <p>The KMS key you want to use to encrypt your medical transcription output.</p>
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
+    /// <ol>
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
+    /// <ol>
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
+    /// </ol>
+    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
+    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    pub fn get_output_encryption_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.output_encryption_kms_key_id
+    }
     /// Adds a key-value pair to `kms_encryption_context`.
     ///
     /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
@@ -394,6 +459,14 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.kms_encryption_context = input;
         self
     }
+    /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
+    pub fn get_kms_encryption_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.kms_encryption_context
+    }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
     pub fn settings(mut self, input: crate::types::MedicalTranscriptionSetting) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -406,6 +479,12 @@ impl StartMedicalTranscriptionJobInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalTranscriptionSetting> {
+        &self.settings
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
     pub fn content_identification_type(
@@ -423,6 +502,12 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self.content_identification_type = input;
         self
     }
+    /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+    pub fn get_content_identification_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+        &self.content_identification_type
+    }
     /// <p>Specify the predominant medical specialty represented in your media. For batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .</p>
     pub fn specialty(mut self, input: crate::types::Specialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
@@ -432,6 +517,10 @@ impl StartMedicalTranscriptionJobInputBuilder {
     pub fn set_specialty(mut self, input: ::std::option::Option<crate::types::Specialty>) -> Self {
         self.specialty = input;
         self
+    }
+    /// <p>Specify the predominant medical specialty represented in your media. For batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .</p>
+    pub fn get_specialty(&self) -> &::std::option::Option<crate::types::Specialty> {
+        &self.specialty
     }
     /// <p>Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation between two people (<code>CONVERSATION</code>).</p>
     /// <p>For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office visit.</p>
@@ -444,6 +533,11 @@ impl StartMedicalTranscriptionJobInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation between two people (<code>CONVERSATION</code>).</p>
+    /// <p>For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office visit.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Appends an item to `tags`.
     ///
@@ -465,6 +559,11 @@ impl StartMedicalTranscriptionJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartMedicalTranscriptionJobInput`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput).
     pub fn build(

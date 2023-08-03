@@ -64,6 +64,10 @@ impl OutpostBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
+    }
     /// <p>Specifies the unique identifier for the outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl OutpostBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>Specifies the unique identifier for the outpost.</p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl OutpostBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
     pub fn capacity_in_bytes(mut self, input: i64) -> Self {
         self.capacity_in_bytes = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl OutpostBuilder {
     pub fn set_capacity_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity_in_bytes = input;
         self
+    }
+    /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
+    pub fn get_capacity_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.capacity_in_bytes
     }
     /// Consumes the builder and constructs a [`Outpost`](crate::types::Outpost).
     pub fn build(self) -> crate::types::Outpost {

@@ -74,6 +74,10 @@ impl AddFacetToObjectInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl AddFacetToObjectInputBuilder {
     ) -> Self {
         self.schema_facet = input;
         self
+    }
+    /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
     }
     /// Appends an item to `object_attribute_list`.
     ///
@@ -106,6 +114,12 @@ impl AddFacetToObjectInputBuilder {
         self.object_attribute_list = input;
         self
     }
+    /// <p>Attributes on the facet that you are adding to the object.</p>
+    pub fn get_object_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.object_attribute_list
+    }
     /// <p>A reference to the object you are adding the specified facet to.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl AddFacetToObjectInputBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>A reference to the object you are adding the specified facet to.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Consumes the builder and constructs a [`AddFacetToObjectInput`](crate::operation::add_facet_to_object::AddFacetToObjectInput).
     pub fn build(

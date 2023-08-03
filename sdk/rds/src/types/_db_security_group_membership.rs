@@ -60,6 +60,10 @@ impl DbSecurityGroupMembershipBuilder {
         self.db_security_group_name = input;
         self
     }
+    /// <p>The name of the DB security group.</p>
+    pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_security_group_name
+    }
     /// <p>The status of the DB security group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl DbSecurityGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the DB security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DbSecurityGroupMembership`](crate::types::DbSecurityGroupMembership).
     pub fn build(self) -> crate::types::DbSecurityGroupMembership {

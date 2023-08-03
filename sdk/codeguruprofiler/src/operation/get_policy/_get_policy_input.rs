@@ -46,6 +46,10 @@ impl GetPolicyInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
     pub fn build(
         self,

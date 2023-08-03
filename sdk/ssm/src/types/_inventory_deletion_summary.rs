@@ -60,6 +60,10 @@ impl InventoryDeletionSummaryBuilder {
         self.total_count = input;
         self
     }
+    /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
+    }
     /// <p>Remaining number of items to delete.</p>
     pub fn remaining_count(mut self, input: i32) -> Self {
         self.remaining_count = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InventoryDeletionSummaryBuilder {
     pub fn set_remaining_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.remaining_count = input;
         self
+    }
+    /// <p>Remaining number of items to delete.</p>
+    pub fn get_remaining_count(&self) -> &::std::option::Option<i32> {
+        &self.remaining_count
     }
     /// Appends an item to `summary_items`.
     ///
@@ -88,6 +96,12 @@ impl InventoryDeletionSummaryBuilder {
     ) -> Self {
         self.summary_items = input;
         self
+    }
+    /// <p>A list of counts and versions for deleted items.</p>
+    pub fn get_summary_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionSummaryItem>> {
+        &self.summary_items
     }
     /// Consumes the builder and constructs a [`InventoryDeletionSummary`](crate::types::InventoryDeletionSummary).
     pub fn build(self) -> crate::types::InventoryDeletionSummary {

@@ -38,6 +38,13 @@ impl StartOnDemandAuditTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartOnDemandAuditTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +144,11 @@ impl StartOnDemandAuditTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_check_names(input);
         self
+    }
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    pub fn get_target_check_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_target_check_names()
     }
 }

@@ -48,6 +48,10 @@ impl KinesisVideoStreamStartSelectorBuilder {
         self.producer_timestamp = input;
         self
     }
+    /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
+    pub fn get_producer_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.producer_timestamp
+    }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
     pub fn fragment_number(
         mut self,
@@ -63,6 +67,10 @@ impl KinesisVideoStreamStartSelectorBuilder {
     ) -> Self {
         self.fragment_number = input;
         self
+    }
+    /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
+    pub fn get_fragment_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fragment_number
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamStartSelector`](crate::types::KinesisVideoStreamStartSelector).
     pub fn build(self) -> crate::types::KinesisVideoStreamStartSelector {

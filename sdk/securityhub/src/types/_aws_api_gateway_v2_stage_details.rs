@@ -176,6 +176,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +192,11 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.created_date = input;
         self
     }
+    /// <p>Indicates when the stage was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
+    }
     /// <p>The description of the stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -197,6 +206,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Default route settings for the stage.</p>
     pub fn default_route_settings(
@@ -214,6 +227,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.default_route_settings = input;
         self
     }
+    /// <p>Default route settings for the stage.</p>
+    pub fn get_default_route_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
+        &self.default_route_settings
+    }
     /// <p>The identifier of the deployment that the stage is associated with. </p>
     pub fn deployment_id(
         mut self,
@@ -229,6 +248,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The identifier of the deployment that the stage is associated with. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -248,6 +271,11 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.last_updated_date = input;
         self
     }
+    /// <p>Indicates when the stage was most recently updated.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date
+    }
     /// <p>The route settings for the stage.</p>
     pub fn route_settings(mut self, input: crate::types::AwsApiGatewayV2RouteSettings) -> Self {
         self.route_settings = ::std::option::Option::Some(input);
@@ -261,6 +289,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.route_settings = input;
         self
     }
+    /// <p>The route settings for the stage.</p>
+    pub fn get_route_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
+        &self.route_settings
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -270,6 +304,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Adds a key-value pair to `stage_variables`.
     ///
@@ -310,6 +348,21 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.stage_variables = input;
         self
     }
+    /// <p>A map that defines the stage variables for the stage.</p>
+    /// <p>Variable names can have alphanumeric and underscore characters.</p>
+    /// <p>Variable values can contain the following characters:</p>
+    /// <ul>
+    /// <li> <p>Uppercase and lowercase letters</p> </li>
+    /// <li> <p>Numbers</p> </li>
+    /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
+    /// </ul>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variables
+    }
     /// <p>Information about settings for logging access for the stage.</p>
     pub fn access_log_settings(
         mut self,
@@ -326,6 +379,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.access_log_settings = input;
         self
     }
+    /// <p>Information about settings for logging access for the stage.</p>
+    pub fn get_access_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
+        &self.access_log_settings
+    }
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
     pub fn auto_deploy(mut self, input: bool) -> Self {
         self.auto_deploy = ::std::option::Option::Some(input);
@@ -335,6 +394,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     pub fn set_auto_deploy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_deploy = input;
         self
+    }
+    /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
+    pub fn get_auto_deploy(&self) -> &::std::option::Option<bool> {
+        &self.auto_deploy
     }
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
     pub fn last_deployment_status_message(
@@ -352,6 +415,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self.last_deployment_status_message = input;
         self
     }
+    /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
+    pub fn get_last_deployment_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_deployment_status_message
+    }
     /// <p>Indicates whether the stage is managed by API Gateway.</p>
     pub fn api_gateway_managed(mut self, input: bool) -> Self {
         self.api_gateway_managed = ::std::option::Option::Some(input);
@@ -361,6 +430,10 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     pub fn set_api_gateway_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.api_gateway_managed = input;
         self
+    }
+    /// <p>Indicates whether the stage is managed by API Gateway.</p>
+    pub fn get_api_gateway_managed(&self) -> &::std::option::Option<bool> {
+        &self.api_gateway_managed
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayV2StageDetails`](crate::types::AwsApiGatewayV2StageDetails).
     pub fn build(self) -> crate::types::AwsApiGatewayV2StageDetails {

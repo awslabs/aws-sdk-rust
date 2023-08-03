@@ -36,6 +36,12 @@ impl AddAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddAssociation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_association::builders::AddAssociationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl AddAssociationFluentBuilder {
         self.inner = self.inner.set_source_arn(input);
         self
     }
+    /// <p>The ARN of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -133,6 +143,10 @@ impl AddAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
     }
     /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
     /// <ul>
@@ -158,5 +172,17 @@ impl AddAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
+    }
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
+    /// <ul>
+    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
+    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
+    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
+    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
+    /// </ul>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+        self.inner.get_association_type()
     }
 }

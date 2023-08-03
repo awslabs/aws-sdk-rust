@@ -76,6 +76,10 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Failback Replication Configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -96,6 +104,10 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
         self.bandwidth_throttling = input;
         self
     }
+    /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
+    pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
+        &self.bandwidth_throttling
+    }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn use_private_ip(mut self, input: bool) -> Self {
         self.use_private_ip = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     pub fn set_use_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_private_ip = input;
         self
+    }
+    /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    pub fn get_use_private_ip(&self) -> &::std::option::Option<bool> {
+        &self.use_private_ip
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

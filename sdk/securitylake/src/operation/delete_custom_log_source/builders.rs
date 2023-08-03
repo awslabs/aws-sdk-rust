@@ -36,6 +36,13 @@ impl DeleteCustomLogSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomLogSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteCustomLogSourceFluentBuilder {
         self.inner = self.inner.set_source_name(input);
         self
     }
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_name()
+    }
     /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
     pub fn source_version(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteCustomLogSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
+    }
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_version()
     }
 }

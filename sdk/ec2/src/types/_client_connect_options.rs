@@ -48,6 +48,10 @@ impl ClientConnectOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub fn lambda_function_arn(
         mut self,
@@ -63,6 +67,10 @@ impl ClientConnectOptionsBuilder {
     ) -> Self {
         self.lambda_function_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`ClientConnectOptions`](crate::types::ClientConnectOptions).
     pub fn build(self) -> crate::types::ClientConnectOptions {

@@ -96,6 +96,18 @@ impl SortingConfigurationBuilder {
         self.document_attribute_key = input;
         self
     }
+    /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
+    /// <p>You can also sort by any of the following built-in attributes:</p>
+    /// <ul>
+    /// <li> <p>_category</p> </li>
+    /// <li> <p>_created_at</p> </li>
+    /// <li> <p>_last_updated_at</p> </li>
+    /// <li> <p>_version</p> </li>
+    /// <li> <p>_view_count</p> </li>
+    /// </ul>
+    pub fn get_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_attribute_key
+    }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl SortingConfigurationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortingConfiguration`](crate::types::SortingConfiguration).
     pub fn build(self) -> crate::types::SortingConfiguration {

@@ -50,6 +50,10 @@ impl GetDocumentationVersionInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub fn documentation_version(
         mut self,
@@ -65,6 +69,10 @@ impl GetDocumentationVersionInputBuilder {
     ) -> Self {
         self.documentation_version = input;
         self
+    }
+    /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
     }
     /// Consumes the builder and constructs a [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
     pub fn build(

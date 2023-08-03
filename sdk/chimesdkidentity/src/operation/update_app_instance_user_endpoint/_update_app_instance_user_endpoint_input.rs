@@ -77,6 +77,10 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
@@ -109,6 +121,10 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     ) -> Self {
         self.allow_messages = input;
         self
+    }
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn get_allow_messages(&self) -> &::std::option::Option<crate::types::AllowMessages> {
+        &self.allow_messages
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointInput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput).
     pub fn build(

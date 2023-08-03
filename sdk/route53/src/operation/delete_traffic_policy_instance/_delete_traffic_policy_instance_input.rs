@@ -48,6 +48,12 @@ impl DeleteTrafficPolicyInstanceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
+    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
+    /// </important>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteTrafficPolicyInstanceInput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput).
     pub fn build(
         self,

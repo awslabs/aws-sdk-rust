@@ -36,6 +36,12 @@ impl UpdateDetectorModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDetectorModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateDetectorModelFluentBuilder {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
+    /// <p>The name of the detector model that is updated.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_name()
+    }
     /// <p>Information that defines how a detector operates.</p>
     pub fn detector_model_definition(
         mut self,
@@ -147,6 +157,12 @@ impl UpdateDetectorModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
+    }
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn get_detector_model_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+        self.inner.get_detector_model_definition()
     }
     /// <p>A brief description of the detector model.</p>
     pub fn detector_model_description(
@@ -164,6 +180,10 @@ impl UpdateDetectorModelFluentBuilder {
         self.inner = self.inner.set_detector_model_description(input);
         self
     }
+    /// <p>A brief description of the detector model.</p>
+    pub fn get_detector_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_description()
+    }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -173,6 +193,10 @@ impl UpdateDetectorModelFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
@@ -186,5 +210,9 @@ impl UpdateDetectorModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    pub fn get_evaluation_method(&self) -> &::std::option::Option<crate::types::EvaluationMethod> {
+        self.inner.get_evaluation_method()
     }
 }

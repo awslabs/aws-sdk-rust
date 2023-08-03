@@ -46,6 +46,10 @@ impl UpdateWorkgroupOutputBuilder {
         self.workgroup = input;
         self
     }
+    /// <p>The updated workgroup object.</p>
+    pub fn get_workgroup(&self) -> &::std::option::Option<crate::types::Workgroup> {
+        &self.workgroup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

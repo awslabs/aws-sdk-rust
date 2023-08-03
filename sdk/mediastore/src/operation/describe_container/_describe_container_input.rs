@@ -46,6 +46,10 @@ impl DescribeContainerInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container to query.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
     pub fn build(
         self,

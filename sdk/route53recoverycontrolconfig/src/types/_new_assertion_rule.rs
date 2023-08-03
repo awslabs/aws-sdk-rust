@@ -84,6 +84,12 @@ impl NewAssertionRuleBuilder {
         self.asserted_controls = input;
         self
     }
+    /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
+    pub fn get_asserted_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.asserted_controls
+    }
     /// <p>The Amazon Resource Name (ARN) for the control panel.</p>
     pub fn control_panel_arn(
         mut self,
@@ -100,6 +106,10 @@ impl NewAssertionRuleBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the control panel.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -109,6 +119,10 @@ impl NewAssertionRuleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many control states must be ON as the result of a transaction. For example, if you have three assertion controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
     pub fn rule_config(mut self, input: crate::types::RuleConfig) -> Self {
@@ -123,6 +137,10 @@ impl NewAssertionRuleBuilder {
         self.rule_config = input;
         self
     }
+    /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many control states must be ON as the result of a transaction. For example, if you have three assertion controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
+    pub fn get_rule_config(&self) -> &::std::option::Option<crate::types::RuleConfig> {
+        &self.rule_config
+    }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
@@ -132,6 +150,10 @@ impl NewAssertionRuleBuilder {
     pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_period_ms = input;
         self
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
+        &self.wait_period_ms
     }
     /// Consumes the builder and constructs a [`NewAssertionRule`](crate::types::NewAssertionRule).
     pub fn build(self) -> crate::types::NewAssertionRule {

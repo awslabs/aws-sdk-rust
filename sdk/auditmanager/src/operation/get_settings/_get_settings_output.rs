@@ -46,6 +46,10 @@ impl GetSettingsOutputBuilder {
         self.settings = input;
         self
     }
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        &self.settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

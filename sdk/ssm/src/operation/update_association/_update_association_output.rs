@@ -52,6 +52,12 @@ impl UpdateAssociationOutputBuilder {
         self.association_description = input;
         self
     }
+    /// <p>The description of the association that was updated.</p>
+    pub fn get_association_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationDescription> {
+        &self.association_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

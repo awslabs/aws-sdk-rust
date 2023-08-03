@@ -62,6 +62,12 @@ impl NotifyWorkersOutputBuilder {
         self.notify_workers_failure_statuses = input;
         self
     }
+    /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
+    pub fn get_notify_workers_failure_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>> {
+        &self.notify_workers_failure_statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

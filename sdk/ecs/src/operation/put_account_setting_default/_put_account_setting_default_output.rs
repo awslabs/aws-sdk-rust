@@ -46,6 +46,10 @@ impl PutAccountSettingDefaultOutputBuilder {
         self.setting = input;
         self
     }
+    /// <p>The current setting for a resource.</p>
+    pub fn get_setting(&self) -> &::std::option::Option<crate::types::Setting> {
+        &self.setting
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

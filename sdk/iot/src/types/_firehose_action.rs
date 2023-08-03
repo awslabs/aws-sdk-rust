@@ -66,6 +66,10 @@ impl FirehoseActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The delivery stream name.</p>
     pub fn delivery_stream_name(
         mut self,
@@ -82,6 +86,10 @@ impl FirehoseActionBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The delivery stream name.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.separator = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl FirehoseActionBuilder {
     pub fn set_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.separator = input;
         self
+    }
+    /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
+    pub fn get_separator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.separator
     }
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
@@ -103,6 +115,11 @@ impl FirehoseActionBuilder {
     pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_mode = input;
         self
+    }
+    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
+    pub fn get_batch_mode(&self) -> &::std::option::Option<bool> {
+        &self.batch_mode
     }
     /// Consumes the builder and constructs a [`FirehoseAction`](crate::types::FirehoseAction).
     pub fn build(self) -> crate::types::FirehoseAction {

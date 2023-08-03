@@ -40,6 +40,10 @@ impl ServerlessClientAuthenticationBuilder {
         self.sasl = input;
         self
     }
+    /// <p>Details for ClientAuthentication using SASL.</p>
+    pub fn get_sasl(&self) -> &::std::option::Option<crate::types::ServerlessSasl> {
+        &self.sasl
+    }
     /// Consumes the builder and constructs a [`ServerlessClientAuthentication`](crate::types::ServerlessClientAuthentication).
     pub fn build(self) -> crate::types::ServerlessClientAuthentication {
         crate::types::ServerlessClientAuthentication { sasl: self.sasl }

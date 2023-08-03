@@ -36,6 +36,13 @@ impl GetBackendEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBackendEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_backend_environment::builders::GetBackendEnvironmentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetBackendEnvironmentFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The name for the backend environment. </p>
     pub fn environment_name(
         mut self,
@@ -141,5 +152,9 @@ impl GetBackendEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p> The name for the backend environment. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
 }

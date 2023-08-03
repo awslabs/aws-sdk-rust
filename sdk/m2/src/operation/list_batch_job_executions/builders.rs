@@ -37,6 +37,13 @@ impl ListBatchJobExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBatchJobExecutions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl ListBatchJobExecutionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of batch job executions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +159,10 @@ impl ListBatchJobExecutionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of batch job executions to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(
@@ -164,6 +179,10 @@ impl ListBatchJobExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
     }
     /// Appends an item to `executionIds`.
     ///
@@ -185,6 +204,12 @@ impl ListBatchJobExecutionsFluentBuilder {
         self.inner = self.inner.set_execution_ids(input);
         self
     }
+    /// <p>The unique identifier of each batch job execution.</p>
+    pub fn get_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_execution_ids()
+    }
     /// <p>The name of each batch job execution.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -194,6 +219,10 @@ impl ListBatchJobExecutionsFluentBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
+    }
+    /// <p>The name of each batch job execution.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
     }
     /// <p>The status of the batch job executions.</p>
     pub fn status(mut self, input: crate::types::BatchJobExecutionStatus) -> Self {
@@ -208,6 +237,10 @@ impl ListBatchJobExecutionsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the batch job executions.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchJobExecutionStatus> {
+        self.inner.get_status()
+    }
     /// <p>The time after which the batch job executions started.</p>
     pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.started_after(input);
@@ -221,6 +254,10 @@ impl ListBatchJobExecutionsFluentBuilder {
         self.inner = self.inner.set_started_after(input);
         self
     }
+    /// <p>The time after which the batch job executions started.</p>
+    pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_started_after()
+    }
     /// <p>The time before the batch job executions started.</p>
     pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.started_before(input);
@@ -233,5 +270,9 @@ impl ListBatchJobExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_started_before(input);
         self
+    }
+    /// <p>The time before the batch job executions started.</p>
+    pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_started_before()
     }
 }

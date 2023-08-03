@@ -56,6 +56,10 @@ impl DeploymentApplicationConfigBuilder {
         self.application = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The version of the application.</p>
     pub fn application_version(
         mut self,
@@ -72,6 +76,10 @@ impl DeploymentApplicationConfigBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
+    }
     /// <p>The launch configuration.</p>
     pub fn launch_config(mut self, input: crate::types::DeploymentLaunchConfig) -> Self {
         self.launch_config = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl DeploymentApplicationConfigBuilder {
     ) -> Self {
         self.launch_config = input;
         self
+    }
+    /// <p>The launch configuration.</p>
+    pub fn get_launch_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentLaunchConfig> {
+        &self.launch_config
     }
     /// Consumes the builder and constructs a [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
     pub fn build(self) -> crate::types::DeploymentApplicationConfig {

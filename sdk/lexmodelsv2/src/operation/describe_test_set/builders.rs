@@ -36,6 +36,12 @@ impl DescribeTestSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTestSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_test_set::builders::DescribeTestSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeTestSetFluentBuilder {
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_set_id(input);
         self
+    }
+    /// <p>The test set Id for the test set request.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_set_id()
     }
 }

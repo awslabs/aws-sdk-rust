@@ -72,6 +72,10 @@ impl ReservationUtilizationGroupBuilder {
         self.key = input;
         self
     }
+    /// <p>The key for a specific reservation attribute.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of a specific reservation attribute.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ReservationUtilizationGroupBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of a specific reservation attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -107,6 +115,14 @@ impl ReservationUtilizationGroupBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes for this group of reservations.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>How much you used this group of reservations.</p>
     pub fn utilization(mut self, input: crate::types::ReservationAggregates) -> Self {
         self.utilization = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ReservationUtilizationGroupBuilder {
     ) -> Self {
         self.utilization = input;
         self
+    }
+    /// <p>How much you used this group of reservations.</p>
+    pub fn get_utilization(&self) -> &::std::option::Option<crate::types::ReservationAggregates> {
+        &self.utilization
     }
     /// Consumes the builder and constructs a [`ReservationUtilizationGroup`](crate::types::ReservationUtilizationGroup).
     pub fn build(self) -> crate::types::ReservationUtilizationGroup {

@@ -48,6 +48,10 @@ impl ErrorInfoBuilder {
         self.put_failures_count = input;
         self
     }
+    /// <p> Specifies the failure count for the attempted flow. </p>
+    pub fn get_put_failures_count(&self) -> &::std::option::Option<i64> {
+        &self.put_failures_count
+    }
     /// <p> Specifies the error message that appears if a flow fails. </p>
     pub fn execution_message(
         mut self,
@@ -63,6 +67,10 @@ impl ErrorInfoBuilder {
     ) -> Self {
         self.execution_message = input;
         self
+    }
+    /// <p> Specifies the error message that appears if a flow fails. </p>
+    pub fn get_execution_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_message
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {

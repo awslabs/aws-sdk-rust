@@ -55,6 +55,10 @@ impl OptionGroupMembershipBuilder {
         self
     }
     /// <p>Not supported by Neptune.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
+    /// <p>Not supported by Neptune.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,10 @@ impl OptionGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`OptionGroupMembership`](crate::types::OptionGroupMembership).
     pub fn build(self) -> crate::types::OptionGroupMembership {

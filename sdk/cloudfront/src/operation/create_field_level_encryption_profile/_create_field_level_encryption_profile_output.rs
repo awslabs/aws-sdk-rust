@@ -72,6 +72,12 @@ impl CreateFieldLevelEncryptionProfileOutputBuilder {
         self.field_level_encryption_profile = input;
         self
     }
+    /// <p>Returned when you create a new field-level encryption profile.</p>
+    pub fn get_field_level_encryption_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfile> {
+        &self.field_level_encryption_profile
+    }
     /// <p>The fully qualified URI of the new profile resource just created.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -82,6 +88,10 @@ impl CreateFieldLevelEncryptionProfileOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The fully qualified URI of the new profile resource just created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl CreateFieldLevelEncryptionProfileOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

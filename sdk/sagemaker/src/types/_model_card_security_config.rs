@@ -40,6 +40,10 @@ impl ModelCardSecurityConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>A Key Management Service <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key ID</a> to use for encrypting a model card.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`ModelCardSecurityConfig`](crate::types::ModelCardSecurityConfig).
     pub fn build(self) -> crate::types::ModelCardSecurityConfig {
         crate::types::ModelCardSecurityConfig {

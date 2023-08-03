@@ -56,6 +56,10 @@ impl SectionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the section.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The size, in bytes, of the section contents.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SectionBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size, in bytes, of the section contents.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// <p>The content of a configuration section.</p>
     pub fn attributes(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -78,6 +86,10 @@ impl SectionBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The content of a configuration section.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Section`](crate::types::Section).
     pub fn build(self) -> crate::types::Section {

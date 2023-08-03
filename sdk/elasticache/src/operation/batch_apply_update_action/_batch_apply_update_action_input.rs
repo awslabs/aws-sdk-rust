@@ -69,6 +69,12 @@ impl BatchApplyUpdateActionInputBuilder {
         self.replication_group_ids = input;
         self
     }
+    /// <p>The replication group IDs</p>
+    pub fn get_replication_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_group_ids
+    }
     /// Appends an item to `cache_cluster_ids`.
     ///
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
@@ -91,6 +97,12 @@ impl BatchApplyUpdateActionInputBuilder {
         self.cache_cluster_ids = input;
         self
     }
+    /// <p>The cache cluster IDs</p>
+    pub fn get_cache_cluster_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_cluster_ids
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
         mut self,
@@ -106,6 +118,10 @@ impl BatchApplyUpdateActionInputBuilder {
     ) -> Self {
         self.service_update_name = input;
         self
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
     }
     /// Consumes the builder and constructs a [`BatchApplyUpdateActionInput`](crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput).
     pub fn build(

@@ -78,6 +78,10 @@ impl ExternalEvaluationBuilder {
         self.compliance_resource_type = input;
         self
     }
+    /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
+    pub fn get_compliance_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_resource_type
+    }
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
     pub fn compliance_resource_id(
         mut self,
@@ -94,6 +98,10 @@ impl ExternalEvaluationBuilder {
         self.compliance_resource_id = input;
         self
     }
+    /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
+    pub fn get_compliance_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_resource_id
+    }
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
         self.compliance_type = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl ExternalEvaluationBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl ExternalEvaluationBuilder {
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation = input;
         self
+    }
+    /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
+    pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation
     }
     /// <p>The time when the compliance was recorded. </p>
     pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +145,10 @@ impl ExternalEvaluationBuilder {
     ) -> Self {
         self.ordering_timestamp = input;
         self
+    }
+    /// <p>The time when the compliance was recorded. </p>
+    pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ordering_timestamp
     }
     /// Consumes the builder and constructs a [`ExternalEvaluation`](crate::types::ExternalEvaluation).
     pub fn build(self) -> crate::types::ExternalEvaluation {

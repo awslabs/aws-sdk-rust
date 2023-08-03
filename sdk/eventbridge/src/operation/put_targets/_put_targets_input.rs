@@ -55,6 +55,10 @@ impl PutTargetsInputBuilder {
         self.rule = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule
+    }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -70,6 +74,10 @@ impl PutTargetsInputBuilder {
     ) -> Self {
         self.event_bus_name = input;
         self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
     }
     /// Appends an item to `targets`.
     ///
@@ -89,6 +97,10 @@ impl PutTargetsInputBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The targets to update or add to the rule.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
     pub fn build(

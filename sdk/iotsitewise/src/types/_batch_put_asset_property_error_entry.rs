@@ -49,6 +49,10 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>The ID of the failed entry.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -67,6 +71,12 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>The list of update property value errors.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>> {
+        &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyErrorEntry`](crate::types::BatchPutAssetPropertyErrorEntry).
     pub fn build(self) -> crate::types::BatchPutAssetPropertyErrorEntry {

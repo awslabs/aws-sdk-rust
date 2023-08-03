@@ -36,6 +36,12 @@ impl CreateAnalyzerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAnalyzer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_analyzer::builders::CreateAnalyzerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateAnalyzerFluentBuilder {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
+    /// <p>The name of the analyzer to create.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_name()
+    }
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -133,6 +143,10 @@ impl CreateAnalyzerFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
     /// Appends an item to `archiveRules`.
     ///
@@ -150,6 +164,12 @@ impl CreateAnalyzerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_archive_rules(input);
         self
+    }
+    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+    pub fn get_archive_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>> {
+        self.inner.get_archive_rules()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -174,6 +194,14 @@ impl CreateAnalyzerFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to apply to the analyzer.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,5 +211,9 @@ impl CreateAnalyzerFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

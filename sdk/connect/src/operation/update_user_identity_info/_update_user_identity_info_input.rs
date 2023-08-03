@@ -60,6 +60,10 @@ impl UpdateUserIdentityInfoInputBuilder {
         self.identity_info = input;
         self
     }
+    /// <p>The identity information for the user.</p>
+    pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
+        &self.identity_info
+    }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl UpdateUserIdentityInfoInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -79,6 +87,10 @@ impl UpdateUserIdentityInfoInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
     pub fn build(

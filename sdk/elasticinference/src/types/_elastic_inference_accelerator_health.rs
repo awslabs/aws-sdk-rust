@@ -40,6 +40,10 @@ impl ElasticInferenceAcceleratorHealthBuilder {
         self.status = input;
         self
     }
+    /// <p> The health status of the Elastic Inference Accelerator. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ElasticInferenceAcceleratorHealth`](crate::types::ElasticInferenceAcceleratorHealth).
     pub fn build(self) -> crate::types::ElasticInferenceAcceleratorHealth {
         crate::types::ElasticInferenceAcceleratorHealth {

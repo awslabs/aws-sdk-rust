@@ -49,6 +49,12 @@ impl FailoverConditionBuilder {
         self.failover_condition_settings = input;
         self
     }
+    /// Failover condition type-specific settings.
+    pub fn get_failover_condition_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FailoverConditionSettings> {
+        &self.failover_condition_settings
+    }
     /// Consumes the builder and constructs a [`FailoverCondition`](crate::types::FailoverCondition).
     pub fn build(self) -> crate::types::FailoverCondition {
         crate::types::FailoverCondition {

@@ -62,6 +62,10 @@ impl RollbackInfoBuilder {
         self.rollback_deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment rollback.</p>
+    pub fn get_rollback_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rollback_deployment_id
+    }
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
     pub fn rollback_triggering_deployment_id(
         mut self,
@@ -78,6 +82,12 @@ impl RollbackInfoBuilder {
         self.rollback_triggering_deployment_id = input;
         self
     }
+    /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
+    pub fn get_rollback_triggering_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.rollback_triggering_deployment_id
+    }
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
     pub fn rollback_message(
         mut self,
@@ -93,6 +103,10 @@ impl RollbackInfoBuilder {
     ) -> Self {
         self.rollback_message = input;
         self
+    }
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    pub fn get_rollback_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rollback_message
     }
     /// Consumes the builder and constructs a [`RollbackInfo`](crate::types::RollbackInfo).
     pub fn build(self) -> crate::types::RollbackInfo {

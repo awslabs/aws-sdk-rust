@@ -40,6 +40,10 @@ impl DeleteLunaClientInputBuilder {
         self.client_arn = input;
         self
     }
+    /// <p>The ARN of the client to delete.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
     pub fn build(
         self,

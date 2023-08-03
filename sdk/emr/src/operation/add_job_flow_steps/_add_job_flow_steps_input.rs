@@ -59,6 +59,10 @@ impl AddJobFlowStepsInputBuilder {
         self.job_flow_id = input;
         self
     }
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_flow_id
+    }
     /// Appends an item to `steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
@@ -78,6 +82,10 @@ impl AddJobFlowStepsInputBuilder {
         self.steps = input;
         self
     }
+    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
+        &self.steps
+    }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub fn execution_role_arn(
@@ -95,6 +103,11 @@ impl AddJobFlowStepsInputBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`AddJobFlowStepsInput`](crate::operation::add_job_flow_steps::AddJobFlowStepsInput).
     pub fn build(

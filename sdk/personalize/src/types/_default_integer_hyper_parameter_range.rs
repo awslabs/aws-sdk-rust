@@ -64,6 +64,10 @@ impl DefaultIntegerHyperParameterRangeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the hyperparameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: i32) -> Self {
         self.min_value = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DefaultIntegerHyperParameterRangeBuilder {
     pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<i32> {
+        &self.min_value
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl DefaultIntegerHyperParameterRangeBuilder {
         self.max_value = input;
         self
     }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<i32> {
+        &self.max_value
+    }
     /// <p>Indicates whether the hyperparameter is tunable.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
         self.is_tunable = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl DefaultIntegerHyperParameterRangeBuilder {
     pub fn set_is_tunable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_tunable = input;
         self
+    }
+    /// <p>Indicates whether the hyperparameter is tunable.</p>
+    pub fn get_is_tunable(&self) -> &::std::option::Option<bool> {
+        &self.is_tunable
     }
     /// Consumes the builder and constructs a [`DefaultIntegerHyperParameterRange`](crate::types::DefaultIntegerHyperParameterRange).
     pub fn build(self) -> crate::types::DefaultIntegerHyperParameterRange {

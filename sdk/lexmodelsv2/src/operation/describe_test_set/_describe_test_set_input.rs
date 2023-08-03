@@ -39,6 +39,10 @@ impl DescribeTestSetInputBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The test set Id for the test set request.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// Consumes the builder and constructs a [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
     pub fn build(
         self,

@@ -72,6 +72,10 @@ impl DeleteMarkerEntryBuilder {
         self.owner = input;
         self
     }
+    /// <p>The account that created the delete marker.&gt;</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
+    }
     /// <p>The object key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DeleteMarkerEntryBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The object key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Version ID of an object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl DeleteMarkerEntryBuilder {
         self.version_id = input;
         self
     }
+    /// <p>Version ID of an object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub fn is_latest(mut self, input: bool) -> Self {
         self.is_latest = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl DeleteMarkerEntryBuilder {
     pub fn set_is_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest = input;
         self
+    }
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
+    pub fn get_is_latest(&self) -> &::std::option::Option<bool> {
+        &self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +130,10 @@ impl DeleteMarkerEntryBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>Date and time the object was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     /// Consumes the builder and constructs a [`DeleteMarkerEntry`](crate::types::DeleteMarkerEntry).
     pub fn build(self) -> crate::types::DeleteMarkerEntry {

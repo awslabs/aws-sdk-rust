@@ -70,6 +70,10 @@ impl CellBuilder {
         self.cell_reference = input;
         self
     }
+    /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
+    pub fn get_cell_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_reference
+    }
     /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
     pub fn column(mut self, input: i64) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl CellBuilder {
     pub fn set_column(mut self, input: ::std::option::Option<i64>) -> Self {
         self.column = input;
         self
+    }
+    /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
+    pub fn get_column(&self) -> &::std::option::Option<i64> {
+        &self.column
     }
     /// <p>The name of the column that contains the sensitive data, if available.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl CellBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The name of the column that contains the sensitive data, if available.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The row number of the row that contains the sensitive data.</p>
     pub fn row(mut self, input: i64) -> Self {
         self.row = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl CellBuilder {
     pub fn set_row(mut self, input: ::std::option::Option<i64>) -> Self {
         self.row = input;
         self
+    }
+    /// <p>The row number of the row that contains the sensitive data.</p>
+    pub fn get_row(&self) -> &::std::option::Option<i64> {
+        &self.row
     }
     /// Consumes the builder and constructs a [`Cell`](crate::types::Cell).
     pub fn build(self) -> crate::types::Cell {

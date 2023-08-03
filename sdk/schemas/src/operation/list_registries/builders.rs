@@ -36,6 +36,12 @@ impl ListRegistriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRegistries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_registries::builders::ListRegistriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListRegistriesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -138,6 +148,10 @@ impl ListRegistriesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
     pub fn registry_name_prefix(
@@ -155,6 +169,10 @@ impl ListRegistriesFluentBuilder {
         self.inner = self.inner.set_registry_name_prefix(input);
         self
     }
+    /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
+    pub fn get_registry_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name_prefix()
+    }
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scope(input.into());
@@ -164,5 +182,9 @@ impl ListRegistriesFluentBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
+    }
+    /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scope()
     }
 }

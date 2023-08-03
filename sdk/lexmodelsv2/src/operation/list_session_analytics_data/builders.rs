@@ -40,6 +40,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSessionAnalyticsData as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier for the bot for which you want to retrieve session analytics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session analytics.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date_time(input);
@@ -151,6 +159,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
+    }
+    /// <p>The date and time that marks the beginning of the range of time for which you want to see session analytics.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date_time()
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session analytics.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +177,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
+    /// <p>The date and time that marks the end of the range of time for which you want to see session analytics.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date_time()
+    }
     /// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
     pub fn sort_by(mut self, input: crate::types::SessionDataSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -177,6 +193,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SessionDataSortBy> {
+        self.inner.get_sort_by()
     }
     /// Appends an item to `filters`.
     ///
@@ -195,6 +215,12 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -204,6 +230,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
@@ -216,5 +246,10 @@ impl ListSessionAnalyticsDataFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

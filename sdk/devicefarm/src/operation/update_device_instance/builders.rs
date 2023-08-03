@@ -36,6 +36,12 @@ impl UpdateDeviceInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeviceInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDeviceInstanceFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_arn(input.into());
@@ -135,6 +145,10 @@ impl UpdateDeviceInstanceFluentBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_arn(input);
         self
+    }
+    /// <p>The ARN of the profile that you want to associate with the device instance.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
     }
     /// Appends an item to `labels`.
     ///
@@ -152,5 +166,9 @@ impl UpdateDeviceInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
+    }
+    /// <p>An array of strings that you want to associate with the device instance.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_labels()
     }
 }

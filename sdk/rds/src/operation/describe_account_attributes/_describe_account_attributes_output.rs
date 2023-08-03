@@ -56,6 +56,12 @@ impl DescribeAccountAttributesOutputBuilder {
         self.account_quotas = input;
         self
     }
+    /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
+    pub fn get_account_quotas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
+        &self.account_quotas
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

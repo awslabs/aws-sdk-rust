@@ -36,6 +36,13 @@ impl ListEdgePackagingJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEdgePackagingJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +157,10 @@ impl ListEdgePackagingJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to select.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Select jobs where the job was created after specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,6 +175,10 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>Select jobs where the job was created after specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>Select jobs where the job was created before specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -172,6 +191,10 @@ impl ListEdgePackagingJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>Select jobs where the job was created before specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,6 +209,12 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
+    /// <p>Select jobs where the job was updated after specified time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_after()
+    }
     /// <p>Select jobs where the job was updated before specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_before(input);
@@ -198,6 +227,12 @@ impl ListEdgePackagingJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
+    }
+    /// <p>Select jobs where the job was updated before specified time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_before()
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
     pub fn name_contains(
@@ -215,6 +250,10 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>Filter for jobs containing this name in their packaging job name.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>Filter for jobs where the model name contains this string.</p>
     pub fn model_name_contains(
         mut self,
@@ -231,6 +270,10 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_model_name_contains(input);
         self
     }
+    /// <p>Filter for jobs where the model name contains this string.</p>
+    pub fn get_model_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name_contains()
+    }
     /// <p>The job status to filter for.</p>
     pub fn status_equals(mut self, input: crate::types::EdgePackagingJobStatus) -> Self {
         self.inner = self.inner.status_equals(input);
@@ -243,6 +286,12 @@ impl ListEdgePackagingJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
+    }
+    /// <p>The job status to filter for.</p>
+    pub fn get_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
+        self.inner.get_status_equals()
     }
     /// <p>Use to specify what column to sort by.</p>
     pub fn sort_by(mut self, input: crate::types::ListEdgePackagingJobsSortBy) -> Self {
@@ -257,6 +306,10 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Use to specify what column to sort by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListEdgePackagingJobsSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>What direction to sort by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -266,5 +319,9 @@ impl ListEdgePackagingJobsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>What direction to sort by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

@@ -143,6 +143,10 @@ impl DescribeSecurityProfileOutputBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name of the security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The ARN of the security profile.</p>
     pub fn security_profile_arn(
         mut self,
@@ -159,6 +163,10 @@ impl DescribeSecurityProfileOutputBuilder {
         self.security_profile_arn = input;
         self
     }
+    /// <p>The ARN of the security profile.</p>
+    pub fn get_security_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_arn
+    }
     /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
     pub fn security_profile_description(
         mut self,
@@ -174,6 +182,12 @@ impl DescribeSecurityProfileOutputBuilder {
     ) -> Self {
         self.security_profile_description = input;
         self
+    }
+    /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
+    pub fn get_security_profile_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_description
     }
     /// Appends an item to `behaviors`.
     ///
@@ -193,6 +207,10 @@ impl DescribeSecurityProfileOutputBuilder {
     ) -> Self {
         self.behaviors = input;
         self
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+        &self.behaviors
     }
     /// Adds a key-value pair to `alert_targets`.
     ///
@@ -218,6 +236,14 @@ impl DescribeSecurityProfileOutputBuilder {
     ) -> Self {
         self.alert_targets = input;
         self
+    }
+    /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    pub fn get_alert_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    > {
+        &self.alert_targets
     }
     /// Appends an item to `additional_metrics_to_retain`.
     ///
@@ -245,6 +271,14 @@ impl DescribeSecurityProfileOutputBuilder {
         self.additional_metrics_to_retain = input;
         self
     }
+    /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
+    pub fn get_additional_metrics_to_retain(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_metrics_to_retain
+    }
     /// Appends an item to `additional_metrics_to_retain_v2`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain_v2`](Self::set_additional_metrics_to_retain_v2).
@@ -264,6 +298,12 @@ impl DescribeSecurityProfileOutputBuilder {
         self.additional_metrics_to_retain_v2 = input;
         self
     }
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
+    pub fn get_additional_metrics_to_retain_v2(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>> {
+        &self.additional_metrics_to_retain_v2
+    }
     /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -273,6 +313,10 @@ impl DescribeSecurityProfileOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The time the security profile was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -287,6 +331,10 @@ impl DescribeSecurityProfileOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The time the security profile was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The time the security profile was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -299,6 +347,10 @@ impl DescribeSecurityProfileOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The time the security profile was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

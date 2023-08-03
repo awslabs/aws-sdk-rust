@@ -51,6 +51,10 @@ impl UsageDataSourceResultBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The data source type that generated usage.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>Represents the total of usage for the specified data source.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UsageDataSourceResultBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>Represents the total of usage for the specified data source.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UsageDataSourceResult`](crate::types::UsageDataSourceResult).
     pub fn build(self) -> crate::types::UsageDataSourceResult {

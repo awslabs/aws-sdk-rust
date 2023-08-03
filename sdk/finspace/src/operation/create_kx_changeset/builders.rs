@@ -36,6 +36,12 @@ impl CreateKxChangesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKxChangeset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_kx_changeset::builders::CreateKxChangesetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateKxChangesetFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier of the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -147,6 +157,10 @@ impl CreateKxChangesetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
     /// Appends an item to `changeRequests`.
     ///
@@ -181,6 +195,20 @@ impl CreateKxChangesetFluentBuilder {
         self.inner = self.inner.set_change_requests(input);
         self
     }
+    /// <p>A list of change request objects that are run in order. A change request object consists of changeType , s3Path, and a dbPath. A changeType can has the following values: </p>
+    /// <ul>
+    /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
+    /// <li> <p>DELETE – Deletes files in a database.</p> </li>
+    /// </ul>
+    /// <p>All the change requests require a mandatory <i>dbPath</i> attribute that defines the path within the database directory. The <i>s3Path</i> attribute defines the s3 source file path and is required for a PUT change type.</p>
+    /// <p>Here is an example of how you can use the change request object:</p>
+    /// <p> <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}, { "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}, { "changeType": "DELETE", "dbPath": "/2020.01.01/"} ]</code> </p>
+    /// <p>In this example, the first request with <i>PUT</i> change type allows you to add files in the given s3Path under the <i>2020.01.02</i> partition of the database. The second request with <i>PUT</i> change type allows you to add a single sym file at database root location. The last request with <i>DELETE</i> change type allows you to delete the files under the <i>2020.01.01</i> partition of the database. </p>
+    pub fn get_change_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+        self.inner.get_change_requests()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -190,5 +218,9 @@ impl CreateKxChangesetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

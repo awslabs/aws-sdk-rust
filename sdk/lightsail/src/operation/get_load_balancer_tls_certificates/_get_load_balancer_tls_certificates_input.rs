@@ -45,6 +45,10 @@ impl GetLoadBalancerTlsCertificatesInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Consumes the builder and constructs a [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
     pub fn build(
         self,

@@ -52,6 +52,12 @@ impl CreateServiceTemplateVersionOutputBuilder {
         self.service_template_version = input;
         self
     }
+    /// <p>The service template version summary of detail data that's returned by Proton.</p>
+    pub fn get_service_template_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceTemplateVersion> {
+        &self.service_template_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

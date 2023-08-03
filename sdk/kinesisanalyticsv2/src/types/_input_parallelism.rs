@@ -40,6 +40,10 @@ impl InputParallelismBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of in-application streams to create.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// Consumes the builder and constructs a [`InputParallelism`](crate::types::InputParallelism).
     pub fn build(self) -> crate::types::InputParallelism {
         crate::types::InputParallelism { count: self.count }

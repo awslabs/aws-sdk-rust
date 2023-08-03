@@ -62,6 +62,10 @@ impl CreateTestGridUrlOutputBuilder {
         self.url = input;
         self
     }
+    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CreateTestGridUrlOutputBuilder {
     ) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

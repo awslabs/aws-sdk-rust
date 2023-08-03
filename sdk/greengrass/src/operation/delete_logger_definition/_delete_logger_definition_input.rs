@@ -47,6 +47,10 @@ impl DeleteLoggerDefinitionInputBuilder {
         self.logger_definition_id = input;
         self
     }
+    /// The ID of the logger definition.
+    pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logger_definition_id
+    }
     /// Consumes the builder and constructs a [`DeleteLoggerDefinitionInput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput).
     pub fn build(
         self,

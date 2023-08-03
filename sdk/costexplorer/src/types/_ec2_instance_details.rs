@@ -96,6 +96,10 @@ impl Ec2InstanceDetailsBuilder {
         self.family = input;
         self
     }
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
+    }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn instance_type(
         mut self,
@@ -112,6 +116,10 @@ impl Ec2InstanceDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of instance that Amazon Web Services recommends.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl Ec2InstanceDetailsBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The Availability Zone of the recommended reservation.</p>
     pub fn availability_zone(
@@ -138,6 +150,10 @@ impl Ec2InstanceDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the recommended reservation.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -147,6 +163,10 @@ impl Ec2InstanceDetailsBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
     pub fn tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +178,10 @@ impl Ec2InstanceDetailsBuilder {
         self.tenancy = input;
         self
     }
+    /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenancy
+    }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(mut self, input: bool) -> Self {
         self.current_generation = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl Ec2InstanceDetailsBuilder {
         self.current_generation = input;
         self
     }
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
+        &self.current_generation
+    }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
         self.size_flex_eligible = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl Ec2InstanceDetailsBuilder {
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.size_flex_eligible = input;
         self
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
+        &self.size_flex_eligible
     }
     /// Consumes the builder and constructs a [`Ec2InstanceDetails`](crate::types::Ec2InstanceDetails).
     pub fn build(self) -> crate::types::Ec2InstanceDetails {

@@ -103,6 +103,10 @@ impl CreateVpcConnectionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account where you want to create a new VPC connection.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn vpc_connection_id(
         mut self,
@@ -119,6 +123,10 @@ impl CreateVpcConnectionInputBuilder {
         self.vpc_connection_id = input;
         self
     }
+    /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_id
+    }
     /// <p>The display name for the VPC connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl CreateVpcConnectionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The display name for the VPC connection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -147,6 +159,10 @@ impl CreateVpcConnectionInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs for the VPC connection.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -170,6 +186,12 @@ impl CreateVpcConnectionInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A list of security group IDs for the VPC connection.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `dns_resolvers`.
     ///
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
@@ -192,6 +214,12 @@ impl CreateVpcConnectionInputBuilder {
         self.dns_resolvers = input;
         self
     }
+    /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
+    pub fn get_dns_resolvers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_resolvers
+    }
     /// <p>The IAM role to associate with the VPC connection.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -201,6 +229,10 @@ impl CreateVpcConnectionInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role to associate with the VPC connection.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -220,6 +252,10 @@ impl CreateVpcConnectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of the key-value pairs for the resource tag or tags assigned to the VPC connection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
     pub fn build(

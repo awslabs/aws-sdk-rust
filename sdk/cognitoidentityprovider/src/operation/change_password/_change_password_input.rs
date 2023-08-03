@@ -69,6 +69,10 @@ impl ChangePasswordInputBuilder {
         self.previous_password = input;
         self
     }
+    /// <p>The old password.</p>
+    pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_password
+    }
     /// <p>The new password.</p>
     pub fn proposed_password(
         mut self,
@@ -85,6 +89,10 @@ impl ChangePasswordInputBuilder {
         self.proposed_password = input;
         self
     }
+    /// <p>The new password.</p>
+    pub fn get_proposed_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proposed_password
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl ChangePasswordInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
     pub fn build(

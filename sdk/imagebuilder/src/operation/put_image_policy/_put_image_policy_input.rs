@@ -47,6 +47,10 @@ impl PutImagePolicyInputBuilder {
         self.image_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
+    }
     /// <p>The policy to apply.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl PutImagePolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy to apply.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
     pub fn build(

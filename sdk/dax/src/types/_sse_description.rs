@@ -64,6 +64,16 @@ impl SseDescriptionBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of server-side encryption:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SseStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`SseDescription`](crate::types::SseDescription).
     pub fn build(self) -> crate::types::SseDescription {
         crate::types::SseDescription {

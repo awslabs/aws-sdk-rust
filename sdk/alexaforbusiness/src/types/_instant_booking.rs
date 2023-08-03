@@ -48,6 +48,10 @@ impl InstantBookingBuilder {
         self.duration_in_minutes = input;
         self
     }
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_minutes
+    }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InstantBookingBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether instant booking is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`InstantBooking`](crate::types::InstantBooking).
     pub fn build(self) -> crate::types::InstantBooking {

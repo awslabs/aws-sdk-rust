@@ -63,6 +63,10 @@ impl PutMetadataFlagInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -79,6 +83,10 @@ impl PutMetadataFlagInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The name of the feature associated with the metadata.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl PutMetadataFlagInputBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature associated with the metadata.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// <p>The metadata information to store.</p>
     pub fn body(mut self, input: crate::types::PutMetadataFlagBody) -> Self {
@@ -101,6 +113,10 @@ impl PutMetadataFlagInputBuilder {
     ) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The metadata information to store.</p>
+    pub fn get_body(&self) -> &::std::option::Option<crate::types::PutMetadataFlagBody> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
     pub fn build(

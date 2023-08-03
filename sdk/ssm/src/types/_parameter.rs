@@ -129,6 +129,10 @@ impl ParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
@@ -142,6 +146,12 @@ impl ParameterBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
     }
     /// <p>The parameter value.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
@@ -157,6 +167,12 @@ impl ParameterBuilder {
         self.value = input;
         self
     }
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -166,6 +182,10 @@ impl ParameterBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The parameter version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
     /// <p>parameter_name:version</p>
@@ -180,6 +200,12 @@ impl ParameterBuilder {
     pub fn set_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selector = input;
         self
+    }
+    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
+    /// <p>parameter_name:version</p>
+    /// <p>parameter_name:label</p>
+    pub fn get_selector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selector
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
     pub fn source_result(
@@ -197,6 +223,10 @@ impl ParameterBuilder {
         self.source_result = input;
         self
     }
+    /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
+    pub fn get_source_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_result
+    }
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -210,6 +240,10 @@ impl ParameterBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -220,6 +254,10 @@ impl ParameterBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -229,6 +267,10 @@ impl ParameterBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {

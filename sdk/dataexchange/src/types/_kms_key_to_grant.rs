@@ -40,6 +40,10 @@ impl KmsKeyToGrantBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`KmsKeyToGrant`](crate::types::KmsKeyToGrant).
     pub fn build(self) -> crate::types::KmsKeyToGrant {
         crate::types::KmsKeyToGrant {

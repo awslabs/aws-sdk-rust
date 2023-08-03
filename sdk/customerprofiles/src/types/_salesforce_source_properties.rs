@@ -56,6 +56,10 @@ impl SalesforceSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p>The object specified in the Salesforce flow source.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn enable_dynamic_field_update(mut self, input: bool) -> Self {
         self.enable_dynamic_field_update = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SalesforceSourcePropertiesBuilder {
         self.enable_dynamic_field_update = input;
         self
     }
+    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
+    pub fn get_enable_dynamic_field_update(&self) -> &::std::option::Option<bool> {
+        &self.enable_dynamic_field_update
+    }
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn include_deleted_records(mut self, input: bool) -> Self {
         self.include_deleted_records = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SalesforceSourcePropertiesBuilder {
     pub fn set_include_deleted_records(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deleted_records = input;
         self
+    }
+    /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
+    pub fn get_include_deleted_records(&self) -> &::std::option::Option<bool> {
+        &self.include_deleted_records
     }
     /// Consumes the builder and constructs a [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
     pub fn build(self) -> crate::types::SalesforceSourceProperties {

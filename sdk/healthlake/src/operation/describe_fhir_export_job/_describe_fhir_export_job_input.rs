@@ -49,6 +49,10 @@ impl DescribeFhirExportJobInputBuilder {
         self.datastore_id = input;
         self
     }
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
+    }
     /// <p>The AWS generated ID for an export job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DescribeFhirExportJobInputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The AWS generated ID for an export job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
     pub fn build(

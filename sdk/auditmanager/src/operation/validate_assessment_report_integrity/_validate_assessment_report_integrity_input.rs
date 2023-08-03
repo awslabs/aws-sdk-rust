@@ -45,6 +45,10 @@ impl ValidateAssessmentReportIntegrityInputBuilder {
         self.s3_relative_path = input;
         self
     }
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
+    pub fn get_s3_relative_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_relative_path
+    }
     /// Consumes the builder and constructs a [`ValidateAssessmentReportIntegrityInput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -36,6 +36,10 @@ impl ListServiceInstanceOutputsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceInstanceOutputs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListServiceInstanceOutputsFluentBuilder {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
+    /// <p>The name of the service instance whose outputs you want.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_instance_name()
+    }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
@@ -148,6 +156,10 @@ impl ListServiceInstanceOutputsFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +169,10 @@ impl ListServiceInstanceOutputsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn deployment_id(
@@ -173,5 +189,9 @@ impl ListServiceInstanceOutputsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
     }
 }

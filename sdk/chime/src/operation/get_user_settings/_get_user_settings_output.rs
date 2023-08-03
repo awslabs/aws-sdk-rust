@@ -50,6 +50,10 @@ impl GetUserSettingsOutputBuilder {
         self.user_settings = input;
         self
     }
+    /// <p>The user settings.</p>
+    pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        &self.user_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

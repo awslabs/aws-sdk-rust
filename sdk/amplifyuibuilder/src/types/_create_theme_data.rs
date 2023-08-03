@@ -72,6 +72,10 @@ impl CreateThemeDataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -91,6 +95,10 @@ impl CreateThemeDataBuilder {
         self.values = input;
         self
     }
+    /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.values
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -109,6 +117,12 @@ impl CreateThemeDataBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.overrides
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +148,14 @@ impl CreateThemeDataBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more key-value pairs to use when tagging the theme data.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThemeData`](crate::types::CreateThemeData).
     pub fn build(self) -> crate::types::CreateThemeData {

@@ -80,6 +80,10 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Filter Recovery Snapshots by Source Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
     pub fn filters(mut self, input: crate::types::DescribeRecoverySnapshotsRequestFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl DescribeRecoverySnapshotsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>A set of filters by which to return Recovery Snapshots.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters> {
+        &self.filters
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
     pub fn order(mut self, input: crate::types::RecoverySnapshotsOrder) -> Self {
@@ -106,6 +116,10 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self.order = input;
         self
     }
+    /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::RecoverySnapshotsOrder> {
+        &self.order
+    }
     /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -125,6 +143,10 @@ impl DescribeRecoverySnapshotsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token of the next Recovery Snapshot to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRecoverySnapshotsInput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput).
     pub fn build(

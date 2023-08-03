@@ -70,6 +70,10 @@ impl VendorPropertiesBuilder {
         self.vendor_worker_id = input;
         self
     }
+    /// The worker ID defined by the vendor FMS.
+    pub fn get_vendor_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_worker_id
+    }
     /// The worker IP address defined by the vendor FMS.
     pub fn vendor_worker_ip_address(
         mut self,
@@ -85,6 +89,10 @@ impl VendorPropertiesBuilder {
     ) -> Self {
         self.vendor_worker_ip_address = input;
         self
+    }
+    /// The worker IP address defined by the vendor FMS.
+    pub fn get_vendor_worker_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_worker_ip_address
     }
     /// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
     pub fn vendor_additional_transient_properties(
@@ -102,6 +110,12 @@ impl VendorPropertiesBuilder {
         self.vendor_additional_transient_properties = input;
         self
     }
+    /// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
+    pub fn get_vendor_additional_transient_properties(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_additional_transient_properties
+    }
     /// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
     pub fn vendor_additional_fixed_properties(
         mut self,
@@ -117,6 +131,12 @@ impl VendorPropertiesBuilder {
     ) -> Self {
         self.vendor_additional_fixed_properties = input;
         self
+    }
+    /// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
+    pub fn get_vendor_additional_fixed_properties(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`VendorProperties`](crate::types::VendorProperties).
     pub fn build(self) -> crate::types::VendorProperties {

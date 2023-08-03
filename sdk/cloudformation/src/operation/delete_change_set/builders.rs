@@ -38,6 +38,12 @@ impl DeleteChangeSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteChangeSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_change_set::builders::DeleteChangeSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl DeleteChangeSetFluentBuilder {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_set_name()
+    }
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -143,5 +153,9 @@ impl DeleteChangeSetFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
 }

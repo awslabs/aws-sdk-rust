@@ -36,6 +36,10 @@ impl DeleteTrustFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTrust as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_trust::builders::DeleteTrustInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteTrustFluentBuilder {
         self.inner = self.inner.set_trust_id(input);
         self
     }
+    /// <p>The Trust ID of the trust relationship to be deleted.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_id()
+    }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub fn delete_associated_conditional_forwarder(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_associated_conditional_forwarder(input);
@@ -132,5 +140,9 @@ impl DeleteTrustFluentBuilder {
             .inner
             .set_delete_associated_conditional_forwarder(input);
         self
+    }
+    /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+    pub fn get_delete_associated_conditional_forwarder(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_associated_conditional_forwarder()
     }
 }

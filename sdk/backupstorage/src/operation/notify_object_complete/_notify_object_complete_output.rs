@@ -64,6 +64,10 @@ impl NotifyObjectCompleteOutputBuilder {
         self.object_checksum = input;
         self
     }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
+    }
     /// Checksum algorithm
     pub fn object_checksum_algorithm(
         mut self,
@@ -79,6 +83,12 @@ impl NotifyObjectCompleteOutputBuilder {
     ) -> Self {
         self.object_checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

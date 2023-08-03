@@ -56,6 +56,10 @@ impl QuestionMetricBuilder {
         self.question_id = input;
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
         self.risk = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl QuestionMetricBuilder {
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
         self.risk = input;
         self
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
+        &self.risk
     }
     /// Appends an item to `best_practices`.
     ///
@@ -84,6 +92,12 @@ impl QuestionMetricBuilder {
     ) -> Self {
         self.best_practices = input;
         self
+    }
+    /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
+    pub fn get_best_practices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BestPractice>> {
+        &self.best_practices
     }
     /// Consumes the builder and constructs a [`QuestionMetric`](crate::types::QuestionMetric).
     pub fn build(self) -> crate::types::QuestionMetric {

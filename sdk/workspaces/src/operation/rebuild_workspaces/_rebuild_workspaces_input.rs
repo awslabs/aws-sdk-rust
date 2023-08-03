@@ -53,6 +53,12 @@ impl RebuildWorkspacesInputBuilder {
         self.rebuild_workspace_requests = input;
         self
     }
+    /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+    pub fn get_rebuild_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>> {
+        &self.rebuild_workspace_requests
+    }
     /// Consumes the builder and constructs a [`RebuildWorkspacesInput`](crate::operation::rebuild_workspaces::RebuildWorkspacesInput).
     pub fn build(
         self,

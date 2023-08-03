@@ -70,6 +70,10 @@ impl ProviderDescriptionBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl ProviderDescriptionBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The IdP type.</p>
+    pub fn get_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+        &self.provider_type
     }
     /// <p>The date the provider was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +106,10 @@ impl ProviderDescriptionBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the provider was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the provider was added to the user pool.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl ProviderDescriptionBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the provider was added to the user pool.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`ProviderDescription`](crate::types::ProviderDescription).
     pub fn build(self) -> crate::types::ProviderDescription {

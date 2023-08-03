@@ -94,6 +94,10 @@ impl InstanceStatusBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the instance.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl InstanceStatusBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Appends an item to `events`.
     ///
@@ -123,6 +131,12 @@ impl InstanceStatusBuilder {
         self.events = input;
         self
     }
+    /// <p>Any scheduled events associated with the instance.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>> {
+        &self.events
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -132,6 +146,10 @@ impl InstanceStatusBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
@@ -146,6 +164,10 @@ impl InstanceStatusBuilder {
         self.instance_state = input;
         self
     }
+    /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
+    pub fn get_instance_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.instance_state
+    }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
     pub fn instance_status(mut self, input: crate::types::InstanceStatusSummary) -> Self {
         self.instance_status = ::std::option::Option::Some(input);
@@ -159,6 +181,12 @@ impl InstanceStatusBuilder {
         self.instance_status = input;
         self
     }
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    pub fn get_instance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStatusSummary> {
+        &self.instance_status
+    }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
     pub fn system_status(mut self, input: crate::types::InstanceStatusSummary) -> Self {
         self.system_status = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl InstanceStatusBuilder {
     ) -> Self {
         self.system_status = input;
         self
+    }
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    pub fn get_system_status(&self) -> &::std::option::Option<crate::types::InstanceStatusSummary> {
+        &self.system_status
     }
     /// Consumes the builder and constructs a [`InstanceStatus`](crate::types::InstanceStatus).
     pub fn build(self) -> crate::types::InstanceStatus {

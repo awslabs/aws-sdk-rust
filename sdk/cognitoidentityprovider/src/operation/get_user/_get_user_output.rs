@@ -91,6 +91,10 @@ impl GetUserOutputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// Appends an item to `user_attributes`.
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
@@ -112,6 +116,13 @@ impl GetUserOutputBuilder {
         self.user_attributes = input;
         self
     }
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    pub fn get_user_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+        &self.user_attributes
+    }
     /// Appends an item to `mfa_options`.
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
@@ -131,6 +142,12 @@ impl GetUserOutputBuilder {
         self.mfa_options = input;
         self
     }
+    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        &self.mfa_options
+    }
     /// <p>The user's preferred MFA setting.</p>
     pub fn preferred_mfa_setting(
         mut self,
@@ -146,6 +163,10 @@ impl GetUserOutputBuilder {
     ) -> Self {
         self.preferred_mfa_setting = input;
         self
+    }
+    /// <p>The user's preferred MFA setting.</p>
+    pub fn get_preferred_mfa_setting(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_mfa_setting
     }
     /// Appends an item to `user_mfa_setting_list`.
     ///
@@ -168,6 +189,12 @@ impl GetUserOutputBuilder {
     ) -> Self {
         self.user_mfa_setting_list = input;
         self
+    }
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    pub fn get_user_mfa_setting_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_mfa_setting_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

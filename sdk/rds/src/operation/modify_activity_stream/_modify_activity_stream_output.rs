@@ -89,6 +89,10 @@ impl ModifyActivityStreamOutputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
     pub fn kinesis_stream_name(
         mut self,
@@ -105,6 +109,10 @@ impl ModifyActivityStreamOutputBuilder {
         self.kinesis_stream_name = input;
         self
     }
+    /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
+    pub fn get_kinesis_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kinesis_stream_name
+    }
     /// <p>The status of the modification to the database activity stream.</p>
     pub fn status(mut self, input: crate::types::ActivityStreamStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl ModifyActivityStreamOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the modification to the database activity stream.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActivityStreamStatus> {
+        &self.status
     }
     /// <p>The mode of the database activity stream.</p>
     pub fn mode(mut self, input: crate::types::ActivityStreamMode) -> Self {
@@ -131,6 +143,10 @@ impl ModifyActivityStreamOutputBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode of the database activity stream.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ActivityStreamMode> {
+        &self.mode
+    }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
         self.engine_native_audit_fields_included = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl ModifyActivityStreamOutputBuilder {
         self.engine_native_audit_fields_included = input;
         self
     }
+    /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    pub fn get_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
+        &self.engine_native_audit_fields_included
+    }
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
     pub fn policy_status(mut self, input: crate::types::ActivityStreamPolicyStatus) -> Self {
         self.policy_status = ::std::option::Option::Some(input);
@@ -156,6 +176,12 @@ impl ModifyActivityStreamOutputBuilder {
     ) -> Self {
         self.policy_status = input;
         self
+    }
+    /// <p>The status of the modification to the policy state of the database activity stream.</p>
+    pub fn get_policy_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActivityStreamPolicyStatus> {
+        &self.policy_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

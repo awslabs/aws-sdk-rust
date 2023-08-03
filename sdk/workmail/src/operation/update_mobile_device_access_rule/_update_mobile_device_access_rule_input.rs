@@ -144,6 +144,10 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization under which the rule will be updated.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the rule to be updated.</p>
     pub fn mobile_device_access_rule_id(
         mut self,
@@ -160,6 +164,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.mobile_device_access_rule_id = input;
         self
     }
+    /// <p>The identifier of the rule to be updated.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.mobile_device_access_rule_id
+    }
     /// <p>The updated rule name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -170,6 +180,10 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -179,6 +193,10 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
@@ -192,6 +210,10 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.effect = input;
         self
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        &self.effect
     }
     /// Appends an item to `device_types`.
     ///
@@ -211,6 +233,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.device_types = input;
         self
+    }
+    /// <p>Device types that the updated rule will match.</p>
+    pub fn get_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_types
     }
     /// Appends an item to `not_device_types`.
     ///
@@ -234,6 +262,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.not_device_types = input;
         self
     }
+    /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
+    pub fn get_not_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_types
+    }
     /// Appends an item to `device_models`.
     ///
     /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
@@ -255,6 +289,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.device_models = input;
         self
+    }
+    /// <p>Device models that the updated rule will match.</p>
+    pub fn get_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_models
     }
     /// Appends an item to `not_device_models`.
     ///
@@ -278,6 +318,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.not_device_models = input;
         self
     }
+    /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
+    pub fn get_not_device_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_models
+    }
     /// Appends an item to `device_operating_systems`.
     ///
     /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
@@ -299,6 +345,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.device_operating_systems = input;
         self
+    }
+    /// <p>Device operating systems that the updated rule will match.</p>
+    pub fn get_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_operating_systems
     }
     /// Appends an item to `not_device_operating_systems`.
     ///
@@ -322,6 +374,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.not_device_operating_systems = input;
         self
     }
+    /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
+    pub fn get_not_device_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_operating_systems
+    }
     /// Appends an item to `device_user_agents`.
     ///
     /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
@@ -344,6 +402,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
         self.device_user_agents = input;
         self
     }
+    /// <p>User agents that the updated rule will match.</p>
+    pub fn get_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_user_agents
+    }
     /// Appends an item to `not_device_user_agents`.
     ///
     /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
@@ -365,6 +429,12 @@ impl UpdateMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.not_device_user_agents = input;
         self
+    }
+    /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
+    pub fn get_not_device_user_agents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_device_user_agents
     }
     /// Consumes the builder and constructs a [`UpdateMobileDeviceAccessRuleInput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleInput).
     pub fn build(

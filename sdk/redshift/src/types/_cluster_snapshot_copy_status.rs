@@ -72,6 +72,10 @@ impl ClusterSnapshotCopyStatusBuilder {
         self.destination_region = input;
         self
     }
+    /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_region
+    }
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
     pub fn retention_period(mut self, input: i64) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ClusterSnapshotCopyStatusBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i64> {
+        &self.retention_period
     }
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -97,6 +105,11 @@ impl ClusterSnapshotCopyStatusBuilder {
         self.manual_snapshot_retention_period = input;
         self
     }
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshot_retention_period
+    }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn snapshot_copy_grant_name(
         mut self,
@@ -112,6 +125,10 @@ impl ClusterSnapshotCopyStatusBuilder {
     ) -> Self {
         self.snapshot_copy_grant_name = input;
         self
+    }
+    /// <p>The name of the snapshot copy grant.</p>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_copy_grant_name
     }
     /// Consumes the builder and constructs a [`ClusterSnapshotCopyStatus`](crate::types::ClusterSnapshotCopyStatus).
     pub fn build(self) -> crate::types::ClusterSnapshotCopyStatus {

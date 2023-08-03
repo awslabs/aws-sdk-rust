@@ -102,6 +102,10 @@ impl ChangeSetSummaryListItemBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>The unique identifier for a change set.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub fn change_set_arn(
         mut self,
@@ -117,6 +121,10 @@ impl ChangeSetSummaryListItemBuilder {
     ) -> Self {
         self.change_set_arn = input;
         self
+    }
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+    pub fn get_change_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_arn
     }
     /// <p>The non-unique name for the change set.</p>
     pub fn change_set_name(
@@ -134,6 +142,10 @@ impl ChangeSetSummaryListItemBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The non-unique name for the change set.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -143,6 +155,10 @@ impl ChangeSetSummaryListItemBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +170,10 @@ impl ChangeSetSummaryListItemBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
+    }
     /// <p>The current status of the change set.</p>
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl ChangeSetSummaryListItemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the change set.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeStatus> {
+        &self.status
     }
     /// Appends an item to `entity_id_list`.
     ///
@@ -186,6 +210,12 @@ impl ChangeSetSummaryListItemBuilder {
         self.entity_id_list = input;
         self
     }
+    /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
+    pub fn get_entity_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_id_list
+    }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(mut self, input: crate::types::FailureCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -198,6 +228,10 @@ impl ChangeSetSummaryListItemBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::FailureCode> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`ChangeSetSummaryListItem`](crate::types::ChangeSetSummaryListItem).
     pub fn build(self) -> crate::types::ChangeSetSummaryListItem {

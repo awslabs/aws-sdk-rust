@@ -70,6 +70,10 @@ impl VpcConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The identifier of the VPC endpoint.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -92,6 +96,12 @@ impl VpcConfigurationBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The unique identifier of the VPC security group applied to the VPC endpoint ENI for the cluster.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -111,6 +121,10 @@ impl VpcConfigurationBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The identifier of the subnet that the Privatelink VPC endpoint uses to connect to the cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
     /// <ul>
     /// <li> <p>IP_V4 – IP address version 4</p> </li>
@@ -129,6 +143,13 @@ impl VpcConfigurationBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type for cluster network configuration parameters. The following type is available:</p>
+    /// <ul>
+    /// <li> <p>IP_V4 – IP address version 4</p> </li>
+    /// </ul>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {

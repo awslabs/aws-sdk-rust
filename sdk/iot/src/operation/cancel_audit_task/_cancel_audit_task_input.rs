@@ -39,6 +39,10 @@ impl CancelAuditTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
     pub fn build(
         self,

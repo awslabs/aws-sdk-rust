@@ -82,6 +82,12 @@ impl GetSubnetCidrReservationsOutputBuilder {
         self.subnet_ipv4_cidr_reservations = input;
         self
     }
+    /// <p>Information about the IPv4 subnet CIDR reservations.</p>
+    pub fn get_subnet_ipv4_cidr_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
+        &self.subnet_ipv4_cidr_reservations
+    }
     /// Appends an item to `subnet_ipv6_cidr_reservations`.
     ///
     /// To override the contents of this collection use [`set_subnet_ipv6_cidr_reservations`](Self::set_subnet_ipv6_cidr_reservations).
@@ -104,6 +110,12 @@ impl GetSubnetCidrReservationsOutputBuilder {
         self.subnet_ipv6_cidr_reservations = input;
         self
     }
+    /// <p>Information about the IPv6 subnet CIDR reservations.</p>
+    pub fn get_subnet_ipv6_cidr_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
+        &self.subnet_ipv6_cidr_reservations
+    }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl GetSubnetCidrReservationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

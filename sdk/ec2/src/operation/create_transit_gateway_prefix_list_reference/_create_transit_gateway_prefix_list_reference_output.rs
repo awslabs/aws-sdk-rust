@@ -56,6 +56,12 @@ impl CreateTransitGatewayPrefixListReferenceOutputBuilder {
         self.transit_gateway_prefix_list_reference = input;
         self
     }
+    /// <p>Information about the prefix list reference.</p>
+    pub fn get_transit_gateway_prefix_list_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReference> {
+        &self.transit_gateway_prefix_list_reference
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

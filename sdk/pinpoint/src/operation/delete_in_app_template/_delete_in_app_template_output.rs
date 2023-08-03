@@ -50,6 +50,10 @@ impl DeleteInAppTemplateOutputBuilder {
         self.message_body = input;
         self
     }
+    /// <p>Provides information about an API request or response.</p>
+    pub fn get_message_body(&self) -> &::std::option::Option<crate::types::MessageBody> {
+        &self.message_body
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

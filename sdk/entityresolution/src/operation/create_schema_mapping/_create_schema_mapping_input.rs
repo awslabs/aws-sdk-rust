@@ -77,6 +77,10 @@ impl CreateSchemaMappingInputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CreateSchemaMappingInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `mapped_input_fields`.
     ///
@@ -105,6 +113,12 @@ impl CreateSchemaMappingInputBuilder {
     ) -> Self {
         self.mapped_input_fields = input;
         self
+    }
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
+    pub fn get_mapped_input_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+        &self.mapped_input_fields
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -130,6 +144,14 @@ impl CreateSchemaMappingInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSchemaMappingInput`](crate::operation::create_schema_mapping::CreateSchemaMappingInput).
     pub fn build(

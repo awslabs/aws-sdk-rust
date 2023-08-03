@@ -73,6 +73,13 @@ impl BatchGetCustomDataIdentifiersOutputBuilder {
         self.custom_data_identifiers = input;
         self
     }
+    /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
+    pub fn get_custom_data_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetCustomDataIdentifierSummary>>
+    {
+        &self.custom_data_identifiers
+    }
     /// Appends an item to `not_found_identifier_ids`.
     ///
     /// To override the contents of this collection use [`set_not_found_identifier_ids`](Self::set_not_found_identifier_ids).
@@ -94,6 +101,12 @@ impl BatchGetCustomDataIdentifiersOutputBuilder {
     ) -> Self {
         self.not_found_identifier_ids = input;
         self
+    }
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
+    pub fn get_not_found_identifier_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_found_identifier_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

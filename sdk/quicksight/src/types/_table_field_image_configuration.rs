@@ -49,6 +49,12 @@ impl TableFieldImageConfigurationBuilder {
         self.sizing_options = input;
         self
     }
+    /// <p>The sizing options for the table image configuration.</p>
+    pub fn get_sizing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableCellImageSizingConfiguration> {
+        &self.sizing_options
+    }
     /// Consumes the builder and constructs a [`TableFieldImageConfiguration`](crate::types::TableFieldImageConfiguration).
     pub fn build(self) -> crate::types::TableFieldImageConfiguration {
         crate::types::TableFieldImageConfiguration {

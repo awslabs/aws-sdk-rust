@@ -64,6 +64,10 @@ impl IngestEndpointBuilder {
         self.id = input;
         self
     }
+    /// The system generated unique identifier for the IngestEndpoint
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The system generated password for ingest authentication.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl IngestEndpointBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// The system generated password for ingest authentication.
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// The ingest URL to which the source stream should be sent.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl IngestEndpointBuilder {
         self.url = input;
         self
     }
+    /// The ingest URL to which the source stream should be sent.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// The system generated username for ingest authentication.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl IngestEndpointBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// The system generated username for ingest authentication.
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn build(self) -> crate::types::IngestEndpoint {

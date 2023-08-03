@@ -49,6 +49,10 @@ impl UpdateWorkspaceBundleInputBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The identifier of the bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The identifier of the image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl UpdateWorkspaceBundleInputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
     pub fn build(

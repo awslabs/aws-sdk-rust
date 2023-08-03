@@ -48,6 +48,10 @@ impl ErrorDetailsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn error_message(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -62,6 +66,10 @@ impl ErrorDetailsBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {

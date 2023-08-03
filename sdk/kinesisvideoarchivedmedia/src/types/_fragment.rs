@@ -78,6 +78,10 @@ impl FragmentBuilder {
         self.fragment_number = input;
         self
     }
+    /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
+    pub fn get_fragment_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fragment_number
+    }
     /// <p>The total fragment size, including information about the fragment and contained media data.</p>
     pub fn fragment_size_in_bytes(mut self, input: i64) -> Self {
         self.fragment_size_in_bytes = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl FragmentBuilder {
     pub fn set_fragment_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.fragment_size_in_bytes = input;
         self
+    }
+    /// <p>The total fragment size, including information about the fragment and contained media data.</p>
+    pub fn get_fragment_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.fragment_size_in_bytes
     }
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
     pub fn producer_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -101,6 +109,10 @@ impl FragmentBuilder {
         self.producer_timestamp = input;
         self
     }
+    /// <p>The timestamp from the producer corresponding to the fragment.</p>
+    pub fn get_producer_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.producer_timestamp
+    }
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
     pub fn server_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.server_timestamp = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl FragmentBuilder {
         self.server_timestamp = input;
         self
     }
+    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    pub fn get_server_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.server_timestamp
+    }
     /// <p>The playback duration or other time value associated with the fragment.</p>
     pub fn fragment_length_in_milliseconds(mut self, input: i64) -> Self {
         self.fragment_length_in_milliseconds = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl FragmentBuilder {
     ) -> Self {
         self.fragment_length_in_milliseconds = input;
         self
+    }
+    /// <p>The playback duration or other time value associated with the fragment.</p>
+    pub fn get_fragment_length_in_milliseconds(&self) -> &::std::option::Option<i64> {
+        &self.fragment_length_in_milliseconds
     }
     /// Consumes the builder and constructs a [`Fragment`](crate::types::Fragment).
     pub fn build(self) -> crate::types::Fragment {

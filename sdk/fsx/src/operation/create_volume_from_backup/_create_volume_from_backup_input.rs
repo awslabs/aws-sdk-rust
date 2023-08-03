@@ -76,6 +76,10 @@ impl CreateVolumeFromBackupInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -92,6 +96,10 @@ impl CreateVolumeFromBackupInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the new volume you're creating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl CreateVolumeFromBackupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the new volume you're creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
     pub fn ontap_configuration(
@@ -117,6 +129,12 @@ impl CreateVolumeFromBackupInputBuilder {
     ) -> Self {
         self.ontap_configuration = input;
         self
+    }
+    /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
+        &self.ontap_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -136,6 +154,10 @@ impl CreateVolumeFromBackupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVolumeFromBackupInput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput).
     pub fn build(

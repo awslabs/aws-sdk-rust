@@ -56,6 +56,10 @@ impl AppBuilder {
         self.app_name = input;
         self
     }
+    /// <p>The application's name.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
+    }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AppBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
+    }
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub fn port(mut self, input: i64) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AppBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i64>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The application's port number, for example <code>80</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i64> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     pub fn build(self) -> crate::types::App {

@@ -59,6 +59,10 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance to be modified.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Information about the Capacity Reservation targeting option.</p>
     pub fn capacity_reservation_specification(
         mut self,
@@ -75,6 +79,12 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         self.capacity_reservation_specification = input;
         self
     }
+    /// <p>Information about the Capacity Reservation targeting option.</p>
+    pub fn get_capacity_reservation_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+        &self.capacity_reservation_specification
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyInstanceCapacityReservationAttributesInput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{

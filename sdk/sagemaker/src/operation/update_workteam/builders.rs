@@ -36,6 +36,12 @@ impl UpdateWorkteamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkteam as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateWorkteamFluentBuilder {
         self.inner = self.inner.set_workteam_name(input);
         self
     }
+    /// <p>The name of the work team to update.</p>
+    pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workteam_name()
+    }
     /// Appends an item to `MemberDefinitions`.
     ///
     /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
@@ -147,6 +157,15 @@ impl UpdateWorkteamFluentBuilder {
         self.inner = self.inner.set_member_definitions(input);
         self
     }
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+    /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
+    /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
+    /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
+    pub fn get_member_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+        self.inner.get_member_definitions()
+    }
     /// <p>An updated description for the work team.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -156,6 +175,10 @@ impl UpdateWorkteamFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An updated description for the work team.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub fn notification_configuration(
@@ -172,5 +195,11 @@ impl UpdateWorkteamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_configuration(input);
         self
+    }
+    /// <p>Configures SNS topic notifications for available or expiring work items</p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        self.inner.get_notification_configuration()
     }
 }

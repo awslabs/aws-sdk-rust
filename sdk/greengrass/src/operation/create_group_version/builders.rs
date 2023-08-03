@@ -36,6 +36,12 @@ impl CreateGroupVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGroupVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_group_version::builders::CreateGroupVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateGroupVersionFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ARN of the connector definition version for this group.
     pub fn connector_definition_version_arn(
         mut self,
@@ -147,6 +157,12 @@ impl CreateGroupVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_definition_version_arn(input);
         self
+    }
+    /// The ARN of the connector definition version for this group.
+    pub fn get_connector_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_definition_version_arn()
     }
     /// The ARN of the core definition version for this group.
     pub fn core_definition_version_arn(
@@ -164,6 +180,10 @@ impl CreateGroupVersionFluentBuilder {
         self.inner = self.inner.set_core_definition_version_arn(input);
         self
     }
+    /// The ARN of the core definition version for this group.
+    pub fn get_core_definition_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_definition_version_arn()
+    }
     /// The ARN of the device definition version for this group.
     pub fn device_definition_version_arn(
         mut self,
@@ -179,6 +199,12 @@ impl CreateGroupVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_definition_version_arn(input);
         self
+    }
+    /// The ARN of the device definition version for this group.
+    pub fn get_device_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_definition_version_arn()
     }
     /// The ARN of the function definition version for this group.
     pub fn function_definition_version_arn(
@@ -196,6 +222,12 @@ impl CreateGroupVersionFluentBuilder {
         self.inner = self.inner.set_function_definition_version_arn(input);
         self
     }
+    /// The ARN of the function definition version for this group.
+    pub fn get_function_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_definition_version_arn()
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -205,6 +237,10 @@ impl CreateGroupVersionFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
     /// The ARN of the logger definition version for this group.
     pub fn logger_definition_version_arn(
@@ -222,6 +258,12 @@ impl CreateGroupVersionFluentBuilder {
         self.inner = self.inner.set_logger_definition_version_arn(input);
         self
     }
+    /// The ARN of the logger definition version for this group.
+    pub fn get_logger_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logger_definition_version_arn()
+    }
     /// The ARN of the resource definition version for this group.
     pub fn resource_definition_version_arn(
         mut self,
@@ -238,6 +280,12 @@ impl CreateGroupVersionFluentBuilder {
         self.inner = self.inner.set_resource_definition_version_arn(input);
         self
     }
+    /// The ARN of the resource definition version for this group.
+    pub fn get_resource_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_definition_version_arn()
+    }
     /// The ARN of the subscription definition version for this group.
     pub fn subscription_definition_version_arn(
         mut self,
@@ -253,5 +301,11 @@ impl CreateGroupVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscription_definition_version_arn(input);
         self
+    }
+    /// The ARN of the subscription definition version for this group.
+    pub fn get_subscription_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_definition_version_arn()
     }
 }

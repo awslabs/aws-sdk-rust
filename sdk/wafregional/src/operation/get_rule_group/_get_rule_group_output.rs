@@ -46,6 +46,10 @@ impl GetRuleGroupOutputBuilder {
         self.rule_group = input;
         self
     }
+    /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
+    pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
+        &self.rule_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

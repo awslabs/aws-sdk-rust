@@ -135,6 +135,10 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency of the transaction.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
     pub fn is_valid_exchange(mut self, input: bool) -> Self {
         self.is_valid_exchange = ::std::option::Option::Some(input);
@@ -144,6 +148,10 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
     pub fn set_is_valid_exchange(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_valid_exchange = input;
         self
+    }
+    /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
+    pub fn get_is_valid_exchange(&self) -> &::std::option::Option<bool> {
+        &self.is_valid_exchange
     }
     /// <p>The new end date of the reservation term.</p>
     pub fn output_reserved_instances_will_expire_at(
@@ -161,6 +169,12 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
         self.output_reserved_instances_will_expire_at = input;
         self
     }
+    /// <p>The new end date of the reservation term.</p>
+    pub fn get_output_reserved_instances_will_expire_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.output_reserved_instances_will_expire_at
+    }
     /// <p>The total true upfront charge for the exchange.</p>
     pub fn payment_due(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payment_due = ::std::option::Option::Some(input.into());
@@ -170,6 +184,10 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
     pub fn set_payment_due(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payment_due = input;
         self
+    }
+    /// <p>The total true upfront charge for the exchange.</p>
+    pub fn get_payment_due(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payment_due
     }
     /// <p>The cost associated with the Reserved Instance.</p>
     pub fn reserved_instance_value_rollup(mut self, input: crate::types::ReservationValue) -> Self {
@@ -183,6 +201,12 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
     ) -> Self {
         self.reserved_instance_value_rollup = input;
         self
+    }
+    /// <p>The cost associated with the Reserved Instance.</p>
+    pub fn get_reserved_instance_value_rollup(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationValue> {
+        &self.reserved_instance_value_rollup
     }
     /// Appends an item to `reserved_instance_value_set`.
     ///
@@ -208,6 +232,13 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
         self.reserved_instance_value_set = input;
         self
     }
+    /// <p>The configuration of your Convertible Reserved Instances.</p>
+    pub fn get_reserved_instance_value_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceReservationValue>>
+    {
+        &self.reserved_instance_value_set
+    }
     /// <p>The cost associated with the Reserved Instance.</p>
     pub fn target_configuration_value_rollup(
         mut self,
@@ -223,6 +254,12 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
     ) -> Self {
         self.target_configuration_value_rollup = input;
         self
+    }
+    /// <p>The cost associated with the Reserved Instance.</p>
+    pub fn get_target_configuration_value_rollup(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationValue> {
+        &self.target_configuration_value_rollup
     }
     /// Appends an item to `target_configuration_value_set`.
     ///
@@ -246,6 +283,12 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
         self.target_configuration_value_set = input;
         self
     }
+    /// <p>The values of the target Convertible Reserved Instances.</p>
+    pub fn get_target_configuration_value_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetReservationValue>> {
+        &self.target_configuration_value_set
+    }
     /// <p>Describes the reason why the exchange cannot be completed.</p>
     pub fn validation_failure_reason(
         mut self,
@@ -261,6 +304,10 @@ impl GetReservedInstancesExchangeQuoteOutputBuilder {
     ) -> Self {
         self.validation_failure_reason = input;
         self
+    }
+    /// <p>Describes the reason why the exchange cannot be completed.</p>
+    pub fn get_validation_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_failure_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

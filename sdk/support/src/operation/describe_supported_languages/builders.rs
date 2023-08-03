@@ -41,6 +41,10 @@ impl DescribeSupportedLanguagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSupportedLanguages as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl DescribeSupportedLanguagesFluentBuilder {
         self.inner = self.inner.set_issue_type(input);
         self
     }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_issue_type()
+    }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
@@ -140,6 +148,10 @@ impl DescribeSupportedLanguagesFluentBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_code(input);
         self
+    }
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(
@@ -156,5 +168,9 @@ impl DescribeSupportedLanguagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_category_code(input);
         self
+    }
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category_code()
     }
 }

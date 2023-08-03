@@ -103,6 +103,12 @@ impl MacAlgorithmEmvBuilder {
         self.major_key_derivation_mode = input;
         self
     }
+    /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
+    pub fn get_major_key_derivation_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
+        &self.major_key_derivation_mode
+    }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub fn primary_account_number(
         mut self,
@@ -118,6 +124,10 @@ impl MacAlgorithmEmvBuilder {
     ) -> Self {
         self.primary_account_number = input;
         self
+    }
+    /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_number
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn pan_sequence_number(
@@ -135,6 +145,10 @@ impl MacAlgorithmEmvBuilder {
         self.pan_sequence_number = input;
         self
     }
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pan_sequence_number
+    }
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
     pub fn session_key_derivation_mode(
         mut self,
@@ -151,6 +165,12 @@ impl MacAlgorithmEmvBuilder {
         self.session_key_derivation_mode = input;
         self
     }
+    /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
+    pub fn get_session_key_derivation_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionKeyDerivationMode> {
+        &self.session_key_derivation_mode
+    }
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
     pub fn session_key_derivation_value(
         mut self,
@@ -166,6 +186,12 @@ impl MacAlgorithmEmvBuilder {
     ) -> Self {
         self.session_key_derivation_value = input;
         self
+    }
+    /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
+    pub fn get_session_key_derivation_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionKeyDerivationValue> {
+        &self.session_key_derivation_value
     }
     /// Consumes the builder and constructs a [`MacAlgorithmEmv`](crate::types::MacAlgorithmEmv).
     pub fn build(self) -> crate::types::MacAlgorithmEmv {

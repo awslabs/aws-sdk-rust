@@ -48,6 +48,10 @@ impl ParameterBuilder {
         self.description = input;
         self
     }
+    /// <p>Information about the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A parameter value must be specified in the extension association.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ParameterBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>A parameter value must be specified in the extension association.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {

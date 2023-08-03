@@ -43,6 +43,10 @@ impl ReshardingStatusBuilder {
         self.slot_migration = input;
         self
     }
+    /// <p>The status of the online resharding slot migration</p>
+    pub fn get_slot_migration(&self) -> &::std::option::Option<crate::types::SlotMigration> {
+        &self.slot_migration
+    }
     /// Consumes the builder and constructs a [`ReshardingStatus`](crate::types::ReshardingStatus).
     pub fn build(self) -> crate::types::ReshardingStatus {
         crate::types::ReshardingStatus {

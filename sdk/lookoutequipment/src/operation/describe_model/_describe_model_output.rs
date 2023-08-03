@@ -221,6 +221,10 @@ impl DescribeModelOutputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the ML model being described. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -230,6 +234,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>The name of the dataset being used by the ML being described. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,6 +249,10 @@ impl DescribeModelOutputBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset being used by the ML being described. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -251,6 +263,10 @@ impl DescribeModelOutputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -260,6 +276,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
     pub fn labels_input_configuration(
@@ -277,6 +297,12 @@ impl DescribeModelOutputBuilder {
         self.labels_input_configuration = input;
         self
     }
+    /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
+    pub fn get_labels_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
+        &self.labels_input_configuration
+    }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
     pub fn training_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.training_data_start_time = ::std::option::Option::Some(input);
@@ -289,6 +315,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.training_data_start_time = input;
         self
+    }
+    /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
+    pub fn get_training_data_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_data_start_time
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
     pub fn training_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -303,6 +335,12 @@ impl DescribeModelOutputBuilder {
         self.training_data_end_time = input;
         self
     }
+    /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
+    pub fn get_training_data_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_data_end_time
+    }
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_data_start_time = ::std::option::Option::Some(input);
@@ -315,6 +353,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.evaluation_data_start_time = input;
         self
+    }
+    /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_data_start_time
     }
     /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -329,6 +373,12 @@ impl DescribeModelOutputBuilder {
         self.evaluation_data_end_time = input;
         self
     }
+    /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_data_end_time
+    }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -338,6 +388,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
@@ -357,6 +411,13 @@ impl DescribeModelOutputBuilder {
         self.data_pre_processing_configuration = input;
         self
     }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    pub fn get_data_pre_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
+        &self.data_pre_processing_configuration
+    }
     /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -366,6 +427,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
     }
     /// <p>Indicates the time at which the training of the ML model began. </p>
     pub fn training_execution_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -380,6 +445,12 @@ impl DescribeModelOutputBuilder {
         self.training_execution_start_time = input;
         self
     }
+    /// <p>Indicates the time at which the training of the ML model began. </p>
+    pub fn get_training_execution_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_execution_start_time
+    }
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
     pub fn training_execution_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.training_execution_end_time = ::std::option::Option::Some(input);
@@ -392,6 +463,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.training_execution_end_time = input;
         self
+    }
+    /// <p>Indicates the time at which the training of the ML model was completed. </p>
+    pub fn get_training_execution_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_execution_end_time
     }
     /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
     pub fn failed_reason(
@@ -409,6 +486,10 @@ impl DescribeModelOutputBuilder {
         self.failed_reason = input;
         self
     }
+    /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
+    pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failed_reason
+    }
     /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
     pub fn model_metrics(
         mut self,
@@ -425,6 +506,10 @@ impl DescribeModelOutputBuilder {
         self.model_metrics = input;
         self
     }
+    /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
+    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_metrics
+    }
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -438,6 +523,10 @@ impl DescribeModelOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Indicates the time and date at which the ML model was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -450,6 +539,10 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Indicates the time and date at which the ML model was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(
@@ -467,6 +560,10 @@ impl DescribeModelOutputBuilder {
         self.server_side_kms_key_id = input;
         self
     }
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_kms_key_id
+    }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub fn off_condition(
         mut self,
@@ -482,6 +579,10 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.off_condition = input;
         self
+    }
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.off_condition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

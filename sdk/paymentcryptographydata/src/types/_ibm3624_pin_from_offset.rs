@@ -70,6 +70,10 @@ impl Ibm3624PinFromOffsetBuilder {
         self.decimalization_table = input;
         self
     }
+    /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
+    pub fn get_decimalization_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decimalization_table
+    }
     /// <p>The padding character for validation data.</p>
     pub fn pin_validation_data_pad_character(
         mut self,
@@ -85,6 +89,12 @@ impl Ibm3624PinFromOffsetBuilder {
     ) -> Self {
         self.pin_validation_data_pad_character = input;
         self
+    }
+    /// <p>The padding character for validation data.</p>
+    pub fn get_pin_validation_data_pad_character(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pin_validation_data_pad_character
     }
     /// <p>The unique data for cardholder identification.</p>
     pub fn pin_validation_data(
@@ -102,6 +112,10 @@ impl Ibm3624PinFromOffsetBuilder {
         self.pin_validation_data = input;
         self
     }
+    /// <p>The unique data for cardholder identification.</p>
+    pub fn get_pin_validation_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pin_validation_data
+    }
     /// <p>The PIN offset value.</p>
     pub fn pin_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_offset = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl Ibm3624PinFromOffsetBuilder {
     pub fn set_pin_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pin_offset = input;
         self
+    }
+    /// <p>The PIN offset value.</p>
+    pub fn get_pin_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pin_offset
     }
     /// Consumes the builder and constructs a [`Ibm3624PinFromOffset`](crate::types::Ibm3624PinFromOffset).
     pub fn build(self) -> crate::types::Ibm3624PinFromOffset {

@@ -40,6 +40,13 @@ impl ResumeGameServerGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResumeGameServerGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ResumeGameServerGroupFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// Appends an item to `ResumeActions`.
     ///
     /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
@@ -152,5 +163,11 @@ impl ResumeGameServerGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resume_actions(input);
         self
+    }
+    /// <p>The activity to resume for this game server group.</p>
+    pub fn get_resume_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        self.inner.get_resume_actions()
     }
 }

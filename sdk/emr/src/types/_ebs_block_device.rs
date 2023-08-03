@@ -53,6 +53,12 @@ impl EbsBlockDeviceBuilder {
         self.volume_specification = input;
         self
     }
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
+    pub fn get_volume_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeSpecification> {
+        &self.volume_specification
+    }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl EbsBlockDeviceBuilder {
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device = input;
         self
+    }
+    /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
     }
     /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::types::EbsBlockDevice).
     pub fn build(self) -> crate::types::EbsBlockDevice {

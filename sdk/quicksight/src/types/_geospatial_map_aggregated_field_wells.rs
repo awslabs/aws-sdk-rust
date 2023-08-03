@@ -65,6 +65,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
         self.geospatial = input;
         self
     }
+    /// <p>The geospatial field wells of a geospatial map. Values are grouped by geospatial fields.</p>
+    pub fn get_geospatial(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.geospatial
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -84,6 +90,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The size field wells of a geospatial map. Values are aggregated based on geospatial fields.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
+    }
     /// Appends an item to `colors`.
     ///
     /// To override the contents of this collection use [`set_colors`](Self::set_colors).
@@ -102,6 +114,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
     ) -> Self {
         self.colors = input;
         self
+    }
+    /// <p>The color field wells of a geospatial map.</p>
+    pub fn get_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.colors
     }
     /// Consumes the builder and constructs a [`GeospatialMapAggregatedFieldWells`](crate::types::GeospatialMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::GeospatialMapAggregatedFieldWells {

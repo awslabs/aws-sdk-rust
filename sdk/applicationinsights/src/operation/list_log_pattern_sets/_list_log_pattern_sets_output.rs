@@ -70,6 +70,10 @@ impl ListLogPatternSetsOutputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// Appends an item to `log_pattern_sets`.
     ///
     /// To override the contents of this collection use [`set_log_pattern_sets`](Self::set_log_pattern_sets).
@@ -92,6 +96,12 @@ impl ListLogPatternSetsOutputBuilder {
         self.log_pattern_sets = input;
         self
     }
+    /// <p>The list of log pattern sets.</p>
+    pub fn get_log_pattern_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_pattern_sets
+    }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl ListLogPatternSetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

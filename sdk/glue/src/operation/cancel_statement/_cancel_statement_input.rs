@@ -55,6 +55,10 @@ impl CancelStatementInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The Session ID of the statement to be cancelled.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The ID of the statement to be cancelled.</p>
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl CancelStatementInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the statement to be cancelled.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p>The origin of the request to cancel the statement.</p>
     pub fn request_origin(
@@ -80,6 +88,10 @@ impl CancelStatementInputBuilder {
     ) -> Self {
         self.request_origin = input;
         self
+    }
+    /// <p>The origin of the request to cancel the statement.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
     pub fn build(

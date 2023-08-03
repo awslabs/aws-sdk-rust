@@ -37,6 +37,12 @@ impl CreateVpnGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpnGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateVpnGatewayFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone for the virtual private gateway.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>The type of VPN connection this virtual private gateway supports.</p>
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -142,6 +152,10 @@ impl CreateVpnGatewayFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of VPN connection this virtual private gateway supports.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        self.inner.get_type()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -160,6 +174,12 @@ impl CreateVpnGatewayFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the virtual private gateway.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
     /// <p>Default: 64512</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -172,6 +192,11 @@ impl CreateVpnGatewayFluentBuilder {
         self.inner = self.inner.set_amazon_side_asn(input);
         self
     }
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+    /// <p>Default: 64512</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amazon_side_asn()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -181,5 +206,9 @@ impl CreateVpnGatewayFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

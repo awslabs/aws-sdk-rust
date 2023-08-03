@@ -94,6 +94,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Appends an item to `steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
@@ -113,6 +117,12 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self.steps = input;
         self
     }
+    /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
+    pub fn get_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
+        &self.steps
+    }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(
         mut self,
@@ -128,6 +138,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     ) -> Self {
         self.workflow_build_version_arn = input;
         self
+    }
+    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_build_version_arn
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub fn workflow_execution_id(
@@ -145,6 +159,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self.workflow_execution_id = input;
         self
     }
+    /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
+    pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_execution_id
+    }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(
         mut self,
@@ -161,6 +179,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self.image_build_version_arn = input;
         self
     }
+    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
+    }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -171,6 +193,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>The output message from the list action, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -180,6 +206,10 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

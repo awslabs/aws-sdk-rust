@@ -51,6 +51,12 @@ impl IntegrateServicesBuilder {
         self.athena_integrations = input;
         self
     }
+    /// <p>Information about the integration with Amazon Athena.</p>
+    pub fn get_athena_integrations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>> {
+        &self.athena_integrations
+    }
     /// Consumes the builder and constructs a [`IntegrateServices`](crate::types::IntegrateServices).
     pub fn build(self) -> crate::types::IntegrateServices {
         crate::types::IntegrateServices {

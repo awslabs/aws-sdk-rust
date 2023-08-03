@@ -58,6 +58,12 @@ impl BatchImportFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchImportFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_import_findings::builders::BatchImportFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -154,5 +160,11 @@ impl BatchImportFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_findings(input);
         self
+    }
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    pub fn get_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
+        self.inner.get_findings()
     }
 }

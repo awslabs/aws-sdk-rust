@@ -49,6 +49,12 @@ impl StartOrganizationServiceAccessUpdateOutputBuilder {
         self.organization_status = input;
         self
     }
+    /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
+    pub fn get_organization_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationStatus> {
+        &self.organization_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

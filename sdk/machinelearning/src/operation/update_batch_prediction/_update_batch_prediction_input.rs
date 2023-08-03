@@ -55,6 +55,10 @@ impl UpdateBatchPredictionInputBuilder {
         self.batch_prediction_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_id
+    }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub fn batch_prediction_name(
         mut self,
@@ -70,6 +74,10 @@ impl UpdateBatchPredictionInputBuilder {
     ) -> Self {
         self.batch_prediction_name = input;
         self
+    }
+    /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_name
     }
     /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl UpdateRoomInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateRoomInputBuilder {
         self.room_id = input;
         self
     }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
+    }
     /// <p>The room name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateRoomInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The room name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
     pub fn build(

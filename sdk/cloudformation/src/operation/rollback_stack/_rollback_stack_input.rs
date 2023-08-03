@@ -55,6 +55,10 @@ impl RollbackStackInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name that's associated with the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RollbackStackInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub fn client_request_token(
@@ -80,6 +88,10 @@ impl RollbackStackInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
     pub fn build(

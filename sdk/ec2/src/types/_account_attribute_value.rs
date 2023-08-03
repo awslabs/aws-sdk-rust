@@ -46,6 +46,10 @@ impl AccountAttributeValueBuilder {
         self.attribute_value = input;
         self
     }
+    /// <p>The value of the attribute.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
+    }
     /// Consumes the builder and constructs a [`AccountAttributeValue`](crate::types::AccountAttributeValue).
     pub fn build(self) -> crate::types::AccountAttributeValue {
         crate::types::AccountAttributeValue {

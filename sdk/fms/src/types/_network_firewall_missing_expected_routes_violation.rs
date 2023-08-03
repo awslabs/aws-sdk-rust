@@ -63,6 +63,10 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>The target of the violation.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// Appends an item to `expected_routes`.
     ///
     /// To override the contents of this collection use [`set_expected_routes`](Self::set_expected_routes).
@@ -82,6 +86,12 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
         self.expected_routes = input;
         self
     }
+    /// <p>The expected routes.</p>
+    pub fn get_expected_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
+        &self.expected_routes
+    }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallMissingExpectedRoutesViolation {

@@ -36,6 +36,12 @@ impl CreateContextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContext as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_context::builders::CreateContextInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateContextFluentBuilder {
         self.inner = self.inner.set_context_name(input);
         self
     }
+    /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context_name()
+    }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ContextSource) -> Self {
         self.inner = self.inner.source(input);
@@ -127,6 +137,10 @@ impl CreateContextFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ContextSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ContextSource> {
+        self.inner.get_source()
     }
     /// <p>The context type.</p>
     pub fn context_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +152,10 @@ impl CreateContextFluentBuilder {
         self.inner = self.inner.set_context_type(input);
         self
     }
+    /// <p>The context type.</p>
+    pub fn get_context_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context_type()
+    }
     /// <p>The description of the context.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +165,10 @@ impl CreateContextFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the context.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Properties`.
     ///
@@ -171,6 +193,14 @@ impl CreateContextFluentBuilder {
         self.inner = self.inner.set_properties(input);
         self
     }
+    /// <p>A list of properties to add to the context.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_properties()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -187,5 +217,9 @@ impl CreateContextFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to apply to the context.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

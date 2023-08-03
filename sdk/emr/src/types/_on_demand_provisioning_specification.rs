@@ -64,6 +64,12 @@ impl OnDemandProvisioningSpecificationBuilder {
         self.allocation_strategy = input;
         self
     }
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    pub fn get_allocation_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy> {
+        &self.allocation_strategy
+    }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
     pub fn capacity_reservation_options(
         mut self,
@@ -79,6 +85,12 @@ impl OnDemandProvisioningSpecificationBuilder {
     ) -> Self {
         self.capacity_reservation_options = input;
         self
+    }
+    /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
+    pub fn get_capacity_reservation_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnDemandCapacityReservationOptions> {
+        &self.capacity_reservation_options
     }
     /// Consumes the builder and constructs a [`OnDemandProvisioningSpecification`](crate::types::OnDemandProvisioningSpecification).
     pub fn build(self) -> crate::types::OnDemandProvisioningSpecification {

@@ -104,6 +104,10 @@ impl JobSummaryBuilder {
         self.job_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) for the job. </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p> The unique ID for the job. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl JobSummaryBuilder {
         self.job_id = input;
         self
     }
+    /// <p> The unique ID for the job. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl JobSummaryBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
+    }
+    /// <p> The commit ID from a third-party repository provider for the job. </p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
     pub fn commit_message(
@@ -140,6 +152,10 @@ impl JobSummaryBuilder {
         self.commit_message = input;
         self
     }
+    /// <p> The commit message from a third-party repository provider for the job. </p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_message
+    }
     /// <p> The commit date and time for the job. </p>
     pub fn commit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.commit_time = ::std::option::Option::Some(input);
@@ -152,6 +168,10 @@ impl JobSummaryBuilder {
     ) -> Self {
         self.commit_time = input;
         self
+    }
+    /// <p> The commit date and time for the job. </p>
+    pub fn get_commit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.commit_time
     }
     /// <p> The start date and time for the job. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -166,6 +186,10 @@ impl JobSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The start date and time for the job. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The current status for the job. </p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -175,6 +199,10 @@ impl JobSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The current status for the job. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p> The end date and time for the job. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -189,6 +217,10 @@ impl JobSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p> The end date and time for the job. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
@@ -198,6 +230,10 @@ impl JobSummaryBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
+    }
+    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {

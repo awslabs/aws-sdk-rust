@@ -60,6 +60,12 @@ impl CalculateRouteCarModeOptionsBuilder {
         self.avoid_ferries = input;
         self
     }
+    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_avoid_ferries(&self) -> &::std::option::Option<bool> {
+        &self.avoid_ferries
+    }
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
@@ -73,6 +79,12 @@ impl CalculateRouteCarModeOptionsBuilder {
     pub fn set_avoid_tolls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.avoid_tolls = input;
         self
+    }
+    /// <p>Avoids tolls when calculating routes.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn get_avoid_tolls(&self) -> &::std::option::Option<bool> {
+        &self.avoid_tolls
     }
     /// Consumes the builder and constructs a [`CalculateRouteCarModeOptions`](crate::types::CalculateRouteCarModeOptions).
     pub fn build(self) -> crate::types::CalculateRouteCarModeOptions {

@@ -36,6 +36,10 @@ impl CancelQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelQuery as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_query::builders::CancelQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,11 @@ impl CancelQueryFluentBuilder {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+    #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
+    }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
@@ -135,5 +144,9 @@ impl CancelQueryFluentBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
+    }
+    /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
 }

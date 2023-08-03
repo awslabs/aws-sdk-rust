@@ -56,6 +56,10 @@ impl BatchGetVariableErrorBuilder {
         self.name = input;
         self
     }
+    /// <p>The error name. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The error code. </p>
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl BatchGetVariableErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code. </p>
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
+    }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BatchGetVariableErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetVariableError`](crate::types::BatchGetVariableError).
     pub fn build(self) -> crate::types::BatchGetVariableError {

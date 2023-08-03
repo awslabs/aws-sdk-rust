@@ -63,6 +63,10 @@ impl GetCustomEntityTypeOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom pattern that you retrieved.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
     pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_string = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetCustomEntityTypeOutputBuilder {
     pub fn set_regex_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_string = input;
         self
+    }
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub fn get_regex_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_string
     }
     /// Appends an item to `context_words`.
     ///
@@ -94,6 +102,12 @@ impl GetCustomEntityTypeOutputBuilder {
     ) -> Self {
         self.context_words = input;
         self
+    }
+    /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    pub fn get_context_words(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.context_words
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

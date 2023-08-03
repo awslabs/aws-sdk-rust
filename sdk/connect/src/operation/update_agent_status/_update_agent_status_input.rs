@@ -88,6 +88,10 @@ impl UpdateAgentStatusInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(
         mut self,
@@ -104,6 +108,10 @@ impl UpdateAgentStatusInputBuilder {
         self.agent_status_id = input;
         self
     }
+    /// <p>The identifier of the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_id
+    }
     /// <p>The name of the agent status.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl UpdateAgentStatusInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the agent status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the agent status.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl UpdateAgentStatusInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the agent status.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the agent status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -137,6 +153,10 @@ impl UpdateAgentStatusInputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the agent status.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
+        &self.state
+    }
     /// <p>The display order of the agent status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
         self.display_order = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl UpdateAgentStatusInputBuilder {
         self.display_order = input;
         self
     }
+    /// <p>The display order of the agent status.</p>
+    pub fn get_display_order(&self) -> &::std::option::Option<i32> {
+        &self.display_order
+    }
     /// <p>A number indicating the reset order of the agent status.</p>
     pub fn reset_order_number(mut self, input: bool) -> Self {
         self.reset_order_number = ::std::option::Option::Some(input);
@@ -156,6 +180,10 @@ impl UpdateAgentStatusInputBuilder {
     pub fn set_reset_order_number(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_order_number = input;
         self
+    }
+    /// <p>A number indicating the reset order of the agent status.</p>
+    pub fn get_reset_order_number(&self) -> &::std::option::Option<bool> {
+        &self.reset_order_number
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
     pub fn build(

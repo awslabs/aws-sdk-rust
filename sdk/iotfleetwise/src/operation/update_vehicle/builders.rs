@@ -36,6 +36,12 @@ impl UpdateVehicleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVehicle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vehicle::builders::UpdateVehicleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateVehicleFluentBuilder {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
+    /// <p>The unique ID of the vehicle to update.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vehicle_name()
+    }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn model_manifest_arn(
         mut self,
@@ -134,6 +144,10 @@ impl UpdateVehicleFluentBuilder {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }
+    /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_manifest_arn()
+    }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -149,6 +163,10 @@ impl UpdateVehicleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_decoder_manifest_arn(input);
         self
+    }
+    /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_decoder_manifest_arn()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -175,6 +193,15 @@ impl UpdateVehicleFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
+    }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
     pub fn attribute_update_mode(mut self, input: crate::types::UpdateMode) -> Self {
@@ -189,5 +216,10 @@ impl UpdateVehicleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_update_mode(input);
         self
+    }
+    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+    /// <p>This is required if attributes are present in the input.</p>
+    pub fn get_attribute_update_mode(&self) -> &::std::option::Option<crate::types::UpdateMode> {
+        self.inner.get_attribute_update_mode()
     }
 }

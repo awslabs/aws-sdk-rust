@@ -63,6 +63,10 @@ impl DisassociateExternalConnectionInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DisassociateExternalConnectionInputBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p>The name of the repository from which the external connection will be removed. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DisassociateExternalConnectionInputBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
+    }
+    /// <p>The name of the repository from which the external connection will be removed. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
     pub fn external_connection(
@@ -98,6 +110,10 @@ impl DisassociateExternalConnectionInputBuilder {
     ) -> Self {
         self.external_connection = input;
         self
+    }
+    /// <p>The name of the external connection to be removed from the repository. </p>
+    pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_connection
     }
     /// Consumes the builder and constructs a [`DisassociateExternalConnectionInput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionInput).
     pub fn build(

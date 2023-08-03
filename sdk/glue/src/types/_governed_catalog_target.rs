@@ -86,6 +86,10 @@ impl GovernedCatalogTargetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -104,6 +108,10 @@ impl GovernedCatalogTargetBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -124,6 +132,12 @@ impl GovernedCatalogTargetBuilder {
         self.partition_keys = input;
         self
     }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.partition_keys
+    }
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -134,6 +148,10 @@ impl GovernedCatalogTargetBuilder {
         self.table = input;
         self
     }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
+    }
     /// <p>The name of the database to write to.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -143,6 +161,10 @@ impl GovernedCatalogTargetBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
     pub fn schema_change_policy(mut self, input: crate::types::CatalogSchemaChangePolicy) -> Self {
@@ -156,6 +178,12 @@ impl GovernedCatalogTargetBuilder {
     ) -> Self {
         self.schema_change_policy = input;
         self
+    }
+    /// <p>A policy that specifies update behavior for the governed catalog.</p>
+    pub fn get_schema_change_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogSchemaChangePolicy> {
+        &self.schema_change_policy
     }
     /// Consumes the builder and constructs a [`GovernedCatalogTarget`](crate::types::GovernedCatalogTarget).
     pub fn build(self) -> crate::types::GovernedCatalogTarget {

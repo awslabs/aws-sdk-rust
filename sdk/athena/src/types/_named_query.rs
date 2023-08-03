@@ -80,6 +80,10 @@ impl NamedQueryBuilder {
         self.name = input;
         self
     }
+    /// <p>The query name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl NamedQueryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The query description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The database to which the query belongs.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl NamedQueryBuilder {
         self.database = input;
         self
     }
+    /// <p>The database to which the query belongs.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The SQL statements that make up the query.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl NamedQueryBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The SQL statements that make up the query.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The unique identifier of the query.</p>
     pub fn named_query_id(
@@ -126,6 +142,10 @@ impl NamedQueryBuilder {
         self.named_query_id = input;
         self
     }
+    /// <p>The unique identifier of the query.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.named_query_id
+    }
     /// <p>The name of the workgroup that contains the named query.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl NamedQueryBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the workgroup that contains the named query.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`NamedQuery`](crate::types::NamedQuery).
     pub fn build(self) -> crate::types::NamedQuery {

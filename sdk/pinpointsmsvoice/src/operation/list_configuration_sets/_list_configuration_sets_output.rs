@@ -69,6 +69,12 @@ impl ListConfigurationSetsOutputBuilder {
         self.configuration_sets = input;
         self
     }
+    /// An object that contains a list of configuration sets for your account in the current region.
+    pub fn get_configuration_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_sets
+    }
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListConfigurationSetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

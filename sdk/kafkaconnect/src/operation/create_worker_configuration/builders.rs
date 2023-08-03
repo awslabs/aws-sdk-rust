@@ -36,6 +36,10 @@ impl CreateWorkerConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkerConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateWorkerConfigurationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A summary description of the worker configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the worker configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +143,10 @@ impl CreateWorkerConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the worker configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub fn properties_file_content(
@@ -151,5 +163,9 @@ impl CreateWorkerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties_file_content(input);
         self
+    }
+    /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    pub fn get_properties_file_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_properties_file_content()
     }
 }

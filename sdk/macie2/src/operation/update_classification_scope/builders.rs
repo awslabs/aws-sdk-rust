@@ -36,6 +36,10 @@ impl UpdateClassificationScopeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateClassificationScope as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateClassificationScopeFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
     pub fn s3(mut self, input: crate::types::S3ClassificationScopeUpdate) -> Self {
         self.inner = self.inner.s3(input);
@@ -138,5 +146,9 @@ impl UpdateClassificationScopeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3(input);
         self
+    }
+    /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeUpdate> {
+        self.inner.get_s3()
     }
 }

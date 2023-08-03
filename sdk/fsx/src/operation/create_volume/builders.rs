@@ -36,6 +36,10 @@ impl CreateVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_volume::builders::CreateVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateVolumeFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.inner = self.inner.volume_type(input);
@@ -137,6 +145,10 @@ impl CreateVolumeFluentBuilder {
         self.inner = self.inner.set_volume_type(input);
         self
     }
+    /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        self.inner.get_volume_type()
+    }
     /// <p>Specifies the name of the volume that you're creating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -146,6 +158,10 @@ impl CreateVolumeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Specifies the name of the volume that you're creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
     pub fn ontap_configuration(
@@ -162,6 +178,12 @@ impl CreateVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
+        self.inner.get_ontap_configuration()
     }
     /// Appends an item to `Tags`.
     ///
@@ -180,6 +202,10 @@ impl CreateVolumeFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub fn open_zfs_configuration(
         mut self,
@@ -195,5 +221,11 @@ impl CreateVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

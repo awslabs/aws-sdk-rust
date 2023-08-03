@@ -40,6 +40,10 @@ impl IndTaxDocumentsBuilder {
         self.gstin = input;
         self
     }
+    /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
+    pub fn get_gstin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gstin
+    }
     /// Consumes the builder and constructs a [`IndTaxDocuments`](crate::types::IndTaxDocuments).
     pub fn build(self) -> crate::types::IndTaxDocuments {
         crate::types::IndTaxDocuments { gstin: self.gstin }

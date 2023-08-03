@@ -88,6 +88,10 @@ impl StateMachineListItemBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -116,6 +120,19 @@ impl StateMachineListItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state machine.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p></p>
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -129,6 +146,10 @@ impl StateMachineListItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p></p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
+        &self.r#type
+    }
     /// <p>The date the state machine is created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -141,6 +162,10 @@ impl StateMachineListItemBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the state machine is created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`StateMachineListItem`](crate::types::StateMachineListItem).
     pub fn build(self) -> crate::types::StateMachineListItem {

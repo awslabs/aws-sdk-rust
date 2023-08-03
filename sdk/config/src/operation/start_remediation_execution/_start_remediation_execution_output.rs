@@ -60,6 +60,10 @@ impl StartRemediationExecutionOutputBuilder {
         self.failure_message = input;
         self
     }
+    /// <p>Returns a failure message. For example, the resource is already compliant.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// Appends an item to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -78,6 +82,12 @@ impl StartRemediationExecutionOutputBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl GetFeatureInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the feature.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the feature that you want to retrieve information for.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetFeatureInputBuilder {
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature = input;
         self
+    }
+    /// <p>The name of the feature that you want to retrieve information for.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
     pub fn build(

@@ -56,6 +56,12 @@ impl CopyActionBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
+        &self.lifecycle
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(
         mut self,
@@ -71,6 +77,12 @@ impl CopyActionBuilder {
     ) -> Self {
         self.destination_backup_vault_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn get_destination_backup_vault_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_backup_vault_arn
     }
     /// Consumes the builder and constructs a [`CopyAction`](crate::types::CopyAction).
     pub fn build(self) -> crate::types::CopyAction {

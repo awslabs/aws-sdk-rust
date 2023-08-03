@@ -58,6 +58,10 @@ impl ListStreamingSessionBackupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `streaming_session_backups`.
     ///
     /// To override the contents of this collection use [`set_streaming_session_backups`](Self::set_streaming_session_backups).
@@ -79,6 +83,12 @@ impl ListStreamingSessionBackupsOutputBuilder {
     ) -> Self {
         self.streaming_session_backups = input;
         self
+    }
+    /// <p>Information about the streaming session backups.</p>
+    pub fn get_streaming_session_backups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>> {
+        &self.streaming_session_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

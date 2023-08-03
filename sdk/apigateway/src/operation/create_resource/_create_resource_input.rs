@@ -56,6 +56,10 @@ impl CreateResourceInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The parent resource's identifier.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateResourceInputBuilder {
         self.parent_id = input;
         self
     }
+    /// <p>The parent resource's identifier.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_id
+    }
     /// <p>The last path segment for this resource.</p>
     pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_part = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CreateResourceInputBuilder {
     pub fn set_path_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_part = input;
         self
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn get_path_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_part
     }
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(

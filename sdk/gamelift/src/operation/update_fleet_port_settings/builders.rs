@@ -41,6 +41,13 @@ impl UpdateFleetPortSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFleetPortSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// Appends an item to `InboundPermissionAuthorizations`.
     ///
     /// To override the contents of this collection use [`set_inbound_permission_authorizations`](Self::set_inbound_permission_authorizations).
@@ -148,6 +159,12 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self.inner = self.inner.set_inbound_permission_authorizations(input);
         self
     }
+    /// <p>A collection of port settings to be added to the fleet resource.</p>
+    pub fn get_inbound_permission_authorizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        self.inner.get_inbound_permission_authorizations()
+    }
     /// Appends an item to `InboundPermissionRevocations`.
     ///
     /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
@@ -164,5 +181,11 @@ impl UpdateFleetPortSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_inbound_permission_revocations(input);
         self
+    }
+    /// <p>A collection of port settings to be removed from the fleet resource.</p>
+    pub fn get_inbound_permission_revocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        self.inner.get_inbound_permission_revocations()
     }
 }

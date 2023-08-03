@@ -71,6 +71,12 @@ impl ListQueryLoggingConfigsOutputBuilder {
         self.query_logging_configs = input;
         self
     }
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
+    pub fn get_query_logging_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
+        &self.query_logging_configs
+    }
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,6 +88,11 @@ impl ListQueryLoggingConfigsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

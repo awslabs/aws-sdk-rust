@@ -57,6 +57,12 @@ impl DisassociateResolverRuleOutputBuilder {
         self.resolver_rule_association = input;
         self
     }
+    /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
+    pub fn get_resolver_rule_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverRuleAssociation> {
+        &self.resolver_rule_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

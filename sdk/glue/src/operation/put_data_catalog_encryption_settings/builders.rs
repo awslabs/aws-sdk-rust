@@ -36,6 +36,10 @@ impl PutDataCatalogEncryptionSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDataCatalogEncryptionSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutDataCatalogEncryptionSettingsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The security configuration to set.</p>
     pub fn data_catalog_encryption_settings(
         mut self,
@@ -115,5 +123,11 @@ impl PutDataCatalogEncryptionSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_catalog_encryption_settings(input);
         self
+    }
+    /// <p>The security configuration to set.</p>
+    pub fn get_data_catalog_encryption_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCatalogEncryptionSettings> {
+        self.inner.get_data_catalog_encryption_settings()
     }
 }

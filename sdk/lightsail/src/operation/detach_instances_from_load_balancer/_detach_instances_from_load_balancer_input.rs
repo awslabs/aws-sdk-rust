@@ -53,6 +53,10 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the Lightsail load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `instance_names`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -74,6 +78,12 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     ) -> Self {
         self.instance_names = input;
         self
+    }
+    /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
     }
     /// Consumes the builder and constructs a [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
     pub fn build(

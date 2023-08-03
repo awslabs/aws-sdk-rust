@@ -128,6 +128,10 @@ impl ModelPackagingDescriptionBuilder {
         self.job_name = input;
         self
     }
+    /// <p> The name of the model packaging job. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The name of the project that's associated with a model that's in the model package. </p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl ModelPackagingDescriptionBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project that's associated with a model that's in the model package. </p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The version of the model used in the model packaging job. </p>
     pub fn model_version(
@@ -154,6 +162,10 @@ impl ModelPackagingDescriptionBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model used in the model packaging job. </p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p> The configuration information used in the model packaging job. </p>
     pub fn model_packaging_configuration(
         mut self,
@@ -169,6 +181,12 @@ impl ModelPackagingDescriptionBuilder {
     ) -> Self {
         self.model_packaging_configuration = input;
         self
+    }
+    /// <p> The configuration information used in the model packaging job. </p>
+    pub fn get_model_packaging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
+        &self.model_packaging_configuration
     }
     /// <p>The description for the model packaging job. </p>
     pub fn model_packaging_job_description(
@@ -186,6 +204,12 @@ impl ModelPackagingDescriptionBuilder {
         self.model_packaging_job_description = input;
         self
     }
+    /// <p>The description for the model packaging job. </p>
+    pub fn get_model_packaging_job_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.model_packaging_job_description
+    }
     /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
     pub fn model_packaging_method(
         mut self,
@@ -201,6 +225,10 @@ impl ModelPackagingDescriptionBuilder {
     ) -> Self {
         self.model_packaging_method = input;
         self
+    }
+    /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    pub fn get_model_packaging_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_packaging_method
     }
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
     pub fn model_packaging_output_details(
@@ -218,6 +246,12 @@ impl ModelPackagingDescriptionBuilder {
         self.model_packaging_output_details = input;
         self
     }
+    /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+    pub fn get_model_packaging_output_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackagingOutputDetails> {
+        &self.model_packaging_output_details
+    }
     /// <p> The status of the model packaging job. </p>
     pub fn status(mut self, input: crate::types::ModelPackagingJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -230,6 +264,10 @@ impl ModelPackagingDescriptionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the model packaging job. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelPackagingJobStatus> {
+        &self.status
     }
     /// <p> The status message for the model packaging job. </p>
     pub fn status_message(
@@ -247,6 +285,10 @@ impl ModelPackagingDescriptionBuilder {
         self.status_message = input;
         self
     }
+    /// <p> The status message for the model packaging job. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -260,6 +302,10 @@ impl ModelPackagingDescriptionBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -272,6 +318,12 @@ impl ModelPackagingDescriptionBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ModelPackagingDescription`](crate::types::ModelPackagingDescription).
     pub fn build(self) -> crate::types::ModelPackagingDescription {

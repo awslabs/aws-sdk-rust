@@ -87,6 +87,10 @@ impl ScalingConfigurationInfoBuilder {
         self.min_capacity = input;
         self
     }
+    /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    pub fn get_min_capacity(&self) -> &::std::option::Option<i32> {
+        &self.min_capacity
+    }
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl ScalingConfigurationInfoBuilder {
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity = input;
         self
+    }
+    /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
     }
     /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
@@ -109,6 +117,11 @@ impl ScalingConfigurationInfoBuilder {
         self.auto_pause = input;
         self
     }
+    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
+    pub fn get_auto_pause(&self) -> &::std::option::Option<bool> {
+        &self.auto_pause
+    }
     /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code> mode is paused. A DB cluster can be paused only when it's idle (it has no connections).</p>
     pub fn seconds_until_auto_pause(mut self, input: i32) -> Self {
         self.seconds_until_auto_pause = ::std::option::Option::Some(input);
@@ -118,6 +131,10 @@ impl ScalingConfigurationInfoBuilder {
     pub fn set_seconds_until_auto_pause(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds_until_auto_pause = input;
         self
+    }
+    /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code> mode is paused. A DB cluster can be paused only when it's idle (it has no connections).</p>
+    pub fn get_seconds_until_auto_pause(&self) -> &::std::option::Option<i32> {
+        &self.seconds_until_auto_pause
     }
     /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
@@ -139,6 +156,12 @@ impl ScalingConfigurationInfoBuilder {
         self.timeout_action = input;
         self
     }
+    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
+    /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
+    pub fn get_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timeout_action
+    }
     /// <p>The number of seconds before scaling times out. What happens when an attempted scaling action times out is determined by the <code>TimeoutAction</code> setting.</p>
     pub fn seconds_before_timeout(mut self, input: i32) -> Self {
         self.seconds_before_timeout = ::std::option::Option::Some(input);
@@ -148,6 +171,10 @@ impl ScalingConfigurationInfoBuilder {
     pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds_before_timeout = input;
         self
+    }
+    /// <p>The number of seconds before scaling times out. What happens when an attempted scaling action times out is determined by the <code>TimeoutAction</code> setting.</p>
+    pub fn get_seconds_before_timeout(&self) -> &::std::option::Option<i32> {
+        &self.seconds_before_timeout
     }
     /// Consumes the builder and constructs a [`ScalingConfigurationInfo`](crate::types::ScalingConfigurationInfo).
     pub fn build(self) -> crate::types::ScalingConfigurationInfo {

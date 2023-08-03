@@ -52,6 +52,10 @@ impl ResourceEndpointListItemBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ChannelProtocol> {
+        &self.protocol
+    }
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     pub fn resource_endpoint(
         mut self,
@@ -67,6 +71,10 @@ impl ResourceEndpointListItemBuilder {
     ) -> Self {
         self.resource_endpoint = input;
         self
+    }
+    /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
+    pub fn get_resource_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_endpoint
     }
     /// Consumes the builder and constructs a [`ResourceEndpointListItem`](crate::types::ResourceEndpointListItem).
     pub fn build(self) -> crate::types::ResourceEndpointListItem {

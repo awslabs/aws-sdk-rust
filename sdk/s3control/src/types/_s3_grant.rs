@@ -49,6 +49,10 @@ impl S3GrantBuilder {
         self
     }
     /// <p></p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::S3Grantee> {
+        &self.grantee
+    }
+    /// <p></p>
     pub fn permission(mut self, input: crate::types::S3Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self
@@ -60,6 +64,10 @@ impl S3GrantBuilder {
     ) -> Self {
         self.permission = input;
         self
+    }
+    /// <p></p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::S3Permission> {
+        &self.permission
     }
     /// Consumes the builder and constructs a [`S3Grant`](crate::types::S3Grant).
     pub fn build(self) -> crate::types::S3Grant {

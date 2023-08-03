@@ -62,6 +62,10 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
         self.vpc = input;
         self
     }
+    /// <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        &self.vpc
+    }
     /// <p> <i>Optional:</i> A comment about the disassociation request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p> <i>Optional:</i> A comment about the disassociation request.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`DisassociateVpcFromHostedZoneInput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl DescribeContactFlowOutputBuilder {
         self.contact_flow = input;
         self
     }
+    /// <p>Information about the flow.</p>
+    pub fn get_contact_flow(&self) -> &::std::option::Option<crate::types::ContactFlow> {
+        &self.contact_flow
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

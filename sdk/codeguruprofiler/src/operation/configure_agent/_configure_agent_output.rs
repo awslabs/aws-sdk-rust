@@ -50,6 +50,10 @@ impl ConfigureAgentOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AgentConfiguration> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -92,6 +92,12 @@ impl CreateUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
@@ -109,6 +115,12 @@ impl CreateUserInputBuilder {
         self.message_action = input;
         self
     }
+    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
+    /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
+    /// </note>
+    pub fn get_message_action(&self) -> &::std::option::Option<crate::types::MessageAction> {
+        &self.message_action
+    }
     /// <p>The first name, or given name, of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl CreateUserInputBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name, or given name, of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name, or surname, of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl CreateUserInputBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name, or surname, of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>The authentication type for the user. You must specify USERPOOL. </p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -141,6 +161,12 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.authentication_type = input;
         self
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL. </p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

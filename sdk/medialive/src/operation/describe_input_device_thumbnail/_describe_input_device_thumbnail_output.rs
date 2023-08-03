@@ -79,6 +79,10 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self.body = input;
         self
     }
+    /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
+    }
     /// Specifies the media type of the thumbnail.
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self.content_type = input;
         self
     }
+    /// Specifies the media type of the thumbnail.
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
+        &self.content_type
+    }
     /// The length of the content.
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self.content_length = input;
         self
     }
+    /// The length of the content.
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
+    }
     /// The unique, cacheable version of this thumbnail.
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// The unique, cacheable version of this thumbnail.
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// The date and time the thumbnail was last updated at the device.
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -124,6 +140,10 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// The date and time the thumbnail was last updated at the device.
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

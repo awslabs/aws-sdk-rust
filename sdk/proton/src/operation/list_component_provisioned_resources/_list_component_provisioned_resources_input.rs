@@ -53,6 +53,10 @@ impl ListComponentProvisionedResourcesInputBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component whose provisioned resources you want.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl ListComponentProvisionedResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentProvisionedResourcesInput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput, ::aws_smithy_http::operation::error::BuildError>{

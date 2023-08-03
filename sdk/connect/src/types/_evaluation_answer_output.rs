@@ -53,6 +53,10 @@ impl EvaluationAnswerOutputBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for an answer in a contact evaluation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
+        &self.value
+    }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn system_suggested_value(mut self, input: crate::types::EvaluationAnswerData) -> Self {
         self.system_suggested_value = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl EvaluationAnswerOutputBuilder {
     ) -> Self {
         self.system_suggested_value = input;
         self
+    }
+    /// <p>The system suggested value for an answer in a contact evaluation.</p>
+    pub fn get_system_suggested_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
+        &self.system_suggested_value
     }
     /// Consumes the builder and constructs a [`EvaluationAnswerOutput`](crate::types::EvaluationAnswerOutput).
     pub fn build(self) -> crate::types::EvaluationAnswerOutput {

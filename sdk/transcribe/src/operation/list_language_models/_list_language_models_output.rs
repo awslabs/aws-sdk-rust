@@ -55,6 +55,10 @@ impl ListLanguageModelsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `models`.
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).
@@ -73,6 +77,12 @@ impl ListLanguageModelsOutputBuilder {
     ) -> Self {
         self.models = input;
         self
+    }
+    /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
+    pub fn get_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>> {
+        &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

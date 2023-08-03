@@ -54,6 +54,10 @@ impl ListConnectorDefinitionVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -72,6 +76,12 @@ impl ListConnectorDefinitionVersionsOutputBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// Information about a version.
+    pub fn get_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+        &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

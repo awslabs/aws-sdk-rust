@@ -71,6 +71,12 @@ impl DescribeComplianceByConfigRuleOutputBuilder {
         self.compliance_by_config_rules = input;
         self
     }
+    /// <p>Indicates whether each of the specified Config rules is compliant.</p>
+    pub fn get_compliance_by_config_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceByConfigRule>> {
+        &self.compliance_by_config_rules
+    }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl DescribeComplianceByConfigRuleOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

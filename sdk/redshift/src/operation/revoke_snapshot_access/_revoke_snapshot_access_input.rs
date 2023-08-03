@@ -71,6 +71,10 @@ impl RevokeSnapshotAccessInputBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the snapshot that the account can no longer access.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl RevokeSnapshotAccessInputBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(
@@ -97,6 +105,10 @@ impl RevokeSnapshotAccessInputBuilder {
         self.snapshot_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_cluster_identifier
+    }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
     pub fn account_with_restore_access(
         mut self,
@@ -112,6 +124,10 @@ impl RevokeSnapshotAccessInputBuilder {
     ) -> Self {
         self.account_with_restore_access = input;
         self
+    }
+    /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    pub fn get_account_with_restore_access(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_with_restore_access
     }
     /// Consumes the builder and constructs a [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
     pub fn build(

@@ -56,6 +56,12 @@ impl DeleteDbInstanceAutomatedBackupOutputBuilder {
         self.db_instance_automated_backup = input;
         self
     }
+    /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
+    pub fn get_db_instance_automated_backup(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbInstanceAutomatedBackup> {
+        &self.db_instance_automated_backup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

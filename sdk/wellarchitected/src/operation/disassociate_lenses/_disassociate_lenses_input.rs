@@ -51,6 +51,10 @@ impl DisassociateLensesInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// Appends an item to `lens_aliases`.
     ///
     /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
@@ -71,6 +75,13 @@ impl DisassociateLensesInputBuilder {
     ) -> Self {
         self.lens_aliases = input;
         self
+    }
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lens_aliases
     }
     /// Consumes the builder and constructs a [`DisassociateLensesInput`](crate::operation::disassociate_lenses::DisassociateLensesInput).
     pub fn build(

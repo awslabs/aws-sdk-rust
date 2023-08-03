@@ -36,6 +36,10 @@ impl ListDistributionsByWebACLIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDistributionsByWebACLId as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ListDistributionsByWebACLIdFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -136,6 +144,10 @@ impl ListDistributionsByWebACLIdFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_acl_id(input.into());
@@ -145,5 +157,9 @@ impl ListDistributionsByWebACLIdFluentBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_acl_id(input);
         self
+    }
+    /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_web_acl_id()
     }
 }

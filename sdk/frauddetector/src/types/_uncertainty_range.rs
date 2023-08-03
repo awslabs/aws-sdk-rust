@@ -48,6 +48,10 @@ impl UncertaintyRangeBuilder {
         self.lower_bound_value = input;
         self
     }
+    /// <p> The lower bound value of the area under curve (auc). </p>
+    pub fn get_lower_bound_value(&self) -> &::std::option::Option<f32> {
+        &self.lower_bound_value
+    }
     /// <p> The upper bound value of the area under curve (auc). </p>
     pub fn upper_bound_value(mut self, input: f32) -> Self {
         self.upper_bound_value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UncertaintyRangeBuilder {
     pub fn set_upper_bound_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound_value = input;
         self
+    }
+    /// <p> The upper bound value of the area under curve (auc). </p>
+    pub fn get_upper_bound_value(&self) -> &::std::option::Option<f32> {
+        &self.upper_bound_value
     }
     /// Consumes the builder and constructs a [`UncertaintyRange`](crate::types::UncertaintyRange).
     pub fn build(self) -> crate::types::UncertaintyRange {

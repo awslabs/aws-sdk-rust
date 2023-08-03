@@ -38,6 +38,10 @@ impl UntagQueueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagQueue as a reference.
+    pub fn as_input(&self) -> &crate::operation::untag_queue::builders::UntagQueueInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl UntagQueueFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -136,5 +144,9 @@ impl UntagQueueFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>The list of tags to be removed from the specified queue.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

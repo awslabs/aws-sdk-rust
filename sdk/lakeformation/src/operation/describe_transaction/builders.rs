@@ -36,6 +36,12 @@ impl DescribeTransactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTransaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeTransactionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The transaction for which to return status.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
 }

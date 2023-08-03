@@ -173,6 +173,18 @@ impl RuleConditionBuilder {
         self.field = input;
         self
     }
+    /// <p>The field in the HTTP request. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>http-header</code> </p> </li>
+    /// <li> <p> <code>http-request-method</code> </p> </li>
+    /// <li> <p> <code>host-header</code> </p> </li>
+    /// <li> <p> <code>path-pattern</code> </p> </li>
+    /// <li> <p> <code>query-string</code> </p> </li>
+    /// <li> <p> <code>source-ip</code> </p> </li>
+    /// </ul>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -222,6 +234,25 @@ impl RuleConditionBuilder {
         self.values = input;
         self
     }
+    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>- .</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
+    /// </ul>
+    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>_ - . $ / ~ " ' @ : +</p> </li>
+    /// <li> <p>&amp; (using &amp;)</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
+    /// </ul>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
     pub fn host_header_config(mut self, input: crate::types::HostHeaderConditionConfig) -> Self {
         self.host_header_config = ::std::option::Option::Some(input);
@@ -234,6 +265,12 @@ impl RuleConditionBuilder {
     ) -> Self {
         self.host_header_config = input;
         self
+    }
+    /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
+    pub fn get_host_header_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HostHeaderConditionConfig> {
+        &self.host_header_config
     }
     /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
     pub fn path_pattern_config(mut self, input: crate::types::PathPatternConditionConfig) -> Self {
@@ -248,6 +285,12 @@ impl RuleConditionBuilder {
         self.path_pattern_config = input;
         self
     }
+    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
+    pub fn get_path_pattern_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PathPatternConditionConfig> {
+        &self.path_pattern_config
+    }
     /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
     pub fn http_header_config(mut self, input: crate::types::HttpHeaderConditionConfig) -> Self {
         self.http_header_config = ::std::option::Option::Some(input);
@@ -261,6 +304,12 @@ impl RuleConditionBuilder {
         self.http_header_config = input;
         self
     }
+    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
+    pub fn get_http_header_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpHeaderConditionConfig> {
+        &self.http_header_config
+    }
     /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
     pub fn query_string_config(mut self, input: crate::types::QueryStringConditionConfig) -> Self {
         self.query_string_config = ::std::option::Option::Some(input);
@@ -273,6 +322,12 @@ impl RuleConditionBuilder {
     ) -> Self {
         self.query_string_config = input;
         self
+    }
+    /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
+    pub fn get_query_string_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryStringConditionConfig> {
+        &self.query_string_config
     }
     /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
     pub fn http_request_method_config(
@@ -290,6 +345,12 @@ impl RuleConditionBuilder {
         self.http_request_method_config = input;
         self
     }
+    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
+    pub fn get_http_request_method_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpRequestMethodConditionConfig> {
+        &self.http_request_method_config
+    }
     /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConditionConfig) -> Self {
         self.source_ip_config = ::std::option::Option::Some(input);
@@ -302,6 +363,12 @@ impl RuleConditionBuilder {
     ) -> Self {
         self.source_ip_config = input;
         self
+    }
+    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
+    pub fn get_source_ip_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceIpConditionConfig> {
+        &self.source_ip_config
     }
     /// Consumes the builder and constructs a [`RuleCondition`](crate::types::RuleCondition).
     pub fn build(self) -> crate::types::RuleCondition {

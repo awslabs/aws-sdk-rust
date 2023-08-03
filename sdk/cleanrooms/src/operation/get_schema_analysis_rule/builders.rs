@@ -36,6 +36,13 @@ impl GetSchemaAnalysisRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchemaAnalysisRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetSchemaAnalysisRuleFluentBuilder {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
+    /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collaboration_identifier()
+    }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +152,10 @@ impl GetSchemaAnalysisRuleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the schema to retrieve the analysis rule for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
     pub fn r#type(mut self, input: crate::types::AnalysisRuleType) -> Self {
@@ -154,5 +169,9 @@ impl GetSchemaAnalysisRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AnalysisRuleType> {
+        self.inner.get_type()
     }
 }

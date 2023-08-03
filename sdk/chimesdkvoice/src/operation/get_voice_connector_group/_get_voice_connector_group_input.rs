@@ -47,6 +47,10 @@ impl GetVoiceConnectorGroupInputBuilder {
         self.voice_connector_group_id = input;
         self
     }
+    /// <p>The Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_id
+    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorGroupInput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput).
     pub fn build(
         self,

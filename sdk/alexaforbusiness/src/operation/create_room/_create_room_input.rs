@@ -79,6 +79,10 @@ impl CreateRoomInputBuilder {
         self.room_name = input;
         self
     }
+    /// <p>The name for the room.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_name
+    }
     /// <p>The description for the room.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateRoomInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the room.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The profile ARN for the room. This is required.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreateRoomInputBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_arn = input;
         self
+    }
+    /// <p>The profile ARN for the room. This is required.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
     }
     /// <p>The calendar ARN for the room.</p>
     pub fn provider_calendar_id(
@@ -115,6 +127,10 @@ impl CreateRoomInputBuilder {
         self.provider_calendar_id = input;
         self
     }
+    /// <p>The calendar ARN for the room.</p>
+    pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_calendar_id
+    }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(
         mut self,
@@ -130,6 +146,10 @@ impl CreateRoomInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -149,6 +169,10 @@ impl CreateRoomInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the room.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
     pub fn build(

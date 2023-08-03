@@ -44,6 +44,13 @@ impl ValidateResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl ValidateResourcePolicyFluentBuilder {
         self.inner = self.inner.set_secret_id(input);
         self
     }
+    /// <p>This field is reserved for internal use.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_id()
+    }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(
         mut self,
@@ -149,5 +160,9 @@ impl ValidateResourcePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
+    }
+    /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_policy()
     }
 }

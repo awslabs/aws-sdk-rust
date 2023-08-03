@@ -70,6 +70,10 @@ impl NetworkInterfaceBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The network interface identifier. </p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The subnet identifier. </p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The subnet identifier. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The IPv4 address of the network interface within the subnet. </p>
     pub fn private_ip_address(
@@ -96,6 +104,10 @@ impl NetworkInterfaceBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The IPv4 address of the network interface within the subnet. </p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The Availability Zone. </p>
     pub fn availability_zone(
         mut self,
@@ -111,6 +123,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

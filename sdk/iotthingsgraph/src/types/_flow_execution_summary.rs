@@ -86,6 +86,10 @@ impl FlowExecutionSummaryBuilder {
         self.flow_execution_id = input;
         self
     }
+    /// <p>The ID of the flow execution.</p>
+    pub fn get_flow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_execution_id
+    }
     /// <p>The current status of the flow execution.</p>
     pub fn status(mut self, input: crate::types::FlowExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl FlowExecutionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the flow execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FlowExecutionStatus> {
+        &self.status
     }
     /// <p>The ID of the system instance that contains the flow.</p>
     pub fn system_instance_id(
@@ -115,6 +123,10 @@ impl FlowExecutionSummaryBuilder {
         self.system_instance_id = input;
         self
     }
+    /// <p>The ID of the system instance that contains the flow.</p>
+    pub fn get_system_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.system_instance_id
+    }
     /// <p>The ID of the flow.</p>
     pub fn flow_template_id(
         mut self,
@@ -131,6 +143,10 @@ impl FlowExecutionSummaryBuilder {
         self.flow_template_id = input;
         self
     }
+    /// <p>The ID of the flow.</p>
+    pub fn get_flow_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_template_id
+    }
     /// <p>The date and time when the flow execution summary was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl FlowExecutionSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time when the flow execution summary was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl FlowExecutionSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time when the flow execution summary was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`FlowExecutionSummary`](crate::types::FlowExecutionSummary).
     pub fn build(self) -> crate::types::FlowExecutionSummary {

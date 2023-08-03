@@ -72,6 +72,10 @@ impl ListFiltersInputBuilder {
         self.arns = input;
         self
     }
+    /// <p>The Amazon resource number (ARN) of the filter.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// <p>The action the filter applies to matched findings.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ListFiltersInputBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action the filter applies to matched findings.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ListFiltersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListFiltersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
     pub fn build(

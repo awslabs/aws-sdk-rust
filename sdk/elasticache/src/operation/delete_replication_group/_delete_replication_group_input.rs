@@ -64,6 +64,10 @@ impl DeleteReplicationGroupInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
     pub fn retain_primary_cluster(mut self, input: bool) -> Self {
         self.retain_primary_cluster = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DeleteReplicationGroupInputBuilder {
     pub fn set_retain_primary_cluster(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_primary_cluster = input;
         self
+    }
+    /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
+    pub fn get_retain_primary_cluster(&self) -> &::std::option::Option<bool> {
+        &self.retain_primary_cluster
     }
     /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
     pub fn final_snapshot_identifier(
@@ -89,6 +97,10 @@ impl DeleteReplicationGroupInputBuilder {
     ) -> Self {
         self.final_snapshot_identifier = input;
         self
+    }
+    /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
+    pub fn get_final_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
     pub fn build(

@@ -91,6 +91,10 @@ impl InvalidNetworkSettingsBuilder {
         self.message = input;
         self
     }
+    /// <p>Error message explaining what's wrong with network settings.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
     pub fn invalid_subnet_id(
         mut self,
@@ -106,6 +110,10 @@ impl InvalidNetworkSettingsBuilder {
     ) -> Self {
         self.invalid_subnet_id = input;
         self
+    }
+    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    pub fn get_invalid_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invalid_subnet_id
     }
     /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
     pub fn invalid_security_group_id(
@@ -123,6 +131,10 @@ impl InvalidNetworkSettingsBuilder {
         self.invalid_security_group_id = input;
         self
     }
+    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    pub fn get_invalid_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invalid_security_group_id
+    }
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
     pub fn invalid_route_table_id(
         mut self,
@@ -138,6 +150,10 @@ impl InvalidNetworkSettingsBuilder {
     ) -> Self {
         self.invalid_route_table_id = input;
         self
+    }
+    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    pub fn get_invalid_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invalid_route_table_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

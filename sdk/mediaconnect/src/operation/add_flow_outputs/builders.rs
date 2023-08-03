@@ -36,6 +36,12 @@ impl AddFlowOutputsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddFlowOutputs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddFlowOutputsFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to add outputs to.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -142,5 +152,11 @@ impl AddFlowOutputsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
+    }
+    /// A list of outputs that you want to add.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+        self.inner.get_outputs()
     }
 }

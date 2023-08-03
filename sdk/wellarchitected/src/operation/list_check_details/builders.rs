@@ -36,6 +36,12 @@ impl ListCheckDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCheckDetails as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_check_details::builders::ListCheckDetailsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListCheckDetailsFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl ListCheckDetailsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -157,6 +171,10 @@ impl ListCheckDetailsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Well-Architected Lens ARN.</p>
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_arn(input.into());
@@ -166,6 +184,10 @@ impl ListCheckDetailsFluentBuilder {
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_arn(input);
         self
+    }
+    /// <p>Well-Architected Lens ARN.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_arn()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -179,6 +201,11 @@ impl ListCheckDetailsFluentBuilder {
         self.inner = self.inner.set_pillar_id(input);
         self
     }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pillar_id()
+    }
     /// <p>The ID of the question.</p>
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.question_id(input.into());
@@ -189,6 +216,10 @@ impl ListCheckDetailsFluentBuilder {
         self.inner = self.inner.set_question_id(input);
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_question_id()
+    }
     /// <p>The ID of a choice.</p>
     pub fn choice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.choice_id(input.into());
@@ -198,5 +229,9 @@ impl ListCheckDetailsFluentBuilder {
     pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_choice_id(input);
         self
+    }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_choice_id()
     }
 }

@@ -59,6 +59,10 @@ impl LaunchTemplatePrivateDnsNameOptionsRequestBuilder {
         self.hostname_type = input;
         self
     }
+    /// <p>The type of hostname for Amazon EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 native subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
+    pub fn get_hostname_type(&self) -> &::std::option::Option<crate::types::HostnameType> {
+        &self.hostname_type
+    }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
         self.enable_resource_name_dns_a_record = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl LaunchTemplatePrivateDnsNameOptionsRequestBuilder {
         self.enable_resource_name_dns_a_record = input;
         self
     }
+    /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+    pub fn get_enable_resource_name_dns_a_record(&self) -> &::std::option::Option<bool> {
+        &self.enable_resource_name_dns_a_record
+    }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     pub fn enable_resource_name_dns_aaaa_record(mut self, input: bool) -> Self {
         self.enable_resource_name_dns_aaaa_record = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl LaunchTemplatePrivateDnsNameOptionsRequestBuilder {
     ) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self
+    }
+    /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+    pub fn get_enable_resource_name_dns_aaaa_record(&self) -> &::std::option::Option<bool> {
+        &self.enable_resource_name_dns_aaaa_record
     }
     /// Consumes the builder and constructs a [`LaunchTemplatePrivateDnsNameOptionsRequest`](crate::types::LaunchTemplatePrivateDnsNameOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplatePrivateDnsNameOptionsRequest {

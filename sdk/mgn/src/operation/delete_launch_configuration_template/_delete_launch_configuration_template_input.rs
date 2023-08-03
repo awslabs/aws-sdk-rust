@@ -45,6 +45,12 @@ impl DeleteLaunchConfigurationTemplateInputBuilder {
         self.launch_configuration_template_id = input;
         self
     }
+    /// <p>ID of resource to be deleted.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_template_id
+    }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

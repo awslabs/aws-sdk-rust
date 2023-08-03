@@ -48,6 +48,10 @@ impl TextWithHighlightsBuilder {
         self.text = input;
         self
     }
+    /// <p>The text to display to the user.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Appends an item to `highlights`.
     ///
     /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
@@ -66,6 +70,12 @@ impl TextWithHighlightsBuilder {
     ) -> Self {
         self.highlights = input;
         self
+    }
+    /// <p>The beginning and end of the text that should be highlighted.</p>
+    pub fn get_highlights(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
+        &self.highlights
     }
     /// Consumes the builder and constructs a [`TextWithHighlights`](crate::types::TextWithHighlights).
     pub fn build(self) -> crate::types::TextWithHighlights {

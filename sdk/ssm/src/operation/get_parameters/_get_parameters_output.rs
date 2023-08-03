@@ -63,6 +63,12 @@ impl GetParametersOutputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A list of details for a parameter.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
+    }
     /// Appends an item to `invalid_parameters`.
     ///
     /// To override the contents of this collection use [`set_invalid_parameters`](Self::set_invalid_parameters).
@@ -84,6 +90,12 @@ impl GetParametersOutputBuilder {
     ) -> Self {
         self.invalid_parameters = input;
         self
+    }
+    /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
+    pub fn get_invalid_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

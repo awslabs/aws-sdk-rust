@@ -56,6 +56,10 @@ impl PutProjectEventsResultEntryBuilder {
         self.event_id = input;
         self
     }
+    /// <p>A unique ID assigned to this <code>PutProjectEvents</code> operation. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PutProjectEventsResultEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl PutProjectEventsResultEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PutProjectEventsResultEntry`](crate::types::PutProjectEventsResultEntry).
     pub fn build(self) -> crate::types::PutProjectEventsResultEntry {

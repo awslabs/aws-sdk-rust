@@ -59,6 +59,10 @@ impl ParametersBuilder {
         self.exclude_boot_volume = input;
         self
     }
+    /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
+    pub fn get_exclude_boot_volume(&self) -> &::std::option::Option<bool> {
+        &self.exclude_boot_volume
+    }
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
     pub fn no_reboot(mut self, input: bool) -> Self {
         self.no_reboot = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ParametersBuilder {
     pub fn set_no_reboot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_reboot = input;
         self
+    }
+    /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
+    pub fn get_no_reboot(&self) -> &::std::option::Option<bool> {
+        &self.no_reboot
     }
     /// Appends an item to `exclude_data_volume_tags`.
     ///
@@ -89,6 +97,13 @@ impl ParametersBuilder {
     ) -> Self {
         self.exclude_data_volume_tags = input;
         self
+    }
+    /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
+    /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
+    pub fn get_exclude_data_volume_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.exclude_data_volume_tags
     }
     /// Consumes the builder and constructs a [`Parameters`](crate::types::Parameters).
     pub fn build(self) -> crate::types::Parameters {

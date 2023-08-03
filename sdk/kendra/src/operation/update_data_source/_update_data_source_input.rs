@@ -120,6 +120,10 @@ impl UpdateDataSourceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the data source connector you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A new name for the data source connector.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl UpdateDataSourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A new name for the data source connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -139,6 +147,10 @@ impl UpdateDataSourceInputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index used with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>Configuration information you want to update for the data source connector.</p>
     pub fn configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
@@ -153,6 +165,12 @@ impl UpdateDataSourceInputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>Configuration information you want to update for the data source connector.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.configuration
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -166,6 +184,12 @@ impl UpdateDataSourceInputBuilder {
         self.vpc_configuration = input;
         self
     }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
+    }
     /// <p>A new description for the data source connector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -175,6 +199,10 @@ impl UpdateDataSourceInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for the data source connector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The sync schedule you want to update for the data source connector.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +214,10 @@ impl UpdateDataSourceInputBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The sync schedule you want to update for the data source connector.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
+    }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -195,6 +227,10 @@ impl UpdateDataSourceInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(
@@ -211,6 +247,10 @@ impl UpdateDataSourceInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -229,6 +269,13 @@ impl UpdateDataSourceInputBuilder {
     ) -> Self {
         self.custom_document_enrichment_configuration = input;
         self
+    }
+    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    pub fn get_custom_document_enrichment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+        &self.custom_document_enrichment_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(

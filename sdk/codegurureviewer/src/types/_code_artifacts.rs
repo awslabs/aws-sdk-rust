@@ -58,6 +58,12 @@ impl CodeArtifactsBuilder {
         self.source_code_artifacts_object_key = input;
         self
     }
+    /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
+    pub fn get_source_code_artifacts_object_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_code_artifacts_object_key
+    }
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub fn build_artifacts_object_key(
         mut self,
@@ -73,6 +79,10 @@ impl CodeArtifactsBuilder {
     ) -> Self {
         self.build_artifacts_object_key = input;
         self
+    }
+    /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+    pub fn get_build_artifacts_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_artifacts_object_key
     }
     /// Consumes the builder and constructs a [`CodeArtifacts`](crate::types::CodeArtifacts).
     pub fn build(self) -> crate::types::CodeArtifacts {

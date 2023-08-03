@@ -36,6 +36,13 @@ impl ModifySnapshotScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySnapshotSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ModifySnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
+    /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_identifier()
+    }
     /// Appends an item to `ScheduleDefinitions`.
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
@@ -151,5 +162,11 @@ impl ModifySnapshotScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
+    }
+    /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+    pub fn get_schedule_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_schedule_definitions()
     }
 }

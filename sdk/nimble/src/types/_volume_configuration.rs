@@ -57,6 +57,10 @@ impl VolumeConfigurationBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl VolumeConfigurationBuilder {
         self.throughput = input;
         self
     }
+    /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i32> {
+        &self.throughput
+    }
     /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl VolumeConfigurationBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {

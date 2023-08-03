@@ -61,6 +61,10 @@ impl GetDigestOutputBuilder {
         self.digest = input;
         self
     }
+    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.digest
+    }
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub fn digest_tip_address(mut self, input: crate::types::ValueHolder) -> Self {
         self.digest_tip_address = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl GetDigestOutputBuilder {
     ) -> Self {
         self.digest_tip_address = input;
         self
+    }
+    /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    pub fn get_digest_tip_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        &self.digest_tip_address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

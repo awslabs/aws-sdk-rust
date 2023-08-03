@@ -39,6 +39,10 @@ impl SearchThingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchThings as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_things::builders::SearchThingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl SearchThingsFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The ID of the entity to which the things are associated.</p>
+    /// <p>The IDs should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +155,10 @@ impl SearchThingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -156,6 +170,10 @@ impl SearchThingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.inner = self.inner.namespace_version(input);
@@ -165,5 +183,9 @@ impl SearchThingsFluentBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_namespace_version(input);
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_namespace_version()
     }
 }

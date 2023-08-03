@@ -98,6 +98,10 @@ impl LayerVersionsListItemBuilder {
         self.layer_version_arn = input;
         self
     }
+    /// <p>The ARN of the layer version.</p>
+    pub fn get_layer_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_version_arn
+    }
     /// <p>The version number.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl LayerVersionsListItemBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The description of the version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +126,10 @@ impl LayerVersionsListItemBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_date = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl LayerVersionsListItemBuilder {
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
     }
     /// Appends an item to `compatible_runtimes`.
     ///
@@ -149,6 +165,13 @@ impl LayerVersionsListItemBuilder {
         self.compatible_runtimes = input;
         self
     }
+    /// <p>The layer's compatible runtimes.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_compatible_runtimes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Runtime>> {
+        &self.compatible_runtimes
+    }
     /// <p>The layer's open-source license.</p>
     pub fn license_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_info = ::std::option::Option::Some(input.into());
@@ -158,6 +181,10 @@ impl LayerVersionsListItemBuilder {
     pub fn set_license_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_info = input;
         self
+    }
+    /// <p>The layer's open-source license.</p>
+    pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_info
     }
     /// Appends an item to `compatible_architectures`.
     ///
@@ -177,6 +204,12 @@ impl LayerVersionsListItemBuilder {
     ) -> Self {
         self.compatible_architectures = input;
         self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn get_compatible_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.compatible_architectures
     }
     /// Consumes the builder and constructs a [`LayerVersionsListItem`](crate::types::LayerVersionsListItem).
     pub fn build(self) -> crate::types::LayerVersionsListItem {

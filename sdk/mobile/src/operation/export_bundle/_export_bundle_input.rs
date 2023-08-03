@@ -56,6 +56,10 @@ impl ExportBundleInputBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p> Unique bundle identifier. </p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ExportBundleInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p> Developer desktop or target application platform. </p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ExportBundleInputBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p> Developer desktop or target application platform. </p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
     pub fn build(

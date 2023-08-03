@@ -39,6 +39,12 @@ impl UpdateAppMonitorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppMonitor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateAppMonitorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the app monitor to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -138,6 +148,10 @@ impl UpdateAppMonitorFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub fn app_monitor_configuration(
@@ -155,6 +169,12 @@ impl UpdateAppMonitorFluentBuilder {
         self.inner = self.inner.set_app_monitor_configuration(input);
         self
     }
+    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
+    pub fn get_app_monitor_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
+        self.inner.get_app_monitor_configuration()
+    }
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     pub fn cw_log_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.cw_log_enabled(input);
@@ -164,6 +184,10 @@ impl UpdateAppMonitorFluentBuilder {
     pub fn set_cw_log_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cw_log_enabled(input);
         self
+    }
+    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
+    pub fn get_cw_log_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cw_log_enabled()
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
@@ -179,5 +203,10 @@ impl UpdateAppMonitorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_events(input);
         self
+    }
+    /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+    /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+    pub fn get_custom_events(&self) -> &::std::option::Option<crate::types::CustomEvents> {
+        self.inner.get_custom_events()
     }
 }

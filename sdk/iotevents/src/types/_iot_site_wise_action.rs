@@ -81,6 +81,10 @@ impl IotSiteWiseActionBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// <p>The ID of the asset that has the specified property.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl IotSiteWiseActionBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset that has the specified property.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl IotSiteWiseActionBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// <p>The alias of the asset property.</p>
     pub fn property_alias(
@@ -117,6 +129,10 @@ impl IotSiteWiseActionBuilder {
         self.property_alias = input;
         self
     }
+    /// <p>The alias of the asset property.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_alias
+    }
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
     pub fn property_value(mut self, input: crate::types::AssetPropertyValue) -> Self {
         self.property_value = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl IotSiteWiseActionBuilder {
     ) -> Self {
         self.property_value = input;
         self
+    }
+    /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
+    pub fn get_property_value(&self) -> &::std::option::Option<crate::types::AssetPropertyValue> {
+        &self.property_value
     }
     /// Consumes the builder and constructs a [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
     pub fn build(self) -> crate::types::IotSiteWiseAction {

@@ -63,6 +63,12 @@ impl RelatedDeploymentsBuilder {
         self.auto_update_outdated_instances_root_deployment_id = input;
         self
     }
+    /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
+    pub fn get_auto_update_outdated_instances_root_deployment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.auto_update_outdated_instances_root_deployment_id
+    }
     /// Appends an item to `auto_update_outdated_instances_deployment_ids`.
     ///
     /// To override the contents of this collection use [`set_auto_update_outdated_instances_deployment_ids`](Self::set_auto_update_outdated_instances_deployment_ids).
@@ -86,6 +92,12 @@ impl RelatedDeploymentsBuilder {
     ) -> Self {
         self.auto_update_outdated_instances_deployment_ids = input;
         self
+    }
+    /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
+    pub fn get_auto_update_outdated_instances_deployment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_update_outdated_instances_deployment_ids
     }
     /// Consumes the builder and constructs a [`RelatedDeployments`](crate::types::RelatedDeployments).
     pub fn build(self) -> crate::types::RelatedDeployments {

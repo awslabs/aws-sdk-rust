@@ -96,6 +96,10 @@ impl ThemeVersionBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The version number of the theme.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl ThemeVersionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The description of the theme.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl ThemeVersionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the theme.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(
@@ -132,6 +144,10 @@ impl ThemeVersionBuilder {
         self.base_theme_id = input;
         self
     }
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_theme_id
+    }
     /// <p>The date and time that this theme version was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl ThemeVersionBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that this theme version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The theme configuration, which contains all the theme display properties.</p>
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl ThemeVersionBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The theme configuration, which contains all the theme display properties.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ThemeConfiguration> {
+        &self.configuration
     }
     /// Appends an item to `errors`.
     ///
@@ -177,6 +201,10 @@ impl ThemeVersionBuilder {
         self.errors = input;
         self
     }
+    /// <p>Errors associated with the theme.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeError>> {
+        &self.errors
+    }
     /// <p>The status of the theme version.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl ThemeVersionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the theme version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ThemeVersion`](crate::types::ThemeVersion).
     pub fn build(self) -> crate::types::ThemeVersion {

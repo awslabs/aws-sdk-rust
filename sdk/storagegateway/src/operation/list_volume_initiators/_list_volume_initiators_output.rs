@@ -57,6 +57,10 @@ impl ListVolumeInitiatorsOutputBuilder {
         self.initiators = input;
         self
     }
+    /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
+    pub fn get_initiators(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.initiators
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

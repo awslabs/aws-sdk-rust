@@ -42,6 +42,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociatePhoneNumbersWithVoiceConnector as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// Appends an item to `E164PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -132,6 +140,12 @@ impl AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_e164_phone_numbers(input);
         self
     }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_e164_phone_numbers()
+    }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(mut self, input: bool) -> Self {
         self.inner = self.inner.force_associate(input);
@@ -141,5 +155,9 @@ impl AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
     pub fn set_force_associate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_associate(input);
         self
+    }
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    pub fn get_force_associate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_associate()
     }
 }

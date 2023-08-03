@@ -116,6 +116,10 @@ impl LicenseConversionTaskBuilder {
         self.license_conversion_task_id = input;
         self
     }
+    /// <p>The ID of the license type conversion task.</p>
+    pub fn get_license_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_conversion_task_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl LicenseConversionTaskBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>Information about the license type this conversion task converted from.</p>
     pub fn source_license_context(mut self, input: crate::types::LicenseConversionContext) -> Self {
@@ -138,6 +146,12 @@ impl LicenseConversionTaskBuilder {
     ) -> Self {
         self.source_license_context = input;
         self
+    }
+    /// <p>Information about the license type this conversion task converted from.</p>
+    pub fn get_source_license_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseConversionContext> {
+        &self.source_license_context
     }
     /// <p>Information about the license type this conversion task converted to.</p>
     pub fn destination_license_context(
@@ -155,6 +169,12 @@ impl LicenseConversionTaskBuilder {
         self.destination_license_context = input;
         self
     }
+    /// <p>Information about the license type this conversion task converted to.</p>
+    pub fn get_destination_license_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseConversionContext> {
+        &self.destination_license_context
+    }
     /// <p>The status of the conversion task.</p>
     pub fn status(mut self, input: crate::types::LicenseConversionTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl LicenseConversionTaskBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the conversion task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseConversionTaskStatus> {
+        &self.status
     }
     /// <p>The status message for the conversion task.</p>
     pub fn status_message(
@@ -184,6 +208,10 @@ impl LicenseConversionTaskBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the conversion task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The time the conversion task was started at.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -196,6 +224,10 @@ impl LicenseConversionTaskBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time the conversion task was started at.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time the usage operation value of the resource was changed.</p>
     pub fn license_conversion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,6 +242,12 @@ impl LicenseConversionTaskBuilder {
         self.license_conversion_time = input;
         self
     }
+    /// <p>The time the usage operation value of the resource was changed.</p>
+    pub fn get_license_conversion_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.license_conversion_time
+    }
     /// <p>The time the conversion task was completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -222,6 +260,10 @@ impl LicenseConversionTaskBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time the conversion task was completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`LicenseConversionTask`](crate::types::LicenseConversionTask).
     pub fn build(self) -> crate::types::LicenseConversionTask {

@@ -63,6 +63,12 @@ impl DescribeStandardsControlsOutputBuilder {
         self.controls = input;
         self
     }
+    /// <p>A list of security standards controls.</p>
+    pub fn get_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>> {
+        &self.controls
+    }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeStandardsControlsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

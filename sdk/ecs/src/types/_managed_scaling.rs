@@ -81,6 +81,10 @@ impl ManagedScalingBuilder {
         self.status = input;
         self
     }
+    /// <p>Determines whether to use managed scaling for the capacity provider.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedScalingStatus> {
+        &self.status
+    }
     /// <p>The target capacity utilization as a percentage for the capacity provider. The specified value must be greater than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto Scaling group being completely used.</p>
     pub fn target_capacity(mut self, input: i32) -> Self {
         self.target_capacity = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ManagedScalingBuilder {
     pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_capacity = input;
         self
+    }
+    /// <p>The target capacity utilization as a percentage for the capacity provider. The specified value must be greater than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto Scaling group being completely used.</p>
+    pub fn get_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_capacity
     }
     /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
     /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
@@ -105,6 +113,12 @@ impl ManagedScalingBuilder {
         self.minimum_scaling_step_size = input;
         self
     }
+    /// <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    /// <p>When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual demand is less than the minimum scaling step size.</p>
+    /// <p>If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both the maximum scaling step size as well as the capacity demand.</p>
+    pub fn get_minimum_scaling_step_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_scaling_step_size
+    }
     /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
     pub fn maximum_scaling_step_size(mut self, input: i32) -> Self {
         self.maximum_scaling_step_size = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl ManagedScalingBuilder {
         self.maximum_scaling_step_size = input;
         self
     }
+    /// <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is not affected by this parameter. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    pub fn get_maximum_scaling_step_size(&self) -> &::std::option::Option<i32> {
+        &self.maximum_scaling_step_size
+    }
     /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.</p>
     pub fn instance_warmup_period(mut self, input: i32) -> Self {
         self.instance_warmup_period = ::std::option::Option::Some(input);
@@ -124,6 +142,10 @@ impl ManagedScalingBuilder {
     pub fn set_instance_warmup_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_warmup_period = input;
         self
+    }
+    /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.</p>
+    pub fn get_instance_warmup_period(&self) -> &::std::option::Option<i32> {
+        &self.instance_warmup_period
     }
     /// Consumes the builder and constructs a [`ManagedScaling`](crate::types::ManagedScaling).
     pub fn build(self) -> crate::types::ManagedScaling {

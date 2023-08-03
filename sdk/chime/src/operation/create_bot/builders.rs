@@ -36,6 +36,10 @@ impl CreateBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_bot::builders::CreateBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The bot display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -128,6 +136,10 @@ impl CreateBotFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The bot display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -137,5 +149,9 @@ impl CreateBotFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The domain of the Amazon Chime Enterprise account.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
     }
 }

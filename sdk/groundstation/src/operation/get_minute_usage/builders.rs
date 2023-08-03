@@ -36,6 +36,12 @@ impl GetMinuteUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMinuteUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_minute_usage::builders::GetMinuteUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetMinuteUsageFluentBuilder {
         self.inner = self.inner.set_month(input);
         self
     }
+    /// <p>The month being requested, with a value of 1-12.</p>
+    pub fn get_month(&self) -> &::std::option::Option<i32> {
+        self.inner.get_month()
+    }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn year(mut self, input: i32) -> Self {
         self.inner = self.inner.year(input);
@@ -135,5 +145,9 @@ impl GetMinuteUsageFluentBuilder {
     pub fn set_year(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_year(input);
         self
+    }
+    /// <p>The year being requested, in the format of YYYY.</p>
+    pub fn get_year(&self) -> &::std::option::Option<i32> {
+        self.inner.get_year()
     }
 }

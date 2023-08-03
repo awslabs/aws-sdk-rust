@@ -48,6 +48,10 @@ impl WarningBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code for the warning.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// Appends an item to `pages`.
     ///
     /// To override the contents of this collection use [`set_pages`](Self::set_pages).
@@ -63,6 +67,10 @@ impl WarningBuilder {
     pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.pages = input;
         self
+    }
+    /// <p>A list of the pages that the warning applies to.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.pages
     }
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {

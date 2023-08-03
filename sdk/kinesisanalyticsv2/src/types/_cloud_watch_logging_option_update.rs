@@ -54,6 +54,12 @@ impl CloudWatchLoggingOptionUpdateBuilder {
         self.cloud_watch_logging_option_id = input;
         self
     }
+    /// <p>The ID of the CloudWatch logging option to update</p>
+    pub fn get_cloud_watch_logging_option_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logging_option_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     pub fn log_stream_arn_update(
         mut self,
@@ -69,6 +75,10 @@ impl CloudWatchLoggingOptionUpdateBuilder {
     ) -> Self {
         self.log_stream_arn_update = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn_update
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionUpdate`](crate::types::CloudWatchLoggingOptionUpdate).
     pub fn build(self) -> crate::types::CloudWatchLoggingOptionUpdate {

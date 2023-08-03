@@ -36,6 +36,10 @@ impl DisassociateIdentityProviderConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateIdentityProviderConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateIdentityProviderConfigFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>An object representing an identity provider configuration.</p>
     pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         self.inner = self.inner.identity_provider_config(input);
@@ -112,6 +120,12 @@ impl DisassociateIdentityProviderConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_config(input);
         self
+    }
+    /// <p>An object representing an identity provider configuration.</p>
+    pub fn get_identity_provider_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
+        self.inner.get_identity_provider_config()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -128,5 +142,9 @@ impl DisassociateIdentityProviderConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

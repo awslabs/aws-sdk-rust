@@ -94,6 +94,10 @@ impl GetFilterOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl GetFilterOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
@@ -114,6 +122,10 @@ impl GetFilterOutputBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
+    }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl GetFilterOutputBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
@@ -136,6 +152,10 @@ impl GetFilterOutputBuilder {
     ) -> Self {
         self.finding_criteria = input;
         self
+    }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        &self.finding_criteria
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -161,6 +181,14 @@ impl GetFilterOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the filter resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

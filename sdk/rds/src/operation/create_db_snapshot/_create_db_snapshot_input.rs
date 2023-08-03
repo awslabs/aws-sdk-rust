@@ -103,6 +103,18 @@ impl CreateDbSnapshotInputBuilder {
         self.db_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the DB snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_snapshot_identifier
+    }
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -127,6 +139,14 @@ impl CreateDbSnapshotInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -145,6 +165,10 @@ impl CreateDbSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbSnapshotInput`](crate::operation::create_db_snapshot::CreateDbSnapshotInput).
     pub fn build(

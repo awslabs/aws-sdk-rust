@@ -37,6 +37,13 @@ impl DescribeStackResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStackResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,15 @@ impl DescribeStackResourceFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
     pub fn logical_resource_id(
@@ -154,5 +170,10 @@ impl DescribeStackResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
+    }
+    /// <p>The logical name of the resource as specified in the template.</p>
+    /// <p>Default: There is no default value.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logical_resource_id()
     }
 }

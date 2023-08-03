@@ -52,6 +52,11 @@ impl DeleteMessageInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// <p>The receipt handle associated with the message to delete.</p>
     pub fn receipt_handle(
         mut self,
@@ -67,6 +72,10 @@ impl DeleteMessageInputBuilder {
     ) -> Self {
         self.receipt_handle = input;
         self
+    }
+    /// <p>The receipt handle associated with the message to delete.</p>
+    pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.receipt_handle
     }
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(

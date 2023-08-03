@@ -39,6 +39,10 @@ impl GetVpcLinkInputBuilder {
         self.vpc_link_id = input;
         self
     }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
+    }
     /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
     pub fn build(
         self,

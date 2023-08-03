@@ -36,6 +36,12 @@ impl DescribeBotVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBotVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeBotVersionFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier of the bot containing the version to return metadata for.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -135,5 +145,9 @@ impl DescribeBotVersionFluentBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
+    }
+    /// <p>The version of the bot to return metadata for.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
     }
 }

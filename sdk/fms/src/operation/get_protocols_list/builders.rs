@@ -36,6 +36,12 @@ impl GetProtocolsListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProtocolsList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetProtocolsListFluentBuilder {
         self.inner = self.inner.set_list_id(input);
         self
     }
+    /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_list_id()
+    }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn default_list(mut self, input: bool) -> Self {
         self.inner = self.inner.default_list(input);
@@ -135,5 +145,9 @@ impl GetProtocolsListFluentBuilder {
     pub fn set_default_list(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_default_list(input);
         self
+    }
+    /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    pub fn get_default_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_default_list()
     }
 }

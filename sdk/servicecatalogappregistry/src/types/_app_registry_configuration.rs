@@ -45,6 +45,12 @@ impl AppRegistryConfigurationBuilder {
         self.tag_query_configuration = input;
         self
     }
+    /// <p> Includes the definition of a <code>tagQuery</code>. </p>
+    pub fn get_tag_query_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TagQueryConfiguration> {
+        &self.tag_query_configuration
+    }
     /// Consumes the builder and constructs a [`AppRegistryConfiguration`](crate::types::AppRegistryConfiguration).
     pub fn build(self) -> crate::types::AppRegistryConfiguration {
         crate::types::AppRegistryConfiguration {

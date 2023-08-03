@@ -61,6 +61,10 @@ impl StopDeploymentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The environment ID.</p>
     pub fn environment_id(
         mut self,
@@ -77,6 +81,10 @@ impl StopDeploymentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The environment ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.deployment_number = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl StopDeploymentInputBuilder {
     pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_number = input;
         self
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
+        &self.deployment_number
     }
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(

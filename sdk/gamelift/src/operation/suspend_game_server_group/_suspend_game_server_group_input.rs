@@ -57,6 +57,10 @@ impl SuspendGameServerGroupInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// Appends an item to `suspend_actions`.
     ///
     /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
@@ -75,6 +79,12 @@ impl SuspendGameServerGroupInputBuilder {
     ) -> Self {
         self.suspend_actions = input;
         self
+    }
+    /// <p>The activity to suspend for this game server group.</p>
+    pub fn get_suspend_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        &self.suspend_actions
     }
     /// Consumes the builder and constructs a [`SuspendGameServerGroupInput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupInput).
     pub fn build(

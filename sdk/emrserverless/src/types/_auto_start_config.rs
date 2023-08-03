@@ -40,6 +40,10 @@ impl AutoStartConfigBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AutoStartConfig`](crate::types::AutoStartConfig).
     pub fn build(self) -> crate::types::AutoStartConfig {
         crate::types::AutoStartConfig {

@@ -48,6 +48,10 @@ impl InventoryItemAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the inventory item attribute.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the inventory item attribute. </p>
     pub fn data_type(mut self, input: crate::types::InventoryAttributeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl InventoryItemAttributeBuilder {
     ) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the inventory item attribute. </p>
+    pub fn get_data_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryAttributeDataType> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`InventoryItemAttribute`](crate::types::InventoryItemAttribute).
     pub fn build(self) -> crate::types::InventoryItemAttribute {

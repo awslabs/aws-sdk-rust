@@ -59,6 +59,10 @@ impl DescribeCacheSecurityGroupsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `cache_security_groups`.
     ///
     /// To override the contents of this collection use [`set_cache_security_groups`](Self::set_cache_security_groups).
@@ -77,6 +81,12 @@ impl DescribeCacheSecurityGroupsOutputBuilder {
     ) -> Self {
         self.cache_security_groups = input;
         self
+    }
+    /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
+    pub fn get_cache_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>> {
+        &self.cache_security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

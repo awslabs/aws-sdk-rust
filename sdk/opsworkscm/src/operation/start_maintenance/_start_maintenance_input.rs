@@ -57,6 +57,10 @@ impl StartMaintenanceInputBuilder {
         self.server_name = input;
         self
     }
+    /// <p>The name of the server on which to run maintenance. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// Appends an item to `engine_attributes`.
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
@@ -83,6 +87,16 @@ impl StartMaintenanceInputBuilder {
     ) -> Self {
         self.engine_attributes = input;
         self
+    }
+    /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
+    /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
+    /// </ul>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        &self.engine_attributes
     }
     /// Consumes the builder and constructs a [`StartMaintenanceInput`](crate::operation::start_maintenance::StartMaintenanceInput).
     pub fn build(

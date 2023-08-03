@@ -56,6 +56,10 @@ impl GetConnectionStatusOutputBuilder {
         self.target = input;
         self
     }
+    /// <p>The ID of the managed node to check connection status. </p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetConnectionStatusOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

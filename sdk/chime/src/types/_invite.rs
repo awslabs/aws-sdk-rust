@@ -72,6 +72,10 @@ impl InviteBuilder {
         self.invite_id = input;
         self
     }
+    /// <p>The invite ID.</p>
+    pub fn get_invite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invite_id
+    }
     /// <p>The status of the invite.</p>
     pub fn status(mut self, input: crate::types::InviteStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl InviteBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InviteStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the invite.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InviteStatus> {
+        &self.status
     }
     /// <p>The email address to which the invite is sent.</p>
     pub fn email_address(
@@ -98,6 +106,10 @@ impl InviteBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address to which the invite is sent.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The status of the invite email.</p>
     pub fn email_status(mut self, input: crate::types::EmailStatus) -> Self {
         self.email_status = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl InviteBuilder {
     ) -> Self {
         self.email_status = input;
         self
+    }
+    /// <p>The status of the invite email.</p>
+    pub fn get_email_status(&self) -> &::std::option::Option<crate::types::EmailStatus> {
+        &self.email_status
     }
     /// Consumes the builder and constructs a [`Invite`](crate::types::Invite).
     pub fn build(self) -> crate::types::Invite {

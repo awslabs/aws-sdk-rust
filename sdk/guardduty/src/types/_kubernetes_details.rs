@@ -56,6 +56,12 @@ impl KubernetesDetailsBuilder {
         self.kubernetes_user_details = input;
         self
     }
+    /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+    pub fn get_kubernetes_user_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesUserDetails> {
+        &self.kubernetes_user_details
+    }
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
     pub fn kubernetes_workload_details(
         mut self,
@@ -71,6 +77,12 @@ impl KubernetesDetailsBuilder {
     ) -> Self {
         self.kubernetes_workload_details = input;
         self
+    }
+    /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+    pub fn get_kubernetes_workload_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesWorkloadDetails> {
+        &self.kubernetes_workload_details
     }
     /// Consumes the builder and constructs a [`KubernetesDetails`](crate::types::KubernetesDetails).
     pub fn build(self) -> crate::types::KubernetesDetails {

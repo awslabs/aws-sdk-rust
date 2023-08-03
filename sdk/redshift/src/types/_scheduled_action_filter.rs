@@ -51,6 +51,10 @@ impl ScheduledActionFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The type of element to filter. </p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ScheduledActionFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl ScheduledActionFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ScheduledActionFilter`](crate::types::ScheduledActionFilter).
     pub fn build(self) -> crate::types::ScheduledActionFilter {

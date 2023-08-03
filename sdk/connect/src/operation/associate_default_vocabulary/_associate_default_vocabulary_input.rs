@@ -55,6 +55,10 @@ impl AssociateDefaultVocabularyInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl AssociateDefaultVocabularyInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn get_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+        &self.language_code
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
     pub fn vocabulary_id(
@@ -83,6 +93,10 @@ impl AssociateDefaultVocabularyInputBuilder {
     ) -> Self {
         self.vocabulary_id = input;
         self
+    }
+    /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+    pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_id
     }
     /// Consumes the builder and constructs a [`AssociateDefaultVocabularyInput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput).
     pub fn build(

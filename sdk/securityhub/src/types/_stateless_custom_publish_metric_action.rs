@@ -60,6 +60,14 @@ impl StatelessCustomPublishMetricActionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>Defines CloudWatch dimension values to publish.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
+    > {
+        &self.dimensions
+    }
     /// Consumes the builder and constructs a [`StatelessCustomPublishMetricAction`](crate::types::StatelessCustomPublishMetricAction).
     pub fn build(self) -> crate::types::StatelessCustomPublishMetricAction {
         crate::types::StatelessCustomPublishMetricAction {

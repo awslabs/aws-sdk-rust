@@ -52,6 +52,10 @@ impl CreateMultiRegionAccessPointOutputBuilder {
         self.request_token_arn = input;
         self
     }
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    pub fn get_request_token_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

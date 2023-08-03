@@ -139,6 +139,10 @@ impl SheetDefinitionBuilder {
         self.sheet_id = input;
         self
     }
+    /// <p>The unique identifier of a sheet.</p>
+    pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sheet_id
+    }
     /// <p>The title of the sheet.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl SheetDefinitionBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the sheet.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>A description of the sheet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +167,10 @@ impl SheetDefinitionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the sheet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -168,6 +180,10 @@ impl SheetDefinitionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `parameter_controls`.
     ///
@@ -190,6 +206,13 @@ impl SheetDefinitionBuilder {
         self.parameter_controls = input;
         self
     }
+    /// <p>The list of parameter controls that are on a sheet.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_parameter_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>> {
+        &self.parameter_controls
+    }
     /// Appends an item to `filter_controls`.
     ///
     /// To override the contents of this collection use [`set_filter_controls`](Self::set_filter_controls).
@@ -211,6 +234,13 @@ impl SheetDefinitionBuilder {
         self.filter_controls = input;
         self
     }
+    /// <p>The list of filter controls that are on a sheet.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_filter_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterControl>> {
+        &self.filter_controls
+    }
     /// Appends an item to `visuals`.
     ///
     /// To override the contents of this collection use [`set_visuals`](Self::set_visuals).
@@ -230,6 +260,10 @@ impl SheetDefinitionBuilder {
         self.visuals = input;
         self
     }
+    /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
+    pub fn get_visuals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Visual>> {
+        &self.visuals
+    }
     /// Appends an item to `text_boxes`.
     ///
     /// To override the contents of this collection use [`set_text_boxes`](Self::set_text_boxes).
@@ -248,6 +282,12 @@ impl SheetDefinitionBuilder {
     ) -> Self {
         self.text_boxes = input;
         self
+    }
+    /// <p>The text boxes that are on a sheet.</p>
+    pub fn get_text_boxes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>> {
+        &self.text_boxes
     }
     /// Appends an item to `layouts`.
     ///
@@ -270,6 +310,11 @@ impl SheetDefinitionBuilder {
         self.layouts = input;
         self
     }
+    /// <p>Layouts define how the components of a sheet are arranged.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layout>> {
+        &self.layouts
+    }
     /// Appends an item to `sheet_control_layouts`.
     ///
     /// To override the contents of this collection use [`set_sheet_control_layouts`](Self::set_sheet_control_layouts).
@@ -288,6 +333,12 @@ impl SheetDefinitionBuilder {
     ) -> Self {
         self.sheet_control_layouts = input;
         self
+    }
+    /// <p>The control layouts of the sheet.</p>
+    pub fn get_sheet_control_layouts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>> {
+        &self.sheet_control_layouts
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
@@ -309,6 +360,14 @@ impl SheetDefinitionBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The layout content type of the sheet. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
+    /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
+    /// </ul>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::SheetContentType> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`SheetDefinition`](crate::types::SheetDefinition).
     pub fn build(self) -> crate::types::SheetDefinition {

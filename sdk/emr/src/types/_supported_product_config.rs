@@ -48,6 +48,10 @@ impl SupportedProductConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the product configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `args`.
     ///
     /// To override the contents of this collection use [`set_args`](Self::set_args).
@@ -66,6 +70,10 @@ impl SupportedProductConfigBuilder {
     ) -> Self {
         self.args = input;
         self
+    }
+    /// <p>The list of user-supplied arguments.</p>
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.args
     }
     /// Consumes the builder and constructs a [`SupportedProductConfig`](crate::types::SupportedProductConfig).
     pub fn build(self) -> crate::types::SupportedProductConfig {

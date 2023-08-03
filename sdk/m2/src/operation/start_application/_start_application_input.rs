@@ -46,6 +46,10 @@ impl StartApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application you want to start.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(
         self,

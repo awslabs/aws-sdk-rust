@@ -48,6 +48,10 @@ impl ParameterAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The field identifier.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ParameterAttributeBuilder {
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
+    }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
     }
     /// Consumes the builder and constructs a [`ParameterAttribute`](crate::types::ParameterAttribute).
     pub fn build(self) -> crate::types::ParameterAttribute {

@@ -49,6 +49,12 @@ impl ScheduledSplitsLaunchDefinitionBuilder {
         self.steps = input;
         self
     }
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
+    pub fn get_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>> {
+        &self.steps
+    }
     /// Consumes the builder and constructs a [`ScheduledSplitsLaunchDefinition`](crate::types::ScheduledSplitsLaunchDefinition).
     pub fn build(self) -> crate::types::ScheduledSplitsLaunchDefinition {
         crate::types::ScheduledSplitsLaunchDefinition { steps: self.steps }

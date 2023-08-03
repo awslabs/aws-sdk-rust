@@ -48,6 +48,10 @@ impl EcsServiceBuilder {
         self.service_name = input;
         self
     }
+    /// <p> The name of the target Amazon ECS service. </p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EcsServiceBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// Consumes the builder and constructs a [`EcsService`](crate::types::EcsService).
     pub fn build(self) -> crate::types::EcsService {

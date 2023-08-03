@@ -82,6 +82,12 @@ impl UpdateEc2DeepInspectionConfigurationOutputBuilder {
         self.package_paths = input;
         self
     }
+    /// <p>The current Amazon Inspector deep inspection custom paths for your account.</p>
+    pub fn get_package_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.package_paths
+    }
     /// Appends an item to `org_package_paths`.
     ///
     /// To override the contents of this collection use [`set_org_package_paths`](Self::set_org_package_paths).
@@ -104,6 +110,12 @@ impl UpdateEc2DeepInspectionConfigurationOutputBuilder {
         self.org_package_paths = input;
         self
     }
+    /// <p>The current Amazon Inspector deep inspection custom paths for the organization.</p>
+    pub fn get_org_package_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.org_package_paths
+    }
     /// <p>The status of Amazon Inspector deep inspection in your account.</p>
     pub fn status(mut self, input: crate::types::Ec2DeepInspectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl UpdateEc2DeepInspectionConfigurationOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of Amazon Inspector deep inspection in your account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Ec2DeepInspectionStatus> {
+        &self.status
     }
     /// <p>An error message explaining why new Amazon Inspector deep inspection custom paths could not be added.</p>
     pub fn error_message(
@@ -132,6 +148,10 @@ impl UpdateEc2DeepInspectionConfigurationOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>An error message explaining why new Amazon Inspector deep inspection custom paths could not be added.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

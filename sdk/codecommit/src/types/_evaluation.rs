@@ -66,6 +66,10 @@ impl EvaluationBuilder {
         self.approved = input;
         self
     }
+    /// <p>Whether the state of the pull request is approved.</p>
+    pub fn get_approved(&self) -> &::std::option::Option<bool> {
+        &self.approved
+    }
     /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
     pub fn overridden(mut self, input: bool) -> Self {
         self.overridden = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl EvaluationBuilder {
     pub fn set_overridden(mut self, input: ::std::option::Option<bool>) -> Self {
         self.overridden = input;
         self
+    }
+    /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
+    pub fn get_overridden(&self) -> &::std::option::Option<bool> {
+        &self.overridden
     }
     /// Appends an item to `approval_rules_satisfied`.
     ///
@@ -98,6 +106,12 @@ impl EvaluationBuilder {
         self.approval_rules_satisfied = input;
         self
     }
+    /// <p>The names of the approval rules that have had their conditions met.</p>
+    pub fn get_approval_rules_satisfied(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.approval_rules_satisfied
+    }
     /// Appends an item to `approval_rules_not_satisfied`.
     ///
     /// To override the contents of this collection use [`set_approval_rules_not_satisfied`](Self::set_approval_rules_not_satisfied).
@@ -119,6 +133,12 @@ impl EvaluationBuilder {
     ) -> Self {
         self.approval_rules_not_satisfied = input;
         self
+    }
+    /// <p>The names of the approval rules that have not had their conditions met.</p>
+    pub fn get_approval_rules_not_satisfied(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.approval_rules_not_satisfied
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     pub fn build(self) -> crate::types::Evaluation {

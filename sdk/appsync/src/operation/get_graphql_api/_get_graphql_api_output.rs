@@ -49,6 +49,10 @@ impl GetGraphqlApiOutputBuilder {
         self.graphql_api = input;
         self
     }
+    /// <p>The <code>GraphqlApi</code> object.</p>
+    pub fn get_graphql_api(&self) -> &::std::option::Option<crate::types::GraphqlApi> {
+        &self.graphql_api
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -76,6 +76,10 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The access key ID for the temporary credentials.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The secret key for the temporary credentials.</p>
     pub fn secret_access_key(
         mut self,
@@ -91,6 +95,10 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     ) -> Self {
         self.secret_access_key = input;
         self
+    }
+    /// <p>The secret key for the temporary credentials.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
     }
     /// <p>The session token for the temporary credentials.</p>
     pub fn session_token(
@@ -108,6 +116,10 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         self.session_token = input;
         self
     }
+    /// <p>The session token for the temporary credentials.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     ) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

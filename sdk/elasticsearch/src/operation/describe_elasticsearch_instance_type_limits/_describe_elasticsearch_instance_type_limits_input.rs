@@ -56,6 +56,10 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
     pub fn instance_type(mut self, input: crate::types::EsPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+        &self.instance_type
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
     pub fn elasticsearch_version(
@@ -84,6 +94,10 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     ) -> Self {
         self.elasticsearch_version = input;
         self
+    }
+    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elasticsearch_version
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput, ::aws_smithy_http::operation::error::BuildError>{

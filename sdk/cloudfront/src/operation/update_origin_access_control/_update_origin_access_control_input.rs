@@ -65,6 +65,12 @@ impl UpdateOriginAccessControlInputBuilder {
         self.origin_access_control_config = input;
         self
     }
+    /// <p>An origin access control.</p>
+    pub fn get_origin_access_control_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
+        &self.origin_access_control_config
+    }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl UpdateOriginAccessControlInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the origin access control that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -84,6 +94,10 @@ impl UpdateOriginAccessControlInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateOriginAccessControlInput`](crate::operation::update_origin_access_control::UpdateOriginAccessControlInput).
     pub fn build(

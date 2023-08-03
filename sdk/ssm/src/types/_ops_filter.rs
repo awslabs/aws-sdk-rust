@@ -56,6 +56,10 @@ impl OpsFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl OpsFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The filter value.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The type of filter.</p>
     pub fn r#type(mut self, input: crate::types::OpsFilterOperatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl OpsFilterBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of filter.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OpsFilterOperatorType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OpsFilter`](crate::types::OpsFilter).
     pub fn build(self) -> crate::types::OpsFilter {

@@ -36,6 +36,10 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetDeliveryOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
         self.inner = self.inner.delivery_options(input);
@@ -118,5 +126,9 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_options(input);
         self
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
+    pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
+        self.inner.get_delivery_options()
     }
 }

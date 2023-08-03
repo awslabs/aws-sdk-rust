@@ -36,6 +36,12 @@ impl ListHostKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListHostKeys as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_host_keys::builders::ListHostKeysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ListHostKeysFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of host keys to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -128,6 +138,10 @@ impl ListHostKeysFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The identifier of the server that contains the host keys that you want to view.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
@@ -137,5 +151,9 @@ impl ListHostKeysFluentBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
+    }
+    /// <p>The identifier of the server that contains the host keys that you want to view.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
     }
 }

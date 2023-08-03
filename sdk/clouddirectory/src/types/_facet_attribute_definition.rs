@@ -75,6 +75,10 @@ impl FacetAttributeDefinitionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the attribute.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FacetAttributeType> {
+        &self.r#type
+    }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn default_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl FacetAttributeDefinitionBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value of the attribute (if configured).</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.default_value
+    }
     /// <p>Whether the attribute is mutable or not.</p>
     pub fn is_immutable(mut self, input: bool) -> Self {
         self.is_immutable = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl FacetAttributeDefinitionBuilder {
     pub fn set_is_immutable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_immutable = input;
         self
+    }
+    /// <p>Whether the attribute is mutable or not.</p>
+    pub fn get_is_immutable(&self) -> &::std::option::Option<bool> {
+        &self.is_immutable
     }
     /// Adds a key-value pair to `rules`.
     ///
@@ -122,6 +134,14 @@ impl FacetAttributeDefinitionBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>Validation rules attached to the attribute definition.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
+    > {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::types::FacetAttributeDefinition).
     pub fn build(self) -> crate::types::FacetAttributeDefinition {

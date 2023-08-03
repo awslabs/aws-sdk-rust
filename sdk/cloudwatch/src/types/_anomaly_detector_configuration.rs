@@ -59,6 +59,12 @@ impl AnomalyDetectorConfigurationBuilder {
         self.excluded_time_ranges = input;
         self
     }
+    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
+    pub fn get_excluded_time_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.excluded_time_ranges
+    }
     /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
     pub fn metric_timezone(
@@ -76,6 +82,11 @@ impl AnomalyDetectorConfigurationBuilder {
     ) -> Self {
         self.metric_timezone = input;
         self
+    }
+    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
+    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+    pub fn get_metric_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_timezone
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorConfiguration`](crate::types::AnomalyDetectorConfiguration).
     pub fn build(self) -> crate::types::AnomalyDetectorConfiguration {

@@ -36,6 +36,12 @@ impl ListLogSourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLogSources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_log_sources::builders::ListLogSourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl ListLogSourcesFluentBuilder {
         self.inner = self.inner.set_accounts(input);
         self
     }
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_accounts()
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -160,6 +170,10 @@ impl ListLogSourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_regions(input);
         self
+    }
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_regions()
     }
     /// Appends an item to `sources`.
     ///
@@ -178,6 +192,12 @@ impl ListLogSourcesFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        self.inner.get_sources()
+    }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -188,6 +208,10 @@ impl ListLogSourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of accounts for which the log sources are displayed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -197,5 +221,9 @@ impl ListLogSourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

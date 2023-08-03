@@ -47,6 +47,10 @@ impl CreateStreamKeyOutputBuilder {
         self.stream_key = input;
         self
     }
+    /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
+    pub fn get_stream_key(&self) -> &::std::option::Option<crate::types::StreamKey> {
+        &self.stream_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -143,6 +143,10 @@ impl RedshiftDestinationDescriptionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The database connection string.</p>
     pub fn cluster_jdbcurl(
         mut self,
@@ -159,6 +163,10 @@ impl RedshiftDestinationDescriptionBuilder {
         self.cluster_jdbcurl = input;
         self
     }
+    /// <p>The database connection string.</p>
+    pub fn get_cluster_jdbcurl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_jdbcurl
+    }
     /// <p>The <code>COPY</code> command.</p>
     pub fn copy_command(mut self, input: crate::types::CopyCommand) -> Self {
         self.copy_command = ::std::option::Option::Some(input);
@@ -172,6 +180,10 @@ impl RedshiftDestinationDescriptionBuilder {
         self.copy_command = input;
         self
     }
+    /// <p>The <code>COPY</code> command.</p>
+    pub fn get_copy_command(&self) -> &::std::option::Option<crate::types::CopyCommand> {
+        &self.copy_command
+    }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -181,6 +193,10 @@ impl RedshiftDestinationDescriptionBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(mut self, input: crate::types::RedshiftRetryOptions) -> Self {
@@ -194,6 +210,10 @@ impl RedshiftDestinationDescriptionBuilder {
     ) -> Self {
         self.retry_options = input;
         self
+    }
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::RedshiftRetryOptions> {
+        &self.retry_options
     }
     /// <p>The Amazon S3 destination.</p>
     pub fn s3_destination_description(
@@ -211,6 +231,12 @@ impl RedshiftDestinationDescriptionBuilder {
         self.s3_destination_description = input;
         self
     }
+    /// <p>The Amazon S3 destination.</p>
+    pub fn get_s3_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+        &self.s3_destination_description
+    }
     /// <p>The data processing configuration.</p>
     pub fn processing_configuration(
         mut self,
@@ -227,6 +253,12 @@ impl RedshiftDestinationDescriptionBuilder {
         self.processing_configuration = input;
         self
     }
+    /// <p>The data processing configuration.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
+    }
     /// <p>The Amazon S3 backup mode.</p>
     pub fn s3_backup_mode(mut self, input: crate::types::RedshiftS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
@@ -240,6 +272,10 @@ impl RedshiftDestinationDescriptionBuilder {
         self.s3_backup_mode = input;
         self
     }
+    /// <p>The Amazon S3 backup mode.</p>
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::RedshiftS3BackupMode> {
+        &self.s3_backup_mode
+    }
     /// <p>The configuration for backup in Amazon S3.</p>
     pub fn s3_backup_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_backup_description = ::std::option::Option::Some(input);
@@ -252,6 +288,12 @@ impl RedshiftDestinationDescriptionBuilder {
     ) -> Self {
         self.s3_backup_description = input;
         self
+    }
+    /// <p>The configuration for backup in Amazon S3.</p>
+    pub fn get_s3_backup_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+        &self.s3_backup_description
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
@@ -268,6 +310,12 @@ impl RedshiftDestinationDescriptionBuilder {
     ) -> Self {
         self.cloud_watch_logging_options = input;
         self
+    }
+    /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`RedshiftDestinationDescription`](crate::types::RedshiftDestinationDescription).
     pub fn build(self) -> crate::types::RedshiftDestinationDescription {

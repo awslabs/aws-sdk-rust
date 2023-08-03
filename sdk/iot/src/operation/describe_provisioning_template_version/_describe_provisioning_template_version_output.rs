@@ -70,6 +70,10 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The provisioning template version ID.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<i32> {
+        &self.version_id
+    }
     /// <p>The date when the provisioning template version was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date when the provisioning template version was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The JSON formatted contents of the provisioning template version.</p>
     pub fn template_body(
@@ -99,6 +107,10 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The JSON formatted contents of the provisioning template version.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>True if the provisioning template version is the default version.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
+    }
+    /// <p>True if the provisioning template version is the default version.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -54,6 +54,10 @@ impl CreateAppImageConfigOutputBuilder {
         self.app_image_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+    pub fn get_app_image_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

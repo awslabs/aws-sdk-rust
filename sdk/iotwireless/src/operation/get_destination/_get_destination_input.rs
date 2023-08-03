@@ -39,6 +39,10 @@ impl GetDestinationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource to get.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetDestinationInput`](crate::operation::get_destination::GetDestinationInput).
     pub fn build(
         self,

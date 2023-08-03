@@ -59,6 +59,12 @@ impl ListInsightsStatusFilterBuilder {
         self.ongoing = input;
         self
     }
+    /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    pub fn get_ongoing(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListInsightsOngoingStatusFilter> {
+        &self.ongoing
+    }
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn closed(mut self, input: crate::types::ListInsightsClosedStatusFilter) -> Self {
         self.closed = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl ListInsightsStatusFilterBuilder {
         self.closed = input;
         self
     }
+    /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    pub fn get_closed(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListInsightsClosedStatusFilter> {
+        &self.closed
+    }
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn any(mut self, input: crate::types::ListInsightsAnyStatusFilter) -> Self {
         self.any = ::std::option::Option::Some(input);
@@ -84,6 +96,10 @@ impl ListInsightsStatusFilterBuilder {
     ) -> Self {
         self.any = input;
         self
+    }
+    /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    pub fn get_any(&self) -> &::std::option::Option<crate::types::ListInsightsAnyStatusFilter> {
+        &self.any
     }
     /// Consumes the builder and constructs a [`ListInsightsStatusFilter`](crate::types::ListInsightsStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsStatusFilter {

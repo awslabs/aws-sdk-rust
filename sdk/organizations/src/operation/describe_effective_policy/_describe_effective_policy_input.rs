@@ -72,6 +72,15 @@ impl DescribeEffectivePolicyInputBuilder {
         self.policy_type = input;
         self
     }
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+    /// </ul>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::EffectivePolicyType> {
+        &self.policy_type
+    }
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -81,6 +90,10 @@ impl DescribeEffectivePolicyInputBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
     pub fn build(

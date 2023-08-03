@@ -40,6 +40,10 @@ impl GetResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
     pub fn build(
         self,

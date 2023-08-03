@@ -74,6 +74,12 @@ impl SearchHoursOfOperationsOutputBuilder {
         self.hours_of_operations = input;
         self
     }
+    /// <p>Information about the hours of operations.</p>
+    pub fn get_hours_of_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
+        &self.hours_of_operations
+    }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +90,10 @@ impl SearchHoursOfOperationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of hours of operations which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl SearchHoursOfOperationsOutputBuilder {
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
+    }
+    /// <p>The total number of hours of operations which matched your search query.</p>
+    pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
+        &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl ArcAxisDisplayRangeBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum value of the arc axis range.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
+    }
     /// <p>The maximum value of the arc axis range.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ArcAxisDisplayRangeBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value of the arc axis range.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`ArcAxisDisplayRange`](crate::types::ArcAxisDisplayRange).
     pub fn build(self) -> crate::types::ArcAxisDisplayRange {

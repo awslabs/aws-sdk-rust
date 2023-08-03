@@ -36,6 +36,13 @@ impl DeleteInferenceSchedulerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInferenceScheduler as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteInferenceSchedulerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
+    }
+    /// <p>The name of the inference scheduler to be deleted. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inference_scheduler_name()
     }
 }

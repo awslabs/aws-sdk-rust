@@ -91,6 +91,10 @@ impl DescribeCustomMetricOutputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p> The name of the custom metric. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub fn metric_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_arn = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl DescribeCustomMetricOutputBuilder {
     pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
+    pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_arn
     }
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
@@ -118,6 +126,12 @@ impl DescribeCustomMetricOutputBuilder {
         self.metric_type = input;
         self
     }
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+    /// </important>
+    pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::CustomMetricType> {
+        &self.metric_type
+    }
     /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -127,6 +141,10 @@ impl DescribeCustomMetricOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +159,10 @@ impl DescribeCustomMetricOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -153,6 +175,10 @@ impl DescribeCustomMetricOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

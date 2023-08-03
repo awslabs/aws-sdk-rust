@@ -36,6 +36,10 @@ impl DeleteStorageVirtualMachineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStorageVirtualMachine as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the SVM that you want to delete.</p>
     pub fn storage_virtual_machine_id(
         mut self,
@@ -147,5 +155,9 @@ impl DeleteStorageVirtualMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_virtual_machine_id(input);
         self
+    }
+    /// <p>The ID of the SVM that you want to delete.</p>
+    pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_virtual_machine_id()
     }
 }

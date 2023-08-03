@@ -58,6 +58,10 @@ impl ListFirewallDomainsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `domains`.
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
@@ -78,6 +82,11 @@ impl ListFirewallDomainsOutputBuilder {
     ) -> Self {
         self.domains = input;
         self
+    }
+    /// <p>A list of the domains in the firewall domain list. </p>
+    /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domains
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

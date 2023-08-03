@@ -37,6 +37,12 @@ impl TestRenderTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestRenderTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_render_template::builders::TestRenderTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl TestRenderTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the template that you want to render.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(
         mut self,
@@ -148,5 +158,9 @@ impl TestRenderTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_data(input);
         self
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_data()
     }
 }

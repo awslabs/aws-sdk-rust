@@ -48,6 +48,10 @@ impl TermBuilder {
         self.source_text = input;
         self
     }
+    /// <p>The source text of the term being translated by the custom terminology.</p>
+    pub fn get_source_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_text
+    }
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub fn target_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_text = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TermBuilder {
     pub fn set_target_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_text = input;
         self
+    }
+    /// <p>The target text of the term being translated by the custom terminology.</p>
+    pub fn get_target_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_text
     }
     /// Consumes the builder and constructs a [`Term`](crate::types::Term).
     pub fn build(self) -> crate::types::Term {

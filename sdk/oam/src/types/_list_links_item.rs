@@ -72,6 +72,10 @@ impl ListLinksItemBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the link.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ListLinksItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ListLinksItemBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// Appends an item to `resource_types`.
     ///
@@ -114,6 +126,12 @@ impl ListLinksItemBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>The resource types supported by this link.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     /// <p>The ARN of the sink that this link is attached to.</p>
     pub fn sink_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_arn = ::std::option::Option::Some(input.into());
@@ -123,6 +141,10 @@ impl ListLinksItemBuilder {
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sink_arn = input;
         self
+    }
+    /// <p>The ARN of the sink that this link is attached to.</p>
+    pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_arn
     }
     /// Consumes the builder and constructs a [`ListLinksItem`](crate::types::ListLinksItem).
     pub fn build(self) -> crate::types::ListLinksItem {

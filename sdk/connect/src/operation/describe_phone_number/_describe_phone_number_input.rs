@@ -47,6 +47,10 @@ impl DescribePhoneNumberInputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// Consumes the builder and constructs a [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
     pub fn build(
         self,

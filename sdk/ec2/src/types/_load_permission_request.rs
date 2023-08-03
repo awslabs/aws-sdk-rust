@@ -51,6 +51,10 @@ impl LoadPermissionRequestBuilder {
         self.group = input;
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.group
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl LoadPermissionRequestBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`LoadPermissionRequest`](crate::types::LoadPermissionRequest).
     pub fn build(self) -> crate::types::LoadPermissionRequest {

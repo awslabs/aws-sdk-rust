@@ -49,6 +49,10 @@ impl RowBuilder {
         self.data = input;
         self
     }
+    /// <p>List of data points in a single row of the result set.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
         crate::types::Row { data: self.data }

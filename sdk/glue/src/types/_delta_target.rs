@@ -73,6 +73,12 @@ impl DeltaTargetBuilder {
         self.delta_tables = input;
         self
     }
+    /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
+    pub fn get_delta_tables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delta_tables
+    }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     pub fn connection_name(
         mut self,
@@ -89,6 +95,10 @@ impl DeltaTargetBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The name of the connection to use to connect to the Delta table target.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     pub fn write_manifest(mut self, input: bool) -> Self {
         self.write_manifest = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl DeltaTargetBuilder {
         self.write_manifest = input;
         self
     }
+    /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
+    pub fn get_write_manifest(&self) -> &::std::option::Option<bool> {
+        &self.write_manifest
+    }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     pub fn create_native_delta_table(mut self, input: bool) -> Self {
         self.create_native_delta_table = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl DeltaTargetBuilder {
     pub fn set_create_native_delta_table(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_native_delta_table = input;
         self
+    }
+    /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
+    pub fn get_create_native_delta_table(&self) -> &::std::option::Option<bool> {
+        &self.create_native_delta_table
     }
     /// Consumes the builder and constructs a [`DeltaTarget`](crate::types::DeltaTarget).
     pub fn build(self) -> crate::types::DeltaTarget {

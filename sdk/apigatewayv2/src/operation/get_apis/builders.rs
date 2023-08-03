@@ -36,6 +36,10 @@ impl GetApisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApis as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_apis::builders::GetApisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetApisFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_max_results()
+    }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -127,5 +135,9 @@ impl GetApisFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

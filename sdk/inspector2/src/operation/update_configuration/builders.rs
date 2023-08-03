@@ -36,6 +36,12 @@ impl UpdateConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl UpdateConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ecr_configuration(input);
         self
+    }
+    /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
+        self.inner.get_ecr_configuration()
     }
 }

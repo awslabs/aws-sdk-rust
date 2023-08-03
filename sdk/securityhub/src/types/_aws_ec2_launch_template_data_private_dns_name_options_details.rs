@@ -61,6 +61,10 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
         self.enable_resource_name_dns_aaaa_record = input;
         self
     }
+    /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
+    pub fn get_enable_resource_name_dns_aaaa_record(&self) -> &::std::option::Option<bool> {
+        &self.enable_resource_name_dns_aaaa_record
+    }
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
         self.enable_resource_name_dns_a_record = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
     ) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
+    }
+    /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
+    pub fn get_enable_resource_name_dns_a_record(&self) -> &::std::option::Option<bool> {
+        &self.enable_resource_name_dns_a_record
     }
     /// <p> The type of hostname for EC2 instances. </p>
     pub fn hostname_type(
@@ -89,6 +97,10 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
     ) -> Self {
         self.hostname_type = input;
         self
+    }
+    /// <p> The type of hostname for EC2 instances. </p>
+    pub fn get_hostname_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname_type
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {

@@ -36,6 +36,10 @@ impl ListWirelessGatewayTaskDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWirelessGatewayTaskDefinitions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ListWirelessGatewayTaskDefinitionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -109,6 +117,10 @@ impl ListWirelessGatewayTaskDefinitionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     pub fn task_definition_type(
@@ -125,5 +137,11 @@ impl ListWirelessGatewayTaskDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_task_definition_type(input);
         self
+    }
+    /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
+    pub fn get_task_definition_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessGatewayTaskDefinitionType> {
+        self.inner.get_task_definition_type()
     }
 }

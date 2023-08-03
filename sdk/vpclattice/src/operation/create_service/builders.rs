@@ -37,6 +37,12 @@ impl CreateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -152,6 +166,14 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags for the service.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(
         mut self,
@@ -168,6 +190,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
+    /// <p>The custom domain name of the service.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn certificate_arn(
         mut self,
@@ -183,6 +209,10 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -201,5 +231,13 @@ impl CreateServiceFluentBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.inner = self.inner.set_auth_type(input);
         self
+    }
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// </ul>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        self.inner.get_auth_type()
     }
 }

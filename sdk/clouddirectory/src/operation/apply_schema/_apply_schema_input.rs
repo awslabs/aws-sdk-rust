@@ -53,6 +53,10 @@ impl ApplySchemaInputBuilder {
         self.published_schema_arn = input;
         self
     }
+    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+    pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.published_schema_arn
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(
         mut self,
@@ -68,6 +72,10 @@ impl ApplySchemaInputBuilder {
     ) -> Self {
         self.directory_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
     }
     /// Consumes the builder and constructs a [`ApplySchemaInput`](crate::operation::apply_schema::ApplySchemaInput).
     pub fn build(

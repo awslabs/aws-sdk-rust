@@ -64,6 +64,10 @@ impl GetCoipPoolUsageOutputBuilder {
         self.coip_pool_id = input;
         self
     }
+    /// <p>The ID of the customer-owned address pool.</p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
+    }
     /// Appends an item to `coip_address_usages`.
     ///
     /// To override the contents of this collection use [`set_coip_address_usages`](Self::set_coip_address_usages).
@@ -83,6 +87,12 @@ impl GetCoipPoolUsageOutputBuilder {
         self.coip_address_usages = input;
         self
     }
+    /// <p>Information about the address usage.</p>
+    pub fn get_coip_address_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>> {
+        &self.coip_address_usages
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -98,6 +108,12 @@ impl GetCoipPoolUsageOutputBuilder {
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,10 @@ impl CreateDiskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDisk as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_disk::builders::CreateDiskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateDiskFluentBuilder {
         self.inner = self.inner.set_disk_name(input);
         self
     }
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_name()
+    }
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn availability_zone(
@@ -137,6 +145,11 @@ impl CreateDiskFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+    /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.inner = self.inner.size_in_gb(input);
@@ -146,6 +159,10 @@ impl CreateDiskFluentBuilder {
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_size_in_gb(input);
         self
+    }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        self.inner.get_size_in_gb()
     }
     /// Appends an item to `tags`.
     ///
@@ -166,6 +183,11 @@ impl CreateDiskFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `addOns`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
@@ -182,5 +204,11 @@ impl CreateDiskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_ons(input);
         self
+    }
+    /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    pub fn get_add_ons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+        self.inner.get_add_ons()
     }
 }

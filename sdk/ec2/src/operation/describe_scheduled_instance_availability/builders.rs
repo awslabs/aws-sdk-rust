@@ -38,6 +38,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScheduledInstanceAvailability as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -135,6 +143,15 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
+    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The time period for the first schedule to start.</p>
     pub fn first_slot_start_time_range(
         mut self,
@@ -151,6 +168,12 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner = self.inner.set_first_slot_start_time_range(input);
         self
     }
+    /// <p>The time period for the first schedule to start.</p>
+    pub fn get_first_slot_start_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
+        self.inner.get_first_slot_start_time_range()
+    }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -160,6 +183,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and less than 1,720.</p>
     pub fn max_slot_duration_in_hours(mut self, input: i32) -> Self {
@@ -171,6 +198,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner = self.inner.set_max_slot_duration_in_hours(input);
         self
     }
+    /// <p>The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and less than 1,720.</p>
+    pub fn get_max_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_slot_duration_in_hours()
+    }
     /// <p>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
     pub fn min_slot_duration_in_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.min_slot_duration_in_hours(input);
@@ -181,6 +212,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
         self.inner = self.inner.set_min_slot_duration_in_hours(input);
         self
     }
+    /// <p>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
+    pub fn get_min_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_slot_duration_in_hours()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -190,6 +225,10 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The schedule recurrence.</p>
     pub fn recurrence(mut self, input: crate::types::ScheduledInstanceRecurrenceRequest) -> Self {
@@ -203,5 +242,11 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
+    }
+    /// <p>The schedule recurrence.</p>
+    pub fn get_recurrence(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
+        self.inner.get_recurrence()
     }
 }

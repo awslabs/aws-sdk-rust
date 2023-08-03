@@ -53,6 +53,10 @@ impl UnshareDirectoryOutputBuilder {
         self.shared_directory_id = input;
         self
     }
+    /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
+    pub fn get_shared_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_directory_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

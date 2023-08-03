@@ -61,6 +61,10 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>ID of source server on which to update replication type.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Replication type to which to update source server.</p>
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         self.replication_type = input;
         self
     }
+    /// <p>Replication type to which to update source server.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
+        &self.replication_type
+    }
     /// <p>Account ID on which to update replication type.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>Account ID on which to update replication type.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput, ::aws_smithy_http::operation::error::BuildError>{

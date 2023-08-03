@@ -47,6 +47,10 @@ impl PutAttributesInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -65,6 +69,12 @@ impl PutAttributesInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
     pub fn build(

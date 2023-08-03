@@ -38,6 +38,13 @@ impl DeleteRouteCalculatorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRouteCalculator as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,9 @@ impl DeleteRouteCalculatorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
+    }
+    /// <p>The name of the route calculator resource to be deleted.</p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculator_name()
     }
 }

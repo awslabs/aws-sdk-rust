@@ -54,6 +54,12 @@ impl RemoveTemplateActionInputBuilder {
         self.launch_configuration_template_id = input;
         self
     }
+    /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_template_id
+    }
     /// <p>Template post migration custom action ID to remove.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -63,6 +69,10 @@ impl RemoveTemplateActionInputBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>Template post migration custom action ID to remove.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// Consumes the builder and constructs a [`RemoveTemplateActionInput`](crate::operation::remove_template_action::RemoveTemplateActionInput).
     pub fn build(

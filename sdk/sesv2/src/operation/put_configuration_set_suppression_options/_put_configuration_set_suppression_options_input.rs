@@ -66,6 +66,10 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set to change the suppression list preferences for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Appends an item to `suppressed_reasons`.
     ///
     /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
@@ -92,6 +96,16 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     ) -> Self {
         self.suppressed_reasons = input;
         self
+    }
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// </ul>
+    pub fn get_suppressed_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+        &self.suppressed_reasons
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

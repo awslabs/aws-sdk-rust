@@ -53,6 +53,10 @@ impl CreateProtectionOutputBuilder {
         self.protection_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

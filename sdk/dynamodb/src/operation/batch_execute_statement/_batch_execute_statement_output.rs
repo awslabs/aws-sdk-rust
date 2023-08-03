@@ -67,6 +67,12 @@ impl BatchExecuteStatementOutputBuilder {
         self.responses = input;
         self
     }
+    /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
+    pub fn get_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStatementResponse>> {
+        &self.responses
+    }
     /// Appends an item to `consumed_capacity`.
     ///
     /// To override the contents of this collection use [`set_consumed_capacity`](Self::set_consumed_capacity).
@@ -85,6 +91,12 @@ impl BatchExecuteStatementOutputBuilder {
     ) -> Self {
         self.consumed_capacity = input;
         self
+    }
+    /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
+    pub fn get_consumed_capacity(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
+        &self.consumed_capacity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

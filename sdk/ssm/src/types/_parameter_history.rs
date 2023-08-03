@@ -158,6 +158,10 @@ impl ParameterHistoryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of parameter used.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -168,6 +172,10 @@ impl ParameterHistoryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of parameter used.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
+    }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -177,6 +185,10 @@ impl ParameterHistoryBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The ID of the query key used for this parameter.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>Date the parameter was last changed or updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,6 +202,10 @@ impl ParameterHistoryBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>Date the parameter was last changed or updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
     pub fn last_modified_user(
@@ -207,6 +223,10 @@ impl ParameterHistoryBuilder {
         self.last_modified_user = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
+    }
     /// <p>Information about the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -217,6 +237,10 @@ impl ParameterHistoryBuilder {
         self.description = input;
         self
     }
+    /// <p>Information about the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The parameter value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -226,6 +250,10 @@ impl ParameterHistoryBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The parameter value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Parameter names can include the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
@@ -245,6 +273,11 @@ impl ParameterHistoryBuilder {
         self.allowed_pattern = input;
         self
     }
+    /// <p>Parameter names can include the following letters and symbols.</p>
+    /// <p>a-zA-Z0-9_.-</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
+    }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -254,6 +287,10 @@ impl ParameterHistoryBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The parameter version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// Appends an item to `labels`.
     ///
@@ -274,6 +311,10 @@ impl ParameterHistoryBuilder {
         self.labels = input;
         self
     }
+    /// <p>Labels assigned to the parameter version.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p>The parameter tier.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -283,6 +324,10 @@ impl ParameterHistoryBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ParameterTier>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The parameter tier.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ParameterTier> {
+        &self.tier
     }
     /// Appends an item to `policies`.
     ///
@@ -305,6 +350,13 @@ impl ParameterHistoryBuilder {
         self.policies = input;
         self
     }
+    /// <p>Information about the policies assigned to a parameter.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
+        &self.policies
+    }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -314,6 +366,10 @@ impl ParameterHistoryBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`ParameterHistory`](crate::types::ParameterHistory).
     pub fn build(self) -> crate::types::ParameterHistory {

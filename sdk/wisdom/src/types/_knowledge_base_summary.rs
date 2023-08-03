@@ -134,6 +134,10 @@ impl KnowledgeBaseSummaryBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn knowledge_base_arn(
         mut self,
@@ -150,6 +154,10 @@ impl KnowledgeBaseSummaryBuilder {
         self.knowledge_base_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_arn
+    }
     /// <p>The name of the knowledge base.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -159,6 +167,10 @@ impl KnowledgeBaseSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the knowledge base.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of knowledge base.</p>
     pub fn knowledge_base_type(mut self, input: crate::types::KnowledgeBaseType) -> Self {
@@ -173,6 +185,12 @@ impl KnowledgeBaseSummaryBuilder {
         self.knowledge_base_type = input;
         self
     }
+    /// <p>The type of knowledge base.</p>
+    pub fn get_knowledge_base_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
+        &self.knowledge_base_type
+    }
     /// <p>The status of the knowledge base summary.</p>
     pub fn status(mut self, input: crate::types::KnowledgeBaseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -185,6 +203,10 @@ impl KnowledgeBaseSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the knowledge base summary.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
+        &self.status
     }
     /// <p>Configuration information about the external data source.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
@@ -199,6 +221,12 @@ impl KnowledgeBaseSummaryBuilder {
         self.source_configuration = input;
         self
     }
+    /// <p>Configuration information about the external data source.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        &self.source_configuration
+    }
     /// <p>Information about how to render the content.</p>
     pub fn rendering_configuration(mut self, input: crate::types::RenderingConfiguration) -> Self {
         self.rendering_configuration = ::std::option::Option::Some(input);
@@ -211,6 +239,12 @@ impl KnowledgeBaseSummaryBuilder {
     ) -> Self {
         self.rendering_configuration = input;
         self
+    }
+    /// <p>Information about how to render the content.</p>
+    pub fn get_rendering_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RenderingConfiguration> {
+        &self.rendering_configuration
     }
     /// <p>The KMS key used for encryption.</p>
     pub fn server_side_encryption_configuration(
@@ -228,6 +262,12 @@ impl KnowledgeBaseSummaryBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The description of the knowledge base.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -237,6 +277,10 @@ impl KnowledgeBaseSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the knowledge base.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -262,6 +306,14 @@ impl KnowledgeBaseSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseSummary`](crate::types::KnowledgeBaseSummary).
     pub fn build(self) -> crate::types::KnowledgeBaseSummary {

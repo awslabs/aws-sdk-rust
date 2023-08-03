@@ -97,6 +97,10 @@ impl DataCaptureConfigBuilder {
         self.enable_capture = input;
         self
     }
+    /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
+    pub fn get_enable_capture(&self) -> &::std::option::Option<bool> {
+        &self.enable_capture
+    }
     /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
     pub fn initial_sampling_percentage(mut self, input: i32) -> Self {
         self.initial_sampling_percentage = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl DataCaptureConfigBuilder {
     pub fn set_initial_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.initial_sampling_percentage = input;
         self
+    }
+    /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
+    pub fn get_initial_sampling_percentage(&self) -> &::std::option::Option<i32> {
+        &self.initial_sampling_percentage
     }
     /// <p>The Amazon S3 location used to capture the data.</p>
     pub fn destination_s3_uri(
@@ -122,6 +130,10 @@ impl DataCaptureConfigBuilder {
     ) -> Self {
         self.destination_s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 location used to capture the data.</p>
+    pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_uri
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -147,6 +159,17 @@ impl DataCaptureConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Appends an item to `capture_options`.
     ///
     /// To override the contents of this collection use [`set_capture_options`](Self::set_capture_options).
@@ -166,6 +189,12 @@ impl DataCaptureConfigBuilder {
         self.capture_options = input;
         self
     }
+    /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
+    pub fn get_capture_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>> {
+        &self.capture_options
+    }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
     pub fn capture_content_type_header(
         mut self,
@@ -181,6 +210,12 @@ impl DataCaptureConfigBuilder {
     ) -> Self {
         self.capture_content_type_header = input;
         self
+    }
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    pub fn get_capture_content_type_header(
+        &self,
+    ) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
+        &self.capture_content_type_header
     }
     /// Consumes the builder and constructs a [`DataCaptureConfig`](crate::types::DataCaptureConfig).
     pub fn build(self) -> crate::types::DataCaptureConfig {

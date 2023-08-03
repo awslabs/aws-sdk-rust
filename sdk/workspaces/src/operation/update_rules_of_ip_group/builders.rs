@@ -36,6 +36,13 @@ impl UpdateRulesOfIpGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRulesOfIpGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateRulesOfIpGroupFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// Appends an item to `UserRules`.
     ///
     /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
@@ -142,5 +153,11 @@ impl UpdateRulesOfIpGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
+    }
+    /// <p>One or more rules.</p>
+    pub fn get_user_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        self.inner.get_user_rules()
     }
 }

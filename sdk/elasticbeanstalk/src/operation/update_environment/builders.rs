@@ -38,6 +38,12 @@ impl UpdateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application with which the environment is associated.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -154,6 +164,12 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment to update.</p>
+    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_name(
@@ -172,6 +188,11 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -182,6 +203,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -191,6 +216,10 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
@@ -203,6 +232,11 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::EnvironmentTier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
+    }
+    /// <p>This specifies the tier to use to update the environment.</p>
+    /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::EnvironmentTier> {
+        self.inner.get_tier()
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
     pub fn version_label(
@@ -220,6 +254,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_version_label(input);
         self
     }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_label()
+    }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     pub fn template_name(
         mut self,
@@ -235,6 +273,10 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
     pub fn solution_stack_name(
@@ -252,6 +294,10 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
+    /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_solution_stack_name()
+    }
     /// <p>The ARN of the platform, if used.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
@@ -261,6 +307,10 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
         self
+    }
+    /// <p>The ARN of the platform, if used.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_arn()
     }
     /// Appends an item to `OptionSettings`.
     ///
@@ -279,6 +329,12 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_option_settings(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        self.inner.get_option_settings()
+    }
     /// Appends an item to `OptionsToRemove`.
     ///
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).
@@ -295,5 +351,11 @@ impl UpdateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
+    }
+    /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
+    pub fn get_options_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+        self.inner.get_options_to_remove()
     }
 }

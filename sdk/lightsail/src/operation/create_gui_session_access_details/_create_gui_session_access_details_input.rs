@@ -45,6 +45,10 @@ impl CreateGuiSessionAccessDetailsInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`CreateGuiSessionAccessDetailsInput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput).
     pub fn build(
         self,

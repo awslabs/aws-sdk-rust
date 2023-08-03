@@ -62,6 +62,10 @@ impl AccountQuotaBuilder {
         self.account_quota_name = input;
         self
     }
+    /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
+    pub fn get_account_quota_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_quota_name
+    }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn used(mut self, input: i64) -> Self {
         self.used = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl AccountQuotaBuilder {
         self.used = input;
         self
     }
+    /// <p>The amount currently used toward the quota maximum.</p>
+    pub fn get_used(&self) -> &::std::option::Option<i64> {
+        &self.used
+    }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn max(mut self, input: i64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl AccountQuotaBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum allowed value for the quota.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`AccountQuota`](crate::types::AccountQuota).
     pub fn build(self) -> crate::types::AccountQuota {

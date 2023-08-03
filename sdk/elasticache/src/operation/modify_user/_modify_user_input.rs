@@ -79,6 +79,10 @@ impl ModifyUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
         mut self,
@@ -95,6 +99,10 @@ impl ModifyUserInputBuilder {
         self.access_string = input;
         self
     }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
+    }
     /// <p>Adds additional user permissions to the access string.</p>
     pub fn append_access_string(
         mut self,
@@ -110,6 +118,10 @@ impl ModifyUserInputBuilder {
     ) -> Self {
         self.append_access_string = input;
         self
+    }
+    /// <p>Adds additional user permissions to the access string.</p>
+    pub fn get_append_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.append_access_string
     }
     /// Appends an item to `passwords`.
     ///
@@ -130,6 +142,10 @@ impl ModifyUserInputBuilder {
         self.passwords = input;
         self
     }
+    /// <p>The passwords belonging to the user. You are allowed up to two.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.passwords
+    }
     /// <p>Indicates no password is required for the user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
         self.no_password_required = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl ModifyUserInputBuilder {
     pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_password_required = input;
         self
+    }
+    /// <p>Indicates no password is required for the user.</p>
+    pub fn get_no_password_required(&self) -> &::std::option::Option<bool> {
+        &self.no_password_required
     }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -152,6 +172,12 @@ impl ModifyUserInputBuilder {
     ) -> Self {
         self.authentication_mode = input;
         self
+    }
+    /// <p>Specifies how to authenticate the user.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
     pub fn build(

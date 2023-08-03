@@ -99,6 +99,10 @@ impl DescribeUsageLimitsInputBuilder {
         self.usage_limit_id = input;
         self
     }
+    /// <p>The identifier of the usage limit to describe.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_limit_id
+    }
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
     pub fn cluster_identifier(
         mut self,
@@ -115,6 +119,10 @@ impl DescribeUsageLimitsInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The feature type for which you want to describe usage limits.</p>
     pub fn feature_type(mut self, input: crate::types::UsageLimitFeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl DescribeUsageLimitsInputBuilder {
     ) -> Self {
         self.feature_type = input;
         self
+    }
+    /// <p>The feature type for which you want to describe usage limits.</p>
+    pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::UsageLimitFeatureType> {
+        &self.feature_type
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
@@ -142,6 +154,12 @@ impl DescribeUsageLimitsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeUsageLimits</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -151,6 +169,10 @@ impl DescribeUsageLimitsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeUsageLimits</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -171,6 +193,10 @@ impl DescribeUsageLimitsInputBuilder {
         self.tag_keys = input;
         self
     }
+    /// <p>A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -189,6 +215,10 @@ impl DescribeUsageLimitsInputBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`DescribeUsageLimitsInput`](crate::operation::describe_usage_limits::DescribeUsageLimitsInput).
     pub fn build(

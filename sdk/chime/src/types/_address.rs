@@ -126,6 +126,10 @@ impl AddressBuilder {
         self.street_name = input;
         self
     }
+    /// <p>The address street, such as <code>8th Avenue</code>.</p>
+    pub fn get_street_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_name
+    }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
     pub fn street_suffix(
         mut self,
@@ -141,6 +145,10 @@ impl AddressBuilder {
     ) -> Self {
         self.street_suffix = input;
         self
+    }
+    /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+    pub fn get_street_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_suffix
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
     pub fn post_directional(
@@ -158,6 +166,10 @@ impl AddressBuilder {
         self.post_directional = input;
         self
     }
+    /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+    pub fn get_post_directional(&self) -> &::std::option::Option<::std::string::String> {
+        &self.post_directional
+    }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
     pub fn pre_directional(
         mut self,
@@ -173,6 +185,10 @@ impl AddressBuilder {
     ) -> Self {
         self.pre_directional = input;
         self
+    }
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+    pub fn get_pre_directional(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_directional
     }
     /// <p>The numeric portion of an address.</p>
     pub fn street_number(
@@ -190,6 +206,10 @@ impl AddressBuilder {
         self.street_number = input;
         self
     }
+    /// <p>The numeric portion of an address.</p>
+    pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_number
+    }
     /// <p>The city of an address.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
@@ -199,6 +219,10 @@ impl AddressBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city = input;
         self
+    }
+    /// <p>The city of an address.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The state of an address.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,6 +234,10 @@ impl AddressBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of an address.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The postal code of an address.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
@@ -219,6 +247,10 @@ impl AddressBuilder {
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
+    }
+    /// <p>The postal code of an address.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// <p>The Zip + 4 or postal code + 4 of an address.</p>
     pub fn postal_code_plus4(
@@ -236,6 +268,10 @@ impl AddressBuilder {
         self.postal_code_plus4 = input;
         self
     }
+    /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+    pub fn get_postal_code_plus4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code_plus4
+    }
     /// <p>The country of an address. </p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
@@ -245,6 +281,10 @@ impl AddressBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
+    }
+    /// <p>The country of an address. </p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {

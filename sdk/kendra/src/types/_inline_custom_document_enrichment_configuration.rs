@@ -60,6 +60,12 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
         self.condition = input;
         self
     }
+    /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
+    pub fn get_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
+        &self.condition
+    }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub fn target(mut self, input: crate::types::DocumentAttributeTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
         self.target = input;
         self
     }
+    /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::DocumentAttributeTarget> {
+        &self.target
+    }
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_deletion(mut self, input: bool) -> Self {
         self.document_content_deletion = ::std::option::Option::Some(input);
@@ -82,6 +92,10 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     pub fn set_document_content_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.document_content_deletion = input;
         self
+    }
+    /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    pub fn get_document_content_deletion(&self) -> &::std::option::Option<bool> {
+        &self.document_content_deletion
     }
     /// Consumes the builder and constructs a [`InlineCustomDocumentEnrichmentConfiguration`](crate::types::InlineCustomDocumentEnrichmentConfiguration).
     pub fn build(self) -> crate::types::InlineCustomDocumentEnrichmentConfiguration {

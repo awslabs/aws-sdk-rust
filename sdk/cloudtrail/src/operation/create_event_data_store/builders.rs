@@ -36,6 +36,13 @@ impl CreateEventDataStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEventDataStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_event_data_store::builders::CreateEventDataStoreInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the event data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `AdvancedEventSelectors`.
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
@@ -149,6 +160,15 @@ impl CreateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
+    /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
+    /// <p> For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+    /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
+    /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        self.inner.get_advanced_event_selectors()
+    }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_region_enabled(input);
@@ -158,6 +178,10 @@ impl CreateEventDataStoreFluentBuilder {
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_region_enabled(input);
         self
+    }
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
+    pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_region_enabled()
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     pub fn organization_enabled(mut self, input: bool) -> Self {
@@ -169,6 +193,10 @@ impl CreateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_organization_enabled(input);
         self
     }
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_organization_enabled()
+    }
     /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period(input);
@@ -178,6 +206,10 @@ impl CreateEventDataStoreFluentBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
+    }
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period()
     }
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
@@ -191,6 +223,10 @@ impl CreateEventDataStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
+    }
+    /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_termination_protection_enabled()
     }
     /// Appends an item to `TagsList`.
     ///
@@ -208,6 +244,10 @@ impl CreateEventDataStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_list(input);
         self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags_list()
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -239,6 +279,20 @@ impl CreateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+    /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+    /// </important>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
     pub fn start_ingestion(mut self, input: bool) -> Self {
         self.inner = self.inner.start_ingestion(input);
@@ -248,5 +302,9 @@ impl CreateEventDataStoreFluentBuilder {
     pub fn set_start_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_start_ingestion(input);
         self
+    }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn get_start_ingestion(&self) -> &::std::option::Option<bool> {
+        self.inner.get_start_ingestion()
     }
 }

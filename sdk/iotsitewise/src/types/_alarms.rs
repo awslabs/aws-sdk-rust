@@ -54,6 +54,10 @@ impl AlarmsBuilder {
         self.alarm_role_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
+    pub fn get_alarm_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_role_arn
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn notification_lambda_arn(
         mut self,
@@ -69,6 +73,10 @@ impl AlarmsBuilder {
     ) -> Self {
         self.notification_lambda_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+    pub fn get_notification_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_lambda_arn
     }
     /// Consumes the builder and constructs a [`Alarms`](crate::types::Alarms).
     pub fn build(self) -> crate::types::Alarms {

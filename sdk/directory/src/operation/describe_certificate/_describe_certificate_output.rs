@@ -51,6 +51,10 @@ impl DescribeCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::Certificate> {
+        &self.certificate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

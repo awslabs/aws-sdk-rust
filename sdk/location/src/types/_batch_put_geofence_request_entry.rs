@@ -77,6 +77,10 @@ impl BatchPutGeofenceRequestEntryBuilder {
         self.geofence_id = input;
         self
     }
+    /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
+    }
     /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
@@ -93,6 +97,12 @@ impl BatchPutGeofenceRequestEntryBuilder {
     ) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// </note>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
+        &self.geometry
     }
     /// Adds a key-value pair to `geofence_properties`.
     ///
@@ -120,6 +130,15 @@ impl BatchPutGeofenceRequestEntryBuilder {
     ) -> Self {
         self.geofence_properties = input;
         self
+    }
+    /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn get_geofence_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::types::BatchPutGeofenceRequestEntry).
     pub fn build(self) -> crate::types::BatchPutGeofenceRequestEntry {

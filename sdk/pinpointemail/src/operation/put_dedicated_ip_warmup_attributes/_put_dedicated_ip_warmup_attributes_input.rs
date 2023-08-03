@@ -48,6 +48,10 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
         self.ip = input;
         self
     }
+    /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.warmup_percentage = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
     pub fn set_warmup_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.warmup_percentage = input;
         self
+    }
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    pub fn get_warmup_percentage(&self) -> &::std::option::Option<i32> {
+        &self.warmup_percentage
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesInput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput).
     pub fn build(

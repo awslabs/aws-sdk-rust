@@ -54,6 +54,10 @@ impl GetSignedBluinsightsUrlOutputBuilder {
         self.signed_bi_url = input;
         self
     }
+    /// <p>Single sign-on AWS Blu Insights URL.</p>
+    pub fn get_signed_bi_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signed_bi_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

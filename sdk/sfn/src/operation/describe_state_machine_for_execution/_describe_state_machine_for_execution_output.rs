@@ -145,6 +145,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The name of the state machine associated with the execution.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -154,6 +158,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the state machine associated with the execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,6 +173,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -174,6 +186,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,6 +204,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.update_date = input;
         self
     }
+    /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
+    }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -200,6 +220,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
@@ -214,6 +240,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+        &self.tracing_configuration
+    }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
@@ -224,6 +256,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.map_run_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
+    }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -233,6 +269,10 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
     /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
@@ -245,6 +285,11 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
+    /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -65,6 +65,10 @@ impl ReloadReplicationTablesInputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     /// Appends an item to `tables_to_reload`.
     ///
     /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
@@ -84,6 +88,12 @@ impl ReloadReplicationTablesInputBuilder {
         self.tables_to_reload = input;
         self
     }
+    /// <p>The list of tables to reload.</p>
+    pub fn get_tables_to_reload(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+        &self.tables_to_reload
+    }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
     pub fn reload_option(mut self, input: crate::types::ReloadOptionValue) -> Self {
         self.reload_option = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl ReloadReplicationTablesInputBuilder {
     ) -> Self {
         self.reload_option = input;
         self
+    }
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
+    pub fn get_reload_option(&self) -> &::std::option::Option<crate::types::ReloadOptionValue> {
+        &self.reload_option
     }
     /// Consumes the builder and constructs a [`ReloadReplicationTablesInput`](crate::operation::reload_replication_tables::ReloadReplicationTablesInput).
     pub fn build(

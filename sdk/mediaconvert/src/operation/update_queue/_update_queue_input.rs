@@ -66,6 +66,10 @@ impl UpdateQueueInputBuilder {
         self.description = input;
         self
     }
+    /// The new description for the queue, if you are changing it.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The name of the queue that you are modifying.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateQueueInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the queue that you are modifying.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
     pub fn reservation_plan_settings(
@@ -92,6 +100,12 @@ impl UpdateQueueInputBuilder {
         self.reservation_plan_settings = input;
         self
     }
+    /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
+    pub fn get_reservation_plan_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+        &self.reservation_plan_settings
+    }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,6 +115,10 @@ impl UpdateQueueInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
     pub fn build(

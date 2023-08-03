@@ -66,6 +66,10 @@ impl KeyAttributesBuilder {
         self.key_usage = input;
         self
     }
+    /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsage> {
+        &self.key_usage
+    }
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
     pub fn key_class(mut self, input: crate::types::KeyClass) -> Self {
         self.key_class = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl KeyAttributesBuilder {
     pub fn set_key_class(mut self, input: ::std::option::Option<crate::types::KeyClass>) -> Self {
         self.key_class = input;
         self
+    }
+    /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
+    pub fn get_key_class(&self) -> &::std::option::Option<crate::types::KeyClass> {
+        &self.key_class
     }
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
@@ -91,6 +99,11 @@ impl KeyAttributesBuilder {
         self.key_algorithm = input;
         self
     }
+    /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
+    /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
+    pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.key_algorithm
+    }
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
     pub fn key_modes_of_use(mut self, input: crate::types::KeyModesOfUse) -> Self {
         self.key_modes_of_use = ::std::option::Option::Some(input);
@@ -103,6 +116,10 @@ impl KeyAttributesBuilder {
     ) -> Self {
         self.key_modes_of_use = input;
         self
+    }
+    /// <p>The list of cryptographic operations that you can perform using the key.</p>
+    pub fn get_key_modes_of_use(&self) -> &::std::option::Option<crate::types::KeyModesOfUse> {
+        &self.key_modes_of_use
     }
     /// Consumes the builder and constructs a [`KeyAttributes`](crate::types::KeyAttributes).
     pub fn build(self) -> crate::types::KeyAttributes {

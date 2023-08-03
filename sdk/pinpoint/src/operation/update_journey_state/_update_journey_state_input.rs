@@ -64,6 +64,10 @@ impl UpdateJourneyStateInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateJourneyStateInputBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_id = input;
         self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.journey_id
     }
     /// <p>Changes the status of a journey.</p>
     pub fn journey_state_request(mut self, input: crate::types::JourneyStateRequest) -> Self {
@@ -86,6 +94,12 @@ impl UpdateJourneyStateInputBuilder {
     ) -> Self {
         self.journey_state_request = input;
         self
+    }
+    /// <p>Changes the status of a journey.</p>
+    pub fn get_journey_state_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::JourneyStateRequest> {
+        &self.journey_state_request
     }
     /// Consumes the builder and constructs a [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
     pub fn build(

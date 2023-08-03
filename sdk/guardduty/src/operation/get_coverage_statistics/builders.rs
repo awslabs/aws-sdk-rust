@@ -36,6 +36,13 @@ impl GetCoverageStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCoverageStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetCoverageStatisticsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
@@ -138,6 +149,12 @@ impl GetCoverageStatisticsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
+    }
+    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        self.inner.get_filter_criteria()
     }
     /// Appends an item to `StatisticsType`.
     ///
@@ -155,5 +172,11 @@ impl GetCoverageStatisticsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_statistics_type(input);
         self
+    }
+    /// <p>Represents the statistics type used to aggregate the coverage details.</p>
+    pub fn get_statistics_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
+        self.inner.get_statistics_type()
     }
 }

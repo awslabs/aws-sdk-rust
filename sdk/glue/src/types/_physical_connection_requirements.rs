@@ -57,6 +57,10 @@ impl PhysicalConnectionRequirementsBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The subnet ID used by the connection.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// Appends an item to `security_group_id_list`.
     ///
     /// To override the contents of this collection use [`set_security_group_id_list`](Self::set_security_group_id_list).
@@ -79,6 +83,12 @@ impl PhysicalConnectionRequirementsBuilder {
         self.security_group_id_list = input;
         self
     }
+    /// <p>The security group ID list used by the connection.</p>
+    pub fn get_security_group_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_id_list
+    }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
     pub fn availability_zone(
         mut self,
@@ -94,6 +104,10 @@ impl PhysicalConnectionRequirementsBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`PhysicalConnectionRequirements`](crate::types::PhysicalConnectionRequirements).
     pub fn build(self) -> crate::types::PhysicalConnectionRequirements {

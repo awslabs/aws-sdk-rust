@@ -86,6 +86,10 @@ impl ComponentSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ComponentSummaryBuilder {
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
     }
     /// <p>The type of the component.</p>
     pub fn component_type(mut self, input: crate::types::ComponentType) -> Self {
@@ -108,6 +116,10 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>The type of the component.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
+        &self.component_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +146,14 @@ impl ComponentSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags of the component.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -143,6 +163,10 @@ impl ComponentSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {

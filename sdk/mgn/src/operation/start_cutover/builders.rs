@@ -36,6 +36,10 @@ impl StartCutoverFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartCutover as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_cutover::builders::StartCutoverInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,12 @@ impl StartCutoverFluentBuilder {
         self.inner = self.inner.set_source_server_i_ds(input);
         self
     }
+    /// <p>Start Cutover by Source Server IDs.</p>
+    pub fn get_source_server_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_server_i_ds()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -151,6 +161,14 @@ impl StartCutoverFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Start Cutover by Tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Start Cutover by Account IDs</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -160,5 +178,9 @@ impl StartCutoverFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Start Cutover by Account IDs</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

@@ -63,6 +63,10 @@ impl ReleaseHostsOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.successful
+    }
     /// Appends an item to `unsuccessful`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
@@ -81,6 +85,12 @@ impl ReleaseHostsOutputBuilder {
     ) -> Self {
         self.unsuccessful = input;
         self
+    }
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl GetEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEntities as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_entities::builders::GetEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,12 @@ impl GetEntitiesFluentBuilder {
         self.inner = self.inner.set_ids(input);
         self
     }
+    /// <p>An array of entity IDs.</p>
+    /// <p>The IDs should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ids()
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.inner = self.inner.namespace_version(input);
@@ -151,5 +161,9 @@ impl GetEntitiesFluentBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_namespace_version(input);
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_namespace_version()
     }
 }

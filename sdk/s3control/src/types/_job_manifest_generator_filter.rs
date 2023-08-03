@@ -68,6 +68,10 @@ impl JobManifestGeneratorFilterBuilder {
         self.eligible_for_replication = input;
         self
     }
+    /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+    pub fn get_eligible_for_replication(&self) -> &::std::option::Option<bool> {
+        &self.eligible_for_replication
+    }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl JobManifestGeneratorFilterBuilder {
         self.created_after = input;
         self
     }
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl JobManifestGeneratorFilterBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Appends an item to `object_replication_statuses`.
     ///
@@ -112,6 +124,12 @@ impl JobManifestGeneratorFilterBuilder {
     ) -> Self {
         self.object_replication_statuses = input;
         self
+    }
+    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    pub fn get_object_replication_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>> {
+        &self.object_replication_statuses
     }
     /// Consumes the builder and constructs a [`JobManifestGeneratorFilter`](crate::types::JobManifestGeneratorFilter).
     pub fn build(self) -> crate::types::JobManifestGeneratorFilter {

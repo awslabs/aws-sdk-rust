@@ -40,6 +40,10 @@ impl TestSetExportSpecificationBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The unique identifier of the test set.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// Consumes the builder and constructs a [`TestSetExportSpecification`](crate::types::TestSetExportSpecification).
     pub fn build(self) -> crate::types::TestSetExportSpecification {
         crate::types::TestSetExportSpecification {

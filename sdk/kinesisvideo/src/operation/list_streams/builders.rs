@@ -36,6 +36,10 @@ impl ListStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreams as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_streams::builders::ListStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListStreamsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -136,6 +144,10 @@ impl ListStreamsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn stream_name_condition(mut self, input: crate::types::StreamNameCondition) -> Self {
@@ -149,5 +161,11 @@ impl ListStreamsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stream_name_condition(input);
         self
+    }
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
+    pub fn get_stream_name_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamNameCondition> {
+        self.inner.get_stream_name_condition()
     }
 }

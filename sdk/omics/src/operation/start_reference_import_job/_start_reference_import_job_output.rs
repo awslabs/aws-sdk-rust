@@ -80,6 +80,10 @@ impl StartReferenceImportJobOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The job's reference store ID.</p>
     pub fn reference_store_id(
         mut self,
@@ -96,6 +100,10 @@ impl StartReferenceImportJobOutputBuilder {
         self.reference_store_id = input;
         self
     }
+    /// <p>The job's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
+    }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl StartReferenceImportJobOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The job's service role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceImportJobStatus) -> Self {
@@ -119,6 +131,10 @@ impl StartReferenceImportJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceImportJobStatus> {
+        &self.status
+    }
     /// <p>When the job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl StartReferenceImportJobOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

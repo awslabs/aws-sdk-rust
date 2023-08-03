@@ -37,6 +37,10 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateSolNetworkPackageContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
         self.inner = self.inner.set_nsd_info_id(input);
         self
     }
+    /// <p>Network service descriptor file.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nsd_info_id()
+    }
     /// <p>Network package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
         self.inner = self.inner.content_type(input);
@@ -114,6 +122,10 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>Network package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        self.inner.get_content_type()
+    }
     /// <p>Network package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.file(input);
@@ -123,5 +135,9 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_file(input);
         self
+    }
+    /// <p>Network package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_file()
     }
 }

@@ -61,6 +61,10 @@ impl DeleteOtaUpdateInputBuilder {
         self.ota_update_id = input;
         self
     }
+    /// <p>The ID of the OTA update to delete.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_id
+    }
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub fn delete_stream(mut self, input: bool) -> Self {
         self.delete_stream = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl DeleteOtaUpdateInputBuilder {
         self.delete_stream = input;
         self
     }
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    pub fn get_delete_stream(&self) -> &::std::option::Option<bool> {
+        &self.delete_stream
+    }
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub fn force_delete_aws_job(mut self, input: bool) -> Self {
         self.force_delete_aws_job = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DeleteOtaUpdateInputBuilder {
     pub fn set_force_delete_aws_job(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete_aws_job = input;
         self
+    }
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    pub fn get_force_delete_aws_job(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_aws_job
     }
     /// Consumes the builder and constructs a [`DeleteOtaUpdateInput`](crate::operation::delete_ota_update::DeleteOtaUpdateInput).
     pub fn build(

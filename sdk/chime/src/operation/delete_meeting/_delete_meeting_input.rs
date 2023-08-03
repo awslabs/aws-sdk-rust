@@ -39,6 +39,10 @@ impl DeleteMeetingInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Consumes the builder and constructs a [`DeleteMeetingInput`](crate::operation::delete_meeting::DeleteMeetingInput).
     pub fn build(
         self,

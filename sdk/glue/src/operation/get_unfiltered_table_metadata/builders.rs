@@ -37,6 +37,10 @@ impl GetUnfilteredTableMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUnfilteredTableMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn database_name(
         mut self,
@@ -143,6 +151,10 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>(Required) Specifies the name of a database that contains the table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -152,6 +164,10 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
@@ -165,6 +181,10 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
+    }
+    /// <p>A structure containing Lake Formation audit context information.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        self.inner.get_audit_context()
     }
     /// Appends an item to `SupportedPermissionTypes`.
     ///
@@ -182,5 +202,11 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
+    }
+    /// <p>(Required) A list of supported permission types. </p>
+    pub fn get_supported_permission_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+        self.inner.get_supported_permission_types()
     }
 }

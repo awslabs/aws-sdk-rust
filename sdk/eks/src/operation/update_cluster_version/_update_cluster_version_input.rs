@@ -56,6 +56,10 @@ impl UpdateClusterVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateClusterVersionInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The desired Kubernetes version following a successful update.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -81,6 +89,10 @@ impl UpdateClusterVersionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(

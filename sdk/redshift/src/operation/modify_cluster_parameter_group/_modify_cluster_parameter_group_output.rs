@@ -61,6 +61,10 @@ impl ModifyClusterParameterGroupOutputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the cluster parameter group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn parameter_group_status(
         mut self,
@@ -76,6 +80,10 @@ impl ModifyClusterParameterGroupOutputBuilder {
     ) -> Self {
         self.parameter_group_status = input;
         self
+    }
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
+    pub fn get_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl MetricToRetainBuilder {
         self.metric = input;
         self
     }
+    /// <p>What is measured by the behavior.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
+    }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn metric_dimension(mut self, input: crate::types::MetricDimension) -> Self {
         self.metric_dimension = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MetricToRetainBuilder {
     ) -> Self {
         self.metric_dimension = input;
         self
+    }
+    /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
+    pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
+        &self.metric_dimension
     }
     /// Consumes the builder and constructs a [`MetricToRetain`](crate::types::MetricToRetain).
     pub fn build(self) -> crate::types::MetricToRetain {

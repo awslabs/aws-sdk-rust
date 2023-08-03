@@ -40,6 +40,10 @@ impl VpcInfoCidrBlockSetDetailsBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 CIDR block for the VPC. </p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// Consumes the builder and constructs a [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
     pub fn build(self) -> crate::types::VpcInfoCidrBlockSetDetails {
         crate::types::VpcInfoCidrBlockSetDetails {

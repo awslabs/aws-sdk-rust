@@ -69,6 +69,10 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
     pub fn transit_gateway_connect_peer_arn(
         mut self,
@@ -85,6 +89,12 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         self.transit_gateway_connect_peer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
+    pub fn get_transit_gateway_connect_peer_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_connect_peer_arn
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
@@ -104,6 +118,10 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
+    }
+    /// <p>The ID of the link.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayConnectPeerInput`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput, ::aws_smithy_http::operation::error::BuildError>{

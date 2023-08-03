@@ -60,6 +60,14 @@ impl PointInTimeRecoveryBuilder {
         self.status = input;
         self
     }
+    /// <p>The options are:</p>
+    /// <ul>
+    /// <li> <p> <code>status=ENABLED</code> </p> </li>
+    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PointInTimeRecoveryStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`PointInTimeRecovery`](crate::types::PointInTimeRecovery).
     pub fn build(self) -> crate::types::PointInTimeRecovery {
         crate::types::PointInTimeRecovery {

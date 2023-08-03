@@ -56,6 +56,10 @@ impl BinaryColumnStatisticsDataBuilder {
         self.maximum_length = input;
         self
     }
+    /// <p>The size of the longest bit sequence in the column.</p>
+    pub fn get_maximum_length(&self) -> &::std::option::Option<i64> {
+        &self.maximum_length
+    }
     /// <p>The average bit sequence length in the column.</p>
     pub fn average_length(mut self, input: f64) -> Self {
         self.average_length = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl BinaryColumnStatisticsDataBuilder {
         self.average_length = input;
         self
     }
+    /// <p>The average bit sequence length in the column.</p>
+    pub fn get_average_length(&self) -> &::std::option::Option<f64> {
+        &self.average_length
+    }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl BinaryColumnStatisticsDataBuilder {
     pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
+        &self.number_of_nulls
     }
     /// Consumes the builder and constructs a [`BinaryColumnStatisticsData`](crate::types::BinaryColumnStatisticsData).
     pub fn build(self) -> crate::types::BinaryColumnStatisticsData {

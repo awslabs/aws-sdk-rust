@@ -45,6 +45,10 @@ impl GetEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
     pub fn build(
         self,

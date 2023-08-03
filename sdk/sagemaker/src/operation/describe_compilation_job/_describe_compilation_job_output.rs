@@ -186,6 +186,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.compilation_job_name = input;
         self
     }
+    /// <p>The name of the model compilation job.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
     pub fn compilation_job_arn(
         mut self,
@@ -202,6 +206,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.compilation_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+    pub fn get_compilation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_arn
+    }
     /// <p>The status of the model compilation job.</p>
     pub fn compilation_job_status(mut self, input: crate::types::CompilationJobStatus) -> Self {
         self.compilation_job_status = ::std::option::Option::Some(input);
@@ -214,6 +222,12 @@ impl DescribeCompilationJobOutputBuilder {
     ) -> Self {
         self.compilation_job_status = input;
         self
+    }
+    /// <p>The status of the model compilation job.</p>
+    pub fn get_compilation_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompilationJobStatus> {
+        &self.compilation_job_status
     }
     /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
     /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
@@ -230,6 +244,13 @@ impl DescribeCompilationJobOutputBuilder {
         self.compilation_start_time = input;
         self
     }
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    pub fn get_compilation_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.compilation_start_time
+    }
     /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
     pub fn compilation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.compilation_end_time = ::std::option::Option::Some(input);
@@ -243,6 +264,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.compilation_end_time = input;
         self
     }
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    pub fn get_compilation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.compilation_end_time
+    }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
@@ -255,6 +280,12 @@ impl DescribeCompilationJobOutputBuilder {
     ) -> Self {
         self.stopping_condition = input;
         self
+    }
+    /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+        &self.stopping_condition
     }
     /// <p>The inference image to use when compiling a model. Specify an image only if the target device is a cloud instance.</p>
     pub fn inference_image(
@@ -272,6 +303,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.inference_image = input;
         self
     }
+    /// <p>The inference image to use when compiling a model. Specify an image only if the target device is a cloud instance.</p>
+    pub fn get_inference_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_image
+    }
     /// <p>The Amazon Resource Name (ARN) of the versioned model package that was provided to SageMaker Neo when you initiated a compilation job.</p>
     pub fn model_package_version_arn(
         mut self,
@@ -288,6 +323,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.model_package_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the versioned model package that was provided to SageMaker Neo when you initiated a compilation job.</p>
+    pub fn get_model_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_version_arn
+    }
     /// <p>The time that the model compilation job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -301,6 +340,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the model compilation job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time that the status of the model compilation job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -313,6 +356,10 @@ impl DescribeCompilationJobOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time that the status of the model compilation job was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>If a model compilation job failed, the reason it failed. </p>
     pub fn failure_reason(
@@ -330,6 +377,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If a model compilation job failed, the reason it failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Information about the location in Amazon S3 that has been configured for storing the model artifacts used in the compilation job.</p>
     pub fn model_artifacts(mut self, input: crate::types::ModelArtifacts) -> Self {
         self.model_artifacts = ::std::option::Option::Some(input);
@@ -342,6 +393,10 @@ impl DescribeCompilationJobOutputBuilder {
     ) -> Self {
         self.model_artifacts = input;
         self
+    }
+    /// <p>Information about the location in Amazon S3 that has been configured for storing the model artifacts used in the compilation job.</p>
+    pub fn get_model_artifacts(&self) -> &::std::option::Option<crate::types::ModelArtifacts> {
+        &self.model_artifacts
     }
     /// <p>Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.</p>
     pub fn model_digests(mut self, input: crate::types::ModelDigests) -> Self {
@@ -356,6 +411,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.model_digests = input;
         self
     }
+    /// <p>Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.</p>
+    pub fn get_model_digests(&self) -> &::std::option::Option<crate::types::ModelDigests> {
+        &self.model_digests
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -365,6 +424,10 @@ impl DescribeCompilationJobOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Information about the location in Amazon S3 of the input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
     pub fn input_config(mut self, input: crate::types::InputConfig) -> Self {
@@ -379,6 +442,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.input_config = input;
         self
     }
+    /// <p>Information about the location in Amazon S3 of the input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::InputConfig> {
+        &self.input_config
+    }
     /// <p>Information about the output location for the compiled model and the target device that the model runs on.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -392,6 +459,10 @@ impl DescribeCompilationJobOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>Information about the output location for the compiled model and the target device that the model runs on.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::NeoVpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -404,6 +475,10 @@ impl DescribeCompilationJobOutputBuilder {
     ) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::NeoVpcConfig> {
+        &self.vpc_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

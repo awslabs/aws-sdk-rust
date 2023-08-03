@@ -56,6 +56,10 @@ impl BatchItemErrorBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// <p>The numeric error code of the error.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl BatchItemErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The numeric error code of the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>A text description of the error.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl BatchItemErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A text description of the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchItemError`](crate::types::BatchItemError).
     pub fn build(self) -> crate::types::BatchItemError {

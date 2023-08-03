@@ -101,6 +101,14 @@ impl DataViewDestinationTypeParamsBuilder {
         self.destination_type = input;
         self
     }
+    /// <p>Destination type for a Dataview.</p>
+    /// <ul>
+    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
+    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// </ul>
+    pub fn get_destination_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_type
+    }
     /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
@@ -124,6 +132,16 @@ impl DataViewDestinationTypeParamsBuilder {
     ) -> Self {
         self.s3_destination_export_file_format = input;
         self
+    }
+    /// <p>Dataview export file format.</p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
+    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// </ul>
+    pub fn get_s3_destination_export_file_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportFileFormat> {
+        &self.s3_destination_export_file_format
     }
     /// Adds a key-value pair to `s3_destination_export_file_format_options`.
     ///
@@ -155,6 +173,16 @@ impl DataViewDestinationTypeParamsBuilder {
     ) -> Self {
         self.s3_destination_export_file_format_options = input;
         self
+    }
+    /// <p>Format Options for S3 Destination type.</p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
+    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    pub fn get_s3_destination_export_file_format_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.s3_destination_export_file_format_options
     }
     /// Consumes the builder and constructs a [`DataViewDestinationTypeParams`](crate::types::DataViewDestinationTypeParams).
     pub fn build(self) -> crate::types::DataViewDestinationTypeParams {

@@ -46,6 +46,10 @@ impl UpdateSpaceOutputBuilder {
         self.space_arn = input;
         self
     }
+    /// <p>The space's Amazon Resource Name (ARN).</p>
+    pub fn get_space_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

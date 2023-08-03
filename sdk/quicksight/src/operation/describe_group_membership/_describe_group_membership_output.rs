@@ -67,6 +67,10 @@ impl DescribeGroupMembershipOutputBuilder {
         self.group_member = input;
         self
     }
+    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    pub fn get_group_member(&self) -> &::std::option::Option<crate::types::GroupMember> {
+        &self.group_member
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl DescribeGroupMembershipOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl DescribeGroupMembershipOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

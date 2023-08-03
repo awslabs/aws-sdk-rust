@@ -47,6 +47,10 @@ impl GetDeploymentsInputBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetDeploymentsInputBuilder {
     ) -> Self {
         self.device_fleet_name = input;
         self
+    }
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DeleteTapePoolInputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     /// Consumes the builder and constructs a [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
     pub fn build(
         self,

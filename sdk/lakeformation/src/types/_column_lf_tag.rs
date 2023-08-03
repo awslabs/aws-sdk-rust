@@ -48,6 +48,10 @@ impl ColumnLfTagBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a column resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `lf_tags`.
     ///
     /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
@@ -66,6 +70,10 @@ impl ColumnLfTagBuilder {
     ) -> Self {
         self.lf_tags = input;
         self
+    }
+    /// <p>The LF-tags attached to a column resource.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags
     }
     /// Consumes the builder and constructs a [`ColumnLfTag`](crate::types::ColumnLfTag).
     pub fn build(self) -> crate::types::ColumnLfTag {

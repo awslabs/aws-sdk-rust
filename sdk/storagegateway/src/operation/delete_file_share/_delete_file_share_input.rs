@@ -56,6 +56,10 @@ impl DeleteFileShareInputBuilder {
         self.file_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
+    pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_arn
+    }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -67,6 +71,11 @@ impl DeleteFileShareInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
     pub fn build(

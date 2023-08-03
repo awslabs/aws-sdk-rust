@@ -36,6 +36,10 @@ impl DeleteVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_volume::builders::DeleteVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteVolumeFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the volume that you are deleting.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
@@ -133,6 +141,10 @@ impl DeleteVolumeFluentBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
+    }
+    /// <p>The ID of the volume that you are deleting.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
     pub fn ontap_configuration(
@@ -150,6 +162,12 @@ impl DeleteVolumeFluentBuilder {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
+    /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteVolumeOntapConfiguration> {
+        self.inner.get_ontap_configuration()
+    }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
     pub fn open_zfs_configuration(
         mut self,
@@ -165,5 +183,11 @@ impl DeleteVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

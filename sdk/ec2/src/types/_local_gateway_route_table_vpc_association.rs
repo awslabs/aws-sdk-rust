@@ -104,6 +104,12 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
         self.local_gateway_route_table_vpc_association_id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_local_gateway_route_table_vpc_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_vpc_association_id
+    }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(
         mut self,
@@ -119,6 +125,12 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table for the association.</p>
     pub fn local_gateway_route_table_arn(
@@ -136,6 +148,12 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
         self.local_gateway_route_table_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the local gateway route table for the association.</p>
+    pub fn get_local_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_arn
+    }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(
         mut self,
@@ -152,6 +170,10 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -161,6 +183,10 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +198,10 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The state of the association.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -181,6 +211,10 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the association.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -200,6 +234,10 @@ impl LocalGatewayRouteTableVpcAssociationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the association.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGatewayRouteTableVpcAssociation`](crate::types::LocalGatewayRouteTableVpcAssociation).
     pub fn build(self) -> crate::types::LocalGatewayRouteTableVpcAssociation {

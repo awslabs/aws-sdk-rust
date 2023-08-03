@@ -58,6 +58,10 @@ impl RenewDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to renew.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(mut self, input: i32) -> Self {
@@ -70,6 +74,11 @@ impl RenewDomainInputBuilder {
         self.duration_in_years = input;
         self
     }
+    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>Default: 1</p>
+    pub fn get_duration_in_years(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_years
+    }
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub fn current_expiry_year(mut self, input: i32) -> Self {
         self.current_expiry_year = ::std::option::Option::Some(input);
@@ -79,6 +88,10 @@ impl RenewDomainInputBuilder {
     pub fn set_current_expiry_year(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_expiry_year = input;
         self
+    }
+    /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
+    pub fn get_current_expiry_year(&self) -> &::std::option::Option<i32> {
+        &self.current_expiry_year
     }
     /// Consumes the builder and constructs a [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
     pub fn build(

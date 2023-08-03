@@ -54,6 +54,10 @@ impl GetModelsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next page token to be used in subsequent requests.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `models`.
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).
@@ -72,6 +76,10 @@ impl GetModelsOutputBuilder {
     ) -> Self {
         self.models = input;
         self
+    }
+    /// <p>The array of models.</p>
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Model>> {
+        &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

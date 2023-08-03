@@ -71,6 +71,10 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         self.source = input;
         self
     }
+    /// <p>The source Region or Availability Zone that the metric subscription is enabled for. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The target Region or Availability Zone that the metric subscription is enabled for. For example, <code>eu-west-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The target Region or Availability Zone that the metric subscription is enabled for. For example, <code>eu-west-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The metric used for the enabled subscription.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>The metric used for the enabled subscription.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The statistic used for the enabled subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -104,6 +116,10 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic used for the enabled subscription.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{

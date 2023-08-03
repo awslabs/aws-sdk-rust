@@ -50,6 +50,10 @@ impl UpdateResultBuilder {
         self.update_available = input;
         self
     }
+    /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
+    pub fn get_update_available(&self) -> &::std::option::Option<bool> {
+        &self.update_available
+    }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl UpdateResultBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateResult`](crate::types::UpdateResult).
     pub fn build(self) -> crate::types::UpdateResult {

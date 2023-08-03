@@ -67,6 +67,11 @@ impl AlarmIdentifierBuilder {
         self.region = input;
         self
     }
+    /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
+    /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_region(&self) -> &::std::option::Option<crate::types::CloudWatchRegion> {
+        &self.region
+    }
     /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
     /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
     /// <ul>
@@ -88,6 +93,16 @@ impl AlarmIdentifierBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
+    /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
+    /// <ul>
+    /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
+    /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AlarmIdentifier`](crate::types::AlarmIdentifier).
     pub fn build(self) -> crate::types::AlarmIdentifier {

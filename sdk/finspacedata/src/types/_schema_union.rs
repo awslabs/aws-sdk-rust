@@ -43,6 +43,12 @@ impl SchemaUnionBuilder {
         self.tabular_schema_config = input;
         self
     }
+    /// <p>The configuration for a schema on a tabular Dataset.</p>
+    pub fn get_tabular_schema_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaDefinition> {
+        &self.tabular_schema_config
+    }
     /// Consumes the builder and constructs a [`SchemaUnion`](crate::types::SchemaUnion).
     pub fn build(self) -> crate::types::SchemaUnion {
         crate::types::SchemaUnion {

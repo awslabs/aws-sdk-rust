@@ -70,6 +70,10 @@ impl StartSuiteRunOutputBuilder {
         self.suite_run_id = input;
         self
     }
+    /// <p>Suite Run ID of the started suite run.</p>
+    pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_run_id
+    }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
     pub fn suite_run_arn(
         mut self,
@@ -86,6 +90,10 @@ impl StartSuiteRunOutputBuilder {
         self.suite_run_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
+    pub fn get_suite_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_run_arn
+    }
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl StartSuiteRunOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The response of an Device Advisor test endpoint.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl StartSuiteRunOutputBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The response of an Device Advisor test endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

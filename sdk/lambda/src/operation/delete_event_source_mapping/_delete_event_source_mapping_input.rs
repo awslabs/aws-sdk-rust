@@ -41,6 +41,10 @@ impl DeleteEventSourceMappingInputBuilder {
         self.uuid = input;
         self
     }
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
+    }
     /// Consumes the builder and constructs a [`DeleteEventSourceMappingInput`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput).
     pub fn build(
         self,

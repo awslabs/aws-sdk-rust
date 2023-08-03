@@ -72,6 +72,10 @@ impl TransferInputDeviceInputBuilder {
         self.input_device_id = input;
         self
     }
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_device_id
+    }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
     pub fn target_customer_id(
         mut self,
@@ -87,6 +91,10 @@ impl TransferInputDeviceInputBuilder {
     ) -> Self {
         self.target_customer_id = input;
         self
+    }
+    /// The AWS account ID (12 digits) for the recipient of the device transfer.
+    pub fn get_target_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_customer_id
     }
     /// The target AWS region to transfer the device.
     pub fn target_region(
@@ -104,6 +112,10 @@ impl TransferInputDeviceInputBuilder {
         self.target_region = input;
         self
     }
+    /// The target AWS region to transfer the device.
+    pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_region
+    }
     /// An optional message for the recipient. Maximum 280 characters.
     pub fn transfer_message(
         mut self,
@@ -119,6 +131,10 @@ impl TransferInputDeviceInputBuilder {
     ) -> Self {
         self.transfer_message = input;
         self
+    }
+    /// An optional message for the recipient. Maximum 280 characters.
+    pub fn get_transfer_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_message
     }
     /// Consumes the builder and constructs a [`TransferInputDeviceInput`](crate::operation::transfer_input_device::TransferInputDeviceInput).
     pub fn build(

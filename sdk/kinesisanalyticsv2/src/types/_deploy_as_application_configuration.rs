@@ -45,6 +45,12 @@ impl DeployAsApplicationConfigurationBuilder {
         self.s3_content_location = input;
         self
     }
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
+    pub fn get_s3_content_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ContentBaseLocation> {
+        &self.s3_content_location
+    }
     /// Consumes the builder and constructs a [`DeployAsApplicationConfiguration`](crate::types::DeployAsApplicationConfiguration).
     pub fn build(self) -> crate::types::DeployAsApplicationConfiguration {
         crate::types::DeployAsApplicationConfiguration {

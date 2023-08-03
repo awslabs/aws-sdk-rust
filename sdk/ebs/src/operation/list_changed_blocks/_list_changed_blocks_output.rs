@@ -88,6 +88,12 @@ impl ListChangedBlocksOutputBuilder {
         self.changed_blocks = input;
         self
     }
+    /// <p>An array of objects containing information about the changed blocks.</p>
+    pub fn get_changed_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>> {
+        &self.changed_blocks
+    }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
     pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiry_time = ::std::option::Option::Some(input);
@@ -101,6 +107,10 @@ impl ListChangedBlocksOutputBuilder {
         self.expiry_time = input;
         self
     }
+    /// <p>The time when the <code>BlockToken</code> expires.</p>
+    pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiry_time
+    }
     /// <p>The size of the volume in GB.</p>
     pub fn volume_size(mut self, input: i64) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -110,6 +120,10 @@ impl ListChangedBlocksOutputBuilder {
     pub fn set_volume_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_size = input;
         self
+    }
+    /// <p>The size of the volume in GB.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i64> {
+        &self.volume_size
     }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn block_size(mut self, input: i32) -> Self {
@@ -121,6 +135,10 @@ impl ListChangedBlocksOutputBuilder {
         self.block_size = input;
         self
     }
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    pub fn get_block_size(&self) -> &::std::option::Option<i32> {
+        &self.block_size
+    }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -130,6 +148,10 @@ impl ListChangedBlocksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

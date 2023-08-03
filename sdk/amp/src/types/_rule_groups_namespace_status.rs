@@ -53,6 +53,12 @@ impl RuleGroupsNamespaceStatusBuilder {
         self.status_code = input;
         self
     }
+    /// Status code of this namespace.
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode> {
+        &self.status_code
+    }
     /// The reason for failure if any.
     pub fn status_reason(
         mut self,
@@ -68,6 +74,10 @@ impl RuleGroupsNamespaceStatusBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// The reason for failure if any.
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceStatus`](crate::types::RuleGroupsNamespaceStatus).
     pub fn build(self) -> crate::types::RuleGroupsNamespaceStatus {

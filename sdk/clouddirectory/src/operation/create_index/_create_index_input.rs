@@ -81,6 +81,10 @@ impl CreateIndexInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory where the index should be created.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Appends an item to `ordered_indexed_attribute_list`.
     ///
     /// To override the contents of this collection use [`set_ordered_indexed_attribute_list`](Self::set_ordered_indexed_attribute_list).
@@ -100,6 +104,12 @@ impl CreateIndexInputBuilder {
         self.ordered_indexed_attribute_list = input;
         self
     }
+    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+    pub fn get_ordered_indexed_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>> {
+        &self.ordered_indexed_attribute_list
+    }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn is_unique(mut self, input: bool) -> Self {
         self.is_unique = ::std::option::Option::Some(input);
@@ -109,6 +119,10 @@ impl CreateIndexInputBuilder {
     pub fn set_is_unique(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_unique = input;
         self
+    }
+    /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    pub fn get_is_unique(&self) -> &::std::option::Option<bool> {
+        &self.is_unique
     }
     /// <p>A reference to the parent object that contains the index object.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -123,6 +137,10 @@ impl CreateIndexInputBuilder {
         self.parent_reference = input;
         self
     }
+    /// <p>A reference to the parent object that contains the index object.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.parent_reference
+    }
     /// <p>The name of the link between the parent object and the index object.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -132,6 +150,10 @@ impl CreateIndexInputBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The name of the link between the parent object and the index object.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
     pub fn build(

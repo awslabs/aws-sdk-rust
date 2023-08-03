@@ -60,6 +60,10 @@ impl ListCodeSigningConfigsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `code_signing_configs`.
     ///
     /// To override the contents of this collection use [`set_code_signing_configs`](Self::set_code_signing_configs).
@@ -78,6 +82,12 @@ impl ListCodeSigningConfigsOutputBuilder {
     ) -> Self {
         self.code_signing_configs = input;
         self
+    }
+    /// <p>The code signing configurations</p>
+    pub fn get_code_signing_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeSigningConfig>> {
+        &self.code_signing_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

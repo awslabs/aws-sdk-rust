@@ -49,6 +49,10 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     pub fn content_security_policy(
         mut self,
@@ -64,6 +68,10 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     ) -> Self {
         self.content_security_policy = input;
         self
+    }
+    /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
+    pub fn get_content_security_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_security_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentSecurityPolicy`](crate::types::ResponseHeadersPolicyContentSecurityPolicy).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyContentSecurityPolicy {

@@ -37,6 +37,13 @@ impl CreateSoftwareUpdateJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSoftwareUpdateJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateSoftwareUpdateJobFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
     pub fn s3_url_signer_role(
         mut self,
@@ -149,6 +160,10 @@ impl CreateSoftwareUpdateJobFluentBuilder {
         self.inner = self.inner.set_s3_url_signer_role(input);
         self
     }
+    /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    pub fn get_s3_url_signer_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_url_signer_role()
+    }
     /// The piece of software on the Greengrass core that will be updated.
     pub fn software_to_update(mut self, input: crate::types::SoftwareToUpdate) -> Self {
         self.inner = self.inner.software_to_update(input);
@@ -162,6 +177,10 @@ impl CreateSoftwareUpdateJobFluentBuilder {
         self.inner = self.inner.set_software_to_update(input);
         self
     }
+    /// The piece of software on the Greengrass core that will be updated.
+    pub fn get_software_to_update(&self) -> &::std::option::Option<crate::types::SoftwareToUpdate> {
+        self.inner.get_software_to_update()
+    }
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
     pub fn update_agent_log_level(mut self, input: crate::types::UpdateAgentLogLevel) -> Self {
         self.inner = self.inner.update_agent_log_level(input);
@@ -174,6 +193,12 @@ impl CreateSoftwareUpdateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_agent_log_level(input);
         self
+    }
+    /// The minimum level of log statements that should be logged by the OTA Agent during an update.
+    pub fn get_update_agent_log_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateAgentLogLevel> {
+        self.inner.get_update_agent_log_level()
     }
     /// Appends an item to `UpdateTargets`.
     ///
@@ -195,6 +220,12 @@ impl CreateSoftwareUpdateJobFluentBuilder {
         self.inner = self.inner.set_update_targets(input);
         self
     }
+    /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+    pub fn get_update_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_update_targets()
+    }
     /// The architecture of the cores which are the targets of an update.
     pub fn update_targets_architecture(
         mut self,
@@ -211,6 +242,12 @@ impl CreateSoftwareUpdateJobFluentBuilder {
         self.inner = self.inner.set_update_targets_architecture(input);
         self
     }
+    /// The architecture of the cores which are the targets of an update.
+    pub fn get_update_targets_architecture(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateTargetsArchitecture> {
+        self.inner.get_update_targets_architecture()
+    }
     /// The operating system of the cores which are the targets of an update.
     pub fn update_targets_operating_system(
         mut self,
@@ -226,5 +263,11 @@ impl CreateSoftwareUpdateJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_targets_operating_system(input);
         self
+    }
+    /// The operating system of the cores which are the targets of an update.
+    pub fn get_update_targets_operating_system(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateTargetsOperatingSystem> {
+        self.inner.get_update_targets_operating_system()
     }
 }

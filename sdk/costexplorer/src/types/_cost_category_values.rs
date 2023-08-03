@@ -58,6 +58,10 @@ impl CostCategoryValuesBuilder {
         self.key = input;
         self
     }
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -77,6 +81,10 @@ impl CostCategoryValuesBuilder {
         self.values = input;
         self
     }
+    /// <p>The specific value of the Cost Category.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Appends an item to `match_options`.
     ///
     /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
@@ -95,6 +103,12 @@ impl CostCategoryValuesBuilder {
     ) -> Self {
         self.match_options = input;
         self
+    }
+    /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
+    pub fn get_match_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+        &self.match_options
     }
     /// Consumes the builder and constructs a [`CostCategoryValues`](crate::types::CostCategoryValues).
     pub fn build(self) -> crate::types::CostCategoryValues {

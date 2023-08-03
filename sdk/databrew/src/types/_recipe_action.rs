@@ -56,6 +56,10 @@ impl RecipeActionBuilder {
         self.operation = input;
         self
     }
+    /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -80,6 +84,14 @@ impl RecipeActionBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Contextual parameters for the transformation.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`RecipeAction`](crate::types::RecipeAction).
     pub fn build(self) -> crate::types::RecipeAction {

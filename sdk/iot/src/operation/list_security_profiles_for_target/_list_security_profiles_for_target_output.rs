@@ -70,6 +70,12 @@ impl ListSecurityProfilesForTargetOutputBuilder {
         self.security_profile_target_mappings = input;
         self
     }
+    /// <p>A list of security profiles and their associated targets.</p>
+    pub fn get_security_profile_target_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>> {
+        &self.security_profile_target_mappings
+    }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListSecurityProfilesForTargetOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

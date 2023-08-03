@@ -36,6 +36,12 @@ impl SearchResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_resources::builders::SearchResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl SearchResourcesFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
@@ -152,6 +162,10 @@ impl SearchResourcesFluentBuilder {
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
+    }
+    /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_text()
     }
     /// Appends an item to `QueryScopes`.
     ///
@@ -170,6 +184,12 @@ impl SearchResourcesFluentBuilder {
         self.inner = self.inner.set_query_scopes(input);
         self
     }
+    /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
+    pub fn get_query_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>> {
+        self.inner.get_query_scopes()
+    }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
     pub fn organization_id(
         mut self,
@@ -185,6 +205,10 @@ impl SearchResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
     /// Appends an item to `AdditionalResponseFields`.
     ///
@@ -206,6 +230,12 @@ impl SearchResourcesFluentBuilder {
         self.inner = self.inner.set_additional_response_fields(input);
         self
     }
+    /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
+    pub fn get_additional_response_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResponseFieldType>> {
+        self.inner.get_additional_response_fields()
+    }
     /// <p>Filters results based on entity metadata.</p>
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
         self.inner = self.inner.filters(input);
@@ -215,6 +245,10 @@ impl SearchResourcesFluentBuilder {
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Filters results based on entity metadata.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
+        self.inner.get_filters()
     }
     /// Appends an item to `OrderBy`.
     ///
@@ -233,6 +267,12 @@ impl SearchResourcesFluentBuilder {
         self.inner = self.inner.set_order_by(input);
         self
     }
+    /// <p>Order by results in one or more categories.</p>
+    pub fn get_order_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>> {
+        self.inner.get_order_by()
+    }
     /// <p>Max results count per page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -243,6 +283,10 @@ impl SearchResourcesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>Max results count per page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -252,5 +296,9 @@ impl SearchResourcesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

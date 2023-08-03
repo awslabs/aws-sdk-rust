@@ -78,6 +78,10 @@ impl RevisionBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
@@ -91,6 +95,12 @@ impl RevisionBuilder {
         self.repository_provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
+    }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
     pub fn sha(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl RevisionBuilder {
     pub fn set_sha(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha = input;
         self
+    }
+    /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
+    pub fn get_sha(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
     pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +125,10 @@ impl RevisionBuilder {
         self.directory = input;
         self
     }
+    /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
+    pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory
+    }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl RevisionBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// Consumes the builder and constructs a [`Revision`](crate::types::Revision).
     pub fn build(self) -> crate::types::Revision {

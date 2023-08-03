@@ -77,6 +77,12 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         self.transit_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_id
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -92,6 +98,10 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     ) -> Self {
         self.prefix_list_id = input;
         self
+    }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
     pub fn transit_gateway_attachment_id(
@@ -109,6 +119,12 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment to which traffic is routed.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn blackhole(mut self, input: bool) -> Self {
         self.blackhole = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         self.blackhole = input;
         self
     }
+    /// <p>Indicates whether to drop traffic that matches this route.</p>
+    pub fn get_blackhole(&self) -> &::std::option::Option<bool> {
+        &self.blackhole
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput, ::aws_smithy_http::operation::error::BuildError>{

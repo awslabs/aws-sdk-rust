@@ -46,6 +46,10 @@ impl DescribeNamespaceInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
     pub fn build(
         self,

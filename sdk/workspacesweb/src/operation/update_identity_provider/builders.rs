@@ -36,6 +36,13 @@ impl UpdateIdentityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_identity_provider_arn(input);
         self
     }
+    /// <p>The ARN of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_arn()
+    }
     /// <p>The name of the identity provider.</p>
     pub fn identity_provider_name(
         mut self,
@@ -148,6 +159,10 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_identity_provider_name(input);
         self
     }
+    /// <p>The name of the identity provider.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_name()
+    }
     /// <p>The type of the identity provider.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.inner = self.inner.identity_provider_type(input);
@@ -160,6 +175,12 @@ impl UpdateIdentityProviderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_type(input);
         self
+    }
+    /// <p>The type of the identity provider.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        self.inner.get_identity_provider_type()
     }
     /// Adds a key-value pair to `identityProviderDetails`.
     ///
@@ -264,6 +285,54 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_identity_provider_details(input);
         self
     }
+    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_identity_provider_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_identity_provider_details()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -275,5 +344,10 @@ impl UpdateIdentityProviderFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

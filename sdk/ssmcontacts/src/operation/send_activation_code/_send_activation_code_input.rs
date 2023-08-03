@@ -46,6 +46,10 @@ impl SendActivationCodeInputBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// Consumes the builder and constructs a [`SendActivationCodeInput`](crate::operation::send_activation_code::SendActivationCodeInput).
     pub fn build(
         self,

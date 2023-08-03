@@ -45,6 +45,12 @@ impl ColumnGroupBuilder {
         self.geo_spatial_column_group = input;
         self
     }
+    /// <p>Geospatial column group that denotes a hierarchy.</p>
+    pub fn get_geo_spatial_column_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeoSpatialColumnGroup> {
+        &self.geo_spatial_column_group
+    }
     /// Consumes the builder and constructs a [`ColumnGroup`](crate::types::ColumnGroup).
     pub fn build(self) -> crate::types::ColumnGroup {
         crate::types::ColumnGroup {

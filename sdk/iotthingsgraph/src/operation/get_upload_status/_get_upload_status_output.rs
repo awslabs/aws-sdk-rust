@@ -95,6 +95,10 @@ impl GetUploadStatusOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The ID of the upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
     pub fn upload_status(mut self, input: crate::types::UploadStatus) -> Self {
         self.upload_status = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl GetUploadStatusOutputBuilder {
     ) -> Self {
         self.upload_status = input;
         self
+    }
+    /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
+    pub fn get_upload_status(&self) -> &::std::option::Option<crate::types::UploadStatus> {
+        &self.upload_status
     }
     /// <p>The ARN of the upload.</p>
     pub fn namespace_arn(
@@ -124,6 +132,10 @@ impl GetUploadStatusOutputBuilder {
         self.namespace_arn = input;
         self
     }
+    /// <p>The ARN of the upload.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
+    }
     /// <p>The name of the upload's namespace.</p>
     pub fn namespace_name(
         mut self,
@@ -140,6 +152,10 @@ impl GetUploadStatusOutputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the upload's namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.namespace_version = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl GetUploadStatusOutputBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.namespace_version
     }
     /// Appends an item to `failure_reason`.
     ///
@@ -172,6 +192,12 @@ impl GetUploadStatusOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason for an upload failure.</p>
+    pub fn get_failure_reason(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reason
+    }
     /// <p>The date at which the upload was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl GetUploadStatusOutputBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date at which the upload was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

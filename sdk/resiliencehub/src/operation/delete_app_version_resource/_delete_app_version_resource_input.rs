@@ -89,6 +89,10 @@ impl DeleteAppVersionResourceInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
         mut self,
@@ -105,6 +109,10 @@ impl DeleteAppVersionResourceInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
@@ -117,6 +125,12 @@ impl DeleteAppVersionResourceInputBuilder {
     ) -> Self {
         self.logical_resource_id = input;
         self
+    }
+    /// <p>The logical identifier of the resource.</p>
+    pub fn get_logical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+        &self.logical_resource_id
     }
     /// <p>The physical identifier of the resource.</p>
     pub fn physical_resource_id(
@@ -134,6 +148,10 @@ impl DeleteAppVersionResourceInputBuilder {
         self.physical_resource_id = input;
         self
     }
+    /// <p>The physical identifier of the resource.</p>
+    pub fn get_physical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.physical_resource_id
+    }
     /// <p>The Amazon Web Services region that owns the physical resource.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -143,6 +161,10 @@ impl DeleteAppVersionResourceInputBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(
@@ -160,6 +182,10 @@ impl DeleteAppVersionResourceInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -169,6 +195,10 @@ impl DeleteAppVersionResourceInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAppVersionResourceInput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput).
     pub fn build(

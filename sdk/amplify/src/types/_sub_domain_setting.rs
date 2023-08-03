@@ -48,6 +48,10 @@ impl SubDomainSettingBuilder {
         self.prefix = input;
         self
     }
+    /// <p> The prefix setting for the subdomain. </p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p> The branch name setting for the subdomain. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SubDomainSettingBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p> The branch name setting for the subdomain. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`SubDomainSetting`](crate::types::SubDomainSetting).
     pub fn build(self) -> crate::types::SubDomainSetting {

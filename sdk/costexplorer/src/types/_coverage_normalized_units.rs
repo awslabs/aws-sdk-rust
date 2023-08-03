@@ -71,6 +71,10 @@ impl CoverageNormalizedUnitsBuilder {
         self.on_demand_normalized_units = input;
         self
     }
+    /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
+    pub fn get_on_demand_normalized_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_normalized_units
+    }
     /// <p>The number of normalized units that a reservation covers.</p>
     pub fn reserved_normalized_units(
         mut self,
@@ -86,6 +90,10 @@ impl CoverageNormalizedUnitsBuilder {
     ) -> Self {
         self.reserved_normalized_units = input;
         self
+    }
+    /// <p>The number of normalized units that a reservation covers.</p>
+    pub fn get_reserved_normalized_units(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_normalized_units
     }
     /// <p>The total number of normalized units that you used.</p>
     pub fn total_running_normalized_units(
@@ -103,6 +111,12 @@ impl CoverageNormalizedUnitsBuilder {
         self.total_running_normalized_units = input;
         self
     }
+    /// <p>The total number of normalized units that you used.</p>
+    pub fn get_total_running_normalized_units(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.total_running_normalized_units
+    }
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
     pub fn coverage_normalized_units_percentage(
         mut self,
@@ -118,6 +132,12 @@ impl CoverageNormalizedUnitsBuilder {
     ) -> Self {
         self.coverage_normalized_units_percentage = input;
         self
+    }
+    /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
+    pub fn get_coverage_normalized_units_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.coverage_normalized_units_percentage
     }
     /// Consumes the builder and constructs a [`CoverageNormalizedUnits`](crate::types::CoverageNormalizedUnits).
     pub fn build(self) -> crate::types::CoverageNormalizedUnits {

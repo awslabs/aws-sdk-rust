@@ -660,6 +660,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.athena_connector_source = input;
         self
     }
+    /// <p>Specifies a connector to an Amazon Athena data source.</p>
+    pub fn get_athena_connector_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::AthenaConnectorSource> {
+        &self.athena_connector_source
+    }
     /// <p>Specifies a connector to a JDBC data source.</p>
     pub fn jdbc_connector_source(mut self, input: crate::types::JdbcConnectorSource) -> Self {
         self.jdbc_connector_source = ::std::option::Option::Some(input);
@@ -672,6 +678,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.jdbc_connector_source = input;
         self
+    }
+    /// <p>Specifies a connector to a JDBC data source.</p>
+    pub fn get_jdbc_connector_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::JdbcConnectorSource> {
+        &self.jdbc_connector_source
     }
     /// <p>Specifies a connector to an Apache Spark data source.</p>
     pub fn spark_connector_source(mut self, input: crate::types::SparkConnectorSource) -> Self {
@@ -686,6 +698,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.spark_connector_source = input;
         self
     }
+    /// <p>Specifies a connector to an Apache Spark data source.</p>
+    pub fn get_spark_connector_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::SparkConnectorSource> {
+        &self.spark_connector_source
+    }
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
     pub fn catalog_source(mut self, input: crate::types::CatalogSource) -> Self {
         self.catalog_source = ::std::option::Option::Some(input);
@@ -698,6 +716,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.catalog_source = input;
         self
+    }
+    /// <p>Specifies a data store in the Glue Data Catalog.</p>
+    pub fn get_catalog_source(&self) -> &::std::option::Option<crate::types::CatalogSource> {
+        &self.catalog_source
     }
     /// <p>Specifies an Amazon Redshift data store.</p>
     pub fn redshift_source(mut self, input: crate::types::RedshiftSource) -> Self {
@@ -712,6 +734,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.redshift_source = input;
         self
     }
+    /// <p>Specifies an Amazon Redshift data store.</p>
+    pub fn get_redshift_source(&self) -> &::std::option::Option<crate::types::RedshiftSource> {
+        &self.redshift_source
+    }
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
     pub fn s3_catalog_source(mut self, input: crate::types::S3CatalogSource) -> Self {
         self.s3_catalog_source = ::std::option::Option::Some(input);
@@ -724,6 +750,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_catalog_source = input;
         self
+    }
+    /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+    pub fn get_s3_catalog_source(&self) -> &::std::option::Option<crate::types::S3CatalogSource> {
+        &self.s3_catalog_source
     }
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub fn s3_csv_source(mut self, input: crate::types::S3CsvSource) -> Self {
@@ -738,6 +768,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_csv_source = input;
         self
     }
+    /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+    pub fn get_s3_csv_source(&self) -> &::std::option::Option<crate::types::S3CsvSource> {
+        &self.s3_csv_source
+    }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub fn s3_json_source(mut self, input: crate::types::S3JsonSource) -> Self {
         self.s3_json_source = ::std::option::Option::Some(input);
@@ -751,6 +785,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_json_source = input;
         self
     }
+    /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+    pub fn get_s3_json_source(&self) -> &::std::option::Option<crate::types::S3JsonSource> {
+        &self.s3_json_source
+    }
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
     pub fn s3_parquet_source(mut self, input: crate::types::S3ParquetSource) -> Self {
         self.s3_parquet_source = ::std::option::Option::Some(input);
@@ -763,6 +801,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_parquet_source = input;
         self
+    }
+    /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+    pub fn get_s3_parquet_source(&self) -> &::std::option::Option<crate::types::S3ParquetSource> {
+        &self.s3_parquet_source
     }
     /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn relational_catalog_source(
@@ -780,6 +822,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.relational_catalog_source = input;
         self
     }
+    /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+    pub fn get_relational_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalCatalogSource> {
+        &self.relational_catalog_source
+    }
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn dynamo_db_catalog_source(mut self, input: crate::types::DynamoDbCatalogSource) -> Self {
         self.dynamo_db_catalog_source = ::std::option::Option::Some(input);
@@ -792,6 +840,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.dynamo_db_catalog_source = input;
         self
+    }
+    /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+    pub fn get_dynamo_db_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::DynamoDbCatalogSource> {
+        &self.dynamo_db_catalog_source
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn jdbc_connector_target(mut self, input: crate::types::JdbcConnectorTarget) -> Self {
@@ -806,6 +860,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.jdbc_connector_target = input;
         self
     }
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub fn get_jdbc_connector_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::JdbcConnectorTarget> {
+        &self.jdbc_connector_target
+    }
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
     pub fn spark_connector_target(mut self, input: crate::types::SparkConnectorTarget) -> Self {
         self.spark_connector_target = ::std::option::Option::Some(input);
@@ -818,6 +878,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.spark_connector_target = input;
         self
+    }
+    /// <p>Specifies a target that uses an Apache Spark connector.</p>
+    pub fn get_spark_connector_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::SparkConnectorTarget> {
+        &self.spark_connector_target
     }
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
     pub fn catalog_target(mut self, input: crate::types::BasicCatalogTarget) -> Self {
@@ -832,6 +898,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.catalog_target = input;
         self
     }
+    /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+    pub fn get_catalog_target(&self) -> &::std::option::Option<crate::types::BasicCatalogTarget> {
+        &self.catalog_target
+    }
     /// <p>Specifies a target that uses Amazon Redshift.</p>
     pub fn redshift_target(mut self, input: crate::types::RedshiftTarget) -> Self {
         self.redshift_target = ::std::option::Option::Some(input);
@@ -844,6 +914,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.redshift_target = input;
         self
+    }
+    /// <p>Specifies a target that uses Amazon Redshift.</p>
+    pub fn get_redshift_target(&self) -> &::std::option::Option<crate::types::RedshiftTarget> {
+        &self.redshift_target
     }
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
     pub fn s3_catalog_target(mut self, input: crate::types::S3CatalogTarget) -> Self {
@@ -858,6 +932,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_catalog_target = input;
         self
     }
+    /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+    pub fn get_s3_catalog_target(&self) -> &::std::option::Option<crate::types::S3CatalogTarget> {
+        &self.s3_catalog_target
+    }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn s3_glue_parquet_target(mut self, input: crate::types::S3GlueParquetTarget) -> Self {
         self.s3_glue_parquet_target = ::std::option::Option::Some(input);
@@ -870,6 +948,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_glue_parquet_target = input;
         self
+    }
+    /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    pub fn get_s3_glue_parquet_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3GlueParquetTarget> {
+        &self.s3_glue_parquet_target
     }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn s3_direct_target(mut self, input: crate::types::S3DirectTarget) -> Self {
@@ -884,6 +968,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_direct_target = input;
         self
     }
+    /// <p>Specifies a data target that writes to Amazon S3.</p>
+    pub fn get_s3_direct_target(&self) -> &::std::option::Option<crate::types::S3DirectTarget> {
+        &self.s3_direct_target
+    }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub fn apply_mapping(mut self, input: crate::types::ApplyMapping) -> Self {
         self.apply_mapping = ::std::option::Option::Some(input);
@@ -896,6 +984,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.apply_mapping = input;
         self
+    }
+    /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+    pub fn get_apply_mapping(&self) -> &::std::option::Option<crate::types::ApplyMapping> {
+        &self.apply_mapping
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
     pub fn select_fields(mut self, input: crate::types::SelectFields) -> Self {
@@ -910,6 +1002,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.select_fields = input;
         self
     }
+    /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+    pub fn get_select_fields(&self) -> &::std::option::Option<crate::types::SelectFields> {
+        &self.select_fields
+    }
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
     pub fn drop_fields(mut self, input: crate::types::DropFields) -> Self {
         self.drop_fields = ::std::option::Option::Some(input);
@@ -922,6 +1018,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.drop_fields = input;
         self
+    }
+    /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+    pub fn get_drop_fields(&self) -> &::std::option::Option<crate::types::DropFields> {
+        &self.drop_fields
     }
     /// <p>Specifies a transform that renames a single data property key.</p>
     pub fn rename_field(mut self, input: crate::types::RenameField) -> Self {
@@ -936,6 +1036,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.rename_field = input;
         self
     }
+    /// <p>Specifies a transform that renames a single data property key.</p>
+    pub fn get_rename_field(&self) -> &::std::option::Option<crate::types::RenameField> {
+        &self.rename_field
+    }
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
     pub fn spigot(mut self, input: crate::types::Spigot) -> Self {
         self.spigot = ::std::option::Option::Some(input);
@@ -946,6 +1050,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.spigot = input;
         self
     }
+    /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+    pub fn get_spigot(&self) -> &::std::option::Option<crate::types::Spigot> {
+        &self.spigot
+    }
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
     pub fn join(mut self, input: crate::types::Join) -> Self {
         self.join = ::std::option::Option::Some(input);
@@ -955,6 +1063,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_join(mut self, input: ::std::option::Option<crate::types::Join>) -> Self {
         self.join = input;
         self
+    }
+    /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::Join> {
+        &self.join
     }
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
     pub fn split_fields(mut self, input: crate::types::SplitFields) -> Self {
@@ -969,6 +1081,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.split_fields = input;
         self
     }
+    /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+    pub fn get_split_fields(&self) -> &::std::option::Option<crate::types::SplitFields> {
+        &self.split_fields
+    }
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
     pub fn select_from_collection(mut self, input: crate::types::SelectFromCollection) -> Self {
         self.select_from_collection = ::std::option::Option::Some(input);
@@ -981,6 +1097,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.select_from_collection = input;
         self
+    }
+    /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+    pub fn get_select_from_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectFromCollection> {
+        &self.select_from_collection
     }
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
     pub fn fill_missing_values(mut self, input: crate::types::FillMissingValues) -> Self {
@@ -995,6 +1117,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.fill_missing_values = input;
         self
     }
+    /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+    pub fn get_fill_missing_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::FillMissingValues> {
+        &self.fill_missing_values
+    }
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -1004,6 +1132,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter
     }
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
     pub fn custom_code(mut self, input: crate::types::CustomCode) -> Self {
@@ -1018,6 +1150,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.custom_code = input;
         self
     }
+    /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+    pub fn get_custom_code(&self) -> &::std::option::Option<crate::types::CustomCode> {
+        &self.custom_code
+    }
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
     pub fn spark_sql(mut self, input: crate::types::SparkSql) -> Self {
         self.spark_sql = ::std::option::Option::Some(input);
@@ -1027,6 +1163,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_spark_sql(mut self, input: ::std::option::Option<crate::types::SparkSql>) -> Self {
         self.spark_sql = input;
         self
+    }
+    /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+    pub fn get_spark_sql(&self) -> &::std::option::Option<crate::types::SparkSql> {
+        &self.spark_sql
     }
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
     pub fn direct_kinesis_source(mut self, input: crate::types::DirectKinesisSource) -> Self {
@@ -1041,6 +1181,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.direct_kinesis_source = input;
         self
     }
+    /// <p>Specifies a direct Amazon Kinesis data source.</p>
+    pub fn get_direct_kinesis_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectKinesisSource> {
+        &self.direct_kinesis_source
+    }
     /// <p>Specifies an Apache Kafka data store.</p>
     pub fn direct_kafka_source(mut self, input: crate::types::DirectKafkaSource) -> Self {
         self.direct_kafka_source = ::std::option::Option::Some(input);
@@ -1053,6 +1199,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.direct_kafka_source = input;
         self
+    }
+    /// <p>Specifies an Apache Kafka data store.</p>
+    pub fn get_direct_kafka_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectKafkaSource> {
+        &self.direct_kafka_source
     }
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
     pub fn catalog_kinesis_source(mut self, input: crate::types::CatalogKinesisSource) -> Self {
@@ -1067,6 +1219,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.catalog_kinesis_source = input;
         self
     }
+    /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+    pub fn get_catalog_kinesis_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogKinesisSource> {
+        &self.catalog_kinesis_source
+    }
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
     pub fn catalog_kafka_source(mut self, input: crate::types::CatalogKafkaSource) -> Self {
         self.catalog_kafka_source = ::std::option::Option::Some(input);
@@ -1079,6 +1237,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.catalog_kafka_source = input;
         self
+    }
+    /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+    pub fn get_catalog_kafka_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogKafkaSource> {
+        &self.catalog_kafka_source
     }
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
     pub fn drop_null_fields(mut self, input: crate::types::DropNullFields) -> Self {
@@ -1093,6 +1257,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.drop_null_fields = input;
         self
     }
+    /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+    pub fn get_drop_null_fields(&self) -> &::std::option::Option<crate::types::DropNullFields> {
+        &self.drop_null_fields
+    }
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
     pub fn merge(mut self, input: crate::types::Merge) -> Self {
         self.merge = ::std::option::Option::Some(input);
@@ -1103,6 +1271,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.merge = input;
         self
     }
+    /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+    pub fn get_merge(&self) -> &::std::option::Option<crate::types::Merge> {
+        &self.merge
+    }
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
     pub fn union(mut self, input: crate::types::Union) -> Self {
         self.union = ::std::option::Option::Some(input);
@@ -1112,6 +1284,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_union(mut self, input: ::std::option::Option<crate::types::Union>) -> Self {
         self.union = input;
         self
+    }
+    /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+    pub fn get_union(&self) -> &::std::option::Option<crate::types::Union> {
+        &self.union
     }
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
     pub fn pii_detection(mut self, input: crate::types::PiiDetection) -> Self {
@@ -1126,6 +1302,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.pii_detection = input;
         self
     }
+    /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+    pub fn get_pii_detection(&self) -> &::std::option::Option<crate::types::PiiDetection> {
+        &self.pii_detection
+    }
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
     pub fn aggregate(mut self, input: crate::types::Aggregate) -> Self {
         self.aggregate = ::std::option::Option::Some(input);
@@ -1135,6 +1315,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_aggregate(mut self, input: ::std::option::Option<crate::types::Aggregate>) -> Self {
         self.aggregate = input;
         self
+    }
+    /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+    pub fn get_aggregate(&self) -> &::std::option::Option<crate::types::Aggregate> {
+        &self.aggregate
     }
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
     pub fn drop_duplicates(mut self, input: crate::types::DropDuplicates) -> Self {
@@ -1149,6 +1333,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.drop_duplicates = input;
         self
     }
+    /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+    pub fn get_drop_duplicates(&self) -> &::std::option::Option<crate::types::DropDuplicates> {
+        &self.drop_duplicates
+    }
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
     pub fn governed_catalog_target(mut self, input: crate::types::GovernedCatalogTarget) -> Self {
         self.governed_catalog_target = ::std::option::Option::Some(input);
@@ -1162,6 +1350,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.governed_catalog_target = input;
         self
     }
+    /// <p>Specifies a data target that writes to a goverened catalog.</p>
+    pub fn get_governed_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::GovernedCatalogTarget> {
+        &self.governed_catalog_target
+    }
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
     pub fn governed_catalog_source(mut self, input: crate::types::GovernedCatalogSource) -> Self {
         self.governed_catalog_source = ::std::option::Option::Some(input);
@@ -1174,6 +1368,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.governed_catalog_source = input;
         self
+    }
+    /// <p>Specifies a data source in a goverened Data Catalog.</p>
+    pub fn get_governed_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::GovernedCatalogSource> {
+        &self.governed_catalog_source
     }
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
     pub fn microsoft_sql_server_catalog_source(
@@ -1191,6 +1391,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.microsoft_sql_server_catalog_source = input;
         self
     }
+    /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+    pub fn get_microsoft_sql_server_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::MicrosoftSqlServerCatalogSource> {
+        &self.microsoft_sql_server_catalog_source
+    }
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
     pub fn my_sql_catalog_source(mut self, input: crate::types::MySqlCatalogSource) -> Self {
         self.my_sql_catalog_source = ::std::option::Option::Some(input);
@@ -1203,6 +1409,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.my_sql_catalog_source = input;
         self
+    }
+    /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+    pub fn get_my_sql_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::MySqlCatalogSource> {
+        &self.my_sql_catalog_source
     }
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
     pub fn oracle_sql_catalog_source(
@@ -1220,6 +1432,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.oracle_sql_catalog_source = input;
         self
     }
+    /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+    pub fn get_oracle_sql_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::OracleSqlCatalogSource> {
+        &self.oracle_sql_catalog_source
+    }
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
     pub fn postgre_sql_catalog_source(
         mut self,
@@ -1235,6 +1453,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.postgre_sql_catalog_source = input;
         self
+    }
+    /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+    pub fn get_postgre_sql_catalog_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostgreSqlCatalogSource> {
+        &self.postgre_sql_catalog_source
     }
     /// <p>Specifies a target that uses Microsoft SQL.</p>
     pub fn microsoft_sql_server_catalog_target(
@@ -1252,6 +1476,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.microsoft_sql_server_catalog_target = input;
         self
     }
+    /// <p>Specifies a target that uses Microsoft SQL.</p>
+    pub fn get_microsoft_sql_server_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget> {
+        &self.microsoft_sql_server_catalog_target
+    }
     /// <p>Specifies a target that uses MySQL.</p>
     pub fn my_sql_catalog_target(mut self, input: crate::types::MySqlCatalogTarget) -> Self {
         self.my_sql_catalog_target = ::std::option::Option::Some(input);
@@ -1264,6 +1494,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.my_sql_catalog_target = input;
         self
+    }
+    /// <p>Specifies a target that uses MySQL.</p>
+    pub fn get_my_sql_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::MySqlCatalogTarget> {
+        &self.my_sql_catalog_target
     }
     /// <p>Specifies a target that uses Oracle SQL.</p>
     pub fn oracle_sql_catalog_target(
@@ -1281,6 +1517,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.oracle_sql_catalog_target = input;
         self
     }
+    /// <p>Specifies a target that uses Oracle SQL.</p>
+    pub fn get_oracle_sql_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::OracleSqlCatalogTarget> {
+        &self.oracle_sql_catalog_target
+    }
     /// <p>Specifies a target that uses Postgres SQL.</p>
     pub fn postgre_sql_catalog_target(
         mut self,
@@ -1297,6 +1539,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.postgre_sql_catalog_target = input;
         self
     }
+    /// <p>Specifies a target that uses Postgres SQL.</p>
+    pub fn get_postgre_sql_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostgreSqlCatalogTarget> {
+        &self.postgre_sql_catalog_target
+    }
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub fn dynamic_transform(mut self, input: crate::types::DynamicTransform) -> Self {
         self.dynamic_transform = ::std::option::Option::Some(input);
@@ -1309,6 +1557,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.dynamic_transform = input;
         self
+    }
+    /// <p>Specifies a custom visual transform created by a user.</p>
+    pub fn get_dynamic_transform(&self) -> &::std::option::Option<crate::types::DynamicTransform> {
+        &self.dynamic_transform
     }
     /// <p>Specifies your data quality evaluation criteria.</p>
     pub fn evaluate_data_quality(mut self, input: crate::types::EvaluateDataQuality) -> Self {
@@ -1323,6 +1575,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.evaluate_data_quality = input;
         self
     }
+    /// <p>Specifies your data quality evaluation criteria.</p>
+    pub fn get_evaluate_data_quality(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluateDataQuality> {
+        &self.evaluate_data_quality
+    }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_hudi_source(mut self, input: crate::types::S3CatalogHudiSource) -> Self {
         self.s3_catalog_hudi_source = ::std::option::Option::Some(input);
@@ -1335,6 +1593,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_catalog_hudi_source = input;
         self
+    }
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    pub fn get_s3_catalog_hudi_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3CatalogHudiSource> {
+        &self.s3_catalog_hudi_source
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
     pub fn catalog_hudi_source(mut self, input: crate::types::CatalogHudiSource) -> Self {
@@ -1349,6 +1613,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.catalog_hudi_source = input;
         self
     }
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+    pub fn get_catalog_hudi_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogHudiSource> {
+        &self.catalog_hudi_source
+    }
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
     pub fn s3_hudi_source(mut self, input: crate::types::S3HudiSource) -> Self {
         self.s3_hudi_source = ::std::option::Option::Some(input);
@@ -1361,6 +1631,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_hudi_source = input;
         self
+    }
+    /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+    pub fn get_s3_hudi_source(&self) -> &::std::option::Option<crate::types::S3HudiSource> {
+        &self.s3_hudi_source
     }
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
     pub fn s3_hudi_catalog_target(mut self, input: crate::types::S3HudiCatalogTarget) -> Self {
@@ -1375,6 +1649,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_hudi_catalog_target = input;
         self
     }
+    /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+    pub fn get_s3_hudi_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3HudiCatalogTarget> {
+        &self.s3_hudi_catalog_target
+    }
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     pub fn s3_hudi_direct_target(mut self, input: crate::types::S3HudiDirectTarget) -> Self {
         self.s3_hudi_direct_target = ::std::option::Option::Some(input);
@@ -1387,6 +1667,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_hudi_direct_target = input;
         self
+    }
+    /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+    pub fn get_s3_hudi_direct_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3HudiDirectTarget> {
+        &self.s3_hudi_direct_target
     }
     /// <p>Specifies the direct JDBC source connection.</p>
     pub fn direct_jdbc_source(mut self, input: crate::types::DirectJdbcSource) -> Self {
@@ -1401,6 +1687,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.direct_jdbc_source = input;
         self
     }
+    /// <p>Specifies the direct JDBC source connection.</p>
+    pub fn get_direct_jdbc_source(&self) -> &::std::option::Option<crate::types::DirectJdbcSource> {
+        &self.direct_jdbc_source
+    }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_delta_source(mut self, input: crate::types::S3CatalogDeltaSource) -> Self {
         self.s3_catalog_delta_source = ::std::option::Option::Some(input);
@@ -1413,6 +1703,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_catalog_delta_source = input;
         self
+    }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
+    pub fn get_s3_catalog_delta_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3CatalogDeltaSource> {
+        &self.s3_catalog_delta_source
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
     pub fn catalog_delta_source(mut self, input: crate::types::CatalogDeltaSource) -> Self {
@@ -1427,6 +1723,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.catalog_delta_source = input;
         self
     }
+    /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
+    pub fn get_catalog_delta_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CatalogDeltaSource> {
+        &self.catalog_delta_source
+    }
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
     pub fn s3_delta_source(mut self, input: crate::types::S3DeltaSource) -> Self {
         self.s3_delta_source = ::std::option::Option::Some(input);
@@ -1439,6 +1741,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_delta_source = input;
         self
+    }
+    /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+    pub fn get_s3_delta_source(&self) -> &::std::option::Option<crate::types::S3DeltaSource> {
+        &self.s3_delta_source
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
     pub fn s3_delta_catalog_target(mut self, input: crate::types::S3DeltaCatalogTarget) -> Self {
@@ -1453,6 +1759,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_delta_catalog_target = input;
         self
     }
+    /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
+    pub fn get_s3_delta_catalog_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DeltaCatalogTarget> {
+        &self.s3_delta_catalog_target
+    }
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     pub fn s3_delta_direct_target(mut self, input: crate::types::S3DeltaDirectTarget) -> Self {
         self.s3_delta_direct_target = ::std::option::Option::Some(input);
@@ -1465,6 +1777,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.s3_delta_direct_target = input;
         self
+    }
+    /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+    pub fn get_s3_delta_direct_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DeltaDirectTarget> {
+        &self.s3_delta_direct_target
     }
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
     pub fn amazon_redshift_source(mut self, input: crate::types::AmazonRedshiftSource) -> Self {
@@ -1479,6 +1797,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.amazon_redshift_source = input;
         self
     }
+    /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+    pub fn get_amazon_redshift_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonRedshiftSource> {
+        &self.amazon_redshift_source
+    }
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     pub fn amazon_redshift_target(mut self, input: crate::types::AmazonRedshiftTarget) -> Self {
         self.amazon_redshift_target = ::std::option::Option::Some(input);
@@ -1491,6 +1815,12 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.amazon_redshift_target = input;
         self
+    }
+    /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+    pub fn get_amazon_redshift_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonRedshiftTarget> {
+        &self.amazon_redshift_target
     }
     /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
     pub fn evaluate_data_quality_multi_frame(
@@ -1508,6 +1838,12 @@ impl CodeGenConfigurationNodeBuilder {
         self.evaluate_data_quality_multi_frame = input;
         self
     }
+    /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
+    pub fn get_evaluate_data_quality_multi_frame(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluateDataQualityMultiFrame> {
+        &self.evaluate_data_quality_multi_frame
+    }
     /// <p>Specifies a Glue DataBrew recipe node.</p>
     pub fn recipe(mut self, input: crate::types::Recipe) -> Self {
         self.recipe = ::std::option::Option::Some(input);
@@ -1517,6 +1853,10 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn set_recipe(mut self, input: ::std::option::Option<crate::types::Recipe>) -> Self {
         self.recipe = input;
         self
+    }
+    /// <p>Specifies a Glue DataBrew recipe node.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<crate::types::Recipe> {
+        &self.recipe
     }
     /// <p>Specifies a Snowflake data source.</p>
     pub fn snowflake_source(mut self, input: crate::types::SnowflakeSource) -> Self {
@@ -1531,6 +1871,10 @@ impl CodeGenConfigurationNodeBuilder {
         self.snowflake_source = input;
         self
     }
+    /// <p>Specifies a Snowflake data source.</p>
+    pub fn get_snowflake_source(&self) -> &::std::option::Option<crate::types::SnowflakeSource> {
+        &self.snowflake_source
+    }
     /// <p>Specifies a target that writes to a Snowflake data source.</p>
     pub fn snowflake_target(mut self, input: crate::types::SnowflakeTarget) -> Self {
         self.snowflake_target = ::std::option::Option::Some(input);
@@ -1543,6 +1887,10 @@ impl CodeGenConfigurationNodeBuilder {
     ) -> Self {
         self.snowflake_target = input;
         self
+    }
+    /// <p>Specifies a target that writes to a Snowflake data source.</p>
+    pub fn get_snowflake_target(&self) -> &::std::option::Option<crate::types::SnowflakeTarget> {
+        &self.snowflake_target
     }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
     pub fn build(self) -> crate::types::CodeGenConfigurationNode {

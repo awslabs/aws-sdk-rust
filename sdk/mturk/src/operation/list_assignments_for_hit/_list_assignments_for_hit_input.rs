@@ -66,6 +66,10 @@ impl ListAssignmentsForHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The ID of the HIT.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ListAssignmentsForHitInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl ListAssignmentsForHitInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `assignment_statuses`.
     ///
@@ -104,6 +116,12 @@ impl ListAssignmentsForHitInputBuilder {
     ) -> Self {
         self.assignment_statuses = input;
         self
+    }
+    /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+    pub fn get_assignment_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
+        &self.assignment_statuses
     }
     /// Consumes the builder and constructs a [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl LoggingBuilder {
         self.cluster_logging = input;
         self
     }
+    /// <p>The cluster control plane logging configuration for your cluster.</p>
+    pub fn get_cluster_logging(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSetup>> {
+        &self.cluster_logging
+    }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
         crate::types::Logging {

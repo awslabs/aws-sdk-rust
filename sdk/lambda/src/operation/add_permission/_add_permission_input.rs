@@ -157,6 +157,17 @@ impl AddPermissionInputBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -166,6 +177,10 @@ impl AddPermissionInputBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,6 +192,10 @@ impl AddPermissionInputBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The Amazon Web Service or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -186,6 +205,10 @@ impl AddPermissionInputBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The Amazon Web Service or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>For Amazon Web Services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
@@ -198,6 +221,11 @@ impl AddPermissionInputBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>For Amazon Web Services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
+    /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub fn source_account(
@@ -215,6 +243,10 @@ impl AddPermissionInputBuilder {
         self.source_account = input;
         self
     }
+    /// <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
+    pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account
+    }
     /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
     pub fn event_source_token(
         mut self,
@@ -231,6 +263,10 @@ impl AddPermissionInputBuilder {
         self.event_source_token = input;
         self
     }
+    /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
+    pub fn get_event_source_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_token
+    }
     /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualifier = ::std::option::Option::Some(input.into());
@@ -241,6 +277,10 @@ impl AddPermissionInputBuilder {
         self.qualifier = input;
         self
     }
+    /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualifier
+    }
     /// <p>Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -250,6 +290,10 @@ impl AddPermissionInputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     pub fn principal_org_id(
@@ -267,6 +311,10 @@ impl AddPermissionInputBuilder {
         self.principal_org_id = input;
         self
     }
+    /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+    pub fn get_principal_org_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_org_id
+    }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
         self.function_url_auth_type = ::std::option::Option::Some(input);
@@ -279,6 +327,12 @@ impl AddPermissionInputBuilder {
     ) -> Self {
         self.function_url_auth_type = input;
         self
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    pub fn get_function_url_auth_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
+        &self.function_url_auth_type
     }
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
     pub fn build(

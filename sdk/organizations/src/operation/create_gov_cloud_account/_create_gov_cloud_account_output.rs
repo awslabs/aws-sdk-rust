@@ -53,6 +53,12 @@ impl CreateGovCloudAccountOutputBuilder {
         self.create_account_status = input;
         self
     }
+    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
+    pub fn get_create_account_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateAccountStatus> {
+        &self.create_account_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

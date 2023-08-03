@@ -53,6 +53,10 @@ impl ObjectAttributeUpdateBuilder {
         self.object_attribute_key = input;
         self
     }
+    /// <p>The key of the attribute being updated.</p>
+    pub fn get_object_attribute_key(&self) -> &::std::option::Option<crate::types::AttributeKey> {
+        &self.object_attribute_key
+    }
     /// <p>The action to perform as part of the attribute update.</p>
     pub fn object_attribute_action(mut self, input: crate::types::ObjectAttributeAction) -> Self {
         self.object_attribute_action = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl ObjectAttributeUpdateBuilder {
     ) -> Self {
         self.object_attribute_action = input;
         self
+    }
+    /// <p>The action to perform as part of the attribute update.</p>
+    pub fn get_object_attribute_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectAttributeAction> {
+        &self.object_attribute_action
     }
     /// Consumes the builder and constructs a [`ObjectAttributeUpdate`](crate::types::ObjectAttributeUpdate).
     pub fn build(self) -> crate::types::ObjectAttributeUpdate {

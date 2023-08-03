@@ -49,6 +49,12 @@ impl SectionLayoutConfigurationBuilder {
         self.free_form_layout = input;
         self
     }
+    /// <p>The free-form layout configuration of a section.</p>
+    pub fn get_free_form_layout(
+        &self,
+    ) -> &::std::option::Option<crate::types::FreeFormSectionLayoutConfiguration> {
+        &self.free_form_layout
+    }
     /// Consumes the builder and constructs a [`SectionLayoutConfiguration`](crate::types::SectionLayoutConfiguration).
     pub fn build(self) -> crate::types::SectionLayoutConfiguration {
         crate::types::SectionLayoutConfiguration {

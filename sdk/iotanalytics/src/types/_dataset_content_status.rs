@@ -51,6 +51,10 @@ impl DatasetContentStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DatasetContentState> {
+        &self.state
+    }
     /// <p>The reason the dataset contents are in this state.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DatasetContentStatusBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason the dataset contents are in this state.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`DatasetContentStatus`](crate::types::DatasetContentStatus).
     pub fn build(self) -> crate::types::DatasetContentStatus {

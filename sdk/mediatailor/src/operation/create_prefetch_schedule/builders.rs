@@ -36,6 +36,13 @@ impl CreatePrefetchScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePrefetchSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreatePrefetchScheduleFluentBuilder {
         self.inner = self.inner.set_consumption(input);
         self
     }
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    pub fn get_consumption(&self) -> &::std::option::Option<crate::types::PrefetchConsumption> {
+        self.inner.get_consumption()
+    }
     /// <p>The name to assign to the schedule request.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -138,6 +149,10 @@ impl CreatePrefetchScheduleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name to assign to the schedule request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The name to assign to the playback configuration.</p>
     pub fn playback_configuration_name(
@@ -155,6 +170,10 @@ impl CreatePrefetchScheduleFluentBuilder {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
     }
+    /// <p>The name to assign to the playback configuration.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_playback_configuration_name()
+    }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
         self.inner = self.inner.retrieval(input);
@@ -168,6 +187,10 @@ impl CreatePrefetchScheduleFluentBuilder {
         self.inner = self.inner.set_retrieval(input);
         self
     }
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    pub fn get_retrieval(&self) -> &::std::option::Option<crate::types::PrefetchRetrieval> {
+        self.inner.get_retrieval()
+    }
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
@@ -177,5 +200,9 @@ impl CreatePrefetchScheduleFluentBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
+    }
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
     }
 }

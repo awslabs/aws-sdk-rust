@@ -37,6 +37,12 @@ impl ListDeviceEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeviceEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_device_arn(input);
         self
     }
+    /// <p>The ARN of a device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
+    }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub fn event_type(mut self, input: crate::types::DeviceEventType) -> Self {
         self.inner = self.inner.event_type(input);
@@ -151,6 +161,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_event_type(input);
         self
     }
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DeviceEventType> {
+        self.inner.get_event_type()
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,6 +175,10 @@ impl ListDeviceEventsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -170,5 +188,9 @@ impl ListDeviceEventsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

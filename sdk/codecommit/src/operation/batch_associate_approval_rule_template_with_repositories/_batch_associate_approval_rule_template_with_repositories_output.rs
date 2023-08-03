@@ -77,6 +77,12 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
         self.associated_repository_names = input;
         self
     }
+    /// <p>A list of names of the repositories that have been associated with the template.</p>
+    pub fn get_associated_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_repository_names
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -100,6 +106,14 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
+    > {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl TileLayoutStyleBuilder {
         self.gutter = input;
         self
     }
+    /// <p>The gutter settings that apply between tiles. </p>
+    pub fn get_gutter(&self) -> &::std::option::Option<crate::types::GutterStyle> {
+        &self.gutter
+    }
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
     pub fn margin(mut self, input: crate::types::MarginStyle) -> Self {
         self.margin = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TileLayoutStyleBuilder {
     pub fn set_margin(mut self, input: ::std::option::Option<crate::types::MarginStyle>) -> Self {
         self.margin = input;
         self
+    }
+    /// <p>The margin settings that apply around the outside edge of sheets.</p>
+    pub fn get_margin(&self) -> &::std::option::Option<crate::types::MarginStyle> {
+        &self.margin
     }
     /// Consumes the builder and constructs a [`TileLayoutStyle`](crate::types::TileLayoutStyle).
     pub fn build(self) -> crate::types::TileLayoutStyle {

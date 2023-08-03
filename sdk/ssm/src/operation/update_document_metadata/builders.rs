@@ -36,6 +36,13 @@ impl UpdateDocumentMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDocumentMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateDocumentMetadataFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the change template for which a version's metadata is to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version of a change template in which to update approval metadata.</p>
     pub fn document_version(
         mut self,
@@ -142,6 +153,10 @@ impl UpdateDocumentMetadataFluentBuilder {
         self.inner = self.inner.set_document_version(input);
         self
     }
+    /// <p>The version of a change template in which to update approval metadata.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
+    }
     /// <p>The change template review details to update.</p>
     pub fn document_reviews(mut self, input: crate::types::DocumentReviews) -> Self {
         self.inner = self.inner.document_reviews(input);
@@ -154,5 +169,9 @@ impl UpdateDocumentMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_reviews(input);
         self
+    }
+    /// <p>The change template review details to update.</p>
+    pub fn get_document_reviews(&self) -> &::std::option::Option<crate::types::DocumentReviews> {
+        self.inner.get_document_reviews()
     }
 }

@@ -49,6 +49,10 @@ impl IpSetBuilder {
         self.definition = input;
         self
     }
+    /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.definition
+    }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     pub fn build(self) -> crate::types::IpSet {
         crate::types::IpSet {

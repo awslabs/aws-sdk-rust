@@ -45,6 +45,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFileSystemFromBackup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_backup_id(input);
         self
     }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
+    }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -150,6 +158,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -169,6 +181,11 @@ impl CreateFileSystemFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+    /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -190,6 +207,12 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -207,6 +230,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The configuration for this Microsoft Windows file system.</p>
     pub fn windows_configuration(
         mut self,
@@ -222,6 +249,12 @@ impl CreateFileSystemFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
+    }
+    /// <p>The configuration for this Microsoft Windows file system.</p>
+    pub fn get_windows_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
+        self.inner.get_windows_configuration()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
@@ -255,6 +288,20 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <ul>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_lustre_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
+        self.inner.get_lustre_configuration()
+    }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
     /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
@@ -282,6 +329,17 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_storage_type(input);
         self
     }
+    /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+    /// <ul>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
+    /// </ul>
+    /// <p> The default value is <code>SSD</code>. </p> <note>
+    /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
+    /// </note>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        self.inner.get_storage_type()
+    }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
     /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
@@ -306,6 +364,17 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
+    /// <ul>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+    /// </ul>
+    /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn file_system_type_version(
@@ -324,6 +393,11 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+    pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_type_version()
+    }
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
     pub fn open_zfs_configuration(
         mut self,
@@ -340,6 +414,12 @@ impl CreateFileSystemFromBackupFluentBuilder {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
+    /// <p>The OpenZFS configuration for the file system that's being created. </p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
+        self.inner.get_open_zfs_configuration()
+    }
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
     /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request. </p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -351,5 +431,10 @@ impl CreateFileSystemFromBackupFluentBuilder {
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
+    }
+    /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
+    /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request. </p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_capacity()
     }
 }

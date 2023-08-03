@@ -133,6 +133,12 @@ impl DescribeProvisioningParametersOutputBuilder {
         self.provisioning_artifact_parameters = input;
         self
     }
+    /// <p>Information about the parameters used to provision the product.</p>
+    pub fn get_provisioning_artifact_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>> {
+        &self.provisioning_artifact_parameters
+    }
     /// Appends an item to `constraint_summaries`.
     ///
     /// To override the contents of this collection use [`set_constraint_summaries`](Self::set_constraint_summaries).
@@ -151,6 +157,12 @@ impl DescribeProvisioningParametersOutputBuilder {
     ) -> Self {
         self.constraint_summaries = input;
         self
+    }
+    /// <p>Information about the constraints used to provision the product.</p>
+    pub fn get_constraint_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>> {
+        &self.constraint_summaries
     }
     /// Appends an item to `usage_instructions`.
     ///
@@ -171,6 +183,12 @@ impl DescribeProvisioningParametersOutputBuilder {
         self.usage_instructions = input;
         self
     }
+    /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
+    pub fn get_usage_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageInstruction>> {
+        &self.usage_instructions
+    }
     /// Appends an item to `tag_options`.
     ///
     /// To override the contents of this collection use [`set_tag_options`](Self::set_tag_options).
@@ -190,6 +208,12 @@ impl DescribeProvisioningParametersOutputBuilder {
         self.tag_options = input;
         self
     }
+    /// <p>Information about the TagOptions associated with the resource.</p>
+    pub fn get_tag_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionSummary>> {
+        &self.tag_options
+    }
     /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
     pub fn provisioning_artifact_preferences(
         mut self,
@@ -205,6 +229,12 @@ impl DescribeProvisioningParametersOutputBuilder {
     ) -> Self {
         self.provisioning_artifact_preferences = input;
         self
+    }
+    /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactPreferences> {
+        &self.provisioning_artifact_preferences
     }
     /// Appends an item to `provisioning_artifact_outputs`.
     ///
@@ -234,6 +264,15 @@ impl DescribeProvisioningParametersOutputBuilder {
         self.provisioning_artifact_outputs = input;
         self
     }
+    /// <p>The output of the provisioning artifact.</p>
+    #[deprecated(
+        note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+    )]
+    pub fn get_provisioning_artifact_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactOutput>> {
+        &self.provisioning_artifact_outputs
+    }
     /// Appends an item to `provisioning_artifact_output_keys`.
     ///
     /// To override the contents of this collection use [`set_provisioning_artifact_output_keys`](Self::set_provisioning_artifact_output_keys).
@@ -255,6 +294,12 @@ impl DescribeProvisioningParametersOutputBuilder {
     ) -> Self {
         self.provisioning_artifact_output_keys = input;
         self
+    }
+    /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+    pub fn get_provisioning_artifact_output_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactOutput>> {
+        &self.provisioning_artifact_output_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl FieldGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the field group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -66,6 +70,10 @@ impl FieldGroupBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>Represents an ordered list containing field related information.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldItem>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`FieldGroup`](crate::types::FieldGroup).
     pub fn build(self) -> crate::types::FieldGroup {

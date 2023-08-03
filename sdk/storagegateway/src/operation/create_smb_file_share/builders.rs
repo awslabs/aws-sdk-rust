@@ -39,6 +39,12 @@ impl CreateSMBFileShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSMBFileShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_smb_file_share::builders::CreateSmbFileShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -138,6 +148,10 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
@@ -151,6 +165,11 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_kms_encrypted()
+    }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
@@ -161,6 +180,10 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
+    }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
@@ -170,6 +193,10 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role()
     }
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
@@ -199,6 +226,19 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_location_arn(input);
         self
     }
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
+    /// <p>Bucket ARN:</p>
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
+    /// <p>Access point ARN:</p>
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Access point alias:</p>
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+    /// </note>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_arn()
+    }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn default_storage_class(
@@ -217,6 +257,11 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_default_storage_class(input);
         self
     }
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    pub fn get_default_storage_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_storage_class()
+    }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub fn object_acl(mut self, input: crate::types::ObjectAcl) -> Self {
         self.inner = self.inner.object_acl(input);
@@ -226,6 +271,10 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_object_acl(mut self, input: ::std::option::Option<crate::types::ObjectAcl>) -> Self {
         self.inner = self.inner.set_object_acl(input);
         self
+    }
+    /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    pub fn get_object_acl(&self) -> &::std::option::Option<crate::types::ObjectAcl> {
+        self.inner.get_object_acl()
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
@@ -239,6 +288,11 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_read_only(input);
         self
     }
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_read_only()
+    }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn guess_mime_type_enabled(mut self, input: bool) -> Self {
@@ -250,6 +304,11 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_guess_mime_type_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_guess_mime_type_enabled(input);
         self
+    }
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_guess_mime_type_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_guess_mime_type_enabled()
     }
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
@@ -267,6 +326,13 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_requester_pays(input);
         self
     }
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_requester_pays(&self) -> &::std::option::Option<bool> {
+        self.inner.get_requester_pays()
+    }
     /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
@@ -281,6 +347,12 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_smbacl_enabled(input);
         self
     }
+    /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_smbacl_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_smbacl_enabled()
+    }
     /// <p>The files and folders on this share will only be visible to users with read access.</p>
     pub fn access_based_enumeration(mut self, input: bool) -> Self {
         self.inner = self.inner.access_based_enumeration(input);
@@ -290,6 +362,10 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_access_based_enumeration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_access_based_enumeration(input);
         self
+    }
+    /// <p>The files and folders on this share will only be visible to users with read access.</p>
+    pub fn get_access_based_enumeration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_access_based_enumeration()
     }
     /// Appends an item to `AdminUserList`.
     ///
@@ -315,6 +391,14 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_admin_user_list(input);
         self
     }
+    /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
+    /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
+    /// </important>
+    pub fn get_admin_user_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_admin_user_list()
+    }
     /// Appends an item to `ValidUserList`.
     ///
     /// To override the contents of this collection use [`set_valid_user_list`](Self::set_valid_user_list).
@@ -334,6 +418,12 @@ impl CreateSMBFileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_valid_user_list(input);
         self
+    }
+    /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    pub fn get_valid_user_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_valid_user_list()
     }
     /// Appends an item to `InvalidUserList`.
     ///
@@ -355,6 +445,12 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_invalid_user_list(input);
         self
     }
+    /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    pub fn get_invalid_user_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_invalid_user_list()
+    }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn audit_destination_arn(
         mut self,
@@ -370,6 +466,10 @@ impl CreateSMBFileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_destination_arn()
     }
     /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
@@ -389,6 +489,11 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_authentication(input);
         self
     }
+    /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication()
+    }
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
     pub fn case_sensitivity(mut self, input: crate::types::CaseSensitivity) -> Self {
         self.inner = self.inner.case_sensitivity(input);
@@ -401,6 +506,10 @@ impl CreateSMBFileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_case_sensitivity(input);
         self
+    }
+    /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+    pub fn get_case_sensitivity(&self) -> &::std::option::Option<crate::types::CaseSensitivity> {
+        self.inner.get_case_sensitivity()
     }
     /// Appends an item to `Tags`.
     ///
@@ -423,6 +532,12 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
@@ -443,6 +558,12 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
+    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// </note>
+    pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_share_name()
+    }
     /// <p>Specifies refresh cache information for the file share.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
         self.inner = self.inner.cache_attributes(input);
@@ -455,6 +576,10 @@ impl CreateSMBFileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
+    }
+    /// <p>Specifies refresh cache information for the file share.</p>
+    pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
+        self.inner.get_cache_attributes()
     }
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -484,6 +609,16 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_notification_policy(input);
         self
     }
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
+    /// </note>
+    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    /// <p> <code>{}</code> </p>
+    pub fn get_notification_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_policy()
+    }
     /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
@@ -503,6 +638,12 @@ impl CreateSMBFileShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_endpoint_dns_name(input);
         self
+    }
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub fn get_vpc_endpoint_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_endpoint_dns_name()
     }
     /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
@@ -524,6 +665,12 @@ impl CreateSMBFileShareFluentBuilder {
         self.inner = self.inner.set_bucket_region(input);
         self
     }
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_region()
+    }
     /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
@@ -539,5 +686,12 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn set_oplocks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_oplocks_enabled(input);
         self
+    }
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_oplocks_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_oplocks_enabled()
     }
 }

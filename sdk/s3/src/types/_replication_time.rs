@@ -51,6 +51,10 @@ impl ReplicationTimeBuilder {
         self.status = input;
         self
     }
+    /// <p> Specifies whether the replication time is enabled. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationTimeStatus> {
+        &self.status
+    }
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub fn time(mut self, input: crate::types::ReplicationTimeValue) -> Self {
         self.time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ReplicationTimeBuilder {
     ) -> Self {
         self.time = input;
         self
+    }
+    /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::ReplicationTimeValue> {
+        &self.time
     }
     /// Consumes the builder and constructs a [`ReplicationTime`](crate::types::ReplicationTime).
     pub fn build(self) -> crate::types::ReplicationTime {

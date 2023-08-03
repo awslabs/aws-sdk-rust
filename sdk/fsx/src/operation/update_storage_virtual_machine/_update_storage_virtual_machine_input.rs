@@ -87,6 +87,12 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self.active_directory_configuration = input;
         self
     }
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
+    pub fn get_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration> {
+        &self.active_directory_configuration
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -102,6 +108,10 @@ impl UpdateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
     pub fn storage_virtual_machine_id(
@@ -119,6 +129,10 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self.storage_virtual_machine_id = input;
         self
     }
+    /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_virtual_machine_id
+    }
     /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn svm_admin_password(
         mut self,
@@ -134,6 +148,10 @@ impl UpdateStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.svm_admin_password = input;
         self
+    }
+    /// <p>Specifies a new SvmAdminPassword.</p>
+    pub fn get_svm_admin_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.svm_admin_password
     }
     /// Consumes the builder and constructs a [`UpdateStorageVirtualMachineInput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput).
     pub fn build(

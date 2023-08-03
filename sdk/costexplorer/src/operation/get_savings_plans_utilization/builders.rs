@@ -38,6 +38,10 @@ impl GetSavingsPlansUtilizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSavingsPlansUtilization as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         self.inner = self.inner.set_time_period(input);
         self
     }
+    /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        self.inner.get_time_period()
+    }
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
@@ -145,6 +153,11 @@ impl GetSavingsPlansUtilizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
+    }
+    /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+    /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
+        self.inner.get_granularity()
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -173,6 +186,19 @@ impl GetSavingsPlansUtilizationFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+    /// </ul>
+    /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        self.inner.get_filter()
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -204,5 +230,18 @@ impl GetSavingsPlansUtilizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCommitment</code> </p> </li>
+    /// <li> <p> <code>UsedCommitment</code> </p> </li>
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+    /// <li> <p> <code>NetSavings</code> </p> </li>
+    /// </ul>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        self.inner.get_sort_by()
     }
 }

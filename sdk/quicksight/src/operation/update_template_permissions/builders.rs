@@ -36,6 +36,10 @@ impl UpdateTemplatePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTemplatePermissions as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateTemplatePermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -141,6 +149,10 @@ impl UpdateTemplatePermissionsFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// Appends an item to `GrantPermissions`.
     ///
@@ -159,6 +171,12 @@ impl UpdateTemplatePermissionsFluentBuilder {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
+    /// <p>A list of resource permissions to be granted on the template. </p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_grant_permissions()
+    }
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -175,5 +193,11 @@ impl UpdateTemplatePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
+    }
+    /// <p>A list of resource permissions to be revoked from the template. </p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_revoke_permissions()
     }
 }

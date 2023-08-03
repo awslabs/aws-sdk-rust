@@ -83,6 +83,10 @@ impl EndpointOutputConfigurationBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint made during a recommendation job.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl EndpointOutputConfigurationBuilder {
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variant_name = input;
         self
+    }
+    /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+    pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variant_name
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
     pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
@@ -106,6 +114,12 @@ impl EndpointOutputConfigurationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
+        &self.instance_type
+    }
     /// <p>The number of instances recommended to launch initially.</p>
     pub fn initial_instance_count(mut self, input: i32) -> Self {
         self.initial_instance_count = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl EndpointOutputConfigurationBuilder {
     pub fn set_initial_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.initial_instance_count = input;
         self
+    }
+    /// <p>The number of instances recommended to launch initially.</p>
+    pub fn get_initial_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.initial_instance_count
     }
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub fn serverless_config(
@@ -131,6 +149,12 @@ impl EndpointOutputConfigurationBuilder {
     ) -> Self {
         self.serverless_config = input;
         self
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn get_serverless_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+        &self.serverless_config
     }
     /// Consumes the builder and constructs a [`EndpointOutputConfiguration`](crate::types::EndpointOutputConfiguration).
     pub fn build(self) -> crate::types::EndpointOutputConfiguration {

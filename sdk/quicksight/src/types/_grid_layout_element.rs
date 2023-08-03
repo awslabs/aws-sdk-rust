@@ -80,6 +80,10 @@ impl GridLayoutElementBuilder {
         self.element_id = input;
         self
     }
+    /// <p>A unique identifier for an element within a grid layout.</p>
+    pub fn get_element_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element_id
+    }
     /// <p>The type of element.</p>
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
         self.element_type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl GridLayoutElementBuilder {
         self.element_type = input;
         self
     }
+    /// <p>The type of element.</p>
+    pub fn get_element_type(&self) -> &::std::option::Option<crate::types::LayoutElementType> {
+        &self.element_type
+    }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn column_index(mut self, input: i32) -> Self {
         self.column_index = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl GridLayoutElementBuilder {
     pub fn set_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_index = input;
         self
+    }
+    /// <p>The column index for the upper left corner of an element.</p>
+    pub fn get_column_index(&self) -> &::std::option::Option<i32> {
+        &self.column_index
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
     pub fn column_span(mut self, input: i32) -> Self {
@@ -113,6 +125,10 @@ impl GridLayoutElementBuilder {
         self.column_span = input;
         self
     }
+    /// <p>The width of a grid element expressed as a number of grid columns.</p>
+    pub fn get_column_span(&self) -> &::std::option::Option<i32> {
+        &self.column_span
+    }
     /// <p>The row index for the upper left corner of an element.</p>
     pub fn row_index(mut self, input: i32) -> Self {
         self.row_index = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl GridLayoutElementBuilder {
         self.row_index = input;
         self
     }
+    /// <p>The row index for the upper left corner of an element.</p>
+    pub fn get_row_index(&self) -> &::std::option::Option<i32> {
+        &self.row_index
+    }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub fn row_span(mut self, input: i32) -> Self {
         self.row_span = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl GridLayoutElementBuilder {
     pub fn set_row_span(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_span = input;
         self
+    }
+    /// <p>The height of a grid element expressed as a number of grid rows.</p>
+    pub fn get_row_span(&self) -> &::std::option::Option<i32> {
+        &self.row_span
     }
     /// Consumes the builder and constructs a [`GridLayoutElement`](crate::types::GridLayoutElement).
     pub fn build(self) -> crate::types::GridLayoutElement {

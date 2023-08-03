@@ -49,6 +49,12 @@ impl PortForwardingConfigBuilder {
         self.port_mappings = input;
         self
     }
+    /// <p>The port mappings for the configuration.</p>
+    pub fn get_port_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
+        &self.port_mappings
+    }
     /// Consumes the builder and constructs a [`PortForwardingConfig`](crate::types::PortForwardingConfig).
     pub fn build(self) -> crate::types::PortForwardingConfig {
         crate::types::PortForwardingConfig {

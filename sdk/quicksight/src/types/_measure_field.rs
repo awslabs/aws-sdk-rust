@@ -75,6 +75,12 @@ impl MeasureFieldBuilder {
         self.numerical_measure_field = input;
         self
     }
+    /// <p>The measure type field with numerical type columns.</p>
+    pub fn get_numerical_measure_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericalMeasureField> {
+        &self.numerical_measure_field
+    }
     /// <p>The measure type field with categorical type columns.</p>
     pub fn categorical_measure_field(
         mut self,
@@ -91,6 +97,12 @@ impl MeasureFieldBuilder {
         self.categorical_measure_field = input;
         self
     }
+    /// <p>The measure type field with categorical type columns.</p>
+    pub fn get_categorical_measure_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoricalMeasureField> {
+        &self.categorical_measure_field
+    }
     /// <p>The measure type field with date type columns.</p>
     pub fn date_measure_field(mut self, input: crate::types::DateMeasureField) -> Self {
         self.date_measure_field = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl MeasureFieldBuilder {
         self.date_measure_field = input;
         self
     }
+    /// <p>The measure type field with date type columns.</p>
+    pub fn get_date_measure_field(&self) -> &::std::option::Option<crate::types::DateMeasureField> {
+        &self.date_measure_field
+    }
     /// <p>The calculated measure field only used in pivot tables.</p>
     pub fn calculated_measure_field(mut self, input: crate::types::CalculatedMeasureField) -> Self {
         self.calculated_measure_field = ::std::option::Option::Some(input);
@@ -116,6 +132,12 @@ impl MeasureFieldBuilder {
     ) -> Self {
         self.calculated_measure_field = input;
         self
+    }
+    /// <p>The calculated measure field only used in pivot tables.</p>
+    pub fn get_calculated_measure_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::CalculatedMeasureField> {
+        &self.calculated_measure_field
     }
     /// Consumes the builder and constructs a [`MeasureField`](crate::types::MeasureField).
     pub fn build(self) -> crate::types::MeasureField {

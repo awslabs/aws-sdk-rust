@@ -36,6 +36,10 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEc2DeepInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_activate_deep_inspection(input);
         self
     }
+    /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
+    pub fn get_activate_deep_inspection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_activate_deep_inspection()
+    }
     /// Appends an item to `packagePaths`.
     ///
     /// To override the contents of this collection use [`set_package_paths`](Self::set_package_paths).
@@ -119,5 +127,11 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_package_paths(input);
         self
+    }
+    /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
+    pub fn get_package_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_package_paths()
     }
 }

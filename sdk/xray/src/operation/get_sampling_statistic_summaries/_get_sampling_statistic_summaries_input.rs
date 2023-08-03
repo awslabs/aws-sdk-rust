@@ -39,6 +39,10 @@ impl GetSamplingStatisticSummariesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`GetSamplingStatisticSummariesInput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput).
     pub fn build(
         self,

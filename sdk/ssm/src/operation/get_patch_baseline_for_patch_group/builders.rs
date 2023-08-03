@@ -36,6 +36,10 @@ impl GetPatchBaselineForPatchGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPatchBaselineForPatchGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl GetPatchBaselineForPatchGroupFluentBuilder {
         self.inner = self.inner.set_patch_group(input);
         self
     }
+    /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_group()
+    }
     /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);
@@ -112,5 +120,9 @@ impl GetPatchBaselineForPatchGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
+    }
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        self.inner.get_operating_system()
     }
 }

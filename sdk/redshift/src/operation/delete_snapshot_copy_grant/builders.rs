@@ -37,6 +37,13 @@ impl DeleteSnapshotCopyGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSnapshotCopyGrant as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteSnapshotCopyGrantFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_copy_grant_name(input);
         self
+    }
+    /// <p>The name of the snapshot copy grant to delete.</p>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_copy_grant_name()
     }
 }

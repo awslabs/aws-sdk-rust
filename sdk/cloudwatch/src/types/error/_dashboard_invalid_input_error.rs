@@ -79,6 +79,10 @@ impl DashboardInvalidInputErrorBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `dashboard_validation_messages`.
     ///
     /// To override the contents of this collection use [`set_dashboard_validation_messages`](Self::set_dashboard_validation_messages).
@@ -99,6 +103,12 @@ impl DashboardInvalidInputErrorBuilder {
     ) -> Self {
         self.dashboard_validation_messages = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_dashboard_validation_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>> {
+        &self.dashboard_validation_messages
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

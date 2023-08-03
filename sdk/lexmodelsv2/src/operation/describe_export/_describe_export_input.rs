@@ -39,6 +39,10 @@ impl DescribeExportInputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique identifier of the export to describe.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// Consumes the builder and constructs a [`DescribeExportInput`](crate::operation::describe_export::DescribeExportInput).
     pub fn build(
         self,

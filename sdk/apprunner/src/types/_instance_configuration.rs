@@ -62,6 +62,11 @@ impl InstanceConfigurationBuilder {
         self.cpu = input;
         self
     }
+    /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
+    /// <p>Default: <code>1 vCPU</code> </p>
+    pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu
+    }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,6 +78,11 @@ impl InstanceConfigurationBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
+    /// <p>Default: <code>2 GB</code> </p>
+    pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.memory
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub fn instance_role_arn(
@@ -89,6 +99,10 @@ impl InstanceConfigurationBuilder {
     ) -> Self {
         self.instance_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
+    pub fn get_instance_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_role_arn
     }
     /// Consumes the builder and constructs a [`InstanceConfiguration`](crate::types::InstanceConfiguration).
     pub fn build(self) -> crate::types::InstanceConfiguration {

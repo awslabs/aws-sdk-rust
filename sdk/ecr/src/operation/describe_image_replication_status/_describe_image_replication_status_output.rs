@@ -72,6 +72,10 @@ impl DescribeImageReplicationStatusOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl DescribeImageReplicationStatusOutputBuilder {
     ) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
     }
     /// Appends an item to `replication_statuses`.
     ///
@@ -103,6 +111,12 @@ impl DescribeImageReplicationStatusOutputBuilder {
     ) -> Self {
         self.replication_statuses = input;
         self
+    }
+    /// <p>The replication status details for the images in the specified repository.</p>
+    pub fn get_replication_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>> {
+        &self.replication_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

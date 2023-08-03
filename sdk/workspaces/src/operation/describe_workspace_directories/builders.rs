@@ -36,6 +36,10 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeWorkspaceDirectories as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,12 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
         self.inner = self.inner.set_directory_ids(input);
         self
     }
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
+    pub fn get_directory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_directory_ids()
+    }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -152,6 +162,10 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of directories to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,5 +175,9 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

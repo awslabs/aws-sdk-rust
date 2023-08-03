@@ -80,6 +80,10 @@ impl AmiBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl AmiBuilder {
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
+    }
+    /// <p>The AMI ID of the Amazon EC2 AMI.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
     }
     /// <p>The name of the Amazon EC2 AMI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl AmiBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon EC2 AMI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl AmiBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Image status and the reason for that status.</p>
     pub fn state(mut self, input: crate::types::ImageState) -> Self {
@@ -120,6 +136,10 @@ impl AmiBuilder {
         self.state = input;
         self
     }
+    /// <p>Image status and the reason for that status.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageState> {
+        &self.state
+    }
     /// <p>The account ID of the owner of the AMI.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl AmiBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the owner of the AMI.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`Ami`](crate::types::Ami).
     pub fn build(self) -> crate::types::Ami {

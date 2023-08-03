@@ -60,6 +60,12 @@ impl ListIntentPathsOutputBuilder {
         self.node_summaries = input;
         self
     }
+    /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
+    pub fn get_node_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>> {
+        &self.node_summaries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

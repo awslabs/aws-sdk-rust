@@ -48,6 +48,10 @@ impl R53ResourceRecordBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The DNS target domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The Route 53 Resource Record Set ID.</p>
     pub fn record_set_id(
         mut self,
@@ -63,6 +67,10 @@ impl R53ResourceRecordBuilder {
     ) -> Self {
         self.record_set_id = input;
         self
+    }
+    /// <p>The Route 53 Resource Record Set ID.</p>
+    pub fn get_record_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_set_id
     }
     /// Consumes the builder and constructs a [`R53ResourceRecord`](crate::types::R53ResourceRecord).
     pub fn build(self) -> crate::types::R53ResourceRecord {

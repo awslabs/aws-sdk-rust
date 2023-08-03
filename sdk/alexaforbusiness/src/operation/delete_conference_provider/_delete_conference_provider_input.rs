@@ -47,6 +47,10 @@ impl DeleteConferenceProviderInputBuilder {
         self.conference_provider_arn = input;
         self
     }
+    /// <p>The ARN of the conference provider.</p>
+    pub fn get_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conference_provider_arn
+    }
     /// Consumes the builder and constructs a [`DeleteConferenceProviderInput`](crate::operation::delete_conference_provider::DeleteConferenceProviderInput).
     pub fn build(
         self,

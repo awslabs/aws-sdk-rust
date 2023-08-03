@@ -36,6 +36,10 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetSuppressionOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set to change the suppression list preferences for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// Appends an item to `SuppressedReasons`.
     ///
     /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
@@ -130,5 +138,15 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suppressed_reasons(input);
         self
+    }
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// </ul>
+    pub fn get_suppressed_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+        self.inner.get_suppressed_reasons()
     }
 }

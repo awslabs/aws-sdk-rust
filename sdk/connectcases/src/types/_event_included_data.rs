@@ -53,6 +53,10 @@ impl EventIncludedDataBuilder {
         self.case_data = input;
         self
     }
+    /// <p>Details of what case data is published through the case event stream.</p>
+    pub fn get_case_data(&self) -> &::std::option::Option<crate::types::CaseEventIncludedData> {
+        &self.case_data
+    }
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn related_item_data(mut self, input: crate::types::RelatedItemEventIncludedData) -> Self {
         self.related_item_data = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl EventIncludedDataBuilder {
     ) -> Self {
         self.related_item_data = input;
         self
+    }
+    /// <p>Details of what related item data is published through the case event stream.</p>
+    pub fn get_related_item_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelatedItemEventIncludedData> {
+        &self.related_item_data
     }
     /// Consumes the builder and constructs a [`EventIncludedData`](crate::types::EventIncludedData).
     pub fn build(self) -> crate::types::EventIncludedData {

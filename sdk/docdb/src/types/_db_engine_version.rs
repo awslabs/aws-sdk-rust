@@ -97,6 +97,10 @@ impl DbEngineVersionBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the database engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the database engine.</p>
     pub fn engine_version(
         mut self,
@@ -112,6 +116,10 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The name of the parameter group family for the database engine.</p>
     pub fn db_parameter_group_family(
@@ -129,6 +137,10 @@ impl DbEngineVersionBuilder {
         self.db_parameter_group_family = input;
         self
     }
+    /// <p>The name of the parameter group family for the database engine.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
+    }
     /// <p>The description of the database engine.</p>
     pub fn db_engine_description(
         mut self,
@@ -145,6 +157,10 @@ impl DbEngineVersionBuilder {
         self.db_engine_description = input;
         self
     }
+    /// <p>The description of the database engine.</p>
+    pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_description
+    }
     /// <p>The description of the database engine version.</p>
     pub fn db_engine_version_description(
         mut self,
@@ -160,6 +176,12 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.db_engine_version_description = input;
         self
+    }
+    /// <p>The description of the database engine version.</p>
+    pub fn get_db_engine_version_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_version_description
     }
     /// Appends an item to `valid_upgrade_target`.
     ///
@@ -179,6 +201,12 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.valid_upgrade_target = input;
         self
+    }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn get_valid_upgrade_target(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>> {
+        &self.valid_upgrade_target
     }
     /// Appends an item to `exportable_log_types`.
     ///
@@ -202,6 +230,12 @@ impl DbEngineVersionBuilder {
         self.exportable_log_types = input;
         self
     }
+    /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
+    pub fn get_exportable_log_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exportable_log_types
+    }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = ::std::option::Option::Some(input);
@@ -214,6 +248,10 @@ impl DbEngineVersionBuilder {
     ) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = input;
         self
+    }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+    pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
+        &self.supports_log_exports_to_cloudwatch_logs
     }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {

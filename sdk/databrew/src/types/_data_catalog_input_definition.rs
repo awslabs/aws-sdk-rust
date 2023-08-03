@@ -64,6 +64,10 @@ impl DataCatalogInputDefinitionBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of a database in the Data Catalog.</p>
     pub fn database_name(
         mut self,
@@ -80,6 +84,10 @@ impl DataCatalogInputDefinitionBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of a database in the Data Catalog.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl DataCatalogInputDefinitionBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub fn temp_directory(mut self, input: crate::types::S3Location) -> Self {
@@ -102,6 +114,10 @@ impl DataCatalogInputDefinitionBuilder {
     ) -> Self {
         self.temp_directory = input;
         self
+    }
+    /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
+    pub fn get_temp_directory(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.temp_directory
     }
     /// Consumes the builder and constructs a [`DataCatalogInputDefinition`](crate::types::DataCatalogInputDefinition).
     pub fn build(self) -> crate::types::DataCatalogInputDefinition {

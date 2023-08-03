@@ -70,6 +70,10 @@ impl ListPricingRulesOutputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p> The billing period for which the described pricing rules are applicable. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// Appends an item to `pricing_rules`.
     ///
     /// To override the contents of this collection use [`set_pricing_rules`](Self::set_pricing_rules).
@@ -89,6 +93,12 @@ impl ListPricingRulesOutputBuilder {
         self.pricing_rules = input;
         self
     }
+    /// <p> A list containing the described pricing rules. </p>
+    pub fn get_pricing_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>> {
+        &self.pricing_rules
+    }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl ListPricingRulesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

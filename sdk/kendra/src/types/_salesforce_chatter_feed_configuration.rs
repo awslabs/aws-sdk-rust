@@ -80,6 +80,10 @@ impl SalesforceChatterFeedConfigurationBuilder {
         self.document_data_field_name = input;
         self
     }
+    /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
+    pub fn get_document_data_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_data_field_name
+    }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub fn document_title_field_name(
         mut self,
@@ -95,6 +99,10 @@ impl SalesforceChatterFeedConfigurationBuilder {
     ) -> Self {
         self.document_title_field_name = input;
         self
+    }
+    /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
+    pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_field_name
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -114,6 +122,12 @@ impl SalesforceChatterFeedConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Appends an item to `include_filter_types`.
     ///
@@ -138,6 +152,13 @@ impl SalesforceChatterFeedConfigurationBuilder {
     ) -> Self {
         self.include_filter_types = input;
         self
+    }
+    /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
+    pub fn get_include_filter_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>
+    {
+        &self.include_filter_types
     }
     /// Consumes the builder and constructs a [`SalesforceChatterFeedConfiguration`](crate::types::SalesforceChatterFeedConfiguration).
     pub fn build(self) -> crate::types::SalesforceChatterFeedConfiguration {

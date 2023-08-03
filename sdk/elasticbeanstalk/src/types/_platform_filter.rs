@@ -77,6 +77,11 @@ impl PlatformFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The platform version attribute to which the filter values are applied.</p>
+    /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
     /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
     pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,6 +93,11 @@ impl PlatformFilterBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+    /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
+    pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operator
     }
     /// Appends an item to `values`.
     ///
@@ -121,6 +131,17 @@ impl PlatformFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
+    /// <p>The following list shows valid filter values for some filter attributes.</p>
+    /// <ul>
+    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
+    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
+    /// </ul>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`PlatformFilter`](crate::types::PlatformFilter).
     pub fn build(self) -> crate::types::PlatformFilter {

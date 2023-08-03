@@ -67,6 +67,10 @@ impl ModelMetricsBuilder {
         self.model_quality = input;
         self
     }
+    /// <p>Metrics that measure the quality of a model.</p>
+    pub fn get_model_quality(&self) -> &::std::option::Option<crate::types::ModelQuality> {
+        &self.model_quality
+    }
     /// <p>Metrics that measure the quality of the input data for a model.</p>
     pub fn model_data_quality(mut self, input: crate::types::ModelDataQuality) -> Self {
         self.model_data_quality = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ModelMetricsBuilder {
         self.model_data_quality = input;
         self
     }
+    /// <p>Metrics that measure the quality of the input data for a model.</p>
+    pub fn get_model_data_quality(&self) -> &::std::option::Option<crate::types::ModelDataQuality> {
+        &self.model_data_quality
+    }
     /// <p>Metrics that measure bais in a model.</p>
     pub fn bias(mut self, input: crate::types::Bias) -> Self {
         self.bias = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl ModelMetricsBuilder {
     pub fn set_bias(mut self, input: ::std::option::Option<crate::types::Bias>) -> Self {
         self.bias = input;
         self
+    }
+    /// <p>Metrics that measure bais in a model.</p>
+    pub fn get_bias(&self) -> &::std::option::Option<crate::types::Bias> {
+        &self.bias
     }
     /// <p>Metrics that help explain a model.</p>
     pub fn explainability(mut self, input: crate::types::Explainability) -> Self {
@@ -102,6 +114,10 @@ impl ModelMetricsBuilder {
     ) -> Self {
         self.explainability = input;
         self
+    }
+    /// <p>Metrics that help explain a model.</p>
+    pub fn get_explainability(&self) -> &::std::option::Option<crate::types::Explainability> {
+        &self.explainability
     }
     /// Consumes the builder and constructs a [`ModelMetrics`](crate::types::ModelMetrics).
     pub fn build(self) -> crate::types::ModelMetrics {

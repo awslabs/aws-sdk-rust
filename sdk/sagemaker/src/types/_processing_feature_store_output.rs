@@ -46,6 +46,10 @@ impl ProcessingFeatureStoreOutputBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your processing script is responsible for putting records into your Feature Store.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// Consumes the builder and constructs a [`ProcessingFeatureStoreOutput`](crate::types::ProcessingFeatureStoreOutput).
     pub fn build(self) -> crate::types::ProcessingFeatureStoreOutput {
         crate::types::ProcessingFeatureStoreOutput {

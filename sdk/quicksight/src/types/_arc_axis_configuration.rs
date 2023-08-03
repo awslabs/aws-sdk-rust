@@ -51,6 +51,10 @@ impl ArcAxisConfigurationBuilder {
         self.range = input;
         self
     }
+    /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::ArcAxisDisplayRange> {
+        &self.range
+    }
     /// <p>The reserved range of the arc axis.</p>
     pub fn reserve_range(mut self, input: i32) -> Self {
         self.reserve_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ArcAxisConfigurationBuilder {
     pub fn set_reserve_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reserve_range = input;
         self
+    }
+    /// <p>The reserved range of the arc axis.</p>
+    pub fn get_reserve_range(&self) -> &::std::option::Option<i32> {
+        &self.reserve_range
     }
     /// Consumes the builder and constructs a [`ArcAxisConfiguration`](crate::types::ArcAxisConfiguration).
     pub fn build(self) -> crate::types::ArcAxisConfiguration {

@@ -36,6 +36,12 @@ impl DisableLoggingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableLogging as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_logging::builders::DisableLoggingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,10 @@ impl DisableLoggingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The identifier of the cluster on which logging is to be stopped.</p>
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

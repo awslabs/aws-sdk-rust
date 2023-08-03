@@ -57,6 +57,10 @@ impl AssociateInstanceStorageConfigInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A valid resource type.</p>
     pub fn resource_type(mut self, input: crate::types::InstanceStorageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -70,6 +74,12 @@ impl AssociateInstanceStorageConfigInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>A valid resource type.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+        &self.resource_type
+    }
     /// <p>A valid storage type.</p>
     pub fn storage_config(mut self, input: crate::types::InstanceStorageConfig) -> Self {
         self.storage_config = ::std::option::Option::Some(input);
@@ -82,6 +92,12 @@ impl AssociateInstanceStorageConfigInputBuilder {
     ) -> Self {
         self.storage_config = input;
         self
+    }
+    /// <p>A valid storage type.</p>
+    pub fn get_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
+        &self.storage_config
     }
     /// Consumes the builder and constructs a [`AssociateInstanceStorageConfigInput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput).
     pub fn build(

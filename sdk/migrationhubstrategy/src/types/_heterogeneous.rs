@@ -58,6 +58,13 @@ impl HeterogeneousBuilder {
         self.target_database_engine = input;
         self
     }
+    /// <p> The target database engine for heterogeneous database migration preference. </p>
+    pub fn get_target_database_engine(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>
+    {
+        &self.target_database_engine
+    }
     /// Consumes the builder and constructs a [`Heterogeneous`](crate::types::Heterogeneous).
     pub fn build(self) -> crate::types::Heterogeneous {
         crate::types::Heterogeneous {

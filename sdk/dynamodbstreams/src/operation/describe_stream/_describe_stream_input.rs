@@ -56,6 +56,10 @@ impl DescribeStreamInputBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DescribeStreamInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(
@@ -81,6 +89,10 @@ impl DescribeStreamInputBuilder {
     ) -> Self {
         self.exclusive_start_shard_id = input;
         self
+    }
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    pub fn get_exclusive_start_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_shard_id
     }
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(

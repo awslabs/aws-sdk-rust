@@ -52,6 +52,10 @@ impl DetectProtectiveEquipmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectProtectiveEquipment as a reference.
+    pub fn as_input(&self) -> &crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,10 @@ impl DetectProtectiveEquipmentFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>An array of PPE types that you want to summarize.</p>
     pub fn summarization_attributes(
         mut self,
@@ -157,5 +165,11 @@ impl DetectProtectiveEquipmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_summarization_attributes(input);
         self
+    }
+    /// <p>An array of PPE types that you want to summarize.</p>
+    pub fn get_summarization_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes> {
+        self.inner.get_summarization_attributes()
     }
 }

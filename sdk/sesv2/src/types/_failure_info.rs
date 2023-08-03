@@ -54,6 +54,10 @@ impl FailureInfoBuilder {
         self.failed_records_s3_url = input;
         self
     }
+    /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
+    pub fn get_failed_records_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failed_records_s3_url
+    }
     /// <p>A message about why the import job failed.</p>
     pub fn error_message(
         mut self,
@@ -69,6 +73,10 @@ impl FailureInfoBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message about why the import job failed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailureInfo`](crate::types::FailureInfo).
     pub fn build(self) -> crate::types::FailureInfo {

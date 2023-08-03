@@ -56,6 +56,12 @@ impl UpdateTimeToLiveOutputBuilder {
         self.time_to_live_specification = input;
         self
     }
+    /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
+    pub fn get_time_to_live_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
+        &self.time_to_live_specification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

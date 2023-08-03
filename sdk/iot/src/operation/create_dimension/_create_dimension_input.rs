@@ -71,6 +71,10 @@ impl CreateDimensionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl CreateDimensionInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
+        &self.r#type
     }
     /// Appends an item to `string_values`.
     ///
@@ -103,6 +111,12 @@ impl CreateDimensionInputBuilder {
         self.string_values = input;
         self
     }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -122,6 +136,10 @@ impl CreateDimensionInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata that can be used to manage the dimension.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
         mut self,
@@ -137,6 +155,10 @@ impl CreateDimensionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateDimensionInput`](crate::operation::create_dimension::CreateDimensionInput).
     pub fn build(

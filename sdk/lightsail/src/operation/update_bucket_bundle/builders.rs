@@ -38,6 +38,12 @@ impl UpdateBucketBundleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBucketBundle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateBucketBundleFluentBuilder {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
+    /// <p>The name of the bucket for which to update the bundle.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
+    }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,5 +149,10 @@ impl UpdateBucketBundleFluentBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
+    }
+    /// <p>The ID of the new bundle to apply to the bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
     }
 }

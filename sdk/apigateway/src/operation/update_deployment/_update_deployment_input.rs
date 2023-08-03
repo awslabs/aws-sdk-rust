@@ -58,6 +58,10 @@ impl UpdateDeploymentInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The replacement identifier for the Deployment resource to change information about.</p>
     pub fn deployment_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateDeploymentInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The replacement identifier for the Deployment resource to change information about.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -92,6 +100,12 @@ impl UpdateDeploymentInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
     pub fn build(

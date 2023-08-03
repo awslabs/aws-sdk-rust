@@ -81,6 +81,10 @@ impl ControlDomainInsightsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the control domain. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique identifier for the control domain. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ControlDomainInsightsBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the control domain. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl ControlDomainInsightsBuilder {
         self.controls_count_by_noncompliant_evidence = input;
         self
     }
+    /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
+    pub fn get_controls_count_by_noncompliant_evidence(&self) -> &::std::option::Option<i32> {
+        &self.controls_count_by_noncompliant_evidence
+    }
     /// <p>The total number of controls in the control domain. </p>
     pub fn total_controls_count(mut self, input: i32) -> Self {
         self.total_controls_count = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl ControlDomainInsightsBuilder {
     pub fn set_total_controls_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_controls_count = input;
         self
+    }
+    /// <p>The total number of controls in the control domain. </p>
+    pub fn get_total_controls_count(&self) -> &::std::option::Option<i32> {
+        &self.total_controls_count
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
     pub fn evidence_insights(mut self, input: crate::types::EvidenceInsights) -> Self {
@@ -127,6 +143,10 @@ impl ControlDomainInsightsBuilder {
         self.evidence_insights = input;
         self
     }
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
+    pub fn get_evidence_insights(&self) -> &::std::option::Option<crate::types::EvidenceInsights> {
+        &self.evidence_insights
+    }
     /// <p>The time when the control domain insights were last updated. </p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -139,6 +159,10 @@ impl ControlDomainInsightsBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The time when the control domain insights were last updated. </p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`ControlDomainInsights`](crate::types::ControlDomainInsights).
     pub fn build(self) -> crate::types::ControlDomainInsights {

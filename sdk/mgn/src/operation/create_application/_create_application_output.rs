@@ -155,6 +155,10 @@ impl CreateApplicationOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Application ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl CreateApplicationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Application ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Application name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +183,10 @@ impl CreateApplicationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>Application name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Application description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -185,6 +197,10 @@ impl CreateApplicationOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>Application description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Application archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -194,6 +210,10 @@ impl CreateApplicationOutputBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Application archival status.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>Application aggregated status.</p>
     pub fn application_aggregated_status(
@@ -211,6 +231,12 @@ impl CreateApplicationOutputBuilder {
         self.application_aggregated_status = input;
         self
     }
+    /// <p>Application aggregated status.</p>
+    pub fn get_application_aggregated_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationAggregatedStatus> {
+        &self.application_aggregated_status
+    }
     /// <p>Application creation dateTime.</p>
     pub fn creation_date_time(
         mut self,
@@ -227,6 +253,10 @@ impl CreateApplicationOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>Application creation dateTime.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date_time
+    }
     /// <p>Application last modified dateTime.</p>
     pub fn last_modified_date_time(
         mut self,
@@ -242,6 +272,10 @@ impl CreateApplicationOutputBuilder {
     ) -> Self {
         self.last_modified_date_time = input;
         self
+    }
+    /// <p>Application last modified dateTime.</p>
+    pub fn get_last_modified_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -268,6 +302,14 @@ impl CreateApplicationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Application tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Application wave ID.</p>
     pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wave_id = ::std::option::Option::Some(input.into());
@@ -277,6 +319,10 @@ impl CreateApplicationOutputBuilder {
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wave_id = input;
         self
+    }
+    /// <p>Application wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

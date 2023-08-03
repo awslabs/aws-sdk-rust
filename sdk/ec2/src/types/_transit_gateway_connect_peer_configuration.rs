@@ -84,6 +84,10 @@ impl TransitGatewayConnectPeerConfigurationBuilder {
         self.transit_gateway_address = input;
         self
     }
+    /// <p>The Connect peer IP address on the transit gateway side of the tunnel.</p>
+    pub fn get_transit_gateway_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_address
+    }
     /// <p>The Connect peer IP address on the appliance side of the tunnel.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl TransitGatewayConnectPeerConfigurationBuilder {
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
+    }
+    /// <p>The Connect peer IP address on the appliance side of the tunnel.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -116,6 +124,12 @@ impl TransitGatewayConnectPeerConfigurationBuilder {
         self.inside_cidr_blocks = input;
         self
     }
+    /// <p>The range of interior BGP peer IP addresses.</p>
+    pub fn get_inside_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inside_cidr_blocks
+    }
     /// <p>The tunnel protocol.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolValue) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl TransitGatewayConnectPeerConfigurationBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The tunnel protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolValue> {
+        &self.protocol
     }
     /// Appends an item to `bgp_configurations`.
     ///
@@ -152,6 +170,14 @@ impl TransitGatewayConnectPeerConfigurationBuilder {
     ) -> Self {
         self.bgp_configurations = input;
         self
+    }
+    /// <p>The BGP configuration details.</p>
+    pub fn get_bgp_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::TransitGatewayAttachmentBgpConfiguration>,
+    > {
+        &self.bgp_configurations
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnectPeerConfiguration`](crate::types::TransitGatewayConnectPeerConfiguration).
     pub fn build(self) -> crate::types::TransitGatewayConnectPeerConfiguration {

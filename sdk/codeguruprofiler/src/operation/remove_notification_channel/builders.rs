@@ -36,6 +36,10 @@ impl RemoveNotificationChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveNotificationChannel as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RemoveNotificationChannelFluentBuilder {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
+    /// <p>The name of the profiling group we want to change notification configuration for.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
+    }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -141,5 +149,9 @@ impl RemoveNotificationChannelFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// <p>The id of the channel that we want to stop receiving notifications.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
 }

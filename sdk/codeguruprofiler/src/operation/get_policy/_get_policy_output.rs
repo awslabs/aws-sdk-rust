@@ -55,6 +55,10 @@ impl GetPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>A unique identifier for the current revision of the returned policy.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetPolicyOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>A unique identifier for the current revision of the returned policy.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

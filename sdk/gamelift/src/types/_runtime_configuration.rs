@@ -67,6 +67,12 @@ impl RuntimeConfigurationBuilder {
         self.server_processes = input;
         self
     }
+    /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
+    pub fn get_server_processes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>> {
+        &self.server_processes
+    }
     /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn max_concurrent_game_session_activations(mut self, input: i32) -> Self {
         self.max_concurrent_game_session_activations = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl RuntimeConfigurationBuilder {
         self.max_concurrent_game_session_activations = input;
         self
     }
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    pub fn get_max_concurrent_game_session_activations(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_game_session_activations
+    }
     /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
     pub fn game_session_activation_timeout_seconds(mut self, input: i32) -> Self {
         self.game_session_activation_timeout_seconds = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl RuntimeConfigurationBuilder {
     ) -> Self {
         self.game_session_activation_timeout_seconds = input;
         self
+    }
+    /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
+    pub fn get_game_session_activation_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.game_session_activation_timeout_seconds
     }
     /// Consumes the builder and constructs a [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
     pub fn build(self) -> crate::types::RuntimeConfiguration {

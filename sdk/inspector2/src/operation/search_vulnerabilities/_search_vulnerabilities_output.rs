@@ -65,6 +65,12 @@ impl SearchVulnerabilitiesOutputBuilder {
         self.vulnerabilities = input;
         self
     }
+    /// <p>Details about the listed vulnerability.</p>
+    pub fn get_vulnerabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
+        &self.vulnerabilities
+    }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl SearchVulnerabilitiesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

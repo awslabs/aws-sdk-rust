@@ -61,6 +61,12 @@ impl SigningProfileRevocationRecordBuilder {
         self.revocation_effective_from = input;
         self
     }
+    /// <p>The time when revocation becomes effective.</p>
+    pub fn get_revocation_effective_from(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.revocation_effective_from
+    }
     /// <p>The time when the signing profile was revoked.</p>
     pub fn revoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.revoked_at = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl SigningProfileRevocationRecordBuilder {
         self.revoked_at = input;
         self
     }
+    /// <p>The time when the signing profile was revoked.</p>
+    pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.revoked_at
+    }
     /// <p>The identity of the revoker.</p>
     pub fn revoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revoked_by = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl SigningProfileRevocationRecordBuilder {
     pub fn set_revoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revoked_by = input;
         self
+    }
+    /// <p>The identity of the revoker.</p>
+    pub fn get_revoked_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revoked_by
     }
     /// Consumes the builder and constructs a [`SigningProfileRevocationRecord`](crate::types::SigningProfileRevocationRecord).
     pub fn build(self) -> crate::types::SigningProfileRevocationRecord {

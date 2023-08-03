@@ -39,6 +39,10 @@ impl StartFlowInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you want to start.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
     pub fn build(
         self,

@@ -91,6 +91,12 @@ impl DescribeFleetHistoryOutputBuilder {
         self.history_records = input;
         self
     }
+    /// <p>Information about the events in the history of the EC2 Fleet.</p>
+    pub fn get_history_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryRecordEntry>> {
+        &self.history_records
+    }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     pub fn last_evaluated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +112,11 @@ impl DescribeFleetHistoryOutputBuilder {
         self.last_evaluated_time = input;
         self
     }
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
+    pub fn get_last_evaluated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_evaluated_time
+    }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +127,10 @@ impl DescribeFleetHistoryOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the EC Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -125,6 +140,10 @@ impl DescribeFleetHistoryOutputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>The ID of the EC Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +157,10 @@ impl DescribeFleetHistoryOutputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

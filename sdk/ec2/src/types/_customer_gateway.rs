@@ -96,6 +96,10 @@ impl CustomerGatewayBuilder {
         self.bgp_asn = input;
         self
     }
+    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    pub fn get_bgp_asn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_asn
+    }
     /// <p>The ID of the customer gateway.</p>
     pub fn customer_gateway_id(
         mut self,
@@ -112,6 +116,10 @@ impl CustomerGatewayBuilder {
         self.customer_gateway_id = input;
         self
     }
+    /// <p>The ID of the customer gateway.</p>
+    pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_id
+    }
     /// <p>The IP address of the customer gateway device's outside interface.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl CustomerGatewayBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn certificate_arn(
@@ -138,6 +150,10 @@ impl CustomerGatewayBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -147,6 +163,10 @@ impl CustomerGatewayBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +178,10 @@ impl CustomerGatewayBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The name of customer gateway device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl CustomerGatewayBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The name of customer gateway device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// Appends an item to `tags`.
     ///
@@ -186,6 +214,10 @@ impl CustomerGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the customer gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CustomerGateway`](crate::types::CustomerGateway).
     pub fn build(self) -> crate::types::CustomerGateway {

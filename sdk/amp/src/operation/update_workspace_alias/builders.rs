@@ -36,6 +36,12 @@ impl UpdateWorkspaceAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkspaceAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorkspaceAliasFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// The ID of the workspace being updated.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// The new alias of the workspace.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -136,6 +146,10 @@ impl UpdateWorkspaceAliasFluentBuilder {
         self.inner = self.inner.set_alias(input);
         self
     }
+    /// The new alias of the workspace.
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +159,9 @@ impl UpdateWorkspaceAliasFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

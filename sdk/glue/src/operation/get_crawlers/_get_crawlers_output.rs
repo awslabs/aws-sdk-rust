@@ -63,6 +63,10 @@ impl GetCrawlersOutputBuilder {
         self.crawlers = input;
         self
     }
+    /// <p>A list of crawler metadata.</p>
+    pub fn get_crawlers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Crawler>> {
+        &self.crawlers
+    }
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetCrawlersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

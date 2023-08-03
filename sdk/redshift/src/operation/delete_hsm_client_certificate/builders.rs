@@ -36,6 +36,10 @@ impl DeleteHsmClientCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHsmClientCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl DeleteHsmClientCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hsm_client_certificate_identifier(input);
         self
+    }
+    /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_client_certificate_identifier()
     }
 }

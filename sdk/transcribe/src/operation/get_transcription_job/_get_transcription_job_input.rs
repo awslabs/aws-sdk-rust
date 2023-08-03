@@ -47,6 +47,10 @@ impl GetTranscriptionJobInputBuilder {
         self.transcription_job_name = input;
         self
     }
+    /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcription_job_name
+    }
     /// Consumes the builder and constructs a [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
     pub fn build(
         self,

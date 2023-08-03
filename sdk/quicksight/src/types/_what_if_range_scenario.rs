@@ -59,6 +59,10 @@ impl WhatIfRangeScenarioBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The start date in the date range that you need the forecast results for.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The end date in the date range that you need the forecast results for.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl WhatIfRangeScenarioBuilder {
         self.end_date = input;
         self
     }
+    /// <p>The end date in the date range that you need the forecast results for.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl WhatIfRangeScenarioBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The target value that you want to meet for the provided date range.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`WhatIfRangeScenario`](crate::types::WhatIfRangeScenario).
     pub fn build(self) -> crate::types::WhatIfRangeScenario {

@@ -36,6 +36,12 @@ impl ModifyUserGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyUserGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_user_group::builders::ModifyUserGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ModifyUserGroupFluentBuilder {
         self.inner = self.inner.set_user_group_id(input);
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_group_id()
+    }
     /// Appends an item to `UserIdsToAdd`.
     ///
     /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
@@ -152,6 +162,12 @@ impl ModifyUserGroupFluentBuilder {
         self.inner = self.inner.set_user_ids_to_add(input);
         self
     }
+    /// <p>The list of user IDs to add to the user group.</p>
+    pub fn get_user_ids_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_ids_to_add()
+    }
     /// Appends an item to `UserIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_user_ids_to_remove`](Self::set_user_ids_to_remove).
@@ -171,5 +187,11 @@ impl ModifyUserGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_ids_to_remove(input);
         self
+    }
+    /// <p>The list of user IDs to remove from the user group.</p>
+    pub fn get_user_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_ids_to_remove()
     }
 }

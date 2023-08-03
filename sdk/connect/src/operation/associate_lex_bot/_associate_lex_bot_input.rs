@@ -47,6 +47,10 @@ impl AssociateLexBotInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The Amazon Lex bot to associate with the instance.</p>
     pub fn lex_bot(mut self, input: crate::types::LexBot) -> Self {
         self.lex_bot = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl AssociateLexBotInputBuilder {
     pub fn set_lex_bot(mut self, input: ::std::option::Option<crate::types::LexBot>) -> Self {
         self.lex_bot = input;
         self
+    }
+    /// <p>The Amazon Lex bot to associate with the instance.</p>
+    pub fn get_lex_bot(&self) -> &::std::option::Option<crate::types::LexBot> {
+        &self.lex_bot
     }
     /// Consumes the builder and constructs a [`AssociateLexBotInput`](crate::operation::associate_lex_bot::AssociateLexBotInput).
     pub fn build(

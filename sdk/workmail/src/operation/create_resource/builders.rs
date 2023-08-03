@@ -36,6 +36,12 @@ impl CreateResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateResourceFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The name of the new resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -134,6 +144,10 @@ impl CreateResourceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -143,5 +157,9 @@ impl CreateResourceFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_type()
     }
 }

@@ -48,6 +48,10 @@ impl ApplicationComponentSummaryBuilder {
         self.app_type = input;
         self
     }
+    /// <p> Contains the name of application types. </p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
+    }
     /// <p> Contains the count of application type. </p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ApplicationComponentSummaryBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p> Contains the count of application type. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ApplicationComponentSummary`](crate::types::ApplicationComponentSummary).
     pub fn build(self) -> crate::types::ApplicationComponentSummary {

@@ -62,6 +62,10 @@ impl GetEvidenceFolderInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The unique identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -78,6 +82,10 @@ impl GetEvidenceFolderInputBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(
         mut self,
@@ -93,6 +101,10 @@ impl GetEvidenceFolderInputBuilder {
     ) -> Self {
         self.evidence_folder_id = input;
         self
+    }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evidence_folder_id
     }
     /// Consumes the builder and constructs a [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
     pub fn build(

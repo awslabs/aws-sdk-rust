@@ -54,6 +54,10 @@ impl GetPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>Information about the specified Firewall Manager policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        &self.policy
+    }
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetPolicyOutputBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

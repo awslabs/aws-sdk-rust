@@ -43,6 +43,12 @@ impl DashboardSourceEntityBuilder {
         self.source_template = input;
         self
     }
+    /// <p>Source template.</p>
+    pub fn get_source_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardSourceTemplate> {
+        &self.source_template
+    }
     /// Consumes the builder and constructs a [`DashboardSourceEntity`](crate::types::DashboardSourceEntity).
     pub fn build(self) -> crate::types::DashboardSourceEntity {
         crate::types::DashboardSourceEntity {

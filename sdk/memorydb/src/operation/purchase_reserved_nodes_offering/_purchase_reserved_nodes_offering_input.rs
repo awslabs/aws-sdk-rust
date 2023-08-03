@@ -69,6 +69,10 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         self.reserved_nodes_offering_id = input;
         self
     }
+    /// <p>The ID of the reserved node offering to purchase.</p>
+    pub fn get_reserved_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_nodes_offering_id
+    }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn reservation_id(
         mut self,
@@ -85,6 +89,10 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         self.reservation_id = input;
         self
     }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
+    }
     /// <p>The number of node instances to reserve.</p>
     pub fn node_count(mut self, input: i32) -> Self {
         self.node_count = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl PurchaseReservedNodesOfferingInputBuilder {
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_count = input;
         self
+    }
+    /// <p>The number of node instances to reserve.</p>
+    pub fn get_node_count(&self) -> &::std::option::Option<i32> {
+        &self.node_count
     }
     /// Appends an item to `tags`.
     ///
@@ -113,6 +125,10 @@ impl PurchaseReservedNodesOfferingInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseReservedNodesOfferingInput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput).
     pub fn build(

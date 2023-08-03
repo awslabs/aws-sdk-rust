@@ -213,6 +213,10 @@ impl GetDeploymentOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application that was deployed.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the environment that was deployed.</p>
     pub fn environment_id(
         mut self,
@@ -228,6 +232,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The ID of the environment that was deployed.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
     pub fn deployment_strategy_id(
@@ -245,6 +253,10 @@ impl GetDeploymentOutputBuilder {
         self.deployment_strategy_id = input;
         self
     }
+    /// <p>The ID of the deployment strategy that was deployed.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_strategy_id
+    }
     /// <p>The ID of the configuration profile that was deployed.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -261,6 +273,10 @@ impl GetDeploymentOutputBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.deployment_number = ::std::option::Option::Some(input);
@@ -270,6 +286,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_number = input;
         self
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
+        &self.deployment_number
     }
     /// <p>The name of the configuration.</p>
     pub fn configuration_name(
@@ -287,6 +307,10 @@ impl GetDeploymentOutputBuilder {
         self.configuration_name = input;
         self
     }
+    /// <p>The name of the configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// <p>Information about the source location of the configuration.</p>
     pub fn configuration_location_uri(
         mut self,
@@ -302,6 +326,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.configuration_location_uri = input;
         self
+    }
+    /// <p>Information about the source location of the configuration.</p>
+    pub fn get_configuration_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_location_uri
     }
     /// <p>The configuration version that was deployed.</p>
     pub fn configuration_version(
@@ -319,6 +347,10 @@ impl GetDeploymentOutputBuilder {
         self.configuration_version = input;
         self
     }
+    /// <p>The configuration version that was deployed.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_version
+    }
     /// <p>The description of the deployment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -329,6 +361,10 @@ impl GetDeploymentOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the deployment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.deployment_duration_in_minutes = ::std::option::Option::Some(input);
@@ -338,6 +374,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_duration_in_minutes = input;
         self
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
@@ -352,6 +392,10 @@ impl GetDeploymentOutputBuilder {
         self.growth_type = input;
         self
     }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        &self.growth_type
+    }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.growth_factor = ::std::option::Option::Some(input);
@@ -362,6 +406,10 @@ impl GetDeploymentOutputBuilder {
         self.growth_factor = input;
         self
     }
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        &self.growth_factor
+    }
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.final_bake_time_in_minutes = ::std::option::Option::Some(input);
@@ -371,6 +419,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.final_bake_time_in_minutes = input;
         self
+    }
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
     pub fn state(mut self, input: crate::types::DeploymentState) -> Self {
@@ -384,6 +436,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the deployment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DeploymentState> {
+        &self.state
     }
     /// Appends an item to `event_log`.
     ///
@@ -404,6 +460,12 @@ impl GetDeploymentOutputBuilder {
         self.event_log = input;
         self
     }
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
+    pub fn get_event_log(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentEvent>> {
+        &self.event_log
+    }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn percentage_complete(mut self, input: f32) -> Self {
         self.percentage_complete = ::std::option::Option::Some(input);
@@ -413,6 +475,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percentage_complete = input;
         self
+    }
+    /// <p>The percentage of targets for which the deployment is available.</p>
+    pub fn get_percentage_complete(&self) -> &::std::option::Option<f32> {
+        &self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -427,6 +493,10 @@ impl GetDeploymentOutputBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The time the deployment started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The time the deployment completed. </p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_at = ::std::option::Option::Some(input);
@@ -439,6 +509,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.completed_at = input;
         self
+    }
+    /// <p>The time the deployment completed. </p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
     }
     /// Appends an item to `applied_extensions`.
     ///
@@ -459,6 +533,12 @@ impl GetDeploymentOutputBuilder {
         self.applied_extensions = input;
         self
     }
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub fn get_applied_extensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>> {
+        &self.applied_extensions
+    }
     /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -468,6 +548,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
     pub fn kms_key_identifier(
@@ -484,6 +568,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.kms_key_identifier = input;
         self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

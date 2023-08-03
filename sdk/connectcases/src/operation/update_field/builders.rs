@@ -36,6 +36,10 @@ impl UpdateFieldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateField as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_field::builders::UpdateFieldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateFieldFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.field_id(input.into());
@@ -127,6 +135,10 @@ impl UpdateFieldFluentBuilder {
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_field_id(input);
         self
+    }
+    /// <p>The unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_field_id()
     }
     /// <p>The name of the field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateFieldFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of a field.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,5 +163,9 @@ impl UpdateFieldFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of a field.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

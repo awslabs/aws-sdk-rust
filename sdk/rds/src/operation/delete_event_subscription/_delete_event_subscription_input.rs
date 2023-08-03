@@ -48,6 +48,10 @@ impl DeleteEventSubscriptionInputBuilder {
         self.subscription_name = input;
         self
     }
+    /// <p>The name of the RDS event notification subscription you want to delete.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_name
+    }
     /// Consumes the builder and constructs a [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
     pub fn build(
         self,

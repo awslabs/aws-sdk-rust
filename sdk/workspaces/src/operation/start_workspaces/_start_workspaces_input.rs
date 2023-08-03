@@ -50,6 +50,12 @@ impl StartWorkspacesInputBuilder {
         self.start_workspace_requests = input;
         self
     }
+    /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_start_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRequest>> {
+        &self.start_workspace_requests
+    }
     /// Consumes the builder and constructs a [`StartWorkspacesInput`](crate::operation::start_workspaces::StartWorkspacesInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateBaiduChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBaiduChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_baidu_channel::builders::UpdateBaiduChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateBaiduChannelFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub fn baidu_channel_request(mut self, input: crate::types::BaiduChannelRequest) -> Self {
         self.inner = self.inner.baidu_channel_request(input);
@@ -144,5 +154,11 @@ impl UpdateBaiduChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_baidu_channel_request(input);
         self
+    }
+    /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    pub fn get_baidu_channel_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::BaiduChannelRequest> {
+        self.inner.get_baidu_channel_request()
     }
 }

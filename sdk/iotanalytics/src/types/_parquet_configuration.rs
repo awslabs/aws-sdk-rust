@@ -43,6 +43,10 @@ impl ParquetConfigurationBuilder {
         self.schema_definition = input;
         self
     }
+    /// <p>Information needed to define a schema.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
+        &self.schema_definition
+    }
     /// Consumes the builder and constructs a [`ParquetConfiguration`](crate::types::ParquetConfiguration).
     pub fn build(self) -> crate::types::ParquetConfiguration {
         crate::types::ParquetConfiguration {

@@ -84,6 +84,12 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.affected_accounts = input;
         self
     }
+    /// <p>A JSON set of elements of the affected accounts.</p>
+    pub fn get_affected_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.affected_accounts
+    }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
@@ -107,6 +113,15 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.event_scope_code = input;
         self
     }
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
+    /// </ul>
+    pub fn get_event_scope_code(&self) -> &::std::option::Option<crate::types::EventScopeCode> {
+        &self.event_scope_code
+    }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +131,10 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

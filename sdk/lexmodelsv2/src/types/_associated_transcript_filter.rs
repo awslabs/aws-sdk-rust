@@ -51,6 +51,10 @@ impl AssociatedTranscriptFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AssociatedTranscriptFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl AssociatedTranscriptFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values to use to filter the transcript.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
     pub fn build(self) -> crate::types::AssociatedTranscriptFilter {

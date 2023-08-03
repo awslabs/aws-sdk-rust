@@ -43,6 +43,10 @@ impl DescribeMultiRegionAccessPointOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMultiRegionAccessPointOperation as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl DescribeMultiRegionAccessPointOperationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
     pub fn request_token_arn(
         mut self,
@@ -122,5 +130,9 @@ impl DescribeMultiRegionAccessPointOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_token_arn(input);
         self
+    }
+    /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
+    pub fn get_request_token_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_token_arn()
     }
 }

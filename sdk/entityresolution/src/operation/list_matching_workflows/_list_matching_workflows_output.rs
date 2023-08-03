@@ -69,6 +69,12 @@ impl ListMatchingWorkflowsOutputBuilder {
         self.workflow_summaries = input;
         self
     }
+    /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
+    pub fn get_workflow_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
+        &self.workflow_summaries
+    }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListMatchingWorkflowsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

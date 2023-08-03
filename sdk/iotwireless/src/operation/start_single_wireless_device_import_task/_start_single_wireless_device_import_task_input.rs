@@ -77,6 +77,10 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
         mut self,
@@ -93,6 +97,10 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the wireless device for which an import task is being started.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The name of the wireless device for which an import task is being started.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// Appends an item to `tags`.
     ///
@@ -122,6 +134,10 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkSingleStartImportInfo) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -134,6 +150,12 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkSingleStartImportInfo> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`StartSingleWirelessDeviceImportTaskInput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput, ::aws_smithy_http::operation::error::BuildError>{

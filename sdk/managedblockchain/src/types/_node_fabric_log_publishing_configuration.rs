@@ -51,6 +51,10 @@ impl NodeFabricLogPublishingConfigurationBuilder {
         self.chaincode_logs = input;
         self
     }
+    /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
+    pub fn get_chaincode_logs(&self) -> &::std::option::Option<crate::types::LogConfigurations> {
+        &self.chaincode_logs
+    }
     /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
     pub fn peer_logs(mut self, input: crate::types::LogConfigurations) -> Self {
         self.peer_logs = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl NodeFabricLogPublishingConfigurationBuilder {
     ) -> Self {
         self.peer_logs = input;
         self
+    }
+    /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
+    pub fn get_peer_logs(&self) -> &::std::option::Option<crate::types::LogConfigurations> {
+        &self.peer_logs
     }
     /// Consumes the builder and constructs a [`NodeFabricLogPublishingConfiguration`](crate::types::NodeFabricLogPublishingConfiguration).
     pub fn build(self) -> crate::types::NodeFabricLogPublishingConfiguration {

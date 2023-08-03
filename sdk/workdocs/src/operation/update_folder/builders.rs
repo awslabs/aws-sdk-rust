@@ -36,6 +36,10 @@ impl UpdateFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFolder as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_folder::builders::UpdateFolderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateFolderFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_id(input.into());
@@ -134,6 +142,10 @@ impl UpdateFolderFluentBuilder {
         self.inner = self.inner.set_folder_id(input);
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_id()
+    }
     /// <p>The name of the folder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +155,10 @@ impl UpdateFolderFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the folder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(
@@ -160,6 +176,10 @@ impl UpdateFolderFluentBuilder {
         self.inner = self.inner.set_parent_folder_id(input);
         self
     }
+    /// <p>The ID of the parent folder.</p>
+    pub fn get_parent_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_folder_id()
+    }
     /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
         self.inner = self.inner.resource_state(input);
@@ -172,5 +192,9 @@ impl UpdateFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_state(input);
         self
+    }
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
+    pub fn get_resource_state(&self) -> &::std::option::Option<crate::types::ResourceStateType> {
+        self.inner.get_resource_state()
     }
 }

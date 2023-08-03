@@ -56,6 +56,10 @@ impl UnprocessedScramSecretBuilder {
         self.error_code = input;
         self
     }
+    /// <p>Error code for associate/disassociate failure.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>Error message for associate/disassociate failure.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl UnprocessedScramSecretBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Error message for associate/disassociate failure.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UnprocessedScramSecretBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>AWS Secrets Manager secret ARN.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`UnprocessedScramSecret`](crate::types::UnprocessedScramSecret).
     pub fn build(self) -> crate::types::UnprocessedScramSecret {

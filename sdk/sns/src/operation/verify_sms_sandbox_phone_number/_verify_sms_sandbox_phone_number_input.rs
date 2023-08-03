@@ -47,6 +47,10 @@ impl VerifySmsSandboxPhoneNumberInputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The destination phone number to verify.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
     pub fn one_time_password(
         mut self,
@@ -62,6 +66,10 @@ impl VerifySmsSandboxPhoneNumberInputBuilder {
     ) -> Self {
         self.one_time_password = input;
         self
+    }
+    /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    pub fn get_one_time_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.one_time_password
     }
     /// Consumes the builder and constructs a [`VerifySmsSandboxPhoneNumberInput`](crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberInput).
     pub fn build(

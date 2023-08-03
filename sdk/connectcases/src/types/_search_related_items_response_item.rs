@@ -95,6 +95,10 @@ impl SearchRelatedItemsResponseItemBuilder {
         self.related_item_id = input;
         self
     }
+    /// <p>Unique identifier of a related item.</p>
+    pub fn get_related_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_item_id
+    }
     /// <p>Type of a related item.</p>
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl SearchRelatedItemsResponseItemBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of a related item.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
+        &self.r#type
     }
     /// <p>Time at which a related item was associated with a case.</p>
     pub fn association_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -118,6 +126,10 @@ impl SearchRelatedItemsResponseItemBuilder {
         self.association_time = input;
         self
     }
+    /// <p>Time at which a related item was associated with a case.</p>
+    pub fn get_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.association_time
+    }
     /// <p>Represents the content of a particular type of related item.</p>
     pub fn content(mut self, input: crate::types::RelatedItemContent) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl SearchRelatedItemsResponseItemBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Represents the content of a particular type of related item.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemContent> {
+        &self.content
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -158,6 +174,17 @@ impl SearchRelatedItemsResponseItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
     pub fn build(self) -> crate::types::SearchRelatedItemsResponseItem {

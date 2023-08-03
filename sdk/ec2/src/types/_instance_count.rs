@@ -48,6 +48,10 @@ impl InstanceCountBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The states of the listed Reserved Instances.</p>
     pub fn state(mut self, input: crate::types::ListingState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InstanceCountBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ListingState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The states of the listed Reserved Instances.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ListingState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`InstanceCount`](crate::types::InstanceCount).
     pub fn build(self) -> crate::types::InstanceCount {

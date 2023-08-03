@@ -36,6 +36,10 @@ impl UpgradeElasticsearchDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpgradeElasticsearchDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpgradeElasticsearchDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn target_version(
         mut self,
@@ -142,6 +150,10 @@ impl UpgradeElasticsearchDomainFluentBuilder {
         self.inner = self.inner.set_target_version(input);
         self
     }
+    /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_version()
+    }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
         self.inner = self.inner.perform_check_only(input);
@@ -151,5 +163,9 @@ impl UpgradeElasticsearchDomainFluentBuilder {
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_check_only(input);
         self
+    }
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
+    pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_perform_check_only()
     }
 }

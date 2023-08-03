@@ -39,6 +39,10 @@ impl GetOrderInputBuilder {
         self.order_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the order.</p>
+    pub fn get_order_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_arn
+    }
     /// Consumes the builder and constructs a [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
     pub fn build(
         self,

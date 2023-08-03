@@ -49,6 +49,12 @@ impl ModifyClusterSubnetGroupOutputBuilder {
         self.cluster_subnet_group = input;
         self
     }
+    /// <p>Describes a subnet group.</p>
+    pub fn get_cluster_subnet_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterSubnetGroup> {
+        &self.cluster_subnet_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

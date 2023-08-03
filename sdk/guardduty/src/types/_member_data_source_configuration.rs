@@ -64,6 +64,10 @@ impl MemberDataSourceConfigurationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID for the member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Contains information on the status of data sources for the account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurationsResult) -> Self {
@@ -78,6 +82,13 @@ impl MemberDataSourceConfigurationBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Contains information on the status of data sources for the account.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
+        &self.data_sources
     }
     /// Appends an item to `features`.
     ///
@@ -99,6 +110,13 @@ impl MemberDataSourceConfigurationBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>Contains information about the status of the features for the member account.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>
+    {
+        &self.features
     }
     /// Consumes the builder and constructs a [`MemberDataSourceConfiguration`](crate::types::MemberDataSourceConfiguration).
     pub fn build(self) -> crate::types::MemberDataSourceConfiguration {

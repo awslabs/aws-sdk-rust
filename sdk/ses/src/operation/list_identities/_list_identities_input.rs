@@ -59,6 +59,10 @@ impl ListIdentitiesInputBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// <p>The token to use for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ListIdentitiesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ListIdentitiesInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
     pub fn build(

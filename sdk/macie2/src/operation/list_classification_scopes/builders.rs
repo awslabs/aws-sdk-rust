@@ -36,6 +36,13 @@ impl ListClassificationScopesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListClassificationScopes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl ListClassificationScopesFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,5 +155,9 @@ impl ListClassificationScopesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

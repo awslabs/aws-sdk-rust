@@ -50,6 +50,10 @@ impl UpdateMediaStorageConfigurationInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     pub fn media_storage_configuration(
         mut self,
@@ -65,6 +69,12 @@ impl UpdateMediaStorageConfigurationInputBuilder {
     ) -> Self {
         self.media_storage_configuration = input;
         self
+    }
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn get_media_storage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+        &self.media_storage_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMediaStorageConfigurationInput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput).
     pub fn build(

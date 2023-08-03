@@ -55,6 +55,12 @@ impl ImportCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -151,6 +157,10 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
+    }
     /// <p>The certificate to import.</p>
     pub fn certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.certificate(input);
@@ -163,6 +173,10 @@ impl ImportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
+    }
+    /// <p>The certificate to import.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_certificate()
     }
     /// <p>The private key that matches the public key in the certificate.</p>
     pub fn private_key(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -177,6 +191,10 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_private_key(input);
         self
     }
+    /// <p>The private key that matches the public key in the certificate.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_private_key()
+    }
     /// <p>The PEM encoded certificate chain.</p>
     pub fn certificate_chain(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.certificate_chain(input);
@@ -189,6 +207,10 @@ impl ImportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_chain(input);
         self
+    }
+    /// <p>The PEM encoded certificate chain.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_certificate_chain()
     }
     /// Appends an item to `Tags`.
     ///
@@ -208,5 +230,10 @@ impl ImportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

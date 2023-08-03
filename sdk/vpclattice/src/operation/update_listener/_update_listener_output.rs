@@ -102,6 +102,10 @@ impl UpdateListenerOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the listener.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl UpdateListenerOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the listener.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the listener.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl UpdateListenerOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the listener.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The protocol of the listener.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
@@ -135,6 +147,10 @@ impl UpdateListenerOutputBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol of the listener.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
+        &self.protocol
+    }
     /// <p>The listener port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl UpdateListenerOutputBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The listener port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +175,10 @@ impl UpdateListenerOutputBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -164,6 +188,10 @@ impl UpdateListenerOutputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The action for the default rule.</p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -177,6 +205,10 @@ impl UpdateListenerOutputBuilder {
     ) -> Self {
         self.default_action = input;
         self
+    }
+    /// <p>The action for the default rule.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.default_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

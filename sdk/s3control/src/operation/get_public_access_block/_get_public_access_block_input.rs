@@ -40,6 +40,10 @@ impl GetPublicAccessBlockInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
     pub fn build(
         self,

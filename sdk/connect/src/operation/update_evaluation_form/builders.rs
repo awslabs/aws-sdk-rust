@@ -37,6 +37,12 @@ impl UpdateEvaluationFormFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEvaluationForm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(
         mut self,
@@ -143,6 +153,10 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_form_id()
+    }
     /// <p>A version of the evaluation form to update.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.inner = self.inner.evaluation_form_version(input);
@@ -152,6 +166,10 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_form_version(input);
         self
+    }
+    /// <p>A version of the evaluation form to update.</p>
+    pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_evaluation_form_version()
     }
     /// <p>A flag indicating whether the operation must create a new version.</p>
     pub fn create_new_version(mut self, input: bool) -> Self {
@@ -163,6 +181,10 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_create_new_version(input);
         self
     }
+    /// <p>A flag indicating whether the operation must create a new version.</p>
+    pub fn get_create_new_version(&self) -> &::std::option::Option<bool> {
+        self.inner.get_create_new_version()
+    }
     /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -173,6 +195,10 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_title(input);
         self
     }
+    /// <p>A title of the evaluation form.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
+    }
     /// <p>The description of the evaluation form.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -182,6 +208,10 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the evaluation form.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Items`.
     ///
@@ -200,6 +230,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_items(input);
         self
     }
+    /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+        self.inner.get_items()
+    }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn scoring_strategy(mut self, input: crate::types::EvaluationFormScoringStrategy) -> Self {
         self.inner = self.inner.scoring_strategy(input);
@@ -213,6 +249,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_scoring_strategy(input);
         self
     }
+    /// <p>A scoring strategy of the evaluation form.</p>
+    pub fn get_scoring_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+        self.inner.get_scoring_strategy()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -222,5 +264,9 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

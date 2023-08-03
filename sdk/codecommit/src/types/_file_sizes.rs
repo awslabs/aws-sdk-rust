@@ -56,6 +56,10 @@ impl FileSizesBuilder {
         self.source = input;
         self
     }
+    /// <p>The size of a file in the source of a merge or pull request.</p>
+    pub fn get_source(&self) -> &::std::option::Option<i64> {
+        &self.source
+    }
     /// <p>The size of a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: i64) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FileSizesBuilder {
         self.destination = input;
         self
     }
+    /// <p>The size of a file in the destination of a merge or pull request.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<i64> {
+        &self.destination
+    }
     /// <p>The size of a file in the base of a merge or pull request.</p>
     pub fn base(mut self, input: i64) -> Self {
         self.base = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl FileSizesBuilder {
     pub fn set_base(mut self, input: ::std::option::Option<i64>) -> Self {
         self.base = input;
         self
+    }
+    /// <p>The size of a file in the base of a merge or pull request.</p>
+    pub fn get_base(&self) -> &::std::option::Option<i64> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`FileSizes`](crate::types::FileSizes).
     pub fn build(self) -> crate::types::FileSizes {

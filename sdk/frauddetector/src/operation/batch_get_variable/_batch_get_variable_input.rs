@@ -49,6 +49,10 @@ impl BatchGetVariableInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The list of variable names to get.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Consumes the builder and constructs a [`BatchGetVariableInput`](crate::operation::batch_get_variable::BatchGetVariableInput).
     pub fn build(
         self,

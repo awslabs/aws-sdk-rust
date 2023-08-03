@@ -64,6 +64,10 @@ impl ListTransactionsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn status_filter(mut self, input: crate::types::TransactionStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl ListTransactionsInputBuilder {
         self.status_filter = input;
         self
     }
+    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    pub fn get_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
+        &self.status_filter
+    }
     /// <p>The maximum number of transactions to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ListTransactionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of transactions to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl ListTransactionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(

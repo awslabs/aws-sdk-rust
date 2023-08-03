@@ -41,6 +41,10 @@ impl GetSnapshotLimitsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Contains the identifier of the directory to obtain the limits for.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
     pub fn build(
         self,

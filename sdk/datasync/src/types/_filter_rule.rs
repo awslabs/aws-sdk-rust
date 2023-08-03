@@ -53,6 +53,10 @@ impl FilterRuleBuilder {
         self.filter_type = input;
         self
     }
+    /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
+    pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::FilterType> {
+        &self.filter_type
+    }
     /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
     /// <p> </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,6 +68,11 @@ impl FilterRuleBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+    /// <p> </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FilterRule`](crate::types::FilterRule).
     pub fn build(self) -> crate::types::FilterRule {

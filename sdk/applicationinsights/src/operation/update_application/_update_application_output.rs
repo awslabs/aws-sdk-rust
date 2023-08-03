@@ -50,6 +50,10 @@ impl UpdateApplicationOutputBuilder {
         self.application_info = input;
         self
     }
+    /// <p>Information about the application. </p>
+    pub fn get_application_info(&self) -> &::std::option::Option<crate::types::ApplicationInfo> {
+        &self.application_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

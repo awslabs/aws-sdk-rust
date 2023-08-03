@@ -69,6 +69,12 @@ impl RunConfigurationBuilder {
         self.flink_run_configuration = input;
         self
     }
+    /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_flink_run_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
+        &self.flink_run_configuration
+    }
     /// Appends an item to `sql_run_configurations`.
     ///
     /// To override the contents of this collection use [`set_sql_run_configurations`](Self::set_sql_run_configurations).
@@ -88,6 +94,12 @@ impl RunConfigurationBuilder {
         self.sql_run_configurations = input;
         self
     }
+    /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
+    pub fn get_sql_run_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>> {
+        &self.sql_run_configurations
+    }
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub fn application_restore_configuration(
         mut self,
@@ -103,6 +115,12 @@ impl RunConfigurationBuilder {
     ) -> Self {
         self.application_restore_configuration = input;
         self
+    }
+    /// <p>Describes the restore behavior of a restarting application.</p>
+    pub fn get_application_restore_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
+        &self.application_restore_configuration
     }
     /// Consumes the builder and constructs a [`RunConfiguration`](crate::types::RunConfiguration).
     pub fn build(self) -> crate::types::RunConfiguration {

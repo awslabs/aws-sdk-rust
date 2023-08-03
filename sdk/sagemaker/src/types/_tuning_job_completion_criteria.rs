@@ -62,6 +62,10 @@ impl TuningJobCompletionCriteriaBuilder {
         self.target_objective_metric_value = input;
         self
     }
+    /// <p>The value of the objective metric.</p>
+    pub fn get_target_objective_metric_value(&self) -> &::std::option::Option<f32> {
+        &self.target_objective_metric_value
+    }
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
     pub fn best_objective_not_improving(
         mut self,
@@ -78,6 +82,12 @@ impl TuningJobCompletionCriteriaBuilder {
         self.best_objective_not_improving = input;
         self
     }
+    /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
+    pub fn get_best_objective_not_improving(
+        &self,
+    ) -> &::std::option::Option<crate::types::BestObjectiveNotImproving> {
+        &self.best_objective_not_improving
+    }
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
     pub fn convergence_detected(mut self, input: crate::types::ConvergenceDetected) -> Self {
         self.convergence_detected = ::std::option::Option::Some(input);
@@ -90,6 +100,12 @@ impl TuningJobCompletionCriteriaBuilder {
     ) -> Self {
         self.convergence_detected = input;
         self
+    }
+    /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
+    pub fn get_convergence_detected(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConvergenceDetected> {
+        &self.convergence_detected
     }
     /// Consumes the builder and constructs a [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
     pub fn build(self) -> crate::types::TuningJobCompletionCriteria {

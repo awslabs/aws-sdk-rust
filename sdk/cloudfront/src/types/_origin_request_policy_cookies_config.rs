@@ -81,6 +81,18 @@ impl OriginRequestPolicyCookiesConfigBuilder {
         self.cookie_behavior = input;
         self
     }
+    /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>none</code> – No cookies in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p> </li>
+    /// <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
+    /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
+    /// </ul>
+    pub fn get_cookie_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior> {
+        &self.cookie_behavior
+    }
     /// <p>Contains a list of cookie names.</p>
     pub fn cookies(mut self, input: crate::types::CookieNames) -> Self {
         self.cookies = ::std::option::Option::Some(input);
@@ -90,6 +102,10 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     pub fn set_cookies(mut self, input: ::std::option::Option<crate::types::CookieNames>) -> Self {
         self.cookies = input;
         self
+    }
+    /// <p>Contains a list of cookie names.</p>
+    pub fn get_cookies(&self) -> &::std::option::Option<crate::types::CookieNames> {
+        &self.cookies
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyCookiesConfig`](crate::types::OriginRequestPolicyCookiesConfig).
     pub fn build(self) -> crate::types::OriginRequestPolicyCookiesConfig {

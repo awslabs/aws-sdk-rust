@@ -56,6 +56,10 @@ impl ExtensionAssociationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The extension association ID. This ID is used to call other <code>ExtensionAssociation</code> API actions such as <code>GetExtensionAssociation</code> or <code>DeleteExtensionAssociation</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn extension_arn(
         mut self,
@@ -72,6 +76,10 @@ impl ExtensionAssociationSummaryBuilder {
         self.extension_arn = input;
         self
     }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn get_extension_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_arn
+    }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl ExtensionAssociationSummaryBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ExtensionAssociationSummary`](crate::types::ExtensionAssociationSummary).
     pub fn build(self) -> crate::types::ExtensionAssociationSummary {

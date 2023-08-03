@@ -54,6 +54,10 @@ impl EfsStorageConfigurationBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The file system identifier.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The mount point for the file system.</p>
     pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_point = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl EfsStorageConfigurationBuilder {
     pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
+    }
+    /// <p>The mount point for the file system.</p>
+    pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_point
     }
     /// Consumes the builder and constructs a [`EfsStorageConfiguration`](crate::types::EfsStorageConfiguration).
     pub fn build(self) -> crate::types::EfsStorageConfiguration {

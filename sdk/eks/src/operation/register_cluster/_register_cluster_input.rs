@@ -71,6 +71,10 @@ impl RegisterClusterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Define a unique name for this cluster for your Region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
     pub fn connector_config(mut self, input: crate::types::ConnectorConfigRequest) -> Self {
         self.connector_config = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl RegisterClusterInputBuilder {
     ) -> Self {
         self.connector_config = input;
         self
+    }
+    /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
+    pub fn get_connector_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorConfigRequest> {
+        &self.connector_config
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -99,6 +109,10 @@ impl RegisterClusterInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -124,6 +138,14 @@ impl RegisterClusterInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterClusterInput`](crate::operation::register_cluster::RegisterClusterInput).
     pub fn build(

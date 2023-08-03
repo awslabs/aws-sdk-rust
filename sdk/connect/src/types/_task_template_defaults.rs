@@ -56,6 +56,12 @@ impl TaskTemplateDefaultsBuilder {
         self.default_field_values = input;
         self
     }
+    /// <p>Default value for the field.</p>
+    pub fn get_default_field_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>> {
+        &self.default_field_values
+    }
     /// Consumes the builder and constructs a [`TaskTemplateDefaults`](crate::types::TaskTemplateDefaults).
     pub fn build(self) -> crate::types::TaskTemplateDefaults {
         crate::types::TaskTemplateDefaults {

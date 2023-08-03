@@ -45,6 +45,10 @@ impl DeleteFleetAdvisorCollectorInputBuilder {
         self.collector_referenced_id = input;
         self
     }
+    /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collector_referenced_id
+    }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorInput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput).
     pub fn build(
         self,

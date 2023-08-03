@@ -56,6 +56,10 @@ impl ReportGroupTrendStatsBuilder {
         self.average = input;
         self
     }
+    /// <p>Contains the average of all values analyzed.</p>
+    pub fn get_average(&self) -> &::std::option::Option<::std::string::String> {
+        &self.average
+    }
     /// <p>Contains the maximum value analyzed.</p>
     pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ReportGroupTrendStatsBuilder {
         self.max = input;
         self
     }
+    /// <p>Contains the maximum value analyzed.</p>
+    pub fn get_max(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max
+    }
     /// <p>Contains the minimum value analyzed.</p>
     pub fn min(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ReportGroupTrendStatsBuilder {
     pub fn set_min(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min = input;
         self
+    }
+    /// <p>Contains the minimum value analyzed.</p>
+    pub fn get_min(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`ReportGroupTrendStats`](crate::types::ReportGroupTrendStats).
     pub fn build(self) -> crate::types::ReportGroupTrendStats {

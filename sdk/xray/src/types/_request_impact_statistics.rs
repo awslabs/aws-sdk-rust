@@ -56,6 +56,10 @@ impl RequestImpactStatisticsBuilder {
         self.fault_count = input;
         self
     }
+    /// <p>The number of requests that have resulted in a fault,</p>
+    pub fn get_fault_count(&self) -> &::std::option::Option<i64> {
+        &self.fault_count
+    }
     /// <p>The number of successful requests.</p>
     pub fn ok_count(mut self, input: i64) -> Self {
         self.ok_count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RequestImpactStatisticsBuilder {
         self.ok_count = input;
         self
     }
+    /// <p>The number of successful requests.</p>
+    pub fn get_ok_count(&self) -> &::std::option::Option<i64> {
+        &self.ok_count
+    }
     /// <p>The total number of requests to the service.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RequestImpactStatisticsBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of requests to the service.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`RequestImpactStatistics`](crate::types::RequestImpactStatistics).
     pub fn build(self) -> crate::types::RequestImpactStatistics {

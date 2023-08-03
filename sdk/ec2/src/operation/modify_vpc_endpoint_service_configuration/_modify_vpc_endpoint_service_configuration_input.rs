@@ -143,6 +143,10 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -152,6 +156,10 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the endpoint service.</p>
     pub fn private_dns_name(
@@ -169,6 +177,10 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>(Interface endpoint configuration) The private DNS name to assign to the endpoint service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>(Interface endpoint configuration) Removes the private DNS name of the endpoint service.</p>
     pub fn remove_private_dns_name(mut self, input: bool) -> Self {
         self.remove_private_dns_name = ::std::option::Option::Some(input);
@@ -179,6 +191,10 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.remove_private_dns_name = input;
         self
     }
+    /// <p>(Interface endpoint configuration) Removes the private DNS name of the endpoint service.</p>
+    pub fn get_remove_private_dns_name(&self) -> &::std::option::Option<bool> {
+        &self.remove_private_dns_name
+    }
     /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.acceptance_required = ::std::option::Option::Some(input);
@@ -188,6 +204,10 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.acceptance_required = input;
         self
+    }
+    /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        &self.acceptance_required
     }
     /// Appends an item to `add_network_load_balancer_arns`.
     ///
@@ -211,6 +231,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.add_network_load_balancer_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
+    pub fn get_add_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_network_load_balancer_arns
+    }
     /// Appends an item to `remove_network_load_balancer_arns`.
     ///
     /// To override the contents of this collection use [`set_remove_network_load_balancer_arns`](Self::set_remove_network_load_balancer_arns).
@@ -232,6 +258,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.remove_network_load_balancer_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
+    pub fn get_remove_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_network_load_balancer_arns
     }
     /// Appends an item to `add_gateway_load_balancer_arns`.
     ///
@@ -255,6 +287,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.add_gateway_load_balancer_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
+    pub fn get_add_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_gateway_load_balancer_arns
+    }
     /// Appends an item to `remove_gateway_load_balancer_arns`.
     ///
     /// To override the contents of this collection use [`set_remove_gateway_load_balancer_arns`](Self::set_remove_gateway_load_balancer_arns).
@@ -276,6 +314,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.remove_gateway_load_balancer_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
+    pub fn get_remove_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_gateway_load_balancer_arns
     }
     /// Appends an item to `add_supported_ip_address_types`.
     ///
@@ -299,6 +343,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self.add_supported_ip_address_types = input;
         self
     }
+    /// <p>The IP address types to add to your service configuration.</p>
+    pub fn get_add_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_supported_ip_address_types
+    }
     /// Appends an item to `remove_supported_ip_address_types`.
     ///
     /// To override the contents of this collection use [`set_remove_supported_ip_address_types`](Self::set_remove_supported_ip_address_types).
@@ -320,6 +370,12 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
     ) -> Self {
         self.remove_supported_ip_address_types = input;
         self
+    }
+    /// <p>The IP address types to remove from your service configuration.</p>
+    pub fn get_remove_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_supported_ip_address_types
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServiceConfigurationInput`](crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

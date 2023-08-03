@@ -43,6 +43,10 @@ impl PrioritizeBusinessGoalsBuilder {
         self.business_goals = input;
         self
     }
+    /// <p> Rank of business goals based on priority. </p>
+    pub fn get_business_goals(&self) -> &::std::option::Option<crate::types::BusinessGoals> {
+        &self.business_goals
+    }
     /// Consumes the builder and constructs a [`PrioritizeBusinessGoals`](crate::types::PrioritizeBusinessGoals).
     pub fn build(self) -> crate::types::PrioritizeBusinessGoals {
         crate::types::PrioritizeBusinessGoals {

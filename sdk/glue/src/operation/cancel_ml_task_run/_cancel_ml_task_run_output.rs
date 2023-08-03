@@ -63,6 +63,10 @@ impl CancelMlTaskRunOutputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// <p>The unique identifier for the task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_run_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CancelMlTaskRunOutputBuilder {
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_run_id = input;
         self
+    }
+    /// <p>The unique identifier for the task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
@@ -85,6 +93,10 @@ impl CancelMlTaskRunOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status for this run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

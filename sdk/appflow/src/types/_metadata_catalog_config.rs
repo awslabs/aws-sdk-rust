@@ -43,6 +43,12 @@ impl MetadataCatalogConfigBuilder {
         self.glue_data_catalog = input;
         self
     }
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
+    pub fn get_glue_data_catalog(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlueDataCatalogConfig> {
+        &self.glue_data_catalog
+    }
     /// Consumes the builder and constructs a [`MetadataCatalogConfig`](crate::types::MetadataCatalogConfig).
     pub fn build(self) -> crate::types::MetadataCatalogConfig {
         crate::types::MetadataCatalogConfig {

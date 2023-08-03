@@ -47,6 +47,10 @@ impl ListBucketIntelligentTieringConfigurationsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(
         mut self,
@@ -62,6 +66,10 @@ impl ListBucketIntelligentTieringConfigurationsInputBuilder {
     ) -> Self {
         self.continuation_token = input;
         self
+    }
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continuation_token
     }
     /// Consumes the builder and constructs a [`ListBucketIntelligentTieringConfigurationsInput`](crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{

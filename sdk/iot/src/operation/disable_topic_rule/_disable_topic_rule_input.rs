@@ -41,6 +41,10 @@ impl DisableTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule to disable.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
     pub fn build(
         self,

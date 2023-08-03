@@ -39,6 +39,10 @@ impl DeleteFleetInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
     pub fn build(
         self,

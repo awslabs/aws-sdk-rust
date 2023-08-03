@@ -56,6 +56,11 @@ impl CreateCertificateAuthorityOutputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

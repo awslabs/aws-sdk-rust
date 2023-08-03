@@ -79,6 +79,10 @@ impl CreateDeviceDefinitionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// Information about the initial version of the device definition.
     pub fn initial_version(mut self, input: crate::types::DeviceDefinitionVersion) -> Self {
         self.initial_version = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl CreateDeviceDefinitionInputBuilder {
         self.initial_version = input;
         self
     }
+    /// Information about the initial version of the device definition.
+    pub fn get_initial_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceDefinitionVersion> {
+        &self.initial_version
+    }
     /// The name of the device definition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl CreateDeviceDefinitionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the device definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -126,6 +140,14 @@ impl CreateDeviceDefinitionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeviceDefinitionInput`](crate::operation::create_device_definition::CreateDeviceDefinitionInput).
     pub fn build(

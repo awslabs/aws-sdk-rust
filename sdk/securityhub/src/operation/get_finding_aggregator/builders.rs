@@ -36,6 +36,12 @@ impl GetFindingAggregatorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindingAggregator as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetFindingAggregatorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_aggregator_arn(input);
         self
+    }
+    /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_finding_aggregator_arn()
     }
 }

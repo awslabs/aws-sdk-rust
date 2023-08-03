@@ -88,6 +88,10 @@ impl FolderBuilder {
         self.folder_id = input;
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl FolderBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the folder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A display name for the folder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl FolderBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A display name for the folder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of folder it is.</p>
     pub fn folder_type(mut self, input: crate::types::FolderType) -> Self {
@@ -120,6 +132,10 @@ impl FolderBuilder {
     ) -> Self {
         self.folder_type = input;
         self
+    }
+    /// <p>The type of folder it is.</p>
+    pub fn get_folder_type(&self) -> &::std::option::Option<crate::types::FolderType> {
+        &self.folder_type
     }
     /// Appends an item to `folder_path`.
     ///
@@ -140,6 +156,12 @@ impl FolderBuilder {
         self.folder_path = input;
         self
     }
+    /// <p>An array of ancestor ARN strings for the folder.</p>
+    pub fn get_folder_path(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_path
+    }
     /// <p>The time that the folder was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -153,6 +175,10 @@ impl FolderBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the folder was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time that the folder was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -165,6 +191,10 @@ impl FolderBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that the folder was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {

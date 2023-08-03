@@ -71,6 +71,12 @@ impl ListInputDeviceTransfersOutputBuilder {
         self.input_device_transfers = input;
         self
     }
+    /// The list of devices that you are transferring or are being transferred to you.
+    pub fn get_input_device_transfers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>> {
+        &self.input_device_transfers
+    }
     /// A token to get additional list results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListInputDeviceTransfersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token to get additional list results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

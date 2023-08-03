@@ -88,6 +88,10 @@ impl OpsItemEventSummaryBuilder {
         self.ops_item_id = input;
         self
     }
+    /// <p>The ID of the OpsItem.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
+    }
     /// <p>The ID of the OpsItem event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl OpsItemEventSummaryBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The ID of the OpsItem event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The source of the OpsItem event.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl OpsItemEventSummaryBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the OpsItem event.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The type of information provided as a detail.</p>
     pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail_type = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl OpsItemEventSummaryBuilder {
         self.detail_type = input;
         self
     }
+    /// <p>The type of information provided as a detail.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail_type
+    }
     /// <p>Specific information about the OpsItem event.</p>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl OpsItemEventSummaryBuilder {
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>Specific information about the OpsItem event.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
     }
     /// <p>Information about the user or resource that created the OpsItem event.</p>
     pub fn created_by(mut self, input: crate::types::OpsItemIdentity) -> Self {
@@ -141,6 +161,10 @@ impl OpsItemEventSummaryBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Information about the user or resource that created the OpsItem event.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::OpsItemIdentity> {
+        &self.created_by
+    }
     /// <p>The date and time the OpsItem event was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -153,6 +177,10 @@ impl OpsItemEventSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The date and time the OpsItem event was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`OpsItemEventSummary`](crate::types::OpsItemEventSummary).
     pub fn build(self) -> crate::types::OpsItemEventSummary {

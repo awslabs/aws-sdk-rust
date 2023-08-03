@@ -39,6 +39,10 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCheckLayerAvailability as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository that is associated with the image layers to check.</p>
     pub fn repository_name(
         mut self,
@@ -144,6 +152,10 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository that is associated with the image layers to check.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
     /// Appends an item to `layerDigests`.
     ///
@@ -164,5 +176,11 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_digests(input);
         self
+    }
+    /// <p>The digests of the image layers to check.</p>
+    pub fn get_layer_digests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_digests()
     }
 }

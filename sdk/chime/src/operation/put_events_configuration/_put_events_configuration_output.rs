@@ -53,6 +53,12 @@ impl PutEventsConfigurationOutputBuilder {
         self.events_configuration = input;
         self
     }
+    /// <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
+    pub fn get_events_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventsConfiguration> {
+        &self.events_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

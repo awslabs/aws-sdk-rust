@@ -74,6 +74,10 @@ impl SubnetGroupBuilder {
         self.subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group.</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_name
+    }
     /// <p>The description of the subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl SubnetGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl SubnetGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnets`.
     ///
@@ -112,6 +124,10 @@ impl SubnetGroupBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>A list of subnets associated with the subnet group. </p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`SubnetGroup`](crate::types::SubnetGroup).
     pub fn build(self) -> crate::types::SubnetGroup {

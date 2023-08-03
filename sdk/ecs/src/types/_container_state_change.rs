@@ -95,6 +95,10 @@ impl ContainerStateChangeBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The container image SHA 256 digest.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl ContainerStateChangeBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The container image SHA 256 digest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// <p>The ID of the Docker container.</p>
     pub fn runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +123,10 @@ impl ContainerStateChangeBuilder {
         self.runtime_id = input;
         self
     }
+    /// <p>The ID of the Docker container.</p>
+    pub fn get_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_id
+    }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl ContainerStateChangeBuilder {
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
+    }
+    /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        &self.exit_code
     }
     /// Appends an item to `network_bindings`.
     ///
@@ -144,6 +160,12 @@ impl ContainerStateChangeBuilder {
         self.network_bindings = input;
         self
     }
+    /// <p>Any network bindings that are associated with the container.</p>
+    pub fn get_network_bindings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+        &self.network_bindings
+    }
     /// <p>The reason for the state change.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -154,6 +176,10 @@ impl ContainerStateChangeBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for the state change.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The status of the container.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -163,6 +189,10 @@ impl ContainerStateChangeBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the container.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ContainerStateChange`](crate::types::ContainerStateChange).
     pub fn build(self) -> crate::types::ContainerStateChange {

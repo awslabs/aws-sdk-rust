@@ -43,6 +43,10 @@ impl ReportFilterBuilder {
         self.status = input;
         self
     }
+    /// <p> The status used to filter reports. You can filter using one status only. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ReportFilter`](crate::types::ReportFilter).
     pub fn build(self) -> crate::types::ReportFilter {
         crate::types::ReportFilter {

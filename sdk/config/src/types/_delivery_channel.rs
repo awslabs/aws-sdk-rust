@@ -88,6 +88,10 @@ impl DeliveryChannelBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the delivery channel. By default, Config assigns the name "default" when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
     /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
     pub fn s3_bucket_name(
@@ -106,6 +110,11 @@ impl DeliveryChannelBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
+    /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The prefix for the specified Amazon S3 bucket.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -122,6 +131,10 @@ impl DeliveryChannelBuilder {
         self.s3_key_prefix = input;
         self
     }
+    /// <p>The prefix for the specified Amazon S3 bucket.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config. Must belong to the same Region as the destination S3 bucket.</p>
     pub fn s3_kms_key_arn(
         mut self,
@@ -137,6 +150,10 @@ impl DeliveryChannelBuilder {
     ) -> Self {
         self.s3_kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config. Must belong to the same Region as the destination S3 bucket.</p>
+    pub fn get_s3_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_kms_key_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
     /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
@@ -156,6 +173,11 @@ impl DeliveryChannelBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
+    /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The options for how often Config delivers configuration snapshots to the Amazon S3 bucket.</p>
     pub fn config_snapshot_delivery_properties(
         mut self,
@@ -171,6 +193,12 @@ impl DeliveryChannelBuilder {
     ) -> Self {
         self.config_snapshot_delivery_properties = input;
         self
+    }
+    /// <p>The options for how often Config delivers configuration snapshots to the Amazon S3 bucket.</p>
+    pub fn get_config_snapshot_delivery_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigSnapshotDeliveryProperties> {
+        &self.config_snapshot_delivery_properties
     }
     /// Consumes the builder and constructs a [`DeliveryChannel`](crate::types::DeliveryChannel).
     pub fn build(self) -> crate::types::DeliveryChannel {

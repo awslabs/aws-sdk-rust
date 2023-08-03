@@ -54,6 +54,11 @@ impl S3ObjectTagBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the tag.</p>
+    /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,6 +70,11 @@ impl S3ObjectTagBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the tag.</p>
+    /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`S3ObjectTag`](crate::types::S3ObjectTag).
     pub fn build(self) -> crate::types::S3ObjectTag {

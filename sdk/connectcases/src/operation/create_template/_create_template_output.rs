@@ -54,6 +54,10 @@ impl CreateTemplateOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique identifier of a template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateTemplateOutputBuilder {
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

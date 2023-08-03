@@ -80,6 +80,11 @@ impl CreateKeyPairInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>A unique name for the key pair.</p>
+    /// <p>Constraints: Up to 255 ASCII characters</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -89,6 +94,10 @@ impl CreateKeyPairInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code> </p>
@@ -101,6 +110,11 @@ impl CreateKeyPairInputBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.key_type = input;
         self
+    }
+    /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
+    /// <p>Default: <code>rsa</code> </p>
+    pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
+        &self.key_type
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -121,6 +135,12 @@ impl CreateKeyPairInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the new key pair.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code> </p>
     pub fn key_format(mut self, input: crate::types::KeyFormat) -> Self {
@@ -132,6 +152,11 @@ impl CreateKeyPairInputBuilder {
     pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
         self.key_format = input;
         self
+    }
+    /// <p>The format of the key pair.</p>
+    /// <p>Default: <code>pem</code> </p>
+    pub fn get_key_format(&self) -> &::std::option::Option<crate::types::KeyFormat> {
+        &self.key_format
     }
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(

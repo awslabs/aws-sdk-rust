@@ -43,6 +43,10 @@ impl StartTransactionInputBuilder {
         self.transaction_type = input;
         self
     }
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    pub fn get_transaction_type(&self) -> &::std::option::Option<crate::types::TransactionType> {
+        &self.transaction_type
+    }
     /// Consumes the builder and constructs a [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
     pub fn build(
         self,

@@ -63,6 +63,12 @@ impl SourceSelectionCriteriaBuilder {
         self.sse_kms_encrypted_objects = input;
         self
     }
+    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
+    pub fn get_sse_kms_encrypted_objects(
+        &self,
+    ) -> &::std::option::Option<crate::types::SseKmsEncryptedObjects> {
+        &self.sse_kms_encrypted_objects
+    }
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
     /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
@@ -79,6 +85,14 @@ impl SourceSelectionCriteriaBuilder {
     ) -> Self {
         self.replica_modifications = input;
         self
+    }
+    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
+    /// </note>
+    pub fn get_replica_modifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicaModifications> {
+        &self.replica_modifications
     }
     /// Consumes the builder and constructs a [`SourceSelectionCriteria`](crate::types::SourceSelectionCriteria).
     pub fn build(self) -> crate::types::SourceSelectionCriteria {

@@ -36,6 +36,10 @@ impl DeregisterDBProxyTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterDBProxyTargets as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
+    /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
+    }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
     pub fn target_group_name(
         mut self,
@@ -147,6 +155,10 @@ impl DeregisterDBProxyTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
+    }
+    /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
+    pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_name()
     }
     /// Appends an item to `DBInstanceIdentifiers`.
     ///
@@ -168,6 +180,12 @@ impl DeregisterDBProxyTargetsFluentBuilder {
         self.inner = self.inner.set_db_instance_identifiers(input);
         self
     }
+    /// <p>One or more DB instance identifiers.</p>
+    pub fn get_db_instance_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_db_instance_identifiers()
+    }
     /// Appends an item to `DBClusterIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_db_cluster_identifiers`](Self::set_db_cluster_identifiers).
@@ -187,5 +205,11 @@ impl DeregisterDBProxyTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifiers(input);
         self
+    }
+    /// <p>One or more DB cluster identifiers.</p>
+    pub fn get_db_cluster_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_db_cluster_identifiers()
     }
 }

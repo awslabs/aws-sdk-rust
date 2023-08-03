@@ -51,6 +51,10 @@ impl TestSetSortByBuilder {
         self.attribute = input;
         self
     }
+    /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::TestSetSortAttribute> {
+        &self.attribute
+    }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TestSetSortByBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`TestSetSortBy`](crate::types::TestSetSortBy).
     pub fn build(self) -> crate::types::TestSetSortBy {

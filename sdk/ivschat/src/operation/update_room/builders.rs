@@ -36,6 +36,10 @@ impl UpdateRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_room::builders::UpdateRoomInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateRoomFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateRoomFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Room name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
@@ -141,6 +153,10 @@ impl UpdateRoomFluentBuilder {
         self.inner = self.inner.set_maximum_message_rate_per_second(input);
         self
     }
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
+    pub fn get_maximum_message_rate_per_second(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_message_rate_per_second()
+    }
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub fn maximum_message_length(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_message_length(input);
@@ -150,6 +166,10 @@ impl UpdateRoomFluentBuilder {
     pub fn set_maximum_message_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_message_length(input);
         self
+    }
+    /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
+    pub fn get_maximum_message_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_message_length()
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
     pub fn message_review_handler(mut self, input: crate::types::MessageReviewHandler) -> Self {
@@ -163,6 +183,12 @@ impl UpdateRoomFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_message_review_handler(input);
         self
+    }
+    /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
+    pub fn get_message_review_handler(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+        self.inner.get_message_review_handler()
     }
     /// Appends an item to `loggingConfigurationIdentifiers`.
     ///
@@ -183,5 +209,11 @@ impl UpdateRoomFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logging_configuration_identifiers(input);
         self
+    }
+    /// <p>Array of logging-configuration identifiers attached to the room.</p>
+    pub fn get_logging_configuration_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_logging_configuration_identifiers()
     }
 }

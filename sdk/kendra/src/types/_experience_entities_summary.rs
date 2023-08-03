@@ -56,6 +56,10 @@ impl ExperienceEntitiesSummaryBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ExperienceEntitiesSummaryBuilder {
         self.entity_type = input;
         self
     }
+    /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.entity_type
+    }
     /// <p>Information about the user entity.</p>
     pub fn display_data(mut self, input: crate::types::EntityDisplayData) -> Self {
         self.display_data = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ExperienceEntitiesSummaryBuilder {
     ) -> Self {
         self.display_data = input;
         self
+    }
+    /// <p>Information about the user entity.</p>
+    pub fn get_display_data(&self) -> &::std::option::Option<crate::types::EntityDisplayData> {
+        &self.display_data
     }
     /// Consumes the builder and constructs a [`ExperienceEntitiesSummary`](crate::types::ExperienceEntitiesSummary).
     pub fn build(self) -> crate::types::ExperienceEntitiesSummary {

@@ -40,6 +40,10 @@ impl DescribeAuditFindingInputBuilder {
         self.finding_id = input;
         self
     }
+    /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
+    }
     /// Consumes the builder and constructs a [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
     pub fn build(
         self,

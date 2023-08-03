@@ -76,6 +76,13 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
         self.successfully_associated_resources = input;
         self
     }
+    /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
+    pub fn get_successfully_associated_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>
+    {
+        &self.successfully_associated_resources
+    }
     /// Appends an item to `failed_associated_resources`.
     ///
     /// To override the contents of this collection use [`set_failed_associated_resources`](Self::set_failed_associated_resources).
@@ -99,6 +106,13 @@ impl BatchAssociateResourcesToCustomLineItemOutputBuilder {
     ) -> Self {
         self.failed_associated_resources = input;
         self
+    }
+    /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
+    pub fn get_failed_associated_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>
+    {
+        &self.failed_associated_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

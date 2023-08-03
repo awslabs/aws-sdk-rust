@@ -40,6 +40,10 @@ impl AwsRdsDbSubnetGroupSubnetAvailabilityZoneBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
     pub fn build(self) -> crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone {
         crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone { name: self.name }

@@ -73,6 +73,10 @@ impl UpgradeElasticsearchDomainOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn target_version(
         mut self,
@@ -89,6 +93,10 @@ impl UpgradeElasticsearchDomainOutputBuilder {
         self.target_version = input;
         self
     }
+    /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_version
+    }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
         self.perform_check_only = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_check_only = input;
         self
+    }
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
+    pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
+        &self.perform_check_only
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
@@ -111,6 +123,12 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     ) -> Self {
         self.change_progress_details = input;
         self
+    }
+    /// <p>Specifies change details of the domain configuration change.</p>
+    pub fn get_change_progress_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+        &self.change_progress_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

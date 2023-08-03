@@ -57,6 +57,10 @@ impl RecordColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column that is created in the in-application input stream or reference table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A reference to the data element in the streaming input or the reference data source.</p>
     pub fn mapping(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mapping = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl RecordColumnBuilder {
         self.mapping = input;
         self
     }
+    /// <p>A reference to the data element in the streaming input or the reference data source.</p>
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mapping
+    }
     /// <p>The type of column created in the in-application input stream or reference table.</p>
     pub fn sql_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_type = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl RecordColumnBuilder {
     pub fn set_sql_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_type = input;
         self
+    }
+    /// <p>The type of column created in the in-application input stream or reference table.</p>
+    pub fn get_sql_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_type
     }
     /// Consumes the builder and constructs a [`RecordColumn`](crate::types::RecordColumn).
     pub fn build(self) -> crate::types::RecordColumn {

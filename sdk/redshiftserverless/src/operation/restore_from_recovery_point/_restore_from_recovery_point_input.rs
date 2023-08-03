@@ -63,6 +63,10 @@ impl RestoreFromRecoveryPointInputBuilder {
         self.recovery_point_id = input;
         self
     }
+    /// <p>The unique identifier of the recovery point to restore from.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_id
+    }
     /// <p>The name of the namespace to restore data into.</p>
     pub fn namespace_name(
         mut self,
@@ -79,6 +83,10 @@ impl RestoreFromRecoveryPointInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace to restore data into.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the workgroup used to restore data.</p>
     pub fn workgroup_name(
         mut self,
@@ -94,6 +102,10 @@ impl RestoreFromRecoveryPointInputBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The name of the workgroup used to restore data.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`RestoreFromRecoveryPointInput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput).
     pub fn build(

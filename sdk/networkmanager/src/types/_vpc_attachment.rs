@@ -59,6 +59,10 @@ impl VpcAttachmentBuilder {
         self.attachment = input;
         self
     }
+    /// <p>Provides details about the VPC attachment.</p>
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
+        &self.attachment
+    }
     /// Appends an item to `subnet_arns`.
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
@@ -78,6 +82,12 @@ impl VpcAttachmentBuilder {
         self.subnet_arns = input;
         self
     }
+    /// <p>The subnet ARNs.</p>
+    pub fn get_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_arns
+    }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl VpcAttachmentBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Provides details about the VPC attachment.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`VpcAttachment`](crate::types::VpcAttachment).
     pub fn build(self) -> crate::types::VpcAttachment {

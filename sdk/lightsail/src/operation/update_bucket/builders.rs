@@ -37,6 +37,10 @@ impl UpdateBucketFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBucket as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bucket::builders::UpdateBucketInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateBucketFluentBuilder {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
+    /// <p>The name of the bucket to update.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
+    }
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
     pub fn access_rules(mut self, input: crate::types::AccessRules) -> Self {
         self.inner = self.inner.access_rules(input);
@@ -131,6 +139,10 @@ impl UpdateBucketFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_rules(input);
         self
+    }
+    /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
+    pub fn get_access_rules(&self) -> &::std::option::Option<crate::types::AccessRules> {
+        self.inner.get_access_rules()
     }
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
@@ -151,6 +163,15 @@ impl UpdateBucketFluentBuilder {
     pub fn set_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_versioning(input);
         self
+    }
+    /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
+    /// <p>The following options can be specified:</p>
+    /// <ul>
+    /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
+    /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
+    /// </ul>
+    pub fn get_versioning(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_versioning()
     }
     /// Appends an item to `readonlyAccessAccounts`.
     ///
@@ -174,6 +195,13 @@ impl UpdateBucketFluentBuilder {
         self.inner = self.inner.set_readonly_access_accounts(input);
         self
     }
+    /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+    /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
+    pub fn get_readonly_access_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_readonly_access_accounts()
+    }
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn access_log_config(mut self, input: crate::types::BucketAccessLogConfig) -> Self {
         self.inner = self.inner.access_log_config(input);
@@ -186,5 +214,11 @@ impl UpdateBucketFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_log_config(input);
         self
+    }
+    /// <p>An object that describes the access log configuration for the bucket.</p>
+    pub fn get_access_log_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
+        self.inner.get_access_log_config()
     }
 }

@@ -73,6 +73,10 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
         self.default_log_level = input;
         self
     }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.default_log_level
+    }
     /// Appends an item to `wireless_gateway_log_options`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).
@@ -95,6 +99,12 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
         self.wireless_gateway_log_options = input;
         self
     }
+    /// <p>The list of wireless gateway log options.</p>
+    pub fn get_wireless_gateway_log_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
+        &self.wireless_gateway_log_options
+    }
     /// Appends an item to `wireless_device_log_options`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
@@ -116,6 +126,12 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
     ) -> Self {
         self.wireless_device_log_options = input;
         self
+    }
+    /// <p>The list of wireless device log options.</p>
+    pub fn get_wireless_device_log_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
+        &self.wireless_device_log_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

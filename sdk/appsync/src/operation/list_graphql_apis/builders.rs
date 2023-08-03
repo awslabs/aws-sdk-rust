@@ -36,6 +36,12 @@ impl ListGraphqlApisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGraphqlApis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_graphql_apis::builders::ListGraphqlApisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListGraphqlApisFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,6 +145,10 @@ impl ListGraphqlApisFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results that you want the request to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
@@ -149,6 +163,10 @@ impl ListGraphqlApisFluentBuilder {
         self.inner = self.inner.set_api_type(input);
         self
     }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn get_api_type(&self) -> &::std::option::Option<crate::types::GraphQlApiType> {
+        self.inner.get_api_type()
+    }
     /// <p>The account owner of the GraphQL API.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);
@@ -158,5 +176,9 @@ impl ListGraphqlApisFluentBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        self.inner.get_owner()
     }
 }

@@ -40,6 +40,10 @@ impl LambdaAvailabilityProviderBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
     pub fn build(self) -> crate::types::LambdaAvailabilityProvider {
         crate::types::LambdaAvailabilityProvider {

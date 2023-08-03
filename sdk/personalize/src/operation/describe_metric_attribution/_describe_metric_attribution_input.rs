@@ -45,6 +45,10 @@ impl DescribeMetricAttributionInputBuilder {
         self.metric_attribution_arn = input;
         self
     }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_attribution_arn
+    }
     /// Consumes the builder and constructs a [`DescribeMetricAttributionInput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionInput).
     pub fn build(
         self,

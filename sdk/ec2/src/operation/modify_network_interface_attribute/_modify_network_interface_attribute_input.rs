@@ -95,6 +95,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self.attachment = input;
         self
     }
+    /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
+    pub fn get_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges> {
+        &self.attachment
+    }
     /// <p>A description for the network interface.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
         self.description = ::std::option::Option::Some(input);
@@ -108,6 +114,10 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the network interface.</p>
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -117,6 +127,10 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `groups`.
     ///
@@ -137,6 +151,10 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self.groups = input;
         self
     }
+    /// <p>Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -153,6 +171,10 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn source_dest_check(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.source_dest_check = ::std::option::Option::Some(input);
@@ -166,6 +188,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self.source_dest_check = input;
         self
     }
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
+    pub fn get_source_dest_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.source_dest_check
+    }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
     pub fn ena_srd_specification(mut self, input: crate::types::EnaSrdSpecification) -> Self {
         self.ena_srd_specification = ::std::option::Option::Some(input);
@@ -178,6 +206,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     ) -> Self {
         self.ena_srd_specification = input;
         self
+    }
+    /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
+    pub fn get_ena_srd_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+        &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
     pub fn build(

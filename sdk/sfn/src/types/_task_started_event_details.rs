@@ -54,6 +54,10 @@ impl TaskStartedEventDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl TaskStartedEventDetailsBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`TaskStartedEventDetails`](crate::types::TaskStartedEventDetails).
     pub fn build(self) -> crate::types::TaskStartedEventDetails {

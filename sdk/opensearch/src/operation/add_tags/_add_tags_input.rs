@@ -48,6 +48,10 @@ impl AddTagsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -66,6 +70,10 @@ impl AddTagsInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>List of resource tags.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(

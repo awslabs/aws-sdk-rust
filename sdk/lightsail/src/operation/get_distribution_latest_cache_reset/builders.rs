@@ -36,6 +36,10 @@ impl GetDistributionLatestCacheResetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDistributionLatestCacheReset as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl GetDistributionLatestCacheResetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
+    }
+    /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_name()
     }
 }

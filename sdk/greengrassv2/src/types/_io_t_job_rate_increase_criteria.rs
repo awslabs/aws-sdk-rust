@@ -48,6 +48,10 @@ impl IoTJobRateIncreaseCriteriaBuilder {
         self.number_of_notified_things = input;
         self
     }
+    /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
+    pub fn get_number_of_notified_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_notified_things
+    }
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
         self.number_of_succeeded_things = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl IoTJobRateIncreaseCriteriaBuilder {
     pub fn set_number_of_succeeded_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_succeeded_things = input;
         self
+    }
+    /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
+    pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_succeeded_things
     }
     /// Consumes the builder and constructs a [`IoTJobRateIncreaseCriteria`](crate::types::IoTJobRateIncreaseCriteria).
     pub fn build(self) -> crate::types::IoTJobRateIncreaseCriteria {

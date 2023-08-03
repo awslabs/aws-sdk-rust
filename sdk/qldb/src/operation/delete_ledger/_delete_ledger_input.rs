@@ -39,6 +39,10 @@ impl DeleteLedgerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger that you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::operation::delete_ledger::DeleteLedgerInput).
     pub fn build(
         self,

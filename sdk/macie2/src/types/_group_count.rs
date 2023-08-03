@@ -48,6 +48,10 @@ impl GroupCountBuilder {
         self.count = input;
         self
     }
+    /// <p>The total number of findings in the group of query results.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
     pub fn group_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GroupCountBuilder {
     pub fn set_group_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_key = input;
         self
+    }
+    /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
+    pub fn get_group_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_key
     }
     /// Consumes the builder and constructs a [`GroupCount`](crate::types::GroupCount).
     pub fn build(self) -> crate::types::GroupCount {

@@ -51,6 +51,10 @@ impl DescribeProtectionGroupOutputBuilder {
         self.protection_group = input;
         self
     }
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    pub fn get_protection_group(&self) -> &::std::option::Option<crate::types::ProtectionGroup> {
+        &self.protection_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

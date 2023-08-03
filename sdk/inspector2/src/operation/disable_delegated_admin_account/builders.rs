@@ -36,6 +36,10 @@ impl DisableDelegatedAdminAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableDelegatedAdminAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DisableDelegatedAdminAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delegated_admin_account_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delegated_admin_account_id()
     }
 }

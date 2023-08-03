@@ -36,6 +36,12 @@ impl DeleteAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAssessmentRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteAssessmentRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
+    }
+    /// <p>The ARN that specifies the assessment run that you want to delete.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_run_arn()
     }
 }

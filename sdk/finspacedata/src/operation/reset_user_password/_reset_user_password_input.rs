@@ -48,6 +48,10 @@ impl ResetUserPasswordInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ResetUserPasswordInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl UpdateSystemTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSystemTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,12 @@ impl UpdateSystemTemplateFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the system to be updated.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.inner = self.inner.definition(input);
@@ -144,6 +156,10 @@ impl UpdateSystemTemplateFluentBuilder {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        self.inner.get_definition()
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
@@ -155,5 +171,10 @@ impl UpdateSystemTemplateFluentBuilder {
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_compatible_namespace_version(input);
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_compatible_namespace_version()
     }
 }

@@ -108,6 +108,10 @@ impl ConnectionBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The ARN of the connection.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The name of the connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl ConnectionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the connection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state of the connection.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
@@ -131,6 +139,10 @@ impl ConnectionBuilder {
         self.connection_state = input;
         self
     }
+    /// <p>The state of the connection.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.connection_state
+    }
     /// <p>The reason that the connection is in the connection state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -140,6 +152,10 @@ impl ConnectionBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason that the connection is in the connection state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The authorization type specified for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
@@ -158,6 +174,14 @@ impl ConnectionBuilder {
         self.authorization_type = input;
         self
     }
+    /// <p>The authorization type specified for the connection.</p> <note>
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// </note>
+    pub fn get_authorization_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
+        &self.authorization_type
+    }
     /// <p>A time stamp for the time that the connection was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -184,6 +212,10 @@ impl ConnectionBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A time stamp for the time that the connection was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn last_authorized_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_authorized_time = ::std::option::Option::Some(input);
@@ -196,6 +228,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.last_authorized_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn get_last_authorized_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_authorized_time
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {

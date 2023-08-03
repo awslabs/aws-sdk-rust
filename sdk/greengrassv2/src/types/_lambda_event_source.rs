@@ -56,6 +56,10 @@ impl LambdaEventSourceBuilder {
         self.topic = input;
         self
     }
+    /// <p>The topic to which to subscribe to receive event messages.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
@@ -76,6 +80,14 @@ impl LambdaEventSourceBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of event source. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LambdaEventSourceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`LambdaEventSource`](crate::types::LambdaEventSource).
     pub fn build(self) -> crate::types::LambdaEventSource {

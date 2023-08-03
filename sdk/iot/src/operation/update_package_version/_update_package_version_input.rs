@@ -102,6 +102,10 @@ impl UpdatePackageVersionInputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the associated software package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The name of the target package version.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl UpdatePackageVersionInputBuilder {
         self.version_name = input;
         self
     }
+    /// <p>The name of the target package version.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>The package version description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl UpdatePackageVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The package version description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -151,6 +163,16 @@ impl UpdatePackageVersionInputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
+    /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn action(mut self, input: crate::types::PackageVersionAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -164,6 +186,10 @@ impl UpdatePackageVersionInputBuilder {
         self.action = input;
         self
     }
+    /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::PackageVersionAction> {
+        &self.action
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -173,6 +199,10 @@ impl UpdatePackageVersionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
     pub fn build(

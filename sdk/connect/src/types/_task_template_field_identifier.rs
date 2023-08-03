@@ -40,6 +40,10 @@ impl TaskTemplateFieldIdentifierBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the task template field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`TaskTemplateFieldIdentifier`](crate::types::TaskTemplateFieldIdentifier).
     pub fn build(self) -> crate::types::TaskTemplateFieldIdentifier {
         crate::types::TaskTemplateFieldIdentifier { name: self.name }

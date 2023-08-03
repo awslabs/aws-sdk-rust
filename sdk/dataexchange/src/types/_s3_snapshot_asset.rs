@@ -40,6 +40,10 @@ impl S3SnapshotAssetBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the Amazon S3 object that is the object.</p>
+    pub fn get_size(&self) -> &::std::option::Option<f64> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`S3SnapshotAsset`](crate::types::S3SnapshotAsset).
     pub fn build(self) -> crate::types::S3SnapshotAsset {
         crate::types::S3SnapshotAsset {

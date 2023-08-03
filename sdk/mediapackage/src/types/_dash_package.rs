@@ -177,6 +177,12 @@ impl DashPackageBuilder {
         self.ad_triggers = input;
         self
     }
+    /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+    pub fn get_ad_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
+        &self.ad_triggers
+    }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn ads_on_delivery_restrictions(
         mut self,
@@ -193,6 +199,12 @@ impl DashPackageBuilder {
         self.ads_on_delivery_restrictions = input;
         self
     }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+    pub fn get_ads_on_delivery_restrictions(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
+        &self.ads_on_delivery_restrictions
+    }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     pub fn encryption(mut self, input: crate::types::DashEncryption) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -206,6 +218,10 @@ impl DashPackageBuilder {
         self.encryption = input;
         self
     }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::DashEncryption> {
+        &self.encryption
+    }
     /// When enabled, an I-Frame only stream will be included in the output.
     pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
         self.include_iframe_only_stream = ::std::option::Option::Some(input);
@@ -215,6 +231,10 @@ impl DashPackageBuilder {
     pub fn set_include_iframe_only_stream(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_iframe_only_stream = input;
         self
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn get_include_iframe_only_stream(&self) -> &::std::option::Option<bool> {
+        &self.include_iframe_only_stream
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     pub fn manifest_layout(mut self, input: crate::types::ManifestLayout) -> Self {
@@ -229,6 +249,10 @@ impl DashPackageBuilder {
         self.manifest_layout = input;
         self
     }
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    pub fn get_manifest_layout(&self) -> &::std::option::Option<crate::types::ManifestLayout> {
+        &self.manifest_layout
+    }
     /// Time window (in seconds) contained in each manifest.
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
         self.manifest_window_seconds = ::std::option::Option::Some(input);
@@ -238,6 +262,10 @@ impl DashPackageBuilder {
     pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manifest_window_seconds = input;
         self
+    }
+    /// Time window (in seconds) contained in each manifest.
+    pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.manifest_window_seconds
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
@@ -249,6 +277,10 @@ impl DashPackageBuilder {
         self.min_buffer_time_seconds = input;
         self
     }
+    /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
+    pub fn get_min_buffer_time_seconds(&self) -> &::std::option::Option<i32> {
+        &self.min_buffer_time_seconds
+    }
     /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
     pub fn min_update_period_seconds(mut self, input: i32) -> Self {
         self.min_update_period_seconds = ::std::option::Option::Some(input);
@@ -258,6 +290,10 @@ impl DashPackageBuilder {
     pub fn set_min_update_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_update_period_seconds = input;
         self
+    }
+    /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
+    pub fn get_min_update_period_seconds(&self) -> &::std::option::Option<i32> {
+        &self.min_update_period_seconds
     }
     /// Appends an item to `period_triggers`.
     ///
@@ -278,6 +314,12 @@ impl DashPackageBuilder {
         self.period_triggers = input;
         self
     }
+    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
+    pub fn get_period_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>> {
+        &self.period_triggers
+    }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
     pub fn profile(mut self, input: crate::types::Profile) -> Self {
         self.profile = ::std::option::Option::Some(input);
@@ -288,6 +330,10 @@ impl DashPackageBuilder {
         self.profile = input;
         self
     }
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
+    pub fn get_profile(&self) -> &::std::option::Option<crate::types::Profile> {
+        &self.profile
+    }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
         self.segment_duration_seconds = ::std::option::Option::Some(input);
@@ -297,6 +343,10 @@ impl DashPackageBuilder {
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
+    }
+    /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     pub fn segment_template_format(mut self, input: crate::types::SegmentTemplateFormat) -> Self {
@@ -311,6 +361,12 @@ impl DashPackageBuilder {
         self.segment_template_format = input;
         self
     }
+    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    pub fn get_segment_template_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::SegmentTemplateFormat> {
+        &self.segment_template_format
+    }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
         self.stream_selection = ::std::option::Option::Some(input);
@@ -323,6 +379,10 @@ impl DashPackageBuilder {
     ) -> Self {
         self.stream_selection = input;
         self
+    }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
     }
     /// Duration (in seconds) to delay live content before presentation.
     pub fn suggested_presentation_delay_seconds(mut self, input: i32) -> Self {
@@ -337,6 +397,10 @@ impl DashPackageBuilder {
         self.suggested_presentation_delay_seconds = input;
         self
     }
+    /// Duration (in seconds) to delay live content before presentation.
+    pub fn get_suggested_presentation_delay_seconds(&self) -> &::std::option::Option<i32> {
+        &self.suggested_presentation_delay_seconds
+    }
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
     pub fn utc_timing(mut self, input: crate::types::UtcTiming) -> Self {
         self.utc_timing = ::std::option::Option::Some(input);
@@ -346,6 +410,10 @@ impl DashPackageBuilder {
     pub fn set_utc_timing(mut self, input: ::std::option::Option<crate::types::UtcTiming>) -> Self {
         self.utc_timing = input;
         self
+    }
+    /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+    pub fn get_utc_timing(&self) -> &::std::option::Option<crate::types::UtcTiming> {
+        &self.utc_timing
     }
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
     pub fn utc_timing_uri(
@@ -362,6 +430,10 @@ impl DashPackageBuilder {
     ) -> Self {
         self.utc_timing_uri = input;
         self
+    }
+    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
+    pub fn get_utc_timing_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utc_timing_uri
     }
     /// Consumes the builder and constructs a [`DashPackage`](crate::types::DashPackage).
     pub fn build(self) -> crate::types::DashPackage {

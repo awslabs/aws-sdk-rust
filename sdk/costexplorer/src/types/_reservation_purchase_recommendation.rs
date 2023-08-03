@@ -105,6 +105,10 @@ impl ReservationPurchaseRecommendationBuilder {
         self.account_scope = input;
         self
     }
+    /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
         self.lookback_period_in_days = ::std::option::Option::Some(input);
@@ -117,6 +121,12 @@ impl ReservationPurchaseRecommendationBuilder {
     ) -> Self {
         self.lookback_period_in_days = input;
         self
+    }
+    /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        &self.lookback_period_in_days
     }
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
@@ -131,6 +141,10 @@ impl ReservationPurchaseRecommendationBuilder {
         self.term_in_years = input;
         self
     }
+    /// <p>The term of the reservation that you want recommendations for, in years.</p>
+    pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
+        &self.term_in_years
+    }
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -144,6 +158,10 @@ impl ReservationPurchaseRecommendationBuilder {
         self.payment_option = input;
         self
     }
+    /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
     pub fn service_specification(mut self, input: crate::types::ServiceSpecification) -> Self {
         self.service_specification = ::std::option::Option::Some(input);
@@ -156,6 +174,12 @@ impl ReservationPurchaseRecommendationBuilder {
     ) -> Self {
         self.service_specification = input;
         self
+    }
+    /// <p>Hardware specifications for the service that you want recommendations for.</p>
+    pub fn get_service_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceSpecification> {
+        &self.service_specification
     }
     /// Appends an item to `recommendation_details`.
     ///
@@ -181,6 +205,14 @@ impl ReservationPurchaseRecommendationBuilder {
         self.recommendation_details = input;
         self
     }
+    /// <p>Details about the recommended purchases.</p>
+    pub fn get_recommendation_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>,
+    > {
+        &self.recommendation_details
+    }
     /// <p>A summary about the recommended purchase.</p>
     pub fn recommendation_summary(
         mut self,
@@ -196,6 +228,12 @@ impl ReservationPurchaseRecommendationBuilder {
     ) -> Self {
         self.recommendation_summary = input;
         self
+    }
+    /// <p>A summary about the recommended purchase.</p>
+    pub fn get_recommendation_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary> {
+        &self.recommendation_summary
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendation`](crate::types::ReservationPurchaseRecommendation).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendation {

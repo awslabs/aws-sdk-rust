@@ -49,6 +49,10 @@ impl ListPublicKeysOutputBuilder {
         self.public_key_list = input;
         self
     }
+    /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
+    pub fn get_public_key_list(&self) -> &::std::option::Option<crate::types::PublicKeyList> {
+        &self.public_key_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

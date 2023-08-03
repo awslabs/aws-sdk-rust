@@ -52,6 +52,10 @@ impl TagColumnOperationBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The column that this operation acts on.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -74,6 +78,12 @@ impl TagColumnOperationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
+    /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagColumnOperation`](crate::types::TagColumnOperation).
     pub fn build(self) -> crate::types::TagColumnOperation {

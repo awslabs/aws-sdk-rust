@@ -39,6 +39,10 @@ impl DescribeModelInputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// Consumes the builder and constructs a [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
     pub fn build(
         self,

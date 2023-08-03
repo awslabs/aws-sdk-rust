@@ -46,6 +46,10 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsBuilder {
         self.cloud_watch_logs_log_group = input;
         self
     }
+    /// <p> An object describing a CloudWatch Logs log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"> Amazon Web Services::Logs::LogGroup</a> in the <i>CloudFormation User Guide</i>. </p>
+    pub fn get_cloud_watch_logs_log_group(&self) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails>{
+        &self.cloud_watch_logs_log_group
+    }
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails`](crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails).
     pub fn build(
         self,

@@ -55,6 +55,10 @@ impl RetrieveOutputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Appends an item to `result_items`.
     ///
     /// To override the contents of this collection use [`set_result_items`](Self::set_result_items).
@@ -73,6 +77,12 @@ impl RetrieveOutputBuilder {
     ) -> Self {
         self.result_items = input;
         self
+    }
+    /// <p>The results of the retrieved relevant passages for the search.</p>
+    pub fn get_result_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>> {
+        &self.result_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

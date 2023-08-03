@@ -39,6 +39,10 @@ impl GetParallelDataInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parallel data resource that is being retrieved.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetParallelDataInput`](crate::operation::get_parallel_data::GetParallelDataInput).
     pub fn build(
         self,

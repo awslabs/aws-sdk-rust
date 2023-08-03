@@ -54,6 +54,10 @@ impl KeyPairBuilder {
         self.public_key = input;
         self
     }
+    /// <p>The public key.</p>
+    pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key
+    }
     /// <p>The private key.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl KeyPairBuilder {
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
+    }
+    /// <p>The private key.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     /// Consumes the builder and constructs a [`KeyPair`](crate::types::KeyPair).
     pub fn build(self) -> crate::types::KeyPair {

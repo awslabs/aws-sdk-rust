@@ -40,6 +40,10 @@ impl VideoSelectorPidBuilder {
         self.pid = input;
         self
     }
+    /// Selects a specific PID from within a video source.
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
+    }
     /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::types::VideoSelectorPid).
     pub fn build(self) -> crate::types::VideoSelectorPid {
         crate::types::VideoSelectorPid { pid: self.pid }

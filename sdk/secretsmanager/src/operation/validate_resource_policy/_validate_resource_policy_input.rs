@@ -49,6 +49,10 @@ impl ValidateResourcePolicyInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>This field is reserved for internal use.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(
         mut self,
@@ -64,6 +68,10 @@ impl ValidateResourcePolicyInputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     /// Consumes the builder and constructs a [`ValidateResourcePolicyInput`](crate::operation::validate_resource_policy::ValidateResourcePolicyInput).
     pub fn build(

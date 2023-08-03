@@ -37,6 +37,10 @@ impl ValidateSecurityProfileBehaviorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateSecurityProfileBehaviors as a reference.
+    pub fn as_input(&self) -> &crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,9 @@ impl ValidateSecurityProfileBehaviorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+        self.inner.get_behaviors()
     }
 }

@@ -38,6 +38,12 @@ impl CreateLoginProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLoginProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_login_profile::builders::CreateLoginProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,11 @@ impl CreateLoginProfileFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The new password for the user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +153,11 @@ impl CreateLoginProfileFluentBuilder {
         self.inner = self.inner.set_password(input);
         self
     }
+    /// <p>The new password for the user.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
+    }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn password_reset_required(mut self, input: bool) -> Self {
         self.inner = self.inner.password_reset_required(input);
@@ -151,5 +167,9 @@ impl CreateLoginProfileFluentBuilder {
     pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_password_reset_required(input);
         self
+    }
+    /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_password_reset_required()
     }
 }

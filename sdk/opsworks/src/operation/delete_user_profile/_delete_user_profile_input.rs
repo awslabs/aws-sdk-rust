@@ -40,6 +40,10 @@ impl DeleteUserProfileInputBuilder {
         self.iam_user_arn = input;
         self
     }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_user_arn
+    }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
     pub fn build(
         self,

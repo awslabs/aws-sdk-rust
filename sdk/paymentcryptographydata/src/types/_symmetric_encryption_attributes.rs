@@ -63,6 +63,10 @@ impl SymmetricEncryptionAttributesBuilder {
         self.mode = input;
         self
     }
+    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
+        &self.mode
+    }
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
     pub fn initialization_vector(
         mut self,
@@ -79,6 +83,10 @@ impl SymmetricEncryptionAttributesBuilder {
         self.initialization_vector = input;
         self
     }
+    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initialization_vector
+    }
     /// <p>The padding to be included with the data.</p>
     pub fn padding_type(mut self, input: crate::types::PaddingType) -> Self {
         self.padding_type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl SymmetricEncryptionAttributesBuilder {
     ) -> Self {
         self.padding_type = input;
         self
+    }
+    /// <p>The padding to be included with the data.</p>
+    pub fn get_padding_type(&self) -> &::std::option::Option<crate::types::PaddingType> {
+        &self.padding_type
     }
     /// Consumes the builder and constructs a [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
     pub fn build(self) -> crate::types::SymmetricEncryptionAttributes {

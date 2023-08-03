@@ -114,6 +114,10 @@ impl DataLakeResourceBuilder {
         self.data_lake_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn get_data_lake_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_arn
+    }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl DataLakeResourceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
     pub fn s3_bucket_arn(
@@ -140,6 +148,10 @@ impl DataLakeResourceBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
+    }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub fn encryption_configuration(
         mut self,
@@ -155,6 +167,12 @@ impl DataLakeResourceBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>Provides encryption details of Amazon Security Lake object.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     pub fn lifecycle_configuration(
@@ -172,6 +190,12 @@ impl DataLakeResourceBuilder {
         self.lifecycle_configuration = input;
         self
     }
+    /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
+    pub fn get_lifecycle_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
+        &self.lifecycle_configuration
+    }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     pub fn replication_configuration(
         mut self,
@@ -188,6 +212,12 @@ impl DataLakeResourceBuilder {
         self.replication_configuration = input;
         self
     }
+    /// <p>Provides replication details of Amazon Security Lake object.</p>
+    pub fn get_replication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
+        &self.replication_configuration
+    }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
     pub fn create_status(mut self, input: crate::types::DataLakeStatus) -> Self {
         self.create_status = ::std::option::Option::Some(input);
@@ -201,6 +231,10 @@ impl DataLakeResourceBuilder {
         self.create_status = input;
         self
     }
+    /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
+    pub fn get_create_status(&self) -> &::std::option::Option<crate::types::DataLakeStatus> {
+        &self.create_status
+    }
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
     pub fn update_status(mut self, input: crate::types::DataLakeUpdateStatus) -> Self {
         self.update_status = ::std::option::Option::Some(input);
@@ -213,6 +247,10 @@ impl DataLakeResourceBuilder {
     ) -> Self {
         self.update_status = input;
         self
+    }
+    /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::DataLakeUpdateStatus> {
+        &self.update_status
     }
     /// Consumes the builder and constructs a [`DataLakeResource`](crate::types::DataLakeResource).
     pub fn build(self) -> crate::types::DataLakeResource {

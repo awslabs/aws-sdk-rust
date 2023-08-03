@@ -87,6 +87,10 @@ impl GetResourceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The resource's identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The parent resource's identifier.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl GetResourceOutputBuilder {
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
+    }
+    /// <p>The parent resource's identifier.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_id
     }
     /// <p>The last path segment for this resource.</p>
     pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl GetResourceOutputBuilder {
         self.path_part = input;
         self
     }
+    /// <p>The last path segment for this resource.</p>
+    pub fn get_path_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_part
+    }
     /// <p>The full path for this resource.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl GetResourceOutputBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The full path for this resource.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Adds a key-value pair to `resource_methods`.
     ///
@@ -141,6 +157,14 @@ impl GetResourceOutputBuilder {
     ) -> Self {
         self.resource_methods = input;
         self
+    }
+    /// <p>Gets an API resource's method of a given HTTP verb.</p>
+    pub fn get_resource_methods(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
+    > {
+        &self.resource_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

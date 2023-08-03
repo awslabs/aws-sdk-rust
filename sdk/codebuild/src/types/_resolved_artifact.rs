@@ -56,6 +56,10 @@ impl ResolvedArtifactBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the type of artifact.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactsType> {
+        &self.r#type
+    }
     /// <p>The location of the artifact.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResolvedArtifactBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the artifact.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The identifier of the artifact.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResolvedArtifactBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The identifier of the artifact.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`ResolvedArtifact`](crate::types::ResolvedArtifact).
     pub fn build(self) -> crate::types::ResolvedArtifact {

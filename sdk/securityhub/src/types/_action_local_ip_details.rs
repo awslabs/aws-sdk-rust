@@ -46,6 +46,10 @@ impl ActionLocalIpDetailsBuilder {
         self.ip_address_v4 = input;
         self
     }
+    /// <p>The IP address.</p>
+    pub fn get_ip_address_v4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_v4
+    }
     /// Consumes the builder and constructs a [`ActionLocalIpDetails`](crate::types::ActionLocalIpDetails).
     pub fn build(self) -> crate::types::ActionLocalIpDetails {
         crate::types::ActionLocalIpDetails {

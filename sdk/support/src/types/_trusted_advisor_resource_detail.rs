@@ -76,6 +76,10 @@ impl TrustedAdvisorResourceDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl TrustedAdvisorResourceDetailBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The unique identifier for the identified resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,6 +104,10 @@ impl TrustedAdvisorResourceDetailBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The unique identifier for the identified resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
     pub fn is_suppressed(mut self, input: bool) -> Self {
         self.is_suppressed = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl TrustedAdvisorResourceDetailBuilder {
     pub fn set_is_suppressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_suppressed = input;
         self
+    }
+    /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
+    pub fn get_is_suppressed(&self) -> &::std::option::Option<bool> {
+        &self.is_suppressed
     }
     /// Appends an item to `metadata`.
     ///
@@ -124,6 +140,12 @@ impl TrustedAdvisorResourceDetailBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorResourceDetail`](crate::types::TrustedAdvisorResourceDetail).
     pub fn build(self) -> crate::types::TrustedAdvisorResourceDetail {

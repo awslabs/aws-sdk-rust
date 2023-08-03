@@ -47,6 +47,10 @@ impl DeleteVpcPeeringConnectionInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A unique identifier for a VPC peering connection.</p>
     pub fn vpc_peering_connection_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteVpcPeeringConnectionInputBuilder {
     ) -> Self {
         self.vpc_peering_connection_id = input;
         self
+    }
+    /// <p>A unique identifier for a VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionInput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput).
     pub fn build(

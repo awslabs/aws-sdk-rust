@@ -54,6 +54,10 @@ impl CreateReplicationConfigurationInputBuilder {
         self.source_file_system_id = input;
         self
     }
+    /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_id
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -72,6 +76,12 @@ impl CreateReplicationConfigurationInputBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
+        &self.destinations
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationInput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationInput).
     pub fn build(

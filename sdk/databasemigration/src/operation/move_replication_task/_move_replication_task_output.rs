@@ -52,6 +52,10 @@ impl MoveReplicationTaskOutputBuilder {
         self.replication_task = input;
         self
     }
+    /// <p>The replication task that was moved.</p>
+    pub fn get_replication_task(&self) -> &::std::option::Option<crate::types::ReplicationTask> {
+        &self.replication_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

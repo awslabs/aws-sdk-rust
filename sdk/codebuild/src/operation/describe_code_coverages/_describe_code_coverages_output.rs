@@ -56,6 +56,10 @@ impl DescribeCodeCoveragesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `code_coverages`.
     ///
     /// To override the contents of this collection use [`set_code_coverages`](Self::set_code_coverages).
@@ -74,6 +78,12 @@ impl DescribeCodeCoveragesOutputBuilder {
     ) -> Self {
         self.code_coverages = input;
         self
+    }
+    /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
+    pub fn get_code_coverages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>> {
+        &self.code_coverages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationSetEventDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that the event destination should be associated with.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.inner = self.inner.event_destination(input);
@@ -122,5 +130,9 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
+    }
+    /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
+    pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
+        self.inner.get_event_destination()
     }
 }

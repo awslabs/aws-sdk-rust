@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetail
         self.max = input;
         self
     }
+    /// <p> The maximum amount of memory, in MiB. If this parameter isn't specified, there's no maximum limit. </p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
+    }
     /// <p> The minimum amount of memory, in MiB. If <code>0</code> is specified, there's no maximum limit. </p>
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetail
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
+    }
+    /// <p> The minimum amount of memory, in MiB. If <code>0</code> is specified, there's no maximum limit. </p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails).
     pub fn build(

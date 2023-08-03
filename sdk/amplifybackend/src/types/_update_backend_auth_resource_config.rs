@@ -74,6 +74,10 @@ impl UpdateBackendAuthResourceConfigBuilder {
         self.auth_resources = input;
         self
     }
+    /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
+    pub fn get_auth_resources(&self) -> &::std::option::Option<crate::types::AuthResources> {
+        &self.auth_resources
+    }
     /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
     pub fn identity_pool_configs(
         mut self,
@@ -90,6 +94,12 @@ impl UpdateBackendAuthResourceConfigBuilder {
         self.identity_pool_configs = input;
         self
     }
+    /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
+    pub fn get_identity_pool_configs(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBackendAuthIdentityPoolConfig> {
+        &self.identity_pool_configs
+    }
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl UpdateBackendAuthResourceConfigBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::Service>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        &self.service
     }
     /// <p>Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
     pub fn user_pool_configs(
@@ -115,6 +129,12 @@ impl UpdateBackendAuthResourceConfigBuilder {
     ) -> Self {
         self.user_pool_configs = input;
         self
+    }
+    /// <p>Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
+    pub fn get_user_pool_configs(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBackendAuthUserPoolConfig> {
+        &self.user_pool_configs
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthResourceConfig`](crate::types::UpdateBackendAuthResourceConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthResourceConfig {

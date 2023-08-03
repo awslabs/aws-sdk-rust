@@ -55,6 +55,10 @@ impl StopRelationalDatabaseInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of your database to stop.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
     pub fn relational_database_snapshot_name(
         mut self,
@@ -70,6 +74,12 @@ impl StopRelationalDatabaseInputBuilder {
     ) -> Self {
         self.relational_database_snapshot_name = input;
         self
+    }
+    /// <p>The name of your new database snapshot to be created before stopping your database.</p>
+    pub fn get_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_snapshot_name
     }
     /// Consumes the builder and constructs a [`StopRelationalDatabaseInput`](crate::operation::stop_relational_database::StopRelationalDatabaseInput).
     pub fn build(

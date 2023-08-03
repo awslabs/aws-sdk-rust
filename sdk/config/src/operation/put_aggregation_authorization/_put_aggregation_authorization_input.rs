@@ -61,6 +61,10 @@ impl PutAggregationAuthorizationInputBuilder {
         self.authorized_account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    pub fn get_authorized_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorized_account_id
+    }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn authorized_aws_region(
         mut self,
@@ -76,6 +80,10 @@ impl PutAggregationAuthorizationInputBuilder {
     ) -> Self {
         self.authorized_aws_region = input;
         self
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn get_authorized_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorized_aws_region
     }
     /// Appends an item to `tags`.
     ///
@@ -95,6 +103,10 @@ impl PutAggregationAuthorizationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of tag object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutAggregationAuthorizationInput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput).
     pub fn build(

@@ -64,6 +64,12 @@ impl ListAlertsOutputBuilder {
         self.alert_summary_list = input;
         self
     }
+    /// <p>Contains information about an alert.</p>
+    pub fn get_alert_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>> {
+        &self.alert_summary_list
+    }
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListAlertsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

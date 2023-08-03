@@ -41,6 +41,12 @@ impl RevokeCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,11 @@ impl RevokeCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
+    }
     /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
     /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
     /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
@@ -159,6 +170,12 @@ impl RevokeCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_serial(input);
         self
     }
+    /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+    /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
+    /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
+    pub fn get_certificate_serial(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_serial()
+    }
     /// <p>Specifies why you revoked the certificate.</p>
     pub fn revocation_reason(mut self, input: crate::types::RevocationReason) -> Self {
         self.inner = self.inner.revocation_reason(input);
@@ -171,5 +188,9 @@ impl RevokeCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revocation_reason(input);
         self
+    }
+    /// <p>Specifies why you revoked the certificate.</p>
+    pub fn get_revocation_reason(&self) -> &::std::option::Option<crate::types::RevocationReason> {
+        self.inner.get_revocation_reason()
     }
 }

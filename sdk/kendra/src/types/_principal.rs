@@ -64,6 +64,10 @@ impl PrincipalBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user or group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of principal.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl PrincipalBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of principal.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.r#type
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
     pub fn access(mut self, input: crate::types::ReadAccessType) -> Self {
@@ -86,6 +94,10 @@ impl PrincipalBuilder {
     ) -> Self {
         self.access = input;
         self
+    }
+    /// <p>Whether to allow or deny document access to the principal.</p>
+    pub fn get_access(&self) -> &::std::option::Option<crate::types::ReadAccessType> {
+        &self.access
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub fn data_source_id(
@@ -102,6 +114,10 @@ impl PrincipalBuilder {
     ) -> Self {
         self.data_source_id = input;
         self
+    }
+    /// <p>The identifier of the data source the principal should access documents from.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {

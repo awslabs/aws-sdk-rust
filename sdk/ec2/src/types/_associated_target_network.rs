@@ -48,6 +48,10 @@ impl AssociatedTargetNetworkBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The target network type.</p>
     pub fn network_type(mut self, input: crate::types::AssociatedNetworkType) -> Self {
         self.network_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AssociatedTargetNetworkBuilder {
     ) -> Self {
         self.network_type = input;
         self
+    }
+    /// <p>The target network type.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AssociatedNetworkType> {
+        &self.network_type
     }
     /// Consumes the builder and constructs a [`AssociatedTargetNetwork`](crate::types::AssociatedTargetNetwork).
     pub fn build(self) -> crate::types::AssociatedTargetNetwork {

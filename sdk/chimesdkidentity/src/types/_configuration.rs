@@ -40,6 +40,10 @@ impl ConfigurationBuilder {
         self.lex = input;
         self
     }
+    /// <p>The configuration for an Amazon Lex V2 bot.</p>
+    pub fn get_lex(&self) -> &::std::option::Option<crate::types::LexConfiguration> {
+        &self.lex
+    }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {
         crate::types::Configuration { lex: self.lex }

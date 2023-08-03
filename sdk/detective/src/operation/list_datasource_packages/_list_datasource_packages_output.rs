@@ -91,6 +91,17 @@ impl ListDatasourcePackagesOutputBuilder {
         self.datasource_packages = input;
         self
     }
+    /// <p>Details on the data source packages active in the behavior graph.</p>
+    pub fn get_datasource_packages(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DatasourcePackage,
+            crate::types::DatasourcePackageIngestDetail,
+        >,
+    > {
+        &self.datasource_packages
+    }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +111,10 @@ impl ListDatasourcePackagesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

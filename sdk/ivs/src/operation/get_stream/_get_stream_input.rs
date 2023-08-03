@@ -39,6 +39,10 @@ impl GetStreamInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>Channel ARN for stream to be accessed.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// Consumes the builder and constructs a [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
     pub fn build(
         self,

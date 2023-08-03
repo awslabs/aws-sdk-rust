@@ -75,6 +75,10 @@ impl ServiceLimitExceededBuilder {
         self.limit = input;
         self
     }
+    /// <p>Enumeration of the service limit that was exceeded. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<crate::types::ServiceLimit> {
+        &self.limit
+    }
     /// <p>A detailed error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl ServiceLimitExceededBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -51,6 +51,10 @@ impl ListInvalidationsOutputBuilder {
         self.invalidation_list = input;
         self
     }
+    /// <p>Information about invalidation batches.</p>
+    pub fn get_invalidation_list(&self) -> &::std::option::Option<crate::types::InvalidationList> {
+        &self.invalidation_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

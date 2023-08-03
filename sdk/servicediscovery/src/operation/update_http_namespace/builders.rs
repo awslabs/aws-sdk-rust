@@ -36,6 +36,12 @@ impl UpdateHttpNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateHttpNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateHttpNamespaceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the namespace that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn updater_request_id(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateHttpNamespaceFluentBuilder {
         self.inner = self.inner.set_updater_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    pub fn get_updater_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_updater_request_id()
+    }
     /// <p>Updated properties for the the HTTP namespace.</p>
     pub fn namespace(mut self, input: crate::types::HttpNamespaceChange) -> Self {
         self.inner = self.inner.namespace(input);
@@ -154,5 +168,9 @@ impl UpdateHttpNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>Updated properties for the the HTTP namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::HttpNamespaceChange> {
+        self.inner.get_namespace()
     }
 }

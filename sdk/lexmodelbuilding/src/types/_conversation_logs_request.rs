@@ -58,6 +58,12 @@ impl ConversationLogsRequestBuilder {
         self.log_settings = input;
         self
     }
+    /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
+    pub fn get_log_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>> {
+        &self.log_settings
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -67,6 +73,10 @@ impl ConversationLogsRequestBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`ConversationLogsRequest`](crate::types::ConversationLogsRequest).
     pub fn build(self) -> crate::types::ConversationLogsRequest {

@@ -47,6 +47,10 @@ impl DescribeFaqInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the FAQ you want to get information on.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeFaqInputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index for the FAQ.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
     pub fn build(

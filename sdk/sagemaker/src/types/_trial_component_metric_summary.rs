@@ -104,6 +104,10 @@ impl TrialComponentMetricSummaryBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl TrialComponentMetricSummaryBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>When the metric was last updated.</p>
     pub fn time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,6 +135,10 @@ impl TrialComponentMetricSummaryBuilder {
         self.time_stamp = input;
         self
     }
+    /// <p>When the metric was last updated.</p>
+    pub fn get_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_stamp
+    }
     /// <p>The maximum value of the metric.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl TrialComponentMetricSummaryBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value of the metric.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// <p>The minimum value of the metric.</p>
     pub fn min(mut self, input: f64) -> Self {
@@ -147,6 +163,10 @@ impl TrialComponentMetricSummaryBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum value of the metric.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
+    }
     /// <p>The most recent value of the metric.</p>
     pub fn last(mut self, input: f64) -> Self {
         self.last = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl TrialComponentMetricSummaryBuilder {
     pub fn set_last(mut self, input: ::std::option::Option<f64>) -> Self {
         self.last = input;
         self
+    }
+    /// <p>The most recent value of the metric.</p>
+    pub fn get_last(&self) -> &::std::option::Option<f64> {
+        &self.last
     }
     /// <p>The number of samples used to generate the metric.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -167,6 +191,10 @@ impl TrialComponentMetricSummaryBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of samples used to generate the metric.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The average value of the metric.</p>
     pub fn avg(mut self, input: f64) -> Self {
         self.avg = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl TrialComponentMetricSummaryBuilder {
         self.avg = input;
         self
     }
+    /// <p>The average value of the metric.</p>
+    pub fn get_avg(&self) -> &::std::option::Option<f64> {
+        &self.avg
+    }
     /// <p>The standard deviation of the metric.</p>
     pub fn std_dev(mut self, input: f64) -> Self {
         self.std_dev = ::std::option::Option::Some(input);
@@ -186,6 +218,10 @@ impl TrialComponentMetricSummaryBuilder {
     pub fn set_std_dev(mut self, input: ::std::option::Option<f64>) -> Self {
         self.std_dev = input;
         self
+    }
+    /// <p>The standard deviation of the metric.</p>
+    pub fn get_std_dev(&self) -> &::std::option::Option<f64> {
+        &self.std_dev
     }
     /// Consumes the builder and constructs a [`TrialComponentMetricSummary`](crate::types::TrialComponentMetricSummary).
     pub fn build(self) -> crate::types::TrialComponentMetricSummary {

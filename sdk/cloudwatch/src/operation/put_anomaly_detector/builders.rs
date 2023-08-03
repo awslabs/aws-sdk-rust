@@ -37,6 +37,12 @@ impl PutAnomalyDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAnomalyDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,11 @@ impl PutAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +151,11 @@ impl PutAnomalyDetectorFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>The name of the metric to create the anomaly detection model for.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// Appends an item to `Dimensions`.
     ///
@@ -160,6 +176,13 @@ impl PutAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_dimensions(input);
         self
     }
+    /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        self.inner.get_dimensions()
+    }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +194,11 @@ impl PutAnomalyDetectorFluentBuilder {
     pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stat(input);
         self
+    }
+    /// <p>The statistic to use for the metric and the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_stat(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stat()
     }
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
     /// <p>The configuration can also include the time zone to use for the metric.</p>
@@ -186,6 +214,13 @@ impl PutAnomalyDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+    /// <p>The configuration can also include the time zone to use for the metric.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
+        self.inner.get_configuration()
     }
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -221,6 +256,21 @@ impl PutAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_single_metric_anomaly_detector(input);
         self
     }
+    /// <p>A single metric anomaly detector to be created.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code> </p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+    pub fn get_single_metric_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
+        self.inner.get_single_metric_anomaly_detector()
+    }
     /// <p>The metric math anomaly detector to be created.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
@@ -254,5 +304,20 @@ impl PutAnomalyDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_math_anomaly_detector(input);
         self
+    }
+    /// <p>The metric math anomaly detector to be created.</p>
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code> </p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+    pub fn get_metric_math_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
+        self.inner.get_metric_math_anomaly_detector()
     }
 }

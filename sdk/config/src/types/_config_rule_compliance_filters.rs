@@ -72,6 +72,10 @@ impl ConfigRuleComplianceFiltersBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>The rule compliance status.</p>
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
@@ -87,6 +91,11 @@ impl ConfigRuleComplianceFiltersBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The rule compliance status.</p>
+    /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The 12-digit account ID of the source account. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -97,6 +106,10 @@ impl ConfigRuleComplianceFiltersBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the source account. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source region where the data is aggregated. </p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -106,6 +119,10 @@ impl ConfigRuleComplianceFiltersBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The source region where the data is aggregated. </p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`ConfigRuleComplianceFilters`](crate::types::ConfigRuleComplianceFilters).
     pub fn build(self) -> crate::types::ConfigRuleComplianceFilters {

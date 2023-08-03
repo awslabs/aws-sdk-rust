@@ -83,6 +83,10 @@ impl CredentialSummaryBuilder {
         self.seen_at = input;
         self
     }
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
+    pub fn get_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.seen_at
+    }
     /// <p>The serial number of the certificate.</p>
     pub fn serial_number(
         mut self,
@@ -99,6 +103,10 @@ impl CredentialSummaryBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The serial number of the certificate.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl CredentialSummaryBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>Indicates whether the credential is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl CredentialSummaryBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether the credential is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The PEM-encoded data of the certificate.</p>
     pub fn x509_certificate_data(
@@ -135,6 +151,10 @@ impl CredentialSummaryBuilder {
         self.x509_certificate_data = input;
         self
     }
+    /// <p>The PEM-encoded data of the certificate.</p>
+    pub fn get_x509_certificate_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x509_certificate_data
+    }
     /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl CredentialSummaryBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>Indicates whether the temporary credential request was successful. </p>
+    pub fn get_failed(&self) -> &::std::option::Option<bool> {
+        &self.failed
     }
     /// Consumes the builder and constructs a [`CredentialSummary`](crate::types::CredentialSummary).
     pub fn build(self) -> crate::types::CredentialSummary {

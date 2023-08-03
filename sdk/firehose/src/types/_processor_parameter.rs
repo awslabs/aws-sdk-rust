@@ -51,6 +51,12 @@ impl ProcessorParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
+    pub fn get_parameter_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessorParameterName> {
+        &self.parameter_name
+    }
     /// <p>The parameter value.</p>
     pub fn parameter_value(
         mut self,
@@ -66,6 +72,10 @@ impl ProcessorParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The parameter value.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ProcessorParameter`](crate::types::ProcessorParameter).
     pub fn build(self) -> crate::types::ProcessorParameter {

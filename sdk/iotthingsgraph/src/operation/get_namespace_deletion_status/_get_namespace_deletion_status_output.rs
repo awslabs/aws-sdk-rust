@@ -86,6 +86,10 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self.namespace_arn = input;
         self
     }
+    /// <p>The ARN of the namespace that is being deleted.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
+    }
     /// <p>The name of the namespace that is being deleted.</p>
     pub fn namespace_name(
         mut self,
@@ -102,6 +106,10 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace that is being deleted.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The status of the deletion request.</p>
     pub fn status(mut self, input: crate::types::NamespaceDeletionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the deletion request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NamespaceDeletionStatus> {
+        &self.status
+    }
     /// <p>An error code returned by the namespace deletion task.</p>
     pub fn error_code(mut self, input: crate::types::NamespaceDeletionStatusErrorCodes) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -127,6 +139,12 @@ impl GetNamespaceDeletionStatusOutputBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code returned by the namespace deletion task.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes> {
+        &self.error_code
     }
     /// <p>An error code returned by the namespace deletion task.</p>
     pub fn error_message(
@@ -143,6 +161,10 @@ impl GetNamespaceDeletionStatusOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>An error code returned by the namespace deletion task.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

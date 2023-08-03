@@ -37,6 +37,13 @@ impl DescribeDeliveryStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDeliveryStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -142,6 +153,10 @@ impl DescribeDeliveryStreamFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
     pub fn exclusive_start_destination_id(
@@ -158,5 +173,11 @@ impl DescribeDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_destination_id(input);
         self
+    }
+    /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    pub fn get_exclusive_start_destination_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_destination_id()
     }
 }

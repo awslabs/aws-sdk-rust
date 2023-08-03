@@ -55,6 +55,10 @@ impl RejectVpcEndpointConnectionsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Appends an item to `vpc_endpoint_ids`.
     ///
@@ -86,6 +94,12 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     ) -> Self {
         self.vpc_endpoint_ids = input;
         self
+    }
+    /// <p>The IDs of the VPC endpoints.</p>
+    pub fn get_vpc_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_endpoint_ids
     }
     /// Consumes the builder and constructs a [`RejectVpcEndpointConnectionsInput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput).
     pub fn build(

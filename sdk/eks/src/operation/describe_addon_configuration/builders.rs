@@ -36,6 +36,10 @@ impl DescribeAddonConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAddonConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeAddonConfigurationFluentBuilder {
         self.inner = self.inner.set_addon_name(input);
         self
     }
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_addon_name()
+    }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_version(
         mut self,
@@ -141,5 +149,9 @@ impl DescribeAddonConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_addon_version(input);
         self
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_addon_version()
     }
 }

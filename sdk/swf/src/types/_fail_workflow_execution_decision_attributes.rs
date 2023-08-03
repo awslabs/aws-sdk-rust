@@ -56,6 +56,10 @@ impl FailWorkflowExecutionDecisionAttributesBuilder {
         self.reason = input;
         self
     }
+    /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p> Details of the failure.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FailWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p> Details of the failure.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`FailWorkflowExecutionDecisionAttributes`](crate::types::FailWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::FailWorkflowExecutionDecisionAttributes {

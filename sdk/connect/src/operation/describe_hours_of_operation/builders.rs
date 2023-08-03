@@ -37,6 +37,10 @@ impl DescribeHoursOfOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHoursOfOperation as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DescribeHoursOfOperationFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(
         mut self,
@@ -142,5 +150,9 @@ impl DescribeHoursOfOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hours_of_operation_id(input);
         self
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hours_of_operation_id()
     }
 }

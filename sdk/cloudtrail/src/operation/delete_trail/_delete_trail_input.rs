@@ -40,6 +40,10 @@ impl DeleteTrailInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
     pub fn build(
         self,

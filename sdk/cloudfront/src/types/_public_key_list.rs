@@ -64,6 +64,10 @@ impl PublicKeyListBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// <p>The maximum number of public keys you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl PublicKeyListBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of public keys you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>The number of public keys in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl PublicKeyListBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of public keys in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -102,6 +114,12 @@ impl PublicKeyListBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of public keys.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicKeySummary>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`PublicKeyList`](crate::types::PublicKeyList).
     pub fn build(self) -> crate::types::PublicKeyList {

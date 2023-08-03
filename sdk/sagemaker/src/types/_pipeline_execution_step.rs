@@ -123,6 +123,10 @@ impl PipelineExecutionStepBuilder {
         self.step_name = input;
         self
     }
+    /// <p>The name of the step that is executed.</p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
+    }
     /// <p>The display name of the step.</p>
     pub fn step_display_name(
         mut self,
@@ -138,6 +142,10 @@ impl PipelineExecutionStepBuilder {
     ) -> Self {
         self.step_display_name = input;
         self
+    }
+    /// <p>The display name of the step.</p>
+    pub fn get_step_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_display_name
     }
     /// <p>The description of the step.</p>
     pub fn step_description(
@@ -155,6 +163,10 @@ impl PipelineExecutionStepBuilder {
         self.step_description = input;
         self
     }
+    /// <p>The description of the step.</p>
+    pub fn get_step_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_description
+    }
     /// <p>The time that the step started executing.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -167,6 +179,10 @@ impl PipelineExecutionStepBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time that the step started executing.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time that the step stopped executing.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +197,10 @@ impl PipelineExecutionStepBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time that the step stopped executing.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The status of the step execution.</p>
     pub fn step_status(mut self, input: crate::types::StepStatus) -> Self {
         self.step_status = ::std::option::Option::Some(input);
@@ -193,6 +213,10 @@ impl PipelineExecutionStepBuilder {
     ) -> Self {
         self.step_status = input;
         self
+    }
+    /// <p>The status of the step execution.</p>
+    pub fn get_step_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        &self.step_status
     }
     /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
     pub fn cache_hit_result(mut self, input: crate::types::CacheHitResult) -> Self {
@@ -207,6 +231,10 @@ impl PipelineExecutionStepBuilder {
         self.cache_hit_result = input;
         self
     }
+    /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
+    pub fn get_cache_hit_result(&self) -> &::std::option::Option<crate::types::CacheHitResult> {
+        &self.cache_hit_result
+    }
     /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
     pub fn attempt_count(mut self, input: i32) -> Self {
         self.attempt_count = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl PipelineExecutionStepBuilder {
     pub fn set_attempt_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.attempt_count = input;
         self
+    }
+    /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
+    pub fn get_attempt_count(&self) -> &::std::option::Option<i32> {
+        &self.attempt_count
     }
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
     pub fn failure_reason(
@@ -233,6 +265,10 @@ impl PipelineExecutionStepBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Metadata to run the pipeline step.</p>
     pub fn metadata(mut self, input: crate::types::PipelineExecutionStepMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -245,6 +281,12 @@ impl PipelineExecutionStepBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata to run the pipeline step.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipelineExecutionStepMetadata> {
+        &self.metadata
     }
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
     pub fn selective_execution_result(
@@ -261,6 +303,12 @@ impl PipelineExecutionStepBuilder {
     ) -> Self {
         self.selective_execution_result = input;
         self
+    }
+    /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
+    pub fn get_selective_execution_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectiveExecutionResult> {
+        &self.selective_execution_result
     }
     /// Consumes the builder and constructs a [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
     pub fn build(self) -> crate::types::PipelineExecutionStep {

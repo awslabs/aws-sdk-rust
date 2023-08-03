@@ -53,6 +53,10 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>If <code>True</code>, redistribution is applied immediately.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>{

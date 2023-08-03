@@ -36,6 +36,12 @@ impl UpdateProfileJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProfileJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -144,6 +154,10 @@ impl UpdateProfileJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key_arn()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
@@ -166,6 +180,14 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// </ul>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
+        self.inner.get_encryption_mode()
+    }
     /// <p>The name of the job to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -175,6 +197,10 @@ impl UpdateProfileJobFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the job to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(mut self, input: crate::types::LogSubscription) -> Self {
@@ -189,6 +215,10 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_log_subscription(input);
         self
     }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    pub fn get_log_subscription(&self) -> &::std::option::Option<crate::types::LogSubscription> {
+        self.inner.get_log_subscription()
+    }
     /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.max_capacity(input);
@@ -199,6 +229,10 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
+    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_capacity()
+    }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.inner = self.inner.max_retries(input);
@@ -208,6 +242,10 @@ impl UpdateProfileJobFluentBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries(input);
         self
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_retries()
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn output_location(mut self, input: crate::types::S3Location) -> Self {
@@ -221,6 +259,10 @@ impl UpdateProfileJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_location(input);
         self
+    }
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_output_location()
     }
     /// Appends an item to `ValidationConfigurations`.
     ///
@@ -242,6 +284,12 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_validation_configurations(input);
         self
     }
+    /// <p>List of validation configurations that are applied to the profile job.</p>
+    pub fn get_validation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
+        self.inner.get_validation_configurations()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -251,6 +299,10 @@ impl UpdateProfileJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -262,6 +314,10 @@ impl UpdateProfileJobFluentBuilder {
         self.inner = self.inner.set_timeout(input);
         self
     }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout()
+    }
     /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn job_sample(mut self, input: crate::types::JobSample) -> Self {
         self.inner = self.inner.job_sample(input);
@@ -271,5 +327,9 @@ impl UpdateProfileJobFluentBuilder {
     pub fn set_job_sample(mut self, input: ::std::option::Option<crate::types::JobSample>) -> Self {
         self.inner = self.inner.set_job_sample(input);
         self
+    }
+    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    pub fn get_job_sample(&self) -> &::std::option::Option<crate::types::JobSample> {
+        self.inner.get_job_sample()
     }
 }

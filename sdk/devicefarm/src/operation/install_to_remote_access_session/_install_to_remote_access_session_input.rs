@@ -54,6 +54,10 @@ impl InstallToRemoteAccessSessionInputBuilder {
         self.remote_access_session_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+    pub fn get_remote_access_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_access_session_arn
+    }
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl InstallToRemoteAccessSessionInputBuilder {
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
+    }
+    /// <p>The ARN of the app about which you are requesting information.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
     }
     /// Consumes the builder and constructs a [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
     pub fn build(

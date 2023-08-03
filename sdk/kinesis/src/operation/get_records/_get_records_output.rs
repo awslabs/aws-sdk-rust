@@ -80,6 +80,10 @@ impl GetRecordsOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>The data records retrieved from the shard.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
+    }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
     pub fn next_shard_iterator(
         mut self,
@@ -96,6 +100,10 @@ impl GetRecordsOutputBuilder {
         self.next_shard_iterator = input;
         self
     }
+    /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
+    pub fn get_next_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_shard_iterator
+    }
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
     pub fn millis_behind_latest(mut self, input: i64) -> Self {
         self.millis_behind_latest = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl GetRecordsOutputBuilder {
     pub fn set_millis_behind_latest(mut self, input: ::std::option::Option<i64>) -> Self {
         self.millis_behind_latest = input;
         self
+    }
+    /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
+    pub fn get_millis_behind_latest(&self) -> &::std::option::Option<i64> {
+        &self.millis_behind_latest
     }
     /// Appends an item to `child_shards`.
     ///
@@ -124,6 +136,12 @@ impl GetRecordsOutputBuilder {
     ) -> Self {
         self.child_shards = input;
         self
+    }
+    /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
+    pub fn get_child_shards(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChildShard>> {
+        &self.child_shards
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

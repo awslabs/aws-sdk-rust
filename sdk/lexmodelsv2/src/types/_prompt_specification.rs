@@ -101,6 +101,12 @@ impl PromptSpecificationBuilder {
         self.message_groups = input;
         self
     }
+    /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
+    pub fn get_message_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+        &self.message_groups
+    }
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
@@ -111,6 +117,10 @@ impl PromptSpecificationBuilder {
         self.max_retries = input;
         self
     }
+    /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        &self.max_retries
+    }
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
         self.allow_interrupt = ::std::option::Option::Some(input);
@@ -120,6 +130,10 @@ impl PromptSpecificationBuilder {
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_interrupt = input;
         self
+    }
+    /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
+    pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
+        &self.allow_interrupt
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
     pub fn message_selection_strategy(
@@ -136,6 +150,12 @@ impl PromptSpecificationBuilder {
     ) -> Self {
         self.message_selection_strategy = input;
         self
+    }
+    /// <p>Indicates how a message is selected from a message group among retries.</p>
+    pub fn get_message_selection_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageSelectionStrategy> {
+        &self.message_selection_strategy
     }
     /// Adds a key-value pair to `prompt_attempts_specification`.
     ///
@@ -164,6 +184,17 @@ impl PromptSpecificationBuilder {
     ) -> Self {
         self.prompt_attempts_specification = input;
         self
+    }
+    /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
+    pub fn get_prompt_attempts_specification(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::PromptAttempt,
+            crate::types::PromptAttemptSpecification,
+        >,
+    > {
+        &self.prompt_attempts_specification
     }
     /// Consumes the builder and constructs a [`PromptSpecification`](crate::types::PromptSpecification).
     pub fn build(self) -> crate::types::PromptSpecification {

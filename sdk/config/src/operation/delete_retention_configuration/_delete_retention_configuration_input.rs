@@ -45,6 +45,12 @@ impl DeleteRetentionConfigurationInputBuilder {
         self.retention_configuration_name = input;
         self
     }
+    /// <p>The name of the retention configuration to delete.</p>
+    pub fn get_retention_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.retention_configuration_name
+    }
     /// Consumes the builder and constructs a [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
     pub fn build(
         self,

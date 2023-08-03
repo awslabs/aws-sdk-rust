@@ -69,6 +69,10 @@ impl GetIdentityPoolConfigurationOutputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
     pub fn push_sync(mut self, input: crate::types::PushSync) -> Self {
         self.push_sync = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl GetIdentityPoolConfigurationOutputBuilder {
     pub fn set_push_sync(mut self, input: ::std::option::Option<crate::types::PushSync>) -> Self {
         self.push_sync = input;
         self
+    }
+    /// <p>Options to apply to this identity pool for push synchronization.</p>
+    pub fn get_push_sync(&self) -> &::std::option::Option<crate::types::PushSync> {
+        &self.push_sync
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub fn cognito_streams(mut self, input: crate::types::CognitoStreams) -> Self {
@@ -91,6 +99,10 @@ impl GetIdentityPoolConfigurationOutputBuilder {
     ) -> Self {
         self.cognito_streams = input;
         self
+    }
+    /// Options to apply to this identity pool for Amazon Cognito streams.
+    pub fn get_cognito_streams(&self) -> &::std::option::Option<crate::types::CognitoStreams> {
+        &self.cognito_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

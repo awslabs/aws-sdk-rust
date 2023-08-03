@@ -51,6 +51,10 @@ impl DeletePlatformVersionOutputBuilder {
         self.platform_summary = input;
         self
     }
+    /// <p>Detailed information about the version of the custom platform.</p>
+    pub fn get_platform_summary(&self) -> &::std::option::Option<crate::types::PlatformSummary> {
+        &self.platform_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

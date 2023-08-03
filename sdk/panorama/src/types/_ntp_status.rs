@@ -61,6 +61,12 @@ impl NtpStatusBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The connection's status.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
+        &self.connection_status
+    }
     /// <p>The IP address of the server.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl NtpStatusBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the server.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The domain name of the server.</p>
     pub fn ntp_server_name(
@@ -86,6 +96,10 @@ impl NtpStatusBuilder {
     ) -> Self {
         self.ntp_server_name = input;
         self
+    }
+    /// <p>The domain name of the server.</p>
+    pub fn get_ntp_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ntp_server_name
     }
     /// Consumes the builder and constructs a [`NtpStatus`](crate::types::NtpStatus).
     pub fn build(self) -> crate::types::NtpStatus {

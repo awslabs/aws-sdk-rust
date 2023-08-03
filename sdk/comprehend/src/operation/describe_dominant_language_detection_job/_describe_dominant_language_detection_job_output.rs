@@ -56,6 +56,12 @@ impl DescribeDominantLanguageDetectionJobOutputBuilder {
         self.dominant_language_detection_job_properties = input;
         self
     }
+    /// <p>An object that contains the properties associated with a dominant language detection job.</p>
+    pub fn get_dominant_language_detection_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DominantLanguageDetectionJobProperties> {
+        &self.dominant_language_detection_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl EmotionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of emotion detected.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EmotionName> {
+        &self.r#type
+    }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EmotionBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Emotion`](crate::types::Emotion).
     pub fn build(self) -> crate::types::Emotion {

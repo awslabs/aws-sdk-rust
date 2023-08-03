@@ -51,6 +51,10 @@ impl CreateVoiceConnectorGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `voice_connector_items`.
     ///
     /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
@@ -69,6 +73,12 @@ impl CreateVoiceConnectorGroupInputBuilder {
     ) -> Self {
         self.voice_connector_items = input;
         self
+    }
+    /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
+    pub fn get_voice_connector_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        &self.voice_connector_items
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorGroupInput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput).
     pub fn build(

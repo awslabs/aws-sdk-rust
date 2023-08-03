@@ -54,6 +54,10 @@ impl VirtualServiceBackendBuilder {
         self.virtual_service_name = input;
         self
     }
+    /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
+    pub fn get_virtual_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_service_name
+    }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn client_policy(mut self, input: crate::types::ClientPolicy) -> Self {
         self.client_policy = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl VirtualServiceBackendBuilder {
     ) -> Self {
         self.client_policy = input;
         self
+    }
+    /// <p>A reference to an object that represents the client policy for a backend.</p>
+    pub fn get_client_policy(&self) -> &::std::option::Option<crate::types::ClientPolicy> {
+        &self.client_policy
     }
     /// Consumes the builder and constructs a [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
     pub fn build(self) -> crate::types::VirtualServiceBackend {

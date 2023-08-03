@@ -41,6 +41,10 @@ impl GetOperationDetailInputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// Consumes the builder and constructs a [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
     pub fn build(
         self,

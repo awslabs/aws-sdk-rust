@@ -62,6 +62,10 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
         self.scheduled_action_name = input;
         self
     }
+    /// <p>The name of the scheduled action.</p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_name
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message accompanying the error code.</p>
     pub fn error_message(
@@ -87,6 +95,10 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message accompanying the error code.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedScheduledUpdateGroupActionRequest`](crate::types::FailedScheduledUpdateGroupActionRequest).
     pub fn build(self) -> crate::types::FailedScheduledUpdateGroupActionRequest {

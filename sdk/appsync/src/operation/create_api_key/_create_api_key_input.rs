@@ -55,6 +55,10 @@ impl CreateApiKeyInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The ID for your GraphQL API.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CreateApiKeyInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
         self.expires = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl CreateApiKeyInputBuilder {
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        &self.expires
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(

@@ -37,6 +37,13 @@ impl DescribeDryRunProgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDryRunProgress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DescribeDryRunProgressFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The unique identifier of the dry run.</p>
     pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dry_run_id(input.into());
@@ -137,6 +148,10 @@ impl DescribeDryRunProgressFluentBuilder {
         self.inner = self.inner.set_dry_run_id(input);
         self
     }
+    /// <p>The unique identifier of the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dry_run_id()
+    }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn load_dry_run_config(mut self, input: bool) -> Self {
         self.inner = self.inner.load_dry_run_config(input);
@@ -146,5 +161,9 @@ impl DescribeDryRunProgressFluentBuilder {
     pub fn set_load_dry_run_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_load_dry_run_config(input);
         self
+    }
+    /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+    pub fn get_load_dry_run_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_load_dry_run_config()
     }
 }

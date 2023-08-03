@@ -39,6 +39,10 @@ impl GetInsightInputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// Consumes the builder and constructs a [`GetInsightInput`](crate::operation::get_insight::GetInsightInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl DisassociateTransitGatewayConnectPeerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateTransitGatewayConnectPeer as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateTransitGatewayConnectPeerFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn transit_gateway_connect_peer_arn(
         mut self,
@@ -121,5 +129,11 @@ impl DisassociateTransitGatewayConnectPeerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transit_gateway_connect_peer_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    pub fn get_transit_gateway_connect_peer_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_connect_peer_arn()
     }
 }

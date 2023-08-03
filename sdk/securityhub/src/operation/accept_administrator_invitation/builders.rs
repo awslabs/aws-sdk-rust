@@ -38,6 +38,10 @@ impl AcceptAdministratorInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptAdministratorInvitation as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl AcceptAdministratorInvitationFluentBuilder {
         self.inner = self.inner.set_administrator_id(input);
         self
     }
+    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_administrator_id()
+    }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub fn invitation_id(
         mut self,
@@ -149,5 +157,9 @@ impl AcceptAdministratorInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
+    }
+    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invitation_id()
     }
 }

@@ -48,6 +48,10 @@ impl AnalyticsAndOperatorBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -66,6 +70,10 @@ impl AnalyticsAndOperatorBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags to use when evaluating an AND predicate.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AnalyticsAndOperator`](crate::types::AnalyticsAndOperator).
     pub fn build(self) -> crate::types::AnalyticsAndOperator {

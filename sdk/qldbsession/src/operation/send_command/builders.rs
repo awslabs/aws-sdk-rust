@@ -42,6 +42,10 @@ impl SendCommandFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendCommand as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_command::builders::SendCommandInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,11 @@ impl SendCommandFluentBuilder {
         self.inner = self.inner.set_session_token(input);
         self
     }
+    /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+    /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_token()
+    }
     /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
     pub fn start_session(mut self, input: crate::types::StartSessionRequest) -> Self {
         self.inner = self.inner.start_session(input);
@@ -144,6 +153,10 @@ impl SendCommandFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_session(input);
         self
+    }
+    /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
+    pub fn get_start_session(&self) -> &::std::option::Option<crate::types::StartSessionRequest> {
+        self.inner.get_start_session()
     }
     /// <p>Command to start a new transaction.</p>
     pub fn start_transaction(mut self, input: crate::types::StartTransactionRequest) -> Self {
@@ -158,6 +171,12 @@ impl SendCommandFluentBuilder {
         self.inner = self.inner.set_start_transaction(input);
         self
     }
+    /// <p>Command to start a new transaction.</p>
+    pub fn get_start_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartTransactionRequest> {
+        self.inner.get_start_transaction()
+    }
     /// <p>Command to end the current session.</p>
     pub fn end_session(mut self, input: crate::types::EndSessionRequest) -> Self {
         self.inner = self.inner.end_session(input);
@@ -170,6 +189,10 @@ impl SendCommandFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_session(input);
         self
+    }
+    /// <p>Command to end the current session.</p>
+    pub fn get_end_session(&self) -> &::std::option::Option<crate::types::EndSessionRequest> {
+        self.inner.get_end_session()
     }
     /// <p>Command to commit the specified transaction.</p>
     pub fn commit_transaction(mut self, input: crate::types::CommitTransactionRequest) -> Self {
@@ -184,6 +207,12 @@ impl SendCommandFluentBuilder {
         self.inner = self.inner.set_commit_transaction(input);
         self
     }
+    /// <p>Command to commit the specified transaction.</p>
+    pub fn get_commit_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitTransactionRequest> {
+        self.inner.get_commit_transaction()
+    }
     /// <p>Command to abort the current transaction.</p>
     pub fn abort_transaction(mut self, input: crate::types::AbortTransactionRequest) -> Self {
         self.inner = self.inner.abort_transaction(input);
@@ -196,6 +225,12 @@ impl SendCommandFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_abort_transaction(input);
         self
+    }
+    /// <p>Command to abort the current transaction.</p>
+    pub fn get_abort_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbortTransactionRequest> {
+        self.inner.get_abort_transaction()
     }
     /// <p>Command to execute a statement in the specified transaction.</p>
     pub fn execute_statement(mut self, input: crate::types::ExecuteStatementRequest) -> Self {
@@ -210,6 +245,12 @@ impl SendCommandFluentBuilder {
         self.inner = self.inner.set_execute_statement(input);
         self
     }
+    /// <p>Command to execute a statement in the specified transaction.</p>
+    pub fn get_execute_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecuteStatementRequest> {
+        self.inner.get_execute_statement()
+    }
     /// <p>Command to fetch a page.</p>
     pub fn fetch_page(mut self, input: crate::types::FetchPageRequest) -> Self {
         self.inner = self.inner.fetch_page(input);
@@ -222,5 +263,9 @@ impl SendCommandFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fetch_page(input);
         self
+    }
+    /// <p>Command to fetch a page.</p>
+    pub fn get_fetch_page(&self) -> &::std::option::Option<crate::types::FetchPageRequest> {
+        self.inner.get_fetch_page()
     }
 }

@@ -54,6 +54,10 @@ impl CreateBatchSegmentJobOutputBuilder {
         self.batch_segment_job_arn = input;
         self
     }
+    /// <p>The ARN of the batch segment job.</p>
+    pub fn get_batch_segment_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_segment_job_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

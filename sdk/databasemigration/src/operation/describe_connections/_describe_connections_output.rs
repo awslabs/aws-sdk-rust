@@ -57,6 +57,10 @@ impl DescribeConnectionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `connections`.
     ///
     /// To override the contents of this collection use [`set_connections`](Self::set_connections).
@@ -75,6 +79,12 @@ impl DescribeConnectionsOutputBuilder {
     ) -> Self {
         self.connections = input;
         self
+    }
+    /// <p>A description of the connections.</p>
+    pub fn get_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+        &self.connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

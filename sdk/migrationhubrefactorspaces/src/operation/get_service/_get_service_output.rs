@@ -210,6 +210,10 @@ impl GetServiceOutputBuilder {
         self.service_id = input;
         self
     }
+    /// <p>The unique identifier of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
+    }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -220,6 +224,10 @@ impl GetServiceOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -229,6 +237,10 @@ impl GetServiceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub fn owner_account_id(
@@ -246,6 +258,10 @@ impl GetServiceOutputBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the service owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The Amazon Web Services account ID of the service creator.</p>
     pub fn created_by_account_id(
         mut self,
@@ -262,6 +278,10 @@ impl GetServiceOutputBuilder {
         self.created_by_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the service creator.</p>
+    pub fn get_created_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_account_id
+    }
     /// <p>The description of the service. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -271,6 +291,10 @@ impl GetServiceOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the service. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn environment_id(
@@ -288,6 +312,10 @@ impl GetServiceOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of the environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The ID of the application.</p>
     pub fn application_id(
         mut self,
@@ -304,6 +332,10 @@ impl GetServiceOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the virtual private cloud (VPC). </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -313,6 +345,10 @@ impl GetServiceOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the virtual private cloud (VPC). </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The endpoint type of the service.</p>
     pub fn endpoint_type(mut self, input: crate::types::ServiceEndpointType) -> Self {
@@ -326,6 +362,10 @@ impl GetServiceOutputBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The endpoint type of the service.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ServiceEndpointType> {
+        &self.endpoint_type
     }
     /// <p>The configuration for the URL endpoint type.</p>
     /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
@@ -344,6 +384,12 @@ impl GetServiceOutputBuilder {
         self.url_endpoint = input;
         self
     }
+    /// <p>The configuration for the URL endpoint type.</p>
+    /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
+    /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
+    pub fn get_url_endpoint(&self) -> &::std::option::Option<crate::types::UrlEndpointConfig> {
+        &self.url_endpoint
+    }
     /// <p>The configuration for the Lambda endpoint type.</p>
     /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
     pub fn lambda_endpoint(mut self, input: crate::types::LambdaEndpointConfig) -> Self {
@@ -359,6 +405,13 @@ impl GetServiceOutputBuilder {
         self.lambda_endpoint = input;
         self
     }
+    /// <p>The configuration for the Lambda endpoint type.</p>
+    /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
+    pub fn get_lambda_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaEndpointConfig> {
+        &self.lambda_endpoint
+    }
     /// <p>The current state of the service. </p>
     pub fn state(mut self, input: crate::types::ServiceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -368,6 +421,10 @@ impl GetServiceOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ServiceState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the service. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ServiceState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -394,6 +451,14 @@ impl GetServiceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Any error associated with the service resource. </p>
     pub fn error(mut self, input: crate::types::ErrorResponse) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -403,6 +468,10 @@ impl GetServiceOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Any error associated with the service resource. </p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorResponse> {
+        &self.error
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -417,6 +486,10 @@ impl GetServiceOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the service was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The timestamp of when the service is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -429,6 +502,10 @@ impl GetServiceOutputBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The timestamp of when the service is created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

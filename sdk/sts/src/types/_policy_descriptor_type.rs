@@ -40,6 +40,10 @@ impl PolicyDescriptorTypeBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`PolicyDescriptorType`](crate::types::PolicyDescriptorType).
     pub fn build(self) -> crate::types::PolicyDescriptorType {
         crate::types::PolicyDescriptorType { arn: self.arn }

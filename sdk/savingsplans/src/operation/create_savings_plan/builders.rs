@@ -36,6 +36,12 @@ impl CreateSavingsPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSavingsPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateSavingsPlanFluentBuilder {
         self.inner = self.inner.set_savings_plan_offering_id(input);
         self
     }
+    /// <p>The ID of the offering.</p>
+    pub fn get_savings_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_savings_plan_offering_id()
+    }
     /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub fn commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commitment(input.into());
@@ -141,6 +151,10 @@ impl CreateSavingsPlanFluentBuilder {
     pub fn set_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commitment(input);
         self
+    }
+    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    pub fn get_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commitment()
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
     pub fn upfront_payment_amount(
@@ -158,6 +172,10 @@ impl CreateSavingsPlanFluentBuilder {
         self.inner = self.inner.set_upfront_payment_amount(input);
         self
     }
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    pub fn get_upfront_payment_amount(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upfront_payment_amount()
+    }
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn purchase_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.purchase_time(input);
@@ -171,6 +189,10 @@ impl CreateSavingsPlanFluentBuilder {
         self.inner = self.inner.set_purchase_time(input);
         self
     }
+    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    pub fn get_purchase_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_purchase_time()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -180,6 +202,10 @@ impl CreateSavingsPlanFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -203,5 +229,13 @@ impl CreateSavingsPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

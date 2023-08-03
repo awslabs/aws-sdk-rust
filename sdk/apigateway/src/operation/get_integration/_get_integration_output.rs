@@ -193,6 +193,11 @@ impl GetIntegrationOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
+        &self.r#type
+    }
     /// <p>Specifies the integration's HTTP method type.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
@@ -202,6 +207,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
     /// <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of GetObject, the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
@@ -215,6 +224,11 @@ impl GetIntegrationOutputBuilder {
         self.uri = input;
         self
     }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+    /// <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of GetObject, the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.connection_type = ::std::option::Option::Some(input);
@@ -227,6 +241,10 @@ impl GetIntegrationOutputBuilder {
     ) -> Self {
         self.connection_type = input;
         self
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
     }
     /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
     pub fn connection_id(
@@ -244,6 +262,10 @@ impl GetIntegrationOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
     pub fn credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials = ::std::option::Option::Some(input.into());
@@ -253,6 +275,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials
     }
     /// Adds a key-value pair to `request_parameters`.
     ///
@@ -279,6 +305,14 @@ impl GetIntegrationOutputBuilder {
         self.request_parameters = input;
         self
     }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn get_request_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_parameters
+    }
     /// Adds a key-value pair to `request_templates`.
     ///
     /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
@@ -304,6 +338,14 @@ impl GetIntegrationOutputBuilder {
         self.request_templates = input;
         self
     }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn get_request_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_templates
+    }
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
     pub fn passthrough_behavior(
         mut self,
@@ -320,6 +362,10 @@ impl GetIntegrationOutputBuilder {
         self.passthrough_behavior = input;
         self
     }
+    /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
+    pub fn get_passthrough_behavior(&self) -> &::std::option::Option<::std::string::String> {
+        &self.passthrough_behavior
+    }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     pub fn content_handling(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
@@ -335,6 +381,13 @@ impl GetIntegrationOutputBuilder {
         self.content_handling = input;
         self
     }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn get_content_handling(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+        &self.content_handling
+    }
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
     pub fn timeout_in_millis(mut self, input: i32) -> Self {
         self.timeout_in_millis = ::std::option::Option::Some(input);
@@ -344,6 +397,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_millis = input;
         self
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_millis
     }
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     pub fn cache_namespace(
@@ -360,6 +417,10 @@ impl GetIntegrationOutputBuilder {
     ) -> Self {
         self.cache_namespace = input;
         self
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn get_cache_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_namespace
     }
     /// Appends an item to `cache_key_parameters`.
     ///
@@ -382,6 +443,12 @@ impl GetIntegrationOutputBuilder {
     ) -> Self {
         self.cache_key_parameters = input;
         self
+    }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
+    pub fn get_cache_key_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_key_parameters
     }
     /// Adds a key-value pair to `integration_responses`.
     ///
@@ -408,6 +475,14 @@ impl GetIntegrationOutputBuilder {
         self.integration_responses = input;
         self
     }
+    /// <p>Specifies the integration's responses.</p>
+    pub fn get_integration_responses(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>,
+    > {
+        &self.integration_responses
+    }
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
         self.tls_config = ::std::option::Option::Some(input);
@@ -417,6 +492,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.tls_config = input;
         self
+    }
+    /// <p>Specifies the TLS configuration for an integration.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        &self.tls_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

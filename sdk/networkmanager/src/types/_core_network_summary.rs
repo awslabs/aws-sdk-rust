@@ -94,6 +94,10 @@ impl CoreNetworkSummaryBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>a core network ARN.</p>
     pub fn core_network_arn(
         mut self,
@@ -109,6 +113,10 @@ impl CoreNetworkSummaryBuilder {
     ) -> Self {
         self.core_network_arn = input;
         self
+    }
+    /// <p>a core network ARN.</p>
+    pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_arn
     }
     /// <p>The global network ID.</p>
     pub fn global_network_id(
@@ -126,6 +134,10 @@ impl CoreNetworkSummaryBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The global network ID.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the account owner.</p>
     pub fn owner_account_id(
         mut self,
@@ -142,6 +154,10 @@ impl CoreNetworkSummaryBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The ID of the account owner.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The state of a core network.</p>
     pub fn state(mut self, input: crate::types::CoreNetworkState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -155,6 +171,10 @@ impl CoreNetworkSummaryBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of a core network.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CoreNetworkState> {
+        &self.state
+    }
     /// <p>The description of a core network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -164,6 +184,10 @@ impl CoreNetworkSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a core network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -183,6 +207,10 @@ impl CoreNetworkSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The key-value tags associated with a core network summary.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CoreNetworkSummary`](crate::types::CoreNetworkSummary).
     pub fn build(self) -> crate::types::CoreNetworkSummary {

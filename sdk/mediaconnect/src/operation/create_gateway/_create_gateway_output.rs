@@ -46,6 +46,10 @@ impl CreateGatewayOutputBuilder {
         self.gateway = input;
         self
     }
+    /// The settings for a gateway, including its networks.
+    pub fn get_gateway(&self) -> &::std::option::Option<crate::types::Gateway> {
+        &self.gateway
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

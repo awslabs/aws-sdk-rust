@@ -36,6 +36,12 @@ impl UpdateFlywheelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFlywheel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_flywheel::builders::UpdateFlywheelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateFlywheelFluentBuilder {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(
         mut self,
@@ -133,6 +143,10 @@ impl UpdateFlywheelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_active_model_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_active_model_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
     pub fn data_access_role_arn(
@@ -150,6 +164,10 @@ impl UpdateFlywheelFluentBuilder {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_access_role_arn()
+    }
     /// <p>Flywheel data security configuration.</p>
     pub fn data_security_config(mut self, input: crate::types::UpdateDataSecurityConfig) -> Self {
         self.inner = self.inner.data_security_config(input);
@@ -162,5 +180,11 @@ impl UpdateFlywheelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_security_config(input);
         self
+    }
+    /// <p>Flywheel data security configuration.</p>
+    pub fn get_data_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateDataSecurityConfig> {
+        self.inner.get_data_security_config()
     }
 }

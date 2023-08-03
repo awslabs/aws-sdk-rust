@@ -48,6 +48,10 @@ impl CountryBuilder {
         self.country_code = input;
         self
     }
+    /// <p>The 2-letter ISO 3166 country code for the country.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
+    }
     /// <p>The name of the country.</p>
     pub fn country_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CountryBuilder {
     pub fn set_country_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_name = input;
         self
+    }
+    /// <p>The name of the country.</p>
+    pub fn get_country_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_name
     }
     /// Consumes the builder and constructs a [`Country`](crate::types::Country).
     pub fn build(self) -> crate::types::Country {

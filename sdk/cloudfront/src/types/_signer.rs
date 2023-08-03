@@ -54,6 +54,10 @@ impl SignerBuilder {
         self.aws_account_number = input;
         self
     }
+    /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
+    pub fn get_aws_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_number
+    }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn key_pair_ids(mut self, input: crate::types::KeyPairIds) -> Self {
         self.key_pair_ids = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SignerBuilder {
     ) -> Self {
         self.key_pair_ids = input;
         self
+    }
+    /// <p>A list of CloudFront key pair identifiers.</p>
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<crate::types::KeyPairIds> {
+        &self.key_pair_ids
     }
     /// Consumes the builder and constructs a [`Signer`](crate::types::Signer).
     pub fn build(self) -> crate::types::Signer {

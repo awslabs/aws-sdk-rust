@@ -92,6 +92,12 @@ impl AwsCorsConfigurationBuilder {
         self.allow_origins = input;
         self
     }
+    /// <p>The allowed origins for CORS requests.</p>
+    pub fn get_allow_origins(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_origins
+    }
     /// <p>Indicates whether the CORS request includes credentials.</p>
     pub fn allow_credentials(mut self, input: bool) -> Self {
         self.allow_credentials = ::std::option::Option::Some(input);
@@ -101,6 +107,10 @@ impl AwsCorsConfigurationBuilder {
     pub fn set_allow_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_credentials = input;
         self
+    }
+    /// <p>Indicates whether the CORS request includes credentials.</p>
+    pub fn get_allow_credentials(&self) -> &::std::option::Option<bool> {
+        &self.allow_credentials
     }
     /// Appends an item to `expose_headers`.
     ///
@@ -124,6 +134,12 @@ impl AwsCorsConfigurationBuilder {
         self.expose_headers = input;
         self
     }
+    /// <p>The exposed headers for CORS requests.</p>
+    pub fn get_expose_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.expose_headers
+    }
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
     pub fn max_age(mut self, input: i32) -> Self {
         self.max_age = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl AwsCorsConfigurationBuilder {
     pub fn set_max_age(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_age = input;
         self
+    }
+    /// <p>The number of seconds for which the browser caches preflight request results.</p>
+    pub fn get_max_age(&self) -> &::std::option::Option<i32> {
+        &self.max_age
     }
     /// Appends an item to `allow_methods`.
     ///
@@ -156,6 +176,12 @@ impl AwsCorsConfigurationBuilder {
         self.allow_methods = input;
         self
     }
+    /// <p>The allowed methods for CORS requests.</p>
+    pub fn get_allow_methods(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_methods
+    }
     /// Appends an item to `allow_headers`.
     ///
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
@@ -177,6 +203,12 @@ impl AwsCorsConfigurationBuilder {
     ) -> Self {
         self.allow_headers = input;
         self
+    }
+    /// <p>The allowed headers for CORS requests.</p>
+    pub fn get_allow_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_headers
     }
     /// Consumes the builder and constructs a [`AwsCorsConfiguration`](crate::types::AwsCorsConfiguration).
     pub fn build(self) -> crate::types::AwsCorsConfiguration {

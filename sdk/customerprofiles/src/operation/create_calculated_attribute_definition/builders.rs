@@ -36,6 +36,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCalculatedAttributeDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
         mut self,
@@ -116,6 +124,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_calculated_attribute_name(input);
         self
     }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculated_attribute_name()
+    }
     /// <p>The display name of the calculated attribute.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -126,6 +138,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The display name of the calculated attribute.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the calculated attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +151,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the calculated attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
     pub fn attribute_details(mut self, input: crate::types::AttributeDetails) -> Self {
@@ -149,6 +169,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_attribute_details(input);
         self
     }
+    /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
+    pub fn get_attribute_details(&self) -> &::std::option::Option<crate::types::AttributeDetails> {
+        self.inner.get_attribute_details()
+    }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn conditions(mut self, input: crate::types::Conditions) -> Self {
         self.inner = self.inner.conditions(input);
@@ -162,6 +186,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
         self.inner = self.inner.set_conditions(input);
         self
     }
+    /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
+        self.inner.get_conditions()
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.inner = self.inner.statistic(input);
@@ -171,6 +199,10 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.inner = self.inner.set_statistic(input);
         self
+    }
+    /// <p>The aggregation operation to perform for the calculated attribute.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        self.inner.get_statistic()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -194,5 +226,13 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

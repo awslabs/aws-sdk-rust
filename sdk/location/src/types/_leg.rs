@@ -127,6 +127,12 @@ impl LegBuilder {
         self.start_position = input;
         self
     }
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.start_position
+    }
     /// Appends an item to `end_position`.
     ///
     /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
@@ -147,6 +153,12 @@ impl LegBuilder {
         self.end_position = input;
         self
     }
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.end_position
+    }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
@@ -163,6 +175,13 @@ impl LegBuilder {
         self.distance = input;
         self
     }
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
+    /// <ul>
+    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+    /// </ul>
+    pub fn get_distance(&self) -> &::std::option::Option<f64> {
+        &self.distance
+    }
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -173,6 +192,10 @@ impl LegBuilder {
         self.duration_seconds = input;
         self
     }
+    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<f64> {
+        &self.duration_seconds
+    }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
     pub fn geometry(mut self, input: crate::types::LegGeometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -182,6 +205,10 @@ impl LegBuilder {
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::LegGeometry>) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>Contains the calculated route's path as a linestring geometry.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::LegGeometry> {
+        &self.geometry
     }
     /// Appends an item to `steps`.
     ///
@@ -201,6 +228,10 @@ impl LegBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`Leg`](crate::types::Leg).
     pub fn build(self) -> crate::types::Leg {

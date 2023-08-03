@@ -47,6 +47,10 @@ impl QueryWhatIfForecastOutputBuilder {
         self.forecast = input;
         self
     }
+    /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
+    pub fn get_forecast(&self) -> &::std::option::Option<crate::types::Forecast> {
+        &self.forecast
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

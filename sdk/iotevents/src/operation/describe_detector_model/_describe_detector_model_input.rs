@@ -55,6 +55,10 @@ impl DescribeDetectorModelInputBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>The version of the detector model.</p>
     pub fn detector_model_version(
         mut self,
@@ -70,6 +74,10 @@ impl DescribeDetectorModelInputBuilder {
     ) -> Self {
         self.detector_model_version = input;
         self
+    }
+    /// <p>The version of the detector model.</p>
+    pub fn get_detector_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_version
     }
     /// Consumes the builder and constructs a [`DescribeDetectorModelInput`](crate::operation::describe_detector_model::DescribeDetectorModelInput).
     pub fn build(

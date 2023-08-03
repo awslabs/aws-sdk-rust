@@ -90,6 +90,10 @@ impl InstanceGroupModifyConfigBuilder {
         self.instance_group_id = input;
         self
     }
+    /// <p>Unique ID of the instance group to modify.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
+    }
     /// <p>Target size for the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl InstanceGroupModifyConfigBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Target size for the instance group.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Appends an item to `ec2_instance_ids_to_terminate`.
     ///
@@ -122,6 +130,12 @@ impl InstanceGroupModifyConfigBuilder {
         self.ec2_instance_ids_to_terminate = input;
         self
     }
+    /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    pub fn get_ec2_instance_ids_to_terminate(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_instance_ids_to_terminate
+    }
     /// <p>Policy for customizing shrink operations.</p>
     pub fn shrink_policy(mut self, input: crate::types::ShrinkPolicy) -> Self {
         self.shrink_policy = ::std::option::Option::Some(input);
@@ -135,6 +149,10 @@ impl InstanceGroupModifyConfigBuilder {
         self.shrink_policy = input;
         self
     }
+    /// <p>Policy for customizing shrink operations.</p>
+    pub fn get_shrink_policy(&self) -> &::std::option::Option<crate::types::ShrinkPolicy> {
+        &self.shrink_policy
+    }
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
     pub fn reconfiguration_type(mut self, input: crate::types::ReconfigurationType) -> Self {
         self.reconfiguration_type = ::std::option::Option::Some(input);
@@ -147,6 +165,12 @@ impl InstanceGroupModifyConfigBuilder {
     ) -> Self {
         self.reconfiguration_type = input;
         self
+    }
+    /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+    pub fn get_reconfiguration_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReconfigurationType> {
+        &self.reconfiguration_type
     }
     /// Appends an item to `configurations`.
     ///
@@ -166,6 +190,12 @@ impl InstanceGroupModifyConfigBuilder {
     ) -> Self {
         self.configurations = input;
         self
+    }
+    /// <p>A list of new or modified configurations to apply for an instance group.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// Consumes the builder and constructs a [`InstanceGroupModifyConfig`](crate::types::InstanceGroupModifyConfig).
     pub fn build(self) -> crate::types::InstanceGroupModifyConfig {

@@ -40,6 +40,10 @@ impl ListImagesFilterBuilder {
         self.tag_status = input;
         self
     }
+    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
+        &self.tag_status
+    }
     /// Consumes the builder and constructs a [`ListImagesFilter`](crate::types::ListImagesFilter).
     pub fn build(self) -> crate::types::ListImagesFilter {
         crate::types::ListImagesFilter {

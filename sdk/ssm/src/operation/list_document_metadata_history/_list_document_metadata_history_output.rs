@@ -78,6 +78,10 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the change template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the change template.</p>
     pub fn document_version(
         mut self,
@@ -94,6 +98,10 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of the change template.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl ListDocumentMetadataHistoryOutputBuilder {
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author = input;
         self
+    }
+    /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
     }
     /// <p>Information about the response to the change template approval request.</p>
     pub fn metadata(mut self, input: crate::types::DocumentMetadataResponseInfo) -> Self {
@@ -117,6 +129,12 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Information about the response to the change template approval request.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentMetadataResponseInfo> {
+        &self.metadata
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl ListDocumentMetadataHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

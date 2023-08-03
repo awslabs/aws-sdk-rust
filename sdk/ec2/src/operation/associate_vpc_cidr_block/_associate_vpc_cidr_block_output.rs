@@ -76,6 +76,12 @@ impl AssociateVpcCidrBlockOutputBuilder {
         self.ipv6_cidr_block_association = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR block association.</p>
+    pub fn get_ipv6_cidr_block_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation> {
+        &self.ipv6_cidr_block_association
+    }
     /// <p>Information about the IPv4 CIDR block association.</p>
     pub fn cidr_block_association(mut self, input: crate::types::VpcCidrBlockAssociation) -> Self {
         self.cidr_block_association = ::std::option::Option::Some(input);
@@ -89,6 +95,12 @@ impl AssociateVpcCidrBlockOutputBuilder {
         self.cidr_block_association = input;
         self
     }
+    /// <p>Information about the IPv4 CIDR block association.</p>
+    pub fn get_cidr_block_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcCidrBlockAssociation> {
+        &self.cidr_block_association
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl AssociateVpcCidrBlockOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

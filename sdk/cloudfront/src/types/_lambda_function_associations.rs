@@ -51,6 +51,10 @@ impl LambdaFunctionAssociationsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -69,6 +73,12 @@ impl LambdaFunctionAssociationsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).
     pub fn build(self) -> crate::types::LambdaFunctionAssociations {

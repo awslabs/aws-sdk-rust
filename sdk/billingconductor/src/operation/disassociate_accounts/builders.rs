@@ -36,6 +36,12 @@ impl DisassociateAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateAccounts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DisassociateAccountsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -142,5 +152,11 @@ impl DisassociateAccountsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The array of account IDs to disassociate. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

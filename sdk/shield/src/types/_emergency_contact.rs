@@ -62,6 +62,10 @@ impl EmergencyContactBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address for the contact.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The phone number for the contact.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl EmergencyContactBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number for the contact.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>Additional notes regarding the contact. </p>
     pub fn contact_notes(
@@ -87,6 +95,10 @@ impl EmergencyContactBuilder {
     ) -> Self {
         self.contact_notes = input;
         self
+    }
+    /// <p>Additional notes regarding the contact. </p>
+    pub fn get_contact_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_notes
     }
     /// Consumes the builder and constructs a [`EmergencyContact`](crate::types::EmergencyContact).
     pub fn build(self) -> crate::types::EmergencyContact {

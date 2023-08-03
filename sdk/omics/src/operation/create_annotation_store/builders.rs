@@ -36,6 +36,13 @@ impl CreateAnnotationStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAnnotationStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateAnnotationStoreFluentBuilder {
         self.inner = self.inner.set_reference(input);
         self
     }
+    /// <p>The genome reference for the store's annotations.</p>
+    pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
+        self.inner.get_reference()
+    }
     /// <p>A name for the store.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +150,10 @@ impl CreateAnnotationStoreFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +163,10 @@ impl CreateAnnotationStoreFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the store.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -172,6 +191,14 @@ impl CreateAnnotationStoreFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the store.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.inner = self.inner.sse_config(input);
@@ -181,6 +208,10 @@ impl CreateAnnotationStoreFluentBuilder {
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.inner = self.inner.set_sse_config(input);
         self
+    }
+    /// <p>Server-side encryption (SSE) settings for the store.</p>
+    pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
+        self.inner.get_sse_config()
     }
     /// <p>The annotation file format of the store.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
@@ -195,6 +226,10 @@ impl CreateAnnotationStoreFluentBuilder {
         self.inner = self.inner.set_store_format(input);
         self
     }
+    /// <p>The annotation file format of the store.</p>
+    pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
+        self.inner.get_store_format()
+    }
     /// <p>File parsing options for the annotation store.</p>
     pub fn store_options(mut self, input: crate::types::StoreOptions) -> Self {
         self.inner = self.inner.store_options(input);
@@ -207,5 +242,9 @@ impl CreateAnnotationStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_store_options(input);
         self
+    }
+    /// <p>File parsing options for the annotation store.</p>
+    pub fn get_store_options(&self) -> &::std::option::Option<crate::types::StoreOptions> {
+        self.inner.get_store_options()
     }
 }

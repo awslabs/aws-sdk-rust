@@ -57,6 +57,12 @@ impl GetInstancePortStatesOutputBuilder {
         self.port_states = input;
         self
     }
+    /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
+    pub fn get_port_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>> {
+        &self.port_states
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

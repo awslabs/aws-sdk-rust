@@ -51,6 +51,10 @@ impl UpdateResiliencyPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResiliencyPolicy> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

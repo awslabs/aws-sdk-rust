@@ -50,6 +50,10 @@ impl GetKnowledgeBaseOutputBuilder {
         self.knowledge_base = input;
         self
     }
+    /// <p>The knowledge base.</p>
+    pub fn get_knowledge_base(&self) -> &::std::option::Option<crate::types::KnowledgeBaseData> {
+        &self.knowledge_base
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

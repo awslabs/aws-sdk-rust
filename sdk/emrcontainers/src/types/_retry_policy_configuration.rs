@@ -40,6 +40,10 @@ impl RetryPolicyConfigurationBuilder {
         self.max_attempts = input;
         self
     }
+    /// <p>The maximum number of attempts on the job's driver.</p>
+    pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
+        &self.max_attempts
+    }
     /// Consumes the builder and constructs a [`RetryPolicyConfiguration`](crate::types::RetryPolicyConfiguration).
     pub fn build(self) -> crate::types::RetryPolicyConfiguration {
         crate::types::RetryPolicyConfiguration {

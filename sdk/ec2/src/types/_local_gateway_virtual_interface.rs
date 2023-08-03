@@ -110,6 +110,12 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self.local_gateway_virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_local_gateway_virtual_interface_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_virtual_interface_id
+    }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(
         mut self,
@@ -126,6 +132,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
@@ -135,6 +145,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vlan = input;
         self
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        &self.vlan
     }
     /// <p>The local address.</p>
     pub fn local_address(
@@ -152,6 +166,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self.local_address = input;
         self
     }
+    /// <p>The local address.</p>
+    pub fn get_local_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_address
+    }
     /// <p>The peer address.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -161,6 +179,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
+    }
+    /// <p>The peer address.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
     }
     /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
     pub fn local_bgp_asn(mut self, input: i32) -> Self {
@@ -172,6 +194,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self.local_bgp_asn = input;
         self
     }
+    /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
+    pub fn get_local_bgp_asn(&self) -> &::std::option::Option<i32> {
+        &self.local_bgp_asn
+    }
     /// <p>The peer BGP ASN.</p>
     pub fn peer_bgp_asn(mut self, input: i32) -> Self {
         self.peer_bgp_asn = ::std::option::Option::Some(input);
@@ -182,6 +208,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self.peer_bgp_asn = input;
         self
     }
+    /// <p>The peer BGP ASN.</p>
+    pub fn get_peer_bgp_asn(&self) -> &::std::option::Option<i32> {
+        &self.peer_bgp_asn
+    }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -191,6 +221,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -210,6 +244,10 @@ impl LocalGatewayVirtualInterfaceBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the virtual interface.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGatewayVirtualInterface`](crate::types::LocalGatewayVirtualInterface).
     pub fn build(self) -> crate::types::LocalGatewayVirtualInterface {

@@ -55,6 +55,10 @@ impl PutTargetsOutputBuilder {
         self.failed_entry_count = input;
         self
     }
+    /// <p>The number of failed entries.</p>
+    pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_entry_count
+    }
     /// Appends an item to `failed_entries`.
     ///
     /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
@@ -73,6 +77,12 @@ impl PutTargetsOutputBuilder {
     ) -> Self {
         self.failed_entries = input;
         self
+    }
+    /// <p>The failed target entries.</p>
+    pub fn get_failed_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>> {
+        &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

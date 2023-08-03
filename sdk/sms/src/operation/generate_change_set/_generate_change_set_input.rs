@@ -48,6 +48,10 @@ impl GenerateChangeSetInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application associated with the change set.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The format for the change set.</p>
     pub fn changeset_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.changeset_format = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GenerateChangeSetInputBuilder {
     ) -> Self {
         self.changeset_format = input;
         self
+    }
+    /// <p>The format for the change set.</p>
+    pub fn get_changeset_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.changeset_format
     }
     /// Consumes the builder and constructs a [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
     pub fn build(

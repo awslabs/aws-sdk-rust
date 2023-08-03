@@ -72,6 +72,14 @@ impl ServerProcessBuilder {
         self.launch_path = input;
         self
     }
+    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <ul>
+    /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
+    /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
+    /// </ul>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_path
+    }
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ServerProcessBuilder {
         self.parameters = input;
         self
     }
+    /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters
+    }
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
     pub fn concurrent_executions(mut self, input: i32) -> Self {
         self.concurrent_executions = ::std::option::Option::Some(input);
@@ -91,6 +103,10 @@ impl ServerProcessBuilder {
     pub fn set_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_executions = input;
         self
+    }
+    /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
+    pub fn get_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.concurrent_executions
     }
     /// Consumes the builder and constructs a [`ServerProcess`](crate::types::ServerProcess).
     pub fn build(self) -> crate::types::ServerProcess {

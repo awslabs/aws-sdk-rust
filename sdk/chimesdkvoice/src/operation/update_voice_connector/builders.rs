@@ -36,6 +36,12 @@ impl UpdateVoiceConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVoiceConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The name of the Voice Connector.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl UpdateVoiceConnectorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Voice Connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>When enabled, requires encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.inner = self.inner.require_encryption(input);
@@ -151,5 +165,9 @@ impl UpdateVoiceConnectorFluentBuilder {
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_encryption(input);
         self
+    }
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
+    pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_require_encryption()
     }
 }

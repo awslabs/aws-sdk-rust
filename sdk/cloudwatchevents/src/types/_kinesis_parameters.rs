@@ -46,6 +46,10 @@ impl KinesisParametersBuilder {
         self.partition_key_path = input;
         self
     }
+    /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    pub fn get_partition_key_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_key_path
+    }
     /// Consumes the builder and constructs a [`KinesisParameters`](crate::types::KinesisParameters).
     pub fn build(self) -> crate::types::KinesisParameters {
         crate::types::KinesisParameters {

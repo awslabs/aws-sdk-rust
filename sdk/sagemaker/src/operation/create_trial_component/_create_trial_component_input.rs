@@ -161,6 +161,10 @@ impl CreateTrialComponentInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl CreateTrialComponentInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
@@ -194,6 +202,15 @@ impl CreateTrialComponentInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the component. States include:</p>
+    /// <ul>
+    /// <li> <p>InProgress</p> </li>
+    /// <li> <p>Completed</p> </li>
+    /// <li> <p>Failed</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
+        &self.status
+    }
     /// <p>When the component started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -207,6 +224,10 @@ impl CreateTrialComponentInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>When the component started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>When the component ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -219,6 +240,10 @@ impl CreateTrialComponentInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>When the component ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -248,6 +273,17 @@ impl CreateTrialComponentInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The hyperparameters for the component.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `input_artifacts`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
@@ -275,6 +311,14 @@ impl CreateTrialComponentInputBuilder {
     ) -> Self {
         self.input_artifacts = input;
         self
+    }
+    /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.input_artifacts
     }
     /// Adds a key-value pair to `output_artifacts`.
     ///
@@ -304,6 +348,14 @@ impl CreateTrialComponentInputBuilder {
         self.output_artifacts = input;
         self
     }
+    /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.output_artifacts
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.metadata_properties = ::std::option::Option::Some(input);
@@ -316,6 +368,12 @@ impl CreateTrialComponentInputBuilder {
     ) -> Self {
         self.metadata_properties = input;
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        &self.metadata_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -335,6 +393,10 @@ impl CreateTrialComponentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to associate with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTrialComponentInput`](crate::operation::create_trial_component::CreateTrialComponentInput).
     pub fn build(

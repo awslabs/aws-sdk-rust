@@ -64,6 +64,10 @@ impl DocumentMetadataConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the index field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the index field. </p>
     pub fn r#type(mut self, input: crate::types::DocumentAttributeValueType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl DocumentMetadataConfigurationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The data type of the index field. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentAttributeValueType> {
+        &self.r#type
+    }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
         self.relevance = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl DocumentMetadataConfigurationBuilder {
         self.relevance = input;
         self
     }
+    /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
+    pub fn get_relevance(&self) -> &::std::option::Option<crate::types::Relevance> {
+        &self.relevance
+    }
     /// <p>Provides information about how the field is used during a search.</p>
     pub fn search(mut self, input: crate::types::Search) -> Self {
         self.search = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl DocumentMetadataConfigurationBuilder {
     pub fn set_search(mut self, input: ::std::option::Option<crate::types::Search>) -> Self {
         self.search = input;
         self
+    }
+    /// <p>Provides information about how the field is used during a search.</p>
+    pub fn get_search(&self) -> &::std::option::Option<crate::types::Search> {
+        &self.search
     }
     /// Consumes the builder and constructs a [`DocumentMetadataConfiguration`](crate::types::DocumentMetadataConfiguration).
     pub fn build(self) -> crate::types::DocumentMetadataConfiguration {

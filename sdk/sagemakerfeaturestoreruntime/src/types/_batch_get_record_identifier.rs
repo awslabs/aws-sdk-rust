@@ -66,6 +66,10 @@ impl BatchGetRecordIdentifierBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// Appends an item to `record_identifiers_value_as_string`.
     ///
     /// To override the contents of this collection use [`set_record_identifiers_value_as_string`](Self::set_record_identifiers_value_as_string).
@@ -88,6 +92,12 @@ impl BatchGetRecordIdentifierBuilder {
         self.record_identifiers_value_as_string = input;
         self
     }
+    /// <p>The value for a list of record identifiers in string format.</p>
+    pub fn get_record_identifiers_value_as_string(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.record_identifiers_value_as_string
+    }
     /// Appends an item to `feature_names`.
     ///
     /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
@@ -109,6 +119,12 @@ impl BatchGetRecordIdentifierBuilder {
     ) -> Self {
         self.feature_names = input;
         self
+    }
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
+    pub fn get_feature_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.feature_names
     }
     /// Consumes the builder and constructs a [`BatchGetRecordIdentifier`](crate::types::BatchGetRecordIdentifier).
     pub fn build(self) -> crate::types::BatchGetRecordIdentifier {

@@ -102,6 +102,10 @@ impl NatGatewayAddressBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
     pub fn network_interface_id(
         mut self,
@@ -118,6 +122,10 @@ impl NatGatewayAddressBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface associated with the NAT gateway.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The private IP address associated with the NAT gateway.</p>
     pub fn private_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl NatGatewayAddressBuilder {
         self.private_ip = input;
         self
     }
+    /// <p>The private IP address associated with the NAT gateway.</p>
+    pub fn get_private_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip
+    }
     /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -137,6 +149,10 @@ impl NatGatewayAddressBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn association_id(
@@ -154,6 +170,10 @@ impl NatGatewayAddressBuilder {
         self.association_id = input;
         self
     }
+    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>Defines if the IP address is the primary address.</p>
     pub fn is_primary(mut self, input: bool) -> Self {
         self.is_primary = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl NatGatewayAddressBuilder {
     pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_primary = input;
         self
+    }
+    /// <p>Defines if the IP address is the primary address.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
     }
     /// <p>The address failure message.</p>
     pub fn failure_message(
@@ -180,6 +204,10 @@ impl NatGatewayAddressBuilder {
         self.failure_message = input;
         self
     }
+    /// <p>The address failure message.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// <p>The address status.</p>
     pub fn status(mut self, input: crate::types::NatGatewayAddressStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -192,6 +220,10 @@ impl NatGatewayAddressBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The address status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NatGatewayAddressStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`NatGatewayAddress`](crate::types::NatGatewayAddress).
     pub fn build(self) -> crate::types::NatGatewayAddress {

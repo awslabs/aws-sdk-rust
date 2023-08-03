@@ -40,6 +40,10 @@ impl PauseCampaignInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`PauseCampaignInput`](crate::operation::pause_campaign::PauseCampaignInput).
     pub fn build(
         self,

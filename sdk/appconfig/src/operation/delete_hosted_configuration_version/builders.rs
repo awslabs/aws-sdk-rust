@@ -36,6 +36,10 @@ impl DeleteHostedConfigurationVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHostedConfigurationVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteHostedConfigurationVersionFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -122,6 +130,10 @@ impl DeleteHostedConfigurationVersionFluentBuilder {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_profile_id()
+    }
     /// <p>The versions number to delete.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.inner = self.inner.version_number(input);
@@ -131,5 +143,9 @@ impl DeleteHostedConfigurationVersionFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>The versions number to delete.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version_number()
     }
 }

@@ -39,6 +39,10 @@ impl GetGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
     pub fn build(
         self,

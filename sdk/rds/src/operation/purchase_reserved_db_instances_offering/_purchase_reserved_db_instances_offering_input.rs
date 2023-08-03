@@ -78,6 +78,13 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
         self.reserved_db_instances_offering_id = input;
         self
     }
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
+    /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+    pub fn get_reserved_db_instances_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instances_offering_id
+    }
     /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
     pub fn reserved_db_instance_id(
@@ -96,6 +103,11 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
         self.reserved_db_instance_id = input;
         self
     }
+    /// <p>Customer-specified identifier to track this reservation.</p>
+    /// <p>Example: myreservationID</p>
+    pub fn get_reserved_db_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instance_id
+    }
     /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn db_instance_count(mut self, input: i32) -> Self {
@@ -107,6 +119,11 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
     pub fn set_db_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_instance_count = input;
         self
+    }
+    /// <p>The number of instances to reserve.</p>
+    /// <p>Default: <code>1</code> </p>
+    pub fn get_db_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.db_instance_count
     }
     /// Appends an item to `tags`.
     ///
@@ -126,6 +143,10 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -73,6 +73,10 @@ impl SetUserMfaPreferenceInputBuilder {
         self.sms_mfa_settings = input;
         self
     }
+    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
+        &self.sms_mfa_settings
+    }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
     pub fn software_token_mfa_settings(
         mut self,
@@ -89,6 +93,12 @@ impl SetUserMfaPreferenceInputBuilder {
         self.software_token_mfa_settings = input;
         self
     }
+    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    pub fn get_software_token_mfa_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+        &self.software_token_mfa_settings
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl SetUserMfaPreferenceInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`SetUserMfaPreferenceInput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput).
     pub fn build(

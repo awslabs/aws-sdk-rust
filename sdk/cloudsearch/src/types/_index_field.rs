@@ -152,6 +152,12 @@ impl IndexFieldBuilder {
         self.index_field_name = input;
         self
     }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    pub fn get_index_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_field_name
+    }
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub fn index_field_type(mut self, input: crate::types::IndexFieldType) -> Self {
         self.index_field_type = ::std::option::Option::Some(input);
@@ -164,6 +170,10 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.index_field_type = input;
         self
+    }
+    /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn get_index_field_type(&self) -> &::std::option::Option<crate::types::IndexFieldType> {
+        &self.index_field_type
     }
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
     pub fn int_options(mut self, input: crate::types::IntOptions) -> Self {
@@ -178,6 +188,10 @@ impl IndexFieldBuilder {
         self.int_options = input;
         self
     }
+    /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+    pub fn get_int_options(&self) -> &::std::option::Option<crate::types::IntOptions> {
+        &self.int_options
+    }
     /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
     pub fn double_options(mut self, input: crate::types::DoubleOptions) -> Self {
         self.double_options = ::std::option::Option::Some(input);
@@ -190,6 +204,10 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.double_options = input;
         self
+    }
+    /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+    pub fn get_double_options(&self) -> &::std::option::Option<crate::types::DoubleOptions> {
+        &self.double_options
     }
     /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
     pub fn literal_options(mut self, input: crate::types::LiteralOptions) -> Self {
@@ -204,6 +222,10 @@ impl IndexFieldBuilder {
         self.literal_options = input;
         self
     }
+    /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+    pub fn get_literal_options(&self) -> &::std::option::Option<crate::types::LiteralOptions> {
+        &self.literal_options
+    }
     /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
     pub fn text_options(mut self, input: crate::types::TextOptions) -> Self {
         self.text_options = ::std::option::Option::Some(input);
@@ -216,6 +238,10 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.text_options = input;
         self
+    }
+    /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+    pub fn get_text_options(&self) -> &::std::option::Option<crate::types::TextOptions> {
+        &self.text_options
     }
     /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
     pub fn date_options(mut self, input: crate::types::DateOptions) -> Self {
@@ -230,6 +256,10 @@ impl IndexFieldBuilder {
         self.date_options = input;
         self
     }
+    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+    pub fn get_date_options(&self) -> &::std::option::Option<crate::types::DateOptions> {
+        &self.date_options
+    }
     /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
     pub fn lat_lon_options(mut self, input: crate::types::LatLonOptions) -> Self {
         self.lat_lon_options = ::std::option::Option::Some(input);
@@ -242,6 +272,10 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.lat_lon_options = input;
         self
+    }
+    /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
+    pub fn get_lat_lon_options(&self) -> &::std::option::Option<crate::types::LatLonOptions> {
+        &self.lat_lon_options
     }
     /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
     pub fn int_array_options(mut self, input: crate::types::IntArrayOptions) -> Self {
@@ -256,6 +290,10 @@ impl IndexFieldBuilder {
         self.int_array_options = input;
         self
     }
+    /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+    pub fn get_int_array_options(&self) -> &::std::option::Option<crate::types::IntArrayOptions> {
+        &self.int_array_options
+    }
     /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
     pub fn double_array_options(mut self, input: crate::types::DoubleArrayOptions) -> Self {
         self.double_array_options = ::std::option::Option::Some(input);
@@ -268,6 +306,12 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.double_array_options = input;
         self
+    }
+    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
+    pub fn get_double_array_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DoubleArrayOptions> {
+        &self.double_array_options
     }
     /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
     pub fn literal_array_options(mut self, input: crate::types::LiteralArrayOptions) -> Self {
@@ -282,6 +326,12 @@ impl IndexFieldBuilder {
         self.literal_array_options = input;
         self
     }
+    /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+    pub fn get_literal_array_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LiteralArrayOptions> {
+        &self.literal_array_options
+    }
     /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
     pub fn text_array_options(mut self, input: crate::types::TextArrayOptions) -> Self {
         self.text_array_options = ::std::option::Option::Some(input);
@@ -295,6 +345,10 @@ impl IndexFieldBuilder {
         self.text_array_options = input;
         self
     }
+    /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+    pub fn get_text_array_options(&self) -> &::std::option::Option<crate::types::TextArrayOptions> {
+        &self.text_array_options
+    }
     /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
     pub fn date_array_options(mut self, input: crate::types::DateArrayOptions) -> Self {
         self.date_array_options = ::std::option::Option::Some(input);
@@ -307,6 +361,10 @@ impl IndexFieldBuilder {
     ) -> Self {
         self.date_array_options = input;
         self
+    }
+    /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+    pub fn get_date_array_options(&self) -> &::std::option::Option<crate::types::DateArrayOptions> {
+        &self.date_array_options
     }
     /// Consumes the builder and constructs a [`IndexField`](crate::types::IndexField).
     pub fn build(self) -> crate::types::IndexField {

@@ -36,6 +36,13 @@ impl UpdateWirelessGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWirelessGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateWirelessGatewayFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The new name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +147,10 @@ impl UpdateWirelessGatewayFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The new name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A new description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +160,10 @@ impl UpdateWirelessGatewayFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `JoinEuiFilters`.
     ///
@@ -162,6 +181,12 @@ impl UpdateWirelessGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_join_eui_filters(input);
         self
+    }
+    /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    pub fn get_join_eui_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        self.inner.get_join_eui_filters()
     }
     /// Appends an item to `NetIdFilters`.
     ///
@@ -183,6 +208,12 @@ impl UpdateWirelessGatewayFluentBuilder {
         self.inner = self.inner.set_net_id_filters(input);
         self
     }
+    /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    pub fn get_net_id_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_net_id_filters()
+    }
     /// <p>The MaxEIRP value.</p>
     pub fn max_eirp(mut self, input: f32) -> Self {
         self.inner = self.inner.max_eirp(input);
@@ -192,5 +223,9 @@ impl UpdateWirelessGatewayFluentBuilder {
     pub fn set_max_eirp(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_max_eirp(input);
         self
+    }
+    /// <p>The MaxEIRP value.</p>
+    pub fn get_max_eirp(&self) -> &::std::option::Option<f32> {
+        self.inner.get_max_eirp()
     }
 }

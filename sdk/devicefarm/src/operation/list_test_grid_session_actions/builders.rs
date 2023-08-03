@@ -36,6 +36,10 @@ impl ListTestGridSessionActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTestGridSessionActions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListTestGridSessionActionsFluentBuilder {
         self.inner = self.inner.set_session_arn(input);
         self
     }
+    /// <p>The ARN of the session to retrieve.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_arn()
+    }
     /// <p>The maximum number of sessions to return per response.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.inner = self.inner.max_result(input);
@@ -142,6 +150,10 @@ impl ListTestGridSessionActionsFluentBuilder {
         self.inner = self.inner.set_max_result(input);
         self
     }
+    /// <p>The maximum number of sessions to return per response.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_result()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,5 +163,9 @@ impl ListTestGridSessionActionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

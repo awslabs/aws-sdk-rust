@@ -48,6 +48,10 @@ impl PhaseContextBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status code for the context of the build phase.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
+    }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PhaseContextBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`PhaseContext`](crate::types::PhaseContext).
     pub fn build(self) -> crate::types::PhaseContext {

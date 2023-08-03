@@ -69,6 +69,10 @@ impl LaunchPermissionBuilder {
         self.group = input;
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.group
+    }
     /// <p>The Amazon Web Services account ID.</p>
     /// <p>Constraints: Up to 10 000 account IDs can be specified in a single request.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,6 +84,11 @@ impl LaunchPermissionBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    /// <p>Constraints: Up to 10 000 account IDs can be specified in a single request.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
     pub fn organization_arn(
@@ -97,6 +106,10 @@ impl LaunchPermissionBuilder {
         self.organization_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+    pub fn get_organization_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
     pub fn organizational_unit_arn(
         mut self,
@@ -112,6 +125,10 @@ impl LaunchPermissionBuilder {
     ) -> Self {
         self.organizational_unit_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+    pub fn get_organizational_unit_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_arn
     }
     /// Consumes the builder and constructs a [`LaunchPermission`](crate::types::LaunchPermission).
     pub fn build(self) -> crate::types::LaunchPermission {

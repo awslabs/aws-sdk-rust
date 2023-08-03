@@ -62,6 +62,12 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
         self.reserved_instance_offering_id = input;
         self
     }
+    /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
+    pub fn get_reserved_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instance_offering_id
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +91,10 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstanceOfferingsInput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{

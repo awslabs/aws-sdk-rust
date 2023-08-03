@@ -37,6 +37,12 @@ impl DeregisterVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterVolume as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_volume::builders::DeregisterVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl DeregisterVolumeFluentBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
+    }
+    /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
     }
 }

@@ -52,6 +52,10 @@ impl ModelPackageValidationProfileBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the profile for the model package.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
     pub fn transform_job_definition(mut self, input: crate::types::TransformJobDefinition) -> Self {
         self.transform_job_definition = ::std::option::Option::Some(input);
@@ -64,6 +68,12 @@ impl ModelPackageValidationProfileBuilder {
     ) -> Self {
         self.transform_job_definition = input;
         self
+    }
+    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
+    pub fn get_transform_job_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformJobDefinition> {
+        &self.transform_job_definition
     }
     /// Consumes the builder and constructs a [`ModelPackageValidationProfile`](crate::types::ModelPackageValidationProfile).
     pub fn build(self) -> crate::types::ModelPackageValidationProfile {

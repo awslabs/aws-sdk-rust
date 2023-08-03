@@ -37,6 +37,12 @@ impl CreateUpdatedImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUpdatedImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_updated_image::builders::CreateUpdatedImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateUpdatedImageFluentBuilder {
         self.inner = self.inner.set_existing_image_name(input);
         self
     }
+    /// <p>The name of the image to update.</p>
+    pub fn get_existing_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_existing_image_name()
+    }
     /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
     pub fn new_image_name(
         mut self,
@@ -148,6 +158,10 @@ impl CreateUpdatedImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_image_name(input);
         self
+    }
+    /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    pub fn get_new_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_image_name()
     }
     /// <p>The description to display for the new image.</p>
     pub fn new_image_description(
@@ -165,6 +179,10 @@ impl CreateUpdatedImageFluentBuilder {
         self.inner = self.inner.set_new_image_description(input);
         self
     }
+    /// <p>The description to display for the new image.</p>
+    pub fn get_new_image_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_image_description()
+    }
     /// <p>The name to display for the new image.</p>
     pub fn new_image_display_name(
         mut self,
@@ -180,6 +198,10 @@ impl CreateUpdatedImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_image_display_name(input);
         self
+    }
+    /// <p>The name to display for the new image.</p>
+    pub fn get_new_image_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_image_display_name()
     }
     /// Adds a key-value pair to `newImageTags`.
     ///
@@ -212,6 +234,18 @@ impl CreateUpdatedImageFluentBuilder {
         self.inner = self.inner.set_new_image_tags(input);
         self
     }
+    /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_new_image_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_new_image_tags()
+    }
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -221,5 +255,9 @@ impl CreateUpdatedImageFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

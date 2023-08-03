@@ -70,6 +70,10 @@ impl VariableImpactExplanationBuilder {
         self.event_variable_name = input;
         self
     }
+    /// <p> The event variable name. </p>
+    pub fn get_event_variable_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_variable_name
+    }
     /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
     pub fn relative_impact(
         mut self,
@@ -85,6 +89,10 @@ impl VariableImpactExplanationBuilder {
     ) -> Self {
         self.relative_impact = input;
         self
+    }
+    /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+    pub fn get_relative_impact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relative_impact
     }
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
     /// <ul>
@@ -103,6 +111,14 @@ impl VariableImpactExplanationBuilder {
     pub fn set_log_odds_impact(mut self, input: ::std::option::Option<f32>) -> Self {
         self.log_odds_impact = input;
         self
+    }
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
+    /// </ul>
+    pub fn get_log_odds_impact(&self) -> &::std::option::Option<f32> {
+        &self.log_odds_impact
     }
     /// Consumes the builder and constructs a [`VariableImpactExplanation`](crate::types::VariableImpactExplanation).
     pub fn build(self) -> crate::types::VariableImpactExplanation {

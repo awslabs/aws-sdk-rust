@@ -135,6 +135,12 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.db_cluster_endpoint_identifier = input;
         self
     }
+    /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_identifier
+    }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -150,6 +156,10 @@ impl CreateDbClusterEndpointOutputBuilder {
     ) -> Self {
         self.db_cluster_identifier = input;
         self
+    }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub fn db_cluster_endpoint_resource_identifier(
@@ -167,6 +177,12 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.db_cluster_endpoint_resource_identifier = input;
         self
     }
+    /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    pub fn get_db_cluster_endpoint_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_resource_identifier
+    }
     /// <p>The DNS address of the endpoint.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -177,6 +193,10 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -186,6 +206,10 @@ impl CreateDbClusterEndpointOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub fn endpoint_type(
@@ -203,6 +227,10 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
+    }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn custom_endpoint_type(
         mut self,
@@ -218,6 +246,10 @@ impl CreateDbClusterEndpointOutputBuilder {
     ) -> Self {
         self.custom_endpoint_type = input;
         self
+    }
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_custom_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_endpoint_type
     }
     /// Appends an item to `static_members`.
     ///
@@ -241,6 +273,12 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.static_members = input;
         self
     }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_members
+    }
     /// Appends an item to `excluded_members`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
@@ -263,6 +301,12 @@ impl CreateDbClusterEndpointOutputBuilder {
         self.excluded_members = input;
         self
     }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    pub fn get_excluded_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_members
+    }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub fn db_cluster_endpoint_arn(
         mut self,
@@ -278,6 +322,10 @@ impl CreateDbClusterEndpointOutputBuilder {
     ) -> Self {
         self.db_cluster_endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    pub fn get_db_cluster_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

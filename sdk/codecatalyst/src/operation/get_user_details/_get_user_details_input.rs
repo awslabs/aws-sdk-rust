@@ -47,6 +47,10 @@ impl GetUserDetailsInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated unique ID of the user. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetUserDetailsInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`GetUserDetailsInput`](crate::operation::get_user_details::GetUserDetailsInput).
     pub fn build(

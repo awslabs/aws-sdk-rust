@@ -36,6 +36,10 @@ impl DescribeMetricAttributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMetricAttribution as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DescribeMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_attribution_arn(input);
         self
+    }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_attribution_arn()
     }
 }

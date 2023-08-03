@@ -47,6 +47,10 @@ impl GetAccountSendingEnabledOutputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

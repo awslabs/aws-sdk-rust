@@ -36,6 +36,12 @@ impl DeleteKeyspaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteKeyspace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_keyspace::builders::DeleteKeyspaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl DeleteKeyspaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_keyspace_name(input);
         self
+    }
+    /// <p>The name of the keyspace to be deleted.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyspace_name()
     }
 }

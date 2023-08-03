@@ -43,6 +43,10 @@ impl ListControlSelectAllOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility configuration of the <code>Select all</code> options in a list control.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`ListControlSelectAllOptions`](crate::types::ListControlSelectAllOptions).
     pub fn build(self) -> crate::types::ListControlSelectAllOptions {
         crate::types::ListControlSelectAllOptions {

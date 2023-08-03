@@ -73,6 +73,10 @@ impl EphemerisMetaDataBuilder {
         self.source = input;
         self
     }
+    /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::EphemerisSource> {
+        &self.source
+    }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
     pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +88,11 @@ impl EphemerisMetaDataBuilder {
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ephemeris_id = input;
         self
+    }
+    /// <p>UUID of a customer-provided ephemeris.</p>
+    /// <p>This field is not populated for default ephemerides from Space Track.</p>
+    pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_id
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
@@ -97,6 +106,11 @@ impl EphemerisMetaDataBuilder {
         self.epoch = input;
         self
     }
+    /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
+    /// <p>This field is not populated for customer-provided ephemerides.</p>
+    pub fn get_epoch(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.epoch
+    }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +122,11 @@ impl EphemerisMetaDataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`EphemerisMetaData`](crate::types::EphemerisMetaData).
     pub fn build(self) -> crate::types::EphemerisMetaData {

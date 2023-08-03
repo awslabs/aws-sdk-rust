@@ -69,6 +69,10 @@ impl CreateEndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>. </p>
     pub fn endpoint_config_name(
         mut self,
@@ -85,6 +89,10 @@ impl CreateEndpointInputBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>. </p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.deployment_config = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl CreateEndpointInputBuilder {
     ) -> Self {
         self.deployment_config = input;
         self
+    }
+    /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
     }
     /// Appends an item to `tags`.
     ///
@@ -116,6 +128,10 @@ impl CreateEndpointInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(

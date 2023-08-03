@@ -43,6 +43,10 @@ impl TimestampForCollectionBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// Consumes the builder and constructs a [`TimestampForCollection`](crate::types::TimestampForCollection).
     pub fn build(self) -> crate::types::TimestampForCollection {
         crate::types::TimestampForCollection {

@@ -59,6 +59,10 @@ impl InstanceTypeOfferingBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The location type.</p>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.location_type = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl InstanceTypeOfferingBuilder {
         self.location_type = input;
         self
     }
+    /// <p>The location type.</p>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        &self.location_type
+    }
     /// <p>The identifier for the location. This depends on the location type. For example, if the location type is <code>region</code>, the location is the Region code (for example, <code>us-east-2</code>.)</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl InstanceTypeOfferingBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The identifier for the location. This depends on the location type. For example, if the location type is <code>region</code>, the location is the Region code (for example, <code>us-east-2</code>.)</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`InstanceTypeOffering`](crate::types::InstanceTypeOffering).
     pub fn build(self) -> crate::types::InstanceTypeOffering {

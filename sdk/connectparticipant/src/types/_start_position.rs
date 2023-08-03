@@ -58,6 +58,10 @@ impl StartPositionBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the message or event where to start. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The time in ISO format where to start.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(
@@ -76,6 +80,11 @@ impl StartPositionBuilder {
         self.absolute_time = input;
         self
     }
+    /// <p>The time in ISO format where to start.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_absolute_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_time
+    }
     /// <p>The start position of the most recent message where you want to start. </p>
     pub fn most_recent(mut self, input: i32) -> Self {
         self.most_recent = ::std::option::Option::Some(input);
@@ -85,6 +94,10 @@ impl StartPositionBuilder {
     pub fn set_most_recent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.most_recent = input;
         self
+    }
+    /// <p>The start position of the most recent message where you want to start. </p>
+    pub fn get_most_recent(&self) -> &::std::option::Option<i32> {
+        &self.most_recent
     }
     /// Consumes the builder and constructs a [`StartPosition`](crate::types::StartPosition).
     pub fn build(self) -> crate::types::StartPosition {

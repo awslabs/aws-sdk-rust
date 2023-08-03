@@ -72,6 +72,10 @@ impl DisassociateCustomDomainOutputBuilder {
         self.dns_target = input;
         self
     }
+    /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
+    pub fn get_dns_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_target
+    }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DisassociateCustomDomainOutputBuilder {
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// <p>A description of the domain name that's being disassociated.</p>
     pub fn custom_domain(mut self, input: crate::types::CustomDomain) -> Self {
@@ -94,6 +102,10 @@ impl DisassociateCustomDomainOutputBuilder {
     ) -> Self {
         self.custom_domain = input;
         self
+    }
+    /// <p>A description of the domain name that's being disassociated.</p>
+    pub fn get_custom_domain(&self) -> &::std::option::Option<crate::types::CustomDomain> {
+        &self.custom_domain
     }
     /// Appends an item to `vpc_dns_targets`.
     ///
@@ -113,6 +125,12 @@ impl DisassociateCustomDomainOutputBuilder {
     ) -> Self {
         self.vpc_dns_targets = input;
         self
+    }
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    pub fn get_vpc_dns_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
+        &self.vpc_dns_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

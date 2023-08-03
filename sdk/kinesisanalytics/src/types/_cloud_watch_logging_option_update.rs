@@ -62,6 +62,12 @@ impl CloudWatchLoggingOptionUpdateBuilder {
         self.cloud_watch_logging_option_id = input;
         self
     }
+    /// <p>ID of the CloudWatch logging option to update</p>
+    pub fn get_cloud_watch_logging_option_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logging_option_id
+    }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
     pub fn log_stream_arn_update(
         mut self,
@@ -78,6 +84,10 @@ impl CloudWatchLoggingOptionUpdateBuilder {
         self.log_stream_arn_update = input;
         self
     }
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn_update
+    }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub fn role_arn_update(
         mut self,
@@ -93,6 +103,10 @@ impl CloudWatchLoggingOptionUpdateBuilder {
     ) -> Self {
         self.role_arn_update = input;
         self
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn_update
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionUpdate`](crate::types::CloudWatchLoggingOptionUpdate).
     pub fn build(self) -> crate::types::CloudWatchLoggingOptionUpdate {

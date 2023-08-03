@@ -57,6 +57,12 @@ impl TopicNumericEqualityFilterBuilder {
         self.constant = input;
         self
     }
+    /// <p>The constant used in a numeric equality filter.</p>
+    pub fn get_constant(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicSingularFilterConstant> {
+        &self.constant
+    }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic. Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub fn aggregation(mut self, input: crate::types::NamedFilterAggType) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl TopicNumericEqualityFilterBuilder {
     ) -> Self {
         self.aggregation = input;
         self
+    }
+    /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic. Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::NamedFilterAggType> {
+        &self.aggregation
     }
     /// Consumes the builder and constructs a [`TopicNumericEqualityFilter`](crate::types::TopicNumericEqualityFilter).
     pub fn build(self) -> crate::types::TopicNumericEqualityFilter {

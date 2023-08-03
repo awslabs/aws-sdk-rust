@@ -48,6 +48,10 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>The ID of the entry.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// <p>Contains asset property value information.</p>
     pub fn asset_property_value(mut self, input: crate::types::AssetPropertyValue) -> Self {
         self.asset_property_value = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
     ) -> Self {
         self.asset_property_value = input;
         self
+    }
+    /// <p>Contains asset property value information.</p>
+    pub fn get_asset_property_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetPropertyValue> {
+        &self.asset_property_value
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueSuccessEntry {

@@ -78,6 +78,10 @@ impl ZookeeperNodeInfoBuilder {
         self.attached_eni_id = input;
         self
     }
+    /// <p>The attached elastic network interface of the broker.</p>
+    pub fn get_attached_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_eni_id
+    }
     /// <p>The virtual private cloud (VPC) IP address of the client.</p>
     pub fn client_vpc_ip_address(
         mut self,
@@ -93,6 +97,10 @@ impl ZookeeperNodeInfoBuilder {
     ) -> Self {
         self.client_vpc_ip_address = input;
         self
+    }
+    /// <p>The virtual private cloud (VPC) IP address of the client.</p>
+    pub fn get_client_vpc_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpc_ip_address
     }
     /// Appends an item to `endpoints`.
     ///
@@ -113,6 +121,10 @@ impl ZookeeperNodeInfoBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>Endpoints for accessing the ZooKeeper.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.endpoints
+    }
     /// <p>The role-specific ID for Zookeeper.</p>
     pub fn zookeeper_id(mut self, input: f64) -> Self {
         self.zookeeper_id = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl ZookeeperNodeInfoBuilder {
     pub fn set_zookeeper_id(mut self, input: ::std::option::Option<f64>) -> Self {
         self.zookeeper_id = input;
         self
+    }
+    /// <p>The role-specific ID for Zookeeper.</p>
+    pub fn get_zookeeper_id(&self) -> &::std::option::Option<f64> {
+        &self.zookeeper_id
     }
     /// <p>The version of Zookeeper.</p>
     pub fn zookeeper_version(
@@ -138,6 +154,10 @@ impl ZookeeperNodeInfoBuilder {
     ) -> Self {
         self.zookeeper_version = input;
         self
+    }
+    /// <p>The version of Zookeeper.</p>
+    pub fn get_zookeeper_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zookeeper_version
     }
     /// Consumes the builder and constructs a [`ZookeeperNodeInfo`](crate::types::ZookeeperNodeInfo).
     pub fn build(self) -> crate::types::ZookeeperNodeInfo {

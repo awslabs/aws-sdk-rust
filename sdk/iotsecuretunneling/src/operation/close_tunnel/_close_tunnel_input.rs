@@ -47,6 +47,10 @@ impl CloseTunnelInputBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>The ID of the tunnel to close.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(mut self, input: bool) -> Self {
         self.delete = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl CloseTunnelInputBuilder {
     pub fn set_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete = input;
         self
+    }
+    /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    pub fn get_delete(&self) -> &::std::option::Option<bool> {
+        &self.delete
     }
     /// Consumes the builder and constructs a [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
     pub fn build(

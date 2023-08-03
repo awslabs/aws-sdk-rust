@@ -40,6 +40,10 @@ impl ListResourcePoliciesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Not currently supported.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListResourcePoliciesInput`](crate::operation::list_resource_policies::ListResourcePoliciesInput).
     pub fn build(
         self,

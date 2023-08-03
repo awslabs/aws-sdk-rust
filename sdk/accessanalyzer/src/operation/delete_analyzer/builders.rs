@@ -36,6 +36,12 @@ impl DeleteAnalyzerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAnalyzer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_analyzer::builders::DeleteAnalyzerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteAnalyzerFluentBuilder {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
+    /// <p>The name of the analyzer to delete.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_name()
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -133,5 +143,9 @@ impl DeleteAnalyzerFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

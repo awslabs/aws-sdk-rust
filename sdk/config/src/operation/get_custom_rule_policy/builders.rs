@@ -36,6 +36,12 @@ impl GetCustomRulePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCustomRulePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetCustomRulePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
+    }
+    /// <p>The name of your Config Custom Policy rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
     }
 }

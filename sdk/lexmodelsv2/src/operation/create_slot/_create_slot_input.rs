@@ -128,6 +128,10 @@ impl CreateSlotInputBuilder {
         self.slot_name = input;
         self
     }
+    /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
+    }
     /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl CreateSlotInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl CreateSlotInputBuilder {
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_type_id = input;
         self
+    }
+    /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
     }
     /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
     pub fn value_elicitation_setting(
@@ -164,6 +176,12 @@ impl CreateSlotInputBuilder {
         self.value_elicitation_setting = input;
         self
     }
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
+    pub fn get_value_elicitation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+        &self.value_elicitation_setting
+    }
     /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
@@ -179,6 +197,13 @@ impl CreateSlotInputBuilder {
         self.obfuscation_setting = input;
         self
     }
+    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
+    /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
+    pub fn get_obfuscation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+        &self.obfuscation_setting
+    }
     /// <p>The identifier of the bot associated with the slot.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -188,6 +213,10 @@ impl CreateSlotInputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot associated with the slot.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot associated with the slot.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,6 +228,10 @@ impl CreateSlotInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot associated with the slot.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -209,6 +242,10 @@ impl CreateSlotInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The identifier of the intent that contains the slot.</p>
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
@@ -218,6 +255,10 @@ impl CreateSlotInputBuilder {
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_id = input;
         self
+    }
+    /// <p>The identifier of the intent that contains the slot.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
     }
     /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
@@ -234,6 +275,13 @@ impl CreateSlotInputBuilder {
         self.multiple_values_setting = input;
         self
     }
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    pub fn get_multiple_values_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+        &self.multiple_values_setting
+    }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     pub fn sub_slot_setting(mut self, input: crate::types::SubSlotSetting) -> Self {
         self.sub_slot_setting = ::std::option::Option::Some(input);
@@ -246,6 +294,10 @@ impl CreateSlotInputBuilder {
     ) -> Self {
         self.sub_slot_setting = input;
         self
+    }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn get_sub_slot_setting(&self) -> &::std::option::Option<crate::types::SubSlotSetting> {
+        &self.sub_slot_setting
     }
     /// Consumes the builder and constructs a [`CreateSlotInput`](crate::operation::create_slot::CreateSlotInput).
     pub fn build(

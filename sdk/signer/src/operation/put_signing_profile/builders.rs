@@ -36,6 +36,12 @@ impl PutSigningProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSigningProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_signing_profile::builders::PutSigningProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutSigningProfileFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The name of the signing profile to be created.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
     pub fn signing_material(mut self, input: crate::types::SigningMaterial) -> Self {
         self.inner = self.inner.signing_material(input);
@@ -138,6 +148,10 @@ impl PutSigningProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_signing_material(input);
         self
+    }
+    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
+    pub fn get_signing_material(&self) -> &::std::option::Option<crate::types::SigningMaterial> {
+        self.inner.get_signing_material()
     }
     /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
     pub fn signature_validity_period(
@@ -155,6 +169,12 @@ impl PutSigningProfileFluentBuilder {
         self.inner = self.inner.set_signature_validity_period(input);
         self
     }
+    /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
+    pub fn get_signature_validity_period(
+        &self,
+    ) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
+        self.inner.get_signature_validity_period()
+    }
     /// <p>The ID of the signing platform to be created.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_id(input.into());
@@ -164,6 +184,10 @@ impl PutSigningProfileFluentBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_id(input);
         self
+    }
+    /// <p>The ID of the signing platform to be created.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_id()
     }
     /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
     pub fn overrides(mut self, input: crate::types::SigningPlatformOverrides) -> Self {
@@ -177,6 +201,10 @@ impl PutSigningProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
+    }
+    /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::SigningPlatformOverrides> {
+        self.inner.get_overrides()
     }
     /// Adds a key-value pair to `signingParameters`.
     ///
@@ -201,6 +229,14 @@ impl PutSigningProfileFluentBuilder {
         self.inner = self.inner.set_signing_parameters(input);
         self
     }
+    /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
+    pub fn get_signing_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_signing_parameters()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -223,5 +259,13 @@ impl PutSigningProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to be associated with the signing profile that is being created.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -77,6 +77,10 @@ impl GetShardIteratorInputBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl GetShardIteratorInputBuilder {
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_id = input;
         self
+    }
+    /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
     }
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
@@ -112,6 +120,18 @@ impl GetShardIteratorInputBuilder {
         self.shard_iterator_type = input;
         self
     }
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
+    /// <ul>
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
+    /// </ul>
+    pub fn get_shard_iterator_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShardIteratorType> {
+        &self.shard_iterator_type
+    }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn sequence_number(
         mut self,
@@ -127,6 +147,10 @@ impl GetShardIteratorInputBuilder {
     ) -> Self {
         self.sequence_number = input;
         self
+    }
+    /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_number
     }
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
     pub fn build(

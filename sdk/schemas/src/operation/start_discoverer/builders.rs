@@ -36,6 +36,12 @@ impl StartDiscovererFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDiscoverer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_discoverer::builders::StartDiscovererInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl StartDiscovererFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_discoverer_id(input);
         self
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discoverer_id()
     }
 }

@@ -36,6 +36,12 @@ impl DescribeVolumesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVolumes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl DescribeVolumesFluentBuilder {
         self.inner = self.inner.set_volume_ids(input);
         self
     }
+    /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
+    pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_volume_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -161,6 +171,12 @@ impl DescribeVolumesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -171,6 +187,10 @@ impl DescribeVolumesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,5 +200,9 @@ impl DescribeVolumesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

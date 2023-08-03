@@ -51,6 +51,10 @@ impl LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p> The number of elastic inference accelerators to attach to the instance. </p>
     /// <p>Default: 1</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -62,6 +66,11 @@ impl LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p> The number of elastic inference accelerators to attach to the instance. </p>
+    /// <p>Default: 1</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`LaunchTemplateElasticInferenceAcceleratorResponse`](crate::types::LaunchTemplateElasticInferenceAcceleratorResponse).
     pub fn build(self) -> crate::types::LaunchTemplateElasticInferenceAcceleratorResponse {

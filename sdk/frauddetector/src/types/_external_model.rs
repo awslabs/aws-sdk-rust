@@ -116,6 +116,10 @@ impl ExternalModelBuilder {
         self.model_endpoint = input;
         self
     }
+    /// <p>The Amazon SageMaker model endpoints.</p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_endpoint
+    }
     /// <p>The source of the model.</p>
     pub fn model_source(mut self, input: crate::types::ModelSource) -> Self {
         self.model_source = ::std::option::Option::Some(input);
@@ -128,6 +132,10 @@ impl ExternalModelBuilder {
     ) -> Self {
         self.model_source = input;
         self
+    }
+    /// <p>The source of the model.</p>
+    pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
+        &self.model_source
     }
     /// <p>The role used to invoke the model. </p>
     pub fn invoke_model_endpoint_role_arn(
@@ -145,6 +153,12 @@ impl ExternalModelBuilder {
         self.invoke_model_endpoint_role_arn = input;
         self
     }
+    /// <p>The role used to invoke the model. </p>
+    pub fn get_invoke_model_endpoint_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.invoke_model_endpoint_role_arn
+    }
     /// <p>The input configuration.</p>
     pub fn input_configuration(mut self, input: crate::types::ModelInputConfiguration) -> Self {
         self.input_configuration = ::std::option::Option::Some(input);
@@ -157,6 +171,12 @@ impl ExternalModelBuilder {
     ) -> Self {
         self.input_configuration = input;
         self
+    }
+    /// <p>The input configuration.</p>
+    pub fn get_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelInputConfiguration> {
+        &self.input_configuration
     }
     /// <p>The output configuration.</p>
     pub fn output_configuration(mut self, input: crate::types::ModelOutputConfiguration) -> Self {
@@ -171,6 +191,12 @@ impl ExternalModelBuilder {
         self.output_configuration = input;
         self
     }
+    /// <p>The output configuration.</p>
+    pub fn get_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelOutputConfiguration> {
+        &self.output_configuration
+    }
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
     pub fn model_endpoint_status(mut self, input: crate::types::ModelEndpointStatus) -> Self {
         self.model_endpoint_status = ::std::option::Option::Some(input);
@@ -183,6 +209,12 @@ impl ExternalModelBuilder {
     ) -> Self {
         self.model_endpoint_status = input;
         self
+    }
+    /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
+    pub fn get_model_endpoint_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelEndpointStatus> {
+        &self.model_endpoint_status
     }
     /// <p>Timestamp of when the model was last updated.</p>
     pub fn last_updated_time(
@@ -200,6 +232,10 @@ impl ExternalModelBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>Timestamp of when the model was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>Timestamp of when the model was last created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -210,6 +246,10 @@ impl ExternalModelBuilder {
         self.created_time = input;
         self
     }
+    /// <p>Timestamp of when the model was last created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The model ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -219,6 +259,10 @@ impl ExternalModelBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The model ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ExternalModel`](crate::types::ExternalModel).
     pub fn build(self) -> crate::types::ExternalModel {

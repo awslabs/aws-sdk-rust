@@ -107,6 +107,19 @@ impl CheckpointConfigurationDescriptionBuilder {
         self.configuration_type = input;
         self
     }
+    /// <p>Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p> <note>
+    /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
+    /// <ul>
+    /// <li> <p> <b>CheckpointingEnabled:</b> true</p> </li>
+    /// <li> <p> <b>CheckpointInterval:</b> 60000</p> </li>
+    /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_configuration_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+        &self.configuration_type
+    }
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
@@ -120,6 +133,12 @@ impl CheckpointConfigurationDescriptionBuilder {
     pub fn set_checkpointing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.checkpointing_enabled = input;
         self
+    }
+    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
+    /// </note>
+    pub fn get_checkpointing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.checkpointing_enabled
     }
     /// <p>Describes the interval in milliseconds between checkpoint operations. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
@@ -135,6 +154,12 @@ impl CheckpointConfigurationDescriptionBuilder {
         self.checkpoint_interval = input;
         self
     }
+    /// <p>Describes the interval in milliseconds between checkpoint operations. </p> <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
+    /// </note>
+    pub fn get_checkpoint_interval(&self) -> &::std::option::Option<i64> {
+        &self.checkpoint_interval
+    }
     /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
@@ -148,6 +173,12 @@ impl CheckpointConfigurationDescriptionBuilder {
     pub fn set_min_pause_between_checkpoints(mut self, input: ::std::option::Option<i64>) -> Self {
         self.min_pause_between_checkpoints = input;
         self
+    }
+    /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start. </p> <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
+    /// </note>
+    pub fn get_min_pause_between_checkpoints(&self) -> &::std::option::Option<i64> {
+        &self.min_pause_between_checkpoints
     }
     /// Consumes the builder and constructs a [`CheckpointConfigurationDescription`](crate::types::CheckpointConfigurationDescription).
     pub fn build(self) -> crate::types::CheckpointConfigurationDescription {

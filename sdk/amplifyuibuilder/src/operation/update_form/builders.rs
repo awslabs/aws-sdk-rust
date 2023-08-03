@@ -36,6 +36,10 @@ impl UpdateFormFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateForm as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_form::builders::UpdateFormInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateFormFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -134,6 +142,10 @@ impl UpdateFormFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The unique ID for the form.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -144,6 +156,10 @@ impl UpdateFormFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique ID for the form.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -153,6 +169,10 @@ impl UpdateFormFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The request accepts the following data in JSON format.</p>
     pub fn updated_form(mut self, input: crate::types::UpdateFormData) -> Self {
@@ -166,5 +186,9 @@ impl UpdateFormFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_updated_form(input);
         self
+    }
+    /// <p>The request accepts the following data in JSON format.</p>
+    pub fn get_updated_form(&self) -> &::std::option::Option<crate::types::UpdateFormData> {
+        self.inner.get_updated_form()
     }
 }

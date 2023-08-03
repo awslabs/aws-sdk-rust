@@ -55,6 +55,10 @@ impl PutSolFunctionPackageContentInputBuilder {
         self.vnf_pkg_id = input;
         self
     }
+    /// <p>Function package ID.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
+    }
     /// <p>Function package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl PutSolFunctionPackageContentInputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Function package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.content_type
+    }
     /// <p>Function package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl PutSolFunctionPackageContentInputBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file = input;
         self
+    }
+    /// <p>Function package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
     pub fn build(

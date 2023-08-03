@@ -182,6 +182,10 @@ impl SolutionVersionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the solution version.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the solution version.</p>
     pub fn solution_version_arn(
         mut self,
@@ -198,6 +202,10 @@ impl SolutionVersionBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The ARN of the solution version.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// <p>The ARN of the solution.</p>
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
@@ -207,6 +215,10 @@ impl SolutionVersionBuilder {
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_arn = input;
         self
+    }
+    /// <p>The ARN of the solution.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
     }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
     pub fn perform_hpo(mut self, input: bool) -> Self {
@@ -218,6 +230,10 @@ impl SolutionVersionBuilder {
         self.perform_hpo = input;
         self
     }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
+    pub fn get_perform_hpo(&self) -> &::std::option::Option<bool> {
+        &self.perform_hpo
+    }
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
     pub fn perform_auto_ml(mut self, input: bool) -> Self {
         self.perform_auto_ml = ::std::option::Option::Some(input);
@@ -227,6 +243,10 @@ impl SolutionVersionBuilder {
     pub fn set_perform_auto_ml(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_auto_ml = input;
         self
+    }
+    /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
+    pub fn get_perform_auto_ml(&self) -> &::std::option::Option<bool> {
+        &self.perform_auto_ml
     }
     /// <p>The ARN of the recipe used in the solution.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,6 +258,10 @@ impl SolutionVersionBuilder {
         self.recipe_arn = input;
         self
     }
+    /// <p>The ARN of the recipe used in the solution.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
+    }
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -247,6 +271,10 @@ impl SolutionVersionBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
     pub fn dataset_group_arn(
@@ -264,6 +292,10 @@ impl SolutionVersionBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>Describes the configuration properties for the solution.</p>
     pub fn solution_config(mut self, input: crate::types::SolutionConfig) -> Self {
         self.solution_config = ::std::option::Option::Some(input);
@@ -277,6 +309,10 @@ impl SolutionVersionBuilder {
         self.solution_config = input;
         self
     }
+    /// <p>Describes the configuration properties for the solution.</p>
+    pub fn get_solution_config(&self) -> &::std::option::Option<crate::types::SolutionConfig> {
+        &self.solution_config
+    }
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
     pub fn training_hours(mut self, input: f64) -> Self {
         self.training_hours = ::std::option::Option::Some(input);
@@ -286,6 +322,10 @@ impl SolutionVersionBuilder {
     pub fn set_training_hours(mut self, input: ::std::option::Option<f64>) -> Self {
         self.training_hours = input;
         self
+    }
+    /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
+    pub fn get_training_hours(&self) -> &::std::option::Option<f64> {
+        &self.training_hours
     }
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
@@ -304,6 +344,12 @@ impl SolutionVersionBuilder {
         self.training_mode = input;
         self
     }
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// </important>
+    pub fn get_training_mode(&self) -> &::std::option::Option<crate::types::TrainingMode> {
+        &self.training_mode
+    }
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
     pub fn tuned_hpo_params(mut self, input: crate::types::TunedHpoParams) -> Self {
         self.tuned_hpo_params = ::std::option::Option::Some(input);
@@ -316,6 +362,10 @@ impl SolutionVersionBuilder {
     ) -> Self {
         self.tuned_hpo_params = input;
         self
+    }
+    /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
+    pub fn get_tuned_hpo_params(&self) -> &::std::option::Option<crate::types::TunedHpoParams> {
+        &self.tuned_hpo_params
     }
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
@@ -345,6 +395,19 @@ impl SolutionVersionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the solution version.</p>
+    /// <p>A solution version can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If training a solution version fails, the reason for the failure.</p>
     pub fn failure_reason(
         mut self,
@@ -361,6 +424,10 @@ impl SolutionVersionBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If training a solution version fails, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -374,6 +441,10 @@ impl SolutionVersionBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -386,6 +457,12 @@ impl SolutionVersionBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`SolutionVersion`](crate::types::SolutionVersion).
     pub fn build(self) -> crate::types::SolutionVersion {

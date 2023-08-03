@@ -68,6 +68,10 @@ impl LaunchPathSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the product path.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `constraint_summaries`.
     ///
     /// To override the contents of this collection use [`set_constraint_summaries`](Self::set_constraint_summaries).
@@ -86,6 +90,12 @@ impl LaunchPathSummaryBuilder {
     ) -> Self {
         self.constraint_summaries = input;
         self
+    }
+    /// <p>The constraints on the portfolio-product relationship.</p>
+    pub fn get_constraint_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>> {
+        &self.constraint_summaries
     }
     /// Appends an item to `tags`.
     ///
@@ -106,6 +116,10 @@ impl LaunchPathSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with this product path.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The name of the portfolio that contains the product. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl LaunchPathSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the portfolio that contains the product. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`LaunchPathSummary`](crate::types::LaunchPathSummary).
     pub fn build(self) -> crate::types::LaunchPathSummary {

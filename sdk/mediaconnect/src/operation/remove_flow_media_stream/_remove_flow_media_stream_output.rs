@@ -56,6 +56,10 @@ impl RemoveFlowMediaStreamOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The name of the media stream that was removed.
     pub fn media_stream_name(
         mut self,
@@ -71,6 +75,10 @@ impl RemoveFlowMediaStreamOutputBuilder {
     ) -> Self {
         self.media_stream_name = input;
         self
+    }
+    /// The name of the media stream that was removed.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_stream_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

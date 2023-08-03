@@ -154,6 +154,10 @@ impl EventsDetectionJobPropertiesBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier assigned to the events detection job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
@@ -190,6 +194,23 @@ impl EventsDetectionJobPropertiesBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :events-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The name you assigned the events detection job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -199,6 +220,10 @@ impl EventsDetectionJobPropertiesBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name you assigned the events detection job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the events detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -210,6 +235,10 @@ impl EventsDetectionJobPropertiesBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the events detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>A description of the status of the events detection job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -219,6 +248,10 @@ impl EventsDetectionJobPropertiesBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the status of the events detection job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The time that the events detection job was submitted for processing.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -233,6 +266,10 @@ impl EventsDetectionJobPropertiesBuilder {
         self.submit_time = input;
         self
     }
+    /// <p>The time that the events detection job was submitted for processing.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
+    }
     /// <p>The time that the events detection job completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -245,6 +282,10 @@ impl EventsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the events detection job completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The input data configuration that you supplied when you created the events detection job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -259,6 +300,10 @@ impl EventsDetectionJobPropertiesBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input data configuration that you supplied when you created the events detection job.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output data configuration that you supplied when you created the events detection job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -272,6 +317,10 @@ impl EventsDetectionJobPropertiesBuilder {
         self.output_data_config = input;
         self
     }
+    /// <p>The output data configuration that you supplied when you created the events detection job.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
+    }
     /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -284,6 +333,10 @@ impl EventsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(
@@ -300,6 +353,10 @@ impl EventsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.data_access_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// Appends an item to `target_event_types`.
     ///
@@ -322,6 +379,12 @@ impl EventsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.target_event_types = input;
         self
+    }
+    /// <p>The types of events that are detected by the job.</p>
+    pub fn get_target_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_event_types
     }
     /// Consumes the builder and constructs a [`EventsDetectionJobProperties`](crate::types::EventsDetectionJobProperties).
     pub fn build(self) -> crate::types::EventsDetectionJobProperties {

@@ -48,6 +48,10 @@ impl SubnetMappingBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The unique identifier for the subnet. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SubnetMappingBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
     pub fn build(self) -> crate::types::SubnetMapping {

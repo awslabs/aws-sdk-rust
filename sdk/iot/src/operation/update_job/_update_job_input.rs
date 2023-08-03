@@ -110,6 +110,10 @@ impl UpdateJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job to be updated.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>A short text description of the job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl UpdateJobInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A short text description of the job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -132,6 +140,12 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.presigned_url_config = input;
         self
+    }
+    /// <p>Configuration information for pre-signed S3 URLs.</p>
+    pub fn get_presigned_url_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+        &self.presigned_url_config
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
     pub fn job_executions_rollout_config(
@@ -149,6 +163,12 @@ impl UpdateJobInputBuilder {
         self.job_executions_rollout_config = input;
         self
     }
+    /// <p>Allows you to create a staged rollout of the job.</p>
+    pub fn get_job_executions_rollout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+        &self.job_executions_rollout_config
+    }
     /// <p>Allows you to create criteria to abort a job.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
         self.abort_config = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl UpdateJobInputBuilder {
         self.abort_config = input;
         self
     }
+    /// <p>Allows you to create criteria to abort a job.</p>
+    pub fn get_abort_config(&self) -> &::std::option::Option<crate::types::AbortConfig> {
+        &self.abort_config
+    }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.timeout_config = input;
         self
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -193,6 +221,14 @@ impl UpdateJobInputBuilder {
         self.namespace_id = input;
         self
     }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
+    }
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub fn job_executions_retry_config(
         mut self,
@@ -208,6 +244,12 @@ impl UpdateJobInputBuilder {
     ) -> Self {
         self.job_executions_retry_config = input;
         self
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn get_job_executions_retry_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+        &self.job_executions_retry_config
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(

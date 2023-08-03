@@ -155,6 +155,10 @@ impl GlobalReplicationGroupBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>The optional description of the Global datastore</p>
     pub fn global_replication_group_description(
         mut self,
@@ -171,6 +175,12 @@ impl GlobalReplicationGroupBuilder {
         self.global_replication_group_description = input;
         self
     }
+    /// <p>The optional description of the Global datastore</p>
+    pub fn get_global_replication_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_description
+    }
     /// <p>The status of the Global datastore</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -180,6 +190,10 @@ impl GlobalReplicationGroupBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Global datastore</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The cache node type of the Global datastore</p>
     pub fn cache_node_type(
@@ -197,6 +211,10 @@ impl GlobalReplicationGroupBuilder {
         self.cache_node_type = input;
         self
     }
+    /// <p>The cache node type of the Global datastore</p>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_type
+    }
     /// <p>The Elasticache engine. For Redis only.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -206,6 +224,10 @@ impl GlobalReplicationGroupBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The Elasticache engine. For Redis only.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The Elasticache Redis engine version.</p>
     pub fn engine_version(
@@ -222,6 +244,10 @@ impl GlobalReplicationGroupBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The Elasticache Redis engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Appends an item to `members`.
     ///
@@ -242,6 +268,12 @@ impl GlobalReplicationGroupBuilder {
         self.members = input;
         self
     }
+    /// <p>The replication groups that comprise the Global datastore.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>> {
+        &self.members
+    }
     /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
     pub fn cluster_enabled(mut self, input: bool) -> Self {
         self.cluster_enabled = ::std::option::Option::Some(input);
@@ -251,6 +283,10 @@ impl GlobalReplicationGroupBuilder {
     pub fn set_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cluster_enabled = input;
         self
+    }
+    /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
+    pub fn get_cluster_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cluster_enabled
     }
     /// Appends an item to `global_node_groups`.
     ///
@@ -271,6 +307,12 @@ impl GlobalReplicationGroupBuilder {
         self.global_node_groups = input;
         self
     }
+    /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    pub fn get_global_node_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>> {
+        &self.global_node_groups
+    }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn auth_token_enabled(mut self, input: bool) -> Self {
@@ -283,6 +325,11 @@ impl GlobalReplicationGroupBuilder {
         self.auth_token_enabled = input;
         self
     }
+    /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_auth_token_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auth_token_enabled
+    }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
@@ -294,6 +341,11 @@ impl GlobalReplicationGroupBuilder {
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
+    }
+    /// <p>A flag that enables in-transit encryption when set to true.</p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.transit_encryption_enabled
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
@@ -309,6 +361,12 @@ impl GlobalReplicationGroupBuilder {
         self.at_rest_encryption_enabled = input;
         self
     }
+    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
+    /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.at_rest_encryption_enabled
+    }
     /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -318,6 +376,10 @@ impl GlobalReplicationGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GlobalReplicationGroup`](crate::types::GlobalReplicationGroup).
     pub fn build(self) -> crate::types::GlobalReplicationGroup {

@@ -53,6 +53,10 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The origination settings being updated.</p>
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
         self.origination = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutVoiceConnectorOriginationInputBuilder {
     ) -> Self {
         self.origination = input;
         self
+    }
+    /// <p>The origination settings being updated.</p>
+    pub fn get_origination(&self) -> &::std::option::Option<crate::types::Origination> {
+        &self.origination
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
     pub fn build(

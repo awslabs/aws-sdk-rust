@@ -46,6 +46,10 @@ impl ModelInputBuilder {
         self.data_input_config = input;
         self
     }
+    /// <p>The input configuration object for the model.</p>
+    pub fn get_data_input_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_input_config
+    }
     /// Consumes the builder and constructs a [`ModelInput`](crate::types::ModelInput).
     pub fn build(self) -> crate::types::ModelInput {
         crate::types::ModelInput {

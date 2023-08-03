@@ -63,6 +63,12 @@ impl ServiceConnectServiceResourceBuilder {
         self.discovery_name = input;
         self
     }
+    /// <p>The discovery name of this Service Connect resource.</p>
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    pub fn get_discovery_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
     pub fn discovery_arn(
         mut self,
@@ -78,6 +84,10 @@ impl ServiceConnectServiceResourceBuilder {
     ) -> Self {
         self.discovery_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery name for this Service Connect resource. You can use this ARN in other integrations with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon ECS.</p>
+    pub fn get_discovery_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_arn
     }
     /// Consumes the builder and constructs a [`ServiceConnectServiceResource`](crate::types::ServiceConnectServiceResource).
     pub fn build(self) -> crate::types::ServiceConnectServiceResource {

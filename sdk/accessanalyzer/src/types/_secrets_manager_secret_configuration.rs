@@ -49,6 +49,10 @@ impl SecretsManagerSecretConfigurationBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub fn secret_policy(
         mut self,
@@ -64,6 +68,10 @@ impl SecretsManagerSecretConfigurationBuilder {
     ) -> Self {
         self.secret_policy = input;
         self
+    }
+    /// <p>The proposed resource policy defining who can access or manage the secret.</p>
+    pub fn get_secret_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_policy
     }
     /// Consumes the builder and constructs a [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
     pub fn build(self) -> crate::types::SecretsManagerSecretConfiguration {

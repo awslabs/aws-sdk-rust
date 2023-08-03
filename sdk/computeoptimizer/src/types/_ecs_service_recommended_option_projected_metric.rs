@@ -61,6 +61,10 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
         self.recommended_cpu_units = input;
         self
     }
+    /// <p> The recommended CPU size for the Amazon ECS service. </p>
+    pub fn get_recommended_cpu_units(&self) -> &::std::option::Option<i32> {
+        &self.recommended_cpu_units
+    }
     /// <p> The recommended memory size for the Amazon ECS service. </p>
     pub fn recommended_memory_size(mut self, input: i32) -> Self {
         self.recommended_memory_size = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     pub fn set_recommended_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recommended_memory_size = input;
         self
+    }
+    /// <p> The recommended memory size for the Amazon ECS service. </p>
+    pub fn get_recommended_memory_size(&self) -> &::std::option::Option<i32> {
+        &self.recommended_memory_size
     }
     /// Appends an item to `projected_metrics`.
     ///
@@ -89,6 +97,12 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     ) -> Self {
         self.projected_metrics = input;
         self
+    }
+    /// <p> An array of objects that describe the projected metric. </p>
+    pub fn get_projected_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>> {
+        &self.projected_metrics
     }
     /// Consumes the builder and constructs a [`EcsServiceRecommendedOptionProjectedMetric`](crate::types::EcsServiceRecommendedOptionProjectedMetric).
     pub fn build(self) -> crate::types::EcsServiceRecommendedOptionProjectedMetric {

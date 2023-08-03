@@ -51,6 +51,10 @@ impl ModifyDbProxyEndpointOutputBuilder {
         self.db_proxy_endpoint = input;
         self
     }
+    /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
+    pub fn get_db_proxy_endpoint(&self) -> &::std::option::Option<crate::types::DbProxyEndpoint> {
+        &self.db_proxy_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

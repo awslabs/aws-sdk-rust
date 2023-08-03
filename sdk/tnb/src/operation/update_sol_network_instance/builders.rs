@@ -37,6 +37,10 @@ impl UpdateSolNetworkInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSolNetworkInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self.inner = self.inner.set_ns_instance_id(input);
         self
     }
+    /// <p>ID of the network instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ns_instance_id()
+    }
     /// <p>The type of update.</p>
     pub fn update_type(mut self, input: crate::types::UpdateSolNetworkType) -> Self {
         self.inner = self.inner.update_type(input);
@@ -146,6 +154,10 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self.inner = self.inner.set_update_type(input);
         self
     }
+    /// <p>The type of update.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkType> {
+        self.inner.get_update_type()
+    }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
     pub fn modify_vnf_info_data(mut self, input: crate::types::UpdateSolNetworkModify) -> Self {
         self.inner = self.inner.modify_vnf_info_data(input);
@@ -158,6 +170,12 @@ impl UpdateSolNetworkInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_modify_vnf_info_data(input);
         self
+    }
+    /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
+    pub fn get_modify_vnf_info_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateSolNetworkModify> {
+        self.inner.get_modify_vnf_info_data()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -181,5 +199,13 @@ impl UpdateSolNetworkInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

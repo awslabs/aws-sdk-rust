@@ -43,6 +43,10 @@ impl AnswerMachineDetectionConfigBuilder {
         self.enable_answer_machine_detection = input;
         self
     }
+    /// Enable or disable answering machine detection
+    pub fn get_enable_answer_machine_detection(&self) -> &::std::option::Option<bool> {
+        &self.enable_answer_machine_detection
+    }
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
     pub fn build(self) -> crate::types::AnswerMachineDetectionConfig {
         crate::types::AnswerMachineDetectionConfig {

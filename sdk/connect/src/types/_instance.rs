@@ -135,6 +135,10 @@ impl InstanceBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl InstanceBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The identity management type.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
@@ -157,6 +165,12 @@ impl InstanceBuilder {
     ) -> Self {
         self.identity_management_type = input;
         self
+    }
+    /// <p>The identity management type.</p>
+    pub fn get_identity_management_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryType> {
+        &self.identity_management_type
     }
     /// <p>The alias of instance.</p>
     pub fn instance_alias(
@@ -174,6 +188,10 @@ impl InstanceBuilder {
         self.instance_alias = input;
         self
     }
+    /// <p>The alias of instance.</p>
+    pub fn get_instance_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_alias
+    }
     /// <p>When the instance was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -187,6 +205,10 @@ impl InstanceBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the instance was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The service role of the instance.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -196,6 +218,10 @@ impl InstanceBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The service role of the instance.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>The state of the instance.</p>
     pub fn instance_status(mut self, input: crate::types::InstanceStatus) -> Self {
@@ -210,6 +236,10 @@ impl InstanceBuilder {
         self.instance_status = input;
         self
     }
+    /// <p>The state of the instance.</p>
+    pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
+        &self.instance_status
+    }
     /// <p>Relevant details why the instance was not successfully created. </p>
     pub fn status_reason(mut self, input: crate::types::InstanceStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -223,6 +253,10 @@ impl InstanceBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>Relevant details why the instance was not successfully created. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::InstanceStatusReason> {
+        &self.status_reason
+    }
     /// <p>Whether inbound calls are enabled.</p>
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
         self.inbound_calls_enabled = ::std::option::Option::Some(input);
@@ -233,6 +267,10 @@ impl InstanceBuilder {
         self.inbound_calls_enabled = input;
         self
     }
+    /// <p>Whether inbound calls are enabled.</p>
+    pub fn get_inbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        &self.inbound_calls_enabled
+    }
     /// <p>Whether outbound calls are enabled.</p>
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
         self.outbound_calls_enabled = ::std::option::Option::Some(input);
@@ -242,6 +280,10 @@ impl InstanceBuilder {
     pub fn set_outbound_calls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.outbound_calls_enabled = input;
         self
+    }
+    /// <p>Whether outbound calls are enabled.</p>
+    pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
+        &self.outbound_calls_enabled
     }
     /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
     pub fn instance_access_url(
@@ -258,6 +300,10 @@ impl InstanceBuilder {
     ) -> Self {
         self.instance_access_url = input;
         self
+    }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn get_instance_access_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_access_url
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

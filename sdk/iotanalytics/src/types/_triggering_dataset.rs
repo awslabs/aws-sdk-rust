@@ -40,6 +40,10 @@ impl TriggeringDatasetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`TriggeringDataset`](crate::types::TriggeringDataset).
     pub fn build(self) -> crate::types::TriggeringDataset {
         crate::types::TriggeringDataset { name: self.name }

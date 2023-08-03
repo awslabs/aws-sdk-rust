@@ -39,6 +39,10 @@ impl ListAllowedNodeTypeUpdatesInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
     pub fn build(
         self,

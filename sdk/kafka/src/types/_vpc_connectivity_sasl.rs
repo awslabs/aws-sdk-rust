@@ -51,6 +51,10 @@ impl VpcConnectivitySaslBuilder {
         self.scram = input;
         self
     }
+    /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
+    pub fn get_scram(&self) -> &::std::option::Option<crate::types::VpcConnectivityScram> {
+        &self.scram
+    }
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
     pub fn iam(mut self, input: crate::types::VpcConnectivityIam) -> Self {
         self.iam = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl VpcConnectivitySaslBuilder {
     ) -> Self {
         self.iam = input;
         self
+    }
+    /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
+    pub fn get_iam(&self) -> &::std::option::Option<crate::types::VpcConnectivityIam> {
+        &self.iam
     }
     /// Consumes the builder and constructs a [`VpcConnectivitySasl`](crate::types::VpcConnectivitySasl).
     pub fn build(self) -> crate::types::VpcConnectivitySasl {

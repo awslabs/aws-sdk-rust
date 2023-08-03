@@ -80,6 +80,10 @@ impl ProvisionedProductPlanSummaryBuilder {
         self.plan_name = input;
         self
     }
+    /// <p>The name of the plan.</p>
+    pub fn get_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_name
+    }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ProvisionedProductPlanSummaryBuilder {
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_id = input;
         self
+    }
+    /// <p>The plan identifier.</p>
+    pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_id
     }
     /// <p>The product identifier.</p>
     pub fn provision_product_id(
@@ -106,6 +114,10 @@ impl ProvisionedProductPlanSummaryBuilder {
         self.provision_product_id = input;
         self
     }
+    /// <p>The product identifier.</p>
+    pub fn get_provision_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provision_product_id
+    }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn provision_product_name(
         mut self,
@@ -122,6 +134,10 @@ impl ProvisionedProductPlanSummaryBuilder {
         self.provision_product_name = input;
         self
     }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn get_provision_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provision_product_name
+    }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::ProvisionedProductPlanType) -> Self {
         self.plan_type = ::std::option::Option::Some(input);
@@ -134,6 +150,12 @@ impl ProvisionedProductPlanSummaryBuilder {
     ) -> Self {
         self.plan_type = input;
         self
+    }
+    /// <p>The plan type.</p>
+    pub fn get_plan_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
+        &self.plan_type
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
@@ -150,6 +172,10 @@ impl ProvisionedProductPlanSummaryBuilder {
     ) -> Self {
         self.provisioning_artifact_id = input;
         self
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
     }
     /// Consumes the builder and constructs a [`ProvisionedProductPlanSummary`](crate::types::ProvisionedProductPlanSummary).
     pub fn build(self) -> crate::types::ProvisionedProductPlanSummary {

@@ -48,6 +48,10 @@ impl RecommendationJobResourceLimitBuilder {
         self.max_number_of_tests = input;
         self
     }
+    /// <p>Defines the maximum number of load tests.</p>
+    pub fn get_max_number_of_tests(&self) -> &::std::option::Option<i32> {
+        &self.max_number_of_tests
+    }
     /// <p>Defines the maximum number of parallel load tests.</p>
     pub fn max_parallel_of_tests(mut self, input: i32) -> Self {
         self.max_parallel_of_tests = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RecommendationJobResourceLimitBuilder {
     pub fn set_max_parallel_of_tests(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parallel_of_tests = input;
         self
+    }
+    /// <p>Defines the maximum number of parallel load tests.</p>
+    pub fn get_max_parallel_of_tests(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_of_tests
     }
     /// Consumes the builder and constructs a [`RecommendationJobResourceLimit`](crate::types::RecommendationJobResourceLimit).
     pub fn build(self) -> crate::types::RecommendationJobResourceLimit {

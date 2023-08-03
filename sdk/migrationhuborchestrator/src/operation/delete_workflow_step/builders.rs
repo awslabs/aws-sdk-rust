@@ -36,6 +36,12 @@ impl DeleteWorkflowStepFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWorkflowStep as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_workflow_step::builders::DeleteWorkflowStepInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteWorkflowStepFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the step you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the step group that contains the step you want to delete.</p>
     pub fn step_group_id(
         mut self,
@@ -142,6 +152,10 @@ impl DeleteWorkflowStepFluentBuilder {
         self.inner = self.inner.set_step_group_id(input);
         self
     }
+    /// <p>The ID of the step group that contains the step you want to delete.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_group_id()
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -151,5 +165,9 @@ impl DeleteWorkflowStepFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
 }

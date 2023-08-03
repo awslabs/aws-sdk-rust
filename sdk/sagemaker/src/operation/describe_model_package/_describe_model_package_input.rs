@@ -50,6 +50,11 @@ impl DescribeModelPackageInputBuilder {
         self.model_package_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+    /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn get_model_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_name
+    }
     /// Consumes the builder and constructs a [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
     pub fn build(
         self,

@@ -64,6 +64,10 @@ impl CorrectionBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CorrectionBuilder {
         self.end_offset = input;
         self
     }
+    /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
+    }
     /// <p>The string or text of a misspelled word in a query.</p>
     pub fn term(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.term = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CorrectionBuilder {
     pub fn set_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.term = input;
         self
+    }
+    /// <p>The string or text of a misspelled word in a query.</p>
+    pub fn get_term(&self) -> &::std::option::Option<::std::string::String> {
+        &self.term
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
     pub fn corrected_term(
@@ -99,6 +111,10 @@ impl CorrectionBuilder {
     ) -> Self {
         self.corrected_term = input;
         self
+    }
+    /// <p>The string or text of a corrected misspelled word in a query.</p>
+    pub fn get_corrected_term(&self) -> &::std::option::Option<::std::string::String> {
+        &self.corrected_term
     }
     /// Consumes the builder and constructs a [`Correction`](crate::types::Correction).
     pub fn build(self) -> crate::types::Correction {

@@ -41,6 +41,10 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The identifier of the subnet</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {
         crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {

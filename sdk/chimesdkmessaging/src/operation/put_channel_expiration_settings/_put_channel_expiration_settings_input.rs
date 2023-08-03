@@ -55,6 +55,10 @@ impl PutChannelExpirationSettingsInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl PutChannelExpirationSettingsInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
@@ -77,6 +85,12 @@ impl PutChannelExpirationSettingsInputBuilder {
     ) -> Self {
         self.expiration_settings = input;
         self
+    }
+    /// <p>Settings that control the interval after which a channel is deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
     pub fn build(

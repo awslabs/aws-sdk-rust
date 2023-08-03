@@ -54,6 +54,10 @@ impl SubChannelSummaryBuilder {
         self.sub_channel_id = input;
         self
     }
+    /// <p>The unique ID of a SubChannel.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
+    }
     /// <p>The number of members in a SubChannel.</p>
     pub fn membership_count(mut self, input: i32) -> Self {
         self.membership_count = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SubChannelSummaryBuilder {
     pub fn set_membership_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.membership_count = input;
         self
+    }
+    /// <p>The number of members in a SubChannel.</p>
+    pub fn get_membership_count(&self) -> &::std::option::Option<i32> {
+        &self.membership_count
     }
     /// Consumes the builder and constructs a [`SubChannelSummary`](crate::types::SubChannelSummary).
     pub fn build(self) -> crate::types::SubChannelSummary {

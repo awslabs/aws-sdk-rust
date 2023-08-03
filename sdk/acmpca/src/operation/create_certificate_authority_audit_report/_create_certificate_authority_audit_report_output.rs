@@ -60,6 +60,10 @@ impl CreateCertificateAuthorityAuditReportOutputBuilder {
         self.audit_report_id = input;
         self
     }
+    /// <p>An alphanumeric string that contains a report identifier.</p>
+    pub fn get_audit_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_report_id
+    }
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl CreateCertificateAuthorityAuditReportOutputBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateVpcConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateVpcConnectorFluentBuilder {
         self.inner = self.inner.set_vpc_connector_name(input);
         self
     }
+    /// <p>A name for the VPC connector.</p>
+    pub fn get_vpc_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_connector_name()
+    }
     /// Appends an item to `Subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -153,6 +163,12 @@ impl CreateVpcConnectorFluentBuilder {
         self.inner = self.inner.set_subnets(input);
         self
     }
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
+    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// </note>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnets()
+    }
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -173,6 +189,12 @@ impl CreateVpcConnectorFluentBuilder {
         self.inner = self.inner.set_security_groups(input);
         self
     }
+    /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -189,5 +211,9 @@ impl CreateVpcConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

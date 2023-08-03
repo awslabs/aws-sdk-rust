@@ -66,6 +66,12 @@ impl DescribeEnvironmentsOutputBuilder {
         self.environments = input;
         self
     }
+    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    pub fn get_environments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>> {
+        &self.environments
+    }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeEnvironmentsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl GetTrailInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
     pub fn build(
         self,

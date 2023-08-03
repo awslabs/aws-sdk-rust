@@ -75,6 +75,10 @@ impl StatementTimeoutExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub fn db_connection_id(mut self, input: i64) -> Self {
         self.db_connection_id = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl StatementTimeoutExceptionBuilder {
     pub fn set_db_connection_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.db_connection_id = input;
         self
+    }
+    /// <p>The database connection ID that executed the SQL statement.</p>
+    pub fn get_db_connection_id(&self) -> &::std::option::Option<i64> {
+        &self.db_connection_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

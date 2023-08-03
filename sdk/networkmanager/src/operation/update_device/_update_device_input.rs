@@ -139,6 +139,10 @@ impl UpdateDeviceInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl UpdateDeviceInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub fn aws_location(mut self, input: crate::types::AwsLocation) -> Self {
@@ -162,6 +170,10 @@ impl UpdateDeviceInputBuilder {
         self.aws_location = input;
         self
     }
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    pub fn get_aws_location(&self) -> &::std::option::Option<crate::types::AwsLocation> {
+        &self.aws_location
+    }
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +186,11 @@ impl UpdateDeviceInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the device.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The type of the device.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -183,6 +200,10 @@ impl UpdateDeviceInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the device.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -196,6 +217,11 @@ impl UpdateDeviceInputBuilder {
         self.vendor = input;
         self
     }
+    /// <p>The vendor of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
+    }
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,6 +233,11 @@ impl UpdateDeviceInputBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
+    }
+    /// <p>The model of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
     }
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -226,6 +257,11 @@ impl UpdateDeviceInputBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The serial number of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>Describes a location.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -236,6 +272,10 @@ impl UpdateDeviceInputBuilder {
         self.location = input;
         self
     }
+    /// <p>Describes a location.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
@@ -245,6 +285,10 @@ impl UpdateDeviceInputBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
     pub fn build(

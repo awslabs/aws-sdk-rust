@@ -46,6 +46,10 @@ impl FirehoseDestinationConfigurationBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
     pub fn build(self) -> crate::types::FirehoseDestinationConfiguration {
         crate::types::FirehoseDestinationConfiguration {

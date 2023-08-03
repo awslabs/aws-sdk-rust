@@ -48,6 +48,10 @@ impl AccountHealthBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn insight(mut self, input: crate::types::AccountInsightHealth) -> Self {
         self.insight = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AccountHealthBuilder {
     ) -> Self {
         self.insight = input;
         self
+    }
+    /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
+    pub fn get_insight(&self) -> &::std::option::Option<crate::types::AccountInsightHealth> {
+        &self.insight
     }
     /// Consumes the builder and constructs a [`AccountHealth`](crate::types::AccountHealth).
     pub fn build(self) -> crate::types::AccountHealth {

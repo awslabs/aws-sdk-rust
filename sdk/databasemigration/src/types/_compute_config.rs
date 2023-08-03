@@ -119,6 +119,10 @@ impl ComputeConfigBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where the DMS Serverless replication using this configuration will run. The default value is a random, system-chosen Availability Zone in the configuration's Amazon Web Services Region, for example, <code>"us-west-2"</code>. You can't set this parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>A list of custom DNS name servers supported for the DMS Serverless replication to access your source or target database. This list overrides the default name servers supported by the DMS Serverless replication. You can specify a comma-separated list of internet addresses for up to four DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
     pub fn dns_name_servers(
         mut self,
@@ -135,6 +139,10 @@ impl ComputeConfigBuilder {
         self.dns_name_servers = input;
         self
     }
+    /// <p>A list of custom DNS name servers supported for the DMS Serverless replication to access your source or target database. This list overrides the default name servers supported by the DMS Serverless replication. You can specify a comma-separated list of internet addresses for up to four DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
+    pub fn get_dns_name_servers(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name_servers
+    }
     /// <p>An Key Management Service (KMS) key Amazon Resource Name (ARN) that is used to encrypt the data during DMS Serverless replication.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
@@ -149,6 +157,12 @@ impl ComputeConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>An Key Management Service (KMS) key Amazon Resource Name (ARN) that is used to encrypt the data during DMS Serverless replication.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Specifies the maximum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the maximum value that you can specify for DMS Serverless is 384. The <code>MaxCapacityUnits</code> parameter is the only DCU parameter you are required to specify.</p>
     pub fn max_capacity_units(mut self, input: i32) -> Self {
         self.max_capacity_units = ::std::option::Option::Some(input);
@@ -158,6 +172,10 @@ impl ComputeConfigBuilder {
     pub fn set_max_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity_units = input;
         self
+    }
+    /// <p>Specifies the maximum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the maximum value that you can specify for DMS Serverless is 384. The <code>MaxCapacityUnits</code> parameter is the only DCU parameter you are required to specify.</p>
+    pub fn get_max_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity_units
     }
     /// <p>Specifies the minimum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the minimum DCU value that you can specify for DMS Serverless is 2. You don't have to specify a value for the <code>MinCapacityUnits</code> parameter. If you don't set this value, DMS scans the current activity of available source tables to identify an optimum setting for this parameter. If there is no current source activity or DMS can't otherwise identify a more appropriate value, it sets this parameter to the minimum DCU value allowed, 2.</p>
     pub fn min_capacity_units(mut self, input: i32) -> Self {
@@ -169,6 +187,10 @@ impl ComputeConfigBuilder {
         self.min_capacity_units = input;
         self
     }
+    /// <p>Specifies the minimum value of the DMS capacity units (DCUs) for which a given DMS Serverless replication can be provisioned. A single DCU is 2GB of RAM, with 2 DCUs as the minimum value allowed. The list of valid DCU values includes 2, 4, 8, 16, 32, 64, 128, 192, 256, and 384. So, the minimum DCU value that you can specify for DMS Serverless is 2. You don't have to specify a value for the <code>MinCapacityUnits</code> parameter. If you don't set this value, DMS scans the current activity of available source tables to identify an optimum setting for this parameter. If there is no current source activity or DMS can't otherwise identify a more appropriate value, it sets this parameter to the minimum DCU value allowed, 2.</p>
+    pub fn get_min_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.min_capacity_units
+    }
     /// <p>Specifies whether the DMS Serverless replication is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -178,6 +200,10 @@ impl ComputeConfigBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>Specifies whether the DMS Serverless replication is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>The weekly time range during which system maintenance can occur for the DMS Serverless replication, in Universal Coordinated Time (UTC). The format is <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region. This maintenance occurs on a random day of the week. Valid values for days of the week include <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thu</code>, <code>Fri</code>, <code>Sat</code>, and <code>Sun</code>.</p>
@@ -199,6 +225,14 @@ impl ComputeConfigBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur for the DMS Serverless replication, in Universal Coordinated Time (UTC). The format is <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region. This maintenance occurs on a random day of the week. Valid values for days of the week include <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thu</code>, <code>Fri</code>, <code>Sat</code>, and <code>Sun</code>.</p>
+    /// <p>Constraints include a minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Specifies a subnet group identifier to associate with the DMS Serverless replication.</p>
     pub fn replication_subnet_group_id(
         mut self,
@@ -214,6 +248,10 @@ impl ComputeConfigBuilder {
     ) -> Self {
         self.replication_subnet_group_id = input;
         self
+    }
+    /// <p>Specifies a subnet group identifier to associate with the DMS Serverless replication.</p>
+    pub fn get_replication_subnet_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_id
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -236,6 +274,12 @@ impl ComputeConfigBuilder {
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
+    }
+    /// <p>Specifies the virtual private cloud (VPC) security group to use with the DMS Serverless replication. The VPC security group must work with the VPC containing the replication.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`ComputeConfig`](crate::types::ComputeConfig).
     pub fn build(self) -> crate::types::ComputeConfig {

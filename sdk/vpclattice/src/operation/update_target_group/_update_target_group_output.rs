@@ -87,6 +87,10 @@ impl UpdateTargetGroupOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl UpdateTargetGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the target group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl UpdateTargetGroupOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the target group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The target group type.</p>
     pub fn r#type(mut self, input: crate::types::TargetGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl UpdateTargetGroupOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetGroupType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The target group type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
+        &self.r#type
     }
     /// <p>The target group configuration.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
@@ -130,6 +146,10 @@ impl UpdateTargetGroupOutputBuilder {
         self.config = input;
         self
     }
+    /// <p>The target group configuration.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
+        &self.config
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::TargetGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -142,6 +162,10 @@ impl UpdateTargetGroupOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetGroupStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

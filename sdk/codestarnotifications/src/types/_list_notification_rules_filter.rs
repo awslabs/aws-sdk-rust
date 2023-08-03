@@ -51,6 +51,12 @@ impl ListNotificationRulesFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
+    pub fn get_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListNotificationRulesFilterName> {
+        &self.name
+    }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl ListNotificationRulesFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ListNotificationRulesFilter`](crate::types::ListNotificationRulesFilter).
     pub fn build(self) -> crate::types::ListNotificationRulesFilter {

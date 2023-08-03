@@ -64,6 +64,10 @@ impl DirectoryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the directory.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(
         mut self,
@@ -80,6 +84,10 @@ impl DirectoryBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
     pub fn state(mut self, input: crate::types::DirectoryState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl DirectoryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DirectoryState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DirectoryState> {
+        &self.state
     }
     /// <p>The date and time when the directory was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl DirectoryBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time when the directory was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// Consumes the builder and constructs a [`Directory`](crate::types::Directory).
     pub fn build(self) -> crate::types::Directory {

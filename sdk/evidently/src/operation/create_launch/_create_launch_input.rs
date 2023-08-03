@@ -115,6 +115,10 @@ impl CreateLaunchInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that you want to create the launch in.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name for the new launch.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl CreateLaunchInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the new launch.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An optional description for the launch.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -134,6 +142,10 @@ impl CreateLaunchInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description for the launch.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_config(
@@ -150,6 +162,12 @@ impl CreateLaunchInputBuilder {
     ) -> Self {
         self.scheduled_splits_config = input;
         self
+    }
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    pub fn get_scheduled_splits_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
+        &self.scheduled_splits_config
     }
     /// Appends an item to `metric_monitors`.
     ///
@@ -170,6 +188,12 @@ impl CreateLaunchInputBuilder {
         self.metric_monitors = input;
         self
     }
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    pub fn get_metric_monitors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
+        &self.metric_monitors
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -189,6 +213,12 @@ impl CreateLaunchInputBuilder {
         self.groups = input;
         self
     }
+    /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
+        &self.groups
+    }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -204,6 +234,10 @@ impl CreateLaunchInputBuilder {
     ) -> Self {
         self.randomization_salt = input;
         self
+    }
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.randomization_salt
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -237,6 +271,18 @@ impl CreateLaunchInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a launch.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLaunchInput`](crate::operation::create_launch::CreateLaunchInput).
     pub fn build(

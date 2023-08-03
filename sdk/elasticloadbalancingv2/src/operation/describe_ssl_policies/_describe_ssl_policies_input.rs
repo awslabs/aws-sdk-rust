@@ -74,6 +74,10 @@ impl DescribeSslPoliciesInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the policies.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl DescribeSslPoliciesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl DescribeSslPoliciesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn load_balancer_type(mut self, input: crate::types::LoadBalancerTypeEnum) -> Self {
@@ -106,6 +118,12 @@ impl DescribeSslPoliciesInputBuilder {
     ) -> Self {
         self.load_balancer_type = input;
         self
+    }
+    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    pub fn get_load_balancer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
+        &self.load_balancer_type
     }
     /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
     pub fn build(

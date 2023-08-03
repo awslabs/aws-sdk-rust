@@ -37,6 +37,12 @@ impl CreateFirewallPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFirewallPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_policy_name()
+    }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
         self.inner = self.inner.firewall_policy(input);
@@ -146,6 +156,10 @@ impl CreateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_firewall_policy(input);
         self
     }
+    /// <p>The rule groups and policy actions to use in the firewall policy.</p>
+    pub fn get_firewall_policy(&self) -> &::std::option::Option<crate::types::FirewallPolicy> {
+        self.inner.get_firewall_policy()
+    }
     /// <p>A description of the firewall policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -155,6 +169,10 @@ impl CreateFirewallPolicyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -173,6 +191,10 @@ impl CreateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
@@ -186,6 +208,12 @@ impl CreateFirewallPolicyFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub fn encryption_configuration(
@@ -202,5 +230,11 @@ impl CreateFirewallPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
+    }
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
     }
 }

@@ -66,6 +66,10 @@ impl CertificateValidationRecordBuilder {
         self.name = input;
         self
     }
+    /// <p>The certificate CNAME record name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The record type, always <code>CNAME</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl CertificateValidationRecordBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The record type, always <code>CNAME</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The certificate CNAME record value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl CertificateValidationRecordBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The certificate CNAME record value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
     pub fn status(mut self, input: crate::types::CertificateValidationRecordStatus) -> Self {
@@ -98,6 +110,12 @@ impl CertificateValidationRecordBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateValidationRecordStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CertificateValidationRecord`](crate::types::CertificateValidationRecord).
     pub fn build(self) -> crate::types::CertificateValidationRecord {

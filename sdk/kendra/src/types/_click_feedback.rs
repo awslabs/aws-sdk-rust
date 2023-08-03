@@ -48,6 +48,10 @@ impl ClickFeedbackBuilder {
         self.result_id = input;
         self
     }
+    /// <p>The identifier of the search result that was clicked.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn click_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.click_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ClickFeedbackBuilder {
     ) -> Self {
         self.click_time = input;
         self
+    }
+    /// <p>The Unix timestamp when the result was clicked.</p>
+    pub fn get_click_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.click_time
     }
     /// Consumes the builder and constructs a [`ClickFeedback`](crate::types::ClickFeedback).
     pub fn build(self) -> crate::types::ClickFeedback {

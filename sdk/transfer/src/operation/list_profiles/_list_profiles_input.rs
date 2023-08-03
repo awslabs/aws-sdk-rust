@@ -55,6 +55,10 @@ impl ListProfilesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of profiles to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListProfilesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -77,6 +85,10 @@ impl ListProfilesInputBuilder {
     ) -> Self {
         self.profile_type = input;
         self
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
     pub fn build(

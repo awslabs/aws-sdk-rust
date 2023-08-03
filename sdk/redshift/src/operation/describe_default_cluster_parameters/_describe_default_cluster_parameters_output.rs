@@ -55,6 +55,12 @@ impl DescribeDefaultClusterParametersOutputBuilder {
         self.default_cluster_parameters = input;
         self
     }
+    /// <p>Describes the default cluster parameters for a parameter group family.</p>
+    pub fn get_default_cluster_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClusterParameters> {
+        &self.default_cluster_parameters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

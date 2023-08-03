@@ -40,6 +40,10 @@ impl OrganizationEbsVolumesResultBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     /// Consumes the builder and constructs a [`OrganizationEbsVolumesResult`](crate::types::OrganizationEbsVolumesResult).
     pub fn build(self) -> crate::types::OrganizationEbsVolumesResult {
         crate::types::OrganizationEbsVolumesResult {

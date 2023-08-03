@@ -74,6 +74,10 @@ impl DatumBuilder {
         self.scalar_value = input;
         self
     }
+    /// <p> Indicates if the data point is a scalar value such as integer, string, double, or Boolean. </p>
+    pub fn get_scalar_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scalar_value
+    }
     /// Appends an item to `time_series_value`.
     ///
     /// To override the contents of this collection use [`set_time_series_value`](Self::set_time_series_value).
@@ -92,6 +96,12 @@ impl DatumBuilder {
     ) -> Self {
         self.time_series_value = input;
         self
+    }
+    /// <p> Indicates if the data point is a timeseries data type. </p>
+    pub fn get_time_series_value(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>> {
+        &self.time_series_value
     }
     /// Appends an item to `array_value`.
     ///
@@ -112,6 +122,10 @@ impl DatumBuilder {
         self.array_value = input;
         self
     }
+    /// <p> Indicates if the data point is an array. </p>
+    pub fn get_array_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+        &self.array_value
+    }
     /// <p> Indicates if the data point is a row. </p>
     pub fn row_value(mut self, input: crate::types::Row) -> Self {
         self.row_value = ::std::option::Option::Some(input);
@@ -122,6 +136,10 @@ impl DatumBuilder {
         self.row_value = input;
         self
     }
+    /// <p> Indicates if the data point is a row. </p>
+    pub fn get_row_value(&self) -> &::std::option::Option<crate::types::Row> {
+        &self.row_value
+    }
     /// <p> Indicates if the data point is null. </p>
     pub fn null_value(mut self, input: bool) -> Self {
         self.null_value = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl DatumBuilder {
     pub fn set_null_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.null_value = input;
         self
+    }
+    /// <p> Indicates if the data point is null. </p>
+    pub fn get_null_value(&self) -> &::std::option::Option<bool> {
+        &self.null_value
     }
     /// Consumes the builder and constructs a [`Datum`](crate::types::Datum).
     pub fn build(self) -> crate::types::Datum {

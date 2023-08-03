@@ -54,6 +54,10 @@ impl DeletePolicyTemplateInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the policy template that you want to delete.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies the ID of the policy template that you want to delete.</p>
     pub fn policy_template_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeletePolicyTemplateInputBuilder {
     ) -> Self {
         self.policy_template_id = input;
         self
+    }
+    /// <p>Specifies the ID of the policy template that you want to delete.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
     }
     /// Consumes the builder and constructs a [`DeletePolicyTemplateInput`](crate::operation::delete_policy_template::DeletePolicyTemplateInput).
     pub fn build(

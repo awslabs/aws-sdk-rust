@@ -37,6 +37,13 @@ impl UpdateSigningCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSigningCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_signing_certificate::builders::UpdateSigningCertificateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,11 @@ impl UpdateSigningCertificateFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the IAM user the signing certificate belongs to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The ID of the signing certificate you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn certificate_id(
@@ -147,6 +159,11 @@ impl UpdateSigningCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The ID of the signing certificate you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.inner = self.inner.status(input);
@@ -156,5 +173,9 @@ impl UpdateSigningCertificateFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        self.inner.get_status()
     }
 }

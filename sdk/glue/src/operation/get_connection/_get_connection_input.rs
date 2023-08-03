@@ -55,6 +55,10 @@ impl GetConnectionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the connection definition to retrieve.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connection definition to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(mut self, input: bool) -> Self {
         self.hide_password = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl GetConnectionInputBuilder {
     pub fn set_hide_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hide_password = input;
         self
+    }
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    pub fn get_hide_password(&self) -> &::std::option::Option<bool> {
+        &self.hide_password
     }
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
     pub fn build(

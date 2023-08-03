@@ -45,6 +45,10 @@ impl DeleteCanaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCanary as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_canary::builders::DeleteCanaryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DeleteCanaryFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
     /// <p>Type: Boolean</p>
     pub fn delete_lambda(mut self, input: bool) -> Self {
@@ -138,5 +146,10 @@ impl DeleteCanaryFluentBuilder {
     pub fn set_delete_lambda(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_lambda(input);
         self
+    }
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
+    /// <p>Type: Boolean</p>
+    pub fn get_delete_lambda(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_lambda()
     }
 }

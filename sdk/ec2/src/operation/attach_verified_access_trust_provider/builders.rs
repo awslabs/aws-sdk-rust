@@ -36,6 +36,10 @@ impl AttachVerifiedAccessTrustProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachVerifiedAccessTrustProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AttachVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_verified_access_instance_id()
+    }
     /// <p>The ID of the Verified Access trust provider.</p>
     pub fn verified_access_trust_provider_id(
         mut self,
@@ -122,6 +130,12 @@ impl AttachVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_verified_access_trust_provider_id(input);
         self
     }
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn get_verified_access_trust_provider_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_verified_access_trust_provider_id()
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -132,6 +146,10 @@ impl AttachVerifiedAccessTrustProviderFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -141,5 +159,9 @@ impl AttachVerifiedAccessTrustProviderFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

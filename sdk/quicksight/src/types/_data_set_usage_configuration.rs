@@ -51,6 +51,10 @@ impl DataSetUsageConfigurationBuilder {
         self.disable_use_as_direct_query_source = input;
         self
     }
+    /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
+    pub fn get_disable_use_as_direct_query_source(&self) -> &::std::option::Option<bool> {
+        &self.disable_use_as_direct_query_source
+    }
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub fn disable_use_as_imported_source(mut self, input: bool) -> Self {
         self.disable_use_as_imported_source = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DataSetUsageConfigurationBuilder {
     ) -> Self {
         self.disable_use_as_imported_source = input;
         self
+    }
+    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    pub fn get_disable_use_as_imported_source(&self) -> &::std::option::Option<bool> {
+        &self.disable_use_as_imported_source
     }
     /// Consumes the builder and constructs a [`DataSetUsageConfiguration`](crate::types::DataSetUsageConfiguration).
     pub fn build(self) -> crate::types::DataSetUsageConfiguration {

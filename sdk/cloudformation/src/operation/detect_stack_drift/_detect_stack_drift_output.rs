@@ -57,6 +57,11 @@ impl DetectStackDriftOutputBuilder {
         self.stack_drift_detection_id = input;
         self
     }
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
+    pub fn get_stack_drift_detection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_drift_detection_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -72,6 +72,10 @@ impl FulfillmentCodeHookSettingsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
     pub fn post_fulfillment_status_specification(
         mut self,
@@ -87,6 +91,12 @@ impl FulfillmentCodeHookSettingsBuilder {
     ) -> Self {
         self.post_fulfillment_status_specification = input;
         self
+    }
+    /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
+    pub fn get_post_fulfillment_status_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostFulfillmentStatusSpecification> {
+        &self.post_fulfillment_status_specification
     }
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
     pub fn fulfillment_updates_specification(
@@ -104,6 +114,12 @@ impl FulfillmentCodeHookSettingsBuilder {
         self.fulfillment_updates_specification = input;
         self
     }
+    /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
+    pub fn get_fulfillment_updates_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::FulfillmentUpdatesSpecification> {
+        &self.fulfillment_updates_specification
+    }
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl FulfillmentCodeHookSettingsBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`FulfillmentCodeHookSettings`](crate::types::FulfillmentCodeHookSettings).
     pub fn build(self) -> crate::types::FulfillmentCodeHookSettings {

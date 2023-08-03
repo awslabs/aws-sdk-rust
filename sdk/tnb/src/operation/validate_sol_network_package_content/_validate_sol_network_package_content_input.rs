@@ -55,6 +55,10 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>Network service descriptor file.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// <p>Network package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Network package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.content_type
+    }
     /// <p>Network package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl ValidateSolNetworkPackageContentInputBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file = input;
         self
+    }
+    /// <p>Network package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput, ::aws_smithy_http::operation::error::BuildError>{

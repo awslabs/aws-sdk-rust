@@ -140,6 +140,10 @@ impl FirewallBuilder {
         self.firewall_name = input;
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_arn = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl FirewallBuilder {
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls. </p>
@@ -168,6 +176,11 @@ impl FirewallBuilder {
         self.firewall_policy_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls. </p>
+    pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_arn
+    }
     /// <p>The unique identifier of the VPC where the firewall is in use. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -177,6 +190,10 @@ impl FirewallBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The unique identifier of the VPC where the firewall is in use. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_mappings`.
     ///
@@ -197,6 +214,12 @@ impl FirewallBuilder {
         self.subnet_mappings = input;
         self
     }
+    /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone. </p>
+    pub fn get_subnet_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+        &self.subnet_mappings
+    }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(mut self, input: bool) -> Self {
         self.delete_protection = ::std::option::Option::Some(input);
@@ -207,6 +230,10 @@ impl FirewallBuilder {
         self.delete_protection = input;
         self
     }
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    pub fn get_delete_protection(&self) -> &::std::option::Option<bool> {
+        &self.delete_protection
+    }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn subnet_change_protection(mut self, input: bool) -> Self {
         self.subnet_change_protection = ::std::option::Option::Some(input);
@@ -216,6 +243,10 @@ impl FirewallBuilder {
     pub fn set_subnet_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.subnet_change_protection = input;
         self
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn get_subnet_change_protection(&self) -> &::std::option::Option<bool> {
+        &self.subnet_change_protection
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
@@ -230,6 +261,10 @@ impl FirewallBuilder {
         self.firewall_policy_change_protection = input;
         self
     }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn get_firewall_policy_change_protection(&self) -> &::std::option::Option<bool> {
+        &self.firewall_policy_change_protection
+    }
     /// <p>A description of the firewall.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -240,6 +275,10 @@ impl FirewallBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the firewall.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The unique identifier for the firewall. </p>
     pub fn firewall_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_id = ::std::option::Option::Some(input.into());
@@ -249,6 +288,10 @@ impl FirewallBuilder {
     pub fn set_firewall_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_id = input;
         self
+    }
+    /// <p>The unique identifier for the firewall. </p>
+    pub fn get_firewall_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_id
     }
     /// Appends an item to `tags`.
     ///
@@ -269,6 +312,10 @@ impl FirewallBuilder {
         self.tags = input;
         self
     }
+    /// <p></p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
     pub fn encryption_configuration(
         mut self,
@@ -284,6 +331,12 @@ impl FirewallBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`Firewall`](crate::types::Firewall).
     pub fn build(self) -> crate::types::Firewall {

@@ -84,6 +84,12 @@ impl InputDeviceNetworkSettingsBuilder {
         self.dns_addresses = input;
         self
     }
+    /// The DNS addresses of the input device.
+    pub fn get_dns_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_addresses
+    }
     /// The network gateway IP address.
     pub fn gateway(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway = ::std::option::Option::Some(input.into());
@@ -94,6 +100,10 @@ impl InputDeviceNetworkSettingsBuilder {
         self.gateway = input;
         self
     }
+    /// The network gateway IP address.
+    pub fn get_gateway(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway
+    }
     /// The IP address of the input device.
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl InputDeviceNetworkSettingsBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// The IP address of the input device.
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
     pub fn ip_scheme(mut self, input: crate::types::InputDeviceIpScheme) -> Self {
@@ -117,6 +131,10 @@ impl InputDeviceNetworkSettingsBuilder {
         self.ip_scheme = input;
         self
     }
+    /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
+    pub fn get_ip_scheme(&self) -> &::std::option::Option<crate::types::InputDeviceIpScheme> {
+        &self.ip_scheme
+    }
     /// The subnet mask of the input device.
     pub fn subnet_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_mask = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl InputDeviceNetworkSettingsBuilder {
     pub fn set_subnet_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_mask = input;
         self
+    }
+    /// The subnet mask of the input device.
+    pub fn get_subnet_mask(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_mask
     }
     /// Consumes the builder and constructs a [`InputDeviceNetworkSettings`](crate::types::InputDeviceNetworkSettings).
     pub fn build(self) -> crate::types::InputDeviceNetworkSettings {

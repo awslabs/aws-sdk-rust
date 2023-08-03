@@ -43,6 +43,10 @@ impl SheetControlLayoutConfigurationBuilder {
         self.grid_layout = input;
         self
     }
+    /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
+    pub fn get_grid_layout(&self) -> &::std::option::Option<crate::types::GridLayoutConfiguration> {
+        &self.grid_layout
+    }
     /// Consumes the builder and constructs a [`SheetControlLayoutConfiguration`](crate::types::SheetControlLayoutConfiguration).
     pub fn build(self) -> crate::types::SheetControlLayoutConfiguration {
         crate::types::SheetControlLayoutConfiguration {

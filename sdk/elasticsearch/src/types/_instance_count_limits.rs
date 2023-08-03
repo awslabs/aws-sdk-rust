@@ -48,6 +48,10 @@ impl InstanceCountLimitsBuilder {
         self.minimum_instance_count = input;
         self
     }
+    /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
+    pub fn get_minimum_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.minimum_instance_count
+    }
     /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
     pub fn maximum_instance_count(mut self, input: i32) -> Self {
         self.maximum_instance_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InstanceCountLimitsBuilder {
     pub fn set_maximum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_instance_count = input;
         self
+    }
+    /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
+    pub fn get_maximum_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_instance_count
     }
     /// Consumes the builder and constructs a [`InstanceCountLimits`](crate::types::InstanceCountLimits).
     pub fn build(self) -> crate::types::InstanceCountLimits {

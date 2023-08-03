@@ -36,6 +36,12 @@ impl CreateLegalHoldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLegalHold as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateLegalHoldFluentBuilder {
         self.inner = self.inner.set_title(input);
         self
     }
+    /// <p>This is the string title of the legal hold.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
+    }
     /// <p>This is the string description of the legal hold.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateLegalHoldFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>This is the string description of the legal hold.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
@@ -152,6 +166,10 @@ impl CreateLegalHoldFluentBuilder {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
+    /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
+    }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
         self.inner = self.inner.recovery_point_selection(input);
@@ -164,6 +182,12 @@ impl CreateLegalHoldFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_point_selection(input);
         self
+    }
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    pub fn get_recovery_point_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
+        self.inner.get_recovery_point_selection()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -187,5 +211,13 @@ impl CreateLegalHoldFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

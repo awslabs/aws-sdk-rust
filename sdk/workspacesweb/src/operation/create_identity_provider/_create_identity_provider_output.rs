@@ -54,6 +54,10 @@ impl CreateIdentityProviderOutputBuilder {
         self.identity_provider_arn = input;
         self
     }
+    /// <p>The ARN of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

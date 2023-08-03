@@ -48,6 +48,10 @@ impl EvaluateCodeErrorDetailBuilder {
         self.message = input;
         self
     }
+    /// <p>The error payload.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `code_errors`.
     ///
     /// To override the contents of this collection use [`set_code_errors`](Self::set_code_errors).
@@ -66,6 +70,12 @@ impl EvaluateCodeErrorDetailBuilder {
     ) -> Self {
         self.code_errors = input;
         self
+    }
+    /// <p>Contains the list of <code>CodeError</code> objects.</p>
+    pub fn get_code_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeError>> {
+        &self.code_errors
     }
     /// Consumes the builder and constructs a [`EvaluateCodeErrorDetail`](crate::types::EvaluateCodeErrorDetail).
     pub fn build(self) -> crate::types::EvaluateCodeErrorDetail {

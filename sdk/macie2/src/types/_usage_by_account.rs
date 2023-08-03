@@ -64,6 +64,10 @@ impl UsageByAccountBuilder {
         self.currency = input;
         self
     }
+    /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
+        &self.currency
+    }
     /// <p>The estimated value for the metric.</p>
     pub fn estimated_cost(
         mut self,
@@ -80,6 +84,10 @@ impl UsageByAccountBuilder {
         self.estimated_cost = input;
         self
     }
+    /// <p>The estimated value for the metric.</p>
+    pub fn get_estimated_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_cost
+    }
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
     pub fn service_limit(mut self, input: crate::types::ServiceLimit) -> Self {
         self.service_limit = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl UsageByAccountBuilder {
         self.service_limit = input;
         self
     }
+    /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
+    pub fn get_service_limit(&self) -> &::std::option::Option<crate::types::ServiceLimit> {
+        &self.service_limit
+    }
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
     pub fn r#type(mut self, input: crate::types::UsageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl UsageByAccountBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UsageType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UsageType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`UsageByAccount`](crate::types::UsageByAccount).
     pub fn build(self) -> crate::types::UsageByAccount {

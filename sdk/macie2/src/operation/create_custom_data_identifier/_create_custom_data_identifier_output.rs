@@ -52,6 +52,10 @@ impl CreateCustomDataIdentifierOutputBuilder {
         self.custom_data_identifier_id = input;
         self
     }
+    /// <p>The unique identifier for the custom data identifier that was created.</p>
+    pub fn get_custom_data_identifier_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_data_identifier_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

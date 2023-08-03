@@ -80,6 +80,10 @@ impl IpRouteInfoBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_ip = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl IpRouteInfoBuilder {
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ip = input;
         self
+    }
+    /// <p>IP address block in the <code>IpRoute</code>.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ip
     }
     /// <p>The status of the IP address block.</p>
     pub fn ip_route_status_msg(mut self, input: crate::types::IpRouteStatusMsg) -> Self {
@@ -103,6 +111,12 @@ impl IpRouteInfoBuilder {
         self.ip_route_status_msg = input;
         self
     }
+    /// <p>The status of the IP address block.</p>
+    pub fn get_ip_route_status_msg(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpRouteStatusMsg> {
+        &self.ip_route_status_msg
+    }
     /// <p>The date and time the address block was added to the directory.</p>
     pub fn added_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.added_date_time = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl IpRouteInfoBuilder {
     ) -> Self {
         self.added_date_time = input;
         self
+    }
+    /// <p>The date and time the address block was added to the directory.</p>
+    pub fn get_added_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.added_date_time
     }
     /// <p>The reason for the IpRouteStatusMsg.</p>
     pub fn ip_route_status_reason(
@@ -132,6 +150,10 @@ impl IpRouteInfoBuilder {
         self.ip_route_status_reason = input;
         self
     }
+    /// <p>The reason for the IpRouteStatusMsg.</p>
+    pub fn get_ip_route_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_route_status_reason
+    }
     /// <p>Description of the <code>IpRouteInfo</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +163,10 @@ impl IpRouteInfoBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the <code>IpRouteInfo</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`IpRouteInfo`](crate::types::IpRouteInfo).
     pub fn build(self) -> crate::types::IpRouteInfo {

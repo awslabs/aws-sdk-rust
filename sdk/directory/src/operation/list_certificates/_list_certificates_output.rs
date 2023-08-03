@@ -56,6 +56,10 @@ impl ListCertificatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `certificates_info`.
     ///
     /// To override the contents of this collection use [`set_certificates_info`](Self::set_certificates_info).
@@ -74,6 +78,12 @@ impl ListCertificatesOutputBuilder {
     ) -> Self {
         self.certificates_info = input;
         self
+    }
+    /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
+    pub fn get_certificates_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>> {
+        &self.certificates_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

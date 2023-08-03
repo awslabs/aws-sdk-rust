@@ -48,6 +48,10 @@ impl DeviceStatsBuilder {
         self.connected_device_count = input;
         self
     }
+    /// <p>The number of devices connected with a heartbeat.</p>
+    pub fn get_connected_device_count(&self) -> &::std::option::Option<i64> {
+        &self.connected_device_count
+    }
     /// <p>The number of registered devices.</p>
     pub fn registered_device_count(mut self, input: i64) -> Self {
         self.registered_device_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DeviceStatsBuilder {
     pub fn set_registered_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.registered_device_count = input;
         self
+    }
+    /// <p>The number of registered devices.</p>
+    pub fn get_registered_device_count(&self) -> &::std::option::Option<i64> {
+        &self.registered_device_count
     }
     /// Consumes the builder and constructs a [`DeviceStats`](crate::types::DeviceStats).
     pub fn build(self) -> crate::types::DeviceStats {

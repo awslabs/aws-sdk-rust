@@ -66,6 +66,10 @@ impl LambdaActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the lambda activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub fn lambda_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl LambdaActivityBuilder {
     pub fn set_lambda_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_name = input;
         self
+    }
+    /// <p>The name of the Lambda function that is run on the message.</p>
+    pub fn get_lambda_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_name
     }
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
@@ -88,6 +96,11 @@ impl LambdaActivityBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -97,6 +110,10 @@ impl LambdaActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`LambdaActivity`](crate::types::LambdaActivity).
     pub fn build(self) -> crate::types::LambdaActivity {

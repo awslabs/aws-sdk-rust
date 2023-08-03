@@ -41,6 +41,10 @@ impl AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
         self.scan_on_push = input;
         self
     }
+    /// <p>Whether to scan images after they are pushed to a repository.</p>
+    pub fn get_scan_on_push(&self) -> &::std::option::Option<bool> {
+        &self.scan_on_push
+    }
     /// Consumes the builder and constructs a [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {
         crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {

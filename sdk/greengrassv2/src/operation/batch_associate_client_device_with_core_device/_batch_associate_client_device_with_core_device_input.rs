@@ -67,6 +67,14 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The list of client devices to associate.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>,
+    > {
+        &self.entries
+    }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn core_device_thing_name(
         mut self,
@@ -82,6 +90,10 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     ) -> Self {
         self.core_device_thing_name = input;
         self
+    }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_device_thing_name
     }
     /// Consumes the builder and constructs a [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError>{

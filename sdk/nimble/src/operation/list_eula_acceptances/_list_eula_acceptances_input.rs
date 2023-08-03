@@ -66,6 +66,10 @@ impl ListEulaAcceptancesInputBuilder {
         self.eula_ids = input;
         self
     }
+    /// <p>The list of EULA IDs that have been previously accepted.</p>
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eula_ids
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ListEulaAcceptancesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl ListEulaAcceptancesInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
     pub fn build(

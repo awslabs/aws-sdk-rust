@@ -73,6 +73,10 @@ impl UpdateMapInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The name of the map resource to update.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -94,6 +98,14 @@ impl UpdateMapInputBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>Updates the description for the map resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl UpdateMapInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Updates the description for the map resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
     pub fn configuration_update(mut self, input: crate::types::MapConfigurationUpdate) -> Self {
@@ -116,6 +132,12 @@ impl UpdateMapInputBuilder {
     ) -> Self {
         self.configuration_update = input;
         self
+    }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn get_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::MapConfigurationUpdate> {
+        &self.configuration_update
     }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
     pub fn build(

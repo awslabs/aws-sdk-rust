@@ -55,6 +55,10 @@ impl ListAssetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Upper bound on number of records to return.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListAssetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Returns Assets associated with the specified PackagingGroup.
     pub fn packaging_group_id(
@@ -80,6 +88,10 @@ impl ListAssetsInputBuilder {
     ) -> Self {
         self.packaging_group_id = input;
         self
+    }
+    /// Returns Assets associated with the specified PackagingGroup.
+    pub fn get_packaging_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.packaging_group_id
     }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
     pub fn build(

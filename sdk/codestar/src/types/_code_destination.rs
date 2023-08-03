@@ -51,6 +51,12 @@ impl CodeDestinationBuilder {
         self.code_commit = input;
         self
     }
+    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+    pub fn get_code_commit(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeCommitCodeDestination> {
+        &self.code_commit
+    }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn git_hub(mut self, input: crate::types::GitHubCodeDestination) -> Self {
         self.git_hub = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl CodeDestinationBuilder {
     ) -> Self {
         self.git_hub = input;
         self
+    }
+    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+    pub fn get_git_hub(&self) -> &::std::option::Option<crate::types::GitHubCodeDestination> {
+        &self.git_hub
     }
     /// Consumes the builder and constructs a [`CodeDestination`](crate::types::CodeDestination).
     pub fn build(self) -> crate::types::CodeDestination {

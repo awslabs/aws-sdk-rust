@@ -87,6 +87,10 @@ impl ListReportJobsInputBuilder {
         self.by_report_plan_name = input;
         self
     }
+    /// <p>Returns only report jobs with the specified report plan name.</p>
+    pub fn get_by_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_report_plan_name
+    }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.by_creation_before = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ListReportJobsInputBuilder {
     ) -> Self {
         self.by_creation_before = input;
         self
+    }
+    /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
+    pub fn get_by_creation_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_creation_before
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +121,10 @@ impl ListReportJobsInputBuilder {
         self.by_creation_after = input;
         self
     }
+    /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
+    pub fn get_by_creation_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.by_creation_after
+    }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     pub fn by_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +137,11 @@ impl ListReportJobsInputBuilder {
         self.by_status = input;
         self
     }
+    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    pub fn get_by_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_status
+    }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -135,6 +152,10 @@ impl ListReportJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -144,6 +165,10 @@ impl ListReportJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
     pub fn build(

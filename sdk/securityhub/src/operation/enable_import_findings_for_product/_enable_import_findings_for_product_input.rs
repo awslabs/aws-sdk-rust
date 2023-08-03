@@ -39,6 +39,10 @@ impl EnableImportFindingsForProductInputBuilder {
         self.product_arn = input;
         self
     }
+    /// <p>The ARN of the product to enable the integration for.</p>
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_arn
+    }
     /// Consumes the builder and constructs a [`EnableImportFindingsForProductInput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput).
     pub fn build(
         self,

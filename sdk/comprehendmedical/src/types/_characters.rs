@@ -40,6 +40,10 @@ impl CharactersBuilder {
         self.original_text_characters = input;
         self
     }
+    /// <p> The number of characters present in the input text document as processed by Amazon Comprehend Medical. </p>
+    pub fn get_original_text_characters(&self) -> &::std::option::Option<i32> {
+        &self.original_text_characters
+    }
     /// Consumes the builder and constructs a [`Characters`](crate::types::Characters).
     pub fn build(self) -> crate::types::Characters {
         crate::types::Characters {

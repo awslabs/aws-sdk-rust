@@ -39,6 +39,10 @@ impl DescribeServerInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// Consumes the builder and constructs a [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
     pub fn build(
         self,

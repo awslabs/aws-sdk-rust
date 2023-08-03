@@ -36,6 +36,12 @@ impl ListSecurityPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSecurityPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListSecurityPoliciesFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
+        self.inner.get_type()
+    }
     /// Appends an item to `resource`.
     ///
     /// To override the contents of this collection use [`set_resource`](Self::set_resource).
@@ -157,6 +167,10 @@ impl ListSecurityPoliciesFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource()
+    }
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +181,10 @@ impl ListSecurityPoliciesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -176,5 +194,9 @@ impl ListSecurityPoliciesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

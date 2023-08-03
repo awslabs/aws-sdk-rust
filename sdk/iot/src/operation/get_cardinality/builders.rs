@@ -37,6 +37,12 @@ impl GetCardinalityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCardinality as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_cardinality::builders::GetCardinalityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl GetCardinalityFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the index to search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -128,6 +138,10 @@ impl GetCardinalityFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(
@@ -145,6 +159,10 @@ impl GetCardinalityFluentBuilder {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
+    /// <p>The field to aggregate.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aggregation_field()
+    }
     /// <p>The query version.</p>
     pub fn query_version(
         mut self,
@@ -160,5 +178,9 @@ impl GetCardinalityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
+    }
+    /// <p>The query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
     }
 }

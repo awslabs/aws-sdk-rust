@@ -63,6 +63,10 @@ impl TimeSeriesBuilder {
         self.time_series_id = input;
         self
     }
+    /// <p>The ID of the metric.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
+    }
     /// Appends an item to `dimension_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
@@ -82,6 +86,12 @@ impl TimeSeriesBuilder {
         self.dimension_list = input;
         self
     }
+    /// <p>The dimensions of the metric.</p>
+    pub fn get_dimension_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>> {
+        &self.dimension_list
+    }
     /// Appends an item to `metric_value_list`.
     ///
     /// To override the contents of this collection use [`set_metric_value_list`](Self::set_metric_value_list).
@@ -100,6 +110,10 @@ impl TimeSeriesBuilder {
     ) -> Self {
         self.metric_value_list = input;
         self
+    }
+    /// <p>The values for the metric.</p>
+    pub fn get_metric_value_list(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.metric_value_list
     }
     /// Consumes the builder and constructs a [`TimeSeries`](crate::types::TimeSeries).
     pub fn build(self) -> crate::types::TimeSeries {

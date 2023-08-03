@@ -48,6 +48,10 @@ impl SegmentDeliveryConfigurationBuilder {
         self.base_url = input;
         self
     }
+    /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.</p>
+    pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_url
+    }
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SegmentDeliveryConfigurationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`SegmentDeliveryConfiguration`](crate::types::SegmentDeliveryConfiguration).
     pub fn build(self) -> crate::types::SegmentDeliveryConfiguration {

@@ -49,6 +49,10 @@ impl ElicitSubSlotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The field is not supported.</p>
     pub fn sub_slot_to_elicit(
         mut self,
@@ -64,6 +68,12 @@ impl ElicitSubSlotBuilder {
     ) -> Self {
         self.sub_slot_to_elicit = input;
         self
+    }
+    /// <p>The field is not supported.</p>
+    pub fn get_sub_slot_to_elicit(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>> {
+        &self.sub_slot_to_elicit
     }
     /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::types::ElicitSubSlot).
     pub fn build(self) -> crate::types::ElicitSubSlot {

@@ -59,6 +59,12 @@ impl ClarifyTextConfigBuilder {
         self.language = input;
         self
     }
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language. </p> <note>
+    /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
+    /// </note>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::ClarifyTextLanguage> {
+        &self.language
+    }
     /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
     pub fn granularity(mut self, input: crate::types::ClarifyTextGranularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl ClarifyTextConfigBuilder {
     ) -> Self {
         self.granularity = input;
         self
+    }
+    /// <p>The unit of granularity for the analysis of text features. For example, if the unit is <code>'token'</code>, then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::ClarifyTextGranularity> {
+        &self.granularity
     }
     /// Consumes the builder and constructs a [`ClarifyTextConfig`](crate::types::ClarifyTextConfig).
     pub fn build(self) -> crate::types::ClarifyTextConfig {

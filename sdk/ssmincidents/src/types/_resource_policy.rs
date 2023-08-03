@@ -62,6 +62,10 @@ impl ResourcePolicyBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The JSON blob that describes the policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>The ID of the resource policy.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ResourcePolicyBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
+    }
+    /// <p>The ID of the resource policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub fn ram_resource_share_region(
@@ -87,6 +95,10 @@ impl ResourcePolicyBuilder {
     ) -> Self {
         self.ram_resource_share_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
+    pub fn get_ram_resource_share_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ram_resource_share_region
     }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {

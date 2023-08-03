@@ -53,6 +53,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
         self.voice_connector_group_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_id
+    }
     /// Appends an item to `e164_phone_numbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -74,6 +78,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     ) -> Self {
         self.e164_phone_numbers = input;
         self
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.e164_phone_numbers
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput, ::aws_smithy_http::operation::error::BuildError>{

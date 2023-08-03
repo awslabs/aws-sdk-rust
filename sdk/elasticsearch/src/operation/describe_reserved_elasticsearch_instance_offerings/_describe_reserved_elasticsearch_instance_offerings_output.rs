@@ -59,6 +59,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reserved_elasticsearch_instance_offerings`.
     ///
     /// To override the contents of this collection use [`set_reserved_elasticsearch_instance_offerings`](Self::set_reserved_elasticsearch_instance_offerings).
@@ -84,6 +88,13 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     ) -> Self {
         self.reserved_elasticsearch_instance_offerings = input;
         self
+    }
+    /// <p>List of reserved Elasticsearch instance offerings</p>
+    pub fn get_reserved_elasticsearch_instance_offerings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>
+    {
+        &self.reserved_elasticsearch_instance_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

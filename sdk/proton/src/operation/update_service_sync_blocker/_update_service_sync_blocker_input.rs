@@ -49,6 +49,10 @@ impl UpdateServiceSyncBlockerInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the service sync blocker.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The reason the service sync blocker was resolved.</p>
     pub fn resolved_reason(
         mut self,
@@ -64,6 +68,10 @@ impl UpdateServiceSyncBlockerInputBuilder {
     ) -> Self {
         self.resolved_reason = input;
         self
+    }
+    /// <p>The reason the service sync blocker was resolved.</p>
+    pub fn get_resolved_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_reason
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncBlockerInput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput).
     pub fn build(

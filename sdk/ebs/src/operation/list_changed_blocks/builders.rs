@@ -36,6 +36,12 @@ impl ListChangedBlocksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListChangedBlocks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_changed_blocks::builders::ListChangedBlocksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,12 @@ impl ListChangedBlocksFluentBuilder {
         self.inner = self.inner.set_first_snapshot_id(input);
         self
     }
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+    /// </important>
+    pub fn get_first_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_first_snapshot_id()
+    }
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
@@ -167,6 +179,12 @@ impl ListChangedBlocksFluentBuilder {
         self.inner = self.inner.set_second_snapshot_id(input);
         self
     }
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+    /// </important>
+    pub fn get_second_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_second_snapshot_id()
+    }
     /// <p>The token to request the next page of results.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +196,11 @@ impl ListChangedBlocksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to request the next page of results.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of blocks to be returned by the request.</p>
     /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
@@ -193,6 +216,12 @@ impl ListChangedBlocksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of blocks to be returned by the request.</p>
+    /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+    /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The block index from which the comparison should start.</p>
     /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
@@ -206,5 +235,11 @@ impl ListChangedBlocksFluentBuilder {
     pub fn set_starting_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_starting_block_index(input);
         self
+    }
+    /// <p>The block index from which the comparison should start.</p>
+    /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
+    pub fn get_starting_block_index(&self) -> &::std::option::Option<i32> {
+        self.inner.get_starting_block_index()
     }
 }

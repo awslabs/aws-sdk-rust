@@ -36,6 +36,10 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetAssetPropertyValueHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -115,6 +119,13 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_entries(input);
         self
     }
+    /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>
+    {
+        self.inner.get_entries()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -124,6 +135,10 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
@@ -142,5 +157,13 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// </ul>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -58,6 +58,10 @@ impl ListVolumeRecoveryPointsOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `volume_recovery_point_infos`.
     ///
     /// To override the contents of this collection use [`set_volume_recovery_point_infos`](Self::set_volume_recovery_point_infos).
@@ -79,6 +83,12 @@ impl ListVolumeRecoveryPointsOutputBuilder {
     ) -> Self {
         self.volume_recovery_point_infos = input;
         self
+    }
+    /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
+    pub fn get_volume_recovery_point_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>> {
+        &self.volume_recovery_point_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

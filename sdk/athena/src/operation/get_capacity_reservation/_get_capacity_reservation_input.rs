@@ -41,6 +41,10 @@ impl GetCapacityReservationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the capacity reservation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
     pub fn build(
         self,

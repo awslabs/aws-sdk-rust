@@ -43,6 +43,10 @@ impl InvisibleFieldInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>Identifier of the invisible field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::TaskTemplateFieldIdentifier> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`InvisibleFieldInfo`](crate::types::InvisibleFieldInfo).
     pub fn build(self) -> crate::types::InvisibleFieldInfo {
         crate::types::InvisibleFieldInfo { id: self.id }

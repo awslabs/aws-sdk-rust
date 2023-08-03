@@ -48,6 +48,10 @@ impl SourceFileSpecifierBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The full path to the file, including the name of the file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn is_move(mut self, input: bool) -> Self {
         self.is_move = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SourceFileSpecifierBuilder {
     pub fn set_is_move(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_move = input;
         self
+    }
+    /// <p>Whether to remove the source file from the parent commit.</p>
+    pub fn get_is_move(&self) -> &::std::option::Option<bool> {
+        &self.is_move
     }
     /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::types::SourceFileSpecifier).
     pub fn build(self) -> crate::types::SourceFileSpecifier {

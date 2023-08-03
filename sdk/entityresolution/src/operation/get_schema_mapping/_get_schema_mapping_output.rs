@@ -107,6 +107,10 @@ impl GetSchemaMappingOutputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl GetSchemaMappingOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl GetSchemaMappingOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `mapped_input_fields`.
     ///
@@ -146,6 +158,12 @@ impl GetSchemaMappingOutputBuilder {
         self.mapped_input_fields = input;
         self
     }
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    pub fn get_mapped_input_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+        &self.mapped_input_fields
+    }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -159,6 +177,10 @@ impl GetSchemaMappingOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -171,6 +193,10 @@ impl GetSchemaMappingOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -196,6 +222,14 @@ impl GetSchemaMappingOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

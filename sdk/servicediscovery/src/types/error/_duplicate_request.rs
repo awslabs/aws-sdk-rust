@@ -75,6 +75,10 @@ impl DuplicateRequestBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The ID of the operation that's already in progress.</p>
     pub fn duplicate_operation_id(
         mut self,
@@ -90,6 +94,10 @@ impl DuplicateRequestBuilder {
     ) -> Self {
         self.duplicate_operation_id = input;
         self
+    }
+    /// <p>The ID of the operation that's already in progress.</p>
+    pub fn get_duplicate_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duplicate_operation_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -36,6 +36,12 @@ impl ListConnectorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConnectors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_connectors::builders::ListConnectorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ListConnectorsFluentBuilder {
         self.inner = self.inner.set_connector_name_prefix(input);
         self
     }
+    /// <p>The name prefix that you want to use to search for and list connectors.</p>
+    pub fn get_connector_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_name_prefix()
+    }
     /// <p>The maximum number of connectors to list in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,6 +155,10 @@ impl ListConnectorsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of connectors to list in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -154,5 +168,9 @@ impl ListConnectorsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

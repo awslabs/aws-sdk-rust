@@ -65,6 +65,12 @@ impl ListModelCardsOutputBuilder {
         self.model_card_summaries = input;
         self
     }
+    /// <p>The summaries of the listed model cards.</p>
+    pub fn get_model_card_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelCardSummary>> {
+        &self.model_card_summaries
+    }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListModelCardsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

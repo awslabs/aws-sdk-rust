@@ -70,6 +70,10 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
         self.app_id_client_regex = input;
         self
     }
+    /// <p> A regular expression for validating the incoming Amazon Cognito user pools app client ID. If this value isn't set, no filtering is applied. </p>
+    pub fn get_app_id_client_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id_client_regex
+    }
     /// <p> The Amazon Web Services Region in which the user pool was created. </p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p> The Amazon Web Services Region in which the user pool was created. </p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p> The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pools authentication doesn't match the Amazon Cognito user pools configuration. </p>
     pub fn default_action(
@@ -96,6 +104,10 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
         self.default_action = input;
         self
     }
+    /// <p> The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pools authentication doesn't match the Amazon Cognito user pools configuration. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_action
+    }
     /// <p> The user pool ID. </p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p> The user pool ID. </p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiUserPoolConfigDetails`](crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails {

@@ -62,6 +62,10 @@ impl LaunchedInstanceBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>Launched instance EC2 ID.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>Launched instance Job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl LaunchedInstanceBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Launched instance Job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Launched instance first boot.</p>
     pub fn first_boot(mut self, input: crate::types::FirstBoot) -> Self {
         self.first_boot = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl LaunchedInstanceBuilder {
     pub fn set_first_boot(mut self, input: ::std::option::Option<crate::types::FirstBoot>) -> Self {
         self.first_boot = input;
         self
+    }
+    /// <p>Launched instance first boot.</p>
+    pub fn get_first_boot(&self) -> &::std::option::Option<crate::types::FirstBoot> {
+        &self.first_boot
     }
     /// Consumes the builder and constructs a [`LaunchedInstance`](crate::types::LaunchedInstance).
     pub fn build(self) -> crate::types::LaunchedInstance {

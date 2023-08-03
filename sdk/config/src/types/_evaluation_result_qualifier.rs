@@ -70,6 +70,10 @@ impl EvaluationResultQualifierBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule that was used in the evaluation.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn resource_type(
         mut self,
@@ -86,6 +90,10 @@ impl EvaluationResultQualifierBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl EvaluationResultQualifierBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the evaluated Amazon Web Services resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
@@ -108,6 +120,10 @@ impl EvaluationResultQualifierBuilder {
     ) -> Self {
         self.evaluation_mode = input;
         self
+    }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.evaluation_mode
     }
     /// Consumes the builder and constructs a [`EvaluationResultQualifier`](crate::types::EvaluationResultQualifier).
     pub fn build(self) -> crate::types::EvaluationResultQualifier {

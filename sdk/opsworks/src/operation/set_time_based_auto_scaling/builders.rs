@@ -37,6 +37,13 @@ impl SetTimeBasedAutoScalingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetTimeBasedAutoScaling as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl SetTimeBasedAutoScalingFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub fn auto_scaling_schedule(mut self, input: crate::types::WeeklyAutoScalingSchedule) -> Self {
         self.inner = self.inner.auto_scaling_schedule(input);
@@ -139,5 +150,11 @@ impl SetTimeBasedAutoScalingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_schedule(input);
         self
+    }
+    /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    pub fn get_auto_scaling_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
+        self.inner.get_auto_scaling_schedule()
     }
 }

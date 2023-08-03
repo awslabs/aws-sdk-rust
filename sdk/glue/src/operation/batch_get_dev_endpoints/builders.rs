@@ -36,6 +36,13 @@ impl BatchGetDevEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetDevEndpoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl BatchGetDevEndpointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dev_endpoint_names(input);
         self
+    }
+    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
+    pub fn get_dev_endpoint_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dev_endpoint_names()
     }
 }

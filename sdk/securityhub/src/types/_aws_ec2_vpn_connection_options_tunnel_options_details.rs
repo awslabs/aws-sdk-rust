@@ -165,6 +165,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.dpd_timeout_seconds = input;
         self
     }
+    /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
+    pub fn get_dpd_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.dpd_timeout_seconds
+    }
     /// Appends an item to `ike_versions`.
     ///
     /// To override the contents of this collection use [`set_ike_versions`](Self::set_ike_versions).
@@ -184,6 +188,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.ike_versions = input;
         self
     }
+    /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
+    pub fn get_ike_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ike_versions
+    }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn outside_ip_address(
         mut self,
@@ -199,6 +209,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     ) -> Self {
         self.outside_ip_address = input;
         self
+    }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outside_ip_address
     }
     /// Appends an item to `phase1_dh_group_numbers`.
     ///
@@ -218,6 +232,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     ) -> Self {
         self.phase1_dh_group_numbers = input;
         self
+    }
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn get_phase1_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.phase1_dh_group_numbers
     }
     /// Appends an item to `phase1_encryption_algorithms`.
     ///
@@ -241,6 +259,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.phase1_encryption_algorithms = input;
         self
     }
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn get_phase1_encryption_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.phase1_encryption_algorithms
+    }
     /// Appends an item to `phase1_integrity_algorithms`.
     ///
     /// To override the contents of this collection use [`set_phase1_integrity_algorithms`](Self::set_phase1_integrity_algorithms).
@@ -263,6 +287,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.phase1_integrity_algorithms = input;
         self
     }
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn get_phase1_integrity_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.phase1_integrity_algorithms
+    }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     pub fn phase1_lifetime_seconds(mut self, input: i32) -> Self {
         self.phase1_lifetime_seconds = ::std::option::Option::Some(input);
@@ -272,6 +302,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub fn set_phase1_lifetime_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.phase1_lifetime_seconds = input;
         self
+    }
+    /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
+    pub fn get_phase1_lifetime_seconds(&self) -> &::std::option::Option<i32> {
+        &self.phase1_lifetime_seconds
     }
     /// Appends an item to `phase2_dh_group_numbers`.
     ///
@@ -291,6 +325,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     ) -> Self {
         self.phase2_dh_group_numbers = input;
         self
+    }
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn get_phase2_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.phase2_dh_group_numbers
     }
     /// Appends an item to `phase2_encryption_algorithms`.
     ///
@@ -314,6 +352,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.phase2_encryption_algorithms = input;
         self
     }
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn get_phase2_encryption_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.phase2_encryption_algorithms
+    }
     /// Appends an item to `phase2_integrity_algorithms`.
     ///
     /// To override the contents of this collection use [`set_phase2_integrity_algorithms`](Self::set_phase2_integrity_algorithms).
@@ -336,6 +380,12 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.phase2_integrity_algorithms = input;
         self
     }
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn get_phase2_integrity_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.phase2_integrity_algorithms
+    }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     pub fn phase2_lifetime_seconds(mut self, input: i32) -> Self {
         self.phase2_lifetime_seconds = ::std::option::Option::Some(input);
@@ -345,6 +395,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub fn set_phase2_lifetime_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.phase2_lifetime_seconds = input;
         self
+    }
+    /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
+    pub fn get_phase2_lifetime_seconds(&self) -> &::std::option::Option<i32> {
+        &self.phase2_lifetime_seconds
     }
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
     pub fn pre_shared_key(
@@ -362,6 +416,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.pre_shared_key = input;
         self
     }
+    /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
+    pub fn get_pre_shared_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_shared_key
+    }
     /// <p>The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
     pub fn rekey_fuzz_percentage(mut self, input: i32) -> Self {
         self.rekey_fuzz_percentage = ::std::option::Option::Some(input);
@@ -371,6 +429,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub fn set_rekey_fuzz_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rekey_fuzz_percentage = input;
         self
+    }
+    /// <p>The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
+    pub fn get_rekey_fuzz_percentage(&self) -> &::std::option::Option<i32> {
+        &self.rekey_fuzz_percentage
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
     pub fn rekey_margin_time_seconds(mut self, input: i32) -> Self {
@@ -382,6 +444,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
         self.rekey_margin_time_seconds = input;
         self
     }
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
+    pub fn get_rekey_margin_time_seconds(&self) -> &::std::option::Option<i32> {
+        &self.rekey_margin_time_seconds
+    }
     /// <p>The number of packets in an IKE replay window.</p>
     pub fn replay_window_size(mut self, input: i32) -> Self {
         self.replay_window_size = ::std::option::Option::Some(input);
@@ -391,6 +457,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub fn set_replay_window_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replay_window_size = input;
         self
+    }
+    /// <p>The number of packets in an IKE replay window.</p>
+    pub fn get_replay_window_size(&self) -> &::std::option::Option<i32> {
+        &self.replay_window_size
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
     pub fn tunnel_inside_cidr(
@@ -407,6 +477,10 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     ) -> Self {
         self.tunnel_inside_cidr = input;
         self
+    }
+    /// <p>The range of inside IPv4 addresses for the tunnel.</p>
+    pub fn get_tunnel_inside_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_inside_cidr
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {

@@ -53,6 +53,10 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn transit_gateway_connect_peer_arn(
         mut self,
@@ -68,6 +72,12 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
     ) -> Self {
         self.transit_gateway_connect_peer_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    pub fn get_transit_gateway_connect_peer_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_connect_peer_arn
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput, ::aws_smithy_http::operation::error::BuildError>{

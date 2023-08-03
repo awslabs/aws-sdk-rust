@@ -37,6 +37,10 @@ impl CreateInstancesFromSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInstancesFromSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_instance_names(input);
         self
     }
+    /// <p>The names for your new instances.</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_names()
+    }
     /// Adds a key-value pair to `attachedDiskMapping`.
     ///
     /// To override the contents of this collection use [`set_attached_disk_mapping`](Self::set_attached_disk_mapping).
@@ -163,6 +173,14 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_attached_disk_mapping(input);
         self
     }
+    /// <p>An object containing information about one or more disk mappings.</p>
+    pub fn get_attached_disk_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>,
+    > {
+        self.inner.get_attached_disk_mapping()
+    }
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
     pub fn availability_zone(
         mut self,
@@ -178,6 +196,10 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
+    }
+    /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
     }
     /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>
     /// <p>Constraint:</p>
@@ -203,6 +225,14 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }
+    /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
+    /// </ul>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_snapshot_name()
+    }
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
@@ -212,6 +242,10 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
+    }
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
     }
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
@@ -226,6 +260,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_data(input);
         self
+    }
+    /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// </note>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_data()
     }
     /// <p>The name for your key pair.</p>
     pub fn key_pair_name(
@@ -242,6 +282,10 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
+    }
+    /// <p>The name for your key pair.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_pair_name()
     }
     /// Appends an item to `tags`.
     ///
@@ -262,6 +306,11 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `addOns`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
@@ -279,6 +328,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_add_ons(input);
         self
     }
+    /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    pub fn get_add_ons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+        self.inner.get_add_ons()
+    }
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
@@ -295,6 +350,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>The IP address type for the instance.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
     /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
     /// <p>Constraints:</p>
@@ -322,6 +383,15 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner = self.inner.set_source_instance_name(input);
         self
     }
+    /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_source_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_instance_name()
+    }
     /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -343,6 +413,16 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     pub fn set_restore_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_restore_date(input);
         self
+    }
+    /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_restore_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_restore_date()
     }
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
     /// <p>Constraints:</p>
@@ -366,5 +446,14 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_use_latest_restorable_auto_snapshot(input);
         self
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+    /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// </ul>
+    pub fn get_use_latest_restorable_auto_snapshot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_latest_restorable_auto_snapshot()
     }
 }

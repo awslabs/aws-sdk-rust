@@ -69,6 +69,17 @@ impl AuthorizeCacheSecurityGroupIngressOutputBuilder {
         self.cache_security_group = input;
         self
     }
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+    /// </ul>
+    pub fn get_cache_security_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheSecurityGroup> {
+        &self.cache_security_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

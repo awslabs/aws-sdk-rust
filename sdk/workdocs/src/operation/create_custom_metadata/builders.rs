@@ -36,6 +36,12 @@ impl CreateCustomMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_custom_metadata::builders::CreateCustomMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateCustomMetadataFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -142,6 +152,10 @@ impl CreateCustomMetadataFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
@@ -151,6 +165,10 @@ impl CreateCustomMetadataFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
     /// Adds a key-value pair to `CustomMetadata`.
     ///
@@ -174,5 +192,13 @@ impl CreateCustomMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_metadata(input);
         self
+    }
+    /// <p>Custom metadata in the form of name-value pairs.</p>
+    pub fn get_custom_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_custom_metadata()
     }
 }

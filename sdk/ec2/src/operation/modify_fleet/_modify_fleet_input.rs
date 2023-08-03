@@ -93,6 +93,10 @@ impl ModifyFleetInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
@@ -110,6 +114,13 @@ impl ModifyFleetInputBuilder {
     ) -> Self {
         self.excess_capacity_termination_policy = input;
         self
+    }
+    /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
+    pub fn get_excess_capacity_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+        &self.excess_capacity_termination_policy
     }
     /// Appends an item to `launch_template_configs`.
     ///
@@ -135,6 +146,13 @@ impl ModifyFleetInputBuilder {
         self.launch_template_configs = input;
         self
     }
+    /// <p>The launch template and overrides.</p>
+    pub fn get_launch_template_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>
+    {
+        &self.launch_template_configs
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -144,6 +162,10 @@ impl ModifyFleetInputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>The size of the EC2 Fleet.</p>
     pub fn target_capacity_specification(
@@ -161,6 +183,12 @@ impl ModifyFleetInputBuilder {
         self.target_capacity_specification = input;
         self
     }
+    /// <p>The size of the EC2 Fleet.</p>
+    pub fn get_target_capacity_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
+        &self.target_capacity_specification
+    }
     /// <p>Reserved.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
@@ -170,6 +198,10 @@ impl ModifyFleetInputBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// Consumes the builder and constructs a [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
     pub fn build(

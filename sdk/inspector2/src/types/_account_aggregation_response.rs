@@ -48,6 +48,10 @@ impl AccountAggregationResponseBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The number of findings by severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
         self.severity_counts = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AccountAggregationResponseBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>The number of findings by severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`AccountAggregationResponse`](crate::types::AccountAggregationResponse).
     pub fn build(self) -> crate::types::AccountAggregationResponse {

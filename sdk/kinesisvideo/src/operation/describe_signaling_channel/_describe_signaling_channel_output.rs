@@ -51,6 +51,10 @@ impl DescribeSignalingChannelOutputBuilder {
         self.channel_info = input;
         self
     }
+    /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
+    pub fn get_channel_info(&self) -> &::std::option::Option<crate::types::ChannelInfo> {
+        &self.channel_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

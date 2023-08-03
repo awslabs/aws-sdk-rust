@@ -36,6 +36,12 @@ impl PutKMSEncryptionKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutKMSEncryptionKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl PutKMSEncryptionKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kms_encryption_key_arn(input);
         self
+    }
+    /// <p>The KMS encryption key ARN.</p>
+    /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
+    pub fn get_kms_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_encryption_key_arn()
     }
 }

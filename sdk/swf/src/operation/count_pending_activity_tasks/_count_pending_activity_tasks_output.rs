@@ -55,6 +55,10 @@ impl CountPendingActivityTasksOutputBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of tasks in the task list.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn truncated(mut self, input: bool) -> Self {
         self.truncated = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl CountPendingActivityTasksOutputBuilder {
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.truncated = input;
         self
+    }
+    /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

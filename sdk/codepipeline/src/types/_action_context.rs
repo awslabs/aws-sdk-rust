@@ -48,6 +48,10 @@ impl ActionContextBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the action in the context of a job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
     pub fn action_execution_id(
         mut self,
@@ -63,6 +67,10 @@ impl ActionContextBuilder {
     ) -> Self {
         self.action_execution_id = input;
         self
+    }
+    /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
+    pub fn get_action_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_execution_id
     }
     /// Consumes the builder and constructs a [`ActionContext`](crate::types::ActionContext).
     pub fn build(self) -> crate::types::ActionContext {

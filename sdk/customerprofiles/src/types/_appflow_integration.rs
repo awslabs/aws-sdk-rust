@@ -51,6 +51,10 @@ impl AppflowIntegrationBuilder {
         self.flow_definition = input;
         self
     }
+    /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+    pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
+        &self.flow_definition
+    }
     /// Appends an item to `batches`.
     ///
     /// To override the contents of this collection use [`set_batches`](Self::set_batches).
@@ -69,6 +73,10 @@ impl AppflowIntegrationBuilder {
     ) -> Self {
         self.batches = input;
         self
+    }
+    /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+    pub fn get_batches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Batch>> {
+        &self.batches
     }
     /// Consumes the builder and constructs a [`AppflowIntegration`](crate::types::AppflowIntegration).
     pub fn build(self) -> crate::types::AppflowIntegration {

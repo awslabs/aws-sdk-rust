@@ -46,6 +46,10 @@ impl DeleteChannelFlowInputBuilder {
         self.channel_flow_arn = input;
         self
     }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_flow_arn
+    }
     /// Consumes the builder and constructs a [`DeleteChannelFlowInput`](crate::operation::delete_channel_flow::DeleteChannelFlowInput).
     pub fn build(
         self,

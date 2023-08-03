@@ -48,6 +48,10 @@ impl NodeDetailsBuilder {
         self.node_index = input;
         self
     }
+    /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    pub fn get_node_index(&self) -> &::std::option::Option<i32> {
+        &self.node_index
+    }
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     pub fn is_main_node(mut self, input: bool) -> Self {
         self.is_main_node = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NodeDetailsBuilder {
     pub fn set_is_main_node(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_main_node = input;
         self
+    }
+    /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
+    pub fn get_is_main_node(&self) -> &::std::option::Option<bool> {
+        &self.is_main_node
     }
     /// Consumes the builder and constructs a [`NodeDetails`](crate::types::NodeDetails).
     pub fn build(self) -> crate::types::NodeDetails {

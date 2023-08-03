@@ -37,6 +37,13 @@ impl SearchSystemInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchSystemInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +154,13 @@ impl SearchSystemInstancesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +171,10 @@ impl SearchSystemInstancesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -166,5 +184,9 @@ impl SearchSystemInstancesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

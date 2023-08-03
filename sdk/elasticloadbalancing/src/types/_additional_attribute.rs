@@ -64,6 +64,14 @@ impl AdditionalAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the attribute.</p>
+    /// <p>The following attribute is supported.</p>
+    /// <ul>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+    /// </ul>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>This value of the attribute.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -73,6 +81,10 @@ impl AdditionalAttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>This value of the attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AdditionalAttribute`](crate::types::AdditionalAttribute).
     pub fn build(self) -> crate::types::AdditionalAttribute {

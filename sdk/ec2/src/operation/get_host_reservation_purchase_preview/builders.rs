@@ -37,6 +37,10 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetHostReservationPurchasePreview as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,12 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
         self.inner = self.inner.set_host_id_set(input);
         self
     }
+    /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
+    pub fn get_host_id_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_host_id_set()
+    }
     /// <p>The offering ID of the reservation.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
@@ -117,5 +127,9 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_id(input);
         self
+    }
+    /// <p>The offering ID of the reservation.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_id()
     }
 }

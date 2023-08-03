@@ -39,6 +39,10 @@ impl AssociateMemberInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`AssociateMemberInput`](crate::operation::associate_member::AssociateMemberInput).
     pub fn build(
         self,

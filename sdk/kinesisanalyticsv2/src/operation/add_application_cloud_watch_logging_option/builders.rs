@@ -36,6 +36,10 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddApplicationCloudWatchLoggingOption as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The Kinesis Data Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -115,6 +123,10 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_application_version_id(input);
         self
+    }
+    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
     pub fn cloud_watch_logging_option(
@@ -132,6 +144,12 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         self.inner = self.inner.set_cloud_watch_logging_option(input);
         self
     }
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    pub fn get_cloud_watch_logging_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
+        self.inner.get_cloud_watch_logging_option()
+    }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(
         mut self,
@@ -147,5 +165,9 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conditional_token(input);
         self
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conditional_token()
     }
 }

@@ -36,6 +36,10 @@ impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateServiceActionWithProvisioningArtifact as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_service_action_associations(input);
         self
     }
+    /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    pub fn get_service_action_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>> {
+        self.inner.get_service_action_associations()
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
@@ -133,5 +143,13 @@ impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
 }

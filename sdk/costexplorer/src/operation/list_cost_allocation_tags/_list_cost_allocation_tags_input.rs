@@ -76,6 +76,10 @@ impl ListCostAllocationTagsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
+        &self.status
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -95,6 +99,10 @@ impl ListCostAllocationTagsInputBuilder {
         self.tag_keys = input;
         self
     }
+    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
+    }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl ListCostAllocationTagsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CostAllocationTagType> {
+        &self.r#type
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl ListCostAllocationTagsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl ListCostAllocationTagsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
     pub fn build(

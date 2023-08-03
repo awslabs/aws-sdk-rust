@@ -110,6 +110,21 @@ impl GeoLocationBuilder {
         self.continent_code = input;
         self
     }
+    /// <p>The two-letter code for the continent.</p>
+    /// <p>Amazon Route 53 supports the following continent codes:</p>
+    /// <ul>
+    /// <li> <p> <b>AF</b>: Africa</p> </li>
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
+    /// <li> <p> <b>AS</b>: Asia</p> </li>
+    /// <li> <p> <b>EU</b>: Europe</p> </li>
+    /// <li> <p> <b>OC</b>: Oceania</p> </li>
+    /// <li> <p> <b>NA</b>: North America</p> </li>
+    /// <li> <p> <b>SA</b>: South America</p> </li>
+    /// </ul>
+    /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
+    pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continent_code
+    }
     /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +136,11 @@ impl GeoLocationBuilder {
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
+    }
+    /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
+    /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
     }
     /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
@@ -139,6 +159,11 @@ impl GeoLocationBuilder {
     ) -> Self {
         self.subdivision_code = input;
         self
+    }
+    /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
+    /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
+    pub fn get_subdivision_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdivision_code
     }
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {

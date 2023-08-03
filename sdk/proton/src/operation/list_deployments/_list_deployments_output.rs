@@ -54,6 +54,10 @@ impl ListDeploymentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `deployments`.
     ///
     /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
@@ -72,6 +76,12 @@ impl ListDeploymentsOutputBuilder {
     ) -> Self {
         self.deployments = input;
         self
+    }
+    /// <p>An array of deployment with summary data.</p>
+    pub fn get_deployments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
+        &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

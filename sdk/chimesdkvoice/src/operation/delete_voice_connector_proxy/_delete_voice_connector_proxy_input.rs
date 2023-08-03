@@ -45,6 +45,10 @@ impl DeleteVoiceConnectorProxyInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorProxyInput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyInput).
     pub fn build(
         self,

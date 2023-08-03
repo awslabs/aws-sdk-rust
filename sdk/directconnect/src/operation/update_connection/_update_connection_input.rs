@@ -68,6 +68,11 @@ impl UpdateConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the dedicated connection.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The name of the connection.</p>
     pub fn connection_name(
         mut self,
@@ -83,6 +88,10 @@ impl UpdateConnectionInputBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
@@ -101,6 +110,11 @@ impl UpdateConnectionInputBuilder {
     ) -> Self {
         self.encryption_mode = input;
         self
+    }
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_mode
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(

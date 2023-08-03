@@ -91,6 +91,10 @@ impl PivotTotalOptionsBuilder {
         self.totals_visibility = input;
         self
     }
+    /// <p>The visibility configuration for the total cells.</p>
+    pub fn get_totals_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.totals_visibility
+    }
     /// <p>The placement (start, end) for the total cells.</p>
     pub fn placement(mut self, input: crate::types::TableTotalsPlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl PivotTotalOptionsBuilder {
     ) -> Self {
         self.placement = input;
         self
+    }
+    /// <p>The placement (start, end) for the total cells.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::TableTotalsPlacement> {
+        &self.placement
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
     pub fn scroll_status(mut self, input: crate::types::TableTotalsScrollStatus) -> Self {
@@ -117,6 +125,12 @@ impl PivotTotalOptionsBuilder {
         self.scroll_status = input;
         self
     }
+    /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
+    pub fn get_scroll_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
+        &self.scroll_status
+    }
     /// <p>The custom label string for the total cells.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_label = ::std::option::Option::Some(input.into());
@@ -126,6 +140,10 @@ impl PivotTotalOptionsBuilder {
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
+    }
+    /// <p>The custom label string for the total cells.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>The cell styling options for the total cells.</p>
     pub fn total_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
@@ -140,6 +158,10 @@ impl PivotTotalOptionsBuilder {
         self.total_cell_style = input;
         self
     }
+    /// <p>The cell styling options for the total cells.</p>
+    pub fn get_total_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.total_cell_style
+    }
     /// <p>The cell styling options for the totals of value cells.</p>
     pub fn value_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
         self.value_cell_style = ::std::option::Option::Some(input);
@@ -153,6 +175,10 @@ impl PivotTotalOptionsBuilder {
         self.value_cell_style = input;
         self
     }
+    /// <p>The cell styling options for the totals of value cells.</p>
+    pub fn get_value_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.value_cell_style
+    }
     /// <p>The cell styling options for the total of header cells.</p>
     pub fn metric_header_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
         self.metric_header_cell_style = ::std::option::Option::Some(input);
@@ -165,6 +191,12 @@ impl PivotTotalOptionsBuilder {
     ) -> Self {
         self.metric_header_cell_style = input;
         self
+    }
+    /// <p>The cell styling options for the total of header cells.</p>
+    pub fn get_metric_header_cell_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.metric_header_cell_style
     }
     /// Consumes the builder and constructs a [`PivotTotalOptions`](crate::types::PivotTotalOptions).
     pub fn build(self) -> crate::types::PivotTotalOptions {

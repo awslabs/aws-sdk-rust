@@ -56,6 +56,10 @@ impl MetricAttributeBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The metric's event type.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
+    }
     /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl MetricAttributeBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl MetricAttributeBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`MetricAttribute`](crate::types::MetricAttribute).
     pub fn build(self) -> crate::types::MetricAttribute {

@@ -60,6 +60,12 @@ impl SigningConfigurationBuilder {
         self.encryption_algorithm_options = input;
         self
     }
+    /// <p>The encryption algorithm options that are available for a code signing job.</p>
+    pub fn get_encryption_algorithm_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmOptions> {
+        &self.encryption_algorithm_options
+    }
     /// <p>The hash algorithm options that are available for a code signing job.</p>
     pub fn hash_algorithm_options(mut self, input: crate::types::HashAlgorithmOptions) -> Self {
         self.hash_algorithm_options = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl SigningConfigurationBuilder {
     ) -> Self {
         self.hash_algorithm_options = input;
         self
+    }
+    /// <p>The hash algorithm options that are available for a code signing job.</p>
+    pub fn get_hash_algorithm_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::HashAlgorithmOptions> {
+        &self.hash_algorithm_options
     }
     /// Consumes the builder and constructs a [`SigningConfiguration`](crate::types::SigningConfiguration).
     pub fn build(self) -> crate::types::SigningConfiguration {

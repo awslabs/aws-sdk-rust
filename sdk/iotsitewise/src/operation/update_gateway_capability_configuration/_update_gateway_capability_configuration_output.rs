@@ -74,6 +74,10 @@ impl UpdateGatewayCapabilityConfigurationOutputBuilder {
         self.capability_namespace = input;
         self
     }
+    /// <p>The namespace of the gateway capability.</p>
+    pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_namespace
+    }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
@@ -98,6 +102,18 @@ impl UpdateGatewayCapabilityConfigurationOutputBuilder {
     ) -> Self {
         self.capability_sync_status = input;
         self
+    }
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// </ul>
+    /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
+    pub fn get_capability_sync_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapabilitySyncStatus> {
+        &self.capability_sync_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

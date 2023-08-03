@@ -40,6 +40,10 @@ impl KubernetesAuditLogsConfigurationBuilder {
         self.enable = input;
         self
     }
+    /// <p>The status of Kubernetes audit logs as a data source.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
+    }
     /// Consumes the builder and constructs a [`KubernetesAuditLogsConfiguration`](crate::types::KubernetesAuditLogsConfiguration).
     pub fn build(self) -> crate::types::KubernetesAuditLogsConfiguration {
         crate::types::KubernetesAuditLogsConfiguration {

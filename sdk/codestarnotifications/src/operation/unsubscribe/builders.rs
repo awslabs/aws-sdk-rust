@@ -36,6 +36,10 @@ impl UnsubscribeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Unsubscribe as a reference.
+    pub fn as_input(&self) -> &crate::operation::unsubscribe::builders::UnsubscribeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UnsubscribeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
     pub fn target_address(
         mut self,
@@ -133,5 +141,9 @@ impl UnsubscribeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_address(input);
         self
+    }
+    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_address()
     }
 }

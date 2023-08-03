@@ -51,6 +51,10 @@ impl GatewayPlatformBuilder {
         self.greengrass = input;
         self
     }
+    /// <p>A gateway that runs on IoT Greengrass.</p>
+    pub fn get_greengrass(&self) -> &::std::option::Option<crate::types::Greengrass> {
+        &self.greengrass
+    }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub fn greengrass_v2(mut self, input: crate::types::GreengrassV2) -> Self {
         self.greengrass_v2 = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GatewayPlatformBuilder {
     ) -> Self {
         self.greengrass_v2 = input;
         self
+    }
+    /// <p>A gateway that runs on IoT Greengrass V2.</p>
+    pub fn get_greengrass_v2(&self) -> &::std::option::Option<crate::types::GreengrassV2> {
+        &self.greengrass_v2
     }
     /// Consumes the builder and constructs a [`GatewayPlatform`](crate::types::GatewayPlatform).
     pub fn build(self) -> crate::types::GatewayPlatform {

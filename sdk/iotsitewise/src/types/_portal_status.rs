@@ -48,6 +48,10 @@ impl PortalStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the portal.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PortalState> {
+        &self.state
+    }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::MonitorErrorDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PortalStatusBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::MonitorErrorDetails> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`PortalStatus`](crate::types::PortalStatus).
     pub fn build(self) -> crate::types::PortalStatus {

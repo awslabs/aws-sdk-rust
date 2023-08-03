@@ -36,6 +36,12 @@ impl DescribeTestCasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTestCases as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribeTestCasesFluentBuilder {
         self.inner = self.inner.set_report_arn(input);
         self
     }
+    /// <p> The ARN of the report for which test cases are returned. </p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_arn()
+    }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl DescribeTestCasesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +170,10 @@ impl DescribeTestCasesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
     pub fn filter(mut self, input: crate::types::TestCaseFilter) -> Self {
@@ -169,5 +187,9 @@ impl DescribeTestCasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TestCaseFilter> {
+        self.inner.get_filter()
     }
 }

@@ -36,6 +36,13 @@ impl GetApplicationVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApplicationVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetApplicationVersionFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The specific version of the application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
         self.inner = self.inner.application_version(input);
@@ -141,5 +152,9 @@ impl GetApplicationVersionFluentBuilder {
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_application_version(input);
         self
+    }
+    /// <p>The specific version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_application_version()
     }
 }

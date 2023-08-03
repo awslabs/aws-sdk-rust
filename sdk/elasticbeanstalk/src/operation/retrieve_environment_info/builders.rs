@@ -41,6 +41,13 @@ impl RetrieveEnvironmentInfoFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RetrieveEnvironmentInfo as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,12 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the data's environment.</p>
+    /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -161,6 +174,12 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the data's environment.</p>
+    /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The type of information to retrieve.</p>
     pub fn info_type(mut self, input: crate::types::EnvironmentInfoType) -> Self {
         self.inner = self.inner.info_type(input);
@@ -173,5 +192,9 @@ impl RetrieveEnvironmentInfoFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_info_type(input);
         self
+    }
+    /// <p>The type of information to retrieve.</p>
+    pub fn get_info_type(&self) -> &::std::option::Option<crate::types::EnvironmentInfoType> {
+        self.inner.get_info_type()
     }
 }

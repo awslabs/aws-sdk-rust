@@ -47,6 +47,10 @@ impl StopNotebookExecutionInputBuilder {
         self.notebook_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn get_notebook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_execution_id
+    }
     /// Consumes the builder and constructs a [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
     pub fn build(
         self,

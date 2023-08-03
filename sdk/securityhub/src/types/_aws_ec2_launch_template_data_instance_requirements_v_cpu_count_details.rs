@@ -50,6 +50,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
         self.max = input;
         self
     }
+    /// <p> The maximum number of vCPUs. </p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
+    }
     /// <p> The minimum number of vCPUs. </p>
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
+    }
+    /// <p> The minimum number of vCPUs. </p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
     pub fn build(

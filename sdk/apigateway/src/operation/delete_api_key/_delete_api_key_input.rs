@@ -40,6 +40,10 @@ impl DeleteApiKeyInputBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The identifier of the ApiKey resource to be deleted.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
     pub fn build(
         self,

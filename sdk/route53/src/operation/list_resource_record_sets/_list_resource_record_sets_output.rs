@@ -108,6 +108,12 @@ impl ListResourceRecordSetsOutputBuilder {
         self.resource_record_sets = input;
         self
     }
+    /// <p>Information about multiple resource record sets.</p>
+    pub fn get_resource_record_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>> {
+        &self.resource_record_sets
+    }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -117,6 +123,10 @@ impl ListResourceRecordSetsOutputBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
@@ -136,6 +146,11 @@ impl ListResourceRecordSetsOutputBuilder {
         self.next_record_name = input;
         self
     }
+    /// <p>If the results were truncated, the name of the next record in the list.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    pub fn get_next_record_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_record_name
+    }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
     pub fn next_record_type(mut self, input: crate::types::RrType) -> Self {
@@ -150,6 +165,11 @@ impl ListResourceRecordSetsOutputBuilder {
     ) -> Self {
         self.next_record_type = input;
         self
+    }
+    /// <p>If the results were truncated, the type of the next record in the list.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    pub fn get_next_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
+        &self.next_record_type
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -169,6 +189,11 @@ impl ListResourceRecordSetsOutputBuilder {
         self.next_record_identifier = input;
         self
     }
+    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    pub fn get_next_record_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_record_identifier
+    }
     /// <p>The maximum number of records you requested.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -178,6 +203,10 @@ impl ListResourceRecordSetsOutputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of records you requested.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

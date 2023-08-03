@@ -76,6 +76,10 @@ impl CreateFileCacheLustreConfigurationBuilder {
         self.per_unit_storage_throughput = input;
         self
     }
+    /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+    pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.per_unit_storage_throughput
+    }
     /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::FileCacheLustreDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -88,6 +92,12 @@ impl CreateFileCacheLustreConfigurationBuilder {
     ) -> Self {
         self.deployment_type = input;
         self
+    }
+    /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+    pub fn get_deployment_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileCacheLustreDeploymentType> {
+        &self.deployment_type
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -111,6 +121,15 @@ impl CreateFileCacheLustreConfigurationBuilder {
         self.weekly_maintenance_start_time = input;
         self
     }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn get_weekly_maintenance_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.weekly_maintenance_start_time
+    }
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
     pub fn metadata_configuration(
         mut self,
@@ -126,6 +145,12 @@ impl CreateFileCacheLustreConfigurationBuilder {
     ) -> Self {
         self.metadata_configuration = input;
         self
+    }
+    /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    pub fn get_metadata_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration> {
+        &self.metadata_configuration
     }
     /// Consumes the builder and constructs a [`CreateFileCacheLustreConfiguration`](crate::types::CreateFileCacheLustreConfiguration).
     pub fn build(self) -> crate::types::CreateFileCacheLustreConfiguration {

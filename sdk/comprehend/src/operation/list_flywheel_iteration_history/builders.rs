@@ -36,6 +36,10 @@ impl ListFlywheelIterationHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFlywheelIterationHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }
+    /// <p>The ARN of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
     pub fn filter(mut self, input: crate::types::FlywheelIterationFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -145,6 +153,10 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>Filter the flywheel iteration history based on creation time.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::FlywheelIterationFilter> {
+        self.inner.get_filter()
+    }
     /// <p>Next token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,6 +167,10 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Next token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of iteration history results to return</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,5 +180,9 @@ impl ListFlywheelIterationHistoryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of iteration history results to return</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

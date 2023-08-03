@@ -40,6 +40,10 @@ impl InstanceIpv6AddressBuilder {
         self.ipv6_address = input;
         self
     }
+    /// <p>The IPv6 address.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`InstanceIpv6Address`](crate::types::InstanceIpv6Address).
     pub fn build(self) -> crate::types::InstanceIpv6Address {
         crate::types::InstanceIpv6Address {

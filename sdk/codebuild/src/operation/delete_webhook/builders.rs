@@ -36,6 +36,12 @@ impl DeleteWebhookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWebhook as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_webhook::builders::DeleteWebhookInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteWebhookFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
 }

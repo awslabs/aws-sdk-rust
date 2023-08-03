@@ -68,6 +68,12 @@ impl LoadBalancerTargetGroupStateBuilder {
         self.load_balancer_target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_load_balancer_target_group_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_target_group_arn
+    }
     /// <p>The state of the target group.</p>
     /// <ul>
     /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p> </li>
@@ -91,6 +97,17 @@ impl LoadBalancerTargetGroupStateBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the target group.</p>
+    /// <ul>
+    /// <li> <p> <code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p> </li>
+    /// <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the target group.</p> </li>
+    /// <li> <p> <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p> </li>
+    /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
+    /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`LoadBalancerTargetGroupState`](crate::types::LoadBalancerTargetGroupState).
     pub fn build(self) -> crate::types::LoadBalancerTargetGroupState {

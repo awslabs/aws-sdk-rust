@@ -46,6 +46,10 @@ impl DeleteHumanTaskUiInputBuilder {
         self.human_task_ui_name = input;
         self
     }
+    /// <p>The name of the human task user interface (work task template) you want to delete.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_name
+    }
     /// Consumes the builder and constructs a [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
     pub fn build(
         self,

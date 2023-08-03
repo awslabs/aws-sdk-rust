@@ -48,6 +48,10 @@ impl ExasolParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>The hostname or IP address of the Exasol data source.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The port for the Exasol data source.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ExasolParametersBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port for the Exasol data source.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`ExasolParameters`](crate::types::ExasolParameters).
     pub fn build(self) -> crate::types::ExasolParameters {

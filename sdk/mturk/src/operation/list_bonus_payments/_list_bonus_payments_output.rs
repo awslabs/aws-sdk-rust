@@ -63,6 +63,10 @@ impl ListBonusPaymentsOutputBuilder {
         self.num_results = input;
         self
     }
+    /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
+    pub fn get_num_results(&self) -> &::std::option::Option<i32> {
+        &self.num_results
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListBonusPaymentsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `bonus_payments`.
     ///
@@ -91,6 +99,12 @@ impl ListBonusPaymentsOutputBuilder {
     ) -> Self {
         self.bonus_payments = input;
         self
+    }
+    /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
+    pub fn get_bonus_payments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>> {
+        &self.bonus_payments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

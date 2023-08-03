@@ -87,6 +87,10 @@ impl CreateRouteInputBuilder {
         self.route_name = input;
         self
     }
+    /// <p>The name to use for the route.</p>
+    pub fn get_route_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_name
+    }
     /// <p>The name of the service mesh to create the route in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateRouteInputBuilder {
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
+    }
+    /// <p>The name of the service mesh to create the route in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
     }
     /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
     pub fn virtual_router_name(
@@ -113,6 +121,10 @@ impl CreateRouteInputBuilder {
         self.virtual_router_name = input;
         self
     }
+    /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
+    pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_router_name
+    }
     /// <p>The route specification to apply.</p>
     pub fn spec(mut self, input: crate::types::RouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl CreateRouteInputBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::RouteSpec>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The route specification to apply.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::RouteSpec> {
+        &self.spec
     }
     /// Appends an item to `tags`.
     ///
@@ -142,6 +158,10 @@ impl CreateRouteInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -152,6 +172,10 @@ impl CreateRouteInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_owner = ::std::option::Option::Some(input.into());
@@ -161,6 +185,10 @@ impl CreateRouteInputBuilder {
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
     pub fn build(

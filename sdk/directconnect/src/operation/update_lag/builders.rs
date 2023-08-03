@@ -45,6 +45,10 @@ impl UpdateLagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLag as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_lag::builders::UpdateLagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateLagFluentBuilder {
         self.inner = self.inner.set_lag_id(input);
         self
     }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_id()
+    }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_name(input.into());
@@ -137,6 +145,10 @@ impl UpdateLagFluentBuilder {
         self.inner = self.inner.set_lag_name(input);
         self
     }
+    /// <p>The name of the LAG.</p>
+    pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_name()
+    }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     pub fn minimum_links(mut self, input: i32) -> Self {
         self.inner = self.inner.minimum_links(input);
@@ -146,6 +158,10 @@ impl UpdateLagFluentBuilder {
     pub fn set_minimum_links(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_links(input);
         self
+    }
+    /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    pub fn get_minimum_links(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minimum_links()
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
@@ -164,5 +180,10 @@ impl UpdateLagFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
+    }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_mode()
     }
 }

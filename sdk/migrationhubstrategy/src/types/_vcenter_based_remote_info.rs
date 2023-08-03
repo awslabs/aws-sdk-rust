@@ -54,6 +54,12 @@ impl VcenterBasedRemoteInfoBuilder {
         self.vcenter_configuration_time_stamp = input;
         self
     }
+    /// <p>The time when the remote server based on vCenter was last configured.</p>
+    pub fn get_vcenter_configuration_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vcenter_configuration_time_stamp
+    }
     /// <p>The type of the operating system.</p>
     pub fn os_type(mut self, input: crate::types::OsType) -> Self {
         self.os_type = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl VcenterBasedRemoteInfoBuilder {
     pub fn set_os_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
         self.os_type = input;
         self
+    }
+    /// <p>The type of the operating system.</p>
+    pub fn get_os_type(&self) -> &::std::option::Option<crate::types::OsType> {
+        &self.os_type
     }
     /// Consumes the builder and constructs a [`VcenterBasedRemoteInfo`](crate::types::VcenterBasedRemoteInfo).
     pub fn build(self) -> crate::types::VcenterBasedRemoteInfo {

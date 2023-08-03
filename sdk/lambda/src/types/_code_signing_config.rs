@@ -88,6 +88,10 @@ impl CodeSigningConfigBuilder {
         self.code_signing_config_id = input;
         self
     }
+    /// <p>Unique identifer for the Code signing configuration.</p>
+    pub fn get_code_signing_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_signing_config_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
     pub fn code_signing_config_arn(
         mut self,
@@ -104,6 +108,10 @@ impl CodeSigningConfigBuilder {
         self.code_signing_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
+    pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_signing_config_arn
+    }
     /// <p>Code signing configuration description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl CodeSigningConfigBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Code signing configuration description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>List of allowed publishers.</p>
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
@@ -127,6 +139,12 @@ impl CodeSigningConfigBuilder {
         self.allowed_publishers = input;
         self
     }
+    /// <p>List of allowed publishers.</p>
+    pub fn get_allowed_publishers(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+        &self.allowed_publishers
+    }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
         self.code_signing_policies = ::std::option::Option::Some(input);
@@ -139,6 +157,12 @@ impl CodeSigningConfigBuilder {
     ) -> Self {
         self.code_signing_policies = input;
         self
+    }
+    /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
+    pub fn get_code_signing_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+        &self.code_signing_policies
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
     pub fn last_modified(
@@ -155,6 +179,10 @@ impl CodeSigningConfigBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
     }
     /// Consumes the builder and constructs a [`CodeSigningConfig`](crate::types::CodeSigningConfig).
     pub fn build(self) -> crate::types::CodeSigningConfig {

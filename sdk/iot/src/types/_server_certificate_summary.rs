@@ -65,6 +65,10 @@ impl ServerCertificateSummaryBuilder {
         self.server_certificate_arn = input;
         self
     }
+    /// <p>The ARN of the server certificate.</p>
+    pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_certificate_arn
+    }
     /// <p>The status of the server certificate.</p>
     pub fn server_certificate_status(
         mut self,
@@ -81,6 +85,12 @@ impl ServerCertificateSummaryBuilder {
         self.server_certificate_status = input;
         self
     }
+    /// <p>The status of the server certificate.</p>
+    pub fn get_server_certificate_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerCertificateStatus> {
+        &self.server_certificate_status
+    }
     /// <p>Details that explain the status of the server certificate.</p>
     pub fn server_certificate_status_detail(
         mut self,
@@ -96,6 +106,12 @@ impl ServerCertificateSummaryBuilder {
     ) -> Self {
         self.server_certificate_status_detail = input;
         self
+    }
+    /// <p>Details that explain the status of the server certificate.</p>
+    pub fn get_server_certificate_status_detail(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.server_certificate_status_detail
     }
     /// Consumes the builder and constructs a [`ServerCertificateSummary`](crate::types::ServerCertificateSummary).
     pub fn build(self) -> crate::types::ServerCertificateSummary {

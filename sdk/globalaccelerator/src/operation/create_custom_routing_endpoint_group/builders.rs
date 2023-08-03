@@ -36,6 +36,10 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomRoutingEndpointGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn endpoint_group_region(
         mut self,
@@ -115,6 +123,10 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_region(input);
         self
+    }
+    /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_group_region()
     }
     /// Appends an item to `DestinationConfigurations`.
     ///
@@ -138,6 +150,13 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
         self.inner = self.inner.set_destination_configurations(input);
         self
     }
+    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
+    pub fn get_destination_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>
+    {
+        self.inner.get_destination_configurations()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(
         mut self,
@@ -153,5 +172,9 @@ impl CreateCustomRoutingEndpointGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

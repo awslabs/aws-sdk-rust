@@ -103,6 +103,10 @@ impl ResourceBuilder {
         self.catalog = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogResource> {
+        &self.catalog
+    }
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
     pub fn database(mut self, input: crate::types::DatabaseResource) -> Self {
         self.database = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl ResourceBuilder {
         self.database = input;
         self
     }
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseResource> {
+        &self.database
+    }
     /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
     pub fn table(mut self, input: crate::types::TableResource) -> Self {
         self.table = ::std::option::Option::Some(input);
@@ -125,6 +133,10 @@ impl ResourceBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableResource>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::TableResource> {
+        &self.table
     }
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
     pub fn table_with_columns(mut self, input: crate::types::TableWithColumnsResource) -> Self {
@@ -139,6 +151,12 @@ impl ResourceBuilder {
         self.table_with_columns = input;
         self
     }
+    /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
+    pub fn get_table_with_columns(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableWithColumnsResource> {
+        &self.table_with_columns
+    }
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
     pub fn data_location(mut self, input: crate::types::DataLocationResource) -> Self {
         self.data_location = ::std::option::Option::Some(input);
@@ -151,6 +169,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.data_location = input;
         self
+    }
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    pub fn get_data_location(&self) -> &::std::option::Option<crate::types::DataLocationResource> {
+        &self.data_location
     }
     /// <p>A data cell filter.</p>
     pub fn data_cells_filter(mut self, input: crate::types::DataCellsFilterResource) -> Self {
@@ -165,6 +187,12 @@ impl ResourceBuilder {
         self.data_cells_filter = input;
         self
     }
+    /// <p>A data cell filter.</p>
+    pub fn get_data_cells_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCellsFilterResource> {
+        &self.data_cells_filter
+    }
     /// <p>The LF-tag key and values attached to a resource.</p>
     pub fn lf_tag(mut self, input: crate::types::LfTagKeyResource) -> Self {
         self.lf_tag = ::std::option::Option::Some(input);
@@ -178,6 +206,10 @@ impl ResourceBuilder {
         self.lf_tag = input;
         self
     }
+    /// <p>The LF-tag key and values attached to a resource.</p>
+    pub fn get_lf_tag(&self) -> &::std::option::Option<crate::types::LfTagKeyResource> {
+        &self.lf_tag
+    }
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
     pub fn lf_tag_policy(mut self, input: crate::types::LfTagPolicyResource) -> Self {
         self.lf_tag_policy = ::std::option::Option::Some(input);
@@ -190,6 +222,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.lf_tag_policy = input;
         self
+    }
+    /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    pub fn get_lf_tag_policy(&self) -> &::std::option::Option<crate::types::LfTagPolicyResource> {
+        &self.lf_tag_policy
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

@@ -55,6 +55,12 @@ impl MetricPolicyBuilder {
         self.container_level_metrics = input;
         self
     }
+    /// <p>A setting to enable or disable metrics at the container level.</p>
+    pub fn get_container_level_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerLevelMetrics> {
+        &self.container_level_metrics
+    }
     /// Appends an item to `metric_policy_rules`.
     ///
     /// To override the contents of this collection use [`set_metric_policy_rules`](Self::set_metric_policy_rules).
@@ -73,6 +79,12 @@ impl MetricPolicyBuilder {
     ) -> Self {
         self.metric_policy_rules = input;
         self
+    }
+    /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
+    pub fn get_metric_policy_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>> {
+        &self.metric_policy_rules
     }
     /// Consumes the builder and constructs a [`MetricPolicy`](crate::types::MetricPolicy).
     pub fn build(self) -> crate::types::MetricPolicy {

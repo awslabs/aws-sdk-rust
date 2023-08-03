@@ -74,6 +74,10 @@ impl PipelineSummaryBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Appends an item to `reprocessing_summaries`.
     ///
     /// To override the contents of this collection use [`set_reprocessing_summaries`](Self::set_reprocessing_summaries).
@@ -93,6 +97,12 @@ impl PipelineSummaryBuilder {
         self.reprocessing_summaries = input;
         self
     }
+    /// <p>A summary of information about the pipeline reprocessing.</p>
+    pub fn get_reprocessing_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>> {
+        &self.reprocessing_summaries
+    }
     /// <p>When the pipeline was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl PipelineSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the pipeline was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the pipeline was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl PipelineSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>When the pipeline was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {

@@ -87,6 +87,10 @@ impl CreateWorldTemplateInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the world template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateWorldTemplateInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the world template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The world template body.</p>
     pub fn template_body(
@@ -113,6 +121,10 @@ impl CreateWorldTemplateInputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The world template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>The location of the world template.</p>
     pub fn template_location(mut self, input: crate::types::TemplateLocation) -> Self {
         self.template_location = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl CreateWorldTemplateInputBuilder {
     ) -> Self {
         self.template_location = input;
         self
+    }
+    /// <p>The location of the world template.</p>
+    pub fn get_template_location(&self) -> &::std::option::Option<crate::types::TemplateLocation> {
+        &self.template_location
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -150,6 +166,14 @@ impl CreateWorldTemplateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorldTemplateInput`](crate::operation::create_world_template::CreateWorldTemplateInput).
     pub fn build(

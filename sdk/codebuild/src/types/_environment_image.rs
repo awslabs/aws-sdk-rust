@@ -56,6 +56,10 @@ impl EnvironmentImageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Docker image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the Docker image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl EnvironmentImageBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the Docker image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `versions`.
     ///
@@ -84,6 +92,10 @@ impl EnvironmentImageBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>A list of environment image versions.</p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.versions
     }
     /// Consumes the builder and constructs a [`EnvironmentImage`](crate::types::EnvironmentImage).
     pub fn build(self) -> crate::types::EnvironmentImage {

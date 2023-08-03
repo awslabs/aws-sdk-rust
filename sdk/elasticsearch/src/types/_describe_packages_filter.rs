@@ -51,6 +51,10 @@ impl DescribePackagesFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>Any field from <code>PackageDetails</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DescribePackagesFilterName> {
+        &self.name
+    }
     /// Appends an item to `value`.
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
@@ -69,6 +73,10 @@ impl DescribePackagesFilterBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A non-empty list of values for the specified field.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
     pub fn build(self) -> crate::types::DescribePackagesFilter {

@@ -39,6 +39,10 @@ impl GetImagePolicyInputBuilder {
         self.image_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
+    }
     /// Consumes the builder and constructs a [`GetImagePolicyInput`](crate::operation::get_image_policy::GetImagePolicyInput).
     pub fn build(
         self,

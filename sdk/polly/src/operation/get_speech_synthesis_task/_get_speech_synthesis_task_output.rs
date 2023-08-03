@@ -51,6 +51,10 @@ impl GetSpeechSynthesisTaskOutputBuilder {
         self.synthesis_task = input;
         self
     }
+    /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
+    pub fn get_synthesis_task(&self) -> &::std::option::Option<crate::types::SynthesisTask> {
+        &self.synthesis_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

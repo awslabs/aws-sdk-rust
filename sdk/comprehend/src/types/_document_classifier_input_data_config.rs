@@ -153,6 +153,17 @@ impl DocumentClassifierInputDataConfigBuilder {
         self.data_format = input;
         self
     }
+    /// <p>The format of your training data:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p> </li>
+    /// <li> <p> <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels. </p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
+    pub fn get_data_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentClassifierDataFormat> {
+        &self.data_format
+    }
     /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
@@ -167,6 +178,12 @@ impl DocumentClassifierInputDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
+    /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub fn test_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_s3_uri = ::std::option::Option::Some(input.into());
@@ -176,6 +193,10 @@ impl DocumentClassifierInputDataConfigBuilder {
     pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_s3_uri = input;
         self
+    }
+    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    pub fn get_test_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_s3_uri
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub fn label_delimiter(
@@ -192,6 +213,10 @@ impl DocumentClassifierInputDataConfigBuilder {
     ) -> Self {
         self.label_delimiter = input;
         self
+    }
+    /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
+    pub fn get_label_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_delimiter
     }
     /// Appends an item to `augmented_manifests`.
     ///
@@ -214,6 +239,13 @@ impl DocumentClassifierInputDataConfigBuilder {
         self.augmented_manifests = input;
         self
     }
+    /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
+    pub fn get_augmented_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>> {
+        &self.augmented_manifests
+    }
     /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
     pub fn document_type(
         mut self,
@@ -230,6 +262,12 @@ impl DocumentClassifierInputDataConfigBuilder {
         self.document_type = input;
         self
     }
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    pub fn get_document_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentClassifierDocumentTypeFormat> {
+        &self.document_type
+    }
     /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
     pub fn documents(mut self, input: crate::types::DocumentClassifierDocuments) -> Self {
         self.documents = ::std::option::Option::Some(input);
@@ -242,6 +280,12 @@ impl DocumentClassifierInputDataConfigBuilder {
     ) -> Self {
         self.documents = input;
         self
+    }
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    pub fn get_documents(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentClassifierDocuments> {
+        &self.documents
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p>
     /// <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p>
@@ -271,6 +315,20 @@ impl DocumentClassifierInputDataConfigBuilder {
     ) -> Self {
         self.document_reader_config = input;
         self
+    }
+    /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p>
+    /// <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p>
+    /// <ul>
+    /// <li> <p> <b>Word files</b> - Amazon Comprehend parser extracts the text. </p> </li>
+    /// <li> <p> <b>Digital PDF files</b> - Amazon Comprehend parser extracts the text. </p> </li>
+    /// <li> <p> <b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text. </p> </li>
+    /// </ul>
+    /// <p> <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
+    /// <p> For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide. </p>
+    pub fn get_document_reader_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+        &self.document_reader_config
     }
     /// Consumes the builder and constructs a [`DocumentClassifierInputDataConfig`](crate::types::DocumentClassifierInputDataConfig).
     pub fn build(self) -> crate::types::DocumentClassifierInputDataConfig {

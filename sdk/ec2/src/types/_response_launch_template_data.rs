@@ -410,6 +410,10 @@ impl ResponseLaunchTemplateDataBuilder {
         self.kernel_id = input;
         self
     }
+    /// <p>The ID of the kernel, if applicable.</p>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_id
+    }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
@@ -419,6 +423,10 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
+    }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. </p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        &self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(
@@ -435,6 +443,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.iam_instance_profile = input;
         self
+    }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecification> {
+        &self.iam_instance_profile
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -460,6 +474,13 @@ impl ResponseLaunchTemplateDataBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mappings.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMapping>>
+    {
+        &self.block_device_mappings
+    }
     /// Appends an item to `network_interfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
@@ -483,6 +504,14 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.network_interfaces = input;
         self
+    }
+    /// <p>The network interfaces.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification>,
+    > {
+        &self.network_interfaces
     }
     /// <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI at instance launch.</p>
     /// <p>The value depends on what you specified in the request. The possible values are:</p>
@@ -508,6 +537,17 @@ impl ResponseLaunchTemplateDataBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI at instance launch.</p>
+    /// <p>The value depends on what you specified in the request. The possible values are:</p>
+    /// <ul>
+    /// <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p> </li>
+    /// <li> <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.</p> </li>
+    /// <li> <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -521,6 +561,10 @@ impl ResponseLaunchTemplateDataBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -530,6 +574,10 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The monitoring for the instance.</p>
     pub fn monitoring(mut self, input: crate::types::LaunchTemplatesMonitoring) -> Self {
@@ -544,6 +592,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.monitoring = input;
         self
     }
+    /// <p>The monitoring for the instance.</p>
+    pub fn get_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplatesMonitoring> {
+        &self.monitoring
+    }
     /// <p>The placement of the instance.</p>
     pub fn placement(mut self, input: crate::types::LaunchTemplatePlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -557,6 +611,10 @@ impl ResponseLaunchTemplateDataBuilder {
         self.placement = input;
         self
     }
+    /// <p>The placement of the instance.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::LaunchTemplatePlacement> {
+        &self.placement
+    }
     /// <p>The ID of the RAM disk, if applicable.</p>
     pub fn ram_disk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ram_disk_id = ::std::option::Option::Some(input.into());
@@ -567,6 +625,10 @@ impl ResponseLaunchTemplateDataBuilder {
         self.ram_disk_id = input;
         self
     }
+    /// <p>The ID of the RAM disk, if applicable.</p>
+    pub fn get_ram_disk_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ram_disk_id
+    }
     /// <p>If set to <code>true</code>, indicates that the instance cannot be terminated using the Amazon EC2 console, command line tool, or API.</p>
     pub fn disable_api_termination(mut self, input: bool) -> Self {
         self.disable_api_termination = ::std::option::Option::Some(input);
@@ -576,6 +638,10 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn set_disable_api_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_termination = input;
         self
+    }
+    /// <p>If set to <code>true</code>, indicates that the instance cannot be terminated using the Amazon EC2 console, command line tool, or API.</p>
+    pub fn get_disable_api_termination(&self) -> &::std::option::Option<bool> {
+        &self.disable_api_termination
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn instance_initiated_shutdown_behavior(
@@ -593,6 +659,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    pub fn get_instance_initiated_shutdown_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShutdownBehavior> {
+        &self.instance_initiated_shutdown_behavior
+    }
     /// <p>The user data for the instance. </p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
@@ -602,6 +674,10 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
+    }
+    /// <p>The user data for the instance. </p>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -624,6 +700,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags that are applied to the resources that are created during instance launch.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecification>> {
+        &self.tag_specifications
     }
     /// Appends an item to `elastic_gpu_specifications`.
     ///
@@ -649,6 +731,13 @@ impl ResponseLaunchTemplateDataBuilder {
         self.elastic_gpu_specifications = input;
         self
     }
+    /// <p>The elastic GPU specification.</p>
+    pub fn get_elastic_gpu_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>>
+    {
+        &self.elastic_gpu_specifications
+    }
     /// Appends an item to `elastic_inference_accelerators`.
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
@@ -673,6 +762,14 @@ impl ResponseLaunchTemplateDataBuilder {
         self.elastic_inference_accelerators = input;
         self
     }
+    /// <p> The elastic inference accelerator for the instance. </p>
+    pub fn get_elastic_inference_accelerators(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>,
+    > {
+        &self.elastic_inference_accelerators
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -694,6 +791,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The security group IDs.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Appends an item to `security_groups`.
     ///
@@ -717,6 +820,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security group names.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The market (purchasing) option for the instances.</p>
     pub fn instance_market_options(
         mut self,
@@ -733,6 +842,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.instance_market_options = input;
         self
     }
+    /// <p>The market (purchasing) option for the instances.</p>
+    pub fn get_instance_market_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptions> {
+        &self.instance_market_options
+    }
     /// <p>The credit option for CPU usage of the instance.</p>
     pub fn credit_specification(mut self, input: crate::types::CreditSpecification) -> Self {
         self.credit_specification = ::std::option::Option::Some(input);
@@ -746,6 +861,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.credit_specification = input;
         self
     }
+    /// <p>The credit option for CPU usage of the instance.</p>
+    pub fn get_credit_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreditSpecification> {
+        &self.credit_specification
+    }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn cpu_options(mut self, input: crate::types::LaunchTemplateCpuOptions) -> Self {
         self.cpu_options = ::std::option::Option::Some(input);
@@ -758,6 +879,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.cpu_options = input;
         self
+    }
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_cpu_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateCpuOptions> {
+        &self.cpu_options
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
     pub fn capacity_reservation_specification(
@@ -776,6 +903,13 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.capacity_reservation_specification = input;
         self
+    }
+    /// <p>Information about the Capacity Reservation targeting option.</p>
+    pub fn get_capacity_reservation_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationResponse>
+    {
+        &self.capacity_reservation_specification
     }
     /// Appends an item to `license_specifications`.
     ///
@@ -801,6 +935,13 @@ impl ResponseLaunchTemplateDataBuilder {
         self.license_specifications = input;
         self
     }
+    /// <p>The license configurations.</p>
+    pub fn get_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfiguration>>
+    {
+        &self.license_specifications
+    }
     /// <p>Indicates whether an instance is configured for hibernation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn hibernation_options(
         mut self,
@@ -816,6 +957,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.hibernation_options = input;
         self
+    }
+    /// <p>Indicates whether an instance is configured for hibernation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_hibernation_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateHibernationOptions> {
+        &self.hibernation_options
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn metadata_options(
@@ -833,6 +980,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.metadata_options = input;
         self
     }
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_metadata_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptions> {
+        &self.metadata_options
+    }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn enclave_options(mut self, input: crate::types::LaunchTemplateEnclaveOptions) -> Self {
         self.enclave_options = ::std::option::Option::Some(input);
@@ -845,6 +998,12 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.enclave_options = input;
         self
+    }
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
+    pub fn get_enclave_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateEnclaveOptions> {
+        &self.enclave_options
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.</p>
@@ -860,6 +1019,13 @@ impl ResponseLaunchTemplateDataBuilder {
     ) -> Self {
         self.instance_requirements = input;
         self
+    }
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
+    /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.</p>
+    pub fn get_instance_requirements(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+        &self.instance_requirements
     }
     /// <p>The options for the instance hostname.</p>
     pub fn private_dns_name_options(
@@ -877,6 +1043,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.private_dns_name_options = input;
         self
     }
+    /// <p>The options for the instance hostname.</p>
+    pub fn get_private_dns_name_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptions> {
+        &self.private_dns_name_options
+    }
     /// <p>The maintenance options for your instance.</p>
     pub fn maintenance_options(
         mut self,
@@ -893,6 +1065,12 @@ impl ResponseLaunchTemplateDataBuilder {
         self.maintenance_options = input;
         self
     }
+    /// <p>The maintenance options for your instance.</p>
+    pub fn get_maintenance_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptions> {
+        &self.maintenance_options
+    }
     /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn disable_api_stop(mut self, input: bool) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
@@ -902,6 +1080,10 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_stop = input;
         self
+    }
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
+        &self.disable_api_stop
     }
     /// Consumes the builder and constructs a [`ResponseLaunchTemplateData`](crate::types::ResponseLaunchTemplateData).
     pub fn build(self) -> crate::types::ResponseLaunchTemplateData {

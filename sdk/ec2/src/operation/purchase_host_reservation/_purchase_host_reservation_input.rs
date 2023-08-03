@@ -82,6 +82,10 @@ impl PurchaseHostReservationInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl PurchaseHostReservationInputBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
     }
     /// Appends an item to `host_id_set`.
     ///
@@ -114,6 +122,12 @@ impl PurchaseHostReservationInputBuilder {
         self.host_id_set = input;
         self
     }
+    /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
+    pub fn get_host_id_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_id_set
+    }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
     pub fn limit_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_price = ::std::option::Option::Some(input.into());
@@ -124,6 +138,10 @@ impl PurchaseHostReservationInputBuilder {
         self.limit_price = input;
         self
     }
+    /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
+    pub fn get_limit_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_price
+    }
     /// <p>The ID of the offering.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -133,6 +151,10 @@ impl PurchaseHostReservationInputBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// <p>The ID of the offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -152,6 +174,12 @@ impl PurchaseHostReservationInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`PurchaseHostReservationInput`](crate::operation::purchase_host_reservation::PurchaseHostReservationInput).
     pub fn build(

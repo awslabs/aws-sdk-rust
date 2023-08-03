@@ -56,6 +56,10 @@ impl InitiateLayerUploadOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub fn part_size(mut self, input: i64) -> Self {
         self.part_size = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl InitiateLayerUploadOutputBuilder {
     pub fn set_part_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_size = input;
         self
+    }
+    /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
+    pub fn get_part_size(&self) -> &::std::option::Option<i64> {
+        &self.part_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

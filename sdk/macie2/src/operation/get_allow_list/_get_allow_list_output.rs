@@ -118,6 +118,10 @@ impl GetAllowListOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -130,6 +134,10 @@ impl GetAllowListOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
     pub fn criteria(mut self, input: crate::types::AllowListCriteria) -> Self {
@@ -144,6 +152,10 @@ impl GetAllowListOutputBuilder {
         self.criteria = input;
         self
     }
+    /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AllowListCriteria> {
+        &self.criteria
+    }
     /// <p>The custom description of the allow list.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -153,6 +165,10 @@ impl GetAllowListOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The custom description of the allow list.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique identifier for the allow list.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +180,10 @@ impl GetAllowListOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the allow list.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The custom name of the allow list.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -173,6 +193,10 @@ impl GetAllowListOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The custom name of the allow list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
     pub fn status(mut self, input: crate::types::AllowListStatus) -> Self {
@@ -186,6 +210,10 @@ impl GetAllowListOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AllowListStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -212,6 +240,14 @@ impl GetAllowListOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -224,6 +260,10 @@ impl GetAllowListOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

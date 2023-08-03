@@ -79,6 +79,10 @@ impl ModifyVpnConnectionInputBuilder {
         self.vpn_connection_id = input;
         self
     }
+    /// <p>The ID of the VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
+    }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(
         mut self,
@@ -94,6 +98,10 @@ impl ModifyVpnConnectionInputBuilder {
     ) -> Self {
         self.transit_gateway_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
     pub fn customer_gateway_id(
@@ -111,6 +119,10 @@ impl ModifyVpnConnectionInputBuilder {
         self.customer_gateway_id = input;
         self
     }
+    /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
+    pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_id
+    }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
     pub fn vpn_gateway_id(
         mut self,
@@ -127,6 +139,10 @@ impl ModifyVpnConnectionInputBuilder {
         self.vpn_gateway_id = input;
         self
     }
+    /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
+    pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_gateway_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl ModifyVpnConnectionInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
     pub fn build(

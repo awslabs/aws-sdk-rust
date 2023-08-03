@@ -36,6 +36,10 @@ impl DisassociateApplicationFromEntitlementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateApplicationFromEntitlement as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateApplicationFromEntitlementFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>The name of the entitlement.</p>
     pub fn entitlement_name(
         mut self,
@@ -116,6 +124,10 @@ impl DisassociateApplicationFromEntitlementFluentBuilder {
         self.inner = self.inner.set_entitlement_name(input);
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entitlement_name()
+    }
     /// <p>The identifier of the application to remove from the entitlement.</p>
     pub fn application_identifier(
         mut self,
@@ -131,5 +143,9 @@ impl DisassociateApplicationFromEntitlementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
+    }
+    /// <p>The identifier of the application to remove from the entitlement.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
     }
 }

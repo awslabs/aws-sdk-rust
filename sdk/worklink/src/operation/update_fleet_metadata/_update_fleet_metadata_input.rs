@@ -57,6 +57,10 @@ impl UpdateFleetMetadataInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateFleetMetadataInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -79,6 +87,10 @@ impl UpdateFleetMetadataInputBuilder {
     ) -> Self {
         self.optimize_for_end_user_location = input;
         self
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
+        &self.optimize_for_end_user_location
     }
     /// Consumes the builder and constructs a [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
     pub fn build(

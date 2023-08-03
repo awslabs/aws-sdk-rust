@@ -49,6 +49,12 @@ impl StartReportCreationInputBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
+    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// Consumes the builder and constructs a [`StartReportCreationInput`](crate::operation::start_report_creation::StartReportCreationInput).
     pub fn build(
         self,

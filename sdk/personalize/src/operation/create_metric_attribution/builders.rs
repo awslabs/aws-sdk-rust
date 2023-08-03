@@ -37,6 +37,13 @@ impl CreateMetricAttributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMetricAttribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateMetricAttributionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the metric attribution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -142,6 +153,10 @@ impl CreateMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
     }
     /// Appends an item to `metrics`.
     ///
@@ -160,6 +175,12 @@ impl CreateMetricAttributionFluentBuilder {
         self.inner = self.inner.set_metrics(input);
         self
     }
+    /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+        self.inner.get_metrics()
+    }
     /// <p>The output configuration details for the metric attribution.</p>
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
         self.inner = self.inner.metrics_output_config(input);
@@ -172,5 +193,11 @@ impl CreateMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metrics_output_config(input);
         self
+    }
+    /// <p>The output configuration details for the metric attribution.</p>
+    pub fn get_metrics_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+        self.inner.get_metrics_output_config()
     }
 }

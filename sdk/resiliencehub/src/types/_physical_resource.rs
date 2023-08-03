@@ -126,6 +126,10 @@ impl PhysicalResourceBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
@@ -139,6 +143,12 @@ impl PhysicalResourceBuilder {
         self.logical_resource_id = input;
         self
     }
+    /// <p>The logical identifier of the resource.</p>
+    pub fn get_logical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+        &self.logical_resource_id
+    }
     /// <p>The physical identifier of the resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
@@ -151,6 +161,12 @@ impl PhysicalResourceBuilder {
     ) -> Self {
         self.physical_resource_id = input;
         self
+    }
+    /// <p>The physical identifier of the resource.</p>
+    pub fn get_physical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhysicalResourceId> {
+        &self.physical_resource_id
     }
     /// <p>The type of resource.</p>
     pub fn resource_type(
@@ -167,6 +183,10 @@ impl PhysicalResourceBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `app_components`.
     ///
@@ -186,6 +206,12 @@ impl PhysicalResourceBuilder {
     ) -> Self {
         self.app_components = input;
         self
+    }
+    /// <p>The application components that belong to this resource.</p>
+    pub fn get_app_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponent>> {
+        &self.app_components
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -223,6 +249,18 @@ impl PhysicalResourceBuilder {
         self.additional_info = input;
         self
     }
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
+    /// <p>Key: <code>"failover-regions"</code> </p>
+    /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
+    /// </note>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.additional_info
+    }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub fn excluded(mut self, input: bool) -> Self {
         self.excluded = ::std::option::Option::Some(input);
@@ -232,6 +270,10 @@ impl PhysicalResourceBuilder {
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.excluded = input;
         self
+    }
+    /// <p>Indicates if a resource is included or excluded from the assessment.</p>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
     }
     /// <p>The type of input source.</p>
     pub fn source_type(mut self, input: crate::types::ResourceSourceType) -> Self {
@@ -245,6 +287,10 @@ impl PhysicalResourceBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The type of input source.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ResourceSourceType> {
+        &self.source_type
     }
     /// <p>The name of the parent resource.</p>
     pub fn parent_resource_name(
@@ -261,6 +307,10 @@ impl PhysicalResourceBuilder {
     ) -> Self {
         self.parent_resource_name = input;
         self
+    }
+    /// <p>The name of the parent resource.</p>
+    pub fn get_parent_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_resource_name
     }
     /// Consumes the builder and constructs a [`PhysicalResource`](crate::types::PhysicalResource).
     pub fn build(self) -> crate::types::PhysicalResource {

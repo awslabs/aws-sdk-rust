@@ -90,6 +90,10 @@ impl DescribePrincipalMappingOutputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn data_source_id(
         mut self,
@@ -106,6 +110,10 @@ impl DescribePrincipalMappingOutputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl DescribePrincipalMappingOutputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Appends an item to `group_ordering_id_summaries`.
     ///
@@ -151,6 +163,19 @@ impl DescribePrincipalMappingOutputBuilder {
     ) -> Self {
         self.group_ordering_id_summaries = input;
         self
+    }
+    /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
+    /// <ul>
+    /// <li> <p>Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>
+    /// <li> <p>Last updated—the last date-time an action was updated.</p> </li>
+    /// <li> <p>Received—the last date-time an action was received or submitted.</p> </li>
+    /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
+    /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
+    /// </ul>
+    pub fn get_group_ordering_id_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>> {
+        &self.group_ordering_id_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

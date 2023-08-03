@@ -63,6 +63,14 @@ impl EventsRequestBuilder {
         self.batch_item = input;
         self
     }
+    /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
+    pub fn get_batch_item(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EventsBatch>,
+    > {
+        &self.batch_item
+    }
     /// Consumes the builder and constructs a [`EventsRequest`](crate::types::EventsRequest).
     pub fn build(self) -> crate::types::EventsRequest {
         crate::types::EventsRequest {

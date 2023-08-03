@@ -71,6 +71,11 @@ impl CreateServiceLinkedRoleInputBuilder {
         self.aws_service_name = input;
         self
     }
+    /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+    /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
+    pub fn get_aws_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_service_name
+    }
     /// <p>The description of the role.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +85,10 @@ impl CreateServiceLinkedRoleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the role.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p></p>
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
@@ -100,6 +109,12 @@ impl CreateServiceLinkedRoleInputBuilder {
     ) -> Self {
         self.custom_suffix = input;
         self
+    }
+    /// <p></p>
+    /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
+    /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
+    pub fn get_custom_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_suffix
     }
     /// Consumes the builder and constructs a [`CreateServiceLinkedRoleInput`](crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput).
     pub fn build(

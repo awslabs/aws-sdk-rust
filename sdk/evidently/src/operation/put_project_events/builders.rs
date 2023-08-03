@@ -36,6 +36,12 @@ impl PutProjectEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutProjectEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutProjectEventsFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project to write the events to.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -142,5 +152,9 @@ impl PutProjectEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_events(input);
         self
+    }
+    /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        self.inner.get_events()
     }
 }

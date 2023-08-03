@@ -62,6 +62,10 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(
         mut self,
@@ -78,6 +82,10 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>To show only actions with a particular status, specify a status.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>To show only actions with a particular status, specify a status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -65,6 +65,10 @@ impl UpdateApplicationMaintenanceConfigurationOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The application maintenance configuration description after the update.</p>
     pub fn application_maintenance_configuration_description(
         mut self,
@@ -80,6 +84,12 @@ impl UpdateApplicationMaintenanceConfigurationOutputBuilder {
     ) -> Self {
         self.application_maintenance_configuration_description = input;
         self
+    }
+    /// <p>The application maintenance configuration description after the update.</p>
+    pub fn get_application_maintenance_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription> {
+        &self.application_maintenance_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -100,6 +100,10 @@ impl DescribeCustomPluginOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the custom plugin was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn custom_plugin_arn(
         mut self,
@@ -116,6 +120,10 @@ impl DescribeCustomPluginOutputBuilder {
         self.custom_plugin_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
+    }
     /// <p>The state of the custom plugin.</p>
     pub fn custom_plugin_state(mut self, input: crate::types::CustomPluginState) -> Self {
         self.custom_plugin_state = ::std::option::Option::Some(input);
@@ -129,6 +137,12 @@ impl DescribeCustomPluginOutputBuilder {
         self.custom_plugin_state = input;
         self
     }
+    /// <p>The state of the custom plugin.</p>
+    pub fn get_custom_plugin_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginState> {
+        &self.custom_plugin_state
+    }
     /// <p>The description of the custom plugin.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -138,6 +152,10 @@ impl DescribeCustomPluginOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the custom plugin.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>
     pub fn latest_revision(mut self, input: crate::types::CustomPluginRevisionSummary) -> Self {
@@ -152,6 +170,12 @@ impl DescribeCustomPluginOutputBuilder {
         self.latest_revision = input;
         self
     }
+    /// <p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>
+    pub fn get_latest_revision(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginRevisionSummary> {
+        &self.latest_revision
+    }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -161,6 +185,10 @@ impl DescribeCustomPluginOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the custom plugin.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Details about the state of a custom plugin.</p>
     pub fn state_description(mut self, input: crate::types::StateDescription) -> Self {
@@ -174,6 +202,10 @@ impl DescribeCustomPluginOutputBuilder {
     ) -> Self {
         self.state_description = input;
         self
+    }
+    /// <p>Details about the state of a custom plugin.</p>
+    pub fn get_state_description(&self) -> &::std::option::Option<crate::types::StateDescription> {
+        &self.state_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

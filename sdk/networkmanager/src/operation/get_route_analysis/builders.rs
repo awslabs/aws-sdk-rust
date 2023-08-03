@@ -36,6 +36,12 @@ impl GetRouteAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRouteAnalysis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetRouteAnalysisFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the route analysis.</p>
     pub fn route_analysis_id(
         mut self,
@@ -147,5 +157,9 @@ impl GetRouteAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_route_analysis_id(input);
         self
+    }
+    /// <p>The ID of the route analysis.</p>
+    pub fn get_route_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_analysis_id()
     }
 }

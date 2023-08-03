@@ -46,6 +46,10 @@ impl UpdateUploadOutputBuilder {
         self.upload = input;
         self
     }
+    /// <p>A test spec uploaded to Device Farm.</p>
+    pub fn get_upload(&self) -> &::std::option::Option<crate::types::Upload> {
+        &self.upload
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

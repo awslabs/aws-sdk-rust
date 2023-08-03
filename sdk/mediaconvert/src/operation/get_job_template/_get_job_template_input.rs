@@ -39,6 +39,10 @@ impl GetJobTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the job template.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetJobTemplateInput`](crate::operation::get_job_template::GetJobTemplateInput).
     pub fn build(
         self,

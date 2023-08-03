@@ -36,6 +36,13 @@ impl GetDocumentationPartsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDocumentationParts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn r#type(mut self, input: crate::types::DocumentationPartType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -139,6 +150,10 @@ impl GetDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentationPartType> {
+        self.inner.get_type()
+    }
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
     pub fn name_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_query(input.into());
@@ -148,6 +163,10 @@ impl GetDocumentationPartsFluentBuilder {
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_query(input);
         self
+    }
+    /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_query()
     }
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +178,10 @@ impl GetDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_path(input);
         self
     }
+    /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path()
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.position(input.into());
@@ -169,6 +192,10 @@ impl GetDocumentationPartsFluentBuilder {
         self.inner = self.inner.set_position(input);
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_position()
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -178,6 +205,10 @@ impl GetDocumentationPartsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub fn location_status(mut self, input: crate::types::LocationStatusType) -> Self {
@@ -191,5 +222,9 @@ impl GetDocumentationPartsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_location_status(input);
         self
+    }
+    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
+    pub fn get_location_status(&self) -> &::std::option::Option<crate::types::LocationStatusType> {
+        self.inner.get_location_status()
     }
 }

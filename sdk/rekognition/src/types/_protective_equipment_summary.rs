@@ -66,6 +66,12 @@ impl ProtectiveEquipmentSummaryBuilder {
         self.persons_with_required_equipment = input;
         self
     }
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
+    pub fn get_persons_with_required_equipment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.persons_with_required_equipment
+    }
     /// Appends an item to `persons_without_required_equipment`.
     ///
     /// To override the contents of this collection use [`set_persons_without_required_equipment`](Self::set_persons_without_required_equipment).
@@ -85,6 +91,12 @@ impl ProtectiveEquipmentSummaryBuilder {
         self.persons_without_required_equipment = input;
         self
     }
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
+    pub fn get_persons_without_required_equipment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.persons_without_required_equipment
+    }
     /// Appends an item to `persons_indeterminate`.
     ///
     /// To override the contents of this collection use [`set_persons_indeterminate`](Self::set_persons_indeterminate).
@@ -103,6 +115,10 @@ impl ProtectiveEquipmentSummaryBuilder {
     ) -> Self {
         self.persons_indeterminate = input;
         self
+    }
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
+    pub fn get_persons_indeterminate(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.persons_indeterminate
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentSummary`](crate::types::ProtectiveEquipmentSummary).
     pub fn build(self) -> crate::types::ProtectiveEquipmentSummary {

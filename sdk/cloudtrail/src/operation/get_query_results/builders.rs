@@ -36,6 +36,12 @@ impl GetQueryResultsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetQueryResults as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_query_results::builders::GetQueryResultsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,11 @@ impl GetQueryResultsFluentBuilder {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+    #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
+    }
     /// <p>The ID of the query for which you want to get results.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
@@ -154,6 +165,10 @@ impl GetQueryResultsFluentBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
+    }
+    /// <p>The ID of the query for which you want to get results.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
     /// <p>A token you can use to get the next page of query results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,6 +180,10 @@ impl GetQueryResultsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of query results to display on a single page.</p>
     pub fn max_query_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_query_results(input);
@@ -174,5 +193,9 @@ impl GetQueryResultsFluentBuilder {
     pub fn set_max_query_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_query_results(input);
         self
+    }
+    /// <p>The maximum number of query results to display on a single page.</p>
+    pub fn get_max_query_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_query_results()
     }
 }

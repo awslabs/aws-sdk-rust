@@ -56,6 +56,10 @@ impl S3ObjectBuilder {
         self.bucket = input;
         self
     }
+    /// <p>An Amazon S3 Bucket name.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>An Amazon S3 key for the ephemeris.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3ObjectBuilder {
         self.key = input;
         self
     }
+    /// <p>An Amazon S3 key for the ephemeris.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3ObjectBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {

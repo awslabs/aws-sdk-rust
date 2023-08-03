@@ -48,6 +48,10 @@ impl ComponentConfigurationUpdateBuilder {
         self.merge = input;
         self
     }
+    /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_merge(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge
+    }
     /// Appends an item to `reset`.
     ///
     /// To override the contents of this collection use [`set_reset`](Self::set_reset).
@@ -66,6 +70,10 @@ impl ComponentConfigurationUpdateBuilder {
     ) -> Self {
         self.reset = input;
         self
+    }
+    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_reset(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reset
     }
     /// Consumes the builder and constructs a [`ComponentConfigurationUpdate`](crate::types::ComponentConfigurationUpdate).
     pub fn build(self) -> crate::types::ComponentConfigurationUpdate {

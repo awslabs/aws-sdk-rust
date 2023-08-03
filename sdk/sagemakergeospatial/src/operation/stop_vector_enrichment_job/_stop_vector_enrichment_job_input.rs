@@ -41,6 +41,10 @@ impl StopVectorEnrichmentJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StopVectorEnrichmentJobInput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobInput).
     pub fn build(
         self,

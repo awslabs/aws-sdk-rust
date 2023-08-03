@@ -36,6 +36,12 @@ impl DescribeCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeCertificateFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The identifier of the certificate.</p>
     pub fn certificate_id(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
+    }
+    /// <p>The identifier of the certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
     }
 }

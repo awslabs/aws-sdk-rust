@@ -54,6 +54,10 @@ impl CancelQueryOutputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID of the canceled query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
     pub fn query_status(mut self, input: crate::types::QueryStatus) -> Self {
         self.query_status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CancelQueryOutputBuilder {
     ) -> Self {
         self.query_status = input;
         self
+    }
+    /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.query_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

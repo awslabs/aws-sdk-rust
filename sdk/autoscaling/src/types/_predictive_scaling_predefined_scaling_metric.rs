@@ -94,6 +94,12 @@ impl PredictiveScalingPredefinedScalingMetricBuilder {
         self.predefined_metric_type = input;
         self
     }
+    /// <p>The metric type.</p>
+    pub fn get_predefined_metric_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredefinedScalingMetricType> {
+        &self.predefined_metric_type
+    }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
     /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
@@ -145,6 +151,28 @@ impl PredictiveScalingPredefinedScalingMetricBuilder {
     ) -> Self {
         self.resource_label = input;
         self
+    }
+    /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
+    /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
+    /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li> <p>app/<load-balancer-name>
+    /// /
+    /// <load-balancer-id>
+    /// is the final portion of the load balancer ARN
+    /// </load-balancer-id>
+    /// </load-balancer-name></p> </li>
+    /// <li> <p>targetgroup/<target-group-name>
+    /// /
+    /// <target-group-id>
+    /// is the final portion of the target group ARN.
+    /// </target-group-id>
+    /// </target-group-name></p> </li>
+    /// </ul>
+    /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    pub fn get_resource_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_label
     }
     /// Consumes the builder and constructs a [`PredictiveScalingPredefinedScalingMetric`](crate::types::PredictiveScalingPredefinedScalingMetric).
     pub fn build(self) -> crate::types::PredictiveScalingPredefinedScalingMetric {

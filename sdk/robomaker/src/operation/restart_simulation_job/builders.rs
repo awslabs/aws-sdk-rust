@@ -36,6 +36,12 @@ impl RestartSimulationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestartSimulationJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl RestartSimulationJobFluentBuilder {
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job()
     }
 }

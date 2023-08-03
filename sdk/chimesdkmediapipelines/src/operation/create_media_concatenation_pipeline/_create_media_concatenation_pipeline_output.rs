@@ -56,6 +56,12 @@ impl CreateMediaConcatenationPipelineOutputBuilder {
         self.media_concatenation_pipeline = input;
         self
     }
+    /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
+    pub fn get_media_concatenation_pipeline(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaConcatenationPipeline> {
+        &self.media_concatenation_pipeline
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,10 @@ impl DeleteAccessTokenInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
     pub fn build(
         self,

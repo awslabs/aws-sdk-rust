@@ -99,6 +99,22 @@ impl ExecutionErrorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the error type.</p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not selected and a file with the same name already exists in the target location.</p> </li>
+    /// <li> <p> <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.</p> </li>
+    /// <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback that indicates failure.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety of reasons.</p> </li>
+    /// <li> <p> <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file for a copy step, does not exist.</p> </li>
+    /// <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: occurs when the execution times out.</p> <note>
+    /// <p> You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p>
+    /// </note> </li>
+    /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExecutionErrorType> {
+        &self.r#type
+    }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -108,6 +124,10 @@ impl ExecutionErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ExecutionError`](crate::types::ExecutionError).
     pub fn build(self) -> crate::types::ExecutionError {

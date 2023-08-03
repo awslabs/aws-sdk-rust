@@ -80,6 +80,12 @@ impl GetTraceSummariesOutputBuilder {
         self.trace_summaries = input;
         self
     }
+    /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
+    pub fn get_trace_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>> {
+        &self.trace_summaries
+    }
     /// <p>The start time of this page of results.</p>
     pub fn approximate_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.approximate_time = ::std::option::Option::Some(input);
@@ -93,6 +99,10 @@ impl GetTraceSummariesOutputBuilder {
         self.approximate_time = input;
         self
     }
+    /// <p>The start time of this page of results.</p>
+    pub fn get_approximate_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approximate_time
+    }
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     pub fn traces_processed_count(mut self, input: i64) -> Self {
         self.traces_processed_count = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl GetTraceSummariesOutputBuilder {
         self.traces_processed_count = input;
         self
     }
+    /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
+    pub fn get_traces_processed_count(&self) -> &::std::option::Option<i64> {
+        &self.traces_processed_count
+    }
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl GetTraceSummariesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

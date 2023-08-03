@@ -47,6 +47,10 @@ impl GetFirewallDomainListInputBuilder {
         self.firewall_domain_list_id = input;
         self
     }
+    /// <p>The ID of the domain list. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_domain_list_id
+    }
     /// Consumes the builder and constructs a [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
     pub fn build(
         self,

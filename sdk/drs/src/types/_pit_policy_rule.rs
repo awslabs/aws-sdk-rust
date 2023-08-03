@@ -72,6 +72,10 @@ impl PitPolicyRuleBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The ID of the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<i64> {
+        &self.rule_id
+    }
     /// <p>The units used to measure the interval and retentionDuration.</p>
     pub fn units(mut self, input: crate::types::PitPolicyRuleUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl PitPolicyRuleBuilder {
         self.units = input;
         self
     }
+    /// <p>The units used to measure the interval and retentionDuration.</p>
+    pub fn get_units(&self) -> &::std::option::Option<crate::types::PitPolicyRuleUnits> {
+        &self.units
+    }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl PitPolicyRuleBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>How often, in the chosen units, a snapshot should be taken.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
     pub fn retention_duration(mut self, input: i32) -> Self {
@@ -105,6 +117,10 @@ impl PitPolicyRuleBuilder {
         self.retention_duration = input;
         self
     }
+    /// <p>The duration to retain a snapshot for, in the chosen units.</p>
+    pub fn get_retention_duration(&self) -> &::std::option::Option<i32> {
+        &self.retention_duration
+    }
     /// <p>Whether this rule is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl PitPolicyRuleBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether this rule is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`PitPolicyRule`](crate::types::PitPolicyRule).
     pub fn build(self) -> crate::types::PitPolicyRule {

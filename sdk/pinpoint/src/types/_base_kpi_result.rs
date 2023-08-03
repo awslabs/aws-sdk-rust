@@ -49,6 +49,10 @@ impl BaseKpiResultBuilder {
         self.rows = input;
         self
     }
+    /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRow>> {
+        &self.rows
+    }
     /// Consumes the builder and constructs a [`BaseKpiResult`](crate::types::BaseKpiResult).
     pub fn build(self) -> crate::types::BaseKpiResult {
         crate::types::BaseKpiResult { rows: self.rows }

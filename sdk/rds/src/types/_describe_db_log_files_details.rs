@@ -62,6 +62,10 @@ impl DescribeDbLogFilesDetailsBuilder {
         self.log_file_name = input;
         self
     }
+    /// <p>The name of the log file for the specified DB instance.</p>
+    pub fn get_log_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_file_name
+    }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
     pub fn last_written(mut self, input: i64) -> Self {
         self.last_written = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DescribeDbLogFilesDetailsBuilder {
         self.last_written = input;
         self
     }
+    /// <p>A POSIX timestamp when the last log entry was written.</p>
+    pub fn get_last_written(&self) -> &::std::option::Option<i64> {
+        &self.last_written
+    }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DescribeDbLogFilesDetailsBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`DescribeDbLogFilesDetails`](crate::types::DescribeDbLogFilesDetails).
     pub fn build(self) -> crate::types::DescribeDbLogFilesDetails {

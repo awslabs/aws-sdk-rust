@@ -86,6 +86,10 @@ impl CreateChatTokenInputBuilder {
         self.room_identifier = input;
         self
     }
+    /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_identifier
+    }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateChatTokenInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `capabilities`.
     ///
@@ -115,6 +123,12 @@ impl CreateChatTokenInputBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>> {
+        &self.capabilities
+    }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
     pub fn session_duration_in_minutes(mut self, input: i32) -> Self {
         self.session_duration_in_minutes = ::std::option::Option::Some(input);
@@ -124,6 +138,10 @@ impl CreateChatTokenInputBuilder {
     pub fn set_session_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_duration_in_minutes = input;
         self
+    }
+    /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
+    pub fn get_session_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.session_duration_in_minutes
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -149,6 +167,14 @@ impl CreateChatTokenInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
     pub fn build(

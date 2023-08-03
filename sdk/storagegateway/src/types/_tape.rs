@@ -142,6 +142,10 @@ impl TapeBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     /// <p>The barcode that identifies a specific virtual tape.</p>
     pub fn tape_barcode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl TapeBuilder {
     pub fn set_tape_barcode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_barcode = input;
         self
+    }
+    /// <p>The barcode that identifies a specific virtual tape.</p>
+    pub fn get_tape_barcode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_barcode
     }
     /// <p>The date the virtual tape was created.</p>
     pub fn tape_created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +173,10 @@ impl TapeBuilder {
         self.tape_created_date = input;
         self
     }
+    /// <p>The date the virtual tape was created.</p>
+    pub fn get_tape_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.tape_created_date
+    }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.tape_size_in_bytes = ::std::option::Option::Some(input);
@@ -174,6 +186,10 @@ impl TapeBuilder {
     pub fn set_tape_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.tape_size_in_bytes = input;
         self
+    }
+    /// <p>The size, in bytes, of the virtual tape capacity.</p>
+    pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.tape_size_in_bytes
     }
     /// <p>The current state of the virtual tape.</p>
     pub fn tape_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +201,10 @@ impl TapeBuilder {
         self.tape_status = input;
         self
     }
+    /// <p>The current state of the virtual tape.</p>
+    pub fn get_tape_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_status
+    }
     /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
     pub fn vtl_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vtl_device = ::std::option::Option::Some(input.into());
@@ -194,6 +214,10 @@ impl TapeBuilder {
     pub fn set_vtl_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vtl_device = input;
         self
+    }
+    /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
+    pub fn get_vtl_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device
     }
     /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
     /// <p>Range: 0 (not started) to 100 (complete).</p>
@@ -206,6 +230,11 @@ impl TapeBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
+    /// <p>Range: 0 (not started) to 100 (complete).</p>
+    pub fn get_progress(&self) -> &::std::option::Option<f64> {
+        &self.progress
     }
     /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
@@ -221,6 +250,12 @@ impl TapeBuilder {
         self.tape_used_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// </note>
+    pub fn get_tape_used_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.tape_used_in_bytes
+    }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -230,6 +265,10 @@ impl TapeBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,6 +280,10 @@ impl TapeBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
     pub fn worm(mut self, input: bool) -> Self {
         self.worm = ::std::option::Option::Some(input);
@@ -250,6 +293,10 @@ impl TapeBuilder {
     pub fn set_worm(mut self, input: ::std::option::Option<bool>) -> Self {
         self.worm = input;
         self
+    }
+    /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
+    pub fn get_worm(&self) -> &::std::option::Option<bool> {
+        &self.worm
     }
     /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
     pub fn retention_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -264,6 +311,10 @@ impl TapeBuilder {
         self.retention_start_date = input;
         self
     }
+    /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
+    pub fn get_retention_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.retention_start_date
+    }
     /// <p>The date that the tape enters a custom tape pool.</p>
     pub fn pool_entry_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pool_entry_date = ::std::option::Option::Some(input);
@@ -276,6 +327,10 @@ impl TapeBuilder {
     ) -> Self {
         self.pool_entry_date = input;
         self
+    }
+    /// <p>The date that the tape enters a custom tape pool.</p>
+    pub fn get_pool_entry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pool_entry_date
     }
     /// Consumes the builder and constructs a [`Tape`](crate::types::Tape).
     pub fn build(self) -> crate::types::Tape {

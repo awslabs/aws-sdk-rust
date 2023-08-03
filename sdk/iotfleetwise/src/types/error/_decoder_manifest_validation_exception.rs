@@ -99,6 +99,12 @@ impl DecoderManifestValidationExceptionBuilder {
         self.invalid_signals = input;
         self
     }
+    /// <p>The request couldn't be completed because of invalid signals in the request.</p>
+    pub fn get_invalid_signals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidSignalDecoder>> {
+        &self.invalid_signals
+    }
     /// Appends an item to `invalid_network_interfaces`.
     ///
     /// To override the contents of this collection use [`set_invalid_network_interfaces`](Self::set_invalid_network_interfaces).
@@ -121,6 +127,12 @@ impl DecoderManifestValidationExceptionBuilder {
         self.invalid_network_interfaces = input;
         self
     }
+    /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
+    pub fn get_invalid_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidNetworkInterface>> {
+        &self.invalid_network_interfaces
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -130,6 +142,10 @@ impl DecoderManifestValidationExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -36,6 +36,13 @@ impl UpdateNotebookMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNotebookMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateNotebookMetadataFluentBuilder {
         self.inner = self.inner.set_notebook_id(input);
         self
     }
+    /// <p>The ID of the notebook to update the metadata for.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_id()
+    }
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
@@ -146,6 +157,12 @@ impl UpdateNotebookMetadataFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The name to update the notebook to.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -155,5 +172,9 @@ impl UpdateNotebookMetadataFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name to update the notebook to.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

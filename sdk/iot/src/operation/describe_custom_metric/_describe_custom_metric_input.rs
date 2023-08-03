@@ -40,6 +40,10 @@ impl DescribeCustomMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p> The name of the custom metric. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// Consumes the builder and constructs a [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
     pub fn build(
         self,

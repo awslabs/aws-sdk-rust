@@ -188,6 +188,10 @@ impl PutIntegrationInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>Specifies a put integration request's resource ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -197,6 +201,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>Specifies a put integration request's resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Specifies the HTTP method for the integration.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +216,10 @@ impl PutIntegrationInputBuilder {
         self.http_method = input;
         self
     }
+    /// <p>Specifies the HTTP method for the integration.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>Specifies a put integration input's type.</p>
     pub fn r#type(mut self, input: crate::types::IntegrationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -217,6 +229,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies a put integration input's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
+        &self.r#type
     }
     /// <p>The HTTP method for the integration.</p>
     pub fn integration_http_method(
@@ -234,6 +250,10 @@ impl PutIntegrationInputBuilder {
         self.integration_http_method = input;
         self
     }
+    /// <p>The HTTP method for the integration.</p>
+    pub fn get_integration_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_http_method
+    }
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -243,6 +263,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
@@ -256,6 +280,10 @@ impl PutIntegrationInputBuilder {
     ) -> Self {
         self.connection_type = input;
         self
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
     }
     /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
     pub fn connection_id(
@@ -273,6 +301,10 @@ impl PutIntegrationInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>Specifies whether credentials are required for a put integration.</p>
     pub fn credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials = ::std::option::Option::Some(input.into());
@@ -282,6 +314,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Specifies whether credentials are required for a put integration.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials
     }
     /// Adds a key-value pair to `request_parameters`.
     ///
@@ -308,6 +344,14 @@ impl PutIntegrationInputBuilder {
         self.request_parameters = input;
         self
     }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn get_request_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_parameters
+    }
     /// Adds a key-value pair to `request_templates`.
     ///
     /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
@@ -333,6 +377,14 @@ impl PutIntegrationInputBuilder {
         self.request_templates = input;
         self
     }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn get_request_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_templates
+    }
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
     pub fn passthrough_behavior(
         mut self,
@@ -349,6 +401,10 @@ impl PutIntegrationInputBuilder {
         self.passthrough_behavior = input;
         self
     }
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
+    pub fn get_passthrough_behavior(&self) -> &::std::option::Option<::std::string::String> {
+        &self.passthrough_behavior
+    }
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     pub fn cache_namespace(
         mut self,
@@ -364,6 +420,10 @@ impl PutIntegrationInputBuilder {
     ) -> Self {
         self.cache_namespace = input;
         self
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn get_cache_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_namespace
     }
     /// Appends an item to `cache_key_parameters`.
     ///
@@ -387,6 +447,12 @@ impl PutIntegrationInputBuilder {
         self.cache_key_parameters = input;
         self
     }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
+    pub fn get_cache_key_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_key_parameters
+    }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     pub fn content_handling(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
@@ -402,6 +468,13 @@ impl PutIntegrationInputBuilder {
         self.content_handling = input;
         self
     }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn get_content_handling(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+        &self.content_handling
+    }
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
     pub fn timeout_in_millis(mut self, input: i32) -> Self {
         self.timeout_in_millis = ::std::option::Option::Some(input);
@@ -412,6 +485,10 @@ impl PutIntegrationInputBuilder {
         self.timeout_in_millis = input;
         self
     }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_millis
+    }
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
         self.tls_config = ::std::option::Option::Some(input);
@@ -421,6 +498,10 @@ impl PutIntegrationInputBuilder {
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.tls_config = input;
         self
+    }
+    /// <p>Specifies the TLS configuration for an integration.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        &self.tls_config
     }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(

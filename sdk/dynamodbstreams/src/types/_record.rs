@@ -108,6 +108,10 @@ impl RecordBuilder {
         self.event_id = input;
         self
     }
+    /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
     /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
@@ -131,6 +135,15 @@ impl RecordBuilder {
         self.event_name = input;
         self
     }
+    /// <p>The type of data modification that was performed on the DynamoDB table:</p>
+    /// <ul>
+    /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
+    /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
+    /// </ul>
+    pub fn get_event_name(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.event_name
+    }
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
     pub fn event_version(
@@ -149,6 +162,11 @@ impl RecordBuilder {
         self.event_version = input;
         self
     }
+    /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
+    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
+    pub fn get_event_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_version
+    }
     /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -159,6 +177,10 @@ impl RecordBuilder {
         self.event_source = input;
         self
     }
+    /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source
+    }
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -168,6 +190,10 @@ impl RecordBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The region in which the <code>GetRecords</code> request was received.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
     pub fn dynamodb(mut self, input: crate::types::StreamRecord) -> Self {
@@ -181,6 +207,10 @@ impl RecordBuilder {
     ) -> Self {
         self.dynamodb = input;
         self
+    }
+    /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
+    pub fn get_dynamodb(&self) -> &::std::option::Option<crate::types::StreamRecord> {
+        &self.dynamodb
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
     /// <ul>
@@ -202,6 +232,14 @@ impl RecordBuilder {
     ) -> Self {
         self.user_identity = input;
         self
+    }
+    /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
+    /// <ul>
+    /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
+    /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
+    /// </ul>
+    pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.user_identity
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {

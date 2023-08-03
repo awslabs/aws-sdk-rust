@@ -87,6 +87,10 @@ impl CreateProjectInputBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of an existing dataset to associate this project with.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateProjectInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of an existing recipe to associate with the project.</p>
     pub fn recipe_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl CreateProjectInputBuilder {
         self.recipe_name = input;
         self
     }
+    /// <p>The name of an existing recipe to associate with the project.</p>
+    pub fn get_recipe_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_name
+    }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(mut self, input: crate::types::Sample) -> Self {
         self.sample = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl CreateProjectInputBuilder {
         self.sample = input;
         self
     }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<crate::types::Sample> {
+        &self.sample
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl CreateProjectInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -151,6 +171,14 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata tags to apply to this project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(

@@ -61,6 +61,12 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
         self.reserved_elasticsearch_instance_id = input;
         self
     }
+    /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
+    pub fn get_reserved_elasticsearch_instance_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_elasticsearch_instance_id
+    }
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub fn reservation_name(
         mut self,
@@ -76,6 +82,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
     ) -> Self {
         self.reservation_name = input;
         self
+    }
+    /// <p>The customer-specified identifier used to track this reservation.</p>
+    pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

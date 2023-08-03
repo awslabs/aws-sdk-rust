@@ -52,6 +52,12 @@ impl DescribeConnectorOutputBuilder {
         self.connector_configuration = input;
         self
     }
+    /// <p>Configuration info of all the connectors that the user requested.</p>
+    pub fn get_connector_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorConfiguration> {
+        &self.connector_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

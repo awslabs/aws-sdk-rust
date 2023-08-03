@@ -64,6 +64,10 @@ impl TableCellBuilder {
         self.value = input;
         self
     }
+    /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn top_answer(mut self, input: bool) -> Self {
         self.top_answer = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl TableCellBuilder {
     pub fn set_top_answer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.top_answer = input;
         self
+    }
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
+        &self.top_answer
     }
     /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn highlighted(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl TableCellBuilder {
         self.highlighted = input;
         self
     }
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    pub fn get_highlighted(&self) -> &::std::option::Option<bool> {
+        &self.highlighted
+    }
     /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn header(mut self, input: bool) -> Self {
         self.header = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl TableCellBuilder {
     pub fn set_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.header = input;
         self
+    }
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+    pub fn get_header(&self) -> &::std::option::Option<bool> {
+        &self.header
     }
     /// Consumes the builder and constructs a [`TableCell`](crate::types::TableCell).
     pub fn build(self) -> crate::types::TableCell {

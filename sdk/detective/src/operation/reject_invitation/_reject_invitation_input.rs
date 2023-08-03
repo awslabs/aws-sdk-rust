@@ -44,6 +44,11 @@ impl RejectInvitationInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph to reject the invitation to.</p>
+    /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
     pub fn build(
         self,

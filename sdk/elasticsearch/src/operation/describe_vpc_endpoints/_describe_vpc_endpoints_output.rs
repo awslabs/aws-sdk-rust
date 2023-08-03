@@ -66,6 +66,12 @@ impl DescribeVpcEndpointsOutputBuilder {
         self.vpc_endpoints = input;
         self
     }
+    /// <p>Information about each requested VPC endpoint.</p>
+    pub fn get_vpc_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+        &self.vpc_endpoints
+    }
     /// Appends an item to `vpc_endpoint_errors`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_errors`](Self::set_vpc_endpoint_errors).
@@ -84,6 +90,12 @@ impl DescribeVpcEndpointsOutputBuilder {
     ) -> Self {
         self.vpc_endpoint_errors = input;
         self
+    }
+    /// <p>Any errors associated with the request.</p>
+    pub fn get_vpc_endpoint_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointError>> {
+        &self.vpc_endpoint_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

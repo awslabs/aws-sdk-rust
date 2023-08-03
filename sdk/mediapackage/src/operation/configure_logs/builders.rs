@@ -36,6 +36,12 @@ impl ConfigureLogsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfigureLogs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::configure_logs::builders::ConfigureLogsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,10 @@ impl ConfigureLogsFluentBuilder {
         self.inner = self.inner.set_egress_access_logs(input);
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        self.inner.get_egress_access_logs()
+    }
     /// The ID of the channel to log subscription.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -130,6 +140,10 @@ impl ConfigureLogsFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// The ID of the channel to log subscription.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// Configure ingress access logging.
     pub fn ingress_access_logs(mut self, input: crate::types::IngressAccessLogs) -> Self {
@@ -143,5 +157,11 @@ impl ConfigureLogsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingress_access_logs(input);
         self
+    }
+    /// Configure ingress access logging.
+    pub fn get_ingress_access_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressAccessLogs> {
+        self.inner.get_ingress_access_logs()
     }
 }

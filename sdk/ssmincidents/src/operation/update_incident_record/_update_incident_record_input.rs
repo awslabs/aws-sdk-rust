@@ -118,6 +118,10 @@ impl UpdateIncidentRecordInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl UpdateIncidentRecordInputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A brief description of the incident.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +146,10 @@ impl UpdateIncidentRecordInputBuilder {
         self.title = input;
         self
     }
+    /// <p>A brief description of the incident.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>A longer description of what occurred during the incident.</p>
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl UpdateIncidentRecordInputBuilder {
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>A longer description of what occurred during the incident.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
     }
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -174,6 +190,18 @@ impl UpdateIncidentRecordInputBuilder {
         self.impact = input;
         self
     }
+    /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// </ul>
+    pub fn get_impact(&self) -> &::std::option::Option<i32> {
+        &self.impact
+    }
     /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -187,6 +215,10 @@ impl UpdateIncidentRecordInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IncidentRecordStatus> {
+        &self.status
+    }
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
         self.chat_channel = ::std::option::Option::Some(input);
@@ -199,6 +231,10 @@ impl UpdateIncidentRecordInputBuilder {
     ) -> Self {
         self.chat_channel = input;
         self
+    }
+    /// <p>The Chatbot chat channel where responders can collaborate.</p>
+    pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
+        &self.chat_channel
     }
     /// Appends an item to `notification_targets`.
     ///
@@ -220,6 +256,13 @@ impl UpdateIncidentRecordInputBuilder {
     ) -> Self {
         self.notification_targets = input;
         self
+    }
+    /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
+    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
+    pub fn get_notification_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+        &self.notification_targets
     }
     /// Consumes the builder and constructs a [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl PutSchemaVersionMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSchemaVersionMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutSchemaVersionMetadataFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>The unique ID for the schema.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.inner = self.inner.schema_version_number(input);
@@ -138,6 +146,12 @@ impl PutSchemaVersionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        self.inner.get_schema_version_number()
     }
     /// <p>The unique version ID of the schema version.</p>
     pub fn schema_version_id(
@@ -155,6 +169,10 @@ impl PutSchemaVersionMetadataFluentBuilder {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_version_id()
+    }
     /// <p>The metadata key's corresponding value.</p>
     pub fn metadata_key_value(mut self, input: crate::types::MetadataKeyValuePair) -> Self {
         self.inner = self.inner.metadata_key_value(input);
@@ -167,5 +185,11 @@ impl PutSchemaVersionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_key_value(input);
         self
+    }
+    /// <p>The metadata key's corresponding value.</p>
+    pub fn get_metadata_key_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
+        self.inner.get_metadata_key_value()
     }
 }

@@ -70,6 +70,11 @@ impl LambdaContainerParamsBuilder {
         self.memory_size_in_kb = input;
         self
     }
+    /// <p>The memory size of the container, expressed in kilobytes.</p>
+    /// <p>Default: <code>16384</code> (16 MB)</p>
+    pub fn get_memory_size_in_kb(&self) -> &::std::option::Option<i32> {
+        &self.memory_size_in_kb
+    }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn mount_ro_sysfs(mut self, input: bool) -> Self {
@@ -81,6 +86,11 @@ impl LambdaContainerParamsBuilder {
     pub fn set_mount_ro_sysfs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mount_ro_sysfs = input;
         self
+    }
+    /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_mount_ro_sysfs(&self) -> &::std::option::Option<bool> {
+        &self.mount_ro_sysfs
     }
     /// Appends an item to `volumes`.
     ///
@@ -101,6 +111,12 @@ impl LambdaContainerParamsBuilder {
         self.volumes = input;
         self
     }
+    /// <p>The list of volumes that the container can access.</p>
+    pub fn get_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>> {
+        &self.volumes
+    }
     /// Appends an item to `devices`.
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
@@ -119,6 +135,12 @@ impl LambdaContainerParamsBuilder {
     ) -> Self {
         self.devices = input;
         self
+    }
+    /// <p>The list of system devices that the container can access.</p>
+    pub fn get_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>> {
+        &self.devices
     }
     /// Consumes the builder and constructs a [`LambdaContainerParams`](crate::types::LambdaContainerParams).
     pub fn build(self) -> crate::types::LambdaContainerParams {

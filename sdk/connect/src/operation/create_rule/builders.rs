@@ -37,6 +37,10 @@ impl CreateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_rule::builders::CreateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A unique name for the rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +136,10 @@ impl CreateRuleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A unique name for the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
@@ -142,6 +154,12 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_trigger_event_source(input);
         self
     }
+    /// <p>The event source to trigger the rule.</p>
+    pub fn get_trigger_event_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleTriggerEventSource> {
+        self.inner.get_trigger_event_source()
+    }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function(input.into());
@@ -151,6 +169,10 @@ impl CreateRuleFluentBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function(input);
         self
+    }
+    /// <p>The conditions of the rule.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function()
     }
     /// Appends an item to `Actions`.
     ///
@@ -169,6 +191,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>A list of actions to be run when the rule is triggered.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleAction>> {
+        self.inner.get_actions()
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.inner = self.inner.publish_status(input);
@@ -182,6 +208,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_publish_status(input);
         self
     }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        self.inner.get_publish_status()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -191,5 +221,9 @@ impl CreateRuleFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

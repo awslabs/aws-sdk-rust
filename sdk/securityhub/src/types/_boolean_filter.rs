@@ -40,6 +40,10 @@ impl BooleanFilterBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the boolean.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`BooleanFilter`](crate::types::BooleanFilter).
     pub fn build(self) -> crate::types::BooleanFilter {
         crate::types::BooleanFilter {

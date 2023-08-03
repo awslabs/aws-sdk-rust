@@ -96,6 +96,10 @@ impl RepositoryCatalogDataBuilder {
         self.description = input;
         self
     }
+    /// <p>The short description of the repository.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `architectures`.
     ///
     /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
@@ -121,6 +125,14 @@ impl RepositoryCatalogDataBuilder {
     ) -> Self {
         self.architectures = input;
         self
+    }
+    /// <p>The architecture tags that are associated with the repository.</p> <note>
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// </note>
+    pub fn get_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.architectures
     }
     /// Appends an item to `operating_systems`.
     ///
@@ -148,6 +160,14 @@ impl RepositoryCatalogDataBuilder {
         self.operating_systems = input;
         self
     }
+    /// <p>The operating system tags that are associated with the repository.</p> <note>
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// </note>
+    pub fn get_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.operating_systems
+    }
     /// <p>The URL that contains the logo that's associated with the repository.</p>
     pub fn logo_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logo_url = ::std::option::Option::Some(input.into());
@@ -157,6 +177,10 @@ impl RepositoryCatalogDataBuilder {
     pub fn set_logo_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo_url = input;
         self
+    }
+    /// <p>The URL that contains the logo that's associated with the repository.</p>
+    pub fn get_logo_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logo_url
     }
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
     pub fn about_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +192,10 @@ impl RepositoryCatalogDataBuilder {
         self.about_text = input;
         self
     }
+    /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
+    pub fn get_about_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.about_text
+    }
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
     pub fn usage_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_text = ::std::option::Option::Some(input.into());
@@ -178,6 +206,10 @@ impl RepositoryCatalogDataBuilder {
         self.usage_text = input;
         self
     }
+    /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
+    pub fn get_usage_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_text
+    }
     /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
     pub fn marketplace_certified(mut self, input: bool) -> Self {
         self.marketplace_certified = ::std::option::Option::Some(input);
@@ -187,6 +219,10 @@ impl RepositoryCatalogDataBuilder {
     pub fn set_marketplace_certified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.marketplace_certified = input;
         self
+    }
+    /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
+    pub fn get_marketplace_certified(&self) -> &::std::option::Option<bool> {
+        &self.marketplace_certified
     }
     /// Consumes the builder and constructs a [`RepositoryCatalogData`](crate::types::RepositoryCatalogData).
     pub fn build(self) -> crate::types::RepositoryCatalogData {

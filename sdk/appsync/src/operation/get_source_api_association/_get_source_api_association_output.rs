@@ -53,6 +53,12 @@ impl GetSourceApiAssociationOutputBuilder {
         self.source_api_association = input;
         self
     }
+    /// <p>The <code>SourceApiAssociation</code> object data.</p>
+    pub fn get_source_api_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceApiAssociation> {
+        &self.source_api_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

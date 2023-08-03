@@ -36,6 +36,10 @@ impl AssociateEntitiesToExperienceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateEntitiesToExperience as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -135,6 +143,10 @@ impl AssociateEntitiesToExperienceFluentBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
+    }
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
     }
     /// Appends an item to `EntityList`.
     ///
@@ -152,5 +164,11 @@ impl AssociateEntitiesToExperienceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entity_list(input);
         self
+    }
+    /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
+    pub fn get_entity_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
+        self.inner.get_entity_list()
     }
 }

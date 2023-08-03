@@ -47,6 +47,10 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn validity(mut self, input: i64) -> Self {
         self.validity = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<i64> {
+        &self.validity
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
     pub fn build(

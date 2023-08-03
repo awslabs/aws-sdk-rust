@@ -72,6 +72,10 @@ impl SetUiCustomizationInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl SetUiCustomizationInputBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The client ID for the client app.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The CSS values in the UI customization.</p>
     pub fn css(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.css = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl SetUiCustomizationInputBuilder {
     pub fn set_css(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.css = input;
         self
+    }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
+        &self.css
     }
     /// <p>The uploaded logo image for the UI customization.</p>
     pub fn image_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -104,6 +116,10 @@ impl SetUiCustomizationInputBuilder {
     ) -> Self {
         self.image_file = input;
         self
+    }
+    /// <p>The uploaded logo image for the UI customization.</p>
+    pub fn get_image_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.image_file
     }
     /// Consumes the builder and constructs a [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
     pub fn build(

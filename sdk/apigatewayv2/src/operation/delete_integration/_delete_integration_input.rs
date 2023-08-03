@@ -48,6 +48,10 @@ impl DeleteIntegrationInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The integration ID.</p>
     pub fn integration_id(
         mut self,
@@ -63,6 +67,10 @@ impl DeleteIntegrationInputBuilder {
     ) -> Self {
         self.integration_id = input;
         self
+    }
+    /// <p>The integration ID.</p>
+    pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_id
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
     pub fn build(

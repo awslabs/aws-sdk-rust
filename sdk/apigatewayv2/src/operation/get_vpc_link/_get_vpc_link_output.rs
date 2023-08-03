@@ -121,6 +121,10 @@ impl GetVpcLinkOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the VPC link was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The name of the VPC link.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl GetVpcLinkOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the VPC link.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -153,6 +161,12 @@ impl GetVpcLinkOutputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A list of security group IDs for the VPC link.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -171,6 +185,10 @@ impl GetVpcLinkOutputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs to include in the VPC link.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -197,6 +215,14 @@ impl GetVpcLinkOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags for the VPC link.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ID of the VPC link.</p>
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
@@ -206,6 +232,10 @@ impl GetVpcLinkOutputBuilder {
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_link_id = input;
         self
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
     }
     /// <p>The status of the VPC link.</p>
     pub fn vpc_link_status(mut self, input: crate::types::VpcLinkStatus) -> Self {
@@ -219,6 +249,10 @@ impl GetVpcLinkOutputBuilder {
     ) -> Self {
         self.vpc_link_status = input;
         self
+    }
+    /// <p>The status of the VPC link.</p>
+    pub fn get_vpc_link_status(&self) -> &::std::option::Option<crate::types::VpcLinkStatus> {
+        &self.vpc_link_status
     }
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
     pub fn vpc_link_status_message(
@@ -236,6 +270,10 @@ impl GetVpcLinkOutputBuilder {
         self.vpc_link_status_message = input;
         self
     }
+    /// <p>A message summarizing the cause of the status of the VPC link.</p>
+    pub fn get_vpc_link_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_status_message
+    }
     /// <p>The version of the VPC link.</p>
     pub fn vpc_link_version(mut self, input: crate::types::VpcLinkVersion) -> Self {
         self.vpc_link_version = ::std::option::Option::Some(input);
@@ -248,6 +286,10 @@ impl GetVpcLinkOutputBuilder {
     ) -> Self {
         self.vpc_link_version = input;
         self
+    }
+    /// <p>The version of the VPC link.</p>
+    pub fn get_vpc_link_version(&self) -> &::std::option::Option<crate::types::VpcLinkVersion> {
+        &self.vpc_link_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

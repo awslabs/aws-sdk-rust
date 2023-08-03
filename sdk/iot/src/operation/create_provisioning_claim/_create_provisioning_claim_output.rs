@@ -78,6 +78,10 @@ impl CreateProvisioningClaimOutputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The provisioning claim certificate.</p>
     pub fn certificate_pem(
         mut self,
@@ -94,6 +98,10 @@ impl CreateProvisioningClaimOutputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The provisioning claim certificate.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The provisioning claim key pair.</p>
     pub fn key_pair(mut self, input: crate::types::KeyPair) -> Self {
         self.key_pair = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl CreateProvisioningClaimOutputBuilder {
     pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::KeyPair>) -> Self {
         self.key_pair = input;
         self
+    }
+    /// <p>The provisioning claim key pair.</p>
+    pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::KeyPair> {
+        &self.key_pair
     }
     /// <p>The provisioning claim expiration time.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +128,10 @@ impl CreateProvisioningClaimOutputBuilder {
     ) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>The provisioning claim expiration time.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

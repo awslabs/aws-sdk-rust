@@ -49,6 +49,10 @@ impl OnPremConfigBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>ARNs of the agents to use for an NFS location.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// Consumes the builder and constructs a [`OnPremConfig`](crate::types::OnPremConfig).
     pub fn build(self) -> crate::types::OnPremConfig {
         crate::types::OnPremConfig {

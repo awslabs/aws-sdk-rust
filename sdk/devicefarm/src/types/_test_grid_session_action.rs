@@ -72,6 +72,10 @@ impl TestGridSessionActionBuilder {
         self.action = input;
         self
     }
+    /// <p>The action taken by the session.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The time that the session invoked the action.</p>
     pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl TestGridSessionActionBuilder {
         self.started = input;
         self
     }
+    /// <p>The time that the session invoked the action.</p>
+    pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started
+    }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn duration(mut self, input: i64) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl TestGridSessionActionBuilder {
         self.duration = input;
         self
     }
+    /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i64> {
+        &self.duration
+    }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl TestGridSessionActionBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>HTTP status code returned to the browser when the action was taken.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// <p>HTTP method that the browser used to make the request.</p>
     pub fn request_method(
@@ -120,6 +136,10 @@ impl TestGridSessionActionBuilder {
     ) -> Self {
         self.request_method = input;
         self
+    }
+    /// <p>HTTP method that the browser used to make the request.</p>
+    pub fn get_request_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_method
     }
     /// Consumes the builder and constructs a [`TestGridSessionAction`](crate::types::TestGridSessionAction).
     pub fn build(self) -> crate::types::TestGridSessionAction {

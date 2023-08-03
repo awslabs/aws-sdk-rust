@@ -56,6 +56,10 @@ impl PhoneNumberStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberWorkflowStatus> {
+        &self.status
+    }
     /// <p>The status message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PhoneNumberStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The status message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`PhoneNumberStatus`](crate::types::PhoneNumberStatus).
     pub fn build(self) -> crate::types::PhoneNumberStatus {

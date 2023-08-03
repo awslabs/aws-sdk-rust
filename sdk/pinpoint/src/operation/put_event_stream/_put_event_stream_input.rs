@@ -53,6 +53,10 @@ impl PutEventStreamInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
     pub fn write_event_stream(mut self, input: crate::types::WriteEventStream) -> Self {
         self.write_event_stream = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PutEventStreamInputBuilder {
     ) -> Self {
         self.write_event_stream = input;
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
+    pub fn get_write_event_stream(&self) -> &::std::option::Option<crate::types::WriteEventStream> {
+        &self.write_event_stream
     }
     /// Consumes the builder and constructs a [`PutEventStreamInput`](crate::operation::put_event_stream::PutEventStreamInput).
     pub fn build(

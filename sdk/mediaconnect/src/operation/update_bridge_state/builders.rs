@@ -36,6 +36,12 @@ impl UpdateBridgeStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBridgeState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBridgeStateFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
@@ -138,5 +148,9 @@ impl UpdateBridgeStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
+        self.inner.get_desired_state()
     }
 }

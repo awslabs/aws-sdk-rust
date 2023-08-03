@@ -62,6 +62,10 @@ impl CreateProvisioningTemplateOutputBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The ARN that identifies the provisioning template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(
         mut self,
@@ -78,6 +82,10 @@ impl CreateProvisioningTemplateOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The default version of the provisioning template.</p>
     pub fn default_version_id(mut self, input: i32) -> Self {
         self.default_version_id = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl CreateProvisioningTemplateOutputBuilder {
     pub fn set_default_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_version_id = input;
         self
+    }
+    /// <p>The default version of the provisioning template.</p>
+    pub fn get_default_version_id(&self) -> &::std::option::Option<i32> {
+        &self.default_version_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

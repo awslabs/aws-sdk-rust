@@ -52,6 +52,10 @@ impl GetParametersForImportInputBuilder {
         self.key_material_type = input;
         self
     }
+    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    pub fn get_key_material_type(&self) -> &::std::option::Option<crate::types::KeyMaterialType> {
+        &self.key_material_type
+    }
     /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetParametersForImportInputBuilder {
     ) -> Self {
         self.wrapping_key_algorithm = input;
         self
+    }
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.wrapping_key_algorithm
     }
     /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
     pub fn build(

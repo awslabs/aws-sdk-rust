@@ -62,6 +62,10 @@ impl NielsenNaesIiNwBuilder {
         self.check_digit_string = input;
         self
     }
+    /// Enter the check digit string for the watermark
+    pub fn get_check_digit_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_digit_string
+    }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn sid(mut self, input: f64) -> Self {
         self.sid = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl NielsenNaesIiNwBuilder {
     pub fn set_sid(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sid = input;
         self
+    }
+    /// Enter the Nielsen Source ID (SID) to include in the watermark
+    pub fn get_sid(&self) -> &::std::option::Option<f64> {
+        &self.sid
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
     pub fn timezone(mut self, input: crate::types::NielsenWatermarkTimezones) -> Self {
@@ -84,6 +92,10 @@ impl NielsenNaesIiNwBuilder {
     ) -> Self {
         self.timezone = input;
         self
+    }
+    /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
+    pub fn get_timezone(&self) -> &::std::option::Option<crate::types::NielsenWatermarkTimezones> {
+        &self.timezone
     }
     /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
     pub fn build(self) -> crate::types::NielsenNaesIiNw {

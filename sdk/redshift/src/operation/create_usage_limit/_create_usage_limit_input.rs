@@ -94,6 +94,10 @@ impl CreateUsageLimitInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster that you want to limit usage.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Redshift feature that you want to limit.</p>
     pub fn feature_type(mut self, input: crate::types::UsageLimitFeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl CreateUsageLimitInputBuilder {
     ) -> Self {
         self.feature_type = input;
         self
+    }
+    /// <p>The Amazon Redshift feature that you want to limit.</p>
+    pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::UsageLimitFeatureType> {
+        &self.feature_type
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub fn limit_type(mut self, input: crate::types::UsageLimitLimitType) -> Self {
@@ -120,6 +128,10 @@ impl CreateUsageLimitInputBuilder {
         self.limit_type = input;
         self
     }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
+    pub fn get_limit_type(&self) -> &::std::option::Option<crate::types::UsageLimitLimitType> {
+        &self.limit_type
+    }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl CreateUsageLimitInputBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amount = input;
         self
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        &self.amount
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
@@ -143,6 +159,10 @@ impl CreateUsageLimitInputBuilder {
         self.period = input;
         self
     }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
+        &self.period
+    }
     /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
         self.breach_action = ::std::option::Option::Some(input);
@@ -155,6 +175,12 @@ impl CreateUsageLimitInputBuilder {
     ) -> Self {
         self.breach_action = input;
         self
+    }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        &self.breach_action
     }
     /// Appends an item to `tags`.
     ///
@@ -174,6 +200,10 @@ impl CreateUsageLimitInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUsageLimitInput`](crate::operation::create_usage_limit::CreateUsageLimitInput).
     pub fn build(

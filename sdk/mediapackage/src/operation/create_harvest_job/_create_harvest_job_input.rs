@@ -73,6 +73,10 @@ impl CreateHarvestJobInputBuilder {
         self.end_time = input;
         self
     }
+    /// The end of the time-window which will be harvested
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
+    }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateHarvestJobInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn origin_endpoint_id(
@@ -99,6 +107,10 @@ impl CreateHarvestJobInputBuilder {
         self.origin_endpoint_id = input;
         self
     }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    pub fn get_origin_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_endpoint_id
+    }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl CreateHarvestJobInputBuilder {
         self.s3_destination = input;
         self
     }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
+    }
     /// The start of the time-window which will be harvested
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -121,6 +137,10 @@ impl CreateHarvestJobInputBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
+    }
+    /// The start of the time-window which will be harvested
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
     pub fn build(

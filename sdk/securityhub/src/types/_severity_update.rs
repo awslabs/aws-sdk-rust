@@ -102,6 +102,18 @@ impl SeverityUpdateBuilder {
         self.normalized = input;
         self
     }
+    /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
+    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
+    /// <ul>
+    /// <li> <p>0 - <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p>1–39 - <code>LOW</code> </p> </li>
+    /// <li> <p>40–69 - <code>MEDIUM</code> </p> </li>
+    /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
+    /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
+    /// </ul>
+    pub fn get_normalized(&self) -> &::std::option::Option<i32> {
+        &self.normalized
+    }
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn product(mut self, input: f64) -> Self {
         self.product = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl SeverityUpdateBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<f64>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
+    pub fn get_product(&self) -> &::std::option::Option<f64> {
+        &self.product
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
@@ -135,6 +151,17 @@ impl SeverityUpdateBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<crate::types::SeverityLabel>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The severity value of the finding. The allowed values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li>
+    /// <li> <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
+    /// <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p> </li>
+    /// <li> <p> <code>HIGH</code> - The issue must be addressed as a priority.</p> </li>
+    /// <li> <p> <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p> </li>
+    /// </ul>
+    pub fn get_label(&self) -> &::std::option::Option<crate::types::SeverityLabel> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`SeverityUpdate`](crate::types::SeverityUpdate).
     pub fn build(self) -> crate::types::SeverityUpdate {

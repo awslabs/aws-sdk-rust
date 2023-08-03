@@ -41,6 +41,12 @@ impl GetGroupQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGroupQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_group_query::builders::GetGroupQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,11 @@ impl GetGroupQueryFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
@@ -134,5 +145,9 @@ impl GetGroupQueryFluentBuilder {
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
+    }
+    /// <p>The name or the ARN of the resource group to query.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group()
     }
 }

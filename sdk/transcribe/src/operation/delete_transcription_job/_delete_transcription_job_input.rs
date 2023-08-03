@@ -47,6 +47,10 @@ impl DeleteTranscriptionJobInputBuilder {
         self.transcription_job_name = input;
         self
     }
+    /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcription_job_name
+    }
     /// Consumes the builder and constructs a [`DeleteTranscriptionJobInput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobInput).
     pub fn build(
         self,

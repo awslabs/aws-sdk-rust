@@ -84,6 +84,10 @@ impl SlotNotAvailableExceptionBuilder {
         self.slot_suggestions = input;
         self
     }
+    /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
+    pub fn get_slot_suggestions(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.slot_suggestions
+    }
     /// <p>A description of the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl SlotNotAvailableExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

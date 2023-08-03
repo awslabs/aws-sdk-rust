@@ -51,6 +51,10 @@ impl SearchSortResultBuilder {
         self.field = input;
         self
     }
+    /// <p>Sort search results based on this field name.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::OrderByFieldType> {
+        &self.field
+    }
     /// <p>Sort direction.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SearchSortResultBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Sort direction.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`SearchSortResult`](crate::types::SearchSortResult).
     pub fn build(self) -> crate::types::SearchSortResult {

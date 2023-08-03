@@ -57,6 +57,12 @@ impl UpdatePackageConfigurationInputBuilder {
         self.version_update_by_jobs_config = input;
         self
     }
+    /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
+    pub fn get_version_update_by_jobs_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+        &self.version_update_by_jobs_config
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl UpdatePackageConfigurationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdatePackageConfigurationInput`](crate::operation::update_package_configuration::UpdatePackageConfigurationInput).
     pub fn build(

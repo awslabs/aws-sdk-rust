@@ -64,6 +64,10 @@ impl DisableAlarmActionRequestBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The name of the alarm model.</p>
     pub fn alarm_model_name(
         mut self,
@@ -80,6 +84,10 @@ impl DisableAlarmActionRequestBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl DisableAlarmActionRequestBuilder {
         self.key_value = input;
         self
     }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
+    }
     /// <p>The note that you can leave when you disable the alarm.</p>
     pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.note = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl DisableAlarmActionRequestBuilder {
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.note = input;
         self
+    }
+    /// <p>The note that you can leave when you disable the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
     }
     /// Consumes the builder and constructs a [`DisableAlarmActionRequest`](crate::types::DisableAlarmActionRequest).
     pub fn build(self) -> crate::types::DisableAlarmActionRequest {

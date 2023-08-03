@@ -36,6 +36,12 @@ impl StopStreamingSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopStreamingSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StopStreamingSessionFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -136,6 +146,10 @@ impl StopStreamingSessionFluentBuilder {
         self.inner = self.inner.set_session_id(input);
         self
     }
+    /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -145,6 +159,10 @@ impl StopStreamingSessionFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
     pub fn volume_retention_mode(mut self, input: crate::types::VolumeRetentionMode) -> Self {
@@ -158,5 +176,11 @@ impl StopStreamingSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_volume_retention_mode(input);
         self
+    }
+    /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+    pub fn get_volume_retention_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
+        self.inner.get_volume_retention_mode()
     }
 }

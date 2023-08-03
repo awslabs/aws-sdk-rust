@@ -56,6 +56,10 @@ impl ListedGatewayBuilder {
         self.gateway_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the gateway.
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn gateway_state(mut self, input: crate::types::GatewayState) -> Self {
         self.gateway_state = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ListedGatewayBuilder {
         self.gateway_state = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_gateway_state(&self) -> &::std::option::Option<crate::types::GatewayState> {
+        &self.gateway_state
+    }
     /// The name of the gateway.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl ListedGatewayBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the gateway.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ListedGateway`](crate::types::ListedGateway).
     pub fn build(self) -> crate::types::ListedGateway {

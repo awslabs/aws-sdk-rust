@@ -83,6 +83,12 @@ impl ListServiceVersionsOutputBuilder {
         self.service_versions = input;
         self
     }
+    /// <p>A list of supported versions.</p>
+    pub fn get_service_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>> {
+        &self.service_versions
+    }
     /// <p>The name of the service for which the system provided supported versions.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
@@ -95,6 +101,10 @@ impl ListServiceVersionsOutputBuilder {
     ) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service for which the system provided supported versions.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
     }
     /// Appends an item to `dependent_services`.
     ///
@@ -115,6 +125,12 @@ impl ListServiceVersionsOutputBuilder {
         self.dependent_services = input;
         self
     }
+    /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
+    pub fn get_dependent_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+        &self.dependent_services
+    }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -124,6 +140,10 @@ impl ListServiceVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

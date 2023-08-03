@@ -54,6 +54,10 @@ impl FirewallMetadataBuilder {
         self.firewall_name = input;
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl FirewallMetadataBuilder {
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
     }
     /// Consumes the builder and constructs a [`FirewallMetadata`](crate::types::FirewallMetadata).
     pub fn build(self) -> crate::types::FirewallMetadata {

@@ -40,6 +40,10 @@ impl AmazonOpenSearchServerlessRetryOptionsBuilder {
         self.duration_in_seconds = input;
         self
     }
+    /// <p>After an initial failure to deliver to the Serverless offering for Amazon OpenSearch Service, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`AmazonOpenSearchServerlessRetryOptions`](crate::types::AmazonOpenSearchServerlessRetryOptions).
     pub fn build(self) -> crate::types::AmazonOpenSearchServerlessRetryOptions {
         crate::types::AmazonOpenSearchServerlessRetryOptions {

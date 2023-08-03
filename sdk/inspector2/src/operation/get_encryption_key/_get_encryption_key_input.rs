@@ -48,6 +48,10 @@ impl GetEncryptionKeyInputBuilder {
         self.scan_type = input;
         self
     }
+    /// <p>The scan type the key encrypts.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
+    }
     /// <p>The resource type the key encrypts.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GetEncryptionKeyInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type the key encrypts.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetEncryptionKeyInput`](crate::operation::get_encryption_key::GetEncryptionKeyInput).
     pub fn build(

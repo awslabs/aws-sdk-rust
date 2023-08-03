@@ -49,6 +49,10 @@ impl CreateBgpPeerOutputBuilder {
         self.virtual_interface = input;
         self
     }
+    /// <p>The virtual interface.</p>
+    pub fn get_virtual_interface(&self) -> &::std::option::Option<crate::types::VirtualInterface> {
+        &self.virtual_interface
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

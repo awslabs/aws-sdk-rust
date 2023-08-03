@@ -48,6 +48,10 @@ impl JobManifestBuilder {
         self.spec = input;
         self
     }
+    /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::JobManifestSpec> {
+        &self.spec
+    }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
     pub fn location(mut self, input: crate::types::JobManifestLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl JobManifestBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>Contains the information required to locate the specified job's manifest.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::JobManifestLocation> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`JobManifest`](crate::types::JobManifest).
     pub fn build(self) -> crate::types::JobManifest {

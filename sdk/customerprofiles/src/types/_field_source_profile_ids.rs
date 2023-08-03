@@ -214,6 +214,10 @@ impl FieldSourceProfileIdsBuilder {
         self.account_number = input;
         self
     }
+    /// <p>A unique identifier for the account number field to be merged. </p>
+    pub fn get_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_number
+    }
     /// <p>A unique identifier for the additional information field to be merged.</p>
     pub fn additional_information(
         mut self,
@@ -230,6 +234,10 @@ impl FieldSourceProfileIdsBuilder {
         self.additional_information = input;
         self
     }
+    /// <p>A unique identifier for the additional information field to be merged.</p>
+    pub fn get_additional_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_information
+    }
     /// <p>A unique identifier for the party type field to be merged.</p>
     pub fn party_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.party_type = ::std::option::Option::Some(input.into());
@@ -239,6 +247,10 @@ impl FieldSourceProfileIdsBuilder {
     pub fn set_party_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.party_type = input;
         self
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn get_party_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.party_type
     }
     /// <p>A unique identifier for the business name field to be merged.</p>
     pub fn business_name(
@@ -256,6 +268,10 @@ impl FieldSourceProfileIdsBuilder {
         self.business_name = input;
         self
     }
+    /// <p>A unique identifier for the business name field to be merged.</p>
+    pub fn get_business_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.business_name
+    }
     /// <p>A unique identifier for the first name field to be merged.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -265,6 +281,10 @@ impl FieldSourceProfileIdsBuilder {
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
+    }
+    /// <p>A unique identifier for the first name field to be merged.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
     }
     /// <p>A unique identifier for the middle name field to be merged.</p>
     pub fn middle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -276,6 +296,10 @@ impl FieldSourceProfileIdsBuilder {
         self.middle_name = input;
         self
     }
+    /// <p>A unique identifier for the middle name field to be merged.</p>
+    pub fn get_middle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.middle_name
+    }
     /// <p>A unique identifier for the last name field to be merged.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -285,6 +309,10 @@ impl FieldSourceProfileIdsBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>A unique identifier for the last name field to be merged.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>A unique identifier for the birthdate field to be merged.</p>
     pub fn birth_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -296,6 +324,10 @@ impl FieldSourceProfileIdsBuilder {
         self.birth_date = input;
         self
     }
+    /// <p>A unique identifier for the birthdate field to be merged.</p>
+    pub fn get_birth_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.birth_date
+    }
     /// <p>A unique identifier for the gender field to be merged.</p>
     pub fn gender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gender = ::std::option::Option::Some(input.into());
@@ -306,6 +338,10 @@ impl FieldSourceProfileIdsBuilder {
         self.gender = input;
         self
     }
+    /// <p>A unique identifier for the gender field to be merged.</p>
+    pub fn get_gender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gender
+    }
     /// <p>A unique identifier for the phone number field to be merged.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -315,6 +351,10 @@ impl FieldSourceProfileIdsBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>A unique identifier for the phone number field to be merged.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>A unique identifier for the mobile phone number field to be merged.</p>
     pub fn mobile_phone_number(
@@ -332,6 +372,10 @@ impl FieldSourceProfileIdsBuilder {
         self.mobile_phone_number = input;
         self
     }
+    /// <p>A unique identifier for the mobile phone number field to be merged.</p>
+    pub fn get_mobile_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mobile_phone_number
+    }
     /// <p>A unique identifier for the home phone number field to be merged.</p>
     pub fn home_phone_number(
         mut self,
@@ -347,6 +391,10 @@ impl FieldSourceProfileIdsBuilder {
     ) -> Self {
         self.home_phone_number = input;
         self
+    }
+    /// <p>A unique identifier for the home phone number field to be merged.</p>
+    pub fn get_home_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_phone_number
     }
     /// <p>A unique identifier for the business phone number field to be merged.</p>
     pub fn business_phone_number(
@@ -364,6 +412,10 @@ impl FieldSourceProfileIdsBuilder {
         self.business_phone_number = input;
         self
     }
+    /// <p>A unique identifier for the business phone number field to be merged.</p>
+    pub fn get_business_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.business_phone_number
+    }
     /// <p>A unique identifier for the email address field to be merged.</p>
     pub fn email_address(
         mut self,
@@ -380,6 +432,10 @@ impl FieldSourceProfileIdsBuilder {
         self.email_address = input;
         self
     }
+    /// <p>A unique identifier for the email address field to be merged.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>A unique identifier for the personal email address field to be merged.</p>
     pub fn personal_email_address(
         mut self,
@@ -395,6 +451,10 @@ impl FieldSourceProfileIdsBuilder {
     ) -> Self {
         self.personal_email_address = input;
         self
+    }
+    /// <p>A unique identifier for the personal email address field to be merged.</p>
+    pub fn get_personal_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.personal_email_address
     }
     /// <p>A unique identifier for the party type field to be merged.</p>
     pub fn business_email_address(
@@ -413,6 +473,10 @@ impl FieldSourceProfileIdsBuilder {
         self
     }
     /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn get_business_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.business_email_address
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
@@ -421,6 +485,10 @@ impl FieldSourceProfileIdsBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// <p>A unique identifier for the shipping address field to be merged.</p>
     pub fn shipping_address(
@@ -438,6 +506,10 @@ impl FieldSourceProfileIdsBuilder {
         self.shipping_address = input;
         self
     }
+    /// <p>A unique identifier for the shipping address field to be merged.</p>
+    pub fn get_shipping_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shipping_address
+    }
     /// <p>A unique identifier for the mailing address field to be merged.</p>
     pub fn mailing_address(
         mut self,
@@ -454,6 +526,10 @@ impl FieldSourceProfileIdsBuilder {
         self.mailing_address = input;
         self
     }
+    /// <p>A unique identifier for the mailing address field to be merged.</p>
+    pub fn get_mailing_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mailing_address
+    }
     /// <p>A unique identifier for the billing type field to be merged.</p>
     pub fn billing_address(
         mut self,
@@ -469,6 +545,10 @@ impl FieldSourceProfileIdsBuilder {
     ) -> Self {
         self.billing_address = input;
         self
+    }
+    /// <p>A unique identifier for the billing type field to be merged.</p>
+    pub fn get_billing_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_address
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -494,6 +574,14 @@ impl FieldSourceProfileIdsBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A unique identifier for the attributes field to be merged.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`FieldSourceProfileIds`](crate::types::FieldSourceProfileIds).
     pub fn build(self) -> crate::types::FieldSourceProfileIds {

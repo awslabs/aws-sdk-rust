@@ -77,6 +77,12 @@ impl PutConfigurationAggregatorInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// Appends an item to `account_aggregation_sources`.
     ///
     /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
@@ -99,6 +105,12 @@ impl PutConfigurationAggregatorInputBuilder {
         self.account_aggregation_sources = input;
         self
     }
+    /// <p>A list of AccountAggregationSource object. </p>
+    pub fn get_account_aggregation_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
+        &self.account_aggregation_sources
+    }
     /// <p>An OrganizationAggregationSource object.</p>
     pub fn organization_aggregation_source(
         mut self,
@@ -114,6 +126,12 @@ impl PutConfigurationAggregatorInputBuilder {
     ) -> Self {
         self.organization_aggregation_source = input;
         self
+    }
+    /// <p>An OrganizationAggregationSource object.</p>
+    pub fn get_organization_aggregation_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationAggregationSource> {
+        &self.organization_aggregation_source
     }
     /// Appends an item to `tags`.
     ///
@@ -133,6 +151,10 @@ impl PutConfigurationAggregatorInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of tag object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutConfigurationAggregatorInput`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput).
     pub fn build(

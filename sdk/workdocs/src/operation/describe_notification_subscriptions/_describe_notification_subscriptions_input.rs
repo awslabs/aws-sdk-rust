@@ -61,6 +61,10 @@ impl DescribeNotificationSubscriptionsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DescribeNotificationSubscriptionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DescribeNotificationSubscriptionsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeNotificationSubscriptionsInput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>{

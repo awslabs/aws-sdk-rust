@@ -36,6 +36,12 @@ impl ListEnvironmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEnvironments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_environments::builders::ListEnvironmentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListEnvironmentsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of environments to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListEnvironmentsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of environments to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `environmentTemplates`.
     ///
@@ -163,5 +177,11 @@ impl ListEnvironmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_templates(input);
         self
+    }
+    /// <p>An array of the versions of the environment template.</p>
+    pub fn get_environment_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateFilter>> {
+        self.inner.get_environment_templates()
     }
 }

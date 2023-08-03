@@ -51,6 +51,12 @@ impl GetRoomSkillParameterOutputBuilder {
         self.room_skill_parameter = input;
         self
     }
+    /// <p>The details of the room skill parameter requested. Required.</p>
+    pub fn get_room_skill_parameter(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoomSkillParameter> {
+        &self.room_skill_parameter
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

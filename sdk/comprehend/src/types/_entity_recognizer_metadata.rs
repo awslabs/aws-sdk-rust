@@ -87,6 +87,10 @@ impl EntityRecognizerMetadataBuilder {
         self.number_of_trained_documents = input;
         self
     }
+    /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+    pub fn get_number_of_trained_documents(&self) -> &::std::option::Option<i32> {
+        &self.number_of_trained_documents
+    }
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn number_of_test_documents(mut self, input: i32) -> Self {
         self.number_of_test_documents = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl EntityRecognizerMetadataBuilder {
     pub fn set_number_of_test_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_test_documents = input;
         self
+    }
+    /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+    pub fn get_number_of_test_documents(&self) -> &::std::option::Option<i32> {
+        &self.number_of_test_documents
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
     pub fn evaluation_metrics(
@@ -112,6 +120,12 @@ impl EntityRecognizerMetadataBuilder {
     ) -> Self {
         self.evaluation_metrics = input;
         self
+    }
+    /// <p>Detailed information about the accuracy of an entity recognizer.</p>
+    pub fn get_evaluation_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics> {
+        &self.evaluation_metrics
     }
     /// Appends an item to `entity_types`.
     ///
@@ -136,6 +150,14 @@ impl EntityRecognizerMetadataBuilder {
     ) -> Self {
         self.entity_types = input;
         self
+    }
+    /// <p>Entity types from the metadata of an entity recognizer.</p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
+    > {
+        &self.entity_types
     }
     /// Consumes the builder and constructs a [`EntityRecognizerMetadata`](crate::types::EntityRecognizerMetadata).
     pub fn build(self) -> crate::types::EntityRecognizerMetadata {

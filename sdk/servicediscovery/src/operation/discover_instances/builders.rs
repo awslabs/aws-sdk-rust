@@ -36,6 +36,12 @@ impl DiscoverInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DiscoverInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DiscoverInstancesFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
@@ -142,6 +152,10 @@ impl DiscoverInstancesFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service that you specified when you registered the instance.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -151,6 +165,10 @@ impl DiscoverInstancesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Adds a key-value pair to `QueryParameters`.
     ///
@@ -175,6 +193,14 @@ impl DiscoverInstancesFluentBuilder {
         self.inner = self.inner.set_query_parameters(input);
         self
     }
+    /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
+    pub fn get_query_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_query_parameters()
+    }
     /// Adds a key-value pair to `OptionalParameters`.
     ///
     /// To override the contents of this collection use [`set_optional_parameters`](Self::set_optional_parameters).
@@ -197,6 +223,14 @@ impl DiscoverInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_optional_parameters(input);
         self
+    }
+    /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
+    pub fn get_optional_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_optional_parameters()
     }
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
     /// <dl>
@@ -262,5 +296,35 @@ impl DiscoverInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_status(input);
         self
+    }
+    /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
+    /// <dl>
+    /// <dt>
+    /// HEALTHY
+    /// </dt>
+    /// <dd>
+    /// <p>Returns healthy instances.</p>
+    /// </dd>
+    /// <dt>
+    /// UNHEALTHY
+    /// </dt>
+    /// <dd>
+    /// <p>Returns unhealthy instances.</p>
+    /// </dd>
+    /// <dt>
+    /// ALL
+    /// </dt>
+    /// <dd>
+    /// <p>Returns all instances.</p>
+    /// </dd>
+    /// <dt>
+    /// HEALTHY_OR_ELSE_ALL
+    /// </dt>
+    /// <dd>
+    /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::HealthStatusFilter> {
+        self.inner.get_health_status()
     }
 }

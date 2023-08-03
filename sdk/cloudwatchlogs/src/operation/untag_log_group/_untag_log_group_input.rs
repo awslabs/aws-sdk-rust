@@ -54,6 +54,10 @@ impl UntagLogGroupInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -72,6 +76,10 @@ impl UntagLogGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UntagLogGroupInput`](crate::operation::untag_log_group::UntagLogGroupInput).
     pub fn build(

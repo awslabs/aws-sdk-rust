@@ -72,6 +72,10 @@ impl AssessmentTargetBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the Amazon Inspector assessment target.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AssessmentTargetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Amazon Inspector assessment target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub fn resource_group_arn(
@@ -98,6 +106,10 @@ impl AssessmentTargetBuilder {
         self.resource_group_arn = input;
         self
     }
+    /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_arn
+    }
     /// <p>The time at which the assessment target is created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl AssessmentTargetBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time at which the assessment target is created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl AssessmentTargetBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`AssessmentTarget`](crate::types::AssessmentTarget).
     pub fn build(self) -> crate::types::AssessmentTarget {

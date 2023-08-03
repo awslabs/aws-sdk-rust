@@ -61,6 +61,10 @@ impl ArtifactStoreBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the artifact store, such as S3.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactStoreType> {
+        &self.r#type
+    }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl ArtifactStoreBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
@@ -83,6 +91,10 @@ impl ArtifactStoreBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        &self.encryption_key
     }
     /// Consumes the builder and constructs a [`ArtifactStore`](crate::types::ArtifactStore).
     pub fn build(self) -> crate::types::ArtifactStore {

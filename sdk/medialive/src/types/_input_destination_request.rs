@@ -40,6 +40,10 @@ impl InputDestinationRequestBuilder {
         self.stream_name = input;
         self
     }
+    /// A unique name for the location the RTMP stream is being pushed to.
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// Consumes the builder and constructs a [`InputDestinationRequest`](crate::types::InputDestinationRequest).
     pub fn build(self) -> crate::types::InputDestinationRequest {
         crate::types::InputDestinationRequest {

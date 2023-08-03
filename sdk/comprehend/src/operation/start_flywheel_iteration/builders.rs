@@ -36,6 +36,13 @@ impl StartFlywheelIterationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartFlywheelIteration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartFlywheelIterationFluentBuilder {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }
+    /// <p>The ARN of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
         mut self,
@@ -141,5 +152,9 @@ impl StartFlywheelIterationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

@@ -39,6 +39,10 @@ impl DescribeDominantLanguageDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeDominantLanguageDetectionJobInput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -57,6 +57,10 @@ impl GetClusterSessionCredentialsOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
+    }
     /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_at = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetClusterSessionCredentialsOutputBuilder {
     ) -> Self {
         self.expires_at = input;
         self
+    }
+    /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

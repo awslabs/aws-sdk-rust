@@ -36,6 +36,10 @@ impl UpdateJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_job::builders::UpdateJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The name of the job definition to update.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     pub fn job_update(mut self, input: crate::types::JobUpdate) -> Self {
         self.inner = self.inner.job_update(input);
@@ -127,5 +135,9 @@ impl UpdateJobFluentBuilder {
     pub fn set_job_update(mut self, input: ::std::option::Option<crate::types::JobUpdate>) -> Self {
         self.inner = self.inner.set_job_update(input);
         self
+    }
+    /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
+    pub fn get_job_update(&self) -> &::std::option::Option<crate::types::JobUpdate> {
+        self.inner.get_job_update()
     }
 }

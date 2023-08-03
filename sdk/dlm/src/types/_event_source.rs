@@ -51,6 +51,10 @@ impl EventSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EventSourceValues> {
+        &self.r#type
+    }
     /// <p>Information about the event.</p>
     pub fn parameters(mut self, input: crate::types::EventParameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl EventSourceBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Information about the event.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::EventParameters> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`EventSource`](crate::types::EventSource).
     pub fn build(self) -> crate::types::EventSource {

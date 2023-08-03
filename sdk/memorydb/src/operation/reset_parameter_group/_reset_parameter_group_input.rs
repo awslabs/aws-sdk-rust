@@ -63,6 +63,10 @@ impl ResetParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to reset.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
     pub fn all_parameters(mut self, input: bool) -> Self {
         self.all_parameters = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ResetParameterGroupInputBuilder {
     pub fn set_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.all_parameters = input;
         self
+    }
+    /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
+    pub fn get_all_parameters(&self) -> &::std::option::Option<bool> {
+        &self.all_parameters
     }
     /// Appends an item to `parameter_names`.
     ///
@@ -94,6 +102,12 @@ impl ResetParameterGroupInputBuilder {
     ) -> Self {
         self.parameter_names = input;
         self
+    }
+    /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
+    pub fn get_parameter_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parameter_names
     }
     /// Consumes the builder and constructs a [`ResetParameterGroupInput`](crate::operation::reset_parameter_group::ResetParameterGroupInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl UpdateBandwidthRateLimitInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl UpdateBandwidthRateLimitInputBuilder {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
+    /// <p>The average upload bandwidth rate limit in bits per second.</p>
+    pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        &self.average_upload_rate_limit_in_bits_per_sec
+    }
     /// <p>The average download bandwidth rate limit in bits per second.</p>
     pub fn average_download_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UpdateBandwidthRateLimitInputBuilder {
     ) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = input;
         self
+    }
+    /// <p>The average download bandwidth rate limit in bits per second.</p>
+    pub fn get_average_download_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        &self.average_download_rate_limit_in_bits_per_sec
     }
     /// Consumes the builder and constructs a [`UpdateBandwidthRateLimitInput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput).
     pub fn build(

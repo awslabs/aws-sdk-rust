@@ -78,6 +78,10 @@ impl QueryOutputBuilder {
         self.query_id = input;
         self
     }
+    /// <p> A unique ID for the given query. </p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl QueryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `rows`.
     ///
@@ -107,6 +115,10 @@ impl QueryOutputBuilder {
         self.rows = input;
         self
     }
+    /// <p> The result set rows returned by the query. </p>
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+        &self.rows
+    }
     /// Appends an item to `column_info`.
     ///
     /// To override the contents of this collection use [`set_column_info`](Self::set_column_info).
@@ -126,6 +138,12 @@ impl QueryOutputBuilder {
         self.column_info = input;
         self
     }
+    /// <p> The column data types of the returned result set. </p>
+    pub fn get_column_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+        &self.column_info
+    }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub fn query_status(mut self, input: crate::types::QueryStatus) -> Self {
         self.query_status = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl QueryOutputBuilder {
     ) -> Self {
         self.query_status = input;
         self
+    }
+    /// <p>Information about the status of the query, including progress and bytes scanned.</p>
+    pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.query_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

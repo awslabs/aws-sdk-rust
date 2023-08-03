@@ -96,6 +96,10 @@ impl UpdateInfoEntryBuilder {
         self.region = input;
         self
     }
+    /// <p> The name of the Region. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p> The status of the update performed on the directory. </p>
     pub fn status(mut self, input: crate::types::UpdateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl UpdateInfoEntryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the update performed on the directory. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
+        &self.status
     }
     /// <p> The reason for the current status of the update type activity. </p>
     pub fn status_reason(
@@ -122,6 +130,10 @@ impl UpdateInfoEntryBuilder {
         self.status_reason = input;
         self
     }
+    /// <p> The reason for the current status of the update type activity. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
     pub fn initiated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiated_by = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl UpdateInfoEntryBuilder {
     pub fn set_initiated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiated_by = input;
         self
+    }
+    /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
+    pub fn get_initiated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initiated_by
     }
     /// <p> The new value of the target setting. </p>
     pub fn new_value(mut self, input: crate::types::UpdateValue) -> Self {
@@ -145,6 +161,10 @@ impl UpdateInfoEntryBuilder {
         self.new_value = input;
         self
     }
+    /// <p> The new value of the target setting. </p>
+    pub fn get_new_value(&self) -> &::std::option::Option<crate::types::UpdateValue> {
+        &self.new_value
+    }
     /// <p> The old value of the target setting. </p>
     pub fn previous_value(mut self, input: crate::types::UpdateValue) -> Self {
         self.previous_value = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl UpdateInfoEntryBuilder {
     ) -> Self {
         self.previous_value = input;
         self
+    }
+    /// <p> The old value of the target setting. </p>
+    pub fn get_previous_value(&self) -> &::std::option::Option<crate::types::UpdateValue> {
+        &self.previous_value
     }
     /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,6 +195,10 @@ impl UpdateInfoEntryBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The last updated date and time of a particular directory setting. </p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -183,6 +211,12 @@ impl UpdateInfoEntryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p> The last updated date and time of a particular directory setting. </p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`UpdateInfoEntry`](crate::types::UpdateInfoEntry).
     pub fn build(self) -> crate::types::UpdateInfoEntry {

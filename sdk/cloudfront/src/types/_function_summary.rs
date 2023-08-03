@@ -64,6 +64,10 @@ impl FunctionSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the CloudFront function.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the CloudFront function.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl FunctionSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the CloudFront function.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
@@ -87,6 +95,10 @@ impl FunctionSummaryBuilder {
         self.function_config = input;
         self
     }
+    /// <p>Contains configuration information about a CloudFront function.</p>
+    pub fn get_function_config(&self) -> &::std::option::Option<crate::types::FunctionConfig> {
+        &self.function_config
+    }
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn function_metadata(mut self, input: crate::types::FunctionMetadata) -> Self {
         self.function_metadata = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl FunctionSummaryBuilder {
     ) -> Self {
         self.function_metadata = input;
         self
+    }
+    /// <p>Contains metadata about a CloudFront function.</p>
+    pub fn get_function_metadata(&self) -> &::std::option::Option<crate::types::FunctionMetadata> {
+        &self.function_metadata
     }
     /// Consumes the builder and constructs a [`FunctionSummary`](crate::types::FunctionSummary).
     pub fn build(self) -> crate::types::FunctionSummary {

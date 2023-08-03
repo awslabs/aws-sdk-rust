@@ -40,6 +40,10 @@ impl DescribeFeedbackInputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p> The ID of the insight for which the feedback was provided. </p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// Consumes the builder and constructs a [`DescribeFeedbackInput`](crate::operation::describe_feedback::DescribeFeedbackInput).
     pub fn build(
         self,

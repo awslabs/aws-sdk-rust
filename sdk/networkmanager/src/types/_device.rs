@@ -162,6 +162,10 @@ impl DeviceBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
@@ -171,6 +175,10 @@ impl DeviceBuilder {
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(
@@ -188,6 +196,10 @@ impl DeviceBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Web Services location of the device.</p>
     pub fn aws_location(mut self, input: crate::types::AwsLocation) -> Self {
         self.aws_location = ::std::option::Option::Some(input);
@@ -201,6 +213,10 @@ impl DeviceBuilder {
         self.aws_location = input;
         self
     }
+    /// <p>The Amazon Web Services location of the device.</p>
+    pub fn get_aws_location(&self) -> &::std::option::Option<crate::types::AwsLocation> {
+        &self.aws_location
+    }
     /// <p>The description of the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -210,6 +226,10 @@ impl DeviceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The device type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,6 +241,10 @@ impl DeviceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The device type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The device vendor.</p>
     pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor = ::std::option::Option::Some(input.into());
@@ -231,6 +255,10 @@ impl DeviceBuilder {
         self.vendor = input;
         self
     }
+    /// <p>The device vendor.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
+    }
     /// <p>The device model.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
@@ -240,6 +268,10 @@ impl DeviceBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
+    }
+    /// <p>The device model.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
     }
     /// <p>The device serial number.</p>
     pub fn serial_number(
@@ -257,6 +289,10 @@ impl DeviceBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The device serial number.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The site location.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -267,6 +303,10 @@ impl DeviceBuilder {
         self.location = input;
         self
     }
+    /// <p>The site location.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// <p>The site ID.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
@@ -276,6 +316,10 @@ impl DeviceBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
+    }
+    /// <p>The site ID.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// <p>The date and time that the site was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -290,6 +334,10 @@ impl DeviceBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the site was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The device state.</p>
     pub fn state(mut self, input: crate::types::DeviceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -299,6 +347,10 @@ impl DeviceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DeviceState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The device state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DeviceState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -318,6 +370,10 @@ impl DeviceBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the device.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {

@@ -37,6 +37,12 @@ impl BatchGetMetricDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetMetricData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl BatchGetMetricDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queries(input);
         self
+    }
+    /// <p>A list of queries for metrics to be retrieved.</p>
+    pub fn get_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
+        self.inner.get_queries()
     }
 }

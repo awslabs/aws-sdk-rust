@@ -39,6 +39,10 @@ impl DeleteNotebookInputBuilder {
         self.notebook_id = input;
         self
     }
+    /// <p>The ID of the notebook to delete.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_id
+    }
     /// Consumes the builder and constructs a [`DeleteNotebookInput`](crate::operation::delete_notebook::DeleteNotebookInput).
     pub fn build(
         self,

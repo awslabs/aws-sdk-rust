@@ -39,6 +39,10 @@ impl DeleteDiskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDisk as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_disk::builders::DeleteDiskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl DeleteDiskFluentBuilder {
         self.inner = self.inner.set_disk_name(input);
         self
     }
+    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_name()
+    }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub fn force_delete_add_ons(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete_add_ons(input);
@@ -130,5 +138,9 @@ impl DeleteDiskFluentBuilder {
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_add_ons(input);
         self
+    }
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
+    pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete_add_ons()
     }
 }

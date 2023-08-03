@@ -54,6 +54,10 @@ impl EksConfigurationBuilder {
         self.eks_cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>. </p>
+    pub fn get_eks_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eks_cluster_arn
+    }
     /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
     pub fn kubernetes_namespace(
         mut self,
@@ -69,6 +73,10 @@ impl EksConfigurationBuilder {
     ) -> Self {
         self.kubernetes_namespace = input;
         self
+    }
+    /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
+    pub fn get_kubernetes_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kubernetes_namespace
     }
     /// Consumes the builder and constructs a [`EksConfiguration`](crate::types::EksConfiguration).
     pub fn build(self) -> crate::types::EksConfiguration {

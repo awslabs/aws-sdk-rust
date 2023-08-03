@@ -75,6 +75,10 @@ impl PatchSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name specified to identify the patch source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `products`.
     ///
     /// To override the contents of this collection use [`set_products`](Self::set_products).
@@ -93,6 +97,10 @@ impl PatchSourceBuilder {
     ) -> Self {
         self.products = input;
         self
+    }
+    /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.products
     }
     /// <p>The value of the yum repo configuration. For example:</p>
     /// <p> <code>[main]</code> </p>
@@ -121,6 +129,16 @@ impl PatchSourceBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+    /// </note>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`PatchSource`](crate::types::PatchSource).
     pub fn build(self) -> crate::types::PatchSource {

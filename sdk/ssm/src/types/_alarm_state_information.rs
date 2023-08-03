@@ -48,6 +48,10 @@ impl AlarmStateInformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of your CloudWatch alarm.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The state of your CloudWatch alarm.</p>
     pub fn state(mut self, input: crate::types::ExternalAlarmState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AlarmStateInformationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of your CloudWatch alarm.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExternalAlarmState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AlarmStateInformation`](crate::types::AlarmStateInformation).
     pub fn build(self) -> crate::types::AlarmStateInformation {

@@ -109,6 +109,10 @@ impl StartDeploymentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The environment ID.</p>
     pub fn environment_id(
         mut self,
@@ -124,6 +128,10 @@ impl StartDeploymentInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The environment ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The deployment strategy ID.</p>
     pub fn deployment_strategy_id(
@@ -141,6 +149,10 @@ impl StartDeploymentInputBuilder {
         self.deployment_strategy_id = input;
         self
     }
+    /// <p>The deployment strategy ID.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_strategy_id
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -156,6 +168,10 @@ impl StartDeploymentInputBuilder {
     ) -> Self {
         self.configuration_profile_id = input;
         self
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
     pub fn configuration_version(
@@ -173,6 +189,10 @@ impl StartDeploymentInputBuilder {
         self.configuration_version = input;
         self
     }
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_version
+    }
     /// <p>A description of the deployment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -182,6 +202,10 @@ impl StartDeploymentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the deployment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -208,6 +232,14 @@ impl StartDeploymentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
     pub fn kms_key_identifier(
         mut self,
@@ -223,6 +255,10 @@ impl StartDeploymentInputBuilder {
     ) -> Self {
         self.kms_key_identifier = input;
         self
+    }
+    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
     }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(

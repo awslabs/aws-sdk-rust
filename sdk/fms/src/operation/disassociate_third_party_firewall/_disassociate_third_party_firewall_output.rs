@@ -56,6 +56,12 @@ impl DisassociateThirdPartyFirewallOutputBuilder {
         self.third_party_firewall_status = input;
         self
     }
+    /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
+    pub fn get_third_party_firewall_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus> {
+        &self.third_party_firewall_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

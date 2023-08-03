@@ -214,6 +214,10 @@ impl OperationBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the operation that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -223,6 +227,10 @@ impl OperationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The name of the operation that's associated with the specified ID.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.r#type
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <dl>
@@ -289,6 +297,36 @@ impl OperationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the operation. Values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// SUBMITTED
+    /// </dt>
+    /// <dd>
+    /// <p>This is the initial state that occurs immediately after you submit a request.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Cloud Map is performing the operation.</p>
+    /// </dd>
+    /// <dt>
+    /// SUCCESS
+    /// </dt>
+    /// <dd>
+    /// <p>The operation succeeded.</p>
+    /// </dd>
+    /// <dt>
+    /// FAIL
+    /// </dt>
+    /// <dd>
+    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.status
+    }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
     pub fn error_message(
         mut self,
@@ -304,6 +342,10 @@ impl OperationBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
@@ -333,6 +375,19 @@ impl OperationBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -346,6 +401,10 @@ impl OperationBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
@@ -358,6 +417,10 @@ impl OperationBuilder {
     ) -> Self {
         self.update_date = input;
         self
+    }
+    /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
     }
     /// Adds a key-value pair to `targets`.
     ///
@@ -423,6 +486,34 @@ impl OperationBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>The name of the target entity that's associated with the operation:</p>
+    /// <dl>
+    /// <dt>
+    /// NAMESPACE
+    /// </dt>
+    /// <dd>
+    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
+    /// </dd>
+    /// <dt>
+    /// SERVICE
+    /// </dt>
+    /// <dd>
+    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
+    /// </dd>
+    /// <dt>
+    /// INSTANCE
+    /// </dt>
+    /// <dd>
+    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>,
+    > {
+        &self.targets
     }
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
     pub fn build(self) -> crate::types::Operation {

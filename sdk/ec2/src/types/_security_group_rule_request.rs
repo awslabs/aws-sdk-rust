@@ -108,6 +108,11 @@ impl SecurityGroupRuleRequestBuilder {
         self.ip_protocol = input;
         self
     }
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
+    /// <p>Use <code>-1</code> to specify all protocols.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_protocol
+    }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
@@ -117,6 +122,10 @@ impl SecurityGroupRuleRequestBuilder {
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
+    }
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
     pub fn to_port(mut self, input: i32) -> Self {
@@ -128,6 +137,10 @@ impl SecurityGroupRuleRequestBuilder {
         self.to_port = input;
         self
     }
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
+    }
     /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
     pub fn cidr_ipv4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_ipv4 = ::std::option::Option::Some(input.into());
@@ -138,6 +151,10 @@ impl SecurityGroupRuleRequestBuilder {
         self.cidr_ipv4 = input;
         self
     }
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
+    pub fn get_cidr_ipv4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv4
+    }
     /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
     pub fn cidr_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_ipv6 = ::std::option::Option::Some(input.into());
@@ -147,6 +164,10 @@ impl SecurityGroupRuleRequestBuilder {
     pub fn set_cidr_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ipv6 = input;
         self
+    }
+    /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
+    pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv6
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
@@ -164,6 +185,10 @@ impl SecurityGroupRuleRequestBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The ID of the security group that is referenced in the security group rule.</p>
     pub fn referenced_group_id(
         mut self,
@@ -180,6 +205,10 @@ impl SecurityGroupRuleRequestBuilder {
         self.referenced_group_id = input;
         self
     }
+    /// <p>The ID of the security group that is referenced in the security group rule.</p>
+    pub fn get_referenced_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.referenced_group_id
+    }
     /// <p>The description of the security group rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -189,6 +218,10 @@ impl SecurityGroupRuleRequestBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the security group rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`SecurityGroupRuleRequest`](crate::types::SecurityGroupRuleRequest).
     pub fn build(self) -> crate::types::SecurityGroupRuleRequest {

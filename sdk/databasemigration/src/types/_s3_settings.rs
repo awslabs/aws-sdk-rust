@@ -541,6 +541,10 @@ impl S3SettingsBuilder {
         self.service_access_role_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
     /// <p> Specifies how tables are defined in the S3 source files only. </p>
     pub fn external_table_definition(
         mut self,
@@ -556,6 +560,10 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.external_table_definition = input;
         self
+    }
+    /// <p> Specifies how tables are defined in the S3 source files only. </p>
+    pub fn get_external_table_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_table_definition
     }
     /// <p> The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return (<code>\n</code>). </p>
     pub fn csv_row_delimiter(
@@ -573,6 +581,10 @@ impl S3SettingsBuilder {
         self.csv_row_delimiter = input;
         self
     }
+    /// <p> The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return (<code>\n</code>). </p>
+    pub fn get_csv_row_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csv_row_delimiter
+    }
     /// <p> The delimiter used to separate columns in the .csv file for both source and target. The default is a comma. </p>
     pub fn csv_delimiter(
         mut self,
@@ -588,6 +600,10 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.csv_delimiter = input;
         self
+    }
+    /// <p> The delimiter used to separate columns in the .csv file for both source and target. The default is a comma. </p>
+    pub fn get_csv_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csv_delimiter
     }
     /// <p> An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>. </p>
     pub fn bucket_folder(
@@ -605,6 +621,10 @@ impl S3SettingsBuilder {
         self.bucket_folder = input;
         self
     }
+    /// <p> An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>. </p>
+    pub fn get_bucket_folder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_folder
+    }
     /// <p> The name of the S3 bucket. </p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -614,6 +634,10 @@ impl S3SettingsBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p> The name of the S3 bucket. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies to both .csv and .parquet file formats. </p>
     pub fn compression_type(mut self, input: crate::types::CompressionTypeValue) -> Self {
@@ -627,6 +651,12 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.compression_type = input;
         self
+    }
+    /// <p>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies to both .csv and .parquet file formats. </p>
+    pub fn get_compression_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompressionTypeValue> {
+        &self.compression_type
     }
     /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
@@ -673,6 +703,26 @@ impl S3SettingsBuilder {
         self.encryption_mode = input;
         self
     }
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
+    /// </note>
+    /// <p>To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p>
+    /// <ul>
+    /// <li> <p> <code>s3:CreateBucket</code> </p> </li>
+    /// <li> <p> <code>s3:ListBucket</code> </p> </li>
+    /// <li> <p> <code>s3:DeleteBucket</code> </p> </li>
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+    /// <li> <p> <code>s3:GetObject</code> </p> </li>
+    /// <li> <p> <code>s3:PutObject</code> </p> </li>
+    /// <li> <p> <code>s3:DeleteObject</code> </p> </li>
+    /// <li> <p> <code>s3:GetObjectVersion</code> </p> </li>
+    /// <li> <p> <code>s3:GetBucketPolicy</code> </p> </li>
+    /// <li> <p> <code>s3:PutBucketPolicy</code> </p> </li>
+    /// <li> <p> <code>s3:DeleteBucketPolicy</code> </p> </li>
+    /// </ul>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionModeValue> {
+        &self.encryption_mode
+    }
     /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows use of the key.</p>
     /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code> </p>
     pub fn server_side_encryption_kms_key_id(
@@ -690,6 +740,13 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.server_side_encryption_kms_key_id = input;
         self
+    }
+    /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows use of the key.</p>
+    /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code> </p>
+    pub fn get_server_side_encryption_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_encryption_kms_key_id
     }
     /// <p>The format of the data that you want to use for output. You can choose one of the following: </p>
     /// <ul>
@@ -711,6 +768,14 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.data_format = input;
         self
+    }
+    /// <p>The format of the data that you want to use for output. You can choose one of the following: </p>
+    /// <ul>
+    /// <li> <p> <code>csv</code> : This is a row-based file format with comma-separated values (.csv). </p> </li>
+    /// <li> <p> <code>parquet</code> : Apache Parquet (.parquet) is a columnar storage file format that features efficient compression and provides faster query response. </p> </li>
+    /// </ul>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormatValue> {
+        &self.data_format
     }
     /// <p>The type of encoding you are using: </p>
     /// <ul>
@@ -735,6 +800,15 @@ impl S3SettingsBuilder {
         self.encoding_type = input;
         self
     }
+    /// <p>The type of encoding you are using: </p>
+    /// <ul>
+    /// <li> <p> <code>RLE_DICTIONARY</code> uses a combination of bit-packing and run-length encoding to store repeated values more efficiently. This is the default.</p> </li>
+    /// <li> <p> <code>PLAIN</code> doesn't use encoding at all. Values are stored as they are.</p> </li>
+    /// <li> <p> <code>PLAIN_DICTIONARY</code> builds a dictionary of the values encountered in a given column. The dictionary is stored in a dictionary page for each column chunk.</p> </li>
+    /// </ul>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingTypeValue> {
+        &self.encoding_type
+    }
     /// <p>The maximum size of an encoded dictionary page of a column. If the dictionary page exceeds this, this column is stored using an encoding type of <code>PLAIN</code>. This parameter defaults to 1024 * 1024 bytes (1 MiB), the maximum size of a dictionary page before it reverts to <code>PLAIN</code> encoding. This size is used for .parquet file format only. </p>
     pub fn dict_page_size_limit(mut self, input: i32) -> Self {
         self.dict_page_size_limit = ::std::option::Option::Some(input);
@@ -744,6 +818,10 @@ impl S3SettingsBuilder {
     pub fn set_dict_page_size_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dict_page_size_limit = input;
         self
+    }
+    /// <p>The maximum size of an encoded dictionary page of a column. If the dictionary page exceeds this, this column is stored using an encoding type of <code>PLAIN</code>. This parameter defaults to 1024 * 1024 bytes (1 MiB), the maximum size of a dictionary page before it reverts to <code>PLAIN</code> encoding. This size is used for .parquet file format only. </p>
+    pub fn get_dict_page_size_limit(&self) -> &::std::option::Option<i32> {
+        &self.dict_page_size_limit
     }
     /// <p>The number of rows in a row group. A smaller row group size provides faster reads. But as the number of row groups grows, the slower writes become. This parameter defaults to 10,000 rows. This number is used for .parquet file format only. </p>
     /// <p>If you choose a value larger than the maximum, <code>RowGroupLength</code> is set to the max row group length in bytes (64 * 1024 * 1024). </p>
@@ -757,6 +835,11 @@ impl S3SettingsBuilder {
         self.row_group_length = input;
         self
     }
+    /// <p>The number of rows in a row group. A smaller row group size provides faster reads. But as the number of row groups grows, the slower writes become. This parameter defaults to 10,000 rows. This number is used for .parquet file format only. </p>
+    /// <p>If you choose a value larger than the maximum, <code>RowGroupLength</code> is set to the max row group length in bytes (64 * 1024 * 1024). </p>
+    pub fn get_row_group_length(&self) -> &::std::option::Option<i32> {
+        &self.row_group_length
+    }
     /// <p>The size of one data page in bytes. This parameter defaults to 1024 * 1024 bytes (1 MiB). This number is used for .parquet file format only. </p>
     pub fn data_page_size(mut self, input: i32) -> Self {
         self.data_page_size = ::std::option::Option::Some(input);
@@ -766,6 +849,10 @@ impl S3SettingsBuilder {
     pub fn set_data_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_page_size = input;
         self
+    }
+    /// <p>The size of one data page in bytes. This parameter defaults to 1024 * 1024 bytes (1 MiB). This number is used for .parquet file format only. </p>
+    pub fn get_data_page_size(&self) -> &::std::option::Option<i32> {
+        &self.data_page_size
     }
     /// <p>The version of the Apache Parquet format that you want to use: <code>parquet_1_0</code> (the default) or <code>parquet_2_0</code>.</p>
     pub fn parquet_version(mut self, input: crate::types::ParquetVersionValue) -> Self {
@@ -780,6 +867,10 @@ impl S3SettingsBuilder {
         self.parquet_version = input;
         self
     }
+    /// <p>The version of the Apache Parquet format that you want to use: <code>parquet_1_0</code> (the default) or <code>parquet_2_0</code>.</p>
+    pub fn get_parquet_version(&self) -> &::std::option::Option<crate::types::ParquetVersionValue> {
+        &self.parquet_version
+    }
     /// <p>A value that enables statistics for Parquet pages and row groups. Choose <code>true</code> to enable statistics, <code>false</code> to disable. Statistics include <code>NULL</code>, <code>DISTINCT</code>, <code>MAX</code>, and <code>MIN</code> values. This parameter defaults to <code>true</code>. This value is used for .parquet file format only.</p>
     pub fn enable_statistics(mut self, input: bool) -> Self {
         self.enable_statistics = ::std::option::Option::Some(input);
@@ -789,6 +880,10 @@ impl S3SettingsBuilder {
     pub fn set_enable_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_statistics = input;
         self
+    }
+    /// <p>A value that enables statistics for Parquet pages and row groups. Choose <code>true</code> to enable statistics, <code>false</code> to disable. Statistics include <code>NULL</code>, <code>DISTINCT</code>, <code>MAX</code>, and <code>MIN</code> values. This parameter defaults to <code>true</code>. This value is used for .parquet file format only.</p>
+    pub fn get_enable_statistics(&self) -> &::std::option::Option<bool> {
+        &self.enable_statistics
     }
     /// <p>A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet output files only to indicate how the rows were added to the source database.</p> <note>
     /// <p>DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
@@ -812,6 +907,16 @@ impl S3SettingsBuilder {
         self.include_op_for_full_load = input;
         self
     }
+    /// <p>A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet output files only to indicate how the rows were added to the source database.</p> <note>
+    /// <p>DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
+    /// <p>DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7 and later.</p>
+    /// </note>
+    /// <p>For full load, records can only be inserted. By default (the <code>false</code> setting), no information is recorded in these output files for a full load to indicate that the rows were inserted at the source database. If <code>IncludeOpForFullLoad</code> is set to <code>true</code> or <code>y</code>, the INSERT is recorded as an I annotation in the first field of the .csv file. This allows the format of your target records from a full load to be consistent with the target records from a CDC load.</p> <note>
+    /// <p>This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
+    /// </note>
+    pub fn get_include_op_for_full_load(&self) -> &::std::option::Option<bool> {
+        &self.include_op_for_full_load
+    }
     /// <p>A value that enables a change data capture (CDC) load to write only INSERT operations to .csv or columnar storage (.parquet) output files. By default (the <code>false</code> setting), the first field in a .csv or .parquet record contains the letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether the row was inserted, updated, or deleted at the source database for a CDC load to the target.</p>
     /// <p>If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the source. If <code>IncludeOpForFullLoad</code> is set to <code>false</code>, every CDC record is written without a first field to indicate the INSERT operation at the source. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p> <note>
     /// <p>DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
@@ -829,6 +934,14 @@ impl S3SettingsBuilder {
     pub fn set_cdc_inserts_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cdc_inserts_only = input;
         self
+    }
+    /// <p>A value that enables a change data capture (CDC) load to write only INSERT operations to .csv or columnar storage (.parquet) output files. By default (the <code>false</code> setting), the first field in a .csv or .parquet record contains the letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether the row was inserted, updated, or deleted at the source database for a CDC load to the target.</p>
+    /// <p>If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the source. If <code>IncludeOpForFullLoad</code> is set to <code>false</code>, every CDC record is written without a first field to indicate the INSERT operation at the source. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p> <note>
+    /// <p>DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
+    /// <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code> for the same endpoint, but not both.</p>
+    /// </note>
+    pub fn get_cdc_inserts_only(&self) -> &::std::option::Option<bool> {
+        &self.cdc_inserts_only
     }
     /// <p>A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an Amazon S3 target.</p> <note>
     /// <p>DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.</p>
@@ -860,6 +973,17 @@ impl S3SettingsBuilder {
         self.timestamp_column_name = input;
         self
     }
+    /// <p>A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an Amazon S3 target.</p> <note>
+    /// <p>DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.</p>
+    /// </note>
+    /// <p>DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your migrated data when you set <code>TimestampColumnName</code> to a nonblank value.</p>
+    /// <p>For a full load, each row of this timestamp column contains a timestamp for when the data was transferred from the source to the target by DMS. </p>
+    /// <p>For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of that row in the source database.</p>
+    /// <p>The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit timestamp supported by DMS for the source database.</p>
+    /// <p>When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the timestamp column that you set with <code>TimestampColumnName</code>.</p>
+    pub fn get_timestamp_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_column_name
+    }
     /// <p>A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3 object file in .parquet format.</p> <note>
     /// <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
@@ -887,6 +1011,17 @@ impl S3SettingsBuilder {
         self.parquet_timestamp_in_millisecond = input;
         self
     }
+    /// <p>A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3 object file in .parquet format.</p> <note>
+    /// <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.</p>
+    /// </note>
+    /// <p>When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes them with microsecond precision.</p>
+    /// <p>Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to query or process the data with Athena or Glue.</p> <note>
+    /// <p>DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond precision.</p>
+    /// <p>Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column value that is inserted by setting the <code>TimestampColumnName</code> parameter.</p>
+    /// </note>
+    pub fn get_parquet_timestamp_in_millisecond(&self) -> &::std::option::Option<bool> {
+        &self.parquet_timestamp_in_millisecond
+    }
     /// <p>A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet (columnar storage) output files. The default setting is <code>false</code>, but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet file.</p> <important>
     /// <p>DMS supports the use of the .parquet files in versions 3.4.7 and later.</p>
     /// </important>
@@ -909,6 +1044,16 @@ impl S3SettingsBuilder {
         self.cdc_inserts_and_updates = input;
         self
     }
+    /// <p>A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet (columnar storage) output files. The default setting is <code>false</code>, but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet file.</p> <important>
+    /// <p>DMS supports the use of the .parquet files in versions 3.4.7 and later.</p>
+    /// </important>
+    /// <p>How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p> <note>
+    /// <p>DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.</p>
+    /// <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code> for the same endpoint, but not both.</p>
+    /// </note>
+    pub fn get_cdc_inserts_and_updates(&self) -> &::std::option::Option<bool> {
+        &self.cdc_inserts_and_updates
+    }
     /// <p>When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The default value is <code>false</code>. For more information about date-based folder partitioning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using date-based folder partitioning</a>.</p>
     pub fn date_partition_enabled(mut self, input: bool) -> Self {
         self.date_partition_enabled = ::std::option::Option::Some(input);
@@ -918,6 +1063,10 @@ impl S3SettingsBuilder {
     pub fn set_date_partition_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.date_partition_enabled = input;
         self
+    }
+    /// <p>When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The default value is <code>false</code>. For more information about date-based folder partitioning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using date-based folder partitioning</a>.</p>
+    pub fn get_date_partition_enabled(&self) -> &::std::option::Option<bool> {
+        &self.date_partition_enabled
     }
     /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
     pub fn date_partition_sequence(
@@ -935,6 +1084,12 @@ impl S3SettingsBuilder {
         self.date_partition_sequence = input;
         self
     }
+    /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+    pub fn get_date_partition_sequence(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatePartitionSequenceValue> {
+        &self.date_partition_sequence
+    }
     /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
     pub fn date_partition_delimiter(
         mut self,
@@ -951,6 +1106,12 @@ impl S3SettingsBuilder {
         self.date_partition_delimiter = input;
         self
     }
+    /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+    pub fn get_date_partition_delimiter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatePartitionDelimiterValue> {
+        &self.date_partition_delimiter
+    }
     /// <p>This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"> <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these columns.</p> <note>
     /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
     /// </note>
@@ -964,6 +1125,12 @@ impl S3SettingsBuilder {
     pub fn set_use_csv_no_sup_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_csv_no_sup_value = input;
         self
+    }
+    /// <p>This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"> <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these columns.</p> <note>
+    /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
+    /// </note>
+    pub fn get_use_csv_no_sup_value(&self) -> &::std::option::Option<bool> {
+        &self.use_csv_no_sup_value
     }
     /// <p>This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"> <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
     /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
@@ -985,6 +1152,12 @@ impl S3SettingsBuilder {
         self.csv_no_sup_value = input;
         self
     }
+    /// <p>This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"> <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+    /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
+    /// </note>
+    pub fn get_csv_no_sup_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csv_no_sup_value
+    }
     /// <p>If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon S3 target specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath"> <code>CdcPath</code> </a>. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
     /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
     /// </note>
@@ -998,6 +1171,12 @@ impl S3SettingsBuilder {
     pub fn set_preserve_transactions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_transactions = input;
         self
+    }
+    /// <p>If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon S3 target specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath"> <code>CdcPath</code> </a>. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+    /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
+    /// </note>
+    pub fn get_preserve_transactions(&self) -> &::std::option::Option<bool> {
+        &self.preserve_transactions
     }
     /// <p>Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates the data changes to the target endpoint. For an S3 target if you set <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"> <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC folder path in either your S3 target working directory or the S3 target location specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"> <code>BucketFolder</code> </a> and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"> <code>BucketName</code> </a>.</p>
     /// <p>For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.</p>
@@ -1019,6 +1198,15 @@ impl S3SettingsBuilder {
         self.cdc_path = input;
         self
     }
+    /// <p>Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates the data changes to the target endpoint. For an S3 target if you set <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"> <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC folder path in either your S3 target working directory or the S3 target location specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"> <code>BucketFolder</code> </a> and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"> <code>BucketName</code> </a>.</p>
+    /// <p>For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.</p>
+    /// <p>If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>
+    /// <p>For more information on CDC including transaction order on an S3 target, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+    /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
+    /// </note>
+    pub fn get_cdc_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdc_path
+    }
     /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads, each row of the timestamp column contains the transaction commit time.</p>
     /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp in the timestamp column increments with the time data arrives at the target. </p>
     pub fn use_task_start_time_for_full_load_timestamp(mut self, input: bool) -> Self {
@@ -1033,6 +1221,11 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.use_task_start_time_for_full_load_timestamp = input;
         self
+    }
+    /// <p>When set to true, this parameter uses the task start time as the timestamp column value instead of the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>, each row of the timestamp column contains the task start time. For CDC loads, each row of the timestamp column contains the transaction commit time.</p>
+    /// <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>, the full load timestamp in the timestamp column increments with the time data arrives at the target. </p>
+    pub fn get_use_task_start_time_for_full_load_timestamp(&self) -> &::std::option::Option<bool> {
+        &self.use_task_start_time_for_full_load_timestamp
     }
     /// <p>A value that enables DMS to specify a predefined (canned) access control list for objects created in an Amazon S3 bucket as .csv or .parquet files. For more information about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p>
     /// <p>The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.</p>
@@ -1049,6 +1242,13 @@ impl S3SettingsBuilder {
         self.canned_acl_for_objects = input;
         self
     }
+    /// <p>A value that enables DMS to specify a predefined (canned) access control list for objects created in an Amazon S3 bucket as .csv or .parquet files. For more information about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p>
+    /// <p>The default value is NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and BUCKET_OWNER_FULL_CONTROL.</p>
+    pub fn get_canned_acl_for_objects(
+        &self,
+    ) -> &::std::option::Option<crate::types::CannedAclForObjectsValue> {
+        &self.canned_acl_for_objects
+    }
     /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use to add column name information to the .csv output file.</p>
     /// <p>The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
     pub fn add_column_name(mut self, input: bool) -> Self {
@@ -1060,6 +1260,11 @@ impl S3SettingsBuilder {
     pub fn set_add_column_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_column_name = input;
         self
+    }
+    /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use to add column name information to the .csv output file.</p>
+    /// <p>The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+    pub fn get_add_column_name(&self) -> &::std::option::Option<bool> {
+        &self.add_column_name
     }
     /// <p>Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.</p>
     /// <p>When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
@@ -1075,6 +1280,12 @@ impl S3SettingsBuilder {
         self.cdc_max_batch_interval = input;
         self
     }
+    /// <p>Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.</p>
+    /// <p>When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
+    /// <p>The default value is 60 seconds.</p>
+    pub fn get_cdc_max_batch_interval(&self) -> &::std::option::Option<i32> {
+        &self.cdc_max_batch_interval
+    }
     /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
     /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
     /// <p>The default value is 32 MB.</p>
@@ -1088,6 +1299,12 @@ impl S3SettingsBuilder {
     pub fn set_cdc_min_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cdc_min_file_size = input;
         self
+    }
+    /// <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
+    /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
+    /// <p>The default value is 32 MB.</p>
+    pub fn get_cdc_min_file_size(&self) -> &::std::option::Option<i32> {
+        &self.cdc_min_file_size
     }
     /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
@@ -1107,6 +1324,11 @@ impl S3SettingsBuilder {
         self.csv_null_value = input;
         self
     }
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
+    pub fn get_csv_null_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csv_null_value
+    }
     /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
     /// <p>The default is 0.</p>
     pub fn ignore_header_rows(mut self, input: i32) -> Self {
@@ -1119,6 +1341,11 @@ impl S3SettingsBuilder {
         self.ignore_header_rows = input;
         self
     }
+    /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+    /// <p>The default is 0.</p>
+    pub fn get_ignore_header_rows(&self) -> &::std::option::Option<i32> {
+        &self.ignore_header_rows
+    }
     /// <p>A value that specifies the maximum size (in KB) of any .csv file to be created while migrating to an S3 target during full load.</p>
     /// <p>The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
     pub fn max_file_size(mut self, input: i32) -> Self {
@@ -1130,6 +1357,11 @@ impl S3SettingsBuilder {
     pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_file_size = input;
         self
+    }
+    /// <p>A value that specifies the maximum size (in KB) of any .csv file to be created while migrating to an S3 target during full load.</p>
+    /// <p>The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+    pub fn get_max_file_size(&self) -> &::std::option::Option<i32> {
+        &self.max_file_size
     }
     /// <p>For an S3 source, when this value is set to <code>true</code> or <code>y</code>, each leading double quotation mark has to be followed by an ending double quotation mark. This formatting complies with RFC 4180. When this value is set to <code>false</code> or <code>n</code>, string literals are copied to the target as is. In this case, a delimiter (row or column) signals the end of the field. Thus, you can't use a delimiter as part of the string, because it signals the end of the value.</p>
     /// <p>For an S3 target, an optional parameter used to set behavior to comply with RFC 4180 for data migrated to Amazon S3 using .csv file format only. When this value is set to <code>true</code> or <code>y</code> using Amazon S3 as a target, if the data has quotation marks or newline characters in it, DMS encloses the entire column with an additional pair of double quotation marks ("). Every quotation mark within the data is repeated twice.</p>
@@ -1144,6 +1376,12 @@ impl S3SettingsBuilder {
     pub fn set_rfc4180(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rfc4180 = input;
         self
+    }
+    /// <p>For an S3 source, when this value is set to <code>true</code> or <code>y</code>, each leading double quotation mark has to be followed by an ending double quotation mark. This formatting complies with RFC 4180. When this value is set to <code>false</code> or <code>n</code>, string literals are copied to the target as is. In this case, a delimiter (row or column) signals the end of the field. Thus, you can't use a delimiter as part of the string, because it signals the end of the value.</p>
+    /// <p>For an S3 target, an optional parameter used to set behavior to comply with RFC 4180 for data migrated to Amazon S3 using .csv file format only. When this value is set to <code>true</code> or <code>y</code> using Amazon S3 as a target, if the data has quotation marks or newline characters in it, DMS encloses the entire column with an additional pair of double quotation marks ("). Every quotation mark within the data is repeated twice.</p>
+    /// <p>The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+    pub fn get_rfc4180(&self) -> &::std::option::Option<bool> {
+        &self.rfc4180
     }
     /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
     /// <p> <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code> </p>
@@ -1163,6 +1401,11 @@ impl S3SettingsBuilder {
         self.date_partition_timezone = input;
         self
     }
+    /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
+    /// <p> <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code> </p>
+    pub fn get_date_partition_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_partition_timezone
+    }
     /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
     pub fn add_trailing_padding_character(mut self, input: bool) -> Self {
         self.add_trailing_padding_character = ::std::option::Option::Some(input);
@@ -1175,6 +1418,10 @@ impl S3SettingsBuilder {
     ) -> Self {
         self.add_trailing_padding_character = input;
         self
+    }
+    /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
+    pub fn get_add_trailing_padding_character(&self) -> &::std::option::Option<bool> {
+        &self.add_trailing_padding_character
     }
     /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
     /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
@@ -1196,6 +1443,12 @@ impl S3SettingsBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
+    /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
+    /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
     pub fn glue_catalog_generation(mut self, input: bool) -> Self {
         self.glue_catalog_generation = ::std::option::Option::Some(input);
@@ -1205,6 +1458,10 @@ impl S3SettingsBuilder {
     pub fn set_glue_catalog_generation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.glue_catalog_generation = input;
         self
+    }
+    /// <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your data.</p>
+    pub fn get_glue_catalog_generation(&self) -> &::std::option::Option<bool> {
+        &self.glue_catalog_generation
     }
     /// Consumes the builder and constructs a [`S3Settings`](crate::types::S3Settings).
     pub fn build(self) -> crate::types::S3Settings {

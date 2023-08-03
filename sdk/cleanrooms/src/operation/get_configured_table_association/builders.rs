@@ -36,6 +36,10 @@ impl GetConfiguredTableAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfiguredTableAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl GetConfiguredTableAssociationFluentBuilder {
             .set_configured_table_association_identifier(input);
         self
     }
+    /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_association_identifier()
+    }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
     pub fn membership_identifier(
         mut self,
@@ -151,5 +161,9 @@ impl GetConfiguredTableAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
+    }
+    /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
     }
 }

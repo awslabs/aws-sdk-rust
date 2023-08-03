@@ -39,6 +39,10 @@ impl DeleteDataSetInputBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// Consumes the builder and constructs a [`DeleteDataSetInput`](crate::operation::delete_data_set::DeleteDataSetInput).
     pub fn build(
         self,

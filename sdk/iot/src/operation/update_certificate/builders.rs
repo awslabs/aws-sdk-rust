@@ -39,6 +39,12 @@ impl UpdateCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl UpdateCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p>The new status.</p>
     /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
@@ -151,5 +161,11 @@ impl UpdateCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
+    }
+    /// <p>The new status.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        self.inner.get_new_status()
     }
 }

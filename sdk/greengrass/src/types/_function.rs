@@ -58,6 +58,10 @@ impl FunctionBuilder {
         self.function_arn = input;
         self
     }
+    /// The ARN of the Lambda function.
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// The configuration of the Lambda function.
     pub fn function_configuration(mut self, input: crate::types::FunctionConfiguration) -> Self {
         self.function_configuration = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl FunctionBuilder {
         self.function_configuration = input;
         self
     }
+    /// The configuration of the Lambda function.
+    pub fn get_function_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+        &self.function_configuration
+    }
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -80,6 +90,10 @@ impl FunctionBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`Function`](crate::types::Function).
     pub fn build(self) -> crate::types::Function {

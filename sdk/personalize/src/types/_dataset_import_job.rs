@@ -132,6 +132,10 @@ impl DatasetImportJobBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the import job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The ARN of the dataset import job.</p>
     pub fn dataset_import_job_arn(
         mut self,
@@ -148,6 +152,10 @@ impl DatasetImportJobBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The ARN of the dataset import job.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -157,6 +165,10 @@ impl DatasetImportJobBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -171,6 +183,10 @@ impl DatasetImportJobBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -180,6 +196,10 @@ impl DatasetImportJobBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
@@ -199,6 +219,14 @@ impl DatasetImportJobBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset import job.</p>
+    /// <p>A dataset import job can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -212,6 +240,10 @@ impl DatasetImportJobBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -224,6 +256,12 @@ impl DatasetImportJobBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) the dataset was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If a dataset import job fails, provides the reason why.</p>
     pub fn failure_reason(
@@ -241,6 +279,10 @@ impl DatasetImportJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If a dataset import job fails, provides the reason why.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The import mode used by the dataset import job to import new records.</p>
     pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
         self.import_mode = ::std::option::Option::Some(input);
@@ -254,6 +296,10 @@ impl DatasetImportJobBuilder {
         self.import_mode = input;
         self
     }
+    /// <p>The import mode used by the dataset import job to import new records.</p>
+    pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::ImportMode> {
+        &self.import_mode
+    }
     /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
     pub fn publish_attribution_metrics_to_s3(mut self, input: bool) -> Self {
         self.publish_attribution_metrics_to_s3 = ::std::option::Option::Some(input);
@@ -266,6 +312,10 @@ impl DatasetImportJobBuilder {
     ) -> Self {
         self.publish_attribution_metrics_to_s3 = input;
         self
+    }
+    /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+    pub fn get_publish_attribution_metrics_to_s3(&self) -> &::std::option::Option<bool> {
+        &self.publish_attribution_metrics_to_s3
     }
     /// Consumes the builder and constructs a [`DatasetImportJob`](crate::types::DatasetImportJob).
     pub fn build(self) -> crate::types::DatasetImportJob {

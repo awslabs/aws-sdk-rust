@@ -95,6 +95,10 @@ impl SuiteDefinitionInformationBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the test suite.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Suite name of the test suite.</p>
     pub fn suite_definition_name(
         mut self,
@@ -110,6 +114,10 @@ impl SuiteDefinitionInformationBuilder {
     ) -> Self {
         self.suite_definition_name = input;
         self
+    }
+    /// <p>Suite name of the test suite.</p>
+    pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_name
     }
     /// Appends an item to `default_devices`.
     ///
@@ -130,6 +138,12 @@ impl SuiteDefinitionInformationBuilder {
         self.default_devices = input;
         self
     }
+    /// <p>Specifies the devices that are under test for the test suite.</p>
+    pub fn get_default_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
+        &self.default_devices
+    }
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub fn intended_for_qualification(mut self, input: bool) -> Self {
         self.intended_for_qualification = ::std::option::Option::Some(input);
@@ -139,6 +153,10 @@ impl SuiteDefinitionInformationBuilder {
     pub fn set_intended_for_qualification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.intended_for_qualification = input;
         self
+    }
+    /// <p>Specifies if the test suite is intended for qualification.</p>
+    pub fn get_intended_for_qualification(&self) -> &::std::option::Option<bool> {
+        &self.intended_for_qualification
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
     pub fn is_long_duration_test(mut self, input: bool) -> Self {
@@ -150,6 +168,10 @@ impl SuiteDefinitionInformationBuilder {
         self.is_long_duration_test = input;
         self
     }
+    /// <p>Verifies if the test suite is a long duration test.</p>
+    pub fn get_is_long_duration_test(&self) -> &::std::option::Option<bool> {
+        &self.is_long_duration_test
+    }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -159,6 +181,10 @@ impl SuiteDefinitionInformationBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -172,6 +198,10 @@ impl SuiteDefinitionInformationBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Date (in Unix epoch time) when the test suite was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`SuiteDefinitionInformation`](crate::types::SuiteDefinitionInformation).
     pub fn build(self) -> crate::types::SuiteDefinitionInformation {

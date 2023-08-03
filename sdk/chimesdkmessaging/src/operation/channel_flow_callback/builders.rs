@@ -42,6 +42,12 @@ impl ChannelFlowCallbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChannelFlowCallback as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ChannelFlowCallbackFluentBuilder {
         self.inner = self.inner.set_callback_id(input);
         self
     }
+    /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_callback_id()
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -142,6 +152,10 @@ impl ChannelFlowCallbackFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
     pub fn delete_resource(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_resource(input);
@@ -151,6 +165,10 @@ impl ChannelFlowCallbackFluentBuilder {
     pub fn set_delete_resource(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_resource(input);
         self
+    }
+    /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    pub fn get_delete_resource(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_resource()
     }
     /// <p>Stores information about the processed message.</p>
     pub fn channel_message(mut self, input: crate::types::ChannelMessageCallback) -> Self {
@@ -164,5 +182,11 @@ impl ChannelFlowCallbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_message(input);
         self
+    }
+    /// <p>Stores information about the processed message.</p>
+    pub fn get_channel_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
+        self.inner.get_channel_message()
     }
 }

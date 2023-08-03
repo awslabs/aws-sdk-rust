@@ -56,6 +56,10 @@ impl CreateStandbyWorkspacesInputBuilder {
         self.primary_region = input;
         self
     }
+    /// <p>The Region of the primary WorkSpace.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
     /// Appends an item to `standby_workspaces`.
     ///
     /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
@@ -74,6 +78,12 @@ impl CreateStandbyWorkspacesInputBuilder {
     ) -> Self {
         self.standby_workspaces = input;
         self
+    }
+    /// <p>Information about the standby WorkSpace to be created.</p>
+    pub fn get_standby_workspaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+        &self.standby_workspaces
     }
     /// Consumes the builder and constructs a [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
     pub fn build(

@@ -73,6 +73,14 @@ impl BatchUpdateVehicleOutputBuilder {
         self.vehicles = input;
         self
     }
+    /// <p> A list of information about the batch of updated vehicles. </p> <note>
+    /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
+    /// </note>
+    pub fn get_vehicles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>> {
+        &self.vehicles
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -91,6 +99,12 @@ impl BatchUpdateVehicleOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

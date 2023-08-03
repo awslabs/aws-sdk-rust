@@ -50,6 +50,12 @@ impl UtteranceLevelTestResultsBuilder {
         self.items = input;
         self
     }
+    /// <p>Contains information about an utterance in the results of the test set execution.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>> {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResults`](crate::types::UtteranceLevelTestResults).
     pub fn build(self) -> crate::types::UtteranceLevelTestResults {
         crate::types::UtteranceLevelTestResults { items: self.items }

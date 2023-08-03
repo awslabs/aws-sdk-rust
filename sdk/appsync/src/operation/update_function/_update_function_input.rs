@@ -129,6 +129,10 @@ impl UpdateFunctionInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The GraphQL API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The <code>Function</code> name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl UpdateFunctionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The <code>Function</code> name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The <code>Function</code> description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +157,10 @@ impl UpdateFunctionInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The <code>Function</code> description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The function ID.</p>
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
@@ -158,6 +170,10 @@ impl UpdateFunctionInputBuilder {
     pub fn set_function_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_id = input;
         self
+    }
+    /// <p>The function ID.</p>
+    pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_id
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
     pub fn data_source_name(
@@ -175,6 +191,10 @@ impl UpdateFunctionInputBuilder {
         self.data_source_name = input;
         self
     }
+    /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_name
+    }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     pub fn request_mapping_template(
         mut self,
@@ -190,6 +210,10 @@ impl UpdateFunctionInputBuilder {
     ) -> Self {
         self.request_mapping_template = input;
         self
+    }
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    pub fn get_request_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_mapping_template
     }
     /// <p>The <code>Function</code> request mapping template.</p>
     pub fn response_mapping_template(
@@ -207,6 +231,10 @@ impl UpdateFunctionInputBuilder {
         self.response_mapping_template = input;
         self
     }
+    /// <p>The <code>Function</code> request mapping template.</p>
+    pub fn get_response_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_mapping_template
+    }
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     pub fn function_version(
         mut self,
@@ -223,6 +251,10 @@ impl UpdateFunctionInputBuilder {
         self.function_version = input;
         self
     }
+    /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_version
+    }
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub fn sync_config(mut self, input: crate::types::SyncConfig) -> Self {
@@ -238,6 +270,11 @@ impl UpdateFunctionInputBuilder {
         self.sync_config = input;
         self
     }
+    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    pub fn get_sync_config(&self) -> &::std::option::Option<crate::types::SyncConfig> {
+        &self.sync_config
+    }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.max_batch_size = ::std::option::Option::Some(input);
@@ -247,6 +284,10 @@ impl UpdateFunctionInputBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_batch_size = input;
         self
+    }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     pub fn runtime(mut self, input: crate::types::AppSyncRuntime) -> Self {
@@ -261,6 +302,10 @@ impl UpdateFunctionInputBuilder {
         self.runtime = input;
         self
     }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AppSyncRuntime> {
+        &self.runtime
+    }
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -270,6 +315,10 @@ impl UpdateFunctionInputBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
     pub fn build(

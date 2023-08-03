@@ -48,6 +48,10 @@ impl TopicPreferenceBuilder {
         self.topic_name = input;
         self
     }
+    /// <p>The name of the topic.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
+    }
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub fn subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
         self.subscription_status = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl TopicPreferenceBuilder {
     ) -> Self {
         self.subscription_status = input;
         self
+    }
+    /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
+    pub fn get_subscription_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+        &self.subscription_status
     }
     /// Consumes the builder and constructs a [`TopicPreference`](crate::types::TopicPreference).
     pub fn build(self) -> crate::types::TopicPreference {

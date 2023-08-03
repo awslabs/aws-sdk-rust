@@ -65,6 +65,10 @@ impl ListRuleNamesByTargetOutputBuilder {
         self.rule_names = input;
         self
     }
+    /// <p>The names of the rules that can invoke the given target.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
+    }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListRuleNamesByTargetOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

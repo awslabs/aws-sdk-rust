@@ -68,6 +68,12 @@ impl ListDeliveryStreamsOutputBuilder {
         self.delivery_stream_names = input;
         self
     }
+    /// <p>The names of the delivery streams.</p>
+    pub fn get_delivery_stream_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delivery_stream_names
+    }
     /// <p>Indicates whether there are more delivery streams available to list.</p>
     pub fn has_more_delivery_streams(mut self, input: bool) -> Self {
         self.has_more_delivery_streams = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl ListDeliveryStreamsOutputBuilder {
     pub fn set_has_more_delivery_streams(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_delivery_streams = input;
         self
+    }
+    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    pub fn get_has_more_delivery_streams(&self) -> &::std::option::Option<bool> {
+        &self.has_more_delivery_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

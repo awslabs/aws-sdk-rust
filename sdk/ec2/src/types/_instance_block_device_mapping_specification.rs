@@ -64,6 +64,10 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDeviceSpecification) -> Self {
         self.ebs = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
         self.ebs = input;
         self
     }
+    /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
+    pub fn get_ebs(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
+        &self.ebs
+    }
     /// <p>suppress the specified device included in the block device mapping.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
         self.no_device = input;
         self
     }
+    /// <p>suppress the specified device included in the block device mapping.</p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
+    }
     /// <p>The virtual device name.</p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
+    }
+    /// <p>The virtual device name.</p>
+    pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_name
     }
     /// Consumes the builder and constructs a [`InstanceBlockDeviceMappingSpecification`](crate::types::InstanceBlockDeviceMappingSpecification).
     pub fn build(self) -> crate::types::InstanceBlockDeviceMappingSpecification {

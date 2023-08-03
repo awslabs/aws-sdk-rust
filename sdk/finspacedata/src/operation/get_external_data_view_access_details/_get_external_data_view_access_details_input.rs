@@ -47,6 +47,10 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
         self.data_view_id = input;
         self
     }
+    /// <p>The unique identifier for the Dataview that you want to access.</p>
+    pub fn get_data_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_view_id
+    }
     /// <p>The unique identifier for the Dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
+    }
+    /// <p>The unique identifier for the Dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput, ::aws_smithy_http::operation::error::BuildError>{

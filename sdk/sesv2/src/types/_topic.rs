@@ -66,6 +66,10 @@ impl TopicBuilder {
         self.topic_name = input;
         self
     }
+    /// <p>The name of the topic.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
+    }
     /// <p>The name of the topic the contact will see.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl TopicBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the topic the contact will see.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of what the topic is about, which the contact will see.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl TopicBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of what the topic is about, which the contact will see.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
     pub fn default_subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
@@ -98,6 +110,12 @@ impl TopicBuilder {
     ) -> Self {
         self.default_subscription_status = input;
         self
+    }
+    /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
+    pub fn get_default_subscription_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+        &self.default_subscription_status
     }
     /// Consumes the builder and constructs a [`Topic`](crate::types::Topic).
     pub fn build(self) -> crate::types::Topic {

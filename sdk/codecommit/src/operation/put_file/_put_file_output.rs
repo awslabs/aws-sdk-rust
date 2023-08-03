@@ -62,6 +62,10 @@ impl PutFileOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full SHA ID of the commit that contains this file change.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutFileOutputBuilder {
         self.blob_id = input;
         self
     }
+    /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
+    }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tree_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PutFileOutputBuilder {
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tree_id = input;
         self
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

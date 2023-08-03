@@ -65,6 +65,10 @@ impl ListRuleNamesByTargetInputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -81,6 +85,10 @@ impl ListRuleNamesByTargetInputBuilder {
         self.event_bus_name = input;
         self
     }
+    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ListRuleNamesByTargetInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListRuleNamesByTargetInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListRuleNamesByTargetInput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput).
     pub fn build(

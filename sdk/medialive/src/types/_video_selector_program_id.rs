@@ -40,6 +40,10 @@ impl VideoSelectorProgramIdBuilder {
         self.program_id = input;
         self
     }
+    /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
+    pub fn get_program_id(&self) -> &::std::option::Option<i32> {
+        &self.program_id
+    }
     /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::types::VideoSelectorProgramId).
     pub fn build(self) -> crate::types::VideoSelectorProgramId {
         crate::types::VideoSelectorProgramId {

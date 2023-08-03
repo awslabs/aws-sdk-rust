@@ -132,6 +132,10 @@ impl HlsPackageBuilder {
         self.ad_markers = input;
         self
     }
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
+    pub fn get_ad_markers(&self) -> &::std::option::Option<crate::types::AdMarkers> {
+        &self.ad_markers
+    }
     /// Appends an item to `ad_triggers`.
     ///
     /// To override the contents of this collection use [`set_ad_triggers`](Self::set_ad_triggers).
@@ -151,6 +155,12 @@ impl HlsPackageBuilder {
         self.ad_triggers = input;
         self
     }
+    /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
+    pub fn get_ad_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
+        &self.ad_triggers
+    }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn ads_on_delivery_restrictions(
         mut self,
@@ -167,6 +177,12 @@ impl HlsPackageBuilder {
         self.ads_on_delivery_restrictions = input;
         self
     }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
+    pub fn get_ads_on_delivery_restrictions(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
+        &self.ads_on_delivery_restrictions
+    }
     /// An HTTP Live Streaming (HLS) encryption configuration.
     pub fn encryption(mut self, input: crate::types::HlsEncryption) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -180,6 +196,10 @@ impl HlsPackageBuilder {
         self.encryption = input;
         self
     }
+    /// An HTTP Live Streaming (HLS) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::HlsEncryption> {
+        &self.encryption
+    }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
         self.include_dvb_subtitles = ::std::option::Option::Some(input);
@@ -190,6 +210,10 @@ impl HlsPackageBuilder {
         self.include_dvb_subtitles = input;
         self
     }
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub fn get_include_dvb_subtitles(&self) -> &::std::option::Option<bool> {
+        &self.include_dvb_subtitles
+    }
     /// When enabled, an I-Frame only stream will be included in the output.
     pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
         self.include_iframe_only_stream = ::std::option::Option::Some(input);
@@ -199,6 +223,10 @@ impl HlsPackageBuilder {
     pub fn set_include_iframe_only_stream(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_iframe_only_stream = input;
         self
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn get_include_iframe_only_stream(&self) -> &::std::option::Option<bool> {
+        &self.include_iframe_only_stream
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
     pub fn playlist_type(mut self, input: crate::types::PlaylistType) -> Self {
@@ -213,6 +241,10 @@ impl HlsPackageBuilder {
         self.playlist_type = input;
         self
     }
+    /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
+    pub fn get_playlist_type(&self) -> &::std::option::Option<crate::types::PlaylistType> {
+        &self.playlist_type
+    }
     /// Time window (in seconds) contained in each parent manifest.
     pub fn playlist_window_seconds(mut self, input: i32) -> Self {
         self.playlist_window_seconds = ::std::option::Option::Some(input);
@@ -222,6 +254,10 @@ impl HlsPackageBuilder {
     pub fn set_playlist_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.playlist_window_seconds = input;
         self
+    }
+    /// Time window (in seconds) contained in each parent manifest.
+    pub fn get_playlist_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.playlist_window_seconds
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
@@ -236,6 +272,10 @@ impl HlsPackageBuilder {
         self.program_date_time_interval_seconds = input;
         self
     }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
+    pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.program_date_time_interval_seconds
+    }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
         self.segment_duration_seconds = ::std::option::Option::Some(input);
@@ -245,6 +285,10 @@ impl HlsPackageBuilder {
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
@@ -259,6 +303,10 @@ impl HlsPackageBuilder {
         self.stream_selection = input;
         self
     }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
+    }
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
         self.use_audio_rendition_group = ::std::option::Option::Some(input);
@@ -268,6 +316,10 @@ impl HlsPackageBuilder {
     pub fn set_use_audio_rendition_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_audio_rendition_group = input;
         self
+    }
+    /// When enabled, audio streams will be placed in rendition groups in the output.
+    pub fn get_use_audio_rendition_group(&self) -> &::std::option::Option<bool> {
+        &self.use_audio_rendition_group
     }
     /// Consumes the builder and constructs a [`HlsPackage`](crate::types::HlsPackage).
     pub fn build(self) -> crate::types::HlsPackage {

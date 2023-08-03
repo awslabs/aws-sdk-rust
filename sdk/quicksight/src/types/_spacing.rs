@@ -64,6 +64,10 @@ impl SpacingBuilder {
         self.top = input;
         self
     }
+    /// <p>Define the top spacing.</p>
+    pub fn get_top(&self) -> &::std::option::Option<::std::string::String> {
+        &self.top
+    }
     /// <p>Define the bottom spacing.</p>
     pub fn bottom(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bottom = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SpacingBuilder {
     pub fn set_bottom(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bottom = input;
         self
+    }
+    /// <p>Define the bottom spacing.</p>
+    pub fn get_bottom(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bottom
     }
     /// <p>Define the left spacing.</p>
     pub fn left(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl SpacingBuilder {
         self.left = input;
         self
     }
+    /// <p>Define the left spacing.</p>
+    pub fn get_left(&self) -> &::std::option::Option<::std::string::String> {
+        &self.left
+    }
     /// <p>Define the right spacing.</p>
     pub fn right(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.right = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl SpacingBuilder {
     pub fn set_right(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.right = input;
         self
+    }
+    /// <p>Define the right spacing.</p>
+    pub fn get_right(&self) -> &::std::option::Option<::std::string::String> {
+        &self.right
     }
     /// Consumes the builder and constructs a [`Spacing`](crate::types::Spacing).
     pub fn build(self) -> crate::types::Spacing {

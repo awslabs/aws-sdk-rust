@@ -70,6 +70,10 @@ impl JobTemplateSummaryBuilder {
         self.job_template_arn = input;
         self
     }
+    /// <p>The ARN of the job template.</p>
+    pub fn get_job_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_arn
+    }
     /// <p>The unique identifier of the job template.</p>
     pub fn job_template_id(
         mut self,
@@ -86,6 +90,10 @@ impl JobTemplateSummaryBuilder {
         self.job_template_id = input;
         self
     }
+    /// <p>The unique identifier of the job template.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_id
+    }
     /// <p>A description of the job template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl JobTemplateSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the job template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -108,6 +120,10 @@ impl JobTemplateSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in seconds since the epoch, when the job template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`JobTemplateSummary`](crate::types::JobTemplateSummary).
     pub fn build(self) -> crate::types::JobTemplateSummary {

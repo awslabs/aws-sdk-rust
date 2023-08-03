@@ -84,6 +84,10 @@ impl AwsWafRateBasedRuleDetailsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metrics for the rate-based rule.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The name of the rate-based rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl AwsWafRateBasedRuleDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the rate-based rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
     pub fn rate_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +112,10 @@ impl AwsWafRateBasedRuleDetailsBuilder {
         self.rate_key = input;
         self
     }
+    /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
+    pub fn get_rate_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rate_key
+    }
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
     pub fn rate_limit(mut self, input: i64) -> Self {
         self.rate_limit = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl AwsWafRateBasedRuleDetailsBuilder {
         self.rate_limit = input;
         self
     }
+    /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<i64> {
+        &self.rate_limit
+    }
     /// <p>The unique identifier for the rate-based rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl AwsWafRateBasedRuleDetailsBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>The unique identifier for the rate-based rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Appends an item to `match_predicates`.
     ///
@@ -147,6 +167,13 @@ impl AwsWafRateBasedRuleDetailsBuilder {
     ) -> Self {
         self.match_predicates = input;
         self
+    }
+    /// <p>The predicates to include in the rate-based rule.</p>
+    pub fn get_match_predicates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>
+    {
+        &self.match_predicates
     }
     /// Consumes the builder and constructs a [`AwsWafRateBasedRuleDetails`](crate::types::AwsWafRateBasedRuleDetails).
     pub fn build(self) -> crate::types::AwsWafRateBasedRuleDetails {

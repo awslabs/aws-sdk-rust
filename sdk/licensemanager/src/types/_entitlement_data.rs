@@ -56,6 +56,10 @@ impl EntitlementDataBuilder {
         self.name = input;
         self
     }
+    /// <p>Entitlement data name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Entitlement data value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl EntitlementDataBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Entitlement data value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Entitlement data unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementDataUnit) -> Self {
@@ -78,6 +86,10 @@ impl EntitlementDataBuilder {
     ) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>Entitlement data unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementDataUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`EntitlementData`](crate::types::EntitlementData).
     pub fn build(self) -> crate::types::EntitlementData {

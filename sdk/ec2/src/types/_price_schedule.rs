@@ -68,6 +68,11 @@ impl PriceScheduleBuilder {
         self.active = input;
         self
     }
+    /// <p>The current price schedule, as determined by the term remaining for the Reserved Instance in the listing.</p>
+    /// <p>A specific price schedule is always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be active for months 2 and 1.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -81,6 +86,10 @@ impl PriceScheduleBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
+    }
     /// <p>The fixed price for the term.</p>
     pub fn price(mut self, input: f64) -> Self {
         self.price = ::std::option::Option::Some(input);
@@ -91,6 +100,10 @@ impl PriceScheduleBuilder {
         self.price = input;
         self
     }
+    /// <p>The fixed price for the term.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f64> {
+        &self.price
+    }
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub fn term(mut self, input: i64) -> Self {
         self.term = ::std::option::Option::Some(input);
@@ -100,6 +113,10 @@ impl PriceScheduleBuilder {
     pub fn set_term(mut self, input: ::std::option::Option<i64>) -> Self {
         self.term = input;
         self
+    }
+    /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
+    pub fn get_term(&self) -> &::std::option::Option<i64> {
+        &self.term
     }
     /// Consumes the builder and constructs a [`PriceSchedule`](crate::types::PriceSchedule).
     pub fn build(self) -> crate::types::PriceSchedule {

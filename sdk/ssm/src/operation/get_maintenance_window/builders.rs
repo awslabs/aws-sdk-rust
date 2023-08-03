@@ -36,6 +36,12 @@ impl GetMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMaintenanceWindow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetMaintenanceWindowFluentBuilder {
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_id(input);
         self
+    }
+    /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
     }
 }

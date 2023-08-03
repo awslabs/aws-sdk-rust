@@ -62,6 +62,10 @@ impl ValueBuilder {
         self.original_value = input;
         self
     }
+    /// <p>The text of the utterance from the user that was entered for the slot.</p>
+    pub fn get_original_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_value
+    }
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
     pub fn interpreted_value(
         mut self,
@@ -77,6 +81,10 @@ impl ValueBuilder {
     ) -> Self {
         self.interpreted_value = input;
         self
+    }
+    /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
+    pub fn get_interpreted_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interpreted_value
     }
     /// Appends an item to `resolved_values`.
     ///
@@ -99,6 +107,12 @@ impl ValueBuilder {
     ) -> Self {
         self.resolved_values = input;
         self
+    }
+    /// <p>A list of additional values that have been recognized for the slot.</p>
+    pub fn get_resolved_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resolved_values
     }
     /// Consumes the builder and constructs a [`Value`](crate::types::Value).
     pub fn build(self) -> crate::types::Value {

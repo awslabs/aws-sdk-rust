@@ -49,6 +49,10 @@ impl DescribeContactFlowInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeContactFlowInputBuilder {
     ) -> Self {
         self.contact_flow_id = input;
         self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`DescribeContactFlowInput`](crate::operation::describe_contact_flow::DescribeContactFlowInput).
     pub fn build(

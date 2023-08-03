@@ -37,6 +37,13 @@ impl ListMobileSdkReleasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMobileSdkReleases as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ListMobileSdkReleasesFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The device platform to retrieve the list for.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        self.inner.get_platform()
+    }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_marker(input.into());
@@ -137,6 +148,10 @@ impl ListMobileSdkReleasesFluentBuilder {
         self.inner = self.inner.set_next_marker(input);
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_marker()
+    }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -146,5 +161,9 @@ impl ListMobileSdkReleasesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

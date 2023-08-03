@@ -48,6 +48,10 @@ impl Ipv6CidrAssociationBuilder {
         self.ipv6_cidr = input;
         self
     }
+    /// <p>The IPv6 CIDR block.</p>
+    pub fn get_ipv6_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr
+    }
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
     pub fn associated_resource(
         mut self,
@@ -63,6 +67,10 @@ impl Ipv6CidrAssociationBuilder {
     ) -> Self {
         self.associated_resource = input;
         self
+    }
+    /// <p>The resource that's associated with the IPv6 CIDR block.</p>
+    pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_resource
     }
     /// Consumes the builder and constructs a [`Ipv6CidrAssociation`](crate::types::Ipv6CidrAssociation).
     pub fn build(self) -> crate::types::Ipv6CidrAssociation {

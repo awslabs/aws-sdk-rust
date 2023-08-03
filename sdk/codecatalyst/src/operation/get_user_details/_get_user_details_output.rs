@@ -78,6 +78,10 @@ impl GetUserDetailsOutputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The system-generated unique ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl GetUserDetailsOutputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl GetUserDetailsOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The email address provided by the user when they signed up.</p>
     pub fn primary_email(mut self, input: crate::types::EmailAddress) -> Self {
@@ -111,6 +123,10 @@ impl GetUserDetailsOutputBuilder {
         self.primary_email = input;
         self
     }
+    /// <p>The email address provided by the user when they signed up.</p>
+    pub fn get_primary_email(&self) -> &::std::option::Option<crate::types::EmailAddress> {
+        &self.primary_email
+    }
     /// <p></p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl GetUserDetailsOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p></p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

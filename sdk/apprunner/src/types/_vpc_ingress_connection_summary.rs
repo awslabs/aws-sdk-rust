@@ -54,6 +54,10 @@ impl VpcIngressConnectionSummaryBuilder {
         self.vpc_ingress_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
+    pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_ingress_connection_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VpcIngressConnectionSummaryBuilder {
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// Consumes the builder and constructs a [`VpcIngressConnectionSummary`](crate::types::VpcIngressConnectionSummary).
     pub fn build(self) -> crate::types::VpcIngressConnectionSummary {

@@ -60,6 +60,12 @@ impl PushSyncBuilder {
         self.application_arns = input;
         self
     }
+    /// <p>List of SNS platform application ARNs that could be used by clients.</p>
+    pub fn get_application_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_arns
+    }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl PushSyncBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`PushSync`](crate::types::PushSync).
     pub fn build(self) -> crate::types::PushSync {

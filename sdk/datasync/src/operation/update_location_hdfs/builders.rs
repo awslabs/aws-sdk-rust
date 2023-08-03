@@ -36,6 +36,12 @@ impl UpdateLocationHdfsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLocationHdfs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_location_hdfs::builders::UpdateLocationHdfsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_location_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_arn()
+    }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
@@ -135,6 +145,10 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
+    }
+    /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
     }
     /// Appends an item to `NameNodes`.
     ///
@@ -153,6 +167,12 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_name_nodes(input);
         self
     }
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    pub fn get_name_nodes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
+        self.inner.get_name_nodes()
+    }
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.inner = self.inner.block_size(input);
@@ -163,6 +183,10 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_block_size(input);
         self
     }
+    /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    pub fn get_block_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_block_size()
+    }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.replication_factor(input);
@@ -172,6 +196,10 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
         self
+    }
+    /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
+        self.inner.get_replication_factor()
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn kms_key_provider_uri(
@@ -189,6 +217,10 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kms_key_provider_uri(input);
         self
     }
+    /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_provider_uri()
+    }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
     pub fn qop_configuration(mut self, input: crate::types::QopConfiguration) -> Self {
         self.inner = self.inner.qop_configuration(input);
@@ -201,6 +233,10 @@ impl UpdateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_qop_configuration(input);
         self
+    }
+    /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
+    pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
+        self.inner.get_qop_configuration()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
@@ -215,6 +251,12 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
+    /// <p>The type of authentication used to determine the identity of the user. </p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
+        self.inner.get_authentication_type()
+    }
     /// <p>The user name used to identify the client on the host operating system.</p>
     pub fn simple_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.simple_user(input.into());
@@ -224,6 +266,10 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn set_simple_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_simple_user(input);
         self
+    }
+    /// <p>The user name used to identify the client on the host operating system.</p>
+    pub fn get_simple_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simple_user()
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
     pub fn kerberos_principal(
@@ -241,6 +287,10 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kerberos_principal(input);
         self
     }
+    /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kerberos_principal()
+    }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.kerberos_keytab(input);
@@ -254,6 +304,10 @@ impl UpdateLocationHdfsFluentBuilder {
         self.inner = self.inner.set_kerberos_keytab(input);
         self
     }
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_keytab()
+    }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn kerberos_krb5_conf(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.kerberos_krb5_conf(input);
@@ -266,6 +320,10 @@ impl UpdateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kerberos_krb5_conf(input);
         self
+    }
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_krb5_conf()
     }
     /// Appends an item to `AgentArns`.
     ///
@@ -283,5 +341,9 @@ impl UpdateLocationHdfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
+    }
+    /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_arns()
     }
 }

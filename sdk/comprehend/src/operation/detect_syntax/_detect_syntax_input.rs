@@ -53,6 +53,10 @@ impl DetectSyntaxInputBuilder {
         self.text = input;
         self
     }
+    /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
     pub fn language_code(mut self, input: crate::types::SyntaxLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DetectSyntaxInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::SyntaxLanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`DetectSyntaxInput`](crate::operation::detect_syntax::DetectSyntaxInput).
     pub fn build(

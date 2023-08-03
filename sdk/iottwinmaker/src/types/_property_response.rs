@@ -51,6 +51,12 @@ impl PropertyResponseBuilder {
         self.definition = input;
         self
     }
+    /// <p>An object that specifies information about a property.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::PropertyDefinitionResponse> {
+        &self.definition
+    }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl PropertyResponseBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::DataValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`PropertyResponse`](crate::types::PropertyResponse).
     pub fn build(self) -> crate::types::PropertyResponse {

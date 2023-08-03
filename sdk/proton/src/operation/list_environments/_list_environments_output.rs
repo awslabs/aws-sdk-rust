@@ -56,6 +56,10 @@ impl ListEnvironmentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `environments`.
     ///
     /// To override the contents of this collection use [`set_environments`](Self::set_environments).
@@ -74,6 +78,12 @@ impl ListEnvironmentsOutputBuilder {
     ) -> Self {
         self.environments = input;
         self
+    }
+    /// <p>An array of environment detail data summaries.</p>
+    pub fn get_environments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
+        &self.environments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

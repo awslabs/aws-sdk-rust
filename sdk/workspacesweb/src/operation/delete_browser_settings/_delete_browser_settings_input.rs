@@ -47,6 +47,10 @@ impl DeleteBrowserSettingsInputBuilder {
         self.browser_settings_arn = input;
         self
     }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_settings_arn
+    }
     /// Consumes the builder and constructs a [`DeleteBrowserSettingsInput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsInput).
     pub fn build(
         self,

@@ -53,6 +53,10 @@ impl UnsubscribeInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
     pub fn target_address(
         mut self,
@@ -68,6 +72,10 @@ impl UnsubscribeInputBuilder {
     ) -> Self {
         self.target_address = input;
         self
+    }
+    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_address
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
     pub fn build(

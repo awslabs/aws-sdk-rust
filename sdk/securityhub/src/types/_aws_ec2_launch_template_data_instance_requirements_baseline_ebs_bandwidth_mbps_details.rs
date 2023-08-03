@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails
         self.max = input;
         self
     }
+    /// <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted, there's no maximum limit. </p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
+    }
     /// <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted, there's no minimum limit. </p>
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
+    }
+    /// <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted, there's no minimum limit. </p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails).
     pub fn build(

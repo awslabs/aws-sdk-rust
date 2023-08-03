@@ -52,6 +52,12 @@ impl SetRiskConfigurationOutputBuilder {
         self.risk_configuration = input;
         self
     }
+    /// <p>The risk configuration.</p>
+    pub fn get_risk_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RiskConfigurationType> {
+        &self.risk_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

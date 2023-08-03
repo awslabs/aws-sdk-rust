@@ -58,6 +58,10 @@ impl UpdateWorkloadShareInputBuilder {
         self.share_id = input;
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl UpdateWorkloadShareInputBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -80,6 +88,10 @@ impl UpdateWorkloadShareInputBuilder {
     ) -> Self {
         self.permission_type = input;
         self
+    }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
     }
     /// Consumes the builder and constructs a [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
     pub fn build(

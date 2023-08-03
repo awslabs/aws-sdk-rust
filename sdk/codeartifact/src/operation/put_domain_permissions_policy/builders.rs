@@ -37,6 +37,10 @@ impl PutDomainPermissionsPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDomainPermissionsPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p> The name of the domain on which to set the resource policy. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -136,6 +144,10 @@ impl PutDomainPermissionsPolicyFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     pub fn policy_revision(
@@ -153,6 +165,10 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self.inner = self.inner.set_policy_revision(input);
         self
     }
+    /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_revision()
+    }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
     pub fn policy_document(
         mut self,
@@ -168,5 +184,9 @@ impl PutDomainPermissionsPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
 }

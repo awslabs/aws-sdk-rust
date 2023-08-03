@@ -65,6 +65,12 @@ impl DescribeEventDetailsOutputBuilder {
         self.successful_set = input;
         self
     }
+    /// <p>Information about the events that could be retrieved.</p>
+    pub fn get_successful_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetails>> {
+        &self.successful_set
+    }
     /// Appends an item to `failed_set`.
     ///
     /// To override the contents of this collection use [`set_failed_set`](Self::set_failed_set).
@@ -83,6 +89,12 @@ impl DescribeEventDetailsOutputBuilder {
     ) -> Self {
         self.failed_set = input;
         self
+    }
+    /// <p>Error messages for any events that could not be retrieved.</p>
+    pub fn get_failed_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>> {
+        &self.failed_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

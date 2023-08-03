@@ -59,6 +59,10 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
         self.delivery_method = input;
         self
     }
+    /// <p>The type of verification message to send.</p>
+    pub fn get_delivery_method(&self) -> &::std::option::Option<crate::types::DeliveryMethod> {
+        &self.delivery_method
+    }
     /// <p>The settings for the email message.</p>
     pub fn email_settings(mut self, input: crate::types::EmailSettings) -> Self {
         self.email_settings = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
         self.email_settings = input;
         self
     }
+    /// <p>The settings for the email message.</p>
+    pub fn get_email_settings(&self) -> &::std::option::Option<crate::types::EmailSettings> {
+        &self.email_settings
+    }
     /// <p>The settings for the SMS message.</p>
     pub fn sms_settings(mut self, input: crate::types::SmsSettings) -> Self {
         self.sms_settings = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
     ) -> Self {
         self.sms_settings = input;
         self
+    }
+    /// <p>The settings for the SMS message.</p>
+    pub fn get_sms_settings(&self) -> &::std::option::Option<crate::types::SmsSettings> {
+        &self.sms_settings
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthVerificationMessageConfig`](crate::types::CreateBackendAuthVerificationMessageConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthVerificationMessageConfig {

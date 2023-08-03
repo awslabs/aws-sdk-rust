@@ -228,6 +228,10 @@ impl BackupBuilder {
         self.backup_arn = input;
         self
     }
+    /// <p>The ARN of the backup. </p>
+    pub fn get_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_arn
+    }
     /// <p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
@@ -237,6 +241,10 @@ impl BackupBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_id = input;
         self
+    }
+    /// <p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
     }
     /// <p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>
     pub fn backup_type(mut self, input: crate::types::BackupType) -> Self {
@@ -251,6 +259,10 @@ impl BackupBuilder {
         self.backup_type = input;
         self
     }
+    /// <p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>
+    pub fn get_backup_type(&self) -> &::std::option::Option<crate::types::BackupType> {
+        &self.backup_type
+    }
     /// <p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -264,6 +276,10 @@ impl BackupBuilder {
         self.created_at = input;
         self
     }
+    /// <p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p> A user-provided description for a manual backup. This field is empty for automated backups. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -273,6 +289,10 @@ impl BackupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A user-provided description for a manual backup. This field is empty for automated backups. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The engine type that is obtained from the server when the backup is created. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -284,6 +304,10 @@ impl BackupBuilder {
         self.engine = input;
         self
     }
+    /// <p> The engine type that is obtained from the server when the backup is created. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p> The engine model that is obtained from the server when the backup is created. </p>
     pub fn engine_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_model = ::std::option::Option::Some(input.into());
@@ -293,6 +317,10 @@ impl BackupBuilder {
     pub fn set_engine_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_model = input;
         self
+    }
+    /// <p> The engine model that is obtained from the server when the backup is created. </p>
+    pub fn get_engine_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_model
     }
     /// <p> The engine version that is obtained from the server when the backup is created. </p>
     pub fn engine_version(
@@ -310,6 +338,10 @@ impl BackupBuilder {
         self.engine_version = input;
         self
     }
+    /// <p> The engine version that is obtained from the server when the backup is created. </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>
     pub fn instance_profile_arn(
         mut self,
@@ -325,6 +357,10 @@ impl BackupBuilder {
     ) -> Self {
         self.instance_profile_arn = input;
         self
+    }
+    /// <p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>
+    pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_arn
     }
     /// <p> The instance type that is obtained from the server when the backup is created. </p>
     pub fn instance_type(
@@ -342,6 +378,10 @@ impl BackupBuilder {
         self.instance_type = input;
         self
     }
+    /// <p> The instance type that is obtained from the server when the backup is created. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p> The key pair that is obtained from the server when the backup is created. </p>
     pub fn key_pair(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair = ::std::option::Option::Some(input.into());
@@ -351,6 +391,10 @@ impl BackupBuilder {
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair = input;
         self
+    }
+    /// <p> The key pair that is obtained from the server when the backup is created. </p>
+    pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair
     }
     /// <p> The preferred backup period that is obtained from the server when the backup is created. </p>
     pub fn preferred_backup_window(
@@ -368,6 +412,10 @@ impl BackupBuilder {
         self.preferred_backup_window = input;
         self
     }
+    /// <p> The preferred backup period that is obtained from the server when the backup is created. </p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p> The preferred maintenance period that is obtained from the server when the backup is created. </p>
     pub fn preferred_maintenance_window(
         mut self,
@@ -384,6 +432,12 @@ impl BackupBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p> The preferred maintenance period that is obtained from the server when the backup is created. </p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
     pub fn s3_data_size(mut self, input: i32) -> Self {
@@ -398,6 +452,11 @@ impl BackupBuilder {
     }
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
+    pub fn get_s3_data_size(&self) -> &::std::option::Option<i32> {
+        &self.s3_data_size
+    }
+    /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
     pub fn s3_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_data_url = ::std::option::Option::Some(input.into());
         self
@@ -408,6 +467,11 @@ impl BackupBuilder {
         self.s3_data_url = input;
         self
     }
+    /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
+    pub fn get_s3_data_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_data_url
+    }
     /// <p> The Amazon S3 URL of the backup's log file. </p>
     pub fn s3_log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_log_url = ::std::option::Option::Some(input.into());
@@ -417,6 +481,10 @@ impl BackupBuilder {
     pub fn set_s3_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_log_url = input;
         self
+    }
+    /// <p> The Amazon S3 URL of the backup's log file. </p>
+    pub fn get_s3_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_log_url
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -440,6 +508,12 @@ impl BackupBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p> The security group IDs that are obtained from the server when the backup is created. </p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p> The name of the server from which the backup was made. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -449,6 +523,10 @@ impl BackupBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p> The name of the server from which the backup was made. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// <p> The service role ARN that is obtained from the server when the backup is created. </p>
     pub fn service_role_arn(
@@ -466,6 +544,10 @@ impl BackupBuilder {
         self.service_role_arn = input;
         self
     }
+    /// <p> The service role ARN that is obtained from the server when the backup is created. </p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
+    }
     /// <p>The status of a backup while in progress. </p>
     pub fn status(mut self, input: crate::types::BackupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -475,6 +557,10 @@ impl BackupBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BackupStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a backup while in progress. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BackupStatus> {
+        &self.status
     }
     /// <p> An informational message about backup status. </p>
     pub fn status_description(
@@ -491,6 +577,10 @@ impl BackupBuilder {
     ) -> Self {
         self.status_description = input;
         self
+    }
+    /// <p> An informational message about backup status. </p>
+    pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -511,6 +601,10 @@ impl BackupBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p> The subnet IDs that are obtained from the server when the backup is created. </p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>
     pub fn tools_version(
         mut self,
@@ -527,6 +621,10 @@ impl BackupBuilder {
         self.tools_version = input;
         self
     }
+    /// <p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>
+    pub fn get_tools_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tools_version
+    }
     /// <p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -536,6 +634,10 @@ impl BackupBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {

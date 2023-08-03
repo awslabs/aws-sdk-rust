@@ -45,6 +45,12 @@ impl ImportDataSourceBuilder {
         self.data_source_config = input;
         self
     }
+    /// <p>The configuration parameters for the data source of the import</p>
+    pub fn get_data_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDataSourceConfig> {
+        &self.data_source_config
+    }
     /// Consumes the builder and constructs a [`ImportDataSource`](crate::types::ImportDataSource).
     pub fn build(self) -> crate::types::ImportDataSource {
         crate::types::ImportDataSource {

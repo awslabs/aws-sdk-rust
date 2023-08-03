@@ -67,6 +67,10 @@ impl DescribeOrganizationOverviewInputBuilder {
         self.from_time = input;
         self
     }
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_time
+    }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl DescribeOrganizationOverviewInputBuilder {
     ) -> Self {
         self.to_time = input;
         self
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_time
     }
     /// Appends an item to `account_ids`.
     ///
@@ -98,6 +106,12 @@ impl DescribeOrganizationOverviewInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
     ///
@@ -120,6 +134,12 @@ impl DescribeOrganizationOverviewInputBuilder {
     ) -> Self {
         self.organizational_unit_ids = input;
         self
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationOverviewInput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput).
     pub fn build(

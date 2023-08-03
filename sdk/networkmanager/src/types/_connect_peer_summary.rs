@@ -94,6 +94,10 @@ impl ConnectPeerSummaryBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ID of a Connect peer attachment.</p>
     pub fn connect_attachment_id(
         mut self,
@@ -109,6 +113,10 @@ impl ConnectPeerSummaryBuilder {
     ) -> Self {
         self.connect_attachment_id = input;
         self
+    }
+    /// <p>The ID of a Connect peer attachment.</p>
+    pub fn get_connect_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_attachment_id
     }
     /// <p>The ID of a Connect peer.</p>
     pub fn connect_peer_id(
@@ -126,6 +134,10 @@ impl ConnectPeerSummaryBuilder {
         self.connect_peer_id = input;
         self
     }
+    /// <p>The ID of a Connect peer.</p>
+    pub fn get_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_peer_id
+    }
     /// <p>The Region where the edge is located.</p>
     pub fn edge_location(
         mut self,
@@ -142,6 +154,10 @@ impl ConnectPeerSummaryBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The Region where the edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The state of a Connect peer.</p>
     pub fn connect_peer_state(mut self, input: crate::types::ConnectPeerState) -> Self {
         self.connect_peer_state = ::std::option::Option::Some(input);
@@ -155,6 +171,10 @@ impl ConnectPeerSummaryBuilder {
         self.connect_peer_state = input;
         self
     }
+    /// <p>The state of a Connect peer.</p>
+    pub fn get_connect_peer_state(&self) -> &::std::option::Option<crate::types::ConnectPeerState> {
+        &self.connect_peer_state
+    }
     /// <p>The timestamp when a Connect peer was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl ConnectPeerSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when a Connect peer was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Appends an item to `tags`.
     ///
@@ -186,6 +210,10 @@ impl ConnectPeerSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of key-value tags associated with the Connect peer summary.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ConnectPeerSummary`](crate::types::ConnectPeerSummary).
     pub fn build(self) -> crate::types::ConnectPeerSummary {

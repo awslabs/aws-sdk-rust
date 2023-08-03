@@ -46,6 +46,10 @@ impl GetApplicationPolicyInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
     pub fn build(
         self,

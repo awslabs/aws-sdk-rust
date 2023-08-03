@@ -64,6 +64,10 @@ impl DeleteProfileKeyInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteProfileKeyInputBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// Appends an item to `values`.
     ///
@@ -93,6 +101,10 @@ impl DeleteProfileKeyInputBuilder {
         self.values = input;
         self
     }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl DeleteProfileKeyInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteProfileKeyInput`](crate::operation::delete_profile_key::DeleteProfileKeyInput).
     pub fn build(

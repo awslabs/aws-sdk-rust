@@ -50,6 +50,12 @@ impl HistogramFieldWellsBuilder {
         self.histogram_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a histogram.</p>
+    pub fn get_histogram_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistogramAggregatedFieldWells> {
+        &self.histogram_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`HistogramFieldWells`](crate::types::HistogramFieldWells).
     pub fn build(self) -> crate::types::HistogramFieldWells {
         crate::types::HistogramFieldWells {

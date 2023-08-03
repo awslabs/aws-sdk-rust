@@ -40,6 +40,10 @@ impl DocumentsMetadataConfigurationBuilder {
         self.s3_prefix = input;
         self
     }
+    /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
+    }
     /// Consumes the builder and constructs a [`DocumentsMetadataConfiguration`](crate::types::DocumentsMetadataConfiguration).
     pub fn build(self) -> crate::types::DocumentsMetadataConfiguration {
         crate::types::DocumentsMetadataConfiguration {

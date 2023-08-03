@@ -55,6 +55,10 @@ impl NotifyRecommendationsReceivedInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl NotifyRecommendationsReceivedInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Appends an item to `recommendation_ids`.
     ///
@@ -86,6 +94,12 @@ impl NotifyRecommendationsReceivedInputBuilder {
     ) -> Self {
         self.recommendation_ids = input;
         self
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
     pub fn build(

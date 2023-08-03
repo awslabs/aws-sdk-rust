@@ -71,6 +71,10 @@ impl CreateFleetInputBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>A unique name for the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The fleet name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateFleetInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -93,6 +101,10 @@ impl CreateFleetInputBuilder {
     ) -> Self {
         self.optimize_for_end_user_location = input;
         self
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
+        &self.optimize_for_end_user_location
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -118,6 +130,14 @@ impl CreateFleetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(

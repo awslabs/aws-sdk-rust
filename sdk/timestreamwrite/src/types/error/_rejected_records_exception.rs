@@ -86,6 +86,10 @@ impl RejectedRecordsExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `rejected_records`.
     ///
     /// To override the contents of this collection use [`set_rejected_records`](Self::set_rejected_records).
@@ -104,6 +108,12 @@ impl RejectedRecordsExceptionBuilder {
     ) -> Self {
         self.rejected_records = input;
         self
+    }
+    /// <p> </p>
+    pub fn get_rejected_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>> {
+        &self.rejected_records
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

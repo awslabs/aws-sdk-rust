@@ -88,6 +88,10 @@ impl HierarchyGroupBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl HierarchyGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the hierarchy group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl HierarchyGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the hierarchy group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the level in the hierarchy group.</p>
     pub fn level_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.level_id = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl HierarchyGroupBuilder {
     pub fn set_level_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.level_id = input;
         self
+    }
+    /// <p>The identifier of the level in the hierarchy group.</p>
+    pub fn get_level_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.level_id
     }
     /// <p>Information about the levels in the hierarchy group.</p>
     pub fn hierarchy_path(mut self, input: crate::types::HierarchyPath) -> Self {
@@ -130,6 +146,10 @@ impl HierarchyGroupBuilder {
     ) -> Self {
         self.hierarchy_path = input;
         self
+    }
+    /// <p>Information about the levels in the hierarchy group.</p>
+    pub fn get_hierarchy_path(&self) -> &::std::option::Option<crate::types::HierarchyPath> {
+        &self.hierarchy_path
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -155,6 +175,14 @@ impl HierarchyGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`HierarchyGroup`](crate::types::HierarchyGroup).
     pub fn build(self) -> crate::types::HierarchyGroup {

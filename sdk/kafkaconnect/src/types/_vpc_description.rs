@@ -60,6 +60,12 @@ impl VpcDescriptionBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups for the connector.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -78,6 +84,10 @@ impl VpcDescriptionBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The subnets for the connector.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Consumes the builder and constructs a [`VpcDescription`](crate::types::VpcDescription).
     pub fn build(self) -> crate::types::VpcDescription {

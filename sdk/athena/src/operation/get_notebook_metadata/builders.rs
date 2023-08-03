@@ -36,6 +36,12 @@ impl GetNotebookMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetNotebookMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetNotebookMetadataFluentBuilder {
     pub fn set_notebook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_id(input);
         self
+    }
+    /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_id()
     }
 }

@@ -56,6 +56,12 @@ impl RejectTransitGatewayVpcAttachmentOutputBuilder {
         self.transit_gateway_vpc_attachment = input;
         self
     }
+    /// <p>Information about the attachment.</p>
+    pub fn get_transit_gateway_vpc_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachment> {
+        &self.transit_gateway_vpc_attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

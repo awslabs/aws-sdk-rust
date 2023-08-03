@@ -43,6 +43,12 @@ impl StartApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_application::builders::StartApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl StartApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>Name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// Appends an item to `InputConfigurations`.
     ///
     /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
@@ -155,5 +165,11 @@ impl StartApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_configurations(input);
         self
+    }
+    /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
+    pub fn get_input_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputConfiguration>> {
+        self.inner.get_input_configurations()
     }
 }

@@ -51,6 +51,10 @@ impl SourceBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The type of the trust anchor. </p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::TrustAnchorType> {
+        &self.source_type
+    }
     /// <p>The data field of the trust anchor depending on its type. </p>
     pub fn source_data(mut self, input: crate::types::SourceData) -> Self {
         self.source_data = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SourceBuilder {
     ) -> Self {
         self.source_data = input;
         self
+    }
+    /// <p>The data field of the trust anchor depending on its type. </p>
+    pub fn get_source_data(&self) -> &::std::option::Option<crate::types::SourceData> {
+        &self.source_data
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {

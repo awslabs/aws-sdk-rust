@@ -40,6 +40,10 @@ impl ProgressiveDialerConfigBuilder {
         self.bandwidth_allocation = input;
         self
     }
+    /// The bandwidth allocation of a queue resource.
+    pub fn get_bandwidth_allocation(&self) -> &::std::option::Option<f64> {
+        &self.bandwidth_allocation
+    }
     /// Consumes the builder and constructs a [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
     pub fn build(self) -> crate::types::ProgressiveDialerConfig {
         crate::types::ProgressiveDialerConfig {

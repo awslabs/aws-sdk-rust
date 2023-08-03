@@ -97,6 +97,17 @@ impl AnalyticsIntentMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric for which you want to get intent summary statistics.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -120,6 +131,15 @@ impl AnalyticsIntentMetricBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -132,6 +152,10 @@ impl AnalyticsIntentMetricBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentMetric`](crate::types::AnalyticsIntentMetric).
     pub fn build(self) -> crate::types::AnalyticsIntentMetric {

@@ -53,6 +53,10 @@ impl StartReportJobInputBuilder {
         self.report_plan_name = input;
         self
     }
+    /// <p>The unique name of a report plan.</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_plan_name
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
         mut self,
@@ -68,6 +72,10 @@ impl StartReportJobInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`StartReportJobInput`](crate::operation::start_report_job::StartReportJobInput).
     pub fn build(

@@ -90,6 +90,10 @@ impl StartEventsDetectionJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
@@ -126,6 +130,23 @@ impl StartEventsDetectionJobOutputBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :events-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The status of the events detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -135,6 +156,10 @@ impl StartEventsDetectionJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the events detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

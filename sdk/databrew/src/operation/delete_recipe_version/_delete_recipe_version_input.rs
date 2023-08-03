@@ -49,6 +49,10 @@ impl DeleteRecipeVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn recipe_version(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteRecipeVersionInputBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
     pub fn build(

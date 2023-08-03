@@ -45,6 +45,10 @@ impl DeleteNetworkAnalyzerConfigurationInputBuilder {
         self.configuration_name = input;
         self
     }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationInput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

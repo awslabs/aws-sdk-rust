@@ -186,6 +186,10 @@ impl ExperimentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the experiment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the experiment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -196,6 +200,10 @@ impl ExperimentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the experiment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name or ARN of the project that contains this experiment.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
@@ -205,6 +213,10 @@ impl ExperimentBuilder {
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project = input;
         self
+    }
+    /// <p>The name or ARN of the project that contains this experiment.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
     }
     /// <p>The current state of the experiment.</p>
     pub fn status(mut self, input: crate::types::ExperimentStatus) -> Self {
@@ -218,6 +230,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the experiment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExperimentStatus> {
+        &self.status
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub fn status_reason(
@@ -235,6 +251,10 @@ impl ExperimentBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>A description of the experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -244,6 +264,10 @@ impl ExperimentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the experiment is first created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -258,6 +282,10 @@ impl ExperimentBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the experiment is first created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that the experiment was most recently updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -270,6 +298,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time that the experiment was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
     pub fn schedule(mut self, input: crate::types::ExperimentSchedule) -> Self {
@@ -284,6 +316,10 @@ impl ExperimentBuilder {
         self.schedule = input;
         self
     }
+    /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::ExperimentSchedule> {
+        &self.schedule
+    }
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
     pub fn execution(mut self, input: crate::types::ExperimentExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
@@ -296,6 +332,10 @@ impl ExperimentBuilder {
     ) -> Self {
         self.execution = input;
         self
+    }
+    /// <p>A structure that contains the date and time that the experiment started and ended.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::ExperimentExecution> {
+        &self.execution
     }
     /// Appends an item to `treatments`.
     ///
@@ -316,6 +356,12 @@ impl ExperimentBuilder {
         self.treatments = input;
         self
     }
+    /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    pub fn get_treatments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Treatment>> {
+        &self.treatments
+    }
     /// Appends an item to `metric_goals`.
     ///
     /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
@@ -335,6 +381,12 @@ impl ExperimentBuilder {
         self.metric_goals = input;
         self
     }
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    pub fn get_metric_goals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>> {
+        &self.metric_goals
+    }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -351,6 +403,10 @@ impl ExperimentBuilder {
         self.randomization_salt = input;
         self
     }
+    /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.randomization_salt
+    }
     /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
@@ -363,6 +419,11 @@ impl ExperimentBuilder {
         self.sampling_rate = input;
         self
     }
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
+    pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
+        &self.sampling_rate
+    }
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment = ::std::option::Option::Some(input.into());
@@ -373,6 +434,10 @@ impl ExperimentBuilder {
         self.segment = input;
         self
     }
+    /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub fn r#type(mut self, input: crate::types::ExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -382,6 +447,10 @@ impl ExperimentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExperimentType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExperimentType> {
+        &self.r#type
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_definition(mut self, input: crate::types::OnlineAbDefinition) -> Self {
@@ -395,6 +464,12 @@ impl ExperimentBuilder {
     ) -> Self {
         self.online_ab_definition = input;
         self
+    }
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    pub fn get_online_ab_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnlineAbDefinition> {
+        &self.online_ab_definition
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -420,6 +495,14 @@ impl ExperimentBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values associated with this experiment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
     pub fn build(self) -> crate::types::Experiment {

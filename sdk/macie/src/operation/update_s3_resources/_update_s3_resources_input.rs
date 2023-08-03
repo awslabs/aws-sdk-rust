@@ -58,6 +58,10 @@ impl UpdateS3ResourcesInputBuilder {
         self.member_account_id = input;
         self
     }
+    /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
+    }
     /// Appends an item to `s3_resources_update`.
     ///
     /// To override the contents of this collection use [`set_s3_resources_update`](Self::set_s3_resources_update).
@@ -79,6 +83,12 @@ impl UpdateS3ResourcesInputBuilder {
     ) -> Self {
         self.s3_resources_update = input;
         self
+    }
+    /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
+    pub fn get_s3_resources_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>> {
+        &self.s3_resources_update
     }
     /// Consumes the builder and constructs a [`UpdateS3ResourcesInput`](crate::operation::update_s3_resources::UpdateS3ResourcesInput).
     pub fn build(

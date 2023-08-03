@@ -54,6 +54,10 @@ impl StartGeneratedCodeJobOutputBuilder {
         self.generated_code_job_id = input;
         self
     }
+    /// <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
+    pub fn get_generated_code_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_code_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

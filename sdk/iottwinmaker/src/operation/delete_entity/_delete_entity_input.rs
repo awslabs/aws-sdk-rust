@@ -55,6 +55,10 @@ impl DeleteEntityInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the entity to delete.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the entity to delete.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteEntityInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The ID of the entity to delete.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub fn is_recursive(mut self, input: bool) -> Self {
         self.is_recursive = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DeleteEntityInputBuilder {
     pub fn set_is_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_recursive = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
+    pub fn get_is_recursive(&self) -> &::std::option::Option<bool> {
+        &self.is_recursive
     }
     /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
     pub fn build(

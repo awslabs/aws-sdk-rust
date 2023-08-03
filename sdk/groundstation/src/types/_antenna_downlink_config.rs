@@ -43,6 +43,10 @@ impl AntennaDownlinkConfigBuilder {
         self.spectrum_config = input;
         self
     }
+    /// <p>Object that describes a spectral <code>Config</code>.</p>
+    pub fn get_spectrum_config(&self) -> &::std::option::Option<crate::types::SpectrumConfig> {
+        &self.spectrum_config
+    }
     /// Consumes the builder and constructs a [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
     pub fn build(self) -> crate::types::AntennaDownlinkConfig {
         crate::types::AntennaDownlinkConfig {

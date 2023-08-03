@@ -57,6 +57,10 @@ impl MemberSpecificationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `member_abilities`.
     ///
     /// To override the contents of this collection use [`set_member_abilities`](Self::set_member_abilities).
@@ -76,6 +80,12 @@ impl MemberSpecificationBuilder {
         self.member_abilities = input;
         self
     }
+    /// <p>The abilities granted to the collaboration member.</p>
+    pub fn get_member_abilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+        &self.member_abilities
+    }
     /// <p>The member's display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -85,6 +95,10 @@ impl MemberSpecificationBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The member's display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`MemberSpecification`](crate::types::MemberSpecification).
     pub fn build(self) -> crate::types::MemberSpecification {

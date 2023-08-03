@@ -232,6 +232,10 @@ impl PolicyBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The name of the Firewall Manager policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -241,6 +245,10 @@ impl PolicyBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the Firewall Manager policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>
     pub fn policy_update_token(
@@ -258,6 +266,10 @@ impl PolicyBuilder {
         self.policy_update_token = input;
         self
     }
+    /// <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>
+    pub fn get_policy_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_update_token
+    }
     /// <p>Details about the security service that is being used to protect the resources.</p>
     pub fn security_service_policy_data(
         mut self,
@@ -273,6 +285,12 @@ impl PolicyBuilder {
     ) -> Self {
         self.security_service_policy_data = input;
         self
+    }
+    /// <p>Details about the security service that is being used to protect the resources.</p>
+    pub fn get_security_service_policy_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityServicePolicyData> {
+        &self.security_service_policy_data
     }
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
@@ -291,6 +309,11 @@ impl PolicyBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
+    /// <p>For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `resource_type_list`.
     ///
@@ -314,6 +337,12 @@ impl PolicyBuilder {
         self.resource_type_list = input;
         self
     }
+    /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
+    pub fn get_resource_type_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_type_list
+    }
     /// Appends an item to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -333,6 +362,12 @@ impl PolicyBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>An array of <code>ResourceTag</code> objects.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
     pub fn exclude_resource_tags(mut self, input: bool) -> Self {
         self.exclude_resource_tags = ::std::option::Option::Some(input);
@@ -343,6 +378,10 @@ impl PolicyBuilder {
         self.exclude_resource_tags = input;
         self
     }
+    /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
+    pub fn get_exclude_resource_tags(&self) -> &::std::option::Option<bool> {
+        &self.exclude_resource_tags
+    }
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
     pub fn remediation_enabled(mut self, input: bool) -> Self {
         self.remediation_enabled = ::std::option::Option::Some(input);
@@ -352,6 +391,10 @@ impl PolicyBuilder {
     pub fn set_remediation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remediation_enabled = input;
         self
+    }
+    /// <p>Indicates if the policy should be automatically applied to new resources.</p>
+    pub fn get_remediation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.remediation_enabled
     }
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
@@ -369,6 +412,12 @@ impl PolicyBuilder {
     ) -> Self {
         self.delete_unused_fm_managed_resources = input;
         self
+    }
+    /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
+    /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
+    /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
+    pub fn get_delete_unused_fm_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.delete_unused_fm_managed_resources
     }
     /// Adds a key-value pair to `include_map`.
     ///
@@ -412,6 +461,24 @@ impl PolicyBuilder {
         self.include_map = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+    /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
+    /// <ul>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// </ul>
+    pub fn get_include_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::CustomerPolicyScopeIdType,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.include_map
+    }
     /// Adds a key-value pair to `exclude_map`.
     ///
     /// To override the contents of this collection use [`set_exclude_map`](Self::set_exclude_map).
@@ -454,6 +521,24 @@ impl PolicyBuilder {
         self.exclude_map = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+    /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+    /// <p>You can specify account IDs, OUs, or a combination: </p>
+    /// <ul>
+    /// <li> <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li>
+    /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
+    /// </ul>
+    pub fn get_exclude_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::CustomerPolicyScopeIdType,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.exclude_map
+    }
     /// Appends an item to `resource_set_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_set_ids`](Self::set_resource_set_ids).
@@ -476,6 +561,12 @@ impl PolicyBuilder {
         self.resource_set_ids = input;
         self
     }
+    /// <p>The unique identifiers of the resource sets used by the policy.</p>
+    pub fn get_resource_set_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_set_ids
+    }
     /// <p>The definition of the Network Firewall firewall policy.</p>
     pub fn policy_description(
         mut self,
@@ -491,6 +582,10 @@ impl PolicyBuilder {
     ) -> Self {
         self.policy_description = input;
         self
+    }
+    /// <p>The definition of the Network Firewall firewall policy.</p>
+    pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_description
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
@@ -512,6 +607,14 @@ impl PolicyBuilder {
     ) -> Self {
         self.policy_status = input;
         self
+    }
+    /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
+    /// </ul>
+    pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::CustomerPolicyStatus> {
+        &self.policy_status
     }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {

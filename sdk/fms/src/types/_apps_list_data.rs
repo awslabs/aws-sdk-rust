@@ -96,6 +96,10 @@ impl AppsListDataBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager applications list.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// <p>The name of the Firewall Manager applications list.</p>
     pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AppsListDataBuilder {
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_name = input;
         self
+    }
+    /// <p>The name of the Firewall Manager applications list.</p>
+    pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_name
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     pub fn list_update_token(
@@ -122,6 +130,10 @@ impl AppsListDataBuilder {
         self.list_update_token = input;
         self
     }
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    pub fn get_list_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_update_token
+    }
     /// <p>The time that the Firewall Manager applications list was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl AppsListDataBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time that the Firewall Manager applications list was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl AppsListDataBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time that the Firewall Manager applications list was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Appends an item to `apps_list`.
     ///
@@ -166,6 +186,10 @@ impl AppsListDataBuilder {
     ) -> Self {
         self.apps_list = input;
         self
+    }
+    /// <p>An array of applications in the Firewall Manager applications list.</p>
+    pub fn get_apps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::App>> {
+        &self.apps_list
     }
     /// Adds a key-value pair to `previous_apps_list`.
     ///
@@ -191,6 +215,14 @@ impl AppsListDataBuilder {
     ) -> Self {
         self.previous_apps_list = input;
         self
+    }
+    /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
+    pub fn get_previous_apps_list(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>,
+    > {
+        &self.previous_apps_list
     }
     /// Consumes the builder and constructs a [`AppsListData`](crate::types::AppsListData).
     pub fn build(self) -> crate::types::AppsListData {

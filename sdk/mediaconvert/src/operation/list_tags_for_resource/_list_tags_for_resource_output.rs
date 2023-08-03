@@ -50,6 +50,10 @@ impl ListTagsForResourceOutputBuilder {
         self.resource_tags = input;
         self
     }
+    /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+    pub fn get_resource_tags(&self) -> &::std::option::Option<crate::types::ResourceTags> {
+        &self.resource_tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

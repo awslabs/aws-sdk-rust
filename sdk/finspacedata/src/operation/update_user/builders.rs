@@ -36,6 +36,10 @@ impl UpdateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_user::builders::UpdateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The unique identifier for the user account to update.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
@@ -136,6 +144,14 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The option to indicate the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        self.inner.get_type()
+    }
     /// <p>The first name of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.first_name(input.into());
@@ -146,6 +162,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_first_name(input);
         self
     }
+    /// <p>The first name of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_first_name()
+    }
     /// <p>The last name of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.last_name(input.into());
@@ -155,6 +175,10 @@ impl UpdateUserFluentBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_last_name(input);
         self
+    }
+    /// <p>The last name of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_last_name()
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
@@ -174,6 +198,14 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_api_access(input);
         self
     }
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub fn get_api_access(&self) -> &::std::option::Option<crate::types::ApiAccess> {
+        self.inner.get_api_access()
+    }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub fn api_access_principal_arn(
         mut self,
@@ -190,6 +222,10 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_api_access_principal_arn(input);
         self
     }
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub fn get_api_access_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_access_principal_arn()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -199,5 +235,9 @@ impl UpdateUserFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -80,6 +80,10 @@ impl ServiceConnectServiceBuilder {
         self.port_name = input;
         self
     }
+    /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+    pub fn get_port_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.port_name
+    }
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     pub fn discovery_name(
@@ -97,6 +101,11 @@ impl ServiceConnectServiceBuilder {
     ) -> Self {
         self.discovery_name = input;
         self
+    }
+    /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
+    /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
+    pub fn get_discovery_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_name
     }
     /// Appends an item to `client_aliases`.
     ///
@@ -123,6 +132,15 @@ impl ServiceConnectServiceBuilder {
         self.client_aliases = input;
         self
     }
+    /// <p>The list of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. The maximum number of client aliases that you can have in this list is 1.</p>
+    /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
+    /// <p>Each name and port mapping must be unique within the namespace.</p>
+    /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
+    pub fn get_client_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>> {
+        &self.client_aliases
+    }
     /// <p>The port number for the Service Connect proxy to listen on.</p>
     /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
     /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
@@ -136,6 +154,12 @@ impl ServiceConnectServiceBuilder {
     pub fn set_ingress_port_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ingress_port_override = input;
         self
+    }
+    /// <p>The port number for the Service Connect proxy to listen on.</p>
+    /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
+    /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
+    pub fn get_ingress_port_override(&self) -> &::std::option::Option<i32> {
+        &self.ingress_port_override
     }
     /// Consumes the builder and constructs a [`ServiceConnectService`](crate::types::ServiceConnectService).
     pub fn build(self) -> crate::types::ServiceConnectService {

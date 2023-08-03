@@ -58,6 +58,10 @@ impl ListNetworkAnalyzerConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `network_analyzer_configuration_list`.
     ///
     /// To override the contents of this collection use [`set_network_analyzer_configuration_list`](Self::set_network_analyzer_configuration_list).
@@ -79,6 +83,12 @@ impl ListNetworkAnalyzerConfigurationsOutputBuilder {
     ) -> Self {
         self.network_analyzer_configuration_list = input;
         self
+    }
+    /// <p>The list of network analyzer configurations.</p>
+    pub fn get_network_analyzer_configuration_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>> {
+        &self.network_analyzer_configuration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl UpdateVpcLinkInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the VPC link.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the VPC link.</p>
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateVpcLinkInputBuilder {
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_link_id = input;
         self
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
     }
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
     pub fn build(

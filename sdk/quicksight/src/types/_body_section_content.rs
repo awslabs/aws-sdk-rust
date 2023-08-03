@@ -43,6 +43,10 @@ impl BodySectionContentBuilder {
         self.layout = input;
         self
     }
+    /// <p>The layout configuration of a body section.</p>
+    pub fn get_layout(&self) -> &::std::option::Option<crate::types::SectionLayoutConfiguration> {
+        &self.layout
+    }
     /// Consumes the builder and constructs a [`BodySectionContent`](crate::types::BodySectionContent).
     pub fn build(self) -> crate::types::BodySectionContent {
         crate::types::BodySectionContent {

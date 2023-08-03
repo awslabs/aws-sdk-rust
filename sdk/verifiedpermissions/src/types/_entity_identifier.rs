@@ -56,6 +56,11 @@ impl EntityIdentifierBuilder {
         self.entity_type = input;
         self
     }
+    /// <p>The type of an entity.</p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
+    }
     /// <p>The identifier of an entity.</p>
     /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +72,11 @@ impl EntityIdentifierBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The identifier of an entity.</p>
+    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`EntityIdentifier`](crate::types::EntityIdentifier).
     pub fn build(self) -> crate::types::EntityIdentifier {

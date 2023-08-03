@@ -36,6 +36,10 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutThirdPartyJobFailureResult as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -109,6 +117,10 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Represents information about failure details.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -122,5 +134,9 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_failure_details(input);
         self
+    }
+    /// <p>Represents information about failure details.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        self.inner.get_failure_details()
     }
 }

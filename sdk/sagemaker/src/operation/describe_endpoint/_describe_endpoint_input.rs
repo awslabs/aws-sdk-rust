@@ -46,6 +46,10 @@ impl DescribeEndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl BatchAssociateScramSecretInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Appends an item to `secret_arn_list`.
     ///
     /// To override the contents of this collection use [`set_secret_arn_list`](Self::set_secret_arn_list).
@@ -69,6 +73,12 @@ impl BatchAssociateScramSecretInputBuilder {
     ) -> Self {
         self.secret_arn_list = input;
         self
+    }
+    /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    pub fn get_secret_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.secret_arn_list
     }
     /// Consumes the builder and constructs a [`BatchAssociateScramSecretInput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput).
     pub fn build(

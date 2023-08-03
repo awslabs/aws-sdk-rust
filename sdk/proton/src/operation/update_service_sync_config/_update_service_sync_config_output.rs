@@ -51,6 +51,12 @@ impl UpdateServiceSyncConfigOutputBuilder {
         self.service_sync_config = input;
         self
     }
+    /// <p>The detailed data of the Proton Ops file.</p>
+    pub fn get_service_sync_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
+        &self.service_sync_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

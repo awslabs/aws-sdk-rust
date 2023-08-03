@@ -56,6 +56,10 @@ impl UnprocessedClusterBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The error type associated with the update failure</p>
     pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UnprocessedClusterBuilder {
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p>The error type associated with the update failure</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
     }
     /// <p>The error message associated with the update failure</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl UnprocessedClusterBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message associated with the update failure</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedCluster`](crate::types::UnprocessedCluster).
     pub fn build(self) -> crate::types::UnprocessedCluster {

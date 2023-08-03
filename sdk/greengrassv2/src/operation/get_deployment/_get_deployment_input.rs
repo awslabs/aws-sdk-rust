@@ -45,6 +45,10 @@ impl GetDeploymentInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(
         self,

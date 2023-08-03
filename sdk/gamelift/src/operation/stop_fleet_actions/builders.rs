@@ -45,6 +45,12 @@ impl StopFleetActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopFleetActions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl StopFleetActionsFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -152,6 +162,12 @@ impl StopFleetActionsFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>List of actions to suspend on the fleet. </p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+        self.inner.get_actions()
+    }
     /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -161,5 +177,9 @@ impl StopFleetActionsFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

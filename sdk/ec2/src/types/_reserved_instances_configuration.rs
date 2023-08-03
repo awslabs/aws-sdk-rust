@@ -82,6 +82,10 @@ impl ReservedInstancesConfigurationBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone for the modified Reserved Instances.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The number of modified Reserved Instances.</p> <note>
     /// <p>This is a required field for a request.</p>
     /// </note>
@@ -96,6 +100,12 @@ impl ReservedInstancesConfigurationBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>This is a required field for a request.</p>
+    /// </note>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The instance type for the modified Reserved Instances.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -109,6 +119,10 @@ impl ReservedInstancesConfigurationBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type for the modified Reserved Instances.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -119,6 +133,10 @@ impl ReservedInstancesConfigurationBuilder {
         self.platform = input;
         self
     }
+    /// <p>The network platform of the modified Reserved Instances.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl ReservedInstancesConfigurationBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// Consumes the builder and constructs a [`ReservedInstancesConfiguration`](crate::types::ReservedInstancesConfiguration).
     pub fn build(self) -> crate::types::ReservedInstancesConfiguration {

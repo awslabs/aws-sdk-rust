@@ -57,6 +57,10 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateMultiRegionAccessPointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub fn details(mut self, input: crate::types::CreateMultiRegionAccessPointInput) -> Self {
@@ -79,6 +87,12 @@ impl CreateMultiRegionAccessPointInputBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateMultiRegionAccessPointInput> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl SimulationAppMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl SimulationAppMetadataBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl SimulationAppMetadataBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The current status of the app.</p>
     pub fn status(mut self, input: crate::types::SimulationAppStatus) -> Self {
@@ -105,6 +117,10 @@ impl SimulationAppMetadataBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the app.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationAppStatus> {
+        &self.status
+    }
     /// <p>The desired status of the app.</p>
     pub fn target_status(mut self, input: crate::types::SimulationAppTargetStatus) -> Self {
         self.target_status = ::std::option::Option::Some(input);
@@ -117,6 +133,12 @@ impl SimulationAppMetadataBuilder {
     ) -> Self {
         self.target_status = input;
         self
+    }
+    /// <p>The desired status of the app.</p>
+    pub fn get_target_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
+        &self.target_status
     }
     /// Consumes the builder and constructs a [`SimulationAppMetadata`](crate::types::SimulationAppMetadata).
     pub fn build(self) -> crate::types::SimulationAppMetadata {

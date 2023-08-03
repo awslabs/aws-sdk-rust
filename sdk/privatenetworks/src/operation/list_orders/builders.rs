@@ -37,6 +37,10 @@ impl ListOrdersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOrders as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_orders::builders::ListOrdersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl ListOrdersFluentBuilder {
         self.inner = self.inner.set_network_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_arn()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_token(input.into());
@@ -135,6 +143,10 @@ impl ListOrdersFluentBuilder {
         self.inner = self.inner.set_start_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_start_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,6 +156,10 @@ impl ListOrdersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -180,5 +196,21 @@ impl ListOrdersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
+    /// </ul>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::OrderFilterKeys,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        self.inner.get_filters()
     }
 }

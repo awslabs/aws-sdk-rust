@@ -65,6 +65,10 @@ impl SecurityDetailsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -87,6 +91,12 @@ impl SecurityDetailsBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups to attach to the elastic network interfaces.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl SecurityDetailsBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`SecurityDetails`](crate::types::SecurityDetails).
     pub fn build(self) -> crate::types::SecurityDetails {

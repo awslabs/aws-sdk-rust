@@ -117,6 +117,10 @@ impl JsonBodyBuilder {
         self.match_pattern = input;
         self
     }
+    /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
+    pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::JsonMatchPattern> {
+        &self.match_pattern
+    }
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
     pub fn match_scope(mut self, input: crate::types::JsonMatchScope) -> Self {
         self.match_scope = ::std::option::Option::Some(input);
@@ -129,6 +133,10 @@ impl JsonBodyBuilder {
     ) -> Self {
         self.match_scope = input;
         self
+    }
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
+    pub fn get_match_scope(&self) -> &::std::option::Option<crate::types::JsonMatchScope> {
+        &self.match_scope
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
@@ -172,6 +180,25 @@ impl JsonBodyBuilder {
         self.invalid_fallback_behavior = input;
         self
     }
+    /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
+    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters. </p>
+    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array. </p>
+    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs: </p>
+    /// <ul>
+    /// <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li>
+    /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
+    /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
+    /// </ul>
+    pub fn get_invalid_fallback_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::BodyParsingFallbackBehavior> {
+        &self.invalid_fallback_behavior
+    }
     /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection. </p>
     /// <p>The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees. </p>
     /// <p>The options for oversize handling are the following:</p>
@@ -202,6 +229,19 @@ impl JsonBodyBuilder {
     ) -> Self {
         self.oversize_handling = input;
         self
+    }
+    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection. </p>
+    /// <p>The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees. </p>
+    /// <p>The options for oversize handling are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
+    /// </ul>
+    /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit. </p>
+    /// <p>Default: <code>CONTINUE</code> </p>
+    pub fn get_oversize_handling(&self) -> &::std::option::Option<crate::types::OversizeHandling> {
+        &self.oversize_handling
     }
     /// Consumes the builder and constructs a [`JsonBody`](crate::types::JsonBody).
     pub fn build(self) -> crate::types::JsonBody {

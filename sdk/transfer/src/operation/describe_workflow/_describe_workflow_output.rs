@@ -50,6 +50,10 @@ impl DescribeWorkflowOutputBuilder {
         self.workflow = input;
         self
     }
+    /// <p>The structure that contains the details of the workflow.</p>
+    pub fn get_workflow(&self) -> &::std::option::Option<crate::types::DescribedWorkflow> {
+        &self.workflow
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

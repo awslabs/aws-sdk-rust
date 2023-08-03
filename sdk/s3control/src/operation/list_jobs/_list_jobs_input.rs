@@ -63,6 +63,10 @@ impl ListJobsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `job_statuses`.
     ///
     /// To override the contents of this collection use [`set_job_statuses`](Self::set_job_statuses).
@@ -82,6 +86,12 @@ impl ListJobsInputBuilder {
         self.job_statuses = input;
         self
     }
+    /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
+    pub fn get_job_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
+        &self.job_statuses
+    }
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ListJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +115,10 @@ impl ListJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(

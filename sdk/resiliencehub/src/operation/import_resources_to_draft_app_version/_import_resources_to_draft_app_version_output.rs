@@ -87,6 +87,10 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// Appends an item to `source_arns`.
     ///
@@ -116,6 +124,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self.source_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
+    pub fn get_source_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_arns
+    }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ResourceImportStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceImportStatusType> {
+        &self.status
     }
     /// Appends an item to `terraform_sources`.
     ///
@@ -148,6 +166,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self.terraform_sources = input;
         self
     }
+    /// <p> A list of terraform file s3 URLs you have imported. </p>
+    pub fn get_terraform_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
+        &self.terraform_sources
+    }
     /// Appends an item to `eks_sources`.
     ///
     /// To override the contents of this collection use [`set_eks_sources`](Self::set_eks_sources).
@@ -166,6 +190,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
     ) -> Self {
         self.eks_sources = input;
         self
+    }
+    /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
+    pub fn get_eks_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
+        &self.eks_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

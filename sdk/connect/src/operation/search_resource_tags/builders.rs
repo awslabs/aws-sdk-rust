@@ -36,6 +36,12 @@ impl SearchResourceTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchResourceTags as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl SearchResourceTagsFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -157,6 +167,12 @@ impl SearchResourceTagsFluentBuilder {
         self.inner = self.inner.set_resource_types(input);
         self
     }
+    /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_types()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +183,10 @@ impl SearchResourceTagsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -176,6 +196,10 @@ impl SearchResourceTagsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The search criteria to be used to return tags.</p>
     pub fn search_criteria(mut self, input: crate::types::ResourceTagsSearchCriteria) -> Self {
@@ -189,5 +213,11 @@ impl SearchResourceTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
+    }
+    /// <p>The search criteria to be used to return tags.</p>
+    pub fn get_search_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
+        self.inner.get_search_criteria()
     }
 }

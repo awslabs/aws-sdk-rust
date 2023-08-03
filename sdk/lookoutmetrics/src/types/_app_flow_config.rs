@@ -48,6 +48,10 @@ impl AppFlowConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p> name of the flow.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AppFlowConfigBuilder {
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
+    }
+    /// <p> name of the flow.</p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
     }
     /// Consumes the builder and constructs a [`AppFlowConfig`](crate::types::AppFlowConfig).
     pub fn build(self) -> crate::types::AppFlowConfig {

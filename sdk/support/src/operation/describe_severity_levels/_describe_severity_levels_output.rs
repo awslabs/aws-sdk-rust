@@ -58,6 +58,12 @@ impl DescribeSeverityLevelsOutputBuilder {
         self.severity_levels = input;
         self
     }
+    /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
+    pub fn get_severity_levels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
+        &self.severity_levels
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

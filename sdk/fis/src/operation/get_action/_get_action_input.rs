@@ -39,6 +39,10 @@ impl GetActionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetActionInput`](crate::operation::get_action::GetActionInput).
     pub fn build(
         self,

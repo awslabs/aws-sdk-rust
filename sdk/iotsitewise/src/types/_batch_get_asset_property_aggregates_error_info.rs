@@ -57,6 +57,12 @@ impl BatchGetAssetPropertyAggregatesErrorInfoBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
+        &self.error_code
+    }
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn error_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.error_timestamp = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl BatchGetAssetPropertyAggregatesErrorInfoBuilder {
     ) -> Self {
         self.error_timestamp = input;
         self
+    }
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub fn get_error_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.error_timestamp
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::types::BatchGetAssetPropertyAggregatesErrorInfo).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyAggregatesErrorInfo {

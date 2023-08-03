@@ -56,6 +56,10 @@ impl ProjectListFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>A key that can be used to sort results.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::FilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl ProjectListFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values of the key.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator used to compare the fields.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl ProjectListFilterBuilder {
     ) -> Self {
         self.comparison_operator = input;
         self
+    }
+    /// <p>The operator used to compare the fields.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`ProjectListFilter`](crate::types::ProjectListFilter).
     pub fn build(self) -> crate::types::ProjectListFilter {

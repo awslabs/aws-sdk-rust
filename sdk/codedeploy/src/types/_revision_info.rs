@@ -53,6 +53,10 @@ impl RevisionInfoBuilder {
         self.revision_location = input;
         self
     }
+    /// <p>Information about the location and type of an application revision.</p>
+    pub fn get_revision_location(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        &self.revision_location
+    }
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
     pub fn generic_revision_info(mut self, input: crate::types::GenericRevisionInfo) -> Self {
         self.generic_revision_info = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl RevisionInfoBuilder {
     ) -> Self {
         self.generic_revision_info = input;
         self
+    }
+    /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
+    pub fn get_generic_revision_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::GenericRevisionInfo> {
+        &self.generic_revision_info
     }
     /// Consumes the builder and constructs a [`RevisionInfo`](crate::types::RevisionInfo).
     pub fn build(self) -> crate::types::RevisionInfo {

@@ -55,6 +55,10 @@ impl DescribeSubnetGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `subnet_groups`.
     ///
     /// To override the contents of this collection use [`set_subnet_groups`](Self::set_subnet_groups).
@@ -73,6 +77,12 @@ impl DescribeSubnetGroupsOutputBuilder {
     ) -> Self {
         self.subnet_groups = input;
         self
+    }
+    /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
+    pub fn get_subnet_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>> {
+        &self.subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -195,6 +195,10 @@ impl RuntimeContextBuilder {
         self.modifying_process = input;
         self
     }
+    /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
+    pub fn get_modifying_process(&self) -> &::std::option::Option<crate::types::ProcessDetails> {
+        &self.modifying_process
+    }
     /// <p>The timestamp at which the process modified the current process. The timestamp is in UTC date string format.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -208,6 +212,10 @@ impl RuntimeContextBuilder {
         self.modified_at = input;
         self
     }
+    /// <p>The timestamp at which the process modified the current process. The timestamp is in UTC date string format.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     /// <p>The path to the script that was executed.</p>
     pub fn script_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_path = ::std::option::Option::Some(input.into());
@@ -218,6 +226,10 @@ impl RuntimeContextBuilder {
         self.script_path = input;
         self
     }
+    /// <p>The path to the script that was executed.</p>
+    pub fn get_script_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_path
+    }
     /// <p>The path to the new library that was loaded.</p>
     pub fn library_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.library_path = ::std::option::Option::Some(input.into());
@@ -227,6 +239,10 @@ impl RuntimeContextBuilder {
     pub fn set_library_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.library_path = input;
         self
+    }
+    /// <p>The path to the new library that was loaded.</p>
+    pub fn get_library_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.library_path
     }
     /// <p>The value of the LD_PRELOAD environment variable.</p>
     pub fn ld_preload_value(
@@ -244,6 +260,10 @@ impl RuntimeContextBuilder {
         self.ld_preload_value = input;
         self
     }
+    /// <p>The value of the LD_PRELOAD environment variable.</p>
+    pub fn get_ld_preload_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ld_preload_value
+    }
     /// <p>The path to the docket socket that was accessed.</p>
     pub fn socket_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.socket_path = ::std::option::Option::Some(input.into());
@@ -253,6 +273,10 @@ impl RuntimeContextBuilder {
     pub fn set_socket_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.socket_path = input;
         self
+    }
+    /// <p>The path to the docket socket that was accessed.</p>
+    pub fn get_socket_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.socket_path
     }
     /// <p>The path to the leveraged <code>runc</code> implementation.</p>
     pub fn runc_binary_path(
@@ -270,6 +294,10 @@ impl RuntimeContextBuilder {
         self.runc_binary_path = input;
         self
     }
+    /// <p>The path to the leveraged <code>runc</code> implementation.</p>
+    pub fn get_runc_binary_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runc_binary_path
+    }
     /// <p>The path in the container that modified the release agent file.</p>
     pub fn release_agent_path(
         mut self,
@@ -286,6 +314,10 @@ impl RuntimeContextBuilder {
         self.release_agent_path = input;
         self
     }
+    /// <p>The path in the container that modified the release agent file.</p>
+    pub fn get_release_agent_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_agent_path
+    }
     /// <p>The path on the host that is mounted by the container.</p>
     pub fn mount_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_source = ::std::option::Option::Some(input.into());
@@ -296,6 +328,10 @@ impl RuntimeContextBuilder {
         self.mount_source = input;
         self
     }
+    /// <p>The path on the host that is mounted by the container.</p>
+    pub fn get_mount_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_source
+    }
     /// <p>The path in the container that is mapped to the host directory.</p>
     pub fn mount_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target = ::std::option::Option::Some(input.into());
@@ -305,6 +341,10 @@ impl RuntimeContextBuilder {
     pub fn set_mount_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_target = input;
         self
+    }
+    /// <p>The path in the container that is mapped to the host directory.</p>
+    pub fn get_mount_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_target
     }
     /// <p>Represents the type of mounted fileSystem.</p>
     pub fn file_system_type(
@@ -321,6 +361,10 @@ impl RuntimeContextBuilder {
     ) -> Self {
         self.file_system_type = input;
         self
+    }
+    /// <p>Represents the type of mounted fileSystem.</p>
+    pub fn get_file_system_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_type
     }
     /// Appends an item to `flags`.
     ///
@@ -341,6 +385,10 @@ impl RuntimeContextBuilder {
         self.flags = input;
         self
     }
+    /// <p>Represents options that control the behavior of a runtime operation or action. For example, a filesystem mount operation may contain a read-only flag.</p>
+    pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.flags
+    }
     /// <p>The name of the module loaded into the kernel.</p>
     pub fn module_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.module_name = ::std::option::Option::Some(input.into());
@@ -350,6 +398,10 @@ impl RuntimeContextBuilder {
     pub fn set_module_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.module_name = input;
         self
+    }
+    /// <p>The name of the module loaded into the kernel.</p>
+    pub fn get_module_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.module_name
     }
     /// <p>The path to the module loaded into the kernel.</p>
     pub fn module_file_path(
@@ -367,6 +419,10 @@ impl RuntimeContextBuilder {
         self.module_file_path = input;
         self
     }
+    /// <p>The path to the module loaded into the kernel.</p>
+    pub fn get_module_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.module_file_path
+    }
     /// <p>The <code>SHA256</code> hash of the module.</p>
     pub fn module_sha256(
         mut self,
@@ -382,6 +438,10 @@ impl RuntimeContextBuilder {
     ) -> Self {
         self.module_sha256 = input;
         self
+    }
+    /// <p>The <code>SHA256</code> hash of the module.</p>
+    pub fn get_module_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.module_sha256
     }
     /// <p>The path to the modified shell history file.</p>
     pub fn shell_history_file_path(
@@ -399,6 +459,10 @@ impl RuntimeContextBuilder {
         self.shell_history_file_path = input;
         self
     }
+    /// <p>The path to the modified shell history file.</p>
+    pub fn get_shell_history_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shell_history_file_path
+    }
     /// <p>Information about the process that had its memory overwritten by the current process.</p>
     pub fn target_process(mut self, input: crate::types::ProcessDetails) -> Self {
         self.target_process = ::std::option::Option::Some(input);
@@ -411,6 +475,10 @@ impl RuntimeContextBuilder {
     ) -> Self {
         self.target_process = input;
         self
+    }
+    /// <p>Information about the process that had its memory overwritten by the current process.</p>
+    pub fn get_target_process(&self) -> &::std::option::Option<crate::types::ProcessDetails> {
+        &self.target_process
     }
     /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
     pub fn address_family(
@@ -428,6 +496,10 @@ impl RuntimeContextBuilder {
         self.address_family = input;
         self
     }
+    /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_family
+    }
     /// <p>Specifies a particular protocol within the address family. Usually there is a single protocol in address families. For example, the address family <code>AF_INET</code> only has the IP protocol.</p>
     pub fn iana_protocol_number(mut self, input: i32) -> Self {
         self.iana_protocol_number = ::std::option::Option::Some(input);
@@ -437,6 +509,10 @@ impl RuntimeContextBuilder {
     pub fn set_iana_protocol_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iana_protocol_number = input;
         self
+    }
+    /// <p>Specifies a particular protocol within the address family. Usually there is a single protocol in address families. For example, the address family <code>AF_INET</code> only has the IP protocol.</p>
+    pub fn get_iana_protocol_number(&self) -> &::std::option::Option<i32> {
+        &self.iana_protocol_number
     }
     /// Appends an item to `memory_regions`.
     ///
@@ -459,6 +535,12 @@ impl RuntimeContextBuilder {
     ) -> Self {
         self.memory_regions = input;
         self
+    }
+    /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
+    pub fn get_memory_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.memory_regions
     }
     /// Consumes the builder and constructs a [`RuntimeContext`](crate::types::RuntimeContext).
     pub fn build(self) -> crate::types::RuntimeContext {

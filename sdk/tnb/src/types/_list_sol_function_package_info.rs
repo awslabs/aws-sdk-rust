@@ -113,6 +113,10 @@ impl ListSolFunctionPackageInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Function package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl ListSolFunctionPackageInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Function package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
@@ -136,6 +144,10 @@ impl ListSolFunctionPackageInfoBuilder {
         self.onboarding_state = input;
         self
     }
+    /// <p>Onboarding state of the function package.</p>
+    pub fn get_onboarding_state(&self) -> &::std::option::Option<crate::types::OnboardingState> {
+        &self.onboarding_state
+    }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
@@ -148,6 +160,10 @@ impl ListSolFunctionPackageInfoBuilder {
     ) -> Self {
         self.operational_state = input;
         self
+    }
+    /// <p>Operational state of the function package.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
     }
     /// <p>Usage state of the function package.</p>
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
@@ -162,6 +178,10 @@ impl ListSolFunctionPackageInfoBuilder {
         self.usage_state = input;
         self
     }
+    /// <p>Usage state of the function package.</p>
+    pub fn get_usage_state(&self) -> &::std::option::Option<crate::types::UsageState> {
+        &self.usage_state
+    }
     /// <p>Identifies the function package and the function package descriptor.</p>
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_id = ::std::option::Option::Some(input.into());
@@ -172,6 +192,10 @@ impl ListSolFunctionPackageInfoBuilder {
         self.vnfd_id = input;
         self
     }
+    /// <p>Identifies the function package and the function package descriptor.</p>
+    pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_id
+    }
     /// <p>Provider of the function package and the function package descriptor.</p>
     pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_provider = ::std::option::Option::Some(input.into());
@@ -181,6 +205,10 @@ impl ListSolFunctionPackageInfoBuilder {
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_provider = input;
         self
+    }
+    /// <p>Provider of the function package and the function package descriptor.</p>
+    pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_provider
     }
     /// <p>The product name for the network function.</p>
     pub fn vnf_product_name(
@@ -198,6 +226,10 @@ impl ListSolFunctionPackageInfoBuilder {
         self.vnf_product_name = input;
         self
     }
+    /// <p>The product name for the network function.</p>
+    pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_product_name
+    }
     /// <p>Identifies the version of the function package descriptor.</p>
     pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_version = ::std::option::Option::Some(input.into());
@@ -207,6 +239,10 @@ impl ListSolFunctionPackageInfoBuilder {
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_version = input;
         self
+    }
+    /// <p>Identifies the version of the function package descriptor.</p>
+    pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_version
     }
     /// <p>The metadata of the function package.</p>
     pub fn metadata(mut self, input: crate::types::ListSolFunctionPackageMetadata) -> Self {
@@ -220,6 +256,12 @@ impl ListSolFunctionPackageInfoBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the function package.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListSolFunctionPackageMetadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackageInfo`](crate::types::ListSolFunctionPackageInfo).
     pub fn build(self) -> crate::types::ListSolFunctionPackageInfo {

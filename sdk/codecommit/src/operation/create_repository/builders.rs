@@ -36,6 +36,12 @@ impl CreateRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl CreateRepositoryFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the new repository to be created.</p> <note>
+    /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
+    /// </note>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>A comment or description about the new repository.</p> <note>
     /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
@@ -155,6 +167,12 @@ impl CreateRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_description(input);
         self
+    }
+    /// <p>A comment or description about the new repository.</p> <note>
+    /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
+    /// </note>
+    pub fn get_repository_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_description()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -178,5 +196,13 @@ impl CreateRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

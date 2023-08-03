@@ -67,6 +67,10 @@ impl ColumnTooltipItemBuilder {
         self.column = input;
         self
     }
+    /// <p>The target column of the tooltip item.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The label of the tooltip item.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ColumnTooltipItemBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label of the tooltip item.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The visibility of the tooltip item.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -90,6 +98,10 @@ impl ColumnTooltipItemBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the tooltip item.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The aggregation function of the column tooltip item.</p>
     pub fn aggregation(mut self, input: crate::types::AggregationFunction) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ColumnTooltipItemBuilder {
     ) -> Self {
         self.aggregation = input;
         self
+    }
+    /// <p>The aggregation function of the column tooltip item.</p>
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
+        &self.aggregation
     }
     /// Consumes the builder and constructs a [`ColumnTooltipItem`](crate::types::ColumnTooltipItem).
     pub fn build(self) -> crate::types::ColumnTooltipItem {

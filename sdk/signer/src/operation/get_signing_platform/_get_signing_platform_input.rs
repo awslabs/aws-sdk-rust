@@ -40,6 +40,10 @@ impl GetSigningPlatformInputBuilder {
         self.platform_id = input;
         self
     }
+    /// <p>The ID of the target signing platform.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
+    }
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
     pub fn build(
         self,

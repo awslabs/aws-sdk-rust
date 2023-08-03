@@ -55,6 +55,10 @@ impl ConcatenationSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of concatenation source in a configuration object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConcatenationSourceType> {
+        &self.r#type
+    }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub fn media_capture_pipeline_source_configuration(
         mut self,
@@ -70,6 +74,12 @@ impl ConcatenationSourceBuilder {
     ) -> Self {
         self.media_capture_pipeline_source_configuration = input;
         self
+    }
+    /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
+    pub fn get_media_capture_pipeline_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration> {
+        &self.media_capture_pipeline_source_configuration
     }
     /// Consumes the builder and constructs a [`ConcatenationSource`](crate::types::ConcatenationSource).
     pub fn build(self) -> crate::types::ConcatenationSource {

@@ -64,6 +64,10 @@ impl CreateRelatedItemInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateRelatedItemInputBuilder {
         self.case_id = input;
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>The type of a related item.</p>
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl CreateRelatedItemInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of a related item.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
+        &self.r#type
     }
     /// <p>The content of a related item to be created.</p>
     pub fn content(mut self, input: crate::types::RelatedItemInputContent) -> Self {
@@ -96,6 +108,10 @@ impl CreateRelatedItemInputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of a related item to be created.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemInputContent> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
     pub fn build(

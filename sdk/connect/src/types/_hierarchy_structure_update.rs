@@ -75,6 +75,10 @@ impl HierarchyStructureUpdateBuilder {
         self.level_one = input;
         self
     }
+    /// <p>The update for level one.</p>
+    pub fn get_level_one(&self) -> &::std::option::Option<crate::types::HierarchyLevelUpdate> {
+        &self.level_one
+    }
     /// <p>The update for level two.</p>
     pub fn level_two(mut self, input: crate::types::HierarchyLevelUpdate) -> Self {
         self.level_two = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl HierarchyStructureUpdateBuilder {
     ) -> Self {
         self.level_two = input;
         self
+    }
+    /// <p>The update for level two.</p>
+    pub fn get_level_two(&self) -> &::std::option::Option<crate::types::HierarchyLevelUpdate> {
+        &self.level_two
     }
     /// <p>The update for level three.</p>
     pub fn level_three(mut self, input: crate::types::HierarchyLevelUpdate) -> Self {
@@ -101,6 +109,10 @@ impl HierarchyStructureUpdateBuilder {
         self.level_three = input;
         self
     }
+    /// <p>The update for level three.</p>
+    pub fn get_level_three(&self) -> &::std::option::Option<crate::types::HierarchyLevelUpdate> {
+        &self.level_three
+    }
     /// <p>The update for level four.</p>
     pub fn level_four(mut self, input: crate::types::HierarchyLevelUpdate) -> Self {
         self.level_four = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl HierarchyStructureUpdateBuilder {
         self.level_four = input;
         self
     }
+    /// <p>The update for level four.</p>
+    pub fn get_level_four(&self) -> &::std::option::Option<crate::types::HierarchyLevelUpdate> {
+        &self.level_four
+    }
     /// <p>The update for level five.</p>
     pub fn level_five(mut self, input: crate::types::HierarchyLevelUpdate) -> Self {
         self.level_five = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl HierarchyStructureUpdateBuilder {
     ) -> Self {
         self.level_five = input;
         self
+    }
+    /// <p>The update for level five.</p>
+    pub fn get_level_five(&self) -> &::std::option::Option<crate::types::HierarchyLevelUpdate> {
+        &self.level_five
     }
     /// Consumes the builder and constructs a [`HierarchyStructureUpdate`](crate::types::HierarchyStructureUpdate).
     pub fn build(self) -> crate::types::HierarchyStructureUpdate {

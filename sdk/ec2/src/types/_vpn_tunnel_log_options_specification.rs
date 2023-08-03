@@ -50,6 +50,12 @@ impl VpnTunnelLogOptionsSpecificationBuilder {
         self.cloud_watch_log_options = input;
         self
     }
+    /// <p>Options for sending VPN tunnel logs to CloudWatch.</p>
+    pub fn get_cloud_watch_log_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogOptionsSpecification> {
+        &self.cloud_watch_log_options
+    }
     /// Consumes the builder and constructs a [`VpnTunnelLogOptionsSpecification`](crate::types::VpnTunnelLogOptionsSpecification).
     pub fn build(self) -> crate::types::VpnTunnelLogOptionsSpecification {
         crate::types::VpnTunnelLogOptionsSpecification {

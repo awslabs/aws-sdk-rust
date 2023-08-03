@@ -51,6 +51,12 @@ impl CreateDbClusterSnapshotOutputBuilder {
         self.db_cluster_snapshot = input;
         self
     }
+    /// <p>Detailed information about a cluster snapshot. </p>
+    pub fn get_db_cluster_snapshot(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
+        &self.db_cluster_snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -55,6 +55,11 @@ impl DeleteSigningCertificateInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user the signing certificate belongs to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
     pub fn certificate_id(
@@ -72,6 +77,11 @@ impl DeleteSigningCertificateInputBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// Consumes the builder and constructs a [`DeleteSigningCertificateInput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateInput).
     pub fn build(

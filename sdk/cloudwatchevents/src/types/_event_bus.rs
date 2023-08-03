@@ -56,6 +56,10 @@ impl EventBusBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event bus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the event bus.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EventBusBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the event bus.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl EventBusBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`EventBus`](crate::types::EventBus).
     pub fn build(self) -> crate::types::EventBus {

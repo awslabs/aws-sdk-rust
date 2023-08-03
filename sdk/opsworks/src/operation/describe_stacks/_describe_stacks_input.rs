@@ -48,6 +48,10 @@ impl DescribeStacksInputBuilder {
         self.stack_ids = input;
         self
     }
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    pub fn get_stack_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_ids
+    }
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
     pub fn build(
         self,

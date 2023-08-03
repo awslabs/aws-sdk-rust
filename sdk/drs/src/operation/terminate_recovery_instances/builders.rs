@@ -36,6 +36,10 @@ impl TerminateRecoveryInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateRecoveryInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,11 @@ impl TerminateRecoveryInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_instance_i_ds(input);
         self
+    }
+    /// <p>The IDs of the Recovery Instances that should be terminated.</p>
+    pub fn get_recovery_instance_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recovery_instance_i_ds()
     }
 }

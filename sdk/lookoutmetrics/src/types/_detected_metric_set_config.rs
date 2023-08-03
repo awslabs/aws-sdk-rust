@@ -56,6 +56,10 @@ impl DetectedMetricSetConfigBuilder {
         self.offset = input;
         self
     }
+    /// <p>The dataset's offset.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.offset
+    }
     /// <p>The dataset's interval.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::DetectedField) -> Self {
         self.metric_set_frequency = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DetectedMetricSetConfigBuilder {
         self.metric_set_frequency = input;
         self
     }
+    /// <p>The dataset's interval.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.metric_set_frequency
+    }
     /// <p>The dataset's data source.</p>
     pub fn metric_source(mut self, input: crate::types::DetectedMetricSource) -> Self {
         self.metric_source = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DetectedMetricSetConfigBuilder {
     ) -> Self {
         self.metric_source = input;
         self
+    }
+    /// <p>The dataset's data source.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::DetectedMetricSource> {
+        &self.metric_source
     }
     /// Consumes the builder and constructs a [`DetectedMetricSetConfig`](crate::types::DetectedMetricSetConfig).
     pub fn build(self) -> crate::types::DetectedMetricSetConfig {

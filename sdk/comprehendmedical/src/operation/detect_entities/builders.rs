@@ -38,6 +38,12 @@ impl DetectEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectEntities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_entities::builders::DetectEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +125,9 @@ impl DetectEntitiesFluentBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
+    }
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
     }
 }

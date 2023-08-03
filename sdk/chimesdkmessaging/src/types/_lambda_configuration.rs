@@ -48,6 +48,10 @@ impl LambdaConfigurationBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda message processing function.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Controls how the Lambda function is invoked.</p>
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
         self.invocation_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LambdaConfigurationBuilder {
     ) -> Self {
         self.invocation_type = input;
         self
+    }
+    /// <p>Controls how the Lambda function is invoked.</p>
+    pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::InvocationType> {
+        &self.invocation_type
     }
     /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::types::LambdaConfiguration).
     pub fn build(self) -> crate::types::LambdaConfiguration {

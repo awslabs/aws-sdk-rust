@@ -37,6 +37,12 @@ impl DescribeVTLDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVTLDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl DescribeVTLDevicesFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// Appends an item to `VTLDeviceARNs`.
     ///
     /// To override the contents of this collection use [`set_vtl_device_ar_ns`](Self::set_vtl_device_ar_ns).
@@ -162,6 +172,14 @@ impl DescribeVTLDevicesFluentBuilder {
         self.inner = self.inner.set_vtl_device_ar_ns(input);
         self
     }
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
+    /// </note>
+    pub fn get_vtl_device_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vtl_device_ar_ns()
+    }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -172,6 +190,10 @@ impl DescribeVTLDevicesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -181,5 +203,9 @@ impl DescribeVTLDevicesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

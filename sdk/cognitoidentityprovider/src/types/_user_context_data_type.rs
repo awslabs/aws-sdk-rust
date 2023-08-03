@@ -54,6 +54,10 @@ impl UserContextDataTypeBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The source IP address of your user's device.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_data = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UserContextDataTypeBuilder {
     pub fn set_encoded_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_data = input;
         self
+    }
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+    pub fn get_encoded_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_data
     }
     /// Consumes the builder and constructs a [`UserContextDataType`](crate::types::UserContextDataType).
     pub fn build(self) -> crate::types::UserContextDataType {

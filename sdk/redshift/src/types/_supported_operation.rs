@@ -46,6 +46,10 @@ impl SupportedOperationBuilder {
         self.operation_name = input;
         self
     }
+    /// <p>A list of the supported operations.</p>
+    pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_name
+    }
     /// Consumes the builder and constructs a [`SupportedOperation`](crate::types::SupportedOperation).
     pub fn build(self) -> crate::types::SupportedOperation {
         crate::types::SupportedOperation {

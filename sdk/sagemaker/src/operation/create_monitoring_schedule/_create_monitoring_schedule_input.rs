@@ -66,6 +66,10 @@ impl CreateMonitoringScheduleInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
         mut self,
@@ -81,6 +85,12 @@ impl CreateMonitoringScheduleInputBuilder {
     ) -> Self {
         self.monitoring_schedule_config = input;
         self
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    pub fn get_monitoring_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+        &self.monitoring_schedule_config
     }
     /// Appends an item to `tags`.
     ///
@@ -100,6 +110,10 @@ impl CreateMonitoringScheduleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMonitoringScheduleInput`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput).
     pub fn build(

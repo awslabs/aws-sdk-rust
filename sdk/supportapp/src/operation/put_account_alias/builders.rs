@@ -36,6 +36,12 @@ impl PutAccountAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl PutAccountAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_alias(input);
         self
+    }
+    /// <p>An alias or short name for an Amazon Web Services account.</p>
+    pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_alias()
     }
 }

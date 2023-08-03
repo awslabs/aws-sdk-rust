@@ -46,6 +46,12 @@ impl CertificateAuthenticationRequestBuilder {
         self.client_root_certificate_chain_arn = input;
         self
     }
+    /// <p>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be provisioned in Certificate Manager (ACM).</p>
+    pub fn get_client_root_certificate_chain_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.client_root_certificate_chain_arn
+    }
     /// Consumes the builder and constructs a [`CertificateAuthenticationRequest`](crate::types::CertificateAuthenticationRequest).
     pub fn build(self) -> crate::types::CertificateAuthenticationRequest {
         crate::types::CertificateAuthenticationRequest {

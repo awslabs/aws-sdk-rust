@@ -63,6 +63,10 @@ impl ListAppsOutputBuilder {
         self.apps = input;
         self
     }
+    /// <p>The application summaries.</p>
+    pub fn get_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
+        &self.apps
+    }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListAppsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,10 @@ impl TimeRangeBuilder {
         self.from_inclusive = input;
         self
     }
+    /// <p>The start time, in Unix time in seconds. </p>
+    pub fn get_from_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_inclusive
+    }
     /// <p>The end time, in Unix time in seconds. </p>
     pub fn to_exclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_exclusive = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TimeRangeBuilder {
     ) -> Self {
         self.to_exclusive = input;
         self
+    }
+    /// <p>The end time, in Unix time in seconds. </p>
+    pub fn get_to_exclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_exclusive
     }
     /// Consumes the builder and constructs a [`TimeRange`](crate::types::TimeRange).
     pub fn build(self) -> crate::types::TimeRange {

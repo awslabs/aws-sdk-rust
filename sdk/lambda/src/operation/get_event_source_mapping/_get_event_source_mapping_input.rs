@@ -41,6 +41,10 @@ impl GetEventSourceMappingInputBuilder {
         self.uuid = input;
         self
     }
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
+    }
     /// Consumes the builder and constructs a [`GetEventSourceMappingInput`](crate::operation::get_event_source_mapping::GetEventSourceMappingInput).
     pub fn build(
         self,

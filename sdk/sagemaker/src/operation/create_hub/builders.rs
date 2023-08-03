@@ -38,6 +38,10 @@ impl CreateHubFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHub as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_hub::builders::CreateHubInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateHubFluentBuilder {
         self.inner = self.inner.set_hub_name(input);
         self
     }
+    /// <p>The name of the hub to create.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_name()
+    }
     /// <p>A description of the hub.</p>
     pub fn hub_description(
         mut self,
@@ -136,6 +144,10 @@ impl CreateHubFluentBuilder {
         self.inner = self.inner.set_hub_description(input);
         self
     }
+    /// <p>A description of the hub.</p>
+    pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_description()
+    }
     /// <p>The display name of the hub.</p>
     pub fn hub_display_name(
         mut self,
@@ -151,6 +163,10 @@ impl CreateHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hub_display_name(input);
         self
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_display_name()
     }
     /// Appends an item to `HubSearchKeywords`.
     ///
@@ -172,6 +188,12 @@ impl CreateHubFluentBuilder {
         self.inner = self.inner.set_hub_search_keywords(input);
         self
     }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn get_hub_search_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_hub_search_keywords()
+    }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(mut self, input: crate::types::HubS3StorageConfig) -> Self {
         self.inner = self.inner.s3_storage_config(input);
@@ -184,6 +206,12 @@ impl CreateHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_storage_config(input);
         self
+    }
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    pub fn get_s3_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
+        self.inner.get_s3_storage_config()
     }
     /// Appends an item to `Tags`.
     ///
@@ -201,5 +229,9 @@ impl CreateHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Any tags to associate with the hub.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

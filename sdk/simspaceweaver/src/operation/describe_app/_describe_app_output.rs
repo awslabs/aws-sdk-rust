@@ -102,6 +102,10 @@ impl DescribeAppOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl DescribeAppOutputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The current lifecycle state of the custom app.</p>
     pub fn status(mut self, input: crate::types::SimulationAppStatus) -> Self {
@@ -135,6 +147,10 @@ impl DescribeAppOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current lifecycle state of the custom app.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationAppStatus> {
+        &self.status
+    }
     /// <p>The desired lifecycle state of the custom app.</p>
     pub fn target_status(mut self, input: crate::types::SimulationAppTargetStatus) -> Self {
         self.target_status = ::std::option::Option::Some(input);
@@ -147,6 +163,12 @@ impl DescribeAppOutputBuilder {
     ) -> Self {
         self.target_status = input;
         self
+    }
+    /// <p>The desired lifecycle state of the custom app.</p>
+    pub fn get_target_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
+        &self.target_status
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
@@ -161,6 +183,10 @@ impl DescribeAppOutputBuilder {
         self.launch_overrides = input;
         self
     }
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
+    pub fn get_launch_overrides(&self) -> &::std::option::Option<crate::types::LaunchOverrides> {
+        &self.launch_overrides
+    }
     /// <p>The description of the app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -170,6 +196,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
     pub fn endpoint_info(mut self, input: crate::types::SimulationAppEndpointInfo) -> Self {
@@ -183,6 +213,12 @@ impl DescribeAppOutputBuilder {
     ) -> Self {
         self.endpoint_info = input;
         self
+    }
+    /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
+    pub fn get_endpoint_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationAppEndpointInfo> {
+        &self.endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -45,6 +45,12 @@ impl CreateKnowledgeBaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKnowledgeBase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl CreateKnowledgeBaseFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the knowledge base.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +154,10 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the knowledge base.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
     pub fn knowledge_base_type(mut self, input: crate::types::KnowledgeBaseType) -> Self {
@@ -158,6 +172,12 @@ impl CreateKnowledgeBaseFluentBuilder {
         self.inner = self.inner.set_knowledge_base_type(input);
         self
     }
+    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
+    pub fn get_knowledge_base_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
+        self.inner.get_knowledge_base_type()
+    }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.inner = self.inner.source_configuration(input);
@@ -171,6 +191,12 @@ impl CreateKnowledgeBaseFluentBuilder {
         self.inner = self.inner.set_source_configuration(input);
         self
     }
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        self.inner.get_source_configuration()
+    }
     /// <p>Information about how to render the content.</p>
     pub fn rendering_configuration(mut self, input: crate::types::RenderingConfiguration) -> Self {
         self.inner = self.inner.rendering_configuration(input);
@@ -183,6 +209,12 @@ impl CreateKnowledgeBaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rendering_configuration(input);
         self
+    }
+    /// <p>Information about how to render the content.</p>
+    pub fn get_rendering_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RenderingConfiguration> {
+        self.inner.get_rendering_configuration()
     }
     /// <p>The KMS key used for encryption.</p>
     pub fn server_side_encryption_configuration(
@@ -200,6 +232,12 @@ impl CreateKnowledgeBaseFluentBuilder {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        self.inner.get_server_side_encryption_configuration()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -209,6 +247,10 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -232,5 +274,13 @@ impl CreateKnowledgeBaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

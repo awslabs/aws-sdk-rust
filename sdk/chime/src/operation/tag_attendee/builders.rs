@@ -41,6 +41,10 @@ impl TagAttendeeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagAttendee as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_attendee::builders::TagAttendeeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl TagAttendeeFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attendee_id(input.into());
@@ -132,6 +140,10 @@ impl TagAttendeeFluentBuilder {
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attendee_id(input);
         self
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attendee_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -149,5 +161,9 @@ impl TagAttendeeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -57,6 +57,10 @@ impl DescribeSourceRegionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `source_regions`.
     ///
     /// To override the contents of this collection use [`set_source_regions`](Self::set_source_regions).
@@ -75,6 +79,12 @@ impl DescribeSourceRegionsOutputBuilder {
     ) -> Self {
         self.source_regions = input;
         self
+    }
+    /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
+    pub fn get_source_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>> {
+        &self.source_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

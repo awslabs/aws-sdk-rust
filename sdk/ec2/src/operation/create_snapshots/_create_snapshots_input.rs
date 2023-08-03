@@ -96,6 +96,10 @@ impl CreateSnapshotsInputBuilder {
         self.description = input;
         self
     }
+    /// <p> A description propagated to every snapshot specified by the instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
     pub fn instance_specification(mut self, input: crate::types::InstanceSpecification) -> Self {
         self.instance_specification = ::std::option::Option::Some(input);
@@ -108,6 +112,12 @@ impl CreateSnapshotsInputBuilder {
     ) -> Self {
         self.instance_specification = input;
         self
+    }
+    /// <p>The instance to specify which volumes should be included in the snapshots.</p>
+    pub fn get_instance_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceSpecification> {
+        &self.instance_specification
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
@@ -131,6 +141,16 @@ impl CreateSnapshotsInputBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
+    /// <ul>
+    /// <li> <p>To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same Region as the instance.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter. The snapshots are created in the Region for the Outpost.</p> </li>
+    /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -150,6 +170,12 @@ impl CreateSnapshotsInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>Tags to apply to every snapshot specified by the instance.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -159,6 +185,10 @@ impl CreateSnapshotsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
     pub fn copy_tags_from_source(mut self, input: crate::types::CopyTagsFromSource) -> Self {
@@ -172,6 +202,12 @@ impl CreateSnapshotsInputBuilder {
     ) -> Self {
         self.copy_tags_from_source = input;
         self
+    }
+    /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
+    pub fn get_copy_tags_from_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::CopyTagsFromSource> {
+        &self.copy_tags_from_source
     }
     /// Consumes the builder and constructs a [`CreateSnapshotsInput`](crate::operation::create_snapshots::CreateSnapshotsInput).
     pub fn build(

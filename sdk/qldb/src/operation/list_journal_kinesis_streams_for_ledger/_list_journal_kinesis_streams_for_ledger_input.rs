@@ -55,6 +55,10 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
         self.ledger_name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ledger_name
+    }
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerInput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput, ::aws_smithy_http::operation::error::BuildError>{

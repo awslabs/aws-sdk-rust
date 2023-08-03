@@ -131,6 +131,10 @@ impl CreateLicenseVersionInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>License name.</p>
     pub fn license_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_name = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl CreateLicenseVersionInputBuilder {
     pub fn set_license_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_name = input;
         self
+    }
+    /// <p>License name.</p>
+    pub fn get_license_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_name
     }
     /// <p>Product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +159,10 @@ impl CreateLicenseVersionInputBuilder {
         self.product_name = input;
         self
     }
+    /// <p>Product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
+    }
     /// <p>License issuer.</p>
     pub fn issuer(mut self, input: crate::types::Issuer) -> Self {
         self.issuer = ::std::option::Option::Some(input);
@@ -161,6 +173,10 @@ impl CreateLicenseVersionInputBuilder {
         self.issuer = input;
         self
     }
+    /// <p>License issuer.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<crate::types::Issuer> {
+        &self.issuer
+    }
     /// <p>Home Region of the license.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -170,6 +186,10 @@ impl CreateLicenseVersionInputBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>Home Region of the license.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
@@ -183,6 +203,10 @@ impl CreateLicenseVersionInputBuilder {
     ) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
+        &self.validity
     }
     /// Appends an item to `license_metadata`.
     ///
@@ -203,6 +227,12 @@ impl CreateLicenseVersionInputBuilder {
         self.license_metadata = input;
         self
     }
+    /// <p>Information about the license.</p>
+    pub fn get_license_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.license_metadata
+    }
     /// Appends an item to `entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -222,6 +252,12 @@ impl CreateLicenseVersionInputBuilder {
         self.entitlements = input;
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        &self.entitlements
+    }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(
         mut self,
@@ -238,6 +274,12 @@ impl CreateLicenseVersionInputBuilder {
         self.consumption_configuration = input;
         self
     }
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    pub fn get_consumption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+        &self.consumption_configuration
+    }
     /// <p>License status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -248,6 +290,10 @@ impl CreateLicenseVersionInputBuilder {
         self.status = input;
         self
     }
+    /// <p>License status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseStatus> {
+        &self.status
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -257,6 +303,10 @@ impl CreateLicenseVersionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Current version of the license.</p>
     pub fn source_version(
@@ -273,6 +323,10 @@ impl CreateLicenseVersionInputBuilder {
     ) -> Self {
         self.source_version = input;
         self
+    }
+    /// <p>Current version of the license.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// Consumes the builder and constructs a [`CreateLicenseVersionInput`](crate::operation::create_license_version::CreateLicenseVersionInput).
     pub fn build(

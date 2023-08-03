@@ -48,6 +48,10 @@ impl FailedItemBuilder {
         self.uri = input;
         self
     }
+    /// <p>The univeral resource indicator (URI) of the resource that failed.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The reason the resource's association could not be updated.</p>
     pub fn reason(mut self, input: crate::types::FailedItemReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FailedItemBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason the resource's association could not be updated.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::FailedItemReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`FailedItem`](crate::types::FailedItem).
     pub fn build(self) -> crate::types::FailedItem {

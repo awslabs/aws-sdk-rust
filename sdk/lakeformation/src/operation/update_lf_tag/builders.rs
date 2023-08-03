@@ -36,6 +36,10 @@ impl UpdateLFTagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLFTag as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_lf_tag::builders::UpdateLfTagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateLFTagFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_key(input.into());
@@ -127,6 +135,10 @@ impl UpdateLFTagFluentBuilder {
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tag_key(input);
         self
+    }
+    /// <p>The key-name for the LF-tag for which to add or delete values.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tag_key()
     }
     /// Appends an item to `TagValuesToDelete`.
     ///
@@ -148,6 +160,12 @@ impl UpdateLFTagFluentBuilder {
         self.inner = self.inner.set_tag_values_to_delete(input);
         self
     }
+    /// <p>A list of LF-tag values to delete from the LF-tag.</p>
+    pub fn get_tag_values_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_values_to_delete()
+    }
     /// Appends an item to `TagValuesToAdd`.
     ///
     /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
@@ -167,5 +185,11 @@ impl UpdateLFTagFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_values_to_add(input);
         self
+    }
+    /// <p>A list of LF-tag values to add from the LF-tag.</p>
+    pub fn get_tag_values_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_values_to_add()
     }
 }

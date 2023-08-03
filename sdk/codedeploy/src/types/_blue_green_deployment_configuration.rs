@@ -72,6 +72,12 @@ impl BlueGreenDeploymentConfigurationBuilder {
         self.terminate_blue_instances_on_deployment_success = input;
         self
     }
+    /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
+    pub fn get_terminate_blue_instances_on_deployment_success(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlueInstanceTerminationOption> {
+        &self.terminate_blue_instances_on_deployment_success
+    }
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
     pub fn deployment_ready_option(mut self, input: crate::types::DeploymentReadyOption) -> Self {
         self.deployment_ready_option = ::std::option::Option::Some(input);
@@ -84,6 +90,12 @@ impl BlueGreenDeploymentConfigurationBuilder {
     ) -> Self {
         self.deployment_ready_option = input;
         self
+    }
+    /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
+    pub fn get_deployment_ready_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentReadyOption> {
+        &self.deployment_ready_option
     }
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
     pub fn green_fleet_provisioning_option(
@@ -100,6 +112,12 @@ impl BlueGreenDeploymentConfigurationBuilder {
     ) -> Self {
         self.green_fleet_provisioning_option = input;
         self
+    }
+    /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
+    pub fn get_green_fleet_provisioning_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::GreenFleetProvisioningOption> {
+        &self.green_fleet_provisioning_option
     }
     /// Consumes the builder and constructs a [`BlueGreenDeploymentConfiguration`](crate::types::BlueGreenDeploymentConfiguration).
     pub fn build(self) -> crate::types::BlueGreenDeploymentConfiguration {

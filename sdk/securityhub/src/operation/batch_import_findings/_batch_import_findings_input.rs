@@ -50,6 +50,12 @@ impl BatchImportFindingsInputBuilder {
         self.findings = input;
         self
     }
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    pub fn get_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
+        &self.findings
+    }
     /// Consumes the builder and constructs a [`BatchImportFindingsInput`](crate::operation::batch_import_findings::BatchImportFindingsInput).
     pub fn build(
         self,

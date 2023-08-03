@@ -60,6 +60,10 @@ impl UserPausedDetailsBuilder {
         self.job_expires_at = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
+    pub fn get_job_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_expires_at
+    }
     /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
     pub fn job_imminent_expiration_health_event_arn(
         mut self,
@@ -76,6 +80,12 @@ impl UserPausedDetailsBuilder {
         self.job_imminent_expiration_health_event_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
+    pub fn get_job_imminent_expiration_health_event_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.job_imminent_expiration_health_event_arn
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
     pub fn job_paused_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_paused_at = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl UserPausedDetailsBuilder {
     ) -> Self {
         self.job_paused_at = input;
         self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
+    pub fn get_job_paused_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_paused_at
     }
     /// Consumes the builder and constructs a [`UserPausedDetails`](crate::types::UserPausedDetails).
     pub fn build(self) -> crate::types::UserPausedDetails {

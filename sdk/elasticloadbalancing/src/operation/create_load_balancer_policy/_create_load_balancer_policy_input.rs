@@ -73,6 +73,10 @@ impl CreateLoadBalancerPolicyInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateLoadBalancerPolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
     pub fn policy_type_name(
@@ -98,6 +106,10 @@ impl CreateLoadBalancerPolicyInputBuilder {
     ) -> Self {
         self.policy_type_name = input;
         self
+    }
+    /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+    pub fn get_policy_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_type_name
     }
     /// Appends an item to `policy_attributes`.
     ///
@@ -117,6 +129,12 @@ impl CreateLoadBalancerPolicyInputBuilder {
     ) -> Self {
         self.policy_attributes = input;
         self
+    }
+    /// <p>The policy attributes.</p>
+    pub fn get_policy_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
+        &self.policy_attributes
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
     pub fn build(

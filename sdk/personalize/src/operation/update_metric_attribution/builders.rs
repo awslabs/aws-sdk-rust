@@ -37,6 +37,13 @@ impl UpdateMetricAttributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMetricAttribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,12 @@ impl UpdateMetricAttributionFluentBuilder {
         self.inner = self.inner.set_add_metrics(input);
         self
     }
+    /// <p>Add new metric attributes to the metric attribution.</p>
+    pub fn get_add_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+        self.inner.get_add_metrics()
+    }
     /// Appends an item to `removeMetrics`.
     ///
     /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).
@@ -154,6 +167,12 @@ impl UpdateMetricAttributionFluentBuilder {
         self.inner = self.inner.set_remove_metrics(input);
         self
     }
+    /// <p>Remove metric attributes from the metric attribution.</p>
+    pub fn get_remove_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_metrics()
+    }
     /// <p>An output config for the metric attribution.</p>
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
         self.inner = self.inner.metrics_output_config(input);
@@ -166,6 +185,12 @@ impl UpdateMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metrics_output_config(input);
         self
+    }
+    /// <p>An output config for the metric attribution.</p>
+    pub fn get_metrics_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+        self.inner.get_metrics_output_config()
     }
     /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
     pub fn metric_attribution_arn(
@@ -182,5 +207,9 @@ impl UpdateMetricAttributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_attribution_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
+    pub fn get_metric_attribution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_attribution_arn()
     }
 }

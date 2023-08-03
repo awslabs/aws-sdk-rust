@@ -120,6 +120,10 @@ impl UpdateDecoderManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the decoder manifest to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> A brief description of the decoder manifest to update. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl UpdateDecoderManifestInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A brief description of the decoder manifest to update. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `signal_decoders_to_add`.
     ///
@@ -149,6 +157,12 @@ impl UpdateDecoderManifestInputBuilder {
         self.signal_decoders_to_add = input;
         self
     }
+    /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
+    pub fn get_signal_decoders_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+        &self.signal_decoders_to_add
+    }
     /// Appends an item to `signal_decoders_to_update`.
     ///
     /// To override the contents of this collection use [`set_signal_decoders_to_update`](Self::set_signal_decoders_to_update).
@@ -167,6 +181,12 @@ impl UpdateDecoderManifestInputBuilder {
     ) -> Self {
         self.signal_decoders_to_update = input;
         self
+    }
+    /// <p> A list of updated information about decoding signals to update in the decoder manifest. </p>
+    pub fn get_signal_decoders_to_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+        &self.signal_decoders_to_update
     }
     /// Appends an item to `signal_decoders_to_remove`.
     ///
@@ -190,6 +210,12 @@ impl UpdateDecoderManifestInputBuilder {
         self.signal_decoders_to_remove = input;
         self
     }
+    /// <p> A list of signal decoders to remove from the decoder manifest. </p>
+    pub fn get_signal_decoders_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.signal_decoders_to_remove
+    }
     /// Appends an item to `network_interfaces_to_add`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces_to_add`](Self::set_network_interfaces_to_add).
@@ -209,6 +235,12 @@ impl UpdateDecoderManifestInputBuilder {
         self.network_interfaces_to_add = input;
         self
     }
+    /// <p> A list of information about the network interfaces to add to the decoder manifest. </p>
+    pub fn get_network_interfaces_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces_to_add
+    }
     /// Appends an item to `network_interfaces_to_update`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces_to_update`](Self::set_network_interfaces_to_update).
@@ -227,6 +259,12 @@ impl UpdateDecoderManifestInputBuilder {
     ) -> Self {
         self.network_interfaces_to_update = input;
         self
+    }
+    /// <p> A list of information about the network interfaces to update in the decoder manifest. </p>
+    pub fn get_network_interfaces_to_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces_to_update
     }
     /// Appends an item to `network_interfaces_to_remove`.
     ///
@@ -250,6 +288,12 @@ impl UpdateDecoderManifestInputBuilder {
         self.network_interfaces_to_remove = input;
         self
     }
+    /// <p> A list of network interfaces to remove from the decoder manifest.</p>
+    pub fn get_network_interfaces_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interfaces_to_remove
+    }
     /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is <code>DRAFT</code>, you can edit the decoder manifest. </p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -262,6 +306,10 @@ impl UpdateDecoderManifestInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is <code>DRAFT</code>, you can edit the decoder manifest. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateDecoderManifestInput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl RangedSocketAddressBuilder {
         self.name = input;
         self
     }
+    /// <p>IPv4 socket address.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Port range of a socket address.</p>
     pub fn port_range(mut self, input: crate::types::IntegerRange) -> Self {
         self.port_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RangedSocketAddressBuilder {
     ) -> Self {
         self.port_range = input;
         self
+    }
+    /// <p>Port range of a socket address.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::IntegerRange> {
+        &self.port_range
     }
     /// Consumes the builder and constructs a [`RangedSocketAddress`](crate::types::RangedSocketAddress).
     pub fn build(self) -> crate::types::RangedSocketAddress {

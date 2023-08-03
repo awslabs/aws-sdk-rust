@@ -46,6 +46,10 @@ impl StopBulkDeploymentInputBuilder {
         self.bulk_deployment_id = input;
         self
     }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_id
+    }
     /// Consumes the builder and constructs a [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
     pub fn build(
         self,

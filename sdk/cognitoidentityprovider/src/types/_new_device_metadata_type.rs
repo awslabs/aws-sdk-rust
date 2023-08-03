@@ -48,6 +48,10 @@ impl NewDeviceMetadataTypeBuilder {
         self.device_key = input;
         self
     }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
+    }
     /// <p>The device group key.</p>
     pub fn device_group_key(
         mut self,
@@ -63,6 +67,10 @@ impl NewDeviceMetadataTypeBuilder {
     ) -> Self {
         self.device_group_key = input;
         self
+    }
+    /// <p>The device group key.</p>
+    pub fn get_device_group_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_group_key
     }
     /// Consumes the builder and constructs a [`NewDeviceMetadataType`](crate::types::NewDeviceMetadataType).
     pub fn build(self) -> crate::types::NewDeviceMetadataType {

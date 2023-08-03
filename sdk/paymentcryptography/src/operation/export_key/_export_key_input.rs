@@ -50,6 +50,10 @@ impl ExportKeyInputBuilder {
         self.key_material = input;
         self
     }
+    /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
+    pub fn get_key_material(&self) -> &::std::option::Option<crate::types::ExportKeyMaterial> {
+        &self.key_material
+    }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub fn export_key_identifier(
         mut self,
@@ -65,6 +69,10 @@ impl ExportKeyInputBuilder {
     ) -> Self {
         self.export_key_identifier = input;
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
+    pub fn get_export_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_key_identifier
     }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
     pub fn build(

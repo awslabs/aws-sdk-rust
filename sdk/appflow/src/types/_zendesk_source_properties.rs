@@ -40,6 +40,10 @@ impl ZendeskSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Zendesk flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`ZendeskSourceProperties`](crate::types::ZendeskSourceProperties).
     pub fn build(self) -> crate::types::ZendeskSourceProperties {
         crate::types::ZendeskSourceProperties {

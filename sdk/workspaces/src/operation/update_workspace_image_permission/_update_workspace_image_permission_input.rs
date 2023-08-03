@@ -59,6 +59,10 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn allow_copy_image(mut self, input: bool) -> Self {
         self.allow_copy_image = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     pub fn set_allow_copy_image(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_copy_image = input;
         self
+    }
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    pub fn get_allow_copy_image(&self) -> &::std::option::Option<bool> {
+        &self.allow_copy_image
     }
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
@@ -88,6 +96,12 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     ) -> Self {
         self.shared_account_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
+    /// </important>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceImagePermissionInput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput).
     pub fn build(

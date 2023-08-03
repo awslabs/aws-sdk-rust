@@ -62,6 +62,10 @@ impl DeleteKxDatabaseInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the kdb database that you want to delete.</p>
     pub fn database_name(
         mut self,
@@ -78,6 +82,10 @@ impl DeleteKxDatabaseInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database that you want to delete.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl DeleteKxDatabaseInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteKxDatabaseInput`](crate::operation::delete_kx_database::DeleteKxDatabaseInput).
     pub fn build(

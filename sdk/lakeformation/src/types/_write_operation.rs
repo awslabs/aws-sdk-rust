@@ -51,6 +51,10 @@ impl WriteOperationBuilder {
         self.add_object = input;
         self
     }
+    /// <p>A new object to add to the governed table.</p>
+    pub fn get_add_object(&self) -> &::std::option::Option<crate::types::AddObjectInput> {
+        &self.add_object
+    }
     /// <p>An object to delete from the governed table.</p>
     pub fn delete_object(mut self, input: crate::types::DeleteObjectInput) -> Self {
         self.delete_object = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl WriteOperationBuilder {
     ) -> Self {
         self.delete_object = input;
         self
+    }
+    /// <p>An object to delete from the governed table.</p>
+    pub fn get_delete_object(&self) -> &::std::option::Option<crate::types::DeleteObjectInput> {
+        &self.delete_object
     }
     /// Consumes the builder and constructs a [`WriteOperation`](crate::types::WriteOperation).
     pub fn build(self) -> crate::types::WriteOperation {

@@ -94,6 +94,10 @@ impl GetSbomExportOutputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The report ID of the software bill of materials (SBOM) report.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// <p>The format of the software bill of materials (SBOM) report.</p>
     pub fn format(mut self, input: crate::types::SbomReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl GetSbomExportOutputBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the software bill of materials (SBOM) report.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::SbomReportFormat> {
+        &self.format
     }
     /// <p>The status of the software bill of materials (SBOM) report.</p>
     pub fn status(mut self, input: crate::types::ExternalReportStatus) -> Self {
@@ -120,6 +128,10 @@ impl GetSbomExportOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the software bill of materials (SBOM) report.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExternalReportStatus> {
+        &self.status
+    }
     /// <p>An error code.</p>
     pub fn error_code(mut self, input: crate::types::ReportingErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl GetSbomExportOutputBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ReportingErrorCode> {
+        &self.error_code
     }
     /// <p>An error message.</p>
     pub fn error_message(
@@ -149,6 +165,10 @@ impl GetSbomExportOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl GetSbomExportOutputBuilder {
         self.s3_destination = input;
         self
     }
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.s3_destination
+    }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     pub fn filter_criteria(mut self, input: crate::types::ResourceFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
@@ -174,6 +198,12 @@ impl GetSbomExportOutputBuilder {
     ) -> Self {
         self.filter_criteria = input;
         self
+    }
+    /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
+        &self.filter_criteria
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

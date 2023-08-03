@@ -80,6 +80,10 @@ impl BillingGroupCostReportElementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a billing group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
     pub fn aws_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_cost = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl BillingGroupCostReportElementBuilder {
     pub fn set_aws_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_cost = input;
         self
+    }
+    /// <p>The actual Amazon Web Services charges for the billing group.</p>
+    pub fn get_aws_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_cost
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
     pub fn proforma_cost(
@@ -106,6 +114,10 @@ impl BillingGroupCostReportElementBuilder {
         self.proforma_cost = input;
         self
     }
+    /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
+    pub fn get_proforma_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proforma_cost
+    }
     /// <p>The billing group margin.</p>
     pub fn margin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.margin = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl BillingGroupCostReportElementBuilder {
     pub fn set_margin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.margin = input;
         self
+    }
+    /// <p>The billing group margin.</p>
+    pub fn get_margin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.margin
     }
     /// <p>The percentage of billing group margin.</p>
     pub fn margin_percentage(
@@ -132,6 +148,10 @@ impl BillingGroupCostReportElementBuilder {
         self.margin_percentage = input;
         self
     }
+    /// <p>The percentage of billing group margin.</p>
+    pub fn get_margin_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.margin_percentage
+    }
     /// <p>The displayed currency.</p>
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl BillingGroupCostReportElementBuilder {
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>The displayed currency.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency
     }
     /// Consumes the builder and constructs a [`BillingGroupCostReportElement`](crate::types::BillingGroupCostReportElement).
     pub fn build(self) -> crate::types::BillingGroupCostReportElement {

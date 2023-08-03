@@ -121,6 +121,10 @@ impl PartitionBuilder {
         self.values = input;
         self
     }
+    /// <p>The values of the partition.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The name of the catalog database in which to create the partition.</p>
     pub fn database_name(
         mut self,
@@ -137,6 +141,10 @@ impl PartitionBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database in which to create the partition.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the database table in which to create the partition.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -146,6 +154,10 @@ impl PartitionBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the database table in which to create the partition.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The time at which the partition was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,6 +172,10 @@ impl PartitionBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the partition was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time at which the partition was accessed.</p>
     pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_access_time = ::std::option::Option::Some(input);
@@ -173,6 +189,10 @@ impl PartitionBuilder {
         self.last_access_time = input;
         self
     }
+    /// <p>The last time at which the partition was accessed.</p>
+    pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access_time
+    }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
         self.storage_descriptor = ::std::option::Option::Some(input);
@@ -185,6 +205,12 @@ impl PartitionBuilder {
     ) -> Self {
         self.storage_descriptor = input;
         self
+    }
+    /// <p>Provides information about the physical location where the partition is stored.</p>
+    pub fn get_storage_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageDescriptor> {
+        &self.storage_descriptor
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -211,6 +237,14 @@ impl PartitionBuilder {
         self.parameters = input;
         self
     }
+    /// <p>These key-value pairs define partition parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn last_analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_analyzed_time = ::std::option::Option::Some(input);
@@ -224,6 +258,10 @@ impl PartitionBuilder {
         self.last_analyzed_time = input;
         self
     }
+    /// <p>The last time at which column statistics were computed for this partition.</p>
+    pub fn get_last_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_time
+    }
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -233,6 +271,10 @@ impl PartitionBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
+    }
+    /// <p>The ID of the Data Catalog in which the partition resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// Consumes the builder and constructs a [`Partition`](crate::types::Partition).
     pub fn build(self) -> crate::types::Partition {

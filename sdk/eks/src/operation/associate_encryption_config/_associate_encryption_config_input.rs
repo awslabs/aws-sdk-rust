@@ -56,6 +56,10 @@ impl AssociateEncryptionConfigInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// Appends an item to `encryption_config`.
     ///
     /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
@@ -75,6 +79,12 @@ impl AssociateEncryptionConfigInputBuilder {
         self.encryption_config = input;
         self
     }
+    /// <p>The configuration you are using for encryption.</p>
+    pub fn get_encryption_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+        &self.encryption_config
+    }
     /// <p>The client request token you are using with the encryption configuration.</p>
     pub fn client_request_token(
         mut self,
@@ -90,6 +100,10 @@ impl AssociateEncryptionConfigInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The client request token you are using with the encryption configuration.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`AssociateEncryptionConfigInput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigInput).
     pub fn build(

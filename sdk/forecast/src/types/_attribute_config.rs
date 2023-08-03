@@ -95,6 +95,10 @@ impl AttributeConfigBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// Adds a key-value pair to `transformations`.
     ///
     /// To override the contents of this collection use [`set_transformations`](Self::set_transformations).
@@ -147,6 +151,28 @@ impl AttributeConfigBuilder {
     ) -> Self {
         self.transformations = input;
         self
+    }
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
+    /// <ul>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// </ul>
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
+    /// <ul>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// </ul>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    pub fn get_transformations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.transformations
     }
     /// Consumes the builder and constructs a [`AttributeConfig`](crate::types::AttributeConfig).
     pub fn build(self) -> crate::types::AttributeConfig {

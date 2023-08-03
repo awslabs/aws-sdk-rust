@@ -50,6 +50,12 @@ impl HumanLoopRequestSourceBuilder {
         self.aws_managed_human_loop_request_source = input;
         self
     }
+    /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
+    pub fn get_aws_managed_human_loop_request_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsManagedHumanLoopRequestSource> {
+        &self.aws_managed_human_loop_request_source
+    }
     /// Consumes the builder and constructs a [`HumanLoopRequestSource`](crate::types::HumanLoopRequestSource).
     pub fn build(self) -> crate::types::HumanLoopRequestSource {
         crate::types::HumanLoopRequestSource {

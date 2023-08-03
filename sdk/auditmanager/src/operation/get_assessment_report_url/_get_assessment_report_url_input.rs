@@ -55,6 +55,10 @@ impl GetAssessmentReportUrlInputBuilder {
         self.assessment_report_id = input;
         self
     }
+    /// <p> The unique identifier for the assessment report. </p>
+    pub fn get_assessment_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_report_id
+    }
     /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -70,6 +74,10 @@ impl GetAssessmentReportUrlInputBuilder {
     ) -> Self {
         self.assessment_id = input;
         self
+    }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// Consumes the builder and constructs a [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
     pub fn build(

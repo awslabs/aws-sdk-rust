@@ -80,6 +80,10 @@ impl ListHealthEventsInputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// <p>The time when a health event started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListHealthEventsInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time when a health event started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +114,10 @@ impl ListHealthEventsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl ListHealthEventsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of health event objects that you want to return with this call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl ListHealthEventsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of health event objects that you want to return with this call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The status of a health event.</p>
     pub fn event_status(mut self, input: crate::types::HealthEventStatus) -> Self {
@@ -138,6 +158,10 @@ impl ListHealthEventsInputBuilder {
     ) -> Self {
         self.event_status = input;
         self
+    }
+    /// <p>The status of a health event.</p>
+    pub fn get_event_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
+        &self.event_status
     }
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
     pub fn build(

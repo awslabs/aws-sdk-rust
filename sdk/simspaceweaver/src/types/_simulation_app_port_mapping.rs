@@ -48,6 +48,10 @@ impl SimulationAppPortMappingBuilder {
         self.declared = input;
         self
     }
+    /// <p>The TCP/UDP port number of the app, declared in the simulation schema. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. The source code for the app should bind to the <code>Declared</code> port.</p>
+    pub fn get_declared(&self) -> &::std::option::Option<i32> {
+        &self.declared
+    }
     /// <p>The TCP/UDP port number of the running app. SimSpace Weaver dynamically assigns this port number when the app starts. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. Clients connect to the app using the app's IP address and the <code>Actual</code> port number.</p>
     pub fn actual(mut self, input: i32) -> Self {
         self.actual = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SimulationAppPortMappingBuilder {
     pub fn set_actual(mut self, input: ::std::option::Option<i32>) -> Self {
         self.actual = input;
         self
+    }
+    /// <p>The TCP/UDP port number of the running app. SimSpace Weaver dynamically assigns this port number when the app starts. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. Clients connect to the app using the app's IP address and the <code>Actual</code> port number.</p>
+    pub fn get_actual(&self) -> &::std::option::Option<i32> {
+        &self.actual
     }
     /// Consumes the builder and constructs a [`SimulationAppPortMapping`](crate::types::SimulationAppPortMapping).
     pub fn build(self) -> crate::types::SimulationAppPortMapping {

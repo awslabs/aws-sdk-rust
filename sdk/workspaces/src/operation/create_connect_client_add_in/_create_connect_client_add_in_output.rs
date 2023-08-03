@@ -46,6 +46,10 @@ impl CreateConnectClientAddInOutputBuilder {
         self.add_in_id = input;
         self
     }
+    /// <p>The client add-in identifier.</p>
+    pub fn get_add_in_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.add_in_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

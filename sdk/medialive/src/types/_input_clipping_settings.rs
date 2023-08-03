@@ -61,6 +61,12 @@ impl InputClippingSettingsBuilder {
         self.input_timecode_source = input;
         self
     }
+    /// The source of the timecodes in the source being clipped.
+    pub fn get_input_timecode_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputTimecodeSource> {
+        &self.input_timecode_source
+    }
     /// Settings to identify the start of the clip.
     pub fn start_timecode(mut self, input: crate::types::StartTimecode) -> Self {
         self.start_timecode = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl InputClippingSettingsBuilder {
         self.start_timecode = input;
         self
     }
+    /// Settings to identify the start of the clip.
+    pub fn get_start_timecode(&self) -> &::std::option::Option<crate::types::StartTimecode> {
+        &self.start_timecode
+    }
     /// Settings to identify the end of the clip.
     pub fn stop_timecode(mut self, input: crate::types::StopTimecode) -> Self {
         self.stop_timecode = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl InputClippingSettingsBuilder {
     ) -> Self {
         self.stop_timecode = input;
         self
+    }
+    /// Settings to identify the end of the clip.
+    pub fn get_stop_timecode(&self) -> &::std::option::Option<crate::types::StopTimecode> {
+        &self.stop_timecode
     }
     /// Consumes the builder and constructs a [`InputClippingSettings`](crate::types::InputClippingSettings).
     pub fn build(self) -> crate::types::InputClippingSettings {

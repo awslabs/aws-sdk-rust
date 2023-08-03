@@ -36,6 +36,10 @@ impl ListEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEntities as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_entities::builders::ListEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_catalog(input);
         self
     }
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog()
+    }
     /// <p>The type of entities to retrieve.</p>
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_type(input.into());
@@ -138,6 +146,10 @@ impl ListEntitiesFluentBuilder {
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
+    }
+    /// <p>The type of entities to retrieve.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_type()
     }
     /// Appends an item to `FilterList`.
     ///
@@ -156,6 +168,10 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_filter_list(input);
         self
     }
+    /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
+    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filter_list()
+    }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.inner = self.inner.sort(input);
@@ -165,6 +181,10 @@ impl ListEntitiesFluentBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
+    }
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        self.inner.get_sort()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,6 +196,10 @@ impl ListEntitiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -185,6 +209,10 @@ impl ListEntitiesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn ownership_type(mut self, input: crate::types::OwnershipType) -> Self {
@@ -198,5 +226,9 @@ impl ListEntitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ownership_type(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_ownership_type(&self) -> &::std::option::Option<crate::types::OwnershipType> {
+        self.inner.get_ownership_type()
     }
 }

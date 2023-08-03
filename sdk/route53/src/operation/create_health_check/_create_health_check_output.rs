@@ -59,6 +59,10 @@ impl CreateHealthCheckOutputBuilder {
         self.health_check = input;
         self
     }
+    /// <p>A complex type that contains identifying information about the health check.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        &self.health_check
+    }
     /// <p>The unique URL representing the new health check.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl CreateHealthCheckOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The unique URL representing the new health check.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

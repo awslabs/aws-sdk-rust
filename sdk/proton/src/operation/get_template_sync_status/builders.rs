@@ -36,6 +36,13 @@ impl GetTemplateSyncStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTemplateSyncStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetTemplateSyncStatusFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.inner = self.inner.template_type(input);
@@ -144,6 +155,10 @@ impl GetTemplateSyncStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
+    }
+    /// <p>The template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        self.inner.get_template_type()
     }
     /// <p>The template major version.</p>
     pub fn template_version(
@@ -160,5 +175,9 @@ impl GetTemplateSyncStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_version(input);
         self
+    }
+    /// <p>The template major version.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_version()
     }
 }

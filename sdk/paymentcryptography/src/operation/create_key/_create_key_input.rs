@@ -89,6 +89,10 @@ impl CreateKeyInputBuilder {
         self.key_attributes = input;
         self
     }
+    /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
+    pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
+        &self.key_attributes
+    }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
     pub fn key_check_value_algorithm(
@@ -107,6 +111,13 @@ impl CreateKeyInputBuilder {
         self.key_check_value_algorithm = input;
         self
     }
+    /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
+    /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
+    pub fn get_key_check_value_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
+        &self.key_check_value_algorithm
+    }
     /// <p>Specifies whether the key is exportable from the service.</p>
     pub fn exportable(mut self, input: bool) -> Self {
         self.exportable = ::std::option::Option::Some(input);
@@ -117,6 +128,10 @@ impl CreateKeyInputBuilder {
         self.exportable = input;
         self
     }
+    /// <p>Specifies whether the key is exportable from the service.</p>
+    pub fn get_exportable(&self) -> &::std::option::Option<bool> {
+        &self.exportable
+    }
     /// <p>Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key not enabled, then it is created but not activated. The default value is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -126,6 +141,10 @@ impl CreateKeyInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key not enabled, then it is created but not activated. The default value is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `tags`.
     ///
@@ -155,6 +174,15 @@ impl CreateKeyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to attach to the key. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. </p>
+    /// <p>To use this parameter, you must have <code>TagResource</code> permission.</p> <important>
+    /// <p>Don't include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important> <note>
+    /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
     pub fn build(

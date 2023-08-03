@@ -80,6 +80,10 @@ impl SnapshotDetailsBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the snapshot.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description of the snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SnapshotDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `sections`.
     ///
@@ -115,6 +123,14 @@ impl SnapshotDetailsBuilder {
         self.sections = input;
         self
     }
+    /// <p>The sections in the snapshot.</p>
+    pub fn get_sections(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
+    > {
+        &self.sections
+    }
     /// <p>The timestamp of when the snapshot was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl SnapshotDetailsBuilder {
         self.created = input;
         self
     }
+    /// <p>The timestamp of when the snapshot was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The timestamp of when the snapshot was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl SnapshotDetailsBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The timestamp of when the snapshot was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).
     pub fn build(self) -> crate::types::SnapshotDetails {

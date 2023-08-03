@@ -36,6 +36,12 @@ impl UpdateResolverRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResolverRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resolver_rule::builders::UpdateResolverRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateResolverRuleFluentBuilder {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
     }
+    /// <p>The ID of the Resolver rule that you want to update.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_rule_id()
+    }
     /// <p>The new settings for the Resolver rule.</p>
     pub fn config(mut self, input: crate::types::ResolverRuleConfig) -> Self {
         self.inner = self.inner.config(input);
@@ -144,5 +154,9 @@ impl UpdateResolverRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_config(input);
         self
+    }
+    /// <p>The new settings for the Resolver rule.</p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::ResolverRuleConfig> {
+        self.inner.get_config()
     }
 }

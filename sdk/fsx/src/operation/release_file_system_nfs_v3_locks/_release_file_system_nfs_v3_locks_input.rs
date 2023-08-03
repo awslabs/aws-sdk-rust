@@ -53,6 +53,10 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -68,6 +72,10 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
     pub fn build(

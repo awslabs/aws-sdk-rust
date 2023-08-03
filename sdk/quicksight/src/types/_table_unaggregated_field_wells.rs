@@ -49,6 +49,12 @@ impl TableUnaggregatedFieldWellsBuilder {
         self.values = input;
         self
     }
+    /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`TableUnaggregatedFieldWells`](crate::types::TableUnaggregatedFieldWells).
     pub fn build(self) -> crate::types::TableUnaggregatedFieldWells {
         crate::types::TableUnaggregatedFieldWells {

@@ -62,6 +62,10 @@ impl MonitorDataSourceBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl MonitorDataSourceBuilder {
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
     pub fn predictor_arn(
@@ -87,6 +95,10 @@ impl MonitorDataSourceBuilder {
     ) -> Self {
         self.predictor_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
     }
     /// Consumes the builder and constructs a [`MonitorDataSource`](crate::types::MonitorDataSource).
     pub fn build(self) -> crate::types::MonitorDataSource {

@@ -64,6 +64,10 @@ impl DescribeGlobalTableSettingsOutputBuilder {
         self.global_table_name = input;
         self
     }
+    /// <p>The name of the global table.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
+    }
     /// Appends an item to `replica_settings`.
     ///
     /// To override the contents of this collection use [`set_replica_settings`](Self::set_replica_settings).
@@ -82,6 +86,12 @@ impl DescribeGlobalTableSettingsOutputBuilder {
     ) -> Self {
         self.replica_settings = input;
         self
+    }
+    /// <p>The Region-specific settings for the global table.</p>
+    pub fn get_replica_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>> {
+        &self.replica_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

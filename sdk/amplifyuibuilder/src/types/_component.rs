@@ -245,6 +245,10 @@ impl ComponentBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app associated with the component.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -261,6 +265,10 @@ impl ComponentBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -270,6 +278,10 @@ impl ComponentBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The unique ID of the component in its original source system, such as Figma.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// <p>The unique ID of the component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -281,6 +293,10 @@ impl ComponentBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the component.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -290,6 +306,10 @@ impl ComponentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
     pub fn component_type(
@@ -306,6 +326,10 @@ impl ComponentBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -332,6 +356,14 @@ impl ComponentBuilder {
         self.properties = input;
         self
     }
+    /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
+    > {
+        &self.properties
+    }
     /// Appends an item to `children`.
     ///
     /// To override the contents of this collection use [`set_children`](Self::set_children).
@@ -351,6 +383,12 @@ impl ComponentBuilder {
         self.children = input;
         self
     }
+    /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
+    pub fn get_children(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
+        &self.children
+    }
     /// Appends an item to `variants`.
     ///
     /// To override the contents of this collection use [`set_variants`](Self::set_variants).
@@ -369,6 +407,12 @@ impl ComponentBuilder {
     ) -> Self {
         self.variants = input;
         self
+    }
+    /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
+    pub fn get_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>> {
+        &self.variants
     }
     /// Adds a key-value pair to `overrides`.
     ///
@@ -397,6 +441,17 @@ impl ComponentBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        &self.overrides
     }
     /// Adds a key-value pair to `binding_properties`.
     ///
@@ -428,6 +483,18 @@ impl ComponentBuilder {
         self.binding_properties = input;
         self
     }
+    /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
+    /// <p></p>
+    pub fn get_binding_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentBindingPropertiesValue,
+        >,
+    > {
+        &self.binding_properties
+    }
     /// Adds a key-value pair to `collection_properties`.
     ///
     /// To override the contents of this collection use [`set_collection_properties`](Self::set_collection_properties).
@@ -456,6 +523,17 @@ impl ComponentBuilder {
         self.collection_properties = input;
         self
     }
+    /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
+    pub fn get_collection_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDataConfiguration,
+        >,
+    > {
+        &self.collection_properties
+    }
     /// <p>The time that the component was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -469,6 +547,10 @@ impl ComponentBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that the component was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time that the component was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -481,6 +563,10 @@ impl ComponentBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The time that the component was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -507,6 +593,14 @@ impl ComponentBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more key-value pairs to use when tagging the component.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Adds a key-value pair to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -532,6 +626,14 @@ impl ComponentBuilder {
         self.events = input;
         self
     }
+    /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
+    > {
+        &self.events
+    }
     /// <p>The schema version of the component when it was imported.</p>
     pub fn schema_version(
         mut self,
@@ -547,6 +649,10 @@ impl ComponentBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// <p>The schema version of the component when it was imported.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {

@@ -44,6 +44,10 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateEmbedUrlForAnonymousUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,10 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.session_lifetime_in_minutes(input);
@@ -124,6 +132,10 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
         self.inner = self.inner.set_session_lifetime_in_minutes(input);
         self
     }
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_session_lifetime_in_minutes()
+    }
     /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -133,6 +145,10 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
     /// Appends an item to `SessionTags`.
     ///
@@ -152,6 +168,13 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_tags(input);
         self
+    }
+    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_session_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
+        self.inner.get_session_tags()
     }
     /// Appends an item to `AuthorizedResourceArns`.
     ///
@@ -173,6 +196,12 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
         self.inner = self.inner.set_authorized_resource_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    pub fn get_authorized_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_authorized_resource_arns()
+    }
     /// <p>The configuration of the experience that you are embedding.</p>
     pub fn experience_configuration(
         mut self,
@@ -188,6 +217,12 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_experience_configuration(input);
         self
+    }
+    /// <p>The configuration of the experience that you are embedding.</p>
+    pub fn get_experience_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
+        self.inner.get_experience_configuration()
     }
     /// Appends an item to `AllowedDomains`.
     ///
@@ -210,5 +245,12 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_allowed_domains(input);
         self
+    }
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    pub fn get_allowed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_domains()
     }
 }

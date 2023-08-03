@@ -54,6 +54,12 @@ impl Scte35InputScheduleActionSettingsBuilder {
         self.input_attachment_name_reference = input;
         self
     }
+    /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
+    pub fn get_input_attachment_name_reference(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.input_attachment_name_reference
+    }
     /// Whether the SCTE-35 input should be the active input or a fixed input.
     pub fn mode(mut self, input: crate::types::Scte35InputMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl Scte35InputScheduleActionSettingsBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Scte35InputMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// Whether the SCTE-35 input should be the active input or a fixed input.
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::Scte35InputMode> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`Scte35InputScheduleActionSettings`](crate::types::Scte35InputScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35InputScheduleActionSettings {

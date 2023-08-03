@@ -37,6 +37,10 @@ impl UpdateTrafficDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrafficDistribution as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateTrafficDistributionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub fn telephony_config(mut self, input: crate::types::TelephonyConfig) -> Self {
         self.inner = self.inner.telephony_config(input);
@@ -139,5 +147,9 @@ impl UpdateTrafficDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_telephony_config(input);
         self
+    }
+    /// <p>The distribution of traffic between the instance and its replica(s).</p>
+    pub fn get_telephony_config(&self) -> &::std::option::Option<crate::types::TelephonyConfig> {
+        self.inner.get_telephony_config()
     }
 }

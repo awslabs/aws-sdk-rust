@@ -49,6 +49,10 @@ impl DescribeClusterOutputBuilder {
         self.cluster_info = input;
         self
     }
+    /// <p>The cluster information.</p>
+    pub fn get_cluster_info(&self) -> &::std::option::Option<crate::types::ClusterInfo> {
+        &self.cluster_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

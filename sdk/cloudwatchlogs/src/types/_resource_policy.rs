@@ -56,6 +56,10 @@ impl ResourcePolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the resource policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The details of the policy.</p>
     pub fn policy_document(
         mut self,
@@ -72,6 +76,10 @@ impl ResourcePolicyBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The details of the policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn last_updated_time(mut self, input: i64) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ResourcePolicyBuilder {
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {

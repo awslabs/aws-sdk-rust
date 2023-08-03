@@ -59,6 +59,12 @@ impl StartQueryPlanningInputBuilder {
         self.query_planning_context = input;
         self
     }
+    /// <p>A structure containing information about the query plan.</p>
+    pub fn get_query_planning_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryPlanningContext> {
+        &self.query_planning_context
+    }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl StartQueryPlanningInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
     pub fn build(

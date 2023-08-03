@@ -48,6 +48,10 @@ impl ElevationBuilder {
         self.value = input;
         self
     }
+    /// <p>Elevation angle value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>Elevation angle units.</p>
     pub fn unit(mut self, input: crate::types::AngleUnits) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ElevationBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::AngleUnits>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>Elevation angle units.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::AngleUnits> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Elevation`](crate::types::Elevation).
     pub fn build(self) -> crate::types::Elevation {

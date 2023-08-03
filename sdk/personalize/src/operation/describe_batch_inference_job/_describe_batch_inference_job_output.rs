@@ -49,6 +49,12 @@ impl DescribeBatchInferenceJobOutputBuilder {
         self.batch_inference_job = input;
         self
     }
+    /// <p>Information on the specified batch inference job.</p>
+    pub fn get_batch_inference_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchInferenceJob> {
+        &self.batch_inference_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

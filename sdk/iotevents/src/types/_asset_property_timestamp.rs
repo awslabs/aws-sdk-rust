@@ -62,6 +62,10 @@ impl AssetPropertyTimestampBuilder {
         self.time_in_seconds = input;
         self
     }
+    /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
+    pub fn get_time_in_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_in_seconds
+    }
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
     pub fn offset_in_nanos(
         mut self,
@@ -77,6 +81,10 @@ impl AssetPropertyTimestampBuilder {
     ) -> Self {
         self.offset_in_nanos = input;
         self
+    }
+    /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
+    pub fn get_offset_in_nanos(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offset_in_nanos
     }
     /// Consumes the builder and constructs a [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
     pub fn build(self) -> crate::types::AssetPropertyTimestamp {

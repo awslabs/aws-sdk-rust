@@ -36,6 +36,13 @@ impl DeregisterPackageVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterPackageVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner = self.inner.set_owner_account(input);
         self
     }
+    /// <p>An owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
     /// <p>A package ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_id(input.into());
@@ -141,6 +152,10 @@ impl DeregisterPackageVersionFluentBuilder {
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_id(input);
         self
+    }
+    /// <p>A package ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_id()
     }
     /// <p>A package version.</p>
     pub fn package_version(
@@ -158,6 +173,10 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner = self.inner.set_package_version(input);
         self
     }
+    /// <p>A package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_version()
+    }
     /// <p>A patch version.</p>
     pub fn patch_version(
         mut self,
@@ -174,6 +193,10 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner = self.inner.set_patch_version(input);
         self
     }
+    /// <p>A patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_version()
+    }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
     pub fn updated_latest_patch_version(
         mut self,
@@ -189,5 +212,11 @@ impl DeregisterPackageVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_updated_latest_patch_version(input);
         self
+    }
+    /// <p>If the version was marked latest, the new version to maker as latest.</p>
+    pub fn get_updated_latest_patch_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_updated_latest_patch_version()
     }
 }

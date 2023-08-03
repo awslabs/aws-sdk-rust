@@ -63,6 +63,12 @@ impl GetBucketIntelligentTieringConfigurationOutputBuilder {
         self.intelligent_tiering_configuration = input;
         self
     }
+    /// <p>Container for S3 Intelligent-Tiering configuration.</p>
+    pub fn get_intelligent_tiering_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntelligentTieringConfiguration> {
+        &self.intelligent_tiering_configuration
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

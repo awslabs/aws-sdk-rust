@@ -52,6 +52,10 @@ impl CreatePredictorOutputBuilder {
         self.predictor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

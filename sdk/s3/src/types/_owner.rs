@@ -88,6 +88,20 @@ impl OwnerBuilder {
         self.display_name = input;
         self
     }
+    /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>Container for the ID of the owner.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +111,10 @@ impl OwnerBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>Container for the ID of the owner.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`Owner`](crate::types::Owner).
     pub fn build(self) -> crate::types::Owner {

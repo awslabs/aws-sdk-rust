@@ -80,6 +80,10 @@ impl InputConfigurationBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>A brief description of the input.</p>
     pub fn input_description(
         mut self,
@@ -96,6 +100,10 @@ impl InputConfigurationBuilder {
         self.input_description = input;
         self
     }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_description
+    }
     /// <p>The ARN of the input.</p>
     pub fn input_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl InputConfigurationBuilder {
     pub fn set_input_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_arn = input;
         self
+    }
+    /// <p>The ARN of the input.</p>
+    pub fn get_input_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_arn
     }
     /// <p>The time the input was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +131,10 @@ impl InputConfigurationBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the input was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the input was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl InputConfigurationBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The last time the input was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
+    }
     /// <p>The status of the input.</p>
     pub fn status(mut self, input: crate::types::InputStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl InputConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InputStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the input.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InputStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     pub fn build(self) -> crate::types::InputConfiguration {

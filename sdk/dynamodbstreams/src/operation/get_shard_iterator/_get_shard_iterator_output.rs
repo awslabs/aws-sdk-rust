@@ -54,6 +54,10 @@ impl GetShardIteratorOutputBuilder {
         self.shard_iterator = input;
         self
     }
+    /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
+    pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_iterator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

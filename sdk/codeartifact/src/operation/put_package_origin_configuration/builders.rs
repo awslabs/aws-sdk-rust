@@ -38,6 +38,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPackageOriginConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -137,6 +145,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p>The name of the repository that contains the package.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +160,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p>The name of the repository that contains the package.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
     /// <p>A format that specifies the type of the package to be updated.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -157,6 +173,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>A format that specifies the type of the package to be updated.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        self.inner.get_format()
     }
     /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -180,6 +200,16 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the package to be updated.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
@@ -189,6 +219,10 @@ impl PutPackageOriginConfigurationFluentBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
+    }
+    /// <p>The name of the package to be updated.</p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
@@ -204,5 +238,12 @@ impl PutPackageOriginConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+    /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+    pub fn get_restrictions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
+        self.inner.get_restrictions()
     }
 }

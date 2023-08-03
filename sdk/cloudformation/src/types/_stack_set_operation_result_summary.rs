@@ -94,6 +94,10 @@ impl StackSetOperationResultSummaryBuilder {
         self.account = input;
         self
     }
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>The name of the Amazon Web Services Region for this operation result.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl StackSetOperationResultSummaryBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The name of the Amazon Web Services Region for this operation result.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The result status of the stack set operation for the given account in the given Region.</p>
     /// <ul>
@@ -131,6 +139,19 @@ impl StackSetOperationResultSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <ul>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed.</p> <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationResultStatus> {
+        &self.status
+    }
     /// <p>The reason for the assigned result status.</p>
     pub fn status_reason(
         mut self,
@@ -147,6 +168,10 @@ impl StackSetOperationResultSummaryBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the assigned result status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
     pub fn account_gate_result(mut self, input: crate::types::AccountGateResult) -> Self {
         self.account_gate_result = ::std::option::Option::Some(input);
@@ -159,6 +184,12 @@ impl StackSetOperationResultSummaryBuilder {
     ) -> Self {
         self.account_gate_result = input;
         self
+    }
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    pub fn get_account_gate_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountGateResult> {
+        &self.account_gate_result
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(
@@ -175,6 +206,10 @@ impl StackSetOperationResultSummaryBuilder {
     ) -> Self {
         self.organizational_unit_id = input;
         self
+    }
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
     }
     /// Consumes the builder and constructs a [`StackSetOperationResultSummary`](crate::types::StackSetOperationResultSummary).
     pub fn build(self) -> crate::types::StackSetOperationResultSummary {

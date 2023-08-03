@@ -40,6 +40,10 @@ impl CodeCommitRepositoryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CodeCommitRepository`](crate::types::CodeCommitRepository).
     pub fn build(self) -> crate::types::CodeCommitRepository {
         crate::types::CodeCommitRepository { name: self.name }

@@ -37,6 +37,12 @@ impl DisableSnapshotCopyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableSnapshotCopy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,10 @@ impl DisableSnapshotCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
+    /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

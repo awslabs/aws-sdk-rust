@@ -39,6 +39,10 @@ impl GetQueryResultsInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID number of the query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,

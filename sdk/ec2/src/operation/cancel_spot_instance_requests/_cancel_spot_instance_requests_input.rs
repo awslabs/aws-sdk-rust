@@ -49,6 +49,10 @@ impl CancelSpotInstanceRequestsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `spot_instance_request_ids`.
     ///
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
@@ -70,6 +74,12 @@ impl CancelSpotInstanceRequestsInputBuilder {
     ) -> Self {
         self.spot_instance_request_ids = input;
         self
+    }
+    /// <p>The IDs of the Spot Instance requests.</p>
+    pub fn get_spot_instance_request_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.spot_instance_request_ids
     }
     /// Consumes the builder and constructs a [`CancelSpotInstanceRequestsInput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput).
     pub fn build(

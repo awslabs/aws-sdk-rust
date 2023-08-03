@@ -54,6 +54,12 @@ impl BatchAssociateUserStackInputBuilder {
         self.user_stack_associations = input;
         self
     }
+    /// <p>The list of UserStackAssociation objects.</p>
+    pub fn get_user_stack_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
+        &self.user_stack_associations
+    }
     /// Consumes the builder and constructs a [`BatchAssociateUserStackInput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput).
     pub fn build(
         self,

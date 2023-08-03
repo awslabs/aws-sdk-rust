@@ -113,6 +113,14 @@ impl AccountDetailsBuilder {
         self.mail_type = input;
         self
     }
+    /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
+    /// </ul>
+    pub fn get_mail_type(&self) -> &::std::option::Option<crate::types::MailType> {
+        &self.mail_type
+    }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub fn website_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_url = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl AccountDetailsBuilder {
     pub fn set_website_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_url = input;
         self
+    }
+    /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
+    pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_url
     }
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
     pub fn contact_language(mut self, input: crate::types::ContactLanguage) -> Self {
@@ -135,6 +147,10 @@ impl AccountDetailsBuilder {
     ) -> Self {
         self.contact_language = input;
         self
+    }
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    pub fn get_contact_language(&self) -> &::std::option::Option<crate::types::ContactLanguage> {
+        &self.contact_language
     }
     /// <p>A description of the types of email that you plan to send.</p>
     pub fn use_case_description(
@@ -151,6 +167,10 @@ impl AccountDetailsBuilder {
     ) -> Self {
         self.use_case_description = input;
         self
+    }
+    /// <p>A description of the types of email that you plan to send.</p>
+    pub fn get_use_case_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case_description
     }
     /// Appends an item to `additional_contact_email_addresses`.
     ///
@@ -174,6 +194,12 @@ impl AccountDetailsBuilder {
         self.additional_contact_email_addresses = input;
         self
     }
+    /// <p>Additional email addresses where updates are sent about your account review process.</p>
+    pub fn get_additional_contact_email_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_contact_email_addresses
+    }
     /// <p>Information about the review of the latest details you submitted.</p>
     pub fn review_details(mut self, input: crate::types::ReviewDetails) -> Self {
         self.review_details = ::std::option::Option::Some(input);
@@ -186,6 +212,10 @@ impl AccountDetailsBuilder {
     ) -> Self {
         self.review_details = input;
         self
+    }
+    /// <p>Information about the review of the latest details you submitted.</p>
+    pub fn get_review_details(&self) -> &::std::option::Option<crate::types::ReviewDetails> {
+        &self.review_details
     }
     /// Consumes the builder and constructs a [`AccountDetails`](crate::types::AccountDetails).
     pub fn build(self) -> crate::types::AccountDetails {

@@ -45,6 +45,10 @@ impl ValueHolderBuilder {
         self.ion_text = input;
         self
     }
+    /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
+    pub fn get_ion_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ion_text
+    }
     /// Consumes the builder and constructs a [`ValueHolder`](crate::types::ValueHolder).
     pub fn build(self) -> crate::types::ValueHolder {
         crate::types::ValueHolder {

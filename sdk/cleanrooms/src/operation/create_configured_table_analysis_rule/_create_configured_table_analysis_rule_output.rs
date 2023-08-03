@@ -51,6 +51,12 @@ impl CreateConfiguredTableAnalysisRuleOutputBuilder {
         self.analysis_rule = input;
         self
     }
+    /// <p>The entire created analysis rule.</p>
+    pub fn get_analysis_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRule> {
+        &self.analysis_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

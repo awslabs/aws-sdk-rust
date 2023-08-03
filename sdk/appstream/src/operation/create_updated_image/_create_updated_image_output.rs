@@ -55,6 +55,10 @@ impl CreateUpdatedImageOutputBuilder {
         self.image = input;
         self
     }
+    /// <p>Describes an image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
+    }
     /// <p>Indicates whether a new image can be created.</p>
     pub fn can_update_image(mut self, input: bool) -> Self {
         self.can_update_image = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl CreateUpdatedImageOutputBuilder {
     pub fn set_can_update_image(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_update_image = input;
         self
+    }
+    /// <p>Indicates whether a new image can be created.</p>
+    pub fn get_can_update_image(&self) -> &::std::option::Option<bool> {
+        &self.can_update_image
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

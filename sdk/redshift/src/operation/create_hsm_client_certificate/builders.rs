@@ -37,6 +37,10 @@ impl CreateHsmClientCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHsmClientCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl CreateHsmClientCertificateFluentBuilder {
         self.inner = self.inner.set_hsm_client_certificate_identifier(input);
         self
     }
+    /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
+    pub fn get_hsm_client_certificate_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_client_certificate_identifier()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,5 +159,9 @@ impl CreateHsmClientCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

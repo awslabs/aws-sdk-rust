@@ -58,6 +58,12 @@ impl DescribeThumbnailsOutputBuilder {
         self.thumbnail_details = input;
         self
     }
+    /// Placeholder documentation for __listOfThumbnailDetail
+    pub fn get_thumbnail_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>> {
+        &self.thumbnail_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

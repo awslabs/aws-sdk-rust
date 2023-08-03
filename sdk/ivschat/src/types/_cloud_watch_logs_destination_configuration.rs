@@ -46,6 +46,10 @@ impl CloudWatchLogsDestinationConfigurationBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestinationConfiguration`](crate::types::CloudWatchLogsDestinationConfiguration).
     pub fn build(self) -> crate::types::CloudWatchLogsDestinationConfiguration {
         crate::types::CloudWatchLogsDestinationConfiguration {

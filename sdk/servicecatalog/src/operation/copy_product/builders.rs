@@ -38,6 +38,10 @@ impl CopyProductFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyProduct as a reference.
+    pub fn as_input(&self) -> &crate::operation::copy_product::builders::CopyProductInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,14 @@ impl CopyProductFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
     pub fn source_product_arn(
         mut self,
@@ -149,6 +161,10 @@ impl CopyProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_product_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source product.</p>
+    pub fn get_source_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_product_arn()
     }
     /// <p>The identifier of the target product. By default, a new product is created.</p>
     pub fn target_product_id(
@@ -166,6 +182,10 @@ impl CopyProductFluentBuilder {
         self.inner = self.inner.set_target_product_id(input);
         self
     }
+    /// <p>The identifier of the target product. By default, a new product is created.</p>
+    pub fn get_target_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_product_id()
+    }
     /// <p>A name for the target product. The default is the name of the source product.</p>
     pub fn target_product_name(
         mut self,
@@ -181,6 +201,10 @@ impl CopyProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_product_name(input);
         self
+    }
+    /// <p>A name for the target product. The default is the name of the source product.</p>
+    pub fn get_target_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_product_name()
     }
     /// Appends an item to `SourceProvisioningArtifactIdentifiers`.
     ///
@@ -214,6 +238,19 @@ impl CopyProductFluentBuilder {
             .set_source_provisioning_artifact_identifiers(input);
         self
     }
+    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
+    pub fn get_source_provisioning_artifact_identifiers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<
+                crate::types::ProvisioningArtifactPropertyName,
+                ::std::string::String,
+            >,
+        >,
+    > {
+        self.inner.get_source_provisioning_artifact_identifiers()
+    }
     /// Appends an item to `CopyOptions`.
     ///
     /// To override the contents of this collection use [`set_copy_options`](Self::set_copy_options).
@@ -231,6 +268,12 @@ impl CopyProductFluentBuilder {
         self.inner = self.inner.set_copy_options(input);
         self
     }
+    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
+    pub fn get_copy_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyOption>> {
+        self.inner.get_copy_options()
+    }
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn idempotency_token(
         mut self,
@@ -246,5 +289,9 @@ impl CopyProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

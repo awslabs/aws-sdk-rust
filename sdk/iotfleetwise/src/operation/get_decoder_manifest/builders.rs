@@ -36,6 +36,12 @@ impl GetDecoderManifestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDecoderManifest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetDecoderManifestFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The name of the decoder manifest to retrieve information about. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

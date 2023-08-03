@@ -45,6 +45,10 @@ impl StopAutoMlJobInputBuilder {
         self.auto_ml_job_name = input;
         self
     }
+    /// <p>The name of the object you are requesting.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_name
+    }
     /// Consumes the builder and constructs a [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
     pub fn build(
         self,

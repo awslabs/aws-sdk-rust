@@ -75,6 +75,10 @@ impl UpdateGatewayInformationInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl UpdateGatewayInformationInputBuilder {
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_name
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn gateway_timezone(
@@ -100,6 +108,10 @@ impl UpdateGatewayInformationInputBuilder {
     ) -> Self {
         self.gateway_timezone = input;
         self
+    }
+    /// <p>A value that indicates the time zone of the gateway.</p>
+    pub fn get_gateway_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_timezone
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
@@ -119,6 +131,11 @@ impl UpdateGatewayInformationInputBuilder {
         self.cloud_watch_log_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
+    }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub fn gateway_capacity(mut self, input: crate::types::GatewayCapacity) -> Self {
         self.gateway_capacity = ::std::option::Option::Some(input);
@@ -131,6 +148,10 @@ impl UpdateGatewayInformationInputBuilder {
     ) -> Self {
         self.gateway_capacity = input;
         self
+    }
+    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    pub fn get_gateway_capacity(&self) -> &::std::option::Option<crate::types::GatewayCapacity> {
+        &self.gateway_capacity
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
     pub fn build(

@@ -60,6 +60,10 @@ impl ListEventConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `event_configurations_list`.
     ///
     /// To override the contents of this collection use [`set_event_configurations_list`](Self::set_event_configurations_list).
@@ -81,6 +85,12 @@ impl ListEventConfigurationsOutputBuilder {
     ) -> Self {
         self.event_configurations_list = input;
         self
+    }
+    /// <p>Event configurations of all events for a single resource.</p>
+    pub fn get_event_configurations_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>> {
+        &self.event_configurations_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

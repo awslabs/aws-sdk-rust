@@ -43,6 +43,12 @@ impl ArchiveCdnSettingsBuilder {
         self.archive_s3_settings = input;
         self
     }
+    /// Archive S3 Settings
+    pub fn get_archive_s3_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArchiveS3Settings> {
+        &self.archive_s3_settings
+    }
     /// Consumes the builder and constructs a [`ArchiveCdnSettings`](crate::types::ArchiveCdnSettings).
     pub fn build(self) -> crate::types::ArchiveCdnSettings {
         crate::types::ArchiveCdnSettings {

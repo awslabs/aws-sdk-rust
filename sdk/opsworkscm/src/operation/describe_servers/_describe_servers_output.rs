@@ -87,6 +87,16 @@ impl DescribeServersOutputBuilder {
         self.servers = input;
         self
     }
+    /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
+    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
+    /// <ul>
+    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
+    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
+    /// </ul>
+    pub fn get_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Server>> {
+        &self.servers
+    }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl DescribeServersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

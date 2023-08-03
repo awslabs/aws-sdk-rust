@@ -74,6 +74,10 @@ impl GetAppLaunchConfigurationOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl GetAppLaunchConfigurationOutputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub fn auto_launch(mut self, input: bool) -> Self {
         self.auto_launch = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl GetAppLaunchConfigurationOutputBuilder {
     pub fn set_auto_launch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_launch = input;
         self
+    }
+    /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    pub fn get_auto_launch(&self) -> &::std::option::Option<bool> {
+        &self.auto_launch
     }
     /// Appends an item to `server_group_launch_configurations`.
     ///
@@ -115,6 +127,12 @@ impl GetAppLaunchConfigurationOutputBuilder {
     ) -> Self {
         self.server_group_launch_configurations = input;
         self
+    }
+    /// <p>The launch configurations for server groups in this application.</p>
+    pub fn get_server_group_launch_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
+        &self.server_group_launch_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

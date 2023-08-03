@@ -36,6 +36,13 @@ impl CancelSchemaExtensionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelSchemaExtension as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CancelSchemaExtensionFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory whose schema extension will be canceled.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The identifier of the schema extension that will be canceled.</p>
     pub fn schema_extension_id(
         mut self,
@@ -141,5 +152,9 @@ impl CancelSchemaExtensionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_extension_id(input);
         self
+    }
+    /// <p>The identifier of the schema extension that will be canceled.</p>
+    pub fn get_schema_extension_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_extension_id()
     }
 }

@@ -45,6 +45,10 @@ impl GetSipMediaApplicationLoggingConfigurationInputBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// Consumes the builder and constructs a [`GetSipMediaApplicationLoggingConfigurationInput`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

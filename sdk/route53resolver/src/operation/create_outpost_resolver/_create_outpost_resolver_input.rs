@@ -91,6 +91,11 @@ impl CreateOutpostResolverInputBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
+    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,6 +106,10 @@ impl CreateOutpostResolverInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -110,6 +119,10 @@ impl CreateOutpostResolverInputBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
     pub fn preferred_instance_type(
@@ -127,6 +140,10 @@ impl CreateOutpostResolverInputBuilder {
         self.preferred_instance_type = input;
         self
     }
+    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_instance_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -136,6 +153,10 @@ impl CreateOutpostResolverInputBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -155,6 +176,10 @@ impl CreateOutpostResolverInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
     pub fn build(

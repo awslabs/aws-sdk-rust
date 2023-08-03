@@ -57,6 +57,10 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Contains information about the calculation execution status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CalculationStatus> {
+        &self.status
+    }
     /// <p>Contains information about the DPU execution time and progress.</p>
     pub fn statistics(mut self, input: crate::types::CalculationStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetCalculationExecutionStatusOutputBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>Contains information about the DPU execution time and progress.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::CalculationStatistics> {
+        &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

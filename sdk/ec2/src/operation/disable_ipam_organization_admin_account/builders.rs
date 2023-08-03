@@ -36,6 +36,10 @@ impl DisableIpamOrganizationAdminAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableIpamOrganizationAdminAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisableIpamOrganizationAdminAccountFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
     pub fn delegated_admin_account_id(
         mut self,
@@ -115,5 +123,9 @@ impl DisableIpamOrganizationAdminAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delegated_admin_account_id(input);
         self
+    }
+    /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delegated_admin_account_id()
     }
 }

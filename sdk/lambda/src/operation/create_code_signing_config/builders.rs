@@ -37,6 +37,13 @@ impl CreateCodeSigningConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCodeSigningConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateCodeSigningConfigFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Descriptive name for this code signing configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Signing profiles for this code signing configuration.</p>
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
         self.inner = self.inner.allowed_publishers(input);
@@ -140,6 +151,12 @@ impl CreateCodeSigningConfigFluentBuilder {
         self.inner = self.inner.set_allowed_publishers(input);
         self
     }
+    /// <p>Signing profiles for this code signing configuration.</p>
+    pub fn get_allowed_publishers(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+        self.inner.get_allowed_publishers()
+    }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
         self.inner = self.inner.code_signing_policies(input);
@@ -152,5 +169,11 @@ impl CreateCodeSigningConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_signing_policies(input);
         self
+    }
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    pub fn get_code_signing_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+        self.inner.get_code_signing_policies()
     }
 }

@@ -72,6 +72,10 @@ impl GetApiKeysOutputBuilder {
         self.warnings = input;
         self
     }
+    /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warnings
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -91,6 +95,10 @@ impl GetApiKeysOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>The current page of elements from this collection.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKey>> {
+        &self.items
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl GetApiKeysOutputBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

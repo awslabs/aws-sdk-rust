@@ -51,6 +51,10 @@ impl ComparedSourceImageFaceBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>Bounding box of the face.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>Confidence level that the selected bounding box contains a face.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ComparedSourceImageFaceBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Confidence level that the selected bounding box contains a face.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`ComparedSourceImageFace`](crate::types::ComparedSourceImageFace).
     pub fn build(self) -> crate::types::ComparedSourceImageFace {

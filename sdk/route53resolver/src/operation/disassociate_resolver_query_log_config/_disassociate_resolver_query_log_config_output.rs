@@ -56,6 +56,12 @@ impl DisassociateResolverQueryLogConfigOutputBuilder {
         self.resolver_query_log_config_association = input;
         self
     }
+    /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
+    pub fn get_resolver_query_log_config_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
+        &self.resolver_query_log_config_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

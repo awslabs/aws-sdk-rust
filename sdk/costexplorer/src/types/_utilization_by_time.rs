@@ -60,6 +60,10 @@ impl UtilizationByTimeBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The period of time that this utilization was used for.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -79,6 +83,12 @@ impl UtilizationByTimeBuilder {
         self.groups = input;
         self
     }
+    /// <p>The groups that this utilization result uses.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>> {
+        &self.groups
+    }
     /// <p>The total number of reservation hours that were used.</p>
     pub fn total(mut self, input: crate::types::ReservationAggregates) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl UtilizationByTimeBuilder {
     ) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total number of reservation hours that were used.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::ReservationAggregates> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UtilizationByTime`](crate::types::UtilizationByTime).
     pub fn build(self) -> crate::types::UtilizationByTime {

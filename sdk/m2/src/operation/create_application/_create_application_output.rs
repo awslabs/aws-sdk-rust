@@ -69,6 +69,10 @@ impl CreateApplicationOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The unique application identifier.</p>
     pub fn application_id(
         mut self,
@@ -85,6 +89,10 @@ impl CreateApplicationOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The version number of the application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl CreateApplicationOutputBuilder {
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.application_version = input;
         self
+    }
+    /// <p>The version number of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

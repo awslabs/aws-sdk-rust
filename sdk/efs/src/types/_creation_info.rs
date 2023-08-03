@@ -59,6 +59,10 @@ impl CreationInfoBuilder {
         self.owner_uid = input;
         self
     }
+    /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    pub fn get_owner_uid(&self) -> &::std::option::Option<i64> {
+        &self.owner_uid
+    }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     pub fn owner_gid(mut self, input: i64) -> Self {
         self.owner_gid = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CreationInfoBuilder {
         self.owner_gid = input;
         self
     }
+    /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    pub fn get_owner_gid(&self) -> &::std::option::Option<i64> {
+        &self.owner_gid
+    }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permissions = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl CreationInfoBuilder {
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`CreationInfo`](crate::types::CreationInfo).
     pub fn build(self) -> crate::types::CreationInfo {

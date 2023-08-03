@@ -118,6 +118,10 @@ impl DescribeSchemaOutputBuilder {
         self.content = input;
         self
     }
+    /// <p>The source of the schema definition.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl DescribeSchemaOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that schema was modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +149,10 @@ impl DescribeSchemaOutputBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time that schema was modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The ARN of the schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -151,6 +163,10 @@ impl DescribeSchemaOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -160,6 +176,10 @@ impl DescribeSchemaOutputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The version number of the schema</p>
     pub fn schema_version(
@@ -176,6 +196,10 @@ impl DescribeSchemaOutputBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// <p>The version number of the schema</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -202,6 +226,14 @@ impl DescribeSchemaOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags associated with the resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The type of the schema.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -211,6 +243,10 @@ impl DescribeSchemaOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The date the schema version was created.</p>
     pub fn version_created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -224,6 +260,10 @@ impl DescribeSchemaOutputBuilder {
     ) -> Self {
         self.version_created_date = input;
         self
+    }
+    /// <p>The date the schema version was created.</p>
+    pub fn get_version_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.version_created_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

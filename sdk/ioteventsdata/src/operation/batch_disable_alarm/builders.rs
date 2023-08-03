@@ -36,6 +36,12 @@ impl BatchDisableAlarmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDisableAlarm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl BatchDisableAlarmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_disable_action_requests(input);
         self
+    }
+    /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_disable_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisableAlarmActionRequest>> {
+        self.inner.get_disable_action_requests()
     }
 }

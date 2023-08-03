@@ -89,6 +89,10 @@ impl DescribeAlarmsForMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The namespace of the metric.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl DescribeAlarmsForMetricInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the metric.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl DescribeAlarmsForMetricInputBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.statistic = input;
         self
+    }
+    /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        &self.statistic
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
     pub fn extended_statistic(
@@ -124,6 +136,10 @@ impl DescribeAlarmsForMetricInputBuilder {
     ) -> Self {
         self.extended_statistic = input;
         self
+    }
+    /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
+    pub fn get_extended_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extended_statistic
     }
     /// Appends an item to `dimensions`.
     ///
@@ -144,6 +160,12 @@ impl DescribeAlarmsForMetricInputBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
+    }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl DescribeAlarmsForMetricInputBuilder {
         self.period = input;
         self
     }
+    /// <p>The period, in seconds, over which the statistic is applied.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// <p>The unit for the metric.</p>
     pub fn unit(mut self, input: crate::types::StandardUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -163,6 +189,10 @@ impl DescribeAlarmsForMetricInputBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::StandardUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`DescribeAlarmsForMetricInput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput).
     pub fn build(

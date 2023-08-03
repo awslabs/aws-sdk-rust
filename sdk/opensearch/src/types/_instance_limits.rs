@@ -45,6 +45,12 @@ impl InstanceLimitsBuilder {
         self.instance_count_limits = input;
         self
     }
+    /// <p>Limits on the number of instances that can be created for a given instance type.</p>
+    pub fn get_instance_count_limits(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceCountLimits> {
+        &self.instance_count_limits
+    }
     /// Consumes the builder and constructs a [`InstanceLimits`](crate::types::InstanceLimits).
     pub fn build(self) -> crate::types::InstanceLimits {
         crate::types::InstanceLimits {

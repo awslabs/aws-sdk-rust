@@ -36,6 +36,10 @@ impl RunFleetAdvisorLsaAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RunFleetAdvisorLsaAnalysis as a reference.
+    pub fn as_input(&self) -> &crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

@@ -119,6 +119,10 @@ impl GetExtensionOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The extension name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl GetExtensionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The extension name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The extension version number.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -139,6 +147,10 @@ impl GetExtensionOutputBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The extension version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
+    }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl GetExtensionOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Information about the extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl GetExtensionOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Information about the extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `actions`.
     ///
@@ -187,6 +207,17 @@ impl GetExtensionOutputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions defined in the extension.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ActionPoint,
+            ::std::vec::Vec<crate::types::Action>,
+        >,
+    > {
+        &self.actions
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -211,6 +242,14 @@ impl GetExtensionOutputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
+    > {
+        &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

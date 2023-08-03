@@ -131,6 +131,12 @@ impl FiltersBuilder {
         self.text_locales = input;
         self
     }
+    /// <p>Filters by the locale of the content or comment.</p>
+    pub fn get_text_locales(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>> {
+        &self.text_locales
+    }
     /// Appends an item to `content_categories`.
     ///
     /// To override the contents of this collection use [`set_content_categories`](Self::set_content_categories).
@@ -149,6 +155,12 @@ impl FiltersBuilder {
     ) -> Self {
         self.content_categories = input;
         self
+    }
+    /// <p>Filters by content category.</p>
+    pub fn get_content_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>> {
+        &self.content_categories
     }
     /// Appends an item to `resource_types`.
     ///
@@ -169,6 +181,12 @@ impl FiltersBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>Filters based on entity type.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>> {
+        &self.resource_types
+    }
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -187,6 +205,10 @@ impl FiltersBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>Filter by labels using exact match.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Appends an item to `principals`.
     ///
@@ -207,6 +229,12 @@ impl FiltersBuilder {
         self.principals = input;
         self
     }
+    /// <p>Filter based on UserIds or GroupIds.</p>
+    pub fn get_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>> {
+        &self.principals
+    }
     /// Appends an item to `ancestor_ids`.
     ///
     /// To override the contents of this collection use [`set_ancestor_ids`](Self::set_ancestor_ids).
@@ -225,6 +253,12 @@ impl FiltersBuilder {
     ) -> Self {
         self.ancestor_ids = input;
         self
+    }
+    /// <p>Filter based on resource’s path.</p>
+    pub fn get_ancestor_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ancestor_ids
     }
     /// Appends an item to `search_collection_types`.
     ///
@@ -245,6 +279,12 @@ impl FiltersBuilder {
         self.search_collection_types = input;
         self
     }
+    /// <p>Filter based on file groupings.</p>
+    pub fn get_search_collection_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>> {
+        &self.search_collection_types
+    }
     /// <p>Filter based on size (in bytes).</p>
     pub fn size_range(mut self, input: crate::types::LongRangeType) -> Self {
         self.size_range = ::std::option::Option::Some(input);
@@ -257,6 +297,10 @@ impl FiltersBuilder {
     ) -> Self {
         self.size_range = input;
         self
+    }
+    /// <p>Filter based on size (in bytes).</p>
+    pub fn get_size_range(&self) -> &::std::option::Option<crate::types::LongRangeType> {
+        &self.size_range
     }
     /// <p>Filter based on resource’s creation timestamp.</p>
     pub fn created_range(mut self, input: crate::types::DateRangeType) -> Self {
@@ -271,6 +315,10 @@ impl FiltersBuilder {
         self.created_range = input;
         self
     }
+    /// <p>Filter based on resource’s creation timestamp.</p>
+    pub fn get_created_range(&self) -> &::std::option::Option<crate::types::DateRangeType> {
+        &self.created_range
+    }
     /// <p>Filter based on resource’s modified timestamp.</p>
     pub fn modified_range(mut self, input: crate::types::DateRangeType) -> Self {
         self.modified_range = ::std::option::Option::Some(input);
@@ -283,6 +331,10 @@ impl FiltersBuilder {
     ) -> Self {
         self.modified_range = input;
         self
+    }
+    /// <p>Filter based on resource’s modified timestamp.</p>
+    pub fn get_modified_range(&self) -> &::std::option::Option<crate::types::DateRangeType> {
+        &self.modified_range
     }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {

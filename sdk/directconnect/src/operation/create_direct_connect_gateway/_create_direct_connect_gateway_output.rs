@@ -51,6 +51,12 @@ impl CreateDirectConnectGatewayOutputBuilder {
         self.direct_connect_gateway = input;
         self
     }
+    /// <p>The Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGateway> {
+        &self.direct_connect_gateway
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -47,6 +47,10 @@ impl DeleteVirtualClusterOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

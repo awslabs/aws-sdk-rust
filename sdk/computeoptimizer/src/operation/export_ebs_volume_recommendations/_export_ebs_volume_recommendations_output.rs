@@ -58,6 +58,11 @@ impl ExportEbsVolumeRecommendationsOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identification number of the export job.</p>
+    /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -70,6 +75,10 @@ impl ExportEbsVolumeRecommendationsOutputBuilder {
     ) -> Self {
         self.s3_destination = input;
         self
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

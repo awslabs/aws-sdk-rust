@@ -56,6 +56,10 @@ impl StageSessionSummaryBuilder {
         self.session_id = input;
         self
     }
+    /// <p>ID of the session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl StageSessionSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p> ISO 8601 timestamp (returned as a string) when this stage session began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl StageSessionSummaryBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`StageSessionSummary`](crate::types::StageSessionSummary).
     pub fn build(self) -> crate::types::StageSessionSummary {

@@ -45,6 +45,12 @@ impl StopHyperParameterTuningJobInputBuilder {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
+    /// <p>The name of the tuning job to stop.</p>
+    pub fn get_hyper_parameter_tuning_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_name
+    }
     /// Consumes the builder and constructs a [`StopHyperParameterTuningJobInput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput).
     pub fn build(
         self,

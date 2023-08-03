@@ -36,6 +36,12 @@ impl UntagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_resource::builders::UntagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UntagResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `TagsToRemove`.
     ///
     /// To override the contents of this collection use [`set_tags_to_remove`](Self::set_tags_to_remove).
@@ -137,5 +147,11 @@ impl UntagResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_remove(input);
         self
+    }
+    /// <p>Tags to remove from this resource.</p>
+    pub fn get_tags_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tags_to_remove()
     }
 }

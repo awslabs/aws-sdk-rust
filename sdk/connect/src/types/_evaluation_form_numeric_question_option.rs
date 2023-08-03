@@ -64,6 +64,10 @@ impl EvaluationFormNumericQuestionOptionBuilder {
         self.min_value = input;
         self
     }
+    /// <p>The minimum answer value of the range option.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<i32> {
+        &self.min_value
+    }
     /// <p>The maximum answer value of the range option.</p>
     pub fn max_value(mut self, input: i32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
+    }
+    /// <p>The maximum answer value of the range option.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<i32> {
+        &self.max_value
     }
     /// <p>The score assigned to answer values within the range option.</p>
     pub fn score(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl EvaluationFormNumericQuestionOptionBuilder {
         self.score = input;
         self
     }
+    /// <p>The score assigned to answer values within the range option.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
+    }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
         self.automatic_fail = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormNumericQuestionOption {

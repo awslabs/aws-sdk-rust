@@ -64,6 +64,10 @@ impl DeleteWorkloadShareInputBuilder {
         self.share_id = input;
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteWorkloadShareInputBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -95,6 +103,13 @@ impl DeleteWorkloadShareInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteWorkloadShareInput`](crate::operation::delete_workload_share::DeleteWorkloadShareInput).
     pub fn build(

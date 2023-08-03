@@ -127,6 +127,10 @@ impl DescribeThingGroupOutputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The name of the thing group.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The thing group ID.</p>
     pub fn thing_group_id(
         mut self,
@@ -142,6 +146,10 @@ impl DescribeThingGroupOutputBuilder {
     ) -> Self {
         self.thing_group_id = input;
         self
+    }
+    /// <p>The thing group ID.</p>
+    pub fn get_thing_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_id
     }
     /// <p>The thing group ARN.</p>
     pub fn thing_group_arn(
@@ -159,6 +167,10 @@ impl DescribeThingGroupOutputBuilder {
         self.thing_group_arn = input;
         self
     }
+    /// <p>The thing group ARN.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
+    }
     /// <p>The version of the thing group.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -168,6 +180,10 @@ impl DescribeThingGroupOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the thing group.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
@@ -182,6 +198,12 @@ impl DescribeThingGroupOutputBuilder {
         self.thing_group_properties = input;
         self
     }
+    /// <p>The thing group properties.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        &self.thing_group_properties
+    }
     /// <p>Thing group metadata.</p>
     pub fn thing_group_metadata(mut self, input: crate::types::ThingGroupMetadata) -> Self {
         self.thing_group_metadata = ::std::option::Option::Some(input);
@@ -195,6 +217,12 @@ impl DescribeThingGroupOutputBuilder {
         self.thing_group_metadata = input;
         self
     }
+    /// <p>Thing group metadata.</p>
+    pub fn get_thing_group_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupMetadata> {
+        &self.thing_group_metadata
+    }
     /// <p>The dynamic thing group index name.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl DescribeThingGroupOutputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The dynamic thing group index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The dynamic thing group search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -214,6 +246,10 @@ impl DescribeThingGroupOutputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The dynamic thing group search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The dynamic thing group query version.</p>
     pub fn query_version(
@@ -231,6 +267,10 @@ impl DescribeThingGroupOutputBuilder {
         self.query_version = input;
         self
     }
+    /// <p>The dynamic thing group query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
+    }
     /// <p>The dynamic thing group status.</p>
     pub fn status(mut self, input: crate::types::DynamicGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -243,6 +283,10 @@ impl DescribeThingGroupOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The dynamic thing group status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DynamicGroupStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

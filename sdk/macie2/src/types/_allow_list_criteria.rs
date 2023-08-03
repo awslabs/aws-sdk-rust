@@ -48,6 +48,10 @@ impl AllowListCriteriaBuilder {
         self.regex = input;
         self
     }
+    /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex
+    }
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
     pub fn s3_words_list(mut self, input: crate::types::S3WordsList) -> Self {
         self.s3_words_list = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AllowListCriteriaBuilder {
     ) -> Self {
         self.s3_words_list = input;
         self
+    }
+    /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
+    pub fn get_s3_words_list(&self) -> &::std::option::Option<crate::types::S3WordsList> {
+        &self.s3_words_list
     }
     /// Consumes the builder and constructs a [`AllowListCriteria`](crate::types::AllowListCriteria).
     pub fn build(self) -> crate::types::AllowListCriteria {

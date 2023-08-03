@@ -64,6 +64,10 @@ impl DescribeClustersOutputBuilder {
         self.clusters = input;
         self
     }
+    /// <p>The list of clusters.</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.clusters
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -82,6 +86,10 @@ impl DescribeClustersOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

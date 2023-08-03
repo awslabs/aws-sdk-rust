@@ -45,6 +45,12 @@ impl DeleteRelationalDatabaseSnapshotInputBuilder {
         self.relational_database_snapshot_name = input;
         self
     }
+    /// <p>The name of the database snapshot that you are deleting.</p>
+    pub fn get_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_snapshot_name
+    }
     /// Consumes the builder and constructs a [`DeleteRelationalDatabaseSnapshotInput`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

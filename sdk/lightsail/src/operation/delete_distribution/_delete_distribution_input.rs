@@ -50,6 +50,11 @@ impl DeleteDistributionInputBuilder {
         self.distribution_name = input;
         self
     }
+    /// <p>The name of the distribution to delete.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_name
+    }
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
     pub fn build(
         self,

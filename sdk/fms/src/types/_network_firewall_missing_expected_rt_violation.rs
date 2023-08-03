@@ -78,6 +78,10 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
     pub fn vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>The resource ID of the VPC associated with a violating subnet.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc
     }
     /// <p>The Availability Zone of a violating subnet. </p>
     pub fn availability_zone(
@@ -104,6 +112,10 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of a violating subnet. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
     pub fn current_route_table(
         mut self,
@@ -120,6 +132,10 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
         self.current_route_table = input;
         self
     }
+    /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+    pub fn get_current_route_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_route_table
+    }
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
     pub fn expected_route_table(
         mut self,
@@ -135,6 +151,10 @@ impl NetworkFirewallMissingExpectedRtViolationBuilder {
     ) -> Self {
         self.expected_route_table = input;
         self
+    }
+    /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+    pub fn get_expected_route_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_route_table
     }
     /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRtViolation`](crate::types::NetworkFirewallMissingExpectedRtViolation).
     pub fn build(self) -> crate::types::NetworkFirewallMissingExpectedRtViolation {

@@ -38,6 +38,13 @@ impl BatchGetTokenBalanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetTokenBalance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +144,11 @@ impl BatchGetTokenBalanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_get_token_balance_inputs(input);
         self
+    }
+    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    pub fn get_get_token_balance_inputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
+        self.inner.get_get_token_balance_inputs()
     }
 }

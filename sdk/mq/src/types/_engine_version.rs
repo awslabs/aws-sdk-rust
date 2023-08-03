@@ -40,6 +40,10 @@ impl EngineVersionBuilder {
         self.name = input;
         self
     }
+    /// <p>Id for the version.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`EngineVersion`](crate::types::EngineVersion).
     pub fn build(self) -> crate::types::EngineVersion {
         crate::types::EngineVersion { name: self.name }

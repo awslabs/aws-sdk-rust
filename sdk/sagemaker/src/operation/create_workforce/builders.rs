@@ -39,6 +39,12 @@ impl CreateWorkforceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkforce as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workforce::builders::CreateWorkforceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl CreateWorkforceFluentBuilder {
         self.inner = self.inner.set_cognito_config(input);
         self
     }
+    /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
+    /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
+    pub fn get_cognito_config(&self) -> &::std::option::Option<crate::types::CognitoConfig> {
+        self.inner.get_cognito_config()
+    }
     /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
     /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
     pub fn oidc_config(mut self, input: crate::types::OidcConfig) -> Self {
@@ -149,6 +160,11 @@ impl CreateWorkforceFluentBuilder {
         self.inner = self.inner.set_oidc_config(input);
         self
     }
+    /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
+    /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
+    pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfig> {
+        self.inner.get_oidc_config()
+    }
     /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConfig) -> Self {
         self.inner = self.inner.source_ip_config(input);
@@ -161,6 +177,10 @@ impl CreateWorkforceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_ip_config(input);
         self
+    }
+    /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+    pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
+        self.inner.get_source_ip_config()
     }
     /// <p>The name of the private workforce.</p>
     pub fn workforce_name(
@@ -177,6 +197,10 @@ impl CreateWorkforceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workforce_name(input);
         self
+    }
+    /// <p>The name of the private workforce.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workforce_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -195,6 +219,10 @@ impl CreateWorkforceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
     pub fn workforce_vpc_config(mut self, input: crate::types::WorkforceVpcConfigRequest) -> Self {
         self.inner = self.inner.workforce_vpc_config(input);
@@ -207,5 +235,11 @@ impl CreateWorkforceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workforce_vpc_config(input);
         self
+    }
+    /// <p>Use this parameter to configure a workforce using VPC.</p>
+    pub fn get_workforce_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+        self.inner.get_workforce_vpc_config()
     }
 }

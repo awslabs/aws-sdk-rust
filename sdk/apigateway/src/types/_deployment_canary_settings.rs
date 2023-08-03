@@ -64,6 +64,10 @@ impl DeploymentCanarySettingsBuilder {
         self.percent_traffic = input;
         self
     }
+    /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
+    pub fn get_percent_traffic(&self) -> &::std::option::Option<f64> {
+        &self.percent_traffic
+    }
     /// Adds a key-value pair to `stage_variable_overrides`.
     ///
     /// To override the contents of this collection use [`set_stage_variable_overrides`](Self::set_stage_variable_overrides).
@@ -89,6 +93,14 @@ impl DeploymentCanarySettingsBuilder {
         self.stage_variable_overrides = input;
         self
     }
+    /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
+    pub fn get_stage_variable_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variable_overrides
+    }
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
     pub fn use_stage_cache(mut self, input: bool) -> Self {
         self.use_stage_cache = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl DeploymentCanarySettingsBuilder {
     pub fn set_use_stage_cache(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_stage_cache = input;
         self
+    }
+    /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
+    pub fn get_use_stage_cache(&self) -> &::std::option::Option<bool> {
+        &self.use_stage_cache
     }
     /// Consumes the builder and constructs a [`DeploymentCanarySettings`](crate::types::DeploymentCanarySettings).
     pub fn build(self) -> crate::types::DeploymentCanarySettings {

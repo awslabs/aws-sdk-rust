@@ -54,6 +54,10 @@ impl BatchDeleteScheduledActionInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `scheduled_action_names`.
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
@@ -75,6 +79,12 @@ impl BatchDeleteScheduledActionInputBuilder {
     ) -> Self {
         self.scheduled_action_names = input;
         self
+    }
+    /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
+    pub fn get_scheduled_action_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scheduled_action_names
     }
     /// Consumes the builder and constructs a [`BatchDeleteScheduledActionInput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput).
     pub fn build(

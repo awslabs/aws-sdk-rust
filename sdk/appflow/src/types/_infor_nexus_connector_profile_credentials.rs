@@ -78,6 +78,10 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p> The Access Key portion of the credentials. </p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p> The identifier for the user. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p> The identifier for the user. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p> The secret key used to sign requests. </p>
     pub fn secret_access_key(
@@ -104,6 +112,10 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         self.secret_access_key = input;
         self
     }
+    /// <p> The secret key used to sign requests. </p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
+    }
     /// <p> The encryption keys used to encrypt data. </p>
     pub fn datakey(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datakey = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     pub fn set_datakey(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datakey = input;
         self
+    }
+    /// <p> The encryption keys used to encrypt data. </p>
+    pub fn get_datakey(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datakey
     }
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileCredentials`](crate::types::InforNexusConnectorProfileCredentials).
     pub fn build(self) -> crate::types::InforNexusConnectorProfileCredentials {

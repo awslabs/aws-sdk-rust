@@ -40,6 +40,10 @@ impl OsReleaseBuilder {
         self.label = input;
         self
     }
+    /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// Consumes the builder and constructs a [`OsRelease`](crate::types::OsRelease).
     pub fn build(self) -> crate::types::OsRelease {
         crate::types::OsRelease { label: self.label }

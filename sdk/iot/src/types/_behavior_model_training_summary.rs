@@ -89,6 +89,10 @@ impl BehaviorModelTrainingSummaryBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p> The name of the security profile. </p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p> The name of the behavior. </p>
     pub fn behavior_name(
         mut self,
@@ -104,6 +108,10 @@ impl BehaviorModelTrainingSummaryBuilder {
     ) -> Self {
         self.behavior_name = input;
         self
+    }
+    /// <p> The name of the behavior. </p>
+    pub fn get_behavior_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.behavior_name
     }
     /// <p> The date a training model started collecting data. </p>
     pub fn training_data_collection_start_date(
@@ -121,6 +129,12 @@ impl BehaviorModelTrainingSummaryBuilder {
         self.training_data_collection_start_date = input;
         self
     }
+    /// <p> The date a training model started collecting data. </p>
+    pub fn get_training_data_collection_start_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_data_collection_start_date
+    }
     /// <p> The status of the behavior model. </p>
     pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
         self.model_status = ::std::option::Option::Some(input);
@@ -133,6 +147,10 @@ impl BehaviorModelTrainingSummaryBuilder {
     ) -> Self {
         self.model_status = input;
         self
+    }
+    /// <p> The status of the behavior model. </p>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.model_status
     }
     /// <p> The percentage of datapoints collected. </p>
     pub fn datapoints_collection_percentage(mut self, input: f64) -> Self {
@@ -147,6 +165,10 @@ impl BehaviorModelTrainingSummaryBuilder {
         self.datapoints_collection_percentage = input;
         self
     }
+    /// <p> The percentage of datapoints collected. </p>
+    pub fn get_datapoints_collection_percentage(&self) -> &::std::option::Option<f64> {
+        &self.datapoints_collection_percentage
+    }
     /// <p> The date the model was last refreshed. </p>
     pub fn last_model_refresh_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_model_refresh_date = ::std::option::Option::Some(input);
@@ -159,6 +181,12 @@ impl BehaviorModelTrainingSummaryBuilder {
     ) -> Self {
         self.last_model_refresh_date = input;
         self
+    }
+    /// <p> The date the model was last refreshed. </p>
+    pub fn get_last_model_refresh_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_model_refresh_date
     }
     /// Consumes the builder and constructs a [`BehaviorModelTrainingSummary`](crate::types::BehaviorModelTrainingSummary).
     pub fn build(self) -> crate::types::BehaviorModelTrainingSummary {

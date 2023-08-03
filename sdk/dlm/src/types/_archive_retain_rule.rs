@@ -45,6 +45,12 @@ impl ArchiveRetainRuleBuilder {
         self.retention_archive_tier = input;
         self
     }
+    /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+    pub fn get_retention_archive_tier(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionArchiveTier> {
+        &self.retention_archive_tier
+    }
     /// Consumes the builder and constructs a [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).
     pub fn build(self) -> crate::types::ArchiveRetainRule {
         crate::types::ArchiveRetainRule {

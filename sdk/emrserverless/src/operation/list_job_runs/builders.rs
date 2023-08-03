@@ -36,6 +36,10 @@ impl ListJobRunsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobRuns as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_job_runs::builders::ListJobRunsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListJobRunsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application for which to list the job run.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The token for the next set of job run results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +153,10 @@ impl ListJobRunsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of job run results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,6 +166,10 @@ impl ListJobRunsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of job runs that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
     pub fn created_at_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +184,10 @@ impl ListJobRunsFluentBuilder {
         self.inner = self.inner.set_created_at_after(input);
         self
     }
+    /// <p>The lower bound of the option to filter by creation date and time.</p>
+    pub fn get_created_at_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_at_after()
+    }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
     pub fn created_at_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_at_before(input);
@@ -180,6 +200,10 @@ impl ListJobRunsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_at_before(input);
         self
+    }
+    /// <p>The upper bound of the option to filter by creation date and time.</p>
+    pub fn get_created_at_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_at_before()
     }
     /// Appends an item to `states`.
     ///
@@ -197,5 +221,9 @@ impl ListJobRunsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_states(input);
         self
+    }
+    /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
+        self.inner.get_states()
     }
 }

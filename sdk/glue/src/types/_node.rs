@@ -80,6 +80,10 @@ impl NodeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of Glue component represented by the node.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NodeType> {
+        &self.r#type
+    }
     /// <p>The name of the Glue component represented by the node.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl NodeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Glue component represented by the node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique Id assigned to the node within the workflow.</p>
     pub fn unique_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl NodeBuilder {
     pub fn set_unique_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unique_id = input;
         self
+    }
+    /// <p>The unique Id assigned to the node within the workflow.</p>
+    pub fn get_unique_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unique_id
     }
     /// <p>Details of the Trigger when the node represents a Trigger.</p>
     pub fn trigger_details(mut self, input: crate::types::TriggerNodeDetails) -> Self {
@@ -113,6 +125,10 @@ impl NodeBuilder {
         self.trigger_details = input;
         self
     }
+    /// <p>Details of the Trigger when the node represents a Trigger.</p>
+    pub fn get_trigger_details(&self) -> &::std::option::Option<crate::types::TriggerNodeDetails> {
+        &self.trigger_details
+    }
     /// <p>Details of the Job when the node represents a Job.</p>
     pub fn job_details(mut self, input: crate::types::JobNodeDetails) -> Self {
         self.job_details = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl NodeBuilder {
         self.job_details = input;
         self
     }
+    /// <p>Details of the Job when the node represents a Job.</p>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobNodeDetails> {
+        &self.job_details
+    }
     /// <p>Details of the crawler when the node represents a crawler.</p>
     pub fn crawler_details(mut self, input: crate::types::CrawlerNodeDetails) -> Self {
         self.crawler_details = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl NodeBuilder {
     ) -> Self {
         self.crawler_details = input;
         self
+    }
+    /// <p>Details of the crawler when the node represents a crawler.</p>
+    pub fn get_crawler_details(&self) -> &::std::option::Option<crate::types::CrawlerNodeDetails> {
+        &self.crawler_details
     }
     /// Consumes the builder and constructs a [`Node`](crate::types::Node).
     pub fn build(self) -> crate::types::Node {

@@ -47,6 +47,10 @@ impl DeleteMonitoringScheduleInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the monitoring schedule to delete.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// Consumes the builder and constructs a [`DeleteMonitoringScheduleInput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput).
     pub fn build(
         self,

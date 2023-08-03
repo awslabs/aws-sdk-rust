@@ -66,6 +66,10 @@ impl AnomalyGroupStatisticsBuilder {
         self.evaluation_start_date = input;
         self
     }
+    /// <p>The start of the time range that was searched.</p>
+    pub fn get_evaluation_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_start_date
+    }
     /// <p>The number of groups found.</p>
     pub fn total_count(mut self, input: i32) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AnomalyGroupStatisticsBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The number of groups found.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
     }
     /// Appends an item to `itemized_metric_stats_list`.
     ///
@@ -94,6 +102,12 @@ impl AnomalyGroupStatisticsBuilder {
     ) -> Self {
         self.itemized_metric_stats_list = input;
         self
+    }
+    /// <p>Statistics for individual metrics within the group.</p>
+    pub fn get_itemized_metric_stats_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>> {
+        &self.itemized_metric_stats_list
     }
     /// Consumes the builder and constructs a [`AnomalyGroupStatistics`](crate::types::AnomalyGroupStatistics).
     pub fn build(self) -> crate::types::AnomalyGroupStatistics {

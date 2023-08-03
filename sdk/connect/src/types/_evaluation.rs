@@ -150,6 +150,10 @@ impl EvaluationBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_arn(
         mut self,
@@ -166,6 +170,10 @@ impl EvaluationBuilder {
         self.evaluation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_arn
+    }
     /// <p>Metadata about the contact evaluation.</p>
     pub fn metadata(mut self, input: crate::types::EvaluationMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -178,6 +186,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata about the contact evaluation.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::EvaluationMetadata> {
+        &self.metadata
     }
     /// Adds a key-value pair to `answers`.
     ///
@@ -207,6 +219,14 @@ impl EvaluationBuilder {
         self.answers = input;
         self
     }
+    /// <p>A map of question identifiers to answer value.</p>
+    pub fn get_answers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput>,
+    > {
+        &self.answers
+    }
     /// Adds a key-value pair to `notes`.
     ///
     /// To override the contents of this collection use [`set_notes`](Self::set_notes).
@@ -232,6 +252,14 @@ impl EvaluationBuilder {
         self.notes = input;
         self
     }
+    /// <p>A map of question identifiers to note value.</p>
+    pub fn get_notes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
+    > {
+        &self.notes
+    }
     /// <p>The status of the contact evaluation.</p>
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -244,6 +272,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the contact evaluation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `scores`.
     ///
@@ -270,6 +302,14 @@ impl EvaluationBuilder {
         self.scores = input;
         self
     }
+    /// <p>A map of item (section or question) identifiers to score value.</p>
+    pub fn get_scores(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationScore>,
+    > {
+        &self.scores
+    }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -283,6 +323,10 @@ impl EvaluationBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the evaluation was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -295,6 +339,10 @@ impl EvaluationBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp for when the evaluation was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -320,6 +368,14 @@ impl EvaluationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     pub fn build(self) -> crate::types::Evaluation {

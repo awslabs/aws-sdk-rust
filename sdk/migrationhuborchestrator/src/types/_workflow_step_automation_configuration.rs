@@ -80,6 +80,10 @@ impl WorkflowStepAutomationConfigurationBuilder {
         self.script_location_s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket where the script is located.</p>
+    pub fn get_script_location_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_location_s3_bucket
+    }
     /// <p>The Amazon S3 key for the script location.</p>
     pub fn script_location_s3_key(mut self, input: crate::types::PlatformScriptKey) -> Self {
         self.script_location_s3_key = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl WorkflowStepAutomationConfigurationBuilder {
     ) -> Self {
         self.script_location_s3_key = input;
         self
+    }
+    /// <p>The Amazon S3 key for the script location.</p>
+    pub fn get_script_location_s3_key(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlatformScriptKey> {
+        &self.script_location_s3_key
     }
     /// <p>The command required to run the script.</p>
     pub fn command(mut self, input: crate::types::PlatformCommand) -> Self {
@@ -106,6 +116,10 @@ impl WorkflowStepAutomationConfigurationBuilder {
         self.command = input;
         self
     }
+    /// <p>The command required to run the script.</p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::PlatformCommand> {
+        &self.command
+    }
     /// <p>The source or target environment.</p>
     pub fn run_environment(mut self, input: crate::types::RunEnvironment) -> Self {
         self.run_environment = ::std::option::Option::Some(input);
@@ -119,6 +133,10 @@ impl WorkflowStepAutomationConfigurationBuilder {
         self.run_environment = input;
         self
     }
+    /// <p>The source or target environment.</p>
+    pub fn get_run_environment(&self) -> &::std::option::Option<crate::types::RunEnvironment> {
+        &self.run_environment
+    }
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl WorkflowStepAutomationConfigurationBuilder {
     ) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>The servers on which to run the script.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
     }
     /// Consumes the builder and constructs a [`WorkflowStepAutomationConfiguration`](crate::types::WorkflowStepAutomationConfiguration).
     pub fn build(self) -> crate::types::WorkflowStepAutomationConfiguration {

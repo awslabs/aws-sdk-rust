@@ -56,6 +56,10 @@ impl ListGeoMatchSetsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `geo_match_sets`.
     ///
     /// To override the contents of this collection use [`set_geo_match_sets`](Self::set_geo_match_sets).
@@ -74,6 +78,12 @@ impl ListGeoMatchSetsOutputBuilder {
     ) -> Self {
         self.geo_match_sets = input;
         self
+    }
+    /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
+    pub fn get_geo_match_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetSummary>> {
+        &self.geo_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

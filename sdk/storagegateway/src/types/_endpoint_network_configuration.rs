@@ -57,6 +57,14 @@ impl EndpointNetworkConfigurationBuilder {
         self.ip_addresses = input;
         self
     }
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+    /// </note>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_addresses
+    }
     /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).
     pub fn build(self) -> crate::types::EndpointNetworkConfiguration {
         crate::types::EndpointNetworkConfiguration {

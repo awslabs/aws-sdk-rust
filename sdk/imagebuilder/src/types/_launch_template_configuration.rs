@@ -62,6 +62,10 @@ impl LaunchTemplateConfigurationBuilder {
         self.launch_template_id = input;
         self
     }
+    /// <p>Identifies the Amazon EC2 launch template to use.</p>
+    pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_id
+    }
     /// <p>The account ID that this configuration applies to.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl LaunchTemplateConfigurationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID that this configuration applies to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
     pub fn set_default_version(mut self, input: bool) -> Self {
         self.set_default_version = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl LaunchTemplateConfigurationBuilder {
     pub fn set_set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_default_version = input;
         self
+    }
+    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    pub fn get_set_default_version(&self) -> &::std::option::Option<bool> {
+        &self.set_default_version
     }
     /// Consumes the builder and constructs a [`LaunchTemplateConfiguration`](crate::types::LaunchTemplateConfiguration).
     pub fn build(self) -> crate::types::LaunchTemplateConfiguration {

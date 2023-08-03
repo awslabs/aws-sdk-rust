@@ -66,6 +66,10 @@ impl ListFileSystemAssociationsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListFileSystemAssociationsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Appends an item to `file_system_association_summary_list`.
     ///
@@ -99,6 +107,12 @@ impl ListFileSystemAssociationsOutputBuilder {
     ) -> Self {
         self.file_system_association_summary_list = input;
         self
+    }
+    /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
+    pub fn get_file_system_association_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>> {
+        &self.file_system_association_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

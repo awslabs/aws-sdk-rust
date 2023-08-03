@@ -68,6 +68,10 @@ impl CodeContentDescriptionBuilder {
         self.text_content = input;
         self
     }
+    /// <p>The text-format code</p>
+    pub fn get_text_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_content
+    }
     /// <p>The checksum that can be used to validate zip-format code.</p>
     pub fn code_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_md5 = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CodeContentDescriptionBuilder {
         self.code_md5 = input;
         self
     }
+    /// <p>The checksum that can be used to validate zip-format code.</p>
+    pub fn get_code_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_md5
+    }
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
     pub fn code_size(mut self, input: i64) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl CodeContentDescriptionBuilder {
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size = input;
         self
+    }
+    /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i64> {
+        &self.code_size
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
     pub fn s3_application_code_location_description(
@@ -103,6 +115,12 @@ impl CodeContentDescriptionBuilder {
     ) -> Self {
         self.s3_application_code_location_description = input;
         self
+    }
+    /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
+    pub fn get_s3_application_code_location_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ApplicationCodeLocationDescription> {
+        &self.s3_application_code_location_description
     }
     /// Consumes the builder and constructs a [`CodeContentDescription`](crate::types::CodeContentDescription).
     pub fn build(self) -> crate::types::CodeContentDescription {

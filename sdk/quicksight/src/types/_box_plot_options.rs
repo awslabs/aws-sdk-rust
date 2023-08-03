@@ -59,6 +59,10 @@ impl BoxPlotOptionsBuilder {
         self.style_options = input;
         self
     }
+    /// <p>The style options of the box plot.</p>
+    pub fn get_style_options(&self) -> &::std::option::Option<crate::types::BoxPlotStyleOptions> {
+        &self.style_options
+    }
     /// <p>Determines the visibility of the outlier in a box plot.</p>
     pub fn outlier_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.outlier_visibility = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl BoxPlotOptionsBuilder {
         self.outlier_visibility = input;
         self
     }
+    /// <p>Determines the visibility of the outlier in a box plot.</p>
+    pub fn get_outlier_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.outlier_visibility
+    }
     /// <p>Determines the visibility of all data points of the box plot.</p>
     pub fn all_data_points_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.all_data_points_visibility = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl BoxPlotOptionsBuilder {
     ) -> Self {
         self.all_data_points_visibility = input;
         self
+    }
+    /// <p>Determines the visibility of all data points of the box plot.</p>
+    pub fn get_all_data_points_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::Visibility> {
+        &self.all_data_points_visibility
     }
     /// Consumes the builder and constructs a [`BoxPlotOptions`](crate::types::BoxPlotOptions).
     pub fn build(self) -> crate::types::BoxPlotOptions {

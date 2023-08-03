@@ -56,6 +56,10 @@ impl PackageVersionOutputConfigBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The output's package name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The output's package version.</p>
     pub fn package_version(
         mut self,
@@ -72,6 +76,10 @@ impl PackageVersionOutputConfigBuilder {
         self.package_version = input;
         self
     }
+    /// <p>The output's package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn mark_latest(mut self, input: bool) -> Self {
         self.mark_latest = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl PackageVersionOutputConfigBuilder {
     pub fn set_mark_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mark_latest = input;
         self
+    }
+    /// <p>Indicates that the version is recommended for all users.</p>
+    pub fn get_mark_latest(&self) -> &::std::option::Option<bool> {
+        &self.mark_latest
     }
     /// Consumes the builder and constructs a [`PackageVersionOutputConfig`](crate::types::PackageVersionOutputConfig).
     pub fn build(self) -> crate::types::PackageVersionOutputConfig {

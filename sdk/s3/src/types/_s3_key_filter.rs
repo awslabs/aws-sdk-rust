@@ -49,6 +49,12 @@ impl S3KeyFilterBuilder {
         self.filter_rules = input;
         self
     }
+    /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
+    pub fn get_filter_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        &self.filter_rules
+    }
     /// Consumes the builder and constructs a [`S3KeyFilter`](crate::types::S3KeyFilter).
     pub fn build(self) -> crate::types::S3KeyFilter {
         crate::types::S3KeyFilter {

@@ -70,6 +70,11 @@ impl ListSecretVersionIdsInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN or name of the secret whose versions you want to list.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecretVersionIds</code> again with the value from <code>NextToken</code>. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,6 +87,11 @@ impl ListSecretVersionIdsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of results to include in the response.</p>
+    /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecretVersionIds</code> again with the value from <code>NextToken</code>. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecretVersionIds</code> again with this value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ListSecretVersionIdsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecretVersionIds</code> again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default, versions without staging labels aren't included.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
         self.include_deprecated = ::std::option::Option::Some(input);
@@ -101,6 +115,10 @@ impl ListSecretVersionIdsInputBuilder {
     pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deprecated = input;
         self
+    }
+    /// <p>Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default, versions without staging labels aren't included.</p>
+    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
+        &self.include_deprecated
     }
     /// Consumes the builder and constructs a [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIpamDiscoveredAccounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>A resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
         mut self,
@@ -151,6 +159,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
+    /// <p>A resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_resource_discovery_id()
+    }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
     pub fn discovery_region(
         mut self,
@@ -166,6 +178,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_discovery_region(input);
         self
+    }
+    /// <p>The Amazon Web Services Region that the account information is returned from.</p>
+    pub fn get_discovery_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discovery_region()
     }
     /// Appends an item to `Filters`.
     ///
@@ -184,6 +200,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Discovered account filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -194,6 +214,10 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of discovered accounts to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -203,5 +227,9 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of discovered accounts to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

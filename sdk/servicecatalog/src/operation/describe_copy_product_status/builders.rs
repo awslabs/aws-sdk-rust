@@ -36,6 +36,10 @@ impl DescribeCopyProductStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCopyProductStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,14 @@ impl DescribeCopyProductStatusFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
     pub fn copy_product_token(
         mut self,
@@ -155,5 +167,9 @@ impl DescribeCopyProductStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_copy_product_token(input);
         self
+    }
+    /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
+    pub fn get_copy_product_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_product_token()
     }
 }

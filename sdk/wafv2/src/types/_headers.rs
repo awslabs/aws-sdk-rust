@@ -82,6 +82,12 @@ impl HeadersBuilder {
         self.match_pattern = input;
         self
     }
+    /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
+    /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code> </p>
+    pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::HeaderMatchPattern> {
+        &self.match_pattern
+    }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     pub fn match_scope(mut self, input: crate::types::MapMatchScope) -> Self {
         self.match_scope = ::std::option::Option::Some(input);
@@ -94,6 +100,10 @@ impl HeadersBuilder {
     ) -> Self {
         self.match_scope = input;
         self
+    }
+    /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
+    pub fn get_match_scope(&self) -> &::std::option::Option<crate::types::MapMatchScope> {
+        &self.match_scope
     }
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
@@ -119,6 +129,16 @@ impl HeadersBuilder {
     ) -> Self {
         self.oversize_handling = input;
         self
+    }
+    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
+    /// <p>The options for oversize handling are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available headers normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
+    /// </ul>
+    pub fn get_oversize_handling(&self) -> &::std::option::Option<crate::types::OversizeHandling> {
+        &self.oversize_handling
     }
     /// Consumes the builder and constructs a [`Headers`](crate::types::Headers).
     pub fn build(self) -> crate::types::Headers {

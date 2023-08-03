@@ -58,6 +58,10 @@ impl ShadowModeConfigBuilder {
         self.source_model_variant_name = input;
         self
     }
+    /// <p> The name of the production variant, which takes all the inference requests. </p>
+    pub fn get_source_model_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_model_variant_name
+    }
     /// Appends an item to `shadow_model_variants`.
     ///
     /// To override the contents of this collection use [`set_shadow_model_variants`](Self::set_shadow_model_variants).
@@ -76,6 +80,12 @@ impl ShadowModeConfigBuilder {
     ) -> Self {
         self.shadow_model_variants = input;
         self
+    }
+    /// <p>List of shadow variant configurations.</p>
+    pub fn get_shadow_model_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>> {
+        &self.shadow_model_variants
     }
     /// Consumes the builder and constructs a [`ShadowModeConfig`](crate::types::ShadowModeConfig).
     pub fn build(self) -> crate::types::ShadowModeConfig {

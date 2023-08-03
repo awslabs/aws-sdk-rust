@@ -46,6 +46,10 @@ impl DescribeTransformJobInputBuilder {
         self.transform_job_name = input;
         self
     }
+    /// <p>The name of the transform job that you want to view details of.</p>
+    pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
     pub fn build(
         self,

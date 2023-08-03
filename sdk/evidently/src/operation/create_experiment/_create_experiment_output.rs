@@ -50,6 +50,10 @@ impl CreateExperimentOutputBuilder {
         self.experiment = input;
         self
     }
+    /// <p>A structure containing the configuration details of the experiment that you created.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<crate::types::Experiment> {
+        &self.experiment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

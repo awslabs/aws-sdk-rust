@@ -56,6 +56,10 @@ impl RecipeStepBuilder {
         self.action = input;
         self
     }
+    /// <p>The particular action to be performed in the recipe step.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RecipeAction> {
+        &self.action
+    }
     /// Appends an item to `condition_expressions`.
     ///
     /// To override the contents of this collection use [`set_condition_expressions`](Self::set_condition_expressions).
@@ -78,6 +82,14 @@ impl RecipeStepBuilder {
     ) -> Self {
         self.condition_expressions = input;
         self
+    }
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
+    /// </note>
+    pub fn get_condition_expressions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionExpression>> {
+        &self.condition_expressions
     }
     /// Consumes the builder and constructs a [`RecipeStep`](crate::types::RecipeStep).
     pub fn build(self) -> crate::types::RecipeStep {

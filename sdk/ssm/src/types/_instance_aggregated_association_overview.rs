@@ -58,6 +58,10 @@ impl InstanceAggregatedAssociationOverviewBuilder {
         self.detailed_status = input;
         self
     }
+    /// <p>Detailed status information about the aggregated associations.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_status
+    }
     /// Adds a key-value pair to `instance_association_status_aggregated_count`.
     ///
     /// To override the contents of this collection use [`set_instance_association_status_aggregated_count`](Self::set_instance_association_status_aggregated_count).
@@ -82,6 +86,12 @@ impl InstanceAggregatedAssociationOverviewBuilder {
     ) -> Self {
         self.instance_association_status_aggregated_count = input;
         self
+    }
+    /// <p>The number of associations for the managed node(s).</p>
+    pub fn get_instance_association_status_aggregated_count(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.instance_association_status_aggregated_count
     }
     /// Consumes the builder and constructs a [`InstanceAggregatedAssociationOverview`](crate::types::InstanceAggregatedAssociationOverview).
     pub fn build(self) -> crate::types::InstanceAggregatedAssociationOverview {

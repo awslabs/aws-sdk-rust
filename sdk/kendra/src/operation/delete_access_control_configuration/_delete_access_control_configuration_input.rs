@@ -47,6 +47,10 @@ impl DeleteAccessControlConfigurationInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The identifier of the access control configuration you want to delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteAccessControlConfigurationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the access control configuration you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteAccessControlConfigurationInput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

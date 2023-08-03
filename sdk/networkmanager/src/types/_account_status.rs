@@ -48,6 +48,10 @@ impl AccountStatusBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of an account within the Amazon Web Services Organization.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of SLR deployment for the account.</p>
     pub fn slr_deployment_status(
         mut self,
@@ -63,6 +67,10 @@ impl AccountStatusBuilder {
     ) -> Self {
         self.slr_deployment_status = input;
         self
+    }
+    /// <p>The status of SLR deployment for the account.</p>
+    pub fn get_slr_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slr_deployment_status
     }
     /// Consumes the builder and constructs a [`AccountStatus`](crate::types::AccountStatus).
     pub fn build(self) -> crate::types::AccountStatus {

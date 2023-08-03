@@ -36,6 +36,10 @@ impl RemoveSourceIdentifierFromSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveSourceIdentifierFromSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl RemoveSourceIdentifierFromSubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
+    /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_name()
+    }
     /// <p>The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
     pub fn source_identifier(
         mut self,
@@ -121,5 +129,9 @@ impl RemoveSourceIdentifierFromSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_identifier(input);
         self
+    }
+    /// <p>The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_identifier()
     }
 }

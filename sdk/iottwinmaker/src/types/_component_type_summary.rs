@@ -88,6 +88,10 @@ impl ComponentTypeSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the component type.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
         mut self,
@@ -104,6 +108,10 @@ impl ComponentTypeSummaryBuilder {
         self.component_type_id = input;
         self
     }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
+    }
     /// <p>The date and time when the component type was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -116,6 +124,10 @@ impl ComponentTypeSummaryBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time when the component type was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time when the component type was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,6 +142,10 @@ impl ComponentTypeSummaryBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time when the component type was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The description of the component type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -140,6 +156,10 @@ impl ComponentTypeSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the component type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The current status of the component type.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl ComponentTypeSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the component type.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The component type name.</p>
     pub fn component_type_name(
@@ -165,6 +189,10 @@ impl ComponentTypeSummaryBuilder {
     ) -> Self {
         self.component_type_name = input;
         self
+    }
+    /// <p>The component type name.</p>
+    pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_name
     }
     /// Consumes the builder and constructs a [`ComponentTypeSummary`](crate::types::ComponentTypeSummary).
     pub fn build(self) -> crate::types::ComponentTypeSummary {

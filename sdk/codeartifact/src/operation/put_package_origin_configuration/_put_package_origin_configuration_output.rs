@@ -52,6 +52,12 @@ impl PutPackageOriginConfigurationOutputBuilder {
         self.origin_configuration = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+    pub fn get_origin_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageOriginConfiguration> {
+        &self.origin_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

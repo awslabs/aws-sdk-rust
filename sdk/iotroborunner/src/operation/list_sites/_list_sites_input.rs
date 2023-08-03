@@ -47,6 +47,10 @@ impl ListSitesInputBuilder {
         self.max_results = input;
         self
     }
+    /// Maximum number of results to retrieve in a single ListSites call.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl ListSitesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSitesInput`](crate::operation::list_sites::ListSitesInput).
     pub fn build(

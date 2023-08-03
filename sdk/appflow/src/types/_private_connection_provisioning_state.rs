@@ -65,6 +65,12 @@ impl PrivateConnectionProvisioningStateBuilder {
         self.status = input;
         self
     }
+    /// <p> Specifies the private connection provisioning status. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningStatus> {
+        &self.status
+    }
     /// <p> Specifies the private connection provisioning failure reason. </p>
     pub fn failure_message(
         mut self,
@@ -81,6 +87,10 @@ impl PrivateConnectionProvisioningStateBuilder {
         self.failure_message = input;
         self
     }
+    /// <p> Specifies the private connection provisioning failure reason. </p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// <p> Specifies the private connection provisioning failure cause. </p>
     pub fn failure_cause(
         mut self,
@@ -96,6 +106,12 @@ impl PrivateConnectionProvisioningStateBuilder {
     ) -> Self {
         self.failure_cause = input;
         self
+    }
+    /// <p> Specifies the private connection provisioning failure cause. </p>
+    pub fn get_failure_cause(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause> {
+        &self.failure_cause
     }
     /// Consumes the builder and constructs a [`PrivateConnectionProvisioningState`](crate::types::PrivateConnectionProvisioningState).
     pub fn build(self) -> crate::types::PrivateConnectionProvisioningState {

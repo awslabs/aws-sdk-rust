@@ -114,6 +114,10 @@ impl AccountBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The AWS account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl AccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Chime account name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -133,6 +141,10 @@ impl AccountBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The Amazon Chime account name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub fn account_type(mut self, input: crate::types::AccountType) -> Self {
@@ -147,6 +159,10 @@ impl AccountBuilder {
         self.account_type = input;
         self
     }
+    /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+    pub fn get_account_type(&self) -> &::std::option::Option<crate::types::AccountType> {
+        &self.account_type
+    }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl AccountBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The default license for the Amazon Chime account.</p>
     pub fn default_license(mut self, input: crate::types::License) -> Self {
         self.default_license = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl AccountBuilder {
     ) -> Self {
         self.default_license = input;
         self
+    }
+    /// <p>The default license for the Amazon Chime account.</p>
+    pub fn get_default_license(&self) -> &::std::option::Option<crate::types::License> {
+        &self.default_license
     }
     /// Appends an item to `supported_licenses`.
     ///
@@ -192,6 +216,12 @@ impl AccountBuilder {
         self.supported_licenses = input;
         self
     }
+    /// <p>Supported licenses for the Amazon Chime account.</p>
+    pub fn get_supported_licenses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::License>> {
+        &self.supported_licenses
+    }
     /// <p>The status of the account.</p>
     pub fn account_status(mut self, input: crate::types::AccountStatus) -> Self {
         self.account_status = ::std::option::Option::Some(input);
@@ -204,6 +234,10 @@ impl AccountBuilder {
     ) -> Self {
         self.account_status = input;
         self
+    }
+    /// <p>The status of the account.</p>
+    pub fn get_account_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
+        &self.account_status
     }
     /// Appends an item to `signin_delegate_groups`.
     ///
@@ -223,6 +257,12 @@ impl AccountBuilder {
     ) -> Self {
         self.signin_delegate_groups = input;
         self
+    }
+    /// <p>The sign-in delegate groups associated with the account.</p>
+    pub fn get_signin_delegate_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>> {
+        &self.signin_delegate_groups
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {

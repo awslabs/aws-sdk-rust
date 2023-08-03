@@ -229,6 +229,10 @@ impl GetEnvironmentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the runtime environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -238,6 +242,10 @@ impl GetEnvironmentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the runtime environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
     pub fn environment_arn(
@@ -255,6 +263,10 @@ impl GetEnvironmentOutputBuilder {
         self.environment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
+    }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn environment_id(
         mut self,
@@ -270,6 +282,10 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The unique identifier of the runtime environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The type of instance underlying the runtime environment.</p>
     pub fn instance_type(
@@ -287,6 +303,10 @@ impl GetEnvironmentOutputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of instance underlying the runtime environment.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The status of the runtime environment.</p>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -300,6 +320,10 @@ impl GetEnvironmentOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the runtime environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
+        &self.status
+    }
     /// <p>The target platform for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -312,6 +336,10 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The target platform for the runtime environment.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
     pub fn engine_version(
@@ -329,6 +357,10 @@ impl GetEnvironmentOutputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the runtime engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -338,6 +370,10 @@ impl GetEnvironmentOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The unique identifier for the VPC used with this runtime environment.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -357,6 +393,10 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -380,6 +420,12 @@ impl GetEnvironmentOutputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -392,6 +438,10 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when the runtime environment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `storage_configurations`.
     ///
@@ -411,6 +461,12 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.storage_configurations = input;
         self
+    }
+    /// <p>The storage configurations defined for the runtime environment.</p>
+    pub fn get_storage_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>> {
+        &self.storage_configurations
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -437,6 +493,14 @@ impl GetEnvironmentOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags defined for this runtime environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
     pub fn high_availability_config(mut self, input: crate::types::HighAvailabilityConfig) -> Self {
         self.high_availability_config = ::std::option::Option::Some(input);
@@ -450,6 +514,12 @@ impl GetEnvironmentOutputBuilder {
         self.high_availability_config = input;
         self
     }
+    /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
+    pub fn get_high_availability_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
+        &self.high_availability_config
+    }
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -460,6 +530,10 @@ impl GetEnvironmentOutputBuilder {
         self.publicly_accessible = input;
         self
     }
+    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
+    }
     /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn actual_capacity(mut self, input: i32) -> Self {
         self.actual_capacity = ::std::option::Option::Some(input);
@@ -469,6 +543,10 @@ impl GetEnvironmentOutputBuilder {
     pub fn set_actual_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.actual_capacity = input;
         self
+    }
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    pub fn get_actual_capacity(&self) -> &::std::option::Option<i32> {
+        &self.actual_capacity
     }
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
     pub fn load_balancer_arn(
@@ -486,6 +564,10 @@ impl GetEnvironmentOutputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(
         mut self,
@@ -501,6 +583,10 @@ impl GetEnvironmentOutputBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The reason for the reported status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(
@@ -518,6 +604,12 @@ impl GetEnvironmentOutputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
     pub fn pending_maintenance(mut self, input: crate::types::PendingMaintenance) -> Self {
         self.pending_maintenance = ::std::option::Option::Some(input);
@@ -531,6 +623,12 @@ impl GetEnvironmentOutputBuilder {
         self.pending_maintenance = input;
         self
     }
+    /// <p>Indicates the pending maintenance scheduled on this environment.</p>
+    pub fn get_pending_maintenance(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingMaintenance> {
+        &self.pending_maintenance
+    }
     /// <p>The identifier of a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -540,6 +638,10 @@ impl GetEnvironmentOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

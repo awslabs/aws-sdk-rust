@@ -230,6 +230,10 @@ impl GlacierJobDescriptionBuilder {
         self.job_id = input;
         self
     }
+    /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The job description provided when initiating the job.</p>
     pub fn job_description(
         mut self,
@@ -246,6 +250,10 @@ impl GlacierJobDescriptionBuilder {
         self.job_description = input;
         self
     }
+    /// <p>The job description provided when initiating the job.</p>
+    pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_description
+    }
     /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
     pub fn action(mut self, input: crate::types::ActionCode) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -255,6 +263,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionCode>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionCode> {
+        &self.action
     }
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
     pub fn archive_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,6 +278,10 @@ impl GlacierJobDescriptionBuilder {
         self.archive_id = input;
         self
     }
+    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
+    pub fn get_archive_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
     pub fn vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_arn = ::std::option::Option::Some(input.into());
@@ -275,6 +291,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
+    pub fn get_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_arn
     }
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
     pub fn creation_date(
@@ -292,6 +312,10 @@ impl GlacierJobDescriptionBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
     pub fn completed(mut self, input: bool) -> Self {
         self.completed = ::std::option::Option::Some(input);
@@ -301,6 +325,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_completed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.completed = input;
         self
+    }
+    /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
+    pub fn get_completed(&self) -> &::std::option::Option<bool> {
+        &self.completed
     }
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
     pub fn status_code(mut self, input: crate::types::StatusCode) -> Self {
@@ -314,6 +342,10 @@ impl GlacierJobDescriptionBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StatusCode> {
+        &self.status_code
     }
     /// <p>A friendly message that describes the job status.</p>
     pub fn status_message(
@@ -331,6 +363,10 @@ impl GlacierJobDescriptionBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A friendly message that describes the job status.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
     pub fn archive_size_in_bytes(mut self, input: i64) -> Self {
         self.archive_size_in_bytes = ::std::option::Option::Some(input);
@@ -340,6 +376,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_archive_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.archive_size_in_bytes = input;
         self
+    }
+    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
+    pub fn get_archive_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.archive_size_in_bytes
     }
     /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
     pub fn inventory_size_in_bytes(mut self, input: i64) -> Self {
@@ -351,6 +391,10 @@ impl GlacierJobDescriptionBuilder {
         self.inventory_size_in_bytes = input;
         self
     }
+    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
+    pub fn get_inventory_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.inventory_size_in_bytes
+    }
     /// <p>An Amazon SNS topic that receives notification.</p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
@@ -360,6 +404,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
+    }
+    /// <p>An Amazon SNS topic that receives notification.</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
     pub fn completion_date(
@@ -376,6 +424,10 @@ impl GlacierJobDescriptionBuilder {
     ) -> Self {
         self.completion_date = input;
         self
+    }
+    /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
+    pub fn get_completion_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_date
     }
     /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
     /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
@@ -419,6 +471,23 @@ impl GlacierJobDescriptionBuilder {
         self.sha256_tree_hash = input;
         self
     }
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
+    /// <p>This field is null for the following:</p>
+    /// <ul>
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Inventory jobs</p> </li>
+    /// <li> <p>Select jobs</p> </li>
+    /// </ul>
+    pub fn get_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha256_tree_hash
+    }
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
     pub fn archive_sha256_tree_hash(
         mut self,
@@ -434,6 +503,10 @@ impl GlacierJobDescriptionBuilder {
     ) -> Self {
         self.archive_sha256_tree_hash = input;
         self
+    }
+    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
+    pub fn get_archive_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_sha256_tree_hash
     }
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
     pub fn retrieval_byte_range(
@@ -451,6 +524,10 @@ impl GlacierJobDescriptionBuilder {
         self.retrieval_byte_range = input;
         self
     }
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    pub fn get_retrieval_byte_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retrieval_byte_range
+    }
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
     pub fn tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tier = ::std::option::Option::Some(input.into());
@@ -460,6 +537,10 @@ impl GlacierJobDescriptionBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tier
     }
     /// <p>Parameters used for range inventory retrieval.</p>
     pub fn inventory_retrieval_parameters(
@@ -477,6 +558,12 @@ impl GlacierJobDescriptionBuilder {
         self.inventory_retrieval_parameters = input;
         self
     }
+    /// <p>Parameters used for range inventory retrieval.</p>
+    pub fn get_inventory_retrieval_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryRetrievalJobDescription> {
+        &self.inventory_retrieval_parameters
+    }
     /// <p>Contains the job output location.</p>
     pub fn job_output_path(
         mut self,
@@ -493,6 +580,10 @@ impl GlacierJobDescriptionBuilder {
         self.job_output_path = input;
         self
     }
+    /// <p>Contains the job output location.</p>
+    pub fn get_job_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_output_path
+    }
     /// <p>Contains the parameters used for a select.</p>
     pub fn select_parameters(mut self, input: crate::types::SelectParameters) -> Self {
         self.select_parameters = ::std::option::Option::Some(input);
@@ -506,6 +597,10 @@ impl GlacierJobDescriptionBuilder {
         self.select_parameters = input;
         self
     }
+    /// <p>Contains the parameters used for a select.</p>
+    pub fn get_select_parameters(&self) -> &::std::option::Option<crate::types::SelectParameters> {
+        &self.select_parameters
+    }
     /// <p>Contains the location where the data from the select job is stored.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -518,6 +613,10 @@ impl GlacierJobDescriptionBuilder {
     ) -> Self {
         self.output_location = input;
         self
+    }
+    /// <p>Contains the location where the data from the select job is stored.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
     }
     /// Consumes the builder and constructs a [`GlacierJobDescription`](crate::types::GlacierJobDescription).
     pub fn build(self) -> crate::types::GlacierJobDescription {

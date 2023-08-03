@@ -37,6 +37,12 @@ impl DeletePolicyStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePolicyStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeletePolicyStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
+    }
+    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
     }
 }

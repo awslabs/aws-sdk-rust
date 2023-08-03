@@ -36,6 +36,12 @@ impl CompleteSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CompleteSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CompleteSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p>The number of blocks that were written to the snapshot.</p>
     pub fn changed_blocks_count(mut self, input: i32) -> Self {
         self.inner = self.inner.changed_blocks_count(input);
@@ -135,6 +145,10 @@ impl CompleteSnapshotFluentBuilder {
     pub fn set_changed_blocks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_changed_blocks_count(input);
         self
+    }
+    /// <p>The number of blocks that were written to the snapshot.</p>
+    pub fn get_changed_blocks_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_changed_blocks_count()
     }
     /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
@@ -148,6 +162,11 @@ impl CompleteSnapshotFluentBuilder {
         self.inner = self.inner.set_checksum(input);
         self
     }
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
+    }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         self.inner = self.inner.checksum_algorithm(input);
@@ -160,6 +179,12 @@ impl CompleteSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
+    }
+    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        self.inner.get_checksum_algorithm()
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
     pub fn checksum_aggregation_method(
@@ -176,5 +201,11 @@ impl CompleteSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checksum_aggregation_method(input);
         self
+    }
+    /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
+    pub fn get_checksum_aggregation_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAggregationMethod> {
+        self.inner.get_checksum_aggregation_method()
     }
 }

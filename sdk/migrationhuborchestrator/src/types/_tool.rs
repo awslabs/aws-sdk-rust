@@ -48,6 +48,10 @@ impl ToolBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an AWS service. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The URL of an AWS service.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ToolBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL of an AWS service.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`Tool`](crate::types::Tool).
     pub fn build(self) -> crate::types::Tool {

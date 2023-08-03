@@ -95,6 +95,10 @@ impl ThrottlingExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The container for the exception message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The container for the <code>serviceCode</code>.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl ThrottlingExceptionBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
+    }
+    /// <p>The container for the <code>serviceCode</code>.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The container for the <code>quotaCode</code>.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +123,10 @@ impl ThrottlingExceptionBuilder {
         self.quota_code = input;
         self
     }
+    /// <p>The container for the <code>quotaCode</code>.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
+    }
     /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl ThrottlingExceptionBuilder {
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
+    }
+    /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
+        &self.retry_after_seconds
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

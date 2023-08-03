@@ -43,6 +43,12 @@ impl UpdateDeviceCertificateParamsBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceCertificateUpdateAction> {
+        &self.action
+    }
     /// Consumes the builder and constructs a [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
     pub fn build(self) -> crate::types::UpdateDeviceCertificateParams {
         crate::types::UpdateDeviceCertificateParams {

@@ -64,6 +64,10 @@ impl DescribePartnersInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
     pub fn cluster_identifier(
         mut self,
@@ -79,6 +83,10 @@ impl DescribePartnersInputBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
     pub fn database_name(
@@ -96,6 +104,10 @@ impl DescribePartnersInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl DescribePartnersInputBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
+    }
+    /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_name
     }
     /// Consumes the builder and constructs a [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
     pub fn build(

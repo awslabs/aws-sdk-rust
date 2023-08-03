@@ -80,6 +80,10 @@ impl MappingEntryBuilder {
         self.source_table = input;
         self
     }
+    /// <p>The name of the source table.</p>
+    pub fn get_source_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table
+    }
     /// <p>The source path.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_path = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl MappingEntryBuilder {
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
+    }
+    /// <p>The source path.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
     }
     /// <p>The source type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl MappingEntryBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// <p>The target table.</p>
     pub fn target_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl MappingEntryBuilder {
     pub fn set_target_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_table = input;
         self
+    }
+    /// <p>The target table.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_table
     }
     /// <p>The target path.</p>
     pub fn target_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl MappingEntryBuilder {
         self.target_path = input;
         self
     }
+    /// <p>The target path.</p>
+    pub fn get_target_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_path
+    }
     /// <p>The target type.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl MappingEntryBuilder {
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>The target type.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
     }
     /// Consumes the builder and constructs a [`MappingEntry`](crate::types::MappingEntry).
     pub fn build(self) -> crate::types::MappingEntry {

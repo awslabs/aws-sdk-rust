@@ -37,6 +37,12 @@ impl DescribeAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_account::builders::DescribeAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,10 @@ impl DescribeAccountFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

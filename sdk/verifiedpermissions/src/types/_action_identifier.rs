@@ -50,6 +50,10 @@ impl ActionIdentifierBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of an action.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_type
+    }
     /// <p>The ID of an action.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl ActionIdentifierBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
+    }
+    /// <p>The ID of an action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
     }
     /// Consumes the builder and constructs a [`ActionIdentifier`](crate::types::ActionIdentifier).
     pub fn build(self) -> crate::types::ActionIdentifier {

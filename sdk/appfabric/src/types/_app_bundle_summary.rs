@@ -40,6 +40,10 @@ impl AppBundleSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`AppBundleSummary`](crate::types::AppBundleSummary).
     pub fn build(self) -> crate::types::AppBundleSummary {
         crate::types::AppBundleSummary { arn: self.arn }

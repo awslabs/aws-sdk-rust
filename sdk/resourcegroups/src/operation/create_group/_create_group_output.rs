@@ -78,6 +78,10 @@ impl CreateGroupOutputBuilder {
         self.group = input;
         self
     }
+    /// <p>The description of the resource group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
+        &self.group
+    }
     /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl CreateGroupOutputBuilder {
     ) -> Self {
         self.resource_query = input;
         self
+    }
+    /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -116,6 +124,14 @@ impl CreateGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn group_configuration(mut self, input: crate::types::GroupConfiguration) -> Self {
         self.group_configuration = ::std::option::Option::Some(input);
@@ -128,6 +144,12 @@ impl CreateGroupOutputBuilder {
     ) -> Self {
         self.group_configuration = input;
         self
+    }
+    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
+    pub fn get_group_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::GroupConfiguration> {
+        &self.group_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

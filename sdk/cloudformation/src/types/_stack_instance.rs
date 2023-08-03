@@ -164,6 +164,10 @@ impl StackInstanceBuilder {
         self.stack_set_id = input;
         self
     }
+    /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
+    pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_id
+    }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -173,6 +177,10 @@ impl StackInstanceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +192,10 @@ impl StackInstanceBuilder {
         self.account = input;
         self
     }
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>The ID of the stack instance.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -193,6 +205,10 @@ impl StackInstanceBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The ID of the stack instance.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Appends an item to `parameter_overrides`.
     ///
@@ -212,6 +228,12 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.parameter_overrides = input;
         self
+    }
+    /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
+    pub fn get_parameter_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameter_overrides
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
@@ -244,6 +266,19 @@ impl StackInstanceBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
+    /// <ul>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
+    /// <ul>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StackInstanceStatus> {
+        &self.status
+    }
     /// <p>The detailed status of the stack instance.</p>
     pub fn stack_instance_status(
         mut self,
@@ -259,6 +294,12 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.stack_instance_status = input;
         self
+    }
+    /// <p>The detailed status of the stack instance.</p>
+    pub fn get_stack_instance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackInstanceComprehensiveStatus> {
+        &self.stack_instance_status
     }
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
     pub fn status_reason(
@@ -276,6 +317,10 @@ impl StackInstanceBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(
         mut self,
@@ -291,6 +336,10 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.organizational_unit_id = input;
         self
+    }
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
@@ -317,6 +366,16 @@ impl StackInstanceBuilder {
         self.drift_status = input;
         self
     }
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
+    /// <ul>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// </ul>
+    pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
+        &self.drift_status
+    }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn last_drift_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_drift_check_timestamp = ::std::option::Option::Some(input);
@@ -329,6 +388,12 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.last_drift_check_timestamp = input;
         self
+    }
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
+    pub fn get_last_drift_check_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_drift_check_timestamp
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
     pub fn last_operation_id(
@@ -345,6 +410,10 @@ impl StackInstanceBuilder {
     ) -> Self {
         self.last_operation_id = input;
         self
+    }
+    /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+    pub fn get_last_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_operation_id
     }
     /// Consumes the builder and constructs a [`StackInstance`](crate::types::StackInstance).
     pub fn build(self) -> crate::types::StackInstance {

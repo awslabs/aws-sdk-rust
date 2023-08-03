@@ -65,6 +65,10 @@ impl UpdateBillingGroupInputBuilder {
         self.billing_group_name = input;
         self
     }
+    /// <p>The name of the billing group.</p>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
+    }
     /// <p>The properties of the billing group.</p>
     pub fn billing_group_properties(mut self, input: crate::types::BillingGroupProperties) -> Self {
         self.billing_group_properties = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl UpdateBillingGroupInputBuilder {
         self.billing_group_properties = input;
         self
     }
+    /// <p>The properties of the billing group.</p>
+    pub fn get_billing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+        &self.billing_group_properties
+    }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.expected_version = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl UpdateBillingGroupInputBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
+    }
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
     pub fn build(

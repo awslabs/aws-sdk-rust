@@ -98,6 +98,18 @@ impl GetActionTypeInputBuilder {
         self.category = input;
         self
     }
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        &self.category
+    }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl GetActionTypeInputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +134,10 @@ impl GetActionTypeInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
+    }
     /// <p>A string that describes the action type version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -127,6 +147,10 @@ impl GetActionTypeInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>A string that describes the action type version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetActionTypeInput`](crate::operation::get_action_type::GetActionTypeInput).
     pub fn build(

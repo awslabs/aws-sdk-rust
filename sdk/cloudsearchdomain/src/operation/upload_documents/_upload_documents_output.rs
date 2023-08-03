@@ -72,6 +72,10 @@ impl UploadDocumentsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The number of documents that were added to the search domain.</p>
     pub fn adds(mut self, input: i64) -> Self {
         self.adds = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl UploadDocumentsOutputBuilder {
         self.adds = input;
         self
     }
+    /// <p>The number of documents that were added to the search domain.</p>
+    pub fn get_adds(&self) -> &::std::option::Option<i64> {
+        &self.adds
+    }
     /// <p>The number of documents that were deleted from the search domain.</p>
     pub fn deletes(mut self, input: i64) -> Self {
         self.deletes = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl UploadDocumentsOutputBuilder {
     pub fn set_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.deletes = input;
         self
+    }
+    /// <p>The number of documents that were deleted from the search domain.</p>
+    pub fn get_deletes(&self) -> &::std::option::Option<i64> {
+        &self.deletes
     }
     /// Appends an item to `warnings`.
     ///
@@ -110,6 +122,12 @@ impl UploadDocumentsOutputBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
+    pub fn get_warnings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

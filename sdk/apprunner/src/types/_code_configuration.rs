@@ -72,6 +72,16 @@ impl CodeConfigurationBuilder {
         self.configuration_source = input;
         self
     }
+    /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and ignores <code>CodeConfigurationValues</code>.</p> </li>
+    /// <li> <p> <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p> </li>
+    /// </ul>
+    pub fn get_configuration_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationSource> {
+        &self.configuration_source
+    }
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
     pub fn code_configuration_values(
         mut self,
@@ -87,6 +97,12 @@ impl CodeConfigurationBuilder {
     ) -> Self {
         self.code_configuration_values = input;
         self
+    }
+    /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
+    pub fn get_code_configuration_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeConfigurationValues> {
+        &self.code_configuration_values
     }
     /// Consumes the builder and constructs a [`CodeConfiguration`](crate::types::CodeConfiguration).
     pub fn build(self) -> crate::types::CodeConfiguration {

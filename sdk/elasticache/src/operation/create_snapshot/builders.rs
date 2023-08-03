@@ -38,6 +38,12 @@ impl CreateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
     pub fn cache_cluster_id(
         mut self,
@@ -141,6 +151,10 @@ impl CreateSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
+    }
+    /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_cluster_id()
     }
     /// <p>A name for the snapshot being created.</p>
     pub fn snapshot_name(
@@ -158,6 +172,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>A name for the snapshot being created.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -167,6 +185,10 @@ impl CreateSnapshotFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -184,5 +206,9 @@ impl CreateSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

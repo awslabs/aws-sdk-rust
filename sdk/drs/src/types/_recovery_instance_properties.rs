@@ -97,6 +97,10 @@ impl RecoveryInstancePropertiesBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time the Recovery Instance properties were last updated on.</p>
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date_time
+    }
     /// <p>Hints used to uniquely identify a machine.</p>
     pub fn identification_hints(mut self, input: crate::types::IdentificationHints) -> Self {
         self.identification_hints = ::std::option::Option::Some(input);
@@ -109,6 +113,12 @@ impl RecoveryInstancePropertiesBuilder {
     ) -> Self {
         self.identification_hints = input;
         self
+    }
+    /// <p>Hints used to uniquely identify a machine.</p>
+    pub fn get_identification_hints(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentificationHints> {
+        &self.identification_hints
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -129,6 +139,12 @@ impl RecoveryInstancePropertiesBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>An array of network interfaces.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
+    }
     /// Appends an item to `disks`.
     ///
     /// To override the contents of this collection use [`set_disks`](Self::set_disks).
@@ -147,6 +163,12 @@ impl RecoveryInstancePropertiesBuilder {
     ) -> Self {
         self.disks = input;
         self
+    }
+    /// <p>An array of disks.</p>
+    pub fn get_disks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>> {
+        &self.disks
     }
     /// Appends an item to `cpus`.
     ///
@@ -167,6 +189,10 @@ impl RecoveryInstancePropertiesBuilder {
         self.cpus = input;
         self
     }
+    /// <p>An array of CPUs.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cpu>> {
+        &self.cpus
+    }
     /// <p>The amount of RAM in bytes.</p>
     pub fn ram_bytes(mut self, input: i64) -> Self {
         self.ram_bytes = ::std::option::Option::Some(input);
@@ -177,6 +203,10 @@ impl RecoveryInstancePropertiesBuilder {
         self.ram_bytes = input;
         self
     }
+    /// <p>The amount of RAM in bytes.</p>
+    pub fn get_ram_bytes(&self) -> &::std::option::Option<i64> {
+        &self.ram_bytes
+    }
     /// <p>Operating system.</p>
     pub fn os(mut self, input: crate::types::Os) -> Self {
         self.os = ::std::option::Option::Some(input);
@@ -186,6 +216,10 @@ impl RecoveryInstancePropertiesBuilder {
     pub fn set_os(mut self, input: ::std::option::Option<crate::types::Os>) -> Self {
         self.os = input;
         self
+    }
+    /// <p>Operating system.</p>
+    pub fn get_os(&self) -> &::std::option::Option<crate::types::Os> {
+        &self.os
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceProperties`](crate::types::RecoveryInstanceProperties).
     pub fn build(self) -> crate::types::RecoveryInstanceProperties {

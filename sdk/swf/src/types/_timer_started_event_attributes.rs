@@ -66,6 +66,10 @@ impl TimerStartedEventAttributesBuilder {
         self.timer_id = input;
         self
     }
+    /// <p>The unique ID of the timer that was started.</p>
+    pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_id
+    }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl TimerStartedEventAttributesBuilder {
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
+    }
+    /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
@@ -94,6 +102,11 @@ impl TimerStartedEventAttributesBuilder {
         self.start_to_fire_timeout = input;
         self
     }
+    /// <p>The duration of time after which the timer fires.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+    pub fn get_start_to_fire_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_fire_timeout
+    }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
@@ -106,6 +119,10 @@ impl TimerStartedEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`TimerStartedEventAttributes`](crate::types::TimerStartedEventAttributes).
     pub fn build(self) -> crate::types::TimerStartedEventAttributes {

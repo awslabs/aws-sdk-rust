@@ -57,6 +57,10 @@ impl ConnectedHomeSettingsBuilder {
         self.labels = input;
         self
     }
+    /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(mut self, input: f32) -> Self {
         self.min_confidence = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ConnectedHomeSettingsBuilder {
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.min_confidence = input;
         self
+    }
+    /// <p> The minimum confidence required to label an object in the video. </p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        &self.min_confidence
     }
     /// Consumes the builder and constructs a [`ConnectedHomeSettings`](crate::types::ConnectedHomeSettings).
     pub fn build(self) -> crate::types::ConnectedHomeSettings {

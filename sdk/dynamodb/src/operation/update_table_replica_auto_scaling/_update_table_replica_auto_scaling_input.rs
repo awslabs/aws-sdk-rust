@@ -89,6 +89,13 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
         self.global_secondary_index_updates = input;
         self
     }
+    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
+    pub fn get_global_secondary_index_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>
+    {
+        &self.global_secondary_index_updates
+    }
     /// <p>The name of the global table to be updated.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -98,6 +105,10 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the global table to be updated.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn provisioned_write_capacity_auto_scaling_update(
@@ -114,6 +125,12 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
     ) -> Self {
         self.provisioned_write_capacity_auto_scaling_update = input;
         self
+    }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
+    pub fn get_provisioned_write_capacity_auto_scaling_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        &self.provisioned_write_capacity_auto_scaling_update
     }
     /// Appends an item to `replica_updates`.
     ///
@@ -133,6 +150,12 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
     ) -> Self {
         self.replica_updates = input;
         self
+    }
+    /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
+    pub fn get_replica_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>> {
+        &self.replica_updates
     }
     /// Consumes the builder and constructs a [`UpdateTableReplicaAutoScalingInput`](crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput).
     pub fn build(

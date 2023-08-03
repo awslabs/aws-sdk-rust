@@ -45,6 +45,10 @@ impl ContactCenterActivityBuilder {
         self.next_activity = input;
         self
     }
+    /// <p>The unique identifier for the next activity to perform after the this activity.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
+    }
     /// Consumes the builder and constructs a [`ContactCenterActivity`](crate::types::ContactCenterActivity).
     pub fn build(self) -> crate::types::ContactCenterActivity {
         crate::types::ContactCenterActivity {

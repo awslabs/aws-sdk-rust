@@ -64,6 +64,10 @@ impl CreateThingTypeInputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
         self.thing_type_properties = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl CreateThingTypeInputBuilder {
     ) -> Self {
         self.thing_type_properties = input;
         self
+    }
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
+    pub fn get_thing_type_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingTypeProperties> {
+        &self.thing_type_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -95,6 +105,10 @@ impl CreateThingTypeInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the thing type.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
     pub fn build(

@@ -129,6 +129,10 @@ impl WorkforceBuilder {
         self.workforce_name = input;
         self
     }
+    /// <p>The name of the private workforce.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
     pub fn workforce_arn(
         mut self,
@@ -145,6 +149,10 @@ impl WorkforceBuilder {
         self.workforce_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
+    pub fn get_workforce_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_arn
+    }
     /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -157,6 +165,10 @@ impl WorkforceBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConfig) -> Self {
@@ -171,6 +183,10 @@ impl WorkforceBuilder {
         self.source_ip_config = input;
         self
     }
+    /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
+    pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
+        &self.source_ip_config
+    }
     /// <p>The subdomain for your OIDC Identity Provider.</p>
     pub fn sub_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_domain = ::std::option::Option::Some(input.into());
@@ -180,6 +196,10 @@ impl WorkforceBuilder {
     pub fn set_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_domain = input;
         self
+    }
+    /// <p>The subdomain for your OIDC Identity Provider.</p>
+    pub fn get_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_domain
     }
     /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     pub fn cognito_config(mut self, input: crate::types::CognitoConfig) -> Self {
@@ -194,6 +214,10 @@ impl WorkforceBuilder {
         self.cognito_config = input;
         self
     }
+    /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
+    pub fn get_cognito_config(&self) -> &::std::option::Option<crate::types::CognitoConfig> {
+        &self.cognito_config
+    }
     /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
     pub fn oidc_config(mut self, input: crate::types::OidcConfigForResponse) -> Self {
         self.oidc_config = ::std::option::Option::Some(input);
@@ -206,6 +230,10 @@ impl WorkforceBuilder {
     ) -> Self {
         self.oidc_config = input;
         self
+    }
+    /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+    pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfigForResponse> {
+        &self.oidc_config
     }
     /// <p>The date that the workforce is created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +248,10 @@ impl WorkforceBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date that the workforce is created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The configuration of a VPC workforce.</p>
     pub fn workforce_vpc_config(mut self, input: crate::types::WorkforceVpcConfigResponse) -> Self {
         self.workforce_vpc_config = ::std::option::Option::Some(input);
@@ -233,6 +265,12 @@ impl WorkforceBuilder {
         self.workforce_vpc_config = input;
         self
     }
+    /// <p>The configuration of a VPC workforce.</p>
+    pub fn get_workforce_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigResponse> {
+        &self.workforce_vpc_config
+    }
     /// <p>The status of your workforce.</p>
     pub fn status(mut self, input: crate::types::WorkforceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -245,6 +283,10 @@ impl WorkforceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of your workforce.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkforceStatus> {
+        &self.status
     }
     /// <p>The reason your workforce failed.</p>
     pub fn failure_reason(
@@ -261,6 +303,10 @@ impl WorkforceBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason your workforce failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`Workforce`](crate::types::Workforce).
     pub fn build(self) -> crate::types::Workforce {

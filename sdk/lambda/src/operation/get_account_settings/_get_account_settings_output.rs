@@ -58,6 +58,10 @@ impl GetAccountSettingsOutputBuilder {
         self.account_limit = input;
         self
     }
+    /// <p>Limits that are related to concurrency and code storage.</p>
+    pub fn get_account_limit(&self) -> &::std::option::Option<crate::types::AccountLimit> {
+        &self.account_limit
+    }
     /// <p>The number of functions and amount of storage in use.</p>
     pub fn account_usage(mut self, input: crate::types::AccountUsage) -> Self {
         self.account_usage = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl GetAccountSettingsOutputBuilder {
     ) -> Self {
         self.account_usage = input;
         self
+    }
+    /// <p>The number of functions and amount of storage in use.</p>
+    pub fn get_account_usage(&self) -> &::std::option::Option<crate::types::AccountUsage> {
+        &self.account_usage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

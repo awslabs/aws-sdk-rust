@@ -47,6 +47,10 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the service instance that you want the sync status input for.</p>
     pub fn service_instance_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetServiceInstanceSyncStatusInputBuilder {
     ) -> Self {
         self.service_instance_name = input;
         self
+    }
+    /// <p>The name of the service instance that you want the sync status input for.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceSyncStatusInput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput).
     pub fn build(

@@ -39,6 +39,12 @@ impl CreateDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,14 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
+    /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
+    /// <p>For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zones()
+    }
     /// <p>The number of days for which automated backups are retained.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Default: <code>1</code> </p>
@@ -165,6 +179,16 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_backup_retention_period(input);
         self
     }
+    /// <p>The number of days for which automated backups are retained.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Default: <code>1</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a value from 1 to 35.</p> </li>
+    /// </ul>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_backup_retention_period()
+    }
     /// <p>The name of the character set (<code>CharacterSet</code>) to associate the DB cluster with.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub fn character_set_name(
@@ -183,6 +207,11 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_character_set_name(input);
         self
     }
+    /// <p>The name of the character set (<code>CharacterSet</code>) to associate the DB cluster with.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_character_set_name()
+    }
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(
@@ -200,6 +229,11 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
     /// <p>The identifier for this DB cluster. This parameter is stored as a lowercase string.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -233,6 +267,18 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The identifier for this DB cluster. This parameter is stored as a lowercase string.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If you don't specify a value, then the default DB cluster parameter group for the specified DB engine and version is used.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
@@ -259,6 +305,17 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If you don't specify a value, then the default DB cluster parameter group for the specified DB engine and version is used.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -280,6 +337,13 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
+    }
+    /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -313,6 +377,18 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
+    /// <p>A DB subnet group to associate with this DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
+    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_subnet_group_name()
+    }
     /// <p>The database engine to use for this DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
@@ -326,6 +402,12 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
+    }
+    /// <p>The database engine to use for this DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
@@ -377,6 +459,27 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The version number of the database engine to use.</p>
+    /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p>For information about a specific engine, see the following topics:</p>
+    /// <ul>
+    /// <li> <p>Aurora MySQL - see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li> <p>Aurora PostgreSQL - see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
+    /// <li> <p>RDS for MySQL - see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon RDS for MySQL</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// <li> <p>RDS for PostgreSQL - see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The port number on which the instances in the DB cluster accept connections.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
@@ -400,6 +503,17 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p>RDS for MySQL and Aurora MySQL - <code>3306</code> </p> </li>
+    /// <li> <p>RDS for PostgreSQL and Aurora PostgreSQL - <code>5432</code> </p> </li>
+    /// </ul>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>The name of the master user for the DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -431,6 +545,17 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_master_username(input);
         self
     }
+    /// <p>The name of the master user for the DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// </ul>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_username()
+    }
     /// <p>The password for the master database user.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
@@ -461,6 +586,17 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
+    /// <p>The password for the master database user.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>Can contain any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// </ul>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_user_password()
+    }
     /// <p>The option group to associate the DB cluster with.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn option_group_name(
@@ -478,6 +614,11 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
+    }
+    /// <p>The option group to associate the DB cluster with.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -513,6 +654,19 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
+    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
+    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// </ul>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_backup_window()
+    }
     /// <p>The weekly time range during which system maintenance can occur.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -547,6 +701,21 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
+    /// <li> <p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p> </li>
+    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
+    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// </ul>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read replica.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn replication_source_identifier(
@@ -564,6 +733,13 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_source_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read replica.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_replication_source_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_source_identifier()
     }
     /// Appends an item to `Tags`.
     ///
@@ -584,6 +760,11 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags to assign to the DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
@@ -595,6 +776,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_storage_encrypted(input);
         self
+    }
+    /// <p>Specifies whether the DB cluster is encrypted.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_storage_encrypted()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -623,6 +809,19 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li> <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS uses the KMS key used to encrypt the source. Otherwise, Amazon RDS uses your default KMS key.</p> </li>
+    /// <li> <p>If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS uses your default KMS key.</p> </li>
+    /// </ul>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, make sure to set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
     /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
@@ -662,6 +861,21 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }
+    /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
+    /// <p>The presigned URL request must contain the following parameter values:</p>
+    /// <ul>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will be created in.</p> </li>
+    /// <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p> </li>
+    /// </ul>
+    /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// </note>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pre_signed_url()
+    }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
@@ -678,6 +892,12 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
+    }
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_iam_database_authentication()
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
@@ -700,6 +920,16 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_backtrack_window(input);
         self
+    }
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
+    /// <p>Default: <code>0</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// </ul>
+    pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
+        self.inner.get_backtrack_window()
     }
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
@@ -741,6 +971,22 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
+    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li> <p>Aurora MySQL - <code>audit | error | general | slowquery</code> </p> </li>
+    /// <li> <p>Aurora PostgreSQL - <code>postgresql</code> </p> </li>
+    /// <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p> </li>
+    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_enable_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_enable_cloudwatch_logs_exports()
+    }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
@@ -765,6 +1011,17 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_engine_mode(input);
         self
     }
+    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_mode()
+    }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub fn scaling_configuration(mut self, input: crate::types::ScalingConfiguration) -> Self {
@@ -780,6 +1037,13 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_scaling_configuration(input);
         self
     }
+    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalingConfiguration> {
+        self.inner.get_scaling_configuration()
+    }
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -791,6 +1055,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
+    }
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
     }
     /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
@@ -810,6 +1079,11 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
+    }
     /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -826,6 +1100,13 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_enable_http_endpoint(input);
         self
     }
+    /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_enable_http_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_http_endpoint()
+    }
     /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
@@ -837,6 +1118,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags_to_snapshot()
     }
     /// <p>The Active Directory directory ID to create the DB cluster in.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
@@ -853,6 +1139,13 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
     }
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
@@ -872,6 +1165,11 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_domain_iam_role_name(input);
         self
     }
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_iam_role_name()
+    }
     /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
     /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
@@ -888,6 +1186,12 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_global_write_forwarding(input);
         self
+    }
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_enable_global_write_forwarding(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_global_write_forwarding()
     }
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -911,6 +1215,13 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_instance_class(input);
         self
     }
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
+    /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    pub fn get_db_cluster_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_instance_class()
+    }
     /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -924,6 +1235,12 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        self.inner.get_allocated_storage()
     }
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage configurations for Amazon Aurora DB clusters</a>. For information on storage types for Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings for creating Multi-AZ DB clusters</a>.</p>
@@ -963,6 +1280,24 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_storage_type(input);
         self
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage configurations for Amazon Aurora DB clusters</a>. For information on storage types for Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings for creating Multi-AZ DB clusters</a>.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li>
+    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// </ul>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
+    }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -986,6 +1321,17 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
         self
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
+    /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
+    /// </ul>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        self.inner.get_iops()
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
@@ -1025,6 +1371,24 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
+    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p> </li>
+    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p> </li>
+    /// </ul>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publicly_accessible()
+    }
     /// <p>Specifies whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
@@ -1036,6 +1400,11 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
+    }
+    /// <p>Specifies whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_minor_version_upgrade()
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
@@ -1054,6 +1423,14 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_monitoring_interval(input);
         self
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
+    /// <p>Default: <code>0</code> </p>
+    pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
+        self.inner.get_monitoring_interval()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
@@ -1075,6 +1452,12 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_monitoring_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_role_arn()
+    }
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -1088,6 +1471,12 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_performance_insights(input);
         self
+    }
+    /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_performance_insights()
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -1110,6 +1499,15 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_performance_insights_kms_key_id(input);
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    pub fn get_performance_insights_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_performance_insights_kms_key_id()
     }
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -1142,6 +1540,19 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_performance_insights_retention_period(input);
         self
     }
+    /// <p>The number of days to retain Performance Insights data.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>7</code> </p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+    /// <li> <p> <code>731</code> </p> </li>
+    /// </ul>
+    /// <p>Default: <code>7</code> days</p>
+    /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
+    pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_performance_insights_retention_period()
+    }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn serverless_v2_scaling_configuration(
@@ -1159,6 +1570,13 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
         self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        self.inner.get_serverless_v2_scaling_configuration()
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
@@ -1178,6 +1596,14 @@ impl CreateDBClusterFluentBuilder {
         self.inner = self.inner.set_network_type(input);
         self
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_type()
+    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_system_id(input.into());
@@ -1187,6 +1613,10 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_system_id(input);
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_system_id()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
@@ -1209,6 +1639,16 @@ impl CreateDBClusterFluentBuilder {
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
         self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// </ul>
+    pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_master_user_password()
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
@@ -1235,5 +1675,16 @@ impl CreateDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_master_user_secret_kms_key_id(input);
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_master_user_secret_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_user_secret_kms_key_id()
     }
 }

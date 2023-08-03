@@ -36,6 +36,10 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyIpamResourceDiscovery as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>A resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
         mut self,
@@ -142,6 +150,10 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
+    /// <p>A resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_resource_discovery_id()
+    }
     /// <p>A resource discovery description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +163,10 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A resource discovery description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `AddOperatingRegions`.
     ///
@@ -168,6 +184,12 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_operating_regions(input);
         self
+    }
+    /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+    pub fn get_add_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+        self.inner.get_add_operating_regions()
     }
     /// Appends an item to `RemoveOperatingRegions`.
     ///
@@ -188,5 +210,11 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_operating_regions(input);
         self
+    }
+    /// <p>Remove operating Regions.</p>
+    pub fn get_remove_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+        self.inner.get_remove_operating_regions()
     }
 }

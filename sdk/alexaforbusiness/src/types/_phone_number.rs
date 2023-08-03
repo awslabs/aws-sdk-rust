@@ -54,6 +54,10 @@ impl PhoneNumberBuilder {
         self.number = input;
         self
     }
+    /// <p>The raw value of the phone number.</p>
+    pub fn get_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.number
+    }
     /// <p>The type of the phone number.</p>
     pub fn r#type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PhoneNumberBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the phone number.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {

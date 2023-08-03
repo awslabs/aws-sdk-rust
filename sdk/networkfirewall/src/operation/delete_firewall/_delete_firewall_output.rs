@@ -58,6 +58,11 @@ impl DeleteFirewallOutputBuilder {
         self.firewall = input;
         self
     }
+    /// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
+    /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
+    pub fn get_firewall(&self) -> &::std::option::Option<crate::types::Firewall> {
+        &self.firewall
+    }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn firewall_status(mut self, input: crate::types::FirewallStatus) -> Self {
         self.firewall_status = ::std::option::Option::Some(input);
@@ -70,6 +75,10 @@ impl DeleteFirewallOutputBuilder {
     ) -> Self {
         self.firewall_status = input;
         self
+    }
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    pub fn get_firewall_status(&self) -> &::std::option::Option<crate::types::FirewallStatus> {
+        &self.firewall_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

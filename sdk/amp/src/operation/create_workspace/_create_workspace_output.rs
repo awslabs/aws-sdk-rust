@@ -79,6 +79,10 @@ impl CreateWorkspaceOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The generated ID of the workspace that was just created.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// The ARN of the workspace that was just created.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateWorkspaceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// The ARN of the workspace that was just created.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// The status of the workspace that was just created (usually CREATING).
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
@@ -101,6 +109,10 @@ impl CreateWorkspaceOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// The status of the workspace that was just created (usually CREATING).
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -126,6 +138,14 @@ impl CreateWorkspaceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// The tags of this workspace.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

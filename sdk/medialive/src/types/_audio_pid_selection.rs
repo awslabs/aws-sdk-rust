@@ -40,6 +40,10 @@ impl AudioPidSelectionBuilder {
         self.pid = input;
         self
     }
+    /// Selects a specific PID from within a source.
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
+    }
     /// Consumes the builder and constructs a [`AudioPidSelection`](crate::types::AudioPidSelection).
     pub fn build(self) -> crate::types::AudioPidSelection {
         crate::types::AudioPidSelection { pid: self.pid }

@@ -65,6 +65,10 @@ impl NetworkInterfaceBuilder {
         self.interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interface_id
+    }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn r#type(mut self, input: crate::types::NetworkInterfaceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
+        &self.r#type
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn can_interface(mut self, input: crate::types::CanInterface) -> Self {
@@ -91,6 +99,10 @@ impl NetworkInterfaceBuilder {
         self.can_interface = input;
         self
     }
+    /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
+    pub fn get_can_interface(&self) -> &::std::option::Option<crate::types::CanInterface> {
+        &self.can_interface
+    }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn obd_interface(mut self, input: crate::types::ObdInterface) -> Self {
         self.obd_interface = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.obd_interface = input;
         self
+    }
+    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    pub fn get_obd_interface(&self) -> &::std::option::Option<crate::types::ObdInterface> {
+        &self.obd_interface
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

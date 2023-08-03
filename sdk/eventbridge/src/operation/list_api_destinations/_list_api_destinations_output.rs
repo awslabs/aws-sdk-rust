@@ -66,6 +66,12 @@ impl ListApiDestinationsOutputBuilder {
         self.api_destinations = input;
         self
     }
+    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    pub fn get_api_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>> {
+        &self.api_destinations
+    }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListApiDestinationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

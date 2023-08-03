@@ -56,6 +56,10 @@ impl ModelPerformanceBuilder {
         self.f1_score = input;
         self
     }
+    /// <p>The overall F1 score metric for the trained model.</p>
+    pub fn get_f1_score(&self) -> &::std::option::Option<f32> {
+        &self.f1_score
+    }
     /// <p>The overall recall metric value for the trained model. </p>
     pub fn recall(mut self, input: f32) -> Self {
         self.recall = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ModelPerformanceBuilder {
         self.recall = input;
         self
     }
+    /// <p>The overall recall metric value for the trained model. </p>
+    pub fn get_recall(&self) -> &::std::option::Option<f32> {
+        &self.recall
+    }
     /// <p>The overall precision metric value for the trained model.</p>
     pub fn precision(mut self, input: f32) -> Self {
         self.precision = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ModelPerformanceBuilder {
     pub fn set_precision(mut self, input: ::std::option::Option<f32>) -> Self {
         self.precision = input;
         self
+    }
+    /// <p>The overall precision metric value for the trained model.</p>
+    pub fn get_precision(&self) -> &::std::option::Option<f32> {
+        &self.precision
     }
     /// Consumes the builder and constructs a [`ModelPerformance`](crate::types::ModelPerformance).
     pub fn build(self) -> crate::types::ModelPerformance {

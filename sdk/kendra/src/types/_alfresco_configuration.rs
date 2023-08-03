@@ -162,6 +162,10 @@ impl AlfrescoConfigurationBuilder {
         self.site_url = input;
         self
     }
+    /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+    pub fn get_site_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_url
+    }
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
@@ -171,6 +175,10 @@ impl AlfrescoConfigurationBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
+    }
+    /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -190,6 +198,14 @@ impl AlfrescoConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The user name of the Alfresco account.</p> </li>
+    /// <li> <p>password—The password of the Alfresco account.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -205,6 +221,11 @@ impl AlfrescoConfigurationBuilder {
         self.ssl_certificate_s3_path = input;
         self
     }
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
+    pub fn get_ssl_certificate_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        &self.ssl_certificate_s3_path
+    }
     /// <p> <code>TRUE</code> to index shared files.</p>
     pub fn crawl_system_folders(mut self, input: bool) -> Self {
         self.crawl_system_folders = ::std::option::Option::Some(input);
@@ -215,6 +236,10 @@ impl AlfrescoConfigurationBuilder {
         self.crawl_system_folders = input;
         self
     }
+    /// <p> <code>TRUE</code> to index shared files.</p>
+    pub fn get_crawl_system_folders(&self) -> &::std::option::Option<bool> {
+        &self.crawl_system_folders
+    }
     /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
     pub fn crawl_comments(mut self, input: bool) -> Self {
         self.crawl_comments = ::std::option::Option::Some(input);
@@ -224,6 +249,10 @@ impl AlfrescoConfigurationBuilder {
     pub fn set_crawl_comments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_comments = input;
         self
+    }
+    /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+    pub fn get_crawl_comments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_comments
     }
     /// Appends an item to `entity_filter`.
     ///
@@ -243,6 +272,12 @@ impl AlfrescoConfigurationBuilder {
     ) -> Self {
         self.entity_filter = input;
         self
+    }
+    /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+    pub fn get_entity_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlfrescoEntity>> {
+        &self.entity_filter
     }
     /// Appends an item to `document_library_field_mappings`.
     ///
@@ -266,6 +301,12 @@ impl AlfrescoConfigurationBuilder {
         self.document_library_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn get_document_library_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.document_library_field_mappings
+    }
     /// Appends an item to `blog_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_blog_field_mappings`](Self::set_blog_field_mappings).
@@ -287,6 +328,12 @@ impl AlfrescoConfigurationBuilder {
     ) -> Self {
         self.blog_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn get_blog_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.blog_field_mappings
     }
     /// Appends an item to `wiki_field_mappings`.
     ///
@@ -310,6 +357,12 @@ impl AlfrescoConfigurationBuilder {
         self.wiki_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn get_wiki_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.wiki_field_mappings
+    }
     /// Appends an item to `inclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
@@ -331,6 +384,12 @@ impl AlfrescoConfigurationBuilder {
     ) -> Self {
         self.inclusion_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
     ///
@@ -354,6 +413,12 @@ impl AlfrescoConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -366,6 +431,12 @@ impl AlfrescoConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`AlfrescoConfiguration`](crate::types::AlfrescoConfiguration).
     pub fn build(self) -> crate::types::AlfrescoConfiguration {

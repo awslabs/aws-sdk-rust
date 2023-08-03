@@ -94,6 +94,10 @@ impl CreatePlatformVersionInputBuilder {
         self.platform_name = input;
         self
     }
+    /// <p>The name of your custom platform.</p>
+    pub fn get_platform_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_name
+    }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
     pub fn platform_version(
         mut self,
@@ -110,6 +114,10 @@ impl CreatePlatformVersionInputBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>The number, such as 1.0.2, for the new platform version.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
     pub fn platform_definition_bundle(mut self, input: crate::types::S3Location) -> Self {
         self.platform_definition_bundle = ::std::option::Option::Some(input);
@@ -122,6 +130,12 @@ impl CreatePlatformVersionInputBuilder {
     ) -> Self {
         self.platform_definition_bundle = input;
         self
+    }
+    /// <p>The location of the platform definition archive in Amazon S3.</p>
+    pub fn get_platform_definition_bundle(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Location> {
+        &self.platform_definition_bundle
     }
     /// <p>The name of the builder environment.</p>
     pub fn environment_name(
@@ -138,6 +152,10 @@ impl CreatePlatformVersionInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the builder environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Appends an item to `option_settings`.
     ///
@@ -157,6 +175,12 @@ impl CreatePlatformVersionInputBuilder {
     ) -> Self {
         self.option_settings = input;
         self
+    }
+    /// <p>The configuration option settings to apply to the builder environment.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        &self.option_settings
     }
     /// Appends an item to `tags`.
     ///
@@ -178,6 +202,11 @@ impl CreatePlatformVersionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the new platform version.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePlatformVersionInput`](crate::operation::create_platform_version::CreatePlatformVersionInput).
     pub fn build(

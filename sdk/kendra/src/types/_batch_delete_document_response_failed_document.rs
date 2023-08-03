@@ -56,6 +56,10 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the document that couldn't be removed from the index.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for why the document couldn't be removed from the index.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>An explanation for why the document couldn't be removed from the index.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchDeleteDocumentResponseFailedDocument`](crate::types::BatchDeleteDocumentResponseFailedDocument).
     pub fn build(self) -> crate::types::BatchDeleteDocumentResponseFailedDocument {

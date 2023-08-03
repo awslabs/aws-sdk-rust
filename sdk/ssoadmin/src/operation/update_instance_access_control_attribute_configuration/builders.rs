@@ -36,6 +36,10 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInstanceAccessControlAttributeConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_instance_access_control_attribute_configuration::builders::UpdateInstanceAccessControlAttributeConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_arn()
+    }
     /// <p>Updates the attributes for your ABAC configuration.</p>
     pub fn instance_access_control_attribute_configuration(
         mut self,
@@ -119,5 +127,12 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
             .inner
             .set_instance_access_control_attribute_configuration(input);
         self
+    }
+    /// <p>Updates the attributes for your ABAC configuration.</p>
+    pub fn get_instance_access_control_attribute_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration> {
+        self.inner
+            .get_instance_access_control_attribute_configuration()
     }
 }

@@ -40,6 +40,10 @@ impl GetOutpostResolverInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the Resolver on the Outpost.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetOutpostResolverInput`](crate::operation::get_outpost_resolver::GetOutpostResolverInput).
     pub fn build(
         self,

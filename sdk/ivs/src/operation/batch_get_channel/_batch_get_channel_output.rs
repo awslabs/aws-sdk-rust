@@ -64,6 +64,10 @@ impl BatchGetChannelOutputBuilder {
         self.channels = input;
         self
     }
+    /// <p></p>
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        &self.channels
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -82,6 +86,10 @@ impl BatchGetChannelOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Each error object is related to a specific ARN in the request.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

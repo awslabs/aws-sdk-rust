@@ -58,6 +58,12 @@ impl GaugeChartConditionalFormattingOptionBuilder {
         self.primary_value = input;
         self
     }
+    /// <p>The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_primary_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::GaugeChartPrimaryValueConditionalFormatting> {
+        &self.primary_value
+    }
     /// <p>The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.</p>
     pub fn arc(mut self, input: crate::types::GaugeChartArcConditionalFormatting) -> Self {
         self.arc = ::std::option::Option::Some(input);
@@ -70,6 +76,12 @@ impl GaugeChartConditionalFormattingOptionBuilder {
     ) -> Self {
         self.arc = input;
         self
+    }
+    /// <p>The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc(
+        &self,
+    ) -> &::std::option::Option<crate::types::GaugeChartArcConditionalFormatting> {
+        &self.arc
     }
     /// Consumes the builder and constructs a [`GaugeChartConditionalFormattingOption`](crate::types::GaugeChartConditionalFormattingOption).
     pub fn build(self) -> crate::types::GaugeChartConditionalFormattingOption {

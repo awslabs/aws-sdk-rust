@@ -94,6 +94,10 @@ impl FmtpBuilder {
         self.channel_order = input;
         self
     }
+    /// The format of the audio channel.
+    pub fn get_channel_order(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_order
+    }
     /// The format that is used for the representation of color.
     pub fn colorimetry(mut self, input: crate::types::Colorimetry) -> Self {
         self.colorimetry = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl FmtpBuilder {
     ) -> Self {
         self.colorimetry = input;
         self
+    }
+    /// The format that is used for the representation of color.
+    pub fn get_colorimetry(&self) -> &::std::option::Option<crate::types::Colorimetry> {
+        &self.colorimetry
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
     pub fn exact_framerate(
@@ -123,6 +131,10 @@ impl FmtpBuilder {
         self.exact_framerate = input;
         self
     }
+    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    pub fn get_exact_framerate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exact_framerate
+    }
     /// The pixel aspect ratio (PAR) of the video.
     pub fn par(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.par = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl FmtpBuilder {
     pub fn set_par(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.par = input;
         self
+    }
+    /// The pixel aspect ratio (PAR) of the video.
+    pub fn get_par(&self) -> &::std::option::Option<::std::string::String> {
+        &self.par
     }
     /// The encoding range of the video.
     pub fn range(mut self, input: crate::types::Range) -> Self {
@@ -143,6 +159,10 @@ impl FmtpBuilder {
         self.range = input;
         self
     }
+    /// The encoding range of the video.
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.range
+    }
     /// The type of compression that was used to smooth the video’s appearance
     pub fn scan_mode(mut self, input: crate::types::ScanMode) -> Self {
         self.scan_mode = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl FmtpBuilder {
         self.scan_mode = input;
         self
     }
+    /// The type of compression that was used to smooth the video’s appearance
+    pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
+        &self.scan_mode
+    }
     /// The transfer characteristic system (TCS) that is used in the video.
     pub fn tcs(mut self, input: crate::types::Tcs) -> Self {
         self.tcs = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl FmtpBuilder {
     pub fn set_tcs(mut self, input: ::std::option::Option<crate::types::Tcs>) -> Self {
         self.tcs = input;
         self
+    }
+    /// The transfer characteristic system (TCS) that is used in the video.
+    pub fn get_tcs(&self) -> &::std::option::Option<crate::types::Tcs> {
+        &self.tcs
     }
     /// Consumes the builder and constructs a [`Fmtp`](crate::types::Fmtp).
     pub fn build(self) -> crate::types::Fmtp {

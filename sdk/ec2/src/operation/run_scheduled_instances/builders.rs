@@ -38,6 +38,13 @@ impl RunScheduledInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RunScheduledInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl RunScheduledInstancesFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -137,6 +148,10 @@ impl RunScheduledInstancesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The number of instances.</p>
     /// <p>Default: 1</p>
@@ -149,6 +164,11 @@ impl RunScheduledInstancesFluentBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
+    }
+    /// <p>The number of instances.</p>
+    /// <p>Default: 1</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
     pub fn launch_specification(
@@ -166,6 +186,12 @@ impl RunScheduledInstancesFluentBuilder {
         self.inner = self.inner.set_launch_specification(input);
         self
     }
+    /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
+    pub fn get_launch_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
+        self.inner.get_launch_specification()
+    }
     /// <p>The Scheduled Instance ID.</p>
     pub fn scheduled_instance_id(
         mut self,
@@ -181,5 +207,9 @@ impl RunScheduledInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_instance_id(input);
         self
+    }
+    /// <p>The Scheduled Instance ID.</p>
+    pub fn get_scheduled_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_instance_id()
     }
 }

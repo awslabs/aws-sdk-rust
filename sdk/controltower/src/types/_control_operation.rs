@@ -75,6 +75,10 @@ impl ControlOperationBuilder {
         self.operation_type = input;
         self
     }
+    /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
+    pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::ControlOperationType> {
+        &self.operation_type
+    }
     /// <p>The time that the operation began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl ControlOperationBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time that the operation began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time that the operation finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -101,6 +109,10 @@ impl ControlOperationBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time that the operation finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ControlOperationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl ControlOperationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlOperationStatus> {
+        &self.status
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub fn status_message(
@@ -129,6 +145,10 @@ impl ControlOperationBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ControlOperation`](crate::types::ControlOperation).
     pub fn build(self) -> crate::types::ControlOperation {

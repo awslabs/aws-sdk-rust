@@ -37,6 +37,10 @@ impl DisassociateConnectionFromLagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateConnectionFromLag as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DisassociateConnectionFromLagFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_id(input.into());
@@ -142,5 +150,9 @@ impl DisassociateConnectionFromLagFluentBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lag_id(input);
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_id()
     }
 }

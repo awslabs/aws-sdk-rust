@@ -72,6 +72,10 @@ impl RoomMembershipBuilder {
         self.room_id = input;
         self
     }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
+    }
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
     pub fn member(mut self, input: crate::types::Member) -> Self {
         self.member = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl RoomMembershipBuilder {
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::Member>) -> Self {
         self.member = input;
         self
+    }
+    /// <p>The member details, such as email address, name, member ID, and member type.</p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::Member> {
+        &self.member
     }
     /// <p>The membership role.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
@@ -95,6 +103,10 @@ impl RoomMembershipBuilder {
         self.role = input;
         self
     }
+    /// <p>The membership role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
+        &self.role
+    }
     /// <p>The identifier of the user that invited the room member.</p>
     pub fn invited_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invited_by = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl RoomMembershipBuilder {
     pub fn set_invited_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invited_by = input;
         self
+    }
+    /// <p>The identifier of the user that invited the room member.</p>
+    pub fn get_invited_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invited_by
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +133,10 @@ impl RoomMembershipBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The room membership update timestamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`RoomMembership`](crate::types::RoomMembership).
     pub fn build(self) -> crate::types::RoomMembership {

@@ -53,6 +53,10 @@ impl CreatePresignedNotebookInstanceUrlInputBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the notebook instance.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
         self.session_expiration_duration_in_seconds = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl CreatePresignedNotebookInstanceUrlInputBuilder {
     ) -> Self {
         self.session_expiration_duration_in_seconds = input;
         self
+    }
+    /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
+    pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.session_expiration_duration_in_seconds
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookInstanceUrlInput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput, ::aws_smithy_http::operation::error::BuildError>{

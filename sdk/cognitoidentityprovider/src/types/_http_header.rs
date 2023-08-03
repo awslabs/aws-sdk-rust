@@ -48,6 +48,10 @@ impl HttpHeaderBuilder {
         self.header_name = input;
         self
     }
+    /// <p>The header name.</p>
+    pub fn get_header_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header_name
+    }
     /// <p>The header value.</p>
     pub fn header_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header_value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl HttpHeaderBuilder {
     pub fn set_header_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_value = input;
         self
+    }
+    /// <p>The header value.</p>
+    pub fn get_header_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header_value
     }
     /// Consumes the builder and constructs a [`HttpHeader`](crate::types::HttpHeader).
     pub fn build(self) -> crate::types::HttpHeader {

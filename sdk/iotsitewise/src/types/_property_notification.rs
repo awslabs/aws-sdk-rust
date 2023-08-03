@@ -48,6 +48,10 @@ impl PropertyNotificationBuilder {
         self.topic = input;
         self
     }
+    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// <p>The current notification state.</p>
     pub fn state(mut self, input: crate::types::PropertyNotificationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PropertyNotificationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current notification state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PropertyNotificationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`PropertyNotification`](crate::types::PropertyNotification).
     pub fn build(self) -> crate::types::PropertyNotification {

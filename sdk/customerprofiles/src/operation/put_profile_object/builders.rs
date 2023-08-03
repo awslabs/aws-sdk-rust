@@ -39,6 +39,12 @@ impl PutProfileObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutProfileObject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl PutProfileObjectFluentBuilder {
         self.inner = self.inner.set_object_type_name(input);
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_type_name()
+    }
     /// <p>A string that is serialized from a JSON object.</p>
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object(input.into());
@@ -145,6 +155,10 @@ impl PutProfileObjectFluentBuilder {
         self.inner = self.inner.set_object(input);
         self
     }
+    /// <p>A string that is serialized from a JSON object.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object()
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -154,5 +168,9 @@ impl PutProfileObjectFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

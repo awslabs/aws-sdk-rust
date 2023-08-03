@@ -88,6 +88,20 @@ impl CapacityConfigurationBuilder {
         self.node_type = input;
         self
     }
+    /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
+    /// <p>You can only specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
+    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// </ul>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
+    }
     /// <p>The number of instances running in a cluster.</p>
     pub fn node_count(mut self, input: i32) -> Self {
         self.node_count = ::std::option::Option::Some(input);
@@ -97,6 +111,10 @@ impl CapacityConfigurationBuilder {
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_count = input;
         self
+    }
+    /// <p>The number of instances running in a cluster.</p>
+    pub fn get_node_count(&self) -> &::std::option::Option<i32> {
+        &self.node_count
     }
     /// Consumes the builder and constructs a [`CapacityConfiguration`](crate::types::CapacityConfiguration).
     pub fn build(self) -> crate::types::CapacityConfiguration {

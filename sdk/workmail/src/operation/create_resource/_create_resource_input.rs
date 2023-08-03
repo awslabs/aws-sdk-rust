@@ -61,6 +61,10 @@ impl CreateResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The name of the new resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreateResourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl CreateResourceInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(

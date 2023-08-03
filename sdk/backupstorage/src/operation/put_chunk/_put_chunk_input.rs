@@ -92,6 +92,10 @@ impl PutChunkInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// Upload Id for the in-progress upload.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl PutChunkInputBuilder {
         self.upload_id = input;
         self
     }
+    /// Upload Id for the in-progress upload.
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// Describes this chunk's position relative to the other chunks
     pub fn chunk_index(mut self, input: i64) -> Self {
         self.chunk_index = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl PutChunkInputBuilder {
     pub fn set_chunk_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.chunk_index = input;
         self
+    }
+    /// Describes this chunk's position relative to the other chunks
+    pub fn get_chunk_index(&self) -> &::std::option::Option<i64> {
+        &self.chunk_index
     }
     /// Data to be uploaded
     pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -125,6 +137,10 @@ impl PutChunkInputBuilder {
         self.data = input;
         self
     }
+    /// Data to be uploaded
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.data
+    }
     /// Data length
     pub fn length(mut self, input: i64) -> Self {
         self.length = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl PutChunkInputBuilder {
         self.length = input;
         self
     }
+    /// Data length
+    pub fn get_length(&self) -> &::std::option::Option<i64> {
+        &self.length
+    }
     /// Data checksum
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl PutChunkInputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// Data checksum
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
@@ -157,6 +181,12 @@ impl PutChunkInputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`PutChunkInput`](crate::operation::put_chunk::PutChunkInput).
     pub fn build(

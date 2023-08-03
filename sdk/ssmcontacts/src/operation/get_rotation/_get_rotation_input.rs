@@ -39,6 +39,10 @@ impl GetRotationInputBuilder {
         self.rotation_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_id
+    }
     /// Consumes the builder and constructs a [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
     pub fn build(
         self,

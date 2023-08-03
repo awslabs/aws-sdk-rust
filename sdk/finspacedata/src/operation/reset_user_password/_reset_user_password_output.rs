@@ -62,6 +62,10 @@ impl ResetUserPasswordOutputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier of the user that a new password is generated for.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
     pub fn temporary_password(
         mut self,
@@ -77,6 +81,10 @@ impl ResetUserPasswordOutputBuilder {
     ) -> Self {
         self.temporary_password = input;
         self
+    }
+    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    pub fn get_temporary_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.temporary_password
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

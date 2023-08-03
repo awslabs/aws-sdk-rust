@@ -99,6 +99,10 @@ impl InvalidLayerPartExceptionBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the exception.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the exception.</p>
     pub fn repository_name(
         mut self,
@@ -115,6 +119,10 @@ impl InvalidLayerPartExceptionBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the exception.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The upload ID associated with the exception.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl InvalidLayerPartExceptionBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>The upload ID associated with the exception.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
     pub fn last_valid_byte_received(mut self, input: i64) -> Self {
@@ -135,6 +147,10 @@ impl InvalidLayerPartExceptionBuilder {
         self.last_valid_byte_received = input;
         self
     }
+    /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
+    pub fn get_last_valid_byte_received(&self) -> &::std::option::Option<i64> {
+        &self.last_valid_byte_received
+    }
     /// <p>The error message associated with the exception.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -144,6 +160,10 @@ impl InvalidLayerPartExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message associated with the exception.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

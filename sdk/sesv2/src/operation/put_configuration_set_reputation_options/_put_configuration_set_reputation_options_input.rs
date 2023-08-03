@@ -54,6 +54,10 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
         self.reputation_metrics_enabled = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
     pub fn set_reputation_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reputation_metrics_enabled = input;
         self
+    }
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+    pub fn get_reputation_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.reputation_metrics_enabled
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsInput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

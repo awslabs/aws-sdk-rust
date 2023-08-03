@@ -38,6 +38,12 @@ impl DescribeAutoMLJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAutoMLJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl DescribeAutoMLJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_ml_job_name(input);
         self
+    }
+    /// <p>Requests information about an AutoML job using its unique name.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_ml_job_name()
     }
 }

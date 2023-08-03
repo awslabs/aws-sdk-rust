@@ -57,6 +57,12 @@ impl CustomDataIdentifiersBuilder {
         self.detections = input;
         self
     }
+    /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
+    pub fn get_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>> {
+        &self.detections
+    }
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl CustomDataIdentifiersBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`CustomDataIdentifiers`](crate::types::CustomDataIdentifiers).
     pub fn build(self) -> crate::types::CustomDataIdentifiers {

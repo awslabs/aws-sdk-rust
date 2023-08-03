@@ -43,6 +43,12 @@ impl TransactGetItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TransactGetItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl TransactGetItemsFluentBuilder {
         self.inner = self.inner.set_transact_items(input);
         self
     }
+    /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+    pub fn get_transact_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>> {
+        self.inner.get_transact_items()
+    }
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
     pub fn return_consumed_capacity(mut self, input: crate::types::ReturnConsumedCapacity) -> Self {
         self.inner = self.inner.return_consumed_capacity(input);
@@ -152,5 +164,11 @@ impl TransactGetItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
+    }
+    /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
+    pub fn get_return_consumed_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+        self.inner.get_return_consumed_capacity()
     }
 }

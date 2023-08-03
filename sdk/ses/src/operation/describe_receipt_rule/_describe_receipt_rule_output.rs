@@ -49,6 +49,10 @@ impl DescribeReceiptRuleOutputBuilder {
         self.rule = input;
         self
     }
+    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        &self.rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

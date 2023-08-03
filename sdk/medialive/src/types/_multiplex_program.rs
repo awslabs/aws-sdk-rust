@@ -83,6 +83,10 @@ impl MultiplexProgramBuilder {
         self.channel_id = input;
         self
     }
+    /// The MediaLive channel associated with the program.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// The settings for this multiplex program.
     pub fn multiplex_program_settings(
         mut self,
@@ -99,6 +103,12 @@ impl MultiplexProgramBuilder {
         self.multiplex_program_settings = input;
         self
     }
+    /// The settings for this multiplex program.
+    pub fn get_multiplex_program_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+        &self.multiplex_program_settings
+    }
     /// The packet identifier map for this multiplex program.
     pub fn packet_identifiers_map(
         mut self,
@@ -114,6 +124,12 @@ impl MultiplexProgramBuilder {
     ) -> Self {
         self.packet_identifiers_map = input;
         self
+    }
+    /// The packet identifier map for this multiplex program.
+    pub fn get_packet_identifiers_map(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap> {
+        &self.packet_identifiers_map
     }
     /// Appends an item to `pipeline_details`.
     ///
@@ -134,6 +150,12 @@ impl MultiplexProgramBuilder {
         self.pipeline_details = input;
         self
     }
+    /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    pub fn get_pipeline_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>> {
+        &self.pipeline_details
+    }
     /// The name of the multiplex program.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -143,6 +165,10 @@ impl MultiplexProgramBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The name of the multiplex program.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`MultiplexProgram`](crate::types::MultiplexProgram).
     pub fn build(self) -> crate::types::MultiplexProgram {

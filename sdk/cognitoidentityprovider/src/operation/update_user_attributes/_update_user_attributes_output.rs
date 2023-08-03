@@ -64,6 +64,12 @@ impl UpdateUserAttributesOutputBuilder {
         self.code_delivery_details_list = input;
         self
     }
+    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    pub fn get_code_delivery_details_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>> {
+        &self.code_delivery_details_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

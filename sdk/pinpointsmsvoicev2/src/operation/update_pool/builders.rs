@@ -36,6 +36,10 @@ impl UpdatePoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePool as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_pool::builders::UpdatePoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdatePoolFluentBuilder {
         self.inner = self.inner.set_pool_id(input);
         self
     }
+    /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_id()
+    }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.two_way_enabled(input);
@@ -127,6 +135,10 @@ impl UpdatePoolFluentBuilder {
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_two_way_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_two_way_enabled()
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(
@@ -144,6 +156,10 @@ impl UpdatePoolFluentBuilder {
         self.inner = self.inner.set_two_way_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_two_way_channel_arn()
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.self_managed_opt_outs_enabled(input);
@@ -153,6 +169,10 @@ impl UpdatePoolFluentBuilder {
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_self_managed_opt_outs_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_self_managed_opt_outs_enabled()
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
     pub fn opt_out_list_name(
@@ -170,6 +190,10 @@ impl UpdatePoolFluentBuilder {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
+    /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opt_out_list_name()
+    }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.shared_routes_enabled(input);
@@ -180,6 +204,10 @@ impl UpdatePoolFluentBuilder {
         self.inner = self.inner.set_shared_routes_enabled(input);
         self
     }
+    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_shared_routes_enabled()
+    }
     /// <p>When set to true the pool can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection_enabled(input);
@@ -189,5 +217,9 @@ impl UpdatePoolFluentBuilder {
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
+    }
+    /// <p>When set to true the pool can't be deleted.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection_enabled()
     }
 }

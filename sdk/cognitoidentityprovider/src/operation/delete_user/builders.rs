@@ -36,6 +36,10 @@ impl DeleteUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_user::builders::DeleteUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteUserFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

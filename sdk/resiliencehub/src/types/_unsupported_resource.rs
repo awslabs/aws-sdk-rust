@@ -67,6 +67,12 @@ impl UnsupportedResourceBuilder {
         self.logical_resource_id = input;
         self
     }
+    /// <p>The logical resource identifier for the unsupported resource.</p>
+    pub fn get_logical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+        &self.logical_resource_id
+    }
     /// <p>The physical resource identifier for the unsupported resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
@@ -79,6 +85,12 @@ impl UnsupportedResourceBuilder {
     ) -> Self {
         self.physical_resource_id = input;
         self
+    }
+    /// <p>The physical resource identifier for the unsupported resource.</p>
+    pub fn get_physical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhysicalResourceId> {
+        &self.physical_resource_id
     }
     /// <p>The type of resource.</p>
     pub fn resource_type(
@@ -96,6 +108,10 @@ impl UnsupportedResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The status of the unsupported resource.</p>
     pub fn unsupported_resource_status(
         mut self,
@@ -111,6 +127,10 @@ impl UnsupportedResourceBuilder {
     ) -> Self {
         self.unsupported_resource_status = input;
         self
+    }
+    /// <p>The status of the unsupported resource.</p>
+    pub fn get_unsupported_resource_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unsupported_resource_status
     }
     /// Consumes the builder and constructs a [`UnsupportedResource`](crate::types::UnsupportedResource).
     pub fn build(self) -> crate::types::UnsupportedResource {

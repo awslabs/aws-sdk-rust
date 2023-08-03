@@ -56,6 +56,10 @@ impl ThresholdBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of a threshold.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
     pub fn r#type(mut self, input: crate::types::ThresholdType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ThresholdBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThresholdType> {
+        &self.r#type
+    }
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
     pub fn unit(mut self, input: crate::types::ThresholdUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ThresholdBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::ThresholdUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::ThresholdUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Threshold`](crate::types::Threshold).
     pub fn build(self) -> crate::types::Threshold {

@@ -56,6 +56,10 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
         self.encryption_disabled = input;
         self
     }
+    /// <p>Whether to disable encryption of the S3 build log output.</p>
+    pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
+        &self.encryption_disabled
+    }
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
         self.location = input;
         self
     }
+    /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The current status of the S3 build logs.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the S3 build logs.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails {

@@ -93,6 +93,10 @@ impl GetPolicyTemplateOutputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>The ID of the policy store that contains the policy template.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>The ID of the policy template.</p>
     pub fn policy_template_id(
         mut self,
@@ -109,6 +113,10 @@ impl GetPolicyTemplateOutputBuilder {
         self.policy_template_id = input;
         self
     }
+    /// <p>The ID of the policy template.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
+    }
     /// <p>The description of the policy template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl GetPolicyTemplateOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the policy template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The content of the body of the policy template written in the Cedar policy language.</p>
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl GetPolicyTemplateOutputBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>The content of the body of the policy template written in the Cedar policy language.</p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// <p>The date and time that the policy template was originally created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,6 +158,10 @@ impl GetPolicyTemplateOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time that the policy template was originally created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl GetPolicyTemplateOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time that the policy template was most recently updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

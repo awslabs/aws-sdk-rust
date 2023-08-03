@@ -56,6 +56,10 @@ impl WorkerResourceConfigBuilder {
         self.cpu = input;
         self
     }
+    /// <p>The CPU requirements for every worker instance of the worker type.</p>
+    pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu
+    }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl WorkerResourceConfigBuilder {
         self.memory = input;
         self
     }
+    /// <p>The memory requirements for every worker instance of the worker type.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.memory
+    }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn disk(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl WorkerResourceConfigBuilder {
     pub fn set_disk(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk = input;
         self
+    }
+    /// <p>The disk requirements for every worker instance of the worker type.</p>
+    pub fn get_disk(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk
     }
     /// Consumes the builder and constructs a [`WorkerResourceConfig`](crate::types::WorkerResourceConfig).
     pub fn build(self) -> crate::types::WorkerResourceConfig {

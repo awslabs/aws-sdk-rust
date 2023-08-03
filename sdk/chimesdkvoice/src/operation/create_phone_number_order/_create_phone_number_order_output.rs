@@ -51,6 +51,10 @@ impl CreatePhoneNumberOrderOutputBuilder {
         self.phone_number_order = input;
         self
     }
+    /// <p>The phone number order details.</p>
+    pub fn get_phone_number_order(&self) -> &::std::option::Option<crate::types::PhoneNumberOrder> {
+        &self.phone_number_order
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

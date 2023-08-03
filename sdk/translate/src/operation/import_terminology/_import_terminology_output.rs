@@ -63,6 +63,12 @@ impl ImportTerminologyOutputBuilder {
         self.terminology_properties = input;
         self
     }
+    /// <p>The properties of the custom terminology being imported.</p>
+    pub fn get_terminology_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::TerminologyProperties> {
+        &self.terminology_properties
+    }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     pub fn auxiliary_data_location(mut self, input: crate::types::TerminologyDataLocation) -> Self {
         self.auxiliary_data_location = ::std::option::Option::Some(input);
@@ -75,6 +81,12 @@ impl ImportTerminologyOutputBuilder {
     ) -> Self {
         self.auxiliary_data_location = input;
         self
+    }
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    pub fn get_auxiliary_data_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
+        &self.auxiliary_data_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

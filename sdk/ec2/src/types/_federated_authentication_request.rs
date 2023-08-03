@@ -54,6 +54,10 @@ impl FederatedAuthenticationRequestBuilder {
         self.saml_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
+    pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_provider_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
     pub fn self_service_saml_provider_arn(
         mut self,
@@ -69,6 +73,12 @@ impl FederatedAuthenticationRequestBuilder {
     ) -> Self {
         self.self_service_saml_provider_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
+    pub fn get_self_service_saml_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.self_service_saml_provider_arn
     }
     /// Consumes the builder and constructs a [`FederatedAuthenticationRequest`](crate::types::FederatedAuthenticationRequest).
     pub fn build(self) -> crate::types::FederatedAuthenticationRequest {

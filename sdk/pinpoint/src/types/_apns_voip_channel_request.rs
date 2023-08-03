@@ -96,6 +96,10 @@ impl ApnsVoipChannelRequestBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ApnsVoipChannelRequestBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
     pub fn default_authentication_method(
@@ -122,6 +130,12 @@ impl ApnsVoipChannelRequestBuilder {
         self.default_authentication_method = input;
         self
     }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
+    pub fn get_default_authentication_method(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_authentication_method
+    }
     /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -131,6 +145,10 @@ impl ApnsVoipChannelRequestBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +160,10 @@ impl ApnsVoipChannelRequestBuilder {
         self.private_key = input;
         self
     }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
+    }
     /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
@@ -151,6 +173,10 @@ impl ApnsVoipChannelRequestBuilder {
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_id = input;
         self
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// <p>The authentication key to use for APNs tokens.</p>
     pub fn token_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +188,10 @@ impl ApnsVoipChannelRequestBuilder {
         self.token_key = input;
         self
     }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn get_token_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_key
+    }
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
     pub fn token_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_key_id = ::std::option::Option::Some(input.into());
@@ -171,6 +201,10 @@ impl ApnsVoipChannelRequestBuilder {
     pub fn set_token_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_key_id = input;
         self
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
+    pub fn get_token_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_key_id
     }
     /// Consumes the builder and constructs a [`ApnsVoipChannelRequest`](crate::types::ApnsVoipChannelRequest).
     pub fn build(self) -> crate::types::ApnsVoipChannelRequest {

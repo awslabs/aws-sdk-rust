@@ -40,6 +40,10 @@ impl LaunchTemplatesMonitoringRequestBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic monitoring is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`LaunchTemplatesMonitoringRequest`](crate::types::LaunchTemplatesMonitoringRequest).
     pub fn build(self) -> crate::types::LaunchTemplatesMonitoringRequest {
         crate::types::LaunchTemplatesMonitoringRequest {

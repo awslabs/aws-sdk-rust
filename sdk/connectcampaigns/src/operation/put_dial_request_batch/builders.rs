@@ -36,6 +36,12 @@ impl PutDialRequestBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDialRequestBatch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutDialRequestBatchFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// Appends an item to `dialRequests`.
     ///
     /// To override the contents of this collection use [`set_dial_requests`](Self::set_dial_requests).
@@ -142,5 +152,11 @@ impl PutDialRequestBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dial_requests(input);
         self
+    }
+    /// A list of dial requests.
+    pub fn get_dial_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
+        self.inner.get_dial_requests()
     }
 }

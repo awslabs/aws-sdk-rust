@@ -40,6 +40,10 @@ impl PendingResourceBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`PendingResource`](crate::types::PendingResource).
     pub fn build(self) -> crate::types::PendingResource {
         crate::types::PendingResource {

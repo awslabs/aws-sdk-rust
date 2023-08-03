@@ -37,6 +37,12 @@ impl CreateDirectoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDirectory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_directory::builders::CreateDirectoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateDirectoryFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -136,5 +146,9 @@ impl CreateDirectoryFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
 }

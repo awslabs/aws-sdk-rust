@@ -136,6 +136,10 @@ impl WorkflowStepSummaryBuilder {
         self.step_id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_id
+    }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl WorkflowStepSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -159,6 +167,10 @@ impl WorkflowStepSummaryBuilder {
         self.step_action_type = input;
         self
     }
+    /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
+        &self.step_action_type
+    }
     /// <p>The owner of the step.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -168,6 +180,10 @@ impl WorkflowStepSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the step.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// Appends an item to `previous`.
     ///
@@ -188,6 +204,10 @@ impl WorkflowStepSummaryBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -207,6 +227,10 @@ impl WorkflowStepSummaryBuilder {
         self.next = input;
         self
     }
+    /// <p>The next step.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
+    }
     /// <p>The status of the step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -216,6 +240,10 @@ impl WorkflowStepSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        &self.status
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(
@@ -233,6 +261,10 @@ impl WorkflowStepSummaryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message of the migration workflow.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The number of servers that have been migrated.</p>
     pub fn no_of_srv_completed(mut self, input: i32) -> Self {
         self.no_of_srv_completed = ::std::option::Option::Some(input);
@@ -242,6 +274,10 @@ impl WorkflowStepSummaryBuilder {
     pub fn set_no_of_srv_completed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.no_of_srv_completed = input;
         self
+    }
+    /// <p>The number of servers that have been migrated.</p>
+    pub fn get_no_of_srv_completed(&self) -> &::std::option::Option<i32> {
+        &self.no_of_srv_completed
     }
     /// <p>The number of servers that have failed to migrate.</p>
     pub fn no_of_srv_failed(mut self, input: i32) -> Self {
@@ -253,6 +289,10 @@ impl WorkflowStepSummaryBuilder {
         self.no_of_srv_failed = input;
         self
     }
+    /// <p>The number of servers that have failed to migrate.</p>
+    pub fn get_no_of_srv_failed(&self) -> &::std::option::Option<i32> {
+        &self.no_of_srv_failed
+    }
     /// <p>The total number of servers that have been migrated.</p>
     pub fn total_no_of_srv(mut self, input: i32) -> Self {
         self.total_no_of_srv = ::std::option::Option::Some(input);
@@ -263,6 +303,10 @@ impl WorkflowStepSummaryBuilder {
         self.total_no_of_srv = input;
         self
     }
+    /// <p>The total number of servers that have been migrated.</p>
+    pub fn get_total_no_of_srv(&self) -> &::std::option::Option<i32> {
+        &self.total_no_of_srv
+    }
     /// <p>The description of the step.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -272,6 +316,10 @@ impl WorkflowStepSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the step.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The location of the script.</p>
     pub fn script_location(
@@ -288,6 +336,10 @@ impl WorkflowStepSummaryBuilder {
     ) -> Self {
         self.script_location = input;
         self
+    }
+    /// <p>The location of the script.</p>
+    pub fn get_script_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_location
     }
     /// Consumes the builder and constructs a [`WorkflowStepSummary`](crate::types::WorkflowStepSummary).
     pub fn build(self) -> crate::types::WorkflowStepSummary {

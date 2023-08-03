@@ -79,6 +79,12 @@ impl CreateWhatIfForecastExportInputBuilder {
         self.what_if_forecast_export_name = input;
         self
     }
+    /// <p>The name of the what-if forecast to export.</p>
+    pub fn get_what_if_forecast_export_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_export_name
+    }
     /// Appends an item to `what_if_forecast_arns`.
     ///
     /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
@@ -101,6 +107,12 @@ impl CreateWhatIfForecastExportInputBuilder {
         self.what_if_forecast_arns = input;
         self
     }
+    /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+    pub fn get_what_if_forecast_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.what_if_forecast_arns
+    }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
@@ -115,6 +127,11 @@ impl CreateWhatIfForecastExportInputBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        &self.destination
     }
     /// Appends an item to `tags`.
     ///
@@ -135,6 +152,10 @@ impl CreateWhatIfForecastExportInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -144,6 +165,10 @@ impl CreateWhatIfForecastExportInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`CreateWhatIfForecastExportInput`](crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportInput).
     pub fn build(

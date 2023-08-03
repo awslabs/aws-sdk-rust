@@ -102,6 +102,10 @@ impl IntegrationAssociationSummaryBuilder {
         self.integration_association_id = input;
         self
     }
+    /// <p>The identifier for the AppIntegration association.</p>
+    pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_association_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
     pub fn integration_association_arn(
         mut self,
@@ -118,6 +122,10 @@ impl IntegrationAssociationSummaryBuilder {
         self.integration_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
+    pub fn get_integration_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_association_arn
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl IntegrationAssociationSummaryBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The integration type.</p>
     pub fn integration_type(mut self, input: crate::types::IntegrationType) -> Self {
@@ -140,6 +152,10 @@ impl IntegrationAssociationSummaryBuilder {
     ) -> Self {
         self.integration_type = input;
         self
+    }
+    /// <p>The integration type.</p>
+    pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
+        &self.integration_type
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
     pub fn integration_arn(
@@ -157,6 +173,10 @@ impl IntegrationAssociationSummaryBuilder {
         self.integration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
+    pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_arn
+    }
     /// <p>The URL for the external application.</p>
     pub fn source_application_url(
         mut self,
@@ -172,6 +192,10 @@ impl IntegrationAssociationSummaryBuilder {
     ) -> Self {
         self.source_application_url = input;
         self
+    }
+    /// <p>The URL for the external application.</p>
+    pub fn get_source_application_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_application_url
     }
     /// <p>The user-provided, friendly name for the external application.</p>
     pub fn source_application_name(
@@ -189,6 +213,10 @@ impl IntegrationAssociationSummaryBuilder {
         self.source_application_name = input;
         self
     }
+    /// <p>The user-provided, friendly name for the external application.</p>
+    pub fn get_source_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_application_name
+    }
     /// <p>The name of the source.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -201,6 +229,10 @@ impl IntegrationAssociationSummaryBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The name of the source.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
     pub fn build(self) -> crate::types::IntegrationAssociationSummary {

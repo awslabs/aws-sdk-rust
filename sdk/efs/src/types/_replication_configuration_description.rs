@@ -85,6 +85,10 @@ impl ReplicationConfigurationDescriptionBuilder {
         self.source_file_system_id = input;
         self
     }
+    /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_id
+    }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
     pub fn source_file_system_region(
         mut self,
@@ -100,6 +104,10 @@ impl ReplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.source_file_system_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    pub fn get_source_file_system_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_region
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub fn source_file_system_arn(
@@ -117,6 +125,10 @@ impl ReplicationConfigurationDescriptionBuilder {
         self.source_file_system_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
+    pub fn get_source_file_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
     pub fn original_source_file_system_arn(
         mut self,
@@ -133,6 +145,12 @@ impl ReplicationConfigurationDescriptionBuilder {
         self.original_source_file_system_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    pub fn get_original_source_file_system_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.original_source_file_system_arn
+    }
     /// <p>Describes when the replication configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -145,6 +163,10 @@ impl ReplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>Describes when the replication configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `destinations`.
     ///
@@ -164,6 +186,12 @@ impl ReplicationConfigurationDescriptionBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>An array of destination objects. Only one destination object is supported.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+        &self.destinations
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
     pub fn build(self) -> crate::types::ReplicationConfigurationDescription {

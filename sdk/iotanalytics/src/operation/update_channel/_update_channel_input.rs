@@ -55,6 +55,10 @@ impl UpdateChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel to be updated.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn channel_storage(mut self, input: crate::types::ChannelStorage) -> Self {
         self.channel_storage = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl UpdateChannelInputBuilder {
         self.channel_storage = input;
         self
     }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    pub fn get_channel_storage(&self) -> &::std::option::Option<crate::types::ChannelStorage> {
+        &self.channel_storage
+    }
     /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl UpdateChannelInputBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(

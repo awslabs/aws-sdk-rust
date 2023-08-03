@@ -83,6 +83,15 @@ impl LambdaFunctionUtilizationMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the utilization metric.</p>
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
+    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::LambdaFunctionMetricName> {
+        &self.name
+    }
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
@@ -100,6 +109,14 @@ impl LambdaFunctionUtilizationMetricBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic of the utilization metric.</p>
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    pub fn get_statistic(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFunctionMetricStatistic> {
+        &self.statistic
+    }
     /// <p>The value of the utilization metric.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -109,6 +126,10 @@ impl LambdaFunctionUtilizationMetricBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the utilization metric.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`LambdaFunctionUtilizationMetric`](crate::types::LambdaFunctionUtilizationMetric).
     pub fn build(self) -> crate::types::LambdaFunctionUtilizationMetric {

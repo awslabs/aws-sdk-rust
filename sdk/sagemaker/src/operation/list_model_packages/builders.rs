@@ -36,6 +36,12 @@ impl ListModelPackagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListModelPackages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListModelPackagesFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -153,6 +163,10 @@ impl ListModelPackagesFluentBuilder {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
+    /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
+    }
     /// <p>The maximum number of model packages to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,6 +176,10 @@ impl ListModelPackagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of model packages to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
     pub fn name_contains(
@@ -179,6 +197,10 @@ impl ListModelPackagesFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
     pub fn model_approval_status(mut self, input: crate::types::ModelApprovalStatus) -> Self {
         self.inner = self.inner.model_approval_status(input);
@@ -191,6 +213,12 @@ impl ListModelPackagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_approval_status(input);
         self
+    }
+    /// <p>A filter that returns only the model packages with the specified approval status.</p>
+    pub fn get_model_approval_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+        self.inner.get_model_approval_status()
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
     pub fn model_package_group_name(
@@ -207,6 +235,10 @@ impl ListModelPackagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
+    }
+    /// <p>A filter that returns only model versions that belong to the specified model group.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_package_group_name()
     }
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
@@ -231,6 +263,15 @@ impl ListModelPackagesFluentBuilder {
         self.inner = self.inner.set_model_package_type(input);
         self
     }
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
+    /// <ul>
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// </ul>
+    pub fn get_model_package_type(&self) -> &::std::option::Option<crate::types::ModelPackageType> {
+        self.inner.get_model_package_type()
+    }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -240,6 +281,10 @@ impl ListModelPackagesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ModelPackageSortBy) -> Self {
@@ -254,6 +299,10 @@ impl ListModelPackagesFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelPackageSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -263,5 +312,9 @@ impl ListModelPackagesFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

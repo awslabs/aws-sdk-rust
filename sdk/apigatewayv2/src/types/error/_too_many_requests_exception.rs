@@ -75,6 +75,10 @@ impl TooManyRequestsExceptionBuilder {
         self.limit_type = input;
         self
     }
+    /// <p>The limit type.</p>
+    pub fn get_limit_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_type
+    }
     /// <p>Describes the error encountered.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl TooManyRequestsExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Describes the error encountered.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

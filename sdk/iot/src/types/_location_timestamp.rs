@@ -50,6 +50,10 @@ impl LocationTimestampBuilder {
         self.value = input;
         self
     }
+    /// <p>An expression that returns a long epoch time value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl LocationTimestampBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`LocationTimestamp`](crate::types::LocationTimestamp).
     pub fn build(self) -> crate::types::LocationTimestamp {

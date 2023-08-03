@@ -163,6 +163,10 @@ impl StorageDescriptorBuilder {
         self.columns = input;
         self
     }
+    /// <p>A list of the <code>Columns</code> in the table.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.columns
+    }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -172,6 +176,10 @@ impl StorageDescriptorBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Appends an item to `additional_locations`.
     ///
@@ -195,6 +203,12 @@ impl StorageDescriptorBuilder {
         self.additional_locations = input;
         self
     }
+    /// <p>A list of locations that point to the path where a Delta table is located.</p>
+    pub fn get_additional_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_locations
+    }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub fn input_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_format = ::std::option::Option::Some(input.into());
@@ -204,6 +218,10 @@ impl StorageDescriptorBuilder {
     pub fn set_input_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_format = input;
         self
+    }
+    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
+    pub fn get_input_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_format
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub fn output_format(
@@ -221,6 +239,10 @@ impl StorageDescriptorBuilder {
         self.output_format = input;
         self
     }
+    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+    pub fn get_output_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_format
+    }
     /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn compressed(mut self, input: bool) -> Self {
         self.compressed = ::std::option::Option::Some(input);
@@ -230,6 +252,10 @@ impl StorageDescriptorBuilder {
     pub fn set_compressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compressed = input;
         self
+    }
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    pub fn get_compressed(&self) -> &::std::option::Option<bool> {
+        &self.compressed
     }
     /// <p>Must be specified if the table contains any dimension columns.</p>
     pub fn number_of_buckets(mut self, input: i32) -> Self {
@@ -241,6 +267,10 @@ impl StorageDescriptorBuilder {
         self.number_of_buckets = input;
         self
     }
+    /// <p>Must be specified if the table contains any dimension columns.</p>
+    pub fn get_number_of_buckets(&self) -> &::std::option::Option<i32> {
+        &self.number_of_buckets
+    }
     /// <p>The serialization/deserialization (SerDe) information.</p>
     pub fn serde_info(mut self, input: crate::types::SerDeInfo) -> Self {
         self.serde_info = ::std::option::Option::Some(input);
@@ -250,6 +280,10 @@ impl StorageDescriptorBuilder {
     pub fn set_serde_info(mut self, input: ::std::option::Option<crate::types::SerDeInfo>) -> Self {
         self.serde_info = input;
         self
+    }
+    /// <p>The serialization/deserialization (SerDe) information.</p>
+    pub fn get_serde_info(&self) -> &::std::option::Option<crate::types::SerDeInfo> {
+        &self.serde_info
     }
     /// Appends an item to `bucket_columns`.
     ///
@@ -273,6 +307,12 @@ impl StorageDescriptorBuilder {
         self.bucket_columns = input;
         self
     }
+    /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
+    pub fn get_bucket_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bucket_columns
+    }
     /// Appends an item to `sort_columns`.
     ///
     /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
@@ -291,6 +331,10 @@ impl StorageDescriptorBuilder {
     ) -> Self {
         self.sort_columns = input;
         self
+    }
+    /// <p>A list specifying the sort order of each bucket in the table.</p>
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Order>> {
+        &self.sort_columns
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -317,6 +361,14 @@ impl StorageDescriptorBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The user-supplied properties in key-value form.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub fn skewed_info(mut self, input: crate::types::SkewedInfo) -> Self {
         self.skewed_info = ::std::option::Option::Some(input);
@@ -330,6 +382,10 @@ impl StorageDescriptorBuilder {
         self.skewed_info = input;
         self
     }
+    /// <p>The information about values that appear frequently in a column (skewed values).</p>
+    pub fn get_skewed_info(&self) -> &::std::option::Option<crate::types::SkewedInfo> {
+        &self.skewed_info
+    }
     /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn stored_as_sub_directories(mut self, input: bool) -> Self {
         self.stored_as_sub_directories = ::std::option::Option::Some(input);
@@ -339,6 +395,10 @@ impl StorageDescriptorBuilder {
     pub fn set_stored_as_sub_directories(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stored_as_sub_directories = input;
         self
+    }
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    pub fn get_stored_as_sub_directories(&self) -> &::std::option::Option<bool> {
+        &self.stored_as_sub_directories
     }
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
@@ -354,6 +414,11 @@ impl StorageDescriptorBuilder {
     ) -> Self {
         self.schema_reference = input;
         self
+    }
+    /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
+    /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
+    pub fn get_schema_reference(&self) -> &::std::option::Option<crate::types::SchemaReference> {
+        &self.schema_reference
     }
     /// Consumes the builder and constructs a [`StorageDescriptor`](crate::types::StorageDescriptor).
     pub fn build(self) -> crate::types::StorageDescriptor {

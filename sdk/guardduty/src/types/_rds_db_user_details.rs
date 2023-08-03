@@ -72,6 +72,10 @@ impl RdsDbUserDetailsBuilder {
         self.user = input;
         self
     }
+    /// <p>The user name used in the anomalous login attempt.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
+    }
     /// <p>The application name used in the anomalous login attempt.</p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RdsDbUserDetailsBuilder {
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application = input;
         self
+    }
+    /// <p>The application name used in the anomalous login attempt.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// <p>The name of the database instance involved in the anomalous login attempt.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl RdsDbUserDetailsBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database instance involved in the anomalous login attempt.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
     pub fn ssl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl RdsDbUserDetailsBuilder {
         self.ssl = input;
         self
     }
+    /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
+    pub fn get_ssl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssl
+    }
     /// <p>The authentication method used by the user involved in the finding.</p>
     pub fn auth_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_method = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl RdsDbUserDetailsBuilder {
     pub fn set_auth_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_method = input;
         self
+    }
+    /// <p>The authentication method used by the user involved in the finding.</p>
+    pub fn get_auth_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_method
     }
     /// Consumes the builder and constructs a [`RdsDbUserDetails`](crate::types::RdsDbUserDetails).
     pub fn build(self) -> crate::types::RdsDbUserDetails {

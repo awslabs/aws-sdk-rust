@@ -63,6 +63,12 @@ impl ListStreamsOutputBuilder {
         self.stream_info_list = input;
         self
     }
+    /// <p>An array of <code>StreamInfo</code> objects.</p>
+    pub fn get_stream_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>> {
+        &self.stream_info_list
+    }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListStreamsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

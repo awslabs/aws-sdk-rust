@@ -48,6 +48,10 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionDraining`](crate::types::AwsElbLoadBalancerConnectionDraining).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerConnectionDraining {

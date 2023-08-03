@@ -80,6 +80,10 @@ impl ListProfileObjectsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token from the previous call to ListProfileObjects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ListProfileObjectsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ListProfileObjectsInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
@@ -116,6 +128,10 @@ impl ListProfileObjectsInputBuilder {
         self.object_type_name = input;
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
+    }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl ListProfileObjectsInputBuilder {
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn object_filter(mut self, input: crate::types::ObjectFilter) -> Self {
@@ -138,6 +158,10 @@ impl ListProfileObjectsInputBuilder {
     ) -> Self {
         self.object_filter = input;
         self
+    }
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
+    pub fn get_object_filter(&self) -> &::std::option::Option<crate::types::ObjectFilter> {
+        &self.object_filter
     }
     /// Consumes the builder and constructs a [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl TextLogSettingBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Determines whether conversation logs should be stored for an alias.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub fn destination(mut self, input: crate::types::TextLogDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TextLogSettingBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::TextLogDestination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`TextLogSetting`](crate::types::TextLogSetting).
     pub fn build(self) -> crate::types::TextLogSetting {

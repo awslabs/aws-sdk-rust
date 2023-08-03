@@ -58,6 +58,10 @@ impl ListWirelessDeviceImportTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `wireless_device_import_task_list`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_import_task_list`](Self::set_wireless_device_import_task_list).
@@ -79,6 +83,12 @@ impl ListWirelessDeviceImportTasksOutputBuilder {
     ) -> Self {
         self.wireless_device_import_task_list = input;
         self
+    }
+    /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
+    pub fn get_wireless_device_import_task_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceImportTask>> {
+        &self.wireless_device_import_task_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

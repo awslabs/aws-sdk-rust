@@ -39,6 +39,10 @@ impl DescribeElasticLoadBalancersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeElasticLoadBalancers as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DescribeElasticLoadBalancersFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -145,5 +153,9 @@ impl DescribeElasticLoadBalancersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
+    }
+    /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
     }
 }

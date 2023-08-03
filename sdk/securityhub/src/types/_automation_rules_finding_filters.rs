@@ -346,6 +346,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.product_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    pub fn get_product_arn(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.product_arn
+    }
     /// Appends an item to `aws_account_id`.
     ///
     /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
@@ -364,6 +370,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.aws_account_id = input;
         self
+    }
+    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    pub fn get_aws_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.aws_account_id
     }
     /// Appends an item to `id`.
     ///
@@ -384,6 +396,10 @@ impl AutomationRulesFindingFiltersBuilder {
         self.id = input;
         self
     }
+    /// <p> The product-specific identifier for a finding. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.id
+    }
     /// Appends an item to `generator_id`.
     ///
     /// To override the contents of this collection use [`set_generator_id`](Self::set_generator_id).
@@ -403,6 +419,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.generator_id = input;
         self
     }
+    /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    pub fn get_generator_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.generator_id
+    }
     /// Appends an item to `r#type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
@@ -421,6 +443,10 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.r#type
     }
     /// Appends an item to `first_observed_at`.
     ///
@@ -443,6 +469,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.first_observed_at = input;
         self
     }
+    /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_first_observed_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.first_observed_at
+    }
     /// Appends an item to `last_observed_at`.
     ///
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
@@ -463,6 +496,13 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.last_observed_at = input;
         self
+    }
+    /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_observed_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.last_observed_at
     }
     /// Appends an item to `created_at`.
     ///
@@ -485,6 +525,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.created_at = input;
         self
     }
+    /// <p> A timestamp that indicates when this finding record was created. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.created_at
+    }
     /// Appends an item to `updated_at`.
     ///
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
@@ -506,6 +553,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.updated_at = input;
         self
     }
+    /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_updated_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.updated_at
+    }
     /// Appends an item to `confidence`.
     ///
     /// To override the contents of this collection use [`set_confidence`](Self::set_confidence).
@@ -524,6 +578,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    pub fn get_confidence(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.confidence
     }
     /// Appends an item to `criticality`.
     ///
@@ -544,6 +604,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.criticality = input;
         self
     }
+    /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    pub fn get_criticality(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.criticality
+    }
     /// Appends an item to `title`.
     ///
     /// To override the contents of this collection use [`set_title`](Self::set_title).
@@ -562,6 +628,10 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.title = input;
         self
+    }
+    /// <p> A finding's title. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.title
     }
     /// Appends an item to `description`.
     ///
@@ -582,6 +652,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.description = input;
         self
     }
+    /// <p> A finding's description. </p>
+    pub fn get_description(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.description
+    }
     /// Appends an item to `source_url`.
     ///
     /// To override the contents of this collection use [`set_source_url`](Self::set_source_url).
@@ -600,6 +676,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.source_url = input;
         self
+    }
+    /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    pub fn get_source_url(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.source_url
     }
     /// Appends an item to `product_name`.
     ///
@@ -620,6 +702,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.product_name = input;
         self
     }
+    /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    pub fn get_product_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.product_name
+    }
     /// Appends an item to `company_name`.
     ///
     /// To override the contents of this collection use [`set_company_name`](Self::set_company_name).
@@ -638,6 +726,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.company_name = input;
         self
+    }
+    /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    pub fn get_company_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.company_name
     }
     /// Appends an item to `severity_label`.
     ///
@@ -658,6 +752,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.severity_label = input;
         self
     }
+    /// <p> The severity value of the finding. </p>
+    pub fn get_severity_label(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.severity_label
+    }
     /// Appends an item to `resource_type`.
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
@@ -676,6 +776,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p> The type of resource that the finding pertains to. </p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_type
     }
     /// Appends an item to `resource_id`.
     ///
@@ -696,6 +802,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.resource_id = input;
         self
     }
+    /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    pub fn get_resource_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_id
+    }
     /// Appends an item to `resource_partition`.
     ///
     /// To override the contents of this collection use [`set_resource_partition`](Self::set_resource_partition).
@@ -714,6 +826,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.resource_partition = input;
         self
+    }
+    /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    pub fn get_resource_partition(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_partition
     }
     /// Appends an item to `resource_region`.
     ///
@@ -734,6 +852,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.resource_region = input;
         self
     }
+    /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    pub fn get_resource_region(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_region
+    }
     /// Appends an item to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -752,6 +876,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.resource_tags = input;
         self
+    }
+    /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.resource_tags
     }
     /// Appends an item to `resource_details_other`.
     ///
@@ -772,6 +902,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.resource_details_other = input;
         self
     }
+    /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    pub fn get_resource_details_other(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.resource_details_other
+    }
     /// Appends an item to `compliance_status`.
     ///
     /// To override the contents of this collection use [`set_compliance_status`](Self::set_compliance_status).
@@ -790,6 +926,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.compliance_status = input;
         self
+    }
+    /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    pub fn get_compliance_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.compliance_status
     }
     /// Appends an item to `compliance_security_control_id`.
     ///
@@ -810,6 +952,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.compliance_security_control_id = input;
         self
     }
+    /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    pub fn get_compliance_security_control_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.compliance_security_control_id
+    }
     /// Appends an item to `compliance_associated_standards_id`.
     ///
     /// To override the contents of this collection use [`set_compliance_associated_standards_id`](Self::set_compliance_associated_standards_id).
@@ -828,6 +976,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.compliance_associated_standards_id = input;
         self
+    }
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    pub fn get_compliance_associated_standards_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.compliance_associated_standards_id
     }
     /// Appends an item to `verification_state`.
     ///
@@ -848,6 +1002,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.verification_state = input;
         self
     }
+    /// <p> Provides the veracity of a finding. </p>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.verification_state
+    }
     /// Appends an item to `workflow_status`.
     ///
     /// To override the contents of this collection use [`set_workflow_status`](Self::set_workflow_status).
@@ -866,6 +1026,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.workflow_status = input;
         self
+    }
+    /// <p> Provides information about the status of the investigation into a finding. </p>
+    pub fn get_workflow_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.workflow_status
     }
     /// Appends an item to `record_state`.
     ///
@@ -886,6 +1052,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.record_state = input;
         self
     }
+    /// <p> Provides the current state of a finding. </p>
+    pub fn get_record_state(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.record_state
+    }
     /// Appends an item to `related_findings_product_arn`.
     ///
     /// To override the contents of this collection use [`set_related_findings_product_arn`](Self::set_related_findings_product_arn).
@@ -904,6 +1076,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.related_findings_product_arn = input;
         self
+    }
+    /// <p> The ARN for the product that generated a related finding. </p>
+    pub fn get_related_findings_product_arn(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.related_findings_product_arn
     }
     /// Appends an item to `related_findings_id`.
     ///
@@ -924,6 +1102,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.related_findings_id = input;
         self
     }
+    /// <p> The product-generated identifier for a related finding. </p>
+    pub fn get_related_findings_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.related_findings_id
+    }
     /// Appends an item to `note_text`.
     ///
     /// To override the contents of this collection use [`set_note_text`](Self::set_note_text).
@@ -942,6 +1126,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.note_text = input;
         self
+    }
+    /// <p> The text of a user-defined note that's added to a finding. </p>
+    pub fn get_note_text(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.note_text
     }
     /// Appends an item to `note_updated_at`.
     ///
@@ -962,6 +1152,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.note_updated_at = input;
         self
     }
+    /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    pub fn get_note_updated_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.note_updated_at
+    }
     /// Appends an item to `note_updated_by`.
     ///
     /// To override the contents of this collection use [`set_note_updated_by`](Self::set_note_updated_by).
@@ -981,6 +1177,12 @@ impl AutomationRulesFindingFiltersBuilder {
         self.note_updated_by = input;
         self
     }
+    /// <p> The principal that created a note. </p>
+    pub fn get_note_updated_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.note_updated_by
+    }
     /// Appends an item to `user_defined_fields`.
     ///
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
@@ -999,6 +1201,12 @@ impl AutomationRulesFindingFiltersBuilder {
     ) -> Self {
         self.user_defined_fields = input;
         self
+    }
+    /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    pub fn get_user_defined_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.user_defined_fields
     }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFilters`](crate::types::AutomationRulesFindingFilters).
     pub fn build(self) -> crate::types::AutomationRulesFindingFilters {

@@ -69,6 +69,10 @@ impl QuickConnectConfigBuilder {
         self.quick_connect_type = input;
         self
     }
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    pub fn get_quick_connect_type(&self) -> &::std::option::Option<crate::types::QuickConnectType> {
+        &self.quick_connect_type
+    }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub fn user_config(mut self, input: crate::types::UserQuickConnectConfig) -> Self {
         self.user_config = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl QuickConnectConfigBuilder {
     ) -> Self {
         self.user_config = input;
         self
+    }
+    /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
+    pub fn get_user_config(&self) -> &::std::option::Option<crate::types::UserQuickConnectConfig> {
+        &self.user_config
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
     pub fn queue_config(mut self, input: crate::types::QueueQuickConnectConfig) -> Self {
@@ -95,6 +103,12 @@ impl QuickConnectConfigBuilder {
         self.queue_config = input;
         self
     }
+    /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
+    pub fn get_queue_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueueQuickConnectConfig> {
+        &self.queue_config
+    }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub fn phone_config(mut self, input: crate::types::PhoneNumberQuickConnectConfig) -> Self {
         self.phone_config = ::std::option::Option::Some(input);
@@ -107,6 +121,12 @@ impl QuickConnectConfigBuilder {
     ) -> Self {
         self.phone_config = input;
         self
+    }
+    /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
+    pub fn get_phone_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberQuickConnectConfig> {
+        &self.phone_config
     }
     /// Consumes the builder and constructs a [`QuickConnectConfig`](crate::types::QuickConnectConfig).
     pub fn build(self) -> crate::types::QuickConnectConfig {

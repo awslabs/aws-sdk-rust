@@ -56,6 +56,10 @@ impl BatchCreateRoomMembershipInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl BatchCreateRoomMembershipInputBuilder {
     pub fn set_room_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_id = input;
         self
+    }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
     }
     /// Appends an item to `membership_item_list`.
     ///
@@ -84,6 +92,12 @@ impl BatchCreateRoomMembershipInputBuilder {
     ) -> Self {
         self.membership_item_list = input;
         self
+    }
+    /// <p>The list of membership items.</p>
+    pub fn get_membership_item_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>> {
+        &self.membership_item_list
     }
     /// Consumes the builder and constructs a [`BatchCreateRoomMembershipInput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput).
     pub fn build(

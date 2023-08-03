@@ -48,6 +48,10 @@ impl PathsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of invalidation paths specified for the objects that you want to invalidate.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl PathsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains a list of the paths that you want to invalidate.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`Paths`](crate::types::Paths).
     pub fn build(self) -> crate::types::Paths {

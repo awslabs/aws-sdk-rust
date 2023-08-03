@@ -55,6 +55,10 @@ impl ProjectAppConfigResourceConfigBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn environment_id(
         mut self,
@@ -70,6 +74,10 @@ impl ProjectAppConfigResourceConfigBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`ProjectAppConfigResourceConfig`](crate::types::ProjectAppConfigResourceConfig).
     pub fn build(self) -> crate::types::ProjectAppConfigResourceConfig {

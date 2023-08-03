@@ -50,6 +50,12 @@ impl CreateStreamingDistributionInputBuilder {
         self.streaming_distribution_config = input;
         self
     }
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn get_streaming_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+        &self.streaming_distribution_config
+    }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionInput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionInput).
     pub fn build(
         self,

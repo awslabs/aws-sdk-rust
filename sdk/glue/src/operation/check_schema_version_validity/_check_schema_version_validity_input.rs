@@ -50,6 +50,10 @@ impl CheckSchemaVersionValidityInputBuilder {
         self.data_format = input;
         self
     }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        &self.data_format
+    }
     /// <p>The definition of the schema that has to be validated.</p>
     pub fn schema_definition(
         mut self,
@@ -65,6 +69,10 @@ impl CheckSchemaVersionValidityInputBuilder {
     ) -> Self {
         self.schema_definition = input;
         self
+    }
+    /// <p>The definition of the schema that has to be validated.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_definition
     }
     /// Consumes the builder and constructs a [`CheckSchemaVersionValidityInput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput).
     pub fn build(

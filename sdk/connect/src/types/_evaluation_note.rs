@@ -40,6 +40,10 @@ impl EvaluationNoteBuilder {
         self.value = input;
         self
     }
+    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`EvaluationNote`](crate::types::EvaluationNote).
     pub fn build(self) -> crate::types::EvaluationNote {
         crate::types::EvaluationNote { value: self.value }

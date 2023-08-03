@@ -55,6 +55,10 @@ impl GetMultiRegionAccessPointRoutesOutputBuilder {
         self.mrap = input;
         self
     }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn get_mrap(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mrap
+    }
     /// Appends an item to `routes`.
     ///
     /// To override the contents of this collection use [`set_routes`](Self::set_routes).
@@ -73,6 +77,12 @@ impl GetMultiRegionAccessPointRoutesOutputBuilder {
     ) -> Self {
         self.routes = input;
         self
+    }
+    /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    pub fn get_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
+        &self.routes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

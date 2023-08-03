@@ -56,6 +56,10 @@ impl TaskListEntryBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>The status of the task.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TaskListEntryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
+    }
     /// <p>The name of the task.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl TaskListEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the task.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`TaskListEntry`](crate::types::TaskListEntry).
     pub fn build(self) -> crate::types::TaskListEntry {

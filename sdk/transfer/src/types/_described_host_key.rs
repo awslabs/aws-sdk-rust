@@ -102,6 +102,10 @@ impl DescribedHostKeyBuilder {
         self.arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl DescribedHostKeyBuilder {
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_key_id = input;
         self
+    }
+    /// <p>A unique identifier for the host key.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_id
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn host_key_fingerprint(
@@ -128,6 +136,10 @@ impl DescribedHostKeyBuilder {
         self.host_key_fingerprint = input;
         self
     }
+    /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
+    pub fn get_host_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_fingerprint
+    }
     /// <p>The text description for this host key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -137,6 +149,10 @@ impl DescribedHostKeyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The text description for this host key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
@@ -162,6 +178,17 @@ impl DescribedHostKeyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn date_imported(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_imported = ::std::option::Option::Some(input);
@@ -174,6 +201,10 @@ impl DescribedHostKeyBuilder {
     ) -> Self {
         self.date_imported = input;
         self
+    }
+    /// <p>The date on which the host key was added to the server.</p>
+    pub fn get_date_imported(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_imported
     }
     /// Appends an item to `tags`.
     ///
@@ -193,6 +224,10 @@ impl DescribedHostKeyBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
     pub fn build(self) -> crate::types::DescribedHostKey {

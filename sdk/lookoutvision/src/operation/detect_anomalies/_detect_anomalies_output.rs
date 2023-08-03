@@ -51,6 +51,12 @@ impl DetectAnomaliesOutputBuilder {
         self.detect_anomaly_result = input;
         self
     }
+    /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
+    pub fn get_detect_anomaly_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectAnomalyResult> {
+        &self.detect_anomaly_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

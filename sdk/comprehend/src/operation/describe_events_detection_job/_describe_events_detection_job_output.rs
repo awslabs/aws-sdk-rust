@@ -56,6 +56,12 @@ impl DescribeEventsDetectionJobOutputBuilder {
         self.events_detection_job_properties = input;
         self
     }
+    /// <p>An object that contains the properties associated with an event detection job.</p>
+    pub fn get_events_detection_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventsDetectionJobProperties> {
+        &self.events_detection_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

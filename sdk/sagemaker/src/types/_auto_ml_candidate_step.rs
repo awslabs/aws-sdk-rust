@@ -59,6 +59,12 @@ impl AutoMlCandidateStepBuilder {
         self.candidate_step_type = input;
         self
     }
+    /// <p>Whether the candidate is at the transform, training, or processing step.</p>
+    pub fn get_candidate_step_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CandidateStepType> {
+        &self.candidate_step_type
+    }
     /// <p>The ARN for the candidate's step.</p>
     pub fn candidate_step_arn(
         mut self,
@@ -75,6 +81,10 @@ impl AutoMlCandidateStepBuilder {
         self.candidate_step_arn = input;
         self
     }
+    /// <p>The ARN for the candidate's step.</p>
+    pub fn get_candidate_step_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_step_arn
+    }
     /// <p>The name for the candidate's step.</p>
     pub fn candidate_step_name(
         mut self,
@@ -90,6 +100,10 @@ impl AutoMlCandidateStepBuilder {
     ) -> Self {
         self.candidate_step_name = input;
         self
+    }
+    /// <p>The name for the candidate's step.</p>
+    pub fn get_candidate_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_step_name
     }
     /// Consumes the builder and constructs a [`AutoMlCandidateStep`](crate::types::AutoMlCandidateStep).
     pub fn build(self) -> crate::types::AutoMlCandidateStep {

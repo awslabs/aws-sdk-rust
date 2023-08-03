@@ -36,6 +36,12 @@ impl UpdateWorkloadShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkloadShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorkloadShareFluentBuilder {
         self.inner = self.inner.set_share_id(input);
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_share_id()
+    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -135,6 +145,10 @@ impl UpdateWorkloadShareFluentBuilder {
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_id(input);
         self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -148,5 +162,9 @@ impl UpdateWorkloadShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
+    }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        self.inner.get_permission_type()
     }
 }

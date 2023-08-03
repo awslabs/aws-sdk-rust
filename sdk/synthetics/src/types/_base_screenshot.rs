@@ -54,6 +54,10 @@ impl BaseScreenshotBuilder {
         self.screenshot_name = input;
         self
     }
+    /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
+    pub fn get_screenshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.screenshot_name
+    }
     /// Appends an item to `ignore_coordinates`.
     ///
     /// To override the contents of this collection use [`set_ignore_coordinates`](Self::set_ignore_coordinates).
@@ -75,6 +79,12 @@ impl BaseScreenshotBuilder {
     ) -> Self {
         self.ignore_coordinates = input;
         self
+    }
+    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
+    pub fn get_ignore_coordinates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ignore_coordinates
     }
     /// Consumes the builder and constructs a [`BaseScreenshot`](crate::types::BaseScreenshot).
     pub fn build(self) -> crate::types::BaseScreenshot {

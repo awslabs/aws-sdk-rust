@@ -46,6 +46,10 @@ impl UpdateFlowOutputBuilder {
         self.flow = input;
         self
     }
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub fn get_flow(&self) -> &::std::option::Option<crate::types::Flow> {
+        &self.flow
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

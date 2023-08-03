@@ -48,6 +48,10 @@ impl ModifyActivityStreamInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
     pub fn audit_policy_state(mut self, input: crate::types::AuditPolicyState) -> Self {
         self.audit_policy_state = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ModifyActivityStreamInputBuilder {
     ) -> Self {
         self.audit_policy_state = input;
         self
+    }
+    /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+    pub fn get_audit_policy_state(&self) -> &::std::option::Option<crate::types::AuditPolicyState> {
+        &self.audit_policy_state
     }
     /// Consumes the builder and constructs a [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
     pub fn build(

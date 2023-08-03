@@ -55,6 +55,10 @@ impl TagProjectInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the project you want to add a tag to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +83,14 @@ impl TagProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags you want to add to the project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagProjectInput`](crate::operation::tag_project::TagProjectInput).
     pub fn build(

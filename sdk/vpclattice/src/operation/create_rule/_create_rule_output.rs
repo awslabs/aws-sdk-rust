@@ -86,6 +86,10 @@ impl CreateRuleOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the rule.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateRuleOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the rule.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl CreateRuleOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>. This means that the rule should be an exact match on HTTP constraints which are made up of the HTTP method, path, and header.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl CreateRuleOutputBuilder {
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>. This means that the rule should be an exact match on HTTP constraints which are made up of the HTTP method, path, and header.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
+        &self.r#match
     }
     /// <p>The priority assigned to the rule. The lower the priority number the higher the priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -126,6 +142,10 @@ impl CreateRuleOutputBuilder {
         self.priority = input;
         self
     }
+    /// <p>The priority assigned to the rule. The lower the priority number the higher the priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl CreateRuleOutputBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

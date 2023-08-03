@@ -36,6 +36,12 @@ impl SubmitFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitFeedback as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
+    /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
+    }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
     pub fn anomaly_instance_id(
         mut self,
@@ -140,6 +150,10 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_anomaly_instance_id(input);
         self
     }
+    /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    pub fn get_anomaly_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_instance_id()
+    }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -150,6 +164,10 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
+        self.inner.get_type()
+    }
     /// <p>Optional feedback about this anomaly.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -159,5 +177,9 @@ impl SubmitFeedbackFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>Optional feedback about this anomaly.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

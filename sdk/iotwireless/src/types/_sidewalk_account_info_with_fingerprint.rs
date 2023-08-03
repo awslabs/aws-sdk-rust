@@ -63,6 +63,10 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
         self.amazon_id = input;
         self
     }
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn get_amazon_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_id
+    }
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
     pub fn fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
         self.fingerprint = input;
         self
     }
+    /// <p>The fingerprint of the Sidewalk application server private key.</p>
+    pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fingerprint
+    }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`SidewalkAccountInfoWithFingerprint`](crate::types::SidewalkAccountInfoWithFingerprint).
     pub fn build(self) -> crate::types::SidewalkAccountInfoWithFingerprint {

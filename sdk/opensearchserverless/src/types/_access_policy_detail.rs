@@ -91,6 +91,10 @@ impl AccessPolicyDetailBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of access policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
+        &self.r#type
+    }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl AccessPolicyDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the policy.</p>
     pub fn policy_version(
@@ -117,6 +125,10 @@ impl AccessPolicyDetailBuilder {
         self.policy_version = input;
         self
     }
+    /// <p>The version of the policy.</p>
+    pub fn get_policy_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version
+    }
     /// <p>The description of the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl AccessPolicyDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The JSON policy document without any whitespaces.</p>
     pub fn policy(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -140,6 +156,10 @@ impl AccessPolicyDetailBuilder {
         self.policy = input;
         self
     }
+    /// <p>The JSON policy document without any whitespaces.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.policy
+    }
     /// <p>The date the policy was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl AccessPolicyDetailBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date the policy was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<i64> {
+        &self.created_date
+    }
     /// <p>The timestamp of when the policy was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl AccessPolicyDetailBuilder {
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The timestamp of when the policy was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`AccessPolicyDetail`](crate::types::AccessPolicyDetail).
     pub fn build(self) -> crate::types::AccessPolicyDetail {

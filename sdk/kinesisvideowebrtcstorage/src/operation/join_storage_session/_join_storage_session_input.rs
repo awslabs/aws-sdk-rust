@@ -40,6 +40,10 @@ impl JoinStorageSessionInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// Consumes the builder and constructs a [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMaintenanceWindowTarget as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner = self.inner.set_window_id(input);
         self
     }
+    /// <p>The maintenance window ID with which to modify the target.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
+    }
     /// <p>The target ID to modify.</p>
     pub fn window_target_id(
         mut self,
@@ -151,6 +159,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_window_target_id(input);
         self
+    }
+    /// <p>The target ID to modify.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_target_id()
     }
     /// Appends an item to `Targets`.
     ///
@@ -169,6 +181,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner = self.inner.set_targets(input);
         self
     }
+    /// <p>The targets to add or replace.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        self.inner.get_targets()
+    }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(
         mut self,
@@ -185,6 +201,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner = self.inner.set_owner_information(input);
         self
     }
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_information()
+    }
     /// <p>A name for the update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -194,6 +214,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A name for the update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>An optional description for the update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -205,6 +229,10 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>An optional description for the update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
     pub fn replace(mut self, input: bool) -> Self {
         self.inner = self.inner.replace(input);
@@ -214,5 +242,9 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
     pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_replace(input);
         self
+    }
+    /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    pub fn get_replace(&self) -> &::std::option::Option<bool> {
+        self.inner.get_replace()
     }
 }

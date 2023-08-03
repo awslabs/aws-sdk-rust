@@ -57,6 +57,12 @@ impl DescribeReservedInstancesOutputBuilder {
         self.reserved_instances = input;
         self
     }
+    /// <p>A list of Reserved Instances.</p>
+    pub fn get_reserved_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>> {
+        &self.reserved_instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

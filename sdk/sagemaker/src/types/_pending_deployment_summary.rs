@@ -78,6 +78,10 @@ impl PendingDeploymentSummaryBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>The name of the endpoint configuration used in the deployment. </p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// Appends an item to `production_variants`.
     ///
     /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
@@ -102,6 +106,13 @@ impl PendingDeploymentSummaryBuilder {
         self.production_variants = input;
         self
     }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
+    pub fn get_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>
+    {
+        &self.production_variants
+    }
     /// <p>The start time of the deployment.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -114,6 +125,10 @@ impl PendingDeploymentSummaryBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the deployment.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Appends an item to `shadow_production_variants`.
     ///
@@ -138,6 +153,13 @@ impl PendingDeploymentSummaryBuilder {
     ) -> Self {
         self.shadow_production_variants = input;
         self
+    }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
+    pub fn get_shadow_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>
+    {
+        &self.shadow_production_variants
     }
     /// Consumes the builder and constructs a [`PendingDeploymentSummary`](crate::types::PendingDeploymentSummary).
     pub fn build(self) -> crate::types::PendingDeploymentSummary {

@@ -80,6 +80,10 @@ impl StartResourceEvaluationInputBuilder {
         self.resource_details = input;
         self
     }
+    /// <p>Returns a <code>ResourceDetails</code> object.</p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.resource_details
+    }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
     pub fn evaluation_context(mut self, input: crate::types::EvaluationContext) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl StartResourceEvaluationInputBuilder {
     ) -> Self {
         self.evaluation_context = input;
         self
+    }
+    /// <p>Returns an <code>EvaluationContext</code> object.</p>
+    pub fn get_evaluation_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationContext> {
+        &self.evaluation_context
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
@@ -106,6 +116,10 @@ impl StartResourceEvaluationInputBuilder {
         self.evaluation_mode = input;
         self
     }
+    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.evaluation_mode
+    }
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     pub fn evaluation_timeout(mut self, input: i32) -> Self {
         self.evaluation_timeout = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl StartResourceEvaluationInputBuilder {
     pub fn set_evaluation_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_timeout = input;
         self
+    }
+    /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+    pub fn get_evaluation_timeout(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_timeout
     }
     /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
     /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
@@ -129,6 +147,12 @@ impl StartResourceEvaluationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+    /// </note>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartResourceEvaluationInput`](crate::operation::start_resource_evaluation::StartResourceEvaluationInput).
     pub fn build(

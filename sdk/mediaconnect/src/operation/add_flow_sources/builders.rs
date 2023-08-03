@@ -36,6 +36,12 @@ impl AddFlowSourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddFlowSources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_flow_sources::builders::AddFlowSourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddFlowSourcesFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to mutate.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -142,5 +152,11 @@ impl AddFlowSourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// A list of sources that you want to add.
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+        self.inner.get_sources()
     }
 }

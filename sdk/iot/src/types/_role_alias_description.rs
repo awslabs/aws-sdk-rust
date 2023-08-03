@@ -88,6 +88,10 @@ impl RoleAliasDescriptionBuilder {
         self.role_alias = input;
         self
     }
+    /// <p>The role alias.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias
+    }
     /// <p>The ARN of the role alias.</p>
     pub fn role_alias_arn(
         mut self,
@@ -104,6 +108,10 @@ impl RoleAliasDescriptionBuilder {
         self.role_alias_arn = input;
         self
     }
+    /// <p>The ARN of the role alias.</p>
+    pub fn get_role_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_alias_arn
+    }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl RoleAliasDescriptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The role alias owner.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +136,10 @@ impl RoleAliasDescriptionBuilder {
         self.owner = input;
         self
     }
+    /// <p>The role alias owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The number of seconds for which the credential is valid.</p>
     pub fn credential_duration_seconds(mut self, input: i32) -> Self {
         self.credential_duration_seconds = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl RoleAliasDescriptionBuilder {
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.credential_duration_seconds = input;
         self
+    }
+    /// <p>The number of seconds for which the credential is valid.</p>
+    pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.credential_duration_seconds
     }
     /// <p>The UNIX timestamp of when the role alias was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,6 +167,10 @@ impl RoleAliasDescriptionBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The UNIX timestamp of when the role alias was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl RoleAliasDescriptionBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The UNIX timestamp of when the role alias was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`RoleAliasDescription`](crate::types::RoleAliasDescription).
     pub fn build(self) -> crate::types::RoleAliasDescription {

@@ -53,6 +53,10 @@ impl CreateMetricSetOutputBuilder {
         self.metric_set_arn = input;
         self
     }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

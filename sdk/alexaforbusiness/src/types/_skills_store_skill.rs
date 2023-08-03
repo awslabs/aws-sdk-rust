@@ -88,6 +88,10 @@ impl SkillsStoreSkillBuilder {
         self.skill_id = input;
         self
     }
+    /// <p>The ARN of the skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// <p>The name of the skill.</p>
     pub fn skill_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_name = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl SkillsStoreSkillBuilder {
     pub fn set_skill_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_name = input;
         self
+    }
+    /// <p>The name of the skill.</p>
+    pub fn get_skill_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_name
     }
     /// <p>Short description about the skill.</p>
     pub fn short_description(
@@ -114,6 +122,10 @@ impl SkillsStoreSkillBuilder {
         self.short_description = input;
         self
     }
+    /// <p>Short description about the skill.</p>
+    pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_description
+    }
     /// <p>The URL where the skill icon resides.</p>
     pub fn icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.icon_url = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl SkillsStoreSkillBuilder {
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.icon_url = input;
         self
+    }
+    /// <p>The URL where the skill icon resides.</p>
+    pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.icon_url
     }
     /// Appends an item to `sample_utterances`.
     ///
@@ -146,6 +162,12 @@ impl SkillsStoreSkillBuilder {
         self.sample_utterances = input;
         self
     }
+    /// <p>Sample utterances that interact with the skill.</p>
+    pub fn get_sample_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sample_utterances
+    }
     /// <p>Information about the skill.</p>
     pub fn skill_details(mut self, input: crate::types::SkillDetails) -> Self {
         self.skill_details = ::std::option::Option::Some(input);
@@ -159,6 +181,10 @@ impl SkillsStoreSkillBuilder {
         self.skill_details = input;
         self
     }
+    /// <p>Information about the skill.</p>
+    pub fn get_skill_details(&self) -> &::std::option::Option<crate::types::SkillDetails> {
+        &self.skill_details
+    }
     /// <p>Linking support for a skill.</p>
     pub fn supports_linking(mut self, input: bool) -> Self {
         self.supports_linking = ::std::option::Option::Some(input);
@@ -168,6 +194,10 @@ impl SkillsStoreSkillBuilder {
     pub fn set_supports_linking(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_linking = input;
         self
+    }
+    /// <p>Linking support for a skill.</p>
+    pub fn get_supports_linking(&self) -> &::std::option::Option<bool> {
+        &self.supports_linking
     }
     /// Consumes the builder and constructs a [`SkillsStoreSkill`](crate::types::SkillsStoreSkill).
     pub fn build(self) -> crate::types::SkillsStoreSkill {

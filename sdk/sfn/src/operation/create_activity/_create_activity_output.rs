@@ -54,6 +54,10 @@ impl CreateActivityOutputBuilder {
         self.activity_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
+    }
     /// <p>The date the activity is created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CreateActivityOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the activity is created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

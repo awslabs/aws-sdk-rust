@@ -40,6 +40,10 @@ impl SsekmsEncryptionBuilder {
         self.key_id = input;
         self
     }
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::types::SsekmsEncryption).
     pub fn build(self) -> crate::types::SsekmsEncryption {
         crate::types::SsekmsEncryption {

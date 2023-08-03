@@ -48,6 +48,12 @@ impl StartDetectorModelAnalysisInputBuilder {
         self.detector_model_definition = input;
         self
     }
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn get_detector_model_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+        &self.detector_model_definition
+    }
     /// Consumes the builder and constructs a [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
     pub fn build(
         self,

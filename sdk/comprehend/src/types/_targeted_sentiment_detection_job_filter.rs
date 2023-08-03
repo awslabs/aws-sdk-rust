@@ -64,6 +64,10 @@ impl TargetedSentimentDetectionJobFilterBuilder {
         self.job_name = input;
         self
     }
+    /// <p>Filters on the name of the job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl TargetedSentimentDetectionJobFilterBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submit_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl TargetedSentimentDetectionJobFilterBuilder {
         self.submit_time_before = input;
         self
     }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+    pub fn get_submit_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time_before
+    }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time_after = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl TargetedSentimentDetectionJobFilterBuilder {
     ) -> Self {
         self.submit_time_after = input;
         self
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+    pub fn get_submit_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time_after
     }
     /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobFilter`](crate::types::TargetedSentimentDetectionJobFilter).
     pub fn build(self) -> crate::types::TargetedSentimentDetectionJobFilter {

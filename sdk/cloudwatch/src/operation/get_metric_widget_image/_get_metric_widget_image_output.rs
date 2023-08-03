@@ -51,6 +51,10 @@ impl GetMetricWidgetImageOutputBuilder {
         self.metric_widget_image = input;
         self
     }
+    /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
+    pub fn get_metric_widget_image(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.metric_widget_image
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

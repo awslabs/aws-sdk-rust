@@ -77,6 +77,17 @@ impl DescribeDatasetImportJobOutputBuilder {
         self.dataset_import_job = input;
         self
     }
+    /// <p>Information about the dataset import job, including the status.</p>
+    /// <p>The status is one of the following values:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// </ul>
+    pub fn get_dataset_import_job(&self) -> &::std::option::Option<crate::types::DatasetImportJob> {
+        &self.dataset_import_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

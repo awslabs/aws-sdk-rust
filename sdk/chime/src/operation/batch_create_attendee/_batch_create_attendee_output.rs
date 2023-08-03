@@ -65,6 +65,10 @@ impl BatchCreateAttendeeOutputBuilder {
         self.attendees = input;
         self
     }
+    /// <p>The attendee information, including attendees IDs and join tokens.</p>
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attendee>> {
+        &self.attendees
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -83,6 +87,12 @@ impl BatchCreateAttendeeOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

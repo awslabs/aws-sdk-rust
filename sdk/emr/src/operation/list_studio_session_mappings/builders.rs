@@ -36,6 +36,10 @@ impl ListStudioSessionMappingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStudioSessionMappings as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListStudioSessionMappingsFluentBuilder {
         self.inner = self.inner.set_studio_id(input);
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
+    }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
@@ -148,6 +156,10 @@ impl ListStudioSessionMappingsFluentBuilder {
         self.inner = self.inner.set_identity_type(input);
         self
     }
+    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
+    }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -157,5 +169,9 @@ impl ListStudioSessionMappingsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

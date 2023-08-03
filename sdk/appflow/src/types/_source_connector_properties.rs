@@ -177,6 +177,10 @@ impl SourceConnectorPropertiesBuilder {
         self.amplitude = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Amplitude. </p>
+    pub fn get_amplitude(&self) -> &::std::option::Option<crate::types::AmplitudeSourceProperties> {
+        &self.amplitude
+    }
     /// <p> Specifies the information that is required for querying Datadog. </p>
     pub fn datadog(mut self, input: crate::types::DatadogSourceProperties) -> Self {
         self.datadog = ::std::option::Option::Some(input);
@@ -190,6 +194,10 @@ impl SourceConnectorPropertiesBuilder {
         self.datadog = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Datadog. </p>
+    pub fn get_datadog(&self) -> &::std::option::Option<crate::types::DatadogSourceProperties> {
+        &self.datadog
+    }
     /// <p> Specifies the information that is required for querying Dynatrace. </p>
     pub fn dynatrace(mut self, input: crate::types::DynatraceSourceProperties) -> Self {
         self.dynatrace = ::std::option::Option::Some(input);
@@ -202,6 +210,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.dynatrace = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying Dynatrace. </p>
+    pub fn get_dynatrace(&self) -> &::std::option::Option<crate::types::DynatraceSourceProperties> {
+        &self.dynatrace
     }
     /// <p> Specifies the information that is required for querying Google Analytics. </p>
     pub fn google_analytics(
@@ -219,6 +231,12 @@ impl SourceConnectorPropertiesBuilder {
         self.google_analytics = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Google Analytics. </p>
+    pub fn get_google_analytics(
+        &self,
+    ) -> &::std::option::Option<crate::types::GoogleAnalyticsSourceProperties> {
+        &self.google_analytics
+    }
     /// <p> Specifies the information that is required for querying Infor Nexus. </p>
     pub fn infor_nexus(mut self, input: crate::types::InforNexusSourceProperties) -> Self {
         self.infor_nexus = ::std::option::Option::Some(input);
@@ -231,6 +249,12 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.infor_nexus = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying Infor Nexus. </p>
+    pub fn get_infor_nexus(
+        &self,
+    ) -> &::std::option::Option<crate::types::InforNexusSourceProperties> {
+        &self.infor_nexus
     }
     /// <p> Specifies the information that is required for querying Marketo. </p>
     pub fn marketo(mut self, input: crate::types::MarketoSourceProperties) -> Self {
@@ -245,6 +269,10 @@ impl SourceConnectorPropertiesBuilder {
         self.marketo = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Marketo. </p>
+    pub fn get_marketo(&self) -> &::std::option::Option<crate::types::MarketoSourceProperties> {
+        &self.marketo
+    }
     /// <p> Specifies the information that is required for querying Amazon S3. </p>
     pub fn s3(mut self, input: crate::types::S3SourceProperties) -> Self {
         self.s3 = ::std::option::Option::Some(input);
@@ -257,6 +285,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.s3 = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying Amazon S3. </p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3SourceProperties> {
+        &self.s3
     }
     /// <p> Specifies the information that is required for querying Salesforce. </p>
     pub fn salesforce(mut self, input: crate::types::SalesforceSourceProperties) -> Self {
@@ -271,6 +303,12 @@ impl SourceConnectorPropertiesBuilder {
         self.salesforce = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Salesforce. </p>
+    pub fn get_salesforce(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceSourceProperties> {
+        &self.salesforce
+    }
     /// <p> Specifies the information that is required for querying ServiceNow. </p>
     pub fn service_now(mut self, input: crate::types::ServiceNowSourceProperties) -> Self {
         self.service_now = ::std::option::Option::Some(input);
@@ -283,6 +321,12 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.service_now = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying ServiceNow. </p>
+    pub fn get_service_now(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowSourceProperties> {
+        &self.service_now
     }
     /// <p> Specifies the information that is required for querying Singular. </p>
     pub fn singular(mut self, input: crate::types::SingularSourceProperties) -> Self {
@@ -297,6 +341,10 @@ impl SourceConnectorPropertiesBuilder {
         self.singular = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Singular. </p>
+    pub fn get_singular(&self) -> &::std::option::Option<crate::types::SingularSourceProperties> {
+        &self.singular
+    }
     /// <p> Specifies the information that is required for querying Slack. </p>
     pub fn slack(mut self, input: crate::types::SlackSourceProperties) -> Self {
         self.slack = ::std::option::Option::Some(input);
@@ -309,6 +357,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.slack = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying Slack. </p>
+    pub fn get_slack(&self) -> &::std::option::Option<crate::types::SlackSourceProperties> {
+        &self.slack
     }
     /// <p> Specifies the information that is required for querying Trend Micro. </p>
     pub fn trendmicro(mut self, input: crate::types::TrendmicroSourceProperties) -> Self {
@@ -323,6 +375,12 @@ impl SourceConnectorPropertiesBuilder {
         self.trendmicro = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Trend Micro. </p>
+    pub fn get_trendmicro(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrendmicroSourceProperties> {
+        &self.trendmicro
+    }
     /// <p> Specifies the information that is required for querying Veeva. </p>
     pub fn veeva(mut self, input: crate::types::VeevaSourceProperties) -> Self {
         self.veeva = ::std::option::Option::Some(input);
@@ -335,6 +393,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.veeva = input;
         self
+    }
+    /// <p> Specifies the information that is required for querying Veeva. </p>
+    pub fn get_veeva(&self) -> &::std::option::Option<crate::types::VeevaSourceProperties> {
+        &self.veeva
     }
     /// <p> Specifies the information that is required for querying Zendesk. </p>
     pub fn zendesk(mut self, input: crate::types::ZendeskSourceProperties) -> Self {
@@ -349,6 +411,10 @@ impl SourceConnectorPropertiesBuilder {
         self.zendesk = input;
         self
     }
+    /// <p> Specifies the information that is required for querying Zendesk. </p>
+    pub fn get_zendesk(&self) -> &::std::option::Option<crate::types::ZendeskSourceProperties> {
+        &self.zendesk
+    }
     /// <p> The properties that are applied when using SAPOData as a flow source. </p>
     pub fn sapo_data(mut self, input: crate::types::SapoDataSourceProperties) -> Self {
         self.sapo_data = ::std::option::Option::Some(input);
@@ -361,6 +427,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.sapo_data = input;
         self
+    }
+    /// <p> The properties that are applied when using SAPOData as a flow source. </p>
+    pub fn get_sapo_data(&self) -> &::std::option::Option<crate::types::SapoDataSourceProperties> {
+        &self.sapo_data
     }
     /// <p>The properties that are applied when the custom connector is being used as a source.</p>
     pub fn custom_connector(
@@ -378,6 +448,12 @@ impl SourceConnectorPropertiesBuilder {
         self.custom_connector = input;
         self
     }
+    /// <p>The properties that are applied when the custom connector is being used as a source.</p>
+    pub fn get_custom_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomConnectorSourceProperties> {
+        &self.custom_connector
+    }
     /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
     pub fn pardot(mut self, input: crate::types::PardotSourceProperties) -> Self {
         self.pardot = ::std::option::Option::Some(input);
@@ -390,6 +466,10 @@ impl SourceConnectorPropertiesBuilder {
     ) -> Self {
         self.pardot = input;
         self
+    }
+    /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
+    pub fn get_pardot(&self) -> &::std::option::Option<crate::types::PardotSourceProperties> {
+        &self.pardot
     }
     /// Consumes the builder and constructs a [`SourceConnectorProperties`](crate::types::SourceConnectorProperties).
     pub fn build(self) -> crate::types::SourceConnectorProperties {

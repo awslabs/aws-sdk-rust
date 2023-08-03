@@ -72,6 +72,10 @@ impl CustomStepDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CustomStepDetailsBuilder {
         self.target = input;
         self
     }
+    /// <p>The ARN for the Lambda function that is being called.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>Timeout, in seconds, for the step.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
         self.timeout_seconds = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl CustomStepDetailsBuilder {
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_seconds = input;
         self
+    }
+    /// <p>Timeout, in seconds, for the step.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -115,6 +127,14 @@ impl CustomStepDetailsBuilder {
     ) -> Self {
         self.source_file_location = input;
         self
+    }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// </ul>
+    pub fn get_source_file_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_location
     }
     /// Consumes the builder and constructs a [`CustomStepDetails`](crate::types::CustomStepDetails).
     pub fn build(self) -> crate::types::CustomStepDetails {

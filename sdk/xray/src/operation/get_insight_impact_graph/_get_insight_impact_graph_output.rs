@@ -97,6 +97,10 @@ impl GetInsightImpactGraphOutputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p>The insight's unique identifier.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p>The provided start time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl GetInsightImpactGraphOutputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The provided start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The provided end time. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +131,10 @@ impl GetInsightImpactGraphOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The provided end time. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
     pub fn service_graph_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.service_graph_start_time = ::std::option::Option::Some(input);
@@ -136,6 +148,12 @@ impl GetInsightImpactGraphOutputBuilder {
         self.service_graph_start_time = input;
         self
     }
+    /// <p>The time, in Unix seconds, at which the service graph started.</p>
+    pub fn get_service_graph_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.service_graph_start_time
+    }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
     pub fn service_graph_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.service_graph_end_time = ::std::option::Option::Some(input);
@@ -148,6 +166,12 @@ impl GetInsightImpactGraphOutputBuilder {
     ) -> Self {
         self.service_graph_end_time = input;
         self
+    }
+    /// <p>The time, in Unix seconds, at which the service graph ended.</p>
+    pub fn get_service_graph_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.service_graph_end_time
     }
     /// Appends an item to `services`.
     ///
@@ -168,6 +192,12 @@ impl GetInsightImpactGraphOutputBuilder {
         self.services = input;
         self
     }
+    /// <p>The Amazon Web Services instrumented services related to the insight.</p>
+    pub fn get_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>> {
+        &self.services
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -177,6 +207,10 @@ impl GetInsightImpactGraphOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

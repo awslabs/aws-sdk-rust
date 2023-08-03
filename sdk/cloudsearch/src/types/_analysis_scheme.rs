@@ -65,6 +65,10 @@ impl AnalysisSchemeBuilder {
         self.analysis_scheme_name = input;
         self
     }
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn get_analysis_scheme_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_scheme_name
+    }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn analysis_scheme_language(mut self, input: crate::types::AnalysisSchemeLanguage) -> Self {
         self.analysis_scheme_language = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl AnalysisSchemeBuilder {
         self.analysis_scheme_language = input;
         self
     }
+    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
+    pub fn get_analysis_scheme_language(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisSchemeLanguage> {
+        &self.analysis_scheme_language
+    }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn analysis_options(mut self, input: crate::types::AnalysisOptions) -> Self {
         self.analysis_options = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl AnalysisSchemeBuilder {
     ) -> Self {
         self.analysis_options = input;
         self
+    }
+    /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
+    pub fn get_analysis_options(&self) -> &::std::option::Option<crate::types::AnalysisOptions> {
+        &self.analysis_options
     }
     /// Consumes the builder and constructs a [`AnalysisScheme`](crate::types::AnalysisScheme).
     pub fn build(self) -> crate::types::AnalysisScheme {

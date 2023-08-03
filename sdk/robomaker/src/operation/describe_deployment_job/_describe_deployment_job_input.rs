@@ -44,6 +44,10 @@ impl DescribeDeploymentJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
     pub fn build(
         self,

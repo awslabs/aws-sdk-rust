@@ -47,6 +47,12 @@ impl PutMetricDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMetricData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_metric_data::builders::PutMetricDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,11 @@ impl PutMetricDataFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
+    /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// Appends an item to `MetricData`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -147,5 +158,11 @@ impl PutMetricDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
+    }
+    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+        self.inner.get_metric_data()
     }
 }

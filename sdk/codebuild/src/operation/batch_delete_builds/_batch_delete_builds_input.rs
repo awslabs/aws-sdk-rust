@@ -49,6 +49,10 @@ impl BatchDeleteBuildsInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>The IDs of the builds to delete.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Consumes the builder and constructs a [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
     pub fn build(
         self,

@@ -150,6 +150,10 @@ impl DescribeNodeOutputBuilder {
         self.node_id = input;
         self
     }
+    /// <p>The node's ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
+    }
     /// <p>The node's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -159,6 +163,10 @@ impl DescribeNodeOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The node's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The node's category.</p>
     pub fn category(mut self, input: crate::types::NodeCategory) -> Self {
@@ -172,6 +180,10 @@ impl DescribeNodeOutputBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The node's category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::NodeCategory> {
+        &self.category
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn owner_account(
@@ -189,6 +201,10 @@ impl DescribeNodeOutputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>The node's package name.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
@@ -198,6 +214,10 @@ impl DescribeNodeOutputBuilder {
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
+    }
+    /// <p>The node's package name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
     }
     /// <p>The node's package ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,6 +229,10 @@ impl DescribeNodeOutputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The node's package ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>The node's ARN.</p>
     pub fn package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_arn = ::std::option::Option::Some(input.into());
@@ -218,6 +242,10 @@ impl DescribeNodeOutputBuilder {
     pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_arn = input;
         self
+    }
+    /// <p>The node's ARN.</p>
+    pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_arn
     }
     /// <p>The node's package version.</p>
     pub fn package_version(
@@ -235,6 +263,10 @@ impl DescribeNodeOutputBuilder {
         self.package_version = input;
         self
     }
+    /// <p>The node's package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>The node's patch version.</p>
     pub fn patch_version(
         mut self,
@@ -251,6 +283,10 @@ impl DescribeNodeOutputBuilder {
         self.patch_version = input;
         self
     }
+    /// <p>The node's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// <p>The node's interface.</p>
     pub fn node_interface(mut self, input: crate::types::NodeInterface) -> Self {
         self.node_interface = ::std::option::Option::Some(input);
@@ -264,6 +300,10 @@ impl DescribeNodeOutputBuilder {
         self.node_interface = input;
         self
     }
+    /// <p>The node's interface.</p>
+    pub fn get_node_interface(&self) -> &::std::option::Option<crate::types::NodeInterface> {
+        &self.node_interface
+    }
     /// <p>The node's asset name.</p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
@@ -274,6 +314,10 @@ impl DescribeNodeOutputBuilder {
         self.asset_name = input;
         self
     }
+    /// <p>The node's asset name.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
+    }
     /// <p>The node's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -283,6 +327,10 @@ impl DescribeNodeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The node's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>When the node was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -297,6 +345,10 @@ impl DescribeNodeOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>When the node was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>When the node was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -309,6 +361,10 @@ impl DescribeNodeOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>When the node was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl SlotDefaultValueBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// Consumes the builder and constructs a [`SlotDefaultValue`](crate::types::SlotDefaultValue).
     pub fn build(self) -> crate::types::SlotDefaultValue {
         crate::types::SlotDefaultValue {

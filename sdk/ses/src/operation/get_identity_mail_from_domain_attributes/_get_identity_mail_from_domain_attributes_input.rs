@@ -49,6 +49,10 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
         self.identities = input;
         self
     }
+    /// <p>A list of one or more identities.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identities
+    }
     /// Consumes the builder and constructs a [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

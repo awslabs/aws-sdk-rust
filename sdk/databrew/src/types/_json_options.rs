@@ -40,6 +40,10 @@ impl JsonOptionsBuilder {
         self.multi_line = input;
         self
     }
+    /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
+    pub fn get_multi_line(&self) -> &::std::option::Option<bool> {
+        &self.multi_line
+    }
     /// Consumes the builder and constructs a [`JsonOptions`](crate::types::JsonOptions).
     pub fn build(self) -> crate::types::JsonOptions {
         crate::types::JsonOptions {

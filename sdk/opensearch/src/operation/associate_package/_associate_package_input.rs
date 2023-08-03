@@ -49,6 +49,10 @@ impl AssociatePackageInputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>Name of the domain to associate the package with.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociatePackageInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>Name of the domain to associate the package with.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
     pub fn build(

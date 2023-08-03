@@ -40,6 +40,10 @@ impl CancelSbomExportInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The report ID of the SBOM export to cancel.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
     pub fn build(
         self,

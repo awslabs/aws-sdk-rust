@@ -38,6 +38,10 @@ impl CreateVPCAssociationAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVPCAssociationAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl CreateVPCAssociationAuthorizationFluentBuilder {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
+    /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
+    }
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.inner = self.inner.vpc(input);
@@ -117,5 +125,9 @@ impl CreateVPCAssociationAuthorizationFluentBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
+    }
+    /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        self.inner.get_vpc()
     }
 }

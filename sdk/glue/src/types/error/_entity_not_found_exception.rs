@@ -75,6 +75,10 @@ impl EntityNotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>A message describing the problem.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
     pub fn from_federation_source(mut self, input: bool) -> Self {
         self.from_federation_source = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl EntityNotFoundExceptionBuilder {
     pub fn set_from_federation_source(mut self, input: ::std::option::Option<bool>) -> Self {
         self.from_federation_source = input;
         self
+    }
+    /// <p>Indicates whether or not the exception relates to a federated source.</p>
+    pub fn get_from_federation_source(&self) -> &::std::option::Option<bool> {
+        &self.from_federation_source
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

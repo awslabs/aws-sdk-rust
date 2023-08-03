@@ -36,6 +36,12 @@ impl GetCurrentUserDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCurrentUserData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetCurrentUserDataFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
     /// <li> <p>Queues: 100</p> </li>
@@ -168,6 +178,19 @@ impl GetCurrentUserDataFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
+    /// <ul>
+    /// <li> <p>Queues: 100</p> </li>
+    /// <li> <p>Routing profiles: 100</p> </li>
+    /// <li> <p>Agents: 100</p> </li>
+    /// <li> <p>Contact states: 9</p> </li>
+    /// <li> <p>User hierarchy groups: 1</p> </li>
+    /// </ul>
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::UserDataFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -178,6 +201,10 @@ impl GetCurrentUserDataFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -187,5 +214,9 @@ impl GetCurrentUserDataFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

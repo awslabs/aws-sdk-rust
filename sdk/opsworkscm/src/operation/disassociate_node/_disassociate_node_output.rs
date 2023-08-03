@@ -53,6 +53,12 @@ impl DisassociateNodeOutputBuilder {
         self.node_association_status_token = input;
         self
     }
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
+    pub fn get_node_association_status_token(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.node_association_status_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

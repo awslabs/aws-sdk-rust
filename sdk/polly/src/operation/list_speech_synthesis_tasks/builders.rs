@@ -36,6 +36,10 @@ impl ListSpeechSynthesisTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSpeechSynthesisTasks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListSpeechSynthesisTasksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +153,10 @@ impl ListSpeechSynthesisTasksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -154,5 +166,9 @@ impl ListSpeechSynthesisTasksFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Status of the speech synthesis tasks returned in a List operation</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        self.inner.get_status()
     }
 }

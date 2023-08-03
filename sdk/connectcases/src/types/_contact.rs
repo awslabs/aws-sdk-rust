@@ -40,6 +40,10 @@ impl ContactBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {

@@ -70,6 +70,10 @@ impl GetMatchesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The timestamp this version of Match Result generated.</p>
     pub fn match_generation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.match_generation_date = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl GetMatchesOutputBuilder {
         self.match_generation_date = input;
         self
     }
+    /// <p>The timestamp this version of Match Result generated.</p>
+    pub fn get_match_generation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.match_generation_date
+    }
     /// <p>The number of potential matches found.</p>
     pub fn potential_matches(mut self, input: i32) -> Self {
         self.potential_matches = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GetMatchesOutputBuilder {
     pub fn set_potential_matches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.potential_matches = input;
         self
+    }
+    /// <p>The number of potential matches found.</p>
+    pub fn get_potential_matches(&self) -> &::std::option::Option<i32> {
+        &self.potential_matches
     }
     /// Appends an item to `matches`.
     ///
@@ -111,6 +125,10 @@ impl GetMatchesOutputBuilder {
     ) -> Self {
         self.matches = input;
         self
+    }
+    /// <p>The list of matched profiles for this instance.</p>
+    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchItem>> {
+        &self.matches
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

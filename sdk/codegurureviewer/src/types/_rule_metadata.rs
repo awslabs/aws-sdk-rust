@@ -72,6 +72,10 @@ impl RuleMetadataBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The ID of the rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The name of the rule.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RuleMetadataBuilder {
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
+    }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
     }
     /// <p>A short description of the rule.</p>
     pub fn short_description(
@@ -98,6 +106,10 @@ impl RuleMetadataBuilder {
         self.short_description = input;
         self
     }
+    /// <p>A short description of the rule.</p>
+    pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_description
+    }
     /// <p>A long description of the rule.</p>
     pub fn long_description(
         mut self,
@@ -113,6 +125,10 @@ impl RuleMetadataBuilder {
     ) -> Self {
         self.long_description = input;
         self
+    }
+    /// <p>A long description of the rule.</p>
+    pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.long_description
     }
     /// Appends an item to `rule_tags`.
     ///
@@ -132,6 +148,10 @@ impl RuleMetadataBuilder {
     ) -> Self {
         self.rule_tags = input;
         self
+    }
+    /// <p>Tags that are associated with the rule.</p>
+    pub fn get_rule_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_tags
     }
     /// Consumes the builder and constructs a [`RuleMetadata`](crate::types::RuleMetadata).
     pub fn build(self) -> crate::types::RuleMetadata {

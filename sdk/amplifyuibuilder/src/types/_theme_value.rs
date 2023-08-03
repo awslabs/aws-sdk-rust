@@ -48,6 +48,10 @@ impl ThemeValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of a theme property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Appends an item to `children`.
     ///
     /// To override the contents of this collection use [`set_children`](Self::set_children).
@@ -66,6 +70,12 @@ impl ThemeValueBuilder {
     ) -> Self {
         self.children = input;
         self
+    }
+    /// <p>A list of key-value pairs that define the theme's properties.</p>
+    pub fn get_children(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.children
     }
     /// Consumes the builder and constructs a [`ThemeValue`](crate::types::ThemeValue).
     pub fn build(self) -> crate::types::ThemeValue {

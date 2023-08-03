@@ -36,6 +36,12 @@ impl ModifyDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_db_cluster::builders::ModifyDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,14 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -170,6 +184,17 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_new_db_cluster_identifier(input);
         self
     }
+    /// <p>The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub fn get_new_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_db_cluster_identifier()
+    }
     /// <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
@@ -183,6 +208,12 @@ impl ModifyDBClusterFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>
+    /// <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -204,6 +235,15 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_backup_retention_period(input);
         self
     }
+    /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a value from 1 to 35.</p> </li>
+    /// </ul>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_backup_retention_period()
+    }
     /// <p>The name of the cluster parameter group to use for the cluster.</p>
     pub fn db_cluster_parameter_group_name(
         mut self,
@@ -219,6 +259,12 @@ impl ModifyDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
+    }
+    /// <p>The name of the cluster parameter group to use for the cluster.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
@@ -240,6 +286,12 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
+    /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
+    }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>
     /// <p>Default: The same port as the original cluster.</p>
@@ -253,6 +305,12 @@ impl ModifyDBClusterFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The port number on which the cluster accepts connections.</p>
+    /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>
+    /// <p>Default: The same port as the original cluster.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
@@ -271,6 +329,11 @@ impl ModifyDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
+    }
+    /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>Constraints: Must contain from 8 to 100 characters.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_user_password()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
@@ -304,6 +367,18 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
+    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
+    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// </ul>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_backup_window()
+    }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
@@ -328,6 +403,16 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
     pub fn cloudwatch_logs_export_configuration(
         mut self,
@@ -343,6 +428,12 @@ impl ModifyDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
+    }
+    /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
+    pub fn get_cloudwatch_logs_export_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
+        self.inner.get_cloudwatch_logs_export_configuration()
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
@@ -364,6 +455,12 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
+    /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
@@ -376,6 +473,11 @@ impl ModifyDBClusterFluentBuilder {
         self.inner = self.inner.set_allow_major_version_upgrade(input);
         self
     }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_major_version_upgrade()
+    }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
@@ -385,5 +487,9 @@ impl ModifyDBClusterFluentBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
+    }
+    /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
     }
 }

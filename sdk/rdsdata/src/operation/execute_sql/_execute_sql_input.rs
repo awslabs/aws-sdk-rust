@@ -82,6 +82,10 @@ impl ExecuteSqlInputBuilder {
         self.db_cluster_or_instance_arn = input;
         self
     }
+    /// <p>The ARN of the Aurora Serverless DB cluster.</p>
+    pub fn get_db_cluster_or_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_or_instance_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn aws_secret_store_arn(
@@ -99,6 +103,11 @@ impl ExecuteSqlInputBuilder {
     ) -> Self {
         self.aws_secret_store_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    pub fn get_aws_secret_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_secret_store_arn
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
@@ -118,6 +127,11 @@ impl ExecuteSqlInputBuilder {
         self.sql_statements = input;
         self
     }
+    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+    pub fn get_sql_statements(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_statements
+    }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -128,6 +142,10 @@ impl ExecuteSqlInputBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The name of the database schema.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -137,6 +155,10 @@ impl ExecuteSqlInputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The name of the database schema.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
     pub fn build(

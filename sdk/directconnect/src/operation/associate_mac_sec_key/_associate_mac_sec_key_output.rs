@@ -62,6 +62,10 @@ impl AssociateMacSecKeyOutputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Appends an item to `mac_sec_keys`.
     ///
     /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
@@ -80,6 +84,12 @@ impl AssociateMacSecKeyOutputBuilder {
     ) -> Self {
         self.mac_sec_keys = input;
         self
+    }
+    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    pub fn get_mac_sec_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+        &self.mac_sec_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

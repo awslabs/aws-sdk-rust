@@ -67,6 +67,12 @@ impl TransitGatewayMulticastDeregisteredGroupSourcesBuilder {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
+    /// <p>The ID of the transit gateway multicast domain.</p>
+    pub fn get_transit_gateway_multicast_domain_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_multicast_domain_id
+    }
     /// Appends an item to `deregistered_network_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_deregistered_network_interface_ids`](Self::set_deregistered_network_interface_ids).
@@ -89,6 +95,12 @@ impl TransitGatewayMulticastDeregisteredGroupSourcesBuilder {
         self.deregistered_network_interface_ids = input;
         self
     }
+    /// <p>The network interface IDs of the non-registered members.</p>
+    pub fn get_deregistered_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deregistered_network_interface_ids
+    }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn group_ip_address(
         mut self,
@@ -104,6 +116,10 @@ impl TransitGatewayMulticastDeregisteredGroupSourcesBuilder {
     ) -> Self {
         self.group_ip_address = input;
         self
+    }
+    /// <p>The IP address assigned to the transit gateway multicast group.</p>
+    pub fn get_group_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_ip_address
     }
     /// Consumes the builder and constructs a [`TransitGatewayMulticastDeregisteredGroupSources`](crate::types::TransitGatewayMulticastDeregisteredGroupSources).
     pub fn build(self) -> crate::types::TransitGatewayMulticastDeregisteredGroupSources {

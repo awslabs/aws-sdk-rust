@@ -122,6 +122,10 @@ impl ParameterBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The name of the parameter.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>
     pub fn parameter_type(mut self, input: crate::types::ParameterType) -> Self {
         self.parameter_type = ::std::option::Option::Some(input);
@@ -134,6 +138,10 @@ impl ParameterBuilder {
     ) -> Self {
         self.parameter_type = input;
         self
+    }
+    /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>
+    pub fn get_parameter_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.parameter_type
     }
     /// <p>The value for the parameter.</p>
     pub fn parameter_value(
@@ -150,6 +158,10 @@ impl ParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The value for the parameter.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Appends an item to `node_type_specific_values`.
     ///
@@ -170,6 +182,12 @@ impl ParameterBuilder {
         self.node_type_specific_values = input;
         self
     }
+    /// <p>A list of node types, and specific parameter values for each node.</p>
+    pub fn get_node_type_specific_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>> {
+        &self.node_type_specific_values
+    }
     /// <p>A description of the parameter</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -179,6 +197,10 @@ impl ParameterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the parameter</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,6 +212,10 @@ impl ParameterBuilder {
         self.source = input;
         self
     }
+    /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -199,6 +225,10 @@ impl ParameterBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>A range of values within which the parameter can be set.</p>
     pub fn allowed_values(
@@ -216,6 +246,10 @@ impl ParameterBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>A range of values within which the parameter can be set.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
+    }
     /// <p>Whether the customer is allowed to modify the parameter.</p>
     pub fn is_modifiable(mut self, input: crate::types::IsModifiable) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
@@ -229,6 +263,10 @@ impl ParameterBuilder {
         self.is_modifiable = input;
         self
     }
+    /// <p>Whether the customer is allowed to modify the parameter.</p>
+    pub fn get_is_modifiable(&self) -> &::std::option::Option<crate::types::IsModifiable> {
+        &self.is_modifiable
+    }
     /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
@@ -241,6 +279,10 @@ impl ParameterBuilder {
     ) -> Self {
         self.change_type = input;
         self
+    }
+    /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
+    pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
+        &self.change_type
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {

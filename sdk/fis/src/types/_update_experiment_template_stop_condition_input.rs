@@ -48,6 +48,10 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
         self.source = input;
         self
     }
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateStopConditionInput`](crate::types::UpdateExperimentTemplateStopConditionInput).
     pub fn build(self) -> crate::types::UpdateExperimentTemplateStopConditionInput {

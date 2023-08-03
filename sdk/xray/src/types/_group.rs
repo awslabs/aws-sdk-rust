@@ -74,6 +74,10 @@ impl GroupBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The unique case-sensitive name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl GroupBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
     pub fn filter_expression(
@@ -99,6 +107,10 @@ impl GroupBuilder {
     ) -> Self {
         self.filter_expression = input;
         self
+    }
+    /// <p>The filter expression defining the parameters to include traces.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
@@ -120,6 +132,16 @@ impl GroupBuilder {
     ) -> Self {
         self.insights_configuration = input;
         self
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// </ul>
+    pub fn get_insights_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InsightsConfiguration> {
+        &self.insights_configuration
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     pub fn build(self) -> crate::types::Group {

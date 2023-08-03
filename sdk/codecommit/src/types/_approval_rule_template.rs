@@ -102,6 +102,10 @@ impl ApprovalRuleTemplateBuilder {
         self.approval_rule_template_id = input;
         self
     }
+    /// <p>The system-generated ID of the approval rule template.</p>
+    pub fn get_approval_rule_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_id
+    }
     /// <p>The name of the approval rule template.</p>
     pub fn approval_rule_template_name(
         mut self,
@@ -117,6 +121,10 @@ impl ApprovalRuleTemplateBuilder {
     ) -> Self {
         self.approval_rule_template_name = input;
         self
+    }
+    /// <p>The name of the approval rule template.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
     }
     /// <p>The description of the approval rule template.</p>
     pub fn approval_rule_template_description(
@@ -134,6 +142,12 @@ impl ApprovalRuleTemplateBuilder {
         self.approval_rule_template_description = input;
         self
     }
+    /// <p>The description of the approval rule template.</p>
+    pub fn get_approval_rule_template_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_description
+    }
     /// <p>The content of the approval rule template.</p>
     pub fn approval_rule_template_content(
         mut self,
@@ -149,6 +163,12 @@ impl ApprovalRuleTemplateBuilder {
     ) -> Self {
         self.approval_rule_template_content = input;
         self
+    }
+    /// <p>The content of the approval rule template.</p>
+    pub fn get_approval_rule_template_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_content
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
     pub fn rule_content_sha256(
@@ -166,6 +186,10 @@ impl ApprovalRuleTemplateBuilder {
         self.rule_content_sha256 = input;
         self
     }
+    /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
+    pub fn get_rule_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_content_sha256
+    }
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -179,6 +203,10 @@ impl ApprovalRuleTemplateBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the approval rule template was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -191,6 +219,10 @@ impl ApprovalRuleTemplateBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the approval rule template was created, in timestamp format.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
     pub fn last_modified_user(
@@ -207,6 +239,10 @@ impl ApprovalRuleTemplateBuilder {
     ) -> Self {
         self.last_modified_user = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
     }
     /// Consumes the builder and constructs a [`ApprovalRuleTemplate`](crate::types::ApprovalRuleTemplate).
     pub fn build(self) -> crate::types::ApprovalRuleTemplate {

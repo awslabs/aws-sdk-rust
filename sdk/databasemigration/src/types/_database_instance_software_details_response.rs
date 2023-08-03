@@ -88,6 +88,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         self.engine = input;
         self
     }
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
     pub fn engine_version(
         mut self,
@@ -103,6 +107,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
     pub fn engine_edition(
@@ -120,6 +128,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         self.engine_edition = input;
         self
     }
+    /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
+    pub fn get_engine_edition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_edition
+    }
     /// <p>The service pack level of the database.</p>
     pub fn service_pack(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_pack = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
     pub fn set_service_pack(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_pack = input;
         self
+    }
+    /// <p>The service pack level of the database.</p>
+    pub fn get_service_pack(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_pack
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
     pub fn support_level(
@@ -146,6 +162,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         self.support_level = input;
         self
     }
+    /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
+    pub fn get_support_level(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_level
+    }
     /// <p>The operating system architecture of the database.</p>
     pub fn os_architecture(mut self, input: i32) -> Self {
         self.os_architecture = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
         self.os_architecture = input;
         self
     }
+    /// <p>The operating system architecture of the database.</p>
+    pub fn get_os_architecture(&self) -> &::std::option::Option<i32> {
+        &self.os_architecture
+    }
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
     pub fn tooltip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tooltip = ::std::option::Option::Some(input.into());
@@ -165,6 +189,10 @@ impl DatabaseInstanceSoftwareDetailsResponseBuilder {
     pub fn set_tooltip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tooltip = input;
         self
+    }
+    /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
+    pub fn get_tooltip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tooltip
     }
     /// Consumes the builder and constructs a [`DatabaseInstanceSoftwareDetailsResponse`](crate::types::DatabaseInstanceSoftwareDetailsResponse).
     pub fn build(self) -> crate::types::DatabaseInstanceSoftwareDetailsResponse {

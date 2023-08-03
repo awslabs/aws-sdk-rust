@@ -80,6 +80,12 @@ impl AttributeSuggestionsGetConfigBuilder {
         self.suggestion_attributes = input;
         self
     }
+    /// <p>The list of document field/attribute keys or field names to use for query suggestions. If the content within any of the fields match what your user starts typing as their query, then the field content is returned as a query suggestion.</p>
+    pub fn get_suggestion_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.suggestion_attributes
+    }
     /// Appends an item to `additional_response_attributes`.
     ///
     /// To override the contents of this collection use [`set_additional_response_attributes`](Self::set_additional_response_attributes).
@@ -102,6 +108,12 @@ impl AttributeSuggestionsGetConfigBuilder {
         self.additional_response_attributes = input;
         self
     }
+    /// <p>The list of additional document field/attribute keys or field names to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
+    pub fn get_additional_response_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_response_attributes
+    }
     /// <p>Filters the search results based on document fields/attributes.</p>
     pub fn attribute_filter(mut self, input: crate::types::AttributeFilter) -> Self {
         self.attribute_filter = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl AttributeSuggestionsGetConfigBuilder {
         self.attribute_filter = input;
         self
     }
+    /// <p>Filters the search results based on document fields/attributes.</p>
+    pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
+        &self.attribute_filter
+    }
     /// <p>Applies user context filtering so that only users who are given access to certain documents see these document in their search results.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
         self.user_context = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl AttributeSuggestionsGetConfigBuilder {
     ) -> Self {
         self.user_context = input;
         self
+    }
+    /// <p>Applies user context filtering so that only users who are given access to certain documents see these document in their search results.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.user_context
     }
     /// Consumes the builder and constructs a [`AttributeSuggestionsGetConfig`](crate::types::AttributeSuggestionsGetConfig).
     pub fn build(self) -> crate::types::AttributeSuggestionsGetConfig {

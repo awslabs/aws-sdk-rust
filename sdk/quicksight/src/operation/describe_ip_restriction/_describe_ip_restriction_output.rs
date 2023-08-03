@@ -94,6 +94,10 @@ impl DescribeIpRestrictionOutputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Adds a key-value pair to `ip_restriction_rule_map`.
     ///
     /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
@@ -119,6 +123,14 @@ impl DescribeIpRestrictionOutputBuilder {
         self.ip_restriction_rule_map = input;
         self
     }
+    /// <p>A map that describes the IP rules with CIDR range and description.</p>
+    pub fn get_ip_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.ip_restriction_rule_map
+    }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl DescribeIpRestrictionOutputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>A value that specifies whether IP rules are turned on.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +155,10 @@ impl DescribeIpRestrictionOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request. </p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl DescribeIpRestrictionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request. </p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

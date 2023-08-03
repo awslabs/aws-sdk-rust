@@ -37,6 +37,10 @@ impl DescribeValidDBInstanceModificationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeValidDBInstanceModifications as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,9 @@ impl DescribeValidDBInstanceModificationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
+    }
+    /// <p>The customer identifier or the ARN of your DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
     }
 }

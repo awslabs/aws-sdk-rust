@@ -48,6 +48,10 @@ impl DebugSessionBuilder {
         self.session_enabled = input;
         self
     }
+    /// <p>Specifies if session debugging is enabled for this build.</p>
+    pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
+        &self.session_enabled
+    }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
     pub fn session_target(
         mut self,
@@ -63,6 +67,10 @@ impl DebugSessionBuilder {
     ) -> Self {
         self.session_target = input;
         self
+    }
+    /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
+    pub fn get_session_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_target
     }
     /// Consumes the builder and constructs a [`DebugSession`](crate::types::DebugSession).
     pub fn build(self) -> crate::types::DebugSession {

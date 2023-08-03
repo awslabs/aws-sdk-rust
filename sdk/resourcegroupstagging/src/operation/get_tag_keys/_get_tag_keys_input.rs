@@ -45,6 +45,10 @@ impl GetTagKeysInputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
     pub fn build(
         self,

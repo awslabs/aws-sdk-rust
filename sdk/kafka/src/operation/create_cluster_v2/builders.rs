@@ -36,6 +36,12 @@ impl CreateClusterV2FluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterV2 as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster_v2::builders::CreateClusterV2InputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateClusterV2FluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,6 +159,14 @@ impl CreateClusterV2FluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A map of tags that you want the cluster to have.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Information about the provisioned cluster.</p>
     pub fn provisioned(mut self, input: crate::types::ProvisionedRequest) -> Self {
         self.inner = self.inner.provisioned(input);
@@ -162,6 +180,10 @@ impl CreateClusterV2FluentBuilder {
         self.inner = self.inner.set_provisioned(input);
         self
     }
+    /// <p>Information about the provisioned cluster.</p>
+    pub fn get_provisioned(&self) -> &::std::option::Option<crate::types::ProvisionedRequest> {
+        self.inner.get_provisioned()
+    }
     /// <p>Information about the serverless cluster.</p>
     pub fn serverless(mut self, input: crate::types::ServerlessRequest) -> Self {
         self.inner = self.inner.serverless(input);
@@ -174,5 +196,9 @@ impl CreateClusterV2FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_serverless(input);
         self
+    }
+    /// <p>Information about the serverless cluster.</p>
+    pub fn get_serverless(&self) -> &::std::option::Option<crate::types::ServerlessRequest> {
+        self.inner.get_serverless()
     }
 }

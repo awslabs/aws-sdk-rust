@@ -36,6 +36,10 @@ impl ListBuildsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBuilds as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_builds::builders::ListBuildsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,14 @@ impl ListBuildsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>The order to list build IDs. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        self.inner.get_sort_order()
+    }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,5 +156,9 @@ impl ListBuildsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

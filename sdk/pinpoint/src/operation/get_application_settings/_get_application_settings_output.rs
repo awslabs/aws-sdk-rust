@@ -58,6 +58,12 @@ impl GetApplicationSettingsOutputBuilder {
         self.application_settings_resource = input;
         self
     }
+    /// <p>Provides information about an application, including the default settings for an application.</p>
+    pub fn get_application_settings_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSettingsResource> {
+        &self.application_settings_resource
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
         self.items = input;
         self
     }
+    /// <p>The list of status code values that can cause a failover to the next origin.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.items
+    }
     /// <p>The number of status codes that can cause a failover.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of status codes that can cause a failover.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {

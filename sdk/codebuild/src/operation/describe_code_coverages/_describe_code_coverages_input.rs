@@ -117,6 +117,10 @@ impl DescribeCodeCoveragesInputBuilder {
         self.report_arn = input;
         self
     }
+    /// <p> The ARN of the report for which test cases are returned. </p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_arn
+    }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl DescribeCodeCoveragesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -136,6 +144,10 @@ impl DescribeCodeCoveragesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
@@ -149,6 +161,10 @@ impl DescribeCodeCoveragesInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Specifies if the results are sorted in ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
     }
     /// <p>Specifies how the results are sorted. Possible values are:</p>
     /// <dl>
@@ -191,6 +207,26 @@ impl DescribeCodeCoveragesInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Specifies how the results are sorted. Possible values are:</p>
+    /// <dl>
+    /// <dt>
+    /// FILE_PATH
+    /// </dt>
+    /// <dd>
+    /// <p>The results are sorted by file path.</p>
+    /// </dd>
+    /// <dt>
+    /// LINE_COVERAGE_PERCENTAGE
+    /// </dt>
+    /// <dd>
+    /// <p>The results are sorted by the percentage of lines that are covered.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
+        &self.sort_by
+    }
     /// <p>The minimum line coverage percentage to report.</p>
     pub fn min_line_coverage_percentage(mut self, input: f64) -> Self {
         self.min_line_coverage_percentage = ::std::option::Option::Some(input);
@@ -201,6 +237,10 @@ impl DescribeCodeCoveragesInputBuilder {
         self.min_line_coverage_percentage = input;
         self
     }
+    /// <p>The minimum line coverage percentage to report.</p>
+    pub fn get_min_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        &self.min_line_coverage_percentage
+    }
     /// <p>The maximum line coverage percentage to report.</p>
     pub fn max_line_coverage_percentage(mut self, input: f64) -> Self {
         self.max_line_coverage_percentage = ::std::option::Option::Some(input);
@@ -210,6 +250,10 @@ impl DescribeCodeCoveragesInputBuilder {
     pub fn set_max_line_coverage_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_line_coverage_percentage = input;
         self
+    }
+    /// <p>The maximum line coverage percentage to report.</p>
+    pub fn get_max_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        &self.max_line_coverage_percentage
     }
     /// Consumes the builder and constructs a [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
     pub fn build(

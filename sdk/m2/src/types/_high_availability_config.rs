@@ -40,6 +40,10 @@ impl HighAvailabilityConfigBuilder {
         self.desired_capacity = input;
         self
     }
+    /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
+    }
     /// Consumes the builder and constructs a [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
     pub fn build(self) -> crate::types::HighAvailabilityConfig {
         crate::types::HighAvailabilityConfig {

@@ -37,6 +37,13 @@ impl GetReadinessCheckStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReadinessCheckStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl GetReadinessCheckStatusFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +156,10 @@ impl GetReadinessCheckStatusFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(
@@ -161,5 +176,9 @@ impl GetReadinessCheckStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
+    }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readiness_check_name()
     }
 }

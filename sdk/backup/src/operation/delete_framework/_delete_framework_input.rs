@@ -45,6 +45,10 @@ impl DeleteFrameworkInputBuilder {
         self.framework_name = input;
         self
     }
+    /// <p>The unique name of a framework.</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// Consumes the builder and constructs a [`DeleteFrameworkInput`](crate::operation::delete_framework::DeleteFrameworkInput).
     pub fn build(
         self,

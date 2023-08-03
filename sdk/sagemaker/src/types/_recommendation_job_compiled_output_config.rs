@@ -46,6 +46,10 @@ impl RecommendationJobCompiledOutputConfigBuilder {
         self.s3_output_uri = input;
         self
     }
+    /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
+    pub fn get_s3_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_uri
+    }
     /// Consumes the builder and constructs a [`RecommendationJobCompiledOutputConfig`](crate::types::RecommendationJobCompiledOutputConfig).
     pub fn build(self) -> crate::types::RecommendationJobCompiledOutputConfig {
         crate::types::RecommendationJobCompiledOutputConfig {

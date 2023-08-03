@@ -50,6 +50,12 @@ impl FilledMapSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of the location fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// Consumes the builder and constructs a [`FilledMapSortConfiguration`](crate::types::FilledMapSortConfiguration).
     pub fn build(self) -> crate::types::FilledMapSortConfiguration {
         crate::types::FilledMapSortConfiguration {

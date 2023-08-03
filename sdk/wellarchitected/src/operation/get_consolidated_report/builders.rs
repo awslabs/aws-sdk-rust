@@ -37,6 +37,13 @@ impl GetConsolidatedReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConsolidatedReport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,11 @@ impl GetConsolidatedReportFluentBuilder {
         self.inner = self.inner.set_format(input);
         self
     }
+    /// <p>The format of the consolidated report.</p>
+    /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        self.inner.get_format()
+    }
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
     pub fn include_shared_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.include_shared_resources(input);
@@ -149,6 +161,10 @@ impl GetConsolidatedReportFluentBuilder {
     pub fn set_include_shared_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shared_resources(input);
         self
+    }
+    /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
+    pub fn get_include_shared_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_shared_resources()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +176,10 @@ impl GetConsolidatedReportFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,5 +189,9 @@ impl GetConsolidatedReportFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

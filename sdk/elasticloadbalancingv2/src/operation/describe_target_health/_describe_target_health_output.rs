@@ -63,6 +63,12 @@ impl DescribeTargetHealthOutputBuilder {
         self.target_health_descriptions = input;
         self
     }
+    /// <p>Information about the health of the targets.</p>
+    pub fn get_target_health_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetHealthDescription>> {
+        &self.target_health_descriptions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

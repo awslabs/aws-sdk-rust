@@ -48,6 +48,10 @@ impl NoncurrentVersionTransitionBuilder {
         self.noncurrent_days = input;
         self
     }
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"> How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_noncurrent_days(&self) -> &::std::option::Option<i32> {
+        &self.noncurrent_days
+    }
     /// <p>The class of storage used to store the object.</p>
     pub fn storage_class(mut self, input: crate::types::TransitionStorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl NoncurrentVersionTransitionBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn get_storage_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitionStorageClass> {
+        &self.storage_class
     }
     /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::types::NoncurrentVersionTransition).
     pub fn build(self) -> crate::types::NoncurrentVersionTransition {

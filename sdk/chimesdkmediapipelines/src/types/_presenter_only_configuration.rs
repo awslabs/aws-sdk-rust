@@ -43,6 +43,12 @@ impl PresenterOnlyConfigurationBuilder {
         self.presenter_position = input;
         self
     }
+    /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
+    pub fn get_presenter_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresenterPosition> {
+        &self.presenter_position
+    }
     /// Consumes the builder and constructs a [`PresenterOnlyConfiguration`](crate::types::PresenterOnlyConfiguration).
     pub fn build(self) -> crate::types::PresenterOnlyConfiguration {
         crate::types::PresenterOnlyConfiguration {

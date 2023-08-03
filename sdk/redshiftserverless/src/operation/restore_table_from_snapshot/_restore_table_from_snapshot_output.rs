@@ -49,6 +49,12 @@ impl RestoreTableFromSnapshotOutputBuilder {
         self.table_restore_status = input;
         self
     }
+    /// <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
+    pub fn get_table_restore_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableRestoreStatus> {
+        &self.table_restore_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

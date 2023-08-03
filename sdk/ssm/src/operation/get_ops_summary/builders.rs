@@ -36,6 +36,12 @@ impl GetOpsSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOpsSummary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetOpsSummaryFluentBuilder {
         self.inner = self.inner.set_sync_name(input);
         self
     }
+    /// <p>Specify the name of a resource data sync to get.</p>
+    pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_name()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -145,6 +155,10 @@ impl GetOpsSummaryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>> {
+        self.inner.get_filters()
     }
     /// Appends an item to `Aggregators`.
     ///
@@ -163,6 +177,12 @@ impl GetOpsSummaryFluentBuilder {
         self.inner = self.inner.set_aggregators(input);
         self
     }
+    /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
+    pub fn get_aggregators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
+        self.inner.get_aggregators()
+    }
     /// Appends an item to `ResultAttributes`.
     ///
     /// To override the contents of this collection use [`set_result_attributes`](Self::set_result_attributes).
@@ -180,6 +200,12 @@ impl GetOpsSummaryFluentBuilder {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
+    /// <p>The OpsData data type to return.</p>
+    pub fn get_result_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
+        self.inner.get_result_attributes()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -190,6 +216,10 @@ impl GetOpsSummaryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -199,5 +229,9 @@ impl GetOpsSummaryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

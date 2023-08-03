@@ -90,6 +90,10 @@ impl VerifiedAccessInstanceBuilder {
         self.verified_access_instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_instance_id
+    }
     /// <p>A description for the Amazon Web Services Verified Access instance.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl VerifiedAccessInstanceBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the Amazon Web Services Verified Access instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `verified_access_trust_providers`.
     ///
@@ -124,6 +132,13 @@ impl VerifiedAccessInstanceBuilder {
         self.verified_access_trust_providers = input;
         self
     }
+    /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+    pub fn get_verified_access_trust_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProviderCondensed>>
+    {
+        &self.verified_access_trust_providers
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(
         mut self,
@@ -140,6 +155,10 @@ impl VerifiedAccessInstanceBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The last updated time.</p>
     pub fn last_updated_time(
         mut self,
@@ -155,6 +174,10 @@ impl VerifiedAccessInstanceBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The last updated time.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
     }
     /// Appends an item to `tags`.
     ///
@@ -174,6 +197,10 @@ impl VerifiedAccessInstanceBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
     pub fn build(self) -> crate::types::VerifiedAccessInstance {

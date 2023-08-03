@@ -76,6 +76,10 @@ impl ListFindingAggregationsInputBuilder {
         self.aggregation_type = input;
         self
     }
+    /// <p>The type of the aggregation request.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
+        &self.aggregation_type
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl ListFindingAggregationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListFindingAggregationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `account_ids`.
     ///
@@ -115,6 +127,12 @@ impl ListFindingAggregationsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.account_ids
+    }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub fn aggregation_request(mut self, input: crate::types::AggregationRequest) -> Self {
         self.aggregation_request = ::std::option::Option::Some(input);
@@ -127,6 +145,12 @@ impl ListFindingAggregationsInputBuilder {
     ) -> Self {
         self.aggregation_request = input;
         self
+    }
+    /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
+    pub fn get_aggregation_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationRequest> {
+        &self.aggregation_request
     }
     /// Consumes the builder and constructs a [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
     pub fn build(

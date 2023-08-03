@@ -42,6 +42,13 @@ impl StopMeetingTranscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopMeetingTranscription as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl StopMeetingTranscriptionFluentBuilder {
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
+    }
+    /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
     }
 }

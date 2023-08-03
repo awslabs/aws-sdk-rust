@@ -54,6 +54,10 @@ impl OriginApprovalRuleTemplateBuilder {
         self.approval_rule_template_id = input;
         self
     }
+    /// <p>The ID of the template that created the approval rule.</p>
+    pub fn get_approval_rule_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_id
+    }
     /// <p>The name of the template that created the approval rule.</p>
     pub fn approval_rule_template_name(
         mut self,
@@ -69,6 +73,10 @@ impl OriginApprovalRuleTemplateBuilder {
     ) -> Self {
         self.approval_rule_template_name = input;
         self
+    }
+    /// <p>The name of the template that created the approval rule.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
     }
     /// Consumes the builder and constructs a [`OriginApprovalRuleTemplate`](crate::types::OriginApprovalRuleTemplate).
     pub fn build(self) -> crate::types::OriginApprovalRuleTemplate {

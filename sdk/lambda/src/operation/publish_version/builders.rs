@@ -38,6 +38,12 @@ impl PublishVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::publish_version::builders::PublishVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,17 @@ impl PublishVersionFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
+    }
     /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
     pub fn code_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_sha256(input.into());
@@ -149,6 +166,10 @@ impl PublishVersionFluentBuilder {
     pub fn set_code_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_sha256(input);
         self
+    }
+    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
+    pub fn get_code_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_sha256()
     }
     /// <p>A description for the version to override the description in the function configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +181,10 @@ impl PublishVersionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the version to override the description in the function configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -169,5 +194,9 @@ impl PublishVersionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

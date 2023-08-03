@@ -36,6 +36,10 @@ impl UpdateUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_upload::builders::UpdateUploadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateUploadFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateUploadFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateUploadFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
+    }
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub fn edit_content(mut self, input: bool) -> Self {
         self.inner = self.inner.edit_content(input);
@@ -147,5 +163,9 @@ impl UpdateUploadFluentBuilder {
     pub fn set_edit_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_edit_content(input);
         self
+    }
+    /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
+    pub fn get_edit_content(&self) -> &::std::option::Option<bool> {
+        self.inner.get_edit_content()
     }
 }

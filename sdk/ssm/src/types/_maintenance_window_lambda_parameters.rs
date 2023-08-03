@@ -74,6 +74,10 @@ impl MaintenanceWindowLambdaParametersBuilder {
         self.client_context = input;
         self
     }
+    /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
+    pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_context
+    }
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualifier = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl MaintenanceWindowLambdaParametersBuilder {
         self.qualifier = input;
         self
     }
+    /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualifier
+    }
     /// <p>JSON to provide to your Lambda function as input.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl MaintenanceWindowLambdaParametersBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>JSON to provide to your Lambda function as input.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowLambdaParameters`](crate::types::MaintenanceWindowLambdaParameters).
     pub fn build(self) -> crate::types::MaintenanceWindowLambdaParameters {

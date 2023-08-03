@@ -37,6 +37,12 @@ impl DeleteAwsLogSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAwsLogSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl DeleteAwsLogSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+        self.inner.get_sources()
     }
 }

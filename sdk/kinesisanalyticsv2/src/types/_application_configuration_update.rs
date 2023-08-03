@@ -122,6 +122,12 @@ impl ApplicationConfigurationUpdateBuilder {
         self.sql_application_configuration_update = input;
         self
     }
+    /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
+    pub fn get_sql_application_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::SqlApplicationConfigurationUpdate> {
+        &self.sql_application_configuration_update
+    }
     /// <p>Describes updates to an application's code configuration.</p>
     pub fn application_code_configuration_update(
         mut self,
@@ -137,6 +143,12 @@ impl ApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.application_code_configuration_update = input;
         self
+    }
+    /// <p>Describes updates to an application's code configuration.</p>
+    pub fn get_application_code_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationCodeConfigurationUpdate> {
+        &self.application_code_configuration_update
     }
     /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
     pub fn flink_application_configuration_update(
@@ -154,6 +166,12 @@ impl ApplicationConfigurationUpdateBuilder {
         self.flink_application_configuration_update = input;
         self
     }
+    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    pub fn get_flink_application_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate> {
+        &self.flink_application_configuration_update
+    }
     /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
     pub fn environment_property_updates(
         mut self,
@@ -170,6 +188,12 @@ impl ApplicationConfigurationUpdateBuilder {
         self.environment_property_updates = input;
         self
     }
+    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_environment_property_updates(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentPropertyUpdates> {
+        &self.environment_property_updates
+    }
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn application_snapshot_configuration_update(
         mut self,
@@ -185,6 +209,12 @@ impl ApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.application_snapshot_configuration_update = input;
         self
+    }
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn get_application_snapshot_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate> {
+        &self.application_snapshot_configuration_update
     }
     /// Appends an item to `vpc_configuration_updates`.
     ///
@@ -208,6 +238,12 @@ impl ApplicationConfigurationUpdateBuilder {
         self.vpc_configuration_updates = input;
         self
     }
+    /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
+    pub fn get_vpc_configuration_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>> {
+        &self.vpc_configuration_updates
+    }
     /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub fn zeppelin_application_configuration_update(
         mut self,
@@ -223,6 +259,12 @@ impl ApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.zeppelin_application_configuration_update = input;
         self
+    }
+    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_zeppelin_application_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate> {
+        &self.zeppelin_application_configuration_update
     }
     /// Consumes the builder and constructs a [`ApplicationConfigurationUpdate`](crate::types::ApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationConfigurationUpdate {

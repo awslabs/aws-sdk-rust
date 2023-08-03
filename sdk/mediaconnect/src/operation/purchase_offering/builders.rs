@@ -36,6 +36,12 @@ impl PurchaseOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseOffering as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_offering_arn(input);
         self
     }
+    /// The Amazon Resource Name (ARN) of the offering.
+    pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_arn()
+    }
     /// The name that you want to use for the reservation.
     pub fn reservation_name(
         mut self,
@@ -142,6 +152,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_reservation_name(input);
         self
     }
+    /// The name that you want to use for the reservation.
+    pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reservation_name()
+    }
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start(input.into());
@@ -151,5 +165,9 @@ impl PurchaseOfferingFluentBuilder {
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start(input);
         self
+    }
+    /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start()
     }
 }

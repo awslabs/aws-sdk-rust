@@ -72,6 +72,10 @@ impl NotificationConfigBuilder {
         self.notification_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
+    pub fn get_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_arn
+    }
     /// Appends an item to `notification_events`.
     ///
     /// To override the contents of this collection use [`set_notification_events`](Self::set_notification_events).
@@ -90,6 +94,12 @@ impl NotificationConfigBuilder {
     ) -> Self {
         self.notification_events = input;
         self
+    }
+    /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_notification_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationEvent>> {
+        &self.notification_events
     }
     /// <p>The type of notification.</p>
     /// <ul>
@@ -111,6 +121,14 @@ impl NotificationConfigBuilder {
     ) -> Self {
         self.notification_type = input;
         self
+    }
+    /// <p>The type of notification.</p>
+    /// <ul>
+    /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
+    /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
+    /// </ul>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        &self.notification_type
     }
     /// Consumes the builder and constructs a [`NotificationConfig`](crate::types::NotificationConfig).
     pub fn build(self) -> crate::types::NotificationConfig {

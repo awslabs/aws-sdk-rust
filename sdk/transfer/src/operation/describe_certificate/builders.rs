@@ -36,6 +36,12 @@ impl DescribeCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
     }
 }

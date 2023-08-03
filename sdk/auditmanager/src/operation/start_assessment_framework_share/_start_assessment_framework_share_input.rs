@@ -63,6 +63,10 @@ impl StartAssessmentFrameworkShareInputBuilder {
         self.framework_id = input;
         self
     }
+    /// <p> The unique identifier for the custom framework to be shared. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_id
+    }
     /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn destination_account(
         mut self,
@@ -78,6 +82,10 @@ impl StartAssessmentFrameworkShareInputBuilder {
     ) -> Self {
         self.destination_account = input;
         self
+    }
+    /// <p> The Amazon Web Services account of the recipient. </p>
+    pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_account
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn destination_region(
@@ -95,6 +103,10 @@ impl StartAssessmentFrameworkShareInputBuilder {
         self.destination_region = input;
         self
     }
+    /// <p> The Amazon Web Services Region of the recipient. </p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_region
+    }
     /// <p> An optional comment from the sender about the share request. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl StartAssessmentFrameworkShareInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p> An optional comment from the sender about the share request. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`StartAssessmentFrameworkShareInput`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl ListHsmsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListHsmsInput`](crate::operation::list_hsms::ListHsmsInput).
     pub fn build(
         self,

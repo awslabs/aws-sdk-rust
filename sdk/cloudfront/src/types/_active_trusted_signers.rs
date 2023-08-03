@@ -56,6 +56,10 @@ impl ActiveTrustedSignersBuilder {
         self.enabled = input;
         self
     }
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ActiveTrustedSignersBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of Amazon Web Services accounts in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -84,6 +92,10 @@ impl ActiveTrustedSignersBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Signer>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`ActiveTrustedSigners`](crate::types::ActiveTrustedSigners).
     pub fn build(self) -> crate::types::ActiveTrustedSigners {

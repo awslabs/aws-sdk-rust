@@ -69,6 +69,10 @@ impl GetTemplateSyncStatusOutputBuilder {
         self.latest_sync = input;
         self
     }
+    /// <p>The details of the last sync that's returned by Proton.</p>
+    pub fn get_latest_sync(&self) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
+        &self.latest_sync
+    }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
     pub fn latest_successful_sync(mut self, input: crate::types::ResourceSyncAttempt) -> Self {
         self.latest_successful_sync = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl GetTemplateSyncStatusOutputBuilder {
         self.latest_successful_sync = input;
         self
     }
+    /// <p>The details of the last successful sync that's returned by Proton.</p>
+    pub fn get_latest_successful_sync(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
+        &self.latest_successful_sync
+    }
     /// <p>The template sync desired state that's returned by Proton.</p>
     pub fn desired_state(mut self, input: crate::types::Revision) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl GetTemplateSyncStatusOutputBuilder {
     ) -> Self {
         self.desired_state = input;
         self
+    }
+    /// <p>The template sync desired state that's returned by Proton.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::Revision> {
+        &self.desired_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

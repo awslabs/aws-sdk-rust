@@ -55,6 +55,10 @@ impl RegistryScanningRuleBuilder {
         self.scan_frequency = input;
         self
     }
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    pub fn get_scan_frequency(&self) -> &::std::option::Option<crate::types::ScanFrequency> {
+        &self.scan_frequency
+    }
     /// Appends an item to `repository_filters`.
     ///
     /// To override the contents of this collection use [`set_repository_filters`](Self::set_repository_filters).
@@ -73,6 +77,12 @@ impl RegistryScanningRuleBuilder {
     ) -> Self {
         self.repository_filters = input;
         self
+    }
+    /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
+    pub fn get_repository_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>> {
+        &self.repository_filters
     }
     /// Consumes the builder and constructs a [`RegistryScanningRule`](crate::types::RegistryScanningRule).
     pub fn build(self) -> crate::types::RegistryScanningRule {

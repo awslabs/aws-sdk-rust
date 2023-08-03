@@ -51,6 +51,10 @@ impl CreateConfiguredTableOutputBuilder {
         self.configured_table = input;
         self
     }
+    /// <p>The created configured table.</p>
+    pub fn get_configured_table(&self) -> &::std::option::Option<crate::types::ConfiguredTable> {
+        &self.configured_table
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironmentTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the environment template.</p>
     pub fn template_name(
         mut self,
@@ -116,6 +124,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>A description of the new version of an environment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -125,6 +137,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the new version of an environment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
@@ -144,6 +160,11 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_major_version(input);
         self
     }
+    /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
+    }
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
     pub fn source(mut self, input: crate::types::TemplateVersionSourceInput) -> Self {
         self.inner = self.inner.source(input);
@@ -156,6 +177,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::TemplateVersionSourceInput> {
+        self.inner.get_source()
     }
     /// Appends an item to `tags`.
     ///
@@ -175,5 +200,10 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -51,6 +51,10 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
         self.alexa_skill_status = input;
         self
     }
+    /// <p>The status of the Alexa Skill configuration.</p>
+    pub fn get_alexa_skill_status(&self) -> &::std::option::Option<crate::types::AlexaSkillStatus> {
+        &self.alexa_skill_status
+    }
     /// Appends an item to `alexa_skill_ids`.
     ///
     /// To override the contents of this collection use [`set_alexa_skill_ids`](Self::set_alexa_skill_ids).
@@ -72,6 +76,12 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     ) -> Self {
         self.alexa_skill_ids = input;
         self
+    }
+    /// <p>The ID of the Alexa Skill configuration.</p>
+    pub fn get_alexa_skill_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alexa_skill_ids
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
     pub fn build(self) -> crate::types::SipMediaApplicationAlexaSkillConfiguration {

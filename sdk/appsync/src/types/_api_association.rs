@@ -74,6 +74,10 @@ impl ApiAssociationBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl ApiAssociationBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
@@ -107,6 +115,17 @@ impl ApiAssociationBuilder {
         self.association_status = input;
         self
     }
+    /// <p>Identifies the status of an association.</p>
+    /// <ul>
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
+    /// </ul>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.association_status
+    }
     /// <p>Details about the last deployment status.</p>
     pub fn deployment_detail(
         mut self,
@@ -122,6 +141,10 @@ impl ApiAssociationBuilder {
     ) -> Self {
         self.deployment_detail = input;
         self
+    }
+    /// <p>Details about the last deployment status.</p>
+    pub fn get_deployment_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_detail
     }
     /// Consumes the builder and constructs a [`ApiAssociation`](crate::types::ApiAssociation).
     pub fn build(self) -> crate::types::ApiAssociation {

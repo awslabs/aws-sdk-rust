@@ -154,6 +154,10 @@ impl SolutionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the solution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the solution.</p>
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl SolutionBuilder {
         self.solution_arn = input;
         self
     }
+    /// <p>The ARN of the solution.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
+    }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
     pub fn perform_hpo(mut self, input: bool) -> Self {
         self.perform_hpo = ::std::option::Option::Some(input);
@@ -173,6 +181,10 @@ impl SolutionBuilder {
     pub fn set_perform_hpo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_hpo = input;
         self
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
+    pub fn get_perform_hpo(&self) -> &::std::option::Option<bool> {
+        &self.perform_hpo
     }
     /// <important>
     /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
@@ -190,6 +202,13 @@ impl SolutionBuilder {
         self.perform_auto_ml = input;
         self
     }
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
+    /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
+    pub fn get_perform_auto_ml(&self) -> &::std::option::Option<bool> {
+        &self.perform_auto_ml
+    }
     /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -199,6 +218,10 @@ impl SolutionBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
+    }
+    /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub fn dataset_group_arn(
@@ -216,6 +239,10 @@ impl SolutionBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -225,6 +252,10 @@ impl SolutionBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// <p>Describes the configuration properties for the solution.</p>
     pub fn solution_config(mut self, input: crate::types::SolutionConfig) -> Self {
@@ -239,6 +270,10 @@ impl SolutionBuilder {
         self.solution_config = input;
         self
     }
+    /// <p>Describes the configuration properties for the solution.</p>
+    pub fn get_solution_config(&self) -> &::std::option::Option<crate::types::SolutionConfig> {
+        &self.solution_config
+    }
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
     pub fn auto_ml_result(mut self, input: crate::types::AutoMlResult) -> Self {
         self.auto_ml_result = ::std::option::Option::Some(input);
@@ -251,6 +286,10 @@ impl SolutionBuilder {
     ) -> Self {
         self.auto_ml_result = input;
         self
+    }
+    /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
+    pub fn get_auto_ml_result(&self) -> &::std::option::Option<crate::types::AutoMlResult> {
+        &self.auto_ml_result
     }
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -272,6 +311,15 @@ impl SolutionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the solution.</p>
+    /// <p>A solution can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The creation date and time (in Unix time) of the solution.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -284,6 +332,10 @@ impl SolutionBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The creation date and time (in Unix time) of the solution.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -298,6 +350,12 @@ impl SolutionBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
     pub fn latest_solution_version(mut self, input: crate::types::SolutionVersionSummary) -> Self {
         self.latest_solution_version = ::std::option::Option::Some(input);
@@ -310,6 +368,12 @@ impl SolutionBuilder {
     ) -> Self {
         self.latest_solution_version = input;
         self
+    }
+    /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
+    pub fn get_latest_solution_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::SolutionVersionSummary> {
+        &self.latest_solution_version
     }
     /// Consumes the builder and constructs a [`Solution`](crate::types::Solution).
     pub fn build(self) -> crate::types::Solution {

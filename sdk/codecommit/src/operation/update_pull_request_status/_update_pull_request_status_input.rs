@@ -57,6 +57,10 @@ impl UpdatePullRequestStatusInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
     pub fn pull_request_status(mut self, input: crate::types::PullRequestStatusEnum) -> Self {
         self.pull_request_status = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl UpdatePullRequestStatusInputBuilder {
     ) -> Self {
         self.pull_request_status = input;
         self
+    }
+    /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+    pub fn get_pull_request_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+        &self.pull_request_status
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
     pub fn build(

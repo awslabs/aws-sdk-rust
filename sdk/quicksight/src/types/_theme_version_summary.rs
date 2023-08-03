@@ -72,6 +72,10 @@ impl ThemeVersionSummaryBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The version number of the theme version.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
+    }
     /// <p>The Amazon Resource Name (ARN) of the theme version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ThemeVersionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the theme version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The description of the theme version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ThemeVersionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the theme version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that this theme version was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl ThemeVersionSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that this theme version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The status of the theme version.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl ThemeVersionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the theme version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ThemeVersionSummary`](crate::types::ThemeVersionSummary).
     pub fn build(self) -> crate::types::ThemeVersionSummary {

@@ -59,6 +59,10 @@ impl PutNotificationSettingsInputBuilder {
         self.trust_anchor_id = input;
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_id
+    }
     /// Appends an item to `notification_settings`.
     ///
     /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
@@ -77,6 +81,12 @@ impl PutNotificationSettingsInputBuilder {
     ) -> Self {
         self.notification_settings = input;
         self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn get_notification_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+        &self.notification_settings
     }
     /// Consumes the builder and constructs a [`PutNotificationSettingsInput`](crate::operation::put_notification_settings::PutNotificationSettingsInput).
     pub fn build(

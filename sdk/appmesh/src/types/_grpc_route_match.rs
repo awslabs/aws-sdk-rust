@@ -64,6 +64,10 @@ impl GrpcRouteMatchBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The fully qualified domain name for the service to match from the request.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub fn method_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.method_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GrpcRouteMatchBuilder {
     pub fn set_method_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.method_name = input;
         self
+    }
+    /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
+    pub fn get_method_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method_name
     }
     /// Appends an item to `metadata`.
     ///
@@ -93,6 +101,12 @@ impl GrpcRouteMatchBuilder {
         self.metadata = input;
         self
     }
+    /// <p>An object that represents the data to match from the request.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>> {
+        &self.metadata
+    }
     /// <p>The port number to match on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl GrpcRouteMatchBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number to match on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`GrpcRouteMatch`](crate::types::GrpcRouteMatch).
     pub fn build(self) -> crate::types::GrpcRouteMatch {

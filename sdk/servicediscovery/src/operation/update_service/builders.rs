@@ -48,6 +48,12 @@ impl UpdateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service::builders::UpdateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the service that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A complex type that contains the new settings for the service.</p>
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
         self.inner = self.inner.service(input);
@@ -142,5 +152,9 @@ impl UpdateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service(input);
         self
+    }
+    /// <p>A complex type that contains the new settings for the service.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceChange> {
+        self.inner.get_service()
     }
 }

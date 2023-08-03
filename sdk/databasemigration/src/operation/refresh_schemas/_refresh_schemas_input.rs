@@ -48,6 +48,10 @@ impl RefreshSchemasInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -63,6 +67,10 @@ impl RefreshSchemasInputBuilder {
     ) -> Self {
         self.replication_instance_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
     }
     /// Consumes the builder and constructs a [`RefreshSchemasInput`](crate::operation::refresh_schemas::RefreshSchemasInput).
     pub fn build(

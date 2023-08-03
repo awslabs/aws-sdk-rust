@@ -65,6 +65,10 @@ impl AttachmentSetSizeLimitExceededBuilder {
         self.message = input;
         self
     }
+    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

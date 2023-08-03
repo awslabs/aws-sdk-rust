@@ -45,6 +45,10 @@ impl DescribeDataQualityJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the data quality monitoring job definition to describe.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

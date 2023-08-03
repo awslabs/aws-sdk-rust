@@ -36,6 +36,10 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentityProviderByIdentifier as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The IdP identifier.</p>
     pub fn idp_identifier(
         mut self,
@@ -115,5 +123,9 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idp_identifier(input);
         self
+    }
+    /// <p>The IdP identifier.</p>
+    pub fn get_idp_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idp_identifier()
     }
 }

@@ -142,6 +142,10 @@ impl EventDataStoreBuilder {
         self.event_data_store_arn = input;
         self
     }
+    /// <p>The ARN of the event data store.</p>
+    pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_arn
+    }
     /// <p>The name of the event data store.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl EventDataStoreBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Indicates whether the event data store is protected from termination.</p>
     #[deprecated(
@@ -171,6 +179,13 @@ impl EventDataStoreBuilder {
         self.termination_protection_enabled = input;
         self
     }
+    /// <p>Indicates whether the event data store is protected from termination.</p>
+    #[deprecated(
+        note = "TerminationProtectionEnabled is no longer returned by ListEventDataStores"
+    )]
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.termination_protection_enabled
+    }
     /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn status(mut self, input: crate::types::EventDataStoreStatus) -> Self {
@@ -185,6 +200,11 @@ impl EventDataStoreBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of an event data store.</p>
+    #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EventDataStoreStatus> {
+        &self.status
     }
     /// Appends an item to `advanced_event_selectors`.
     ///
@@ -207,6 +227,13 @@ impl EventDataStoreBuilder {
         self.advanced_event_selectors = input;
         self
     }
+    /// <p>The advanced event selectors that were used to select events for the data store.</p>
+    #[deprecated(note = "AdvancedEventSelectors is no longer returned by ListEventDataStores")]
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        &self.advanced_event_selectors
+    }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
@@ -218,6 +245,11 @@ impl EventDataStoreBuilder {
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self
+    }
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
+    #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
+    pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
+        &self.multi_region_enabled
     }
     /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
     #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
@@ -231,6 +263,11 @@ impl EventDataStoreBuilder {
         self.organization_enabled = input;
         self
     }
+    /// <p>Indicates that an event data store is collecting logged events for an organization.</p>
+    #[deprecated(note = "OrganizationEnabled is no longer returned by ListEventDataStores")]
+    pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
+        &self.organization_enabled
+    }
     /// <p>The retention period, in days.</p>
     #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
     pub fn retention_period(mut self, input: i32) -> Self {
@@ -242,6 +279,11 @@ impl EventDataStoreBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>The retention period, in days.</p>
+    #[deprecated(note = "RetentionPeriod is no longer returned by ListEventDataStores")]
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.retention_period
     }
     /// <p>The timestamp of the event data store's creation.</p>
     #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
@@ -258,6 +300,11 @@ impl EventDataStoreBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The timestamp of the event data store's creation.</p>
+    #[deprecated(note = "CreatedTimestamp is no longer returned by ListEventDataStores")]
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -272,6 +319,11 @@ impl EventDataStoreBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    #[deprecated(note = "UpdatedTimestamp is no longer returned by ListEventDataStores")]
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`EventDataStore`](crate::types::EventDataStore).
     pub fn build(self) -> crate::types::EventDataStore {

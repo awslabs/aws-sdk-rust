@@ -66,6 +66,10 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that is associated with the DB instance.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the feature associated with the IAM role.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature associated with the IAM role.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// <p>Describes the state of the association between the IAM role and the DB instance. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
@@ -95,6 +103,15 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Describes the state of the association between the IAM role and the DB instance. The <code>Status</code> property returns one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The IAM role ARN is associated with the DB instance and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAM role ARN is being associated with the DB instance.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAM role ARN is associated with the DB instance. But the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbInstanceAssociatedRole`](crate::types::AwsRdsDbInstanceAssociatedRole).
     pub fn build(self) -> crate::types::AwsRdsDbInstanceAssociatedRole {

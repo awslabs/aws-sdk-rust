@@ -61,6 +61,12 @@ impl BoxPlotSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of a group by fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The pagination configuration of a table visual or box plot.</p>
     pub fn pagination_configuration(
         mut self,
@@ -76,6 +82,12 @@ impl BoxPlotSortConfigurationBuilder {
     ) -> Self {
         self.pagination_configuration = input;
         self
+    }
+    /// <p>The pagination configuration of a table visual or box plot.</p>
+    pub fn get_pagination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PaginationConfiguration> {
+        &self.pagination_configuration
     }
     /// Consumes the builder and constructs a [`BoxPlotSortConfiguration`](crate::types::BoxPlotSortConfiguration).
     pub fn build(self) -> crate::types::BoxPlotSortConfiguration {

@@ -86,6 +86,10 @@ impl StageDeploymentSummaryBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The identifier of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl StageDeploymentSummaryBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The identifier of the snapshot associated with the stage deployment.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The type of action of the deployment.</p>
     pub fn deployment_action(mut self, input: crate::types::DeploymentAction) -> Self {
@@ -109,6 +117,10 @@ impl StageDeploymentSummaryBuilder {
         self.deployment_action = input;
         self
     }
+    /// <p>The type of action of the deployment.</p>
+    pub fn get_deployment_action(&self) -> &::std::option::Option<crate::types::DeploymentAction> {
+        &self.deployment_action
+    }
     /// <p>The state of the deployment.</p>
     pub fn deployment_state(mut self, input: crate::types::DeploymentState) -> Self {
         self.deployment_state = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl StageDeploymentSummaryBuilder {
     ) -> Self {
         self.deployment_state = input;
         self
+    }
+    /// <p>The state of the deployment.</p>
+    pub fn get_deployment_state(&self) -> &::std::option::Option<crate::types::DeploymentState> {
+        &self.deployment_state
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +151,10 @@ impl StageDeploymentSummaryBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The timestamp of when the deployment was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The result of the deployment.</p>
     pub fn deployment_result(mut self, input: crate::types::DeploymentResult) -> Self {
         self.deployment_result = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl StageDeploymentSummaryBuilder {
     ) -> Self {
         self.deployment_result = input;
         self
+    }
+    /// <p>The result of the deployment.</p>
+    pub fn get_deployment_result(&self) -> &::std::option::Option<crate::types::DeploymentResult> {
+        &self.deployment_result
     }
     /// Consumes the builder and constructs a [`StageDeploymentSummary`](crate::types::StageDeploymentSummary).
     pub fn build(self) -> crate::types::StageDeploymentSummary {

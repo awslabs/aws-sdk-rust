@@ -52,6 +52,10 @@ impl SecretsManagerSecretResourceDataBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `additional_staging_labels_to_download`.
     ///
     /// To override the contents of this collection use [`set_additional_staging_labels_to_download`](Self::set_additional_staging_labels_to_download).
@@ -75,6 +79,12 @@ impl SecretsManagerSecretResourceDataBuilder {
     ) -> Self {
         self.additional_staging_labels_to_download = input;
         self
+    }
+    /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
+    pub fn get_additional_staging_labels_to_download(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_staging_labels_to_download
     }
     /// Consumes the builder and constructs a [`SecretsManagerSecretResourceData`](crate::types::SecretsManagerSecretResourceData).
     pub fn build(self) -> crate::types::SecretsManagerSecretResourceData {

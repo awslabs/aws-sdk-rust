@@ -124,6 +124,10 @@ impl WirelessDeviceStatisticsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the wireless device reporting the data.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -133,6 +137,10 @@ impl WirelessDeviceStatisticsBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the wireless device reporting the data.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The wireless device type.</p>
     pub fn r#type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -147,6 +155,10 @@ impl WirelessDeviceStatisticsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The wireless device type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.r#type
+    }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -156,6 +168,10 @@ impl WirelessDeviceStatisticsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the destination to which the device is assigned.</p>
     pub fn destination_name(
@@ -172,6 +188,10 @@ impl WirelessDeviceStatisticsBuilder {
     ) -> Self {
         self.destination_name = input;
         self
+    }
+    /// <p>The name of the destination to which the device is assigned.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>Theis value is only valid for 3 months.</p>
@@ -193,6 +213,12 @@ impl WirelessDeviceStatisticsBuilder {
         self.last_uplink_received_at = input;
         self
     }
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>Theis value is only valid for 3 months.</p>
+    /// </note>
+    pub fn get_last_uplink_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_uplink_received_at
+    }
     /// <p>LoRaWAN device info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanListDevice) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -205,6 +231,10 @@ impl WirelessDeviceStatisticsBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>LoRaWAN device info.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanListDevice> {
+        &self.lo_ra_wan
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkListDevice) -> Self {
@@ -219,6 +249,10 @@ impl WirelessDeviceStatisticsBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkListDevice> {
+        &self.sidewalk
+    }
     /// <p>The status of a wireless device in a FUOTA task.</p>
     pub fn fuota_device_status(mut self, input: crate::types::FuotaDeviceStatus) -> Self {
         self.fuota_device_status = ::std::option::Option::Some(input);
@@ -231,6 +265,12 @@ impl WirelessDeviceStatisticsBuilder {
     ) -> Self {
         self.fuota_device_status = input;
         self
+    }
+    /// <p>The status of a wireless device in a FUOTA task.</p>
+    pub fn get_fuota_device_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FuotaDeviceStatus> {
+        &self.fuota_device_status
     }
     /// <p>The status of the wireless device in the multicast group.</p>
     pub fn multicast_device_status(
@@ -248,6 +288,10 @@ impl WirelessDeviceStatisticsBuilder {
         self.multicast_device_status = input;
         self
     }
+    /// <p>The status of the wireless device in the multicast group.</p>
+    pub fn get_multicast_device_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multicast_device_status
+    }
     /// <p>Id of the multicast group.</p>
     pub fn mc_group_id(mut self, input: i32) -> Self {
         self.mc_group_id = ::std::option::Option::Some(input);
@@ -257,6 +301,10 @@ impl WirelessDeviceStatisticsBuilder {
     pub fn set_mc_group_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mc_group_id = input;
         self
+    }
+    /// <p>Id of the multicast group.</p>
+    pub fn get_mc_group_id(&self) -> &::std::option::Option<i32> {
+        &self.mc_group_id
     }
     /// Consumes the builder and constructs a [`WirelessDeviceStatistics`](crate::types::WirelessDeviceStatistics).
     pub fn build(self) -> crate::types::WirelessDeviceStatistics {

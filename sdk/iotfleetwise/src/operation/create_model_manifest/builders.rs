@@ -37,6 +37,12 @@ impl CreateModelManifestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModelManifest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateModelManifestFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the vehicle model to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> A brief description of the vehicle model. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl CreateModelManifestFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> A brief description of the vehicle model. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `nodes`.
     ///
@@ -154,6 +168,10 @@ impl CreateModelManifestFluentBuilder {
         self.inner = self.inner.set_nodes(input);
         self
     }
+    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_nodes()
+    }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(
         mut self,
@@ -169,6 +187,10 @@ impl CreateModelManifestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_signal_catalog_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -186,5 +208,9 @@ impl CreateModelManifestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that can be used to manage the vehicle model.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -39,6 +39,10 @@ impl DeletePoolInputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
     pub fn build(
         self,

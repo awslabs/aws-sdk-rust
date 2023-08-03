@@ -43,6 +43,10 @@ impl MediaPackageGroupSettingsBuilder {
         self.destination = input;
         self
     }
+    /// MediaPackage channel destination.
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::types::MediaPackageGroupSettings).
     pub fn build(self) -> crate::types::MediaPackageGroupSettings {
         crate::types::MediaPackageGroupSettings {

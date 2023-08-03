@@ -50,6 +50,12 @@ impl GetGeoLocationOutputBuilder {
         self.geo_location_details = input;
         self
     }
+    /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
+    pub fn get_geo_location_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeoLocationDetails> {
+        &self.geo_location_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

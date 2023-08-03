@@ -88,6 +88,10 @@ impl ErrorResponseBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code associated with the error. </p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.code
+    }
     /// <p>The message associated with the error. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl ErrorResponseBuilder {
         self.message = input;
         self
     }
+    /// <p>The message associated with the error. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl ErrorResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the resource owner. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The ID of the resource. </p>
     pub fn resource_identifier(
@@ -124,6 +136,10 @@ impl ErrorResponseBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The ID of the resource. </p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The type of resource. </p>
     pub fn resource_type(mut self, input: crate::types::ErrorResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl ErrorResponseBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ErrorResourceType> {
+        &self.resource_type
     }
     /// Adds a key-value pair to `additional_details`.
     ///
@@ -161,6 +181,14 @@ impl ErrorResponseBuilder {
     ) -> Self {
         self.additional_details = input;
         self
+    }
+    /// <p>Additional details about the error. </p>
+    pub fn get_additional_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_details
     }
     /// Consumes the builder and constructs a [`ErrorResponse`](crate::types::ErrorResponse).
     pub fn build(self) -> crate::types::ErrorResponse {

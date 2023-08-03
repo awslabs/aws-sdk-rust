@@ -120,6 +120,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.allowed_attempts = input;
         self
     }
+    /// <p>The attempts allowed to validate an OTP.</p>
+    pub fn get_allowed_attempts(&self) -> &::std::option::Option<i32> {
+        &self.allowed_attempts
+    }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
     pub fn brand_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.brand_name = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn set_brand_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.brand_name = input;
         self
+    }
+    /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
+    pub fn get_brand_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.brand_name
     }
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.channel = input;
         self
     }
+    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// <p>The number of characters in the generated OTP.</p>
     pub fn code_length(mut self, input: i32) -> Self {
         self.code_length = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn set_code_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code_length = input;
         self
+    }
+    /// <p>The number of characters in the generated OTP.</p>
+    pub fn get_code_length(&self) -> &::std::option::Option<i32> {
+        &self.code_length
     }
     /// <p>The destination identity to send OTP to.</p>
     pub fn destination_identity(
@@ -166,6 +182,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.destination_identity = input;
         self
     }
+    /// <p>The destination identity to send OTP to.</p>
+    pub fn get_destination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_identity
+    }
     /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -176,6 +196,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The language to be used for the outgoing message body containing the OTP.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -185,6 +209,10 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The language to be used for the outgoing message body containing the OTP.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// <p>The origination identity used to send OTP from.</p>
     pub fn origination_identity(
@@ -202,6 +230,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The origination identity used to send OTP from.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
@@ -211,6 +243,10 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
+    }
+    /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
     }
     /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -222,6 +258,10 @@ impl SendOtpMessageRequestParametersBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     pub fn validity_period(mut self, input: i32) -> Self {
         self.validity_period = ::std::option::Option::Some(input);
@@ -231,6 +271,10 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn set_validity_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.validity_period = input;
         self
+    }
+    /// <p>The time in minutes before the OTP is no longer valid.</p>
+    pub fn get_validity_period(&self) -> &::std::option::Option<i32> {
+        &self.validity_period
     }
     /// Consumes the builder and constructs a [`SendOtpMessageRequestParameters`](crate::types::SendOtpMessageRequestParameters).
     pub fn build(self) -> crate::types::SendOtpMessageRequestParameters {

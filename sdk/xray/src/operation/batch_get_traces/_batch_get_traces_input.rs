@@ -56,6 +56,10 @@ impl BatchGetTracesInputBuilder {
         self.trace_ids = input;
         self
     }
+    /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+    pub fn get_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trace_ids
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl BatchGetTracesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetTracesInput`](crate::operation::batch_get_traces::BatchGetTracesInput).
     pub fn build(

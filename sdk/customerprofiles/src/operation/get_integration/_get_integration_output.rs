@@ -126,6 +126,10 @@ impl GetIntegrationOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
@@ -152,6 +160,10 @@ impl GetIntegrationOutputBuilder {
         self.object_type_name = input;
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
+    }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -165,6 +177,10 @@ impl GetIntegrationOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -177,6 +193,10 @@ impl GetIntegrationOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -203,6 +223,14 @@ impl GetIntegrationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Adds a key-value pair to `object_type_names`.
     ///
     /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
@@ -228,6 +256,14 @@ impl GetIntegrationOutputBuilder {
         self.object_type_names = input;
         self
     }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn get_object_type_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.object_type_names
+    }
     /// <p>Unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -238,6 +274,10 @@ impl GetIntegrationOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     pub fn is_unstructured(mut self, input: bool) -> Self {
         self.is_unstructured = ::std::option::Option::Some(input);
@@ -247,6 +287,10 @@ impl GetIntegrationOutputBuilder {
     pub fn set_is_unstructured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_unstructured = input;
         self
+    }
+    /// <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
+    pub fn get_is_unstructured(&self) -> &::std::option::Option<bool> {
+        &self.is_unstructured
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

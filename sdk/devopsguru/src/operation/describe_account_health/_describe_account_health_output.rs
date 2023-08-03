@@ -80,6 +80,10 @@ impl DescribeAccountHealthOutputBuilder {
         self.open_reactive_insights = input;
         self
     }
+    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
+    pub fn get_open_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_reactive_insights
+    }
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
         self.open_proactive_insights = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DescribeAccountHealthOutputBuilder {
     pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_proactive_insights = input;
         self
+    }
+    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
+    pub fn get_open_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_proactive_insights
     }
     /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
     pub fn metrics_analyzed(mut self, input: i32) -> Self {
@@ -100,6 +108,10 @@ impl DescribeAccountHealthOutputBuilder {
         self.metrics_analyzed = input;
         self
     }
+    /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
+    pub fn get_metrics_analyzed(&self) -> &::std::option::Option<i32> {
+        &self.metrics_analyzed
+    }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub fn resource_hours(mut self, input: i64) -> Self {
         self.resource_hours = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl DescribeAccountHealthOutputBuilder {
         self.resource_hours = input;
         self
     }
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    pub fn get_resource_hours(&self) -> &::std::option::Option<i64> {
+        &self.resource_hours
+    }
     /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
     pub fn analyzed_resource_count(mut self, input: i64) -> Self {
         self.analyzed_resource_count = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl DescribeAccountHealthOutputBuilder {
     pub fn set_analyzed_resource_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.analyzed_resource_count = input;
         self
+    }
+    /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
+    pub fn get_analyzed_resource_count(&self) -> &::std::option::Option<i64> {
+        &self.analyzed_resource_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

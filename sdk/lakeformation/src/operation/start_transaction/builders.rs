@@ -36,6 +36,12 @@ impl StartTransactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartTransaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_transaction::builders::StartTransactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl StartTransactionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_type(input);
         self
+    }
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    pub fn get_transaction_type(&self) -> &::std::option::Option<crate::types::TransactionType> {
+        self.inner.get_transaction_type()
     }
 }

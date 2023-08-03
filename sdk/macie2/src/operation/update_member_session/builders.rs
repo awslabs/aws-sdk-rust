@@ -36,6 +36,12 @@ impl UpdateMemberSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMemberSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateMemberSessionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -135,5 +145,9 @@ impl UpdateMemberSessionFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
+        self.inner.get_status()
     }
 }

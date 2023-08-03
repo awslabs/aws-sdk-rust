@@ -72,6 +72,10 @@ impl VersionSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The date and time this resource was created.</p>
     pub fn creation_time(
         mut self,
@@ -87,6 +91,10 @@ impl VersionSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -106,6 +114,11 @@ impl VersionSummaryBuilder {
         self.semantic_version = input;
         self
     }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
+    }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn source_code_url(
         mut self,
@@ -121,6 +134,10 @@ impl VersionSummaryBuilder {
     ) -> Self {
         self.source_code_url = input;
         self
+    }
+    /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_code_url
     }
     /// Consumes the builder and constructs a [`VersionSummary`](crate::types::VersionSummary).
     pub fn build(self) -> crate::types::VersionSummary {

@@ -72,6 +72,10 @@ impl QueryRuntimeStatisticsTimelineBuilder {
         self.query_queue_time_in_millis = input;
         self
     }
+    /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+    pub fn get_query_queue_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.query_queue_time_in_millis
+    }
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub fn query_planning_time_in_millis(mut self, input: i64) -> Self {
         self.query_planning_time_in_millis = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl QueryRuntimeStatisticsTimelineBuilder {
     pub fn set_query_planning_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.query_planning_time_in_millis = input;
         self
+    }
+    /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+    pub fn get_query_planning_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.query_planning_time_in_millis
     }
     /// <p>The number of milliseconds that the query took to execute.</p>
     pub fn engine_execution_time_in_millis(mut self, input: i64) -> Self {
@@ -95,6 +103,10 @@ impl QueryRuntimeStatisticsTimelineBuilder {
         self.engine_execution_time_in_millis = input;
         self
     }
+    /// <p>The number of milliseconds that the query took to execute.</p>
+    pub fn get_engine_execution_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.engine_execution_time_in_millis
+    }
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
     pub fn service_processing_time_in_millis(mut self, input: i64) -> Self {
         self.service_processing_time_in_millis = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl QueryRuntimeStatisticsTimelineBuilder {
         self.service_processing_time_in_millis = input;
         self
     }
+    /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+    pub fn get_service_processing_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.service_processing_time_in_millis
+    }
     /// <p>The number of milliseconds that Athena took to run the query.</p>
     pub fn total_execution_time_in_millis(mut self, input: i64) -> Self {
         self.total_execution_time_in_millis = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl QueryRuntimeStatisticsTimelineBuilder {
     pub fn set_total_execution_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_execution_time_in_millis = input;
         self
+    }
+    /// <p>The number of milliseconds that Athena took to run the query.</p>
+    pub fn get_total_execution_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.total_execution_time_in_millis
     }
     /// Consumes the builder and constructs a [`QueryRuntimeStatisticsTimeline`](crate::types::QueryRuntimeStatisticsTimeline).
     pub fn build(self) -> crate::types::QueryRuntimeStatisticsTimeline {

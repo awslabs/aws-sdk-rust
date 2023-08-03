@@ -63,6 +63,12 @@ impl CreatePolicyInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
     pub fn policy_store_id(
         mut self,
@@ -79,6 +85,10 @@ impl CreatePolicyInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl CreatePolicyInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
     pub fn build(

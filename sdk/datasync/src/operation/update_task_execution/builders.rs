@@ -38,6 +38,12 @@ impl UpdateTaskExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTaskExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateTaskExecutionFluentBuilder {
         self.inner = self.inner.set_task_execution_arn(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
+    pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_execution_arn()
+    }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
@@ -145,5 +155,10 @@ impl UpdateTaskExecutionFluentBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        self.inner.get_options()
     }
 }

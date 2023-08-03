@@ -69,6 +69,10 @@ impl ListProfilesInputBuilder {
         self.profile_name_prefix = input;
         self
     }
+    /// <p>Prefix for profile name.</p>
+    pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name_prefix
+    }
     /// <p>Profile owner type.</p>
     pub fn profile_owner_type(mut self, input: crate::types::ProfileOwnerType) -> Self {
         self.profile_owner_type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListProfilesInputBuilder {
         self.profile_owner_type = input;
         self
     }
+    /// <p>Profile owner type.</p>
+    pub fn get_profile_owner_type(&self) -> &::std::option::Option<crate::types::ProfileOwnerType> {
+        &self.profile_owner_type
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ListProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListProfilesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl SendingOptionsBuilder {
         self.sending_enabled = input;
         self
     }
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sending_enabled
+    }
     /// Consumes the builder and constructs a [`SendingOptions`](crate::types::SendingOptions).
     pub fn build(self) -> crate::types::SendingOptions {
         crate::types::SendingOptions {

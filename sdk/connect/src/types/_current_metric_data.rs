@@ -48,6 +48,10 @@ impl CurrentMetricDataBuilder {
         self.metric = input;
         self
     }
+    /// <p>Information about the metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::CurrentMetric> {
+        &self.metric
+    }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CurrentMetricDataBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the metric.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CurrentMetricData`](crate::types::CurrentMetricData).
     pub fn build(self) -> crate::types::CurrentMetricData {

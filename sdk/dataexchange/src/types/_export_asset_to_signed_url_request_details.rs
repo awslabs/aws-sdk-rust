@@ -56,6 +56,10 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision associated with this export request.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ExportAssetToSignedUrlRequestDetails`](crate::types::ExportAssetToSignedUrlRequestDetails).
     pub fn build(self) -> crate::types::ExportAssetToSignedUrlRequestDetails {

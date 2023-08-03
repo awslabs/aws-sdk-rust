@@ -80,6 +80,10 @@ impl CreateScheduleInputBuilder {
         self.job_names = input;
         self
     }
+    /// <p>The name or names of one or more jobs to be run.</p>
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_names
+    }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(
         mut self,
@@ -95,6 +99,10 @@ impl CreateScheduleInputBuilder {
     ) -> Self {
         self.cron_expression = input;
         self
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -121,6 +129,14 @@ impl CreateScheduleInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags to apply to this schedule.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl CreateScheduleInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CreateScheduleInput`](crate::operation::create_schedule::CreateScheduleInput).
     pub fn build(

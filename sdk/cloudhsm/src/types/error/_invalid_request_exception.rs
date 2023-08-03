@@ -75,6 +75,10 @@ impl InvalidRequestExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Additional information about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Indicates if the action can be retried.</p>
     pub fn retryable(mut self, input: bool) -> Self {
         self.retryable = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl InvalidRequestExceptionBuilder {
     pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
+    }
+    /// <p>Indicates if the action can be retried.</p>
+    pub fn get_retryable(&self) -> &::std::option::Option<bool> {
+        &self.retryable
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

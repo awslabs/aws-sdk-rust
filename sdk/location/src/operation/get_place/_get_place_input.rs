@@ -79,6 +79,10 @@ impl GetPlaceInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the place index resource that you want to use for the search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The identifier of the place to find.</p>
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl GetPlaceInputBuilder {
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.place_id = input;
         self
+    }
+    /// <p>The identifier of the place to find.</p>
+    pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.place_id
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -107,6 +115,14 @@ impl GetPlaceInputBuilder {
         self.language = input;
         self
     }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl GetPlaceInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
     pub fn build(

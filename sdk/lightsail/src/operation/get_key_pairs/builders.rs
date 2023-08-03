@@ -36,6 +36,10 @@ impl GetKeyPairsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetKeyPairs as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_key_pairs::builders::GetKeyPairsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,11 @@ impl GetKeyPairsFluentBuilder {
         self.inner = self.inner.set_page_token(input);
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
+    }
     /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
     pub fn include_default_key_pair(mut self, input: bool) -> Self {
         self.inner = self.inner.include_default_key_pair(input);
@@ -129,5 +138,9 @@ impl GetKeyPairsFluentBuilder {
     pub fn set_include_default_key_pair(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_default_key_pair(input);
         self
+    }
+    /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+    pub fn get_include_default_key_pair(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_default_key_pair()
     }
 }

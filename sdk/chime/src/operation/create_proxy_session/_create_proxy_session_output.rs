@@ -50,6 +50,10 @@ impl CreateProxySessionOutputBuilder {
         self.proxy_session = input;
         self
     }
+    /// <p>The proxy session details.</p>
+    pub fn get_proxy_session(&self) -> &::std::option::Option<crate::types::ProxySession> {
+        &self.proxy_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

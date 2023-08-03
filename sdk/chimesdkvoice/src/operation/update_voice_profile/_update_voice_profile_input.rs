@@ -54,6 +54,10 @@ impl UpdateVoiceProfileInputBuilder {
         self.voice_profile_id = input;
         self
     }
+    /// <p>The profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_id
+    }
     /// <p>The ID of the speaker search task.</p>
     pub fn speaker_search_task_id(
         mut self,
@@ -69,6 +73,10 @@ impl UpdateVoiceProfileInputBuilder {
     ) -> Self {
         self.speaker_search_task_id = input;
         self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_id
     }
     /// Consumes the builder and constructs a [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
     pub fn build(

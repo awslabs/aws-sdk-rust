@@ -49,6 +49,10 @@ impl PortProbeActionBuilder {
         self.blocked = input;
         self
     }
+    /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
+    pub fn get_blocked(&self) -> &::std::option::Option<bool> {
+        &self.blocked
+    }
     /// Appends an item to `port_probe_details`.
     ///
     /// To override the contents of this collection use [`set_port_probe_details`](Self::set_port_probe_details).
@@ -67,6 +71,12 @@ impl PortProbeActionBuilder {
     ) -> Self {
         self.port_probe_details = input;
         self
+    }
+    /// <p>A list of objects related to port probe details.</p>
+    pub fn get_port_probe_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>> {
+        &self.port_probe_details
     }
     /// Consumes the builder and constructs a [`PortProbeAction`](crate::types::PortProbeAction).
     pub fn build(self) -> crate::types::PortProbeAction {

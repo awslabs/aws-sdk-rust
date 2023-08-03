@@ -79,6 +79,10 @@ impl TargetResourceTypeBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>A description of the resource type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl TargetResourceTypeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the resource type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -116,6 +124,17 @@ impl TargetResourceTypeBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters for the resource type.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TargetResourceTypeParameter,
+        >,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`TargetResourceType`](crate::types::TargetResourceType).
     pub fn build(self) -> crate::types::TargetResourceType {

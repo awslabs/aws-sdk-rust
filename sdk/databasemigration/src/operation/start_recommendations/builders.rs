@@ -37,6 +37,12 @@ impl StartRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRecommendations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl StartRecommendationsFluentBuilder {
         self.inner = self.inner.set_database_id(input);
         self
     }
+    /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_id()
+    }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
         self.inner = self.inner.settings(input);
@@ -139,5 +149,9 @@ impl StartRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::RecommendationSettings> {
+        self.inner.get_settings()
     }
 }

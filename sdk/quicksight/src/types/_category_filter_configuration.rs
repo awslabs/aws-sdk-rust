@@ -73,6 +73,12 @@ impl CategoryFilterConfigurationBuilder {
         self.filter_list_configuration = input;
         self
     }
+    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    pub fn get_filter_list_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterListConfiguration> {
+        &self.filter_list_configuration
+    }
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
     pub fn custom_filter_list_configuration(
         mut self,
@@ -89,6 +95,12 @@ impl CategoryFilterConfigurationBuilder {
         self.custom_filter_list_configuration = input;
         self
     }
+    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    pub fn get_custom_filter_list_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomFilterListConfiguration> {
+        &self.custom_filter_list_configuration
+    }
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
     pub fn custom_filter_configuration(
         mut self,
@@ -104,6 +116,12 @@ impl CategoryFilterConfigurationBuilder {
     ) -> Self {
         self.custom_filter_configuration = input;
         self
+    }
+    /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
+    pub fn get_custom_filter_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomFilterConfiguration> {
+        &self.custom_filter_configuration
     }
     /// Consumes the builder and constructs a [`CategoryFilterConfiguration`](crate::types::CategoryFilterConfiguration).
     pub fn build(self) -> crate::types::CategoryFilterConfiguration {

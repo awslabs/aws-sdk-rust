@@ -38,6 +38,12 @@ impl DescribeSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `SnapshotIds`.
     ///
     /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
@@ -156,6 +166,12 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_snapshot_ids(input);
         self
     }
+    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
+    pub fn get_snapshot_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_snapshot_ids()
+    }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,6 +182,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -175,5 +195,9 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

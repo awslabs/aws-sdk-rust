@@ -36,6 +36,12 @@ impl UpdateLinkAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLinkAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateLinkAttributesFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.inner = self.inner.typed_link_specifier(input);
@@ -144,6 +154,12 @@ impl UpdateLinkAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        self.inner.get_typed_link_specifier()
     }
     /// Appends an item to `AttributeUpdates`.
     ///
@@ -161,5 +177,11 @@ impl UpdateLinkAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>> {
+        self.inner.get_attribute_updates()
     }
 }

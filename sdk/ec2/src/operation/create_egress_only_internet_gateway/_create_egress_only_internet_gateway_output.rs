@@ -58,6 +58,10 @@ impl CreateEgressOnlyInternetGatewayOutputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Information about the egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway(
         mut self,
@@ -73,6 +77,12 @@ impl CreateEgressOnlyInternetGatewayOutputBuilder {
     ) -> Self {
         self.egress_only_internet_gateway = input;
         self
+    }
+    /// <p>Information about the egress-only internet gateway.</p>
+    pub fn get_egress_only_internet_gateway(
+        &self,
+    ) -> &::std::option::Option<crate::types::EgressOnlyInternetGateway> {
+        &self.egress_only_internet_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

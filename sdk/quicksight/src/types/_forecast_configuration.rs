@@ -54,6 +54,12 @@ impl ForecastConfigurationBuilder {
         self.forecast_properties = input;
         self
     }
+    /// <p>The forecast properties setup of a forecast in the line chart.</p>
+    pub fn get_forecast_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeBasedForecastProperties> {
+        &self.forecast_properties
+    }
     /// <p>The forecast scenario of a forecast in the line chart.</p>
     pub fn scenario(mut self, input: crate::types::ForecastScenario) -> Self {
         self.scenario = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl ForecastConfigurationBuilder {
     ) -> Self {
         self.scenario = input;
         self
+    }
+    /// <p>The forecast scenario of a forecast in the line chart.</p>
+    pub fn get_scenario(&self) -> &::std::option::Option<crate::types::ForecastScenario> {
+        &self.scenario
     }
     /// Consumes the builder and constructs a [`ForecastConfiguration`](crate::types::ForecastConfiguration).
     pub fn build(self) -> crate::types::ForecastConfiguration {

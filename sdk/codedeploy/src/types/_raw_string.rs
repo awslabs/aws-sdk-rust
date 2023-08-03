@@ -51,6 +51,10 @@ impl RawStringBuilder {
         self.content = input;
         self
     }
+    /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The SHA256 hash value of the revision content.</p>
     pub fn sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256 = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl RawStringBuilder {
     pub fn set_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256 = input;
         self
+    }
+    /// <p>The SHA256 hash value of the revision content.</p>
+    pub fn get_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha256
     }
     /// Consumes the builder and constructs a [`RawString`](crate::types::RawString).
     pub fn build(self) -> crate::types::RawString {

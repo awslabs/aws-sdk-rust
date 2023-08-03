@@ -83,6 +83,18 @@ impl PackageVersionErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::PackageVersionErrorCode> {
+        &self.error_code
+    }
     /// <p> The error message associated with the error. </p>
     pub fn error_message(
         mut self,
@@ -98,6 +110,10 @@ impl PackageVersionErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p> The error message associated with the error. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PackageVersionError`](crate::types::PackageVersionError).
     pub fn build(self) -> crate::types::PackageVersionError {

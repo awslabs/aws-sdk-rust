@@ -197,6 +197,10 @@ impl DescribeImageVersionOutputBuilder {
         self.base_image = input;
         self
     }
+    /// <p>The registry path of the container image on which this image version is based.</p>
+    pub fn get_base_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_image
+    }
     /// <p>The registry path of the container image that contains this image version.</p>
     pub fn container_image(
         mut self,
@@ -213,6 +217,10 @@ impl DescribeImageVersionOutputBuilder {
         self.container_image = input;
         self
     }
+    /// <p>The registry path of the container image that contains this image version.</p>
+    pub fn get_container_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_image
+    }
     /// <p>When the version was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -225,6 +233,10 @@ impl DescribeImageVersionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
     pub fn failure_reason(
@@ -242,6 +254,10 @@ impl DescribeImageVersionOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>When a create or delete operation fails, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The ARN of the image the version is based on.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -251,6 +267,10 @@ impl DescribeImageVersionOutputBuilder {
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_arn = input;
         self
+    }
+    /// <p>The ARN of the image the version is based on.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     /// <p>The ARN of the version.</p>
     pub fn image_version_arn(
@@ -268,6 +288,10 @@ impl DescribeImageVersionOutputBuilder {
         self.image_version_arn = input;
         self
     }
+    /// <p>The ARN of the version.</p>
+    pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_version_arn
+    }
     /// <p>The status of the version.</p>
     pub fn image_version_status(mut self, input: crate::types::ImageVersionStatus) -> Self {
         self.image_version_status = ::std::option::Option::Some(input);
@@ -280,6 +304,12 @@ impl DescribeImageVersionOutputBuilder {
     ) -> Self {
         self.image_version_status = input;
         self
+    }
+    /// <p>The status of the version.</p>
+    pub fn get_image_version_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageVersionStatus> {
+        &self.image_version_status
     }
     /// <p>When the version was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -294,6 +324,10 @@ impl DescribeImageVersionOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>When the version was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The version number.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -303,6 +337,10 @@ impl DescribeImageVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// <p>The stability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -329,6 +367,16 @@ impl DescribeImageVersionOutputBuilder {
         self.vendor_guidance = input;
         self
     }
+    /// <p>The stability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
+        &self.vendor_guidance
+    }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
     /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
@@ -349,6 +397,15 @@ impl DescribeImageVersionOutputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn ml_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_framework = ::std::option::Option::Some(input.into());
@@ -358,6 +415,10 @@ impl DescribeImageVersionOutputBuilder {
     pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_framework = input;
         self
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn get_ml_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
     pub fn programming_lang(
@@ -374,6 +435,10 @@ impl DescribeImageVersionOutputBuilder {
     ) -> Self {
         self.programming_lang = input;
         self
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn get_programming_lang(&self) -> &::std::option::Option<::std::string::String> {
+        &self.programming_lang
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
@@ -393,6 +458,14 @@ impl DescribeImageVersionOutputBuilder {
         self.processor = input;
         self
     }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn get_processor(&self) -> &::std::option::Option<crate::types::Processor> {
+        &self.processor
+    }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn horovod(mut self, input: bool) -> Self {
         self.horovod = ::std::option::Option::Some(input);
@@ -402,6 +475,10 @@ impl DescribeImageVersionOutputBuilder {
     pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
         self.horovod = input;
         self
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn get_horovod(&self) -> &::std::option::Option<bool> {
+        &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn release_notes(
@@ -418,6 +495,10 @@ impl DescribeImageVersionOutputBuilder {
     ) -> Self {
         self.release_notes = input;
         self
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_notes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

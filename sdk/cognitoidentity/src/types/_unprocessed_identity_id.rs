@@ -48,6 +48,10 @@ impl UnprocessedIdentityIdBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// <p>The error code indicating the type of error that occurred.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UnprocessedIdentityIdBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code indicating the type of error that occurred.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`UnprocessedIdentityId`](crate::types::UnprocessedIdentityId).
     pub fn build(self) -> crate::types::UnprocessedIdentityId {

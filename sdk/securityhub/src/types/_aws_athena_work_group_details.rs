@@ -67,6 +67,10 @@ impl AwsAthenaWorkGroupDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p> The workgroup name. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The workgroup description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl AwsAthenaWorkGroupDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p> The workgroup description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> Whether the workgroup is enabled or disabled. </p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p> Whether the workgroup is enabled or disabled. </p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p> The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified. </p>
     pub fn configuration(
@@ -102,6 +114,12 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p> The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified. </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationDetails> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupDetails`](crate::types::AwsAthenaWorkGroupDetails).
     pub fn build(self) -> crate::types::AwsAthenaWorkGroupDetails {

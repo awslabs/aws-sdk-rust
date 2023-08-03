@@ -47,6 +47,10 @@ impl GetCommitOutputBuilder {
         self.commit = input;
         self
     }
+    /// <p>A commit data type object that contains information about the specified commit.</p>
+    pub fn get_commit(&self) -> &::std::option::Option<crate::types::Commit> {
+        &self.commit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl UpdateVehicleResponseItemBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The unique ID of the updated vehicle.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateVehicleResponseItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`UpdateVehicleResponseItem`](crate::types::UpdateVehicleResponseItem).
     pub fn build(self) -> crate::types::UpdateVehicleResponseItem {

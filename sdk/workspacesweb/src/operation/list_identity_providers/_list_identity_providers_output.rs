@@ -60,6 +60,10 @@ impl ListIdentityProvidersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `identity_providers`.
     ///
     /// To override the contents of this collection use [`set_identity_providers`](Self::set_identity_providers).
@@ -78,6 +82,12 @@ impl ListIdentityProvidersOutputBuilder {
     ) -> Self {
         self.identity_providers = input;
         self
+    }
+    /// <p>The identity providers.</p>
+    pub fn get_identity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
+        &self.identity_providers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

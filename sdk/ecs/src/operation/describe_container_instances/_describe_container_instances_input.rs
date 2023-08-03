@@ -56,6 +56,10 @@ impl DescribeContainerInstancesInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `container_instances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
@@ -78,6 +82,12 @@ impl DescribeContainerInstancesInputBuilder {
         self.container_instances = input;
         self
     }
+    /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
+    pub fn get_container_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_instances
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -96,6 +106,12 @@ impl DescribeContainerInstancesInputBuilder {
     ) -> Self {
         self.include = input;
         self
+    }
+    /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeContainerInstancesInput`](crate::operation::describe_container_instances::DescribeContainerInstancesInput).
     pub fn build(

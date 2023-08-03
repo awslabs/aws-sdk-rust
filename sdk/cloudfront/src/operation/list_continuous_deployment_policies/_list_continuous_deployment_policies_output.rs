@@ -56,6 +56,12 @@ impl ListContinuousDeploymentPoliciesOutputBuilder {
         self.continuous_deployment_policy_list = input;
         self
     }
+    /// <p>A list of continuous deployment policies.</p>
+    pub fn get_continuous_deployment_policy_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyList> {
+        &self.continuous_deployment_policy_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

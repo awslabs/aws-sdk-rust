@@ -48,6 +48,10 @@ impl CustomHeadersBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of custom headers, if any, for this distribution.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,12 @@ impl CustomHeadersBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CustomHeaders`](crate::types::CustomHeaders).
     pub fn build(self) -> crate::types::CustomHeaders {

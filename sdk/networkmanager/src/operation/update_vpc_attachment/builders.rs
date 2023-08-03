@@ -36,6 +36,12 @@ impl UpdateVpcAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVpcAttachment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_attachment_id(input);
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attachment_id()
+    }
     /// Appends an item to `AddSubnetArns`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
@@ -151,6 +161,12 @@ impl UpdateVpcAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_subnet_arns(input);
         self
+    }
+    /// <p>Adds a subnet ARN to the VPC attachment.</p>
+    pub fn get_add_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_subnet_arns()
     }
     /// Appends an item to `RemoveSubnetArns`.
     ///
@@ -172,6 +188,12 @@ impl UpdateVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_remove_subnet_arns(input);
         self
     }
+    /// <p>Removes a subnet ARN from the attachment.</p>
+    pub fn get_remove_subnet_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_subnet_arns()
+    }
     /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(mut self, input: crate::types::VpcOptions) -> Self {
         self.inner = self.inner.options(input);
@@ -181,5 +203,9 @@ impl UpdateVpcAttachmentFluentBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>Additional options for updating the VPC attachment. </p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        self.inner.get_options()
     }
 }

@@ -62,6 +62,10 @@ impl CollectionConfigurationBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The name of the tensor collection. The name must be unique relative to other rule configuration names.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Adds a key-value pair to `collection_parameters`.
     ///
     /// To override the contents of this collection use [`set_collection_parameters`](Self::set_collection_parameters).
@@ -86,6 +90,14 @@ impl CollectionConfigurationBuilder {
     ) -> Self {
         self.collection_parameters = input;
         self
+    }
+    /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
+    pub fn get_collection_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.collection_parameters
     }
     /// Consumes the builder and constructs a [`CollectionConfiguration`](crate::types::CollectionConfiguration).
     pub fn build(self) -> crate::types::CollectionConfiguration {

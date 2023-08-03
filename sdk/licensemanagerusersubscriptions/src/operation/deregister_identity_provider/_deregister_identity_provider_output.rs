@@ -55,6 +55,12 @@ impl DeregisterIdentityProviderOutputBuilder {
         self.identity_provider_summary = input;
         self
     }
+    /// <p>Metadata that describes the results of an identity provider operation.</p>
+    pub fn get_identity_provider_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderSummary> {
+        &self.identity_provider_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

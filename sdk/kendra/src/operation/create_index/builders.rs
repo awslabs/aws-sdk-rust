@@ -38,6 +38,10 @@ impl CreateIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIndex as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_index::builders::CreateIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateIndexFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the index.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
     /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
@@ -134,6 +142,12 @@ impl CreateIndexFluentBuilder {
         self.inner = self.inner.set_edition(input);
         self
     }
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+    /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::IndexEdition> {
+        self.inner.get_edition()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -143,6 +157,10 @@ impl CreateIndexFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(
@@ -160,6 +178,12 @@ impl CreateIndexFluentBuilder {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
+    /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        self.inner.get_server_side_encryption_configuration()
+    }
     /// <p>A description for the index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -170,6 +194,10 @@ impl CreateIndexFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the index.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -179,6 +207,10 @@ impl CreateIndexFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -196,6 +228,10 @@ impl CreateIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// Appends an item to `UserTokenConfigurations`.
     ///
@@ -216,6 +252,12 @@ impl CreateIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_token_configurations(input);
         self
+    }
+    /// <p>The user token configuration.</p>
+    pub fn get_user_token_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+        self.inner.get_user_token_configurations()
     }
     /// <p>The user context policy.</p>
     /// <dl>
@@ -258,6 +300,26 @@ impl CreateIndexFluentBuilder {
         self.inner = self.inner.set_user_context_policy(input);
         self
     }
+    /// <p>The user context policy.</p>
+    /// <dl>
+    /// <dt>
+    /// ATTRIBUTE_FILTER
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
+    /// <dt>
+    /// USER_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
+    /// </dl>
+    pub fn get_user_context_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserContextPolicy> {
+        self.inner.get_user_context_policy()
+    }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
         mut self,
@@ -273,5 +335,11 @@ impl CreateIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_group_resolution_configuration(input);
         self
+    }
+    /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    pub fn get_user_group_resolution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+        self.inner.get_user_group_resolution_configuration()
     }
 }

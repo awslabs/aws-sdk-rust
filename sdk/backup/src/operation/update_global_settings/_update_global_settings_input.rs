@@ -63,6 +63,14 @@ impl UpdateGlobalSettingsInputBuilder {
         self.global_settings = input;
         self
     }
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
+    pub fn get_global_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.global_settings
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,

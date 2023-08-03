@@ -72,6 +72,10 @@ impl ManagedJobTemplateSummaryBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The unique Name for a managed template.</p>
     pub fn template_name(
         mut self,
@@ -88,6 +92,10 @@ impl ManagedJobTemplateSummaryBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The unique Name for a managed template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The description for a managed template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl ManagedJobTemplateSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for a managed template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `environments`.
     ///
@@ -117,6 +129,12 @@ impl ManagedJobTemplateSummaryBuilder {
         self.environments = input;
         self
     }
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub fn get_environments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.environments
+    }
     /// <p>The version for a managed template.</p>
     pub fn template_version(
         mut self,
@@ -132,6 +150,10 @@ impl ManagedJobTemplateSummaryBuilder {
     ) -> Self {
         self.template_version = input;
         self
+    }
+    /// <p>The version for a managed template.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_version
     }
     /// Consumes the builder and constructs a [`ManagedJobTemplateSummary`](crate::types::ManagedJobTemplateSummary).
     pub fn build(self) -> crate::types::ManagedJobTemplateSummary {

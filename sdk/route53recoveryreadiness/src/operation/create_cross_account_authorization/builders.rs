@@ -36,6 +36,10 @@ impl CreateCrossAccountAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCrossAccountAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl CreateCrossAccountAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cross_account_authorization(input);
         self
+    }
+    /// <p>The cross-account authorization.</p>
+    pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cross_account_authorization()
     }
 }

@@ -48,6 +48,10 @@ impl OpenHoursRuleBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OpenHoursRuleBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`OpenHoursRule`](crate::types::OpenHoursRule).
     pub fn build(self) -> crate::types::OpenHoursRule {

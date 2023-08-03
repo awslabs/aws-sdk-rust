@@ -54,6 +54,12 @@ impl GetBlacklistReportsInputBuilder {
         self.blacklist_item_names = input;
         self
     }
+    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
+    pub fn get_blacklist_item_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.blacklist_item_names
+    }
     /// Consumes the builder and constructs a [`GetBlacklistReportsInput`](crate::operation::get_blacklist_reports::GetBlacklistReportsInput).
     pub fn build(
         self,

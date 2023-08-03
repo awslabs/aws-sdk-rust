@@ -91,6 +91,20 @@ impl AttributeDimensionBuilder {
         self.attribute_type = input;
         self
     }
+    /// <p>The type of segment dimension to use. Valid values are: </p>
+    /// <ul>
+    /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
+    /// <li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li>
+    /// <li>CONTAINS - endpoints that have attributes' substrings match the values are included in the segment.</li>
+    /// <li>BEFORE - endpoints with attributes read as ISO_INSTANT datetimes before the value are included in the segment.</li>
+    /// <li>AFTER - endpoints with attributes read as ISO_INSTANT datetimes after the value are included in the segment.</li>
+    /// <li>ON - endpoints with attributes read as ISO_INSTANT dates on the value are included in the segment. Time is ignored in this comparison.</li>
+    /// <li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li>
+    /// <p></p>
+    /// </ul>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::AttributeType> {
+        &self.attribute_type
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -109,6 +123,10 @@ impl AttributeDimensionBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`AttributeDimension`](crate::types::AttributeDimension).
     pub fn build(self) -> crate::types::AttributeDimension {

@@ -48,6 +48,10 @@ impl QueryArgProfileBuilder {
         self.query_arg = input;
         self
     }
+    /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
+    pub fn get_query_arg(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_arg
+    }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl QueryArgProfileBuilder {
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
+    }
+    /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// Consumes the builder and constructs a [`QueryArgProfile`](crate::types::QueryArgProfile).
     pub fn build(self) -> crate::types::QueryArgProfile {

@@ -112,6 +112,10 @@ impl AnalysisBuilder {
         self.analysis_id = input;
         self
     }
+    /// <p>The ID of the analysis.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl AnalysisBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The descriptive name of the analysis.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl AnalysisBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The descriptive name of the analysis.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Status associated with the analysis.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -144,6 +156,10 @@ impl AnalysisBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status associated with the analysis.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// Appends an item to `errors`.
     ///
@@ -163,6 +179,12 @@ impl AnalysisBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Errors associated with the analysis.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>> {
+        &self.errors
     }
     /// Appends an item to `data_set_arns`.
     ///
@@ -186,6 +208,12 @@ impl AnalysisBuilder {
         self.data_set_arns = input;
         self
     }
+    /// <p>The ARNs of the datasets of the analysis.</p>
+    pub fn get_data_set_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.data_set_arns
+    }
     /// <p>The ARN of the theme of the analysis.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
@@ -195,6 +223,10 @@ impl AnalysisBuilder {
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
+    }
+    /// <p>The ARN of the theme of the analysis.</p>
+    pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_arn
     }
     /// <p>The time that the analysis was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,6 +241,10 @@ impl AnalysisBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the analysis was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time that the analysis was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -221,6 +257,10 @@ impl AnalysisBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that the analysis was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Appends an item to `sheets`.
     ///
@@ -240,6 +280,10 @@ impl AnalysisBuilder {
     ) -> Self {
         self.sheets = input;
         self
+    }
+    /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sheet>> {
+        &self.sheets
     }
     /// Consumes the builder and constructs a [`Analysis`](crate::types::Analysis).
     pub fn build(self) -> crate::types::Analysis {

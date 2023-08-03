@@ -56,6 +56,10 @@ impl DeleteImagePipelineOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
     pub fn image_pipeline_arn(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteImagePipelineOutputBuilder {
     ) -> Self {
         self.image_pipeline_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -124,6 +124,10 @@ impl OfferingBuilder {
         self.arn = input;
         self
     }
+    /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn currency_code(
         mut self,
@@ -140,6 +144,10 @@ impl OfferingBuilder {
         self.currency_code = input;
         self
     }
+    /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// Lease duration, e.g. '12'
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -149,6 +157,10 @@ impl OfferingBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// Lease duration, e.g. '12'
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
     pub fn duration_units(mut self, input: crate::types::OfferingDurationUnits) -> Self {
@@ -163,6 +175,12 @@ impl OfferingBuilder {
         self.duration_units = input;
         self
     }
+    /// Units for duration, e.g. 'MONTHS'
+    pub fn get_duration_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
+        &self.duration_units
+    }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn fixed_price(mut self, input: f64) -> Self {
         self.fixed_price = ::std::option::Option::Some(input);
@@ -172,6 +190,10 @@ impl OfferingBuilder {
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.fixed_price = input;
         self
+    }
+    /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     pub fn offering_description(
@@ -189,6 +211,10 @@ impl OfferingBuilder {
         self.offering_description = input;
         self
     }
+    /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    pub fn get_offering_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_description
+    }
     /// Unique offering ID, e.g. '87654321'
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -198,6 +224,10 @@ impl OfferingBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Offering type, e.g. 'NO_UPFRONT'
     pub fn offering_type(mut self, input: crate::types::OfferingType) -> Self {
@@ -212,6 +242,10 @@ impl OfferingBuilder {
         self.offering_type = input;
         self
     }
+    /// Offering type, e.g. 'NO_UPFRONT'
+    pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingType> {
+        &self.offering_type
+    }
     /// AWS region, e.g. 'us-west-2'
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -221,6 +255,10 @@ impl OfferingBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// AWS region, e.g. 'us-west-2'
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Resource configuration details
     pub fn resource_specification(
@@ -238,6 +276,12 @@ impl OfferingBuilder {
         self.resource_specification = input;
         self
     }
+    /// Resource configuration details
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
+        &self.resource_specification
+    }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -247,6 +291,10 @@ impl OfferingBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// Consumes the builder and constructs a [`Offering`](crate::types::Offering).
     pub fn build(self) -> crate::types::Offering {

@@ -65,6 +65,10 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
         self.auth_tt_l = input;
         self
     }
+    /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
+    pub fn get_auth_tt_l(&self) -> &::std::option::Option<i64> {
+        &self.auth_tt_l
+    }
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
     pub fn iat_tt_l(mut self, input: i64) -> Self {
@@ -85,6 +93,10 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
         self.iat_tt_l = input;
         self
     }
+    /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
+    pub fn get_iat_tt_l(&self) -> &::std::option::Option<i64> {
+        &self.iat_tt_l
+    }
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
+    }
+    /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
     }
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {

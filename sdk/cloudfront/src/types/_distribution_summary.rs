@@ -207,6 +207,10 @@ impl DistributionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -217,6 +221,10 @@ impl DistributionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -226,6 +234,10 @@ impl DistributionSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time the distribution was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -240,6 +252,10 @@ impl DistributionSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time the distribution was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -249,6 +265,10 @@ impl DistributionSummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
@@ -260,6 +280,10 @@ impl DistributionSummaryBuilder {
         self.aliases = input;
         self
     }
+    /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<crate::types::Aliases> {
+        &self.aliases
+    }
     /// <p>A complex type that contains information about origins for this distribution.</p>
     pub fn origins(mut self, input: crate::types::Origins) -> Self {
         self.origins = ::std::option::Option::Some(input);
@@ -269,6 +293,10 @@ impl DistributionSummaryBuilder {
     pub fn set_origins(mut self, input: ::std::option::Option<crate::types::Origins>) -> Self {
         self.origins = input;
         self
+    }
+    /// <p>A complex type that contains information about origins for this distribution.</p>
+    pub fn get_origins(&self) -> &::std::option::Option<crate::types::Origins> {
+        &self.origins
     }
     /// <p>A complex type that contains information about origin groups for this distribution.</p>
     pub fn origin_groups(mut self, input: crate::types::OriginGroups) -> Self {
@@ -283,6 +311,10 @@ impl DistributionSummaryBuilder {
         self.origin_groups = input;
         self
     }
+    /// <p>A complex type that contains information about origin groups for this distribution.</p>
+    pub fn get_origin_groups(&self) -> &::std::option::Option<crate::types::OriginGroups> {
+        &self.origin_groups
+    }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
     pub fn default_cache_behavior(mut self, input: crate::types::DefaultCacheBehavior) -> Self {
         self.default_cache_behavior = ::std::option::Option::Some(input);
@@ -295,6 +327,12 @@ impl DistributionSummaryBuilder {
     ) -> Self {
         self.default_cache_behavior = input;
         self
+    }
+    /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    pub fn get_default_cache_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultCacheBehavior> {
+        &self.default_cache_behavior
     }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviors) -> Self {
@@ -309,6 +347,10 @@ impl DistributionSummaryBuilder {
         self.cache_behaviors = input;
         self
     }
+    /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<crate::types::CacheBehaviors> {
+        &self.cache_behaviors
+    }
     /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
     pub fn custom_error_responses(mut self, input: crate::types::CustomErrorResponses) -> Self {
         self.custom_error_responses = ::std::option::Option::Some(input);
@@ -322,6 +364,12 @@ impl DistributionSummaryBuilder {
         self.custom_error_responses = input;
         self
     }
+    /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
+    pub fn get_custom_error_responses(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomErrorResponses> {
+        &self.custom_error_responses
+    }
     /// <p>The comment originally specified when this distribution was created.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -331,6 +379,10 @@ impl DistributionSummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment originally specified when this distribution was created.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
@@ -345,6 +397,10 @@ impl DistributionSummaryBuilder {
         self.price_class = input;
         self
     }
+    /// <p>A complex type that contains information about price class for this streaming distribution.</p>
+    pub fn get_price_class(&self) -> &::std::option::Option<crate::types::PriceClass> {
+        &self.price_class
+    }
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -354,6 +410,10 @@ impl DistributionSummaryBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether the distribution is enabled to accept user requests for content.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
     pub fn viewer_certificate(mut self, input: crate::types::ViewerCertificate) -> Self {
@@ -368,6 +428,12 @@ impl DistributionSummaryBuilder {
         self.viewer_certificate = input;
         self
     }
+    /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
+    pub fn get_viewer_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::ViewerCertificate> {
+        &self.viewer_certificate
+    }
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
     pub fn restrictions(mut self, input: crate::types::Restrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
@@ -381,6 +447,10 @@ impl DistributionSummaryBuilder {
         self.restrictions = input;
         self
     }
+    /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::Restrictions> {
+        &self.restrictions
+    }
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
@@ -390,6 +460,10 @@ impl DistributionSummaryBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
+    }
+    /// <p>The Web ACL Id (if any) associated with the distribution.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
     }
     /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
     pub fn http_version(mut self, input: crate::types::HttpVersion) -> Self {
@@ -404,6 +478,10 @@ impl DistributionSummaryBuilder {
         self.http_version = input;
         self
     }
+    /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
+    pub fn get_http_version(&self) -> &::std::option::Option<crate::types::HttpVersion> {
+        &self.http_version
+    }
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
     pub fn is_ipv6_enabled(mut self, input: bool) -> Self {
         self.is_ipv6_enabled = ::std::option::Option::Some(input);
@@ -413,6 +491,10 @@ impl DistributionSummaryBuilder {
     pub fn set_is_ipv6_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_ipv6_enabled = input;
         self
+    }
+    /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
+    pub fn get_is_ipv6_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_ipv6_enabled
     }
     /// Appends an item to `alias_icp_recordals`.
     ///
@@ -435,6 +517,13 @@ impl DistributionSummaryBuilder {
         self.alias_icp_recordals = input;
         self
     }
+    /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
+    /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
+    pub fn get_alias_icp_recordals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
+        &self.alias_icp_recordals
+    }
     /// <p>Whether the primary distribution has a staging distribution enabled.</p>
     pub fn staging(mut self, input: bool) -> Self {
         self.staging = ::std::option::Option::Some(input);
@@ -444,6 +533,10 @@ impl DistributionSummaryBuilder {
     pub fn set_staging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.staging = input;
         self
+    }
+    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    pub fn get_staging(&self) -> &::std::option::Option<bool> {
+        &self.staging
     }
     /// Consumes the builder and constructs a [`DistributionSummary`](crate::types::DistributionSummary).
     pub fn build(self) -> crate::types::DistributionSummary {

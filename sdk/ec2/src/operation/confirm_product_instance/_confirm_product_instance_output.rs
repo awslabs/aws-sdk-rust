@@ -56,6 +56,10 @@ impl ConfirmProductInstanceOutputBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub fn r#return(mut self, input: bool) -> Self {
         self.r#return = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ConfirmProductInstanceOutputBuilder {
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
+    }
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

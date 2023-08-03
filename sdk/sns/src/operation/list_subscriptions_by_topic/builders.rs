@@ -37,6 +37,10 @@ impl ListSubscriptionsByTopicFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSubscriptionsByTopic as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl ListSubscriptionsByTopicFluentBuilder {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
+    /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
+    }
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,5 +153,9 @@ impl ListSubscriptionsByTopicFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -40,6 +40,13 @@ impl GetDownloadUrlForLayerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDownloadUrlForLayer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl GetDownloadUrlForLayerFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
     pub fn repository_name(
         mut self,
@@ -146,6 +157,10 @@ impl GetDownloadUrlForLayerFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository that is associated with the image layer to download.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The digest of the image layer to download.</p>
     pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_digest(input.into());
@@ -155,5 +170,9 @@ impl GetDownloadUrlForLayerFluentBuilder {
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_layer_digest(input);
         self
+    }
+    /// <p>The digest of the image layer to download.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_digest()
     }
 }

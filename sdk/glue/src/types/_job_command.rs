@@ -64,6 +64,10 @@ impl JobCommandBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
     pub fn script_location(
         mut self,
@@ -79,6 +83,10 @@ impl JobCommandBuilder {
     ) -> Self {
         self.script_location = input;
         self
+    }
+    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
+    pub fn get_script_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_location
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub fn python_version(
@@ -96,6 +104,10 @@ impl JobCommandBuilder {
         self.python_version = input;
         self
     }
+    /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
+    pub fn get_python_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.python_version
+    }
     /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl JobCommandBuilder {
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
+    }
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
     }
     /// Consumes the builder and constructs a [`JobCommand`](crate::types::JobCommand).
     pub fn build(self) -> crate::types::JobCommand {

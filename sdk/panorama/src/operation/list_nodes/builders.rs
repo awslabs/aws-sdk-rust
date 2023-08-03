@@ -36,6 +36,10 @@ impl ListNodesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListNodes as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_nodes::builders::ListNodesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListNodesFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// <p>Search for nodes by category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::NodeCategory> {
+        self.inner.get_category()
+    }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
     pub fn owner_account(
         mut self,
@@ -143,6 +151,10 @@ impl ListNodesFluentBuilder {
         self.inner = self.inner.set_owner_account(input);
         self
     }
+    /// <p>Search for nodes by the account ID of the nodes' owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
     /// <p>Search for nodes by name.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_name(input.into());
@@ -152,6 +164,10 @@ impl ListNodesFluentBuilder {
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_name(input);
         self
+    }
+    /// <p>Search for nodes by name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_name()
     }
     /// <p>Search for nodes by version.</p>
     pub fn package_version(
@@ -169,6 +185,10 @@ impl ListNodesFluentBuilder {
         self.inner = self.inner.set_package_version(input);
         self
     }
+    /// <p>Search for nodes by version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_version()
+    }
     /// <p>Search for nodes by patch version.</p>
     pub fn patch_version(
         mut self,
@@ -185,6 +205,10 @@ impl ListNodesFluentBuilder {
         self.inner = self.inner.set_patch_version(input);
         self
     }
+    /// <p>Search for nodes by patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_version()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -195,6 +219,10 @@ impl ListNodesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -204,5 +232,9 @@ impl ListNodesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of nodes to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

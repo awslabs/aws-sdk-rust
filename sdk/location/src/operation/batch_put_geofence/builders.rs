@@ -36,6 +36,12 @@ impl BatchPutGeofenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutGeofence as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl BatchPutGeofenceFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>The geofence collection storing the geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -148,5 +158,11 @@ impl BatchPutGeofenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>The batch of geofences to be stored in a geofence collection.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>> {
+        self.inner.get_entries()
     }
 }

@@ -40,6 +40,10 @@ impl DescribeFlywheelInputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// Consumes the builder and constructs a [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
     pub fn build(
         self,

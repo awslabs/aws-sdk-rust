@@ -52,6 +52,10 @@ impl MentionSentimentBuilder {
         self.sentiment = input;
         self
     }
+    /// <p>The sentiment of the mention. </p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentType> {
+        &self.sentiment
+    }
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
     pub fn sentiment_score(mut self, input: crate::types::SentimentScore) -> Self {
         self.sentiment_score = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl MentionSentimentBuilder {
     ) -> Self {
         self.sentiment_score = input;
         self
+    }
+    /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+    pub fn get_sentiment_score(&self) -> &::std::option::Option<crate::types::SentimentScore> {
+        &self.sentiment_score
     }
     /// Consumes the builder and constructs a [`MentionSentiment`](crate::types::MentionSentiment).
     pub fn build(self) -> crate::types::MentionSentiment {

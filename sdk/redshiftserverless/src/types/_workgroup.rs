@@ -145,6 +145,10 @@ impl WorkgroupBuilder {
         self.workgroup_id = input;
         self
     }
+    /// <p>The unique identifier of the workgroup.</p>
+    pub fn get_workgroup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_id
+    }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
     pub fn workgroup_arn(
         mut self,
@@ -160,6 +164,10 @@ impl WorkgroupBuilder {
     ) -> Self {
         self.workgroup_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
+    pub fn get_workgroup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_arn
     }
     /// <p>The name of the workgroup.</p>
     pub fn workgroup_name(
@@ -177,6 +185,10 @@ impl WorkgroupBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>The namespace the workgroup is associated with.</p>
     pub fn namespace_name(
         mut self,
@@ -193,6 +205,10 @@ impl WorkgroupBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The namespace the workgroup is associated with.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
     pub fn base_capacity(mut self, input: i32) -> Self {
         self.base_capacity = ::std::option::Option::Some(input);
@@ -203,6 +219,10 @@ impl WorkgroupBuilder {
         self.base_capacity = input;
         self
     }
+    /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
+    pub fn get_base_capacity(&self) -> &::std::option::Option<i32> {
+        &self.base_capacity
+    }
     /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
@@ -212,6 +232,10 @@ impl WorkgroupBuilder {
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
+    }
+    /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// Appends an item to `config_parameters`.
     ///
@@ -231,6 +255,12 @@ impl WorkgroupBuilder {
     ) -> Self {
         self.config_parameters = input;
         self
+    }
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    pub fn get_config_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+        &self.config_parameters
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -254,6 +284,12 @@ impl WorkgroupBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>An array of security group IDs to associate with the workgroup.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -273,6 +309,10 @@ impl WorkgroupBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>An array of subnet IDs the workgroup is associated with.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The status of the workgroup.</p>
     pub fn status(mut self, input: crate::types::WorkgroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -286,6 +326,10 @@ impl WorkgroupBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the workgroup.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkgroupStatus> {
+        &self.status
+    }
     /// <p>The endpoint that is created from the workgroup.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
@@ -296,6 +340,10 @@ impl WorkgroupBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint that is created from the workgroup.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
+    }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -305,6 +353,10 @@ impl WorkgroupBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>The creation date of the workgroup.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -319,6 +371,10 @@ impl WorkgroupBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The creation date of the workgroup.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -328,6 +384,10 @@ impl WorkgroupBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {

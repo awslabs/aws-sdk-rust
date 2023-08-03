@@ -39,6 +39,10 @@ impl GetLexiconInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the lexicon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetLexiconInput`](crate::operation::get_lexicon::GetLexiconInput).
     pub fn build(
         self,

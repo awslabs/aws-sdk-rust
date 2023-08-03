@@ -47,6 +47,10 @@ impl StopSessionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the session to be stopped.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The origin of the request.</p>
     pub fn request_origin(
         mut self,
@@ -62,6 +66,10 @@ impl StopSessionInputBuilder {
     ) -> Self {
         self.request_origin = input;
         self
+    }
+    /// <p>The origin of the request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`StopSessionInput`](crate::operation::stop_session::StopSessionInput).
     pub fn build(

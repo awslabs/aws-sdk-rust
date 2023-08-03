@@ -71,6 +71,10 @@ impl StartChangeSetInputBuilder {
         self.catalog = input;
         self
     }
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// Appends an item to `change_set`.
     ///
     /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
@@ -90,6 +94,10 @@ impl StartChangeSetInputBuilder {
         self.change_set = input;
         self
     }
+    /// <p>Array of <code>change</code> object.</p>
+    pub fn get_change_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
+        &self.change_set
+    }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
     pub fn change_set_name(
         mut self,
@@ -106,6 +114,10 @@ impl StartChangeSetInputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
     pub fn client_request_token(
         mut self,
@@ -121,6 +133,10 @@ impl StartChangeSetInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique token to identify the request to ensure idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `change_set_tags`.
     ///
@@ -140,6 +156,12 @@ impl StartChangeSetInputBuilder {
     ) -> Self {
         self.change_set_tags = input;
         self
+    }
+    /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
+    pub fn get_change_set_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.change_set_tags
     }
     /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
     pub fn build(

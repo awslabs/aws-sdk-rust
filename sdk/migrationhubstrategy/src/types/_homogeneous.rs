@@ -58,6 +58,13 @@ impl HomogeneousBuilder {
         self.target_database_engine = input;
         self
     }
+    /// <p> The target database engine for homogeneous database migration preferences. </p>
+    pub fn get_target_database_engine(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>
+    {
+        &self.target_database_engine
+    }
     /// Consumes the builder and constructs a [`Homogeneous`](crate::types::Homogeneous).
     pub fn build(self) -> crate::types::Homogeneous {
         crate::types::Homogeneous {

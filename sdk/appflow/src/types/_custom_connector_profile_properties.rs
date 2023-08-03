@@ -71,6 +71,14 @@ impl CustomConnectorProfilePropertiesBuilder {
         self.profile_properties = input;
         self
     }
+    /// <p>A map of properties that are required to create a profile for the custom connector.</p>
+    pub fn get_profile_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.profile_properties
+    }
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
     pub fn o_auth2_properties(mut self, input: crate::types::OAuth2Properties) -> Self {
         self.o_auth2_properties = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl CustomConnectorProfilePropertiesBuilder {
     ) -> Self {
         self.o_auth2_properties = input;
         self
+    }
+    /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
+    pub fn get_o_auth2_properties(&self) -> &::std::option::Option<crate::types::OAuth2Properties> {
+        &self.o_auth2_properties
     }
     /// Consumes the builder and constructs a [`CustomConnectorProfileProperties`](crate::types::CustomConnectorProfileProperties).
     pub fn build(self) -> crate::types::CustomConnectorProfileProperties {

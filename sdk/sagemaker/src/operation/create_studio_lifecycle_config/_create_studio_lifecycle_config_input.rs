@@ -73,6 +73,12 @@ impl CreateStudioLifecycleConfigInputBuilder {
         self.studio_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    pub fn get_studio_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
+    }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn studio_lifecycle_config_content(
         mut self,
@@ -89,6 +95,12 @@ impl CreateStudioLifecycleConfigInputBuilder {
         self.studio_lifecycle_config_content = input;
         self
     }
+    /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    pub fn get_studio_lifecycle_config_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_content
+    }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub fn studio_lifecycle_config_app_type(
         mut self,
@@ -104,6 +116,12 @@ impl CreateStudioLifecycleConfigInputBuilder {
     ) -> Self {
         self.studio_lifecycle_config_app_type = input;
         self
+    }
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub fn get_studio_lifecycle_config_app_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+        &self.studio_lifecycle_config_app_type
     }
     /// Appends an item to `tags`.
     ///
@@ -123,6 +141,10 @@ impl CreateStudioLifecycleConfigInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigInput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput).
     pub fn build(

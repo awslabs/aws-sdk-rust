@@ -36,6 +36,12 @@ impl UpdateSecurityConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSecurityConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
     pub fn config_version(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_config_version(input);
         self
     }
+    /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
+    pub fn get_config_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_version()
+    }
     /// <p>A description of the security configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +165,10 @@ impl UpdateSecurityConfigFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the security configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>SAML options in in the form of a key-value map.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
@@ -165,6 +183,10 @@ impl UpdateSecurityConfigFluentBuilder {
         self.inner = self.inner.set_saml_options(input);
         self
     }
+    /// <p>SAML options in in the form of a key-value map.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
+        self.inner.get_saml_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -174,5 +196,9 @@ impl UpdateSecurityConfigFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

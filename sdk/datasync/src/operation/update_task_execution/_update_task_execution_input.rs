@@ -57,6 +57,10 @@ impl UpdateTaskExecutionInputBuilder {
         self.task_execution_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
+    pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_execution_arn
+    }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
@@ -68,6 +72,11 @@ impl UpdateTaskExecutionInputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
     pub fn build(

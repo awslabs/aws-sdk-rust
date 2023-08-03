@@ -73,6 +73,10 @@ impl DescribeModelVersionsInputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model version number.</p>
     pub fn model_version_number(
         mut self,
@@ -89,6 +93,10 @@ impl DescribeModelVersionsInputBuilder {
         self.model_version_number = input;
         self
     }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl DescribeModelVersionsInputBuilder {
         self.model_type = input;
         self
     }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
+    }
     /// <p>The next token from the previous results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl DescribeModelVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next token from the previous results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -121,6 +137,10 @@ impl DescribeModelVersionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
     pub fn build(

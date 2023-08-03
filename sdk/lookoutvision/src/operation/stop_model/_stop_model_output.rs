@@ -49,6 +49,10 @@ impl StopModelOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the model.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelHostingStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

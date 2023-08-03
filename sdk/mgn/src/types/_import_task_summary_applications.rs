@@ -48,6 +48,10 @@ impl ImportTaskSummaryApplicationsBuilder {
         self.created_count = input;
         self
     }
+    /// <p>Import task summary applications created count.</p>
+    pub fn get_created_count(&self) -> &::std::option::Option<i64> {
+        &self.created_count
+    }
     /// <p>Import task summary applications modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
         self.modified_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ImportTaskSummaryApplicationsBuilder {
     pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.modified_count = input;
         self
+    }
+    /// <p>Import task summary applications modified count.</p>
+    pub fn get_modified_count(&self) -> &::std::option::Option<i64> {
+        &self.modified_count
     }
     /// Consumes the builder and constructs a [`ImportTaskSummaryApplications`](crate::types::ImportTaskSummaryApplications).
     pub fn build(self) -> crate::types::ImportTaskSummaryApplications {

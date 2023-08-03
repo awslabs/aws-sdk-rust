@@ -78,6 +78,10 @@ impl AwsEc2VolumeAttachmentBuilder {
         self.attach_time = input;
         self
     }
+    /// <p>The datetime when the attachment initiated.</p>
+    pub fn get_attach_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attach_time
+    }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl AwsEc2VolumeAttachmentBuilder {
         self.delete_on_termination = input;
         self
     }
+    /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
+    }
     /// <p>The identifier of the EC2 instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl AwsEc2VolumeAttachmentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
@@ -121,6 +133,17 @@ impl AwsEc2VolumeAttachmentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The attachment state of the volume. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsEc2VolumeAttachment`](crate::types::AwsEc2VolumeAttachment).
     pub fn build(self) -> crate::types::AwsEc2VolumeAttachment {

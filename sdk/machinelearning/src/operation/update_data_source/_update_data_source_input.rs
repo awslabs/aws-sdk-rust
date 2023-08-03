@@ -54,6 +54,10 @@ impl UpdateDataSourceInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
     pub fn data_source_name(
         mut self,
@@ -69,6 +73,10 @@ impl UpdateDataSourceInputBuilder {
     ) -> Self {
         self.data_source_name = input;
         self
+    }
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_name
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(

@@ -59,6 +59,10 @@ impl ModelVariantConfigBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the Amazon SageMaker Model entity.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The name of the variant.</p>
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ModelVariantConfigBuilder {
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variant_name = input;
         self
+    }
+    /// <p>The name of the variant.</p>
+    pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variant_name
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
     pub fn infrastructure_config(mut self, input: crate::types::ModelInfrastructureConfig) -> Self {
@@ -81,6 +89,12 @@ impl ModelVariantConfigBuilder {
     ) -> Self {
         self.infrastructure_config = input;
         self
+    }
+    /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
+    pub fn get_infrastructure_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
+        &self.infrastructure_config
     }
     /// Consumes the builder and constructs a [`ModelVariantConfig`](crate::types::ModelVariantConfig).
     pub fn build(self) -> crate::types::ModelVariantConfig {

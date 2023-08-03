@@ -40,6 +40,10 @@ impl StatePersistenceConfigurationsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`StatePersistenceConfigurations`](crate::types::StatePersistenceConfigurations).
     pub fn build(self) -> crate::types::StatePersistenceConfigurations {
         crate::types::StatePersistenceConfigurations {

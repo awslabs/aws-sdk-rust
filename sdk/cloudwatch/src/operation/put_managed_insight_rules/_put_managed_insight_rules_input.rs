@@ -50,6 +50,12 @@ impl PutManagedInsightRulesInputBuilder {
         self.managed_rules = input;
         self
     }
+    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    pub fn get_managed_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
+        &self.managed_rules
+    }
     /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
     pub fn build(
         self,

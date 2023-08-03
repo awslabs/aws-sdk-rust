@@ -56,6 +56,10 @@ impl ListTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of tasks to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListTasksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -84,6 +92,10 @@ impl ListTasksInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
     pub fn build(

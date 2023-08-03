@@ -43,6 +43,10 @@ impl PipelinePauseStateSettingsBuilder {
         self.pipeline_id = input;
         self
     }
+    /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<crate::types::PipelineId> {
+        &self.pipeline_id
+    }
     /// Consumes the builder and constructs a [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
     pub fn build(self) -> crate::types::PipelinePauseStateSettings {
         crate::types::PipelinePauseStateSettings {

@@ -70,6 +70,11 @@ impl UpdateApplicationVersionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application associated with this version.</p>
+    /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn version_label(
@@ -88,6 +93,11 @@ impl UpdateApplicationVersionInputBuilder {
         self.version_label = input;
         self
     }
+    /// <p>The name of the version to update.</p>
+    /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     /// <p>A new description for this version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl UpdateApplicationVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for this version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateApplicationVersionInput`](crate::operation::update_application_version::UpdateApplicationVersionInput).
     pub fn build(

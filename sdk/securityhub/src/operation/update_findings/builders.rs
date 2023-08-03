@@ -37,6 +37,12 @@ impl UpdateFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_findings::builders::UpdateFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl UpdateFindingsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A collection of attributes that specify which findings you want to update.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The updated note for the finding.</p>
     pub fn note(mut self, input: crate::types::NoteUpdate) -> Self {
         self.inner = self.inner.note(input);
@@ -131,6 +141,10 @@ impl UpdateFindingsFluentBuilder {
     pub fn set_note(mut self, input: ::std::option::Option<crate::types::NoteUpdate>) -> Self {
         self.inner = self.inner.set_note(input);
         self
+    }
+    /// <p>The updated note for the finding.</p>
+    pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
+        self.inner.get_note()
     }
     /// <p>The updated record state for the finding.</p>
     pub fn record_state(mut self, input: crate::types::RecordState) -> Self {
@@ -144,5 +158,9 @@ impl UpdateFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_record_state(input);
         self
+    }
+    /// <p>The updated record state for the finding.</p>
+    pub fn get_record_state(&self) -> &::std::option::Option<crate::types::RecordState> {
+        self.inner.get_record_state()
     }
 }

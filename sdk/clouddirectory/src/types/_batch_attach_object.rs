@@ -59,6 +59,10 @@ impl BatchAttachObjectBuilder {
         self.parent_reference = input;
         self
     }
+    /// <p>The parent object reference.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.parent_reference
+    }
     /// <p>The child object reference that is to be attached to the object.</p>
     pub fn child_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.child_reference = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl BatchAttachObjectBuilder {
         self.child_reference = input;
         self
     }
+    /// <p>The child object reference that is to be attached to the object.</p>
+    pub fn get_child_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.child_reference
+    }
     /// <p>The name of the link.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl BatchAttachObjectBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The name of the link.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`BatchAttachObject`](crate::types::BatchAttachObject).
     pub fn build(self) -> crate::types::BatchAttachObject {

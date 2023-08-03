@@ -46,6 +46,10 @@ impl GenerateServiceLastAccessedDetailsOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

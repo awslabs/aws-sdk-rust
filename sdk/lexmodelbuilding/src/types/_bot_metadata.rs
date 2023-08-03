@@ -80,6 +80,10 @@ impl BotMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl BotMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The status of the bot.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl BotMetadataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the bot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +125,10 @@ impl BotMetadataBuilder {
         self.last_updated_date = input;
         self
     }
+    /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
+    }
     /// <p>The date that the bot was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl BotMetadataBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date that the bot was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl BotMetadataBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`BotMetadata`](crate::types::BotMetadata).
     pub fn build(self) -> crate::types::BotMetadata {

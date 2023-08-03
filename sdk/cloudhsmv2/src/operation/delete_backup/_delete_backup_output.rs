@@ -46,6 +46,10 @@ impl DeleteBackupOutputBuilder {
         self.backup = input;
         self
     }
+    /// <p>Information on the <code>Backup</code> object deleted.</p>
+    pub fn get_backup(&self) -> &::std::option::Option<crate::types::Backup> {
+        &self.backup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

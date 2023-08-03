@@ -83,6 +83,10 @@ impl DataAlreadyExistsExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Data checksum used
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl DataAlreadyExistsExceptionBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// Data checksum used
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Checksum algorithm used
     pub fn checksum_algorithm(
@@ -108,6 +116,10 @@ impl DataAlreadyExistsExceptionBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm used
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_algorithm
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -36,6 +36,10 @@ impl DescribeTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_tags::builders::DescribeTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DescribeTagsFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The type of the ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -130,5 +138,9 @@ impl DescribeTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of the ML object.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
+        self.inner.get_resource_type()
     }
 }

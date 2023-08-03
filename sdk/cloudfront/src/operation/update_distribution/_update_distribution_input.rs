@@ -60,6 +60,12 @@ impl UpdateDistributionInputBuilder {
         self.distribution_config = input;
         self
     }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+        &self.distribution_config
+    }
     /// <p>The distribution's id.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl UpdateDistributionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The distribution's id.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -79,6 +89,10 @@ impl UpdateDistributionInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
     pub fn build(

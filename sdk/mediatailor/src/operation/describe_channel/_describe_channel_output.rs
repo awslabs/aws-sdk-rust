@@ -136,6 +136,10 @@ impl DescribeChannelOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the channel.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl DescribeChannelOutputBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>Indicates whether the channel is in a running state or not.</p>
     pub fn channel_state(mut self, input: crate::types::ChannelState) -> Self {
@@ -159,6 +167,10 @@ impl DescribeChannelOutputBuilder {
         self.channel_state = input;
         self
     }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn get_channel_state(&self) -> &::std::option::Option<crate::types::ChannelState> {
+        &self.channel_state
+    }
     /// <p>The timestamp of when the channel was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -171,6 +183,10 @@ impl DescribeChannelOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
     pub fn filler_slate(mut self, input: crate::types::SlateSource) -> Self {
@@ -185,6 +201,10 @@ impl DescribeChannelOutputBuilder {
         self.filler_slate = input;
         self
     }
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
+        &self.filler_slate
+    }
     /// <p>The timestamp of when the channel was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -197,6 +217,10 @@ impl DescribeChannelOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp of when the channel was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Appends an item to `outputs`.
     ///
@@ -217,6 +241,12 @@ impl DescribeChannelOutputBuilder {
         self.outputs = input;
         self
     }
+    /// <p>The channel's output properties.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
+        &self.outputs
+    }
     /// <p>The channel's playback mode.</p>
     pub fn playback_mode(
         mut self,
@@ -232,6 +262,10 @@ impl DescribeChannelOutputBuilder {
     ) -> Self {
         self.playback_mode = input;
         self
+    }
+    /// <p>The channel's playback mode.</p>
+    pub fn get_playback_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_mode
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -258,6 +292,14 @@ impl DescribeChannelOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The channel's tier.</p>
     pub fn tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tier = ::std::option::Option::Some(input.into());
@@ -267,6 +309,10 @@ impl DescribeChannelOutputBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The channel's tier.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tier
     }
     /// <p>The log configuration for the channel.</p>
     pub fn log_configuration(mut self, input: crate::types::LogConfigurationForChannel) -> Self {
@@ -280,6 +326,12 @@ impl DescribeChannelOutputBuilder {
     ) -> Self {
         self.log_configuration = input;
         self
+    }
+    /// <p>The log configuration for the channel.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogConfigurationForChannel> {
+        &self.log_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

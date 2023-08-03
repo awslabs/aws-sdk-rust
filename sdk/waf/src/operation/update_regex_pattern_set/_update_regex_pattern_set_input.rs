@@ -63,6 +63,10 @@ impl UpdateRegexPatternSetInputBuilder {
         self.regex_pattern_set_id = input;
         self
     }
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    pub fn get_regex_pattern_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_pattern_set_id
+    }
     /// Appends an item to `updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -82,6 +86,12 @@ impl UpdateRegexPatternSetInputBuilder {
         self.updates = input;
         self
     }
+    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>> {
+        &self.updates
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl UpdateRegexPatternSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
     pub fn build(

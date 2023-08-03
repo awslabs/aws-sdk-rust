@@ -59,6 +59,10 @@ impl TimecodeBurninSettingsBuilder {
         self.font_size = input;
         self
     }
+    /// Choose a timecode burn-in font size
+    pub fn get_font_size(&self) -> &::std::option::Option<crate::types::TimecodeBurninFontSize> {
+        &self.font_size
+    }
     /// Choose a timecode burn-in output position
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl TimecodeBurninSettingsBuilder {
         self.position = input;
         self
     }
+    /// Choose a timecode burn-in output position
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::TimecodeBurninPosition> {
+        &self.position
+    }
     /// Create a timecode burn-in prefix (optional)
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl TimecodeBurninSettingsBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// Create a timecode burn-in prefix (optional)
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`TimecodeBurninSettings`](crate::types::TimecodeBurninSettings).
     pub fn build(self) -> crate::types::TimecodeBurninSettings {

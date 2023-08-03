@@ -40,6 +40,10 @@ impl ResultReuseInformationBuilder {
         self.reused_previous_result = input;
         self
     }
+    /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+    pub fn get_reused_previous_result(&self) -> &::std::option::Option<bool> {
+        &self.reused_previous_result
+    }
     /// Consumes the builder and constructs a [`ResultReuseInformation`](crate::types::ResultReuseInformation).
     pub fn build(self) -> crate::types::ResultReuseInformation {
         crate::types::ResultReuseInformation {

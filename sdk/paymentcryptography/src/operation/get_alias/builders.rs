@@ -44,6 +44,10 @@ impl GetAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_alias::builders::GetAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetAliasFluentBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_name(input);
         self
+    }
+    /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
     }
 }

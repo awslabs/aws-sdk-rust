@@ -57,6 +57,10 @@ impl SendDataToMulticastGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn payload_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_data = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SendDataToMulticastGroupInputBuilder {
     pub fn set_payload_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_data = input;
         self
+    }
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub fn get_payload_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_data
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
     pub fn wireless_metadata(mut self, input: crate::types::MulticastWirelessMetadata) -> Self {
@@ -79,6 +87,12 @@ impl SendDataToMulticastGroupInputBuilder {
     ) -> Self {
         self.wireless_metadata = input;
         self
+    }
+    /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    pub fn get_wireless_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
+        &self.wireless_metadata
     }
     /// Consumes the builder and constructs a [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
     pub fn build(

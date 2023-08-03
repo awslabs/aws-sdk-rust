@@ -52,6 +52,12 @@ impl CreateGroupCertificateAuthorityOutputBuilder {
         self.group_certificate_authority_arn = input;
         self
     }
+    /// The ARN of the group certificate authority.
+    pub fn get_group_certificate_authority_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl BatchDetectEntitiesItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -66,6 +70,10 @@ impl BatchDetectEntitiesItemResultBuilder {
     ) -> Self {
         self.entities = input;
         self
+    }
+    /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`BatchDetectEntitiesItemResult`](crate::types::BatchDetectEntitiesItemResult).
     pub fn build(self) -> crate::types::BatchDetectEntitiesItemResult {

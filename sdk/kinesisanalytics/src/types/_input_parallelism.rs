@@ -40,6 +40,10 @@ impl InputParallelismBuilder {
         self.count = input;
         self
     }
+    /// <p>Number of in-application streams to create. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// Consumes the builder and constructs a [`InputParallelism`](crate::types::InputParallelism).
     pub fn build(self) -> crate::types::InputParallelism {
         crate::types::InputParallelism { count: self.count }

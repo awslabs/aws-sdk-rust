@@ -53,6 +53,10 @@ impl CreateNetworkProfileOutputBuilder {
         self.network_profile_arn = input;
         self
     }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

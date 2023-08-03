@@ -62,6 +62,10 @@ impl ListFirewallDomainListsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `firewall_domain_lists`.
     ///
     /// To override the contents of this collection use [`set_firewall_domain_lists`](Self::set_firewall_domain_lists).
@@ -85,6 +89,13 @@ impl ListFirewallDomainListsOutputBuilder {
     ) -> Self {
         self.firewall_domain_lists = input;
         self
+    }
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
+    pub fn get_firewall_domain_lists(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>> {
+        &self.firewall_domain_lists
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

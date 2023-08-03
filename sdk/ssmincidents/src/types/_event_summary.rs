@@ -87,6 +87,10 @@ impl EventSummaryBuilder {
         self.incident_record_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_record_arn
+    }
     /// <p>The timeline event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl EventSummaryBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The timeline event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The time that the event occurred.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +118,10 @@ impl EventSummaryBuilder {
         self.event_time = input;
         self
     }
+    /// <p>The time that the event occurred.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p>The time that the timeline event was last updated.</p>
     pub fn event_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_updated_time = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl EventSummaryBuilder {
         self.event_updated_time = input;
         self
     }
+    /// <p>The time that the timeline event was last updated.</p>
+    pub fn get_event_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_updated_time
+    }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -132,6 +148,10 @@ impl EventSummaryBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// Appends an item to `event_references`.
     ///
@@ -151,6 +171,12 @@ impl EventSummaryBuilder {
     ) -> Self {
         self.event_references = input;
         self
+    }
+    /// <p>A list of references in a <code>TimelineEvent</code>.</p>
+    pub fn get_event_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+        &self.event_references
     }
     /// Consumes the builder and constructs a [`EventSummary`](crate::types::EventSummary).
     pub fn build(self) -> crate::types::EventSummary {

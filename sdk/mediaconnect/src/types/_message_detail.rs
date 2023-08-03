@@ -55,6 +55,10 @@ impl MessageDetailBuilder {
         self.code = input;
         self
     }
+    /// The error code.
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl MessageDetailBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// The name of the resource.
     pub fn resource_name(
@@ -80,6 +88,10 @@ impl MessageDetailBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// The name of the resource.
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`MessageDetail`](crate::types::MessageDetail).
     pub fn build(self) -> crate::types::MessageDetail {

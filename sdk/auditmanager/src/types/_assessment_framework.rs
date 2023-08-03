@@ -65,6 +65,10 @@ impl AssessmentFrameworkBuilder {
         self.id = input;
         self
     }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AssessmentFrameworkBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
     pub fn metadata(mut self, input: crate::types::FrameworkMetadata) -> Self {
@@ -87,6 +95,10 @@ impl AssessmentFrameworkBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p> The metadata of a framework, such as the name, ID, or description. </p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::FrameworkMetadata> {
+        &self.metadata
     }
     /// Appends an item to `control_sets`.
     ///
@@ -106,6 +118,12 @@ impl AssessmentFrameworkBuilder {
     ) -> Self {
         self.control_sets = input;
         self
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn get_control_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>> {
+        &self.control_sets
     }
     /// Consumes the builder and constructs a [`AssessmentFramework`](crate::types::AssessmentFramework).
     pub fn build(self) -> crate::types::AssessmentFramework {

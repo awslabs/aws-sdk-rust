@@ -89,6 +89,19 @@ impl FilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The following are keys you can use:</p>
+    /// <ul>
+    /// <li> <p> <b>description</b>: Prefix match, not case-sensitive.</p> </li>
+    /// <li> <p> <b>name</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
+    /// </ul>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::FilterNameStringType> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -109,6 +122,11 @@ impl FilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The keyword to filter for.</p>
+    /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

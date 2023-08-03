@@ -55,6 +55,10 @@ impl DeleteGrantInputBuilder {
         self.grant_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
+    }
     /// <p>The Status reason for the delete request.</p>
     pub fn status_reason(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteGrantInputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The Status reason for the delete request.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Current version of the grant.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteGrantInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Current version of the grant.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
     pub fn build(

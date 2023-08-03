@@ -61,6 +61,14 @@ impl RebootDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`RebootDbClusterInput`](crate::operation::reboot_db_cluster::RebootDbClusterInput).
     pub fn build(
         self,

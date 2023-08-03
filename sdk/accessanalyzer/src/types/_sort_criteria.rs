@@ -54,6 +54,10 @@ impl SortCriteriaBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute to sort on.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The sort order, ascending or descending.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
         self.order_by = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SortCriteriaBuilder {
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
         self.order_by = input;
         self
+    }
+    /// <p>The sort order, ascending or descending.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
+        &self.order_by
     }
     /// Consumes the builder and constructs a [`SortCriteria`](crate::types::SortCriteria).
     pub fn build(self) -> crate::types::SortCriteria {

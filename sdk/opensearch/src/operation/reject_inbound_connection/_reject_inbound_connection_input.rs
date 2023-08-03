@@ -48,6 +48,10 @@ impl RejectInboundConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The unique identifier of the inbound connection to reject.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Consumes the builder and constructs a [`RejectInboundConnectionInput`](crate::operation::reject_inbound_connection::RejectInboundConnectionInput).
     pub fn build(
         self,

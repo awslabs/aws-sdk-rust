@@ -36,6 +36,10 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetPrincipalTagAttributeMap as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>The provider name you want to use for attribute mappings.</p>
     pub fn identity_provider_name(
         mut self,
@@ -148,6 +156,10 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self.inner = self.inner.set_identity_provider_name(input);
         self
     }
+    /// <p>The provider name you want to use for attribute mappings.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_name()
+    }
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
     pub fn use_defaults(mut self, input: bool) -> Self {
         self.inner = self.inner.use_defaults(input);
@@ -157,6 +169,10 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
     pub fn set_use_defaults(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_defaults(input);
         self
+    }
+    /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
+    pub fn get_use_defaults(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_defaults()
     }
     /// Adds a key-value pair to `PrincipalTags`.
     ///
@@ -180,5 +196,13 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal_tags(input);
         self
+    }
+    /// <p>You can use this operation to add principal tags.</p>
+    pub fn get_principal_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_principal_tags()
     }
 }

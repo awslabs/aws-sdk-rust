@@ -39,6 +39,10 @@ impl ResumeResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`ResumeResourceInput`](crate::operation::resume_resource::ResumeResourceInput).
     pub fn build(
         self,

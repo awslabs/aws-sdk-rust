@@ -40,6 +40,10 @@ impl HlsTimedMetadataScheduleActionSettingsBuilder {
         self.id3 = input;
         self
     }
+    /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+    pub fn get_id3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id3
+    }
     /// Consumes the builder and constructs a [`HlsTimedMetadataScheduleActionSettings`](crate::types::HlsTimedMetadataScheduleActionSettings).
     pub fn build(self) -> crate::types::HlsTimedMetadataScheduleActionSettings {
         crate::types::HlsTimedMetadataScheduleActionSettings { id3: self.id3 }

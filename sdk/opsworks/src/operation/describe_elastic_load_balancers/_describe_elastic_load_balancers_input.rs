@@ -47,6 +47,10 @@ impl DescribeElasticLoadBalancersInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Appends an item to `layer_ids`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -65,6 +69,10 @@ impl DescribeElasticLoadBalancersInputBuilder {
     ) -> Self {
         self.layer_ids = input;
         self
+    }
+    /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
     }
     /// Consumes the builder and constructs a [`DescribeElasticLoadBalancersInput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput).
     pub fn build(

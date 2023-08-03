@@ -39,6 +39,10 @@ impl GetPolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
     pub fn build(
         self,

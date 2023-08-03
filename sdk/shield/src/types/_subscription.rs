@@ -108,6 +108,10 @@ impl SubscriptionBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the subscription, in Unix time in seconds. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time your subscription will end.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl SubscriptionBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time your subscription will end.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
     pub fn time_commitment_in_seconds(mut self, input: i64) -> Self {
         self.time_commitment_in_seconds = ::std::option::Option::Some(input);
@@ -130,6 +138,10 @@ impl SubscriptionBuilder {
     pub fn set_time_commitment_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.time_commitment_in_seconds = input;
         self
+    }
+    /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
+    pub fn get_time_commitment_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.time_commitment_in_seconds
     }
     /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
@@ -142,6 +154,11 @@ impl SubscriptionBuilder {
     pub fn set_auto_renew(mut self, input: ::std::option::Option<crate::types::AutoRenew>) -> Self {
         self.auto_renew = input;
         self
+    }
+    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+    /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<crate::types::AutoRenew> {
+        &self.auto_renew
     }
     /// Appends an item to `limits`.
     ///
@@ -161,6 +178,10 @@ impl SubscriptionBuilder {
     ) -> Self {
         self.limits = input;
         self
+    }
+    /// <p>Specifies how many protections of a given type you can create.</p>
+    pub fn get_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Limit>> {
+        &self.limits
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
@@ -182,6 +203,14 @@ impl SubscriptionBuilder {
         self.proactive_engagement_status = input;
         self
     }
+    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
+    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
+    pub fn get_proactive_engagement_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProactiveEngagementStatus> {
+        &self.proactive_engagement_status
+    }
     /// <p>Limits settings for your subscription. </p>
     pub fn subscription_limits(mut self, input: crate::types::SubscriptionLimits) -> Self {
         self.subscription_limits = ::std::option::Option::Some(input);
@@ -194,6 +223,12 @@ impl SubscriptionBuilder {
     ) -> Self {
         self.subscription_limits = input;
         self
+    }
+    /// <p>Limits settings for your subscription. </p>
+    pub fn get_subscription_limits(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubscriptionLimits> {
+        &self.subscription_limits
     }
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
     pub fn subscription_arn(
@@ -210,6 +245,10 @@ impl SubscriptionBuilder {
     ) -> Self {
         self.subscription_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

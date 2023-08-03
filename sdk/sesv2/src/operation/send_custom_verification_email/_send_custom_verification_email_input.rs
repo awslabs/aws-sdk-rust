@@ -62,6 +62,10 @@ impl SendCustomVerificationEmailInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address to verify.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     pub fn template_name(
         mut self,
@@ -78,6 +82,10 @@ impl SendCustomVerificationEmailInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the custom verification email template to use when sending the verification email.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     pub fn configuration_set_name(
         mut self,
@@ -93,6 +101,10 @@ impl SendCustomVerificationEmailInputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>Name of a configuration set to use when sending the verification email.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`SendCustomVerificationEmailInput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput).
     pub fn build(

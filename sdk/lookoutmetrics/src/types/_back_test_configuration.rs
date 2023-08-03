@@ -40,6 +40,10 @@ impl BackTestConfigurationBuilder {
         self.run_back_test_mode = input;
         self
     }
+    /// <p>Run a backtest instead of monitoring new data.</p>
+    pub fn get_run_back_test_mode(&self) -> &::std::option::Option<bool> {
+        &self.run_back_test_mode
+    }
     /// Consumes the builder and constructs a [`BackTestConfiguration`](crate::types::BackTestConfiguration).
     pub fn build(self) -> crate::types::BackTestConfiguration {
         crate::types::BackTestConfiguration {

@@ -144,6 +144,10 @@ impl SpeakerEnrollmentJobBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The client-provided name for the speaker enrollment job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl SpeakerEnrollmentJobBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The service-generated identifier for the speaker enrollment job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The current status of the speaker enrollment job.</p>
     pub fn job_status(mut self, input: crate::types::SpeakerEnrollmentJobStatus) -> Self {
@@ -167,6 +175,12 @@ impl SpeakerEnrollmentJobBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the speaker enrollment job.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpeakerEnrollmentJobStatus> {
+        &self.job_status
+    }
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
@@ -176,6 +190,10 @@ impl SpeakerEnrollmentJobBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
+    }
+    /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
     pub fn data_access_role_arn(
@@ -193,6 +211,10 @@ impl SpeakerEnrollmentJobBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
     pub fn enrollment_config(mut self, input: crate::types::EnrollmentConfig) -> Self {
         self.enrollment_config = ::std::option::Option::Some(input);
@@ -205,6 +227,10 @@ impl SpeakerEnrollmentJobBuilder {
     ) -> Self {
         self.enrollment_config = input;
         self
+    }
+    /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
+    pub fn get_enrollment_config(&self) -> &::std::option::Option<crate::types::EnrollmentConfig> {
+        &self.enrollment_config
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -219,6 +245,10 @@ impl SpeakerEnrollmentJobBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -231,6 +261,10 @@ impl SpeakerEnrollmentJobBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>A timestamp of when the speaker enrollment job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -245,6 +279,10 @@ impl SpeakerEnrollmentJobBuilder {
         self.created_at = input;
         self
     }
+    /// <p>A timestamp of when the speaker enrollment job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>A timestamp of when the speaker enrollment job ended. </p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
@@ -257,6 +295,10 @@ impl SpeakerEnrollmentJobBuilder {
     ) -> Self {
         self.ended_at = input;
         self
+    }
+    /// <p>A timestamp of when the speaker enrollment job ended. </p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -271,6 +313,10 @@ impl SpeakerEnrollmentJobBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        &self.failure_details
+    }
     /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
     pub fn job_progress(mut self, input: crate::types::JobProgress) -> Self {
         self.job_progress = ::std::option::Option::Some(input);
@@ -283,6 +329,10 @@ impl SpeakerEnrollmentJobBuilder {
     ) -> Self {
         self.job_progress = input;
         self
+    }
+    /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
+    pub fn get_job_progress(&self) -> &::std::option::Option<crate::types::JobProgress> {
+        &self.job_progress
     }
     /// Consumes the builder and constructs a [`SpeakerEnrollmentJob`](crate::types::SpeakerEnrollmentJob).
     pub fn build(self) -> crate::types::SpeakerEnrollmentJob {

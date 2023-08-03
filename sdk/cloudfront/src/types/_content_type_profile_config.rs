@@ -53,6 +53,10 @@ impl ContentTypeProfileConfigBuilder {
         self.forward_when_content_type_is_unknown = input;
         self
     }
+    /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
+    pub fn get_forward_when_content_type_is_unknown(&self) -> &::std::option::Option<bool> {
+        &self.forward_when_content_type_is_unknown
+    }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub fn content_type_profiles(mut self, input: crate::types::ContentTypeProfiles) -> Self {
         self.content_type_profiles = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl ContentTypeProfileConfigBuilder {
     ) -> Self {
         self.content_type_profiles = input;
         self
+    }
+    /// <p>The configuration for a field-level encryption content type-profile.</p>
+    pub fn get_content_type_profiles(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentTypeProfiles> {
+        &self.content_type_profiles
     }
     /// Consumes the builder and constructs a [`ContentTypeProfileConfig`](crate::types::ContentTypeProfileConfig).
     pub fn build(self) -> crate::types::ContentTypeProfileConfig {

@@ -128,6 +128,10 @@ impl AppAssessmentSummaryBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl AppAssessmentSummaryBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn assessment_status(mut self, input: crate::types::AssessmentStatus) -> Self {
@@ -151,6 +159,10 @@ impl AppAssessmentSummaryBuilder {
         self.assessment_status = input;
         self
     }
+    /// <p>The current status of the assessment for the resiliency policy.</p>
+    pub fn get_assessment_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
+        &self.assessment_status
+    }
     /// <p>The entity that invoked the assessment.</p>
     pub fn invoker(mut self, input: crate::types::AssessmentInvoker) -> Self {
         self.invoker = ::std::option::Option::Some(input);
@@ -163,6 +175,10 @@ impl AppAssessmentSummaryBuilder {
     ) -> Self {
         self.invoker = input;
         self
+    }
+    /// <p>The entity that invoked the assessment.</p>
+    pub fn get_invoker(&self) -> &::std::option::Option<crate::types::AssessmentInvoker> {
+        &self.invoker
     }
     /// <p>The starting time for the action.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +193,10 @@ impl AppAssessmentSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The starting time for the action.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time for the action.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -190,6 +210,10 @@ impl AppAssessmentSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time for the action.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The message from the assessment run.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -199,6 +223,10 @@ impl AppAssessmentSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message from the assessment run.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The name of the assessment.</p>
     pub fn assessment_name(
@@ -216,6 +244,10 @@ impl AppAssessmentSummaryBuilder {
         self.assessment_name = input;
         self
     }
+    /// <p>The name of the assessment.</p>
+    pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(
         mut self,
@@ -232,6 +264,10 @@ impl AppAssessmentSummaryBuilder {
         self.assessment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_arn
+    }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
@@ -245,6 +281,10 @@ impl AppAssessmentSummaryBuilder {
         self.compliance_status = input;
         self
     }
+    /// <p>The current status of compliance for the resiliency policy.</p>
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.compliance_status
+    }
     /// <p>The cost for the application.</p>
     pub fn cost(mut self, input: crate::types::Cost) -> Self {
         self.cost = ::std::option::Option::Some(input);
@@ -255,6 +295,10 @@ impl AppAssessmentSummaryBuilder {
         self.cost = input;
         self
     }
+    /// <p>The cost for the application.</p>
+    pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
+        &self.cost
+    }
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(mut self, input: f64) -> Self {
         self.resiliency_score = ::std::option::Option::Some(input);
@@ -264,6 +308,10 @@ impl AppAssessmentSummaryBuilder {
     pub fn set_resiliency_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.resiliency_score = input;
         self
+    }
+    /// <p>The current resiliency score for the application.</p>
+    pub fn get_resiliency_score(&self) -> &::std::option::Option<f64> {
+        &self.resiliency_score
     }
     /// Consumes the builder and constructs a [`AppAssessmentSummary`](crate::types::AppAssessmentSummary).
     pub fn build(self) -> crate::types::AppAssessmentSummary {

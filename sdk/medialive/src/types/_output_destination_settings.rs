@@ -70,6 +70,10 @@ impl OutputDestinationSettingsBuilder {
         self.password_param = input;
         self
     }
+    /// key used to extract the password from EC2 Parameter store
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
+    }
     /// Stream name for RTMP destinations (URLs of type rtmp://)
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl OutputDestinationSettingsBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// Stream name for RTMP destinations (URLs of type rtmp://)
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// A URL specifying a destination
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl OutputDestinationSettingsBuilder {
         self.url = input;
         self
     }
+    /// A URL specifying a destination
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// username for destination
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl OutputDestinationSettingsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// username for destination
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::types::OutputDestinationSettings).
     pub fn build(self) -> crate::types::OutputDestinationSettings {

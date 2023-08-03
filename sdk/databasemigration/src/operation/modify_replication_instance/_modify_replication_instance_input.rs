@@ -165,6 +165,10 @@ impl ModifyReplicationInstanceInputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -175,6 +179,10 @@ impl ModifyReplicationInstanceInputBuilder {
         self.allocated_storage = input;
         self
     }
+    /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
+    }
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
@@ -184,6 +192,10 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
@@ -202,6 +214,11 @@ impl ModifyReplicationInstanceInputBuilder {
     ) -> Self {
         self.replication_instance_class = input;
         self
+    }
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+    pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_class
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -224,6 +241,12 @@ impl ModifyReplicationInstanceInputBuilder {
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
+    }
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
@@ -249,6 +272,16 @@ impl ModifyReplicationInstanceInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Must be at least 30 minutes</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -258,6 +291,10 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
@@ -277,6 +314,11 @@ impl ModifyReplicationInstanceInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The engine version number of the replication instance.</p>
+    /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
@@ -288,6 +330,11 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;
         self
+    }
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+    /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
+    pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.allow_major_version_upgrade
     }
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
@@ -315,6 +362,18 @@ impl ModifyReplicationInstanceInputBuilder {
         self.auto_minor_version_upgrade = input;
         self
     }
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
+    /// <ul>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
+    /// </ul>
+    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
+    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
+    }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub fn replication_instance_identifier(
         mut self,
@@ -331,6 +390,12 @@ impl ModifyReplicationInstanceInputBuilder {
         self.replication_instance_identifier = input;
         self
     }
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
+    pub fn get_replication_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_identifier
+    }
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
@@ -340,6 +405,10 @@ impl ModifyReplicationInstanceInputBuilder {
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
+    }
+    /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
     }
     /// Consumes the builder and constructs a [`ModifyReplicationInstanceInput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceInput).
     pub fn build(

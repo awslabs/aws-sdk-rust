@@ -40,6 +40,10 @@ impl IdentityBuilder {
         self.oidc = input;
         self
     }
+    /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
+    pub fn get_oidc(&self) -> &::std::option::Option<crate::types::Oidc> {
+        &self.oidc
+    }
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {
         crate::types::Identity { oidc: self.oidc }

@@ -50,6 +50,12 @@ impl GeospatialHeatmapColorScaleBuilder {
         self.colors = input;
         self
     }
+    /// <p>The list of colors to be used in heatmap point style.</p>
+    pub fn get_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>> {
+        &self.colors
+    }
     /// Consumes the builder and constructs a [`GeospatialHeatmapColorScale`](crate::types::GeospatialHeatmapColorScale).
     pub fn build(self) -> crate::types::GeospatialHeatmapColorScale {
         crate::types::GeospatialHeatmapColorScale {

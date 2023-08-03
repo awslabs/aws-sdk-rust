@@ -48,6 +48,10 @@ impl GetDevicePositionInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The tracker resource receiving the position update.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// <p>The device whose position you want to retrieve.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetDevicePositionInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The device whose position you want to retrieve.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Consumes the builder and constructs a [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
     pub fn build(

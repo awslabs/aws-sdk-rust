@@ -69,6 +69,12 @@ impl RegisteredDomainDelegationInfoBuilder {
         self.name_servers_update_state = input;
         self
     }
+    /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
+    pub fn get_name_servers_update_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NameServersUpdateState> {
+        &self.name_servers_update_state
+    }
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
     pub fn r53_hosted_zone_deletion_state(
         mut self,
@@ -84,6 +90,12 @@ impl RegisteredDomainDelegationInfoBuilder {
     ) -> Self {
         self.r53_hosted_zone_deletion_state = input;
         self
+    }
+    /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+    pub fn get_r53_hosted_zone_deletion_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::R53HostedZoneDeletionState> {
+        &self.r53_hosted_zone_deletion_state
     }
     /// Consumes the builder and constructs a [`RegisteredDomainDelegationInfo`](crate::types::RegisteredDomainDelegationInfo).
     pub fn build(self) -> crate::types::RegisteredDomainDelegationInfo {

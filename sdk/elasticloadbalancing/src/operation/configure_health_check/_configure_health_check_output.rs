@@ -51,6 +51,10 @@ impl ConfigureHealthCheckOutputBuilder {
         self.health_check = input;
         self
     }
+    /// <p>The updated health check.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        &self.health_check
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

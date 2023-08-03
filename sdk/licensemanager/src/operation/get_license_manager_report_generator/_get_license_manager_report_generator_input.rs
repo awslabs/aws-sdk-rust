@@ -45,6 +45,12 @@ impl GetLicenseManagerReportGeneratorInputBuilder {
         self.license_manager_report_generator_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.license_manager_report_generator_arn
+    }
     /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorInput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

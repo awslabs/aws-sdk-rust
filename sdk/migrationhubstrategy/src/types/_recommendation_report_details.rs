@@ -83,6 +83,10 @@ impl RecommendationReportDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the recommendation report generation task. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationReportStatus> {
+        &self.status
+    }
     /// <p> The status message for recommendation report generation. </p>
     pub fn status_message(
         mut self,
@@ -99,6 +103,10 @@ impl RecommendationReportDetailsBuilder {
         self.status_message = input;
         self
     }
+    /// <p> The status message for recommendation report generation. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p> The time that the recommendation report generation task starts. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl RecommendationReportDetailsBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p> The time that the recommendation report generation task starts. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The time that the recommendation report generation task completes. </p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,6 +137,10 @@ impl RecommendationReportDetailsBuilder {
         self.completion_time = input;
         self
     }
+    /// <p> The time that the recommendation report generation task completes. </p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
+    }
     /// <p> The S3 bucket where the report file is located. </p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -134,6 +150,10 @@ impl RecommendationReportDetailsBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p> The S3 bucket where the report file is located. </p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// Appends an item to `s3_keys`.
     ///
@@ -153,6 +173,10 @@ impl RecommendationReportDetailsBuilder {
     ) -> Self {
         self.s3_keys = input;
         self
+    }
+    /// <p> The Amazon S3 key name of the report file. </p>
+    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_keys
     }
     /// Consumes the builder and constructs a [`RecommendationReportDetails`](crate::types::RecommendationReportDetails).
     pub fn build(self) -> crate::types::RecommendationReportDetails {

@@ -40,6 +40,10 @@ impl VaultLockPolicyBuilder {
         self.policy = input;
         self
     }
+    /// <p>The vault lock policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`VaultLockPolicy`](crate::types::VaultLockPolicy).
     pub fn build(self) -> crate::types::VaultLockPolicy {
         crate::types::VaultLockPolicy {

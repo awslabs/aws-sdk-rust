@@ -76,6 +76,10 @@ impl RealTimeAlertRuleBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of alert rule.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RealTimeAlertRuleType> {
+        &self.r#type
+    }
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
     pub fn keyword_match_configuration(
         mut self,
@@ -92,6 +96,12 @@ impl RealTimeAlertRuleBuilder {
         self.keyword_match_configuration = input;
         self
     }
+    /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
+    pub fn get_keyword_match_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KeywordMatchConfiguration> {
+        &self.keyword_match_configuration
+    }
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
     pub fn sentiment_configuration(mut self, input: crate::types::SentimentConfiguration) -> Self {
         self.sentiment_configuration = ::std::option::Option::Some(input);
@@ -104,6 +114,12 @@ impl RealTimeAlertRuleBuilder {
     ) -> Self {
         self.sentiment_configuration = input;
         self
+    }
+    /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
+    pub fn get_sentiment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SentimentConfiguration> {
+        &self.sentiment_configuration
     }
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
     pub fn issue_detection_configuration(
@@ -120,6 +136,12 @@ impl RealTimeAlertRuleBuilder {
     ) -> Self {
         self.issue_detection_configuration = input;
         self
+    }
+    /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
+    pub fn get_issue_detection_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IssueDetectionConfiguration> {
+        &self.issue_detection_configuration
     }
     /// Consumes the builder and constructs a [`RealTimeAlertRule`](crate::types::RealTimeAlertRule).
     pub fn build(self) -> crate::types::RealTimeAlertRule {

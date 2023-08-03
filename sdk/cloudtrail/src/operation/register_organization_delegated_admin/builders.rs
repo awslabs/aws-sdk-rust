@@ -36,6 +36,10 @@ impl RegisterOrganizationDelegatedAdminFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterOrganizationDelegatedAdmin as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl RegisterOrganizationDelegatedAdminFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
+    }
+    /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_account_id()
     }
 }

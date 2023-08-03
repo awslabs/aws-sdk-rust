@@ -70,6 +70,10 @@ impl VpcConfigurationDescriptionBuilder {
         self.vpc_configuration_id = input;
         self
     }
+    /// <p>The ID of the VPC configuration.</p>
+    pub fn get_vpc_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_configuration_id
+    }
     /// <p>The ID of the associated VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl VpcConfigurationDescriptionBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the associated VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -98,6 +106,10 @@ impl VpcConfigurationDescriptionBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -120,6 +132,12 @@ impl VpcConfigurationDescriptionBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcConfigurationDescription`](crate::types::VpcConfigurationDescription).
     pub fn build(self) -> crate::types::VpcConfigurationDescription {

@@ -95,6 +95,12 @@ impl TransitGatewayConnectBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the Connect attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The ID of the attachment from which the Connect attachment was created.</p>
     pub fn transport_transit_gateway_attachment_id(
         mut self,
@@ -110,6 +116,12 @@ impl TransitGatewayConnectBuilder {
     ) -> Self {
         self.transport_transit_gateway_attachment_id = input;
         self
+    }
+    /// <p>The ID of the attachment from which the Connect attachment was created.</p>
+    pub fn get_transport_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transport_transit_gateway_attachment_id
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(
@@ -127,6 +139,10 @@ impl TransitGatewayConnectBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The state of the attachment.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAttachmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl TransitGatewayConnectBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the attachment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentState> {
+        &self.state
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -153,6 +173,10 @@ impl TransitGatewayConnectBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The Connect attachment options.</p>
     pub fn options(mut self, input: crate::types::TransitGatewayConnectOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -165,6 +189,12 @@ impl TransitGatewayConnectBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The Connect attachment options.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConnectOptions> {
+        &self.options
     }
     /// Appends an item to `tags`.
     ///
@@ -184,6 +214,10 @@ impl TransitGatewayConnectBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the attachment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnect`](crate::types::TransitGatewayConnect).
     pub fn build(self) -> crate::types::TransitGatewayConnect {

@@ -117,6 +117,10 @@ impl AutoMlJobSummaryBuilder {
         self.auto_ml_job_name = input;
         self
     }
+    /// <p>The name of the AutoML job you are requesting.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_name
+    }
     /// <p>The ARN of the AutoML job.</p>
     pub fn auto_ml_job_arn(
         mut self,
@@ -133,6 +137,10 @@ impl AutoMlJobSummaryBuilder {
         self.auto_ml_job_arn = input;
         self
     }
+    /// <p>The ARN of the AutoML job.</p>
+    pub fn get_auto_ml_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_arn
+    }
     /// <p>The status of the AutoML job.</p>
     pub fn auto_ml_job_status(mut self, input: crate::types::AutoMlJobStatus) -> Self {
         self.auto_ml_job_status = ::std::option::Option::Some(input);
@@ -145,6 +153,10 @@ impl AutoMlJobSummaryBuilder {
     ) -> Self {
         self.auto_ml_job_status = input;
         self
+    }
+    /// <p>The status of the AutoML job.</p>
+    pub fn get_auto_ml_job_status(&self) -> &::std::option::Option<crate::types::AutoMlJobStatus> {
+        &self.auto_ml_job_status
     }
     /// <p>The secondary status of the AutoML job.</p>
     pub fn auto_ml_job_secondary_status(
@@ -162,6 +174,12 @@ impl AutoMlJobSummaryBuilder {
         self.auto_ml_job_secondary_status = input;
         self
     }
+    /// <p>The secondary status of the AutoML job.</p>
+    pub fn get_auto_ml_job_secondary_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobSecondaryStatus> {
+        &self.auto_ml_job_secondary_status
+    }
     /// <p>When the AutoML job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -174,6 +192,10 @@ impl AutoMlJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the AutoML job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The end time of an AutoML job.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,6 +210,10 @@ impl AutoMlJobSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time of an AutoML job.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>When the AutoML job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -200,6 +226,10 @@ impl AutoMlJobSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the AutoML job was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The failure reason of an AutoML job.</p>
     pub fn failure_reason(
@@ -216,6 +246,10 @@ impl AutoMlJobSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The failure reason of an AutoML job.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Appends an item to `partial_failure_reasons`.
     ///
@@ -238,6 +272,12 @@ impl AutoMlJobSummaryBuilder {
     ) -> Self {
         self.partial_failure_reasons = input;
         self
+    }
+    /// <p>The list of reasons for partial failures within an AutoML job.</p>
+    pub fn get_partial_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>> {
+        &self.partial_failure_reasons
     }
     /// Consumes the builder and constructs a [`AutoMlJobSummary`](crate::types::AutoMlJobSummary).
     pub fn build(self) -> crate::types::AutoMlJobSummary {

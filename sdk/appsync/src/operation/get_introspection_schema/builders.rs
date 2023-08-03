@@ -36,6 +36,13 @@ impl GetIntrospectionSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIntrospectionSchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetIntrospectionSchemaFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The schema format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::OutputType) -> Self {
         self.inner = self.inner.format(input);
@@ -136,6 +147,10 @@ impl GetIntrospectionSchemaFluentBuilder {
         self.inner = self.inner.set_format(input);
         self
     }
+    /// <p>The schema format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::OutputType> {
+        self.inner.get_format()
+    }
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
     pub fn include_directives(mut self, input: bool) -> Self {
         self.inner = self.inner.include_directives(input);
@@ -145,5 +160,9 @@ impl GetIntrospectionSchemaFluentBuilder {
     pub fn set_include_directives(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_directives(input);
         self
+    }
+    /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
+    pub fn get_include_directives(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_directives()
     }
 }

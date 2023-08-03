@@ -80,6 +80,12 @@ impl UpdateFileSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFileSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -176,6 +182,10 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system that you are updating.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -191,6 +201,10 @@ impl UpdateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
@@ -226,6 +240,22 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
+    /// </note>
+    /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
+    /// <ul>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
+    /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
+    /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSxfor Windows File Server User Guide</i>.</p>
+    /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_capacity()
+    }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
     pub fn windows_configuration(
         mut self,
@@ -241,6 +271,12 @@ impl UpdateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
+    }
+    /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
+    pub fn get_windows_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration> {
+        self.inner.get_windows_configuration()
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
     pub fn lustre_configuration(
@@ -258,6 +294,12 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
+    /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
+    pub fn get_lustre_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration> {
+        self.inner.get_lustre_configuration()
+    }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
     pub fn ontap_configuration(
         mut self,
@@ -274,6 +316,12 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
+    /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration> {
+        self.inner.get_ontap_configuration()
+    }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
     pub fn open_zfs_configuration(
         mut self,
@@ -289,5 +337,11 @@ impl UpdateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

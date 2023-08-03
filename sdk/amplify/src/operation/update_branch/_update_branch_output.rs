@@ -47,6 +47,10 @@ impl UpdateBranchOutputBuilder {
         self.branch = input;
         self
     }
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    pub fn get_branch(&self) -> &::std::option::Option<crate::types::Branch> {
+        &self.branch
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

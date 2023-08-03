@@ -52,6 +52,10 @@ impl AttachObjectOutputBuilder {
         self.attached_object_identifier = input;
         self
     }
+    /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
+    pub fn get_attached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_object_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

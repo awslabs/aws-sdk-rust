@@ -38,6 +38,12 @@ impl CreateBackupVaultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackupVault as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_backup_vault::builders::CreateBackupVaultInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl CreateBackupVaultFluentBuilder {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
+    }
     /// Adds a key-value pair to `BackupVaultTags`.
     ///
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
@@ -157,6 +167,14 @@ impl CreateBackupVaultFluentBuilder {
         self.inner = self.inner.set_backup_vault_tags(input);
         self
     }
+    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    pub fn get_backup_vault_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_backup_vault_tags()
+    }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -172,6 +190,10 @@ impl CreateBackupVaultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
+    }
+    /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key_arn()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -190,5 +212,10 @@ impl CreateBackupVaultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
     }
 }

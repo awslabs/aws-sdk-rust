@@ -62,6 +62,10 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The name of the segment edge.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
+    }
+    /// <p>The name of the segment edge.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
     }
     /// <p>The Region where the segment edge is located.</p>
     pub fn edge_location(
@@ -87,6 +95,10 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
     ) -> Self {
         self.edge_location = input;
         self
+    }
+    /// <p>The Region where the segment edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
     }
     /// Consumes the builder and constructs a [`CoreNetworkSegmentEdgeIdentifier`](crate::types::CoreNetworkSegmentEdgeIdentifier).
     pub fn build(self) -> crate::types::CoreNetworkSegmentEdgeIdentifier {

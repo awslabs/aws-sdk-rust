@@ -46,6 +46,10 @@ impl DeleteResolverRuleInputBuilder {
         self.resolver_rule_id = input;
         self
     }
+    /// <p>The ID of the Resolver rule that you want to delete.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
+    }
     /// Consumes the builder and constructs a [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
     pub fn build(
         self,

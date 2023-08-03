@@ -77,6 +77,10 @@ impl CreateGroupInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// Information about the initial version of the group.
     pub fn initial_version(mut self, input: crate::types::GroupVersion) -> Self {
         self.initial_version = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl CreateGroupInputBuilder {
         self.initial_version = input;
         self
     }
+    /// Information about the initial version of the group.
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::GroupVersion> {
+        &self.initial_version
+    }
     /// The name of the group.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl CreateGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the group.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -124,6 +136,14 @@ impl CreateGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(

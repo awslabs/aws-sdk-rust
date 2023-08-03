@@ -36,6 +36,10 @@ impl DeregisterDataLakeDelegatedAdministratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterDataLakeDelegatedAdministrator as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

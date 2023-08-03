@@ -37,6 +37,10 @@ impl CreateListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateList as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_list::builders::CreateListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateListFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the list. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `elements`.
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
@@ -136,6 +144,10 @@ impl CreateListFluentBuilder {
         self.inner = self.inner.set_elements(input);
         self
     }
+    /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_elements()
+    }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     pub fn variable_type(
         mut self,
@@ -152,6 +164,10 @@ impl CreateListFluentBuilder {
         self.inner = self.inner.set_variable_type(input);
         self
     }
+    /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_variable_type()
+    }
     /// <p> The description of the list. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -161,6 +177,10 @@ impl CreateListFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the list. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `tags`.
     ///
@@ -178,5 +198,9 @@ impl CreateListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A collection of the key and value pairs. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

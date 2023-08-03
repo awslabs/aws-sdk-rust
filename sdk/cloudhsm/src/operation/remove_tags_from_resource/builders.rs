@@ -40,6 +40,13 @@ impl RemoveTagsFromResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTagsFromResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl RemoveTagsFromResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `TagKeyList`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
@@ -148,5 +159,12 @@ impl RemoveTagsFromResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_key_list(input);
         self
+    }
+    /// <p>The tag key or keys to remove.</p>
+    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_key_list()
     }
 }

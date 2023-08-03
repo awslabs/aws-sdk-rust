@@ -54,6 +54,12 @@ impl GroupCertificateAuthorityPropertiesBuilder {
         self.group_certificate_authority_arn = input;
         self
     }
+    /// The ARN of the certificate authority for the group.
+    pub fn get_group_certificate_authority_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_arn
+    }
     /// The ID of the certificate authority for the group.
     pub fn group_certificate_authority_id(
         mut self,
@@ -69,6 +75,12 @@ impl GroupCertificateAuthorityPropertiesBuilder {
     ) -> Self {
         self.group_certificate_authority_id = input;
         self
+    }
+    /// The ID of the certificate authority for the group.
+    pub fn get_group_certificate_authority_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_id
     }
     /// Consumes the builder and constructs a [`GroupCertificateAuthorityProperties`](crate::types::GroupCertificateAuthorityProperties).
     pub fn build(self) -> crate::types::GroupCertificateAuthorityProperties {

@@ -107,6 +107,10 @@ impl RetrieveInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl RetrieveInputBuilder {
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
+    }
+    /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_text
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
@@ -131,6 +139,11 @@ impl RetrieveInputBuilder {
     ) -> Self {
         self.attribute_filter = input;
         self
+    }
+    /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
+        &self.attribute_filter
     }
     /// Appends an item to `requested_document_attributes`.
     ///
@@ -153,6 +166,12 @@ impl RetrieveInputBuilder {
     ) -> Self {
         self.requested_document_attributes = input;
         self
+    }
+    /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
+    pub fn get_requested_document_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.requested_document_attributes
     }
     /// Appends an item to `document_relevance_override_configurations`.
     ///
@@ -182,6 +201,14 @@ impl RetrieveInputBuilder {
         self.document_relevance_override_configurations = input;
         self
     }
+    /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    pub fn get_document_relevance_override_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>> {
+        &self.document_relevance_override_configurations
+    }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(mut self, input: i32) -> Self {
         self.page_number = ::std::option::Option::Some(input);
@@ -192,6 +219,10 @@ impl RetrieveInputBuilder {
         self.page_number = input;
         self
     }
+    /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i32> {
+        &self.page_number
+    }
     /// <p>Sets the number of retrieved relevant passages that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -201,6 +232,10 @@ impl RetrieveInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>Sets the number of retrieved relevant passages that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
@@ -214,6 +249,10 @@ impl RetrieveInputBuilder {
     ) -> Self {
         self.user_context = input;
         self
+    }
+    /// <p>The user context token or user and group information.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.user_context
     }
     /// Consumes the builder and constructs a [`RetrieveInput`](crate::operation::retrieve::RetrieveInput).
     pub fn build(

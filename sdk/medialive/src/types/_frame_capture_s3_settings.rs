@@ -43,6 +43,10 @@ impl FrameCaptureS3SettingsBuilder {
         self.canned_acl = input;
         self
     }
+    /// Specify the canned ACL to apply to each S3 request. Defaults to none.
+    pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::S3CannedAcl> {
+        &self.canned_acl
+    }
     /// Consumes the builder and constructs a [`FrameCaptureS3Settings`](crate::types::FrameCaptureS3Settings).
     pub fn build(self) -> crate::types::FrameCaptureS3Settings {
         crate::types::FrameCaptureS3Settings {

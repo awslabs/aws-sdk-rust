@@ -84,6 +84,10 @@ impl PhoneNumberInformationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time when the phone number was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The phone number.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl PhoneNumberInformationBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The status of the phone number.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl PhoneNumberInformationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the phone number.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
     pub fn iso2_country_code(
@@ -120,6 +132,10 @@ impl PhoneNumberInformationBuilder {
         self.iso2_country_code = input;
         self
     }
+    /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
+    pub fn get_iso2_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso2_country_code
+    }
     /// <p>The list of supported routes.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.route_type = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl PhoneNumberInformationBuilder {
     pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.route_type = input;
         self
+    }
+    /// <p>The list of supported routes.</p>
+    pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        &self.route_type
     }
     /// Appends an item to `number_capabilities`.
     ///
@@ -148,6 +168,12 @@ impl PhoneNumberInformationBuilder {
     ) -> Self {
         self.number_capabilities = input;
         self
+    }
+    /// <p>The capabilities of each phone number.</p>
+    pub fn get_number_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+        &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
     pub fn build(self) -> crate::types::PhoneNumberInformation {

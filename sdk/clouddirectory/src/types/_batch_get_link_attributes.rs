@@ -51,6 +51,12 @@ impl BatchGetLinkAttributesBuilder {
         self.typed_link_specifier = input;
         self
     }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
+    }
     /// Appends an item to `attribute_names`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
@@ -72,6 +78,12 @@ impl BatchGetLinkAttributesBuilder {
     ) -> Self {
         self.attribute_names = input;
         self
+    }
+    /// <p>A list of attribute names whose values will be retrieved.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
     pub fn build(self) -> crate::types::BatchGetLinkAttributes {

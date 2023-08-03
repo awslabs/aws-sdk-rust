@@ -55,6 +55,10 @@ impl CreateParallelDataOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The custom name that you assigned to the parallel data resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::ParallelDataStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CreateParallelDataOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ParallelDataStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

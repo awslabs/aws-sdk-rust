@@ -39,6 +39,10 @@ impl GetGroupCertificateConfigurationInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Consumes the builder and constructs a [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

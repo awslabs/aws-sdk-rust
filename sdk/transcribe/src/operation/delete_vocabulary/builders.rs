@@ -36,6 +36,12 @@ impl DeleteVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVocabulary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
+    }
+    /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_name()
     }
 }

@@ -51,6 +51,10 @@ impl GroupDefinitionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The string that represents the type of group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GroupDefinitionType> {
+        &self.r#type
+    }
     /// <p>The string that represents a key for a specified group.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl GroupDefinitionBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The string that represents a key for a specified group.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GroupDefinition`](crate::types::GroupDefinition).
     pub fn build(self) -> crate::types::GroupDefinition {

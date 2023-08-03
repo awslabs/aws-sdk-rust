@@ -52,6 +52,10 @@ impl EnableControlOutputBuilder {
         self.operation_identifier = input;
         self
     }
+    /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

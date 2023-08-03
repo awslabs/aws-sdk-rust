@@ -70,6 +70,10 @@ impl FacetAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the facet attribute.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_definition(mut self, input: crate::types::FacetAttributeDefinition) -> Self {
         self.attribute_definition = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl FacetAttributeBuilder {
     ) -> Self {
         self.attribute_definition = input;
         self
+    }
+    /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn get_attribute_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::FacetAttributeDefinition> {
+        &self.attribute_definition
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_reference(mut self, input: crate::types::FacetAttributeReference) -> Self {
@@ -96,6 +106,12 @@ impl FacetAttributeBuilder {
         self.attribute_reference = input;
         self
     }
+    /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn get_attribute_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::FacetAttributeReference> {
+        &self.attribute_reference
+    }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn required_behavior(mut self, input: crate::types::RequiredAttributeBehavior) -> Self {
         self.required_behavior = ::std::option::Option::Some(input);
@@ -108,6 +124,12 @@ impl FacetAttributeBuilder {
     ) -> Self {
         self.required_behavior = input;
         self
+    }
+    /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
+    pub fn get_required_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequiredAttributeBehavior> {
+        &self.required_behavior
     }
     /// Consumes the builder and constructs a [`FacetAttribute`](crate::types::FacetAttribute).
     pub fn build(self) -> crate::types::FacetAttribute {

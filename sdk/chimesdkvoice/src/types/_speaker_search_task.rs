@@ -104,6 +104,10 @@ impl SpeakerSearchTaskBuilder {
         self.speaker_search_task_id = input;
         self
     }
+    /// <p>The speaker search task ID.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_id
+    }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn speaker_search_task_status(
         mut self,
@@ -120,6 +124,10 @@ impl SpeakerSearchTaskBuilder {
         self.speaker_search_task_status = input;
         self
     }
+    /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
+    pub fn get_speaker_search_task_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_status
+    }
     /// <p>The call details of a speaker search task.</p>
     pub fn call_details(mut self, input: crate::types::CallDetails) -> Self {
         self.call_details = ::std::option::Option::Some(input);
@@ -132,6 +140,10 @@ impl SpeakerSearchTaskBuilder {
     ) -> Self {
         self.call_details = input;
         self
+    }
+    /// <p>The call details of a speaker search task.</p>
+    pub fn get_call_details(&self) -> &::std::option::Option<crate::types::CallDetails> {
+        &self.call_details
     }
     /// <p>The details of a speaker search task.</p>
     pub fn speaker_search_details(mut self, input: crate::types::SpeakerSearchDetails) -> Self {
@@ -146,6 +158,12 @@ impl SpeakerSearchTaskBuilder {
         self.speaker_search_details = input;
         self
     }
+    /// <p>The details of a speaker search task.</p>
+    pub fn get_speaker_search_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpeakerSearchDetails> {
+        &self.speaker_search_details
+    }
     /// <p>The time at which a speaker search task was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -158,6 +176,10 @@ impl SpeakerSearchTaskBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time at which a speaker search task was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which a speaker search task was updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -172,6 +194,10 @@ impl SpeakerSearchTaskBuilder {
         self.updated_timestamp = input;
         self
     }
+    /// <p>The time at which a speaker search task was updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
+    }
     /// <p>The time at which the speaker search task began.</p>
     pub fn started_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_timestamp = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl SpeakerSearchTaskBuilder {
     ) -> Self {
         self.started_timestamp = input;
         self
+    }
+    /// <p>The time at which the speaker search task began.</p>
+    pub fn get_started_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_timestamp
     }
     /// <p>A detailed message about the status of a speaker search.</p>
     pub fn status_message(
@@ -200,6 +230,10 @@ impl SpeakerSearchTaskBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A detailed message about the status of a speaker search.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`SpeakerSearchTask`](crate::types::SpeakerSearchTask).
     pub fn build(self) -> crate::types::SpeakerSearchTask {

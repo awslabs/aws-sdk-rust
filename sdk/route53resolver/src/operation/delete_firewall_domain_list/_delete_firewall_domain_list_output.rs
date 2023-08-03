@@ -49,6 +49,12 @@ impl DeleteFirewallDomainListOutputBuilder {
         self.firewall_domain_list = input;
         self
     }
+    /// <p>The domain list that you just deleted. </p>
+    pub fn get_firewall_domain_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallDomainList> {
+        &self.firewall_domain_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

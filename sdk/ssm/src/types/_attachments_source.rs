@@ -69,6 +69,10 @@ impl AttachmentsSourceBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of a key-value pair that identifies the location of an attachment to a document.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::AttachmentsSourceKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -98,6 +102,15 @@ impl AttachmentsSourceBuilder {
         self.values = input;
         self
     }
+    /// <p>The value of a key-value pair that identifies the location of an attachment to a document. The format for <b>Value</b> depends on the type of key you specify.</p>
+    /// <ul>
+    /// <li> <p>For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:</p> <p> <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code> </p> </li>
+    /// <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p> </li>
+    /// <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code> </p> </li>
+    /// </ul>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The name of the document attachment file.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +120,10 @@ impl AttachmentsSourceBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the document attachment file.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AttachmentsSource`](crate::types::AttachmentsSource).
     pub fn build(self) -> crate::types::AttachmentsSource {

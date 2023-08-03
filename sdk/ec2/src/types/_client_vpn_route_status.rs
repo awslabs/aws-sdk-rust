@@ -51,6 +51,10 @@ impl ClientVpnRouteStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The state of the Client VPN endpoint route.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientVpnRouteStatusCode> {
+        &self.code
+    }
     /// <p>A message about the status of the Client VPN endpoint route, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ClientVpnRouteStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the status of the Client VPN endpoint route, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ClientVpnRouteStatus`](crate::types::ClientVpnRouteStatus).
     pub fn build(self) -> crate::types::ClientVpnRouteStatus {

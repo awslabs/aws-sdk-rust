@@ -37,6 +37,13 @@ impl RevokeVpcEndpointAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeVpcEndpointAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl RevokeVpcEndpointAccessFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the OpenSearch Service domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The account ID to revoke access from.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
@@ -136,5 +147,9 @@ impl RevokeVpcEndpointAccessFluentBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self
+    }
+    /// <p>The account ID to revoke access from.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account()
     }
 }

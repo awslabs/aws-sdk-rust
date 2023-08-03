@@ -135,6 +135,10 @@ impl UpdateProgramOutputBuilder {
         self.ad_breaks = input;
         self
     }
+    /// <p>The ad break configuration settings.</p>
+    pub fn get_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdBreak>> {
+        &self.ad_breaks
+    }
     /// <p>The ARN to assign to the program.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl UpdateProgramOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN to assign to the program.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name to assign to the channel for this program.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -154,6 +162,10 @@ impl UpdateProgramOutputBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name to assign to the channel for this program.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The time the program was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +180,10 @@ impl UpdateProgramOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the program was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The name to assign to this program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -177,6 +193,10 @@ impl UpdateProgramOutputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// <p>The name to assign to this program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// <p>The name to assign to the source location for this program.</p>
     pub fn source_location_name(
@@ -194,6 +214,10 @@ impl UpdateProgramOutputBuilder {
         self.source_location_name = input;
         self
     }
+    /// <p>The name to assign to the source location for this program.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
+    }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn vod_source_name(
         mut self,
@@ -209,6 +233,10 @@ impl UpdateProgramOutputBuilder {
     ) -> Self {
         self.vod_source_name = input;
         self
+    }
+    /// <p>The name that's used to refer to a VOD source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn live_source_name(
@@ -226,6 +254,10 @@ impl UpdateProgramOutputBuilder {
         self.live_source_name = input;
         self
     }
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.live_source_name
+    }
     /// <p>The clip range configuration settings.</p>
     pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
         self.clip_range = ::std::option::Option::Some(input);
@@ -236,6 +268,10 @@ impl UpdateProgramOutputBuilder {
         self.clip_range = input;
         self
     }
+    /// <p>The clip range configuration settings.</p>
+    pub fn get_clip_range(&self) -> &::std::option::Option<crate::types::ClipRange> {
+        &self.clip_range
+    }
     /// <p>The duration of the live program in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -245,6 +281,10 @@ impl UpdateProgramOutputBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p>The duration of the live program in milliseconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// <p>The scheduled start time for this Program.</p>
     pub fn scheduled_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -258,6 +298,10 @@ impl UpdateProgramOutputBuilder {
     ) -> Self {
         self.scheduled_start_time = input;
         self
+    }
+    /// <p>The scheduled start time for this Program.</p>
+    pub fn get_scheduled_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

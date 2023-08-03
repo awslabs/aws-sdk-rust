@@ -54,6 +54,10 @@ impl GetCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn certificate_chain(
         mut self,
@@ -69,6 +73,10 @@ impl GetCertificateOutputBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

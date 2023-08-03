@@ -63,6 +63,10 @@ impl DeleteVirtualNodeInputBuilder {
         self.virtual_node_name = input;
         self
     }
+    /// <p>The name of the virtual node to delete.</p>
+    pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_node_name
+    }
     /// <p>The name of the service mesh to delete the virtual node in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteVirtualNodeInputBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name of the service mesh to delete the virtual node in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_owner = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteVirtualNodeInputBuilder {
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
     pub fn build(

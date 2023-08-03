@@ -116,6 +116,10 @@ impl DatabaseBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the database.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl DatabaseBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the database.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The location of the database (for example, an HDFS path).</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl DatabaseBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The location of the database (for example, an HDFS path).</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -161,6 +173,14 @@ impl DatabaseBuilder {
         self.parameters = input;
         self
     }
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The time at which the metadata database was created in the catalog.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -173,6 +193,10 @@ impl DatabaseBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time at which the metadata database was created in the catalog.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// Appends an item to `create_table_default_permissions`.
     ///
@@ -196,6 +220,12 @@ impl DatabaseBuilder {
         self.create_table_default_permissions = input;
         self
     }
+    /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
+    pub fn get_create_table_default_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
+        &self.create_table_default_permissions
+    }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub fn target_database(mut self, input: crate::types::DatabaseIdentifier) -> Self {
         self.target_database = ::std::option::Option::Some(input);
@@ -209,6 +239,10 @@ impl DatabaseBuilder {
         self.target_database = input;
         self
     }
+    /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
+    pub fn get_target_database(&self) -> &::std::option::Option<crate::types::DatabaseIdentifier> {
+        &self.target_database
+    }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -218,6 +252,10 @@ impl DatabaseBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
+    }
+    /// <p>The ID of the Data Catalog in which the database resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
     pub fn federated_database(mut self, input: crate::types::FederatedDatabase) -> Self {
@@ -231,6 +269,12 @@ impl DatabaseBuilder {
     ) -> Self {
         self.federated_database = input;
         self
+    }
+    /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
+    pub fn get_federated_database(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederatedDatabase> {
+        &self.federated_database
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {

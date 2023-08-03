@@ -61,6 +61,10 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the device definition.
     pub fn device_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateDeviceDefinitionVersionInputBuilder {
     ) -> Self {
         self.device_definition_id = input;
         self
+    }
+    /// The ID of the device definition.
+    pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_definition_id
     }
     /// Appends an item to `devices`.
     ///
@@ -95,6 +103,10 @@ impl CreateDeviceDefinitionVersionInputBuilder {
     ) -> Self {
         self.devices = input;
         self
+    }
+    /// A list of devices in the definition version.
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+        &self.devices
     }
     /// Consumes the builder and constructs a [`CreateDeviceDefinitionVersionInput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput).
     pub fn build(

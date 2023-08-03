@@ -56,6 +56,10 @@ impl CommandBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the command.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon S3 location of the command script.</p>
     pub fn script_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_path = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CommandBuilder {
     pub fn set_script_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_path = input;
         self
+    }
+    /// <p>The Amazon S3 location of the command script.</p>
+    pub fn get_script_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_path
     }
     /// Appends an item to `args`.
     ///
@@ -84,6 +92,10 @@ impl CommandBuilder {
     ) -> Self {
         self.args = input;
         self
+    }
+    /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.args
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).
     pub fn build(self) -> crate::types::Command {

@@ -53,6 +53,10 @@ impl CachedMethodsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -71,6 +75,10 @@ impl CachedMethodsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Method>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CachedMethods`](crate::types::CachedMethods).
     pub fn build(self) -> crate::types::CachedMethods {

@@ -56,6 +56,10 @@ impl PagerDutyIncidentDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     pub fn auto_resolve(mut self, input: bool) -> Self {
         self.auto_resolve = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PagerDutyIncidentDetailBuilder {
         self.auto_resolve = input;
         self
     }
+    /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
+    pub fn get_auto_resolve(&self) -> &::std::option::Option<bool> {
+        &self.auto_resolve
+    }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl PagerDutyIncidentDetailBuilder {
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
     }
     /// Consumes the builder and constructs a [`PagerDutyIncidentDetail`](crate::types::PagerDutyIncidentDetail).
     pub fn build(self) -> crate::types::PagerDutyIncidentDetail {

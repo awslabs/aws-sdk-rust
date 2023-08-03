@@ -64,6 +64,10 @@ impl SubnetMappingBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn allocation_id(
         mut self,
@@ -79,6 +83,10 @@ impl SubnetMappingBuilder {
     ) -> Self {
         self.allocation_id = input;
         self
+    }
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub fn private_i_pv4_address(
@@ -96,6 +104,10 @@ impl SubnetMappingBuilder {
         self.private_i_pv4_address = input;
         self
     }
+    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    pub fn get_private_i_pv4_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_i_pv4_address
+    }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn i_pv6_address(
         mut self,
@@ -111,6 +123,10 @@ impl SubnetMappingBuilder {
     ) -> Self {
         self.i_pv6_address = input;
         self
+    }
+    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    pub fn get_i_pv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.i_pv6_address
     }
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
     pub fn build(self) -> crate::types::SubnetMapping {

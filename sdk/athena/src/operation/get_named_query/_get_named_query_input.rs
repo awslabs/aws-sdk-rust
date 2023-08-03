@@ -45,6 +45,10 @@ impl GetNamedQueryInputBuilder {
         self.named_query_id = input;
         self
     }
+    /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.named_query_id
+    }
     /// Consumes the builder and constructs a [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
     pub fn build(
         self,

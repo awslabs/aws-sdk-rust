@@ -45,6 +45,10 @@ impl StopDiscovererInputBuilder {
         self.discoverer_id = input;
         self
     }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discoverer_id
+    }
     /// Consumes the builder and constructs a [`StopDiscovererInput`](crate::operation::stop_discoverer::StopDiscovererInput).
     pub fn build(
         self,

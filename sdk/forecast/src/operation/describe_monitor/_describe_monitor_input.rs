@@ -39,6 +39,10 @@ impl DescribeMonitorInputBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// Consumes the builder and constructs a [`DescribeMonitorInput`](crate::operation::describe_monitor::DescribeMonitorInput).
     pub fn build(
         self,

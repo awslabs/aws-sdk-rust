@@ -37,6 +37,10 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFirewallRuleGroupAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_id()
+    }
     /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -123,6 +131,10 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
+    /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
+    }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
@@ -132,6 +144,10 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
     /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
     pub fn status(mut self, input: crate::types::FirewallRuleGroupAssociationStatus) -> Self {
@@ -146,6 +162,12 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus> {
+        self.inner.get_status()
+    }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -158,6 +180,11 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,5 +196,10 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

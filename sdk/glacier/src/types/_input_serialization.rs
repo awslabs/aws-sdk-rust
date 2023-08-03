@@ -40,6 +40,10 @@ impl InputSerializationBuilder {
         self.csv = input;
         self
     }
+    /// <p>Describes the serialization of a CSV-encoded object.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvInput> {
+        &self.csv
+    }
     /// Consumes the builder and constructs a [`InputSerialization`](crate::types::InputSerialization).
     pub fn build(self) -> crate::types::InputSerialization {
         crate::types::InputSerialization { csv: self.csv }

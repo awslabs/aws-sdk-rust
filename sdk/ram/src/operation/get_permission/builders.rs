@@ -36,6 +36,12 @@ impl GetPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_permission::builders::GetPermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetPermissionFluentBuilder {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+    pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_arn()
+    }
     /// <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
     /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
     pub fn permission_version(mut self, input: i32) -> Self {
@@ -135,5 +145,10 @@ impl GetPermissionFluentBuilder {
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_permission_version(input);
         self
+    }
+    /// <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
+    /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
+    pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_permission_version()
     }
 }

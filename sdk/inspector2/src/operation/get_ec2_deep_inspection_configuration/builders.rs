@@ -36,6 +36,10 @@ impl GetEc2DeepInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEc2DeepInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

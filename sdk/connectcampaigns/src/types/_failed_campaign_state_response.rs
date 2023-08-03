@@ -50,6 +50,10 @@ impl FailedCampaignStateResponseBuilder {
         self.campaign_id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
+    }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     pub fn failure_code(mut self, input: crate::types::GetCampaignStateBatchFailureCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl FailedCampaignStateResponseBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// A predefined code indicating the error that caused the failure in getting state of campaigns
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetCampaignStateBatchFailureCode> {
+        &self.failure_code
     }
     /// Consumes the builder and constructs a [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).
     pub fn build(self) -> crate::types::FailedCampaignStateResponse {

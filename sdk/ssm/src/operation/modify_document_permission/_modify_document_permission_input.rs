@@ -73,6 +73,10 @@ impl ModifyDocumentPermissionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the document that you want to share.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub fn permission_type(mut self, input: crate::types::DocumentPermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl ModifyDocumentPermissionInputBuilder {
     ) -> Self {
         self.permission_type = input;
         self
+    }
+    /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    pub fn get_permission_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+        &self.permission_type
     }
     /// Appends an item to `account_ids_to_add`.
     ///
@@ -108,6 +118,12 @@ impl ModifyDocumentPermissionInputBuilder {
         self.account_ids_to_add = input;
         self
     }
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    pub fn get_account_ids_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids_to_add
+    }
     /// Appends an item to `account_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
@@ -130,6 +146,12 @@ impl ModifyDocumentPermissionInputBuilder {
         self.account_ids_to_remove = input;
         self
     }
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    pub fn get_account_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids_to_remove
+    }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
     pub fn shared_document_version(
         mut self,
@@ -145,6 +167,10 @@ impl ModifyDocumentPermissionInputBuilder {
     ) -> Self {
         self.shared_document_version = input;
         self
+    }
+    /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
+    pub fn get_shared_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_document_version
     }
     /// Consumes the builder and constructs a [`ModifyDocumentPermissionInput`](crate::operation::modify_document_permission::ModifyDocumentPermissionInput).
     pub fn build(

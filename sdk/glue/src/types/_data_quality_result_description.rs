@@ -72,6 +72,10 @@ impl DataQualityResultDescriptionBuilder {
         self.result_id = input;
         self
     }
+    /// <p>The unique result ID for this data quality result.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// <p>The table name associated with the data quality result.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl DataQualityResultDescriptionBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The table name associated with the data quality result.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>The job name associated with the data quality result.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl DataQualityResultDescriptionBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The job name associated with the data quality result.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The job run ID associated with the data quality result.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DataQualityResultDescriptionBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
+    }
+    /// <p>The job run ID associated with the data quality result.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// <p>The time that the run started for this data quality result.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +133,10 @@ impl DataQualityResultDescriptionBuilder {
     ) -> Self {
         self.started_on = input;
         self
+    }
+    /// <p>The time that the run started for this data quality result.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
     }
     /// Consumes the builder and constructs a [`DataQualityResultDescription`](crate::types::DataQualityResultDescription).
     pub fn build(self) -> crate::types::DataQualityResultDescription {

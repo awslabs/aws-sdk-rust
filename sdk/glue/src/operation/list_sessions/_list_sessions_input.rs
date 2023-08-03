@@ -71,6 +71,10 @@ impl ListSessionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListSessionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -106,6 +114,14 @@ impl ListSessionsInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags belonging to the session. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The origin of the request. </p>
     pub fn request_origin(
         mut self,
@@ -121,6 +137,10 @@ impl ListSessionsInputBuilder {
     ) -> Self {
         self.request_origin = input;
         self
+    }
+    /// <p>The origin of the request. </p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl PutLifecyclePolicyInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository to receive the policy.</p>
     pub fn repository_name(
         mut self,
@@ -72,6 +76,10 @@ impl PutLifecyclePolicyInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to receive the policy.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The JSON repository policy text to apply to the repository.</p>
     pub fn lifecycle_policy_text(
         mut self,
@@ -87,6 +95,10 @@ impl PutLifecyclePolicyInputBuilder {
     ) -> Self {
         self.lifecycle_policy_text = input;
         self
+    }
+    /// <p>The JSON repository policy text to apply to the repository.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
     }
     /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
     pub fn build(

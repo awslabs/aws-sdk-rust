@@ -88,6 +88,10 @@ impl FrameworkBuilder {
         self.framework_name = input;
         self
     }
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn framework_arn(
         mut self,
@@ -103,6 +107,10 @@ impl FrameworkBuilder {
     ) -> Self {
         self.framework_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_arn
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
     pub fn framework_description(
@@ -120,6 +128,10 @@ impl FrameworkBuilder {
         self.framework_description = input;
         self
     }
+    /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
+    pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_description
+    }
     /// <p>The number of controls contained by the framework.</p>
     pub fn number_of_controls(mut self, input: i32) -> Self {
         self.number_of_controls = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl FrameworkBuilder {
     pub fn set_number_of_controls(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_controls = input;
         self
+    }
+    /// <p>The number of controls contained by the framework.</p>
+    pub fn get_number_of_controls(&self) -> &::std::option::Option<i32> {
+        &self.number_of_controls
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,6 +158,10 @@ impl FrameworkBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
@@ -160,6 +180,11 @@ impl FrameworkBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status
     }
     /// Consumes the builder and constructs a [`Framework`](crate::types::Framework).
     pub fn build(self) -> crate::types::Framework {

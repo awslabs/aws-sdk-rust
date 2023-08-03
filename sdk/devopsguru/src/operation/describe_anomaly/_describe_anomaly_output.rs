@@ -57,6 +57,10 @@ impl DescribeAnomalyOutputBuilder {
         self.proactive_anomaly = input;
         self
     }
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+    pub fn get_proactive_anomaly(&self) -> &::std::option::Option<crate::types::ProactiveAnomaly> {
+        &self.proactive_anomaly
+    }
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn reactive_anomaly(mut self, input: crate::types::ReactiveAnomaly) -> Self {
         self.reactive_anomaly = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeAnomalyOutputBuilder {
     ) -> Self {
         self.reactive_anomaly = input;
         self
+    }
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+    pub fn get_reactive_anomaly(&self) -> &::std::option::Option<crate::types::ReactiveAnomaly> {
+        &self.reactive_anomaly
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

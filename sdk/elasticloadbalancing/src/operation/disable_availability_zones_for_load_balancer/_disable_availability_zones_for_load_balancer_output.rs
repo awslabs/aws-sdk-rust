@@ -59,6 +59,12 @@ impl DisableAvailabilityZonesForLoadBalancerOutputBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The remaining Availability Zones for the load balancer.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

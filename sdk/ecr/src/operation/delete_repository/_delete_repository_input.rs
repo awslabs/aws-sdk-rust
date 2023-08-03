@@ -56,6 +56,10 @@ impl DeleteRepositoryInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository to delete.</p>
     pub fn repository_name(
         mut self,
@@ -72,6 +76,10 @@ impl DeleteRepositoryInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to delete.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p> If a repository contains images, forces the deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DeleteRepositoryInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p> If a repository contains images, forces the deletion.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(

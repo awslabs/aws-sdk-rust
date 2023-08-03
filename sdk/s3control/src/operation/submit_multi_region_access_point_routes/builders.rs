@@ -49,6 +49,10 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitMultiRegionAccessPointRoutes as a reference.
+    pub fn as_input(&self) -> &crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn mrap(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mrap(input.into());
@@ -122,6 +130,10 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
     pub fn set_mrap(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mrap(input);
         self
+    }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn get_mrap(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mrap()
     }
     /// Appends an item to `RouteUpdates`.
     ///
@@ -139,5 +151,11 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_route_updates(input);
         self
+    }
+    /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    pub fn get_route_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
+        self.inner.get_route_updates()
     }
 }

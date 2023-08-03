@@ -67,6 +67,10 @@ impl ListBotVersionsOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot to list versions for.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// Appends an item to `bot_version_summaries`.
     ///
     /// To override the contents of this collection use [`set_bot_version_summaries`](Self::set_bot_version_summaries).
@@ -86,6 +90,12 @@ impl ListBotVersionsOutputBuilder {
         self.bot_version_summaries = input;
         self
     }
+    /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
+    pub fn get_bot_version_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>> {
+        &self.bot_version_summaries
+    }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl ListBotVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

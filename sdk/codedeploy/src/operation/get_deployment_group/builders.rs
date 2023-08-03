@@ -36,6 +36,12 @@ impl GetDeploymentGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeploymentGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_deployment_group::builders::GetDeploymentGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetDeploymentGroupFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of a deployment group for the specified application.</p>
     pub fn deployment_group_name(
         mut self,
@@ -147,5 +157,9 @@ impl GetDeploymentGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_group_name(input);
         self
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_group_name()
     }
 }

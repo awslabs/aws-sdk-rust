@@ -37,6 +37,10 @@ impl DeleteRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_rule::builders::DeleteRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl DeleteRuleFluentBuilder {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -141,6 +149,10 @@ impl DeleteRuleFluentBuilder {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_identifier()
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_identifier(
         mut self,
@@ -156,5 +168,9 @@ impl DeleteRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_identifier()
     }
 }

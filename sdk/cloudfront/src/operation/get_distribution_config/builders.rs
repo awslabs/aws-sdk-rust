@@ -36,6 +36,13 @@ impl GetDistributionConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDistributionConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_distribution_config::builders::GetDistributionConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl GetDistributionConfigFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

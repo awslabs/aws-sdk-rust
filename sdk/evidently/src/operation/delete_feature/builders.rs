@@ -36,6 +36,12 @@ impl DeleteFeatureFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFeature as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_feature::builders::DeleteFeatureInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteFeatureFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains the feature to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the feature to delete.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature(input.into());
@@ -127,5 +137,9 @@ impl DeleteFeatureFluentBuilder {
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature(input);
         self
+    }
+    /// <p>The name of the feature to delete.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature()
     }
 }

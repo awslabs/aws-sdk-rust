@@ -77,6 +77,12 @@ impl SynthesizeSpeechOutputBuilder {
         self.audio_stream = input;
         self
     }
+    /// <p> Stream containing the synthesized speech. </p>
+    pub fn get_audio_stream(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.audio_stream
+    }
     /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
     /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
@@ -101,6 +107,17 @@ impl SynthesizeSpeechOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
+    /// <ul>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
+    /// </ul>
+    /// <p> </p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>Number of characters synthesized.</p>
     pub fn request_characters(mut self, input: i32) -> Self {
         self.request_characters = ::std::option::Option::Some(input);
@@ -110,6 +127,10 @@ impl SynthesizeSpeechOutputBuilder {
     pub fn set_request_characters(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_characters = input;
         self
+    }
+    /// <p>Number of characters synthesized.</p>
+    pub fn get_request_characters(&self) -> &::std::option::Option<i32> {
+        &self.request_characters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

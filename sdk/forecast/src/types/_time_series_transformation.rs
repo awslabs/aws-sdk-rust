@@ -52,6 +52,10 @@ impl TimeSeriesTransformationBuilder {
         self.action = input;
         self
     }
+    /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// Appends an item to `time_series_conditions`.
     ///
     /// To override the contents of this collection use [`set_time_series_conditions`](Self::set_time_series_conditions).
@@ -70,6 +74,12 @@ impl TimeSeriesTransformationBuilder {
     ) -> Self {
         self.time_series_conditions = input;
         self
+    }
+    /// <p>An array of conditions that define which members of the related time series are transformed.</p>
+    pub fn get_time_series_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>> {
+        &self.time_series_conditions
     }
     /// Consumes the builder and constructs a [`TimeSeriesTransformation`](crate::types::TimeSeriesTransformation).
     pub fn build(self) -> crate::types::TimeSeriesTransformation {

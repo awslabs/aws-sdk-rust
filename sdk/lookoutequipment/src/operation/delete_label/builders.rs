@@ -36,6 +36,10 @@ impl DeleteLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLabel as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_label::builders::DeleteLabelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteLabelFluentBuilder {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
+    /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
+    }
     /// <p> The ID of the label that you want to delete. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_id(input.into());
@@ -133,5 +141,9 @@ impl DeleteLabelFluentBuilder {
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_id(input);
         self
+    }
+    /// <p> The ID of the label that you want to delete. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_id()
     }
 }

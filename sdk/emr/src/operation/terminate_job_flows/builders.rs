@@ -37,6 +37,12 @@ impl TerminateJobFlowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateJobFlows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl TerminateJobFlowsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
+    }
+    /// <p>A list of job flows to be shut down.</p>
+    pub fn get_job_flow_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_flow_ids()
     }
 }

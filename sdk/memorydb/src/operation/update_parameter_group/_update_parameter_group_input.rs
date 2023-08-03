@@ -58,6 +58,10 @@ impl UpdateParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to update.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// Appends an item to `parameter_name_values`.
     ///
     /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
@@ -76,6 +80,12 @@ impl UpdateParameterGroupInputBuilder {
     ) -> Self {
         self.parameter_name_values = input;
         self
+    }
+    /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
+    pub fn get_parameter_name_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+        &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
     pub fn build(

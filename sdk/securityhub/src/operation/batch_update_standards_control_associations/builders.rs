@@ -36,6 +36,10 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateStandardsControlAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,5 +115,12 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_standards_control_association_updates(input);
         self
+    }
+    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    pub fn get_standards_control_association_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>
+    {
+        self.inner.get_standards_control_association_updates()
     }
 }

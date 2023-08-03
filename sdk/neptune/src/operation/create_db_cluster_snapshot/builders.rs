@@ -37,6 +37,13 @@ impl CreateDBClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +154,19 @@ impl CreateDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
     }
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_snapshot_identifier()
+    }
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -173,6 +193,15 @@ impl CreateDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -189,5 +218,9 @@ impl CreateDBClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the DB cluster snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

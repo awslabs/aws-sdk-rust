@@ -50,6 +50,10 @@ impl BotAliasLocaleSettingsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
     pub fn code_hook_specification(mut self, input: crate::types::CodeHookSpecification) -> Self {
         self.code_hook_specification = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl BotAliasLocaleSettingsBuilder {
     ) -> Self {
         self.code_hook_specification = input;
         self
+    }
+    /// <p>Specifies the Lambda function that should be used in the locale.</p>
+    pub fn get_code_hook_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeHookSpecification> {
+        &self.code_hook_specification
     }
     /// Consumes the builder and constructs a [`BotAliasLocaleSettings`](crate::types::BotAliasLocaleSettings).
     pub fn build(self) -> crate::types::BotAliasLocaleSettings {

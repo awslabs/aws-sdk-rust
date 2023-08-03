@@ -128,6 +128,12 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.network_insights_access_scope_analysis_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub fn get_network_insights_access_scope_analysis_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_analysis_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
     pub fn network_insights_access_scope_analysis_arn(
         mut self,
@@ -143,6 +149,12 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     ) -> Self {
         self.network_insights_access_scope_analysis_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
+    pub fn get_network_insights_access_scope_analysis_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_analysis_arn
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn network_insights_access_scope_id(
@@ -160,6 +172,12 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::AnalysisStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -172,6 +190,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AnalysisStatus> {
+        &self.status
     }
     /// <p>The status message.</p>
     pub fn status_message(
@@ -189,6 +211,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The warning message.</p>
     pub fn warning_message(
         mut self,
@@ -205,6 +231,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.warning_message = input;
         self
     }
+    /// <p>The warning message.</p>
+    pub fn get_warning_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning_message
+    }
     /// <p>The analysis start date.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -217,6 +247,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     ) -> Self {
         self.start_date = input;
         self
+    }
+    /// <p>The analysis start date.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     /// <p>The analysis end date.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -231,6 +265,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.end_date = input;
         self
     }
+    /// <p>The analysis end date.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     /// <p>Indicates whether there are findings.</p>
     pub fn findings_found(mut self, input: crate::types::FindingsFound) -> Self {
         self.findings_found = ::std::option::Option::Some(input);
@@ -244,6 +282,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
         self.findings_found = input;
         self
     }
+    /// <p>Indicates whether there are findings.</p>
+    pub fn get_findings_found(&self) -> &::std::option::Option<crate::types::FindingsFound> {
+        &self.findings_found
+    }
     /// <p>The number of network interfaces analyzed.</p>
     pub fn analyzed_eni_count(mut self, input: i32) -> Self {
         self.analyzed_eni_count = ::std::option::Option::Some(input);
@@ -253,6 +295,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     pub fn set_analyzed_eni_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.analyzed_eni_count = input;
         self
+    }
+    /// <p>The number of network interfaces analyzed.</p>
+    pub fn get_analyzed_eni_count(&self) -> &::std::option::Option<i32> {
+        &self.analyzed_eni_count
     }
     /// Appends an item to `tags`.
     ///
@@ -272,6 +318,10 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`NetworkInsightsAccessScopeAnalysis`](crate::types::NetworkInsightsAccessScopeAnalysis).
     pub fn build(self) -> crate::types::NetworkInsightsAccessScopeAnalysis {

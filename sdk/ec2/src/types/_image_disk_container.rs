@@ -92,6 +92,10 @@ impl ImageDiskContainerBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the disk image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The block device mapping for the disk.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl ImageDiskContainerBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The block device mapping for the disk.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The format of the disk image being imported.</p>
     /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
@@ -114,6 +122,11 @@ impl ImageDiskContainerBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the disk image being imported.</p>
+    /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -124,6 +137,10 @@ impl ImageDiskContainerBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -133,6 +150,10 @@ impl ImageDiskContainerBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The S3 bucket for the disk image.</p>
     pub fn user_bucket(mut self, input: crate::types::UserBucket) -> Self {
@@ -146,6 +167,10 @@ impl ImageDiskContainerBuilder {
     ) -> Self {
         self.user_bucket = input;
         self
+    }
+    /// <p>The S3 bucket for the disk image.</p>
+    pub fn get_user_bucket(&self) -> &::std::option::Option<crate::types::UserBucket> {
+        &self.user_bucket
     }
     /// Consumes the builder and constructs a [`ImageDiskContainer`](crate::types::ImageDiskContainer).
     pub fn build(self) -> crate::types::ImageDiskContainer {

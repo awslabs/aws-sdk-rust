@@ -63,6 +63,10 @@ impl ScheduleActionBuilder {
         self.action_name = input;
         self
     }
+    /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// Settings for this schedule action.
     pub fn schedule_action_settings(mut self, input: crate::types::ScheduleActionSettings) -> Self {
         self.schedule_action_settings = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl ScheduleActionBuilder {
     ) -> Self {
         self.schedule_action_settings = input;
         self
+    }
+    /// Settings for this schedule action.
+    pub fn get_schedule_action_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleActionSettings> {
+        &self.schedule_action_settings
     }
     /// The time for the action to start in the channel.
     pub fn schedule_action_start_settings(
@@ -91,6 +101,12 @@ impl ScheduleActionBuilder {
     ) -> Self {
         self.schedule_action_start_settings = input;
         self
+    }
+    /// The time for the action to start in the channel.
+    pub fn get_schedule_action_start_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleActionStartSettings> {
+        &self.schedule_action_start_settings
     }
     /// Consumes the builder and constructs a [`ScheduleAction`](crate::types::ScheduleAction).
     pub fn build(self) -> crate::types::ScheduleAction {

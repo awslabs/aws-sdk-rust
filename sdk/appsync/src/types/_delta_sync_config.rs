@@ -56,6 +56,10 @@ impl DeltaSyncConfigBuilder {
         self.base_table_ttl = input;
         self
     }
+    /// <p>The number of minutes that an Item is stored in the data source.</p>
+    pub fn get_base_table_ttl(&self) -> &::std::option::Option<i64> {
+        &self.base_table_ttl
+    }
     /// <p>The Delta Sync table name.</p>
     pub fn delta_sync_table_name(
         mut self,
@@ -72,6 +76,10 @@ impl DeltaSyncConfigBuilder {
         self.delta_sync_table_name = input;
         self
     }
+    /// <p>The Delta Sync table name.</p>
+    pub fn get_delta_sync_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delta_sync_table_name
+    }
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
     pub fn delta_sync_table_ttl(mut self, input: i64) -> Self {
         self.delta_sync_table_ttl = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DeltaSyncConfigBuilder {
     pub fn set_delta_sync_table_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.delta_sync_table_ttl = input;
         self
+    }
+    /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
+    pub fn get_delta_sync_table_ttl(&self) -> &::std::option::Option<i64> {
+        &self.delta_sync_table_ttl
     }
     /// Consumes the builder and constructs a [`DeltaSyncConfig`](crate::types::DeltaSyncConfig).
     pub fn build(self) -> crate::types::DeltaSyncConfig {

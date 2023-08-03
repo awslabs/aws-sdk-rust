@@ -63,6 +63,10 @@ impl GetExportInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot to export.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the bot to export.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetExportInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the bot to export.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The type of resource to export. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -86,6 +94,10 @@ impl GetExportInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource to export. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The format of the exported data.</p>
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
         self.export_type = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl GetExportInputBuilder {
     ) -> Self {
         self.export_type = input;
         self
+    }
+    /// <p>The format of the exported data.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        &self.export_type
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl DeregisterWirelessDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterWirelessDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeregisterWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
         self.inner = self.inner.wireless_device_type(input);
@@ -138,5 +149,11 @@ impl DeregisterWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
+    }
+    /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        self.inner.get_wireless_device_type()
     }
 }

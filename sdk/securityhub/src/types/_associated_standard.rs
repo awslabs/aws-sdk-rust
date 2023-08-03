@@ -40,6 +40,10 @@ impl AssociatedStandardBuilder {
         self.standards_id = input;
         self
     }
+    /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
+    pub fn get_standards_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_id
+    }
     /// Consumes the builder and constructs a [`AssociatedStandard`](crate::types::AssociatedStandard).
     pub fn build(self) -> crate::types::AssociatedStandard {
         crate::types::AssociatedStandard {

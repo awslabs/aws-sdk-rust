@@ -39,6 +39,10 @@ impl GetTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
     pub fn build(
         self,

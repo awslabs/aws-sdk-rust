@@ -36,6 +36,12 @@ impl CreateListenerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateListener as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_listener::builders::CreateListenerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateListenerFluentBuilder {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
+    }
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,6 +143,10 @@ impl CreateListenerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
@@ -147,6 +161,10 @@ impl CreateListenerFluentBuilder {
         self.inner = self.inner.set_protocol(input);
         self
     }
+    /// <p>The listener protocol HTTP or HTTPS.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
+        self.inner.get_protocol()
+    }
     /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -156,6 +174,10 @@ impl CreateListenerFluentBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
+    }
+    /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_port()
     }
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -170,6 +192,10 @@ impl CreateListenerFluentBuilder {
         self.inner = self.inner.set_default_action(input);
         self
     }
+    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        self.inner.get_default_action()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -179,6 +205,10 @@ impl CreateListenerFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -202,5 +232,13 @@ impl CreateListenerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the listener.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

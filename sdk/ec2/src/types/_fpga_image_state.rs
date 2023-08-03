@@ -75,6 +75,16 @@ impl FpgaImageStateBuilder {
         self.code = input;
         self
     }
+    /// <p>The state. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code> - AFI bitstream generation is in progress.</p> </li>
+    /// <li> <p> <code>available</code> - The AFI is available for use.</p> </li>
+    /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
+    /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::FpgaImageStateCode> {
+        &self.code
+    }
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -84,6 +94,10 @@ impl FpgaImageStateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If the state is <code>failed</code>, this is the error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FpgaImageState`](crate::types::FpgaImageState).
     pub fn build(self) -> crate::types::FpgaImageState {

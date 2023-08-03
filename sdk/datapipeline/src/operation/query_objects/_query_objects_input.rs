@@ -72,6 +72,10 @@ impl QueryObjectsInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub fn query(mut self, input: crate::types::Query) -> Self {
         self.query = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl QueryObjectsInputBuilder {
     pub fn set_query(mut self, input: ::std::option::Option<crate::types::Query>) -> Self {
         self.query = input;
         self
+    }
+    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
+    pub fn get_query(&self) -> &::std::option::Option<crate::types::Query> {
+        &self.query
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub fn sphere(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl QueryObjectsInputBuilder {
         self.sphere = input;
         self
     }
+    /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    pub fn get_sphere(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sphere
+    }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl QueryObjectsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl QueryObjectsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
     pub fn build(

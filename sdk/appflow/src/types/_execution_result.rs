@@ -64,6 +64,10 @@ impl ExecutionResultBuilder {
         self.error_info = input;
         self
     }
+    /// <p> Provides any error message information related to the flow run. </p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
+        &self.error_info
+    }
     /// <p> The total number of bytes processed by the flow run. </p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
         self.bytes_processed = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ExecutionResultBuilder {
     pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_processed = input;
         self
+    }
+    /// <p> The total number of bytes processed by the flow run. </p>
+    pub fn get_bytes_processed(&self) -> &::std::option::Option<i64> {
+        &self.bytes_processed
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
     pub fn bytes_written(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl ExecutionResultBuilder {
         self.bytes_written = input;
         self
     }
+    /// <p> The total number of bytes written as a result of the flow run. </p>
+    pub fn get_bytes_written(&self) -> &::std::option::Option<i64> {
+        &self.bytes_written
+    }
     /// <p> The number of records processed in the flow run. </p>
     pub fn records_processed(mut self, input: i64) -> Self {
         self.records_processed = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ExecutionResultBuilder {
     pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_processed = input;
         self
+    }
+    /// <p> The number of records processed in the flow run. </p>
+    pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
+        &self.records_processed
     }
     /// Consumes the builder and constructs a [`ExecutionResult`](crate::types::ExecutionResult).
     pub fn build(self) -> crate::types::ExecutionResult {

@@ -36,6 +36,10 @@ impl UpdateExtensionAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateExtensionAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateExtensionAssociationFluentBuilder {
         self.inner = self.inner.set_extension_association_id(input);
         self
     }
+    /// <p>The system-generated ID for the association.</p>
+    pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_extension_association_id()
+    }
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -154,5 +162,13 @@ impl UpdateExtensionAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>The parameter names and values defined in the extension.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_parameters()
     }
 }

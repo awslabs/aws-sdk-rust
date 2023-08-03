@@ -51,6 +51,12 @@ impl TimeToLiveDescriptionBuilder {
         self.time_to_live_status = input;
         self
     }
+    /// <p> The TTL status for the table.</p>
+    pub fn get_time_to_live_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeToLiveStatus> {
+        &self.time_to_live_status
+    }
     /// <p> The name of the TTL attribute for items in the table.</p>
     pub fn attribute_name(
         mut self,
@@ -66,6 +72,10 @@ impl TimeToLiveDescriptionBuilder {
     ) -> Self {
         self.attribute_name = input;
         self
+    }
+    /// <p> The name of the TTL attribute for items in the table.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Consumes the builder and constructs a [`TimeToLiveDescription`](crate::types::TimeToLiveDescription).
     pub fn build(self) -> crate::types::TimeToLiveDescription {

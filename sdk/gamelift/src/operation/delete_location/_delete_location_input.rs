@@ -45,6 +45,10 @@ impl DeleteLocationInputBuilder {
         self.location_name = input;
         self
     }
+    /// <p>The location name of the custom location to be deleted.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
     pub fn build(
         self,

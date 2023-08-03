@@ -80,6 +80,10 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace in which to create the rule group namespace.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// The rule groups namespace name.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateRuleGroupsNamespaceInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The rule groups namespace name.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The namespace data that define the rule groups.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -100,6 +108,10 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         self.data = input;
         self
     }
+    /// The namespace data that define the rule groups.
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl CreateRuleGroupsNamespaceInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +150,14 @@ impl CreateRuleGroupsNamespaceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Optional, user-provided tags for this rule groups namespace.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupsNamespaceInput`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl MatchingRuleBuilder {
         self.rule = input;
         self
     }
+    /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule
+    }
     /// Consumes the builder and constructs a [`MatchingRule`](crate::types::MatchingRule).
     pub fn build(self) -> crate::types::MatchingRule {
         crate::types::MatchingRule { rule: self.rule }

@@ -40,6 +40,10 @@ impl SecondaryBuilder {
         self.route = input;
         self
     }
+    /// <p>Defines the secondary Region.</p>
+    pub fn get_route(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route
+    }
     /// Consumes the builder and constructs a [`Secondary`](crate::types::Secondary).
     pub fn build(self) -> crate::types::Secondary {
         crate::types::Secondary { route: self.route }

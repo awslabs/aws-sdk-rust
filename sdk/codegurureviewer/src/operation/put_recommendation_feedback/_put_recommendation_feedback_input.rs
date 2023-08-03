@@ -61,6 +61,10 @@ impl PutRecommendationFeedbackInputBuilder {
         self.code_review_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
+    }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
     pub fn recommendation_id(
         mut self,
@@ -76,6 +80,10 @@ impl PutRecommendationFeedbackInputBuilder {
     ) -> Self {
         self.recommendation_id = input;
         self
+    }
+    /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// Appends an item to `reactions`.
     ///
@@ -95,6 +103,10 @@ impl PutRecommendationFeedbackInputBuilder {
     ) -> Self {
         self.reactions = input;
         self
+    }
+    /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
+    pub fn get_reactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reaction>> {
+        &self.reactions
     }
     /// Consumes the builder and constructs a [`PutRecommendationFeedbackInput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput).
     pub fn build(

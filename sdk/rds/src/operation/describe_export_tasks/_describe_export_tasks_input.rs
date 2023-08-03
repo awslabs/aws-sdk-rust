@@ -121,6 +121,10 @@ impl DescribeExportTasksInputBuilder {
         self.export_task_identifier = input;
         self
     }
+    /// <p>The identifier of the snapshot or cluster export task to be described.</p>
+    pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_task_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl DescribeExportTasksInputBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// Appends an item to `filters`.
     ///
@@ -180,6 +188,25 @@ impl DescribeExportTasksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
+    /// <p>Supported filters include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>canceled</code> </p> </li>
+    /// <li> <p> <code>canceling</code> </p> </li>
+    /// <li> <p> <code>complete</code> </p> </li>
+    /// <li> <p> <code>failed</code> </p> </li>
+    /// <li> <p> <code>in_progress</code> </p> </li>
+    /// <li> <p> <code>starting</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -189,6 +216,10 @@ impl DescribeExportTasksInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -204,6 +235,12 @@ impl DescribeExportTasksInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>The type of source for the export.</p>
     pub fn source_type(mut self, input: crate::types::ExportSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -216,6 +253,10 @@ impl DescribeExportTasksInputBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The type of source for the export.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(

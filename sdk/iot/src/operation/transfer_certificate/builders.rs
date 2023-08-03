@@ -41,6 +41,12 @@ impl TransferCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TransferCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl TransferCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p>The Amazon Web Services account.</p>
     pub fn target_aws_account(
         mut self,
@@ -153,6 +163,10 @@ impl TransferCertificateFluentBuilder {
         self.inner = self.inner.set_target_aws_account(input);
         self
     }
+    /// <p>The Amazon Web Services account.</p>
+    pub fn get_target_aws_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_aws_account()
+    }
     /// <p>The transfer message.</p>
     pub fn transfer_message(
         mut self,
@@ -168,5 +182,9 @@ impl TransferCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transfer_message(input);
         self
+    }
+    /// <p>The transfer message.</p>
+    pub fn get_transfer_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transfer_message()
     }
 }

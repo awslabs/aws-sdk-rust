@@ -79,6 +79,10 @@ impl StartSuiteRunInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the test suite.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Suite definition version of the test suite.</p>
     pub fn suite_definition_version(
         mut self,
@@ -95,6 +99,10 @@ impl StartSuiteRunInputBuilder {
         self.suite_definition_version = input;
         self
     }
+    /// <p>Suite definition version of the test suite.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_version
+    }
     /// <p>Suite run configuration.</p>
     pub fn suite_run_configuration(mut self, input: crate::types::SuiteRunConfiguration) -> Self {
         self.suite_run_configuration = ::std::option::Option::Some(input);
@@ -107,6 +115,12 @@ impl StartSuiteRunInputBuilder {
     ) -> Self {
         self.suite_run_configuration = input;
         self
+    }
+    /// <p>Suite run configuration.</p>
+    pub fn get_suite_run_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
+        &self.suite_run_configuration
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -132,6 +146,14 @@ impl StartSuiteRunInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be attached to the suite run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartSuiteRunInput`](crate::operation::start_suite_run::StartSuiteRunInput).
     pub fn build(

@@ -58,6 +58,12 @@ impl PortProbeActionBuilder {
         self.port_probe_details = input;
         self
     }
+    /// <p>Information about the ports affected by the port probe.</p>
+    pub fn get_port_probe_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>> {
+        &self.port_probe_details
+    }
     /// <p>Indicates whether the port probe was blocked.</p>
     pub fn blocked(mut self, input: bool) -> Self {
         self.blocked = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl PortProbeActionBuilder {
     pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.blocked = input;
         self
+    }
+    /// <p>Indicates whether the port probe was blocked.</p>
+    pub fn get_blocked(&self) -> &::std::option::Option<bool> {
+        &self.blocked
     }
     /// Consumes the builder and constructs a [`PortProbeAction`](crate::types::PortProbeAction).
     pub fn build(self) -> crate::types::PortProbeAction {

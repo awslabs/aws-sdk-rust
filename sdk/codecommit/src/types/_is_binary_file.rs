@@ -56,6 +56,10 @@ impl IsBinaryFileBuilder {
         self.source = input;
         self
     }
+    /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
+    pub fn get_source(&self) -> &::std::option::Option<bool> {
+        &self.source
+    }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: bool) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl IsBinaryFileBuilder {
         self.destination = input;
         self
     }
+    /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<bool> {
+        &self.destination
+    }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn base(mut self, input: bool) -> Self {
         self.base = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl IsBinaryFileBuilder {
     pub fn set_base(mut self, input: ::std::option::Option<bool>) -> Self {
         self.base = input;
         self
+    }
+    /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
+    pub fn get_base(&self) -> &::std::option::Option<bool> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`IsBinaryFile`](crate::types::IsBinaryFile).
     pub fn build(self) -> crate::types::IsBinaryFile {

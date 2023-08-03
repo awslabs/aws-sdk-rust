@@ -72,6 +72,10 @@ impl ExclusionPreviewBuilder {
         self.title = input;
         self
     }
+    /// <p>The name of the exclusion preview.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The description of the exclusion preview.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ExclusionPreviewBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the exclusion preview.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The recommendation for the exclusion preview.</p>
     pub fn recommendation(
@@ -97,6 +105,10 @@ impl ExclusionPreviewBuilder {
     ) -> Self {
         self.recommendation = input;
         self
+    }
+    /// <p>The recommendation for the exclusion preview.</p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation
     }
     /// Appends an item to `scopes`.
     ///
@@ -117,6 +129,10 @@ impl ExclusionPreviewBuilder {
         self.scopes = input;
         self
     }
+    /// <p>The AWS resources for which the exclusion preview pertains.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Scope>> {
+        &self.scopes
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -135,6 +151,12 @@ impl ExclusionPreviewBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The system-defined attributes for the exclusion preview.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ExclusionPreview`](crate::types::ExclusionPreview).
     pub fn build(self) -> crate::types::ExclusionPreview {

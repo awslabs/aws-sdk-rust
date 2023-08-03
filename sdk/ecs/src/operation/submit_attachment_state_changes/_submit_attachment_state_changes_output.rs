@@ -52,6 +52,10 @@ impl SubmitAttachmentStateChangesOutputBuilder {
         self.acknowledgment = input;
         self
     }
+    /// <p>Acknowledgement of the state change.</p>
+    pub fn get_acknowledgment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acknowledgment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

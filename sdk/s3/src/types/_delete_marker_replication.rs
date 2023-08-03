@@ -54,6 +54,14 @@ impl DeleteMarkerReplicationBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates whether to replicate delete markers.</p> <note>
+    /// <p>Indicates whether to replicate delete markers.</p>
+    /// </note>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteMarkerReplicationStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`DeleteMarkerReplication`](crate::types::DeleteMarkerReplication).
     pub fn build(self) -> crate::types::DeleteMarkerReplication {
         crate::types::DeleteMarkerReplication {

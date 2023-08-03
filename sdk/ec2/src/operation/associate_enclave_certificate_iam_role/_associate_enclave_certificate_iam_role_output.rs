@@ -68,6 +68,10 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         self.certificate_s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
+    pub fn get_certificate_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_s3_bucket_name
+    }
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub fn certificate_s3_object_key(
         mut self,
@@ -84,6 +88,10 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         self.certificate_s3_object_key = input;
         self
     }
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    pub fn get_certificate_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_s3_object_key
+    }
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub fn encryption_kms_key_id(
         mut self,
@@ -99,6 +107,10 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
     ) -> Self {
         self.encryption_kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
+    pub fn get_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_kms_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

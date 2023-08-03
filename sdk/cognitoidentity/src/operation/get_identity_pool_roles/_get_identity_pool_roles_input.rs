@@ -47,6 +47,10 @@ impl GetIdentityPoolRolesInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Consumes the builder and constructs a [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
     pub fn build(
         self,

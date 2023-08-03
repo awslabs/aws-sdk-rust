@@ -83,6 +83,10 @@ impl CreateHostedZoneOutputBuilder {
         self.hosted_zone = input;
         self
     }
+    /// <p>A complex type that contains general information about the hosted zone.</p>
+    pub fn get_hosted_zone(&self) -> &::std::option::Option<crate::types::HostedZone> {
+        &self.hosted_zone
+    }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl CreateHostedZoneOutputBuilder {
     ) -> Self {
         self.change_info = input;
         self
+    }
+    /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
+    pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
+        &self.change_info
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
@@ -109,6 +117,10 @@ impl CreateHostedZoneOutputBuilder {
         self.delegation_set = input;
         self
     }
+    /// <p>A complex type that describes the name servers for this hosted zone.</p>
+    pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
+        &self.delegation_set
+    }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl CreateHostedZoneOutputBuilder {
         self.vpc = input;
         self
     }
+    /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        &self.vpc
+    }
     /// <p>The unique URL representing the new hosted zone.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl CreateHostedZoneOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The unique URL representing the new hosted zone.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

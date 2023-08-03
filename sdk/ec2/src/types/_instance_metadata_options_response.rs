@@ -115,6 +115,12 @@ impl InstanceMetadataOptionsResponseBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the metadata option changes.</p>
+    /// <p> <code>pending</code> - The metadata options are being updated and the instance is not ready to process metadata traffic with the new selection.</p>
+    /// <p> <code>applied</code> - The metadata options have been successfully applied on the instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptionsState> {
+        &self.state
+    }
     /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
     /// <ul>
     /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
@@ -138,6 +144,15 @@ impl InstanceMetadataOptionsResponseBuilder {
         self.http_tokens = input;
         self
     }
+    /// <p>IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code> (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance metadata with or without a session token in your request. If you retrieve the IAM role credentials without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials are returned.</p> </li>
+    /// <li> <p> <code>required</code> - When IMDSv2 is required, you must send a session token with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>optional</code> </p>
+    pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokensState> {
+        &self.http_tokens
+    }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
@@ -151,6 +166,12 @@ impl InstanceMetadataOptionsResponseBuilder {
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
+    }
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
+    /// <p>Default: 1</p>
+    /// <p>Possible values: Integers from 1 to 64</p>
+    pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
+        &self.http_put_response_hop_limit
     }
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
@@ -166,6 +187,13 @@ impl InstanceMetadataOptionsResponseBuilder {
     ) -> Self {
         self.http_endpoint = input;
         self
+    }
+    /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+    /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+    pub fn get_http_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataEndpointState> {
+        &self.http_endpoint
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
     pub fn http_protocol_ipv6(
@@ -183,6 +211,12 @@ impl InstanceMetadataOptionsResponseBuilder {
         self.http_protocol_ipv6 = input;
         self
     }
+    /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    pub fn get_http_protocol_ipv6(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataProtocolState> {
+        &self.http_protocol_ipv6
+    }
     /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     pub fn instance_metadata_tags(
         mut self,
@@ -198,6 +232,12 @@ impl InstanceMetadataOptionsResponseBuilder {
     ) -> Self {
         self.instance_metadata_tags = input;
         self
+    }
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    pub fn get_instance_metadata_tags(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
+        &self.instance_metadata_tags
     }
     /// Consumes the builder and constructs a [`InstanceMetadataOptionsResponse`](crate::types::InstanceMetadataOptionsResponse).
     pub fn build(self) -> crate::types::InstanceMetadataOptionsResponse {

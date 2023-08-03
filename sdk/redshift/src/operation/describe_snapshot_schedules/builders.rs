@@ -36,6 +36,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSnapshotSchedules as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>A unique identifier for a snapshot schedule.</p>
     pub fn schedule_identifier(
         mut self,
@@ -156,6 +164,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
+    }
+    /// <p>A unique identifier for a snapshot schedule.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_identifier()
     }
     /// Appends an item to `TagKeys`.
     ///
@@ -174,6 +186,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
+    /// <p>The key value for a snapshot schedule tag.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
+    }
     /// Appends an item to `TagValues`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -191,6 +207,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self.inner = self.inner.set_tag_values(input);
         self
     }
+    /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_values()
+    }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -201,6 +221,10 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -210,5 +234,9 @@ impl DescribeSnapshotSchedulesFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

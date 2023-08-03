@@ -36,6 +36,10 @@ impl ListSpacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSpaces as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_spaces::builders::ListSpacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl ListSpacesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

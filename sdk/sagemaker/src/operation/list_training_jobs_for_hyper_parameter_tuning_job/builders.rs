@@ -36,6 +36,10 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTrainingJobsForHyperParameterTuningJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,12 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
         self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
         self
     }
+    /// <p>The name of the tuning job whose training jobs you want to list.</p>
+    pub fn get_hyper_parameter_tuning_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hyper_parameter_tuning_job_name()
+    }
     /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,6 +132,10 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of training jobs to return. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -131,6 +145,10 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of training jobs to return. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A filter that returns only training jobs with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::TrainingJobStatus) -> Self {
@@ -144,6 +162,10 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
+    }
+    /// <p>A filter that returns only training jobs with the specified status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
+        self.inner.get_status_equals()
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
@@ -160,6 +182,11 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TrainingJobSortByOptions> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -169,5 +196,9 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

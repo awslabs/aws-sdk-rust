@@ -49,6 +49,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub fn value_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_from = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     pub fn set_value_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_from = input;
         self
+    }
+    /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
+    pub fn get_value_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_from
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {

@@ -48,6 +48,10 @@ impl ResourceReceivingAccessBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Lightsail instance.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
     pub fn resource_type(
         mut self,
@@ -63,6 +67,10 @@ impl ResourceReceivingAccessBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceReceivingAccess`](crate::types::ResourceReceivingAccess).
     pub fn build(self) -> crate::types::ResourceReceivingAccess {

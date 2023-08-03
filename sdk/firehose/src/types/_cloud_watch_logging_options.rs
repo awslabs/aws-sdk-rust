@@ -56,6 +56,10 @@ impl CloudWatchLoggingOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables or disables CloudWatch logging.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
     pub fn log_group_name(
         mut self,
@@ -72,6 +76,10 @@ impl CloudWatchLoggingOptionsBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
     pub fn log_stream_name(
         mut self,
@@ -87,6 +95,10 @@ impl CloudWatchLoggingOptionsBuilder {
     ) -> Self {
         self.log_stream_name = input;
         self
+    }
+    /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptions`](crate::types::CloudWatchLoggingOptions).
     pub fn build(self) -> crate::types::CloudWatchLoggingOptions {

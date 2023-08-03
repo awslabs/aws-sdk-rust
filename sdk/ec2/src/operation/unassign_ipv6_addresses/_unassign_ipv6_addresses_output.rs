@@ -72,6 +72,10 @@ impl UnassignIpv6AddressesOutputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// Appends an item to `unassigned_ipv6_addresses`.
     ///
     /// To override the contents of this collection use [`set_unassigned_ipv6_addresses`](Self::set_unassigned_ipv6_addresses).
@@ -94,6 +98,12 @@ impl UnassignIpv6AddressesOutputBuilder {
         self.unassigned_ipv6_addresses = input;
         self
     }
+    /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
+    pub fn get_unassigned_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unassigned_ipv6_addresses
+    }
     /// Appends an item to `unassigned_ipv6_prefixes`.
     ///
     /// To override the contents of this collection use [`set_unassigned_ipv6_prefixes`](Self::set_unassigned_ipv6_prefixes).
@@ -115,6 +125,12 @@ impl UnassignIpv6AddressesOutputBuilder {
     ) -> Self {
         self.unassigned_ipv6_prefixes = input;
         self
+    }
+    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    pub fn get_unassigned_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unassigned_ipv6_prefixes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

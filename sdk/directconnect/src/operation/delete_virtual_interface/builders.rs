@@ -36,6 +36,13 @@ impl DeleteVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVirtualInterface as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteVirtualInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
     }
 }

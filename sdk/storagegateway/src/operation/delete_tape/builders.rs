@@ -36,6 +36,10 @@ impl DeleteTapeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTape as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tape::builders::DeleteTapeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteTapeFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tape_arn(input.into());
@@ -128,6 +136,10 @@ impl DeleteTapeFluentBuilder {
         self.inner = self.inner.set_tape_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tape_arn()
+    }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.inner = self.inner.bypass_governance_retention(input);
@@ -137,5 +149,9 @@ impl DeleteTapeFluentBuilder {
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bypass_governance_retention(input);
         self
+    }
+    /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bypass_governance_retention()
     }
 }

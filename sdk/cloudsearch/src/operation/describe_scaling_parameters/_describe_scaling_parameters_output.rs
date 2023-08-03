@@ -52,6 +52,12 @@ impl DescribeScalingParametersOutputBuilder {
         self.scaling_parameters = input;
         self
     }
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    pub fn get_scaling_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalingParametersStatus> {
+        &self.scaling_parameters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

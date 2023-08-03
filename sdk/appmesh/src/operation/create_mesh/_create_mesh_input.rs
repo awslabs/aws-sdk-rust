@@ -63,6 +63,10 @@ impl CreateMeshInputBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name to use for the service mesh.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The service mesh specification to apply.</p>
     pub fn spec(mut self, input: crate::types::MeshSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreateMeshInputBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::MeshSpec>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The service mesh specification to apply.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::MeshSpec> {
+        &self.spec
     }
     /// Appends an item to `tags`.
     ///
@@ -92,6 +100,10 @@ impl CreateMeshInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl CreateMeshInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
     pub fn build(

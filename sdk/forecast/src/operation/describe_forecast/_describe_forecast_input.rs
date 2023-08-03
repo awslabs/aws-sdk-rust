@@ -40,6 +40,10 @@ impl DescribeForecastInputBuilder {
         self.forecast_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_arn
+    }
     /// Consumes the builder and constructs a [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
     pub fn build(
         self,

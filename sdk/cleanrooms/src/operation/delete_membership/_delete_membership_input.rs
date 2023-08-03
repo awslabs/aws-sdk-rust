@@ -46,6 +46,10 @@ impl DeleteMembershipInputBuilder {
         self.membership_identifier = input;
         self
     }
+    /// <p>The identifier for a membership resource.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
     pub fn build(
         self,

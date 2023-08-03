@@ -36,6 +36,12 @@ impl GetAttributeGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAttributeGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetAttributeGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self
+    }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_group()
     }
 }

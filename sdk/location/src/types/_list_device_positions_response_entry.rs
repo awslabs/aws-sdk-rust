@@ -89,6 +89,10 @@ impl ListDevicePositionsResponseEntryBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device for this position.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl ListDevicePositionsResponseEntryBuilder {
     ) -> Self {
         self.sample_time = input;
         self
+    }
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_time
     }
     /// Appends an item to `position`.
     ///
@@ -118,6 +126,10 @@ impl ListDevicePositionsResponseEntryBuilder {
         self.position = input;
         self
     }
+    /// <p>The last known device position. Empty if no positions currently stored.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.position
+    }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(mut self, input: crate::types::PositionalAccuracy) -> Self {
         self.accuracy = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl ListDevicePositionsResponseEntryBuilder {
     ) -> Self {
         self.accuracy = input;
         self
+    }
+    /// <p>The accuracy of the device position.</p>
+    pub fn get_accuracy(&self) -> &::std::option::Option<crate::types::PositionalAccuracy> {
+        &self.accuracy
     }
     /// Adds a key-value pair to `position_properties`.
     ///
@@ -155,6 +171,14 @@ impl ListDevicePositionsResponseEntryBuilder {
     ) -> Self {
         self.position_properties = input;
         self
+    }
+    /// <p>The properties associated with the position.</p>
+    pub fn get_position_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.position_properties
     }
     /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::types::ListDevicePositionsResponseEntry).
     pub fn build(self) -> crate::types::ListDevicePositionsResponseEntry {

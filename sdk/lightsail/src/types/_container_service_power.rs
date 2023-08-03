@@ -81,6 +81,10 @@ impl ContainerServicePowerBuilder {
         self.power_id = input;
         self
     }
+    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    pub fn get_power_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.power_id
+    }
     /// <p>The monthly price of the power in USD.</p>
     pub fn price(mut self, input: f32) -> Self {
         self.price = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ContainerServicePowerBuilder {
     pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
         self.price = input;
         self
+    }
+    /// <p>The monthly price of the power in USD.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f32> {
+        &self.price
     }
     /// <p>The number of vCPUs included in the power.</p>
     pub fn cpu_count(mut self, input: f32) -> Self {
@@ -101,6 +109,10 @@ impl ContainerServicePowerBuilder {
         self.cpu_count = input;
         self
     }
+    /// <p>The number of vCPUs included in the power.</p>
+    pub fn get_cpu_count(&self) -> &::std::option::Option<f32> {
+        &self.cpu_count
+    }
     /// <p>The amount of RAM (in GB) of the power.</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
         self.ram_size_in_gb = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ContainerServicePowerBuilder {
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
+    }
+    /// <p>The amount of RAM (in GB) of the power.</p>
+    pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
+        &self.ram_size_in_gb
     }
     /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +137,10 @@ impl ContainerServicePowerBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A Boolean value indicating whether the power is active and can be specified for container services.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -130,6 +150,10 @@ impl ContainerServicePowerBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the power is active and can be specified for container services.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// Consumes the builder and constructs a [`ContainerServicePower`](crate::types::ContainerServicePower).
     pub fn build(self) -> crate::types::ContainerServicePower {

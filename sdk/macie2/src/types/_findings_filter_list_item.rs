@@ -83,6 +83,10 @@ impl FindingsFilterListItemBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FindingsFilterAction> {
+        &self.action
+    }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl FindingsFilterListItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the filter.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The unique identifier for the filter.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,6 +111,10 @@ impl FindingsFilterListItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the filter.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The custom name of the filter.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl FindingsFilterListItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The custom name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +153,14 @@ impl FindingsFilterListItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`FindingsFilterListItem`](crate::types::FindingsFilterListItem).
     pub fn build(self) -> crate::types::FindingsFilterListItem {

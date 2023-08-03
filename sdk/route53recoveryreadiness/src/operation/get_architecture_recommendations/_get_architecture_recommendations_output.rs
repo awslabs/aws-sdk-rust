@@ -66,6 +66,10 @@ impl GetArchitectureRecommendationsOutputBuilder {
         self.last_audit_timestamp = input;
         self
     }
+    /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
+    pub fn get_last_audit_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_audit_timestamp
+    }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl GetArchitectureRecommendationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `recommendations`.
     ///
@@ -94,6 +102,12 @@ impl GetArchitectureRecommendationsOutputBuilder {
     ) -> Self {
         self.recommendations = input;
         self
+    }
+    /// <p>A list of the recommendations for the customer's application.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

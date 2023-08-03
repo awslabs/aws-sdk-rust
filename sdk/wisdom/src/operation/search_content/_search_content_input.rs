@@ -63,6 +63,10 @@ impl SearchContentInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SearchContentInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(
@@ -89,6 +97,10 @@ impl SearchContentInputBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The search expression to filter results.</p>
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl SearchContentInputBuilder {
     ) -> Self {
         self.search_expression = input;
         self
+    }
+    /// <p>The search expression to filter results.</p>
+    pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::SearchExpression> {
+        &self.search_expression
     }
     /// Consumes the builder and constructs a [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
     pub fn build(

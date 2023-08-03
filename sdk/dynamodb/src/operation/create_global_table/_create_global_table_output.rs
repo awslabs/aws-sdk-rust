@@ -53,6 +53,12 @@ impl CreateGlobalTableOutputBuilder {
         self.global_table_description = input;
         self
     }
+    /// <p>Contains the details of the global table.</p>
+    pub fn get_global_table_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlobalTableDescription> {
+        &self.global_table_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

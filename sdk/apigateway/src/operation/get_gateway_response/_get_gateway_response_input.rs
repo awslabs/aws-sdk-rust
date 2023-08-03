@@ -49,6 +49,10 @@ impl GetGatewayResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl GetGatewayResponseInputBuilder {
     ) -> Self {
         self.response_type = input;
         self
+    }
+    /// <p>The response type of the associated GatewayResponse.</p>
+    pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
+        &self.response_type
     }
     /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::operation::get_gateway_response::GetGatewayResponseInput).
     pub fn build(

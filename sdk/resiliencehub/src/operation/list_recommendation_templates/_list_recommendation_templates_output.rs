@@ -58,6 +58,10 @@ impl ListRecommendationTemplatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recommendation_templates`.
     ///
     /// To override the contents of this collection use [`set_recommendation_templates`](Self::set_recommendation_templates).
@@ -76,6 +80,12 @@ impl ListRecommendationTemplatesOutputBuilder {
     ) -> Self {
         self.recommendation_templates = input;
         self
+    }
+    /// <p>The recommendation templates for the Resilience Hub applications.</p>
+    pub fn get_recommendation_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>> {
+        &self.recommendation_templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

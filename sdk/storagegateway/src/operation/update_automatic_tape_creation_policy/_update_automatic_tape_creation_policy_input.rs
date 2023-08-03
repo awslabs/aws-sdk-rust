@@ -63,6 +63,12 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
         self.automatic_tape_creation_rules = input;
         self
     }
+    /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
+    pub fn get_automatic_tape_creation_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
+        &self.automatic_tape_creation_rules
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`UpdateAutomaticTapeCreationPolicyInput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput, ::aws_smithy_http::operation::error::BuildError>{

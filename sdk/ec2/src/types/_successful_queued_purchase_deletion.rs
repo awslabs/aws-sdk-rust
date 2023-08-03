@@ -46,6 +46,10 @@ impl SuccessfulQueuedPurchaseDeletionBuilder {
         self.reserved_instances_id = input;
         self
     }
+    /// <p>The ID of the Reserved Instance.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
+    }
     /// Consumes the builder and constructs a [`SuccessfulQueuedPurchaseDeletion`](crate::types::SuccessfulQueuedPurchaseDeletion).
     pub fn build(self) -> crate::types::SuccessfulQueuedPurchaseDeletion {
         crate::types::SuccessfulQueuedPurchaseDeletion {

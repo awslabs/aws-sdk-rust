@@ -50,6 +50,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespaced kernel parameter for which to set a value.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The value of the parameter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the parameter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
     pub fn build(

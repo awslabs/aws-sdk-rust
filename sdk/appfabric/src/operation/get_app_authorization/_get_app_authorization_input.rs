@@ -55,6 +55,10 @@ impl GetAppAuthorizationInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     pub fn app_authorization_identifier(
         mut self,
@@ -70,6 +74,12 @@ impl GetAppAuthorizationInputBuilder {
     ) -> Self {
         self.app_authorization_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    pub fn get_app_authorization_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.app_authorization_identifier
     }
     /// Consumes the builder and constructs a [`GetAppAuthorizationInput`](crate::operation::get_app_authorization::GetAppAuthorizationInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl SimplifiedApplicationBuilder {
         self.name = input;
         self
     }
+    /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SimplifiedApplicationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`SimplifiedApplication`](crate::types::SimplifiedApplication).
     pub fn build(self) -> crate::types::SimplifiedApplication {

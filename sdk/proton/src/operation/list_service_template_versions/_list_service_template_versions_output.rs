@@ -58,6 +58,10 @@ impl ListServiceTemplateVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `template_versions`.
     ///
     /// To override the contents of this collection use [`set_template_versions`](Self::set_template_versions).
@@ -76,6 +80,12 @@ impl ListServiceTemplateVersionsOutputBuilder {
     ) -> Self {
         self.template_versions = input;
         self
+    }
+    /// <p>An array of major or minor versions of a service template with detail data.</p>
+    pub fn get_template_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>> {
+        &self.template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

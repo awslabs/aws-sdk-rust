@@ -60,6 +60,10 @@ impl UpdateBridgeOutputInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Update an existing network output.
     pub fn network_output(mut self, input: crate::types::UpdateBridgeNetworkOutputRequest) -> Self {
         self.network_output = ::std::option::Option::Some(input);
@@ -73,6 +77,12 @@ impl UpdateBridgeOutputInputBuilder {
         self.network_output = input;
         self
     }
+    /// Update an existing network output.
+    pub fn get_network_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest> {
+        &self.network_output
+    }
     /// The name of the bridge output that you want to update.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_name = ::std::option::Option::Some(input.into());
@@ -82,6 +92,10 @@ impl UpdateBridgeOutputInputBuilder {
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_name = input;
         self
+    }
+    /// The name of the bridge output that you want to update.
+    pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_name
     }
     /// Consumes the builder and constructs a [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
     pub fn build(

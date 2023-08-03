@@ -70,6 +70,12 @@ impl PredictionExplanationsBuilder {
         self.variable_impact_explanations = input;
         self
     }
+    /// <p> The details of the event variable's impact on the prediction score. </p>
+    pub fn get_variable_impact_explanations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableImpactExplanation>> {
+        &self.variable_impact_explanations
+    }
     /// Appends an item to `aggregated_variables_impact_explanations`.
     ///
     /// To override the contents of this collection use [`set_aggregated_variables_impact_explanations`](Self::set_aggregated_variables_impact_explanations).
@@ -97,6 +103,14 @@ impl PredictionExplanationsBuilder {
     ) -> Self {
         self.aggregated_variables_impact_explanations = input;
         self
+    }
+    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub fn get_aggregated_variables_impact_explanations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>
+    {
+        &self.aggregated_variables_impact_explanations
     }
     /// Consumes the builder and constructs a [`PredictionExplanations`](crate::types::PredictionExplanations).
     pub fn build(self) -> crate::types::PredictionExplanations {

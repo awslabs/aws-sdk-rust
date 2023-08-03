@@ -94,6 +94,10 @@ impl SchemaListItemBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>the name of the registry where the schema resides.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl SchemaListItemBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl SchemaListItemBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>A description for the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl SchemaListItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the schema.</p>
     pub fn schema_status(mut self, input: crate::types::SchemaStatus) -> Self {
@@ -137,6 +153,10 @@ impl SchemaListItemBuilder {
         self.schema_status = input;
         self
     }
+    /// <p>The status of the schema.</p>
+    pub fn get_schema_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
+        &self.schema_status
+    }
     /// <p>The date and time that a schema was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -147,6 +167,10 @@ impl SchemaListItemBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that a schema was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The date and time that a schema was updated.</p>
     pub fn updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_time = ::std::option::Option::Some(input.into());
@@ -156,6 +180,10 @@ impl SchemaListItemBuilder {
     pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_time = input;
         self
+    }
+    /// <p>The date and time that a schema was updated.</p>
+    pub fn get_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_time
     }
     /// Consumes the builder and constructs a [`SchemaListItem`](crate::types::SchemaListItem).
     pub fn build(self) -> crate::types::SchemaListItem {

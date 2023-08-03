@@ -46,6 +46,10 @@ impl EntitledApplicationBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The identifier of the application.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// Consumes the builder and constructs a [`EntitledApplication`](crate::types::EntitledApplication).
     pub fn build(self) -> crate::types::EntitledApplication {
         crate::types::EntitledApplication {

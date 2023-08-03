@@ -60,6 +60,12 @@ impl AclPendingChangesBuilder {
         self.user_names_to_remove = input;
         self
     }
+    /// <p>A list of user names being removed from the ACL</p>
+    pub fn get_user_names_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names_to_remove
+    }
     /// Appends an item to `user_names_to_add`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
@@ -81,6 +87,12 @@ impl AclPendingChangesBuilder {
     ) -> Self {
         self.user_names_to_add = input;
         self
+    }
+    /// <p>A list of users being added to the ACL</p>
+    pub fn get_user_names_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names_to_add
     }
     /// Consumes the builder and constructs a [`AclPendingChanges`](crate::types::AclPendingChanges).
     pub fn build(self) -> crate::types::AclPendingChanges {

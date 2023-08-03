@@ -36,6 +36,13 @@ impl GetWorldTemplateBodyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorldTemplateBody as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetWorldTemplateBodyFluentBuilder {
         self.inner = self.inner.set_template(input);
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template()
+    }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn generation_job(
         mut self,
@@ -141,5 +152,9 @@ impl GetWorldTemplateBodyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_generation_job(input);
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_generation_job()
     }
 }

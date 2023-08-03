@@ -56,6 +56,10 @@ impl DatabaseIdentifierBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the database resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database.</p>
     pub fn database_name(
         mut self,
@@ -72,6 +76,10 @@ impl DatabaseIdentifierBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Region of the target database.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DatabaseIdentifierBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>Region of the target database.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`DatabaseIdentifier`](crate::types::DatabaseIdentifier).
     pub fn build(self) -> crate::types::DatabaseIdentifier {

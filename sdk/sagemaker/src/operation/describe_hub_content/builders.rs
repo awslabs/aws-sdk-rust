@@ -38,6 +38,12 @@ impl DescribeHubContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHubContent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl DescribeHubContentFluentBuilder {
         self.inner = self.inner.set_hub_name(input);
         self
     }
+    /// <p>The name of the hub that contains the content to describe.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_name()
+    }
     /// <p>The type of content in the hub.</p>
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.inner = self.inner.hub_content_type(input);
@@ -140,6 +150,10 @@ impl DescribeHubContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hub_content_type(input);
         self
+    }
+    /// <p>The type of content in the hub.</p>
+    pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
+        self.inner.get_hub_content_type()
     }
     /// <p>The name of the content to describe.</p>
     pub fn hub_content_name(
@@ -157,6 +171,10 @@ impl DescribeHubContentFluentBuilder {
         self.inner = self.inner.set_hub_content_name(input);
         self
     }
+    /// <p>The name of the content to describe.</p>
+    pub fn get_hub_content_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_content_name()
+    }
     /// <p>The version of the content to describe.</p>
     pub fn hub_content_version(
         mut self,
@@ -172,5 +190,9 @@ impl DescribeHubContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hub_content_version(input);
         self
+    }
+    /// <p>The version of the content to describe.</p>
+    pub fn get_hub_content_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_content_version()
     }
 }

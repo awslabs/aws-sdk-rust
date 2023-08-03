@@ -39,6 +39,10 @@ impl DeleteTrialInputBuilder {
         self.trial_name = input;
         self
     }
+    /// <p>The name of the trial to delete.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
+    }
     /// Consumes the builder and constructs a [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
     pub fn build(
         self,

@@ -54,6 +54,11 @@ impl DataRetrievalRuleBuilder {
         self.strategy = input;
         self
     }
+    /// <p>The type of data retrieval policy to set.</p>
+    /// <p>Valid values: BytesPerHour|FreeTier|None</p>
+    pub fn get_strategy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.strategy
+    }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub fn bytes_per_hour(mut self, input: i64) -> Self {
@@ -65,6 +70,11 @@ impl DataRetrievalRuleBuilder {
     pub fn set_bytes_per_hour(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_per_hour = input;
         self
+    }
+    /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+    /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
+    pub fn get_bytes_per_hour(&self) -> &::std::option::Option<i64> {
+        &self.bytes_per_hour
     }
     /// Consumes the builder and constructs a [`DataRetrievalRule`](crate::types::DataRetrievalRule).
     pub fn build(self) -> crate::types::DataRetrievalRule {

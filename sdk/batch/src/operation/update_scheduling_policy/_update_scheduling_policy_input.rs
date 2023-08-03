@@ -50,6 +50,10 @@ impl UpdateSchedulingPolicyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The fair share policy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.fairshare_policy = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl UpdateSchedulingPolicyInputBuilder {
     ) -> Self {
         self.fairshare_policy = input;
         self
+    }
+    /// <p>The fair share policy.</p>
+    pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
+        &self.fairshare_policy
     }
     /// Consumes the builder and constructs a [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
     pub fn build(

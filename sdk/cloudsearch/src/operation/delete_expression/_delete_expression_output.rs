@@ -51,6 +51,10 @@ impl DeleteExpressionOutputBuilder {
         self.expression = input;
         self
     }
+    /// <p>The status of the expression being deleted.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<crate::types::ExpressionStatus> {
+        &self.expression
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

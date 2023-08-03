@@ -63,6 +63,10 @@ impl VmwareTagBuilder {
         self.vmware_category = input;
         self
     }
+    /// <p>The is the category of VMware.</p>
+    pub fn get_vmware_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vmware_category
+    }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn vmware_tag_name(
         mut self,
@@ -79,6 +83,10 @@ impl VmwareTagBuilder {
         self.vmware_tag_name = input;
         self
     }
+    /// <p>This is the user-defined name of a VMware tag.</p>
+    pub fn get_vmware_tag_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vmware_tag_name
+    }
     /// <p>This is a user-defined description of a VMware tag.</p>
     pub fn vmware_tag_description(
         mut self,
@@ -94,6 +102,10 @@ impl VmwareTagBuilder {
     ) -> Self {
         self.vmware_tag_description = input;
         self
+    }
+    /// <p>This is a user-defined description of a VMware tag.</p>
+    pub fn get_vmware_tag_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vmware_tag_description
     }
     /// Consumes the builder and constructs a [`VmwareTag`](crate::types::VmwareTag).
     pub fn build(self) -> crate::types::VmwareTag {

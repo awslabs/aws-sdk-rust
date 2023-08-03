@@ -63,6 +63,12 @@ impl ComparisonFormatConfigurationBuilder {
         self.number_display_format_configuration = input;
         self
     }
+    /// <p>The number display format.</p>
+    pub fn get_number_display_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberDisplayFormatConfiguration> {
+        &self.number_display_format_configuration
+    }
     /// <p>The percentage display format.</p>
     pub fn percentage_display_format_configuration(
         mut self,
@@ -78,6 +84,12 @@ impl ComparisonFormatConfigurationBuilder {
     ) -> Self {
         self.percentage_display_format_configuration = input;
         self
+    }
+    /// <p>The percentage display format.</p>
+    pub fn get_percentage_display_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PercentageDisplayFormatConfiguration> {
+        &self.percentage_display_format_configuration
     }
     /// Consumes the builder and constructs a [`ComparisonFormatConfiguration`](crate::types::ComparisonFormatConfiguration).
     pub fn build(self) -> crate::types::ComparisonFormatConfiguration {

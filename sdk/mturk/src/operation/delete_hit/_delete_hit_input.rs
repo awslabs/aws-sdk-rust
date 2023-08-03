@@ -39,6 +39,10 @@ impl DeleteHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The ID of the HIT to be deleted.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// Consumes the builder and constructs a [`DeleteHitInput`](crate::operation::delete_hit::DeleteHitInput).
     pub fn build(
         self,

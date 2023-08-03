@@ -47,6 +47,10 @@ impl UpdateRuleVersionOutputBuilder {
         self.rule = input;
         self
     }
+    /// <p>The new rule version that was created.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

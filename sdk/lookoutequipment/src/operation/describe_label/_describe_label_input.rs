@@ -53,6 +53,10 @@ impl DescribeLabelInputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> Returns the name of the group containing the label. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// <p> Returns the ID of the label. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeLabelInputBuilder {
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_id = input;
         self
+    }
+    /// <p> Returns the ID of the label. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_id
     }
     /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
     pub fn build(

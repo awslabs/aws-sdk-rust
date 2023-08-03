@@ -52,6 +52,10 @@ impl ReplaceNetworkAclAssociationOutputBuilder {
         self.new_association_id = input;
         self
     }
+    /// <p>The ID of the new association.</p>
+    pub fn get_new_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_association_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

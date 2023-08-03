@@ -57,6 +57,10 @@ impl RemoveTagsFromStreamInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -76,6 +80,10 @@ impl RemoveTagsFromStreamInputBuilder {
         self.tag_keys = input;
         self
     }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl RemoveTagsFromStreamInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl RuleActionBuilder {
         self.block = input;
         self
     }
+    /// <p>Instructs WAF to block the web request.</p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::BlockAction> {
+        &self.block
+    }
     /// <p>Instructs WAF to allow the web request.</p>
     pub fn allow(mut self, input: crate::types::AllowAction) -> Self {
         self.allow = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl RuleActionBuilder {
         self.allow = input;
         self
     }
+    /// <p>Instructs WAF to allow the web request.</p>
+    pub fn get_allow(&self) -> &::std::option::Option<crate::types::AllowAction> {
+        &self.allow
+    }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub fn count(mut self, input: crate::types::CountAction) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl RuleActionBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<crate::types::CountAction>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
+    pub fn get_count(&self) -> &::std::option::Option<crate::types::CountAction> {
+        &self.count
     }
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
     pub fn captcha(mut self, input: crate::types::CaptchaAction) -> Self {
@@ -105,6 +117,10 @@ impl RuleActionBuilder {
         self.captcha = input;
         self
     }
+    /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
+    pub fn get_captcha(&self) -> &::std::option::Option<crate::types::CaptchaAction> {
+        &self.captcha
+    }
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
     pub fn challenge(mut self, input: crate::types::ChallengeAction) -> Self {
         self.challenge = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl RuleActionBuilder {
     ) -> Self {
         self.challenge = input;
         self
+    }
+    /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
+    pub fn get_challenge(&self) -> &::std::option::Option<crate::types::ChallengeAction> {
+        &self.challenge
     }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     pub fn build(self) -> crate::types::RuleAction {

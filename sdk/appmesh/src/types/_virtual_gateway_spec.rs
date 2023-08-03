@@ -62,6 +62,12 @@ impl VirtualGatewaySpecBuilder {
         self.backend_defaults = input;
         self
     }
+    /// <p>A reference to an object that represents the defaults for backends.</p>
+    pub fn get_backend_defaults(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayBackendDefaults> {
+        &self.backend_defaults
+    }
     /// Appends an item to `listeners`.
     ///
     /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
@@ -81,6 +87,12 @@ impl VirtualGatewaySpecBuilder {
         self.listeners = input;
         self
     }
+    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
+    pub fn get_listeners(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>> {
+        &self.listeners
+    }
     /// <p>An object that represents logging information.</p>
     pub fn logging(mut self, input: crate::types::VirtualGatewayLogging) -> Self {
         self.logging = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl VirtualGatewaySpecBuilder {
     ) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>An object that represents logging information.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::VirtualGatewayLogging> {
+        &self.logging
     }
     /// Consumes the builder and constructs a [`VirtualGatewaySpec`](crate::types::VirtualGatewaySpec).
     pub fn build(self) -> crate::types::VirtualGatewaySpec {

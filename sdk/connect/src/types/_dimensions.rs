@@ -56,6 +56,10 @@ impl DimensionsBuilder {
         self.queue = input;
         self
     }
+    /// <p>Information about the queue for which metrics are returned.</p>
+    pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueReference> {
+        &self.queue
+    }
     /// <p>The channel used for grouping and filters.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DimensionsBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The channel used for grouping and filters.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
     }
     /// <p>Information about the routing profile assigned to the user.</p>
     pub fn routing_profile(mut self, input: crate::types::RoutingProfileReference) -> Self {
@@ -78,6 +86,12 @@ impl DimensionsBuilder {
     ) -> Self {
         self.routing_profile = input;
         self
+    }
+    /// <p>Information about the routing profile assigned to the user.</p>
+    pub fn get_routing_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingProfileReference> {
+        &self.routing_profile
     }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {

@@ -92,6 +92,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that the image belongs to.</p>
     pub fn repository_name(
         mut self,
@@ -107,6 +111,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository that the image belongs to.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
@@ -128,6 +136,15 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The architecture of the image. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>arm64</code> </p> </li>
+    /// <li> <p> <code>i386</code> </p> </li>
+    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// </ul>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
     /// <p>The sha256 digest of the image manifest.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -137,6 +154,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The sha256 digest of the image manifest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// Appends an item to `image_tags`.
     ///
@@ -157,6 +178,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The list of tags that are associated with the image.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn image_published_at(
@@ -174,6 +199,11 @@ impl AwsEcrContainerImageDetailsBuilder {
     ) -> Self {
         self.image_published_at = input;
         self
+    }
+    /// <p>The date and time when the image was pushed to the repository.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_image_published_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_published_at
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
     pub fn build(self) -> crate::types::AwsEcrContainerImageDetails {

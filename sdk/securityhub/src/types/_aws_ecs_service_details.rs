@@ -272,6 +272,14 @@ impl AwsEcsServiceDetailsBuilder {
         self.capacity_provider_strategy = input;
         self
     }
+    /// <p>The capacity provider strategy that the service uses.</p>
+    pub fn get_capacity_provider_strategy(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEcsServiceCapacityProviderStrategyDetails>,
+    > {
+        &self.capacity_provider_strategy
+    }
     /// <p>The ARN of the cluster that hosts the service.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
@@ -281,6 +289,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
+    }
+    /// <p>The ARN of the cluster that hosts the service.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
     }
     /// <p>Deployment parameters for the service. Includes the number of tasks that run and the order in which to start and stop tasks.</p>
     pub fn deployment_configuration(
@@ -298,6 +310,12 @@ impl AwsEcsServiceDetailsBuilder {
         self.deployment_configuration = input;
         self
     }
+    /// <p>Deployment parameters for the service. Includes the number of tasks that run and the order in which to start and stop tasks.</p>
+    pub fn get_deployment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsServiceDeploymentConfigurationDetails> {
+        &self.deployment_configuration
+    }
     /// <p>Contains the deployment controller type that the service uses.</p>
     pub fn deployment_controller(
         mut self,
@@ -314,6 +332,12 @@ impl AwsEcsServiceDetailsBuilder {
         self.deployment_controller = input;
         self
     }
+    /// <p>Contains the deployment controller type that the service uses.</p>
+    pub fn get_deployment_controller(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsServiceDeploymentControllerDetails> {
+        &self.deployment_controller
+    }
     /// <p>The number of instantiations of the task definition to run on the service.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
         self.desired_count = ::std::option::Option::Some(input);
@@ -323,6 +347,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_count = input;
         self
+    }
+    /// <p>The number of instantiations of the task definition to run on the service.</p>
+    pub fn get_desired_count(&self) -> &::std::option::Option<i32> {
+        &self.desired_count
     }
     /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
@@ -334,6 +362,10 @@ impl AwsEcsServiceDetailsBuilder {
         self.enable_ecs_managed_tags = input;
         self
     }
+    /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
+    pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
+        &self.enable_ecs_managed_tags
+    }
     /// <p>Whether the execute command functionality is enabled for the service.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
         self.enable_execute_command = ::std::option::Option::Some(input);
@@ -343,6 +375,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_execute_command = input;
         self
+    }
+    /// <p>Whether the execute command functionality is enabled for the service.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        &self.enable_execute_command
     }
     /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
@@ -357,6 +393,10 @@ impl AwsEcsServiceDetailsBuilder {
         self.health_check_grace_period_seconds = input;
         self
     }
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
+    pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_grace_period_seconds
+    }
     /// <p>The launch type that the service uses.</p>
     /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub fn launch_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -368,6 +408,11 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_launch_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_type = input;
         self
+    }
+    /// <p>The launch type that the service uses.</p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
+    pub fn get_launch_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_type
     }
     /// Appends an item to `load_balancers`.
     ///
@@ -393,6 +438,13 @@ impl AwsEcsServiceDetailsBuilder {
         self.load_balancers = input;
         self
     }
+    /// <p>Information about the load balancers that the service uses.</p>
+    pub fn get_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceLoadBalancersDetails>>
+    {
+        &self.load_balancers
+    }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -402,6 +454,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
     pub fn network_configuration(
@@ -418,6 +474,12 @@ impl AwsEcsServiceDetailsBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationDetails> {
+        &self.network_configuration
     }
     /// Appends an item to `placement_constraints`.
     ///
@@ -443,6 +505,14 @@ impl AwsEcsServiceDetailsBuilder {
         self.placement_constraints = input;
         self
     }
+    /// <p>The placement constraints for the tasks in the service.</p>
+    pub fn get_placement_constraints(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEcsServicePlacementConstraintsDetails>,
+    > {
+        &self.placement_constraints
+    }
     /// Appends an item to `placement_strategies`.
     ///
     /// To override the contents of this collection use [`set_placement_strategies`](Self::set_placement_strategies).
@@ -467,6 +537,14 @@ impl AwsEcsServiceDetailsBuilder {
         self.placement_strategies = input;
         self
     }
+    /// <p>Information about how tasks for the service are placed.</p>
+    pub fn get_placement_strategies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEcsServicePlacementStrategiesDetails>,
+    > {
+        &self.placement_strategies
+    }
     /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
     pub fn platform_version(
         mut self,
@@ -482,6 +560,10 @@ impl AwsEcsServiceDetailsBuilder {
     ) -> Self {
         self.platform_version = input;
         self
+    }
+    /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
     }
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
     /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
@@ -501,6 +583,11 @@ impl AwsEcsServiceDetailsBuilder {
         self.propagate_tags = input;
         self
     }
+    /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<::std::string::String> {
+        &self.propagate_tags
+    }
     /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -510,6 +597,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
@@ -533,6 +624,13 @@ impl AwsEcsServiceDetailsBuilder {
         self.scheduling_strategy = input;
         self
     }
+    /// <p>The scheduling strategy to use for the service.</p>
+    /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
+    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduling_strategy
+    }
     /// <p>The ARN of the service.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
@@ -542,6 +640,10 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
+    }
+    /// <p>The ARN of the service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// <p>The name of the service.</p>
     /// <p>The name can contain up to 255 characters. It can use letters, numbers, underscores, and hyphens.</p>
@@ -554,6 +656,11 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service.</p>
+    /// <p>The name can contain up to 255 characters. It can use letters, numbers, underscores, and hyphens.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Appends an item to `service_registries`.
     ///
@@ -579,6 +686,13 @@ impl AwsEcsServiceDetailsBuilder {
         self.service_registries = input;
         self
     }
+    /// <p>Information about the service discovery registries to assign to the service.</p>
+    pub fn get_service_registries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceServiceRegistriesDetails>>
+    {
+        &self.service_registries
+    }
     /// <p>The task definition to use for tasks in the service.</p>
     pub fn task_definition(
         mut self,
@@ -594,6 +708,10 @@ impl AwsEcsServiceDetailsBuilder {
     ) -> Self {
         self.task_definition = input;
         self
+    }
+    /// <p>The task definition to use for tasks in the service.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceDetails`](crate::types::AwsEcsServiceDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceDetails {

@@ -128,6 +128,10 @@ impl DeletePoolOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     /// <p>The PoolId of the pool that was deleted.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl DeletePoolOutputBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The PoolId of the pool that was deleted.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
@@ -158,6 +166,15 @@ impl DeletePoolOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the pool.</p>
+    /// <ul>
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PoolStatus> {
+        &self.status
+    }
     /// <p>The message type that was associated with the deleted pool.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -171,6 +188,10 @@ impl DeletePoolOutputBuilder {
         self.message_type = input;
         self
     }
+    /// <p>The message type that was associated with the deleted pool.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
+    }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
         self.two_way_enabled = ::std::option::Option::Some(input);
@@ -180,6 +201,10 @@ impl DeletePoolOutputBuilder {
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.two_way_enabled = input;
         self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
     pub fn two_way_channel_arn(
@@ -197,6 +222,10 @@ impl DeletePoolOutputBuilder {
         self.two_way_channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_arn
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
@@ -206,6 +235,10 @@ impl DeletePoolOutputBuilder {
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
+    }
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
     pub fn opt_out_list_name(
@@ -223,6 +256,10 @@ impl DeletePoolOutputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
         self.shared_routes_enabled = ::std::option::Option::Some(input);
@@ -232,6 +269,10 @@ impl DeletePoolOutputBuilder {
     pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.shared_routes_enabled = input;
         self
+    }
+    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
+        &self.shared_routes_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -245,6 +286,10 @@ impl DeletePoolOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

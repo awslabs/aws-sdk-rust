@@ -48,6 +48,10 @@ impl ScanConditionPairBuilder {
         self.key = input;
         self
     }
+    /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ScanConditionPairBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ScanConditionPair`](crate::types::ScanConditionPair).
     pub fn build(self) -> crate::types::ScanConditionPair {

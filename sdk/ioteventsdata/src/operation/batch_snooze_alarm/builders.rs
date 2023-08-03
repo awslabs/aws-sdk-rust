@@ -36,6 +36,12 @@ impl BatchSnoozeAlarmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchSnoozeAlarm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchSnoozeAlarmFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snooze_action_requests(input);
         self
+    }
+    /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_snooze_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>> {
+        self.inner.get_snooze_action_requests()
     }
 }

@@ -38,6 +38,12 @@ impl DeleteEntityTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEntityType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl DeleteEntityTypeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the entity type to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

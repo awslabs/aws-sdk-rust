@@ -40,6 +40,10 @@ impl RequestProgressBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`RequestProgress`](crate::types::RequestProgress).
     pub fn build(self) -> crate::types::RequestProgress {
         crate::types::RequestProgress {

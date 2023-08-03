@@ -73,6 +73,10 @@ impl ListSecretsInputBuilder {
         self.include_planned_deletion = input;
         self
     }
+    /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
+    pub fn get_include_planned_deletion(&self) -> &::std::option::Option<bool> {
+        &self.include_planned_deletion
+    }
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,6 +89,11 @@ impl ListSecretsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of results to include in the response.</p>
+    /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecrets</code> again with this value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +103,10 @@ impl ListSecretsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecrets</code> again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -114,6 +127,10 @@ impl ListSecretsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to apply to the list of secrets.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -126,6 +143,10 @@ impl ListSecretsInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
     pub fn build(

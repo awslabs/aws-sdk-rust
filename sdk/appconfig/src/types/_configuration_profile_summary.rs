@@ -90,6 +90,10 @@ impl ConfigurationProfileSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the configuration profile.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl ConfigurationProfileSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the configuration profile.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the configuration profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl ConfigurationProfileSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configuration profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The URI location of the configuration.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl ConfigurationProfileSummaryBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URI location of the configuration.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Appends an item to `validator_types`.
     ///
@@ -139,6 +155,12 @@ impl ConfigurationProfileSummaryBuilder {
         self.validator_types = input;
         self
     }
+    /// <p>The types of validators in the configuration profile.</p>
+    pub fn get_validator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>> {
+        &self.validator_types
+    }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
@@ -152,6 +174,12 @@ impl ConfigurationProfileSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ConfigurationProfileSummary`](crate::types::ConfigurationProfileSummary).
     pub fn build(self) -> crate::types::ConfigurationProfileSummary {

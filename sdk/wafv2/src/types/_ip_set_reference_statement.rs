@@ -56,6 +56,10 @@ impl IpSetReferenceStatementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -75,6 +79,14 @@ impl IpSetReferenceStatementBuilder {
     ) -> Self {
         self.ip_set_forwarded_ip_config = input;
         self
+    }
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    pub fn get_ip_set_forwarded_ip_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpSetForwardedIpConfig> {
+        &self.ip_set_forwarded_ip_config
     }
     /// Consumes the builder and constructs a [`IpSetReferenceStatement`](crate::types::IpSetReferenceStatement).
     pub fn build(self) -> crate::types::IpSetReferenceStatement {

@@ -51,6 +51,10 @@ impl IngestConfigurationBuilder {
         self.video = input;
         self
     }
+    /// <p>Encoder settings for video.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoConfiguration> {
+        &self.video
+    }
     /// <p>Encoder settings for audio.</p>
     pub fn audio(mut self, input: crate::types::AudioConfiguration) -> Self {
         self.audio = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl IngestConfigurationBuilder {
     ) -> Self {
         self.audio = input;
         self
+    }
+    /// <p>Encoder settings for audio.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioConfiguration> {
+        &self.audio
     }
     /// Consumes the builder and constructs a [`IngestConfiguration`](crate::types::IngestConfiguration).
     pub fn build(self) -> crate::types::IngestConfiguration {

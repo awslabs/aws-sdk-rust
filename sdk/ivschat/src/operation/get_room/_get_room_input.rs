@@ -39,6 +39,10 @@ impl GetRoomInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
     pub fn build(
         self,

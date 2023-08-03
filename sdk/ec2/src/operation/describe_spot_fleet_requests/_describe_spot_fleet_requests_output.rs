@@ -59,6 +59,10 @@ impl DescribeSpotFleetRequestsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `spot_fleet_request_configs`.
     ///
     /// To override the contents of this collection use [`set_spot_fleet_request_configs`](Self::set_spot_fleet_request_configs).
@@ -80,6 +84,12 @@ impl DescribeSpotFleetRequestsOutputBuilder {
     ) -> Self {
         self.spot_fleet_request_configs = input;
         self
+    }
+    /// <p>Information about the configuration of your Spot Fleet.</p>
+    pub fn get_spot_fleet_request_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetRequestConfig>> {
+        &self.spot_fleet_request_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

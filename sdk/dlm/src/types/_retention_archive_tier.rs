@@ -62,6 +62,10 @@ impl RetentionArchiveTierBuilder {
         self.count = input;
         self
     }
+    /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl RetentionArchiveTierBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub fn interval_unit(mut self, input: crate::types::RetentionIntervalUnitValues) -> Self {
@@ -84,6 +92,12 @@ impl RetentionArchiveTierBuilder {
     ) -> Self {
         self.interval_unit = input;
         self
+    }
+    /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
+    pub fn get_interval_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+        &self.interval_unit
     }
     /// Consumes the builder and constructs a [`RetentionArchiveTier`](crate::types::RetentionArchiveTier).
     pub fn build(self) -> crate::types::RetentionArchiveTier {

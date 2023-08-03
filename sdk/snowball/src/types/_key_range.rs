@@ -48,6 +48,10 @@ impl KeyRangeBuilder {
         self.begin_marker = input;
         self
     }
+    /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    pub fn get_begin_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.begin_marker
+    }
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     pub fn end_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_marker = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl KeyRangeBuilder {
     pub fn set_end_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_marker = input;
         self
+    }
+    /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    pub fn get_end_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_marker
     }
     /// Consumes the builder and constructs a [`KeyRange`](crate::types::KeyRange).
     pub fn build(self) -> crate::types::KeyRange {

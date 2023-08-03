@@ -63,6 +63,10 @@ impl EnableAddressTransferInputBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>The allocation ID of an Elastic IP address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
     pub fn transfer_account_id(
         mut self,
@@ -79,6 +83,10 @@ impl EnableAddressTransferInputBuilder {
         self.transfer_account_id = input;
         self
     }
+    /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
+    pub fn get_transfer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_account_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl EnableAddressTransferInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
     pub fn build(

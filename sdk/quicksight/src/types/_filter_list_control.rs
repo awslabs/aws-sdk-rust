@@ -110,6 +110,10 @@ impl FilterListControlBuilder {
         self.filter_control_id = input;
         self
     }
+    /// <p>The ID of the <code>FilterListControl</code>.</p>
+    pub fn get_filter_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_control_id
+    }
     /// <p>The title of the <code>FilterListControl</code>.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl FilterListControlBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the <code>FilterListControl</code>.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The source filter ID of the <code>FilterListControl</code>.</p>
     pub fn source_filter_id(
@@ -136,6 +144,10 @@ impl FilterListControlBuilder {
         self.source_filter_id = input;
         self
     }
+    /// <p>The source filter ID of the <code>FilterListControl</code>.</p>
+    pub fn get_source_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_filter_id
+    }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::ListControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
@@ -148,6 +160,12 @@ impl FilterListControlBuilder {
     ) -> Self {
         self.display_options = input;
         self
+    }
+    /// <p>The display options of a control.</p>
+    pub fn get_display_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListControlDisplayOptions> {
+        &self.display_options
     }
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
@@ -170,6 +188,14 @@ impl FilterListControlBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p> </li>
+    /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from the list.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlListType> {
+        &self.r#type
+    }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn selectable_values(mut self, input: crate::types::FilterSelectableValues) -> Self {
         self.selectable_values = ::std::option::Option::Some(input);
@@ -182,6 +208,12 @@ impl FilterListControlBuilder {
     ) -> Self {
         self.selectable_values = input;
         self
+    }
+    /// <p>A list of selectable values that are used in a control.</p>
+    pub fn get_selectable_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterSelectableValues> {
+        &self.selectable_values
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn cascading_control_configuration(
@@ -198,6 +230,12 @@ impl FilterListControlBuilder {
     ) -> Self {
         self.cascading_control_configuration = input;
         self
+    }
+    /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
+    pub fn get_cascading_control_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
+        &self.cascading_control_configuration
     }
     /// Consumes the builder and constructs a [`FilterListControl`](crate::types::FilterListControl).
     pub fn build(self) -> crate::types::FilterListControl {

@@ -116,6 +116,12 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user associated with the IAM access key related to a finding.</p>
+    /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
+    #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The status of the IAM access key related to a finding.</p>
     pub fn status(mut self, input: crate::types::AwsIamAccessKeyStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -129,6 +135,10 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the IAM access key related to a finding.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AwsIamAccessKeyStatus> {
+        &self.status
+    }
     /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +151,11 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Indicates when the IAM access key was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// <p>The ID of the principal associated with an access key.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -150,6 +165,10 @@ impl AwsIamAccessKeyDetailsBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The ID of the principal associated with an access key.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The type of principal associated with an access key.</p>
     pub fn principal_type(
@@ -167,6 +186,10 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The type of principal associated with an access key.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_type
+    }
     /// <p>The name of the principal.</p>
     pub fn principal_name(
         mut self,
@@ -183,6 +206,10 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.principal_name = input;
         self
     }
+    /// <p>The name of the principal.</p>
+    pub fn get_principal_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_name
+    }
     /// <p>The Amazon Web Services account ID of the account for the key.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -192,6 +219,10 @@ impl AwsIamAccessKeyDetailsBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the account for the key.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The identifier of the access key.</p>
     pub fn access_key_id(
@@ -209,6 +240,10 @@ impl AwsIamAccessKeyDetailsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The identifier of the access key.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>Information about the session that the key was used for.</p>
     pub fn session_context(mut self, input: crate::types::AwsIamAccessKeySessionContext) -> Self {
         self.session_context = ::std::option::Option::Some(input);
@@ -221,6 +256,12 @@ impl AwsIamAccessKeyDetailsBuilder {
     ) -> Self {
         self.session_context = input;
         self
+    }
+    /// <p>Information about the session that the key was used for.</p>
+    pub fn get_session_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsIamAccessKeySessionContext> {
+        &self.session_context
     }
     /// Consumes the builder and constructs a [`AwsIamAccessKeyDetails`](crate::types::AwsIamAccessKeyDetails).
     pub fn build(self) -> crate::types::AwsIamAccessKeyDetails {

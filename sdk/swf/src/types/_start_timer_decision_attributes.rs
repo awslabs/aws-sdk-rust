@@ -70,6 +70,11 @@ impl StartTimerDecisionAttributesBuilder {
         self.timer_id = input;
         self
     }
+    /// <p> The unique ID of the timer.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_id
+    }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -79,6 +84,10 @@ impl StartTimerDecisionAttributesBuilder {
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
+    }
+    /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
@@ -97,6 +106,11 @@ impl StartTimerDecisionAttributesBuilder {
     ) -> Self {
         self.start_to_fire_timeout = input;
         self
+    }
+    /// <p> The duration to wait before firing the timer.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+    pub fn get_start_to_fire_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_fire_timeout
     }
     /// Consumes the builder and constructs a [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
     pub fn build(self) -> crate::types::StartTimerDecisionAttributes {

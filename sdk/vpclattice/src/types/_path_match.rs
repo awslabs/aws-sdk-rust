@@ -48,6 +48,10 @@ impl PathMatchBuilder {
         self.r#match = input;
         self
     }
+    /// <p>The type of path match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::PathMatchType> {
+        &self.r#match
+    }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
         self.case_sensitive = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PathMatchBuilder {
     pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.case_sensitive = input;
         self
+    }
+    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    pub fn get_case_sensitive(&self) -> &::std::option::Option<bool> {
+        &self.case_sensitive
     }
     /// Consumes the builder and constructs a [`PathMatch`](crate::types::PathMatch).
     pub fn build(self) -> crate::types::PathMatch {

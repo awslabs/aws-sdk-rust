@@ -58,6 +58,12 @@ impl LendingSummaryBuilder {
         self.document_groups = input;
         self
     }
+    /// <p>Contains an array of all DocumentGroup objects.</p>
+    pub fn get_document_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>> {
+        &self.document_groups
+    }
     /// Appends an item to `undetected_document_types`.
     ///
     /// To override the contents of this collection use [`set_undetected_document_types`](Self::set_undetected_document_types).
@@ -79,6 +85,12 @@ impl LendingSummaryBuilder {
     ) -> Self {
         self.undetected_document_types = input;
         self
+    }
+    /// <p>UndetectedDocumentTypes.</p>
+    pub fn get_undetected_document_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.undetected_document_types
     }
     /// Consumes the builder and constructs a [`LendingSummary`](crate::types::LendingSummary).
     pub fn build(self) -> crate::types::LendingSummary {

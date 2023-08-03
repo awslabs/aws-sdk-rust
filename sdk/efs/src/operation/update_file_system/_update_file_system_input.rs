@@ -62,6 +62,10 @@ impl UpdateFileSystemInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system that you want to update.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
     pub fn throughput_mode(mut self, input: crate::types::ThroughputMode) -> Self {
         self.throughput_mode = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl UpdateFileSystemInputBuilder {
         self.throughput_mode = input;
         self
     }
+    /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+    pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
+        &self.throughput_mode
+    }
     /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
     pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
         self.provisioned_throughput_in_mibps = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UpdateFileSystemInputBuilder {
     ) -> Self {
         self.provisioned_throughput_in_mibps = input;
         self
+    }
+    /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
+    pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
+        &self.provisioned_throughput_in_mibps
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl AcceptInboundConnectionInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the inbound connection to accept.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Consumes the builder and constructs a [`AcceptInboundConnectionInput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionInput).
     pub fn build(
         self,

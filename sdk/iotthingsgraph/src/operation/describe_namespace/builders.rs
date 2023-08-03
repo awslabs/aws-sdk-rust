@@ -37,6 +37,12 @@ impl DescribeNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DescribeNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
+    }
+    /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
     }
 }

@@ -55,6 +55,12 @@ impl PutRegistryScanningConfigurationInputBuilder {
         self.scan_type = input;
         self
     }
+    /// <p>The scanning type to set for the registry.</p>
+    /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
+    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -73,6 +79,12 @@ impl PutRegistryScanningConfigurationInputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

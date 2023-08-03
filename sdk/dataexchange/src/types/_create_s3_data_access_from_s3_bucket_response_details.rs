@@ -62,6 +62,12 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
         self.asset_source = input;
         self
     }
+    /// <p>Details about the asset source from an Amazon S3 bucket.</p>
+    pub fn get_asset_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DataAccessAssetSourceEntry> {
+        &self.asset_source
+    }
     /// <p>The unique identifier for this data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for this data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>The unique identifier for the revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -81,6 +91,10 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::types::CreateS3DataAccessFromS3BucketResponseDetails).
     pub fn build(self) -> crate::types::CreateS3DataAccessFromS3BucketResponseDetails {

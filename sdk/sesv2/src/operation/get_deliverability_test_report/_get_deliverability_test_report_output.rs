@@ -88,6 +88,12 @@ impl GetDeliverabilityTestReportOutputBuilder {
         self.deliverability_test_report = input;
         self
     }
+    /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    pub fn get_deliverability_test_report(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliverabilityTestReport> {
+        &self.deliverability_test_report
+    }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
     pub fn overall_placement(mut self, input: crate::types::PlacementStatistics) -> Self {
         self.overall_placement = ::std::option::Option::Some(input);
@@ -100,6 +106,12 @@ impl GetDeliverabilityTestReportOutputBuilder {
     ) -> Self {
         self.overall_placement = input;
         self
+    }
+    /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
+    pub fn get_overall_placement(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlacementStatistics> {
+        &self.overall_placement
     }
     /// Appends an item to `isp_placements`.
     ///
@@ -120,6 +132,12 @@ impl GetDeliverabilityTestReportOutputBuilder {
         self.isp_placements = input;
         self
     }
+    /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
+    pub fn get_isp_placements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>> {
+        &self.isp_placements
+    }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -129,6 +147,10 @@ impl GetDeliverabilityTestReportOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `tags`.
     ///
@@ -148,6 +170,10 @@ impl GetDeliverabilityTestReportOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

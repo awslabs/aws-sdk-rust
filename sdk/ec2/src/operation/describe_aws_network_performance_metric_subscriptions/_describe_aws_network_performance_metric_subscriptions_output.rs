@@ -54,6 +54,10 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `subscriptions`.
     ///
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
@@ -72,6 +76,12 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
     ) -> Self {
         self.subscriptions = input;
         self
+    }
+    /// <p>Describes the current Infrastructure Performance subscriptions.</p>
+    pub fn get_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+        &self.subscriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

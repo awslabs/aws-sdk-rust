@@ -62,6 +62,10 @@ impl AddAttachmentsToSetOutputBuilder {
         self.attachment_set_id = input;
         self
     }
+    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
+    pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_set_id
+    }
     /// <p>The time and date when the attachment set expires.</p>
     pub fn expiry_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiry_time = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl AddAttachmentsToSetOutputBuilder {
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiry_time = input;
         self
+    }
+    /// <p>The time and date when the attachment set expires.</p>
+    pub fn get_expiry_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

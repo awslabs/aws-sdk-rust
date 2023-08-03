@@ -41,6 +41,10 @@ impl InviteActionBuilder {
         self.principal = input;
         self
     }
+    /// <p>The Amazon Web Services account ID to invite.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// Consumes the builder and constructs a [`InviteAction`](crate::types::InviteAction).
     pub fn build(self) -> crate::types::InviteAction {
         crate::types::InviteAction {

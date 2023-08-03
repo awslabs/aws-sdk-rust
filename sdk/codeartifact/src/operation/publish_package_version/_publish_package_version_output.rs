@@ -96,6 +96,10 @@ impl PublishPackageVersionOutputBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the package version.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
+    }
     /// <p>The namespace of the package version.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl PublishPackageVersionOutputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace of the package version.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The name of the package.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl PublishPackageVersionOutputBuilder {
         self.package = input;
         self
     }
+    /// <p>The name of the package.</p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
+    }
     /// <p>The version of the package.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl PublishPackageVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the package.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The revision of the package version.</p>
     pub fn version_revision(
@@ -142,6 +158,10 @@ impl PublishPackageVersionOutputBuilder {
         self.version_revision = input;
         self
     }
+    /// <p>The revision of the package version.</p>
+    pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_revision
+    }
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -155,6 +175,10 @@ impl PublishPackageVersionOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        &self.status
+    }
     /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
     pub fn asset(mut self, input: crate::types::AssetSummary) -> Self {
         self.asset = ::std::option::Option::Some(input);
@@ -164,6 +188,10 @@ impl PublishPackageVersionOutputBuilder {
     pub fn set_asset(mut self, input: ::std::option::Option<crate::types::AssetSummary>) -> Self {
         self.asset = input;
         self
+    }
+    /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
+    pub fn get_asset(&self) -> &::std::option::Option<crate::types::AssetSummary> {
+        &self.asset
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

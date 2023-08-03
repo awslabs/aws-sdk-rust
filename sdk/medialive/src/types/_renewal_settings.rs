@@ -53,6 +53,12 @@ impl RenewalSettingsBuilder {
         self.automatic_renewal = input;
         self
     }
+    /// Automatic renewal status for the reservation
+    pub fn get_automatic_renewal(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationAutomaticRenewal> {
+        &self.automatic_renewal
+    }
     /// Count for the reservation renewal
     pub fn renewal_count(mut self, input: i32) -> Self {
         self.renewal_count = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl RenewalSettingsBuilder {
     pub fn set_renewal_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.renewal_count = input;
         self
+    }
+    /// Count for the reservation renewal
+    pub fn get_renewal_count(&self) -> &::std::option::Option<i32> {
+        &self.renewal_count
     }
     /// Consumes the builder and constructs a [`RenewalSettings`](crate::types::RenewalSettings).
     pub fn build(self) -> crate::types::RenewalSettings {

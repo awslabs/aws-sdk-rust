@@ -48,6 +48,10 @@ impl WarningGroupBuilder {
         self.code = input;
         self
     }
+    /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
+    }
     /// The number of times this warning occurred in the job.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WarningGroupBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// The number of times this warning occurred in the job.
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`WarningGroup`](crate::types::WarningGroup).
     pub fn build(self) -> crate::types::WarningGroup {

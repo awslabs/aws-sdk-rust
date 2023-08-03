@@ -38,6 +38,10 @@ impl DeleteClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,5 +147,14 @@ impl DeleteClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
+    }
+    /// <p>The name of the parameter group to be deleted.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
+    /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
+    /// </ul>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
     }
 }

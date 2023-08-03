@@ -46,6 +46,10 @@ impl NotifyWhenUploadedInputBuilder {
         self.file_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_arn
+    }
     /// Consumes the builder and constructs a [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
     pub fn build(
         self,

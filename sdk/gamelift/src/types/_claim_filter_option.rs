@@ -54,6 +54,12 @@ impl ClaimFilterOptionBuilder {
         self.instance_statuses = input;
         self
     }
+    /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
+    pub fn get_instance_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>> {
+        &self.instance_statuses
+    }
     /// Consumes the builder and constructs a [`ClaimFilterOption`](crate::types::ClaimFilterOption).
     pub fn build(self) -> crate::types::ClaimFilterOption {
         crate::types::ClaimFilterOption {

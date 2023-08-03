@@ -51,6 +51,12 @@ impl CreateContainerServiceRegistryLoginOutputBuilder {
         self.registry_login = input;
         self
     }
+    /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
+    pub fn get_registry_login(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceRegistryLogin> {
+        &self.registry_login
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

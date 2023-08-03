@@ -66,6 +66,10 @@ impl ContainerDatasetActionBuilder {
         self.image = input;
         self
     }
+    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
     pub fn execution_role_arn(
         mut self,
@@ -82,6 +86,10 @@ impl ContainerDatasetActionBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
     pub fn resource_configuration(mut self, input: crate::types::ResourceConfiguration) -> Self {
         self.resource_configuration = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl ContainerDatasetActionBuilder {
     ) -> Self {
         self.resource_configuration = input;
         self
+    }
+    /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
+    pub fn get_resource_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceConfiguration> {
+        &self.resource_configuration
     }
     /// Appends an item to `variables`.
     ///
@@ -113,6 +127,10 @@ impl ContainerDatasetActionBuilder {
     ) -> Self {
         self.variables = input;
         self
+    }
+    /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variable>> {
+        &self.variables
     }
     /// Consumes the builder and constructs a [`ContainerDatasetAction`](crate::types::ContainerDatasetAction).
     pub fn build(self) -> crate::types::ContainerDatasetAction {

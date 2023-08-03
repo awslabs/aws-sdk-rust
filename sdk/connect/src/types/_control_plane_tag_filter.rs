@@ -73,6 +73,12 @@ impl ControlPlaneTagFilterBuilder {
         self.or_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+    pub fn get_or_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagCondition>>> {
+        &self.or_conditions
+    }
     /// Appends an item to `and_conditions`.
     ///
     /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
@@ -92,6 +98,12 @@ impl ControlPlaneTagFilterBuilder {
         self.and_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+    pub fn get_and_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCondition>> {
+        &self.and_conditions
+    }
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
     pub fn tag_condition(mut self, input: crate::types::TagCondition) -> Self {
         self.tag_condition = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl ControlPlaneTagFilterBuilder {
     ) -> Self {
         self.tag_condition = input;
         self
+    }
+    /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+    pub fn get_tag_condition(&self) -> &::std::option::Option<crate::types::TagCondition> {
+        &self.tag_condition
     }
     /// Consumes the builder and constructs a [`ControlPlaneTagFilter`](crate::types::ControlPlaneTagFilter).
     pub fn build(self) -> crate::types::ControlPlaneTagFilter {

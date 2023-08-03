@@ -51,6 +51,12 @@ impl GetCoreNetworkPolicyOutputBuilder {
         self.core_network_policy = input;
         self
     }
+    /// <p>The details about a core network policy.</p>
+    pub fn get_core_network_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
+        &self.core_network_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetComplianceDetailsByConfigRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>The name of the Config rule for which you want compliance information.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// Appends an item to `ComplianceTypes`.
     ///
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
@@ -131,6 +139,13 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
+    /// <p>Filters the results by compliance.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    pub fn get_compliance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+        self.inner.get_compliance_types()
+    }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -141,6 +156,10 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,5 +169,9 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

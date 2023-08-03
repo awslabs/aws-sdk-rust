@@ -39,6 +39,10 @@ impl DeleteClusterSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteClusterSecurityGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +138,9 @@ impl DeleteClusterSecurityGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_security_group_name(input);
         self
+    }
+    /// <p>The name of the cluster security group to be deleted.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_security_group_name()
     }
 }

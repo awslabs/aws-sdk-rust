@@ -52,6 +52,12 @@ impl BatchGetTriggersInputBuilder {
         self.trigger_names = input;
         self
     }
+    /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
+    pub fn get_trigger_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trigger_names
+    }
     /// Consumes the builder and constructs a [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl PutDestinationPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDestinationPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_destination_policy::builders::PutDestinationPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutDestinationPolicyFluentBuilder {
         self.inner = self.inner.set_destination_name(input);
         self
     }
+    /// <p>A name for an existing destination.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_name()
+    }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
     pub fn access_policy(
         mut self,
@@ -148,6 +158,10 @@ impl PutDestinationPolicyFluentBuilder {
         self.inner = self.inner.set_access_policy(input);
         self
     }
+    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
+    pub fn get_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_policy()
+    }
     /// <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a> </p>
     /// <p>If you omit this parameter, the default of <code>false</code> is used.</p>
     pub fn force_update(mut self, input: bool) -> Self {
@@ -159,5 +173,10 @@ impl PutDestinationPolicyFluentBuilder {
     pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_update(input);
         self
+    }
+    /// <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a> </p>
+    /// <p>If you omit this parameter, the default of <code>false</code> is used.</p>
+    pub fn get_force_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_update()
     }
 }

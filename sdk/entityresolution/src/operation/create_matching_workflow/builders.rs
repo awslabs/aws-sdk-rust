@@ -36,6 +36,13 @@ impl CreateMatchingWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMatchingWorkflow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateMatchingWorkflowFluentBuilder {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
+    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_name()
+    }
     /// <p>A description of the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +152,10 @@ impl CreateMatchingWorkflowFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `inputSourceConfig`.
     ///
@@ -159,6 +174,12 @@ impl CreateMatchingWorkflowFluentBuilder {
         self.inner = self.inner.set_input_source_config(input);
         self
     }
+    /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
+    pub fn get_input_source_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+        self.inner.get_input_source_config()
+    }
     /// Appends an item to `outputSourceConfig`.
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
@@ -176,6 +197,12 @@ impl CreateMatchingWorkflowFluentBuilder {
         self.inner = self.inner.set_output_source_config(input);
         self
     }
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    pub fn get_output_source_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
+        self.inner.get_output_source_config()
+    }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.inner = self.inner.resolution_techniques(input);
@@ -188,6 +215,12 @@ impl CreateMatchingWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resolution_techniques(input);
         self
+    }
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    pub fn get_resolution_techniques(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolutionTechniques> {
+        self.inner.get_resolution_techniques()
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn incremental_run_config(mut self, input: crate::types::IncrementalRunConfig) -> Self {
@@ -202,6 +235,12 @@ impl CreateMatchingWorkflowFluentBuilder {
         self.inner = self.inner.set_incremental_run_config(input);
         self
     }
+    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    pub fn get_incremental_run_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
+        self.inner.get_incremental_run_config()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -211,6 +250,10 @@ impl CreateMatchingWorkflowFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -234,5 +277,13 @@ impl CreateMatchingWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -70,6 +70,12 @@ impl ListIdentityProviderConfigsOutputBuilder {
         self.identity_provider_configs = input;
         self
     }
+    /// <p>The identity provider configurations for the cluster.</p>
+    pub fn get_identity_provider_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>> {
+        &self.identity_provider_configs
+    }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListIdentityProviderConfigsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

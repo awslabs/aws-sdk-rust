@@ -36,6 +36,10 @@ impl CreateTestSetDiscrepancyReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTestSetDiscrepancyReport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateTestSetDiscrepancyReportFluentBuilder {
         self.inner = self.inner.set_test_set_id(input);
         self
     }
+    /// <p>The test set Id for the test set discrepancy report.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_set_id()
+    }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn target(mut self, input: crate::types::TestSetDiscrepancyReportResourceTarget) -> Self {
         self.inner = self.inner.target(input);
@@ -112,5 +120,11 @@ impl CreateTestSetDiscrepancyReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The target bot for the test set discrepancy report.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
+        self.inner.get_target()
     }
 }

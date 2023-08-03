@@ -66,6 +66,10 @@ impl S3SourceBuilder {
         self.data_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_arn
+    }
     /// <p>Information about the format for the S3 source file or files.</p>
     pub fn upload_settings(mut self, input: crate::types::UploadSettings) -> Self {
         self.upload_settings = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl S3SourceBuilder {
     ) -> Self {
         self.upload_settings = input;
         self
+    }
+    /// <p>Information about the format for the S3 source file or files.</p>
+    pub fn get_upload_settings(&self) -> &::std::option::Option<crate::types::UploadSettings> {
+        &self.upload_settings
     }
     /// Appends an item to `input_columns`.
     ///
@@ -101,6 +109,14 @@ impl S3SourceBuilder {
     ) -> Self {
         self.input_columns = input;
         self
+    }
+    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
+    /// </note>
+    pub fn get_input_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+        &self.input_columns
     }
     /// Consumes the builder and constructs a [`S3Source`](crate::types::S3Source).
     pub fn build(self) -> crate::types::S3Source {

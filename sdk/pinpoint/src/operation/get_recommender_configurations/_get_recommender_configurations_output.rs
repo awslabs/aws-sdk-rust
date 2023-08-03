@@ -56,6 +56,12 @@ impl GetRecommenderConfigurationsOutputBuilder {
         self.list_recommender_configurations_response = input;
         self
     }
+    /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
+    pub fn get_list_recommender_configurations_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListRecommenderConfigurationsResponse> {
+        &self.list_recommender_configurations_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

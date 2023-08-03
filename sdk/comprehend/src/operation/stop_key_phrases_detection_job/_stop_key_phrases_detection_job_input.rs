@@ -39,6 +39,10 @@ impl StopKeyPhrasesDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the key phrases detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopKeyPhrasesDetectionJobInput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobInput).
     pub fn build(
         self,

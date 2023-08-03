@@ -49,6 +49,10 @@ impl DescribeResourceServerInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The identifier for the resource server</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DescribeResourceServerInputBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The identifier for the resource server</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`DescribeResourceServerInput`](crate::operation::describe_resource_server::DescribeResourceServerInput).
     pub fn build(

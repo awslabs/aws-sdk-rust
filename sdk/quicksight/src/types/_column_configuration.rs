@@ -71,6 +71,10 @@ impl ColumnConfigurationBuilder {
         self.column = input;
         self
     }
+    /// <p>The column.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The format configuration of a column.</p>
     pub fn format_configuration(mut self, input: crate::types::FormatConfiguration) -> Self {
         self.format_configuration = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl ColumnConfigurationBuilder {
         self.format_configuration = input;
         self
     }
+    /// <p>The format configuration of a column.</p>
+    pub fn get_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FormatConfiguration> {
+        &self.format_configuration
+    }
     /// <p>The role of the column.</p>
     pub fn role(mut self, input: crate::types::ColumnRole) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ColumnConfigurationBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::ColumnRole>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The role of the column.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::ColumnRole> {
+        &self.role
     }
     /// <p>The color configurations of the column.</p>
     pub fn colors_configuration(mut self, input: crate::types::ColorsConfiguration) -> Self {
@@ -106,6 +120,12 @@ impl ColumnConfigurationBuilder {
     ) -> Self {
         self.colors_configuration = input;
         self
+    }
+    /// <p>The color configurations of the column.</p>
+    pub fn get_colors_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColorsConfiguration> {
+        &self.colors_configuration
     }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {

@@ -50,6 +50,10 @@ impl PrivateDnsNamespaceChangeBuilder {
         self.description = input;
         self
     }
+    /// <p>An updated description for the private DNS namespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Properties to be updated in the private DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PrivateDnsNamespacePropertiesChange) -> Self {
         self.properties = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl PrivateDnsNamespaceChangeBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>Properties to be updated in the private DNS namespace.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`PrivateDnsNamespaceChange`](crate::types::PrivateDnsNamespaceChange).
     pub fn build(self) -> crate::types::PrivateDnsNamespaceChange {

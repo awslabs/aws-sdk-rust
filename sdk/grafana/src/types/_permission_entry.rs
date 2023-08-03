@@ -48,6 +48,10 @@ impl PermissionEntryBuilder {
         self.user = input;
         self
     }
+    /// <p>A structure with the ID of the user or group with this role.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
+        &self.user
+    }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PermissionEntryBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`PermissionEntry`](crate::types::PermissionEntry).
     pub fn build(self) -> crate::types::PermissionEntry {

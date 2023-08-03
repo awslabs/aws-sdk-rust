@@ -37,6 +37,13 @@ impl PutNotificationChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutNotificationChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_notification_channel::builders::PutNotificationChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl PutNotificationChannelFluentBuilder {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
     pub fn sns_role_name(
         mut self,
@@ -148,5 +159,9 @@ impl PutNotificationChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sns_role_name(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+    pub fn get_sns_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_role_name()
     }
 }

@@ -75,6 +75,10 @@ impl RegisterCertificateInputBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
     pub fn ca_certificate_pem(
         mut self,
@@ -91,6 +95,10 @@ impl RegisterCertificateInputBuilder {
         self.ca_certificate_pem = input;
         self
     }
+    /// <p>The CA certificate used to sign the device certificate being registered.</p>
+    pub fn get_ca_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_pem
+    }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     #[deprecated]
@@ -105,6 +113,12 @@ impl RegisterCertificateInputBuilder {
         self.set_as_active = input;
         self
     }
+    /// <p>A boolean value that specifies if the certificate is set to active.</p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    #[deprecated]
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        &self.set_as_active
+    }
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     pub fn status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl RegisterCertificateInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
     pub fn build(

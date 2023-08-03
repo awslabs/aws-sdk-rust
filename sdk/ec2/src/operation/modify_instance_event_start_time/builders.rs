@@ -36,6 +36,10 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyInstanceEventStartTime as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the instance with the scheduled event.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -135,6 +143,10 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance with the scheduled event.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
     pub fn instance_event_id(
@@ -152,6 +164,10 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self.inner = self.inner.set_instance_event_id(input);
         self
     }
+    /// <p>The ID of the event whose date and time you are modifying.</p>
+    pub fn get_instance_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_event_id()
+    }
     /// <p>The new date and time when the event will take place.</p>
     pub fn not_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.not_before(input);
@@ -164,5 +180,9 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_not_before(input);
         self
+    }
+    /// <p>The new date and time when the event will take place.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_not_before()
     }
 }

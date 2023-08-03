@@ -44,6 +44,10 @@ impl UpdateRoutingControlStatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoutingControlStates as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +148,12 @@ impl UpdateRoutingControlStatesFluentBuilder {
         self.inner = self.inner.set_update_routing_control_state_entries(input);
         self
     }
+    /// <p>A set of routing control entries that you want to update.</p>
+    pub fn get_update_routing_control_state_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRoutingControlStateEntry>> {
+        self.inner.get_update_routing_control_state_entries()
+    }
     /// Appends an item to `SafetyRulesToOverride`.
     ///
     /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
@@ -165,5 +175,12 @@ impl UpdateRoutingControlStatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_safety_rules_to_override(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn get_safety_rules_to_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_safety_rules_to_override()
     }
 }

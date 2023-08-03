@@ -70,6 +70,10 @@ impl ReEncryptDataOutputBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The keyARN (Amazon Resource Name) of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     pub fn key_check_value(
         mut self,
@@ -86,6 +90,10 @@ impl ReEncryptDataOutputBuilder {
         self.key_check_value = input;
         self
     }
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_check_value
+    }
     /// <p>The encrypted ciphertext.</p>
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cipher_text = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl ReEncryptDataOutputBuilder {
     pub fn set_cipher_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cipher_text = input;
         self
+    }
+    /// <p>The encrypted ciphertext.</p>
+    pub fn get_cipher_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cipher_text
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

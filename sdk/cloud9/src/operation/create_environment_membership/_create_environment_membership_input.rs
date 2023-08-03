@@ -69,6 +69,10 @@ impl CreateEnvironmentMembershipInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment that contains the environment member you want to add.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateEnvironmentMembershipInputBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
@@ -99,6 +107,14 @@ impl CreateEnvironmentMembershipInputBuilder {
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// </ul>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::MemberPermissions> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentMembershipInput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipInput).
     pub fn build(

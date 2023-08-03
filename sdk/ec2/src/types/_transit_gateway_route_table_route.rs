@@ -102,6 +102,10 @@ impl TransitGatewayRouteTableRouteBuilder {
         self.destination_cidr = input;
         self
     }
+    /// <p>The CIDR block used for destination matches.</p>
+    pub fn get_destination_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr
+    }
     /// <p>The state of the route.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the route.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
@@ -130,6 +138,14 @@ impl TransitGatewayRouteTableRouteBuilder {
         self.route_origin = input;
         self
     }
+    /// <p>The route origin. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>static</p> </li>
+    /// <li> <p>propagated</p> </li>
+    /// </ul>
+    pub fn get_route_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_origin
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -145,6 +161,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     ) -> Self {
         self.prefix_list_id = input;
         self
+    }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// <p>The ID of the route attachment.</p>
     pub fn attachment_id(
@@ -162,6 +182,10 @@ impl TransitGatewayRouteTableRouteBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the route attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The ID of the resource for the route attachment.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -171,6 +195,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource for the route attachment.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource type for the route attachment.</p>
     pub fn resource_type(
@@ -187,6 +215,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type for the route attachment.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`TransitGatewayRouteTableRoute`](crate::types::TransitGatewayRouteTableRoute).
     pub fn build(self) -> crate::types::TransitGatewayRouteTableRoute {

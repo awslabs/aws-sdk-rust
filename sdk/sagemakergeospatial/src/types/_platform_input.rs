@@ -48,6 +48,10 @@ impl PlatformInputBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the platform.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl PlatformInputBuilder {
     ) -> Self {
         self.comparison_operator = input;
         self
+    }
+    /// <p>The ComparisonOperator to use with PlatformInput.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`PlatformInput`](crate::types::PlatformInput).
     pub fn build(self) -> crate::types::PlatformInput {

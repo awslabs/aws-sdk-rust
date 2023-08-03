@@ -103,6 +103,10 @@ impl RegisterApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The type of the application.</p>
     pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
         self.application_type = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl RegisterApplicationInputBuilder {
     ) -> Self {
         self.application_type = input;
         self
+    }
+    /// <p>The type of the application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
     }
     /// Appends an item to `instances`.
     ///
@@ -135,6 +143,10 @@ impl RegisterApplicationInputBuilder {
         self.instances = input;
         self
     }
+    /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instances
+    }
     /// <p>The SAP instance number of the application.</p>
     pub fn sap_instance_number(
         mut self,
@@ -151,6 +163,10 @@ impl RegisterApplicationInputBuilder {
         self.sap_instance_number = input;
         self
     }
+    /// <p>The SAP instance number of the application.</p>
+    pub fn get_sap_instance_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sap_instance_number
+    }
     /// <p>The System ID of the application.</p>
     pub fn sid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sid = ::std::option::Option::Some(input.into());
@@ -160,6 +176,10 @@ impl RegisterApplicationInputBuilder {
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sid = input;
         self
+    }
+    /// <p>The System ID of the application.</p>
+    pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sid
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -186,6 +206,14 @@ impl RegisterApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to be attached to the SAP application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `credentials`.
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
@@ -204,6 +232,12 @@ impl RegisterApplicationInputBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>The credentials of the SAP application.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
     pub fn build(

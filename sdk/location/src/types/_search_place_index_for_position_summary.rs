@@ -92,6 +92,10 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
         self.position = input;
         self
     }
+    /// <p>The position specified in the request.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.position
+    }
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -103,6 +107,11 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Contains the optional result count limit that is specified in the request.</p>
+    /// <p>Default value: <code>50</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -126,6 +135,16 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>Esri</p> </li>
+    /// <li> <p>Grab</p> </li>
+    /// <li> <p>Here</p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
+    }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -135,6 +154,10 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionSummary`](crate::types::SearchPlaceIndexForPositionSummary).
     pub fn build(self) -> crate::types::SearchPlaceIndexForPositionSummary {

@@ -36,6 +36,10 @@ impl ListWavesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWaves as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_waves::builders::ListWavesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListWavesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Waves list filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListWavesRequestFilters> {
+        self.inner.get_filters()
+    }
     /// <p>Maximum results to return when listing waves.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -136,6 +144,10 @@ impl ListWavesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum results to return when listing waves.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Request next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +159,10 @@ impl ListWavesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Request next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Request account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -156,5 +172,9 @@ impl ListWavesFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Request account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

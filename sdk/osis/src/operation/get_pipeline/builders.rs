@@ -36,6 +36,10 @@ impl GetPipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_pipeline::builders::GetPipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl GetPipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
+    }
+    /// <p>The name of the pipeline to get information about.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
     }
 }

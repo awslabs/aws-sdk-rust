@@ -71,6 +71,10 @@ impl AssociateIdentityProviderConfigInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster to associate the configuration to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(mut self, input: crate::types::OidcIdentityProviderConfigRequest) -> Self {
         self.oidc = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl AssociateIdentityProviderConfigInputBuilder {
     ) -> Self {
         self.oidc = input;
         self
+    }
+    /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
+    pub fn get_oidc(
+        &self,
+    ) -> &::std::option::Option<crate::types::OidcIdentityProviderConfigRequest> {
+        &self.oidc
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -109,6 +119,14 @@ impl AssociateIdentityProviderConfigInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
         mut self,
@@ -124,6 +142,10 @@ impl AssociateIdentityProviderConfigInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`AssociateIdentityProviderConfigInput`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigInput).
     pub fn build(

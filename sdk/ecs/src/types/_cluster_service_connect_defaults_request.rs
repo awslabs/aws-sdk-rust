@@ -57,6 +57,14 @@ impl ClusterServiceConnectDefaultsRequestBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
+    /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
+    /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
+    /// <p>If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
+    /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`ClusterServiceConnectDefaultsRequest`](crate::types::ClusterServiceConnectDefaultsRequest).
     pub fn build(self) -> crate::types::ClusterServiceConnectDefaultsRequest {
         crate::types::ClusterServiceConnectDefaultsRequest {

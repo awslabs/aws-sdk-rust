@@ -36,6 +36,12 @@ impl GetObjectMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetObjectMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_object_metadata::builders::GetObjectMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetObjectMetadataFluentBuilder {
         self.inner = self.inner.set_storage_job_id(input);
         self
     }
+    /// Backup job id for the in-progress backup.
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_job_id()
+    }
     /// Object token.
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_token(input.into());
@@ -141,5 +151,9 @@ impl GetObjectMetadataFluentBuilder {
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_token(input);
         self
+    }
+    /// Object token.
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_token()
     }
 }

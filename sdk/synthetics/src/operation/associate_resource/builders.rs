@@ -37,6 +37,12 @@ impl AssociateResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl AssociateResourceFluentBuilder {
         self.inner = self.inner.set_group_identifier(input);
         self
     }
+    /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_identifier()
+    }
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -142,5 +152,9 @@ impl AssociateResourceFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

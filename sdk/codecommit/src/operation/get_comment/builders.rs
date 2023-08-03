@@ -38,6 +38,10 @@ impl GetCommentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetComment as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_comment::builders::GetCommentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl GetCommentFluentBuilder {
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment_id(input);
         self
+    }
+    /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment_id()
     }
 }

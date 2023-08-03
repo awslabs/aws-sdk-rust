@@ -40,6 +40,10 @@ impl PortalResourceBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the portal.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`PortalResource`](crate::types::PortalResource).
     pub fn build(self) -> crate::types::PortalResource {
         crate::types::PortalResource { id: self.id }

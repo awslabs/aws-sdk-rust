@@ -46,6 +46,10 @@ impl DeleteReplicationJobInputBuilder {
         self.replication_job_id = input;
         self
     }
+    /// <p>The ID of the replication job.</p>
+    pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_job_id
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationJobInput`](crate::operation::delete_replication_job::DeleteReplicationJobInput).
     pub fn build(
         self,

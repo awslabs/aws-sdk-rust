@@ -54,6 +54,10 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.sending_enabled = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
+    }
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sending_enabled
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsInput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -119,6 +119,10 @@ impl StackSetOperationSummaryBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>The unique ID of the stack set operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself and <i>all</i> associated stack set instances.</p>
     pub fn action(mut self, input: crate::types::StackSetOperationAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl StackSetOperationSummaryBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself and <i>all</i> associated stack set instances.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::StackSetOperationAction> {
+        &self.action
     }
     /// <p>The overall status of the operation.</p>
     /// <ul>
@@ -161,6 +169,18 @@ impl StackSetOperationSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The overall status of the operation.</p>
+    /// <ul>
+    /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+    /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetOperationStatus> {
+        &self.status
+    }
     /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -174,6 +194,10 @@ impl StackSetOperationSummaryBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_timestamp = ::std::option::Option::Some(input);
@@ -186,6 +210,10 @@ impl StackSetOperationSummaryBuilder {
     ) -> Self {
         self.end_timestamp = input;
         self
+    }
+    /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
+    pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_timestamp
     }
     /// <p>The status of the operation in details.</p>
     pub fn status_reason(
@@ -203,6 +231,10 @@ impl StackSetOperationSummaryBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The status of the operation in details.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Detailed information about the stack set operation.</p>
     pub fn status_details(mut self, input: crate::types::StackSetOperationStatusDetails) -> Self {
         self.status_details = ::std::option::Option::Some(input);
@@ -215,6 +247,12 @@ impl StackSetOperationSummaryBuilder {
     ) -> Self {
         self.status_details = input;
         self
+    }
+    /// <p>Detailed information about the stack set operation.</p>
+    pub fn get_status_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
+        &self.status_details
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
@@ -233,6 +271,13 @@ impl StackSetOperationSummaryBuilder {
     ) -> Self {
         self.operation_preferences = input;
         self
+    }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn get_operation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+        &self.operation_preferences
     }
     /// Consumes the builder and constructs a [`StackSetOperationSummary`](crate::types::StackSetOperationSummary).
     pub fn build(self) -> crate::types::StackSetOperationSummary {

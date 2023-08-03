@@ -77,6 +77,10 @@ impl SearchHoursOfOperationsInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl SearchHoursOfOperationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl SearchHoursOfOperationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn search_filter(mut self, input: crate::types::HoursOfOperationSearchFilter) -> Self {
@@ -110,6 +122,12 @@ impl SearchHoursOfOperationsInputBuilder {
         self.search_filter = input;
         self
     }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn get_search_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchFilter> {
+        &self.search_filter
+    }
     /// <p>The search criteria to be used to return hours of operations.</p>
     pub fn search_criteria(mut self, input: crate::types::HoursOfOperationSearchCriteria) -> Self {
         self.search_criteria = ::std::option::Option::Some(input);
@@ -122,6 +140,12 @@ impl SearchHoursOfOperationsInputBuilder {
     ) -> Self {
         self.search_criteria = input;
         self
+    }
+    /// <p>The search criteria to be used to return hours of operations.</p>
+    pub fn get_search_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchCriteria> {
+        &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchHoursOfOperationsInput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput).
     pub fn build(

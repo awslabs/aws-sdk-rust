@@ -96,6 +96,10 @@ impl NetworkInterfaceAssociationBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>The allocation ID.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>The association ID.</p>
     pub fn association_id(
         mut self,
@@ -112,6 +116,10 @@ impl NetworkInterfaceAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The ID of the Elastic IP address owner.</p>
     pub fn ip_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_owner_id = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl NetworkInterfaceAssociationBuilder {
     pub fn set_ip_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_owner_id = input;
         self
+    }
+    /// <p>The ID of the Elastic IP address owner.</p>
+    pub fn get_ip_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_owner_id
     }
     /// <p>The public DNS name.</p>
     pub fn public_dns_name(
@@ -138,6 +150,10 @@ impl NetworkInterfaceAssociationBuilder {
         self.public_dns_name = input;
         self
     }
+    /// <p>The public DNS name.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
     /// <p>The address of the Elastic IP address bound to the network interface.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -147,6 +163,10 @@ impl NetworkInterfaceAssociationBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>The address of the Elastic IP address bound to the network interface.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
     pub fn customer_owned_ip(
@@ -164,6 +184,10 @@ impl NetworkInterfaceAssociationBuilder {
         self.customer_owned_ip = input;
         self
     }
+    /// <p>The customer-owned IP address associated with the network interface.</p>
+    pub fn get_customer_owned_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ip
+    }
     /// <p>The carrier IP address associated with the network interface.</p>
     /// <p>This option is only available when the network interface is in a subnet which is associated with a Wavelength Zone.</p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +199,11 @@ impl NetworkInterfaceAssociationBuilder {
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
+    }
+    /// <p>The carrier IP address associated with the network interface.</p>
+    /// <p>This option is only available when the network interface is in a subnet which is associated with a Wavelength Zone.</p>
+    pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier_ip
     }
     /// Consumes the builder and constructs a [`NetworkInterfaceAssociation`](crate::types::NetworkInterfaceAssociation).
     pub fn build(self) -> crate::types::NetworkInterfaceAssociation {

@@ -78,6 +78,12 @@ impl SslPolicyBuilder {
         self.ssl_protocols = input;
         self
     }
+    /// <p>The protocols.</p>
+    pub fn get_ssl_protocols(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ssl_protocols
+    }
     /// Appends an item to `ciphers`.
     ///
     /// To override the contents of this collection use [`set_ciphers`](Self::set_ciphers).
@@ -97,6 +103,10 @@ impl SslPolicyBuilder {
         self.ciphers = input;
         self
     }
+    /// <p>The ciphers.</p>
+    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cipher>> {
+        &self.ciphers
+    }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +116,10 @@ impl SslPolicyBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `supported_load_balancer_types`.
     ///
@@ -128,6 +142,12 @@ impl SslPolicyBuilder {
     ) -> Self {
         self.supported_load_balancer_types = input;
         self
+    }
+    /// <p> The supported load balancers. </p>
+    pub fn get_supported_load_balancer_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_load_balancer_types
     }
     /// Consumes the builder and constructs a [`SslPolicy`](crate::types::SslPolicy).
     pub fn build(self) -> crate::types::SslPolicy {

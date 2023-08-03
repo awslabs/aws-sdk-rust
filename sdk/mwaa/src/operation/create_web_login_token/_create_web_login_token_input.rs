@@ -41,6 +41,10 @@ impl CreateWebLoginTokenInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
     pub fn build(
         self,

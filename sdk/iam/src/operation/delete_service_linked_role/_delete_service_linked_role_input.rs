@@ -41,6 +41,10 @@ impl DeleteServiceLinkedRoleInputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the service-linked role to be deleted.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
     pub fn build(
         self,

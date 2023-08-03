@@ -64,6 +64,10 @@ impl KeyPhraseBuilder {
         self.score = input;
         self
     }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
+    }
     /// <p>The text of a key noun phrase.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl KeyPhraseBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The text of a key noun phrase.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl KeyPhraseBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl KeyPhraseBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Consumes the builder and constructs a [`KeyPhrase`](crate::types::KeyPhrase).
     pub fn build(self) -> crate::types::KeyPhrase {

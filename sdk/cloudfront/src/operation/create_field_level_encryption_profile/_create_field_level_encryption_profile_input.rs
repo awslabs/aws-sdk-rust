@@ -49,6 +49,12 @@ impl CreateFieldLevelEncryptionProfileInputBuilder {
         self.field_level_encryption_profile_config = input;
         self
     }
+    /// <p>The request to create a field-level encryption profile.</p>
+    pub fn get_field_level_encryption_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
+        &self.field_level_encryption_profile_config
+    }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionProfileInput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

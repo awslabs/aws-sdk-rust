@@ -40,6 +40,10 @@ impl DeleteOriginEndpointInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the OriginEndpoint to delete.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
     pub fn build(
         self,

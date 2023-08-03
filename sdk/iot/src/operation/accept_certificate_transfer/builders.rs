@@ -38,6 +38,10 @@ impl AcceptCertificateTransferFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptCertificateTransfer as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl AcceptCertificateTransferFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.inner = self.inner.set_as_active(input);
@@ -143,5 +151,9 @@ impl AcceptCertificateTransferFluentBuilder {
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_set_as_active(input);
         self
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_set_as_active()
     }
 }

@@ -69,6 +69,12 @@ impl ListTaskTemplatesOutputBuilder {
         self.task_templates = input;
         self
     }
+    /// <p>Provides details about a list of task templates belonging to an instance.</p>
+    pub fn get_task_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>> {
+        &self.task_templates
+    }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
@@ -82,6 +88,12 @@ impl ListTaskTemplatesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as a null in the response.</p>
+    /// </important>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

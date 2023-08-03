@@ -58,6 +58,12 @@ impl CreateDetectorModelOutputBuilder {
         self.detector_model_configuration = input;
         self
     }
+    /// <p>Information about how the detector model is configured.</p>
+    pub fn get_detector_model_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelConfiguration> {
+        &self.detector_model_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl AccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl AccountBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of Amazon Inspector for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -78,6 +86,10 @@ impl AccountBuilder {
     ) -> Self {
         self.resource_status = input;
         self
+    }
+    /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
+    pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.resource_status
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {

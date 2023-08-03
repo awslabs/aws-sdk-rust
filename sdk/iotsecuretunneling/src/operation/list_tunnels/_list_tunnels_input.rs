@@ -55,6 +55,10 @@ impl ListTunnelsInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT thing associated with the destination device.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The maximum number of results to return at once.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListTunnelsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at once.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListTunnelsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
     pub fn build(

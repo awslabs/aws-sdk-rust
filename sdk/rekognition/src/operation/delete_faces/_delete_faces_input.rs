@@ -53,6 +53,10 @@ impl DeleteFacesInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>Collection from which to remove the specific faces.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// Appends an item to `face_ids`.
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
@@ -71,6 +75,10 @@ impl DeleteFacesInputBuilder {
     ) -> Self {
         self.face_ids = input;
         self
+    }
+    /// <p>An array of face IDs to delete.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.face_ids
     }
     /// Consumes the builder and constructs a [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
     pub fn build(

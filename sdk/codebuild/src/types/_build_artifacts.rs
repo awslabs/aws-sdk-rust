@@ -156,6 +156,10 @@ impl BuildArtifactsBuilder {
         self.location = input;
         self
     }
+    /// <p>Information about the location of the build artifacts.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
@@ -171,6 +175,13 @@ impl BuildArtifactsBuilder {
     pub fn set_sha256sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256sum = input;
         self
+    }
+    /// <p>The SHA-256 hash of the build artifact.</p>
+    /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
+    /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
+    /// </note>
+    pub fn get_sha256sum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha256sum
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
@@ -188,6 +199,13 @@ impl BuildArtifactsBuilder {
         self.md5sum = input;
         self
     }
+    /// <p>The MD5 hash of the build artifact.</p>
+    /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
+    /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
+    /// </note>
+    pub fn get_md5sum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5sum
+    }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn override_artifact_name(mut self, input: bool) -> Self {
         self.override_artifact_name = ::std::option::Option::Some(input);
@@ -198,6 +216,10 @@ impl BuildArtifactsBuilder {
         self.override_artifact_name = input;
         self
     }
+    /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    pub fn get_override_artifact_name(&self) -> &::std::option::Option<bool> {
+        &self.override_artifact_name
+    }
     /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
         self.encryption_disabled = ::std::option::Option::Some(input);
@@ -207,6 +229,10 @@ impl BuildArtifactsBuilder {
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
+    }
+    /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
+        &self.encryption_disabled
     }
     /// <p> An identifier for this artifact definition. </p>
     pub fn artifact_identifier(
@@ -223,6 +249,10 @@ impl BuildArtifactsBuilder {
     ) -> Self {
         self.artifact_identifier = input;
         self
+    }
+    /// <p> An identifier for this artifact definition. </p>
+    pub fn get_artifact_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_identifier
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -292,6 +322,40 @@ impl BuildArtifactsBuilder {
     ) -> Self {
         self.bucket_owner_access = input;
         self
+    }
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
+    /// </note>
+    /// <p>This property can be one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// NONE
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
+    /// </dd>
+    /// <dt>
+    /// READ_ONLY
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
+    /// </dd>
+    /// <dt>
+    /// FULL
+    /// </dt>
+    /// <dd>
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
+    /// <ul>
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
+    /// </ul>
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_bucket_owner_access(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
+        &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`BuildArtifacts`](crate::types::BuildArtifacts).
     pub fn build(self) -> crate::types::BuildArtifacts {

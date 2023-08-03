@@ -78,6 +78,10 @@ impl CreateDirectConnectGatewayAssociationInputBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateDirectConnectGatewayAssociationInputBuilder {
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
     }
     /// Appends an item to `add_allowed_prefixes_to_direct_connect_gateway`.
     ///
@@ -116,6 +124,14 @@ impl CreateDirectConnectGatewayAssociationInputBuilder {
         self.add_allowed_prefixes_to_direct_connect_gateway = input;
         self
     }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+    /// <p>This parameter is required when you create an association to a transit gateway.</p>
+    /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        &self.add_allowed_prefixes_to_direct_connect_gateway
+    }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn virtual_gateway_id(
         mut self,
@@ -131,6 +147,10 @@ impl CreateDirectConnectGatewayAssociationInputBuilder {
     ) -> Self {
         self.virtual_gateway_id = input;
         self
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
     }
     /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationInput`](crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

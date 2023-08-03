@@ -36,6 +36,12 @@ impl DescribePlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePlacement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_placement::builders::DescribePlacementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribePlacementFluentBuilder {
         self.inner = self.inner.set_placement_name(input);
         self
     }
+    /// <p>The name of the placement within a project.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
+    }
     /// <p>The project containing the placement to be described.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -141,5 +151,9 @@ impl DescribePlacementFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The project containing the placement to be described.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
 }

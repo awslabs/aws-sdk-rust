@@ -53,6 +53,10 @@ impl DescribeCostCategoryDefinitionInputBuilder {
         self.cost_category_arn = input;
         self
     }
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_arn
+    }
     /// <p>The date when the Cost Category was effective. </p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_on = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeCostCategoryDefinitionInputBuilder {
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_on = input;
         self
+    }
+    /// <p>The date when the Cost Category was effective. </p>
+    pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_on
     }
     /// Consumes the builder and constructs a [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
     pub fn build(

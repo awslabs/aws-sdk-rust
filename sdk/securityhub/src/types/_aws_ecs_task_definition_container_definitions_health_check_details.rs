@@ -83,6 +83,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
         self.command = input;
         self
     }
+    /// <p>The command that the container runs to determine whether it is healthy.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command
+    }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
     pub fn retries(mut self, input: i32) -> Self {
@@ -103,6 +111,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
         self.retries = input;
         self
     }
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
+    pub fn get_retries(&self) -> &::std::option::Option<i32> {
+        &self.retries
+    }
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
     pub fn start_period(mut self, input: i32) -> Self {
         self.start_period = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
         self.start_period = input;
         self
     }
+    /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
+    pub fn get_start_period(&self) -> &::std::option::Option<i32> {
+        &self.start_period
+    }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {

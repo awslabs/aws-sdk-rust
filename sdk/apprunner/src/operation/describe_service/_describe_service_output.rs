@@ -46,6 +46,10 @@ impl DescribeServiceOutputBuilder {
         self.service = input;
         self
     }
+    /// <p>A full description of the App Runner service that you specified in this request.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        &self.service
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

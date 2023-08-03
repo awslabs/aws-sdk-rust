@@ -62,6 +62,10 @@ impl Ibm3624RandomPinBuilder {
         self.decimalization_table = input;
         self
     }
+    /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
+    pub fn get_decimalization_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decimalization_table
+    }
     /// <p>The padding character for validation data.</p>
     pub fn pin_validation_data_pad_character(
         mut self,
@@ -78,6 +82,12 @@ impl Ibm3624RandomPinBuilder {
         self.pin_validation_data_pad_character = input;
         self
     }
+    /// <p>The padding character for validation data.</p>
+    pub fn get_pin_validation_data_pad_character(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pin_validation_data_pad_character
+    }
     /// <p>The unique data for cardholder identification.</p>
     pub fn pin_validation_data(
         mut self,
@@ -93,6 +103,10 @@ impl Ibm3624RandomPinBuilder {
     ) -> Self {
         self.pin_validation_data = input;
         self
+    }
+    /// <p>The unique data for cardholder identification.</p>
+    pub fn get_pin_validation_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pin_validation_data
     }
     /// Consumes the builder and constructs a [`Ibm3624RandomPin`](crate::types::Ibm3624RandomPin).
     pub fn build(self) -> crate::types::Ibm3624RandomPin {

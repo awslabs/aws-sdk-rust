@@ -56,6 +56,10 @@ impl S3ObjectBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The bucket containing the object.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The key of the object.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3ObjectBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the object.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The etag of the object.</p>
     pub fn etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.etag = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3ObjectBuilder {
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.etag = input;
         self
+    }
+    /// <p>The etag of the object.</p>
+    pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.etag
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {

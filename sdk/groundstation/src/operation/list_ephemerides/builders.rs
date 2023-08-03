@@ -36,6 +36,12 @@ impl ListEphemeridesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEphemerides as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListEphemeridesFluentBuilder {
         self.inner = self.inner.set_satellite_id(input);
         self
     }
+    /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_satellite_id()
+    }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -150,6 +160,10 @@ impl ListEphemeridesFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -162,6 +176,10 @@ impl ListEphemeridesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// Appends an item to `statusList`.
     ///
@@ -180,6 +198,12 @@ impl ListEphemeridesFluentBuilder {
         self.inner = self.inner.set_status_list(input);
         self
     }
+    /// <p>The list of ephemeris status to return.</p>
+    pub fn get_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>> {
+        self.inner.get_status_list()
+    }
     /// <p>Maximum number of ephemerides to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -190,6 +214,10 @@ impl ListEphemeridesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of ephemerides to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -199,5 +227,9 @@ impl ListEphemeridesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -37,6 +37,12 @@ impl DescribeTapeArchivesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTapeArchives as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,10 @@ impl DescribeTapeArchivesFluentBuilder {
         self.inner = self.inner.set_tape_ar_ns(input);
         self
     }
+    /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
+    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tape_ar_ns()
+    }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -155,6 +165,10 @@ impl DescribeTapeArchivesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -164,5 +178,9 @@ impl DescribeTapeArchivesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

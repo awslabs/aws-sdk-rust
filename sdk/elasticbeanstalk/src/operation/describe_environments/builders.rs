@@ -36,6 +36,12 @@ impl DescribeEnvironmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
     pub fn version_label(
         mut self,
@@ -147,6 +157,10 @@ impl DescribeEnvironmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_label()
     }
     /// Appends an item to `EnvironmentIds`.
     ///
@@ -168,6 +182,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_environment_ids(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    pub fn get_environment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_environment_ids()
+    }
     /// Appends an item to `EnvironmentNames`.
     ///
     /// To override the contents of this collection use [`set_environment_names`](Self::set_environment_names).
@@ -188,6 +208,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_environment_names(input);
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    pub fn get_environment_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_environment_names()
+    }
     /// <p>Indicates whether to include deleted environments:</p>
     /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
     /// <p> <code>false</code>: Do not include deleted environments.</p>
@@ -202,6 +228,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_include_deleted(input);
         self
     }
+    /// <p>Indicates whether to include deleted environments:</p>
+    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    pub fn get_include_deleted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_deleted()
+    }
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
     pub fn included_deleted_back_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.included_deleted_back_to(input);
@@ -215,6 +247,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_included_deleted_back_to(input);
         self
     }
+    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    pub fn get_included_deleted_back_to(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_included_deleted_back_to()
+    }
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -227,6 +265,11 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
+    /// <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,5 +281,10 @@ impl DescribeEnvironmentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

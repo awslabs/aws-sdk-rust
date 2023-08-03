@@ -56,6 +56,12 @@ impl DeleteEnvironmentTemplateVersionOutputBuilder {
         self.environment_template_version = input;
         self
     }
+    /// <p>The detailed data of the environment template version being deleted.</p>
+    pub fn get_environment_template_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentTemplateVersion> {
+        &self.environment_template_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

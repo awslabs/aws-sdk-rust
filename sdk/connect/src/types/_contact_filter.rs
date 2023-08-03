@@ -49,6 +49,12 @@ impl ContactFilterBuilder {
         self.contact_states = input;
         self
     }
+    /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+    pub fn get_contact_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactState>> {
+        &self.contact_states
+    }
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).
     pub fn build(self) -> crate::types::ContactFilter {
         crate::types::ContactFilter {

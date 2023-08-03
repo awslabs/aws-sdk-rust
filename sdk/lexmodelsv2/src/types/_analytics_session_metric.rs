@@ -105,6 +105,19 @@ impl AnalyticsSessionMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric for which you want to get session summary statistics.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of sessions.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of sessions that succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of sessions that failed.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of sessions that the user dropped.</p> </li>
+    /// <li> <p> <code>Duration</code> – The duration of sessions.</p> </li>
+    /// <li> <p> <code>TurnsPerSession</code> – The number of turns in the sessions.</p> </li>
+    /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -128,6 +141,15 @@ impl AnalyticsSessionMetricBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -140,6 +162,10 @@ impl AnalyticsSessionMetricBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsSessionMetric`](crate::types::AnalyticsSessionMetric).
     pub fn build(self) -> crate::types::AnalyticsSessionMetric {

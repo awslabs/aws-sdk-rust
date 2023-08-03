@@ -48,6 +48,10 @@ impl UpdateDomainEntryInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain recordset to update.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
         self.domain_entry = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateDomainEntryInputBuilder {
     ) -> Self {
         self.domain_entry = input;
         self
+    }
+    /// <p>An array of key-value pairs containing information about the domain entry.</p>
+    pub fn get_domain_entry(&self) -> &::std::option::Option<crate::types::DomainEntry> {
+        &self.domain_entry
     }
     /// Consumes the builder and constructs a [`UpdateDomainEntryInput`](crate::operation::update_domain_entry::UpdateDomainEntryInput).
     pub fn build(

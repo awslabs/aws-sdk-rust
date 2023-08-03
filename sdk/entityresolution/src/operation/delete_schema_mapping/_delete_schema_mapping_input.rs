@@ -41,6 +41,10 @@ impl DeleteSchemaMappingInputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema to delete.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// Consumes the builder and constructs a [`DeleteSchemaMappingInput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingInput).
     pub fn build(
         self,

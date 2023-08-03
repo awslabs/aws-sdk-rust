@@ -36,6 +36,12 @@ impl UpdateUsageLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUsageLimit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateUsageLimitFluentBuilder {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }
+    /// <p>The identifier of the usage limit to update.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_limit_id()
+    }
     /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn amount(mut self, input: i64) -> Self {
         self.inner = self.inner.amount(input);
@@ -141,6 +151,10 @@ impl UpdateUsageLimitFluentBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amount(input);
         self
+    }
+    /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amount()
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -154,5 +168,11 @@ impl UpdateUsageLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
+    }
+    /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        self.inner.get_breach_action()
     }
 }

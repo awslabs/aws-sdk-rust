@@ -36,6 +36,12 @@ impl CreateHarvestJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHarvestJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateHarvestJobFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// The end of the time-window which will be harvested
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_time()
+    }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -135,6 +145,10 @@ impl CreateHarvestJobFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn origin_endpoint_id(
@@ -152,6 +166,10 @@ impl CreateHarvestJobFluentBuilder {
         self.inner = self.inner.set_origin_endpoint_id(input);
         self
     }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    pub fn get_origin_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origin_endpoint_id()
+    }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.inner = self.inner.s3_destination(input);
@@ -165,6 +183,10 @@ impl CreateHarvestJobFluentBuilder {
         self.inner = self.inner.set_s3_destination(input);
         self
     }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        self.inner.get_s3_destination()
+    }
     /// The start of the time-window which will be harvested
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_time(input.into());
@@ -174,5 +196,9 @@ impl CreateHarvestJobFluentBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// The start of the time-window which will be harvested
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_time()
     }
 }

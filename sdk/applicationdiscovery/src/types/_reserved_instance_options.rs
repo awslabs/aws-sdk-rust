@@ -59,6 +59,10 @@ impl ReservedInstanceOptionsBuilder {
         self.purchasing_option = input;
         self
     }
+    /// <p> The payment plan to use for your Reserved Instance. </p>
+    pub fn get_purchasing_option(&self) -> &::std::option::Option<crate::types::PurchasingOption> {
+        &self.purchasing_option
+    }
     /// <p> The flexibility to change the instance types needed for your Reserved Instance. </p>
     pub fn offering_class(mut self, input: crate::types::OfferingClass) -> Self {
         self.offering_class = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ReservedInstanceOptionsBuilder {
         self.offering_class = input;
         self
     }
+    /// <p> The flexibility to change the instance types needed for your Reserved Instance. </p>
+    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClass> {
+        &self.offering_class
+    }
     /// <p> The preferred duration of the Reserved Instance term. </p>
     pub fn term_length(mut self, input: crate::types::TermLength) -> Self {
         self.term_length = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ReservedInstanceOptionsBuilder {
     ) -> Self {
         self.term_length = input;
         self
+    }
+    /// <p> The preferred duration of the Reserved Instance term. </p>
+    pub fn get_term_length(&self) -> &::std::option::Option<crate::types::TermLength> {
+        &self.term_length
     }
     /// Consumes the builder and constructs a [`ReservedInstanceOptions`](crate::types::ReservedInstanceOptions).
     pub fn build(self) -> crate::types::ReservedInstanceOptions {

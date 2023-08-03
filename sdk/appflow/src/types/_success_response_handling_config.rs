@@ -55,6 +55,10 @@ impl SuccessResponseHandlingConfigBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p>The Amazon S3 bucket prefix.</p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl SuccessResponseHandlingConfigBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>The name of the Amazon S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Consumes the builder and constructs a [`SuccessResponseHandlingConfig`](crate::types::SuccessResponseHandlingConfig).
     pub fn build(self) -> crate::types::SuccessResponseHandlingConfig {

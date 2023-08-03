@@ -55,6 +55,12 @@ impl EnterStandbyOutputBuilder {
         self.activities = input;
         self
     }
+    /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    pub fn get_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.activities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

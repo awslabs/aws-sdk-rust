@@ -75,6 +75,10 @@ impl FieldLevelEncryptionConfigBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique number that ensures the request can't be replayed.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl FieldLevelEncryptionConfigBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
     pub fn query_arg_profile_config(mut self, input: crate::types::QueryArgProfileConfig) -> Self {
@@ -97,6 +105,12 @@ impl FieldLevelEncryptionConfigBuilder {
     ) -> Self {
         self.query_arg_profile_config = input;
         self
+    }
+    /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
+    pub fn get_query_arg_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryArgProfileConfig> {
+        &self.query_arg_profile_config
     }
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
     pub fn content_type_profile_config(
@@ -113,6 +127,12 @@ impl FieldLevelEncryptionConfigBuilder {
     ) -> Self {
         self.content_type_profile_config = input;
         self
+    }
+    /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
+    pub fn get_content_type_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentTypeProfileConfig> {
+        &self.content_type_profile_config
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionConfig`](crate::types::FieldLevelEncryptionConfig).
     pub fn build(self) -> crate::types::FieldLevelEncryptionConfig {

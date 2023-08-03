@@ -57,6 +57,10 @@ impl VersionToPublishBuilder {
         self.associated_rule_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
+    pub fn get_associated_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_rule_group_arn
+    }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(mut self, input: i32) -> Self {
         self.forecasted_lifetime = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl VersionToPublishBuilder {
     pub fn set_forecasted_lifetime(mut self, input: ::std::option::Option<i32>) -> Self {
         self.forecasted_lifetime = input;
         self
+    }
+    /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
+    pub fn get_forecasted_lifetime(&self) -> &::std::option::Option<i32> {
+        &self.forecasted_lifetime
     }
     /// Consumes the builder and constructs a [`VersionToPublish`](crate::types::VersionToPublish).
     pub fn build(self) -> crate::types::VersionToPublish {

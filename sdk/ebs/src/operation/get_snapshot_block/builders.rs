@@ -36,6 +36,12 @@ impl GetSnapshotBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSnapshotBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_snapshot_block::builders::GetSnapshotBlockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,12 @@ impl GetSnapshotBlockFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// </important>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     pub fn block_index(mut self, input: i32) -> Self {
         self.inner = self.inner.block_index(input);
@@ -140,6 +152,10 @@ impl GetSnapshotBlockFluentBuilder {
         self.inner = self.inner.set_block_index(input);
         self
     }
+    /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
+    pub fn get_block_index(&self) -> &::std::option::Option<i32> {
+        self.inner.get_block_index()
+    }
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub fn block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.block_token(input.into());
@@ -149,5 +165,9 @@ impl GetSnapshotBlockFluentBuilder {
     pub fn set_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_block_token(input);
         self
+    }
+    /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+    pub fn get_block_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_block_token()
     }
 }

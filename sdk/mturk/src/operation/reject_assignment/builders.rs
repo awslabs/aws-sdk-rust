@@ -38,6 +38,12 @@ impl RejectAssignmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectAssignment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl RejectAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_id()
+    }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(
         mut self,
@@ -149,5 +159,9 @@ impl RejectAssignmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_requester_feedback(input);
         self
+    }
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_feedback()
     }
 }

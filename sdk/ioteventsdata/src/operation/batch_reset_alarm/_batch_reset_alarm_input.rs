@@ -52,6 +52,12 @@ impl BatchResetAlarmInputBuilder {
         self.reset_action_requests = input;
         self
     }
+    /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_reset_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResetAlarmActionRequest>> {
+        &self.reset_action_requests
+    }
     /// Consumes the builder and constructs a [`BatchResetAlarmInput`](crate::operation::batch_reset_alarm::BatchResetAlarmInput).
     pub fn build(
         self,

@@ -59,6 +59,10 @@ impl NamedEntityDefinitionMetricBuilder {
         self.aggregation = input;
         self
     }
+    /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::NamedEntityAggType> {
+        &self.aggregation
+    }
     /// Adds a key-value pair to `aggregation_function_parameters`.
     ///
     /// To override the contents of this collection use [`set_aggregation_function_parameters`](Self::set_aggregation_function_parameters).
@@ -83,6 +87,14 @@ impl NamedEntityDefinitionMetricBuilder {
     ) -> Self {
         self.aggregation_function_parameters = input;
         self
+    }
+    /// <p>The additional parameters for an aggregation function.</p>
+    pub fn get_aggregation_function_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.aggregation_function_parameters
     }
     /// Consumes the builder and constructs a [`NamedEntityDefinitionMetric`](crate::types::NamedEntityDefinitionMetric).
     pub fn build(self) -> crate::types::NamedEntityDefinitionMetric {

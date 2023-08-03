@@ -36,6 +36,10 @@ impl GetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_group::builders::GetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The ARN of the group that was generated on creation.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_arn(input.into());
@@ -127,5 +135,9 @@ impl GetGroupFluentBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_arn(input);
         self
+    }
+    /// <p>The ARN of the group that was generated on creation.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_arn()
     }
 }

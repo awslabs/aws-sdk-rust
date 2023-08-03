@@ -53,6 +53,10 @@ impl ReplicationRuleAndOperatorBuilder {
         self.prefix = input;
         self
     }
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -71,6 +75,10 @@ impl ReplicationRuleAndOperatorBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of tags containing key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     pub fn build(self) -> crate::types::ReplicationRuleAndOperator {

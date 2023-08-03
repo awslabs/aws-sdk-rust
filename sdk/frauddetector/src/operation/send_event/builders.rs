@@ -36,6 +36,10 @@ impl SendEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendEvent as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_event::builders::SendEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_event_id(input);
         self
     }
+    /// <p>The event ID to upload.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
+    }
     /// <p>The event type name of the event.</p>
     pub fn event_type_name(
         mut self,
@@ -134,6 +142,10 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
+    /// <p>The event type name of the event.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
+    }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn event_timestamp(
         mut self,
@@ -149,6 +161,10 @@ impl SendEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_timestamp(input);
         self
+    }
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_timestamp()
     }
     /// Adds a key-value pair to `eventVariables`.
     ///
@@ -173,6 +189,14 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_event_variables(input);
         self
     }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub fn get_event_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_event_variables()
+    }
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
     pub fn assigned_label(
         mut self,
@@ -188,6 +212,10 @@ impl SendEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assigned_label(input);
         self
+    }
+    /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assigned_label()
     }
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
     pub fn label_timestamp(
@@ -205,6 +233,10 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_label_timestamp(input);
         self
     }
+    /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_timestamp()
+    }
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -221,5 +253,9 @@ impl SendEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entities(input);
         self
+    }
+    /// <p>An array of entities.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        self.inner.get_entities()
     }
 }

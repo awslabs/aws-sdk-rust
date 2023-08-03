@@ -53,6 +53,10 @@ impl DisassociateRecoveryPointFromParentInputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
     pub fn recovery_point_arn(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateRecoveryPointFromParentInputBuilder {
     ) -> Self {
         self.recovery_point_arn = input;
         self
+    }
+    /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_arn
     }
     /// Consumes the builder and constructs a [`DisassociateRecoveryPointFromParentInput`](crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentInput, ::aws_smithy_http::operation::error::BuildError>{

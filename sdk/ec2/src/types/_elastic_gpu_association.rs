@@ -70,6 +70,10 @@ impl ElasticGpuAssociationBuilder {
         self.elastic_gpu_id = input;
         self
     }
+    /// <p>The ID of the Elastic Graphics accelerator.</p>
+    pub fn get_elastic_gpu_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_gpu_id
+    }
     /// <p>The ID of the association.</p>
     pub fn elastic_gpu_association_id(
         mut self,
@@ -85,6 +89,10 @@ impl ElasticGpuAssociationBuilder {
     ) -> Self {
         self.elastic_gpu_association_id = input;
         self
+    }
+    /// <p>The ID of the association.</p>
+    pub fn get_elastic_gpu_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_gpu_association_id
     }
     /// <p>The state of the association between the instance and the Elastic Graphics accelerator.</p>
     pub fn elastic_gpu_association_state(
@@ -102,6 +110,12 @@ impl ElasticGpuAssociationBuilder {
         self.elastic_gpu_association_state = input;
         self
     }
+    /// <p>The state of the association between the instance and the Elastic Graphics accelerator.</p>
+    pub fn get_elastic_gpu_association_state(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_gpu_association_state
+    }
     /// <p>The time the Elastic Graphics accelerator was associated with the instance.</p>
     pub fn elastic_gpu_association_time(
         mut self,
@@ -117,6 +131,12 @@ impl ElasticGpuAssociationBuilder {
     ) -> Self {
         self.elastic_gpu_association_time = input;
         self
+    }
+    /// <p>The time the Elastic Graphics accelerator was associated with the instance.</p>
+    pub fn get_elastic_gpu_association_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_gpu_association_time
     }
     /// Consumes the builder and constructs a [`ElasticGpuAssociation`](crate::types::ElasticGpuAssociation).
     pub fn build(self) -> crate::types::ElasticGpuAssociation {

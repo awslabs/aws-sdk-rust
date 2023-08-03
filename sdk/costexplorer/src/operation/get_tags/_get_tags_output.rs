@@ -76,6 +76,10 @@ impl GetTagsOutputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -95,6 +99,10 @@ impl GetTagsOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that match your request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags
+    }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
     pub fn return_size(mut self, input: i32) -> Self {
         self.return_size = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl GetTagsOutputBuilder {
         self.return_size = input;
         self
     }
+    /// <p>The number of query results that Amazon Web Services returns at a time.</p>
+    pub fn get_return_size(&self) -> &::std::option::Option<i32> {
+        &self.return_size
+    }
     /// <p>The total number of query results.</p>
     pub fn total_size(mut self, input: i32) -> Self {
         self.total_size = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl GetTagsOutputBuilder {
     pub fn set_total_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_size = input;
         self
+    }
+    /// <p>The total number of query results.</p>
+    pub fn get_total_size(&self) -> &::std::option::Option<i32> {
+        &self.total_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

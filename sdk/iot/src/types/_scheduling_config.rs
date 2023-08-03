@@ -66,6 +66,10 @@ impl SchedulingConfigBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl SchedulingConfigBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
     pub fn end_behavior(mut self, input: crate::types::JobEndBehavior) -> Self {
@@ -88,6 +96,10 @@ impl SchedulingConfigBuilder {
     ) -> Self {
         self.end_behavior = input;
         self
+    }
+    /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
+    pub fn get_end_behavior(&self) -> &::std::option::Option<crate::types::JobEndBehavior> {
+        &self.end_behavior
     }
     /// Appends an item to `maintenance_windows`.
     ///
@@ -107,6 +119,12 @@ impl SchedulingConfigBuilder {
     ) -> Self {
         self.maintenance_windows = input;
         self
+    }
+    /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
+    pub fn get_maintenance_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+        &self.maintenance_windows
     }
     /// Consumes the builder and constructs a [`SchedulingConfig`](crate::types::SchedulingConfig).
     pub fn build(self) -> crate::types::SchedulingConfig {

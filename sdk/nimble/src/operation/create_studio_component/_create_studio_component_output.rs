@@ -51,6 +51,10 @@ impl CreateStudioComponentOutputBuilder {
         self.studio_component = input;
         self
     }
+    /// <p>Information about the studio component.</p>
+    pub fn get_studio_component(&self) -> &::std::option::Option<crate::types::StudioComponent> {
+        &self.studio_component
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

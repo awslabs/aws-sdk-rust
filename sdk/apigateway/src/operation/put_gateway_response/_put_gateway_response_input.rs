@@ -89,6 +89,10 @@ impl PutGatewayResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The response type of the associated GatewayResponse</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl PutGatewayResponseInputBuilder {
         self.response_type = input;
         self
     }
+    /// <p>The response type of the associated GatewayResponse</p>
+    pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
+        &self.response_type
+    }
     /// <p>The HTTP status code of the GatewayResponse.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl PutGatewayResponseInputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The HTTP status code of the GatewayResponse.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// Adds a key-value pair to `response_parameters`.
     ///
@@ -137,6 +149,14 @@ impl PutGatewayResponseInputBuilder {
         self.response_parameters = input;
         self
     }
+    /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_parameters
+    }
     /// Adds a key-value pair to `response_templates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
@@ -161,6 +181,14 @@ impl PutGatewayResponseInputBuilder {
     ) -> Self {
         self.response_templates = input;
         self
+    }
+    /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    pub fn get_response_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_templates
     }
     /// Consumes the builder and constructs a [`PutGatewayResponseInput`](crate::operation::put_gateway_response::PutGatewayResponseInput).
     pub fn build(

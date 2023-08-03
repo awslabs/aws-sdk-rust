@@ -44,6 +44,10 @@ impl RestoreKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_key::builders::RestoreKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl RestoreKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
     }
 }

@@ -62,6 +62,10 @@ impl MutualTlsAuthenticationBuilder {
         self.truststore_uri = input;
         self
     }
+    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
+    pub fn get_truststore_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.truststore_uri
+    }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub fn truststore_version(
         mut self,
@@ -77,6 +81,10 @@ impl MutualTlsAuthenticationBuilder {
     ) -> Self {
         self.truststore_version = input;
         self
+    }
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
+    pub fn get_truststore_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.truststore_version
     }
     /// Appends an item to `truststore_warnings`.
     ///
@@ -99,6 +107,12 @@ impl MutualTlsAuthenticationBuilder {
     ) -> Self {
         self.truststore_warnings = input;
         self
+    }
+    /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
+    pub fn get_truststore_warnings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.truststore_warnings
     }
     /// Consumes the builder and constructs a [`MutualTlsAuthentication`](crate::types::MutualTlsAuthentication).
     pub fn build(self) -> crate::types::MutualTlsAuthentication {

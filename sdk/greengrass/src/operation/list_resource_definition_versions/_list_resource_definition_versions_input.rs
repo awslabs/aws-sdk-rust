@@ -55,6 +55,10 @@ impl ListResourceDefinitionVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The maximum number of results to be returned per request.
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_results
+    }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListResourceDefinitionVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// The ID of the resource definition.
     pub fn resource_definition_id(
@@ -80,6 +88,10 @@ impl ListResourceDefinitionVersionsInputBuilder {
     ) -> Self {
         self.resource_definition_id = input;
         self
+    }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
     }
     /// Consumes the builder and constructs a [`ListResourceDefinitionVersionsInput`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput).
     pub fn build(

@@ -63,6 +63,12 @@ impl GetSlotTypesOutputBuilder {
         self.slot_types = input;
         self
     }
+    /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
+    pub fn get_slot_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
+        &self.slot_types
+    }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl GetSlotTypesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

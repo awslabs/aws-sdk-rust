@@ -63,6 +63,10 @@ impl UpdateStandardsControlInputBuilder {
         self.standards_control_arn = input;
         self
     }
+    /// <p>The ARN of the security standard control to enable or disable.</p>
+    pub fn get_standards_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_control_arn
+    }
     /// <p>The updated status of the security standard control.</p>
     pub fn control_status(mut self, input: crate::types::ControlStatus) -> Self {
         self.control_status = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl UpdateStandardsControlInputBuilder {
     ) -> Self {
         self.control_status = input;
         self
+    }
+    /// <p>The updated status of the security standard control.</p>
+    pub fn get_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
+        &self.control_status
     }
     /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     pub fn disabled_reason(
@@ -91,6 +99,10 @@ impl UpdateStandardsControlInputBuilder {
     ) -> Self {
         self.disabled_reason = input;
         self
+    }
+    /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
+    pub fn get_disabled_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disabled_reason
     }
     /// Consumes the builder and constructs a [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
     pub fn build(

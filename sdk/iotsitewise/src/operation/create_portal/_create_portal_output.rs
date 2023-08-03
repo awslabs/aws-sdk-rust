@@ -80,6 +80,10 @@ impl CreatePortalOutputBuilder {
         self.portal_id = input;
         self
     }
+    /// <p>The ID of the created portal.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +95,11 @@ impl CreatePortalOutputBuilder {
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(
@@ -108,6 +117,10 @@ impl CreatePortalOutputBuilder {
         self.portal_start_url = input;
         self
     }
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    pub fn get_portal_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_start_url
+    }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn portal_status(mut self, input: crate::types::PortalStatus) -> Self {
         self.portal_status = ::std::option::Option::Some(input);
@@ -120,6 +133,10 @@ impl CreatePortalOutputBuilder {
     ) -> Self {
         self.portal_status = input;
         self
+    }
+    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
+        &self.portal_status
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     pub fn sso_application_id(
@@ -136,6 +153,10 @@ impl CreatePortalOutputBuilder {
     ) -> Self {
         self.sso_application_id = input;
         self
+    }
+    /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
+    pub fn get_sso_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_application_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

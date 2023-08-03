@@ -55,6 +55,10 @@ impl ListTagsForResourceOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -73,6 +77,10 @@ impl ListTagsForResourceOutputBuilder {
     ) -> Self {
         self.resource_tags = input;
         self
+    }
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.resource_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

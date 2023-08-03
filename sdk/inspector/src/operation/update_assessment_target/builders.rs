@@ -37,6 +37,13 @@ impl UpdateAssessmentTargetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAssessmentTarget as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateAssessmentTargetFluentBuilder {
         self.inner = self.inner.set_assessment_target_arn(input);
         self
     }
+    /// <p>The ARN of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_target_arn()
+    }
     /// <p>The name of the assessment target that you want to update.</p>
     pub fn assessment_target_name(
         mut self,
@@ -149,6 +160,10 @@ impl UpdateAssessmentTargetFluentBuilder {
         self.inner = self.inner.set_assessment_target_name(input);
         self
     }
+    /// <p>The name of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_target_name()
+    }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub fn resource_group_arn(
         mut self,
@@ -164,5 +179,9 @@ impl UpdateAssessmentTargetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_group_arn(input);
         self
+    }
+    /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_arn()
     }
 }

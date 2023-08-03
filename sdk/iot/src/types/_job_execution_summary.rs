@@ -83,6 +83,10 @@ impl JobExecutionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the job execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
+        &self.status
+    }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
     pub fn queued_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.queued_at = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl JobExecutionSummaryBuilder {
     ) -> Self {
         self.queued_at = input;
         self
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+    pub fn get_queued_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.queued_at
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +117,10 @@ impl JobExecutionSummaryBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl JobExecutionSummaryBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
         self.execution_number = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl JobExecutionSummaryBuilder {
         self.execution_number = input;
         self
     }
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
+    pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
+        &self.execution_number
+    }
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
     pub fn retry_attempt(mut self, input: i32) -> Self {
         self.retry_attempt = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl JobExecutionSummaryBuilder {
     pub fn set_retry_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_attempt = input;
         self
+    }
+    /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+    pub fn get_retry_attempt(&self) -> &::std::option::Option<i32> {
+        &self.retry_attempt
     }
     /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::types::JobExecutionSummary).
     pub fn build(self) -> crate::types::JobExecutionSummary {

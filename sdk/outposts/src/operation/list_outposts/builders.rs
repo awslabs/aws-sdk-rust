@@ -37,6 +37,10 @@ impl ListOutpostsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOutposts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_outposts::builders::ListOutpostsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListOutpostsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +147,10 @@ impl ListOutpostsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `LifeCycleStatusFilter`.
     ///
@@ -160,6 +172,12 @@ impl ListOutpostsFluentBuilder {
         self.inner = self.inner.set_life_cycle_status_filter(input);
         self
     }
+    /// <p>Filters the results by the lifecycle status.</p>
+    pub fn get_life_cycle_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_life_cycle_status_filter()
+    }
     /// Appends an item to `AvailabilityZoneFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
@@ -180,6 +198,12 @@ impl ListOutpostsFluentBuilder {
         self.inner = self.inner.set_availability_zone_filter(input);
         self
     }
+    /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
+    pub fn get_availability_zone_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_filter()
+    }
     /// Appends an item to `AvailabilityZoneIdFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
@@ -199,5 +223,11 @@ impl ListOutpostsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zone_id_filter(input);
         self
+    }
+    /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
+    pub fn get_availability_zone_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_id_filter()
     }
 }

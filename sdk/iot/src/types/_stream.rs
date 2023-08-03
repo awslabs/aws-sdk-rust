@@ -48,6 +48,10 @@ impl StreamBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The ID of a file associated with a stream.</p>
     pub fn file_id(mut self, input: i32) -> Self {
         self.file_id = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl StreamBuilder {
     pub fn set_file_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.file_id = input;
         self
+    }
+    /// <p>The ID of a file associated with a stream.</p>
+    pub fn get_file_id(&self) -> &::std::option::Option<i32> {
+        &self.file_id
     }
     /// Consumes the builder and constructs a [`Stream`](crate::types::Stream).
     pub fn build(self) -> crate::types::Stream {

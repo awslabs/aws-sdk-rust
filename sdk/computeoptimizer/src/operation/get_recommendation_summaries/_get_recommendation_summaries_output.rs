@@ -62,6 +62,11 @@ impl GetRecommendationSummariesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+    /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recommendation_summaries`.
     ///
     /// To override the contents of this collection use [`set_recommendation_summaries`](Self::set_recommendation_summaries).
@@ -80,6 +85,12 @@ impl GetRecommendationSummariesOutputBuilder {
     ) -> Self {
         self.recommendation_summaries = input;
         self
+    }
+    /// <p>An array of objects that summarize a recommendation.</p>
+    pub fn get_recommendation_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
+        &self.recommendation_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

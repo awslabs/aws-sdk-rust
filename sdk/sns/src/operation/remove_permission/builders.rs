@@ -38,6 +38,12 @@ impl RemovePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemovePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl RemovePermissionFluentBuilder {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
+    /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
+    }
     /// <p>The unique label of the statement you want to remove.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label(input.into());
@@ -137,5 +147,9 @@ impl RemovePermissionFluentBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label(input);
         self
+    }
+    /// <p>The unique label of the statement you want to remove.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label()
     }
 }

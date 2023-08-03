@@ -39,6 +39,13 @@ impl DescribeFleetMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +135,9 @@ impl DescribeFleetMetadataFluentBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
     }
 }

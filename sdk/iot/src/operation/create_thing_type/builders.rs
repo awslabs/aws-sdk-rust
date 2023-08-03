@@ -37,6 +37,12 @@ impl CreateThingTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateThingType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_thing_type::builders::CreateThingTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateThingTypeFluentBuilder {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_type_name()
+    }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
         self.inner = self.inner.thing_type_properties(input);
@@ -145,6 +155,12 @@ impl CreateThingTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_type_properties(input);
         self
+    }
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
+    pub fn get_thing_type_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingTypeProperties> {
+        self.inner.get_thing_type_properties()
     }
     /// Appends an item to `tags`.
     ///
@@ -162,5 +178,9 @@ impl CreateThingTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata which can be used to manage the thing type.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

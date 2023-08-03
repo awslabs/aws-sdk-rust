@@ -55,6 +55,10 @@ impl GetDiscoveredResourceCountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDiscoveredResourceCounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -167,6 +171,15 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self.inner = self.inner.set_resource_types(input);
         self
     }
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
+    /// </note>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_types()
+    }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -177,6 +190,10 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -186,5 +203,9 @@ impl GetDiscoveredResourceCountsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

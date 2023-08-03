@@ -45,6 +45,12 @@ impl PrefixLevelBuilder {
         self.storage_metrics = input;
         self
     }
+    /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
+    pub fn get_storage_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrefixLevelStorageMetrics> {
+        &self.storage_metrics
+    }
     /// Consumes the builder and constructs a [`PrefixLevel`](crate::types::PrefixLevel).
     pub fn build(self) -> crate::types::PrefixLevel {
         crate::types::PrefixLevel {

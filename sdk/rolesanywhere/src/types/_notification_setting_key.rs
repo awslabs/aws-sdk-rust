@@ -51,6 +51,10 @@ impl NotificationSettingKeyBuilder {
         self.event = input;
         self
     }
+    /// <p>The notification setting event to reset.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::NotificationEvent> {
+        &self.event
+    }
     /// <p>The specified channel of notification.</p>
     pub fn channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl NotificationSettingKeyBuilder {
     ) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The specified channel of notification.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
+        &self.channel
     }
     /// Consumes the builder and constructs a [`NotificationSettingKey`](crate::types::NotificationSettingKey).
     pub fn build(self) -> crate::types::NotificationSettingKey {

@@ -50,6 +50,10 @@ impl PutJobFailureResultInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The details about the failure of a job.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl PutJobFailureResultInputBuilder {
     ) -> Self {
         self.failure_details = input;
         self
+    }
+    /// <p>The details about the failure of a job.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        &self.failure_details
     }
     /// Consumes the builder and constructs a [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
     pub fn build(

@@ -102,6 +102,10 @@ impl FirewallStatelessRuleBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The ARN of the stateless rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -120,6 +124,10 @@ impl FirewallStatelessRuleBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The source IP addresses, in CIDR notation.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sources
     }
     /// Appends an item to `destinations`.
     ///
@@ -140,6 +148,12 @@ impl FirewallStatelessRuleBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The destination IP addresses, in CIDR notation.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destinations
+    }
     /// Appends an item to `source_ports`.
     ///
     /// To override the contents of this collection use [`set_source_ports`](Self::set_source_ports).
@@ -158,6 +172,12 @@ impl FirewallStatelessRuleBuilder {
     ) -> Self {
         self.source_ports = input;
         self
+    }
+    /// <p>The source ports.</p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.source_ports
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -178,6 +198,12 @@ impl FirewallStatelessRuleBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>The destination ports.</p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.destination_ports
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -194,6 +220,10 @@ impl FirewallStatelessRuleBuilder {
         self.protocols = input;
         self
     }
+    /// <p>The protocols.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.protocols
+    }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_action = ::std::option::Option::Some(input.into());
@@ -204,6 +234,10 @@ impl FirewallStatelessRuleBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
+    }
     /// <p>The rule priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -213,6 +247,10 @@ impl FirewallStatelessRuleBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The rule priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`FirewallStatelessRule`](crate::types::FirewallStatelessRule).
     pub fn build(self) -> crate::types::FirewallStatelessRule {

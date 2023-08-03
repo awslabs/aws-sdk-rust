@@ -50,6 +50,13 @@ impl AllowActionBuilder {
         self.custom_request_handling = input;
         self
     }
+    /// <p>Defines custom handling for the web request.</p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_custom_request_handling(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomRequestHandling> {
+        &self.custom_request_handling
+    }
     /// Consumes the builder and constructs a [`AllowAction`](crate::types::AllowAction).
     pub fn build(self) -> crate::types::AllowAction {
         crate::types::AllowAction {

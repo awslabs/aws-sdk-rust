@@ -92,6 +92,10 @@ impl ActionConfigurationPropertyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the action configuration property.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Whether the configuration property is a required value.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl ActionConfigurationPropertyBuilder {
         self.required = input;
         self
     }
+    /// <p>Whether the configuration property is a required value.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
+    }
     /// <p>Whether the configuration property is a key.</p>
     pub fn key(mut self, input: bool) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl ActionConfigurationPropertyBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Whether the configuration property is a key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<bool> {
+        &self.key
     }
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
@@ -124,6 +136,11 @@ impl ActionConfigurationPropertyBuilder {
         self.secret = input;
         self
     }
+    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
+    pub fn get_secret(&self) -> &::std::option::Option<bool> {
+        &self.secret
+    }
     /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
     pub fn queryable(mut self, input: bool) -> Self {
@@ -136,6 +153,11 @@ impl ActionConfigurationPropertyBuilder {
         self.queryable = input;
         self
     }
+    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+    /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
+    pub fn get_queryable(&self) -> &::std::option::Option<bool> {
+        &self.queryable
+    }
     /// <p>The description of the action configuration property that is displayed to users.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +167,10 @@ impl ActionConfigurationPropertyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the action configuration property that is displayed to users.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of the configuration property.</p>
     pub fn r#type(mut self, input: crate::types::ActionConfigurationPropertyType) -> Self {
@@ -158,6 +184,12 @@ impl ActionConfigurationPropertyBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the configuration property.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActionConfigurationPropertyType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ActionConfigurationProperty`](crate::types::ActionConfigurationProperty).
     pub fn build(self) -> crate::types::ActionConfigurationProperty {

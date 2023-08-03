@@ -54,6 +54,10 @@ impl DeleteApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application to delete.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_timestamp = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DeleteApplicationInputBuilder {
     ) -> Self {
         self.create_timestamp = input;
         self
+    }
+    /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_timestamp
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(

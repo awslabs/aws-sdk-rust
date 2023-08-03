@@ -36,6 +36,10 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTrafficMirrorSessions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,12 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_traffic_mirror_session_ids(input);
         self
     }
+    /// <p>The ID of the Traffic Mirror session.</p>
+    pub fn get_traffic_mirror_session_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_traffic_mirror_session_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -151,6 +161,10 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// Appends an item to `Filters`.
     ///
@@ -191,6 +205,21 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li>
+    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li>
+    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li>
+    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
+    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -201,6 +230,10 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -210,5 +243,9 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -72,6 +72,10 @@ impl RealtimeLogConfigsBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of real-time log configurations requested.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -91,6 +95,12 @@ impl RealtimeLogConfigsBuilder {
         self.items = input;
         self
     }
+    /// <p>Contains the list of real-time log configurations.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>> {
+        &self.items
+    }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -100,6 +110,10 @@ impl RealtimeLogConfigsBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +125,10 @@ impl RealtimeLogConfigsBuilder {
         self.marker = input;
         self
     }
+    /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off. </p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl RealtimeLogConfigsBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off. </p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Consumes the builder and constructs a [`RealtimeLogConfigs`](crate::types::RealtimeLogConfigs).
     pub fn build(self) -> crate::types::RealtimeLogConfigs {

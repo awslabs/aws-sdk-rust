@@ -73,6 +73,10 @@ impl BatchDeleteConnectionOutputBuilder {
         self.succeeded = input;
         self
     }
+    /// <p>A list of names of the connection definitions that were successfully deleted.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.succeeded
+    }
     /// Adds a key-value pair to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -97,6 +101,14 @@ impl BatchDeleteConnectionOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
+    > {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

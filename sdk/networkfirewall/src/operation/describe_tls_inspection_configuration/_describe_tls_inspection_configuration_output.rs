@@ -78,6 +78,11 @@ impl DescribeTlsInspectionConfigurationOutputBuilder {
         self.update_token = input;
         self
     }
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p>
+    /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_token
+    }
     /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
     /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
@@ -98,6 +103,14 @@ impl DescribeTlsInspectionConfigurationOutputBuilder {
         self.tls_inspection_configuration = input;
         self
     }
+    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
+    /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn get_tls_inspection_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsInspectionConfiguration> {
+        &self.tls_inspection_configuration
+    }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     pub fn tls_inspection_configuration_response(
         mut self,
@@ -113,6 +126,12 @@ impl DescribeTlsInspectionConfigurationOutputBuilder {
     ) -> Self {
         self.tls_inspection_configuration_response = input;
         self
+    }
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    pub fn get_tls_inspection_configuration_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
+        &self.tls_inspection_configuration_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

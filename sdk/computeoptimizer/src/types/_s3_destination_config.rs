@@ -49,6 +49,10 @@ impl S3DestinationConfigBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_prefix = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl S3DestinationConfigBuilder {
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_prefix = input;
         self
+    }
+    /// <p>The Amazon S3 bucket prefix for an export job.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
     }
     /// Consumes the builder and constructs a [`S3DestinationConfig`](crate::types::S3DestinationConfig).
     pub fn build(self) -> crate::types::S3DestinationConfig {

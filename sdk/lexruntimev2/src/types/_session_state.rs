@@ -91,6 +91,10 @@ impl SessionStateBuilder {
         self.dialog_action = input;
         self
     }
+    /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
+    pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
+        &self.dialog_action
+    }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     pub fn intent(mut self, input: crate::types::Intent) -> Self {
         self.intent = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl SessionStateBuilder {
     pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
         self.intent = input;
         self
+    }
+    /// <p>The active intent that Amazon Lex V2 is processing.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::Intent> {
+        &self.intent
     }
     /// Appends an item to `active_contexts`.
     ///
@@ -119,6 +127,12 @@ impl SessionStateBuilder {
     ) -> Self {
         self.active_contexts = input;
         self
+    }
+    /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
+    pub fn get_active_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+        &self.active_contexts
     }
     /// Adds a key-value pair to `session_attributes`.
     ///
@@ -145,6 +159,14 @@ impl SessionStateBuilder {
         self.session_attributes = input;
         self
     }
+    /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
+    pub fn get_session_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.session_attributes
+    }
     /// <p>A unique identifier for a specific request.</p>
     pub fn originating_request_id(
         mut self,
@@ -161,6 +183,10 @@ impl SessionStateBuilder {
         self.originating_request_id = input;
         self
     }
+    /// <p>A unique identifier for a specific request.</p>
+    pub fn get_originating_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.originating_request_id
+    }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn runtime_hints(mut self, input: crate::types::RuntimeHints) -> Self {
         self.runtime_hints = ::std::option::Option::Some(input);
@@ -173,6 +199,10 @@ impl SessionStateBuilder {
     ) -> Self {
         self.runtime_hints = input;
         self
+    }
+    /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+    pub fn get_runtime_hints(&self) -> &::std::option::Option<crate::types::RuntimeHints> {
+        &self.runtime_hints
     }
     /// Consumes the builder and constructs a [`SessionState`](crate::types::SessionState).
     pub fn build(self) -> crate::types::SessionState {

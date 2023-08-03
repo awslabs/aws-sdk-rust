@@ -72,6 +72,10 @@ impl ThesaurusSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the thesaurus.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the thesaurus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ThesaurusSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the thesaurus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the thesaurus.</p>
     pub fn status(mut self, input: crate::types::ThesaurusStatus) -> Self {
@@ -95,6 +103,10 @@ impl ThesaurusSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the thesaurus.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ThesaurusStatus> {
+        &self.status
+    }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl ThesaurusSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the thesaurus was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl ThesaurusSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The Unix timestamp when the thesaurus was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`ThesaurusSummary`](crate::types::ThesaurusSummary).
     pub fn build(self) -> crate::types::ThesaurusSummary {

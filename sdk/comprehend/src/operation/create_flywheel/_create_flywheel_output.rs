@@ -54,6 +54,10 @@ impl CreateFlywheelOutputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(
         mut self,
@@ -69,6 +73,10 @@ impl CreateFlywheelOutputBuilder {
     ) -> Self {
         self.active_model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_model_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

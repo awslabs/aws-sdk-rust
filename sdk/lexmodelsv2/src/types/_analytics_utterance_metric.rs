@@ -93,6 +93,16 @@ impl AnalyticsUtteranceMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric for which you want to get utterance summary statistics.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of utterances.</p> </li>
+    /// <li> <p> <code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p> </li>
+    /// <li> <p> <code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p> </li>
+    /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceMetricName> {
+        &self.name
+    }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -116,6 +126,15 @@ impl AnalyticsUtteranceMetricBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The summary statistic to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -128,6 +147,10 @@ impl AnalyticsUtteranceMetricBuilder {
     ) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceMetric`](crate::types::AnalyticsUtteranceMetric).
     pub fn build(self) -> crate::types::AnalyticsUtteranceMetric {

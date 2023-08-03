@@ -48,6 +48,10 @@ impl AwsEcsTaskVolumeDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
     pub fn host(mut self, input: crate::types::AwsEcsTaskVolumeHostDetails) -> Self {
         self.host = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AwsEcsTaskVolumeDetailsBuilder {
     ) -> Self {
         self.host = input;
         self
+    }
+    /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
+    pub fn get_host(&self) -> &::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails> {
+        &self.host
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskVolumeDetails`](crate::types::AwsEcsTaskVolumeDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskVolumeDetails {

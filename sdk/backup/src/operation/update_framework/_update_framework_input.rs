@@ -70,6 +70,10 @@ impl UpdateFrameworkInputBuilder {
         self.framework_name = input;
         self
     }
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
     pub fn framework_description(
         mut self,
@@ -85,6 +89,10 @@ impl UpdateFrameworkInputBuilder {
     ) -> Self {
         self.framework_description = input;
         self
+    }
+    /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
+    pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_description
     }
     /// Appends an item to `framework_controls`.
     ///
@@ -105,6 +113,12 @@ impl UpdateFrameworkInputBuilder {
         self.framework_controls = input;
         self
     }
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    pub fn get_framework_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+        &self.framework_controls
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
         mut self,
@@ -120,6 +134,10 @@ impl UpdateFrameworkInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`UpdateFrameworkInput`](crate::operation::update_framework::UpdateFrameworkInput).
     pub fn build(

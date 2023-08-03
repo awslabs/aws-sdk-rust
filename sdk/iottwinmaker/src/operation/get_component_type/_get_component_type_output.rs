@@ -202,6 +202,10 @@ impl GetComponentTypeOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the component type.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(mut self, input: bool) -> Self {
         self.is_singleton = ::std::option::Option::Some(input);
@@ -211,6 +215,10 @@ impl GetComponentTypeOutputBuilder {
     pub fn set_is_singleton(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_singleton = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    pub fn get_is_singleton(&self) -> &::std::option::Option<bool> {
+        &self.is_singleton
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
@@ -228,6 +236,10 @@ impl GetComponentTypeOutputBuilder {
         self.component_type_id = input;
         self
     }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
+    }
     /// <p>The description of the component type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -237,6 +249,10 @@ impl GetComponentTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `property_definitions`.
     ///
@@ -266,6 +282,17 @@ impl GetComponentTypeOutputBuilder {
         self.property_definitions = input;
         self
     }
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    pub fn get_property_definitions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::PropertyDefinitionResponse,
+        >,
+    > {
+        &self.property_definitions
+    }
     /// Appends an item to `extends_from`.
     ///
     /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
@@ -284,6 +311,12 @@ impl GetComponentTypeOutputBuilder {
     ) -> Self {
         self.extends_from = input;
         self
+    }
+    /// <p>The name of the parent component type that this component type extends.</p>
+    pub fn get_extends_from(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.extends_from
     }
     /// Adds a key-value pair to `functions`.
     ///
@@ -310,6 +343,14 @@ impl GetComponentTypeOutputBuilder {
         self.functions = input;
         self
     }
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    pub fn get_functions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
+    > {
+        &self.functions
+    }
     /// <p>The date and time when the component type was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -322,6 +363,10 @@ impl GetComponentTypeOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>The date and time when the component type was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The date and time when the component was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -336,6 +381,10 @@ impl GetComponentTypeOutputBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time when the component was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The ARN of the component type.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -345,6 +394,10 @@ impl GetComponentTypeOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the component type.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
     pub fn is_abstract(mut self, input: bool) -> Self {
@@ -356,6 +409,10 @@ impl GetComponentTypeOutputBuilder {
         self.is_abstract = input;
         self
     }
+    /// <p>A Boolean value that specifies whether the component type is abstract.</p>
+    pub fn get_is_abstract(&self) -> &::std::option::Option<bool> {
+        &self.is_abstract
+    }
     /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
     pub fn is_schema_initialized(mut self, input: bool) -> Self {
         self.is_schema_initialized = ::std::option::Option::Some(input);
@@ -366,6 +423,10 @@ impl GetComponentTypeOutputBuilder {
         self.is_schema_initialized = input;
         self
     }
+    /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
+    pub fn get_is_schema_initialized(&self) -> &::std::option::Option<bool> {
+        &self.is_schema_initialized
+    }
     /// <p>The current status of the component type.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -375,6 +436,10 @@ impl GetComponentTypeOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the component type.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Adds a key-value pair to `property_groups`.
     ///
@@ -403,6 +468,15 @@ impl GetComponentTypeOutputBuilder {
         self.property_groups = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_property_groups(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
+    > {
+        &self.property_groups
+    }
     /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
@@ -412,6 +486,10 @@ impl GetComponentTypeOutputBuilder {
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
+    }
+    /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     /// <p>The component type name.</p>
     pub fn component_type_name(
@@ -428,6 +506,10 @@ impl GetComponentTypeOutputBuilder {
     ) -> Self {
         self.component_type_name = input;
         self
+    }
+    /// <p>The component type name.</p>
+    pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

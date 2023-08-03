@@ -47,6 +47,10 @@ impl CreatePlatformApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePlatformApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_platform_application::builders::CreatePlatformApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,10 @@ impl CreatePlatformApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform(input.into());
@@ -146,6 +154,10 @@ impl CreatePlatformApplicationFluentBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
+    }
+    /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform()
     }
     /// Adds a key-value pair to `Attributes`.
     ///
@@ -169,5 +181,13 @@ impl CreatePlatformApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
     }
 }

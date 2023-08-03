@@ -72,6 +72,10 @@ impl PutMailboxPermissionsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl PutMailboxPermissionsInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl PutMailboxPermissionsInputBuilder {
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_id = input;
         self
+    }
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
+    pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_id
     }
     /// Appends an item to `permission_values`.
     ///
@@ -110,6 +122,12 @@ impl PutMailboxPermissionsInputBuilder {
     ) -> Self {
         self.permission_values = input;
         self
+    }
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+    pub fn get_permission_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+        &self.permission_values
     }
     /// Consumes the builder and constructs a [`PutMailboxPermissionsInput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput).
     pub fn build(

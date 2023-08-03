@@ -46,6 +46,13 @@ impl ListStateMachineAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStateMachineAliases as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,11 @@ impl ListStateMachineAliasesFluentBuilder {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
+    /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_arn()
+    }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +165,10 @@ impl ListStateMachineAliasesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
@@ -165,5 +181,10 @@ impl ListStateMachineAliasesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

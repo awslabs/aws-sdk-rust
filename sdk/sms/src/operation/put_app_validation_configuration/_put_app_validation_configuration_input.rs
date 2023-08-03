@@ -63,6 +63,10 @@ impl PutAppValidationConfigurationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Appends an item to `app_validation_configurations`.
     ///
     /// To override the contents of this collection use [`set_app_validation_configurations`](Self::set_app_validation_configurations).
@@ -84,6 +88,12 @@ impl PutAppValidationConfigurationInputBuilder {
     ) -> Self {
         self.app_validation_configurations = input;
         self
+    }
+    /// <p>The configuration for application validation.</p>
+    pub fn get_app_validation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>> {
+        &self.app_validation_configurations
     }
     /// Appends an item to `server_group_validation_configurations`.
     ///
@@ -110,6 +120,13 @@ impl PutAppValidationConfigurationInputBuilder {
     ) -> Self {
         self.server_group_validation_configurations = input;
         self
+    }
+    /// <p>The configuration for instance validation.</p>
+    pub fn get_server_group_validation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>
+    {
+        &self.server_group_validation_configurations
     }
     /// Consumes the builder and constructs a [`PutAppValidationConfigurationInput`](crate::operation::put_app_validation_configuration::PutAppValidationConfigurationInput).
     pub fn build(

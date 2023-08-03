@@ -40,6 +40,10 @@ impl EnableVpcClassicLinkDnsSupportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableVpcClassicLinkDnsSupport as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,5 +107,9 @@ impl EnableVpcClassicLinkDnsSupportFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
 }

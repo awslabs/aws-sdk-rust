@@ -62,6 +62,10 @@ impl TableColumnBuilder {
         self.table_column_id = input;
         self
     }
+    /// <p>The id of the column in the table.</p>
+    pub fn get_table_column_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_column_id
+    }
     /// <p>The name of the column in the table.</p>
     pub fn table_column_name(
         mut self,
@@ -78,6 +82,10 @@ impl TableColumnBuilder {
         self.table_column_name = input;
         self
     }
+    /// <p>The name of the column in the table.</p>
+    pub fn get_table_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_column_name
+    }
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl TableColumnBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
+    }
+    /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`TableColumn`](crate::types::TableColumn).
     pub fn build(self) -> crate::types::TableColumn {

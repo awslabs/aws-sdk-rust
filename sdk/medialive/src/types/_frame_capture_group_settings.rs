@@ -54,6 +54,10 @@ impl FrameCaptureGroupSettingsBuilder {
         self.destination = input;
         self
     }
+    /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
+        &self.destination
+    }
     /// Parameters that control interactions with the CDN.
     pub fn frame_capture_cdn_settings(
         mut self,
@@ -69,6 +73,12 @@ impl FrameCaptureGroupSettingsBuilder {
     ) -> Self {
         self.frame_capture_cdn_settings = input;
         self
+    }
+    /// Parameters that control interactions with the CDN.
+    pub fn get_frame_capture_cdn_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FrameCaptureCdnSettings> {
+        &self.frame_capture_cdn_settings
     }
     /// Consumes the builder and constructs a [`FrameCaptureGroupSettings`](crate::types::FrameCaptureGroupSettings).
     pub fn build(self) -> crate::types::FrameCaptureGroupSettings {

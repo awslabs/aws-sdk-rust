@@ -69,6 +69,10 @@ impl DeleteBgpPeerInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl DeleteBgpPeerInputBuilder {
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(
@@ -95,6 +103,10 @@ impl DeleteBgpPeerInputBuilder {
         self.customer_address = input;
         self
     }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_address
+    }
     /// <p>The ID of the BGP peer.</p>
     pub fn bgp_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bgp_peer_id = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DeleteBgpPeerInputBuilder {
     pub fn set_bgp_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bgp_peer_id = input;
         self
+    }
+    /// <p>The ID of the BGP peer.</p>
+    pub fn get_bgp_peer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_peer_id
     }
     /// Consumes the builder and constructs a [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
     pub fn build(

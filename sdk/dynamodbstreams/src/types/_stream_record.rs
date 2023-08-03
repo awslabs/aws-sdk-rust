@@ -129,6 +129,12 @@ impl StreamRecordBuilder {
         self.approximate_creation_date_time = input;
         self
     }
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
+    pub fn get_approximate_creation_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approximate_creation_date_time
+    }
     /// Adds a key-value pair to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -153,6 +159,14 @@ impl StreamRecordBuilder {
     ) -> Self {
         self.keys = input;
         self
+    }
+    /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
+    pub fn get_keys(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.keys
     }
     /// Adds a key-value pair to `new_image`.
     ///
@@ -179,6 +193,14 @@ impl StreamRecordBuilder {
         self.new_image = input;
         self
     }
+    /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
+    pub fn get_new_image(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.new_image
+    }
     /// Adds a key-value pair to `old_image`.
     ///
     /// To override the contents of this collection use [`set_old_image`](Self::set_old_image).
@@ -204,6 +226,14 @@ impl StreamRecordBuilder {
         self.old_image = input;
         self
     }
+    /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
+    pub fn get_old_image(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.old_image
+    }
     /// <p>The sequence number of the stream record.</p>
     pub fn sequence_number(
         mut self,
@@ -220,6 +250,10 @@ impl StreamRecordBuilder {
         self.sequence_number = input;
         self
     }
+    /// <p>The sequence number of the stream record.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_number
+    }
     /// <p>The size of the stream record, in bytes.</p>
     pub fn size_bytes(mut self, input: i64) -> Self {
         self.size_bytes = ::std::option::Option::Some(input);
@@ -229,6 +263,10 @@ impl StreamRecordBuilder {
     pub fn set_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_bytes = input;
         self
+    }
+    /// <p>The size of the stream record, in bytes.</p>
+    pub fn get_size_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_bytes
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
@@ -254,6 +292,16 @@ impl StreamRecordBuilder {
     ) -> Self {
         self.stream_view_type = input;
         self
+    }
+    /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
+    /// <ul>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
+    /// </ul>
+    pub fn get_stream_view_type(&self) -> &::std::option::Option<crate::types::StreamViewType> {
+        &self.stream_view_type
     }
     /// Consumes the builder and constructs a [`StreamRecord`](crate::types::StreamRecord).
     pub fn build(self) -> crate::types::StreamRecord {

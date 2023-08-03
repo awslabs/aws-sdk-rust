@@ -59,6 +59,10 @@ impl ListServiceInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `service_instances`.
     ///
     /// To override the contents of this collection use [`set_service_instances`](Self::set_service_instances).
@@ -77,6 +81,12 @@ impl ListServiceInstancesOutputBuilder {
     ) -> Self {
         self.service_instances = input;
         self
+    }
+    /// <p>An array of service instances with summary data.</p>
+    pub fn get_service_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>> {
+        &self.service_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

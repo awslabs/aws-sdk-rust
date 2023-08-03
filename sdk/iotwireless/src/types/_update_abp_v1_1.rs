@@ -40,6 +40,10 @@ impl UpdateAbpV11Builder {
         self.f_cnt_start = input;
         self
     }
+    /// <p>The FCnt init value.</p>
+    pub fn get_f_cnt_start(&self) -> &::std::option::Option<i32> {
+        &self.f_cnt_start
+    }
     /// Consumes the builder and constructs a [`UpdateAbpV11`](crate::types::UpdateAbpV11).
     pub fn build(self) -> crate::types::UpdateAbpV11 {
         crate::types::UpdateAbpV11 {

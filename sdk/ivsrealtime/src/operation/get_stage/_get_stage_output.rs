@@ -46,6 +46,10 @@ impl GetStageOutputBuilder {
         self.stage = input;
         self
     }
+    /// <p>The stage that is returned.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::Stage> {
+        &self.stage
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

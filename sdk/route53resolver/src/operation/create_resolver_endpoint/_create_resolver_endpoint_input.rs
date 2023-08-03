@@ -121,6 +121,10 @@ impl CreateResolverEndpointInputBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl CreateResolverEndpointInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -153,6 +161,12 @@ impl CreateResolverEndpointInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>Specify the applicable value:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
@@ -174,6 +188,14 @@ impl CreateResolverEndpointInputBuilder {
         self.direction = input;
         self
     }
+    /// <p>Specify the applicable value:</p>
+    /// <ul>
+    /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
+    /// </ul>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
+        &self.direction
+    }
     /// Appends an item to `ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
@@ -192,6 +214,12 @@ impl CreateResolverEndpointInputBuilder {
     ) -> Self {
         self.ip_addresses = input;
         self
+    }
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>> {
+        &self.ip_addresses
     }
     /// Appends an item to `tags`.
     ///
@@ -212,6 +240,10 @@ impl CreateResolverEndpointInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.resolver_endpoint_type = ::std::option::Option::Some(input);
@@ -225,6 +257,12 @@ impl CreateResolverEndpointInputBuilder {
         self.resolver_endpoint_type = input;
         self
     }
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    pub fn get_resolver_endpoint_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+        &self.resolver_endpoint_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -234,6 +272,10 @@ impl CreateResolverEndpointInputBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn preferred_instance_type(
@@ -250,6 +292,10 @@ impl CreateResolverEndpointInputBuilder {
     ) -> Self {
         self.preferred_instance_type = input;
         self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_instance_type
     }
     /// Consumes the builder and constructs a [`CreateResolverEndpointInput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointInput).
     pub fn build(

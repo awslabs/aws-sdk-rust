@@ -51,6 +51,10 @@ impl GetAssetPropertyValueOutputBuilder {
         self.property_value = input;
         self
     }
+    /// <p>The current asset property value.</p>
+    pub fn get_property_value(&self) -> &::std::option::Option<crate::types::AssetPropertyValue> {
+        &self.property_value
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

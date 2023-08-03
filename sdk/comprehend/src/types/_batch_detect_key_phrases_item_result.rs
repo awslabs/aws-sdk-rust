@@ -48,6 +48,10 @@ impl BatchDetectKeyPhrasesItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `key_phrases`.
     ///
     /// To override the contents of this collection use [`set_key_phrases`](Self::set_key_phrases).
@@ -66,6 +70,12 @@ impl BatchDetectKeyPhrasesItemResultBuilder {
     ) -> Self {
         self.key_phrases = input;
         self
+    }
+    /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
+    pub fn get_key_phrases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+        &self.key_phrases
     }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).
     pub fn build(self) -> crate::types::BatchDetectKeyPhrasesItemResult {

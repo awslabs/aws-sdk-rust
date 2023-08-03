@@ -47,6 +47,10 @@ impl GetMatchingWorkflowInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// Consumes the builder and constructs a [`GetMatchingWorkflowInput`](crate::operation::get_matching_workflow::GetMatchingWorkflowInput).
     pub fn build(
         self,

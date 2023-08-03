@@ -56,6 +56,10 @@ impl GetResourceInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier for the Resource resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier for the Resource resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `embed`.
     ///
@@ -84,6 +92,10 @@ impl GetResourceInputBuilder {
     ) -> Self {
         self.embed = input;
         self
+    }
+    /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+    pub fn get_embed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.embed
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
     pub fn build(

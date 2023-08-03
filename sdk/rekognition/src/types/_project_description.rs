@@ -64,6 +64,10 @@ impl ProjectDescriptionBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ProjectDescriptionBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The Unix timestamp for the date and time that the project was created.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The current status of the project.</p>
     pub fn status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl ProjectDescriptionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the project.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
+        &self.status
     }
     /// Appends an item to `datasets`.
     ///
@@ -105,6 +117,12 @@ impl ProjectDescriptionBuilder {
     ) -> Self {
         self.datasets = input;
         self
+    }
+    /// <p> Information about the training and test datasets in the project. </p>
+    pub fn get_datasets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
+        &self.datasets
     }
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).
     pub fn build(self) -> crate::types::ProjectDescription {

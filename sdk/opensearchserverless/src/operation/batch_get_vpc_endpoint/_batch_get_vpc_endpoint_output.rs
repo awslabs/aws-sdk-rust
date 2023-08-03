@@ -72,6 +72,12 @@ impl BatchGetVpcEndpointOutputBuilder {
         self.vpc_endpoint_details = input;
         self
     }
+    /// <p>Details about the specified VPC endpoint.</p>
+    pub fn get_vpc_endpoint_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>> {
+        &self.vpc_endpoint_details
+    }
     /// Appends an item to `vpc_endpoint_error_details`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_error_details`](Self::set_vpc_endpoint_error_details).
@@ -93,6 +99,12 @@ impl BatchGetVpcEndpointOutputBuilder {
     ) -> Self {
         self.vpc_endpoint_error_details = input;
         self
+    }
+    /// <p>Error information for a failed request.</p>
+    pub fn get_vpc_endpoint_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>> {
+        &self.vpc_endpoint_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

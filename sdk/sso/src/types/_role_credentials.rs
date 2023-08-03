@@ -78,6 +78,10 @@ impl RoleCredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub fn secret_access_key(
         mut self,
@@ -93,6 +97,10 @@ impl RoleCredentialsBuilder {
     ) -> Self {
         self.secret_access_key = input;
         self
+    }
+    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
     }
     /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub fn session_token(
@@ -110,6 +118,10 @@ impl RoleCredentialsBuilder {
         self.session_token = input;
         self
     }
+    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p>The date on which temporary security credentials expire.</p>
     pub fn expiration(mut self, input: i64) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl RoleCredentialsBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>The date on which temporary security credentials expire.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<i64> {
+        &self.expiration
     }
     /// Consumes the builder and constructs a [`RoleCredentials`](crate::types::RoleCredentials).
     pub fn build(self) -> crate::types::RoleCredentials {

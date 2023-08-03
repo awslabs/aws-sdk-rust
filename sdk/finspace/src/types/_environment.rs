@@ -130,6 +130,10 @@ impl EnvironmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the FinSpace environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the FinSpace environment.</p>
     pub fn environment_id(
         mut self,
@@ -145,6 +149,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
     pub fn aws_account_id(
@@ -162,6 +170,10 @@ impl EnvironmentBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The current status of creation of the FinSpace environment.</p>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -174,6 +186,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of creation of the FinSpace environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
+        &self.status
     }
     /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
     pub fn environment_url(
@@ -191,6 +207,10 @@ impl EnvironmentBuilder {
         self.environment_url = input;
         self
     }
+    /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
+    pub fn get_environment_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_url
+    }
     /// <p>The description of the FinSpace environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -200,6 +220,10 @@ impl EnvironmentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the FinSpace environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
     pub fn environment_arn(
@@ -217,6 +241,10 @@ impl EnvironmentBuilder {
         self.environment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
+    }
     /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
     pub fn sage_maker_studio_domain_url(
         mut self,
@@ -233,6 +261,12 @@ impl EnvironmentBuilder {
         self.sage_maker_studio_domain_url = input;
         self
     }
+    /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
+    pub fn get_sage_maker_studio_domain_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.sage_maker_studio_domain_url
+    }
     /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -242,6 +276,10 @@ impl EnvironmentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
     pub fn dedicated_service_account_id(
@@ -259,6 +297,12 @@ impl EnvironmentBuilder {
         self.dedicated_service_account_id = input;
         self
     }
+    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
+    pub fn get_dedicated_service_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.dedicated_service_account_id
+    }
     /// <p>The authentication mode for the environment.</p>
     pub fn federation_mode(mut self, input: crate::types::FederationMode) -> Self {
         self.federation_mode = ::std::option::Option::Some(input);
@@ -272,6 +316,10 @@ impl EnvironmentBuilder {
         self.federation_mode = input;
         self
     }
+    /// <p>The authentication mode for the environment.</p>
+    pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
+        &self.federation_mode
+    }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn federation_parameters(mut self, input: crate::types::FederationParameters) -> Self {
         self.federation_parameters = ::std::option::Option::Some(input);
@@ -284,6 +332,12 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.federation_parameters = input;
         self
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn get_federation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederationParameters> {
+        &self.federation_parameters
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {

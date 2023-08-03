@@ -106,6 +106,10 @@ impl GetDevicePositionOutputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The device whose position you retrieved.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl GetDevicePositionOutputBuilder {
         self.sample_time = input;
         self
     }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_time
+    }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn received_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.received_time = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl GetDevicePositionOutputBuilder {
     ) -> Self {
         self.received_time = input;
         self
+    }
+    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_received_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.received_time
     }
     /// Appends an item to `position`.
     ///
@@ -148,6 +160,10 @@ impl GetDevicePositionOutputBuilder {
         self.position = input;
         self
     }
+    /// <p>The last known device position.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.position
+    }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(mut self, input: crate::types::PositionalAccuracy) -> Self {
         self.accuracy = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl GetDevicePositionOutputBuilder {
     ) -> Self {
         self.accuracy = input;
         self
+    }
+    /// <p>The accuracy of the device position.</p>
+    pub fn get_accuracy(&self) -> &::std::option::Option<crate::types::PositionalAccuracy> {
+        &self.accuracy
     }
     /// Adds a key-value pair to `position_properties`.
     ///
@@ -185,6 +205,14 @@ impl GetDevicePositionOutputBuilder {
     ) -> Self {
         self.position_properties = input;
         self
+    }
+    /// <p>The properties associated with the position.</p>
+    pub fn get_position_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.position_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

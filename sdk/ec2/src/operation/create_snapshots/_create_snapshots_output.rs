@@ -55,6 +55,12 @@ impl CreateSnapshotsOutputBuilder {
         self.snapshots = input;
         self
     }
+    /// <p>List of snapshots.</p>
+    pub fn get_snapshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>> {
+        &self.snapshots
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

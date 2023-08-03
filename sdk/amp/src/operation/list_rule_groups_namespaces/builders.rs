@@ -36,6 +36,10 @@ impl ListRuleGroupsNamespacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRuleGroupsNamespaces as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListRuleGroupsNamespacesFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// The ID of the workspace.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +152,10 @@ impl ListRuleGroupsNamespacesFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +167,10 @@ impl ListRuleGroupsNamespacesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// Maximum results to return in response (default=100, maximum=1000).
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,5 +180,9 @@ impl ListRuleGroupsNamespacesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// Maximum results to return in response (default=100, maximum=1000).
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

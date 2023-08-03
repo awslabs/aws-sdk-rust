@@ -39,6 +39,10 @@ impl DeleteAclInputBuilder {
         self.acl_name = input;
         self
     }
+    /// <p>The name of the Access Control List to delete</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acl_name
+    }
     /// Consumes the builder and constructs a [`DeleteAclInput`](crate::operation::delete_acl::DeleteAclInput).
     pub fn build(
         self,

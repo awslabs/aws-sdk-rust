@@ -70,6 +70,10 @@ impl EnvironmentVariableBuilder {
         self.name = input;
         self
     }
+    /// <p>The name or key of the environment variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value of the environment variable.</p> <important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
@@ -83,6 +87,12 @@ impl EnvironmentVariableBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the environment variable.</p> <important>
+    /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
+    /// </important>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
@@ -106,6 +116,15 @@ impl EnvironmentVariableBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of environment variable. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to specify a parameter store environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
+    /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentVariableType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::types::EnvironmentVariable).
     pub fn build(self) -> crate::types::EnvironmentVariable {

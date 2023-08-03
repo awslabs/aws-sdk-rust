@@ -139,6 +139,10 @@ impl ClusterBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl ClusterBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -158,6 +166,10 @@ impl ClusterBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Elastic DocumentDB cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
     pub fn cluster_endpoint(
@@ -175,6 +187,10 @@ impl ClusterBuilder {
         self.cluster_endpoint = input;
         self
     }
+    /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_endpoint
+    }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
     pub fn create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_time = ::std::option::Option::Some(input.into());
@@ -184,6 +200,10 @@ impl ClusterBuilder {
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_time
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     pub fn admin_user_name(
@@ -201,6 +221,10 @@ impl ClusterBuilder {
         self.admin_user_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    pub fn get_admin_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_user_name
+    }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn auth_type(mut self, input: crate::types::Auth) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
@@ -210,6 +234,10 @@ impl ClusterBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::Auth>) -> Self {
         self.auth_type = input;
         self
+    }
+    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::Auth> {
+        &self.auth_type
     }
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
     pub fn shard_capacity(mut self, input: i32) -> Self {
@@ -221,6 +249,10 @@ impl ClusterBuilder {
         self.shard_capacity = input;
         self
     }
+    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    pub fn get_shard_capacity(&self) -> &::std::option::Option<i32> {
+        &self.shard_capacity
+    }
     /// <p>The number of shards in the Elastic DocumentDB cluster.</p>
     pub fn shard_count(mut self, input: i32) -> Self {
         self.shard_count = ::std::option::Option::Some(input);
@@ -230,6 +262,10 @@ impl ClusterBuilder {
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shard_count = input;
         self
+    }
+    /// <p>The number of shards in the Elastic DocumentDB cluster.</p>
+    pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.shard_count
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -253,6 +289,12 @@ impl ClusterBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of EC2 VPC security groups associated with this cluster.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -272,6 +314,10 @@ impl ClusterBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     pub fn preferred_maintenance_window(
@@ -290,6 +336,13 @@ impl ClusterBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -299,6 +352,10 @@ impl ClusterBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {

@@ -40,6 +40,10 @@ impl SubmitJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::submit_job::builders::SubmitJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_queue(input.into());
@@ -131,6 +139,10 @@ impl SubmitJobFluentBuilder {
     pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_queue(input);
         self
+    }
+    /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
+    pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_queue()
     }
     /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
@@ -150,6 +162,11 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_share_identifier(input);
         self
     }
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
+    pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_share_identifier()
+    }
     /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(mut self, input: i32) -> Self {
@@ -161,6 +178,11 @@ impl SubmitJobFluentBuilder {
     pub fn set_scheduling_priority_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scheduling_priority_override(input);
         self
+    }
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
+    /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
+    pub fn get_scheduling_priority_override(&self) -> &::std::option::Option<i32> {
+        self.inner.get_scheduling_priority_override()
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn array_properties(mut self, input: crate::types::ArrayProperties) -> Self {
@@ -174,6 +196,10 @@ impl SubmitJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_array_properties(input);
         self
+    }
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::ArrayProperties> {
+        self.inner.get_array_properties()
     }
     /// Appends an item to `dependsOn`.
     ///
@@ -192,6 +218,12 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_depends_on(input);
         self
     }
+    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
+    pub fn get_depends_on(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDependency>> {
+        self.inner.get_depends_on()
+    }
     /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
     /// <p>If the revision is not specified, then the latest active revision is used.</p>
     pub fn job_definition(
@@ -209,6 +241,11 @@ impl SubmitJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_definition(input);
         self
+    }
+    /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
+    /// <p>If the revision is not specified, then the latest active revision is used.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_definition()
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -233,6 +270,14 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_parameters()
+    }
     /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub fn container_overrides(mut self, input: crate::types::ContainerOverrides) -> Self {
         self.inner = self.inner.container_overrides(input);
@@ -245,6 +290,12 @@ impl SubmitJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_overrides(input);
         self
+    }
+    /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
+    pub fn get_container_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerOverrides> {
+        self.inner.get_container_overrides()
     }
     /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
@@ -263,6 +314,12 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_node_overrides(input);
         self
     }
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
+    /// </note>
+    pub fn get_node_overrides(&self) -> &::std::option::Option<crate::types::NodeOverrides> {
+        self.inner.get_node_overrides()
+    }
     /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
         self.inner = self.inner.retry_strategy(input);
@@ -276,6 +333,10 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_retry_strategy(input);
         self
     }
+    /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
+        self.inner.get_retry_strategy()
+    }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
     pub fn propagate_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.propagate_tags(input);
@@ -286,6 +347,10 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_propagate_tags(input);
         self
     }
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_propagate_tags()
+    }
     /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn timeout(mut self, input: crate::types::JobTimeout) -> Self {
         self.inner = self.inner.timeout(input);
@@ -295,6 +360,10 @@ impl SubmitJobFluentBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::JobTimeout>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
+    }
+    /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<crate::types::JobTimeout> {
+        self.inner.get_timeout()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -319,6 +388,14 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
     pub fn eks_properties_override(mut self, input: crate::types::EksPropertiesOverride) -> Self {
         self.inner = self.inner.eks_properties_override(input);
@@ -331,5 +408,11 @@ impl SubmitJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_eks_properties_override(input);
         self
+    }
+    /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
+    pub fn get_eks_properties_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::EksPropertiesOverride> {
+        self.inner.get_eks_properties_override()
     }
 }

@@ -80,6 +80,10 @@ impl RoutingControlBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// <p>The name of the control panel where the routing control is located.</p>
     pub fn control_panel_name(
         mut self,
@@ -95,6 +99,10 @@ impl RoutingControlBuilder {
     ) -> Self {
         self.control_panel_name = input;
         self
+    }
+    /// <p>The name of the control panel where the routing control is located.</p>
+    pub fn get_control_panel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_name
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn routing_control_arn(
@@ -112,6 +120,10 @@ impl RoutingControlBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// <p>The name of the routing control.</p>
     pub fn routing_control_name(
         mut self,
@@ -128,6 +140,10 @@ impl RoutingControlBuilder {
         self.routing_control_name = input;
         self
     }
+    /// <p>The name of the routing control.</p>
+    pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_name
+    }
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
         self.routing_control_state = ::std::option::Option::Some(input);
@@ -140,6 +156,12 @@ impl RoutingControlBuilder {
     ) -> Self {
         self.routing_control_state = input;
         self
+    }
+    /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+    pub fn get_routing_control_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+        &self.routing_control_state
     }
     /// Consumes the builder and constructs a [`RoutingControl`](crate::types::RoutingControl).
     pub fn build(self) -> crate::types::RoutingControl {

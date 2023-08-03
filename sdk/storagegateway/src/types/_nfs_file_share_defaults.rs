@@ -64,6 +64,10 @@ impl NfsFileShareDefaultsBuilder {
         self.file_mode = input;
         self
     }
+    /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_mode
+    }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
     pub fn directory_mode(
         mut self,
@@ -80,6 +84,10 @@ impl NfsFileShareDefaultsBuilder {
         self.directory_mode = input;
         self
     }
+    /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
+    pub fn get_directory_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_mode
+    }
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn group_id(mut self, input: i64) -> Self {
         self.group_id = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl NfsFileShareDefaultsBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<i64> {
+        &self.group_id
+    }
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn owner_id(mut self, input: i64) -> Self {
         self.owner_id = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl NfsFileShareDefaultsBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<i64> {
+        &self.owner_id
     }
     /// Consumes the builder and constructs a [`NfsFileShareDefaults`](crate::types::NfsFileShareDefaults).
     pub fn build(self) -> crate::types::NfsFileShareDefaults {

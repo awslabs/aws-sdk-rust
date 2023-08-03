@@ -172,6 +172,10 @@ impl CodeReviewBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the code review.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(
         mut self,
@@ -187,6 +191,10 @@ impl CodeReviewBuilder {
     ) -> Self {
         self.code_review_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
     }
     /// <p>The name of the repository.</p>
     pub fn repository_name(
@@ -204,6 +212,10 @@ impl CodeReviewBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -213,6 +225,10 @@ impl CodeReviewBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
@@ -226,6 +242,10 @@ impl CodeReviewBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The valid code review states are:</p>
     /// <ul>
@@ -249,6 +269,16 @@ impl CodeReviewBuilder {
         self.state = input;
         self
     }
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::JobState> {
+        &self.state
+    }
     /// <p>The reason for the state of the code review.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -258,6 +288,10 @@ impl CodeReviewBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason for the state of the code review.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -272,6 +306,10 @@ impl CodeReviewBuilder {
         self.created_time_stamp = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
+    pub fn get_created_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time_stamp
+    }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     pub fn last_updated_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time_stamp = ::std::option::Option::Some(input);
@@ -285,6 +323,12 @@ impl CodeReviewBuilder {
         self.last_updated_time_stamp = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
+    pub fn get_last_updated_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time_stamp
+    }
     /// <p>The type of code review.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -294,6 +338,10 @@ impl CodeReviewBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of code review.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>The pull request ID for the code review.</p>
     pub fn pull_request_id(
@@ -311,6 +359,10 @@ impl CodeReviewBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The pull request ID for the code review.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The type of the source code for the code review.</p>
     pub fn source_code_type(mut self, input: crate::types::SourceCodeType) -> Self {
         self.source_code_type = ::std::option::Option::Some(input);
@@ -323,6 +375,10 @@ impl CodeReviewBuilder {
     ) -> Self {
         self.source_code_type = input;
         self
+    }
+    /// <p>The type of the source code for the code review.</p>
+    pub fn get_source_code_type(&self) -> &::std::option::Option<crate::types::SourceCodeType> {
+        &self.source_code_type
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     pub fn association_arn(
@@ -340,6 +396,10 @@ impl CodeReviewBuilder {
         self.association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
+    pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_arn
+    }
     /// <p>The statistics from the code review.</p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -349,6 +409,10 @@ impl CodeReviewBuilder {
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>The statistics from the code review.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::Metrics> {
+        &self.metrics
     }
     /// Appends an item to `analysis_types`.
     ///
@@ -369,6 +433,12 @@ impl CodeReviewBuilder {
         self.analysis_types = input;
         self
     }
+    /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    pub fn get_analysis_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>> {
+        &self.analysis_types
+    }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     pub fn config_file_state(mut self, input: crate::types::ConfigFileState) -> Self {
         self.config_file_state = ::std::option::Option::Some(input);
@@ -381,6 +451,10 @@ impl CodeReviewBuilder {
     ) -> Self {
         self.config_file_state = input;
         self
+    }
+    /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
+    pub fn get_config_file_state(&self) -> &::std::option::Option<crate::types::ConfigFileState> {
+        &self.config_file_state
     }
     /// Consumes the builder and constructs a [`CodeReview`](crate::types::CodeReview).
     pub fn build(self) -> crate::types::CodeReview {

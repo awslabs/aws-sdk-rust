@@ -49,6 +49,12 @@ impl S3ClassificationScopeExclusionBuilder {
         self.bucket_names = input;
         self
     }
+    /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
+    pub fn get_bucket_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bucket_names
+    }
     /// Consumes the builder and constructs a [`S3ClassificationScopeExclusion`](crate::types::S3ClassificationScopeExclusion).
     pub fn build(self) -> crate::types::S3ClassificationScopeExclusion {
         crate::types::S3ClassificationScopeExclusion {

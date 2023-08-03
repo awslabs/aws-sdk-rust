@@ -51,6 +51,10 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `bandwidth_rate_limit_intervals`.
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
@@ -72,6 +76,12 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
     ) -> Self {
         self.bandwidth_rate_limit_intervals = input;
         self
+    }
+    /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    pub fn get_bandwidth_rate_limit_intervals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+        &self.bandwidth_rate_limit_intervals
     }
     /// Consumes the builder and constructs a [`UpdateBandwidthRateLimitScheduleInput`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput, ::aws_smithy_http::operation::error::BuildError>{

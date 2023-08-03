@@ -57,6 +57,10 @@ impl DescribeInsightOutputBuilder {
         self.proactive_insight = input;
         self
     }
+    /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
+    pub fn get_proactive_insight(&self) -> &::std::option::Option<crate::types::ProactiveInsight> {
+        &self.proactive_insight
+    }
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn reactive_insight(mut self, input: crate::types::ReactiveInsight) -> Self {
         self.reactive_insight = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeInsightOutputBuilder {
     ) -> Self {
         self.reactive_insight = input;
         self
+    }
+    /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
+    pub fn get_reactive_insight(&self) -> &::std::option::Option<crate::types::ReactiveInsight> {
+        &self.reactive_insight
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

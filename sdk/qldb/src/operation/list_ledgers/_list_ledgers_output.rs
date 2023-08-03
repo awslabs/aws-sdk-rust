@@ -71,6 +71,12 @@ impl ListLedgersOutputBuilder {
         self.ledgers = input;
         self
     }
+    /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    pub fn get_ledgers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>> {
+        &self.ledgers
+    }
     /// <p>A pagination token, indicating whether there are more results available:</p>
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
@@ -88,6 +94,14 @@ impl ListLedgersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
+    /// </ul>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

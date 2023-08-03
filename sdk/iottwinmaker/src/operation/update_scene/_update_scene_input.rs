@@ -87,6 +87,10 @@ impl UpdateSceneInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the scene.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl UpdateSceneInputBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scene_id = input;
         self
+    }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(
@@ -113,6 +121,10 @@ impl UpdateSceneInputBuilder {
         self.content_location = input;
         self
     }
+    /// <p>The relative path that specifies the location of the content definition file.</p>
+    pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_location
+    }
     /// <p>The description of this scene.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl UpdateSceneInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of this scene.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `capabilities`.
     ///
@@ -141,6 +157,12 @@ impl UpdateSceneInputBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>A list of capabilities that the scene uses to render.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capabilities
     }
     /// Adds a key-value pair to `scene_metadata`.
     ///
@@ -166,6 +188,14 @@ impl UpdateSceneInputBuilder {
     ) -> Self {
         self.scene_metadata = input;
         self
+    }
+    /// <p>The scene metadata.</p>
+    pub fn get_scene_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
     pub fn build(

@@ -128,6 +128,10 @@ impl RulesetItemBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl RulesetItemBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The date and time that the ruleset was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -151,6 +159,10 @@ impl RulesetItemBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the ruleset was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -160,6 +172,10 @@ impl RulesetItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
     pub fn last_modified_by(
@@ -177,6 +193,10 @@ impl RulesetItemBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The modification date and time of the ruleset.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -190,6 +210,10 @@ impl RulesetItemBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The modification date and time of the ruleset.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The name of the ruleset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -199,6 +223,10 @@ impl RulesetItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,6 +238,10 @@ impl RulesetItemBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The number of rules that are defined in the ruleset.</p>
     pub fn rule_count(mut self, input: i32) -> Self {
         self.rule_count = ::std::option::Option::Some(input);
@@ -219,6 +251,10 @@ impl RulesetItemBuilder {
     pub fn set_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_count = input;
         self
+    }
+    /// <p>The number of rules that are defined in the ruleset.</p>
+    pub fn get_rule_count(&self) -> &::std::option::Option<i32> {
+        &self.rule_count
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -245,6 +281,14 @@ impl RulesetItemBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags that have been applied to the ruleset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -254,6 +298,10 @@ impl RulesetItemBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// Consumes the builder and constructs a [`RulesetItem`](crate::types::RulesetItem).
     pub fn build(self) -> crate::types::RulesetItem {

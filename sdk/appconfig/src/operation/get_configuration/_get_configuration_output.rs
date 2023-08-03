@@ -79,6 +79,12 @@ impl GetConfigurationOutputBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
+    /// </important>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
+    }
     /// <p>The configuration version.</p>
     pub fn configuration_version(
         mut self,
@@ -95,6 +101,10 @@ impl GetConfigurationOutputBuilder {
         self.configuration_version = input;
         self
     }
+    /// <p>The configuration version.</p>
+    pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_version
+    }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -104,6 +114,10 @@ impl GetConfigurationOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

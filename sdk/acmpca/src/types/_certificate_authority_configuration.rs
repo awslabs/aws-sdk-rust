@@ -69,6 +69,10 @@ impl CertificateAuthorityConfigurationBuilder {
         self.key_algorithm = input;
         self
     }
+    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
+    pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.key_algorithm
+    }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
@@ -84,6 +88,11 @@ impl CertificateAuthorityConfigurationBuilder {
         self.signing_algorithm = input;
         self
     }
+    /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithm> {
+        &self.signing_algorithm
+    }
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub fn subject(mut self, input: crate::types::Asn1Subject) -> Self {
         self.subject = ::std::option::Option::Some(input);
@@ -93,6 +102,10 @@ impl CertificateAuthorityConfigurationBuilder {
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::Asn1Subject>) -> Self {
         self.subject = input;
         self
+    }
+    /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<crate::types::Asn1Subject> {
+        &self.subject
     }
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
     pub fn csr_extensions(mut self, input: crate::types::CsrExtensions) -> Self {
@@ -106,6 +119,10 @@ impl CertificateAuthorityConfigurationBuilder {
     ) -> Self {
         self.csr_extensions = input;
         self
+    }
+    /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
+    pub fn get_csr_extensions(&self) -> &::std::option::Option<crate::types::CsrExtensions> {
+        &self.csr_extensions
     }
     /// Consumes the builder and constructs a [`CertificateAuthorityConfiguration`](crate::types::CertificateAuthorityConfiguration).
     pub fn build(self) -> crate::types::CertificateAuthorityConfiguration {

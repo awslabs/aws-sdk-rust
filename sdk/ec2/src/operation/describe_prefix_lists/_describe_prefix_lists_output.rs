@@ -56,6 +56,10 @@ impl DescribePrefixListsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `prefix_lists`.
     ///
     /// To override the contents of this collection use [`set_prefix_lists`](Self::set_prefix_lists).
@@ -74,6 +78,12 @@ impl DescribePrefixListsOutputBuilder {
     ) -> Self {
         self.prefix_lists = input;
         self
+    }
+    /// <p>All available prefix lists.</p>
+    pub fn get_prefix_lists(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixList>> {
+        &self.prefix_lists
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

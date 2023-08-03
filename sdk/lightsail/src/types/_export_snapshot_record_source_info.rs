@@ -103,6 +103,12 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportSnapshotRecordSourceType> {
+        &self.resource_type
+    }
     /// <p>The date when the source instance or disk snapshot was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -116,6 +122,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date when the source instance or disk snapshot was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The name of the source instance or disk snapshot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -126,6 +136,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the source instance or disk snapshot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -135,6 +149,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the snapshot's source instance or disk.</p>
     pub fn from_resource_name(
@@ -152,6 +170,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.from_resource_name = input;
         self
     }
+    /// <p>The name of the snapshot's source instance or disk.</p>
+    pub fn get_from_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_resource_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
     pub fn from_resource_arn(
         mut self,
@@ -168,6 +190,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.from_resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
+    pub fn get_from_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_resource_arn
+    }
     /// <p>A list of objects describing an instance snapshot.</p>
     pub fn instance_snapshot_info(mut self, input: crate::types::InstanceSnapshotInfo) -> Self {
         self.instance_snapshot_info = ::std::option::Option::Some(input);
@@ -181,6 +207,12 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self.instance_snapshot_info = input;
         self
     }
+    /// <p>A list of objects describing an instance snapshot.</p>
+    pub fn get_instance_snapshot_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceSnapshotInfo> {
+        &self.instance_snapshot_info
+    }
     /// <p>A list of objects describing a disk snapshot.</p>
     pub fn disk_snapshot_info(mut self, input: crate::types::DiskSnapshotInfo) -> Self {
         self.disk_snapshot_info = ::std::option::Option::Some(input);
@@ -193,6 +225,10 @@ impl ExportSnapshotRecordSourceInfoBuilder {
     ) -> Self {
         self.disk_snapshot_info = input;
         self
+    }
+    /// <p>A list of objects describing a disk snapshot.</p>
+    pub fn get_disk_snapshot_info(&self) -> &::std::option::Option<crate::types::DiskSnapshotInfo> {
+        &self.disk_snapshot_info
     }
     /// Consumes the builder and constructs a [`ExportSnapshotRecordSourceInfo`](crate::types::ExportSnapshotRecordSourceInfo).
     pub fn build(self) -> crate::types::ExportSnapshotRecordSourceInfo {

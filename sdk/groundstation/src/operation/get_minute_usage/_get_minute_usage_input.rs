@@ -48,6 +48,10 @@ impl GetMinuteUsageInputBuilder {
         self.month = input;
         self
     }
+    /// <p>The month being requested, with a value of 1-12.</p>
+    pub fn get_month(&self) -> &::std::option::Option<i32> {
+        &self.month
+    }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn year(mut self, input: i32) -> Self {
         self.year = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GetMinuteUsageInputBuilder {
     pub fn set_year(mut self, input: ::std::option::Option<i32>) -> Self {
         self.year = input;
         self
+    }
+    /// <p>The year being requested, in the format of YYYY.</p>
+    pub fn get_year(&self) -> &::std::option::Option<i32> {
+        &self.year
     }
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
     pub fn build(

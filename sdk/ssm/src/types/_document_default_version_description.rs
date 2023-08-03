@@ -56,6 +56,10 @@ impl DocumentDefaultVersionDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The default version of the document.</p>
     pub fn default_version(
         mut self,
@@ -72,6 +76,10 @@ impl DocumentDefaultVersionDescriptionBuilder {
         self.default_version = input;
         self
     }
+    /// <p>The default version of the document.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version
+    }
     /// <p>The default version of the artifact associated with the document.</p>
     pub fn default_version_name(
         mut self,
@@ -87,6 +95,10 @@ impl DocumentDefaultVersionDescriptionBuilder {
     ) -> Self {
         self.default_version_name = input;
         self
+    }
+    /// <p>The default version of the artifact associated with the document.</p>
+    pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version_name
     }
     /// Consumes the builder and constructs a [`DocumentDefaultVersionDescription`](crate::types::DocumentDefaultVersionDescription).
     pub fn build(self) -> crate::types::DocumentDefaultVersionDescription {

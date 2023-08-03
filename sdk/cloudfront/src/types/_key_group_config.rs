@@ -57,6 +57,10 @@ impl KeyGroupConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>A name to identify the key group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -76,6 +80,10 @@ impl KeyGroupConfigBuilder {
         self.items = input;
         self
     }
+    /// <p>A list of the identifiers of the public keys in the key group.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
+    }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl KeyGroupConfigBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`KeyGroupConfig`](crate::types::KeyGroupConfig).
     pub fn build(self) -> crate::types::KeyGroupConfig {

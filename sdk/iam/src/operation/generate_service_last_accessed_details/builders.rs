@@ -48,6 +48,10 @@ impl GenerateServiceLastAccessedDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateServiceLastAccessedDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GenerateServiceLastAccessedDetailsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
     pub fn granularity(mut self, input: crate::types::AccessAdvisorUsageGranularityType) -> Self {
         self.inner = self.inner.granularity(input);
@@ -124,5 +132,11 @@ impl GenerateServiceLastAccessedDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
+    pub fn get_granularity(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessAdvisorUsageGranularityType> {
+        self.inner.get_granularity()
     }
 }

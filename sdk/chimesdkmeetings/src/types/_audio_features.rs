@@ -43,6 +43,10 @@ impl AudioFeaturesBuilder {
         self.echo_reduction = input;
         self
     }
+    /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
+    pub fn get_echo_reduction(&self) -> &::std::option::Option<crate::types::MeetingFeatureStatus> {
+        &self.echo_reduction
+    }
     /// Consumes the builder and constructs a [`AudioFeatures`](crate::types::AudioFeatures).
     pub fn build(self) -> crate::types::AudioFeatures {
         crate::types::AudioFeatures {

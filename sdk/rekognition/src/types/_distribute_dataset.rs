@@ -40,6 +40,10 @@ impl DistributeDatasetBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DistributeDataset`](crate::types::DistributeDataset).
     pub fn build(self) -> crate::types::DistributeDataset {
         crate::types::DistributeDataset { arn: self.arn }

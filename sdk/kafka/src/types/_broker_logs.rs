@@ -59,6 +59,10 @@ impl BrokerLogsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogs> {
+        &self.cloud_watch_logs
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn firehose(mut self, input: crate::types::Firehose) -> Self {
         self.firehose = ::std::option::Option::Some(input);
         self
@@ -69,6 +73,10 @@ impl BrokerLogsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_firehose(&self) -> &::std::option::Option<crate::types::Firehose> {
+        &self.firehose
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn s3(mut self, input: crate::types::S3) -> Self {
         self.s3 = ::std::option::Option::Some(input);
         self
@@ -77,6 +85,10 @@ impl BrokerLogsBuilder {
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3>) -> Self {
         self.s3 = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`BrokerLogs`](crate::types::BrokerLogs).
     pub fn build(self) -> crate::types::BrokerLogs {

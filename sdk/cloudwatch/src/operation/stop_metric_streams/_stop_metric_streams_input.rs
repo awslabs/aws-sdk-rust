@@ -53,6 +53,11 @@ impl StopMetricStreamsInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The array of the names of metric streams to stop streaming.</p>
+    /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Consumes the builder and constructs a [`StopMetricStreamsInput`](crate::operation::stop_metric_streams::StopMetricStreamsInput).
     pub fn build(
         self,

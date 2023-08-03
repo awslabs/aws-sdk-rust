@@ -78,6 +78,13 @@ impl EngineDefaultsBuilder {
         self.cache_parameter_group_family = input;
         self
     }
+    /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
+    pub fn get_cache_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_family
+    }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -87,6 +94,10 @@ impl EngineDefaultsBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `parameters`.
     ///
@@ -106,6 +117,12 @@ impl EngineDefaultsBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Contains a list of engine default parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Appends an item to `cache_node_type_specific_parameters`.
     ///
@@ -128,6 +145,12 @@ impl EngineDefaultsBuilder {
     ) -> Self {
         self.cache_node_type_specific_parameters = input;
         self
+    }
+    /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    pub fn get_cache_node_type_specific_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>> {
+        &self.cache_node_type_specific_parameters
     }
     /// Consumes the builder and constructs a [`EngineDefaults`](crate::types::EngineDefaults).
     pub fn build(self) -> crate::types::EngineDefaults {

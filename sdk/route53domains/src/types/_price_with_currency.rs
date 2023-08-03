@@ -48,6 +48,10 @@ impl PriceWithCurrencyBuilder {
         self.price = input;
         self
     }
+    /// <p>The price of a domain, in a specific currency.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f64> {
+        &self.price
+    }
     /// <p>The currency specifier.</p>
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PriceWithCurrencyBuilder {
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>The currency specifier.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency
     }
     /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::types::PriceWithCurrency).
     pub fn build(self) -> crate::types::PriceWithCurrency {

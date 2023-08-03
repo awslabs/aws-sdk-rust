@@ -49,6 +49,10 @@ impl DescribeFleetLocationUtilizationOutputBuilder {
         self.fleet_utilization = input;
         self
     }
+    /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
+    pub fn get_fleet_utilization(&self) -> &::std::option::Option<crate::types::FleetUtilization> {
+        &self.fleet_utilization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

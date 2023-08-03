@@ -36,6 +36,10 @@ impl DescribeOrganizationOverviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrganizationOverview as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self.inner = self.inner.set_from_time(input);
         self
     }
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_from_time()
+    }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.to_time(input);
@@ -141,6 +149,10 @@ impl DescribeOrganizationOverviewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_to_time(input);
         self
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_to_time()
     }
     /// Appends an item to `AccountIds`.
     ///
@@ -158,6 +170,12 @@ impl DescribeOrganizationOverviewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
     ///
@@ -178,5 +196,11 @@ impl DescribeOrganizationOverviewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
     }
 }

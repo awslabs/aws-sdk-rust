@@ -40,6 +40,10 @@ impl RunInstancesMonitoringEnabledBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
     pub fn build(self) -> crate::types::RunInstancesMonitoringEnabled {
         crate::types::RunInstancesMonitoringEnabled {

@@ -56,6 +56,10 @@ impl FailureDetailsBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FailureDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
     pub fn log_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FailureDetailsBuilder {
     pub fn set_log_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_file = input;
         self
+    }
+    /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
+    pub fn get_log_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_file
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {

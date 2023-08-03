@@ -56,6 +56,10 @@ impl DescribeReplicationGroupsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `replication_groups`.
     ///
     /// To override the contents of this collection use [`set_replication_groups`](Self::set_replication_groups).
@@ -74,6 +78,12 @@ impl DescribeReplicationGroupsOutputBuilder {
     ) -> Self {
         self.replication_groups = input;
         self
+    }
+    /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    pub fn get_replication_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>> {
+        &self.replication_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

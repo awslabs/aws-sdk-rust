@@ -42,6 +42,13 @@ impl PutRemediationExceptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRemediationExceptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl PutRemediationExceptionsFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>The name of the Config rule for which you want to create remediation exception.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// Appends an item to `ResourceKeys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -157,6 +168,13 @@ impl PutRemediationExceptionsFluentBuilder {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>
+    {
+        self.inner.get_resource_keys()
+    }
     /// <p>The message contains an explanation of the exception.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message(input.into());
@@ -166,6 +184,10 @@ impl PutRemediationExceptionsFluentBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message(input);
         self
+    }
+    /// <p>The message contains an explanation of the exception.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message()
     }
     /// <p>The exception is automatically deleted after the expiration date.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,5 +201,9 @@ impl PutRemediationExceptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expiration_time(input);
         self
+    }
+    /// <p>The exception is automatically deleted after the expiration date.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expiration_time()
     }
 }

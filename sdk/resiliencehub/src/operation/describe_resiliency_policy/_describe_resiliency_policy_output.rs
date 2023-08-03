@@ -51,6 +51,10 @@ impl DescribeResiliencyPolicyOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResiliencyPolicy> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

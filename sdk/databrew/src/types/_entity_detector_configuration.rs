@@ -146,6 +146,34 @@ impl EntityDetectorConfigurationBuilder {
         self.entity_types = input;
         self
     }
+    /// <p>Entity types to detect. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>USA_SSN</p> </li>
+    /// <li> <p>EMAIL</p> </li>
+    /// <li> <p>USA_ITIN</p> </li>
+    /// <li> <p>USA_PASSPORT_NUMBER</p> </li>
+    /// <li> <p>PHONE_NUMBER</p> </li>
+    /// <li> <p>USA_DRIVING_LICENSE</p> </li>
+    /// <li> <p>BANK_ACCOUNT</p> </li>
+    /// <li> <p>CREDIT_CARD</p> </li>
+    /// <li> <p>IP_ADDRESS</p> </li>
+    /// <li> <p>MAC_ADDRESS</p> </li>
+    /// <li> <p>USA_DEA_NUMBER</p> </li>
+    /// <li> <p>USA_HCPCS_CODE</p> </li>
+    /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li>
+    /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li>
+    /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li>
+    /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li>
+    /// <li> <p>USA_CPT_CODE</p> </li>
+    /// <li> <p>PERSON_NAME</p> </li>
+    /// <li> <p>DATE</p> </li>
+    /// </ul>
+    /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_types
+    }
     /// Appends an item to `allowed_statistics`.
     ///
     /// To override the contents of this collection use [`set_allowed_statistics`](Self::set_allowed_statistics).
@@ -164,6 +192,12 @@ impl EntityDetectorConfigurationBuilder {
     ) -> Self {
         self.allowed_statistics = input;
         self
+    }
+    /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
+    pub fn get_allowed_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>> {
+        &self.allowed_statistics
     }
     /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
     pub fn build(self) -> crate::types::EntityDetectorConfiguration {

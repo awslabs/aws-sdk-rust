@@ -36,6 +36,10 @@ impl DeregisterWebhookWithThirdPartyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterWebhookWithThirdParty as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl DeregisterWebhookWithThirdPartyFluentBuilder {
     pub fn set_webhook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_name(input);
         self
+    }
+    /// <p>The name of the webhook you want to deregister.</p>
+    pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_webhook_name()
     }
 }

@@ -40,6 +40,10 @@ impl SmsSettingsBuilder {
         self.sms_message = input;
         self
     }
+    /// <p>The contents of the SMS message.</p>
+    pub fn get_sms_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sms_message
+    }
     /// Consumes the builder and constructs a [`SmsSettings`](crate::types::SmsSettings).
     pub fn build(self) -> crate::types::SmsSettings {
         crate::types::SmsSettings {

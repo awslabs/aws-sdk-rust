@@ -48,6 +48,10 @@ impl HttpQueryParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the query parameter that will be matched on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The query parameter to match on.</p>
     pub fn r#match(mut self, input: crate::types::QueryParameterMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl HttpQueryParameterBuilder {
     ) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>The query parameter to match on.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::QueryParameterMatch> {
+        &self.r#match
     }
     /// Consumes the builder and constructs a [`HttpQueryParameter`](crate::types::HttpQueryParameter).
     pub fn build(self) -> crate::types::HttpQueryParameter {

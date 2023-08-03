@@ -57,6 +57,10 @@ impl PredictedItemBuilder {
         self.item_id = input;
         self
     }
+    /// <p>The recommended item ID.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_id
+    }
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
     pub fn score(mut self, input: f64) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PredictedItemBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
     }
     /// <p>The name of the promotion that included the predicted item.</p>
     pub fn promotion_name(
@@ -82,6 +90,10 @@ impl PredictedItemBuilder {
     ) -> Self {
         self.promotion_name = input;
         self
+    }
+    /// <p>The name of the promotion that included the predicted item.</p>
+    pub fn get_promotion_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.promotion_name
     }
     /// Consumes the builder and constructs a [`PredictedItem`](crate::types::PredictedItem).
     pub fn build(self) -> crate::types::PredictedItem {

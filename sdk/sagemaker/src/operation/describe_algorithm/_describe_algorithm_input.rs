@@ -46,6 +46,10 @@ impl DescribeAlgorithmInputBuilder {
         self.algorithm_name = input;
         self
     }
+    /// <p>The name of the algorithm to describe.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
+    }
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
     pub fn build(
         self,

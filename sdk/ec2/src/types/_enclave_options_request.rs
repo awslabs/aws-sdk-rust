@@ -40,6 +40,10 @@ impl EnclaveOptionsRequestBuilder {
         self.enabled = input;
         self
     }
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`EnclaveOptionsRequest`](crate::types::EnclaveOptionsRequest).
     pub fn build(self) -> crate::types::EnclaveOptionsRequest {
         crate::types::EnclaveOptionsRequest {

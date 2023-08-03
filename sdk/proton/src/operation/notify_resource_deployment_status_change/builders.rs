@@ -37,6 +37,10 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyResourceDeploymentStatusChange as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The status of your provisioned resource.</p>
     pub fn status(mut self, input: crate::types::ResourceDeploymentStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -113,6 +121,10 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of your provisioned resource.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceDeploymentStatus> {
+        self.inner.get_status()
     }
     /// Appends an item to `outputs`.
     ///
@@ -131,6 +143,10 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self.inner = self.inner.set_outputs(input);
         self
     }
+    /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        self.inner.get_outputs()
+    }
     /// <p>The deployment ID for your provisioned resource.</p>
     pub fn deployment_id(
         mut self,
@@ -147,6 +163,10 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p>The deployment ID for your provisioned resource.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p>The deployment status message for your provisioned resource.</p>
     pub fn status_message(
         mut self,
@@ -162,5 +182,9 @@ impl NotifyResourceDeploymentStatusChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_message(input);
         self
+    }
+    /// <p>The deployment status message for your provisioned resource.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_message()
     }
 }

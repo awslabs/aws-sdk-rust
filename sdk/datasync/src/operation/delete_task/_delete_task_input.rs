@@ -40,6 +40,10 @@ impl DeleteTaskInputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
     pub fn build(
         self,

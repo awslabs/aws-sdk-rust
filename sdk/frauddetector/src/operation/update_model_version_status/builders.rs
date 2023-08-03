@@ -42,6 +42,10 @@ impl UpdateModelVersionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateModelVersionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateModelVersionStatusFluentBuilder {
         self.inner = self.inner.set_model_id(input);
         self
     }
+    /// <p>The model ID of the model version to update.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_id()
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.inner = self.inner.model_type(input);
@@ -144,6 +152,10 @@ impl UpdateModelVersionStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        self.inner.get_model_type()
     }
     /// <p>The model version number.</p>
     pub fn model_version_number(
@@ -161,6 +173,10 @@ impl UpdateModelVersionStatusFluentBuilder {
         self.inner = self.inner.set_model_version_number(input);
         self
     }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_version_number()
+    }
     /// <p>The model version status.</p>
     pub fn status(mut self, input: crate::types::ModelVersionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -173,5 +189,9 @@ impl UpdateModelVersionStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The model version status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
+        self.inner.get_status()
     }
 }

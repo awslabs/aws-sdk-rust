@@ -36,6 +36,12 @@ impl BatchUpdateScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl BatchUpdateScheduleFluentBuilder {
         self.inner = self.inner.set_channel_id(input);
         self
     }
+    /// Id of the channel whose schedule is being updated.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
+    }
     /// Schedule actions to create in the schedule.
     pub fn creates(mut self, input: crate::types::BatchScheduleActionCreateRequest) -> Self {
         self.inner = self.inner.creates(input);
@@ -139,6 +149,12 @@ impl BatchUpdateScheduleFluentBuilder {
         self.inner = self.inner.set_creates(input);
         self
     }
+    /// Schedule actions to create in the schedule.
+    pub fn get_creates(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchScheduleActionCreateRequest> {
+        self.inner.get_creates()
+    }
     /// Schedule actions to delete from the schedule.
     pub fn deletes(mut self, input: crate::types::BatchScheduleActionDeleteRequest) -> Self {
         self.inner = self.inner.deletes(input);
@@ -151,5 +167,11 @@ impl BatchUpdateScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deletes(input);
         self
+    }
+    /// Schedule actions to delete from the schedule.
+    pub fn get_deletes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchScheduleActionDeleteRequest> {
+        self.inner.get_deletes()
     }
 }

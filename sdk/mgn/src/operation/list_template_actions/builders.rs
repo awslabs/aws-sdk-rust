@@ -36,6 +36,12 @@ impl ListTemplateActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTemplateActions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,12 @@ impl ListTemplateActionsFluentBuilder {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
+    /// <p>Launch configuration template ID.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_configuration_template_id()
+    }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub fn filters(mut self, input: crate::types::TemplateActionsRequestFilters) -> Self {
         self.inner = self.inner.filters(input);
@@ -156,6 +168,12 @@ impl ListTemplateActionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters to apply when listing template post migration custom actions.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
+        self.inner.get_filters()
+    }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -166,6 +184,10 @@ impl ListTemplateActionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -175,5 +197,9 @@ impl ListTemplateActionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Next token to use when listing template post migration custom actions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -67,6 +67,10 @@ impl ProductionBranchBuilder {
         self.last_deploy_time = input;
         self
     }
+    /// <p> The last deploy time of the production branch. </p>
+    pub fn get_last_deploy_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_deploy_time
+    }
     /// <p> The status of the production branch. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ProductionBranchBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the production branch. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p> The thumbnail URL for the production branch. </p>
     pub fn thumbnail_url(
@@ -93,6 +101,10 @@ impl ProductionBranchBuilder {
         self.thumbnail_url = input;
         self
     }
+    /// <p> The thumbnail URL for the production branch. </p>
+    pub fn get_thumbnail_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbnail_url
+    }
     /// <p> The branch name for the production branch. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ProductionBranchBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p> The branch name for the production branch. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`ProductionBranch`](crate::types::ProductionBranch).
     pub fn build(self) -> crate::types::ProductionBranch {

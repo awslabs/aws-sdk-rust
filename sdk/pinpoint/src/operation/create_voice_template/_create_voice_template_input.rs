@@ -57,6 +57,10 @@ impl CreateVoiceTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub fn voice_template_request(mut self, input: crate::types::VoiceTemplateRequest) -> Self {
         self.voice_template_request = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl CreateVoiceTemplateInputBuilder {
     ) -> Self {
         self.voice_template_request = input;
         self
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    pub fn get_voice_template_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
+        &self.voice_template_request
     }
     /// Consumes the builder and constructs a [`CreateVoiceTemplateInput`](crate::operation::create_voice_template::CreateVoiceTemplateInput).
     pub fn build(

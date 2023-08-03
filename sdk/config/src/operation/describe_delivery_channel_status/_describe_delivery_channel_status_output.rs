@@ -60,6 +60,12 @@ impl DescribeDeliveryChannelStatusOutputBuilder {
         self.delivery_channels_status = input;
         self
     }
+    /// <p>A list that contains the status of a specified delivery channel.</p>
+    pub fn get_delivery_channels_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannelStatus>> {
+        &self.delivery_channels_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

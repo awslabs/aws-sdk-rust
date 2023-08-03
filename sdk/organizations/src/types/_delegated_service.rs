@@ -54,6 +54,10 @@ impl DelegatedServiceBuilder {
         self.service_principal = input;
         self
     }
+    /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_principal
+    }
     /// <p>The date that the account became a delegated administrator for this service. </p>
     pub fn delegation_enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delegation_enabled_date = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl DelegatedServiceBuilder {
     ) -> Self {
         self.delegation_enabled_date = input;
         self
+    }
+    /// <p>The date that the account became a delegated administrator for this service. </p>
+    pub fn get_delegation_enabled_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delegation_enabled_date
     }
     /// Consumes the builder and constructs a [`DelegatedService`](crate::types::DelegatedService).
     pub fn build(self) -> crate::types::DelegatedService {

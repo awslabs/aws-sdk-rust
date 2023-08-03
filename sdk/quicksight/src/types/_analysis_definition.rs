@@ -119,6 +119,12 @@ impl AnalysisDefinitionBuilder {
         self.data_set_identifier_declarations = input;
         self
     }
+    /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
+    pub fn get_data_set_identifier_declarations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>> {
+        &self.data_set_identifier_declarations
+    }
     /// Appends an item to `sheets`.
     ///
     /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
@@ -138,6 +144,12 @@ impl AnalysisDefinitionBuilder {
         self.sheets = input;
         self
     }
+    /// <p>An array of sheet definitions for an analysis. Each <code>SheetDefinition</code> provides detailed information about a sheet within this analysis.</p>
+    pub fn get_sheets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>> {
+        &self.sheets
+    }
     /// Appends an item to `calculated_fields`.
     ///
     /// To override the contents of this collection use [`set_calculated_fields`](Self::set_calculated_fields).
@@ -156,6 +168,12 @@ impl AnalysisDefinitionBuilder {
     ) -> Self {
         self.calculated_fields = input;
         self
+    }
+    /// <p>An array of calculated field definitions for the analysis.</p>
+    pub fn get_calculated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>> {
+        &self.calculated_fields
     }
     /// Appends an item to `parameter_declarations`.
     ///
@@ -180,6 +198,14 @@ impl AnalysisDefinitionBuilder {
         self.parameter_declarations = input;
         self
     }
+    /// <p>An array of parameter declarations for an analysis.</p>
+    /// <p>Parameters are named variables that can transfer a value for use by an action or an object.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_parameter_declarations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>> {
+        &self.parameter_declarations
+    }
     /// Appends an item to `filter_groups`.
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
@@ -201,6 +227,13 @@ impl AnalysisDefinitionBuilder {
         self.filter_groups = input;
         self
     }
+    /// <p>Filter definitions for an analysis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_filter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>> {
+        &self.filter_groups
+    }
     /// Appends an item to `column_configurations`.
     ///
     /// To override the contents of this collection use [`set_column_configurations`](Self::set_column_configurations).
@@ -220,6 +253,12 @@ impl AnalysisDefinitionBuilder {
         self.column_configurations = input;
         self
     }
+    /// <p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>
+    pub fn get_column_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>> {
+        &self.column_configurations
+    }
     /// <p>The configuration for default analysis settings.</p>
     pub fn analysis_defaults(mut self, input: crate::types::AnalysisDefaults) -> Self {
         self.analysis_defaults = ::std::option::Option::Some(input);
@@ -232,6 +271,10 @@ impl AnalysisDefinitionBuilder {
     ) -> Self {
         self.analysis_defaults = input;
         self
+    }
+    /// <p>The configuration for default analysis settings.</p>
+    pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
+        &self.analysis_defaults
     }
     /// Consumes the builder and constructs a [`AnalysisDefinition`](crate::types::AnalysisDefinition).
     pub fn build(self) -> crate::types::AnalysisDefinition {

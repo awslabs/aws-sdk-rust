@@ -41,6 +41,10 @@ impl DescribeSeverityLevelsInputBuilder {
         self.language = input;
         self
     }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// Consumes the builder and constructs a [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
     pub fn build(
         self,

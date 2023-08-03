@@ -135,6 +135,13 @@ impl FleetLaunchTemplateOverridesBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
+    /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
+    /// </note>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
@@ -149,6 +156,12 @@ impl FleetLaunchTemplateOverridesBuilder {
         self.max_price = input;
         self
     }
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// </important>
+    pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_price
+    }
     /// <p>The ID of the subnet in which to launch the instances.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -158,6 +171,10 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet in which to launch the instances.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
     pub fn availability_zone(
@@ -175,6 +192,10 @@ impl FleetLaunchTemplateOverridesBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which to launch the instances.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The number of units provided by the specified instance type.</p>
     pub fn weighted_capacity(mut self, input: f64) -> Self {
         self.weighted_capacity = ::std::option::Option::Some(input);
@@ -184,6 +205,10 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.weighted_capacity = input;
         self
+    }
+    /// <p>The number of units provided by the specified instance type.</p>
+    pub fn get_weighted_capacity(&self) -> &::std::option::Option<f64> {
+        &self.weighted_capacity
     }
     /// <p>The priority for the launch template override. The highest priority is launched first.</p>
     /// <p>If the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand capacity.</p>
@@ -201,6 +226,13 @@ impl FleetLaunchTemplateOverridesBuilder {
         self.priority = input;
         self
     }
+    /// <p>The priority for the launch template override. The highest priority is launched first.</p>
+    /// <p>If the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand capacity.</p>
+    /// <p>If the Spot <code>AllocationStrategy</code> is set to <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a best-effort basis to determine which launch template override to use in fulfilling Spot capacity, but optimizes for capacity first.</p>
+    /// <p>Valid values are whole numbers starting at <code>0</code>. The lower the number, the higher the priority. If no number is set, the override has the lowest priority. You can set the same priority for different launch template overrides.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<f64> {
+        &self.priority
+    }
     /// <p>The location where the instance launched, if applicable.</p>
     pub fn placement(mut self, input: crate::types::PlacementResponse) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -213,6 +245,10 @@ impl FleetLaunchTemplateOverridesBuilder {
     ) -> Self {
         self.placement = input;
         self
+    }
+    /// <p>The location where the instance launched, if applicable.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::PlacementResponse> {
+        &self.placement
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
@@ -231,6 +267,14 @@ impl FleetLaunchTemplateOverridesBuilder {
         self.instance_requirements = input;
         self
     }
+    /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
+    /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
+    /// </note>
+    pub fn get_instance_requirements(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+        &self.instance_requirements
+    }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -240,6 +284,10 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Consumes the builder and constructs a [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
     pub fn build(self) -> crate::types::FleetLaunchTemplateOverrides {

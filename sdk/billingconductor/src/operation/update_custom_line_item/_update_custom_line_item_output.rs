@@ -110,6 +110,10 @@ impl UpdateCustomLineItemOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The ARN of the successfully updated custom line item. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
     pub fn billing_group_arn(
         mut self,
@@ -126,6 +130,10 @@ impl UpdateCustomLineItemOutputBuilder {
         self.billing_group_arn = input;
         self
     }
+    /// <p> The ARN of the billing group that the custom line item is applied to. </p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_arn
+    }
     /// <p> The name of the successfully updated custom line item. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl UpdateCustomLineItemOutputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the successfully updated custom line item. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the successfully updated custom line item. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +157,10 @@ impl UpdateCustomLineItemOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the successfully updated custom line item. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
@@ -159,6 +175,12 @@ impl UpdateCustomLineItemOutputBuilder {
         self.charge_details = input;
         self
     }
+    /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
+        &self.charge_details
+    }
     /// <p> The most recent time when the custom line item was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -169,6 +191,10 @@ impl UpdateCustomLineItemOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p> The most recent time when the custom line item was modified. </p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
+    }
     /// <p> The number of resources that are associated to the custom line item. </p>
     pub fn association_size(mut self, input: i64) -> Self {
         self.association_size = ::std::option::Option::Some(input);
@@ -178,6 +204,10 @@ impl UpdateCustomLineItemOutputBuilder {
     pub fn set_association_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.association_size = input;
         self
+    }
+    /// <p> The number of resources that are associated to the custom line item. </p>
+    pub fn get_association_size(&self) -> &::std::option::Option<i64> {
+        &self.association_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl AssociateApprovedOriginInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The domain to add to your allow list.</p>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociateApprovedOriginInputBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>The domain to add to your allow list.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin
     }
     /// Consumes the builder and constructs a [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
     pub fn build(

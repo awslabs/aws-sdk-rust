@@ -102,6 +102,14 @@ impl BatchGetAssetPropertyValueHistoryOutputBuilder {
         self.error_entries = input;
         self
     }
+    /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    pub fn get_error_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry>,
+    > {
+        &self.error_entries
+    }
     /// Appends an item to `success_entries`.
     ///
     /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
@@ -125,6 +133,14 @@ impl BatchGetAssetPropertyValueHistoryOutputBuilder {
     ) -> Self {
         self.success_entries = input;
         self
+    }
+    /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    pub fn get_success_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySuccessEntry>,
+    > {
+        &self.success_entries
     }
     /// Appends an item to `skipped_entries`.
     ///
@@ -150,6 +166,14 @@ impl BatchGetAssetPropertyValueHistoryOutputBuilder {
         self.skipped_entries = input;
         self
     }
+    /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    pub fn get_skipped_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry>,
+    > {
+        &self.skipped_entries
+    }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -159,6 +183,10 @@ impl BatchGetAssetPropertyValueHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

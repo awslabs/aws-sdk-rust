@@ -36,6 +36,12 @@ impl UpdateUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateUserProfileFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The user profile name.</p>
     pub fn user_profile_name(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateUserProfileFluentBuilder {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }
+    /// <p>The user profile name.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_profile_name()
+    }
     /// <p>A collection of settings.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.inner = self.inner.user_settings(input);
@@ -154,5 +168,9 @@ impl UpdateUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_settings(input);
         self
+    }
+    /// <p>A collection of settings.</p>
+    pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        self.inner.get_user_settings()
     }
 }

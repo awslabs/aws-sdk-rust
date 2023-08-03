@@ -71,6 +71,14 @@ impl ReservationCoverageGroupBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes for this group of reservations.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>How much instance usage this group of reservations covered.</p>
     pub fn coverage(mut self, input: crate::types::Coverage) -> Self {
         self.coverage = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ReservationCoverageGroupBuilder {
     pub fn set_coverage(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
         self.coverage = input;
         self
+    }
+    /// <p>How much instance usage this group of reservations covered.</p>
+    pub fn get_coverage(&self) -> &::std::option::Option<crate::types::Coverage> {
+        &self.coverage
     }
     /// Consumes the builder and constructs a [`ReservationCoverageGroup`](crate::types::ReservationCoverageGroup).
     pub fn build(self) -> crate::types::ReservationCoverageGroup {

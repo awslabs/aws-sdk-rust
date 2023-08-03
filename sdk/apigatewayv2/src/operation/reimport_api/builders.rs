@@ -36,6 +36,10 @@ impl ReimportApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReimportApi as a reference.
+    pub fn as_input(&self) -> &crate::operation::reimport_api::builders::ReimportApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ReimportApiFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
     pub fn basepath(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.basepath(input.into());
@@ -127,6 +135,10 @@ impl ReimportApiFluentBuilder {
     pub fn set_basepath(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_basepath(input);
         self
+    }
+    /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    pub fn get_basepath(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_basepath()
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl ReimportApiFluentBuilder {
         self.inner = self.inner.set_body(input);
         self
     }
+    /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_body()
+    }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
         self.inner = self.inner.fail_on_warnings(input);
@@ -147,5 +163,9 @@ impl ReimportApiFluentBuilder {
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_fail_on_warnings(input);
         self
+    }
+    /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        self.inner.get_fail_on_warnings()
     }
 }

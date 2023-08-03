@@ -51,6 +51,10 @@ impl BackintConfigBuilder {
         self.backint_mode = input;
         self
     }
+    /// <p>AWS service for your database backup.</p>
+    pub fn get_backint_mode(&self) -> &::std::option::Option<crate::types::BackintMode> {
+        &self.backint_mode
+    }
     /// <p></p>
     pub fn ensure_no_backup_in_process(mut self, input: bool) -> Self {
         self.ensure_no_backup_in_process = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl BackintConfigBuilder {
     pub fn set_ensure_no_backup_in_process(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ensure_no_backup_in_process = input;
         self
+    }
+    /// <p></p>
+    pub fn get_ensure_no_backup_in_process(&self) -> &::std::option::Option<bool> {
+        &self.ensure_no_backup_in_process
     }
     /// Consumes the builder and constructs a [`BackintConfig`](crate::types::BackintConfig).
     pub fn build(self) -> crate::types::BackintConfig {

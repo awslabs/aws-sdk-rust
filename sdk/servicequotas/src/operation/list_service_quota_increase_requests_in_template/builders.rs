@@ -36,6 +36,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceQuotaIncreaseRequestsInTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
+    }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_region(input.into());
@@ -115,6 +123,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
+    }
+    /// <p>The AWS Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_region()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +138,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -135,5 +151,9 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

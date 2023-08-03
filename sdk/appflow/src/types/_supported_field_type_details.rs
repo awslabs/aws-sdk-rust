@@ -40,6 +40,10 @@ impl SupportedFieldTypeDetailsBuilder {
         self.v1 = input;
         self
     }
+    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
+    pub fn get_v1(&self) -> &::std::option::Option<crate::types::FieldTypeDetails> {
+        &self.v1
+    }
     /// Consumes the builder and constructs a [`SupportedFieldTypeDetails`](crate::types::SupportedFieldTypeDetails).
     pub fn build(self) -> crate::types::SupportedFieldTypeDetails {
         crate::types::SupportedFieldTypeDetails { v1: self.v1 }

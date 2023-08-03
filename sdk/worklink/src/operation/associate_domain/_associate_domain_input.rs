@@ -63,6 +63,10 @@ impl AssociateDomainInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The fully qualified domain name (FQDN).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AssociateDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name (FQDN).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl AssociateDomainInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn acm_certificate_arn(
@@ -98,6 +110,10 @@ impl AssociateDomainInputBuilder {
     ) -> Self {
         self.acm_certificate_arn = input;
         self
+    }
+    /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    pub fn get_acm_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acm_certificate_arn
     }
     /// Consumes the builder and constructs a [`AssociateDomainInput`](crate::operation::associate_domain::AssociateDomainInput).
     pub fn build(

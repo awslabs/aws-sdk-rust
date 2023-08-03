@@ -58,6 +58,10 @@ impl DescribeLoaOutputBuilder {
         self.loa_content = input;
         self
     }
+    /// <p>The binary contents of the LOA-CFA document.</p>
+    pub fn get_loa_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.loa_content
+    }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn loa_content_type(mut self, input: crate::types::LoaContentType) -> Self {
         self.loa_content_type = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl DescribeLoaOutputBuilder {
     ) -> Self {
         self.loa_content_type = input;
         self
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn get_loa_content_type(&self) -> &::std::option::Option<crate::types::LoaContentType> {
+        &self.loa_content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

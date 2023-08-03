@@ -53,6 +53,14 @@ impl NetworkConfigurationBuilder {
         self.awsvpc_configuration = input;
         self
     }
+    /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
+    /// <p>All specified subnets and security groups must be from the same VPC.</p>
+    /// </note>
+    pub fn get_awsvpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {
+        &self.awsvpc_configuration
+    }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {

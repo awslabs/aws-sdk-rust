@@ -39,6 +39,10 @@ impl CreateFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_fleet::builders::CreateFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateFleetFluentBuilder {
         self.inner = self.inner.set_fleet_name(input);
         self
     }
+    /// <p>A unique name for the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_name()
+    }
     /// <p>The fleet name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -130,6 +138,10 @@ impl CreateFleetFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -143,6 +155,10 @@ impl CreateFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_optimize_for_end_user_location(input);
         self
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
+        self.inner.get_optimize_for_end_user_location()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -166,5 +182,13 @@ impl CreateFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

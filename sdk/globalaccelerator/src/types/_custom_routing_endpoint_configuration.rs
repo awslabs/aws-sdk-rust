@@ -40,6 +40,10 @@ impl CustomRoutingEndpointConfigurationBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// Consumes the builder and constructs a [`CustomRoutingEndpointConfiguration`](crate::types::CustomRoutingEndpointConfiguration).
     pub fn build(self) -> crate::types::CustomRoutingEndpointConfiguration {
         crate::types::CustomRoutingEndpointConfiguration {

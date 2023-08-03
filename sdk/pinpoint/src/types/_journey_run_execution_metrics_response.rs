@@ -86,6 +86,10 @@ impl JourneyRunExecutionMetricsResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl JourneyRunExecutionMetricsResponseBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_id = input;
         self
+    }
+    /// <p>The unique identifier for the journey that the metric applies to.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.journey_id
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey run and updated the data for the metric.</p>
     pub fn last_evaluated_time(
@@ -111,6 +119,10 @@ impl JourneyRunExecutionMetricsResponseBuilder {
     ) -> Self {
         self.last_evaluated_time = input;
         self
+    }
+    /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey run and updated the data for the metric.</p>
+    pub fn get_last_evaluated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_evaluated_time
     }
     /// Adds a key-value pair to `metrics`.
     ///
@@ -137,6 +149,14 @@ impl JourneyRunExecutionMetricsResponseBuilder {
         self.metrics = input;
         self
     }
+    /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metrics
+    }
     /// <p>The unique identifier for the journey run that the metric applies to.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -146,6 +166,10 @@ impl JourneyRunExecutionMetricsResponseBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The unique identifier for the journey run that the metric applies to.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`JourneyRunExecutionMetricsResponse`](crate::types::JourneyRunExecutionMetricsResponse).
     pub fn build(self) -> crate::types::JourneyRunExecutionMetricsResponse {

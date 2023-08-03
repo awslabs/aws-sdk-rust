@@ -36,6 +36,10 @@ impl UpdateWaveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWave as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_wave::builders::UpdateWaveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateWaveFluentBuilder {
         self.inner = self.inner.set_wave_id(input);
         self
     }
+    /// <p>Wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_wave_id()
+    }
     /// <p>Wave name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateWaveFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Wave name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Wave description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateWaveFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Wave description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -147,5 +163,9 @@ impl UpdateWaveFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

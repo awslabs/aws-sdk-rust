@@ -114,6 +114,10 @@ impl AlarmModelVersionSummaryBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn alarm_model_arn(
         mut self,
@@ -129,6 +133,10 @@ impl AlarmModelVersionSummaryBuilder {
     ) -> Self {
         self.alarm_model_arn = input;
         self
+    }
+    /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_alarm_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_arn
     }
     /// <p>The version of the alarm model.</p>
     pub fn alarm_model_version(
@@ -146,6 +154,10 @@ impl AlarmModelVersionSummaryBuilder {
         self.alarm_model_version = input;
         self
     }
+    /// <p>The version of the alarm model.</p>
+    pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_version
+    }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -155,6 +167,10 @@ impl AlarmModelVersionSummaryBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -169,6 +185,10 @@ impl AlarmModelVersionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -181,6 +201,10 @@ impl AlarmModelVersionSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -207,6 +231,16 @@ impl AlarmModelVersionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AlarmModelVersionStatus> {
+        &self.status
+    }
     /// <p> Contains information about the status of the alarm model version. </p>
     pub fn status_message(
         mut self,
@@ -222,6 +256,10 @@ impl AlarmModelVersionSummaryBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p> Contains information about the status of the alarm model version. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`AlarmModelVersionSummary`](crate::types::AlarmModelVersionSummary).
     pub fn build(self) -> crate::types::AlarmModelVersionSummary {

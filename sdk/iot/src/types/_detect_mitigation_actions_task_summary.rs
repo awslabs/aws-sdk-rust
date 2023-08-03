@@ -124,6 +124,10 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.task_id = input;
         self
     }
+    /// <p> The unique identifier of the task. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p> The status of the task. </p>
     pub fn task_status(mut self, input: crate::types::DetectMitigationActionsTaskStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
@@ -136,6 +140,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     ) -> Self {
         self.task_status = input;
         self
+    }
+    /// <p> The status of the task. </p>
+    pub fn get_task_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskStatus> {
+        &self.task_status
     }
     /// <p> The date the task started. </p>
     pub fn task_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +160,10 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.task_start_time = input;
         self
     }
+    /// <p> The date the task started. </p>
+    pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_start_time
+    }
     /// <p> The date the task ended. </p>
     pub fn task_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.task_end_time = ::std::option::Option::Some(input);
@@ -163,6 +177,10 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.task_end_time = input;
         self
     }
+    /// <p> The date the task ended. </p>
+    pub fn get_task_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_end_time
+    }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(mut self, input: crate::types::DetectMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -175,6 +193,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskTarget> {
+        &self.target
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(
@@ -192,6 +216,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.violation_event_occurrence_range = input;
         self
     }
+    /// <p> Specifies the time period of which violation events occurred between. </p>
+    pub fn get_violation_event_occurrence_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::ViolationEventOccurrenceRange> {
+        &self.violation_event_occurrence_range
+    }
     /// <p> Includes only active violations. </p>
     pub fn only_active_violations_included(mut self, input: bool) -> Self {
         self.only_active_violations_included = ::std::option::Option::Some(input);
@@ -205,6 +235,10 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.only_active_violations_included = input;
         self
     }
+    /// <p> Includes only active violations. </p>
+    pub fn get_only_active_violations_included(&self) -> &::std::option::Option<bool> {
+        &self.only_active_violations_included
+    }
     /// <p> Includes suppressed alerts. </p>
     pub fn suppressed_alerts_included(mut self, input: bool) -> Self {
         self.suppressed_alerts_included = ::std::option::Option::Some(input);
@@ -214,6 +248,10 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     pub fn set_suppressed_alerts_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppressed_alerts_included = input;
         self
+    }
+    /// <p> Includes suppressed alerts. </p>
+    pub fn get_suppressed_alerts_included(&self) -> &::std::option::Option<bool> {
+        &self.suppressed_alerts_included
     }
     /// Appends an item to `actions_definition`.
     ///
@@ -234,6 +272,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self.actions_definition = input;
         self
     }
+    /// <p> The definition of the actions. </p>
+    pub fn get_actions_definition(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>> {
+        &self.actions_definition
+    }
     /// <p> The statistics of a mitigation action task. </p>
     pub fn task_statistics(
         mut self,
@@ -249,6 +293,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     ) -> Self {
         self.task_statistics = input;
         self
+    }
+    /// <p> The statistics of a mitigation action task. </p>
+    pub fn get_task_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskStatistics> {
+        &self.task_statistics
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskSummary`](crate::types::DetectMitigationActionsTaskSummary).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskSummary {

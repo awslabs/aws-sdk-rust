@@ -65,6 +65,10 @@ impl MessageBuilder {
         self.content = input;
         self
     }
+    /// <p>The text of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>Indicates the type of response.</p>
     pub fn content_type(mut self, input: crate::types::MessageContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl MessageBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>Indicates the type of response.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::MessageContentType> {
+        &self.content_type
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
@@ -92,6 +100,13 @@ impl MessageBuilder {
     ) -> Self {
         self.image_response_card = input;
         self
+    }
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
+    pub fn get_image_response_card(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageResponseCard> {
+        &self.image_response_card
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

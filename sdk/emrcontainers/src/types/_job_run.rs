@@ -191,6 +191,10 @@ impl JobRunBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the job run.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the job run.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -200,6 +204,10 @@ impl JobRunBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the job run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the job run's virtual cluster.</p>
     pub fn virtual_cluster_id(
@@ -217,6 +225,10 @@ impl JobRunBuilder {
         self.virtual_cluster_id = input;
         self
     }
+    /// <p>The ID of the job run's virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
+    }
     /// <p>The ARN of job run.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -226,6 +238,10 @@ impl JobRunBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of job run.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The state of the job run. </p>
     pub fn state(mut self, input: crate::types::JobRunState) -> Self {
@@ -237,6 +253,10 @@ impl JobRunBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the job run. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::JobRunState> {
+        &self.state
+    }
     /// <p>The client token used to start a job run.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -246,6 +266,10 @@ impl JobRunBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token used to start a job run.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The execution role ARN of the job run.</p>
     pub fn execution_role_arn(
@@ -263,6 +287,10 @@ impl JobRunBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The execution role ARN of the job run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>The release version of Amazon EMR.</p>
     pub fn release_label(
         mut self,
@@ -279,6 +307,10 @@ impl JobRunBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The release version of Amazon EMR.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// <p>The configuration settings that are used to override default configuration.</p>
     pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
@@ -292,6 +324,12 @@ impl JobRunBuilder {
         self.configuration_overrides = input;
         self
     }
+    /// <p>The configuration settings that are used to override default configuration.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        &self.configuration_overrides
+    }
     /// <p>Parameters of job driver for the job run.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.job_driver = ::std::option::Option::Some(input);
@@ -301,6 +339,10 @@ impl JobRunBuilder {
     pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
         self.job_driver = input;
         self
+    }
+    /// <p>Parameters of job driver for the job run.</p>
+    pub fn get_job_driver(&self) -> &::std::option::Option<crate::types::JobDriver> {
+        &self.job_driver
     }
     /// <p>The date and time when the job run was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -315,6 +357,10 @@ impl JobRunBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time when the job run was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The user who created the job run.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -324,6 +370,10 @@ impl JobRunBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The user who created the job run.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The date and time when the job run has finished.</p>
     pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -337,6 +387,10 @@ impl JobRunBuilder {
     ) -> Self {
         self.finished_at = input;
         self
+    }
+    /// <p>The date and time when the job run has finished.</p>
+    pub fn get_finished_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.finished_at
     }
     /// <p>Additional details of the job run state.</p>
     pub fn state_details(
@@ -354,6 +408,10 @@ impl JobRunBuilder {
         self.state_details = input;
         self
     }
+    /// <p>Additional details of the job run state.</p>
+    pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_details
+    }
     /// <p>The reasons why the job run has failed.</p>
     pub fn failure_reason(mut self, input: crate::types::FailureReason) -> Self {
         self.failure_reason = ::std::option::Option::Some(input);
@@ -366,6 +424,10 @@ impl JobRunBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reasons why the job run has failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
+        &self.failure_reason
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -392,6 +454,14 @@ impl JobRunBuilder {
         self.tags = input;
         self
     }
+    /// <p>The assigned tags of the job run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration of the retry policy that the job runs on.</p>
     pub fn retry_policy_configuration(
         mut self,
@@ -408,6 +478,12 @@ impl JobRunBuilder {
         self.retry_policy_configuration = input;
         self
     }
+    /// <p>The configuration of the retry policy that the job runs on.</p>
+    pub fn get_retry_policy_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetryPolicyConfiguration> {
+        &self.retry_policy_configuration
+    }
     /// <p>The current status of the retry policy executed on the job.</p>
     pub fn retry_policy_execution(mut self, input: crate::types::RetryPolicyExecution) -> Self {
         self.retry_policy_execution = ::std::option::Option::Some(input);
@@ -420,6 +496,12 @@ impl JobRunBuilder {
     ) -> Self {
         self.retry_policy_execution = input;
         self
+    }
+    /// <p>The current status of the retry policy executed on the job.</p>
+    pub fn get_retry_policy_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetryPolicyExecution> {
+        &self.retry_policy_execution
     }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {

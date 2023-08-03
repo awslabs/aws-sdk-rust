@@ -60,6 +60,10 @@ impl ListPartnerAccountsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `sidewalk`.
     ///
     /// To override the contents of this collection use [`set_sidewalk`](Self::set_sidewalk).
@@ -80,6 +84,13 @@ impl ListPartnerAccountsOutputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>
+    {
+        &self.sidewalk
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

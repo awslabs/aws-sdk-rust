@@ -61,6 +61,10 @@ impl TypedLinkFacetBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -79,6 +83,12 @@ impl TypedLinkFacetBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>> {
+        &self.attributes
     }
     /// Appends an item to `identity_attribute_order`.
     ///
@@ -101,6 +111,12 @@ impl TypedLinkFacetBuilder {
     ) -> Self {
         self.identity_attribute_order = input;
         self
+    }
+    /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
+    pub fn get_identity_attribute_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identity_attribute_order
     }
     /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::types::TypedLinkFacet).
     pub fn build(self) -> crate::types::TypedLinkFacet {

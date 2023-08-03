@@ -134,6 +134,33 @@ impl AutoMlAlgorithmConfigBuilder {
         self.auto_ml_algorithms = input;
         self
     }
+    /// <p>The selection of algorithms run on a dataset to train the model candidates of an Autopilot job. </p> <note>
+    /// <p>Selected algorithms must belong to the list corresponding to the training mode set in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a minimum of 1 algorithm. </p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>In <code>ENSEMBLING</code> mode:</p>
+    /// <ul>
+    /// <li> <p>"catboost"</p> </li>
+    /// <li> <p>"extra-trees"</p> </li>
+    /// <li> <p>"fastai"</p> </li>
+    /// <li> <p>"lightgbm"</p> </li>
+    /// <li> <p>"linear-learner"</p> </li>
+    /// <li> <p>"nn-torch"</p> </li>
+    /// <li> <p>"randomforest"</p> </li>
+    /// <li> <p>"xgboost"</p> </li>
+    /// </ul> </li>
+    /// <li> <p>In <code>HYPERPARAMETER_TUNING</code> mode:</p>
+    /// <ul>
+    /// <li> <p>"linear-learner"</p> </li>
+    /// <li> <p>"mlp"</p> </li>
+    /// <li> <p>"xgboost"</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_auto_ml_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>> {
+        &self.auto_ml_algorithms
+    }
     /// Consumes the builder and constructs a [`AutoMlAlgorithmConfig`](crate::types::AutoMlAlgorithmConfig).
     pub fn build(self) -> crate::types::AutoMlAlgorithmConfig {
         crate::types::AutoMlAlgorithmConfig {

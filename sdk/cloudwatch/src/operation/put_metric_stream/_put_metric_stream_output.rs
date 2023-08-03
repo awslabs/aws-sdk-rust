@@ -47,6 +47,10 @@ impl PutMetricStreamOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the metric stream.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

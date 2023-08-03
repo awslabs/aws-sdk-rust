@@ -61,6 +61,10 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub fn public_access_block(
@@ -78,6 +82,13 @@ impl CreateMultiRegionAccessPointInputBuilder {
     ) -> Self {
         self.public_access_block = input;
         self
+    }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
+    pub fn get_public_access_block(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+        &self.public_access_block
     }
     /// Appends an item to `regions`.
     ///
@@ -97,6 +108,10 @@ impl CreateMultiRegionAccessPointInputBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::types::CreateMultiRegionAccessPointInput).
     pub fn build(self) -> crate::types::CreateMultiRegionAccessPointInput {

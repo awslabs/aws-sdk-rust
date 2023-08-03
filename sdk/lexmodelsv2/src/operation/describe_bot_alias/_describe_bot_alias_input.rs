@@ -48,6 +48,10 @@ impl DescribeBotAliasInputBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The identifier of the bot alias to describe.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeBotAliasInputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot associated with the bot alias to describe.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// Consumes the builder and constructs a [`DescribeBotAliasInput`](crate::operation::describe_bot_alias::DescribeBotAliasInput).
     pub fn build(

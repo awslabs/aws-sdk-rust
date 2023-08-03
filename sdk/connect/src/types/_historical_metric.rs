@@ -67,6 +67,10 @@ impl HistoricalMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::HistoricalMetricName> {
+        &self.name
+    }
     /// <p>The threshold for the metric, used with service level metrics.</p>
     pub fn threshold(mut self, input: crate::types::Threshold) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl HistoricalMetricBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::Threshold>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The threshold for the metric, used with service level metrics.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<crate::types::Threshold> {
+        &self.threshold
     }
     /// <p>The statistic for the metric.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
@@ -87,6 +95,10 @@ impl HistoricalMetricBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic for the metric.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        &self.statistic
+    }
     /// <p>The unit for the metric.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl HistoricalMetricBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`HistoricalMetric`](crate::types::HistoricalMetric).
     pub fn build(self) -> crate::types::HistoricalMetric {

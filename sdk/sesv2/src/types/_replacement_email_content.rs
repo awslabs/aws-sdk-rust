@@ -45,6 +45,12 @@ impl ReplacementEmailContentBuilder {
         self.replacement_template = input;
         self
     }
+    /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
+    pub fn get_replacement_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplacementTemplate> {
+        &self.replacement_template
+    }
     /// Consumes the builder and constructs a [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).
     pub fn build(self) -> crate::types::ReplacementEmailContent {
         crate::types::ReplacementEmailContent {

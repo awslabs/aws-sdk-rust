@@ -40,6 +40,10 @@ impl AlternateSoftwareMetadataBuilder {
         self.version = input;
         self
     }
+    /// <p>The appliance software version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// Consumes the builder and constructs a [`AlternateSoftwareMetadata`](crate::types::AlternateSoftwareMetadata).
     pub fn build(self) -> crate::types::AlternateSoftwareMetadata {
         crate::types::AlternateSoftwareMetadata {

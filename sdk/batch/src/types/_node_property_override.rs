@@ -48,6 +48,10 @@ impl NodePropertyOverrideBuilder {
         self.target_nodes = input;
         self
     }
+    /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
+    pub fn get_target_nodes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_nodes
+    }
     /// <p>The overrides that are sent to a node range.</p>
     pub fn container_overrides(mut self, input: crate::types::ContainerOverrides) -> Self {
         self.container_overrides = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl NodePropertyOverrideBuilder {
     ) -> Self {
         self.container_overrides = input;
         self
+    }
+    /// <p>The overrides that are sent to a node range.</p>
+    pub fn get_container_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerOverrides> {
+        &self.container_overrides
     }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).
     pub fn build(self) -> crate::types::NodePropertyOverride {

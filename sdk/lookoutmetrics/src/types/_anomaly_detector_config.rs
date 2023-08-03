@@ -43,6 +43,12 @@ impl AnomalyDetectorConfigBuilder {
         self.anomaly_detector_frequency = input;
         self
     }
+    /// <p>The frequency at which the detector analyzes its source data.</p>
+    pub fn get_anomaly_detector_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::Frequency> {
+        &self.anomaly_detector_frequency
+    }
     /// Consumes the builder and constructs a [`AnomalyDetectorConfig`](crate::types::AnomalyDetectorConfig).
     pub fn build(self) -> crate::types::AnomalyDetectorConfig {
         crate::types::AnomalyDetectorConfig {

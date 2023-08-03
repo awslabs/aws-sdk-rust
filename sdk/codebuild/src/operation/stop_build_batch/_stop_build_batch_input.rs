@@ -39,6 +39,10 @@ impl StopBuildBatchInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the batch build to stop.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`StopBuildBatchInput`](crate::operation::stop_build_batch::StopBuildBatchInput).
     pub fn build(
         self,

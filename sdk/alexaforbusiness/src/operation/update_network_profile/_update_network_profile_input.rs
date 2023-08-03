@@ -105,6 +105,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.network_profile_arn = input;
         self
     }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
+    }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn network_profile_name(
         mut self,
@@ -121,6 +125,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.network_profile_name = input;
         self
     }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn get_network_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_name
+    }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl UpdateNetworkProfileInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn current_password(
@@ -147,6 +159,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.current_password = input;
         self
     }
+    /// <p>The current password of the Wi-Fi network.</p>
+    pub fn get_current_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_password
+    }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(
         mut self,
@@ -163,6 +179,10 @@ impl UpdateNetworkProfileInputBuilder {
         self.next_password = input;
         self
     }
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    pub fn get_next_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_password
+    }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(
         mut self,
@@ -178,6 +198,10 @@ impl UpdateNetworkProfileInputBuilder {
     ) -> Self {
         self.certificate_authority_arn = input;
         self
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
     }
     /// Appends an item to `trust_anchors`.
     ///
@@ -200,6 +224,12 @@ impl UpdateNetworkProfileInputBuilder {
     ) -> Self {
         self.trust_anchors = input;
         self
+    }
+    /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    pub fn get_trust_anchors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trust_anchors
     }
     /// Consumes the builder and constructs a [`UpdateNetworkProfileInput`](crate::operation::update_network_profile::UpdateNetworkProfileInput).
     pub fn build(

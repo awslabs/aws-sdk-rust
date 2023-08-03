@@ -43,6 +43,12 @@ impl UpdateTaskProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTaskProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateTaskProtectionFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -150,6 +160,10 @@ impl UpdateTaskProtectionFluentBuilder {
         self.inner = self.inner.set_tasks(input);
         self
     }
+    /// <p>A list of up to 10 task IDs or full ARN entries.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tasks()
+    }
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     pub fn protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.protection_enabled(input);
@@ -159,6 +173,10 @@ impl UpdateTaskProtectionFluentBuilder {
     pub fn set_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_protection_enabled(input);
         self
+    }
+    /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
+    pub fn get_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_protection_enabled()
     }
     /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
@@ -171,5 +189,10 @@ impl UpdateTaskProtectionFluentBuilder {
     pub fn set_expires_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expires_in_minutes(input);
         self
+    }
+    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
+    /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
+    pub fn get_expires_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expires_in_minutes()
     }
 }

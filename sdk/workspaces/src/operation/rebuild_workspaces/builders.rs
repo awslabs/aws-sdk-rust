@@ -39,6 +39,12 @@ impl RebuildWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebuildWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::rebuild_workspaces::builders::RebuildWorkspacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl RebuildWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rebuild_workspace_requests(input);
         self
+    }
+    /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+    pub fn get_rebuild_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>> {
+        self.inner.get_rebuild_workspace_requests()
     }
 }

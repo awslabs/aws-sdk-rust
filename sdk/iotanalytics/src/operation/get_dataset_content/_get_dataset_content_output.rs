@@ -72,6 +72,12 @@ impl GetDatasetContentOutputBuilder {
         self.entries = input;
         self
     }
+    /// <p>A list of <code>DatasetEntry</code> objects.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>> {
+        &self.entries
+    }
     /// <p>The time when the request was made.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -85,6 +91,10 @@ impl GetDatasetContentOutputBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time when the request was made.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The status of the dataset content.</p>
     pub fn status(mut self, input: crate::types::DatasetContentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl GetDatasetContentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the dataset content.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetContentStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

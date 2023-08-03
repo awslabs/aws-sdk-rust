@@ -86,6 +86,10 @@ impl DescribeCodeRepositoryOutputBuilder {
         self.code_repository_name = input;
         self
     }
+    /// <p>The name of the Git repository.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
     pub fn code_repository_arn(
         mut self,
@@ -102,6 +106,10 @@ impl DescribeCodeRepositoryOutputBuilder {
         self.code_repository_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
+    pub fn get_code_repository_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_arn
+    }
     /// <p>The date and time that the repository was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl DescribeCodeRepositoryOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that the repository was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time that the repository was last changed.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +140,10 @@ impl DescribeCodeRepositoryOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time that the repository was last changed.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Configuration details about the repository, including the URL where the repository is located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
         self.git_config = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl DescribeCodeRepositoryOutputBuilder {
     pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfig>) -> Self {
         self.git_config = input;
         self
+    }
+    /// <p>Configuration details about the repository, including the URL where the repository is located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
+    pub fn get_git_config(&self) -> &::std::option::Option<crate::types::GitConfig> {
+        &self.git_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -72,6 +72,10 @@ impl ReferencedSecurityGroupBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The status of a VPC peering connection, if applicable.</p>
     pub fn peering_status(
         mut self,
@@ -88,6 +92,10 @@ impl ReferencedSecurityGroupBuilder {
         self.peering_status = input;
         self
     }
+    /// <p>The status of a VPC peering connection, if applicable.</p>
+    pub fn get_peering_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peering_status
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl ReferencedSecurityGroupBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl ReferencedSecurityGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the VPC peering connection.</p>
     pub fn vpc_peering_connection_id(
@@ -123,6 +139,10 @@ impl ReferencedSecurityGroupBuilder {
     ) -> Self {
         self.vpc_peering_connection_id = input;
         self
+    }
+    /// <p>The ID of the VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`ReferencedSecurityGroup`](crate::types::ReferencedSecurityGroup).
     pub fn build(self) -> crate::types::ReferencedSecurityGroup {

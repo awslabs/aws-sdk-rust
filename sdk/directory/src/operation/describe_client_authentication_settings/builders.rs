@@ -36,6 +36,10 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeClientAuthenticationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -119,6 +127,10 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
+        self.inner.get_type()
+    }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -129,6 +141,10 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -138,5 +154,9 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

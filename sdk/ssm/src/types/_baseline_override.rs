@@ -115,6 +115,10 @@ impl BaselineOverrideBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>The operating system rule used by the patch baseline override.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>A set of patch filters, typically used for approval rules.</p>
     pub fn global_filters(mut self, input: crate::types::PatchFilterGroup) -> Self {
         self.global_filters = ::std::option::Option::Some(input);
@@ -128,6 +132,10 @@ impl BaselineOverrideBuilder {
         self.global_filters = input;
         self
     }
+    /// <p>A set of patch filters, typically used for approval rules.</p>
+    pub fn get_global_filters(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
+        &self.global_filters
+    }
     /// <p>A set of rules defining the approval rules for a patch baseline.</p>
     pub fn approval_rules(mut self, input: crate::types::PatchRuleGroup) -> Self {
         self.approval_rules = ::std::option::Option::Some(input);
@@ -140,6 +148,10 @@ impl BaselineOverrideBuilder {
     ) -> Self {
         self.approval_rules = input;
         self
+    }
+    /// <p>A set of rules defining the approval rules for a patch baseline.</p>
+    pub fn get_approval_rules(&self) -> &::std::option::Option<crate::types::PatchRuleGroup> {
+        &self.approval_rules
     }
     /// Appends an item to `approved_patches`.
     ///
@@ -165,6 +177,13 @@ impl BaselineOverrideBuilder {
         self.approved_patches = input;
         self
     }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_approved_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.approved_patches
+    }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
     pub fn approved_patches_compliance_level(
         mut self,
@@ -180,6 +199,12 @@ impl BaselineOverrideBuilder {
     ) -> Self {
         self.approved_patches_compliance_level = input;
         self
+    }
+    /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
+    pub fn get_approved_patches_compliance_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+        &self.approved_patches_compliance_level
     }
     /// Appends an item to `rejected_patches`.
     ///
@@ -205,6 +230,13 @@ impl BaselineOverrideBuilder {
         self.rejected_patches = input;
         self
     }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_rejected_patches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rejected_patches
+    }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
         self.rejected_patches_action = ::std::option::Option::Some(input);
@@ -218,6 +250,10 @@ impl BaselineOverrideBuilder {
         self.rejected_patches_action = input;
         self
     }
+    /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
+        &self.rejected_patches_action
+    }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
         self.approved_patches_enable_non_security = ::std::option::Option::Some(input);
@@ -230,6 +266,10 @@ impl BaselineOverrideBuilder {
     ) -> Self {
         self.approved_patches_enable_non_security = input;
         self
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    pub fn get_approved_patches_enable_non_security(&self) -> &::std::option::Option<bool> {
+        &self.approved_patches_enable_non_security
     }
     /// Appends an item to `sources`.
     ///
@@ -249,6 +289,12 @@ impl BaselineOverrideBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`BaselineOverride`](crate::types::BaselineOverride).
     pub fn build(self) -> crate::types::BaselineOverride {

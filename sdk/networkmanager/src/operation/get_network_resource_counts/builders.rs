@@ -36,6 +36,10 @@ impl GetNetworkResourceCountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetNetworkResourceCounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,10 @@ impl GetNetworkResourceCountsFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
@@ -201,6 +209,32 @@ impl GetNetworkResourceCountsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -211,6 +245,10 @@ impl GetNetworkResourceCountsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -220,5 +258,9 @@ impl GetNetworkResourceCountsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

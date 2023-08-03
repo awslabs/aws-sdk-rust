@@ -67,6 +67,10 @@ impl ManagedAgentBuilder {
         self.last_started_at = input;
         self
     }
+    /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
+    pub fn get_last_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_started_at
+    }
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn name(mut self, input: crate::types::ManagedAgentName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ManagedAgentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ManagedAgentName> {
+        &self.name
+    }
     /// <p>The reason for why the managed agent is in the state it is in.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ManagedAgentBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for why the managed agent is in the state it is in.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The last known status of the managed agent.</p>
     pub fn last_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_status = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ManagedAgentBuilder {
     pub fn set_last_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_status = input;
         self
+    }
+    /// <p>The last known status of the managed agent.</p>
+    pub fn get_last_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_status
     }
     /// Consumes the builder and constructs a [`ManagedAgent`](crate::types::ManagedAgent).
     pub fn build(self) -> crate::types::ManagedAgent {

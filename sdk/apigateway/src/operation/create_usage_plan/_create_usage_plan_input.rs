@@ -88,6 +88,10 @@ impl CreateUsagePlanInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the usage plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the usage plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl CreateUsagePlanInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the usage plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `api_stages`.
     ///
@@ -117,6 +125,12 @@ impl CreateUsagePlanInputBuilder {
         self.api_stages = input;
         self
     }
+    /// <p>The associated API stages of the usage plan.</p>
+    pub fn get_api_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+        &self.api_stages
+    }
     /// <p>The throttling limits of the usage plan.</p>
     pub fn throttle(mut self, input: crate::types::ThrottleSettings) -> Self {
         self.throttle = ::std::option::Option::Some(input);
@@ -130,6 +144,10 @@ impl CreateUsagePlanInputBuilder {
         self.throttle = input;
         self
     }
+    /// <p>The throttling limits of the usage plan.</p>
+    pub fn get_throttle(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
+        &self.throttle
+    }
     /// <p>The quota of the usage plan.</p>
     pub fn quota(mut self, input: crate::types::QuotaSettings) -> Self {
         self.quota = ::std::option::Option::Some(input);
@@ -139,6 +157,10 @@ impl CreateUsagePlanInputBuilder {
     pub fn set_quota(mut self, input: ::std::option::Option<crate::types::QuotaSettings>) -> Self {
         self.quota = input;
         self
+    }
+    /// <p>The quota of the usage plan.</p>
+    pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
+        &self.quota
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,6 +186,14 @@ impl CreateUsagePlanInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::operation::create_usage_plan::CreateUsagePlanInput).
     pub fn build(

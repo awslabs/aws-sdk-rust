@@ -72,6 +72,10 @@ impl DataSetBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DataSetBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>The logical identifier for a specific data set (in mainframe format).</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The type of dataset. The only supported value is VSAM.</p>
     pub fn dataset_org(mut self, input: crate::types::DatasetOrgAttributes) -> Self {
@@ -94,6 +102,10 @@ impl DataSetBuilder {
     ) -> Self {
         self.dataset_org = input;
         self
+    }
+    /// <p>The type of dataset. The only supported value is VSAM.</p>
+    pub fn get_dataset_org(&self) -> &::std::option::Option<crate::types::DatasetOrgAttributes> {
+        &self.dataset_org
     }
     /// <p>The relative location of the data set in the database or file system. </p>
     pub fn relative_path(
@@ -111,6 +123,10 @@ impl DataSetBuilder {
         self.relative_path = input;
         self
     }
+    /// <p>The relative location of the data set in the database or file system. </p>
+    pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relative_path
+    }
     /// <p>The length of a record.</p>
     pub fn record_length(mut self, input: crate::types::RecordLength) -> Self {
         self.record_length = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl DataSetBuilder {
     ) -> Self {
         self.record_length = input;
         self
+    }
+    /// <p>The length of a record.</p>
+    pub fn get_record_length(&self) -> &::std::option::Option<crate::types::RecordLength> {
+        &self.record_length
     }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     pub fn build(self) -> crate::types::DataSet {

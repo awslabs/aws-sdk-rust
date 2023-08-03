@@ -64,6 +64,10 @@ impl StaticKeyProviderBuilder {
         self.key_format = input;
         self
     }
+    /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
+    pub fn get_key_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_format
+    }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     pub fn key_format_versions(
         mut self,
@@ -79,6 +83,10 @@ impl StaticKeyProviderBuilder {
     ) -> Self {
         self.key_format_versions = input;
         self
+    }
+    /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
+    pub fn get_key_format_versions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_format_versions
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
     pub fn static_key_value(
@@ -96,6 +104,10 @@ impl StaticKeyProviderBuilder {
         self.static_key_value = input;
         self
     }
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
+    pub fn get_static_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_key_value
+    }
     /// Relates to DRM implementation. The location of the license server used for protecting content.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl StaticKeyProviderBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// Relates to DRM implementation. The location of the license server used for protecting content.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`StaticKeyProvider`](crate::types::StaticKeyProvider).
     pub fn build(self) -> crate::types::StaticKeyProvider {

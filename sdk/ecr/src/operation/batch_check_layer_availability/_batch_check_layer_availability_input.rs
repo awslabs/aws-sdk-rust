@@ -55,6 +55,10 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that is associated with the image layers to check.</p>
     pub fn repository_name(
         mut self,
@@ -70,6 +74,10 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository that is associated with the image layers to check.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Appends an item to `layer_digests`.
     ///
@@ -92,6 +100,12 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     ) -> Self {
         self.layer_digests = input;
         self
+    }
+    /// <p>The digests of the image layers to check.</p>
+    pub fn get_layer_digests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_digests
     }
     /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
     pub fn build(

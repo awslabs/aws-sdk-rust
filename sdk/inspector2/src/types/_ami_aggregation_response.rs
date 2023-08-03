@@ -64,6 +64,10 @@ impl AmiAggregationResponseBuilder {
         self.ami = input;
         self
     }
+    /// <p>The ID of the AMI that findings were aggregated for.</p>
+    pub fn get_ami(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami
+    }
     /// <p>The Amazon Web Services account ID for the AMI.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AmiAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID for the AMI.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -87,6 +95,10 @@ impl AmiAggregationResponseBuilder {
         self.severity_counts = input;
         self
     }
+    /// <p>An object that contains the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
+    }
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
     pub fn affected_instances(mut self, input: i64) -> Self {
         self.affected_instances = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl AmiAggregationResponseBuilder {
     pub fn set_affected_instances(mut self, input: ::std::option::Option<i64>) -> Self {
         self.affected_instances = input;
         self
+    }
+    /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
+    pub fn get_affected_instances(&self) -> &::std::option::Option<i64> {
+        &self.affected_instances
     }
     /// Consumes the builder and constructs a [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
     pub fn build(self) -> crate::types::AmiAggregationResponse {

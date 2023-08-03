@@ -36,6 +36,10 @@ impl ListSecurityControlDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSecurityControlDefinitions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListSecurityControlDefinitionsFluentBuilder {
         self.inner = self.inner.set_standards_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_standards_arn()
+    }
     /// <p> Optional pagination parameter. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,6 +130,10 @@ impl ListSecurityControlDefinitionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> Optional pagination parameter. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -131,5 +143,9 @@ impl ListSecurityControlDefinitionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

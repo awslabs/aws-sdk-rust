@@ -59,6 +59,12 @@ impl NotificationFilterConfigBuilder {
         self.severities = input;
         self
     }
+    /// <p> The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>. </p>
+    pub fn get_severities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>> {
+        &self.severities
+    }
     /// Appends an item to `message_types`.
     ///
     /// To override the contents of this collection use [`set_message_types`](Self::set_message_types).
@@ -77,6 +83,12 @@ impl NotificationFilterConfigBuilder {
     ) -> Self {
         self.message_types = input;
         self
+    }
+    /// <p> The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created. </p>
+    pub fn get_message_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>> {
+        &self.message_types
     }
     /// Consumes the builder and constructs a [`NotificationFilterConfig`](crate::types::NotificationFilterConfig).
     pub fn build(self) -> crate::types::NotificationFilterConfig {

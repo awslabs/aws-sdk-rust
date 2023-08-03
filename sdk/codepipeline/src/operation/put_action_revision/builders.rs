@@ -36,6 +36,12 @@ impl PutActionRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutActionRevision as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_action_revision::builders::PutActionRevisionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutActionRevisionFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline that starts processing the revision to the source.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -142,6 +152,10 @@ impl PutActionRevisionFluentBuilder {
         self.inner = self.inner.set_stage_name(input);
         self
     }
+    /// <p>The name of the stage that contains the action that acts on the revision.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
+    }
     /// <p>The name of the action that processes the revision.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_name(input.into());
@@ -151,6 +165,10 @@ impl PutActionRevisionFluentBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
+    }
+    /// <p>The name of the action that processes the revision.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn action_revision(mut self, input: crate::types::ActionRevision) -> Self {
@@ -164,5 +182,9 @@ impl PutActionRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_revision(input);
         self
+    }
+    /// <p>Represents information about the version (or revision) of an action.</p>
+    pub fn get_action_revision(&self) -> &::std::option::Option<crate::types::ActionRevision> {
+        self.inner.get_action_revision()
     }
 }

@@ -72,6 +72,10 @@ impl MonitoringAppSpecificationBuilder {
         self.image_uri = input;
         self
     }
+    /// <p>The container image to be run by the monitoring job.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
+    }
     /// Appends an item to `container_entrypoint`.
     ///
     /// To override the contents of this collection use [`set_container_entrypoint`](Self::set_container_entrypoint).
@@ -93,6 +97,12 @@ impl MonitoringAppSpecificationBuilder {
     ) -> Self {
         self.container_entrypoint = input;
         self
+    }
+    /// <p>Specifies the entrypoint for a container used to run the monitoring job.</p>
+    pub fn get_container_entrypoint(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_entrypoint
     }
     /// Appends an item to `container_arguments`.
     ///
@@ -116,6 +126,12 @@ impl MonitoringAppSpecificationBuilder {
         self.container_arguments = input;
         self
     }
+    /// <p>An array of arguments for the container used to run the monitoring job.</p>
+    pub fn get_container_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_arguments
+    }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn record_preprocessor_source_uri(
         mut self,
@@ -132,6 +148,12 @@ impl MonitoringAppSpecificationBuilder {
         self.record_preprocessor_source_uri = input;
         self
     }
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    pub fn get_record_preprocessor_source_uri(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.record_preprocessor_source_uri
+    }
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
     pub fn post_analytics_processor_source_uri(
         mut self,
@@ -147,6 +169,12 @@ impl MonitoringAppSpecificationBuilder {
     ) -> Self {
         self.post_analytics_processor_source_uri = input;
         self
+    }
+    /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
+    pub fn get_post_analytics_processor_source_uri(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.post_analytics_processor_source_uri
     }
     /// Consumes the builder and constructs a [`MonitoringAppSpecification`](crate::types::MonitoringAppSpecification).
     pub fn build(self) -> crate::types::MonitoringAppSpecification {

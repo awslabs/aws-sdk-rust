@@ -92,6 +92,19 @@ impl ErrorDetailBuilder {
         self.error_code = input;
         self
     }
+    /// <p>A brief description of the error. </p>
+    /// <ul>
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
+    }
     /// <p>A more complete description of the error.</p>
     pub fn error_message(
         mut self,
@@ -107,6 +120,10 @@ impl ErrorDetailBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A more complete description of the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Appends an item to `resource_ids`.
     ///
@@ -126,6 +143,12 @@ impl ErrorDetailBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>An optional field that contains the resource IDs associated with the error.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {

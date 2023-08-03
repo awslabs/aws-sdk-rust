@@ -74,6 +74,12 @@ impl GetRelationalDatabaseEventsOutputBuilder {
         self.relational_database_events = input;
         self
     }
+    /// <p>An object describing the result of your get relational database events request.</p>
+    pub fn get_relational_database_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseEvent>> {
+        &self.relational_database_events
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -93,6 +99,12 @@ impl GetRelationalDatabaseEventsOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

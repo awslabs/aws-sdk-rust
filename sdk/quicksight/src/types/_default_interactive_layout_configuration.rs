@@ -53,6 +53,10 @@ impl DefaultInteractiveLayoutConfigurationBuilder {
         self.grid = input;
         self
     }
+    /// <p>The options that determine the default settings for a grid layout configuration.</p>
+    pub fn get_grid(&self) -> &::std::option::Option<crate::types::DefaultGridLayoutConfiguration> {
+        &self.grid
+    }
     /// <p>The options that determine the default settings of a free-form layout configuration.</p>
     pub fn free_form(mut self, input: crate::types::DefaultFreeFormLayoutConfiguration) -> Self {
         self.free_form = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl DefaultInteractiveLayoutConfigurationBuilder {
     ) -> Self {
         self.free_form = input;
         self
+    }
+    /// <p>The options that determine the default settings of a free-form layout configuration.</p>
+    pub fn get_free_form(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultFreeFormLayoutConfiguration> {
+        &self.free_form
     }
     /// Consumes the builder and constructs a [`DefaultInteractiveLayoutConfiguration`](crate::types::DefaultInteractiveLayoutConfiguration).
     pub fn build(self) -> crate::types::DefaultInteractiveLayoutConfiguration {

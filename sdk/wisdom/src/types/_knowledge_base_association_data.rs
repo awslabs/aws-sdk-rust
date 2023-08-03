@@ -54,6 +54,10 @@ impl KnowledgeBaseAssociationDataBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn knowledge_base_arn(
         mut self,
@@ -69,6 +73,10 @@ impl KnowledgeBaseAssociationDataBuilder {
     ) -> Self {
         self.knowledge_base_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_arn
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseAssociationData`](crate::types::KnowledgeBaseAssociationData).
     pub fn build(self) -> crate::types::KnowledgeBaseAssociationData {

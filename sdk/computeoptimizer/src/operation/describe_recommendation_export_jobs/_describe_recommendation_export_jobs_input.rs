@@ -82,6 +82,12 @@ impl DescribeRecommendationExportJobsInputBuilder {
         self.job_ids = input;
         self
     }
+    /// <p>The identification numbers of the export jobs to return.</p>
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+    /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
+    pub fn get_job_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -101,6 +107,10 @@ impl DescribeRecommendationExportJobsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFilter>> {
+        &self.filters
+    }
     /// <p>The token to advance to the next page of export jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +120,10 @@ impl DescribeRecommendationExportJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of export jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of export jobs to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -122,6 +136,11 @@ impl DescribeRecommendationExportJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput, ::aws_smithy_http::operation::error::BuildError>{

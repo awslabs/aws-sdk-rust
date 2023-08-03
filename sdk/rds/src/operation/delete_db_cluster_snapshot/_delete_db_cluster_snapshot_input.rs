@@ -52,6 +52,13 @@ impl DeleteDbClusterSnapshotInputBuilder {
         self.db_cluster_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the DB cluster snapshot to delete.</p>
+    /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
     pub fn build(
         self,

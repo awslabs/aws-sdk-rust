@@ -102,6 +102,12 @@ impl UpdateServiceSettingsOutputBuilder {
         self.linux_subscriptions_discovery = input;
         self
     }
+    /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
+    pub fn get_linux_subscriptions_discovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
+        &self.linux_subscriptions_discovery
+    }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub fn linux_subscriptions_discovery_settings(
         mut self,
@@ -118,6 +124,12 @@ impl UpdateServiceSettingsOutputBuilder {
         self.linux_subscriptions_discovery_settings = input;
         self
     }
+    /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    pub fn get_linux_subscriptions_discovery_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
+        &self.linux_subscriptions_discovery_settings
+    }
     /// <p>Indicates the status of Linux subscriptions settings being applied.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl UpdateServiceSettingsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of Linux subscriptions settings being applied.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Adds a key-value pair to `status_message`.
     ///
@@ -153,6 +169,14 @@ impl UpdateServiceSettingsOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message which details the Linux subscriptions service settings current status.</p>
+    pub fn get_status_message(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.status_message
+    }
     /// Appends an item to `home_regions`.
     ///
     /// To override the contents of this collection use [`set_home_regions`](Self::set_home_regions).
@@ -171,6 +195,12 @@ impl UpdateServiceSettingsOutputBuilder {
     ) -> Self {
         self.home_regions = input;
         self
+    }
+    /// <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
+    pub fn get_home_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.home_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

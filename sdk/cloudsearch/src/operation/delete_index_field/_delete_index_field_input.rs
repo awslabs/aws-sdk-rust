@@ -49,6 +49,10 @@ impl DeleteIndexFieldInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
     pub fn index_field_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteIndexFieldInputBuilder {
     ) -> Self {
         self.index_field_name = input;
         self
+    }
+    /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    pub fn get_index_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_field_name
     }
     /// Consumes the builder and constructs a [`DeleteIndexFieldInput`](crate::operation::delete_index_field::DeleteIndexFieldInput).
     pub fn build(

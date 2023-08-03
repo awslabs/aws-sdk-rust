@@ -67,6 +67,10 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The type of encryption used for the encryption configuration.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
+    }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn configuration_status(mut self, input: crate::types::ConfigurationStatus) -> Self {
@@ -89,6 +97,12 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     ) -> Self {
         self.configuration_status = input;
         self
+    }
+    /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
+    pub fn get_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationStatus> {
+        &self.configuration_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

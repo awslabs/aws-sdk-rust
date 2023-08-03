@@ -36,6 +36,12 @@ impl StartQueryExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartQueryExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_query_execution::builders::StartQueryExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartQueryExecutionFluentBuilder {
         self.inner = self.inner.set_query_string(input);
         self
     }
+    /// <p>The SQL query statements to be executed.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
+    }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
@@ -146,6 +156,12 @@ impl StartQueryExecutionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The database within which the query executes.</p>
     pub fn query_execution_context(mut self, input: crate::types::QueryExecutionContext) -> Self {
         self.inner = self.inner.query_execution_context(input);
@@ -158,6 +174,12 @@ impl StartQueryExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_execution_context(input);
         self
+    }
+    /// <p>The database within which the query executes.</p>
+    pub fn get_query_execution_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryExecutionContext> {
+        self.inner.get_query_execution_context()
     }
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn result_configuration(mut self, input: crate::types::ResultConfiguration) -> Self {
@@ -172,6 +194,12 @@ impl StartQueryExecutionFluentBuilder {
         self.inner = self.inner.set_result_configuration(input);
         self
     }
+    /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    pub fn get_result_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResultConfiguration> {
+        self.inner.get_result_configuration()
+    }
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -181,6 +209,10 @@ impl StartQueryExecutionFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The name of the workgroup in which the query is being started.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
     /// Appends an item to `ExecutionParameters`.
     ///
@@ -202,6 +234,12 @@ impl StartQueryExecutionFluentBuilder {
         self.inner = self.inner.set_execution_parameters(input);
         self
     }
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    pub fn get_execution_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_execution_parameters()
+    }
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub fn result_reuse_configuration(
         mut self,
@@ -217,5 +255,11 @@ impl StartQueryExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_result_reuse_configuration(input);
         self
+    }
+    /// <p>Specifies the query result reuse behavior for the query.</p>
+    pub fn get_result_reuse_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResultReuseConfiguration> {
+        self.inner.get_result_reuse_configuration()
     }
 }

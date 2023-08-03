@@ -58,6 +58,10 @@ impl ModelPackageValidationSpecificationBuilder {
         self.validation_role = input;
         self
     }
+    /// <p>The IAM roles to be used for the validation of the model package.</p>
+    pub fn get_validation_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_role
+    }
     /// Appends an item to `validation_profiles`.
     ///
     /// To override the contents of this collection use [`set_validation_profiles`](Self::set_validation_profiles).
@@ -79,6 +83,12 @@ impl ModelPackageValidationSpecificationBuilder {
     ) -> Self {
         self.validation_profiles = input;
         self
+    }
+    /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
+    pub fn get_validation_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>> {
+        &self.validation_profiles
     }
     /// Consumes the builder and constructs a [`ModelPackageValidationSpecification`](crate::types::ModelPackageValidationSpecification).
     pub fn build(self) -> crate::types::ModelPackageValidationSpecification {

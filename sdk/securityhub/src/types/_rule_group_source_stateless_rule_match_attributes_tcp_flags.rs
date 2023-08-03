@@ -59,6 +59,10 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
         self.flags = input;
         self
     }
+    /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
+    pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.flags
+    }
     /// Appends an item to `masks`.
     ///
     /// To override the contents of this collection use [`set_masks`](Self::set_masks).
@@ -77,6 +81,10 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
     ) -> Self {
         self.masks = input;
         self
+    }
+    /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
+    pub fn get_masks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.masks
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {

@@ -40,6 +40,10 @@ impl DisassociateConnectorInputBuilder {
         self.connector_id = input;
         self
     }
+    /// <p>The ID of the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
+    }
     /// Consumes the builder and constructs a [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
     pub fn build(
         self,

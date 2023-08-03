@@ -67,6 +67,10 @@ impl CanaryTimelineBuilder {
         self.created = input;
         self
     }
+    /// <p>The date and time the canary was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The date and time the canary was most recently modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl CanaryTimelineBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time the canary was most recently modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     /// <p>The date and time that the canary's most recent run started.</p>
     pub fn last_started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl CanaryTimelineBuilder {
         self.last_started = input;
         self
     }
+    /// <p>The date and time that the canary's most recent run started.</p>
+    pub fn get_last_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_started
+    }
     /// <p>The date and time that the canary's most recent run ended.</p>
     pub fn last_stopped(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_stopped = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl CanaryTimelineBuilder {
     ) -> Self {
         self.last_stopped = input;
         self
+    }
+    /// <p>The date and time that the canary's most recent run ended.</p>
+    pub fn get_last_stopped(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_stopped
     }
     /// Consumes the builder and constructs a [`CanaryTimeline`](crate::types::CanaryTimeline).
     pub fn build(self) -> crate::types::CanaryTimeline {

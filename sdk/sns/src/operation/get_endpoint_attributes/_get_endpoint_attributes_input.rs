@@ -42,6 +42,10 @@ impl GetEndpointAttributesInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// Consumes the builder and constructs a [`GetEndpointAttributesInput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl DeleteFileSystemPolicyInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// Consumes the builder and constructs a [`DeleteFileSystemPolicyInput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyInput).
     pub fn build(
         self,

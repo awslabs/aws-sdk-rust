@@ -40,6 +40,10 @@ impl AwsEcsTaskDefinitionVolumesHostDetailsBuilder {
         self.source_path = input;
         self
     }
+    /// <p>The path on the host container instance that is presented to the container.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
+    }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::types::AwsEcsTaskDefinitionVolumesHostDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesHostDetails {
         crate::types::AwsEcsTaskDefinitionVolumesHostDetails {

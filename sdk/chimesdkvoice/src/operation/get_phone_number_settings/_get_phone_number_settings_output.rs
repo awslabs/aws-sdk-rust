@@ -68,6 +68,10 @@ impl GetPhoneNumberSettingsOutputBuilder {
         self.calling_name = input;
         self
     }
+    /// <p>The default outbound calling name for the account.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calling_name
+    }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn calling_name_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.calling_name_updated_timestamp = ::std::option::Option::Some(input);
@@ -80,6 +84,12 @@ impl GetPhoneNumberSettingsOutputBuilder {
     ) -> Self {
         self.calling_name_updated_timestamp = input;
         self
+    }
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
+    pub fn get_calling_name_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.calling_name_updated_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

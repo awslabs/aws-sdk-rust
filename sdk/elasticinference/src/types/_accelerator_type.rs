@@ -62,6 +62,10 @@ impl AcceleratorTypeBuilder {
         self.accelerator_type_name = input;
         self
     }
+    /// <p> The name of the Elastic Inference Accelerator type. </p>
+    pub fn get_accelerator_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_type_name
+    }
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
     pub fn memory_info(mut self, input: crate::types::MemoryInfo) -> Self {
         self.memory_info = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl AcceleratorTypeBuilder {
     ) -> Self {
         self.memory_info = input;
         self
+    }
+    /// <p> The memory information of the Elastic Inference Accelerator type. </p>
+    pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::MemoryInfo> {
+        &self.memory_info
     }
     /// Appends an item to `throughput_info`.
     ///
@@ -93,6 +101,12 @@ impl AcceleratorTypeBuilder {
     ) -> Self {
         self.throughput_info = input;
         self
+    }
+    /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
+    pub fn get_throughput_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.throughput_info
     }
     /// Consumes the builder and constructs a [`AcceleratorType`](crate::types::AcceleratorType).
     pub fn build(self) -> crate::types::AcceleratorType {

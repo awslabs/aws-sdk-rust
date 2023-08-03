@@ -51,6 +51,10 @@ impl UpdateNetworkSettingsOutputBuilder {
         self.network_settings = input;
         self
     }
+    /// <p>The network settings.</p>
+    pub fn get_network_settings(&self) -> &::std::option::Option<crate::types::NetworkSettings> {
+        &self.network_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

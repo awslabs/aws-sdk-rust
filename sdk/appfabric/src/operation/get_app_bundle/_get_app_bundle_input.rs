@@ -45,6 +45,10 @@ impl GetAppBundleInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// Consumes the builder and constructs a [`GetAppBundleInput`](crate::operation::get_app_bundle::GetAppBundleInput).
     pub fn build(
         self,

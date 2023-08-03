@@ -48,6 +48,10 @@ impl ParameterObjectBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the parameter object. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -66,6 +70,12 @@ impl ParameterObjectBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The attributes of the parameter object.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ParameterObject`](crate::types::ParameterObject).
     pub fn build(self) -> crate::types::ParameterObject {

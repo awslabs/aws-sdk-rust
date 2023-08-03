@@ -36,6 +36,10 @@ impl GetResourceDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetResourceDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_resource_definition_id(input);
         self
     }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_definition_id()
+    }
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn resource_definition_version_id(
         mut self,
@@ -147,5 +155,11 @@ impl GetResourceDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_definition_version_id(input);
         self
+    }
+    /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_resource_definition_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_definition_version_id()
     }
 }

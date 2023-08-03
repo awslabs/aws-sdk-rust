@@ -60,6 +60,10 @@ impl ApplySchemaOutputBuilder {
         self.applied_schema_arn = input;
         self
     }
+    /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
+    pub fn get_applied_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.applied_schema_arn
+    }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(
         mut self,
@@ -75,6 +79,10 @@ impl ApplySchemaOutputBuilder {
     ) -> Self {
         self.directory_arn = input;
         self
+    }
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

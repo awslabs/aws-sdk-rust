@@ -52,6 +52,10 @@ impl HistoricalMetricResultBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The dimension for the metrics.</p>
+    pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::Dimensions> {
+        &self.dimensions
+    }
     /// Appends an item to `collections`.
     ///
     /// To override the contents of this collection use [`set_collections`](Self::set_collections).
@@ -70,6 +74,12 @@ impl HistoricalMetricResultBuilder {
     ) -> Self {
         self.collections = input;
         self
+    }
+    /// <p>The set of metrics.</p>
+    pub fn get_collections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>> {
+        &self.collections
     }
     /// Consumes the builder and constructs a [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).
     pub fn build(self) -> crate::types::HistoricalMetricResult {

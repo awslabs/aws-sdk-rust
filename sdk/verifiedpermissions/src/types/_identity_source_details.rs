@@ -78,6 +78,10 @@ impl IdentitySourceDetailsBuilder {
         self.client_ids = input;
         self
     }
+    /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
+    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_ids
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     pub fn user_pool_arn(
         mut self,
@@ -93,6 +97,10 @@ impl IdentitySourceDetailsBuilder {
     ) -> Self {
         self.user_pool_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
+    pub fn get_user_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_arn
     }
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p> <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code> </p>
@@ -112,6 +120,11 @@ impl IdentitySourceDetailsBuilder {
         self.discovery_url = input;
         self
     }
+    /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
+    /// <p> <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code> </p>
+    pub fn get_discovery_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_url
+    }
     /// <p>A string that identifies the type of OIDC service represented by this identity source. </p>
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
     pub fn open_id_issuer(mut self, input: crate::types::OpenIdIssuer) -> Self {
@@ -126,6 +139,11 @@ impl IdentitySourceDetailsBuilder {
     ) -> Self {
         self.open_id_issuer = input;
         self
+    }
+    /// <p>A string that identifies the type of OIDC service represented by this identity source. </p>
+    /// <p>At this time, the only valid value is <code>cognito</code>.</p>
+    pub fn get_open_id_issuer(&self) -> &::std::option::Option<crate::types::OpenIdIssuer> {
+        &self.open_id_issuer
     }
     /// Consumes the builder and constructs a [`IdentitySourceDetails`](crate::types::IdentitySourceDetails).
     pub fn build(self) -> crate::types::IdentitySourceDetails {

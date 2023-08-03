@@ -60,6 +60,12 @@ impl BandMathConfigInputBuilder {
         self.predefined_indices = input;
         self
     }
+    /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
+    pub fn get_predefined_indices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.predefined_indices
+    }
     /// <p>CustomIndices that are computed.</p>
     pub fn custom_indices(mut self, input: crate::types::CustomIndicesInput) -> Self {
         self.custom_indices = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl BandMathConfigInputBuilder {
     ) -> Self {
         self.custom_indices = input;
         self
+    }
+    /// <p>CustomIndices that are computed.</p>
+    pub fn get_custom_indices(&self) -> &::std::option::Option<crate::types::CustomIndicesInput> {
+        &self.custom_indices
     }
     /// Consumes the builder and constructs a [`BandMathConfigInput`](crate::types::BandMathConfigInput).
     pub fn build(self) -> crate::types::BandMathConfigInput {

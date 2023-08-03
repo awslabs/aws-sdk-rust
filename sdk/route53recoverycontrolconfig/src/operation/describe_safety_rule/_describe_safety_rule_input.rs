@@ -46,6 +46,10 @@ impl DescribeSafetyRuleInputBuilder {
         self.safety_rule_arn = input;
         self
     }
+    /// <p>The ARN of the safety rule.</p>
+    pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.safety_rule_arn
+    }
     /// Consumes the builder and constructs a [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
     pub fn build(
         self,

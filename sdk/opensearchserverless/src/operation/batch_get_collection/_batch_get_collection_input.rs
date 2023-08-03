@@ -57,6 +57,10 @@ impl BatchGetCollectionInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Appends an item to `names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -75,6 +79,10 @@ impl BatchGetCollectionInputBuilder {
     ) -> Self {
         self.names = input;
         self
+    }
+    /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
     }
     /// Consumes the builder and constructs a [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
     pub fn build(

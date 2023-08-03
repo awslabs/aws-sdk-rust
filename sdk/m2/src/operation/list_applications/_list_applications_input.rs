@@ -64,6 +64,10 @@ impl ListApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token to control the number of applications displayed in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of applications to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListApplicationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of applications to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `names`.
     ///
@@ -93,6 +101,10 @@ impl ListApplicationsInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the applications.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub fn environment_id(
         mut self,
@@ -108,6 +120,10 @@ impl ListApplicationsInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(

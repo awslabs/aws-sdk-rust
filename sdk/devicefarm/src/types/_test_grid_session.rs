@@ -80,6 +80,10 @@ impl TestGridSessionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the session.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The state of the session.</p>
     pub fn status(mut self, input: crate::types::TestGridSessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl TestGridSessionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The state of the session.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TestGridSessionStatus> {
+        &self.status
     }
     /// <p>The time that the session was started.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +114,10 @@ impl TestGridSessionBuilder {
         self.created = input;
         self
     }
+    /// <p>The time that the session was started.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The time the session ended.</p>
     pub fn ended(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl TestGridSessionBuilder {
         self.ended = input;
         self
     }
+    /// <p>The time the session ended.</p>
+    pub fn get_ended(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended
+    }
     /// <p>The number of billed minutes that were used for this session. </p>
     pub fn billing_minutes(mut self, input: f64) -> Self {
         self.billing_minutes = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl TestGridSessionBuilder {
     pub fn set_billing_minutes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.billing_minutes = input;
         self
+    }
+    /// <p>The number of billed minutes that were used for this session. </p>
+    pub fn get_billing_minutes(&self) -> &::std::option::Option<f64> {
+        &self.billing_minutes
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
     pub fn selenium_properties(
@@ -141,6 +161,10 @@ impl TestGridSessionBuilder {
     ) -> Self {
         self.selenium_properties = input;
         self
+    }
+    /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
+    pub fn get_selenium_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selenium_properties
     }
     /// Consumes the builder and constructs a [`TestGridSession`](crate::types::TestGridSession).
     pub fn build(self) -> crate::types::TestGridSession {

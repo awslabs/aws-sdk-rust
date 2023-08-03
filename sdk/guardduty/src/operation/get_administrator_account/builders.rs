@@ -37,6 +37,13 @@ impl GetAdministratorAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAdministratorAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl GetAdministratorAccountFluentBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
+    }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
     }
 }

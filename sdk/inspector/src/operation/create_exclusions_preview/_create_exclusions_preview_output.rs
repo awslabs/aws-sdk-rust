@@ -54,6 +54,10 @@ impl CreateExclusionsPreviewOutputBuilder {
         self.preview_token = input;
         self
     }
+    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
+    pub fn get_preview_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preview_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

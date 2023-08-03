@@ -51,6 +51,10 @@ impl ClusterOperationStepBuilder {
         self.step_info = input;
         self
     }
+    /// <p>Information about the step and its status.</p>
+    pub fn get_step_info(&self) -> &::std::option::Option<crate::types::ClusterOperationStepInfo> {
+        &self.step_info
+    }
     /// <p>The name of the step.</p>
     pub fn step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ClusterOperationStepBuilder {
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_name = input;
         self
+    }
+    /// <p>The name of the step.</p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
     }
     /// Consumes the builder and constructs a [`ClusterOperationStep`](crate::types::ClusterOperationStep).
     pub fn build(self) -> crate::types::ClusterOperationStep {

@@ -72,6 +72,10 @@ impl ProvisioningArtifactBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the provisioning artifact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ProvisioningArtifactBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the provisioning artifact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ProvisioningArtifactBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl ProvisioningArtifactBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn guidance(mut self, input: crate::types::ProvisioningArtifactGuidance) -> Self {
         self.guidance = ::std::option::Option::Some(input);
@@ -117,6 +133,12 @@ impl ProvisioningArtifactBuilder {
     ) -> Self {
         self.guidance = input;
         self
+    }
+    /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    pub fn get_guidance(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
+        &self.guidance
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifact`](crate::types::ProvisioningArtifact).
     pub fn build(self) -> crate::types::ProvisioningArtifact {

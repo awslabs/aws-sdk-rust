@@ -60,6 +60,10 @@ impl DescribeCanariesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeCanariesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `names`.
     ///
@@ -92,6 +100,12 @@ impl DescribeCanariesInputBuilder {
     ) -> Self {
         self.names = input;
         self
+    }
+    /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+    /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
     }
     /// Consumes the builder and constructs a [`DescribeCanariesInput`](crate::operation::describe_canaries::DescribeCanariesInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl GetOperationInputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>The ID of the operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
     pub fn build(
         self,

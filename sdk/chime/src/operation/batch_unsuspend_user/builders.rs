@@ -37,6 +37,12 @@ impl BatchUnsuspendUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUnsuspendUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl BatchUnsuspendUserFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// Appends an item to `UserIdList`.
     ///
     /// To override the contents of this collection use [`set_user_id_list`](Self::set_user_id_list).
@@ -143,5 +153,11 @@ impl BatchUnsuspendUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_id_list(input);
         self
+    }
+    /// <p>The request containing the user IDs to unsuspend.</p>
+    pub fn get_user_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_id_list()
     }
 }

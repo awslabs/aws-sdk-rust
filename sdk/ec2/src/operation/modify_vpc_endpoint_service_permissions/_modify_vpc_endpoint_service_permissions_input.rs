@@ -65,6 +65,10 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Appends an item to `add_allowed_principals`.
     ///
@@ -97,6 +105,12 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
         self.add_allowed_principals = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
+    pub fn get_add_allowed_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_allowed_principals
+    }
     /// Appends an item to `remove_allowed_principals`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_principals`](Self::set_remove_allowed_principals).
@@ -118,6 +132,12 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     ) -> Self {
         self.remove_allowed_principals = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
+    pub fn get_remove_allowed_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_allowed_principals
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsInput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput, ::aws_smithy_http::operation::error::BuildError>{

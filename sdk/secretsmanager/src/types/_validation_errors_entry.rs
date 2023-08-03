@@ -48,6 +48,10 @@ impl ValidationErrorsEntryBuilder {
         self.check_name = input;
         self
     }
+    /// <p>Checks the name of the policy.</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
+    }
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl ValidationErrorsEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ValidationErrorsEntry`](crate::types::ValidationErrorsEntry).
     pub fn build(self) -> crate::types::ValidationErrorsEntry {

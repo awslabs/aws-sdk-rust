@@ -40,6 +40,10 @@ impl DescribeDashboardInputBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
     pub fn build(
         self,

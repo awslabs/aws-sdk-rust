@@ -51,6 +51,10 @@ impl ScalingParametersStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::ScalingParameters> {
+        &self.options
+    }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ScalingParametersStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ScalingParametersStatus`](crate::types::ScalingParametersStatus).
     pub fn build(self) -> crate::types::ScalingParametersStatus {

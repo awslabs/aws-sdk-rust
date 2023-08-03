@@ -36,6 +36,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStorageVirtualMachine as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl CreateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.set_active_directory_configuration(input);
         self
     }
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    pub fn get_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration> {
+        self.inner.get_active_directory_configuration()
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -147,6 +157,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn file_system_id(
@@ -164,6 +178,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>The name of the SVM.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -173,6 +191,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the SVM.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
     pub fn svm_admin_password(
@@ -190,6 +212,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.set_svm_admin_password(input);
         self
     }
+    /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
+    pub fn get_svm_admin_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_svm_admin_password()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -206,6 +232,10 @@ impl CreateStorageVirtualMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
@@ -232,5 +262,16 @@ impl CreateStorageVirtualMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_root_volume_security_style(input);
         self
+    }
+    /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
+    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// </ul>
+    pub fn get_root_volume_security_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+        self.inner.get_root_volume_security_style()
     }
 }

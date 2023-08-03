@@ -74,6 +74,10 @@ impl PutLaunchProfileMembersInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID of the identity store.</p>
     pub fn identity_store_id(
         mut self,
@@ -90,6 +94,10 @@ impl PutLaunchProfileMembersInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The ID of the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(
         mut self,
@@ -105,6 +113,10 @@ impl PutLaunchProfileMembersInputBuilder {
     ) -> Self {
         self.launch_profile_id = input;
         self
+    }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
     }
     /// Appends an item to `members`.
     ///
@@ -125,6 +137,12 @@ impl PutLaunchProfileMembersInputBuilder {
         self.members = input;
         self
     }
+    /// <p>A list of members.</p>
+    pub fn get_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
+        &self.members
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -134,6 +152,10 @@ impl PutLaunchProfileMembersInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
     pub fn build(

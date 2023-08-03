@@ -36,6 +36,12 @@ impl DescribeTargetHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTargetHealth as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeTargetHealthFluentBuilder {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_arn()
+    }
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -148,5 +158,11 @@ impl DescribeTargetHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
+    }
+    /// <p>The targets.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
+        self.inner.get_targets()
     }
 }

@@ -69,6 +69,12 @@ impl ListApplicationsOutputBuilder {
         self.application_summaries = input;
         self
     }
+    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    pub fn get_application_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
+        &self.application_summaries
+    }
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub fn has_more_applications(mut self, input: bool) -> Self {
         self.has_more_applications = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl ListApplicationsOutputBuilder {
     pub fn set_has_more_applications(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_applications = input;
         self
+    }
+    /// <p>Returns true if there are more applications to retrieve.</p>
+    pub fn get_has_more_applications(&self) -> &::std::option::Option<bool> {
+        &self.has_more_applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

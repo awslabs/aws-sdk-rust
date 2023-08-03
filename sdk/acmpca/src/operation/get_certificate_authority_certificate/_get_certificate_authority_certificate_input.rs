@@ -49,6 +49,11 @@ impl GetCertificateAuthorityCertificateInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// Consumes the builder and constructs a [`GetCertificateAuthorityCertificateInput`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

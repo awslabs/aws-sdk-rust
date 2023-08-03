@@ -49,6 +49,10 @@ impl UpdateOrganizationConfigurationOutputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        &self.auto_enable
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,13 @@ impl GetSqlInjectionMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSqlInjectionMatchSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,9 @@ impl GetSqlInjectionMatchSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sql_injection_match_set_id(input);
         self
+    }
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sql_injection_match_set_id()
     }
 }

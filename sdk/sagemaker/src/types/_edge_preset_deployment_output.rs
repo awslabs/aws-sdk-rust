@@ -67,6 +67,10 @@ impl EdgePresetDeploymentOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EdgePresetDeploymentType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
     pub fn artifact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl EdgePresetDeploymentOutputBuilder {
     pub fn set_artifact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact
     }
     /// <p>The status of the deployable resource.</p>
     pub fn status(mut self, input: crate::types::EdgePresetDeploymentStatus) -> Self {
@@ -89,6 +97,10 @@ impl EdgePresetDeploymentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the deployable resource.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EdgePresetDeploymentStatus> {
+        &self.status
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
     pub fn status_message(
@@ -105,6 +117,10 @@ impl EdgePresetDeploymentOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>Returns a message describing the status of the deployed resource.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`EdgePresetDeploymentOutput`](crate::types::EdgePresetDeploymentOutput).
     pub fn build(self) -> crate::types::EdgePresetDeploymentOutput {

@@ -69,6 +69,10 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self.allow = input;
         self
     }
+    /// <p> Instructs WAF to allow the web request. </p>
+    pub fn get_allow(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionAllowDetails> {
+        &self.allow
+    }
     /// <p> Instructs WAF to block the web request. </p>
     pub fn block(mut self, input: crate::types::AwsWafv2ActionBlockDetails) -> Self {
         self.block = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl AwsWafv2RulesActionDetailsBuilder {
     ) -> Self {
         self.block = input;
         self
+    }
+    /// <p> Instructs WAF to block the web request. </p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionBlockDetails> {
+        &self.block
     }
     /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
     pub fn captcha(mut self, input: crate::types::AwsWafv2RulesActionCaptchaDetails) -> Self {
@@ -95,6 +103,12 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self.captcha = input;
         self
     }
+    /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
+    pub fn get_captcha(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails> {
+        &self.captcha
+    }
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
     pub fn count(mut self, input: crate::types::AwsWafv2RulesActionCountDetails) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -107,6 +121,12 @@ impl AwsWafv2RulesActionDetailsBuilder {
     ) -> Self {
         self.count = input;
         self
+    }
+    /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
+    pub fn get_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`AwsWafv2RulesActionDetails`](crate::types::AwsWafv2RulesActionDetails).
     pub fn build(self) -> crate::types::AwsWafv2RulesActionDetails {

@@ -60,6 +60,10 @@ impl PagerDutyConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the PagerDuty configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl PagerDutyConfigurationBuilder {
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     pub fn pager_duty_incident_configuration(
@@ -85,6 +93,12 @@ impl PagerDutyConfigurationBuilder {
     ) -> Self {
         self.pager_duty_incident_configuration = input;
         self
+    }
+    /// <p>Details about the PagerDuty service associated with the configuration.</p>
+    pub fn get_pager_duty_incident_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PagerDutyIncidentConfiguration> {
+        &self.pager_duty_incident_configuration
     }
     /// Consumes the builder and constructs a [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     pub fn build(self) -> crate::types::PagerDutyConfiguration {

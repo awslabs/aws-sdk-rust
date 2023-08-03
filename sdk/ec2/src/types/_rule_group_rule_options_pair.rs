@@ -54,6 +54,10 @@ impl RuleGroupRuleOptionsPairBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The ARN of the rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// Appends an item to `rule_options`.
     ///
     /// To override the contents of this collection use [`set_rule_options`](Self::set_rule_options).
@@ -72,6 +76,12 @@ impl RuleGroupRuleOptionsPairBuilder {
     ) -> Self {
         self.rule_options = input;
         self
+    }
+    /// <p>The rule options.</p>
+    pub fn get_rule_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+        &self.rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroupRuleOptionsPair`](crate::types::RuleGroupRuleOptionsPair).
     pub fn build(self) -> crate::types::RuleGroupRuleOptionsPair {

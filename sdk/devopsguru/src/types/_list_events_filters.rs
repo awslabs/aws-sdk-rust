@@ -80,6 +80,10 @@ impl ListEventsFiltersBuilder {
         self.insight_id = input;
         self
     }
+    /// <p> An ID of an insight that is related to the events you want to filter for. </p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
     pub fn event_time_range(mut self, input: crate::types::EventTimeRange) -> Self {
         self.event_time_range = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListEventsFiltersBuilder {
     ) -> Self {
         self.event_time_range = input;
         self
+    }
+    /// <p> A time range during which you want the filtered events to have occurred. </p>
+    pub fn get_event_time_range(&self) -> &::std::option::Option<crate::types::EventTimeRange> {
+        &self.event_time_range
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn event_class(mut self, input: crate::types::EventClass) -> Self {
@@ -106,6 +114,10 @@ impl ListEventsFiltersBuilder {
         self.event_class = input;
         self
     }
+    /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
+    pub fn get_event_class(&self) -> &::std::option::Option<crate::types::EventClass> {
+        &self.event_class
+    }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl ListEventsFiltersBuilder {
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self
+    }
+    /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
+    pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
     pub fn data_source(mut self, input: crate::types::EventDataSource) -> Self {
@@ -129,6 +145,10 @@ impl ListEventsFiltersBuilder {
         self.data_source = input;
         self
     }
+    /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::EventDataSource> {
+        &self.data_source
+    }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
@@ -141,6 +161,12 @@ impl ListEventsFiltersBuilder {
     ) -> Self {
         self.resource_collection = input;
         self
+    }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+        &self.resource_collection
     }
     /// Consumes the builder and constructs a [`ListEventsFilters`](crate::types::ListEventsFilters).
     pub fn build(self) -> crate::types::ListEventsFilters {

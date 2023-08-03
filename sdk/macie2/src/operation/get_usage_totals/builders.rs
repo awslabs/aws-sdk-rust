@@ -36,6 +36,12 @@ impl GetUsageTotalsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUsageTotals as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_usage_totals::builders::GetUsageTotalsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetUsageTotalsFluentBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_range(input);
         self
+    }
+    /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_time_range()
     }
 }

@@ -92,6 +92,10 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance for which to replace the root volume.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a snapshot that you previously created from the original root volume.</p>
     /// <p>If you want to restore the replacement root volume to the initial launch state, or if you want to restore the replacement root volume from an AMI, omit this parameter.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +108,11 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot from which to restore the replacement root volume. The specified snapshot must be a snapshot that you previously created from the original root volume.</p>
+    /// <p>If you want to restore the replacement root volume to the initial launch state, or if you want to restore the replacement root volume from an AMI, omit this parameter.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -114,6 +123,10 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, a randomly generated token is used for the request to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -123,6 +136,10 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -143,6 +160,12 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the root volume replacement task.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing information, architecture type, and virtualization type as that of the instance.</p>
     /// <p>If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its launch state, omit this parameter.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +178,11 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing information, architecture type, and virtualization type as that of the instance.</p>
+    /// <p>If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its launch state, omit this parameter.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>Indicates whether to automatically delete the original root volume after the root volume replacement task completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root volume after the replacement task completes, you must manually delete it when you no longer need it.</p>
     pub fn delete_replaced_root_volume(mut self, input: bool) -> Self {
         self.delete_replaced_root_volume = ::std::option::Option::Some(input);
@@ -164,6 +192,10 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
     pub fn set_delete_replaced_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_replaced_root_volume = input;
         self
+    }
+    /// <p>Indicates whether to automatically delete the original root volume after the root volume replacement task completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root volume after the replacement task completes, you must manually delete it when you no longer need it.</p>
+    pub fn get_delete_replaced_root_volume(&self) -> &::std::option::Option<bool> {
+        &self.delete_replaced_root_volume
     }
     /// Consumes the builder and constructs a [`CreateReplaceRootVolumeTaskInput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput).
     pub fn build(

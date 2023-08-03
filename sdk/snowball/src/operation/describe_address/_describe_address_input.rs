@@ -39,6 +39,10 @@ impl DescribeAddressInputBuilder {
         self.address_id = input;
         self
     }
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
+    }
     /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
     pub fn build(
         self,

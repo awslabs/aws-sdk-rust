@@ -47,6 +47,10 @@ impl DissociateEntityFromThingInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing to disassociate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The entity type from which to disassociate the thing.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DissociateEntityFromThingInputBuilder {
     ) -> Self {
         self.entity_type = input;
         self
+    }
+    /// <p>The entity type from which to disassociate the thing.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.entity_type
     }
     /// Consumes the builder and constructs a [`DissociateEntityFromThingInput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput).
     pub fn build(

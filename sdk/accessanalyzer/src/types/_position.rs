@@ -56,6 +56,10 @@ impl PositionBuilder {
         self.line = input;
         self
     }
+    /// <p>The line of the position, starting from 1.</p>
+    pub fn get_line(&self) -> &::std::option::Option<i32> {
+        &self.line
+    }
     /// <p>The column of the position, starting from 0.</p>
     pub fn column(mut self, input: i32) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PositionBuilder {
         self.column = input;
         self
     }
+    /// <p>The column of the position, starting from 0.</p>
+    pub fn get_column(&self) -> &::std::option::Option<i32> {
+        &self.column
+    }
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl PositionBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
+    }
+    /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
     pub fn build(self) -> crate::types::Position {

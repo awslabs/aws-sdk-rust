@@ -40,6 +40,10 @@ impl DeleteRemoteAccessSessionInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteRemoteAccessSessionInput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput).
     pub fn build(
         self,

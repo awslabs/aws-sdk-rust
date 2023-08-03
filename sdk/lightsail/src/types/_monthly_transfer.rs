@@ -40,6 +40,10 @@ impl MonthlyTransferBuilder {
         self.gb_per_month_allocated = input;
         self
     }
+    /// <p>The amount allocated per month (in GB).</p>
+    pub fn get_gb_per_month_allocated(&self) -> &::std::option::Option<i32> {
+        &self.gb_per_month_allocated
+    }
     /// Consumes the builder and constructs a [`MonthlyTransfer`](crate::types::MonthlyTransfer).
     pub fn build(self) -> crate::types::MonthlyTransfer {
         crate::types::MonthlyTransfer {

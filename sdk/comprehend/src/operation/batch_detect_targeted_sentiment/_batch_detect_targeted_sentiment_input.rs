@@ -62,6 +62,10 @@ impl BatchDetectTargetedSentimentInputBuilder {
         self.text_list = input;
         self
     }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.text_list
+    }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl BatchDetectTargetedSentimentInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentInput`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput).
     pub fn build(

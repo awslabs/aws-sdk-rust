@@ -39,6 +39,10 @@ impl GetProfileObjectTypeTemplateInputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// Consumes the builder and constructs a [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
     pub fn build(
         self,

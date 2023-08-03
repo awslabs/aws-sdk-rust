@@ -38,6 +38,13 @@ impl DisassociateVehicleFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateVehicleFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DisassociateVehicleFleetFluentBuilder {
         self.inner = self.inner.set_vehicle_name(input);
         self
     }
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vehicle_name()
+    }
     /// <p> The unique ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -137,5 +148,9 @@ impl DisassociateVehicleFleetFluentBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
+    }
+    /// <p> The unique ID of a fleet. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
     }
 }

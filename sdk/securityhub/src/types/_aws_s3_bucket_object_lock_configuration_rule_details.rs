@@ -57,6 +57,14 @@ impl AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
         self.default_retention = input;
         self
     }
+    /// <p> The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. </p>
+    pub fn get_default_retention(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
+    > {
+        &self.default_retention
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).
     pub fn build(self) -> crate::types::AwsS3BucketObjectLockConfigurationRuleDetails {
         crate::types::AwsS3BucketObjectLockConfigurationRuleDetails {

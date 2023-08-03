@@ -52,6 +52,10 @@ impl GetPromptFileOutputBuilder {
         self.prompt_presigned_url = input;
         self
     }
+    /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
+    pub fn get_prompt_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_presigned_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -39,6 +39,10 @@ impl UpdateAuditStreamConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAuditStreamConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateAuditStreamConfigurationFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
     pub fn audit_stream_arn(
         mut self,
@@ -118,5 +126,9 @@ impl UpdateAuditStreamConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+    pub fn get_audit_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_stream_arn()
     }
 }

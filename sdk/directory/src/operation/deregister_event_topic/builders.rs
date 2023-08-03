@@ -36,6 +36,12 @@ impl DeregisterEventTopicFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterEventTopic as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeregisterEventTopicFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_name(input.into());
@@ -135,5 +145,9 @@ impl DeregisterEventTopicFluentBuilder {
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_name(input);
         self
+    }
+    /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_name()
     }
 }

@@ -40,6 +40,10 @@ impl InstanceIdDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a corresponding EC2 instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`InstanceIdDetail`](crate::types::InstanceIdDetail).
     pub fn build(self) -> crate::types::InstanceIdDetail {
         crate::types::InstanceIdDetail { id: self.id }

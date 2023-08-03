@@ -64,6 +64,10 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
         self.parameter_name = input;
         self
     }
+    /// <p>The name of the parameter.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
+    }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
     /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
     pub fn parameter_apply_status(
@@ -82,6 +86,11 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
         self.parameter_apply_status = input;
         self
     }
+    /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
+    /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
+    pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_status
+    }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn parameter_apply_error_description(
         mut self,
@@ -97,6 +106,12 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
     ) -> Self {
         self.parameter_apply_error_description = input;
         self
+    }
+    /// <p>The error that prevented the parameter from being applied to the database.</p>
+    pub fn get_parameter_apply_error_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_error_description
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterStatus`](crate::types::AwsRedshiftClusterClusterParameterStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterParameterStatus {

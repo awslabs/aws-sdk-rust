@@ -40,6 +40,10 @@ impl VoiceSpoofingRiskBuilder {
         self.risk_score = input;
         self
     }
+    /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
+    pub fn get_risk_score(&self) -> &::std::option::Option<i32> {
+        &self.risk_score
+    }
     /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
     pub fn build(self) -> crate::types::VoiceSpoofingRisk {
         crate::types::VoiceSpoofingRisk {

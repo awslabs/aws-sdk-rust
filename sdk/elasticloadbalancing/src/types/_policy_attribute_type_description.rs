@@ -92,6 +92,10 @@ impl PolicyAttributeTypeDescriptionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
     pub fn attribute_type(
         mut self,
@@ -108,6 +112,10 @@ impl PolicyAttributeTypeDescriptionBuilder {
         self.attribute_type = input;
         self
     }
+    /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_type
+    }
     /// <p>A description of the attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl PolicyAttributeTypeDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The default value of the attribute, if applicable.</p>
     pub fn default_value(
@@ -133,6 +145,10 @@ impl PolicyAttributeTypeDescriptionBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value of the attribute, if applicable.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
@@ -157,6 +173,17 @@ impl PolicyAttributeTypeDescriptionBuilder {
     pub fn set_cardinality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cardinality = input;
         self
+    }
+    /// <p>The cardinality of the attribute.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p>ONE(1) : Single value required</p> </li>
+    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
+    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
+    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
+    /// </ul>
+    pub fn get_cardinality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cardinality
     }
     /// Consumes the builder and constructs a [`PolicyAttributeTypeDescription`](crate::types::PolicyAttributeTypeDescription).
     pub fn build(self) -> crate::types::PolicyAttributeTypeDescription {

@@ -128,6 +128,10 @@ impl NewTransitVirtualInterfaceBuilder {
         self.virtual_interface_name = input;
         self
     }
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_name
+    }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
@@ -137,6 +141,10 @@ impl NewTransitVirtualInterfaceBuilder {
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vlan = input;
         self
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        &self.vlan
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
@@ -150,6 +158,11 @@ impl NewTransitVirtualInterfaceBuilder {
         self.asn = input;
         self
     }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
+    }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = ::std::option::Option::Some(input);
@@ -160,6 +173,10 @@ impl NewTransitVirtualInterfaceBuilder {
         self.mtu = input;
         self
     }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        &self.mtu
+    }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_key = ::std::option::Option::Some(input.into());
@@ -169,6 +186,10 @@ impl NewTransitVirtualInterfaceBuilder {
     pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_key = input;
         self
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn get_auth_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_key
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
     pub fn amazon_address(
@@ -186,6 +207,10 @@ impl NewTransitVirtualInterfaceBuilder {
         self.amazon_address = input;
         self
     }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn get_amazon_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_address
+    }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(
         mut self,
@@ -202,6 +227,10 @@ impl NewTransitVirtualInterfaceBuilder {
         self.customer_address = input;
         self
     }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_address
+    }
     /// <p>The address family for the BGP peer.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
         self.address_family = ::std::option::Option::Some(input);
@@ -214,6 +243,10 @@ impl NewTransitVirtualInterfaceBuilder {
     ) -> Self {
         self.address_family = input;
         self
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
+        &self.address_family
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
@@ -230,6 +263,10 @@ impl NewTransitVirtualInterfaceBuilder {
     ) -> Self {
         self.direct_connect_gateway_id = input;
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// Appends an item to `tags`.
     ///
@@ -250,6 +287,10 @@ impl NewTransitVirtualInterfaceBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the transitive virtual interface.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(mut self, input: bool) -> Self {
         self.enable_site_link = ::std::option::Option::Some(input);
@@ -259,6 +300,10 @@ impl NewTransitVirtualInterfaceBuilder {
     pub fn set_enable_site_link(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_site_link = input;
         self
+    }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn get_enable_site_link(&self) -> &::std::option::Option<bool> {
+        &self.enable_site_link
     }
     /// Consumes the builder and constructs a [`NewTransitVirtualInterface`](crate::types::NewTransitVirtualInterface).
     pub fn build(self) -> crate::types::NewTransitVirtualInterface {

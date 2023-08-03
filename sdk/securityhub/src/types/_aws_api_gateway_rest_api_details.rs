@@ -118,6 +118,10 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the REST API.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the REST API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the REST API.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the REST API.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the REST API.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -150,6 +162,11 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         self.created_date = input;
         self
     }
+    /// <p>Indicates when the API was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
+    }
     /// <p>The version identifier for the REST API.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -159,6 +176,10 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version identifier for the REST API.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `binary_media_types`.
     ///
@@ -182,6 +203,12 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         self.binary_media_types = input;
         self
     }
+    /// <p>The list of binary media types supported by the REST API.</p>
+    pub fn get_binary_media_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.binary_media_types
+    }
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
     /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
@@ -195,6 +222,12 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     pub fn set_minimum_compression_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_compression_size = input;
         self
+    }
+    /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
+    /// <p>If <code>null</code>, then compression is disabled.</p>
+    /// <p>If 0, then all payloads are compressed.</p>
+    pub fn get_minimum_compression_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
     /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
@@ -216,6 +249,12 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         self.api_key_source = input;
         self
     }
+    /// <p>The source of the API key for metering requests according to a usage plan.</p>
+    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
+    /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    pub fn get_api_key_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_source
+    }
     /// <p>The endpoint configuration of the REST API.</p>
     pub fn endpoint_configuration(
         mut self,
@@ -231,6 +270,12 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     ) -> Self {
         self.endpoint_configuration = input;
         self
+    }
+    /// <p>The endpoint configuration of the REST API.</p>
+    pub fn get_endpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration> {
+        &self.endpoint_configuration
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayRestApiDetails`](crate::types::AwsApiGatewayRestApiDetails).
     pub fn build(self) -> crate::types::AwsApiGatewayRestApiDetails {

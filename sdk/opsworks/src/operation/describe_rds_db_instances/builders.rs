@@ -39,6 +39,13 @@ impl DescribeRdsDbInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRdsDbInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl DescribeRdsDbInstancesFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// Appends an item to `RdsDbInstanceArns`.
     ///
     /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
@@ -148,5 +159,11 @@ impl DescribeRdsDbInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rds_db_instance_arns(input);
         self
+    }
+    /// <p>An array containing the ARNs of the instances to be described.</p>
+    pub fn get_rds_db_instance_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_rds_db_instance_arns()
     }
 }

@@ -82,6 +82,10 @@ impl UpdateModelCardInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card to update.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +97,11 @@ impl UpdateModelCardInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
+    /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -118,6 +127,16 @@ impl UpdateModelCardInputBuilder {
     ) -> Self {
         self.model_card_status = input;
         self
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
     }
     /// Consumes the builder and constructs a [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
     pub fn build(

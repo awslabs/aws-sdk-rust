@@ -46,6 +46,10 @@ impl DeleteGroupOutputBuilder {
         self.group = input;
         self
     }
+    /// <p>A full description of the deleted resource group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
+        &self.group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -77,6 +77,12 @@ impl VisualCustomActionOperationBuilder {
         self.filter_operation = input;
         self
     }
+    /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
+    pub fn get_filter_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomActionFilterOperation> {
+        &self.filter_operation
+    }
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
     pub fn navigation_operation(
         mut self,
@@ -93,6 +99,12 @@ impl VisualCustomActionOperationBuilder {
         self.navigation_operation = input;
         self
     }
+    /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
+    pub fn get_navigation_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomActionNavigationOperation> {
+        &self.navigation_operation
+    }
     /// <p>The URL operation that opens a link to another webpage.</p>
     pub fn url_operation(mut self, input: crate::types::CustomActionUrlOperation) -> Self {
         self.url_operation = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl VisualCustomActionOperationBuilder {
     ) -> Self {
         self.url_operation = input;
         self
+    }
+    /// <p>The URL operation that opens a link to another webpage.</p>
+    pub fn get_url_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomActionUrlOperation> {
+        &self.url_operation
     }
     /// <p>The set parameter operation that sets parameters in custom action.</p>
     pub fn set_parameters_operation(
@@ -121,6 +139,12 @@ impl VisualCustomActionOperationBuilder {
     ) -> Self {
         self.set_parameters_operation = input;
         self
+    }
+    /// <p>The set parameter operation that sets parameters in custom action.</p>
+    pub fn get_set_parameters_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomActionSetParametersOperation> {
+        &self.set_parameters_operation
     }
     /// Consumes the builder and constructs a [`VisualCustomActionOperation`](crate::types::VisualCustomActionOperation).
     pub fn build(self) -> crate::types::VisualCustomActionOperation {

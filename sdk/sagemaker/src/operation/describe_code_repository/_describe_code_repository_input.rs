@@ -47,6 +47,10 @@ impl DescribeCodeRepositoryInputBuilder {
         self.code_repository_name = input;
         self
     }
+    /// <p>The name of the Git repository to describe.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_name
+    }
     /// Consumes the builder and constructs a [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
     pub fn build(
         self,

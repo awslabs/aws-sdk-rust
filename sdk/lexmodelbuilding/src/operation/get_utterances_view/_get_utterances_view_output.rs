@@ -55,6 +55,10 @@ impl GetUtterancesViewOutputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the bot for which utterance information was returned.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// Appends an item to `utterances`.
     ///
     /// To override the contents of this collection use [`set_utterances`](Self::set_utterances).
@@ -73,6 +77,12 @@ impl GetUtterancesViewOutputBuilder {
     ) -> Self {
         self.utterances = input;
         self
+    }
+    /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
+    pub fn get_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>> {
+        &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

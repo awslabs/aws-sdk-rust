@@ -37,6 +37,13 @@ impl UpdateSecurityProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSecurityProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the security profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -144,6 +155,12 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_permissions()
+    }
     /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(
         mut self,
@@ -160,6 +177,10 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_security_profile_id(input);
         self
     }
+    /// <p>The identifier for the security profle.</p>
+    pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_id()
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -169,6 +190,10 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Adds a key-value pair to `AllowedAccessControlTags`.
     ///
@@ -193,6 +218,14 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_allowed_access_control_tags(input);
         self
     }
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn get_allowed_access_control_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_allowed_access_control_tags()
+    }
     /// Appends an item to `TagRestrictedResources`.
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
@@ -212,5 +245,11 @@ impl UpdateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_restricted_resources(input);
         self
+    }
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    pub fn get_tag_restricted_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_restricted_resources()
     }
 }

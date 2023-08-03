@@ -36,6 +36,13 @@ impl DescribeServiceUpdatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeServiceUpdates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_service_update_name(input);
         self
     }
+    /// <p>The unique ID of the service update to describe.</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_update_name()
+    }
     /// Appends an item to `ClusterNames`.
     ///
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
@@ -164,6 +175,12 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
+    /// <p>The list of cluster names to identify service updates to apply</p>
+    pub fn get_cluster_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cluster_names()
+    }
     /// Appends an item to `Status`.
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
@@ -181,6 +198,12 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status(es) of the service updates to filter on</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+        self.inner.get_status()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -191,6 +214,10 @@ impl DescribeServiceUpdatesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -200,5 +227,9 @@ impl DescribeServiceUpdatesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

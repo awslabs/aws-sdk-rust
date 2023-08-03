@@ -36,6 +36,12 @@ impl UpdateBrokerTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBrokerType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBrokerTypeFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
     pub fn current_version(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateBrokerTypeFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
     pub fn target_instance_type(
         mut self,
@@ -157,5 +171,9 @@ impl UpdateBrokerTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_instance_type(input);
         self
+    }
+    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    pub fn get_target_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_instance_type()
     }
 }

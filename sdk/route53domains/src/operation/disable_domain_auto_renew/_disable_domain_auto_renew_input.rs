@@ -41,6 +41,10 @@ impl DisableDomainAutoRenewInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to disable automatic renewal for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DisableDomainAutoRenewInput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput).
     pub fn build(
         self,

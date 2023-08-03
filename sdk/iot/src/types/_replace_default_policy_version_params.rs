@@ -43,6 +43,10 @@ impl ReplaceDefaultPolicyVersionParamsBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<crate::types::PolicyTemplateName> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`ReplaceDefaultPolicyVersionParams`](crate::types::ReplaceDefaultPolicyVersionParams).
     pub fn build(self) -> crate::types::ReplaceDefaultPolicyVersionParams {
         crate::types::ReplaceDefaultPolicyVersionParams {

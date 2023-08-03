@@ -48,6 +48,10 @@ impl DeleteClusterSubnetGroupInputBuilder {
         self.cluster_subnet_group_name = input;
         self
     }
+    /// <p>The name of the cluster subnet group name to be deleted.</p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_subnet_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteClusterSubnetGroupInput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput).
     pub fn build(
         self,

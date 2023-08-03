@@ -144,6 +144,10 @@ impl SigningJobBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the signing job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>A <code>Source</code> that contains information about a signing job's code image source.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -153,6 +157,10 @@ impl SigningJobBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>A <code>Source</code> that contains information about a signing job's code image source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// <p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>
     pub fn signed_object(mut self, input: crate::types::SignedObject) -> Self {
@@ -167,6 +175,10 @@ impl SigningJobBuilder {
         self.signed_object = input;
         self
     }
+    /// <p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>
+    pub fn get_signed_object(&self) -> &::std::option::Option<crate::types::SignedObject> {
+        &self.signed_object
+    }
     /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>
     pub fn signing_material(mut self, input: crate::types::SigningMaterial) -> Self {
         self.signing_material = ::std::option::Option::Some(input);
@@ -179,6 +191,10 @@ impl SigningJobBuilder {
     ) -> Self {
         self.signing_material = input;
         self
+    }
+    /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>
+    pub fn get_signing_material(&self) -> &::std::option::Option<crate::types::SigningMaterial> {
+        &self.signing_material
     }
     /// <p>The date and time that the signing job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -193,6 +209,10 @@ impl SigningJobBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the signing job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The status of the signing job.</p>
     pub fn status(mut self, input: crate::types::SigningStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -202,6 +222,10 @@ impl SigningJobBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SigningStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the signing job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SigningStatus> {
+        &self.status
     }
     /// <p>Indicates whether the signing job is revoked.</p>
     pub fn is_revoked(mut self, input: bool) -> Self {
@@ -213,6 +237,10 @@ impl SigningJobBuilder {
         self.is_revoked = input;
         self
     }
+    /// <p>Indicates whether the signing job is revoked.</p>
+    pub fn get_is_revoked(&self) -> &::std::option::Option<bool> {
+        &self.is_revoked
+    }
     /// <p>The name of the signing profile that created a signing job.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -222,6 +250,10 @@ impl SigningJobBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The name of the signing profile that created a signing job.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>The version of the signing profile that created a signing job.</p>
     pub fn profile_version(
@@ -239,6 +271,10 @@ impl SigningJobBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The version of the signing profile that created a signing job.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>The unique identifier for a signing platform.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
@@ -248,6 +284,10 @@ impl SigningJobBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self
+    }
+    /// <p>The unique identifier for a signing platform.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
     }
     /// <p>The name of a signing platform.</p>
     pub fn platform_display_name(
@@ -265,6 +305,10 @@ impl SigningJobBuilder {
         self.platform_display_name = input;
         self
     }
+    /// <p>The name of a signing platform.</p>
+    pub fn get_platform_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_display_name
+    }
     /// <p>The time when the signature of a signing job expires.</p>
     pub fn signature_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.signature_expires_at = ::std::option::Option::Some(input);
@@ -278,6 +322,10 @@ impl SigningJobBuilder {
         self.signature_expires_at = input;
         self
     }
+    /// <p>The time when the signature of a signing job expires.</p>
+    pub fn get_signature_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.signature_expires_at
+    }
     /// <p>The AWS account ID of the job owner.</p>
     pub fn job_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_owner = ::std::option::Option::Some(input.into());
@@ -288,6 +336,10 @@ impl SigningJobBuilder {
         self.job_owner = input;
         self
     }
+    /// <p>The AWS account ID of the job owner.</p>
+    pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_owner
+    }
     /// <p>The AWS account ID of the job invoker.</p>
     pub fn job_invoker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_invoker = ::std::option::Option::Some(input.into());
@@ -297,6 +349,10 @@ impl SigningJobBuilder {
     pub fn set_job_invoker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_invoker = input;
         self
+    }
+    /// <p>The AWS account ID of the job invoker.</p>
+    pub fn get_job_invoker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_invoker
     }
     /// Consumes the builder and constructs a [`SigningJob`](crate::types::SigningJob).
     pub fn build(self) -> crate::types::SigningJob {

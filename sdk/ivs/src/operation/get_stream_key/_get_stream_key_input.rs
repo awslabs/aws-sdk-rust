@@ -39,6 +39,10 @@ impl GetStreamKeyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN for the stream key to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetStreamKeyInput`](crate::operation::get_stream_key::GetStreamKeyInput).
     pub fn build(
         self,

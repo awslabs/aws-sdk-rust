@@ -60,6 +60,12 @@ impl RetentionPeriodBuilder {
         self.number_of_days = input;
         self
     }
+    /// <p>The number of days that your data is kept.</p> <note>
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
+    /// </note>
+    pub fn get_number_of_days(&self) -> &::std::option::Option<i32> {
+        &self.number_of_days
+    }
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
@@ -73,6 +79,12 @@ impl RetentionPeriodBuilder {
     pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unlimited = input;
         self
+    }
+    /// <p>If true, your data is kept indefinitely.</p> <note>
+    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
+    /// </note>
+    pub fn get_unlimited(&self) -> &::std::option::Option<bool> {
+        &self.unlimited
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {

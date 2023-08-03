@@ -128,6 +128,10 @@ impl AnnotationStoreItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The store's genome reference.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
@@ -141,6 +145,10 @@ impl AnnotationStoreItemBuilder {
         self.reference = input;
         self
     }
+    /// <p>The store's genome reference.</p>
+    pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
+        &self.reference
+    }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -150,6 +158,10 @@ impl AnnotationStoreItemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The store's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
     }
     /// <p>The store's ARN.</p>
     pub fn store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +173,10 @@ impl AnnotationStoreItemBuilder {
         self.store_arn = input;
         self
     }
+    /// <p>The store's ARN.</p>
+    pub fn get_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.store_arn
+    }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -170,6 +186,10 @@ impl AnnotationStoreItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The store's file format.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
@@ -184,6 +204,10 @@ impl AnnotationStoreItemBuilder {
         self.store_format = input;
         self
     }
+    /// <p>The store's file format.</p>
+    pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
+        &self.store_format
+    }
     /// <p>The store's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -194,6 +218,10 @@ impl AnnotationStoreItemBuilder {
         self.description = input;
         self
     }
+    /// <p>The store's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.sse_config = ::std::option::Option::Some(input);
@@ -203,6 +231,10 @@ impl AnnotationStoreItemBuilder {
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.sse_config = input;
         self
+    }
+    /// <p>The store's server-side encryption (SSE) settings.</p>
+    pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
+        &self.sse_config
     }
     /// <p>The store's creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -217,6 +249,10 @@ impl AnnotationStoreItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The store's creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the store was updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -229,6 +265,10 @@ impl AnnotationStoreItemBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>When the store was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>The store's status message.</p>
     pub fn status_message(
@@ -246,6 +286,10 @@ impl AnnotationStoreItemBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The store's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The store's size in bytes.</p>
     pub fn store_size_bytes(mut self, input: i64) -> Self {
         self.store_size_bytes = ::std::option::Option::Some(input);
@@ -255,6 +299,10 @@ impl AnnotationStoreItemBuilder {
     pub fn set_store_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.store_size_bytes = input;
         self
+    }
+    /// <p>The store's size in bytes.</p>
+    pub fn get_store_size_bytes(&self) -> &::std::option::Option<i64> {
+        &self.store_size_bytes
     }
     /// Consumes the builder and constructs a [`AnnotationStoreItem`](crate::types::AnnotationStoreItem).
     pub fn build(self) -> crate::types::AnnotationStoreItem {

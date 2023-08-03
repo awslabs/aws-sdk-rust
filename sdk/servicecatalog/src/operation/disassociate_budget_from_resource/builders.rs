@@ -36,6 +36,10 @@ impl DisassociateBudgetFromResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateBudgetFromResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_budget_from_resource::builders::DisassociateBudgetFromResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateBudgetFromResourceFluentBuilder {
         self.inner = self.inner.set_budget_name(input);
         self
     }
+    /// <p>The name of the budget you want to disassociate.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
+    }
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -109,5 +117,9 @@ impl DisassociateBudgetFromResourceFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
 }

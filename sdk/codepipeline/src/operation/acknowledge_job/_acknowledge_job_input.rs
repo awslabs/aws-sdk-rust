@@ -48,6 +48,10 @@ impl AcknowledgeJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AcknowledgeJobInputBuilder {
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self
+    }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
     }
     /// Consumes the builder and constructs a [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
     pub fn build(

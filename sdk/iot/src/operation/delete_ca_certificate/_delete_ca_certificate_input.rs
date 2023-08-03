@@ -48,6 +48,10 @@ impl DeleteCaCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// Consumes the builder and constructs a [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
     pub fn build(
         self,

@@ -39,6 +39,10 @@ impl DeleteKeyInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the API key to delete.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
     pub fn build(
         self,

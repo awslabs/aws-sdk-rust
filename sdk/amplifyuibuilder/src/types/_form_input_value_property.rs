@@ -60,6 +60,10 @@ impl FormInputValuePropertyBuilder {
         self.value = input;
         self
     }
+    /// <p>The value to assign to the input field.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
         mut self,
@@ -75,6 +79,12 @@ impl FormInputValuePropertyBuilder {
     ) -> Self {
         self.binding_properties = input;
         self
+    }
+    /// <p>The information to bind fields to data at runtime.</p>
+    pub fn get_binding_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::FormInputValuePropertyBindingProperties> {
+        &self.binding_properties
     }
     /// Appends an item to `concat`.
     ///
@@ -94,6 +104,12 @@ impl FormInputValuePropertyBuilder {
     ) -> Self {
         self.concat = input;
         self
+    }
+    /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
+    pub fn get_concat(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>> {
+        &self.concat
     }
     /// Consumes the builder and constructs a [`FormInputValueProperty`](crate::types::FormInputValueProperty).
     pub fn build(self) -> crate::types::FormInputValueProperty {

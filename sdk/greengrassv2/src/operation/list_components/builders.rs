@@ -36,6 +36,12 @@ impl ListComponentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListComponents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_components::builders::ListComponentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl ListComponentsFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
+    /// <p>The scope of the components to list.</p>
+    /// <p>Default: <code>PRIVATE</code> </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ComponentVisibilityScope> {
+        self.inner.get_scope()
+    }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,6 +155,10 @@ impl ListComponentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,5 +168,9 @@ impl ListComponentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -40,6 +40,10 @@ impl DataSourceBuilder {
         self.glue_table = input;
         self
     }
+    /// <p>An Glue table.</p>
+    pub fn get_glue_table(&self) -> &::std::option::Option<crate::types::GlueTable> {
+        &self.glue_table
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {

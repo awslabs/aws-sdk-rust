@@ -46,6 +46,10 @@ impl DescribeInputSecurityGroupInputBuilder {
         self.input_security_group_id = input;
         self
     }
+    /// The id of the Input Security Group to describe
+    pub fn get_input_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_security_group_id
+    }
     /// Consumes the builder and constructs a [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
     pub fn build(
         self,

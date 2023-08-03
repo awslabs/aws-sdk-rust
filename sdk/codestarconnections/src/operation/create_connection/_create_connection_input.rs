@@ -67,6 +67,10 @@ impl CreateConnectionInputBuilder {
         self.provider_type = input;
         self
     }
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
+    }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub fn connection_name(
         mut self,
@@ -82,6 +86,10 @@ impl CreateConnectionInputBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Appends an item to `tags`.
     ///
@@ -102,6 +110,10 @@ impl CreateConnectionInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key-value pair to use when tagging the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl CreateConnectionInputBuilder {
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(

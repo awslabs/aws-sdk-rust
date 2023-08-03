@@ -64,6 +64,10 @@ impl ModelBiasAppSpecificationBuilder {
         self.image_uri = input;
         self
     }
+    /// <p>The container image to be run by the model bias job.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
+    }
     /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
     pub fn config_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_uri = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ModelBiasAppSpecificationBuilder {
     pub fn set_config_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_uri = input;
         self
+    }
+    /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
+    pub fn get_config_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_uri
     }
     /// Adds a key-value pair to `environment`.
     ///
@@ -98,6 +106,14 @@ impl ModelBiasAppSpecificationBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>Sets the environment variables in the Docker container.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`ModelBiasAppSpecification`](crate::types::ModelBiasAppSpecification).
     pub fn build(self) -> crate::types::ModelBiasAppSpecification {

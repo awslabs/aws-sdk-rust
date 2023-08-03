@@ -60,6 +60,13 @@ impl MatcherBuilder {
         self.http_code = input;
         self
     }
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
+    /// <p>For Gateway Load Balancers, this must be "200–399".</p>
+    /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
+    pub fn get_http_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_code
+    }
     /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
     pub fn grpc_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grpc_code = ::std::option::Option::Some(input.into());
@@ -69,6 +76,10 @@ impl MatcherBuilder {
     pub fn set_grpc_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grpc_code = input;
         self
+    }
+    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+    pub fn get_grpc_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grpc_code
     }
     /// Consumes the builder and constructs a [`Matcher`](crate::types::Matcher).
     pub fn build(self) -> crate::types::Matcher {

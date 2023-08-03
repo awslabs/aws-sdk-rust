@@ -66,6 +66,10 @@ impl StartTestExecutionInputBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The test set Id for the test set execution.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// <p>The target bot for the test set execution.</p>
     pub fn target(mut self, input: crate::types::TestExecutionTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl StartTestExecutionInputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target bot for the test set execution.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TestExecutionTarget> {
+        &self.target
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
     pub fn api_mode(mut self, input: crate::types::TestExecutionApiMode) -> Self {
@@ -92,6 +100,10 @@ impl StartTestExecutionInputBuilder {
         self.api_mode = input;
         self
     }
+    /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
+    pub fn get_api_mode(&self) -> &::std::option::Option<crate::types::TestExecutionApiMode> {
+        &self.api_mode
+    }
     /// <p>Indicates whether audio or text is used.</p>
     pub fn test_execution_modality(mut self, input: crate::types::TestExecutionModality) -> Self {
         self.test_execution_modality = ::std::option::Option::Some(input);
@@ -104,6 +116,12 @@ impl StartTestExecutionInputBuilder {
     ) -> Self {
         self.test_execution_modality = input;
         self
+    }
+    /// <p>Indicates whether audio or text is used.</p>
+    pub fn get_test_execution_modality(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+        &self.test_execution_modality
     }
     /// Consumes the builder and constructs a [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
     pub fn build(

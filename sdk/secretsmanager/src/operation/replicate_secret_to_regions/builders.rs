@@ -38,6 +38,10 @@ impl ReplicateSecretToRegionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReplicateSecretToRegions as a reference.
+    pub fn as_input(&self) -> &crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self.inner = self.inner.set_secret_id(input);
         self
     }
+    /// <p>The ARN or name of the secret to replicate.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_id()
+    }
     /// Appends an item to `AddReplicaRegions`.
     ///
     /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
@@ -145,6 +153,12 @@ impl ReplicateSecretToRegionsFluentBuilder {
         self.inner = self.inner.set_add_replica_regions(input);
         self
     }
+    /// <p>A list of Regions in which to replicate the secret.</p>
+    pub fn get_add_replica_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+        self.inner.get_add_replica_regions()
+    }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
         self.inner = self.inner.force_overwrite_replica_secret(input);
@@ -157,5 +171,9 @@ impl ReplicateSecretToRegionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_force_overwrite_replica_secret(input);
         self
+    }
+    /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
+    pub fn get_force_overwrite_replica_secret(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_overwrite_replica_secret()
     }
 }

@@ -53,6 +53,12 @@ impl CoverageFilterCriteriaBuilder {
         self.filter_criterion = input;
         self
     }
+    /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+    pub fn get_filter_criterion(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageFilterCriterion>> {
+        &self.filter_criterion
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {

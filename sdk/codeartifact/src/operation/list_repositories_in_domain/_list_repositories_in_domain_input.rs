@@ -81,6 +81,10 @@ impl ListRepositoriesInDomainInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that contains the returned list of repositories. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ListRepositoriesInDomainInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn administrator_account(
@@ -107,6 +115,10 @@ impl ListRepositoriesInDomainInputBuilder {
         self.administrator_account = input;
         self
     }
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
+    pub fn get_administrator_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_account
+    }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub fn repository_prefix(
         mut self,
@@ -123,6 +135,10 @@ impl ListRepositoriesInDomainInputBuilder {
         self.repository_prefix = input;
         self
     }
+    /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
+    pub fn get_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_prefix
+    }
     /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl ListRepositoriesInDomainInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of results to return per page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -142,6 +162,10 @@ impl ListRepositoriesInDomainInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRepositoriesInDomainInput`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainInput).
     pub fn build(

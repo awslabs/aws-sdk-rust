@@ -56,6 +56,10 @@ impl CancelStepsInfoBuilder {
         self.step_id = input;
         self
     }
+    /// <p>The encrypted StepId of a step.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_id
+    }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
     pub fn status(mut self, input: crate::types::CancelStepsRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CancelStepsInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CancelStepsRequestStatus> {
+        &self.status
+    }
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl CancelStepsInfoBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the failure if the CancelSteps request fails.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`CancelStepsInfo`](crate::types::CancelStepsInfo).
     pub fn build(self) -> crate::types::CancelStepsInfo {

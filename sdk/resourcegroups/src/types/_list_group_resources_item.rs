@@ -55,6 +55,10 @@ impl ListGroupResourcesItemBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A structure that contains the ARN of a resource and its resource type.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.identifier
+    }
     /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
@@ -71,6 +75,12 @@ impl ListGroupResourcesItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListGroupResourcesItem`](crate::types::ListGroupResourcesItem).
     pub fn build(self) -> crate::types::ListGroupResourcesItem {

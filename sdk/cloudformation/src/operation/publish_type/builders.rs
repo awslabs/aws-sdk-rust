@@ -37,6 +37,10 @@ impl PublishTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishType as a reference.
+    pub fn as_input(&self) -> &crate::operation::publish_type::builders::PublishTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,11 @@ impl PublishTypeFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        self.inner.get_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +142,11 @@ impl PublishTypeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +158,11 @@ impl PublishTypeFluentBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
     }
     /// <p>The version number to assign to this version of the extension.</p>
     /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension:</p>
@@ -170,5 +189,14 @@ impl PublishTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_version_number(input);
         self
+    }
+    /// <p>The version number to assign to this version of the extension.</p>
+    /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension:</p>
+    /// <p> <code>MAJOR.MINOR.PATCH</code> </p>
+    /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
+    /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
+    /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
+    pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_version_number()
     }
 }

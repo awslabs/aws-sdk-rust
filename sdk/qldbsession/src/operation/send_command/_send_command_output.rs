@@ -105,6 +105,10 @@ impl SendCommandOutputBuilder {
         self.start_session = input;
         self
     }
+    /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
+    pub fn get_start_session(&self) -> &::std::option::Option<crate::types::StartSessionResult> {
+        &self.start_session
+    }
     /// <p>Contains the details of the started transaction.</p>
     pub fn start_transaction(mut self, input: crate::types::StartTransactionResult) -> Self {
         self.start_transaction = ::std::option::Option::Some(input);
@@ -117,6 +121,12 @@ impl SendCommandOutputBuilder {
     ) -> Self {
         self.start_transaction = input;
         self
+    }
+    /// <p>Contains the details of the started transaction.</p>
+    pub fn get_start_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartTransactionResult> {
+        &self.start_transaction
     }
     /// <p>Contains the details of the ended session.</p>
     pub fn end_session(mut self, input: crate::types::EndSessionResult) -> Self {
@@ -131,6 +141,10 @@ impl SendCommandOutputBuilder {
         self.end_session = input;
         self
     }
+    /// <p>Contains the details of the ended session.</p>
+    pub fn get_end_session(&self) -> &::std::option::Option<crate::types::EndSessionResult> {
+        &self.end_session
+    }
     /// <p>Contains the details of the committed transaction.</p>
     pub fn commit_transaction(mut self, input: crate::types::CommitTransactionResult) -> Self {
         self.commit_transaction = ::std::option::Option::Some(input);
@@ -143,6 +157,12 @@ impl SendCommandOutputBuilder {
     ) -> Self {
         self.commit_transaction = input;
         self
+    }
+    /// <p>Contains the details of the committed transaction.</p>
+    pub fn get_commit_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitTransactionResult> {
+        &self.commit_transaction
     }
     /// <p>Contains the details of the aborted transaction.</p>
     pub fn abort_transaction(mut self, input: crate::types::AbortTransactionResult) -> Self {
@@ -157,6 +177,12 @@ impl SendCommandOutputBuilder {
         self.abort_transaction = input;
         self
     }
+    /// <p>Contains the details of the aborted transaction.</p>
+    pub fn get_abort_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbortTransactionResult> {
+        &self.abort_transaction
+    }
     /// <p>Contains the details of the executed statement.</p>
     pub fn execute_statement(mut self, input: crate::types::ExecuteStatementResult) -> Self {
         self.execute_statement = ::std::option::Option::Some(input);
@@ -170,6 +196,12 @@ impl SendCommandOutputBuilder {
         self.execute_statement = input;
         self
     }
+    /// <p>Contains the details of the executed statement.</p>
+    pub fn get_execute_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecuteStatementResult> {
+        &self.execute_statement
+    }
     /// <p>Contains the details of the fetched page.</p>
     pub fn fetch_page(mut self, input: crate::types::FetchPageResult) -> Self {
         self.fetch_page = ::std::option::Option::Some(input);
@@ -182,6 +214,10 @@ impl SendCommandOutputBuilder {
     ) -> Self {
         self.fetch_page = input;
         self
+    }
+    /// <p>Contains the details of the fetched page.</p>
+    pub fn get_fetch_page(&self) -> &::std::option::Option<crate::types::FetchPageResult> {
+        &self.fetch_page
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

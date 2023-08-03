@@ -40,6 +40,10 @@ impl ProfileTimeBuilder {
         self.start = input;
         self
     }
+    /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start
+    }
     /// Consumes the builder and constructs a [`ProfileTime`](crate::types::ProfileTime).
     pub fn build(self) -> crate::types::ProfileTime {
         crate::types::ProfileTime { start: self.start }

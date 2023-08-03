@@ -125,6 +125,10 @@ impl RuleBasedMatchingResponseBuilder {
         self.enabled = input;
         self
     }
+    /// <p>The flag that enables the rule-based matching process of duplicate profiles.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Appends an item to `matching_rules`.
     ///
     /// To override the contents of this collection use [`set_matching_rules`](Self::set_matching_rules).
@@ -143,6 +147,12 @@ impl RuleBasedMatchingResponseBuilder {
     ) -> Self {
         self.matching_rules = input;
         self
+    }
+    /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
+    pub fn get_matching_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>> {
+        &self.matching_rules
     }
     /// <p>PENDING</p>
     /// <ul>
@@ -179,6 +189,21 @@ impl RuleBasedMatchingResponseBuilder {
         self.status = input;
         self
     }
+    /// <p>PENDING</p>
+    /// <ul>
+    /// <li> <p>The first status after configuration a rule-based matching rule. If it is an existing domain, the rule-based Identity Resolution waits one hour before creating the matching rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.</p> </li>
+    /// </ul>
+    /// <p>IN_PROGRESS</p>
+    /// <ul>
+    /// <li> <p>The system is creating the rule-based matching rule. Under this status, the system is evaluating the existing data and you can no longer change the Rule-based matching configuration.</p> </li>
+    /// </ul>
+    /// <p>ACTIVE</p>
+    /// <ul>
+    /// <li> <p>The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingStatus> {
+        &self.status
+    }
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
     pub fn max_allowed_rule_level_for_merging(mut self, input: i32) -> Self {
         self.max_allowed_rule_level_for_merging = ::std::option::Option::Some(input);
@@ -191,6 +216,10 @@ impl RuleBasedMatchingResponseBuilder {
     ) -> Self {
         self.max_allowed_rule_level_for_merging = input;
         self
+    }
+    /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
+    pub fn get_max_allowed_rule_level_for_merging(&self) -> &::std::option::Option<i32> {
+        &self.max_allowed_rule_level_for_merging
     }
     /// <p>Indicates the maximum allowed rule level.</p>
     pub fn max_allowed_rule_level_for_matching(mut self, input: i32) -> Self {
@@ -205,6 +234,10 @@ impl RuleBasedMatchingResponseBuilder {
         self.max_allowed_rule_level_for_matching = input;
         self
     }
+    /// <p>Indicates the maximum allowed rule level.</p>
+    pub fn get_max_allowed_rule_level_for_matching(&self) -> &::std::option::Option<i32> {
+        &self.max_allowed_rule_level_for_matching
+    }
     /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
     pub fn attribute_types_selector(mut self, input: crate::types::AttributeTypesSelector) -> Self {
         self.attribute_types_selector = ::std::option::Option::Some(input);
@@ -218,6 +251,12 @@ impl RuleBasedMatchingResponseBuilder {
         self.attribute_types_selector = input;
         self
     }
+    /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
+    pub fn get_attribute_types_selector(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeTypesSelector> {
+        &self.attribute_types_selector
+    }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
         self.conflict_resolution = ::std::option::Option::Some(input);
@@ -230,6 +269,12 @@ impl RuleBasedMatchingResponseBuilder {
     ) -> Self {
         self.conflict_resolution = input;
         self
+    }
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        &self.conflict_resolution
     }
     /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
@@ -247,6 +292,12 @@ impl RuleBasedMatchingResponseBuilder {
     ) -> Self {
         self.exporting_config = input;
         self
+    }
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
+    /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
+    /// </note>
+    pub fn get_exporting_config(&self) -> &::std::option::Option<crate::types::ExportingConfig> {
+        &self.exporting_config
     }
     /// Consumes the builder and constructs a [`RuleBasedMatchingResponse`](crate::types::RuleBasedMatchingResponse).
     pub fn build(self) -> crate::types::RuleBasedMatchingResponse {

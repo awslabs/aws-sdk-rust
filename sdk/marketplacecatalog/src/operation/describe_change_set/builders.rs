@@ -36,6 +36,12 @@ impl DescribeChangeSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeChangeSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeChangeSetFluentBuilder {
         self.inner = self.inner.set_catalog(input);
         self
     }
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog()
+    }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
     pub fn change_set_id(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeChangeSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_change_set_id(input);
         self
+    }
+    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_set_id()
     }
 }

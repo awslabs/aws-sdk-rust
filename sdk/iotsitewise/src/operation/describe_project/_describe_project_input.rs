@@ -39,6 +39,10 @@ impl DescribeProjectInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
     pub fn build(
         self,

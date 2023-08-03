@@ -48,6 +48,10 @@ impl GsmLocalIdBuilder {
         self.bsic = input;
         self
     }
+    /// <p>GSM base station identity code (BSIC).</p>
+    pub fn get_bsic(&self) -> &::std::option::Option<i32> {
+        &self.bsic
+    }
     /// <p>GSM broadcast control channel.</p>
     pub fn bcch(mut self, input: i32) -> Self {
         self.bcch = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GsmLocalIdBuilder {
     pub fn set_bcch(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bcch = input;
         self
+    }
+    /// <p>GSM broadcast control channel.</p>
+    pub fn get_bcch(&self) -> &::std::option::Option<i32> {
+        &self.bcch
     }
     /// Consumes the builder and constructs a [`GsmLocalId`](crate::types::GsmLocalId).
     pub fn build(self) -> crate::types::GsmLocalId {

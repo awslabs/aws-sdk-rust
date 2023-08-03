@@ -52,6 +52,12 @@ impl RefreshSchemasOutputBuilder {
         self.refresh_schemas_status = input;
         self
     }
+    /// <p>The status of the refreshed schema.</p>
+    pub fn get_refresh_schemas_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RefreshSchemasStatus> {
+        &self.refresh_schemas_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

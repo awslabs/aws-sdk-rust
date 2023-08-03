@@ -282,6 +282,10 @@ impl SyncDeploymentJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
@@ -291,6 +295,10 @@ impl SyncDeploymentJobOutputBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet
     }
     /// <p>The status of the synchronization job.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -305,6 +313,10 @@ impl SyncDeploymentJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the synchronization job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.status
+    }
     /// <p>Information about the deployment configuration.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.deployment_config = ::std::option::Option::Some(input);
@@ -317,6 +329,10 @@ impl SyncDeploymentJobOutputBuilder {
     ) -> Self {
         self.deployment_config = input;
         self
+    }
+    /// <p>Information about the deployment configuration.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.deployment_config
     }
     /// Appends an item to `deployment_application_configs`.
     ///
@@ -340,6 +356,12 @@ impl SyncDeploymentJobOutputBuilder {
         self.deployment_application_configs = input;
         self
     }
+    /// <p>Information about the deployment application configurations.</p>
+    pub fn get_deployment_application_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+        &self.deployment_application_configs
+    }
     /// <p>The failure reason if the job fails.</p>
     pub fn failure_reason(
         mut self,
@@ -355,6 +377,10 @@ impl SyncDeploymentJobOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The failure reason if the job fails.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The failure code if the job fails:</p>
     /// <dl>
@@ -541,6 +567,96 @@ impl SyncDeploymentJobOutputBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code if the job fails:</p>
+    /// <dl>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
+    /// <dd>
+    /// <p>Internal service error.</p>
+    /// </dd>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
+    /// <dd>
+    /// <p>Robot application exited abnormally.</p>
+    /// </dd>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
+    /// <dd>
+    /// <p> Simulation application exited abnormally.</p>
+    /// </dd>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
+    /// <dd>
+    /// <p>Robot application bundle could not be downloaded.</p>
+    /// </dd>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
+    /// <dd>
+    /// <p>Simulation application bundle could not be downloaded.</p>
+    /// </dd>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
+    /// <dd>
+    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
+    /// </dd>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
+    /// <dd>
+    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
+    /// </dd>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>Subnet IP limit exceeded.</p>
+    /// </dd>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>ENI limit exceeded.</p>
+    /// </dd>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
+    /// <dd>
+    /// <p>Unable to use the Role provided.</p>
+    /// </dd>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
+    /// <dd>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
+    /// </dd>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
+    /// <dd>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
+    /// </dd>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
+    /// <dd>
+    /// <p>Etag for RobotApplication does not match value during version creation.</p>
+    /// </dd>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
+    /// <dd>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::DeploymentJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -553,6 +669,10 @@ impl SyncDeploymentJobOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

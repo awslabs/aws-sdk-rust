@@ -57,6 +57,11 @@ impl CancelQueryInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+    #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
@@ -66,6 +71,10 @@ impl CancelQueryInputBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
+    }
+    /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
     pub fn build(

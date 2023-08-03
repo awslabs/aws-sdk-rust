@@ -60,6 +60,11 @@ impl ListCidrLocationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `cidr_locations`.
     ///
     /// To override the contents of this collection use [`set_cidr_locations`](Self::set_cidr_locations).
@@ -78,6 +83,12 @@ impl ListCidrLocationsOutputBuilder {
     ) -> Self {
         self.cidr_locations = input;
         self
+    }
+    /// <p>A complex type that contains information about the list of CIDR locations.</p>
+    pub fn get_cidr_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationSummary>> {
+        &self.cidr_locations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

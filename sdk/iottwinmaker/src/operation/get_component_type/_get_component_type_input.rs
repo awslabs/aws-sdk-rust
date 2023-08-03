@@ -48,6 +48,10 @@ impl GetComponentTypeInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the component type.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetComponentTypeInputBuilder {
     ) -> Self {
         self.component_type_id = input;
         self
+    }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type_id
     }
     /// Consumes the builder and constructs a [`GetComponentTypeInput`](crate::operation::get_component_type::GetComponentTypeInput).
     pub fn build(

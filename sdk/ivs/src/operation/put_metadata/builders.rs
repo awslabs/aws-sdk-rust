@@ -36,6 +36,10 @@ impl PutMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_metadata::builders::PutMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PutMetadataFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -127,5 +135,9 @@ impl PutMetadataFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
 }

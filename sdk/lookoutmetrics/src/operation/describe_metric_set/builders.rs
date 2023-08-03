@@ -37,6 +37,12 @@ impl DescribeMetricSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMetricSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DescribeMetricSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_set_arn(input);
         self
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_set_arn()
     }
 }

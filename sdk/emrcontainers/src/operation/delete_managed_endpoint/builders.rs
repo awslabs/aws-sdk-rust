@@ -36,6 +36,13 @@ impl DeleteManagedEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteManagedEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteManagedEndpointFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteManagedEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_cluster_id()
     }
 }

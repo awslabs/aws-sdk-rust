@@ -48,6 +48,10 @@ impl RuleResultBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The rule ID that was matched, based on the rule execution mode.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// Appends an item to `outcomes`.
     ///
     /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
@@ -66,6 +70,10 @@ impl RuleResultBuilder {
     ) -> Self {
         self.outcomes = input;
         self
+    }
+    /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
     }
     /// Consumes the builder and constructs a [`RuleResult`](crate::types::RuleResult).
     pub fn build(self) -> crate::types::RuleResult {

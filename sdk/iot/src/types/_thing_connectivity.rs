@@ -56,6 +56,10 @@ impl ThingConnectivityBuilder {
         self.connected = input;
         self
     }
+    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
+    pub fn get_connected(&self) -> &::std::option::Option<bool> {
+        &self.connected
+    }
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ThingConnectivityBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
     }
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     pub fn disconnect_reason(
@@ -81,6 +89,10 @@ impl ThingConnectivityBuilder {
     ) -> Self {
         self.disconnect_reason = input;
         self
+    }
+    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    pub fn get_disconnect_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disconnect_reason
     }
     /// Consumes the builder and constructs a [`ThingConnectivity`](crate::types::ThingConnectivity).
     pub fn build(self) -> crate::types::ThingConnectivity {

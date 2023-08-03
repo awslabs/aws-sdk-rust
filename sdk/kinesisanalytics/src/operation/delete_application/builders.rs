@@ -40,6 +40,12 @@ impl DeleteApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl DeleteApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.create_timestamp(input);
@@ -148,5 +158,9 @@ impl DeleteApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_create_timestamp(input);
         self
+    }
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_create_timestamp()
     }
 }

@@ -64,6 +64,10 @@ impl RecommendationFeedbackSummaryBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// Appends an item to `reactions`.
     ///
     /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).
@@ -83,6 +87,10 @@ impl RecommendationFeedbackSummaryBuilder {
         self.reactions = input;
         self
     }
+    /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
+    pub fn get_reactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reaction>> {
+        &self.reactions
+    }
     /// <p>The ID of the user that gave the feedback.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,11 @@ impl RecommendationFeedbackSummaryBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`RecommendationFeedbackSummary`](crate::types::RecommendationFeedbackSummary).
     pub fn build(self) -> crate::types::RecommendationFeedbackSummary {

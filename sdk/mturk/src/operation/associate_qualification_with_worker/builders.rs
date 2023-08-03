@@ -39,6 +39,10 @@ impl AssociateQualificationWithWorkerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateQualificationWithWorker as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl AssociateQualificationWithWorkerFluentBuilder {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
+    /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualification_type_id()
+    }
     /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
@@ -118,6 +126,10 @@ impl AssociateQualificationWithWorkerFluentBuilder {
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
+    }
+    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_worker_id()
     }
     /// <p>The value of the Qualification to assign.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -129,6 +141,10 @@ impl AssociateQualificationWithWorkerFluentBuilder {
         self.inner = self.inner.set_integer_value(input);
         self
     }
+    /// <p>The value of the Qualification to assign.</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        self.inner.get_integer_value()
+    }
     /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
     pub fn send_notification(mut self, input: bool) -> Self {
         self.inner = self.inner.send_notification(input);
@@ -138,5 +154,9 @@ impl AssociateQualificationWithWorkerFluentBuilder {
     pub fn set_send_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_send_notification(input);
         self
+    }
+    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    pub fn get_send_notification(&self) -> &::std::option::Option<bool> {
+        self.inner.get_send_notification()
     }
 }

@@ -102,6 +102,10 @@ impl AllocateAddressOutputBuilder {
         self.public_ip = input;
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
+    }
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn allocation_id(
         mut self,
@@ -117,6 +121,10 @@ impl AllocateAddressOutputBuilder {
     ) -> Self {
         self.allocation_id = input;
         self
+    }
+    /// <p>The ID that represents the allocation of the Elastic IP address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
     }
     /// <p>The ID of an address pool.</p>
     pub fn public_ipv4_pool(
@@ -134,6 +142,10 @@ impl AllocateAddressOutputBuilder {
         self.public_ipv4_pool = input;
         self
     }
+    /// <p>The ID of an address pool.</p>
+    pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv4_pool
+    }
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub fn network_border_group(
         mut self,
@@ -150,6 +162,10 @@ impl AllocateAddressOutputBuilder {
         self.network_border_group = input;
         self
     }
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl AllocateAddressOutputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The network (<code>vpc</code>).</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainType> {
+        &self.domain
     }
     /// <p>The customer-owned IP address.</p>
     pub fn customer_owned_ip(
@@ -176,6 +196,10 @@ impl AllocateAddressOutputBuilder {
         self.customer_owned_ip = input;
         self
     }
+    /// <p>The customer-owned IP address.</p>
+    pub fn get_customer_owned_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ip
+    }
     /// <p>The ID of the customer-owned address pool.</p>
     pub fn customer_owned_ipv4_pool(
         mut self,
@@ -192,6 +216,10 @@ impl AllocateAddressOutputBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
+    /// <p>The ID of the customer-owned address pool.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
+    }
     /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_ip = ::std::option::Option::Some(input.into());
@@ -201,6 +229,10 @@ impl AllocateAddressOutputBuilder {
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
+    }
+    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier_ip
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl InitializeClusterOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The cluster's state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
+    }
     /// <p>A description of the cluster's state.</p>
     pub fn state_message(
         mut self,
@@ -70,6 +74,10 @@ impl InitializeClusterOutputBuilder {
     ) -> Self {
         self.state_message = input;
         self
+    }
+    /// <p>A description of the cluster's state.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -57,6 +57,12 @@ impl UpdateCustomLineItemChargeDetailsBuilder {
         self.flat = input;
         self
     }
+    /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
+    pub fn get_flat(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails> {
+        &self.flat
+    }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     pub fn percentage(
         mut self,
@@ -72,6 +78,12 @@ impl UpdateCustomLineItemChargeDetailsBuilder {
     ) -> Self {
         self.percentage = input;
         self
+    }
+    /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
+    pub fn get_percentage(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails> {
+        &self.percentage
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemChargeDetails`](crate::types::UpdateCustomLineItemChargeDetails).
     pub fn build(self) -> crate::types::UpdateCustomLineItemChargeDetails {

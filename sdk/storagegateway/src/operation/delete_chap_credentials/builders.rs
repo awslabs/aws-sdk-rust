@@ -36,6 +36,13 @@ impl DeleteChapCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteChapCredentials as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteChapCredentialsFluentBuilder {
         self.inner = self.inner.set_target_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_arn()
+    }
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub fn initiator_name(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteChapCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_initiator_name(input);
         self
+    }
+    /// <p>The iSCSI initiator that connects to the target.</p>
+    pub fn get_initiator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_initiator_name()
     }
 }

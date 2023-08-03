@@ -63,6 +63,10 @@ impl GetPasswordDataOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the Windows instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub fn password_data(
         mut self,
@@ -79,6 +83,10 @@ impl GetPasswordDataOutputBuilder {
         self.password_data = input;
         self
     }
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    pub fn get_password_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_data
+    }
     /// <p>The time the data was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl GetPasswordDataOutputBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time the data was last updated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

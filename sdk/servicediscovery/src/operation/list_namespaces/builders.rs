@@ -36,6 +36,12 @@ impl ListNamespacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListNamespaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_namespaces::builders::ListNamespacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,13 @@ impl ListNamespacesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 namespaces.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,6 +157,10 @@ impl ListNamespacesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 namespaces.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `Filters`.
     ///
@@ -163,5 +180,12 @@ impl ListNamespacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
+    /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceFilter>> {
+        self.inner.get_filters()
     }
 }

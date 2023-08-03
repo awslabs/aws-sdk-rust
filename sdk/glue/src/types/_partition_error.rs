@@ -60,6 +60,12 @@ impl PartitionErrorBuilder {
         self.partition_values = input;
         self
     }
+    /// <p>The values that define the partition.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
+    }
     /// <p>The details about the partition error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
         self.error_detail = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl PartitionErrorBuilder {
     ) -> Self {
         self.error_detail = input;
         self
+    }
+    /// <p>The details about the partition error.</p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error_detail
     }
     /// Consumes the builder and constructs a [`PartitionError`](crate::types::PartitionError).
     pub fn build(self) -> crate::types::PartitionError {

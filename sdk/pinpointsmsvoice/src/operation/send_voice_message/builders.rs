@@ -36,6 +36,12 @@ impl SendVoiceMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendVoiceMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl SendVoiceMessageFluentBuilder {
         self.inner = self.inner.set_caller_id(input);
         self
     }
+    /// The phone number that appears on recipients' devices when they receive the message.
+    pub fn get_caller_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_caller_id()
+    }
     /// The name of the configuration set that you want to use to send the message.
     pub fn configuration_set_name(
         mut self,
@@ -142,6 +152,10 @@ impl SendVoiceMessageFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// The name of the configuration set that you want to use to send the message.
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// An object that contains a voice message and information about the recipient that you want to send it to.
     pub fn content(mut self, input: crate::types::VoiceMessageContent) -> Self {
         self.inner = self.inner.content(input);
@@ -154,6 +168,10 @@ impl SendVoiceMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// An object that contains a voice message and information about the recipient that you want to send it to.
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::VoiceMessageContent> {
+        self.inner.get_content()
     }
     /// The phone number that you want to send the voice message to.
     pub fn destination_phone_number(
@@ -171,6 +189,10 @@ impl SendVoiceMessageFluentBuilder {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
+    /// The phone number that you want to send the voice message to.
+    pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_phone_number()
+    }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
     pub fn origination_phone_number(
         mut self,
@@ -186,5 +208,9 @@ impl SendVoiceMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_origination_phone_number(input);
         self
+    }
+    /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
+    pub fn get_origination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_phone_number()
     }
 }

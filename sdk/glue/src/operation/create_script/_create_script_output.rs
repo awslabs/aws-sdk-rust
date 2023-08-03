@@ -60,6 +60,10 @@ impl CreateScriptOutputBuilder {
         self.python_script = input;
         self
     }
+    /// <p>The Python script generated from the DAG.</p>
+    pub fn get_python_script(&self) -> &::std::option::Option<::std::string::String> {
+        &self.python_script
+    }
     /// <p>The Scala code generated from the DAG.</p>
     pub fn scala_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scala_code = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl CreateScriptOutputBuilder {
     pub fn set_scala_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scala_code = input;
         self
+    }
+    /// <p>The Scala code generated from the DAG.</p>
+    pub fn get_scala_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scala_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

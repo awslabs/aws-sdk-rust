@@ -48,6 +48,10 @@ impl DataColorBuilder {
         self.color = input;
         self
     }
+    /// <p>The color that is applied to the data value.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
+    }
     /// <p>The data value that the color is applied to.</p>
     pub fn data_value(mut self, input: f64) -> Self {
         self.data_value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DataColorBuilder {
     pub fn set_data_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.data_value = input;
         self
+    }
+    /// <p>The data value that the color is applied to.</p>
+    pub fn get_data_value(&self) -> &::std::option::Option<f64> {
+        &self.data_value
     }
     /// Consumes the builder and constructs a [`DataColor`](crate::types::DataColor).
     pub fn build(self) -> crate::types::DataColor {

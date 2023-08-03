@@ -86,6 +86,10 @@ impl DescribeGroupsInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>A query to describe groups by group name.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_query = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl DescribeGroupsInputBuilder {
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_query = input;
         self
+    }
+    /// <p>A query to describe groups by group name.</p>
+    pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_query
     }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
@@ -112,6 +120,10 @@ impl DescribeGroupsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl DescribeGroupsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl DescribeGroupsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeGroupsInput`](crate::operation::describe_groups::DescribeGroupsInput).
     pub fn build(

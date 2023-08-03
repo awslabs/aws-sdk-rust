@@ -104,6 +104,10 @@ impl GetObjectOutputBuilder {
         self.body = input;
         self
     }
+    /// <p>The bytes of the object. </p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
+    }
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn cache_control(
@@ -122,6 +126,11 @@ impl GetObjectOutputBuilder {
         self.cache_control = input;
         self
     }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
     /// <p>The range of bytes to retrieve.</p>
     pub fn content_range(
         mut self,
@@ -138,6 +147,10 @@ impl GetObjectOutputBuilder {
         self.content_range = input;
         self
     }
+    /// <p>The range of bytes to retrieve.</p>
+    pub fn get_content_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_range
+    }
     /// <p>The length of the object in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -147,6 +160,10 @@ impl GetObjectOutputBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p>The length of the object in bytes.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// <p>The content type of the object.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +175,10 @@ impl GetObjectOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content type of the object.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The ETag that represents a unique instance of the object.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -167,6 +188,10 @@ impl GetObjectOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The ETag that represents a unique instance of the object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The date and time that the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +206,10 @@ impl GetObjectOutputBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time that the object was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -190,6 +219,10 @@ impl GetObjectOutputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -59,6 +59,12 @@ impl BatchDeleteDelegationByAssessmentInputBuilder {
         self.delegation_ids = input;
         self
     }
+    /// <p> The identifiers for the delegations. </p>
+    pub fn get_delegation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.delegation_ids
+    }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -74,6 +80,10 @@ impl BatchDeleteDelegationByAssessmentInputBuilder {
     ) -> Self {
         self.assessment_id = input;
         self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// Consumes the builder and constructs a [`BatchDeleteDelegationByAssessmentInput`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentInput, ::aws_smithy_http::operation::error::BuildError>{

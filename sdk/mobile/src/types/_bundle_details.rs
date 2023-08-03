@@ -80,6 +80,10 @@ impl BundleDetailsBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p> Unique bundle identifier. </p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p> Title of the download bundle. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl BundleDetailsBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p> Title of the download bundle. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p> Version of the download bundle. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl BundleDetailsBuilder {
         self.version = input;
         self
     }
+    /// <p> Version of the download bundle. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p> Description of the download bundle. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl BundleDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p> Description of the download bundle. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> Icon for the download bundle. </p>
     pub fn icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.icon_url = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl BundleDetailsBuilder {
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.icon_url = input;
         self
+    }
+    /// <p> Icon for the download bundle. </p>
+    pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.icon_url
     }
     /// Appends an item to `available_platforms`.
     ///
@@ -138,6 +158,12 @@ impl BundleDetailsBuilder {
     ) -> Self {
         self.available_platforms = input;
         self
+    }
+    /// <p> Developer desktop or mobile app or website platforms. </p>
+    pub fn get_available_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Platform>> {
+        &self.available_platforms
     }
     /// Consumes the builder and constructs a [`BundleDetails`](crate::types::BundleDetails).
     pub fn build(self) -> crate::types::BundleDetails {

@@ -41,6 +41,10 @@ impl ResumeBatchLoadTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the batch load task to resume.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
     pub fn build(
         self,

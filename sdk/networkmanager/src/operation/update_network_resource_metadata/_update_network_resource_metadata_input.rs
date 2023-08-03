@@ -69,6 +69,10 @@ impl UpdateNetworkResourceMetadataInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl UpdateNetworkResourceMetadataInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -103,6 +111,14 @@ impl UpdateNetworkResourceMetadataInputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The resource metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`UpdateNetworkResourceMetadataInput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput).
     pub fn build(

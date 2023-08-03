@@ -71,6 +71,11 @@ impl SizeConstraintSetBuilder {
         self.size_constraint_set_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+    /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.size_constraint_set_id
+    }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +85,10 @@ impl SizeConstraintSetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `size_constraints`.
     ///
@@ -99,6 +108,12 @@ impl SizeConstraintSetBuilder {
     ) -> Self {
         self.size_constraints = input;
         self
+    }
+    /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
+    pub fn get_size_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraint>> {
+        &self.size_constraints
     }
     /// Consumes the builder and constructs a [`SizeConstraintSet`](crate::types::SizeConstraintSet).
     pub fn build(self) -> crate::types::SizeConstraintSet {

@@ -60,6 +60,10 @@ impl ConditionalSpecificationBuilder {
         self.active = input;
         self
     }
+    /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// Appends an item to `conditional_branches`.
     ///
     /// To override the contents of this collection use [`set_conditional_branches`](Self::set_conditional_branches).
@@ -79,6 +83,12 @@ impl ConditionalSpecificationBuilder {
         self.conditional_branches = input;
         self
     }
+    /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
+    pub fn get_conditional_branches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>> {
+        &self.conditional_branches
+    }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub fn default_branch(mut self, input: crate::types::DefaultConditionalBranch) -> Self {
         self.default_branch = ::std::option::Option::Some(input);
@@ -91,6 +101,12 @@ impl ConditionalSpecificationBuilder {
     ) -> Self {
         self.default_branch = input;
         self
+    }
+    /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+    pub fn get_default_branch(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultConditionalBranch> {
+        &self.default_branch
     }
     /// Consumes the builder and constructs a [`ConditionalSpecification`](crate::types::ConditionalSpecification).
     pub fn build(self) -> crate::types::ConditionalSpecification {

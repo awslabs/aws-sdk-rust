@@ -39,6 +39,10 @@ impl GetTagsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The resource ARN for the tag.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(
         self,

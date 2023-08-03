@@ -52,6 +52,12 @@ impl SnowflakeMetadataBuilder {
         self.supported_regions = input;
         self
     }
+    /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
+    pub fn get_supported_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_regions
+    }
     /// Consumes the builder and constructs a [`SnowflakeMetadata`](crate::types::SnowflakeMetadata).
     pub fn build(self) -> crate::types::SnowflakeMetadata {
         crate::types::SnowflakeMetadata {

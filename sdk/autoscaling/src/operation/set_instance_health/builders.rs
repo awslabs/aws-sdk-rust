@@ -37,6 +37,12 @@ impl SetInstanceHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetInstanceHealth as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl SetInstanceHealthFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
     pub fn health_status(
         mut self,
@@ -143,6 +153,10 @@ impl SetInstanceHealthFluentBuilder {
         self.inner = self.inner.set_health_status(input);
         self
     }
+    /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_status()
+    }
     /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>
     /// <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     pub fn should_respect_grace_period(mut self, input: bool) -> Self {
@@ -154,5 +168,10 @@ impl SetInstanceHealthFluentBuilder {
     pub fn set_should_respect_grace_period(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_should_respect_grace_period(input);
         self
+    }
+    /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>
+    /// <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+    pub fn get_should_respect_grace_period(&self) -> &::std::option::Option<bool> {
+        self.inner.get_should_respect_grace_period()
     }
 }

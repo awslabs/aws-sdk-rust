@@ -77,6 +77,12 @@ impl ApiKeySummaryBuilder {
         self.token_domains = input;
         self
     }
+    /// <p>The token domains that are defined in this API key. </p>
+    pub fn get_token_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_domains
+    }
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
@@ -86,6 +92,10 @@ impl ApiKeySummaryBuilder {
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key = input;
         self
+    }
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
     }
     /// <p>The date and time that the key was created. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,6 +110,10 @@ impl ApiKeySummaryBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The date and time that the key was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>Internal value used by WAF to manage the key. </p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl ApiKeySummaryBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Internal value used by WAF to manage the key. </p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ApiKeySummary`](crate::types::ApiKeySummary).
     pub fn build(self) -> crate::types::ApiKeySummary {

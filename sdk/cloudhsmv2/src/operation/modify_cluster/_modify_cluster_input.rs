@@ -52,6 +52,12 @@ impl ModifyClusterInputBuilder {
         self.backup_retention_policy = input;
         self
     }
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn get_backup_retention_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
+        &self.backup_retention_policy
+    }
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
@@ -61,6 +67,10 @@ impl ModifyClusterInputBuilder {
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(

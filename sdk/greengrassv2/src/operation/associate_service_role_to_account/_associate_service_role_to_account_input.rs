@@ -39,6 +39,10 @@ impl AssociateServiceRoleToAccountInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
     pub fn build(
         self,

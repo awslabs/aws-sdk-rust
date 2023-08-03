@@ -36,6 +36,13 @@ impl DeregisterApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_application::builders::DeregisterApplicationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeregisterApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
     }
 }

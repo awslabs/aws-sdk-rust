@@ -42,6 +42,10 @@ impl GetRegistryInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        &self.registry_id
+    }
     /// Consumes the builder and constructs a [`GetRegistryInput`](crate::operation::get_registry::GetRegistryInput).
     pub fn build(
         self,

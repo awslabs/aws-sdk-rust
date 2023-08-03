@@ -133,6 +133,10 @@ impl ListPackageVersionsInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -142,6 +146,10 @@ impl ListPackageVersionsInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +161,10 @@ impl ListPackageVersionsInputBuilder {
         self.repository = input;
         self
     }
+    /// <p> The name of the repository that contains the requested package versions. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p> The format of the package versions you want to list. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -162,6 +174,10 @@ impl ListPackageVersionsInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p> The format of the package versions you want to list. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -185,6 +201,16 @@ impl ListPackageVersionsInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p> The name of the package for which you want to request package versions. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -194,6 +220,10 @@ impl ListPackageVersionsInputBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
+    }
+    /// <p> The name of the package for which you want to request package versions. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
     }
     /// <p> A string that filters the requested package versions by status. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -208,6 +238,10 @@ impl ListPackageVersionsInputBuilder {
         self.status = input;
         self
     }
+    /// <p> A string that filters the requested package versions by status. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+        &self.status
+    }
     /// <p> How to sort the requested list of package versions. </p>
     pub fn sort_by(mut self, input: crate::types::PackageVersionSortType) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -221,6 +255,10 @@ impl ListPackageVersionsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p> How to sort the requested list of package versions. </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::PackageVersionSortType> {
+        &self.sort_by
+    }
     /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -231,6 +269,10 @@ impl ListPackageVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of results to return per page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -240,6 +282,10 @@ impl ListPackageVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
     pub fn origin_type(mut self, input: crate::types::PackageVersionOriginType) -> Self {
@@ -253,6 +299,12 @@ impl ListPackageVersionsInputBuilder {
     ) -> Self {
         self.origin_type = input;
         self
+    }
+    /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+    pub fn get_origin_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionOriginType> {
+        &self.origin_type
     }
     /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
     pub fn build(

@@ -61,6 +61,11 @@ impl UpdateSolNetworkModifyBuilder {
         self.vnf_instance_id = input;
         self
     }
+    /// <p>ID of the network function instance.</p>
+    /// <p>A network function instance is a function in a function package .</p>
+    pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_instance_id
+    }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
     pub fn vnf_configurable_properties(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.vnf_configurable_properties = ::std::option::Option::Some(input);
@@ -73,6 +78,12 @@ impl UpdateSolNetworkModifyBuilder {
     ) -> Self {
         self.vnf_configurable_properties = input;
         self
+    }
+    /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
+    pub fn get_vnf_configurable_properties(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.vnf_configurable_properties
     }
     /// Consumes the builder and constructs a [`UpdateSolNetworkModify`](crate::types::UpdateSolNetworkModify).
     pub fn build(self) -> crate::types::UpdateSolNetworkModify {

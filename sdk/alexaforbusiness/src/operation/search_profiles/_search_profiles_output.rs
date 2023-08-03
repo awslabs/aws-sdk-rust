@@ -71,6 +71,12 @@ impl SearchProfilesOutputBuilder {
         self.profiles = input;
         self
     }
+    /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
+    pub fn get_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileData>> {
+        &self.profiles
+    }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl SearchProfilesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The total number of room profiles returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl SearchProfilesOutputBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of room profiles returned.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

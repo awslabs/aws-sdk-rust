@@ -52,6 +52,10 @@ impl DescribeMyUserProfileOutputBuilder {
         self.user_profile = input;
         self
     }
+    /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    pub fn get_user_profile(&self) -> &::std::option::Option<crate::types::SelfUserProfile> {
+        &self.user_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

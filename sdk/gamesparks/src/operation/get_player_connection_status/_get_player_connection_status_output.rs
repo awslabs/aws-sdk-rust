@@ -55,6 +55,12 @@ impl GetPlayerConnectionStatusOutputBuilder {
         self.connections = input;
         self
     }
+    /// <p>The list of connection ids, one for each connection in use by the player.</p>
+    pub fn get_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+        &self.connections
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl AppSyncRuntimeBuilder {
         self.name = input;
         self
     }
+    /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::RuntimeName> {
+        &self.name
+    }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub fn runtime_version(
         mut self,
@@ -63,6 +67,10 @@ impl AppSyncRuntimeBuilder {
     ) -> Self {
         self.runtime_version = input;
         self
+    }
+    /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
+    pub fn get_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_version
     }
     /// Consumes the builder and constructs a [`AppSyncRuntime`](crate::types::AppSyncRuntime).
     pub fn build(self) -> crate::types::AppSyncRuntime {

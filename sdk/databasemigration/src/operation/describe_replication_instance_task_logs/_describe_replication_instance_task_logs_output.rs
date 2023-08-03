@@ -72,6 +72,10 @@ impl DescribeReplicationInstanceTaskLogsOutputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// Appends an item to `replication_instance_task_logs`.
     ///
     /// To override the contents of this collection use [`set_replication_instance_task_logs`](Self::set_replication_instance_task_logs).
@@ -94,6 +98,12 @@ impl DescribeReplicationInstanceTaskLogsOutputBuilder {
         self.replication_instance_task_logs = input;
         self
     }
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    pub fn get_replication_instance_task_logs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>> {
+        &self.replication_instance_task_logs
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl DescribeReplicationInstanceTaskLogsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

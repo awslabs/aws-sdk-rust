@@ -64,6 +64,10 @@ impl CurrentRevisionBuilder {
         self.revision = input;
         self
     }
+    /// <p>The revision ID of the current version of an artifact.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     /// <p>The change identifier for the current revision.</p>
     pub fn change_identifier(
         mut self,
@@ -80,6 +84,10 @@ impl CurrentRevisionBuilder {
         self.change_identifier = input;
         self
     }
+    /// <p>The change identifier for the current revision.</p>
+    pub fn get_change_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_identifier
+    }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl CurrentRevisionBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub fn revision_summary(
@@ -108,6 +120,10 @@ impl CurrentRevisionBuilder {
     ) -> Self {
         self.revision_summary = input;
         self
+    }
+    /// <p>The summary of the most recent revision of the artifact.</p>
+    pub fn get_revision_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_summary
     }
     /// Consumes the builder and constructs a [`CurrentRevision`](crate::types::CurrentRevision).
     pub fn build(self) -> crate::types::CurrentRevision {

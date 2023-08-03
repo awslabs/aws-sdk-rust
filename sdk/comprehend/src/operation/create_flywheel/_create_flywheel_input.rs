@@ -109,6 +109,10 @@ impl CreateFlywheelInputBuilder {
         self.flywheel_name = input;
         self
     }
+    /// <p>Name for the flywheel.</p>
+    pub fn get_flywheel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_name
+    }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
     pub fn active_model_arn(
         mut self,
@@ -124,6 +128,10 @@ impl CreateFlywheelInputBuilder {
     ) -> Self {
         self.active_model_arn = input;
         self
+    }
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
     pub fn data_access_role_arn(
@@ -141,6 +149,10 @@ impl CreateFlywheelInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
         self.task_config = ::std::option::Option::Some(input);
@@ -154,6 +166,10 @@ impl CreateFlywheelInputBuilder {
         self.task_config = input;
         self
     }
+    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
+        &self.task_config
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -163,6 +179,10 @@ impl CreateFlywheelInputBuilder {
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelType> {
+        &self.model_type
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
     pub fn data_lake_s3_uri(
@@ -180,6 +200,10 @@ impl CreateFlywheelInputBuilder {
         self.data_lake_s3_uri = input;
         self
     }
+    /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
+    pub fn get_data_lake_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_s3_uri
+    }
     /// <p>Data security configurations.</p>
     pub fn data_security_config(mut self, input: crate::types::DataSecurityConfig) -> Self {
         self.data_security_config = ::std::option::Option::Some(input);
@@ -192,6 +216,12 @@ impl CreateFlywheelInputBuilder {
     ) -> Self {
         self.data_security_config = input;
         self
+    }
+    /// <p>Data security configurations.</p>
+    pub fn get_data_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSecurityConfig> {
+        &self.data_security_config
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
@@ -208,6 +238,10 @@ impl CreateFlywheelInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -227,6 +261,10 @@ impl CreateFlywheelInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to associate with this flywheel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFlywheelInput`](crate::operation::create_flywheel::CreateFlywheelInput).
     pub fn build(

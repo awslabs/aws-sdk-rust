@@ -39,6 +39,10 @@ impl MeterUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MeterUsage as a reference.
+    pub fn as_input(&self) -> &crate::operation::meter_usage::builders::MeterUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl MeterUsageFluentBuilder {
         self.inner = self.inner.set_product_code(input);
         self
     }
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_code()
+    }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.timestamp(input);
@@ -133,6 +141,10 @@ impl MeterUsageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
+    }
+    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_timestamp()
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     pub fn usage_dimension(
@@ -150,6 +162,10 @@ impl MeterUsageFluentBuilder {
         self.inner = self.inner.set_usage_dimension(input);
         self
     }
+    /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
+    pub fn get_usage_dimension(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_dimension()
+    }
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
     pub fn usage_quantity(mut self, input: i32) -> Self {
         self.inner = self.inner.usage_quantity(input);
@@ -160,6 +176,10 @@ impl MeterUsageFluentBuilder {
         self.inner = self.inner.set_usage_quantity(input);
         self
     }
+    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    pub fn get_usage_quantity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_usage_quantity()
+    }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -169,6 +189,10 @@ impl MeterUsageFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// Appends an item to `UsageAllocations`.
     ///
@@ -188,5 +212,12 @@ impl MeterUsageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_usage_allocations(input);
         self
+    }
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    pub fn get_usage_allocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
+        self.inner.get_usage_allocations()
     }
 }

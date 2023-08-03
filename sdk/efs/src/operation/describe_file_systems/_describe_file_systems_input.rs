@@ -66,6 +66,10 @@ impl DescribeFileSystemsInputBuilder {
         self.max_items = input;
         self
     }
+    /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl DescribeFileSystemsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub fn creation_token(
@@ -92,6 +100,10 @@ impl DescribeFileSystemsInputBuilder {
         self.creation_token = input;
         self
     }
+    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
+    pub fn get_creation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_token
+    }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub fn file_system_id(
         mut self,
@@ -107,6 +119,10 @@ impl DescribeFileSystemsInputBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
     pub fn build(

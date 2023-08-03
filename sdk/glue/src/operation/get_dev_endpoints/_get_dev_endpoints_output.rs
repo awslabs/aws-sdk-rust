@@ -64,6 +64,12 @@ impl GetDevEndpointsOutputBuilder {
         self.dev_endpoints = input;
         self
     }
+    /// <p>A list of <code>DevEndpoint</code> definitions.</p>
+    pub fn get_dev_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
+        &self.dev_endpoints
+    }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetDevEndpointsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

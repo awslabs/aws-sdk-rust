@@ -60,6 +60,12 @@ impl ActivityTypeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this activity.</p> <note>
+    /// <p>The combination of activity type name and version must be unique within a domain.</p>
+    /// </note>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique with in a domain.</p>
     /// </note>
@@ -73,6 +79,12 @@ impl ActivityTypeBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of this activity.</p> <note>
+    /// <p>The combination of activity type name and version must be unique with in a domain.</p>
+    /// </note>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ActivityType`](crate::types::ActivityType).
     pub fn build(self) -> crate::types::ActivityType {

@@ -55,6 +55,12 @@ impl RejectVpcEndpointConnectionsOutputBuilder {
         self.unsuccessful = input;
         self
     }
+    /// <p>Information about the endpoints that were not rejected, if applicable.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+        &self.unsuccessful
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

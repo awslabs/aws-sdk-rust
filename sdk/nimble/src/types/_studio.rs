@@ -206,6 +206,10 @@ impl StudioBuilder {
         self.admin_role_arn = input;
         self
     }
+    /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_admin_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -215,6 +219,10 @@ impl StudioBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -229,6 +237,10 @@ impl StudioBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>A friendly name for the studio.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -239,6 +251,10 @@ impl StudioBuilder {
         self.display_name = input;
         self
     }
+    /// <p>A friendly name for the studio.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -248,6 +264,10 @@ impl StudioBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the studio resource is located.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
     pub fn sso_client_id(
@@ -265,6 +285,10 @@ impl StudioBuilder {
         self.sso_client_id = input;
         self
     }
+    /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
+    pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_client_id
+    }
     /// <p>The current state of the studio resource.</p>
     pub fn state(mut self, input: crate::types::StudioState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -274,6 +298,10 @@ impl StudioBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StudioState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the studio resource.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StudioState> {
+        &self.state
     }
     /// <p>Status codes that provide additional detail on the studio state.</p>
     pub fn status_code(mut self, input: crate::types::StudioStatusCode) -> Self {
@@ -287,6 +315,10 @@ impl StudioBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>Status codes that provide additional detail on the studio state.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StudioStatusCode> {
+        &self.status_code
     }
     /// <p>Additional detail on the studio state.</p>
     pub fn status_message(
@@ -304,6 +336,10 @@ impl StudioBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Additional detail on the studio state.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Configuration of the encryption method that is used for the studio.</p>
     pub fn studio_encryption_configuration(
         mut self,
@@ -320,6 +356,12 @@ impl StudioBuilder {
         self.studio_encryption_configuration = input;
         self
     }
+    /// <p>Configuration of the encryption method that is used for the studio.</p>
+    pub fn get_studio_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
+        &self.studio_encryption_configuration
+    }
     /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -329,6 +371,10 @@ impl StudioBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>The name of the studio, as included in the URL when accessing it in the Nimble Studio portal.</p>
     pub fn studio_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -340,6 +386,10 @@ impl StudioBuilder {
         self.studio_name = input;
         self
     }
+    /// <p>The name of the studio, as included in the URL when accessing it in the Nimble Studio portal.</p>
+    pub fn get_studio_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_name
+    }
     /// <p>The address of the web page for the studio.</p>
     pub fn studio_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_url = ::std::option::Option::Some(input.into());
@@ -349,6 +399,10 @@ impl StudioBuilder {
     pub fn set_studio_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_url = input;
         self
+    }
+    /// <p>The address of the web page for the studio.</p>
+    pub fn get_studio_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_url
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -375,6 +429,14 @@ impl StudioBuilder {
         self.tags = input;
         self
     }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -387,6 +449,10 @@ impl StudioBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(
@@ -403,6 +469,10 @@ impl StudioBuilder {
     ) -> Self {
         self.user_role_arn = input;
         self
+    }
+    /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_user_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`Studio`](crate::types::Studio).
     pub fn build(self) -> crate::types::Studio {

@@ -86,6 +86,12 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         self.savings_plans_utilization_details = input;
         self
     }
+    /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
+    pub fn get_savings_plans_utilization_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>> {
+        &self.savings_plans_utilization_details
+    }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub fn total(mut self, input: crate::types::SavingsPlansUtilizationAggregates) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -98,6 +104,12 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
     ) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total Savings Plans utilization, regardless of time period.</p>
+    pub fn get_total(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansUtilizationAggregates> {
+        &self.total
     }
     /// <p>The time period of the request. </p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
@@ -112,6 +124,10 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The time period of the request. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -121,6 +137,10 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

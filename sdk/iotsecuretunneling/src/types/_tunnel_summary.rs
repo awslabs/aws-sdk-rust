@@ -80,6 +80,10 @@ impl TunnelSummaryBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>The unique alpha-numeric identifier for the tunnel.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// <p>The Amazon Resource Name of the tunnel. </p>
     pub fn tunnel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl TunnelSummaryBuilder {
     pub fn set_tunnel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tunnel_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the tunnel. </p>
+    pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_arn
     }
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
     pub fn status(mut self, input: crate::types::TunnelStatus) -> Self {
@@ -100,6 +108,10 @@ impl TunnelSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TunnelStatus> {
+        &self.status
+    }
     /// <p>A description of the tunnel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl TunnelSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the tunnel.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time the tunnel was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl TunnelSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time the tunnel was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time the tunnel was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl TunnelSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The time the tunnel was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`TunnelSummary`](crate::types::TunnelSummary).
     pub fn build(self) -> crate::types::TunnelSummary {

@@ -97,6 +97,10 @@ impl TooManyRequestsExceptionBuilder {
         self.retry_after_seconds = input;
         self
     }
+    /// <p>The number of seconds the caller should wait before retrying.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retry_after_seconds
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl TooManyRequestsExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +124,10 @@ impl TooManyRequestsExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::ThrottleReason) -> Self {
@@ -129,6 +141,10 @@ impl TooManyRequestsExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ThrottleReason> {
+        &self.reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

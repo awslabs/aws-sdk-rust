@@ -46,6 +46,10 @@ impl DescribeDiscoveryJobInputBuilder {
         self.discovery_job_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeDiscoveryJobInput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobInput).
     pub fn build(
         self,

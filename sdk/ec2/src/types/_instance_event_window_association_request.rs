@@ -65,6 +65,12 @@ impl InstanceEventWindowAssociationRequestBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances to associate with the event window. If the instance is on a Dedicated Host, you can't specify the Instance ID parameter; you must use the Dedicated Host ID parameter.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// Appends an item to `instance_tags`.
     ///
     /// To override the contents of this collection use [`set_instance_tags`](Self::set_instance_tags).
@@ -83,6 +89,10 @@ impl InstanceEventWindowAssociationRequestBuilder {
     ) -> Self {
         self.instance_tags = input;
         self
+    }
+    /// <p>The instance tags to associate with the event window. Any instances associated with the tags will be associated with the event window.</p>
+    pub fn get_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.instance_tags
     }
     /// Appends an item to `dedicated_host_ids`.
     ///
@@ -105,6 +115,12 @@ impl InstanceEventWindowAssociationRequestBuilder {
     ) -> Self {
         self.dedicated_host_ids = input;
         self
+    }
+    /// <p>The IDs of the Dedicated Hosts to associate with the event window.</p>
+    pub fn get_dedicated_host_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dedicated_host_ids
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowAssociationRequest`](crate::types::InstanceEventWindowAssociationRequest).
     pub fn build(self) -> crate::types::InstanceEventWindowAssociationRequest {

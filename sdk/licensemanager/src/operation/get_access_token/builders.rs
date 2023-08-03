@@ -36,6 +36,12 @@ impl GetAccessTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_access_token::builders::GetAccessTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetAccessTokenFluentBuilder {
         self.inner = self.inner.set_token(input);
         self
     }
+    /// <p>Refresh token, encoded as a JWT token.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
+    }
     /// Appends an item to `TokenProperties`.
     ///
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
@@ -145,5 +155,11 @@ impl GetAccessTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_token_properties(input);
         self
+    }
+    /// <p>Token properties to validate against those present in the JWT token.</p>
+    pub fn get_token_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_token_properties()
     }
 }

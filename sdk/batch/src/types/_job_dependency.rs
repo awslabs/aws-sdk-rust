@@ -48,6 +48,10 @@ impl JobDependencyBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID of the Batch job that's associated with this dependency.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The type of the job dependency.</p>
     pub fn r#type(mut self, input: crate::types::ArrayJobDependency) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl JobDependencyBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the job dependency.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ArrayJobDependency> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`JobDependency`](crate::types::JobDependency).
     pub fn build(self) -> crate::types::JobDependency {

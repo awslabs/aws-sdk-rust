@@ -87,6 +87,10 @@ impl ConfigurationSetInformationBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the ConfigurationSet.</p>
     pub fn configuration_set_name(
         mut self,
@@ -102,6 +106,10 @@ impl ConfigurationSetInformationBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The name of the ConfigurationSet.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Appends an item to `event_destinations`.
     ///
@@ -122,6 +130,12 @@ impl ConfigurationSetInformationBuilder {
         self.event_destinations = input;
         self
     }
+    /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
+    pub fn get_event_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
+        &self.event_destinations
+    }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn default_message_type(mut self, input: crate::types::MessageType) -> Self {
         self.default_message_type = ::std::option::Option::Some(input);
@@ -134,6 +148,10 @@ impl ConfigurationSetInformationBuilder {
     ) -> Self {
         self.default_message_type = input;
         self
+    }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_default_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.default_message_type
     }
     /// <p>The default sender ID used by the ConfigurationSet.</p>
     pub fn default_sender_id(
@@ -151,6 +169,10 @@ impl ConfigurationSetInformationBuilder {
         self.default_sender_id = input;
         self
     }
+    /// <p>The default sender ID used by the ConfigurationSet.</p>
+    pub fn get_default_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_sender_id
+    }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl ConfigurationSetInformationBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// Consumes the builder and constructs a [`ConfigurationSetInformation`](crate::types::ConfigurationSetInformation).
     pub fn build(self) -> crate::types::ConfigurationSetInformation {

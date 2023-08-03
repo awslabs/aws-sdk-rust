@@ -52,6 +52,10 @@ impl ActionBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive name for the action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `cross_region_copy`.
     ///
     /// To override the contents of this collection use [`set_cross_region_copy`](Self::set_cross_region_copy).
@@ -70,6 +74,12 @@ impl ActionBuilder {
     ) -> Self {
         self.cross_region_copy = input;
         self
+    }
+    /// <p>The rule for copying shared snapshots across Regions.</p>
+    pub fn get_cross_region_copy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>> {
+        &self.cross_region_copy
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

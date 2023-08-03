@@ -71,6 +71,10 @@ impl UpdateThemeInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateThemeInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID for the theme.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl UpdateThemeInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the theme.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl UpdateThemeInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The configuration of the updated theme.</p>
     pub fn updated_theme(mut self, input: crate::types::UpdateThemeData) -> Self {
@@ -119,6 +135,10 @@ impl UpdateThemeInputBuilder {
     ) -> Self {
         self.updated_theme = input;
         self
+    }
+    /// <p>The configuration of the updated theme.</p>
+    pub fn get_updated_theme(&self) -> &::std::option::Option<crate::types::UpdateThemeData> {
+        &self.updated_theme
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
     pub fn build(

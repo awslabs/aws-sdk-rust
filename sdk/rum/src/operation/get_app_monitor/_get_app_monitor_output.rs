@@ -49,6 +49,10 @@ impl GetAppMonitorOutputBuilder {
         self.app_monitor = input;
         self
     }
+    /// <p>A structure containing all the configuration information for the app monitor.</p>
+    pub fn get_app_monitor(&self) -> &::std::option::Option<crate::types::AppMonitor> {
+        &self.app_monitor
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

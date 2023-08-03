@@ -180,6 +180,12 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.language_code = input;
         self
     }
+    /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
+    /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
+    /// </important>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
@@ -189,6 +195,10 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
+    }
+    /// <p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate_hertz
     }
     /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
     /// <ul>
@@ -215,6 +225,16 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.media_encoding = input;
         self
     }
+    /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
+    /// <ul>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
+    pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MediaEncoding> {
+        &self.media_encoding
+    }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     pub fn vocabulary_name(
         mut self,
@@ -231,6 +251,10 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// <p>Specify the medical specialty contained in your audio.</p>
     pub fn specialty(mut self, input: crate::types::Specialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
@@ -241,6 +265,10 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.specialty = input;
         self
     }
+    /// <p>Specify the medical specialty contained in your audio.</p>
+    pub fn get_specialty(&self) -> &::std::option::Option<crate::types::Specialty> {
+        &self.specialty
+    }
     /// <p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -250,6 +278,10 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -263,6 +295,11 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.show_speaker_label = input;
         self
     }
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
+    pub fn get_show_speaker_label(&self) -> &::std::option::Option<bool> {
+        &self.show_speaker_label
+    }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -274,6 +311,11 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
+    /// <p>You can use a session ID to retry a streaming session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
@@ -301,6 +343,18 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.audio_stream = input;
         self
     }
+    /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
+    pub fn get_audio_stream(
+        &self,
+    ) -> &::std::option::Option<
+        ::aws_smithy_http::event_stream::EventStreamSender<
+            crate::types::AudioStream,
+            crate::types::error::AudioStreamError,
+        >,
+    > {
+        &self.audio_stream
+    }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
@@ -317,6 +371,13 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self.enable_channel_identification = input;
         self
     }
+    /// <p>Enables channel identification in multi-channel audio.</p>
+    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
+    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
+    pub fn get_enable_channel_identification(&self) -> &::std::option::Option<bool> {
+        &self.enable_channel_identification
+    }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
     pub fn number_of_channels(mut self, input: i32) -> Self {
         self.number_of_channels = ::std::option::Option::Some(input);
@@ -326,6 +387,10 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_channels = input;
         self
+    }
+    /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
+    pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
+        &self.number_of_channels
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
@@ -346,6 +411,14 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     ) -> Self {
         self.content_identification_type = input;
         self
+    }
+    /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
+    /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+    pub fn get_content_identification_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+        &self.content_identification_type
     }
     /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionInput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput).
     pub fn build(

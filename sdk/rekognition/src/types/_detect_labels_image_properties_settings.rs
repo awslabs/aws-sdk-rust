@@ -40,6 +40,10 @@ impl DetectLabelsImagePropertiesSettingsBuilder {
         self.max_dominant_colors = input;
         self
     }
+    /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
+    pub fn get_max_dominant_colors(&self) -> &::std::option::Option<i32> {
+        &self.max_dominant_colors
+    }
     /// Consumes the builder and constructs a [`DetectLabelsImagePropertiesSettings`](crate::types::DetectLabelsImagePropertiesSettings).
     pub fn build(self) -> crate::types::DetectLabelsImagePropertiesSettings {
         crate::types::DetectLabelsImagePropertiesSettings {

@@ -43,6 +43,10 @@ impl CustomEventsBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomEventsStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`CustomEvents`](crate::types::CustomEvents).
     pub fn build(self) -> crate::types::CustomEvents {
         crate::types::CustomEvents {

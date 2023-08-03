@@ -50,6 +50,10 @@ impl StartExportOutputBuilder {
         self.export_task = input;
         self
     }
+    /// <p>Start export response export task.</p>
+    pub fn get_export_task(&self) -> &::std::option::Option<crate::types::ExportTask> {
+        &self.export_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

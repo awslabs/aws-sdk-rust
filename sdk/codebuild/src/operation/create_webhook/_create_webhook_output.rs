@@ -46,6 +46,10 @@ impl CreateWebhookOutputBuilder {
         self.webhook = input;
         self
     }
+    /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
+    pub fn get_webhook(&self) -> &::std::option::Option<crate::types::Webhook> {
+        &self.webhook
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

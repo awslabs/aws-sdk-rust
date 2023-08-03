@@ -61,6 +61,10 @@ impl InputDataConfigBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// Appends an item to `supplementary_features`.
     ///
     /// To override the contents of this collection use [`set_supplementary_features`](Self::set_supplementary_features).
@@ -79,6 +83,12 @@ impl InputDataConfigBuilder {
     ) -> Self {
         self.supplementary_features = input;
         self
+    }
+    /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
+    pub fn get_supplementary_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>> {
+        &self.supplementary_features
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn build(self) -> crate::types::InputDataConfig {

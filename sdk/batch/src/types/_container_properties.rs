@@ -308,6 +308,23 @@ impl ContainerPropertiesBuilder {
         self.image = input;
         self
     }
+    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
+    /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.
+    /// <region-name>
+    /// .amazonaws.com/
+    /// <repository-name></repository-name>
+    /// </region-name></code>).</p> </li>
+    /// <li> <p>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li>
+    /// <li> <p>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li>
+    /// <li> <p>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li>
+    /// </ul>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
@@ -322,6 +339,12 @@ impl ContainerPropertiesBuilder {
         self.vcpus = input;
         self
     }
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
+    /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
+    pub fn get_vcpus(&self) -> &::std::option::Option<i32> {
+        &self.vcpus
+    }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn memory(mut self, input: i32) -> Self {
@@ -333,6 +356,11 @@ impl ContainerPropertiesBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// Appends an item to `command`.
     ///
@@ -353,6 +381,10 @@ impl ContainerPropertiesBuilder {
         self.command = input;
         self
     }
+    /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn job_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_role_arn = ::std::option::Option::Some(input.into());
@@ -362,6 +394,10 @@ impl ContainerPropertiesBuilder {
     pub fn set_job_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_job_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn execution_role_arn(
@@ -378,6 +414,10 @@ impl ContainerPropertiesBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Appends an item to `volumes`.
     ///
@@ -397,6 +437,10 @@ impl ContainerPropertiesBuilder {
     ) -> Self {
         self.volumes = input;
         self
+    }
+    /// <p>A list of data volumes used in a job.</p>
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+        &self.volumes
     }
     /// Appends an item to `environment`.
     ///
@@ -425,6 +469,16 @@ impl ContainerPropertiesBuilder {
         self.environment = input;
         self
     }
+    /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
+    /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
+    /// </important> <note>
+    /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// </note>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.environment
+    }
     /// Appends an item to `mount_points`.
     ///
     /// To override the contents of this collection use [`set_mount_points`](Self::set_mount_points).
@@ -444,6 +498,12 @@ impl ContainerPropertiesBuilder {
         self.mount_points = input;
         self
     }
+    /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    pub fn get_mount_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MountPoint>> {
+        &self.mount_points
+    }
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
     pub fn readonly_root_filesystem(mut self, input: bool) -> Self {
         self.readonly_root_filesystem = ::std::option::Option::Some(input);
@@ -453,6 +513,10 @@ impl ContainerPropertiesBuilder {
     pub fn set_readonly_root_filesystem(mut self, input: ::std::option::Option<bool>) -> Self {
         self.readonly_root_filesystem = input;
         self
+    }
+    /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
+    pub fn get_readonly_root_filesystem(&self) -> &::std::option::Option<bool> {
+        &self.readonly_root_filesystem
     }
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
@@ -467,6 +531,12 @@ impl ContainerPropertiesBuilder {
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged = input;
         self
+    }
+    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
+    /// </note>
+    pub fn get_privileged(&self) -> &::std::option::Option<bool> {
+        &self.privileged
     }
     /// Appends an item to `ulimits`.
     ///
@@ -491,6 +561,12 @@ impl ContainerPropertiesBuilder {
         self.ulimits = input;
         self
     }
+    /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
+    /// </note>
+    pub fn get_ulimits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ulimit>> {
+        &self.ulimits
+    }
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -500,6 +576,10 @@ impl ContainerPropertiesBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
     }
     /// <p>The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the same instance type.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
@@ -521,6 +601,12 @@ impl ContainerPropertiesBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the same instance type.</p> <note>
+    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
+    /// </note>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// Appends an item to `resource_requirements`.
     ///
     /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
@@ -540,6 +626,12 @@ impl ContainerPropertiesBuilder {
         self.resource_requirements = input;
         self
     }
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    pub fn get_resource_requirements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
+        &self.resource_requirements
+    }
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
     pub fn linux_parameters(mut self, input: crate::types::LinuxParameters) -> Self {
         self.linux_parameters = ::std::option::Option::Some(input);
@@ -552,6 +644,10 @@ impl ContainerPropertiesBuilder {
     ) -> Self {
         self.linux_parameters = input;
         self
+    }
+    /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
+    pub fn get_linux_parameters(&self) -> &::std::option::Option<crate::types::LinuxParameters> {
+        &self.linux_parameters
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
@@ -578,6 +674,16 @@ impl ContainerPropertiesBuilder {
         self.log_configuration = input;
         self
     }
+    /// <p>The log configuration specification for the container.</p>
+    /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type).</p>
+    /// </note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
+    /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
+        &self.log_configuration
+    }
     /// Appends an item to `secrets`.
     ///
     /// To override the contents of this collection use [`set_secrets`](Self::set_secrets).
@@ -597,6 +703,10 @@ impl ContainerPropertiesBuilder {
         self.secrets = input;
         self
     }
+    /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Secret>> {
+        &self.secrets
+    }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
@@ -609,6 +719,12 @@ impl ContainerPropertiesBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
     }
     /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
     pub fn fargate_platform_configuration(
@@ -626,6 +742,12 @@ impl ContainerPropertiesBuilder {
         self.fargate_platform_configuration = input;
         self
     }
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    pub fn get_fargate_platform_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FargatePlatformConfiguration> {
+        &self.fargate_platform_configuration
+    }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
@@ -639,6 +761,10 @@ impl ContainerPropertiesBuilder {
         self.ephemeral_storage = input;
         self
     }
+    /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
+    pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
+        &self.ephemeral_storage
+    }
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
         self.runtime_platform = ::std::option::Option::Some(input);
@@ -651,6 +777,10 @@ impl ContainerPropertiesBuilder {
     ) -> Self {
         self.runtime_platform = input;
         self
+    }
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
+        &self.runtime_platform
     }
     /// Consumes the builder and constructs a [`ContainerProperties`](crate::types::ContainerProperties).
     pub fn build(self) -> crate::types::ContainerProperties {

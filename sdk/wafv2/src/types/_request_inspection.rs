@@ -81,6 +81,10 @@ impl RequestInspectionBuilder {
         self.payload_type = input;
         self
     }
+    /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+    pub fn get_payload_type(&self) -> &::std::option::Option<crate::types::PayloadType> {
+        &self.payload_type
+    }
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -104,6 +108,15 @@ impl RequestInspectionBuilder {
         self.username_field = input;
         self
     }
+    /// <p>The name of the field in the request payload that contains your customer's username. </p>
+    /// <p>How you specify this depends on the request inspection payload type.</p>
+    /// <ul>
+    /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
+    /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
+    /// </ul>
+    pub fn get_username_field(&self) -> &::std::option::Option<crate::types::UsernameField> {
+        &self.username_field
+    }
     /// <p>The name of the field in the request payload that contains your customer's password. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -126,6 +139,15 @@ impl RequestInspectionBuilder {
     ) -> Self {
         self.password_field = input;
         self
+    }
+    /// <p>The name of the field in the request payload that contains your customer's password. </p>
+    /// <p>How you specify this depends on the request inspection payload type.</p>
+    /// <ul>
+    /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p> </li>
+    /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p> </li>
+    /// </ul>
+    pub fn get_password_field(&self) -> &::std::option::Option<crate::types::PasswordField> {
+        &self.password_field
     }
     /// Consumes the builder and constructs a [`RequestInspection`](crate::types::RequestInspection).
     pub fn build(self) -> crate::types::RequestInspection {

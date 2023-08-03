@@ -48,6 +48,10 @@ impl GetFunctionConcurrencyOutputBuilder {
         self.reserved_concurrent_executions = input;
         self
     }
+    /// <p>The number of simultaneous executions that are reserved for the function.</p>
+    pub fn get_reserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.reserved_concurrent_executions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

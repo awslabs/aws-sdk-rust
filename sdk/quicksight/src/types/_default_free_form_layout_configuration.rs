@@ -49,6 +49,12 @@ impl DefaultFreeFormLayoutConfigurationBuilder {
         self.canvas_size_options = input;
         self
     }
+    /// <p>Determines the screen canvas size options for a free-form layout.</p>
+    pub fn get_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions> {
+        &self.canvas_size_options
+    }
     /// Consumes the builder and constructs a [`DefaultFreeFormLayoutConfiguration`](crate::types::DefaultFreeFormLayoutConfiguration).
     pub fn build(self) -> crate::types::DefaultFreeFormLayoutConfiguration {
         crate::types::DefaultFreeFormLayoutConfiguration {

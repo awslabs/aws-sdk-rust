@@ -66,6 +66,10 @@ impl GetDocumentVersionOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The version metadata.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentVersionMetadata> {
+        &self.metadata
+    }
     /// Adds a key-value pair to `custom_metadata`.
     ///
     /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
@@ -90,6 +94,14 @@ impl GetDocumentVersionOutputBuilder {
     ) -> Self {
         self.custom_metadata = input;
         self
+    }
+    /// <p>The custom metadata on the document version.</p>
+    pub fn get_custom_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

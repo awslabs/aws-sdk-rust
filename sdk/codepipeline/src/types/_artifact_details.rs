@@ -48,6 +48,10 @@ impl ArtifactDetailsBuilder {
         self.minimum_count = input;
         self
     }
+    /// <p>The minimum number of artifacts allowed for the action type.</p>
+    pub fn get_minimum_count(&self) -> &::std::option::Option<i32> {
+        &self.minimum_count
+    }
     /// <p>The maximum number of artifacts allowed for the action type.</p>
     pub fn maximum_count(mut self, input: i32) -> Self {
         self.maximum_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ArtifactDetailsBuilder {
     pub fn set_maximum_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_count = input;
         self
+    }
+    /// <p>The maximum number of artifacts allowed for the action type.</p>
+    pub fn get_maximum_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_count
     }
     /// Consumes the builder and constructs a [`ArtifactDetails`](crate::types::ArtifactDetails).
     pub fn build(self) -> crate::types::ArtifactDetails {

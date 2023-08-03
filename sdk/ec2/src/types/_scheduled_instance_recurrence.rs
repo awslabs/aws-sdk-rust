@@ -72,6 +72,10 @@ impl ScheduledInstanceRecurrenceBuilder {
         self.frequency = input;
         self
     }
+    /// <p>The frequency (<code>Daily</code>, <code>Weekly</code>, or <code>Monthly</code>).</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frequency
+    }
     /// <p>The interval quantity. The interval unit depends on the value of <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ScheduledInstanceRecurrenceBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The interval quantity. The interval unit depends on the value of <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// Appends an item to `occurrence_day_set`.
     ///
@@ -101,6 +109,10 @@ impl ScheduledInstanceRecurrenceBuilder {
         self.occurrence_day_set = input;
         self
     }
+    /// <p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday).</p>
+    pub fn get_occurrence_day_set(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.occurrence_day_set
+    }
     /// <p>Indicates whether the occurrence is relative to the end of the specified week or month.</p>
     pub fn occurrence_relative_to_end(mut self, input: bool) -> Self {
         self.occurrence_relative_to_end = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ScheduledInstanceRecurrenceBuilder {
     pub fn set_occurrence_relative_to_end(mut self, input: ::std::option::Option<bool>) -> Self {
         self.occurrence_relative_to_end = input;
         self
+    }
+    /// <p>Indicates whether the occurrence is relative to the end of the specified week or month.</p>
+    pub fn get_occurrence_relative_to_end(&self) -> &::std::option::Option<bool> {
+        &self.occurrence_relative_to_end
     }
     /// <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).</p>
     pub fn occurrence_unit(
@@ -126,6 +142,10 @@ impl ScheduledInstanceRecurrenceBuilder {
     ) -> Self {
         self.occurrence_unit = input;
         self
+    }
+    /// <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).</p>
+    pub fn get_occurrence_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.occurrence_unit
     }
     /// Consumes the builder and constructs a [`ScheduledInstanceRecurrence`](crate::types::ScheduledInstanceRecurrence).
     pub fn build(self) -> crate::types::ScheduledInstanceRecurrence {

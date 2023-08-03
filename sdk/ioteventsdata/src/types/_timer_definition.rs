@@ -48,6 +48,10 @@ impl TimerDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the timer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn seconds(mut self, input: i32) -> Self {
         self.seconds = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimerDefinitionBuilder {
     pub fn set_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds = input;
         self
+    }
+    /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
+    pub fn get_seconds(&self) -> &::std::option::Option<i32> {
+        &self.seconds
     }
     /// Consumes the builder and constructs a [`TimerDefinition`](crate::types::TimerDefinition).
     pub fn build(self) -> crate::types::TimerDefinition {

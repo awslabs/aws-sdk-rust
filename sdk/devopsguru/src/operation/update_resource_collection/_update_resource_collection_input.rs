@@ -55,6 +55,12 @@ impl UpdateResourceCollectionInputBuilder {
         self.action = input;
         self
     }
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
+        &self.action
+    }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub fn resource_collection(
         mut self,
@@ -70,6 +76,12 @@ impl UpdateResourceCollectionInputBuilder {
     ) -> Self {
         self.resource_collection = input;
         self
+    }
+    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
+        &self.resource_collection
     }
     /// Consumes the builder and constructs a [`UpdateResourceCollectionInput`](crate::operation::update_resource_collection::UpdateResourceCollectionInput).
     pub fn build(

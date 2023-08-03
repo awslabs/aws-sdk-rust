@@ -55,6 +55,10 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name you want to assign to this Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
     pub fn configuration(mut self, input: crate::types::ObjectLambdaConfiguration) -> Self {
@@ -77,6 +85,12 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>Object Lambda Access Point configuration as a JSON document.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaInput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{

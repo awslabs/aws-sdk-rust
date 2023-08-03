@@ -106,6 +106,10 @@ impl DescribeManagedJobTemplateOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl DescribeManagedJobTemplateOutputBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The unique description of a managed template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl DescribeManagedJobTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The unique description of a managed template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The version for a managed template.</p>
     pub fn template_version(
@@ -141,6 +153,10 @@ impl DescribeManagedJobTemplateOutputBuilder {
     ) -> Self {
         self.template_version = input;
         self
+    }
+    /// <p>The version for a managed template.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_version
     }
     /// Appends an item to `environments`.
     ///
@@ -160,6 +176,12 @@ impl DescribeManagedJobTemplateOutputBuilder {
     ) -> Self {
         self.environments = input;
         self
+    }
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub fn get_environments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.environments
     }
     /// Appends an item to `document_parameters`.
     ///
@@ -184,6 +206,14 @@ impl DescribeManagedJobTemplateOutputBuilder {
         self.document_parameters = input;
         self
     }
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// </note>
+    pub fn get_document_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentParameter>> {
+        &self.document_parameters
+    }
     /// <p>The document schema for a managed job template.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -193,6 +223,10 @@ impl DescribeManagedJobTemplateOutputBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p>The document schema for a managed job template.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

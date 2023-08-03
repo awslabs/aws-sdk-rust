@@ -56,6 +56,10 @@ impl ListedConnectorBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListedConnectorBuilder {
         self.connector_id = input;
         self
     }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
+    }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListedConnectorBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`ListedConnector`](crate::types::ListedConnector).
     pub fn build(self) -> crate::types::ListedConnector {

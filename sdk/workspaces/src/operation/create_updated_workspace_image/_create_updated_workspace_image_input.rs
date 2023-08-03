@@ -67,6 +67,10 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new updated WorkSpace image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of whether updates for the WorkSpace image are available.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The identifier of the source WorkSpace image.</p>
     pub fn source_image_id(
@@ -92,6 +100,10 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     ) -> Self {
         self.source_image_id = input;
         self
+    }
+    /// <p>The identifier of the source WorkSpace image.</p>
+    pub fn get_source_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_image_id
     }
     /// Appends an item to `tags`.
     ///
@@ -115,6 +127,12 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
     pub fn build(

@@ -46,6 +46,12 @@ impl RadarChartSeriesSettingsBuilder {
         self.area_style_settings = input;
         self
     }
+    /// <p>The area style settings of a radar chart.</p>
+    pub fn get_area_style_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RadarChartAreaStyleSettings> {
+        &self.area_style_settings
+    }
     /// Consumes the builder and constructs a [`RadarChartSeriesSettings`](crate::types::RadarChartSeriesSettings).
     pub fn build(self) -> crate::types::RadarChartSeriesSettings {
         crate::types::RadarChartSeriesSettings {

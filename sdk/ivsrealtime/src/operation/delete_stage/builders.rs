@@ -36,6 +36,10 @@ impl DeleteStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_stage::builders::DeleteStageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteStageFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>ARN of the stage to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

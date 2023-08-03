@@ -72,6 +72,10 @@ impl SchedulingPolicyDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the scheduling policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl SchedulingPolicyDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The fair share policy for the scheduling policy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
@@ -94,6 +102,10 @@ impl SchedulingPolicyDetailBuilder {
     ) -> Self {
         self.fairshare_policy = input;
         self
+    }
+    /// <p>The fair share policy for the scheduling policy.</p>
+    pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
+        &self.fairshare_policy
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -119,6 +131,14 @@ impl SchedulingPolicyDetailBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that you apply to the scheduling policy to categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SchedulingPolicyDetail`](crate::types::SchedulingPolicyDetail).
     pub fn build(self) -> crate::types::SchedulingPolicyDetail {

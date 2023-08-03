@@ -59,6 +59,10 @@ impl PutProjectEventsOutputBuilder {
         self.failed_event_count = input;
         self
     }
+    /// <p>The number of events in the operation that could not be used by Evidently.</p>
+    pub fn get_failed_event_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_event_count
+    }
     /// Appends an item to `event_results`.
     ///
     /// To override the contents of this collection use [`set_event_results`](Self::set_event_results).
@@ -77,6 +81,12 @@ impl PutProjectEventsOutputBuilder {
     ) -> Self {
         self.event_results = input;
         self
+    }
+    /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
+    pub fn get_event_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>> {
+        &self.event_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

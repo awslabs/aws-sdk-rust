@@ -43,6 +43,10 @@ impl ProcessorConfigurationBuilder {
         self.lambda = input;
         self
     }
+    /// <p>Indicates that the processor is of type Lambda.</p>
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaConfiguration> {
+        &self.lambda
+    }
     /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
     pub fn build(self) -> crate::types::ProcessorConfiguration {
         crate::types::ProcessorConfiguration {

@@ -37,6 +37,10 @@ impl ListStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreams as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_streams::builders::ListStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl ListStreamsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at a time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -138,6 +146,10 @@ impl ListStreamsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.inner = self.inner.ascending_order(input);
@@ -147,5 +159,9 @@ impl ListStreamsFluentBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ascending_order(input);
         self
+    }
+    /// <p>Set to true to return the list of streams in ascending order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ascending_order()
     }
 }

@@ -61,6 +61,10 @@ impl ModifyVpnTunnelCertificateInputBuilder {
         self.vpn_connection_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
+    }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn vpn_tunnel_outside_ip_address(
         mut self,
@@ -77,6 +81,12 @@ impl ModifyVpnTunnelCertificateInputBuilder {
         self.vpn_tunnel_outside_ip_address = input;
         self
     }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_tunnel_outside_ip_address
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl ModifyVpnTunnelCertificateInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelCertificateInput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput).
     pub fn build(

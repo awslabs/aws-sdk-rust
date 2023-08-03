@@ -39,6 +39,10 @@ impl CancelCapacityReservationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the capacity reservation to cancel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
     pub fn build(
         self,

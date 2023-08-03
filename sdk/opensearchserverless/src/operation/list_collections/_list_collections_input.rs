@@ -58,6 +58,12 @@ impl ListCollectionsInputBuilder {
         self.collection_filters = input;
         self
     }
+    /// <p>List of filter names and values that you can use for requests.</p>
+    pub fn get_collection_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::CollectionFilters> {
+        &self.collection_filters
+    }
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl ListCollectionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -77,6 +87,10 @@ impl ListCollectionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCollectionsInput`](crate::operation::list_collections::ListCollectionsInput).
     pub fn build(

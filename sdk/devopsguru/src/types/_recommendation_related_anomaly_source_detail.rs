@@ -61,6 +61,14 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
         self.cloud_watch_metrics = input;
         self
     }
+    /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
+    pub fn get_cloud_watch_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+    > {
+        &self.cloud_watch_metrics
+    }
     /// Consumes the builder and constructs a [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
     pub fn build(self) -> crate::types::RecommendationRelatedAnomalySourceDetail {
         crate::types::RecommendationRelatedAnomalySourceDetail {

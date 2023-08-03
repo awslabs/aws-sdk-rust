@@ -72,6 +72,12 @@ impl ModifyCacheSubnetGroupInputBuilder {
         self.cache_subnet_group_name = input;
         self
     }
+    /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>Example: <code>mysubnetgroup</code> </p>
+    pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_subnet_group_name
+    }
     /// <p>A description of the cache subnet group.</p>
     pub fn cache_subnet_group_description(
         mut self,
@@ -87,6 +93,12 @@ impl ModifyCacheSubnetGroupInputBuilder {
     ) -> Self {
         self.cache_subnet_group_description = input;
         self
+    }
+    /// <p>A description of the cache subnet group.</p>
+    pub fn get_cache_subnet_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_subnet_group_description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -106,6 +118,10 @@ impl ModifyCacheSubnetGroupInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The EC2 subnet IDs for the cache subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyCacheSubnetGroupInput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput).
     pub fn build(

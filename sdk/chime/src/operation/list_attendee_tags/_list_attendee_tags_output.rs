@@ -56,6 +56,10 @@ impl ListAttendeeTagsOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

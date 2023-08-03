@@ -56,6 +56,10 @@ impl PutApplicationPolicyInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Appends an item to `statements`.
     ///
     /// To override the contents of this collection use [`set_statements`](Self::set_statements).
@@ -74,6 +78,12 @@ impl PutApplicationPolicyInputBuilder {
     ) -> Self {
         self.statements = input;
         self
+    }
+    /// <p>An array of policy statements applied to the application.</p>
+    pub fn get_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+        &self.statements
     }
     /// Consumes the builder and constructs a [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
     pub fn build(

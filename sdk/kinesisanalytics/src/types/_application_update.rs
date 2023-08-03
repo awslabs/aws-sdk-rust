@@ -89,6 +89,12 @@ impl ApplicationUpdateBuilder {
         self.input_updates = input;
         self
     }
+    /// <p>Describes application input configuration updates.</p>
+    pub fn get_input_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>> {
+        &self.input_updates
+    }
     /// <p>Describes application code updates.</p>
     pub fn application_code_update(
         mut self,
@@ -104,6 +110,10 @@ impl ApplicationUpdateBuilder {
     ) -> Self {
         self.application_code_update = input;
         self
+    }
+    /// <p>Describes application code updates.</p>
+    pub fn get_application_code_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_code_update
     }
     /// Appends an item to `output_updates`.
     ///
@@ -123,6 +133,12 @@ impl ApplicationUpdateBuilder {
     ) -> Self {
         self.output_updates = input;
         self
+    }
+    /// <p>Describes application output configuration updates.</p>
+    pub fn get_output_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>> {
+        &self.output_updates
     }
     /// Appends an item to `reference_data_source_updates`.
     ///
@@ -146,6 +162,12 @@ impl ApplicationUpdateBuilder {
         self.reference_data_source_updates = input;
         self
     }
+    /// <p>Describes application reference data source updates.</p>
+    pub fn get_reference_data_source_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>> {
+        &self.reference_data_source_updates
+    }
     /// Appends an item to `cloud_watch_logging_option_updates`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
@@ -167,6 +189,12 @@ impl ApplicationUpdateBuilder {
     ) -> Self {
         self.cloud_watch_logging_option_updates = input;
         self
+    }
+    /// <p>Describes application CloudWatch logging option updates.</p>
+    pub fn get_cloud_watch_logging_option_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
+        &self.cloud_watch_logging_option_updates
     }
     /// Consumes the builder and constructs a [`ApplicationUpdate`](crate::types::ApplicationUpdate).
     pub fn build(self) -> crate::types::ApplicationUpdate {

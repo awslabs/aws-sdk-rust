@@ -55,6 +55,10 @@ impl UpdateBridgeStateOutputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// The state of the bridge. ACTIVE or STANDBY.
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl UpdateBridgeStateOutputBuilder {
     ) -> Self {
         self.desired_state = input;
         self
+    }
+    /// The state of the bridge. ACTIVE or STANDBY.
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
+        &self.desired_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,14 @@ impl EvaluationFormSingleSelectQuestionAutomationBuilder {
         self.options = input;
         self
     }
+    /// <p>The automation options of the single select question.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>,
+    > {
+        &self.options
+    }
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
     pub fn default_option_ref_id(
         mut self,
@@ -85,6 +93,10 @@ impl EvaluationFormSingleSelectQuestionAutomationBuilder {
     ) -> Self {
         self.default_option_ref_id = input;
         self
+    }
+    /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
+    pub fn get_default_option_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_option_ref_id
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionAutomation`](crate::types::EvaluationFormSingleSelectQuestionAutomation).
     pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionAutomation {

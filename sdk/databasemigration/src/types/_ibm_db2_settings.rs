@@ -139,6 +139,10 @@ impl IbmDb2SettingsBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Database name for the endpoint.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Endpoint connection password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl IbmDb2SettingsBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Endpoint connection password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>Endpoint TCP port. The default value is 50000.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -159,6 +167,10 @@ impl IbmDb2SettingsBuilder {
         self.port = input;
         self
     }
+    /// <p>Endpoint TCP port. The default value is 50000.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -168,6 +180,10 @@ impl IbmDb2SettingsBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>Fully qualified domain name of the endpoint.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
     pub fn set_data_capture_changes(mut self, input: bool) -> Self {
@@ -179,6 +195,10 @@ impl IbmDb2SettingsBuilder {
         self.set_data_capture_changes = input;
         self
     }
+    /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
+    pub fn get_set_data_capture_changes(&self) -> &::std::option::Option<bool> {
+        &self.set_data_capture_changes
+    }
     /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
     pub fn current_lsn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_lsn = ::std::option::Option::Some(input.into());
@@ -188,6 +208,10 @@ impl IbmDb2SettingsBuilder {
     pub fn set_current_lsn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_lsn = input;
         self
+    }
+    /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
+    pub fn get_current_lsn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_lsn
     }
     /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
     pub fn max_k_bytes_per_read(mut self, input: i32) -> Self {
@@ -199,6 +223,10 @@ impl IbmDb2SettingsBuilder {
         self.max_k_bytes_per_read = input;
         self
     }
+    /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
+    pub fn get_max_k_bytes_per_read(&self) -> &::std::option::Option<i32> {
+        &self.max_k_bytes_per_read
+    }
     /// <p>Endpoint connection user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -208,6 +236,10 @@ impl IbmDb2SettingsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>Endpoint connection user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -229,6 +261,14 @@ impl IbmDb2SettingsBuilder {
         self.secrets_manager_access_role_arn = input;
         self
     }
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// </note>
+    pub fn get_secrets_manager_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_access_role_arn
+    }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
     pub fn secrets_manager_secret_id(
         mut self,
@@ -244,6 +284,10 @@ impl IbmDb2SettingsBuilder {
     ) -> Self {
         self.secrets_manager_secret_id = input;
         self
+    }
+    /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
+    pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_secret_id
     }
     /// Consumes the builder and constructs a [`IbmDb2Settings`](crate::types::IbmDb2Settings).
     pub fn build(self) -> crate::types::IbmDb2Settings {

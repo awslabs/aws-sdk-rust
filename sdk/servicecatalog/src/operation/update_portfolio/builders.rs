@@ -37,6 +37,12 @@ impl UpdatePortfolioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePortfolio as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_portfolio::builders::UpdatePortfolioInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,14 @@ impl UpdatePortfolioFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The portfolio identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -150,6 +164,10 @@ impl UpdatePortfolioFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The name to use for display purposes.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +179,10 @@ impl UpdatePortfolioFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The name to use for display purposes.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The updated description of the portfolio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -170,6 +192,10 @@ impl UpdatePortfolioFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated description of the portfolio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The updated name of the portfolio provider.</p>
     pub fn provider_name(
@@ -186,6 +212,10 @@ impl UpdatePortfolioFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
+    }
+    /// <p>The updated name of the portfolio provider.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
     }
     /// Appends an item to `AddTags`.
     ///
@@ -204,6 +234,10 @@ impl UpdatePortfolioFluentBuilder {
         self.inner = self.inner.set_add_tags(input);
         self
     }
+    /// <p>The tags to add.</p>
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_add_tags()
+    }
     /// Appends an item to `RemoveTags`.
     ///
     /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
@@ -220,5 +254,11 @@ impl UpdatePortfolioFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_tags(input);
         self
+    }
+    /// <p>The tags to remove.</p>
+    pub fn get_remove_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_tags()
     }
 }

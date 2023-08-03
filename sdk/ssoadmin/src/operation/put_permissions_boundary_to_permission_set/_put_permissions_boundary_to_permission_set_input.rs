@@ -57,6 +57,10 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn permission_set_arn(
         mut self,
@@ -73,6 +77,10 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         self.permission_set_arn = input;
         self
     }
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
+    }
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
     pub fn permissions_boundary(mut self, input: crate::types::PermissionsBoundary) -> Self {
         self.permissions_boundary = ::std::option::Option::Some(input);
@@ -85,6 +93,12 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
     ) -> Self {
         self.permissions_boundary = input;
         self
+    }
+    /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+    pub fn get_permissions_boundary(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionsBoundary> {
+        &self.permissions_boundary
     }
     /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetInput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{

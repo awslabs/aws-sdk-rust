@@ -88,6 +88,10 @@ impl EnableFastLaunchInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the image for which you’re enabling faster launching.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include: <code>snapshot</code>, which is the default value.</p>
     pub fn resource_type(
         mut self,
@@ -103,6 +107,10 @@ impl EnableFastLaunchInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include: <code>snapshot</code>, which is the default value.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
     pub fn snapshot_configuration(
@@ -120,6 +128,12 @@ impl EnableFastLaunchInputBuilder {
         self.snapshot_configuration = input;
         self
     }
+    /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
+    pub fn get_snapshot_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest> {
+        &self.snapshot_configuration
+    }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
     pub fn launch_template(
         mut self,
@@ -136,6 +150,12 @@ impl EnableFastLaunchInputBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest> {
+        &self.launch_template
+    }
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl EnableFastLaunchInputBuilder {
         self.max_parallel_launches = input;
         self
     }
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
+    pub fn get_max_parallel_launches(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_launches
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl EnableFastLaunchInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableFastLaunchInput`](crate::operation::enable_fast_launch::EnableFastLaunchInput).
     pub fn build(

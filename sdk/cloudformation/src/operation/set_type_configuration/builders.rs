@@ -39,6 +39,12 @@ impl SetTypeConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetTypeConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl SetTypeConfigurationFluentBuilder {
         self.inner = self.inner.set_type_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and Region.</p>
+    /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_arn()
+    }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub fn configuration(
@@ -150,6 +162,11 @@ impl SetTypeConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The configuration data for the extension, in this account and Region.</p>
+    /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration()
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
@@ -169,6 +186,11 @@ impl SetTypeConfigurationFluentBuilder {
         self.inner = self.inner.set_configuration_alias(input);
         self
     }
+    /// <p>An alias by which to refer to this extension configuration data.</p>
+    /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
+    pub fn get_configuration_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_alias()
+    }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,6 +203,11 @@ impl SetTypeConfigurationFluentBuilder {
         self.inner = self.inner.set_type_name(input);
         self
     }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
+    }
     /// <p>The type of extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn r#type(mut self, input: crate::types::ThirdPartyType) -> Self {
@@ -192,5 +219,10 @@ impl SetTypeConfigurationFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of extension.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        self.inner.get_type()
     }
 }

@@ -46,6 +46,10 @@ impl UnsubscribeInputBuilder {
         self.subscription_arn = input;
         self
     }
+    /// <p>The ARN of the subscription to be deleted.</p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
+    }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
     pub fn build(
         self,

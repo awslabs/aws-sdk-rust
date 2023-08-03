@@ -61,6 +61,10 @@ impl GetServiceInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the application.</p>
     pub fn application_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl GetServiceInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The ID of the service.</p>
     pub fn service_identifier(
         mut self,
@@ -92,6 +100,10 @@ impl GetServiceInputBuilder {
     ) -> Self {
         self.service_identifier = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
     pub fn build(

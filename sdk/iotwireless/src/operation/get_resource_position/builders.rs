@@ -36,6 +36,12 @@ impl GetResourcePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourcePosition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetResourcePositionFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -144,5 +154,9 @@ impl GetResourcePositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        self.inner.get_resource_type()
     }
 }

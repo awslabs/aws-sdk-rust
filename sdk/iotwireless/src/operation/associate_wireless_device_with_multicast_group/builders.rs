@@ -36,6 +36,10 @@ impl AssociateWirelessDeviceWithMulticastGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateWirelessDeviceWithMulticastGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateWirelessDeviceWithMulticastGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the wireless device.</p>
     pub fn wireless_device_id(
         mut self,
@@ -115,5 +123,9 @@ impl AssociateWirelessDeviceWithMulticastGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_device_id(input);
         self
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_wireless_device_id()
     }
 }

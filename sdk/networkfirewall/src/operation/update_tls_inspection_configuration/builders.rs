@@ -37,6 +37,10 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTLSInspectionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_tls_inspection_configuration::builders::UpdateTlsInspectionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tls_inspection_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    pub fn get_tls_inspection_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tls_inspection_configuration_arn()
+    }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub fn tls_inspection_configuration_name(
         mut self,
@@ -122,6 +132,12 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
+    }
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    pub fn get_tls_inspection_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tls_inspection_configuration_name()
     }
     /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
@@ -143,6 +159,14 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_tls_inspection_configuration(input);
         self
     }
+    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
+    /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn get_tls_inspection_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsInspectionConfiguration> {
+        self.inner.get_tls_inspection_configuration()
+    }
     /// <p>A description of the TLS inspection configuration. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -152,6 +176,10 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the TLS inspection configuration. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
     pub fn encryption_configuration(
@@ -169,6 +197,12 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,5 +214,10 @@ impl UpdateTLSInspectionConfigurationFluentBuilder {
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_update_token(input);
         self
+    }
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p>
+    /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_update_token()
     }
 }

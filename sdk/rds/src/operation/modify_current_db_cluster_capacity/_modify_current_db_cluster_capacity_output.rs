@@ -84,6 +84,10 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
     pub fn pending_capacity(mut self, input: i32) -> Self {
         self.pending_capacity = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     pub fn set_pending_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending_capacity = input;
         self
+    }
+    /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
+    pub fn get_pending_capacity(&self) -> &::std::option::Option<i32> {
+        &self.pending_capacity
     }
     /// <p>The current capacity of the DB cluster.</p>
     pub fn current_capacity(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
         self.current_capacity = input;
         self
     }
+    /// <p>The current capacity of the DB cluster.</p>
+    pub fn get_current_capacity(&self) -> &::std::option::Option<i32> {
+        &self.current_capacity
+    }
     /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
     pub fn seconds_before_timeout(mut self, input: i32) -> Self {
         self.seconds_before_timeout = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds_before_timeout = input;
         self
+    }
+    /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
+    pub fn get_seconds_before_timeout(&self) -> &::std::option::Option<i32> {
+        &self.seconds_before_timeout
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     pub fn timeout_action(
@@ -129,6 +145,10 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     ) -> Self {
         self.timeout_action = input;
         self
+    }
+    /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    pub fn get_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timeout_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

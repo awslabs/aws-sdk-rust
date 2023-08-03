@@ -142,6 +142,12 @@ impl CreateClusterInputBuilder {
         self.broker_node_group_info = input;
         self
     }
+    /// <p>Information about the broker nodes in the cluster.</p>
+    pub fn get_broker_node_group_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+        &self.broker_node_group_info
+    }
     /// <p>Includes all client authentication related information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
         self.client_authentication = ::std::option::Option::Some(input);
@@ -155,6 +161,12 @@ impl CreateClusterInputBuilder {
         self.client_authentication = input;
         self
     }
+    /// <p>Includes all client authentication related information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+        &self.client_authentication
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -164,6 +176,10 @@ impl CreateClusterInputBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
@@ -178,6 +194,12 @@ impl CreateClusterInputBuilder {
         self.configuration_info = input;
         self
     }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn get_configuration_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        &self.configuration_info
+    }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
         self.encryption_info = ::std::option::Option::Some(input);
@@ -190,6 +212,10 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.encryption_info = input;
         self
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
+        &self.encryption_info
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
@@ -204,6 +230,12 @@ impl CreateClusterInputBuilder {
         self.enhanced_monitoring = input;
         self
     }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+        &self.enhanced_monitoring
+    }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
         self.open_monitoring = ::std::option::Option::Some(input);
@@ -216,6 +248,10 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.open_monitoring = input;
         self
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoringInfo> {
+        &self.open_monitoring
     }
     /// <p>The version of Apache Kafka.</p>
     pub fn kafka_version(
@@ -233,6 +269,10 @@ impl CreateClusterInputBuilder {
         self.kafka_version = input;
         self
     }
+    /// <p>The version of Apache Kafka.</p>
+    pub fn get_kafka_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kafka_version
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
@@ -246,6 +286,10 @@ impl CreateClusterInputBuilder {
         self.logging_info = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        &self.logging_info
+    }
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
         self.number_of_broker_nodes = ::std::option::Option::Some(input);
@@ -255,6 +299,10 @@ impl CreateClusterInputBuilder {
     pub fn set_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_broker_nodes = input;
         self
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn get_number_of_broker_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_broker_nodes
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -281,6 +329,14 @@ impl CreateClusterInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Create tags when creating the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
         self.storage_mode = ::std::option::Option::Some(input);
@@ -293,6 +349,10 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.storage_mode = input;
         self
+    }
+    /// <p>This controls storage mode for supported storage tiers.</p>
+    pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
+        &self.storage_mode
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(

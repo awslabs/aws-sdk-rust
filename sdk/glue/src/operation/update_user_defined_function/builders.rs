@@ -36,6 +36,10 @@ impl UpdateUserDefinedFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserDefinedFunction as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
     pub fn database_name(
         mut self,
@@ -141,6 +149,10 @@ impl UpdateUserDefinedFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name of the catalog database where the function to be updated is located.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
     /// <p>The name of the function.</p>
     pub fn function_name(
@@ -158,6 +170,10 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
+    /// <p>The name of the function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
+    }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
     pub fn function_input(mut self, input: crate::types::UserDefinedFunctionInput) -> Self {
         self.inner = self.inner.function_input(input);
@@ -170,5 +186,11 @@ impl UpdateUserDefinedFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_function_input(input);
         self
+    }
+    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
+    pub fn get_function_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
+        self.inner.get_function_input()
     }
 }

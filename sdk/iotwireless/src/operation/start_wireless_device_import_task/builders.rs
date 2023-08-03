@@ -36,6 +36,10 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartWirelessDeviceImportTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
         self.inner = self.inner.set_destination_name(input);
         self
     }
+    /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the devices in the import task that are onboarded to AWS IoT Wireless.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_name()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
         mut self,
@@ -147,6 +155,10 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -165,6 +177,10 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkStartImportInfo) -> Self {
         self.inner = self.inner.sidewalk(input);
@@ -177,5 +193,9 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
+    }
+    /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkStartImportInfo> {
+        self.inner.get_sidewalk()
     }
 }

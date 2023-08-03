@@ -64,6 +64,10 @@ impl DeleteApplicationOutputInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Amazon Kinesis Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DeleteApplicationOutputInputBuilder {
         self.current_application_version_id = input;
         self
     }
+    /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
+    }
     /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
     pub fn output_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DeleteApplicationOutputInputBuilder {
     pub fn set_output_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_id = input;
         self
+    }
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
+    pub fn get_output_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationOutputInput`](crate::operation::delete_application_output::DeleteApplicationOutputInput).
     pub fn build(

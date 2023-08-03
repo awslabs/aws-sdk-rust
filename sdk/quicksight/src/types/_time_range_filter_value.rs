@@ -60,6 +60,10 @@ impl TimeRangeFilterValueBuilder {
         self.static_value = input;
         self
     }
+    /// <p>The static input value.</p>
+    pub fn get_static_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.static_value
+    }
     /// <p>The rolling date input value.</p>
     pub fn rolling_date(mut self, input: crate::types::RollingDateConfiguration) -> Self {
         self.rolling_date = ::std::option::Option::Some(input);
@@ -73,6 +77,12 @@ impl TimeRangeFilterValueBuilder {
         self.rolling_date = input;
         self
     }
+    /// <p>The rolling date input value.</p>
+    pub fn get_rolling_date(
+        &self,
+    ) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
+        &self.rolling_date
+    }
     /// <p>The parameter type input value.</p>
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter = ::std::option::Option::Some(input.into());
@@ -82,6 +92,10 @@ impl TimeRangeFilterValueBuilder {
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
+    }
+    /// <p>The parameter type input value.</p>
+    pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter
     }
     /// Consumes the builder and constructs a [`TimeRangeFilterValue`](crate::types::TimeRangeFilterValue).
     pub fn build(self) -> crate::types::TimeRangeFilterValue {

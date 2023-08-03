@@ -64,6 +64,10 @@ impl CloudwatchAlarmActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The CloudWatch alarm name.</p>
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CloudwatchAlarmActionBuilder {
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_name = input;
         self
+    }
+    /// <p>The CloudWatch alarm name.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_name
     }
     /// <p>The reason for the alarm change.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl CloudwatchAlarmActionBuilder {
         self.state_reason = input;
         self
     }
+    /// <p>The reason for the alarm change.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
+    }
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
     pub fn state_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_value = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl CloudwatchAlarmActionBuilder {
     pub fn set_state_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_value = input;
         self
+    }
+    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
+    pub fn get_state_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_value
     }
     /// Consumes the builder and constructs a [`CloudwatchAlarmAction`](crate::types::CloudwatchAlarmAction).
     pub fn build(self) -> crate::types::CloudwatchAlarmAction {

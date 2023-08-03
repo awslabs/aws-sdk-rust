@@ -71,6 +71,10 @@ impl UpdateShardCountOutputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The current number of shards.</p>
     pub fn current_shard_count(mut self, input: i32) -> Self {
         self.current_shard_count = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl UpdateShardCountOutputBuilder {
     pub fn set_current_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_shard_count = input;
         self
+    }
+    /// <p>The current number of shards.</p>
+    pub fn get_current_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.current_shard_count
     }
     /// <p>The updated number of shards.</p>
     pub fn target_shard_count(mut self, input: i32) -> Self {
@@ -91,6 +99,10 @@ impl UpdateShardCountOutputBuilder {
         self.target_shard_count = input;
         self
     }
+    /// <p>The updated number of shards.</p>
+    pub fn get_target_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.target_shard_count
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl UpdateShardCountOutputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

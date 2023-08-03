@@ -40,6 +40,10 @@ impl ServiceNowConnectorProfilePropertiesBuilder {
         self.instance_url = input;
         self
     }
+    /// <p> The location of the ServiceNow resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Consumes the builder and constructs a [`ServiceNowConnectorProfileProperties`](crate::types::ServiceNowConnectorProfileProperties).
     pub fn build(self) -> crate::types::ServiceNowConnectorProfileProperties {
         crate::types::ServiceNowConnectorProfileProperties {

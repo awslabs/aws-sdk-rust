@@ -54,6 +54,10 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
         self.identity_pool_name = input;
         self
     }
+    /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
+    pub fn get_identity_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_name
+    }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
     pub fn unauthenticated_login(mut self, input: bool) -> Self {
         self.unauthenticated_login = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
     pub fn set_unauthenticated_login(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unauthenticated_login = input;
         self
+    }
+    /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
+    pub fn get_unauthenticated_login(&self) -> &::std::option::Option<bool> {
+        &self.unauthenticated_login
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthIdentityPoolConfig`](crate::types::CreateBackendAuthIdentityPoolConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthIdentityPoolConfig {

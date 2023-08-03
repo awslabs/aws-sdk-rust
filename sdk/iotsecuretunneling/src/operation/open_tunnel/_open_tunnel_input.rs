@@ -63,6 +63,10 @@ impl OpenTunnelInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A short text description of the tunnel. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -82,6 +86,10 @@ impl OpenTunnelInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A collection of tag metadata.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
@@ -95,6 +103,12 @@ impl OpenTunnelInputBuilder {
         self.destination_config = input;
         self
     }
+    /// <p>The destination configuration for the OpenTunnel request.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        &self.destination_config
+    }
     /// <p>Timeout configuration for a tunnel.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl OpenTunnelInputBuilder {
     ) -> Self {
         self.timeout_config = input;
         self
+    }
+    /// <p>Timeout configuration for a tunnel.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
     }
     /// Consumes the builder and constructs a [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
     pub fn build(

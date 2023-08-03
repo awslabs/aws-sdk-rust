@@ -54,6 +54,10 @@ impl GetCertificateAuthorityCertificateOutputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>Base64-encoded certificate authority (CA) certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
     pub fn certificate_chain(
         mut self,
@@ -69,6 +73,10 @@ impl GetCertificateAuthorityCertificateOutputBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

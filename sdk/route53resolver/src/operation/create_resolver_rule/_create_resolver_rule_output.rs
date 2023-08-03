@@ -50,6 +50,10 @@ impl CreateResolverRuleOutputBuilder {
         self.resolver_rule = input;
         self
     }
+    /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
+    pub fn get_resolver_rule(&self) -> &::std::option::Option<crate::types::ResolverRule> {
+        &self.resolver_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

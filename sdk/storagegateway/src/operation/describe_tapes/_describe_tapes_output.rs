@@ -66,6 +66,10 @@ impl DescribeTapesOutputBuilder {
         self.tapes = input;
         self
     }
+    /// <p>An array of virtual tape descriptions.</p>
+    pub fn get_tapes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tape>> {
+        &self.tapes
+    }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,6 +81,11 @@ impl DescribeTapesOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
+    /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

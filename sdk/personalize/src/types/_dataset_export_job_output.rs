@@ -43,6 +43,10 @@ impl DatasetExportJobOutputBuilder {
         self.s3_data_destination = input;
         self
     }
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn get_s3_data_destination(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
+        &self.s3_data_destination
+    }
     /// Consumes the builder and constructs a [`DatasetExportJobOutput`](crate::types::DatasetExportJobOutput).
     pub fn build(self) -> crate::types::DatasetExportJobOutput {
         crate::types::DatasetExportJobOutput {

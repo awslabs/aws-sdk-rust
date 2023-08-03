@@ -36,6 +36,10 @@ impl DisassociateDataShareConsumerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateDataShareConsumer as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DisassociateDataShareConsumerFluentBuilder {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_share_arn()
+    }
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     pub fn disassociate_entire_account(mut self, input: bool) -> Self {
         self.inner = self.inner.disassociate_entire_account(input);
@@ -142,6 +150,10 @@ impl DisassociateDataShareConsumerFluentBuilder {
         self.inner = self.inner.set_disassociate_entire_account(input);
         self
     }
+    /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
+    pub fn get_disassociate_entire_account(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disassociate_entire_account()
+    }
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
@@ -151,6 +163,10 @@ impl DisassociateDataShareConsumerFluentBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_arn()
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn consumer_region(
@@ -167,5 +183,9 @@ impl DisassociateDataShareConsumerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consumer_region(input);
         self
+    }
+    /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub fn get_consumer_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_region()
     }
 }

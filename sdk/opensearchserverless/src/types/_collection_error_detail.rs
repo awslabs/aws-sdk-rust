@@ -64,6 +64,10 @@ impl CollectionErrorDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CollectionErrorDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
     pub fn error_message(
@@ -90,6 +98,10 @@ impl CollectionErrorDetailBuilder {
         self.error_message = input;
         self
     }
+    /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl CollectionErrorDetailBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`CollectionErrorDetail`](crate::types::CollectionErrorDetail).
     pub fn build(self) -> crate::types::CollectionErrorDetail {

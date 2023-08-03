@@ -50,6 +50,10 @@ impl GetCallAnalyticsJobOutputBuilder {
         self.call_analytics_job = input;
         self
     }
+    /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
+    pub fn get_call_analytics_job(&self) -> &::std::option::Option<crate::types::CallAnalyticsJob> {
+        &self.call_analytics_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

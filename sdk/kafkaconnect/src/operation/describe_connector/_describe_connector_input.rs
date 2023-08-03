@@ -46,6 +46,10 @@ impl DescribeConnectorInputBuilder {
         self.connector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
     pub fn build(
         self,

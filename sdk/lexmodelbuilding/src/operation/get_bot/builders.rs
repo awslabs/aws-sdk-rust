@@ -37,6 +37,10 @@ impl GetBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bot::builders::GetBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetBotFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the bot. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version or alias of the bot.</p>
     pub fn version_or_alias(
         mut self,
@@ -134,5 +142,9 @@ impl GetBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_or_alias(input);
         self
+    }
+    /// <p>The version or alias of the bot.</p>
+    pub fn get_version_or_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_or_alias()
     }
 }

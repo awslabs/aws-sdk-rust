@@ -90,6 +90,10 @@ impl ResourceInUseExceptionBuilder {
         self.reference_type = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_reference_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
+        &self.reference_type
+    }
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn example_reference(mut self, input: crate::types::ResourceReference) -> Self {
         self.example_reference = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl ResourceInUseExceptionBuilder {
         self.example_reference = input;
         self
     }
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
+    pub fn get_example_reference(&self) -> &::std::option::Option<crate::types::ResourceReference> {
+        &self.example_reference
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl ResourceInUseExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

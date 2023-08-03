@@ -50,6 +50,10 @@ impl VoiceSettingsBuilder {
         self.voice_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Polly voice to use.</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
+    }
     /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
     pub fn engine(mut self, input: crate::types::VoiceEngine) -> Self {
@@ -61,6 +65,11 @@ impl VoiceSettingsBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::VoiceEngine>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
+    /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::VoiceEngine> {
+        &self.engine
     }
     /// Consumes the builder and constructs a [`VoiceSettings`](crate::types::VoiceSettings).
     pub fn build(self) -> crate::types::VoiceSettings {

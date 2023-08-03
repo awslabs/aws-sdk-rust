@@ -69,6 +69,12 @@ impl ListScheduledAuditsOutputBuilder {
         self.scheduled_audits = input;
         self
     }
+    /// <p>The list of scheduled audits.</p>
+    pub fn get_scheduled_audits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>> {
+        &self.scheduled_audits
+    }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListScheduledAuditsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

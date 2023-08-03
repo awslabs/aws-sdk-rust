@@ -51,6 +51,10 @@ impl UpdateOutpostResolverOutputBuilder {
         self.outpost_resolver = input;
         self
     }
+    /// <p>The response to an <code>UpdateOutpostResolver</code> request.</p>
+    pub fn get_outpost_resolver(&self) -> &::std::option::Option<crate::types::OutpostResolver> {
+        &self.outpost_resolver
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

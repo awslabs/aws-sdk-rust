@@ -61,6 +61,12 @@ impl InputIdentifierBuilder {
         self.iot_events_input_identifier = input;
         self
     }
+    /// <p> The identifier of the input routed to AWS IoT Events. </p>
+    pub fn get_iot_events_input_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::IotEventsInputIdentifier> {
+        &self.iot_events_input_identifier
+    }
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
     pub fn iot_site_wise_input_identifier(
         mut self,
@@ -76,6 +82,12 @@ impl InputIdentifierBuilder {
     ) -> Self {
         self.iot_site_wise_input_identifier = input;
         self
+    }
+    /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
+    pub fn get_iot_site_wise_input_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::IotSiteWiseInputIdentifier> {
+        &self.iot_site_wise_input_identifier
     }
     /// Consumes the builder and constructs a [`InputIdentifier`](crate::types::InputIdentifier).
     pub fn build(self) -> crate::types::InputIdentifier {

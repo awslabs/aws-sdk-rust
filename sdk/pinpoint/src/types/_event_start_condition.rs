@@ -51,6 +51,10 @@ impl EventStartConditionBuilder {
         self.event_filter = input;
         self
     }
+    /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
+    pub fn get_event_filter(&self) -> &::std::option::Option<crate::types::EventFilter> {
+        &self.event_filter
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl EventStartConditionBuilder {
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_id = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
     }
     /// Consumes the builder and constructs a [`EventStartCondition`](crate::types::EventStartCondition).
     pub fn build(self) -> crate::types::EventStartCondition {

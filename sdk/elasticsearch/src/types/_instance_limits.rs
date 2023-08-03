@@ -45,6 +45,12 @@ impl InstanceLimitsBuilder {
         self.instance_count_limits = input;
         self
     }
+    /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
+    pub fn get_instance_count_limits(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceCountLimits> {
+        &self.instance_count_limits
+    }
     /// Consumes the builder and constructs a [`InstanceLimits`](crate::types::InstanceLimits).
     pub fn build(self) -> crate::types::InstanceLimits {
         crate::types::InstanceLimits {

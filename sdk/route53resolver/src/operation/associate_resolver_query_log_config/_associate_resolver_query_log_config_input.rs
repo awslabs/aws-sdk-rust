@@ -57,6 +57,12 @@ impl AssociateResolverQueryLogConfigInputBuilder {
         self.resolver_query_log_config_id = input;
         self
     }
+    /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
+    pub fn get_resolver_query_log_config_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_query_log_config_id
+    }
     /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
@@ -70,6 +76,12 @@ impl AssociateResolverQueryLogConfigInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
+    /// </note>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`AssociateResolverQueryLogConfigInput`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigInput).
     pub fn build(

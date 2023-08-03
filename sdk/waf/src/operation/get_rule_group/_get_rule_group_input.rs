@@ -45,6 +45,10 @@ impl GetRuleGroupInputBuilder {
         self.rule_group_id = input;
         self
     }
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
+    }
     /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
     pub fn build(
         self,

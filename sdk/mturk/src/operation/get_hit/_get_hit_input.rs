@@ -39,6 +39,10 @@ impl GetHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p>The ID of the HIT to be retrieved.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// Consumes the builder and constructs a [`GetHitInput`](crate::operation::get_hit::GetHitInput).
     pub fn build(
         self,

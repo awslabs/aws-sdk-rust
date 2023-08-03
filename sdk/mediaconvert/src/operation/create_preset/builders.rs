@@ -36,6 +36,10 @@ impl CreatePresetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePreset as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_preset::builders::CreatePresetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// Optional. A category for the preset you are creating.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category()
+    }
     /// Optional. A description of the preset you are creating.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// Optional. A description of the preset you are creating.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// The name of the preset you are creating.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +149,10 @@ impl CreatePresetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name of the preset you are creating.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Settings for preset
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
@@ -150,6 +166,10 @@ impl CreatePresetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// Settings for preset
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::PresetSettings> {
+        self.inner.get_settings()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -173,5 +193,13 @@ impl CreatePresetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -104,6 +104,10 @@ impl AssessmentControlBuilder {
         self.id = input;
         self
     }
+    /// <p> The identifier for the control. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of the control. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl AssessmentControlBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the control. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The description of the control. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl AssessmentControlBuilder {
         self.description = input;
         self
     }
+    /// <p> The description of the control. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The status of the control. </p>
     pub fn status(mut self, input: crate::types::ControlStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl AssessmentControlBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the control. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
+        &self.status
     }
     /// <p> The response of the control. </p>
     pub fn response(mut self, input: crate::types::ControlResponse) -> Self {
@@ -146,6 +162,10 @@ impl AssessmentControlBuilder {
     ) -> Self {
         self.response = input;
         self
+    }
+    /// <p> The response of the control. </p>
+    pub fn get_response(&self) -> &::std::option::Option<crate::types::ControlResponse> {
+        &self.response
     }
     /// Appends an item to `comments`.
     ///
@@ -165,6 +185,12 @@ impl AssessmentControlBuilder {
     ) -> Self {
         self.comments = input;
         self
+    }
+    /// <p> The list of comments that's attached to the control. </p>
+    pub fn get_comments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlComment>> {
+        &self.comments
     }
     /// Appends an item to `evidence_sources`.
     ///
@@ -188,6 +214,12 @@ impl AssessmentControlBuilder {
         self.evidence_sources = input;
         self
     }
+    /// <p> The list of data sources for the evidence. </p>
+    pub fn get_evidence_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.evidence_sources
+    }
     /// <p> The amount of evidence that's collected for the control. </p>
     pub fn evidence_count(mut self, input: i32) -> Self {
         self.evidence_count = ::std::option::Option::Some(input);
@@ -197,6 +229,10 @@ impl AssessmentControlBuilder {
     pub fn set_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evidence_count = input;
         self
+    }
+    /// <p> The amount of evidence that's collected for the control. </p>
+    pub fn get_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_count
     }
     /// <p> The amount of evidence in the assessment report. </p>
     pub fn assessment_report_evidence_count(mut self, input: i32) -> Self {
@@ -210,6 +246,10 @@ impl AssessmentControlBuilder {
     ) -> Self {
         self.assessment_report_evidence_count = input;
         self
+    }
+    /// <p> The amount of evidence in the assessment report. </p>
+    pub fn get_assessment_report_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.assessment_report_evidence_count
     }
     /// Consumes the builder and constructs a [`AssessmentControl`](crate::types::AssessmentControl).
     pub fn build(self) -> crate::types::AssessmentControl {

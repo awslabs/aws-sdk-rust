@@ -40,6 +40,10 @@ impl DeleteAgentInputBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
     pub fn build(
         self,

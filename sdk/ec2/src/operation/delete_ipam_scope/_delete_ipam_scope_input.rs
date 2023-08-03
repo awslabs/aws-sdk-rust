@@ -47,6 +47,10 @@ impl DeleteIpamScopeInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the scope to delete.</p>
     pub fn ipam_scope_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteIpamScopeInputBuilder {
     ) -> Self {
         self.ipam_scope_id = input;
         self
+    }
+    /// <p>The ID of the scope to delete.</p>
+    pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_scope_id
     }
     /// Consumes the builder and constructs a [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
     pub fn build(

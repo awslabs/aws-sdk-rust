@@ -70,6 +70,10 @@ impl CampaignHookBuilder {
         self.lambda_function_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
+    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_name
+    }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
     /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
@@ -88,6 +92,14 @@ impl CampaignHookBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
+    /// <ul>
+    /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
+    /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
+    /// </ul>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::Mode> {
+        &self.mode
+    }
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
     pub fn web_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_url = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl CampaignHookBuilder {
     pub fn set_web_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_url = input;
         self
+    }
+    /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
+    pub fn get_web_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_url
     }
     /// Consumes the builder and constructs a [`CampaignHook`](crate::types::CampaignHook).
     pub fn build(self) -> crate::types::CampaignHook {

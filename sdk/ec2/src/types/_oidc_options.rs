@@ -99,6 +99,10 @@ impl OidcOptionsBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The OIDC issuer.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>The OIDC authorization endpoint.</p>
     pub fn authorization_endpoint(
         mut self,
@@ -114,6 +118,10 @@ impl OidcOptionsBuilder {
     ) -> Self {
         self.authorization_endpoint = input;
         self
+    }
+    /// <p>The OIDC authorization endpoint.</p>
+    pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_endpoint
     }
     /// <p>The OIDC token endpoint.</p>
     pub fn token_endpoint(
@@ -131,6 +139,10 @@ impl OidcOptionsBuilder {
         self.token_endpoint = input;
         self
     }
+    /// <p>The OIDC token endpoint.</p>
+    pub fn get_token_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_endpoint
+    }
     /// <p>The OIDC user info endpoint.</p>
     pub fn user_info_endpoint(
         mut self,
@@ -147,6 +159,10 @@ impl OidcOptionsBuilder {
         self.user_info_endpoint = input;
         self
     }
+    /// <p>The OIDC user info endpoint.</p>
+    pub fn get_user_info_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_info_endpoint
+    }
     /// <p>The client identifier.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -156,6 +172,10 @@ impl OidcOptionsBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client identifier.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The client secret.</p>
     pub fn client_secret(
@@ -173,6 +193,10 @@ impl OidcOptionsBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>The client secret.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>The OpenID Connect (OIDC) scope specified.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scope = ::std::option::Option::Some(input.into());
@@ -182,6 +206,10 @@ impl OidcOptionsBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>The OpenID Connect (OIDC) scope specified.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
     }
     /// Consumes the builder and constructs a [`OidcOptions`](crate::types::OidcOptions).
     pub fn build(self) -> crate::types::OidcOptions {

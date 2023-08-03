@@ -113,6 +113,10 @@ impl CreateCommentInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl CreateCommentInputBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>The ID of the document version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +141,10 @@ impl CreateCommentInputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The ID of the document version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>The ID of the parent comment.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl CreateCommentInputBuilder {
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
+    }
+    /// <p>The ID of the parent comment.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_id
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn thread_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +169,10 @@ impl CreateCommentInputBuilder {
         self.thread_id = input;
         self
     }
+    /// <p>The ID of the root comment in the thread.</p>
+    pub fn get_thread_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thread_id
+    }
     /// <p>The text of the comment.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -162,6 +182,10 @@ impl CreateCommentInputBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The text of the comment.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(mut self, input: crate::types::CommentVisibilityType) -> Self {
@@ -176,6 +200,10 @@ impl CreateCommentInputBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::CommentVisibilityType> {
+        &self.visibility
+    }
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub fn notify_collaborators(mut self, input: bool) -> Self {
         self.notify_collaborators = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl CreateCommentInputBuilder {
     pub fn set_notify_collaborators(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_collaborators = input;
         self
+    }
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
+    pub fn get_notify_collaborators(&self) -> &::std::option::Option<bool> {
+        &self.notify_collaborators
     }
     /// Consumes the builder and constructs a [`CreateCommentInput`](crate::operation::create_comment::CreateCommentInput).
     pub fn build(

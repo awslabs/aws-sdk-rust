@@ -61,6 +61,10 @@ impl RowLevelPermissionTagConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// Appends an item to `tag_rules`.
     ///
     /// To override the contents of this collection use [`set_tag_rules`](Self::set_tag_rules).
@@ -79,6 +83,12 @@ impl RowLevelPermissionTagConfigurationBuilder {
     ) -> Self {
         self.tag_rules = input;
         self
+    }
+    /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
+    pub fn get_tag_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RowLevelPermissionTagRule>> {
+        &self.tag_rules
     }
     /// Appends an item to `tag_rule_configurations`.
     ///
@@ -101,6 +111,12 @@ impl RowLevelPermissionTagConfigurationBuilder {
     ) -> Self {
         self.tag_rule_configurations = input;
         self
+    }
+    /// <p>A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to it to apply Row-level security (RLS) to the dataset.</p>
+    pub fn get_tag_rule_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.tag_rule_configurations
     }
     /// Consumes the builder and constructs a [`RowLevelPermissionTagConfiguration`](crate::types::RowLevelPermissionTagConfiguration).
     pub fn build(self) -> crate::types::RowLevelPermissionTagConfiguration {

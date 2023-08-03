@@ -96,6 +96,10 @@ impl NetworkAclEntryBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl NetworkAclEntryBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>ICMP protocol: The ICMP type and code.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -118,6 +126,10 @@ impl NetworkAclEntryBuilder {
     ) -> Self {
         self.icmp_type_code = input;
         self
+    }
+    /// <p>ICMP protocol: The ICMP type and code.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        &self.icmp_type_code
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
     pub fn ipv6_cidr_block(
@@ -135,6 +147,10 @@ impl NetworkAclEntryBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
         self.port_range = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl NetworkAclEntryBuilder {
         self.port_range = input;
         self
     }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.port_range
+    }
     /// <p>The protocol number. A value of "-1" means all protocols.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl NetworkAclEntryBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol number. A value of "-1" means all protocols.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -168,6 +192,10 @@ impl NetworkAclEntryBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.rule_action
+    }
     /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl NetworkAclEntryBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`NetworkAclEntry`](crate::types::NetworkAclEntry).
     pub fn build(self) -> crate::types::NetworkAclEntry {

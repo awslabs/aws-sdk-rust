@@ -36,6 +36,12 @@ impl CreateNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNotification as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_notification::builders::CreateNotificationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateNotificationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -135,6 +145,10 @@ impl CreateNotificationFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
     /// <p>The notification that you want to create.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -148,6 +162,10 @@ impl CreateNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
+    }
+    /// <p>The notification that you want to create.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_notification()
     }
     /// Appends an item to `Subscribers`.
     ///
@@ -165,5 +183,11 @@ impl CreateNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
+    }
+    /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        self.inner.get_subscribers()
     }
 }

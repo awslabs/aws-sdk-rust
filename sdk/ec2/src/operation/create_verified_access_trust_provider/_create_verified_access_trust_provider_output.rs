@@ -56,6 +56,12 @@ impl CreateVerifiedAccessTrustProviderOutputBuilder {
         self.verified_access_trust_provider = input;
         self
     }
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn get_verified_access_trust_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessTrustProvider> {
+        &self.verified_access_trust_provider
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

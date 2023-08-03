@@ -49,6 +49,10 @@ impl GetActionTypeOutputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The action type information for the requested action type, such as the action type ID.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionTypeDeclaration> {
+        &self.action_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

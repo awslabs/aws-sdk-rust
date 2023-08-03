@@ -59,6 +59,14 @@ impl DashboardOptionsBuilder {
         self.engagement_metrics = input;
         self
     }
+    /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
+    /// </ul>
+    pub fn get_engagement_metrics(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.engagement_metrics
+    }
     /// Consumes the builder and constructs a [`DashboardOptions`](crate::types::DashboardOptions).
     pub fn build(self) -> crate::types::DashboardOptions {
         crate::types::DashboardOptions {

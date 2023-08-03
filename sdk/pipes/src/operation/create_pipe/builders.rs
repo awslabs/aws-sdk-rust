@@ -36,6 +36,10 @@ impl CreatePipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePipe as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_pipe::builders::CreatePipeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreatePipeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the pipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the pipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl CreatePipeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the pipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The state the pipe should be in.</p>
     pub fn desired_state(mut self, input: crate::types::RequestedPipeState) -> Self {
@@ -141,6 +153,10 @@ impl CreatePipeFluentBuilder {
         self.inner = self.inner.set_desired_state(input);
         self
     }
+    /// <p>The state the pipe should be in.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeState> {
+        self.inner.get_desired_state()
+    }
     /// <p>The ARN of the source resource.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
@@ -150,6 +166,10 @@ impl CreatePipeFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The ARN of the source resource.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source()
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
     pub fn source_parameters(mut self, input: crate::types::PipeSourceParameters) -> Self {
@@ -164,6 +184,12 @@ impl CreatePipeFluentBuilder {
         self.inner = self.inner.set_source_parameters(input);
         self
     }
+    /// <p>The parameters required to set up a source for your pipe.</p>
+    pub fn get_source_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipeSourceParameters> {
+        self.inner.get_source_parameters()
+    }
     /// <p>The ARN of the enrichment resource.</p>
     pub fn enrichment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enrichment(input.into());
@@ -173,6 +199,10 @@ impl CreatePipeFluentBuilder {
     pub fn set_enrichment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_enrichment(input);
         self
+    }
+    /// <p>The ARN of the enrichment resource.</p>
+    pub fn get_enrichment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_enrichment()
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
     pub fn enrichment_parameters(mut self, input: crate::types::PipeEnrichmentParameters) -> Self {
@@ -187,6 +217,12 @@ impl CreatePipeFluentBuilder {
         self.inner = self.inner.set_enrichment_parameters(input);
         self
     }
+    /// <p>The parameters required to set up enrichment on your pipe.</p>
+    pub fn get_enrichment_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
+        self.inner.get_enrichment_parameters()
+    }
     /// <p>The ARN of the target resource.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -196,6 +232,10 @@ impl CreatePipeFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The ARN of the target resource.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
@@ -210,6 +250,12 @@ impl CreatePipeFluentBuilder {
         self.inner = self.inner.set_target_parameters(input);
         self
     }
+    /// <p>The parameters required to set up a target for your pipe.</p>
+    pub fn get_target_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipeTargetParameters> {
+        self.inner.get_target_parameters()
+    }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -219,6 +265,10 @@ impl CreatePipeFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -242,5 +292,13 @@ impl CreatePipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The list of key-value pairs to associate with the pipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

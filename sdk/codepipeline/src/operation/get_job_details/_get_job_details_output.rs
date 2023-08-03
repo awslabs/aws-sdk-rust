@@ -58,6 +58,12 @@ impl GetJobDetailsOutputBuilder {
         self.job_details = input;
         self
     }
+    /// <p>The details of the job.</p> <note>
+    /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
+    /// </note>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
+        &self.job_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

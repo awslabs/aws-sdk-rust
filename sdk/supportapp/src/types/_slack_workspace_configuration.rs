@@ -56,6 +56,10 @@ impl SlackWorkspaceConfigurationBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// <p>The name of the Slack workspace.</p>
     pub fn team_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl SlackWorkspaceConfigurationBuilder {
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_name = input;
         self
+    }
+    /// <p>The name of the Slack workspace.</p>
+    pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_name
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn allow_organization_member_account(mut self, input: bool) -> Self {
@@ -78,6 +86,10 @@ impl SlackWorkspaceConfigurationBuilder {
     ) -> Self {
         self.allow_organization_member_account = input;
         self
+    }
+    /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+    pub fn get_allow_organization_member_account(&self) -> &::std::option::Option<bool> {
+        &self.allow_organization_member_account
     }
     /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
     pub fn build(self) -> crate::types::SlackWorkspaceConfiguration {

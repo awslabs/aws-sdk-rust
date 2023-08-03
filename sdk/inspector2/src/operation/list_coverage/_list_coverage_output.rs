@@ -55,6 +55,10 @@ impl ListCoverageOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `covered_resources`.
     ///
     /// To override the contents of this collection use [`set_covered_resources`](Self::set_covered_resources).
@@ -73,6 +77,12 @@ impl ListCoverageOutputBuilder {
     ) -> Self {
         self.covered_resources = input;
         self
+    }
+    /// <p>An object that contains details on the covered resources in your environment.</p>
+    pub fn get_covered_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>> {
+        &self.covered_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

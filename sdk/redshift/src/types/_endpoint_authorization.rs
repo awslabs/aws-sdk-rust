@@ -104,6 +104,10 @@ impl EndpointAuthorizationBuilder {
         self.grantor = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn get_grantor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantor
+    }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub fn grantee(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl EndpointAuthorizationBuilder {
     pub fn set_grantee(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee
     }
     /// <p>The cluster identifier.</p>
     pub fn cluster_identifier(
@@ -130,6 +138,10 @@ impl EndpointAuthorizationBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The time (UTC) when the authorization was created.</p>
     pub fn authorize_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.authorize_time = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl EndpointAuthorizationBuilder {
     ) -> Self {
         self.authorize_time = input;
         self
+    }
+    /// <p>The time (UTC) when the authorization was created.</p>
+    pub fn get_authorize_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.authorize_time
     }
     /// <p>The status of the cluster.</p>
     pub fn cluster_status(
@@ -159,6 +175,10 @@ impl EndpointAuthorizationBuilder {
         self.cluster_status = input;
         self
     }
+    /// <p>The status of the cluster.</p>
+    pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_status
+    }
     /// <p>The status of the authorization action.</p>
     pub fn status(mut self, input: crate::types::AuthorizationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl EndpointAuthorizationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the authorization action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AuthorizationStatus> {
+        &self.status
+    }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     pub fn allowed_all_vp_cs(mut self, input: bool) -> Self {
         self.allowed_all_vp_cs = ::std::option::Option::Some(input);
@@ -181,6 +205,10 @@ impl EndpointAuthorizationBuilder {
     pub fn set_allowed_all_vp_cs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_all_vp_cs = input;
         self
+    }
+    /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    pub fn get_allowed_all_vp_cs(&self) -> &::std::option::Option<bool> {
+        &self.allowed_all_vp_cs
     }
     /// Appends an item to `allowed_vp_cs`.
     ///
@@ -204,6 +232,12 @@ impl EndpointAuthorizationBuilder {
         self.allowed_vp_cs = input;
         self
     }
+    /// <p>The VPCs allowed access to the cluster.</p>
+    pub fn get_allowed_vp_cs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_vp_cs
+    }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(mut self, input: i32) -> Self {
         self.endpoint_count = ::std::option::Option::Some(input);
@@ -213,6 +247,10 @@ impl EndpointAuthorizationBuilder {
     pub fn set_endpoint_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.endpoint_count = input;
         self
+    }
+    /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    pub fn get_endpoint_count(&self) -> &::std::option::Option<i32> {
+        &self.endpoint_count
     }
     /// Consumes the builder and constructs a [`EndpointAuthorization`](crate::types::EndpointAuthorization).
     pub fn build(self) -> crate::types::EndpointAuthorization {

@@ -73,6 +73,10 @@ impl DescribePortfolioSharesInputBuilder {
         self.portfolio_id = input;
         self
     }
+    /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
+    }
     /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
     /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
     /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
@@ -94,6 +98,14 @@ impl DescribePortfolioSharesInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
+    /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DescribePortfolioShareType> {
+        &self.r#type
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DescribePortfolioSharesInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl DescribePortfolioSharesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
     pub fn build(

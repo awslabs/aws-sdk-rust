@@ -58,6 +58,10 @@ impl SheetElementRenderingRuleBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression of the rendering rules of a sheet.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
     pub fn configuration_overrides(
         mut self,
@@ -73,6 +77,12 @@ impl SheetElementRenderingRuleBuilder {
     ) -> Self {
         self.configuration_overrides = input;
         self
+    }
+    /// <p>The override configuration of the rendering rules of a sheet.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::SheetElementConfigurationOverrides> {
+        &self.configuration_overrides
     }
     /// Consumes the builder and constructs a [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).
     pub fn build(self) -> crate::types::SheetElementRenderingRule {

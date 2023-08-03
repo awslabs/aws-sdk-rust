@@ -54,6 +54,10 @@ impl CreateAssessmentTemplateOutputBuilder {
         self.assessment_template_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment template that is created.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_template_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

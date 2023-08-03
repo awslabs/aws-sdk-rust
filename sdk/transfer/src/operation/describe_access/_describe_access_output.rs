@@ -54,6 +54,10 @@ impl DescribeAccessOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The external identifier of the server that the access is attached to.</p>
     pub fn access(mut self, input: crate::types::DescribedAccess) -> Self {
         self.access = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DescribeAccessOutputBuilder {
     ) -> Self {
         self.access = input;
         self
+    }
+    /// <p>The external identifier of the server that the access is attached to.</p>
+    pub fn get_access(&self) -> &::std::option::Option<crate::types::DescribedAccess> {
+        &self.access
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

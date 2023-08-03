@@ -51,6 +51,12 @@ impl CreateOrganizationalUnitOutputBuilder {
         self.organizational_unit = input;
         self
     }
+    /// <p>A structure that contains details about the newly created OU.</p>
+    pub fn get_organizational_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationalUnit> {
+        &self.organizational_unit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

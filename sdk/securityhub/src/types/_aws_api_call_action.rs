@@ -110,6 +110,10 @@ impl AwsApiCallActionBuilder {
         self.api = input;
         self
     }
+    /// <p>The name of the API method that was issued.</p>
+    pub fn get_api(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api
+    }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl AwsApiCallActionBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
     pub fn caller_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_type = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl AwsApiCallActionBuilder {
     pub fn set_caller_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_type = input;
         self
+    }
+    /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
+    pub fn get_caller_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_type
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn remote_ip_details(mut self, input: crate::types::ActionRemoteIpDetails) -> Self {
@@ -143,6 +155,12 @@ impl AwsApiCallActionBuilder {
         self.remote_ip_details = input;
         self
     }
+    /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
+    pub fn get_remote_ip_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActionRemoteIpDetails> {
+        &self.remote_ip_details
+    }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
     pub fn domain_details(mut self, input: crate::types::AwsApiCallActionDomainDetails) -> Self {
         self.domain_details = ::std::option::Option::Some(input);
@@ -155,6 +173,12 @@ impl AwsApiCallActionBuilder {
     ) -> Self {
         self.domain_details = input;
         self
+    }
+    /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
+    pub fn get_domain_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiCallActionDomainDetails> {
+        &self.domain_details
     }
     /// Adds a key-value pair to `affected_resources`.
     ///
@@ -181,6 +205,14 @@ impl AwsApiCallActionBuilder {
         self.affected_resources = input;
         self
     }
+    /// <p>Identifies the resources that were affected by the API call.</p>
+    pub fn get_affected_resources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.affected_resources
+    }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,6 +225,11 @@ impl AwsApiCallActionBuilder {
         self.first_seen = input;
         self
     }
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn get_first_seen(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_seen
+    }
     /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,6 +241,11 @@ impl AwsApiCallActionBuilder {
     pub fn set_last_seen(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_seen = input;
         self
+    }
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn get_last_seen(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_seen
     }
     /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::types::AwsApiCallAction).
     pub fn build(self) -> crate::types::AwsApiCallAction {

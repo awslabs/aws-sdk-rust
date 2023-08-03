@@ -55,6 +55,10 @@ impl GetBlueprintInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn include_blueprint(mut self, input: bool) -> Self {
         self.include_blueprint = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl GetBlueprintInputBuilder {
         self.include_blueprint = input;
         self
     }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn get_include_blueprint(&self) -> &::std::option::Option<bool> {
+        &self.include_blueprint
+    }
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub fn include_parameter_spec(mut self, input: bool) -> Self {
         self.include_parameter_spec = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl GetBlueprintInputBuilder {
     pub fn set_include_parameter_spec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_parameter_spec = input;
         self
+    }
+    /// <p>Specifies whether or not to include the parameter specification.</p>
+    pub fn get_include_parameter_spec(&self) -> &::std::option::Option<bool> {
+        &self.include_parameter_spec
     }
     /// Consumes the builder and constructs a [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
     pub fn build(

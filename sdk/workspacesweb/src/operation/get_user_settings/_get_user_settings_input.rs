@@ -45,6 +45,10 @@ impl GetUserSettingsInputBuilder {
         self.user_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user settings.</p>
+    pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_settings_arn
+    }
     /// Consumes the builder and constructs a [`GetUserSettingsInput`](crate::operation::get_user_settings::GetUserSettingsInput).
     pub fn build(
         self,

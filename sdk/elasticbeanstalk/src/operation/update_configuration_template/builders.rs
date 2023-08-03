@@ -42,6 +42,10 @@ impl UpdateConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,11 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application associated with the configuration template to update.</p>
+    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn template_name(
@@ -158,6 +167,11 @@ impl UpdateConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the configuration template to update.</p>
+    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>A new description for the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -167,6 +181,10 @@ impl UpdateConfigurationTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description for the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `OptionSettings`.
     ///
@@ -184,6 +202,12 @@ impl UpdateConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
+    }
+    /// <p>A list of configuration option settings to update with the new specified option value.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+        self.inner.get_option_settings()
     }
     /// Appends an item to `OptionsToRemove`.
     ///
@@ -203,5 +227,12 @@ impl UpdateConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
+    }
+    /// <p>A list of configuration options to remove from the configuration set.</p>
+    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    pub fn get_options_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+        self.inner.get_options_to_remove()
     }
 }

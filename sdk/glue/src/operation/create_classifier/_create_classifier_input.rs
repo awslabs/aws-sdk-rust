@@ -75,6 +75,12 @@ impl CreateClassifierInputBuilder {
         self.grok_classifier = input;
         self
     }
+    /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_grok_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateGrokClassifierRequest> {
+        &self.grok_classifier
+    }
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
     pub fn xml_classifier(mut self, input: crate::types::CreateXmlClassifierRequest) -> Self {
         self.xml_classifier = ::std::option::Option::Some(input);
@@ -87,6 +93,12 @@ impl CreateClassifierInputBuilder {
     ) -> Self {
         self.xml_classifier = input;
         self
+    }
+    /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_xml_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateXmlClassifierRequest> {
+        &self.xml_classifier
     }
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
     pub fn json_classifier(mut self, input: crate::types::CreateJsonClassifierRequest) -> Self {
@@ -101,6 +113,12 @@ impl CreateClassifierInputBuilder {
         self.json_classifier = input;
         self
     }
+    /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_json_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateJsonClassifierRequest> {
+        &self.json_classifier
+    }
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
     pub fn csv_classifier(mut self, input: crate::types::CreateCsvClassifierRequest) -> Self {
         self.csv_classifier = ::std::option::Option::Some(input);
@@ -113,6 +131,12 @@ impl CreateClassifierInputBuilder {
     ) -> Self {
         self.csv_classifier = input;
         self
+    }
+    /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+    pub fn get_csv_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateCsvClassifierRequest> {
+        &self.csv_classifier
     }
     /// Consumes the builder and constructs a [`CreateClassifierInput`](crate::operation::create_classifier::CreateClassifierInput).
     pub fn build(

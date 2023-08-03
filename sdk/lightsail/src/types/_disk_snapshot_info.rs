@@ -40,6 +40,10 @@ impl DiskSnapshotInfoBuilder {
         self.size_in_gb = input;
         self
     }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
+    }
     /// Consumes the builder and constructs a [`DiskSnapshotInfo`](crate::types::DiskSnapshotInfo).
     pub fn build(self) -> crate::types::DiskSnapshotInfo {
         crate::types::DiskSnapshotInfo {

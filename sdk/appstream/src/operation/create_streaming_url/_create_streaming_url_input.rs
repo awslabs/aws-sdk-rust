@@ -80,6 +80,10 @@ impl CreateStreamingUrlInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The name of the fleet.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CreateStreamingUrlInputBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The identifier of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl CreateStreamingUrlInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub fn application_id(
@@ -116,6 +128,10 @@ impl CreateStreamingUrlInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub fn validity(mut self, input: i64) -> Self {
         self.validity = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl CreateStreamingUrlInputBuilder {
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<i64> {
+        &self.validity
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn session_context(
@@ -141,6 +161,10 @@ impl CreateStreamingUrlInputBuilder {
     ) -> Self {
         self.session_context = input;
         self
+    }
+    /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_session_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_context
     }
     /// Consumes the builder and constructs a [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
     pub fn build(

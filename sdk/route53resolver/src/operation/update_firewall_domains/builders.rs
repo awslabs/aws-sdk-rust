@@ -36,6 +36,13 @@ impl UpdateFirewallDomainsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFirewallDomains as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateFirewallDomainsFluentBuilder {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
+    /// <p>The ID of the domain list whose domains you want to update. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_domain_list_id()
+    }
     /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
     /// <ul>
     /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
@@ -154,6 +165,17 @@ impl UpdateFirewallDomainsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operation(input);
         self
+    }
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
+    /// </ul>
+    pub fn get_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
+        self.inner.get_operation()
     }
     /// Appends an item to `Domains`.
     ///
@@ -187,5 +209,17 @@ impl UpdateFirewallDomainsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domains(input);
         self
+    }
+    /// <p>A list of domains to use in the update operation.</p> <important>
+    /// <p>There is a limit of 1000 domains per request.</p>
+    /// </important>
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
+    /// <ul>
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
+    /// </ul>
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_domains()
     }
 }

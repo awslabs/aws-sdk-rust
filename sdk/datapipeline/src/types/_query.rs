@@ -49,6 +49,10 @@ impl QueryBuilder {
         self.selectors = input;
         self
     }
+    /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
+    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Selector>> {
+        &self.selectors
+    }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
     pub fn build(self) -> crate::types::Query {
         crate::types::Query {

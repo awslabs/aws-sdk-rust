@@ -40,6 +40,10 @@ impl StreamProcessingStopSelectorBuilder {
         self.max_duration_in_seconds = input;
         self
     }
+    /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
+    pub fn get_max_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.max_duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`StreamProcessingStopSelector`](crate::types::StreamProcessingStopSelector).
     pub fn build(self) -> crate::types::StreamProcessingStopSelector {
         crate::types::StreamProcessingStopSelector {

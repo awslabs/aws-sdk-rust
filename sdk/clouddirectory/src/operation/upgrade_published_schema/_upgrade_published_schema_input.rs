@@ -71,6 +71,10 @@ impl UpgradePublishedSchemaInputBuilder {
         self.development_schema_arn = input;
         self
     }
+    /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
+    pub fn get_development_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.development_schema_arn
+    }
     /// <p>The ARN of the published schema to be upgraded.</p>
     pub fn published_schema_arn(
         mut self,
@@ -86,6 +90,10 @@ impl UpgradePublishedSchemaInputBuilder {
     ) -> Self {
         self.published_schema_arn = input;
         self
+    }
+    /// <p>The ARN of the published schema to be upgraded.</p>
+    pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.published_schema_arn
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
     pub fn minor_version(
@@ -103,6 +111,10 @@ impl UpgradePublishedSchemaInputBuilder {
         self.minor_version = input;
         self
     }
+    /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
+    }
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl UpgradePublishedSchemaInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
     pub fn build(

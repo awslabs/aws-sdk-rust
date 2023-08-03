@@ -117,6 +117,10 @@ impl ChannelMessageSummaryBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID of the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The content of the message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl ChannelMessageSummaryBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The metadata of the message.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl ChannelMessageSummaryBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The type of message.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
@@ -150,6 +162,10 @@ impl ChannelMessageSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of message.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMessageType> {
+        &self.r#type
+    }
     /// <p>The time at which the message summary was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -162,6 +178,10 @@ impl ChannelMessageSummaryBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time at which the message summary was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which a message was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,6 +196,12 @@ impl ChannelMessageSummaryBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The time at which a message was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The time at which a message was last edited.</p>
     pub fn last_edited_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_edited_timestamp = ::std::option::Option::Some(input);
@@ -189,6 +215,12 @@ impl ChannelMessageSummaryBuilder {
         self.last_edited_timestamp = input;
         self
     }
+    /// <p>The time at which a message was last edited.</p>
+    pub fn get_last_edited_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_edited_timestamp
+    }
     /// <p>The message sender.</p>
     pub fn sender(mut self, input: crate::types::Identity) -> Self {
         self.sender = ::std::option::Option::Some(input);
@@ -199,6 +231,10 @@ impl ChannelMessageSummaryBuilder {
         self.sender = input;
         self
     }
+    /// <p>The message sender.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.sender
+    }
     /// <p>Indicates whether a message was redacted.</p>
     pub fn redacted(mut self, input: bool) -> Self {
         self.redacted = ::std::option::Option::Some(input);
@@ -208,6 +244,10 @@ impl ChannelMessageSummaryBuilder {
     pub fn set_redacted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.redacted = input;
         self
+    }
+    /// <p>Indicates whether a message was redacted.</p>
+    pub fn get_redacted(&self) -> &::std::option::Option<bool> {
+        &self.redacted
     }
     /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
     pub fn build(self) -> crate::types::ChannelMessageSummary {

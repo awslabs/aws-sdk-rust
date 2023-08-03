@@ -74,6 +74,12 @@ impl GetReservationCoverageOutputBuilder {
         self.coverages_by_time = input;
         self
     }
+    /// <p>The amount of time that your reservations covered.</p>
+    pub fn get_coverages_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>> {
+        &self.coverages_by_time
+    }
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub fn total(mut self, input: crate::types::Coverage) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -83,6 +89,10 @@ impl GetReservationCoverageOutputBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total amount of instance usage that a reservation covered.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Coverage> {
+        &self.total
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
@@ -99,6 +109,10 @@ impl GetReservationCoverageOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

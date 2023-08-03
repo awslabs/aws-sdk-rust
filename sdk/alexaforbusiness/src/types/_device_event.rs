@@ -56,6 +56,10 @@ impl DeviceEventBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of device event.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceEventType> {
+        &self.r#type
+    }
     /// <p>The value of the event.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeviceEventBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the event.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The time (in epoch) when the event occurred. </p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl DeviceEventBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time (in epoch) when the event occurred. </p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`DeviceEvent`](crate::types::DeviceEvent).
     pub fn build(self) -> crate::types::DeviceEvent {

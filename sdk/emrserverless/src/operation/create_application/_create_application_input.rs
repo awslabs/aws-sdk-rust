@@ -177,6 +177,10 @@ impl CreateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(
         mut self,
@@ -193,6 +197,10 @@ impl CreateApplicationInputBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The Amazon EMR release associated with the application.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -203,6 +211,10 @@ impl CreateApplicationInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of application you want to start, such as Spark or Hive.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -212,6 +224,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `initial_capacity`.
     ///
@@ -238,6 +254,14 @@ impl CreateApplicationInputBuilder {
         self.initial_capacity = input;
         self
     }
+    /// <p>The capacity to initialize when the application is created.</p>
+    pub fn get_initial_capacity(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
+    > {
+        &self.initial_capacity
+    }
     /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn maximum_capacity(mut self, input: crate::types::MaximumAllowedResources) -> Self {
         self.maximum_capacity = ::std::option::Option::Some(input);
@@ -250,6 +274,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.maximum_capacity = input;
         self
+    }
+    /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
+    pub fn get_maximum_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
+        &self.maximum_capacity
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -276,6 +306,14 @@ impl CreateApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn auto_start_configuration(mut self, input: crate::types::AutoStartConfig) -> Self {
         self.auto_start_configuration = ::std::option::Option::Some(input);
@@ -288,6 +326,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.auto_start_configuration = input;
         self
+    }
+    /// <p>The configuration for an application to automatically start on job submission.</p>
+    pub fn get_auto_start_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoStartConfig> {
+        &self.auto_start_configuration
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn auto_stop_configuration(mut self, input: crate::types::AutoStopConfig) -> Self {
@@ -302,6 +346,12 @@ impl CreateApplicationInputBuilder {
         self.auto_stop_configuration = input;
         self
     }
+    /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
+    pub fn get_auto_stop_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoStopConfig> {
+        &self.auto_stop_configuration
+    }
     /// <p>The network configuration for customer VPC connectivity.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
@@ -314,6 +364,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>The network configuration for customer VPC connectivity.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -328,6 +384,10 @@ impl CreateApplicationInputBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
+    }
     /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
     pub fn image_configuration(mut self, input: crate::types::ImageConfigurationInput) -> Self {
         self.image_configuration = ::std::option::Option::Some(input);
@@ -340,6 +400,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.image_configuration = input;
         self
+    }
+    /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
+    pub fn get_image_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
+        &self.image_configuration
     }
     /// Adds a key-value pair to `worker_type_specifications`.
     ///
@@ -368,6 +434,17 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.worker_type_specifications = input;
         self
+    }
+    /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
+    pub fn get_worker_type_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::WorkerTypeSpecificationInput,
+        >,
+    > {
+        &self.worker_type_specifications
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

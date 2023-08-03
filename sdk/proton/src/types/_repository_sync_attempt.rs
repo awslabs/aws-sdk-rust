@@ -59,6 +59,10 @@ impl RepositorySyncAttemptBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The time when the sync attempt started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The sync attempt status.</p>
     pub fn status(mut self, input: crate::types::RepositorySyncStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl RepositorySyncAttemptBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The sync attempt status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RepositorySyncStatus> {
+        &self.status
     }
     /// Appends an item to `events`.
     ///
@@ -90,6 +98,12 @@ impl RepositorySyncAttemptBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>Detail data for sync attempt events.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
     pub fn build(self) -> crate::types::RepositorySyncAttempt {

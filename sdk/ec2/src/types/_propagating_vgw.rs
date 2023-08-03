@@ -40,6 +40,10 @@ impl PropagatingVgwBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// Consumes the builder and constructs a [`PropagatingVgw`](crate::types::PropagatingVgw).
     pub fn build(self) -> crate::types::PropagatingVgw {
         crate::types::PropagatingVgw {

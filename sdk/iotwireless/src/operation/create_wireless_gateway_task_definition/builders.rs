@@ -36,6 +36,10 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWirelessGatewayTaskDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
         self.inner = self.inner.set_auto_create_tasks(input);
         self
     }
+    /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    pub fn get_auto_create_tasks(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_create_tasks()
+    }
     /// <p>The name of the new resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -109,6 +117,10 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Information about the gateways to update.</p>
     pub fn update(mut self, input: crate::types::UpdateWirelessGatewayTaskCreate) -> Self {
@@ -122,6 +134,12 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update(input);
         self
+    }
+    /// <p>Information about the gateways to update.</p>
+    pub fn get_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
+        self.inner.get_update()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
@@ -139,6 +157,10 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -155,5 +177,9 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

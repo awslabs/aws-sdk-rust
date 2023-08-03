@@ -71,6 +71,10 @@ impl DetectPhiOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in its detection.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
+    }
     /// <p>If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     pub fn pagination_token(
         mut self,
@@ -87,6 +91,10 @@ impl DetectPhiOutputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(
         mut self,
@@ -102,6 +110,10 @@ impl DetectPhiOutputBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

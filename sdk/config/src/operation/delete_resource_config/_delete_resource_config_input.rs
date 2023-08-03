@@ -54,6 +54,10 @@ impl DeleteResourceConfigInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>Unique identifier of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteResourceConfigInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>Unique identifier of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteResourceConfigInput`](crate::operation::delete_resource_config::DeleteResourceConfigInput).
     pub fn build(

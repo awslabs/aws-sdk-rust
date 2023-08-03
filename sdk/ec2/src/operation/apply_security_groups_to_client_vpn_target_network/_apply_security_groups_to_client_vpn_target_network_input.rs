@@ -69,6 +69,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The ID of the VPC in which the associated target network is located.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC in which the associated target network is located.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -101,6 +109,12 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The IDs of the security groups to apply to the associated target network. Up to 5 security groups can be applied to an associated target network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToClientVpnTargetNetworkInput`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput, ::aws_smithy_http::operation::error::BuildError>{

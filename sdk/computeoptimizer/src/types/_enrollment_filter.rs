@@ -57,6 +57,11 @@ impl EnrollmentFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::EnrollmentFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -77,6 +82,11 @@ impl EnrollmentFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value of the filter.</p>
+    /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`EnrollmentFilter`](crate::types::EnrollmentFilter).
     pub fn build(self) -> crate::types::EnrollmentFilter {

@@ -89,6 +89,10 @@ impl EntitlementBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl EntitlementBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The description of the entitlement.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl EntitlementBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the entitlement.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
     pub fn app_visibility(mut self, input: crate::types::AppVisibility) -> Self {
@@ -121,6 +133,10 @@ impl EntitlementBuilder {
     ) -> Self {
         self.app_visibility = input;
         self
+    }
+    /// <p>Specifies whether all or selected apps are entitled.</p>
+    pub fn get_app_visibility(&self) -> &::std::option::Option<crate::types::AppVisibility> {
+        &self.app_visibility
     }
     /// Appends an item to `attributes`.
     ///
@@ -141,6 +157,12 @@ impl EntitlementBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes of the entitlement.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+        &self.attributes
+    }
     /// <p>The time when the entitlement was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl EntitlementBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time when the entitlement was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time when the entitlement was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -166,6 +192,10 @@ impl EntitlementBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time when the entitlement was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {

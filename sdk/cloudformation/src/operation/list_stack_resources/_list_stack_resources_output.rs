@@ -69,6 +69,12 @@ impl ListStackResourcesOutputBuilder {
         self.stack_resource_summaries = input;
         self
     }
+    /// <p>A list of <code>StackResourceSummary</code> structures.</p>
+    pub fn get_stack_resource_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>> {
+        &self.stack_resource_summaries
+    }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListStackResourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

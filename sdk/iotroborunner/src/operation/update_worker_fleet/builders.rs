@@ -36,6 +36,12 @@ impl UpdateWorkerFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkerFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorkerFleetFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// Full ARN of the worker fleet.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateWorkerFleetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(
@@ -151,5 +165,9 @@ impl UpdateWorkerFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_fixed_properties(input);
         self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_additional_fixed_properties()
     }
 }

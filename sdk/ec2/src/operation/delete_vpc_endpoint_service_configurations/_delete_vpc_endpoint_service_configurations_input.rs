@@ -47,6 +47,10 @@ impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `service_ids`.
     ///
     /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
@@ -65,6 +69,12 @@ impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
     ) -> Self {
         self.service_ids = input;
         self
+    }
+    /// <p>The IDs of the services.</p>
+    pub fn get_service_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_ids
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -94,6 +94,13 @@ impl CreateRouteCalculatorOutputBuilder {
         self.calculator_name = input;
         self
     }
+    /// <p>The name of the route calculator resource. </p>
+    /// <ul>
+    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// </ul>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculator_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
@@ -116,6 +123,13 @@ impl CreateRouteCalculatorOutputBuilder {
         self.calculator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+    /// </ul>
+    pub fn get_calculator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculator_arn
+    }
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
@@ -134,6 +148,13 @@ impl CreateRouteCalculatorOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <ul>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// </ul>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

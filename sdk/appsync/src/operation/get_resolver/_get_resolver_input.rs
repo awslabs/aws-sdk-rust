@@ -55,6 +55,10 @@ impl GetResolverInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The resolver type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetResolverInputBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The resolver type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The resolver field name.</p>
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl GetResolverInputBuilder {
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
+    }
+    /// <p>The resolver field name.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
     }
     /// Consumes the builder and constructs a [`GetResolverInput`](crate::operation::get_resolver::GetResolverInput).
     pub fn build(

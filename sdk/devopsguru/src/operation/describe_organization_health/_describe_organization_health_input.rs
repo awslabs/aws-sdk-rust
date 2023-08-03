@@ -57,6 +57,12 @@ impl DescribeOrganizationHealthInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `organizational_unit_ids`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
@@ -78,6 +84,12 @@ impl DescribeOrganizationHealthInputBuilder {
     ) -> Self {
         self.organizational_unit_ids = input;
         self
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationHealthInput`](crate::operation::describe_organization_health::DescribeOrganizationHealthInput).
     pub fn build(

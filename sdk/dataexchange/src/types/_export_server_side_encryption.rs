@@ -48,6 +48,10 @@ impl ExportServerSideEncryptionBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn r#type(mut self, input: crate::types::ServerSideEncryptionTypes) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ExportServerSideEncryptionBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionTypes> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::types::ExportServerSideEncryption).
     pub fn build(self) -> crate::types::ExportServerSideEncryption {

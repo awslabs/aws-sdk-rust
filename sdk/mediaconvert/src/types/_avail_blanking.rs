@@ -46,6 +46,10 @@ impl AvailBlankingBuilder {
         self.avail_blanking_image = input;
         self
     }
+    /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
+    pub fn get_avail_blanking_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.avail_blanking_image
+    }
     /// Consumes the builder and constructs a [`AvailBlanking`](crate::types::AvailBlanking).
     pub fn build(self) -> crate::types::AvailBlanking {
         crate::types::AvailBlanking {

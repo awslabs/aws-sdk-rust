@@ -80,6 +80,10 @@ impl IamInstanceProfileAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl IamInstanceProfileAssociationBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfile) -> Self {
@@ -103,6 +111,12 @@ impl IamInstanceProfileAssociationBuilder {
         self.iam_instance_profile = input;
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfile> {
+        &self.iam_instance_profile
+    }
     /// <p>The state of the association.</p>
     pub fn state(mut self, input: crate::types::IamInstanceProfileAssociationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -116,6 +130,12 @@ impl IamInstanceProfileAssociationBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the association.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileAssociationState> {
+        &self.state
+    }
     /// <p>The time the IAM instance profile was associated with the instance.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl IamInstanceProfileAssociationBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time the IAM instance profile was associated with the instance.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`IamInstanceProfileAssociation`](crate::types::IamInstanceProfileAssociation).
     pub fn build(self) -> crate::types::IamInstanceProfileAssociation {

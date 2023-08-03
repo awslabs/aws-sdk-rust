@@ -46,6 +46,10 @@ impl GlueDataCatalogConfigurationUpdateBuilder {
         self.database_arn_update = input;
         self
     }
+    /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_database_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn_update
+    }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfigurationUpdate`](crate::types::GlueDataCatalogConfigurationUpdate).
     pub fn build(self) -> crate::types::GlueDataCatalogConfigurationUpdate {
         crate::types::GlueDataCatalogConfigurationUpdate {

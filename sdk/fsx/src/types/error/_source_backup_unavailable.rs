@@ -75,6 +75,10 @@ impl SourceBackupUnavailableBuilder {
         self.message = input;
         self
     }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl SourceBackupUnavailableBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_id = input;
         self
+    }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

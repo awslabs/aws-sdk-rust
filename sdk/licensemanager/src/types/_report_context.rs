@@ -53,6 +53,12 @@ impl ReportContextBuilder {
         self.license_configuration_arns = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
+    pub fn get_license_configuration_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_configuration_arns
+    }
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
     pub fn build(self) -> crate::types::ReportContext {
         crate::types::ReportContext {

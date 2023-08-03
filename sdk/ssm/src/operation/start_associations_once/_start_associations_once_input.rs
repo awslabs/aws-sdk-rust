@@ -53,6 +53,12 @@ impl StartAssociationsOnceInputBuilder {
         self.association_ids = input;
         self
     }
+    /// <p>The association IDs that you want to run immediately and only one time.</p>
+    pub fn get_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.association_ids
+    }
     /// Consumes the builder and constructs a [`StartAssociationsOnceInput`](crate::operation::start_associations_once::StartAssociationsOnceInput).
     pub fn build(
         self,

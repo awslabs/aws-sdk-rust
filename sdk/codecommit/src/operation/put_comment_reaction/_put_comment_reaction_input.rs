@@ -48,6 +48,10 @@ impl PutCommentReactionInputBuilder {
         self.comment_id = input;
         self
     }
+    /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_id
+    }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     pub fn reaction_value(
         mut self,
@@ -63,6 +67,10 @@ impl PutCommentReactionInputBuilder {
     ) -> Self {
         self.reaction_value = input;
         self
+    }
+    /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+    pub fn get_reaction_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reaction_value
     }
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
     pub fn build(

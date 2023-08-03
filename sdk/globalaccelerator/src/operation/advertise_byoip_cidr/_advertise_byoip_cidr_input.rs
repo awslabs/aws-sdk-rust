@@ -40,6 +40,10 @@ impl AdvertiseByoipCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
     pub fn build(
         self,

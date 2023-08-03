@@ -107,6 +107,12 @@ impl ReservedInstanceOfferingBuilder {
         self.reserved_instance_offering_id = input;
         self
     }
+    /// <p>The unique identifier of the Reserved Instance offering.</p>
+    pub fn get_reserved_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instance_offering_id
+    }
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -120,6 +126,12 @@ impl ReservedInstanceOfferingBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+        &self.instance_type
+    }
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl ReservedInstanceOfferingBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -140,6 +156,10 @@ impl ReservedInstanceOfferingBuilder {
         self.fixed_price = input;
         self
     }
+    /// <p>The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.</p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl ReservedInstanceOfferingBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// <p>The currency code for the Reserved Instance offering.</p>
     pub fn currency_code(
@@ -166,6 +190,10 @@ impl ReservedInstanceOfferingBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code for the Reserved Instance offering.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>Payment option for the Reserved Instance offering</p>
     pub fn payment_option(mut self, input: crate::types::ReservedInstancePaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -178,6 +206,12 @@ impl ReservedInstanceOfferingBuilder {
     ) -> Self {
         self.payment_option = input;
         self
+    }
+    /// <p>Payment option for the Reserved Instance offering</p>
+    pub fn get_payment_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstancePaymentOption> {
+        &self.payment_option
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -197,6 +231,12 @@ impl ReservedInstanceOfferingBuilder {
     ) -> Self {
         self.recurring_charges = input;
         self
+    }
+    /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedInstanceOffering`](crate::types::ReservedInstanceOffering).
     pub fn build(self) -> crate::types::ReservedInstanceOffering {

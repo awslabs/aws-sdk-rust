@@ -51,6 +51,10 @@ impl FailedItemDetailsBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The status code of a failed item.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::FailedItemErrorCode> {
+        &self.failure_code
+    }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     pub fn retryable(mut self, input: bool) -> Self {
         self.retryable = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FailedItemDetailsBuilder {
     pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
+    }
+    /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
+    pub fn get_retryable(&self) -> &::std::option::Option<bool> {
+        &self.retryable
     }
     /// Consumes the builder and constructs a [`FailedItemDetails`](crate::types::FailedItemDetails).
     pub fn build(self) -> crate::types::FailedItemDetails {

@@ -55,6 +55,12 @@ impl PutConfigurationAggregatorOutputBuilder {
         self.configuration_aggregator = input;
         self
     }
+    /// <p>Returns a ConfigurationAggregator object.</p>
+    pub fn get_configuration_aggregator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationAggregator> {
+        &self.configuration_aggregator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

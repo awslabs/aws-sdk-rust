@@ -48,6 +48,10 @@ impl StringAttributeConstraintsTypeBuilder {
         self.min_length = input;
         self
     }
+    /// <p>The minimum length.</p>
+    pub fn get_min_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_length
+    }
     /// <p>The maximum length.</p>
     pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_length = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl StringAttributeConstraintsTypeBuilder {
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_length = input;
         self
+    }
+    /// <p>The maximum length.</p>
+    pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_length
     }
     /// Consumes the builder and constructs a [`StringAttributeConstraintsType`](crate::types::StringAttributeConstraintsType).
     pub fn build(self) -> crate::types::StringAttributeConstraintsType {

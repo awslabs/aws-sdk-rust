@@ -47,6 +47,10 @@ impl ArchiveFindingsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_ids`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -65,6 +69,12 @@ impl ArchiveFindingsInputBuilder {
     ) -> Self {
         self.finding_ids = input;
         self
+    }
+    /// <p>The IDs of the findings that you want to archive.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
     }
     /// Consumes the builder and constructs a [`ArchiveFindingsInput`](crate::operation::archive_findings::ArchiveFindingsInput).
     pub fn build(

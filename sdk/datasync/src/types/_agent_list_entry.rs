@@ -56,6 +56,10 @@ impl AgentListEntryBuilder {
         self.agent_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
+    }
     /// <p>The name of an agent.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AgentListEntryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an agent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AgentListEntryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AgentListEntry`](crate::types::AgentListEntry).
     pub fn build(self) -> crate::types::AgentListEntry {

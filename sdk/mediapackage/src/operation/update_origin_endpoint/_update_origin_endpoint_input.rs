@@ -135,6 +135,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.authorization = input;
         self
     }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        &self.authorization
+    }
     /// A Common Media Application Format (CMAF) packaging configuration.
     pub fn cmaf_package(
         mut self,
@@ -151,6 +155,12 @@ impl UpdateOriginEndpointInputBuilder {
         self.cmaf_package = input;
         self
     }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn get_cmaf_package(
+        &self,
+    ) -> &::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters> {
+        &self.cmaf_package
+    }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn dash_package(mut self, input: crate::types::DashPackage) -> Self {
         self.dash_package = ::std::option::Option::Some(input);
@@ -164,6 +174,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.dash_package = input;
         self
     }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn get_dash_package(&self) -> &::std::option::Option<crate::types::DashPackage> {
+        &self.dash_package
+    }
     /// A short text description of the OriginEndpoint.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -173,6 +187,10 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub fn hls_package(mut self, input: crate::types::HlsPackage) -> Self {
@@ -187,6 +205,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.hls_package = input;
         self
     }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn get_hls_package(&self) -> &::std::option::Option<crate::types::HlsPackage> {
+        &self.hls_package
+    }
     /// The ID of the OriginEndpoint to update.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -196,6 +218,10 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the OriginEndpoint to update.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// A short string that will be appended to the end of the Endpoint URL.
     pub fn manifest_name(
@@ -213,6 +239,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.manifest_name = input;
         self
     }
+    /// A short string that will be appended to the end of the Endpoint URL.
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
     pub fn mss_package(mut self, input: crate::types::MssPackage) -> Self {
         self.mss_package = ::std::option::Option::Some(input);
@@ -225,6 +255,10 @@ impl UpdateOriginEndpointInputBuilder {
     ) -> Self {
         self.mss_package = input;
         self
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn get_mss_package(&self) -> &::std::option::Option<crate::types::MssPackage> {
+        &self.mss_package
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
@@ -239,6 +273,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.origination = input;
         self
     }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn get_origination(&self) -> &::std::option::Option<crate::types::Origination> {
+        &self.origination
+    }
     /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     pub fn startover_window_seconds(mut self, input: i32) -> Self {
         self.startover_window_seconds = ::std::option::Option::Some(input);
@@ -249,6 +287,10 @@ impl UpdateOriginEndpointInputBuilder {
         self.startover_window_seconds = input;
         self
     }
+    /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.startover_window_seconds
+    }
     /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     pub fn time_delay_seconds(mut self, input: i32) -> Self {
         self.time_delay_seconds = ::std::option::Option::Some(input);
@@ -258,6 +300,10 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn set_time_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_delay_seconds = input;
         self
+    }
+    /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn get_time_delay_seconds(&self) -> &::std::option::Option<i32> {
+        &self.time_delay_seconds
     }
     /// Appends an item to `whitelist`.
     ///
@@ -277,6 +323,10 @@ impl UpdateOriginEndpointInputBuilder {
     ) -> Self {
         self.whitelist = input;
         self
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn get_whitelist(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.whitelist
     }
     /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
     pub fn build(

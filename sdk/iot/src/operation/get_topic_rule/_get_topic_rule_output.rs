@@ -55,6 +55,10 @@ impl GetTopicRuleOutputBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The rule ARN.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p>The rule.</p>
     pub fn rule(mut self, input: crate::types::TopicRule) -> Self {
         self.rule = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetTopicRuleOutputBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::TopicRule>) -> Self {
         self.rule = input;
         self
+    }
+    /// <p>The rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::TopicRule> {
+        &self.rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

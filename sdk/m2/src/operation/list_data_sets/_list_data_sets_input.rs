@@ -69,6 +69,10 @@ impl ListDataSetsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListDataSetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl ListDataSetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl ListDataSetsInputBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(

@@ -91,6 +91,10 @@ impl PutRetentionPolicyInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The retention policy ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl PutRetentionPolicyInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The retention policy ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The retention policy name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +119,10 @@ impl PutRetentionPolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The retention policy name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The retention policy description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl PutRetentionPolicyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The retention policy description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `folder_configurations`.
     ///
@@ -139,6 +155,12 @@ impl PutRetentionPolicyInputBuilder {
     ) -> Self {
         self.folder_configurations = input;
         self
+    }
+    /// <p>The retention policy folder configurations.</p>
+    pub fn get_folder_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
+        &self.folder_configurations
     }
     /// Consumes the builder and constructs a [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
     pub fn build(

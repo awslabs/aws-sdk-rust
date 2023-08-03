@@ -51,6 +51,10 @@ impl SortConditionBuilder {
         self.name = input;
         self
     }
+    /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ListDomainsAttributeName> {
+        &self.name
+    }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SortConditionBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortCondition`](crate::types::SortCondition).
     pub fn build(self) -> crate::types::SortCondition {

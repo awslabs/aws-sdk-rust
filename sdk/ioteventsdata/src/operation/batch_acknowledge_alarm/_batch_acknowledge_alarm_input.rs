@@ -57,6 +57,12 @@ impl BatchAcknowledgeAlarmInputBuilder {
         self.acknowledge_action_requests = input;
         self
     }
+    /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_acknowledge_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>> {
+        &self.acknowledge_action_requests
+    }
     /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
     pub fn build(
         self,

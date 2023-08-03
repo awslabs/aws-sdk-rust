@@ -88,6 +88,10 @@ impl Eac3AtmosSettingsBuilder {
         self.bitrate = input;
         self
     }
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    pub fn get_bitrate(&self) -> &::std::option::Option<f64> {
+        &self.bitrate
+    }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Eac3AtmosCodingMode) -> Self {
         self.coding_mode = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl Eac3AtmosSettingsBuilder {
         self.coding_mode = input;
         self
     }
+    /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
+    pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::Eac3AtmosCodingMode> {
+        &self.coding_mode
+    }
     /// Sets the dialnorm for the output. Default 23.
     pub fn dialnorm(mut self, input: i32) -> Self {
         self.dialnorm = ::std::option::Option::Some(input);
@@ -110,6 +118,10 @@ impl Eac3AtmosSettingsBuilder {
     pub fn set_dialnorm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dialnorm = input;
         self
+    }
+    /// Sets the dialnorm for the output. Default 23.
+    pub fn get_dialnorm(&self) -> &::std::option::Option<i32> {
+        &self.dialnorm
     }
     /// Sets the Dolby dynamic range compression profile.
     pub fn drc_line(mut self, input: crate::types::Eac3AtmosDrcLine) -> Self {
@@ -124,6 +136,10 @@ impl Eac3AtmosSettingsBuilder {
         self.drc_line = input;
         self
     }
+    /// Sets the Dolby dynamic range compression profile.
+    pub fn get_drc_line(&self) -> &::std::option::Option<crate::types::Eac3AtmosDrcLine> {
+        &self.drc_line
+    }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
     pub fn drc_rf(mut self, input: crate::types::Eac3AtmosDrcRf) -> Self {
         self.drc_rf = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl Eac3AtmosSettingsBuilder {
         self.drc_rf = input;
         self
     }
+    /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+    pub fn get_drc_rf(&self) -> &::std::option::Option<crate::types::Eac3AtmosDrcRf> {
+        &self.drc_rf
+    }
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn height_trim(mut self, input: f64) -> Self {
         self.height_trim = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl Eac3AtmosSettingsBuilder {
         self.height_trim = input;
         self
     }
+    /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    pub fn get_height_trim(&self) -> &::std::option::Option<f64> {
+        &self.height_trim
+    }
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn surround_trim(mut self, input: f64) -> Self {
         self.surround_trim = ::std::option::Option::Some(input);
@@ -156,6 +180,10 @@ impl Eac3AtmosSettingsBuilder {
     pub fn set_surround_trim(mut self, input: ::std::option::Option<f64>) -> Self {
         self.surround_trim = input;
         self
+    }
+    /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
+    pub fn get_surround_trim(&self) -> &::std::option::Option<f64> {
+        &self.surround_trim
     }
     /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
     pub fn build(self) -> crate::types::Eac3AtmosSettings {

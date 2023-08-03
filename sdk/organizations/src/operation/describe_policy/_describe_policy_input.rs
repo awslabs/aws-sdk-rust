@@ -43,6 +43,11 @@ impl DescribePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// Consumes the builder and constructs a [`DescribePolicyInput`](crate::operation::describe_policy::DescribePolicyInput).
     pub fn build(
         self,

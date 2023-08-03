@@ -56,6 +56,10 @@ impl PolicyVersionBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The policy version ID.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PolicyVersionBuilder {
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
+    }
+    /// <p>Specifies whether the policy version is the default.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
     }
     /// <p>The date and time the policy was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl PolicyVersionBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time the policy was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Consumes the builder and constructs a [`PolicyVersion`](crate::types::PolicyVersion).
     pub fn build(self) -> crate::types::PolicyVersion {

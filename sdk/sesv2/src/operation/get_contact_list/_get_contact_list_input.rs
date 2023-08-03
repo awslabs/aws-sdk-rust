@@ -45,6 +45,10 @@ impl GetContactListInputBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// Consumes the builder and constructs a [`GetContactListInput`](crate::operation::get_contact_list::GetContactListInput).
     pub fn build(
         self,

@@ -55,6 +55,10 @@ impl ReplicationSpecificationBuilder {
         self.replication_strategy = input;
         self
     }
+    /// <p> The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    pub fn get_replication_strategy(&self) -> &::std::option::Option<crate::types::Rs> {
+        &self.replication_strategy
+    }
     /// Appends an item to `region_list`.
     ///
     /// To override the contents of this collection use [`set_region_list`](Self::set_region_list).
@@ -73,6 +77,12 @@ impl ReplicationSpecificationBuilder {
     ) -> Self {
         self.region_list = input;
         self
+    }
+    /// <p> The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in. </p>
+    pub fn get_region_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.region_list
     }
     /// Consumes the builder and constructs a [`ReplicationSpecification`](crate::types::ReplicationSpecification).
     pub fn build(self) -> crate::types::ReplicationSpecification {

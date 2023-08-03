@@ -56,6 +56,12 @@ impl GetMediaInsightsPipelineConfigurationOutputBuilder {
         self.media_insights_pipeline_configuration = input;
         self
     }
+    /// <p>The requested media insights pipeline configuration.</p>
+    pub fn get_media_insights_pipeline_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaInsightsPipelineConfiguration> {
+        &self.media_insights_pipeline_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

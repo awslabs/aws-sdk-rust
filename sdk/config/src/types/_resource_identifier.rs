@@ -67,6 +67,10 @@ impl ResourceIdentifierBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ResourceIdentifierBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The custom name of the resource (if available).</p>
     pub fn resource_name(
@@ -93,6 +101,10 @@ impl ResourceIdentifierBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The custom name of the resource (if available).</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The time that the resource was deleted.</p>
     pub fn resource_deletion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resource_deletion_time = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl ResourceIdentifierBuilder {
     ) -> Self {
         self.resource_deletion_time = input;
         self
+    }
+    /// <p>The time that the resource was deleted.</p>
+    pub fn get_resource_deletion_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resource_deletion_time
     }
     /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::types::ResourceIdentifier).
     pub fn build(self) -> crate::types::ResourceIdentifier {

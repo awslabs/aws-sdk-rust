@@ -51,6 +51,10 @@ impl BatchUpdateUserInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `update_user_request_items`.
     ///
     /// To override the contents of this collection use [`set_update_user_request_items`](Self::set_update_user_request_items).
@@ -69,6 +73,12 @@ impl BatchUpdateUserInputBuilder {
     ) -> Self {
         self.update_user_request_items = input;
         self
+    }
+    /// <p>The request containing the user IDs and details to update.</p>
+    pub fn get_update_user_request_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
+        &self.update_user_request_items
     }
     /// Consumes the builder and constructs a [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
     pub fn build(

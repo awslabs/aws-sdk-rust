@@ -49,6 +49,12 @@ impl AndStatementBuilder {
         self.statements = input;
         self
     }
+    /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
+    pub fn get_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+        &self.statements
+    }
     /// Consumes the builder and constructs a [`AndStatement`](crate::types::AndStatement).
     pub fn build(self) -> crate::types::AndStatement {
         crate::types::AndStatement {

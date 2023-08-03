@@ -49,6 +49,12 @@ impl CompromisedCredentialsActionsTypeBuilder {
         self.event_action = input;
         self
     }
+    /// <p>The event action.</p>
+    pub fn get_event_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompromisedCredentialsEventActionType> {
+        &self.event_action
+    }
     /// Consumes the builder and constructs a [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).
     pub fn build(self) -> crate::types::CompromisedCredentialsActionsType {
         crate::types::CompromisedCredentialsActionsType {

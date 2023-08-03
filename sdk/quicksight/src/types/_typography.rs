@@ -49,6 +49,10 @@ impl TypographyBuilder {
         self.font_families = input;
         self
     }
+    /// <p>Determines the list of font families.</p>
+    pub fn get_font_families(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Font>> {
+        &self.font_families
+    }
     /// Consumes the builder and constructs a [`Typography`](crate::types::Typography).
     pub fn build(self) -> crate::types::Typography {
         crate::types::Typography {

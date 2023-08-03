@@ -73,6 +73,10 @@ impl UpdateScriptInputBuilder {
         self.script_id = input;
         self
     }
+    /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
+    }
     /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl UpdateScriptInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl UpdateScriptInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(mut self, input: crate::types::S3Location) -> Self {
@@ -106,6 +118,10 @@ impl UpdateScriptInputBuilder {
         self.storage_location = input;
         self
     }
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.storage_location
+    }
     /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
     /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     pub fn zip_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -117,6 +133,11 @@ impl UpdateScriptInputBuilder {
     pub fn set_zip_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.zip_file = input;
         self
+    }
+    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+    /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.zip_file
     }
     /// Consumes the builder and constructs a [`UpdateScriptInput`](crate::operation::update_script::UpdateScriptInput).
     pub fn build(

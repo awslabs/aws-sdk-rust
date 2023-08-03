@@ -53,6 +53,12 @@ impl DescribeConfigurationRecordersInputBuilder {
         self.configuration_recorder_names = input;
         self
     }
+    /// <p>A list of configuration recorder names.</p>
+    pub fn get_configuration_recorder_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_recorder_names
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationRecordersInput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput).
     pub fn build(
         self,

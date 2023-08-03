@@ -135,6 +135,17 @@ impl InvokeInputBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>Choose from the following options.</p>
     /// <ul>
     /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
@@ -158,6 +169,15 @@ impl InvokeInputBuilder {
         self.invocation_type = input;
         self
     }
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+    /// </ul>
+    pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::InvocationType> {
+        &self.invocation_type
+    }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn log_type(mut self, input: crate::types::LogType) -> Self {
         self.log_type = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl InvokeInputBuilder {
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
         self.log_type = input;
         self
+    }
+    /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn client_context(
@@ -184,6 +208,10 @@ impl InvokeInputBuilder {
         self.client_context = input;
         self
     }
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_context
+    }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -196,6 +224,11 @@ impl InvokeInputBuilder {
         self.payload = input;
         self
     }
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
+    /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
+    }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualifier = ::std::option::Option::Some(input.into());
@@ -205,6 +238,10 @@ impl InvokeInputBuilder {
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualifier = input;
         self
+    }
+    /// <p>Specify a version or alias to invoke a published version of the function.</p>
+    pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualifier
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
     pub fn build(

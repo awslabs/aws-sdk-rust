@@ -37,6 +37,10 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAcceleratorOfferings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self.inner = self.inner.set_location_type(input);
         self
     }
+    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        self.inner.get_location_type()
+    }
     /// Appends an item to `acceleratorTypes`.
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
@@ -149,5 +157,11 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
+    }
+    /// <p> The list of accelerator types to describe. </p>
+    pub fn get_accelerator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_accelerator_types()
     }
 }

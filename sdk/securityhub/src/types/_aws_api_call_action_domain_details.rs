@@ -40,6 +40,10 @@ impl AwsApiCallActionDomainDetailsBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the DNS domain that issued the API call.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// Consumes the builder and constructs a [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
     pub fn build(self) -> crate::types::AwsApiCallActionDomainDetails {
         crate::types::AwsApiCallActionDomainDetails {

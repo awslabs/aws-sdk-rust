@@ -37,6 +37,10 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLicenseManagerReportGenerator as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,12 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_license_manager_report_generator_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_manager_report_generator_arn()
+    }
     /// <p>Name of the report generator.</p>
     pub fn report_generator_name(
         mut self,
@@ -124,6 +134,10 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_generator_name(input);
         self
+    }
+    /// <p>Name of the report generator.</p>
+    pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_generator_name()
     }
     /// Appends an item to `Type`.
     ///
@@ -150,6 +164,14 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Type of reports to generate. The following report types are supported:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
+        self.inner.get_type()
+    }
     /// <p>The report context.</p>
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
         self.inner = self.inner.report_context(input);
@@ -162,6 +184,10 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_context(input);
         self
+    }
+    /// <p>The report context.</p>
+    pub fn get_report_context(&self) -> &::std::option::Option<crate::types::ReportContext> {
+        self.inner.get_report_context()
     }
     /// <p>Frequency by which reports are generated.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -176,6 +202,10 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
+    /// <p>Frequency by which reports are generated.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        self.inner.get_report_frequency()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -186,6 +216,10 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Description of the report generator.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -195,5 +229,9 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

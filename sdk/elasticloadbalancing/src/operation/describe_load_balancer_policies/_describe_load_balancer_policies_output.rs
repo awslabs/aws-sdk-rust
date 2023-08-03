@@ -58,6 +58,12 @@ impl DescribeLoadBalancerPoliciesOutputBuilder {
         self.policy_descriptions = input;
         self
     }
+    /// <p>Information about the policies.</p>
+    pub fn get_policy_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>> {
+        &self.policy_descriptions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

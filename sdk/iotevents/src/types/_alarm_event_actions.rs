@@ -49,6 +49,12 @@ impl AlarmEventActionsBuilder {
         self.alarm_actions = input;
         self
     }
+    /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
+    pub fn get_alarm_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>> {
+        &self.alarm_actions
+    }
     /// Consumes the builder and constructs a [`AlarmEventActions`](crate::types::AlarmEventActions).
     pub fn build(self) -> crate::types::AlarmEventActions {
         crate::types::AlarmEventActions {

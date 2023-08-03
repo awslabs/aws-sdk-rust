@@ -60,6 +60,12 @@ impl DescribeElasticsearchDomainsOutputBuilder {
         self.domain_status_list = input;
         self
     }
+    /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
+    pub fn get_domain_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>> {
+        &self.domain_status_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

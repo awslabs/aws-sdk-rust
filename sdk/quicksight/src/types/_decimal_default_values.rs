@@ -51,6 +51,10 @@ impl DecimalDefaultValuesBuilder {
         self.dynamic_value = input;
         self
     }
+    /// <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
+    pub fn get_dynamic_value(&self) -> &::std::option::Option<crate::types::DynamicDefaultValue> {
+        &self.dynamic_value
+    }
     /// Appends an item to `static_values`.
     ///
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
@@ -66,6 +70,10 @@ impl DecimalDefaultValuesBuilder {
     pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.static_values = input;
         self
+    }
+    /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.static_values
     }
     /// Consumes the builder and constructs a [`DecimalDefaultValues`](crate::types::DecimalDefaultValues).
     pub fn build(self) -> crate::types::DecimalDefaultValues {

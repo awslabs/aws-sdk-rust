@@ -48,6 +48,10 @@ impl DurationRangeBuilder {
         self.min_seconds = input;
         self
     }
+    /// <p>The minimum value of the duration range. Must be greater than zero.</p>
+    pub fn get_min_seconds(&self) -> &::std::option::Option<i32> {
+        &self.min_seconds
+    }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn max_seconds(mut self, input: i32) -> Self {
         self.max_seconds = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DurationRangeBuilder {
     pub fn set_max_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_seconds = input;
         self
+    }
+    /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
+    pub fn get_max_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_seconds
     }
     /// Consumes the builder and constructs a [`DurationRange`](crate::types::DurationRange).
     pub fn build(self) -> crate::types::DurationRange {

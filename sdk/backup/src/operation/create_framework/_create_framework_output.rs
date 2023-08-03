@@ -60,6 +60,10 @@ impl CreateFrameworkOutputBuilder {
         self.framework_name = input;
         self
     }
+    /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn framework_arn(
         mut self,
@@ -75,6 +79,10 @@ impl CreateFrameworkOutputBuilder {
     ) -> Self {
         self.framework_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

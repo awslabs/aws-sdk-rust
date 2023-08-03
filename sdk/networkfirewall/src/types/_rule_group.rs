@@ -71,6 +71,10 @@ impl RuleGroupBuilder {
         self.rule_variables = input;
         self
     }
+    /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
+    pub fn get_rule_variables(&self) -> &::std::option::Option<crate::types::RuleVariables> {
+        &self.rule_variables
+    }
     /// <p>The list of a rule group's reference sets.</p>
     pub fn reference_sets(mut self, input: crate::types::ReferenceSets) -> Self {
         self.reference_sets = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl RuleGroupBuilder {
     ) -> Self {
         self.reference_sets = input;
         self
+    }
+    /// <p>The list of a rule group's reference sets.</p>
+    pub fn get_reference_sets(&self) -> &::std::option::Option<crate::types::ReferenceSets> {
+        &self.reference_sets
     }
     /// <p>The stateful rules or stateless rules for the rule group. </p>
     pub fn rules_source(mut self, input: crate::types::RulesSource) -> Self {
@@ -97,6 +105,10 @@ impl RuleGroupBuilder {
         self.rules_source = input;
         self
     }
+    /// <p>The stateful rules or stateless rules for the rule group. </p>
+    pub fn get_rules_source(&self) -> &::std::option::Option<crate::types::RulesSource> {
+        &self.rules_source
+    }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
     pub fn stateful_rule_options(mut self, input: crate::types::StatefulRuleOptions) -> Self {
         self.stateful_rule_options = ::std::option::Option::Some(input);
@@ -109,6 +121,12 @@ impl RuleGroupBuilder {
     ) -> Self {
         self.stateful_rule_options = input;
         self
+    }
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    pub fn get_stateful_rule_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
+        &self.stateful_rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
     pub fn build(self) -> crate::types::RuleGroup {

@@ -96,6 +96,10 @@ impl ImportSummaryBuilder {
         self.import_arn = input;
         self
     }
+    /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+    pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_arn
+    }
     /// <p> The status of the import operation. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
         self.import_status = ::std::option::Option::Some(input);
@@ -109,6 +113,10 @@ impl ImportSummaryBuilder {
         self.import_status = input;
         self
     }
+    /// <p> The status of the import operation. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
+    }
     /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
     pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_arn = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl ImportSummaryBuilder {
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+    pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_arn
     }
     /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
@@ -131,6 +143,10 @@ impl ImportSummaryBuilder {
     ) -> Self {
         self.s3_bucket_source = input;
         self
+    }
+    /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
+    pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
+        &self.s3_bucket_source
     }
     /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
     pub fn cloud_watch_log_group_arn(
@@ -148,6 +164,10 @@ impl ImportSummaryBuilder {
         self.cloud_watch_log_group_arn = input;
         self
     }
+    /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
+    }
     /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub fn input_format(mut self, input: crate::types::InputFormat) -> Self {
         self.input_format = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl ImportSummaryBuilder {
     ) -> Self {
         self.input_format = input;
         self
+    }
+    /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
+        &self.input_format
     }
     /// <p> The time at which this import task began. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,6 +198,10 @@ impl ImportSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The time at which this import task began. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl ImportSummaryBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`ImportSummary`](crate::types::ImportSummary).
     pub fn build(self) -> crate::types::ImportSummary {

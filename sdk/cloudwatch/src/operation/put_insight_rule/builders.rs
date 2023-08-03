@@ -37,6 +37,12 @@ impl PutInsightRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInsightRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_insight_rule::builders::PutInsightRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl PutInsightRuleFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>A unique name for the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
     pub fn rule_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_state(input.into());
@@ -136,6 +146,10 @@ impl PutInsightRuleFluentBuilder {
     pub fn set_rule_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_state(input);
         self
+    }
+    /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
+    pub fn get_rule_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_state()
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub fn rule_definition(
@@ -152,6 +166,10 @@ impl PutInsightRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_definition(input);
         self
+    }
+    /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+    pub fn get_rule_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_definition()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,5 +193,12 @@ impl PutInsightRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+    /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

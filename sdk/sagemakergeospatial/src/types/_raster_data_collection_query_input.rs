@@ -81,6 +81,10 @@ impl RasterDataCollectionQueryInputBuilder {
         self.raster_data_collection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    pub fn get_raster_data_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raster_data_collection_arn
+    }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
@@ -93,6 +97,12 @@ impl RasterDataCollectionQueryInputBuilder {
     ) -> Self {
         self.time_range_filter = input;
         self
+    }
+    /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
+    pub fn get_time_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilterInput> {
+        &self.time_range_filter
     }
     /// <p>The area of interest being queried for the raster data collection.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
@@ -107,6 +117,10 @@ impl RasterDataCollectionQueryInputBuilder {
         self.area_of_interest = input;
         self
     }
+    /// <p>The area of interest being queried for the raster data collection.</p>
+    pub fn get_area_of_interest(&self) -> &::std::option::Option<crate::types::AreaOfInterest> {
+        &self.area_of_interest
+    }
     /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
         self.property_filters = ::std::option::Option::Some(input);
@@ -119,6 +133,10 @@ impl RasterDataCollectionQueryInputBuilder {
     ) -> Self {
         self.property_filters = input;
         self
+    }
+    /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
+    pub fn get_property_filters(&self) -> &::std::option::Option<crate::types::PropertyFilters> {
+        &self.property_filters
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryInput`](crate::types::RasterDataCollectionQueryInput).
     pub fn build(self) -> crate::types::RasterDataCollectionQueryInput {

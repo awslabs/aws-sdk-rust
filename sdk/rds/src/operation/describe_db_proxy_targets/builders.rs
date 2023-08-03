@@ -37,6 +37,13 @@ impl DescribeDBProxyTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBProxyTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +152,10 @@ impl DescribeDBProxyTargetsFluentBuilder {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
+    /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
+    }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
     pub fn target_group_name(
         mut self,
@@ -160,6 +171,10 @@ impl DescribeDBProxyTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
+    }
+    /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
+    pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_name()
     }
     /// Appends an item to `Filters`.
     ///
@@ -178,6 +193,10 @@ impl DescribeDBProxyTargetsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -187,6 +206,10 @@ impl DescribeDBProxyTargetsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -201,5 +224,11 @@ impl DescribeDBProxyTargetsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

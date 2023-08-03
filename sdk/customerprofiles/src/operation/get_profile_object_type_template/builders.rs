@@ -37,6 +37,10 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProfileObjectTypeTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
 }

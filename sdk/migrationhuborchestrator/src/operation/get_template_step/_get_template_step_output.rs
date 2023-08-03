@@ -131,6 +131,10 @@ impl GetTemplateStepOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -147,6 +151,10 @@ impl GetTemplateStepOutputBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -156,6 +164,10 @@ impl GetTemplateStepOutputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +179,10 @@ impl GetTemplateStepOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the step.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -176,6 +192,10 @@ impl GetTemplateStepOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the step.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -189,6 +209,10 @@ impl GetTemplateStepOutputBuilder {
     ) -> Self {
         self.step_action_type = input;
         self
+    }
+    /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
+        &self.step_action_type
     }
     /// <p>The time at which the step was created.</p>
     pub fn creation_time(
@@ -205,6 +229,10 @@ impl GetTemplateStepOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the step was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
     }
     /// Appends an item to `previous`.
     ///
@@ -225,6 +253,10 @@ impl GetTemplateStepOutputBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -243,6 +275,10 @@ impl GetTemplateStepOutputBuilder {
     ) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next step.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
     }
     /// Appends an item to `outputs`.
     ///
@@ -263,6 +299,10 @@ impl GetTemplateStepOutputBuilder {
         self.outputs = input;
         self
     }
+    /// <p>The outputs of the step.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepOutput>> {
+        &self.outputs
+    }
     /// <p>The custom script to run tests on source or target environments.</p>
     pub fn step_automation_configuration(
         mut self,
@@ -278,6 +318,12 @@ impl GetTemplateStepOutputBuilder {
     ) -> Self {
         self.step_automation_configuration = input;
         self
+    }
+    /// <p>The custom script to run tests on source or target environments.</p>
+    pub fn get_step_automation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StepAutomationConfiguration> {
+        &self.step_automation_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

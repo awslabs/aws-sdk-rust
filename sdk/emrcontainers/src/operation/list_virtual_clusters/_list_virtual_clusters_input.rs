@@ -97,6 +97,10 @@ impl ListVirtualClustersInputBuilder {
         self.container_provider_id = input;
         self
     }
+    /// <p>The container provider ID of the virtual cluster.</p>
+    pub fn get_container_provider_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_provider_id
+    }
     /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn container_provider_type(mut self, input: crate::types::ContainerProviderType) -> Self {
         self.container_provider_type = ::std::option::Option::Some(input);
@@ -109,6 +113,12 @@ impl ListVirtualClustersInputBuilder {
     ) -> Self {
         self.container_provider_type = input;
         self
+    }
+    /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
+    pub fn get_container_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerProviderType> {
+        &self.container_provider_type
     }
     /// <p>The date and time after which the virtual clusters are created.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +133,10 @@ impl ListVirtualClustersInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The date and time after which the virtual clusters are created.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The date and time before which the virtual clusters are created.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -135,6 +149,10 @@ impl ListVirtualClustersInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The date and time before which the virtual clusters are created.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Appends an item to `states`.
     ///
@@ -155,6 +173,12 @@ impl ListVirtualClustersInputBuilder {
         self.states = input;
         self
     }
+    /// <p>The states of the requested virtual clusters.</p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualClusterState>> {
+        &self.states
+    }
     /// <p>The maximum number of virtual clusters that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl ListVirtualClustersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of virtual clusters that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of virtual clusters to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -174,6 +202,10 @@ impl ListVirtualClustersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of virtual clusters to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::operation::list_virtual_clusters::ListVirtualClustersInput).
     pub fn build(

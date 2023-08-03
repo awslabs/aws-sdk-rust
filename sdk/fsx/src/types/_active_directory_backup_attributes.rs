@@ -56,6 +56,10 @@ impl ActiveDirectoryBackupAttributesBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name of the self-managed Active Directory directory.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
     pub fn active_directory_id(
         mut self,
@@ -72,6 +76,10 @@ impl ActiveDirectoryBackupAttributesBuilder {
         self.active_directory_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
+    pub fn get_active_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_directory_id
+    }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl ActiveDirectoryBackupAttributesBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ActiveDirectoryBackupAttributes`](crate::types::ActiveDirectoryBackupAttributes).
     pub fn build(self) -> crate::types::ActiveDirectoryBackupAttributes {

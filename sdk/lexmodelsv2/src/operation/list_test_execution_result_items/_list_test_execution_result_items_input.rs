@@ -71,6 +71,10 @@ impl ListTestExecutionResultItemsInputBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the test execution to list the result items.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// <p>The filter for the list of results from the test set execution.</p>
     pub fn result_filter_by(mut self, input: crate::types::TestExecutionResultFilterBy) -> Self {
         self.result_filter_by = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl ListTestExecutionResultItemsInputBuilder {
         self.result_filter_by = input;
         self
     }
+    /// <p>The filter for the list of results from the test set execution.</p>
+    pub fn get_result_filter_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
+        &self.result_filter_by
+    }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl ListTestExecutionResultItemsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +117,10 @@ impl ListTestExecutionResultItemsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestExecutionResultItemsInput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput).
     pub fn build(

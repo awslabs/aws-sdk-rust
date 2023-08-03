@@ -129,6 +129,10 @@ impl CreateModelBiasJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// <p>The baseline configuration for a model bias job.</p>
     pub fn model_bias_baseline_config(
         mut self,
@@ -144,6 +148,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     ) -> Self {
         self.model_bias_baseline_config = input;
         self
+    }
+    /// <p>The baseline configuration for a model bias job.</p>
+    pub fn get_model_bias_baseline_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelBiasBaselineConfig> {
+        &self.model_bias_baseline_config
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
     pub fn model_bias_app_specification(
@@ -161,6 +171,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
         self.model_bias_app_specification = input;
         self
     }
+    /// <p>Configures the model bias job to run a specified Docker container image.</p>
+    pub fn get_model_bias_app_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelBiasAppSpecification> {
+        &self.model_bias_app_specification
+    }
     /// <p>Inputs for the model bias job.</p>
     pub fn model_bias_job_input(mut self, input: crate::types::ModelBiasJobInput) -> Self {
         self.model_bias_job_input = ::std::option::Option::Some(input);
@@ -173,6 +189,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     ) -> Self {
         self.model_bias_job_input = input;
         self
+    }
+    /// <p>Inputs for the model bias job.</p>
+    pub fn get_model_bias_job_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelBiasJobInput> {
+        &self.model_bias_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn model_bias_job_output_config(
@@ -190,6 +212,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
         self.model_bias_job_output_config = input;
         self
     }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn get_model_bias_job_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+        &self.model_bias_job_output_config
+    }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.job_resources = ::std::option::Option::Some(input);
@@ -202,6 +230,10 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     ) -> Self {
         self.job_resources = input;
         self
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn get_job_resources(&self) -> &::std::option::Option<crate::types::MonitoringResources> {
+        &self.job_resources
     }
     /// <p>Networking options for a model bias job.</p>
     pub fn network_config(mut self, input: crate::types::MonitoringNetworkConfig) -> Self {
@@ -216,6 +248,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
         self.network_config = input;
         self
     }
+    /// <p>Networking options for a model bias job.</p>
+    pub fn get_network_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+        &self.network_config
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -225,6 +263,10 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn stopping_condition(mut self, input: crate::types::MonitoringStoppingCondition) -> Self {
@@ -238,6 +280,12 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     ) -> Self {
         self.stopping_condition = input;
         self
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+        &self.stopping_condition
     }
     /// Appends an item to `tags`.
     ///
@@ -257,6 +305,10 @@ impl CreateModelBiasJobDefinitionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateModelBiasJobDefinitionInput`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionInput).
     pub fn build(

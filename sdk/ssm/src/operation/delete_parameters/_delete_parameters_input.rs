@@ -49,6 +49,10 @@ impl DeleteParametersInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Consumes the builder and constructs a [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
     pub fn build(
         self,

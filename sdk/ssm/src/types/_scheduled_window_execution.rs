@@ -56,6 +56,10 @@ impl ScheduledWindowExecutionBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window to be run.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The name of the maintenance window to be run.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ScheduledWindowExecutionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the maintenance window to be run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
     pub fn execution_time(
@@ -81,6 +89,10 @@ impl ScheduledWindowExecutionBuilder {
     ) -> Self {
         self.execution_time = input;
         self
+    }
+    /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_time
     }
     /// Consumes the builder and constructs a [`ScheduledWindowExecution`](crate::types::ScheduledWindowExecution).
     pub fn build(self) -> crate::types::ScheduledWindowExecution {

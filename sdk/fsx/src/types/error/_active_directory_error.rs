@@ -89,6 +89,10 @@ impl ActiveDirectoryErrorBuilder {
         self.active_directory_id = input;
         self
     }
+    /// <p>The directory ID of the directory that an error pertains to.</p>
+    pub fn get_active_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_directory_id
+    }
     /// <p>The type of Active Directory error.</p>
     pub fn r#type(mut self, input: crate::types::ActiveDirectoryErrorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl ActiveDirectoryErrorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of Active Directory error.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ActiveDirectoryErrorType> {
+        &self.r#type
+    }
     /// <p>A detailed error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl ActiveDirectoryErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

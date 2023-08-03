@@ -57,6 +57,10 @@ impl ModelQualityBaselineConfigBuilder {
         self.baselining_job_name = input;
         self
     }
+    /// <p>The name of the job that performs baselining for the monitoring job.</p>
+    pub fn get_baselining_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baselining_job_name
+    }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn constraints_resource(
         mut self,
@@ -72,6 +76,12 @@ impl ModelQualityBaselineConfigBuilder {
     ) -> Self {
         self.constraints_resource = input;
         self
+    }
+    /// <p>The constraints resource for a monitoring job.</p>
+    pub fn get_constraints_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConstraintsResource> {
+        &self.constraints_resource
     }
     /// Consumes the builder and constructs a [`ModelQualityBaselineConfig`](crate::types::ModelQualityBaselineConfig).
     pub fn build(self) -> crate::types::ModelQualityBaselineConfig {

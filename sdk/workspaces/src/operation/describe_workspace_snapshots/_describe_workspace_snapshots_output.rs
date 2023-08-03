@@ -63,6 +63,12 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
         self.rebuild_snapshots = input;
         self
     }
+    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
+    pub fn get_rebuild_snapshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.rebuild_snapshots
+    }
     /// Appends an item to `restore_snapshots`.
     ///
     /// To override the contents of this collection use [`set_restore_snapshots`](Self::set_restore_snapshots).
@@ -81,6 +87,12 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
     ) -> Self {
         self.restore_snapshots = input;
         self
+    }
+    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
+    pub fn get_restore_snapshots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.restore_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

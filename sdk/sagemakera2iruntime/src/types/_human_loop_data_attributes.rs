@@ -55,6 +55,13 @@ impl HumanLoopDataAttributesBuilder {
         self.content_classifiers = input;
         self
     }
+    /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
+    /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
+    pub fn get_content_classifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>> {
+        &self.content_classifiers
+    }
     /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::types::HumanLoopDataAttributes).
     pub fn build(self) -> crate::types::HumanLoopDataAttributes {
         crate::types::HumanLoopDataAttributes {

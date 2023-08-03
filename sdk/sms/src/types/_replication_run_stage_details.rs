@@ -48,6 +48,10 @@ impl ReplicationRunStageDetailsBuilder {
         self.stage = input;
         self
     }
+    /// <p>The current stage of a replication run.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
+    }
     /// <p>The progress of the current stage of a replication run.</p>
     pub fn stage_progress(
         mut self,
@@ -63,6 +67,10 @@ impl ReplicationRunStageDetailsBuilder {
     ) -> Self {
         self.stage_progress = input;
         self
+    }
+    /// <p>The progress of the current stage of a replication run.</p>
+    pub fn get_stage_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_progress
     }
     /// Consumes the builder and constructs a [`ReplicationRunStageDetails`](crate::types::ReplicationRunStageDetails).
     pub fn build(self) -> crate::types::ReplicationRunStageDetails {

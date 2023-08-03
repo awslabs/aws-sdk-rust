@@ -115,6 +115,10 @@ impl ListCompilationJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of model compilation jobs to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -124,6 +128,10 @@ impl ListCompilationJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of model compilation jobs to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +146,10 @@ impl ListCompilationJobsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -150,6 +162,10 @@ impl ListCompilationJobsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +180,12 @@ impl ListCompilationJobsInputBuilder {
         self.last_modified_time_after = input;
         self
     }
+    /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
+    }
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
@@ -176,6 +198,12 @@ impl ListCompilationJobsInputBuilder {
     ) -> Self {
         self.last_modified_time_before = input;
         self
+    }
+    /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
     }
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
     pub fn name_contains(
@@ -193,6 +221,10 @@ impl ListCompilationJobsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
     pub fn status_equals(mut self, input: crate::types::CompilationJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
@@ -205,6 +237,10 @@ impl ListCompilationJobsInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::CompilationJobStatus> {
+        &self.status_equals
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ListCompilationJobsSortBy) -> Self {
@@ -219,6 +255,10 @@ impl ListCompilationJobsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListCompilationJobsSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -228,6 +268,10 @@ impl ListCompilationJobsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListCompilationJobsInput`](crate::operation::list_compilation_jobs::ListCompilationJobsInput).
     pub fn build(

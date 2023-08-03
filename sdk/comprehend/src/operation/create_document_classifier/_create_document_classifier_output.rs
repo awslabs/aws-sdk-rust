@@ -54,6 +54,10 @@ impl CreateDocumentClassifierOutputBuilder {
         self.document_classifier_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_classifier_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

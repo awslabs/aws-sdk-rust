@@ -94,6 +94,11 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         self.attach_time = input;
         self
     }
+    /// <p>Indicates when the attachment initiated.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_attach_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attach_time
+    }
     /// <p>The identifier of the network interface attachment</p>
     pub fn attachment_id(
         mut self,
@@ -110,6 +115,10 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The identifier of the network interface attachment</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -119,6 +128,10 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
+    }
+    /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
     }
     /// <p>The device index of the network interface attachment on the instance.</p>
     pub fn device_index(mut self, input: i32) -> Self {
@@ -130,6 +143,10 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         self.device_index = input;
         self
     }
+    /// <p>The device index of the network interface attachment on the instance.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        &self.device_index
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -139,6 +156,10 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     pub fn instance_owner_id(
@@ -156,6 +177,10 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         self.instance_owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
+    pub fn get_instance_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_owner_id
+    }
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +192,11 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The attachment state.</p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceAttachment`](crate::types::AwsEc2NetworkInterfaceAttachment).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceAttachment {

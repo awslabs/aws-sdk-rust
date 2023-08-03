@@ -37,6 +37,12 @@ impl StartCopyJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartCopyJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_copy_job::builders::StartCopyJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl StartCopyJobFluentBuilder {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }
+    /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_point_arn()
+    }
     /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn source_backup_vault_name(
         mut self,
@@ -140,6 +150,10 @@ impl StartCopyJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_backup_vault_name(input);
         self
+    }
+    /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_source_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_backup_vault_name()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(
@@ -157,6 +171,12 @@ impl StartCopyJobFluentBuilder {
         self.inner = self.inner.set_destination_backup_vault_arn(input);
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn get_destination_backup_vault_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_backup_vault_arn()
+    }
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
@@ -166,6 +186,10 @@ impl StartCopyJobFluentBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
+    }
+    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
@@ -183,6 +207,10 @@ impl StartCopyJobFluentBuilder {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
+    }
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
@@ -196,5 +224,11 @@ impl StartCopyJobFluentBuilder {
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
         self.inner = self.inner.set_lifecycle(input);
         self
+    }
+    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
+        self.inner.get_lifecycle()
     }
 }

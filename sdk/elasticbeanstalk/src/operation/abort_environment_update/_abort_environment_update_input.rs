@@ -56,6 +56,10 @@ impl AbortEnvironmentUpdateInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
     pub fn environment_name(
         mut self,
@@ -71,6 +75,10 @@ impl AbortEnvironmentUpdateInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`AbortEnvironmentUpdateInput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateInput).
     pub fn build(

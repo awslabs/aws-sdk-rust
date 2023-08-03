@@ -64,6 +64,10 @@ impl TransferringInputDeviceSummaryBuilder {
         self.id = input;
         self
     }
+    /// The unique ID of the input device.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The optional message that the sender has attached to the transfer.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TransferringInputDeviceSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// The optional message that the sender has attached to the transfer.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// The AWS account ID for the recipient of the input device transfer.
     pub fn target_customer_id(
@@ -90,6 +98,10 @@ impl TransferringInputDeviceSummaryBuilder {
         self.target_customer_id = input;
         self
     }
+    /// The AWS account ID for the recipient of the input device transfer.
+    pub fn get_target_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_customer_id
+    }
     /// The type (direction) of the input device transfer.
     pub fn transfer_type(mut self, input: crate::types::InputDeviceTransferType) -> Self {
         self.transfer_type = ::std::option::Option::Some(input);
@@ -102,6 +114,12 @@ impl TransferringInputDeviceSummaryBuilder {
     ) -> Self {
         self.transfer_type = input;
         self
+    }
+    /// The type (direction) of the input device transfer.
+    pub fn get_transfer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceTransferType> {
+        &self.transfer_type
     }
     /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::types::TransferringInputDeviceSummary).
     pub fn build(self) -> crate::types::TransferringInputDeviceSummary {

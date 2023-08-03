@@ -42,6 +42,10 @@ impl ImportImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportImage as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_image::builders::ImportImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,11 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_architecture(input);
         self
     }
+    /// <p>The architecture of the virtual machine.</p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> </p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_architecture()
+    }
     /// <p>The client-specific data.</p>
     pub fn client_data(mut self, input: crate::types::ClientData) -> Self {
         self.inner = self.inner.client_data(input);
@@ -139,6 +148,10 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_client_data(input);
         self
     }
+    /// <p>The client-specific data.</p>
+    pub fn get_client_data(&self) -> &::std::option::Option<crate::types::ClientData> {
+        self.inner.get_client_data()
+    }
     /// <p>The token to enable idempotency for VM import requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -149,6 +162,10 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The token to enable idempotency for VM import requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>A description string for the import image task.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -158,6 +175,10 @@ impl ImportImageFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description string for the import image task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `DiskContainers`.
     ///
@@ -176,6 +197,12 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_disk_containers(input);
         self
     }
+    /// <p>Information about the disk containers.</p>
+    pub fn get_disk_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
+        self.inner.get_disk_containers()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -186,6 +213,10 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.encrypted(input);
@@ -195,6 +226,10 @@ impl ImportImageFluentBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
+    }
+    /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_encrypted()
     }
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code> </p>
@@ -207,6 +242,11 @@ impl ImportImageFluentBuilder {
     pub fn set_hypervisor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor(input);
         self
+    }
+    /// <p>The target hypervisor platform.</p>
+    /// <p>Valid values: <code>xen</code> </p>
+    pub fn get_hypervisor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hypervisor()
     }
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set. </p>
     /// <p>The KMS key identifier may be provided in any of the following formats: </p>
@@ -238,6 +278,20 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set. </p>
+    /// <p>The KMS key identifier may be provided in any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID</p> </li>
+    /// <li> <p>Key alias</p> </li>
+    /// <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li>
+    /// <li> <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p> </li>
+    /// </ul>
+    /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p>
+    /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
+    /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
     /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
@@ -252,6 +306,12 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_license_type(input);
         self
     }
+    /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
+    /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
+    /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_type()
+    }
     /// <p>The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code> </p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,6 +324,11 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
+    /// <p>Valid values: <code>Windows</code> | <code>Linux</code> </p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform()
+    }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
@@ -273,6 +338,10 @@ impl ImportImageFluentBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
+    }
+    /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_name()
     }
     /// Appends an item to `LicenseSpecifications`.
     ///
@@ -296,6 +365,13 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_license_specifications(input);
         self
     }
+    /// <p>The ARNs of the license configurations.</p>
+    pub fn get_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>
+    {
+        self.inner.get_license_specifications()
+    }
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -313,6 +389,12 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the import image task during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
     pub fn usage_operation(
         mut self,
@@ -329,6 +411,10 @@ impl ImportImageFluentBuilder {
         self.inner = self.inner.set_usage_operation(input);
         self
     }
+    /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_operation()
+    }
     /// <p>The boot mode of the virtual machine.</p>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.inner = self.inner.boot_mode(input);
@@ -341,5 +427,9 @@ impl ImportImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
+    }
+    /// <p>The boot mode of the virtual machine.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
+        self.inner.get_boot_mode()
     }
 }

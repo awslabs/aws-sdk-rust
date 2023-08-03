@@ -56,6 +56,10 @@ impl DedicatedIpPoolBuilder {
         self.pool_name = input;
         self
     }
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
     /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
@@ -76,6 +80,14 @@ impl DedicatedIpPoolBuilder {
     ) -> Self {
         self.scaling_mode = input;
         self
+    }
+    /// <p>The type of the dedicated IP pool.</p>
+    /// <ul>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
+    /// </ul>
+    pub fn get_scaling_mode(&self) -> &::std::option::Option<crate::types::ScalingMode> {
+        &self.scaling_mode
     }
     /// Consumes the builder and constructs a [`DedicatedIpPool`](crate::types::DedicatedIpPool).
     pub fn build(self) -> crate::types::DedicatedIpPool {

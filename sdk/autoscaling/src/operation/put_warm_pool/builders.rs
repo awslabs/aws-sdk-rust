@@ -38,6 +38,10 @@ impl PutWarmPoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutWarmPool as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_warm_pool::builders::PutWarmPoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutWarmPoolFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional property. Specify it only if you do not want the warm pool size to be determined by the difference between the group's maximum capacity and its desired capacity. </p> <important>
     /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling launches and maintains the difference between the group's maximum capacity and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and the desired capacity instead. </p>
     /// <p>The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the same value does the warm pool have an absolute size.</p>
@@ -144,6 +152,14 @@ impl PutWarmPoolFluentBuilder {
         self.inner = self.inner.set_max_group_prepared_capacity(input);
         self
     }
+    /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional property. Specify it only if you do not want the warm pool size to be determined by the difference between the group's maximum capacity and its desired capacity. </p> <important>
+    /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling launches and maintains the difference between the group's maximum capacity and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and the desired capacity instead. </p>
+    /// <p>The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the same value does the warm pool have an absolute size.</p>
+    /// </important>
+    /// <p>If the desired capacity of the Auto Scaling group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless you specify a value for <code>MinSize</code>. To remove a value that you previously set, include the property but specify -1 for the value. </p>
+    pub fn get_max_group_prepared_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_group_prepared_capacity()
+    }
     /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.</p>
     pub fn min_size(mut self, input: i32) -> Self {
         self.inner = self.inner.min_size(input);
@@ -153,6 +169,10 @@ impl PutWarmPoolFluentBuilder {
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_size(input);
         self
+    }
+    /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_size()
     }
     /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
     pub fn pool_state(mut self, input: crate::types::WarmPoolState) -> Self {
@@ -167,6 +187,10 @@ impl PutWarmPoolFluentBuilder {
         self.inner = self.inner.set_pool_state(input);
         self
     }
+    /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
+    pub fn get_pool_state(&self) -> &::std::option::Option<crate::types::WarmPoolState> {
+        self.inner.get_pool_state()
+    }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
     pub fn instance_reuse_policy(mut self, input: crate::types::InstanceReusePolicy) -> Self {
         self.inner = self.inner.instance_reuse_policy(input);
@@ -179,5 +203,11 @@ impl PutWarmPoolFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_reuse_policy(input);
         self
+    }
+    /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
+    pub fn get_instance_reuse_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
+        self.inner.get_instance_reuse_policy()
     }
 }

@@ -37,6 +37,13 @@ impl PutManagedInsightRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutManagedInsightRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,11 @@ impl PutManagedInsightRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_managed_rules(input);
         self
+    }
+    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    pub fn get_managed_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
+        self.inner.get_managed_rules()
     }
 }

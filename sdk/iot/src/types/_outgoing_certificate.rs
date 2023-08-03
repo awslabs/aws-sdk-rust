@@ -86,6 +86,10 @@ impl OutgoingCertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The certificate ARN.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The certificate ID.</p>
     pub fn certificate_id(
         mut self,
@@ -101,6 +105,10 @@ impl OutgoingCertificateBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The certificate ID.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
     pub fn transferred_to(
@@ -118,6 +126,10 @@ impl OutgoingCertificateBuilder {
         self.transferred_to = input;
         self
     }
+    /// <p>The Amazon Web Services account to which the transfer was made.</p>
+    pub fn get_transferred_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transferred_to
+    }
     /// <p>The date the transfer was initiated.</p>
     pub fn transfer_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.transfer_date = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl OutgoingCertificateBuilder {
     ) -> Self {
         self.transfer_date = input;
         self
+    }
+    /// <p>The date the transfer was initiated.</p>
+    pub fn get_transfer_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.transfer_date
     }
     /// <p>The transfer message.</p>
     pub fn transfer_message(
@@ -147,6 +163,10 @@ impl OutgoingCertificateBuilder {
         self.transfer_message = input;
         self
     }
+    /// <p>The transfer message.</p>
+    pub fn get_transfer_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_message
+    }
     /// <p>The certificate creation date.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl OutgoingCertificateBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The certificate creation date.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`OutgoingCertificate`](crate::types::OutgoingCertificate).
     pub fn build(self) -> crate::types::OutgoingCertificate {

@@ -55,6 +55,10 @@ impl ModifyRuleInputBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// Appends an item to `conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -74,6 +78,12 @@ impl ModifyRuleInputBuilder {
         self.conditions = input;
         self
     }
+    /// <p>The conditions.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+        &self.conditions
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -92,6 +102,10 @@ impl ModifyRuleInputBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>The actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
     pub fn build(

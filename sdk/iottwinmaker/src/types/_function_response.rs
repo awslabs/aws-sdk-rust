@@ -76,6 +76,12 @@ impl FunctionResponseBuilder {
         self.required_properties = input;
         self
     }
+    /// <p>The required properties of the function.</p>
+    pub fn get_required_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.required_properties
+    }
     /// <p>The scope of the function.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -85,6 +91,10 @@ impl FunctionResponseBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>The scope of the function.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// <p>The data connector.</p>
     pub fn implemented_by(mut self, input: crate::types::DataConnector) -> Self {
@@ -99,6 +109,10 @@ impl FunctionResponseBuilder {
         self.implemented_by = input;
         self
     }
+    /// <p>The data connector.</p>
+    pub fn get_implemented_by(&self) -> &::std::option::Option<crate::types::DataConnector> {
+        &self.implemented_by
+    }
     /// <p>Indicates whether this function is inherited.</p>
     pub fn is_inherited(mut self, input: bool) -> Self {
         self.is_inherited = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl FunctionResponseBuilder {
     pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_inherited = input;
         self
+    }
+    /// <p>Indicates whether this function is inherited.</p>
+    pub fn get_is_inherited(&self) -> &::std::option::Option<bool> {
+        &self.is_inherited
     }
     /// Consumes the builder and constructs a [`FunctionResponse`](crate::types::FunctionResponse).
     pub fn build(self) -> crate::types::FunctionResponse {

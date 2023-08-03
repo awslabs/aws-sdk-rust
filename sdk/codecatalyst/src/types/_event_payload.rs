@@ -48,6 +48,10 @@ impl EventPayloadBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The type of content in the event payload.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The data included in the event payload.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EventPayloadBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The data included in the event payload.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`EventPayload`](crate::types::EventPayload).
     pub fn build(self) -> crate::types::EventPayload {

@@ -72,6 +72,10 @@ impl TagOptionDetailBuilder {
         self.key = input;
         self
     }
+    /// <p>The TagOption key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The TagOption value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl TagOptionDetailBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The TagOption value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The TagOption active state.</p>
     pub fn active(mut self, input: bool) -> Self {
@@ -92,6 +100,10 @@ impl TagOptionDetailBuilder {
         self.active = input;
         self
     }
+    /// <p>The TagOption active state.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// <p>The TagOption identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl TagOptionDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl TagOptionDetailBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// Consumes the builder and constructs a [`TagOptionDetail`](crate::types::TagOptionDetail).
     pub fn build(self) -> crate::types::TagOptionDetail {

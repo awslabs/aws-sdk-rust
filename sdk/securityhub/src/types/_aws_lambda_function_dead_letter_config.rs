@@ -40,6 +40,10 @@ impl AwsLambdaFunctionDeadLetterConfigBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The ARN of an SQS queue or SNS topic.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionDeadLetterConfig`](crate::types::AwsLambdaFunctionDeadLetterConfig).
     pub fn build(self) -> crate::types::AwsLambdaFunctionDeadLetterConfig {
         crate::types::AwsLambdaFunctionDeadLetterConfig {

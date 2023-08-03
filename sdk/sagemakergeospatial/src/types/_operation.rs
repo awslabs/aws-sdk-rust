@@ -56,6 +56,10 @@ impl OperationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
     pub fn equation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.equation = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl OperationBuilder {
     pub fn set_equation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.equation = input;
         self
+    }
+    /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
+    pub fn get_equation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.equation
     }
     /// <p>The type of the operation.</p>
     pub fn output_type(mut self, input: crate::types::OutputType) -> Self {
@@ -78,6 +86,10 @@ impl OperationBuilder {
     ) -> Self {
         self.output_type = input;
         self
+    }
+    /// <p>The type of the operation.</p>
+    pub fn get_output_type(&self) -> &::std::option::Option<crate::types::OutputType> {
+        &self.output_type
     }
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
     pub fn build(self) -> crate::types::Operation {

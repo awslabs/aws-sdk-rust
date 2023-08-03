@@ -65,6 +65,12 @@ impl UpdateSettingsBuilder {
         self.add_subnets = input;
         self
     }
+    /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
+    pub fn get_add_subnets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_subnets
+    }
     /// Appends an item to `remove_subnets`.
     ///
     /// To override the contents of this collection use [`set_remove_subnets`](Self::set_remove_subnets).
@@ -87,6 +93,12 @@ impl UpdateSettingsBuilder {
         self.remove_subnets = input;
         self
     }
+    /// <p>The ID of one or more subnets to remove.</p>
+    pub fn get_remove_subnets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_subnets
+    }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub fn security_group_id(
         mut self,
@@ -102,6 +114,10 @@ impl UpdateSettingsBuilder {
     ) -> Self {
         self.security_group_id = input;
         self
+    }
+    /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// Consumes the builder and constructs a [`UpdateSettings`](crate::types::UpdateSettings).
     pub fn build(self) -> crate::types::UpdateSettings {

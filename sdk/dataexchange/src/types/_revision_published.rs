@@ -40,6 +40,10 @@ impl RevisionPublishedBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The data set ID of the published revision.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// Consumes the builder and constructs a [`RevisionPublished`](crate::types::RevisionPublished).
     pub fn build(self) -> crate::types::RevisionPublished {
         crate::types::RevisionPublished {

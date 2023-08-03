@@ -88,6 +88,12 @@ impl CodegenGenericDataFieldBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The data type for the generic data field.</p>
+    pub fn get_data_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenGenericDataFieldDataType> {
+        &self.data_type
+    }
     /// <p>The value of the data type for the generic data field.</p>
     pub fn data_type_value(
         mut self,
@@ -104,6 +110,10 @@ impl CodegenGenericDataFieldBuilder {
         self.data_type_value = input;
         self
     }
+    /// <p>The value of the data type for the generic data field.</p>
+    pub fn get_data_type_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type_value
+    }
     /// <p>Specifies whether the generic data field is required.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -113,6 +123,10 @@ impl CodegenGenericDataFieldBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Specifies whether the generic data field is required.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// <p>Specifies whether the generic data field is read-only.</p>
     pub fn read_only(mut self, input: bool) -> Self {
@@ -124,6 +138,10 @@ impl CodegenGenericDataFieldBuilder {
         self.read_only = input;
         self
     }
+    /// <p>Specifies whether the generic data field is read-only.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
+    }
     /// <p>Specifies whether the generic data field is an array.</p>
     pub fn is_array(mut self, input: bool) -> Self {
         self.is_array = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl CodegenGenericDataFieldBuilder {
     pub fn set_is_array(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_array = input;
         self
+    }
+    /// <p>Specifies whether the generic data field is an array.</p>
+    pub fn get_is_array(&self) -> &::std::option::Option<bool> {
+        &self.is_array
     }
     /// <p>The relationship of the generic data schema.</p>
     pub fn relationship(mut self, input: crate::types::CodegenGenericDataRelationshipType) -> Self {
@@ -146,6 +168,12 @@ impl CodegenGenericDataFieldBuilder {
     ) -> Self {
         self.relationship = input;
         self
+    }
+    /// <p>The relationship of the generic data schema.</p>
+    pub fn get_relationship(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenGenericDataRelationshipType> {
+        &self.relationship
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataField`](crate::types::CodegenGenericDataField).
     pub fn build(self) -> crate::types::CodegenGenericDataField {

@@ -46,6 +46,10 @@ impl CreateConnectorOutputBuilder {
         self.connector_id = input;
         self
     }
+    /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

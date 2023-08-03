@@ -48,6 +48,10 @@ impl RecognizedBotMemberBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot member that processes the request.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RecognizedBotMemberBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot member that processes the request.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// Consumes the builder and constructs a [`RecognizedBotMember`](crate::types::RecognizedBotMember).
     pub fn build(self) -> crate::types::RecognizedBotMember {

@@ -57,6 +57,10 @@ impl ListReferenceImportJobsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `import_jobs`.
     ///
     /// To override the contents of this collection use [`set_import_jobs`](Self::set_import_jobs).
@@ -75,6 +79,12 @@ impl ListReferenceImportJobsOutputBuilder {
     ) -> Self {
         self.import_jobs = input;
         self
+    }
+    /// <p>A lis of jobs.</p>
+    pub fn get_import_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>> {
+        &self.import_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

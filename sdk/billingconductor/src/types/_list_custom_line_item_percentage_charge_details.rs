@@ -40,6 +40,10 @@ impl ListCustomLineItemPercentageChargeDetailsBuilder {
         self.percentage_value = input;
         self
     }
+    /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    pub fn get_percentage_value(&self) -> &::std::option::Option<f64> {
+        &self.percentage_value
+    }
     /// Consumes the builder and constructs a [`ListCustomLineItemPercentageChargeDetails`](crate::types::ListCustomLineItemPercentageChargeDetails).
     pub fn build(self) -> crate::types::ListCustomLineItemPercentageChargeDetails {
         crate::types::ListCustomLineItemPercentageChargeDetails {

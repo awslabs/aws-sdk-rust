@@ -52,6 +52,10 @@ impl WirelessDeviceEventLogOptionBuilder {
         self.event = input;
         self
     }
+    /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::WirelessDeviceEvent> {
+        &self.event
+    }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl WirelessDeviceEventLogOptionBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Consumes the builder and constructs a [`WirelessDeviceEventLogOption`](crate::types::WirelessDeviceEventLogOption).
     pub fn build(self) -> crate::types::WirelessDeviceEventLogOption {

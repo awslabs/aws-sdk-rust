@@ -97,6 +97,10 @@ impl ContainerServiceDeploymentBuilder {
         self.version = input;
         self
     }
+    /// <p>The version number of the deployment.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
+    }
     /// <p>The state of the deployment.</p>
     /// <p>A deployment can be in one of the following states:</p>
     /// <ul>
@@ -124,6 +128,19 @@ impl ContainerServiceDeploymentBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the deployment.</p>
+    /// <p>A deployment can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p> <code>Activating</code> - The deployment is being created.</p> </li>
+    /// <li> <p> <code>Active</code> - The deployment was successfully created, and it's currently running on the container service. The container service can have only one deployment in an active state at a time.</p> </li>
+    /// <li> <p> <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on the container service.</p> </li>
+    /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
+    /// </ul>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceDeploymentState> {
+        &self.state
+    }
     /// Adds a key-value pair to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -149,6 +166,14 @@ impl ContainerServiceDeploymentBuilder {
         self.containers = input;
         self
     }
+    /// <p>An object that describes the configuration for the containers of the deployment.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
+        &self.containers
+    }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn public_endpoint(mut self, input: crate::types::ContainerServiceEndpoint) -> Self {
         self.public_endpoint = ::std::option::Option::Some(input);
@@ -162,6 +187,12 @@ impl ContainerServiceDeploymentBuilder {
         self.public_endpoint = input;
         self
     }
+    /// <p>An object that describes the endpoint of the deployment.</p>
+    pub fn get_public_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceEndpoint> {
+        &self.public_endpoint
+    }
     /// <p>The timestamp when the deployment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -174,6 +205,10 @@ impl ContainerServiceDeploymentBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the deployment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`ContainerServiceDeployment`](crate::types::ContainerServiceDeployment).
     pub fn build(self) -> crate::types::ContainerServiceDeployment {

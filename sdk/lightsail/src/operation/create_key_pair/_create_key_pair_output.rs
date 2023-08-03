@@ -70,6 +70,10 @@ impl CreateKeyPairOutputBuilder {
         self.key_pair = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
+    pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::KeyPair> {
+        &self.key_pair
+    }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn public_key_base64(
         mut self,
@@ -85,6 +89,10 @@ impl CreateKeyPairOutputBuilder {
     ) -> Self {
         self.public_key_base64 = input;
         self
+    }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn get_public_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_base64
     }
     /// <p>A base64-encoded RSA private key.</p>
     pub fn private_key_base64(
@@ -102,6 +110,10 @@ impl CreateKeyPairOutputBuilder {
         self.private_key_base64 = input;
         self
     }
+    /// <p>A base64-encoded RSA private key.</p>
+    pub fn get_private_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key_base64
+    }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl CreateKeyPairOutputBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

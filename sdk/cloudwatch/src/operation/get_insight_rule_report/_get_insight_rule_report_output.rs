@@ -102,6 +102,10 @@ impl GetInsightRuleReportOutputBuilder {
         self.key_labels = input;
         self
     }
+    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    pub fn get_key_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_labels
+    }
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
     pub fn aggregation_statistic(
         mut self,
@@ -118,6 +122,10 @@ impl GetInsightRuleReportOutputBuilder {
         self.aggregation_statistic = input;
         self
     }
+    /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
+    pub fn get_aggregation_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_statistic
+    }
     /// <p>The sum of the values from all individual contributors that match the rule.</p>
     pub fn aggregate_value(mut self, input: f64) -> Self {
         self.aggregate_value = ::std::option::Option::Some(input);
@@ -128,6 +136,10 @@ impl GetInsightRuleReportOutputBuilder {
         self.aggregate_value = input;
         self
     }
+    /// <p>The sum of the values from all individual contributors that match the rule.</p>
+    pub fn get_aggregate_value(&self) -> &::std::option::Option<f64> {
+        &self.aggregate_value
+    }
     /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
     pub fn approximate_unique_count(mut self, input: i64) -> Self {
         self.approximate_unique_count = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl GetInsightRuleReportOutputBuilder {
     pub fn set_approximate_unique_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_unique_count = input;
         self
+    }
+    /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
+    pub fn get_approximate_unique_count(&self) -> &::std::option::Option<i64> {
+        &self.approximate_unique_count
     }
     /// Appends an item to `contributors`.
     ///
@@ -157,6 +173,12 @@ impl GetInsightRuleReportOutputBuilder {
         self.contributors = input;
         self
     }
+    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
+    pub fn get_contributors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>> {
+        &self.contributors
+    }
     /// Appends an item to `metric_datapoints`.
     ///
     /// To override the contents of this collection use [`set_metric_datapoints`](Self::set_metric_datapoints).
@@ -175,6 +197,12 @@ impl GetInsightRuleReportOutputBuilder {
     ) -> Self {
         self.metric_datapoints = input;
         self
+    }
+    /// <p>A time series of metric data points that matches the time period in the rule request.</p>
+    pub fn get_metric_datapoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>> {
+        &self.metric_datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

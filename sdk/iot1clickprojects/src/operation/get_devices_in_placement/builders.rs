@@ -36,6 +36,13 @@ impl GetDevicesInPlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDevicesInPlacement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetDevicesInPlacementFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project containing the placement.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The name of the placement to get the devices from.</p>
     pub fn placement_name(
         mut self,
@@ -141,5 +152,9 @@ impl GetDevicesInPlacementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
+    }
+    /// <p>The name of the placement to get the devices from.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
     }
 }

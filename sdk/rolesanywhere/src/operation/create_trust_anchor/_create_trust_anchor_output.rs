@@ -50,6 +50,10 @@ impl CreateTrustAnchorOutputBuilder {
         self.trust_anchor = input;
         self
     }
+    /// <p>The state of the trust anchor after a read or write operation. </p>
+    pub fn get_trust_anchor(&self) -> &::std::option::Option<crate::types::TrustAnchorDetail> {
+        &self.trust_anchor
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

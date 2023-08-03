@@ -37,6 +37,13 @@ impl AddAttributesToFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddAttributesToFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,12 @@ impl AddAttributesToFindingsFluentBuilder {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
+    /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_arns()
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -150,5 +163,11 @@ impl AddAttributesToFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The array of attributes that you want to assign to specified findings.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_attributes()
     }
 }

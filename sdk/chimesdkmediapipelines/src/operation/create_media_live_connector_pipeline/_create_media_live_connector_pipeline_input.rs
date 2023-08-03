@@ -87,6 +87,13 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The media live connector pipeline's data sources.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>
+    {
+        &self.sources
+    }
     /// Appends an item to `sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -106,6 +113,12 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
         self.sinks = input;
         self
     }
+    /// <p>The media live connector pipeline's data sinks.</p>
+    pub fn get_sinks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>> {
+        &self.sinks
+    }
     /// <p>The token assigned to the client making the request.</p>
     pub fn client_request_token(
         mut self,
@@ -121,6 +134,10 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The token assigned to the client making the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -140,6 +157,10 @@ impl CreateMediaLiveConnectorPipelineInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the media live connector pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineInput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineInput, ::aws_smithy_http::operation::error::BuildError>{

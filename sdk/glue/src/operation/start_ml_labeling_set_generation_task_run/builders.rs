@@ -39,6 +39,10 @@ impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMLLabelingSetGenerationTaskRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
         self.inner = self.inner.set_transform_id(input);
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_id()
+    }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
     pub fn output_s3_path(
         mut self,
@@ -118,5 +126,9 @@ impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_s3_path(input);
         self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_path()
     }
 }

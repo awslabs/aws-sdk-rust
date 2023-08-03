@@ -56,6 +56,10 @@ impl PhaseBuilder {
         self.initial_number_of_users = input;
         self
     }
+    /// <p>Specifies how many concurrent users to start with.</p>
+    pub fn get_initial_number_of_users(&self) -> &::std::option::Option<i32> {
+        &self.initial_number_of_users
+    }
     /// <p>Specified how many new users to spawn in a minute.</p>
     pub fn spawn_rate(mut self, input: i32) -> Self {
         self.spawn_rate = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PhaseBuilder {
         self.spawn_rate = input;
         self
     }
+    /// <p>Specified how many new users to spawn in a minute.</p>
+    pub fn get_spawn_rate(&self) -> &::std::option::Option<i32> {
+        &self.spawn_rate
+    }
     /// <p>Specifies how long traffic phase should be.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl PhaseBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>Specifies how long traffic phase should be.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
     }
     /// Consumes the builder and constructs a [`Phase`](crate::types::Phase).
     pub fn build(self) -> crate::types::Phase {

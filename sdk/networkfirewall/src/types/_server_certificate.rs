@@ -40,6 +40,10 @@ impl ServerCertificateBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`ServerCertificate`](crate::types::ServerCertificate).
     pub fn build(self) -> crate::types::ServerCertificate {
         crate::types::ServerCertificate {

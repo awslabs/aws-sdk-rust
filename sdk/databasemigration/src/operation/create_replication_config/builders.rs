@@ -37,6 +37,13 @@ impl CreateReplicationConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReplicationConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_replication_config::builders::CreateReplicationConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,12 @@ impl CreateReplicationConfigFluentBuilder {
         self.inner = self.inner.set_replication_config_identifier(input);
         self
     }
+    /// <p>A unique identifier that you want to use to create a <code>ReplicationConfigArn</code> that is returned as part of the output from this action. You can then pass this output <code>ReplicationConfigArn</code> as the value of the <code>ReplicationConfigArn</code> option for other actions to identify both DMS Serverless replications and replication configurations that you want those actions to operate on. For some actions, you can also use either this unique identifier or a corresponding ARN in action filters to identify the specific replication and replication configuration to operate on.</p>
+    pub fn get_replication_config_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_config_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS Serverless replication configuration.</p>
     pub fn source_endpoint_arn(
         mut self,
@@ -148,6 +161,10 @@ impl CreateReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_endpoint_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS Serverless replication configuration.</p>
+    pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_endpoint_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
     pub fn target_endpoint_arn(
@@ -165,6 +182,10 @@ impl CreateReplicationConfigFluentBuilder {
         self.inner = self.inner.set_target_endpoint_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
+    pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_endpoint_arn()
+    }
     /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
     pub fn compute_config(mut self, input: crate::types::ComputeConfig) -> Self {
         self.inner = self.inner.compute_config(input);
@@ -177,6 +198,10 @@ impl CreateReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compute_config(input);
         self
+    }
+    /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfig> {
+        self.inner.get_compute_config()
     }
     /// <p>The type of DMS Serverless replication to provision using this replication configuration.</p>
     /// <p>Possible values:</p>
@@ -203,6 +228,16 @@ impl CreateReplicationConfigFluentBuilder {
         self.inner = self.inner.set_replication_type(input);
         self
     }
+    /// <p>The type of DMS Serverless replication to provision using this replication configuration.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>"full-load"</code> </p> </li>
+    /// <li> <p> <code>"cdc"</code> </p> </li>
+    /// <li> <p> <code>"full-load-and-cdc"</code> </p> </li>
+    /// </ul>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
+        self.inner.get_replication_type()
+    }
     /// <p>JSON table mappings for DMS Serverless replications that are provisioned using this replication configuration. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.html"> Specifying table selection and transformations rules using JSON</a>.</p>
     pub fn table_mappings(
         mut self,
@@ -218,6 +253,10 @@ impl CreateReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_table_mappings(input);
         self
+    }
+    /// <p>JSON table mappings for DMS Serverless replications that are provisioned using this replication configuration. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.html"> Specifying table selection and transformations rules using JSON</a>.</p>
+    pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_mappings()
     }
     /// <p>Optional JSON settings for DMS Serverless replications that are provisioned using this replication configuration. For example, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.ChangeProcessingTuning.html"> Change processing tuning settings</a>.</p>
     pub fn replication_settings(
@@ -235,6 +274,10 @@ impl CreateReplicationConfigFluentBuilder {
         self.inner = self.inner.set_replication_settings(input);
         self
     }
+    /// <p>Optional JSON settings for DMS Serverless replications that are provisioned using this replication configuration. For example, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.ChangeProcessingTuning.html"> Change processing tuning settings</a>.</p>
+    pub fn get_replication_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_settings()
+    }
     /// <p>Optional JSON settings for specifying supplemental data. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html"> Specifying supplemental data for task settings</a>.</p>
     pub fn supplemental_settings(
         mut self,
@@ -250,6 +293,10 @@ impl CreateReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supplemental_settings(input);
         self
+    }
+    /// <p>Optional JSON settings for specifying supplemental data. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html"> Specifying supplemental data for task settings</a>.</p>
+    pub fn get_supplemental_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_supplemental_settings()
     }
     /// <p>Optional unique value or name that you set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.FineGrainedAccess"> Fine-grained access control using resource names and tags</a>.</p>
     pub fn resource_identifier(
@@ -267,6 +314,10 @@ impl CreateReplicationConfigFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>Optional unique value or name that you set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.FineGrainedAccess"> Fine-grained access control using resource names and tags</a>.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -283,5 +334,9 @@ impl CreateReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more optional tags associated with resources used by the DMS Serverless replication. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tagging.html"> Tagging resources in Database Migration Service</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

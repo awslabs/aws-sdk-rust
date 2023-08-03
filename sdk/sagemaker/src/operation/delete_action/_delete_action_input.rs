@@ -39,6 +39,10 @@ impl DeleteActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action to delete.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// Consumes the builder and constructs a [`DeleteActionInput`](crate::operation::delete_action::DeleteActionInput).
     pub fn build(
         self,

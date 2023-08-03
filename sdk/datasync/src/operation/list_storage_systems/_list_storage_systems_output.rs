@@ -68,6 +68,12 @@ impl ListStorageSystemsOutputBuilder {
         self.storage_systems = input;
         self
     }
+    /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
+    pub fn get_storage_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>> {
+        &self.storage_systems
+    }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl ListStorageSystemsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

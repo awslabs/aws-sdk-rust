@@ -39,6 +39,12 @@ impl DeleteFileCacheFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFileCache as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_file_cache::builders::DeleteFileCacheInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DeleteFileCacheFluentBuilder {
         self.inner = self.inner.set_file_cache_id(input);
         self
     }
+    /// <p>The ID of the cache that's being deleted.</p>
+    pub fn get_file_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_cache_id()
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -150,5 +160,9 @@ impl DeleteFileCacheFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

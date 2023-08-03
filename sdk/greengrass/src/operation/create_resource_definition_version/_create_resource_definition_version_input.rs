@@ -61,6 +61,10 @@ impl CreateResourceDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the resource definition.
     pub fn resource_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateResourceDefinitionVersionInputBuilder {
     ) -> Self {
         self.resource_definition_id = input;
         self
+    }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
     }
     /// Appends an item to `resources`.
     ///
@@ -95,6 +103,10 @@ impl CreateResourceDefinitionVersionInputBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// A list of resources.
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
     pub fn build(

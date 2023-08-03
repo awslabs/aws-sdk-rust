@@ -37,6 +37,13 @@ impl UpdateScalingParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateScalingParameters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateScalingParametersFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub fn scaling_parameters(mut self, input: crate::types::ScalingParameters) -> Self {
         self.inner = self.inner.scaling_parameters(input);
@@ -139,5 +150,11 @@ impl UpdateScalingParametersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scaling_parameters(input);
         self
+    }
+    /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    pub fn get_scaling_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalingParameters> {
+        self.inner.get_scaling_parameters()
     }
 }

@@ -39,6 +39,10 @@ impl DeleteEventBusInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event bus to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteEventBusInput`](crate::operation::delete_event_bus::DeleteEventBusInput).
     pub fn build(
         self,

@@ -51,6 +51,12 @@ impl UpdateAccountSettingsInputBuilder {
         self.group_lifecycle_events_desired_status = input;
         self
     }
+    /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    pub fn get_group_lifecycle_events_desired_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
+        &self.group_lifecycle_events_desired_status
+    }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,

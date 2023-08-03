@@ -46,6 +46,10 @@ impl SourcePriorityBuilder {
         self.primary_source = input;
         self
     }
+    /// The name of the source you choose as the primary source for this flow.
+    pub fn get_primary_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_source
+    }
     /// Consumes the builder and constructs a [`SourcePriority`](crate::types::SourcePriority).
     pub fn build(self) -> crate::types::SourcePriority {
         crate::types::SourcePriority {

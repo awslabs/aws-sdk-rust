@@ -71,6 +71,10 @@ impl GetManagedPrefixListEntriesInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -87,6 +91,10 @@ impl GetManagedPrefixListEntriesInputBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The version of the prefix list for which to return the entries. The default is the current version.</p>
     pub fn target_version(mut self, input: i64) -> Self {
         self.target_version = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl GetManagedPrefixListEntriesInputBuilder {
     pub fn set_target_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_version = input;
         self
+    }
+    /// <p>The version of the prefix list for which to return the entries. The default is the current version.</p>
+    pub fn get_target_version(&self) -> &::std::option::Option<i64> {
+        &self.target_version
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,6 +119,10 @@ impl GetManagedPrefixListEntriesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl GetManagedPrefixListEntriesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetManagedPrefixListEntriesInput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput).
     pub fn build(

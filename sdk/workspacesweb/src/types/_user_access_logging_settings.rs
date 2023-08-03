@@ -63,6 +63,12 @@ impl UserAccessLoggingSettingsBuilder {
         self.user_access_logging_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.user_access_logging_settings_arn
+    }
     /// Appends an item to `associated_portal_arns`.
     ///
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
@@ -85,6 +91,12 @@ impl UserAccessLoggingSettingsBuilder {
         self.associated_portal_arns = input;
         self
     }
+    /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
+    pub fn get_associated_portal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_portal_arns
+    }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn kinesis_stream_arn(
         mut self,
@@ -100,6 +112,10 @@ impl UserAccessLoggingSettingsBuilder {
     ) -> Self {
         self.kinesis_stream_arn = input;
         self
+    }
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kinesis_stream_arn
     }
     /// Consumes the builder and constructs a [`UserAccessLoggingSettings`](crate::types::UserAccessLoggingSettings).
     pub fn build(self) -> crate::types::UserAccessLoggingSettings {

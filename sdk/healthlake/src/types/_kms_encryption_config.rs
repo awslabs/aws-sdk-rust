@@ -48,6 +48,10 @@ impl KmsEncryptionConfigBuilder {
         self.cmk_type = input;
         self
     }
+    /// <p> The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
+    pub fn get_cmk_type(&self) -> &::std::option::Option<crate::types::CmkType> {
+        &self.cmk_type
+    }
     /// <p> The KMS encryption key id/alias used to encrypt the data store contents at rest. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl KmsEncryptionConfigBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p> The KMS encryption key id/alias used to encrypt the data store contents at rest. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     pub fn build(self) -> crate::types::KmsEncryptionConfig {

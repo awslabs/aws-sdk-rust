@@ -142,6 +142,10 @@ impl ExecutionListItemBuilder {
         self.execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn state_machine_arn(
         mut self,
@@ -157,6 +161,10 @@ impl ExecutionListItemBuilder {
     ) -> Self {
         self.state_machine_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -186,6 +194,19 @@ impl ExecutionListItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the execution.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the execution.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -198,6 +219,10 @@ impl ExecutionListItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status
     }
     /// <p>The date the execution started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -212,6 +237,10 @@ impl ExecutionListItemBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date the execution started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
@@ -225,6 +254,10 @@ impl ExecutionListItemBuilder {
         self.stop_date = input;
         self
     }
+    /// <p>If the execution already ended, the date the execution stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
+    }
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
@@ -235,6 +268,10 @@ impl ExecutionListItemBuilder {
         self.map_run_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
+    }
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
     pub fn item_count(mut self, input: i32) -> Self {
         self.item_count = ::std::option::Option::Some(input);
@@ -244,6 +281,10 @@ impl ExecutionListItemBuilder {
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.item_count = input;
         self
+    }
+    /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
+    pub fn get_item_count(&self) -> &::std::option::Option<i32> {
+        &self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
@@ -265,6 +306,12 @@ impl ExecutionListItemBuilder {
         self.state_machine_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
+    /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
+    pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_version_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
     pub fn state_machine_alias_arn(
@@ -282,6 +329,11 @@ impl ExecutionListItemBuilder {
     ) -> Self {
         self.state_machine_alias_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_alias_arn
     }
     /// Consumes the builder and constructs a [`ExecutionListItem`](crate::types::ExecutionListItem).
     pub fn build(self) -> crate::types::ExecutionListItem {

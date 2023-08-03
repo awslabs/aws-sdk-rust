@@ -42,6 +42,10 @@ impl PutFeedbackInputBuilder {
         self.insight_feedback = input;
         self
     }
+    /// <p> The feedback from customers is about the recommendations in this insight. </p>
+    pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
+        &self.insight_feedback
+    }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
     pub fn build(
         self,

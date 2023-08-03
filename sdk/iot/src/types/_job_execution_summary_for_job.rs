@@ -50,6 +50,10 @@ impl JobExecutionSummaryForJobBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>The ARN of the thing on which the job execution is running.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>Contains a subset of information about a job execution.</p>
     pub fn job_execution_summary(mut self, input: crate::types::JobExecutionSummary) -> Self {
         self.job_execution_summary = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl JobExecutionSummaryForJobBuilder {
     ) -> Self {
         self.job_execution_summary = input;
         self
+    }
+    /// <p>Contains a subset of information about a job execution.</p>
+    pub fn get_job_execution_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionSummary> {
+        &self.job_execution_summary
     }
     /// Consumes the builder and constructs a [`JobExecutionSummaryForJob`](crate::types::JobExecutionSummaryForJob).
     pub fn build(self) -> crate::types::JobExecutionSummaryForJob {

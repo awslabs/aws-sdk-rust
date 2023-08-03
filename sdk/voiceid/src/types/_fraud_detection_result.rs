@@ -100,6 +100,10 @@ impl FraudDetectionResultBuilder {
         self.fraud_detection_result_id = input;
         self
     }
+    /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+    pub fn get_fraud_detection_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fraud_detection_result_id
+    }
     /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     pub fn audio_aggregation_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_started_at = ::std::option::Option::Some(input);
@@ -112,6 +116,12 @@ impl FraudDetectionResultBuilder {
     ) -> Self {
         self.audio_aggregation_started_at = input;
         self
+    }
+    /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
+    pub fn get_audio_aggregation_started_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.audio_aggregation_started_at
     }
     /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     pub fn audio_aggregation_ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +136,12 @@ impl FraudDetectionResultBuilder {
         self.audio_aggregation_ended_at = input;
         self
     }
+    /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
+    pub fn get_audio_aggregation_ended_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.audio_aggregation_ended_at
+    }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
     pub fn configuration(mut self, input: crate::types::FraudDetectionConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -139,6 +155,12 @@ impl FraudDetectionResultBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FraudDetectionConfiguration> {
+        &self.configuration
+    }
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub fn decision(mut self, input: crate::types::FraudDetectionDecision) -> Self {
         self.decision = ::std::option::Option::Some(input);
@@ -151,6 +173,10 @@ impl FraudDetectionResultBuilder {
     ) -> Self {
         self.decision = input;
         self
+    }
+    /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
+    pub fn get_decision(&self) -> &::std::option::Option<crate::types::FraudDetectionDecision> {
+        &self.decision
     }
     /// Appends an item to `reasons`.
     ///
@@ -171,6 +197,12 @@ impl FraudDetectionResultBuilder {
         self.reasons = input;
         self
     }
+    /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
+    pub fn get_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FraudDetectionReason>> {
+        &self.reasons
+    }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
     pub fn risk_details(mut self, input: crate::types::FraudRiskDetails) -> Self {
         self.risk_details = ::std::option::Option::Some(input);
@@ -183,6 +215,10 @@ impl FraudDetectionResultBuilder {
     ) -> Self {
         self.risk_details = input;
         self
+    }
+    /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
+    pub fn get_risk_details(&self) -> &::std::option::Option<crate::types::FraudRiskDetails> {
+        &self.risk_details
     }
     /// Consumes the builder and constructs a [`FraudDetectionResult`](crate::types::FraudDetectionResult).
     pub fn build(self) -> crate::types::FraudDetectionResult {

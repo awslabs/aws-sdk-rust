@@ -36,6 +36,10 @@ impl UpdateAutomatedDiscoveryConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAutomatedDiscoveryConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,5 +108,10 @@ impl UpdateAutomatedDiscoveryConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
+    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryStatus> {
+        self.inner.get_status()
     }
 }

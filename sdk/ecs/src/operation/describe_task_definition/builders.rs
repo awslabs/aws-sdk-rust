@@ -38,6 +38,13 @@ impl DescribeTaskDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTaskDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DescribeTaskDefinitionFluentBuilder {
         self.inner = self.inner.set_task_definition(input);
         self
     }
+    /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_definition()
+    }
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
@@ -150,5 +161,11 @@ impl DescribeTaskDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_include(input);
         self
+    }
+    /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
+        self.inner.get_include()
     }
 }

@@ -59,6 +59,10 @@ impl InstanceGroupBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>Specifies the instance type of the instance group.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::TrainingInstanceType> {
+        &self.instance_type
+    }
     /// <p>Specifies the number of instances of the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl InstanceGroupBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Specifies the number of instances of the instance group.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
     pub fn instance_group_name(
@@ -84,6 +92,10 @@ impl InstanceGroupBuilder {
     ) -> Self {
         self.instance_group_name = input;
         self
+    }
+    /// <p>Specifies the name of the instance group.</p>
+    pub fn get_instance_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_name
     }
     /// Consumes the builder and constructs a [`InstanceGroup`](crate::types::InstanceGroup).
     pub fn build(self) -> crate::types::InstanceGroup {

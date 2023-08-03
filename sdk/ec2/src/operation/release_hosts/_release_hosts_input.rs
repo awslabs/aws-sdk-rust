@@ -48,6 +48,10 @@ impl ReleaseHostsInputBuilder {
         self.host_ids = input;
         self
     }
+    /// <p>The IDs of the Dedicated Hosts to release.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_ids
+    }
     /// Consumes the builder and constructs a [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
     pub fn build(
         self,

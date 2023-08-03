@@ -36,6 +36,10 @@ impl UpdateDetectorVersionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDetectorVersionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateDetectorVersionStatusFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(
         mut self,
@@ -142,6 +150,10 @@ impl UpdateDetectorVersionStatusFluentBuilder {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
+    }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
@@ -156,5 +168,10 @@ impl UpdateDetectorVersionStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The new status.</p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
+        self.inner.get_status()
     }
 }

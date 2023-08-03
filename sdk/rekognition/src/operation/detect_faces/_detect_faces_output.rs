@@ -69,6 +69,12 @@ impl DetectFacesOutputBuilder {
         self.face_details = input;
         self
     }
+    /// <p>Details of each face found in the image. </p>
+    pub fn get_face_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>> {
+        &self.face_details
+    }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
@@ -85,6 +91,14 @@ impl DetectFacesOutputBuilder {
     ) -> Self {
         self.orientation_correction = input;
         self
+    }
+    /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    pub fn get_orientation_correction(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrientationCorrection> {
+        &self.orientation_correction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

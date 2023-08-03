@@ -40,6 +40,10 @@ impl LambdaFunctionStartedEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// Consumes the builder and constructs a [`LambdaFunctionStartedEventAttributes`](crate::types::LambdaFunctionStartedEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionStartedEventAttributes {
         crate::types::LambdaFunctionStartedEventAttributes {

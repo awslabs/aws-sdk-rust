@@ -46,6 +46,10 @@ impl SetDefaultAuthorizerInputBuilder {
         self.authorizer_name = input;
         self
     }
+    /// <p>The authorizer name.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_name
+    }
     /// Consumes the builder and constructs a [`SetDefaultAuthorizerInput`](crate::operation::set_default_authorizer::SetDefaultAuthorizerInput).
     pub fn build(
         self,

@@ -62,6 +62,12 @@ impl DestinationDetailsBuilder {
         self.cloud_watch_logs_details = input;
         self
     }
+    /// <p>The configuration details of the CloudWatch Logs destination.</p>
+    pub fn get_cloud_watch_logs_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationDetails> {
+        &self.cloud_watch_logs_details
+    }
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
     pub fn kinesis_firehose_details(
         mut self,
@@ -77,6 +83,12 @@ impl DestinationDetailsBuilder {
     ) -> Self {
         self.kinesis_firehose_details = input;
         self
+    }
+    /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
+    pub fn get_kinesis_firehose_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestinationDetails> {
+        &self.kinesis_firehose_details
     }
     /// Consumes the builder and constructs a [`DestinationDetails`](crate::types::DestinationDetails).
     pub fn build(self) -> crate::types::DestinationDetails {

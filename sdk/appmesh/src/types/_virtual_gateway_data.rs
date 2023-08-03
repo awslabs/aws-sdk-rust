@@ -72,6 +72,10 @@ impl VirtualGatewayDataBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The name of the virtual gateway.</p>
     pub fn virtual_gateway_name(
         mut self,
@@ -88,6 +92,10 @@ impl VirtualGatewayDataBuilder {
         self.virtual_gateway_name = input;
         self
     }
+    /// <p>The name of the virtual gateway.</p>
+    pub fn get_virtual_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_name
+    }
     /// <p>The specifications of the virtual gateway.</p>
     pub fn spec(mut self, input: crate::types::VirtualGatewaySpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl VirtualGatewayDataBuilder {
     ) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The specifications of the virtual gateway.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualGatewaySpec> {
+        &self.spec
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -114,6 +126,10 @@ impl VirtualGatewayDataBuilder {
         self.metadata = input;
         self
     }
+    /// <p>An object that represents metadata for a resource.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.metadata
+    }
     /// <p>The current status of the virtual gateway.</p>
     pub fn status(mut self, input: crate::types::VirtualGatewayStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl VirtualGatewayDataBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the virtual gateway.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualGatewayStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VirtualGatewayData`](crate::types::VirtualGatewayData).
     pub fn build(self) -> crate::types::VirtualGatewayData {

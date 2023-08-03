@@ -57,6 +57,12 @@ impl BatchStartInputBuilder {
         self.channel_ids = input;
         self
     }
+    /// List of channel IDs
+    pub fn get_channel_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channel_ids
+    }
     /// Appends an item to `multiplex_ids`.
     ///
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
@@ -78,6 +84,12 @@ impl BatchStartInputBuilder {
     ) -> Self {
         self.multiplex_ids = input;
         self
+    }
+    /// List of multiplex IDs
+    pub fn get_multiplex_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchStartInput`](crate::operation::batch_start::BatchStartInput).
     pub fn build(

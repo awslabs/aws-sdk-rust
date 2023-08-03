@@ -56,6 +56,10 @@ impl CodeErrorLocationBuilder {
         self.line = input;
         self
     }
+    /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
+    pub fn get_line(&self) -> &::std::option::Option<i32> {
+        &self.line
+    }
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn column(mut self, input: i32) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CodeErrorLocationBuilder {
         self.column = input;
         self
     }
+    /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
+    pub fn get_column(&self) -> &::std::option::Option<i32> {
+        &self.column
+    }
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
     pub fn span(mut self, input: i32) -> Self {
         self.span = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl CodeErrorLocationBuilder {
     pub fn set_span(mut self, input: ::std::option::Option<i32>) -> Self {
         self.span = input;
         self
+    }
+    /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
+    pub fn get_span(&self) -> &::std::option::Option<i32> {
+        &self.span
     }
     /// Consumes the builder and constructs a [`CodeErrorLocation`](crate::types::CodeErrorLocation).
     pub fn build(self) -> crate::types::CodeErrorLocation {

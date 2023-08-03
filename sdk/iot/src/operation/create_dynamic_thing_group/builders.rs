@@ -38,6 +38,13 @@ impl CreateDynamicThingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDynamicThingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl CreateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
+    /// <p>The dynamic thing group name to create.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_group_name()
+    }
     /// <p>The dynamic thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.inner = self.inner.thing_group_properties(input);
@@ -146,6 +157,12 @@ impl CreateDynamicThingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_group_properties(input);
         self
+    }
+    /// <p>The dynamic thing group properties.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        self.inner.get_thing_group_properties()
     }
     /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
@@ -161,6 +178,12 @@ impl CreateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The dynamic thing group index name.</p> <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +195,11 @@ impl CreateDynamicThingGroupFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The dynamic thing group search query string.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The dynamic thing group query version.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
@@ -193,6 +221,12 @@ impl CreateDynamicThingGroupFluentBuilder {
         self.inner = self.inner.set_query_version(input);
         self
     }
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// </note>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -209,5 +243,9 @@ impl CreateDynamicThingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata which can be used to manage the dynamic thing group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

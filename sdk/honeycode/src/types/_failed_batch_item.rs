@@ -48,6 +48,10 @@ impl FailedBatchItemBuilder {
         self.id = input;
         self
     }
+    /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The error message that indicates why the batch item failed. </p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl FailedBatchItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p> The error message that indicates why the batch item failed. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedBatchItem`](crate::types::FailedBatchItem).
     pub fn build(self) -> crate::types::FailedBatchItem {

@@ -65,6 +65,10 @@ impl DataColorPaletteBuilder {
         self.colors = input;
         self
     }
+    /// <p>The hexadecimal codes for the colors.</p>
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.colors
+    }
     /// Appends an item to `min_max_gradient`.
     ///
     /// To override the contents of this collection use [`set_min_max_gradient`](Self::set_min_max_gradient).
@@ -87,6 +91,12 @@ impl DataColorPaletteBuilder {
         self.min_max_gradient = input;
         self
     }
+    /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
+    pub fn get_min_max_gradient(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.min_max_gradient
+    }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     pub fn empty_fill_color(
         mut self,
@@ -102,6 +112,10 @@ impl DataColorPaletteBuilder {
     ) -> Self {
         self.empty_fill_color = input;
         self
+    }
+    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
+    pub fn get_empty_fill_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.empty_fill_color
     }
     /// Consumes the builder and constructs a [`DataColorPalette`](crate::types::DataColorPalette).
     pub fn build(self) -> crate::types::DataColorPalette {

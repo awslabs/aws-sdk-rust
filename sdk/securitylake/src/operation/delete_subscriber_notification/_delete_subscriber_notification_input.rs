@@ -45,6 +45,10 @@ impl DeleteSubscriberNotificationInputBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>The ID of the Security Lake subscriber account.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// Consumes the builder and constructs a [`DeleteSubscriberNotificationInput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput).
     pub fn build(
         self,

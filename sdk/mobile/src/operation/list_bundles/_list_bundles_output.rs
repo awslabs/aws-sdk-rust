@@ -64,6 +64,12 @@ impl ListBundlesOutputBuilder {
         self.bundle_list = input;
         self
     }
+    /// <p> A list of bundles. </p>
+    pub fn get_bundle_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>> {
+        &self.bundle_list
+    }
     /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListBundlesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

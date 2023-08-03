@@ -96,6 +96,10 @@ impl LensBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The ARN of a lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// <p>The version of a lens.</p>
     pub fn lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_version = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl LensBuilder {
     pub fn set_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_version = input;
         self
+    }
+    /// <p>The version of a lens.</p>
+    pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_version
     }
     /// <p>The full name of the lens.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl LensBuilder {
         self.name = input;
         self
     }
+    /// <p>The full name of the lens.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the lens.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl LensBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the lens.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -135,6 +151,10 @@ impl LensBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID that owns the lens.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn share_invitation_id(
@@ -151,6 +171,10 @@ impl LensBuilder {
     ) -> Self {
         self.share_invitation_id = input;
         self
+    }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn get_share_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_invitation_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -176,6 +200,14 @@ impl LensBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the lens.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Lens`](crate::types::Lens).
     pub fn build(self) -> crate::types::Lens {

@@ -54,6 +54,12 @@ impl DescribeApplicationsInputBuilder {
         self.application_names = input;
         self
     }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    pub fn get_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_names
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
     pub fn build(
         self,

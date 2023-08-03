@@ -56,6 +56,10 @@ impl DataIntegrationSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DataIntegrationSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_uri = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DataIntegrationSummaryBuilder {
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_uri = input;
         self
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
     }
     /// Consumes the builder and constructs a [`DataIntegrationSummary`](crate::types::DataIntegrationSummary).
     pub fn build(self) -> crate::types::DataIntegrationSummary {

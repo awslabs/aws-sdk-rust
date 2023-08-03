@@ -40,6 +40,10 @@ impl EncryptionConfigurationBuilder {
         self.kms_key = input;
         self
     }
+    /// <p>The ARN of the KMS key that's used for encryption.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
+    }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {

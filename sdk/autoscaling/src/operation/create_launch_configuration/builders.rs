@@ -40,6 +40,10 @@ impl CreateLaunchConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLaunchConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_launch_configuration_name(input);
         self
     }
+    /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
+    pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_configuration_name()
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not required.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +156,11 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not required.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
@@ -157,6 +170,10 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
+    }
+    /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
     }
     /// Appends an item to `SecurityGroups`.
     ///
@@ -178,6 +195,12 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_security_groups(input);
         self
     }
+    /// <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
+    }
     /// <p>Available for backward compatibility.</p>
     pub fn classic_link_vpc_id(
         mut self,
@@ -193,6 +216,10 @@ impl CreateLaunchConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_classic_link_vpc_id(input);
         self
+    }
+    /// <p>Available for backward compatibility.</p>
+    pub fn get_classic_link_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_classic_link_vpc_id()
     }
     /// Appends an item to `ClassicLinkVPCSecurityGroups`.
     ///
@@ -214,6 +241,12 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_classic_link_vpc_security_groups(input);
         self
     }
+    /// <p>Available for backward compatibility.</p>
+    pub fn get_classic_link_vpc_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_classic_link_vpc_security_groups()
+    }
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_data(input.into());
@@ -223,6 +256,10 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_data(input);
         self
+    }
+    /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_data()
     }
     /// <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>
     /// <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>
@@ -237,6 +274,12 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>
+    /// <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
@@ -256,6 +299,11 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>The ID of the kernel associated with the AMI.</p> <note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
@@ -270,6 +318,12 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_kernel_id(input);
         self
     }
+    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// </note>
+    pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kernel_id()
+    }
     /// <p>The ID of the RAM disk to select.</p> <note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
@@ -283,6 +337,12 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ramdisk_id(input);
         self
+    }
+    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// </note>
+    pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ramdisk_id()
     }
     /// Appends an item to `BlockDeviceMappings`.
     ///
@@ -300,6 +360,12 @@ impl CreateLaunchConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
+    }
+    /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+        self.inner.get_block_device_mappings()
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
     /// <p>The default value is <code>true</code> (enabled).</p> <important>
@@ -320,6 +386,15 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_instance_monitoring(input);
         self
     }
+    /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
+    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// </important>
+    pub fn get_instance_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMonitoring> {
+        self.inner.get_instance_monitoring()
+    }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid Range: Minimum value of 0.001</p> <note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
@@ -335,6 +410,13 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spot_price(input);
         self
+    }
+    /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
+    /// </note>
+    pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spot_price()
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn iam_instance_profile(
@@ -352,6 +434,10 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
+    /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_instance_profile()
+    }
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization is not available with all instance types. Additional fees are incurred when you enable EBS optimization for an instance type that is not EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -363,6 +449,11 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ebs_optimized(input);
         self
+    }
+    /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization is not available with all instance types. Additional fees are incurred when you enable EBS optimization for an instance type that is not EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ebs_optimized()
     }
     /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet.</p>
     /// <p>If you specify <code>true</code>, each instance in the Auto Scaling group receives a unique public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -377,6 +468,12 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_associate_public_ip_address(input);
         self
+    }
+    /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet.</p>
+    /// <p>If you specify <code>true</code>, each instance in the Auto Scaling group receives a unique public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you specify this property, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        self.inner.get_associate_public_ip_address()
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
@@ -398,6 +495,12 @@ impl CreateLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_placement_tenancy(input);
         self
     }
+    /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
+    /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+    pub fn get_placement_tenancy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_tenancy()
+    }
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn metadata_options(mut self, input: crate::types::InstanceMetadataOptions) -> Self {
         self.inner = self.inner.metadata_options(input);
@@ -410,5 +513,11 @@ impl CreateLaunchConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_options(input);
         self
+    }
+    /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_metadata_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
+        self.inner.get_metadata_options()
     }
 }

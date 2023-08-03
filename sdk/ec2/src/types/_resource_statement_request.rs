@@ -57,6 +57,10 @@ impl ResourceStatementRequestBuilder {
         self.resources = input;
         self
     }
+    /// <p>The resources.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// Appends an item to `resource_types`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -78,6 +82,12 @@ impl ResourceStatementRequestBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>The resource types.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
     }
     /// Consumes the builder and constructs a [`ResourceStatementRequest`](crate::types::ResourceStatementRequest).
     pub fn build(self) -> crate::types::ResourceStatementRequest {

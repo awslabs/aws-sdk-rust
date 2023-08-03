@@ -57,6 +57,10 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the streaming configuration.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Appends an item to `streaming_configurations`.
     ///
     /// To override the contents of this collection use [`set_streaming_configurations`](Self::set_streaming_configurations).
@@ -75,6 +79,12 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
     ) -> Self {
         self.streaming_configurations = input;
         self
+    }
+    /// <p>The streaming configurations.</p>
+    pub fn get_streaming_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+        &self.streaming_configurations
     }
     /// Consumes the builder and constructs a [`PutMessagingStreamingConfigurationsInput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{

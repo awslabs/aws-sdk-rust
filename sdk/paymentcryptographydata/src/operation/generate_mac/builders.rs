@@ -43,6 +43,10 @@ impl GenerateMacFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateMac as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_mac::builders::GenerateMacInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl GenerateMacFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The data for which a MAC is under generation.</p>
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_data(input.into());
@@ -140,6 +148,10 @@ impl GenerateMacFluentBuilder {
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_data(input);
         self
+    }
+    /// <p>The data for which a MAC is under generation.</p>
+    pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_data()
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
     pub fn generation_attributes(mut self, input: crate::types::MacAttributes) -> Self {
@@ -154,6 +166,10 @@ impl GenerateMacFluentBuilder {
         self.inner = self.inner.set_generation_attributes(input);
         self
     }
+    /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::MacAttributes> {
+        self.inner.get_generation_attributes()
+    }
     /// <p>The length of a MAC under generation.</p>
     pub fn mac_length(mut self, input: i32) -> Self {
         self.inner = self.inner.mac_length(input);
@@ -163,5 +179,9 @@ impl GenerateMacFluentBuilder {
     pub fn set_mac_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_mac_length(input);
         self
+    }
+    /// <p>The length of a MAC under generation.</p>
+    pub fn get_mac_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_mac_length()
     }
 }

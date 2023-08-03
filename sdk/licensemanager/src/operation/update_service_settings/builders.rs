@@ -36,6 +36,13 @@ impl UpdateServiceSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServiceSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner = self.inner.set_s3_bucket_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_arn()
+    }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -147,6 +158,10 @@ impl UpdateServiceSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
     pub fn organization_configuration(
@@ -164,6 +179,12 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner = self.inner.set_organization_configuration(input);
         self
     }
+    /// <p>Enables integration with Organizations for cross-account discovery.</p>
+    pub fn get_organization_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+        self.inner.get_organization_configuration()
+    }
     /// <p>Activates cross-account discovery.</p>
     pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_cross_accounts_discovery(input);
@@ -176,5 +197,9 @@ impl UpdateServiceSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_cross_accounts_discovery(input);
         self
+    }
+    /// <p>Activates cross-account discovery.</p>
+    pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_cross_accounts_discovery()
     }
 }

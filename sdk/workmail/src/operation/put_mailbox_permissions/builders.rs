@@ -36,6 +36,13 @@ impl PutMailboxPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMailboxPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl PutMailboxPermissionsFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -142,6 +153,10 @@ impl PutMailboxPermissionsFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grantee_id(input.into());
@@ -151,6 +166,10 @@ impl PutMailboxPermissionsFluentBuilder {
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grantee_id(input);
         self
+    }
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
+    pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grantee_id()
     }
     /// Appends an item to `PermissionValues`.
     ///
@@ -168,5 +187,11 @@ impl PutMailboxPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permission_values(input);
         self
+    }
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+    pub fn get_permission_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+        self.inner.get_permission_values()
     }
 }

@@ -62,6 +62,12 @@ impl GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
         self.vpn_connection_device_sample_configuration = input;
         self
     }
+    /// <p>Sample configuration file for the specified customer gateway device.</p>
+    pub fn get_vpn_connection_device_sample_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_device_sample_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -39,6 +39,10 @@ impl DeleteClusterInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,

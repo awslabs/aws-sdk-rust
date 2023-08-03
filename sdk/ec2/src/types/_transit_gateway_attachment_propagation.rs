@@ -54,6 +54,12 @@ impl TransitGatewayAttachmentPropagationBuilder {
         self.transit_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the propagation route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_id
+    }
     /// <p>The state of the propagation route table.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPropagationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -66,6 +72,12 @@ impl TransitGatewayAttachmentPropagationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the propagation route table.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPropagationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`TransitGatewayAttachmentPropagation`](crate::types::TransitGatewayAttachmentPropagation).
     pub fn build(self) -> crate::types::TransitGatewayAttachmentPropagation {

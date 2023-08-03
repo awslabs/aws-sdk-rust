@@ -49,6 +49,10 @@ impl CreateOrUpdateTagsInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateOrUpdateTagsInput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl IsMemberInGroupsInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>An object containing the identifier of a group member.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl IsMemberInGroupsInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>An object containing the identifier of a group member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
+        &self.member_id
     }
     /// Appends an item to `group_ids`.
     ///
@@ -90,6 +98,10 @@ impl IsMemberInGroupsInputBuilder {
     ) -> Self {
         self.group_ids = input;
         self
+    }
+    /// <p>A list of identifiers for groups in the identity store.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
     }
     /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
     pub fn build(

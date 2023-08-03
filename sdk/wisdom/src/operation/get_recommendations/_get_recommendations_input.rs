@@ -64,6 +64,10 @@ impl GetRecommendationsInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetRecommendationsInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl GetRecommendationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub fn wait_time_seconds(mut self, input: i32) -> Self {
         self.wait_time_seconds = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl GetRecommendationsInputBuilder {
     pub fn set_wait_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_time_seconds = input;
         self
+    }
+    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
+    pub fn get_wait_time_seconds(&self) -> &::std::option::Option<i32> {
+        &self.wait_time_seconds
     }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(

@@ -43,6 +43,10 @@ impl AnalyticsIntentStageGroupBySpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentStageField> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AnalyticsIntentStageGroupBySpecification`](crate::types::AnalyticsIntentStageGroupBySpecification).
     pub fn build(self) -> crate::types::AnalyticsIntentStageGroupBySpecification {
         crate::types::AnalyticsIntentStageGroupBySpecification { name: self.name }

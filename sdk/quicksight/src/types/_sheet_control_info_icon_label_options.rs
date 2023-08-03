@@ -51,6 +51,10 @@ impl SheetControlInfoIconLabelOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility configuration of info icon label options.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p> The text content of info icon.</p>
     pub fn info_icon_text(
         mut self,
@@ -66,6 +70,10 @@ impl SheetControlInfoIconLabelOptionsBuilder {
     ) -> Self {
         self.info_icon_text = input;
         self
+    }
+    /// <p> The text content of info icon.</p>
+    pub fn get_info_icon_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.info_icon_text
     }
     /// Consumes the builder and constructs a [`SheetControlInfoIconLabelOptions`](crate::types::SheetControlInfoIconLabelOptions).
     pub fn build(self) -> crate::types::SheetControlInfoIconLabelOptions {

@@ -98,6 +98,10 @@ impl PrefixConfigBuilder {
         self.prefix_type = input;
         self
     }
+    /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+    pub fn get_prefix_type(&self) -> &::std::option::Option<crate::types::PrefixType> {
+        &self.prefix_type
+    }
     /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
     pub fn prefix_format(mut self, input: crate::types::PrefixFormat) -> Self {
         self.prefix_format = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl PrefixConfigBuilder {
     ) -> Self {
         self.prefix_format = input;
         self
+    }
+    /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
+    pub fn get_prefix_format(&self) -> &::std::option::Option<crate::types::PrefixFormat> {
+        &self.prefix_format
     }
     /// Appends an item to `path_prefix_hierarchy`.
     ///
@@ -167,6 +175,31 @@ impl PrefixConfigBuilder {
     ) -> Self {
         self.path_prefix_hierarchy = input;
         self
+    }
+    /// <p>Specifies whether the destination file path includes either or both of the following elements:</p>
+    /// <dl>
+    /// <dt>
+    /// EXECUTION_ID
+    /// </dt>
+    /// <dd>
+    /// <p>The ID that Amazon AppFlow assigns to the flow run.</p>
+    /// </dd>
+    /// <dt>
+    /// SCHEMA_VERSION
+    /// </dt>
+    /// <dd>
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
+    /// <ul>
+    /// <li> <p>Source-to-destination field mappings</p> </li>
+    /// <li> <p>Field data types</p> </li>
+    /// <li> <p>Partition keys</p> </li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn get_path_prefix_hierarchy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>> {
+        &self.path_prefix_hierarchy
     }
     /// Consumes the builder and constructs a [`PrefixConfig`](crate::types::PrefixConfig).
     pub fn build(self) -> crate::types::PrefixConfig {

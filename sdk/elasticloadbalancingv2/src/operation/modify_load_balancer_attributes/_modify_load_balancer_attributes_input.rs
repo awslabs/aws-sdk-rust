@@ -54,6 +54,10 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -72,6 +76,12 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The load balancer attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
     pub fn build(

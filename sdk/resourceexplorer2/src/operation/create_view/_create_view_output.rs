@@ -46,6 +46,10 @@ impl CreateViewOutputBuilder {
         self.view = input;
         self
     }
+    /// <p>A structure that contains the details about the new view.</p>
+    pub fn get_view(&self) -> &::std::option::Option<crate::types::View> {
+        &self.view
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

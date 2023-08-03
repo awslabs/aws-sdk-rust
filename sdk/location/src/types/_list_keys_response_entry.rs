@@ -80,6 +80,10 @@ impl ListKeysResponseEntryBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the API key resource.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_time = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ListKeysResponseEntryBuilder {
         self.expire_time = input;
         self
     }
+    /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expire_time
+    }
     /// <p>The optional description for the API key resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ListKeysResponseEntryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description for the API key resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
@@ -116,6 +128,10 @@ impl ListKeysResponseEntryBuilder {
         self.restrictions = input;
         self
     }
+    /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
+        &self.restrictions
+    }
     /// <p>The timestamp of when the API key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl ListKeysResponseEntryBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp of when the API key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl ListKeysResponseEntryBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// Consumes the builder and constructs a [`ListKeysResponseEntry`](crate::types::ListKeysResponseEntry).
     pub fn build(self) -> crate::types::ListKeysResponseEntry {

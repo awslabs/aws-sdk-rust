@@ -76,6 +76,10 @@ impl RuleSummaryBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The retention rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl RuleSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The retention rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -98,6 +106,10 @@ impl RuleSummaryBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
@@ -120,6 +132,16 @@ impl RuleSummaryBuilder {
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
         self.lock_state = input;
         self
+    }
+    /// <p>The lock state for the retention rule.</p>
+    /// <ul>
+    /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
+    /// <li> <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay period. The retention rule can be modified or deleted only after the unlock delay period has expired.</p> </li>
+    /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
+    /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
+    /// </ul>
+    pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
+        &self.lock_state
     }
     /// Consumes the builder and constructs a [`RuleSummary`](crate::types::RuleSummary).
     pub fn build(self) -> crate::types::RuleSummary {

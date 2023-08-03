@@ -57,6 +57,10 @@ impl DeleteProjectPolicyInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteProjectPolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the policy that you want to delete.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub fn policy_revision_id(
@@ -82,6 +90,10 @@ impl DeleteProjectPolicyInputBuilder {
     ) -> Self {
         self.policy_revision_id = input;
         self
+    }
+    /// <p>The ID of the project policy revision that you want to delete.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
     }
     /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
     pub fn build(

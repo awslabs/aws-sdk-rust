@@ -37,6 +37,12 @@ impl GetPercentilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPercentiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_percentiles::builders::GetPercentilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl GetPercentilesFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the index to search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -128,6 +138,10 @@ impl GetPercentilesFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The search query string.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(
@@ -145,6 +159,10 @@ impl GetPercentilesFluentBuilder {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
+    /// <p>The field to aggregate.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aggregation_field()
+    }
     /// <p>The query version.</p>
     pub fn query_version(
         mut self,
@@ -161,6 +179,10 @@ impl GetPercentilesFluentBuilder {
         self.inner = self.inner.set_query_version(input);
         self
     }
+    /// <p>The query version.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
+    }
     /// Appends an item to `percents`.
     ///
     /// To override the contents of this collection use [`set_percents`](Self::set_percents).
@@ -174,5 +196,9 @@ impl GetPercentilesFluentBuilder {
     pub fn set_percents(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_percents(input);
         self
+    }
+    /// <p>The percentile groups returned.</p>
+    pub fn get_percents(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_percents()
     }
 }

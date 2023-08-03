@@ -70,6 +70,10 @@ impl CreatePlayerSessionsInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to add players to.</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// Appends an item to `player_ids`.
     ///
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
@@ -88,6 +92,10 @@ impl CreatePlayerSessionsInputBuilder {
     ) -> Self {
         self.player_ids = input;
         self
+    }
+    /// <p>List of unique identifiers for the players to be added.</p>
+    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.player_ids
     }
     /// Adds a key-value pair to `player_data_map`.
     ///
@@ -113,6 +121,14 @@ impl CreatePlayerSessionsInputBuilder {
     ) -> Self {
         self.player_data_map = input;
         self
+    }
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    pub fn get_player_data_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.player_data_map
     }
     /// Consumes the builder and constructs a [`CreatePlayerSessionsInput`](crate::operation::create_player_sessions::CreatePlayerSessionsInput).
     pub fn build(

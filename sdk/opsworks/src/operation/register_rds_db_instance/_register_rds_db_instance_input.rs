@@ -65,6 +65,10 @@ impl RegisterRdsDbInstanceInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn rds_db_instance_arn(
         mut self,
@@ -81,6 +85,10 @@ impl RegisterRdsDbInstanceInputBuilder {
         self.rds_db_instance_arn = input;
         self
     }
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rds_db_instance_arn
+    }
     /// <p>The database's master user name.</p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl RegisterRdsDbInstanceInputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>The database's master user name.</p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>The database password.</p>
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_password = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl RegisterRdsDbInstanceInputBuilder {
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_password = input;
         self
+    }
+    /// <p>The database password.</p>
+    pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_password
     }
     /// Consumes the builder and constructs a [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
     pub fn build(

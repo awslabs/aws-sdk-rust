@@ -57,6 +57,10 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application for which you want to update the maintenance configuration.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Describes the application maintenance configuration update.</p>
     pub fn application_maintenance_configuration_update(
         mut self,
@@ -72,6 +76,12 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
     ) -> Self {
         self.application_maintenance_configuration_update = input;
         self
+    }
+    /// <p>Describes the application maintenance configuration update.</p>
+    pub fn get_application_maintenance_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate> {
+        &self.application_maintenance_configuration_update
     }
     /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationInput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -74,6 +74,11 @@ impl GeoMatchSetBuilder {
         self.geo_match_set_id = input;
         self
     }
+    /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
+    /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    pub fn get_geo_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geo_match_set_id
+    }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +88,10 @@ impl GeoMatchSetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `geo_match_constraints`.
     ///
@@ -102,6 +111,12 @@ impl GeoMatchSetBuilder {
     ) -> Self {
         self.geo_match_constraints = input;
         self
+    }
+    /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
+    pub fn get_geo_match_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchConstraint>> {
+        &self.geo_match_constraints
     }
     /// Consumes the builder and constructs a [`GeoMatchSet`](crate::types::GeoMatchSet).
     pub fn build(self) -> crate::types::GeoMatchSet {

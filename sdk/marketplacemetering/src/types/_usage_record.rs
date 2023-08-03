@@ -81,6 +81,11 @@ impl UsageRecordBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
+    /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
     pub fn customer_identifier(
         mut self,
@@ -97,6 +102,10 @@ impl UsageRecordBuilder {
         self.customer_identifier = input;
         self
     }
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_identifier
+    }
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub fn dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension = ::std::option::Option::Some(input.into());
@@ -107,6 +116,10 @@ impl UsageRecordBuilder {
         self.dimension = input;
         self
     }
+    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension
+    }
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -116,6 +129,10 @@ impl UsageRecordBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `usage_allocations`.
     ///
@@ -135,6 +152,12 @@ impl UsageRecordBuilder {
     ) -> Self {
         self.usage_allocations = input;
         self
+    }
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    pub fn get_usage_allocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
+        &self.usage_allocations
     }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).
     pub fn build(self) -> crate::types::UsageRecord {

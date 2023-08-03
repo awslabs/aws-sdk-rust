@@ -63,6 +63,10 @@ impl BlueGreenDeploymentTaskBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the blue/green deployment task.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -86,6 +90,17 @@ impl BlueGreenDeploymentTaskBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the blue/green deployment task.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The resource is being prepared for deployment.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The resource is being deployed.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The resource has been deployed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Deployment of the resource failed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`BlueGreenDeploymentTask`](crate::types::BlueGreenDeploymentTask).
     pub fn build(self) -> crate::types::BlueGreenDeploymentTask {

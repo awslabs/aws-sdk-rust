@@ -37,6 +37,10 @@ impl DeleteRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_room::builders::DeleteRoomInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl DeleteRoomFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The ARN of the room to delete. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

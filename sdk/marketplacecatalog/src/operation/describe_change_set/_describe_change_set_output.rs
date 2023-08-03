@@ -117,6 +117,10 @@ impl DescribeChangeSetOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>Required. The unique identifier for the change set referenced in this request.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub fn change_set_arn(
         mut self,
@@ -132,6 +136,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.change_set_arn = input;
         self
+    }
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+    pub fn get_change_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_arn
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn change_set_name(
@@ -149,6 +157,10 @@ impl DescribeChangeSetOutputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -158,6 +170,10 @@ impl DescribeChangeSetOutputBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +185,10 @@ impl DescribeChangeSetOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
+    }
     /// <p>The status of the change request.</p>
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -178,6 +198,10 @@ impl DescribeChangeSetOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeStatus> {
+        &self.status
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(mut self, input: crate::types::FailureCode) -> Self {
@@ -191,6 +215,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::FailureCode> {
+        &self.failure_code
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
     pub fn failure_description(
@@ -207,6 +235,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.failure_description = input;
         self
+    }
+    /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
+    pub fn get_failure_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_description
     }
     /// Appends an item to `change_set`.
     ///
@@ -226,6 +258,12 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.change_set = input;
         self
+    }
+    /// <p>An array of <code>ChangeSummary</code> objects.</p>
+    pub fn get_change_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>> {
+        &self.change_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -63,6 +63,10 @@ impl UpdateInsightInputBuilder {
         self.insight_arn = input;
         self
     }
+    /// <p>The ARN of the insight that you want to update.</p>
+    pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_arn
+    }
     /// <p>The updated name for the insight.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateInsightInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The updated name for the insight.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The updated filters that define this insight.</p>
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
@@ -85,6 +93,10 @@ impl UpdateInsightInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The updated filters that define this insight.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
+        &self.filters
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     pub fn group_by_attribute(
@@ -101,6 +113,10 @@ impl UpdateInsightInputBuilder {
     ) -> Self {
         self.group_by_attribute = input;
         self
+    }
+    /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
+    pub fn get_group_by_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_attribute
     }
     /// Consumes the builder and constructs a [`UpdateInsightInput`](crate::operation::update_insight::UpdateInsightInput).
     pub fn build(

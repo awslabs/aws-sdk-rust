@@ -49,6 +49,10 @@ impl DeleteAnalysisSchemeInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the analysis scheme you want to delete.</p>
     pub fn analysis_scheme_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteAnalysisSchemeInputBuilder {
     ) -> Self {
         self.analysis_scheme_name = input;
         self
+    }
+    /// <p>The name of the analysis scheme you want to delete.</p>
+    pub fn get_analysis_scheme_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_scheme_name
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
     pub fn build(

@@ -82,6 +82,10 @@ impl BatchPutDocumentInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl BatchPutDocumentInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `documents`.
     ///
@@ -123,6 +131,16 @@ impl BatchPutDocumentInputBuilder {
         self.documents = input;
         self
     }
+    /// <p>One or more documents to add to the index.</p>
+    /// <p>Documents have the following file size limits.</p>
+    /// <ul>
+    /// <li> <p>50 MB total size for any file</p> </li>
+    /// <li> <p>5 MB extracted text for any file</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+        &self.documents
+    }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
@@ -140,6 +158,13 @@ impl BatchPutDocumentInputBuilder {
     ) -> Self {
         self.custom_document_enrichment_configuration = input;
         self
+    }
+    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    pub fn get_custom_document_enrichment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+        &self.custom_document_enrichment_configuration
     }
     /// Consumes the builder and constructs a [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl ExplainabilityBuilder {
         self.report = input;
         self
     }
+    /// <p>The explainability report for a model.</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.report
+    }
     /// Consumes the builder and constructs a [`Explainability`](crate::types::Explainability).
     pub fn build(self) -> crate::types::Explainability {
         crate::types::Explainability {

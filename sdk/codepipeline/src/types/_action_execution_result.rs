@@ -62,6 +62,10 @@ impl ActionExecutionResultBuilder {
         self.external_execution_id = input;
         self
     }
+    /// <p>The action provider's external ID for the action execution.</p>
+    pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_execution_id
+    }
     /// <p>The action provider's summary for the action execution.</p>
     pub fn external_execution_summary(
         mut self,
@@ -78,6 +82,10 @@ impl ActionExecutionResultBuilder {
         self.external_execution_summary = input;
         self
     }
+    /// <p>The action provider's summary for the action execution.</p>
+    pub fn get_external_execution_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_execution_summary
+    }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub fn external_execution_url(
         mut self,
@@ -93,6 +101,10 @@ impl ActionExecutionResultBuilder {
     ) -> Self {
         self.external_execution_url = input;
         self
+    }
+    /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
+    pub fn get_external_execution_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_execution_url
     }
     /// Consumes the builder and constructs a [`ActionExecutionResult`](crate::types::ActionExecutionResult).
     pub fn build(self) -> crate::types::ActionExecutionResult {

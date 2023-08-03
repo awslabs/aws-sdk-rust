@@ -79,6 +79,13 @@ impl CancelSpotFleetRequestsOutputBuilder {
         self.successful_fleet_requests = input;
         self
     }
+    /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
+    pub fn get_successful_fleet_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>
+    {
+        &self.successful_fleet_requests
+    }
     /// Appends an item to `unsuccessful_fleet_requests`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_fleet_requests`](Self::set_unsuccessful_fleet_requests).
@@ -102,6 +109,13 @@ impl CancelSpotFleetRequestsOutputBuilder {
     ) -> Self {
         self.unsuccessful_fleet_requests = input;
         self
+    }
+    /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
+    pub fn get_unsuccessful_fleet_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>
+    {
+        &self.unsuccessful_fleet_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

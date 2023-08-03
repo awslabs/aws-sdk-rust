@@ -47,6 +47,10 @@ impl GetDeviceDefinitionInputBuilder {
         self.device_definition_id = input;
         self
     }
+    /// The ID of the device definition.
+    pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_definition_id
+    }
     /// Consumes the builder and constructs a [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
     pub fn build(
         self,

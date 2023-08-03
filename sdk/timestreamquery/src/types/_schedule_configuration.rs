@@ -46,6 +46,10 @@ impl ScheduleConfigurationBuilder {
         self.schedule_expression = input;
         self
     }
+    /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression. </p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
+    }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {

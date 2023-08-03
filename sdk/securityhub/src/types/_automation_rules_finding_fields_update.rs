@@ -113,6 +113,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self.note = input;
         self
     }
+    /// <p>The updated note.</p>
+    pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
+        &self.note
+    }
     /// <p>Updates to the severity information for a finding.</p>
     pub fn severity(mut self, input: crate::types::SeverityUpdate) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>Updates to the severity information for a finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::SeverityUpdate> {
+        &self.severity
     }
     /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
@@ -139,6 +147,12 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self.verification_state = input;
         self
     }
+    /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationState> {
+        &self.verification_state
+    }
     /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
     pub fn confidence(mut self, input: i32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -149,6 +163,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self.confidence = input;
         self
     }
+    /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
+    pub fn get_confidence(&self) -> &::std::option::Option<i32> {
+        &self.confidence
+    }
     /// <p> The rule action updates the <code>Criticality</code> field of a finding. </p>
     pub fn criticality(mut self, input: i32) -> Self {
         self.criticality = ::std::option::Option::Some(input);
@@ -158,6 +176,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.criticality = input;
         self
+    }
+    /// <p> The rule action updates the <code>Criticality</code> field of a finding. </p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
     }
     /// Appends an item to `types`.
     ///
@@ -177,6 +199,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     ) -> Self {
         self.types = input;
         self
+    }
+    /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
     }
     /// Adds a key-value pair to `user_defined_fields`.
     ///
@@ -203,6 +229,14 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
         self.user_defined_fields = input;
         self
     }
+    /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
+    pub fn get_user_defined_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.user_defined_fields
+    }
     /// <p>Used to update information about the investigation into the finding.</p>
     pub fn workflow(mut self, input: crate::types::WorkflowUpdate) -> Self {
         self.workflow = ::std::option::Option::Some(input);
@@ -215,6 +249,10 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     ) -> Self {
         self.workflow = input;
         self
+    }
+    /// <p>Used to update information about the investigation into the finding.</p>
+    pub fn get_workflow(&self) -> &::std::option::Option<crate::types::WorkflowUpdate> {
+        &self.workflow
     }
     /// Appends an item to `related_findings`.
     ///
@@ -234,6 +272,12 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     ) -> Self {
         self.related_findings = input;
         self
+    }
+    /// <p> The rule action updates the <code>RelatedFindings</code> field of a finding. </p>
+    pub fn get_related_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+        &self.related_findings
     }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFieldsUpdate`](crate::types::AutomationRulesFindingFieldsUpdate).
     pub fn build(self) -> crate::types::AutomationRulesFindingFieldsUpdate {

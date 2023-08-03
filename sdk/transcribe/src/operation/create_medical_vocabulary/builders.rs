@@ -40,6 +40,13 @@ impl CreateMedicalVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMedicalVocabulary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,11 @@ impl CreateMedicalVocabularyFluentBuilder {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
+    /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom medical vocabulary with the same name as an existing custom medical vocabulary, you get a <code>ConflictException</code> error.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_name()
+    }
     /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -150,6 +162,10 @@ impl CreateMedicalVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
@@ -169,6 +185,11 @@ impl CreateMedicalVocabularyFluentBuilder {
         self.inner = self.inner.set_vocabulary_file_uri(input);
         self
     }
+    /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
+    /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    pub fn get_vocabulary_file_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_file_uri()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -187,5 +208,10 @@ impl CreateMedicalVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom medical vocabulary at the time you create this new custom vocabulary.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

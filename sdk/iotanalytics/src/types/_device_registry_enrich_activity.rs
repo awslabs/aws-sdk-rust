@@ -72,6 +72,10 @@ impl DeviceRegistryEnrichActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the attribute that is added to the message.</p>
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DeviceRegistryEnrichActivityBuilder {
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
+    }
+    /// <p>The name of the attribute that is added to the message.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute
     }
     /// <p>The name of the IoT device whose registry information is added to the message.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl DeviceRegistryEnrichActivityBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the IoT device whose registry information is added to the message.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the role that allows access to the device's registry information.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl DeviceRegistryEnrichActivityBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that allows access to the device's registry information.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl DeviceRegistryEnrichActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`DeviceRegistryEnrichActivity`](crate::types::DeviceRegistryEnrichActivity).
     pub fn build(self) -> crate::types::DeviceRegistryEnrichActivity {

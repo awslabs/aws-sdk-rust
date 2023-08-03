@@ -55,6 +55,10 @@ impl ListTasksInputBuilder {
         self.state = input;
         self
     }
+    /// <p>A structure used to filter the list of tasks.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TaskState> {
+        &self.state
+    }
     /// <p>The maximum number of tasks per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of tasks per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListTasksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token to continue to the next page of tasks.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
     pub fn build(

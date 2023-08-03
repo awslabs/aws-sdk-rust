@@ -50,6 +50,10 @@ impl CrossRegionCopyRetainRuleBuilder {
         self.interval = input;
         self
     }
+    /// <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
+    }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub fn interval_unit(mut self, input: crate::types::RetentionIntervalUnitValues) -> Self {
         self.interval_unit = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl CrossRegionCopyRetainRuleBuilder {
     ) -> Self {
         self.interval_unit = input;
         self
+    }
+    /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
+    pub fn get_interval_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+        &self.interval_unit
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyRetainRule`](crate::types::CrossRegionCopyRetainRule).
     pub fn build(self) -> crate::types::CrossRegionCopyRetainRule {

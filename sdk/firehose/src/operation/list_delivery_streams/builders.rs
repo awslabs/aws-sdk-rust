@@ -37,6 +37,12 @@ impl ListDeliveryStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeliveryStreams as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ListDeliveryStreamsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
@@ -150,6 +160,17 @@ impl ListDeliveryStreamsFluentBuilder {
         self.inner = self.inner.set_delivery_stream_type(input);
         self
     }
+    /// <p>The delivery stream type. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// </ul>
+    /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    pub fn get_delivery_stream_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliveryStreamType> {
+        self.inner.get_delivery_stream_type()
+    }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
     pub fn exclusive_start_delivery_stream_name(
         mut self,
@@ -167,5 +188,11 @@ impl ListDeliveryStreamsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_delivery_stream_name(input);
         self
+    }
+    /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    pub fn get_exclusive_start_delivery_stream_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_delivery_stream_name()
     }
 }

@@ -40,6 +40,10 @@ impl ScheduledInstancesMonitoringBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether monitoring is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`ScheduledInstancesMonitoring`](crate::types::ScheduledInstancesMonitoring).
     pub fn build(self) -> crate::types::ScheduledInstancesMonitoring {
         crate::types::ScheduledInstancesMonitoring {

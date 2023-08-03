@@ -64,6 +64,12 @@ impl GetObjectInformationOutputBuilder {
         self.schema_facets = input;
         self
     }
+    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
+    pub fn get_schema_facets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+        &self.schema_facets
+    }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn object_identifier(
         mut self,
@@ -79,6 +85,10 @@ impl GetObjectInformationOutputBuilder {
     ) -> Self {
         self.object_identifier = input;
         self
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,12 @@ impl PutRecordBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRecordBatch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_record_batch::builders::PutRecordBatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl PutRecordBatchFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// Appends an item to `Records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -159,5 +169,9 @@ impl PutRecordBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_records(input);
         self
+    }
+    /// <p>One or more records.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        self.inner.get_records()
     }
 }

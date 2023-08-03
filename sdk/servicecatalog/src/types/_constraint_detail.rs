@@ -98,6 +98,10 @@ impl ConstraintDetailBuilder {
         self.constraint_id = input;
         self
     }
+    /// <p>The identifier of the constraint.</p>
+    pub fn get_constraint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint_id
+    }
     /// <p>The type of constraint.</p>
     /// <ul>
     /// <li> <p> <code>LAUNCH</code> </p> </li>
@@ -120,6 +124,16 @@ impl ConstraintDetailBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of constraint.</p>
+    /// <ul>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The description of the constraint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +143,10 @@ impl ConstraintDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the constraint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The owner of the constraint.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +158,10 @@ impl ConstraintDetailBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the constraint.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl ConstraintDetailBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -159,6 +185,10 @@ impl ConstraintDetailBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_id = input;
         self
+    }
+    /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
     }
     /// Consumes the builder and constructs a [`ConstraintDetail`](crate::types::ConstraintDetail).
     pub fn build(self) -> crate::types::ConstraintDetail {

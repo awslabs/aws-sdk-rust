@@ -36,6 +36,12 @@ impl CancelImageCreationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelImageCreation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_image_creation::builders::CancelImageCreationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CancelImageCreationFluentBuilder {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_build_version_arn()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,5 +151,9 @@ impl CancelImageCreationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

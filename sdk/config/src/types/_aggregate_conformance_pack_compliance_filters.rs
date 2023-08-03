@@ -72,6 +72,10 @@ impl AggregateConformancePackComplianceFiltersBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>The name of the conformance pack.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.compliance_type = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl AggregateConformancePackComplianceFiltersBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The compliance status of the conformance pack.</p>
+    pub fn get_compliance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl AggregateConformancePackComplianceFiltersBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -104,6 +118,10 @@ impl AggregateConformancePackComplianceFiltersBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceFilters`](crate::types::AggregateConformancePackComplianceFilters).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceFilters {

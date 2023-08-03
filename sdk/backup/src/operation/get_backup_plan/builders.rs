@@ -36,6 +36,12 @@ impl GetBackupPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBackupPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_backup_plan::builders::GetBackupPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetBackupPlanFluentBuilder {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_plan_id()
+    }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
@@ -133,5 +143,9 @@ impl GetBackupPlanFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
 }

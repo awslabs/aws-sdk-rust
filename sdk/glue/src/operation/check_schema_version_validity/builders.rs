@@ -36,6 +36,10 @@ impl CheckSchemaVersionValidityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckSchemaVersionValidity as a reference.
+    pub fn as_input(&self) -> &crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl CheckSchemaVersionValidityFluentBuilder {
         self.inner = self.inner.set_data_format(input);
         self
     }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        self.inner.get_data_format()
+    }
     /// <p>The definition of the schema that has to be validated.</p>
     pub fn schema_definition(
         mut self,
@@ -144,5 +152,9 @@ impl CheckSchemaVersionValidityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
+    }
+    /// <p>The definition of the schema that has to be validated.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_definition()
     }
 }

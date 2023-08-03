@@ -73,6 +73,10 @@ impl ListLanguagesOutputBuilder {
         self.languages = input;
         self
     }
+    /// <p>The list of supported languages.</p>
+    pub fn get_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Language>> {
+        &self.languages
+    }
     /// <p>The language code passed in with the request.</p>
     pub fn display_language_code(mut self, input: crate::types::DisplayLanguageCode) -> Self {
         self.display_language_code = ::std::option::Option::Some(input);
@@ -86,6 +90,12 @@ impl ListLanguagesOutputBuilder {
         self.display_language_code = input;
         self
     }
+    /// <p>The language code passed in with the request.</p>
+    pub fn get_display_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
+        &self.display_language_code
+    }
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl ListLanguagesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

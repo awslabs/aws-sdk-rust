@@ -59,6 +59,10 @@ impl UpdateRecoveryGroupInputBuilder {
         self.cells = input;
         self
     }
+    /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
+    }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(
         mut self,
@@ -74,6 +78,10 @@ impl UpdateRecoveryGroupInputBuilder {
     ) -> Self {
         self.recovery_group_name = input;
         self
+    }
+    /// <p>The name of a recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_name
     }
     /// Consumes the builder and constructs a [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
     pub fn build(

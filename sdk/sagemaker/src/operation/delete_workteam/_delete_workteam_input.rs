@@ -45,6 +45,10 @@ impl DeleteWorkteamInputBuilder {
         self.workteam_name = input;
         self
     }
+    /// <p>The name of the work team to delete.</p>
+    pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_name
+    }
     /// Consumes the builder and constructs a [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
     pub fn build(
         self,

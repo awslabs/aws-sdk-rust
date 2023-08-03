@@ -65,6 +65,12 @@ impl DescribeSpendLimitsOutputBuilder {
         self.spend_limits = input;
         self
     }
+    /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
+    pub fn get_spend_limits(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>> {
+        &self.spend_limits
+    }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl DescribeSpendLimitsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

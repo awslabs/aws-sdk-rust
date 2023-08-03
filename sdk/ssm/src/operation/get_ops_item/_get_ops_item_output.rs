@@ -46,6 +46,10 @@ impl GetOpsItemOutputBuilder {
         self.ops_item = input;
         self
     }
+    /// <p>The OpsItem.</p>
+    pub fn get_ops_item(&self) -> &::std::option::Option<crate::types::OpsItem> {
+        &self.ops_item
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

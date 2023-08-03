@@ -46,6 +46,10 @@ impl CreateWorkteamOutputBuilder {
         self.workteam_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

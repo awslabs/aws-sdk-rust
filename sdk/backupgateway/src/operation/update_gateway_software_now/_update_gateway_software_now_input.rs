@@ -41,6 +41,10 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowInput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput).
     pub fn build(
         self,

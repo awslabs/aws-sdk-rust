@@ -64,6 +64,10 @@ impl RetainedMessageSummaryBuilder {
         self.topic = input;
         self
     }
+    /// <p>The topic name to which the retained message was published.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// <p>The size of the retained message's payload in bytes.</p>
     pub fn payload_size(mut self, input: i64) -> Self {
         self.payload_size = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl RetainedMessageSummaryBuilder {
     pub fn set_payload_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.payload_size = input;
         self
+    }
+    /// <p>The size of the retained message's payload in bytes.</p>
+    pub fn get_payload_size(&self) -> &::std::option::Option<i64> {
+        &self.payload_size
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn qos(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl RetainedMessageSummaryBuilder {
         self.qos = input;
         self
     }
+    /// <p>The quality of service (QoS) level used to publish the retained message.</p>
+    pub fn get_qos(&self) -> &::std::option::Option<i32> {
+        &self.qos
+    }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl RetainedMessageSummaryBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`RetainedMessageSummary`](crate::types::RetainedMessageSummary).
     pub fn build(self) -> crate::types::RetainedMessageSummary {

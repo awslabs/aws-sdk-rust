@@ -59,6 +59,10 @@ impl DataPathColorBuilder {
         self.element = input;
         self
     }
+    /// <p>The element that the color needs to be applied to.</p>
+    pub fn get_element(&self) -> &::std::option::Option<crate::types::DataPathValue> {
+        &self.element
+    }
     /// <p>The color that needs to be applied to the element.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DataPathColorBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>The color that needs to be applied to the element.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
@@ -81,6 +89,10 @@ impl DataPathColorBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The time granularity of the field that the color needs to be applied to.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// Consumes the builder and constructs a [`DataPathColor`](crate::types::DataPathColor).
     pub fn build(self) -> crate::types::DataPathColor {

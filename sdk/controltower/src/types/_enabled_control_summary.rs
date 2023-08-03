@@ -46,6 +46,10 @@ impl EnabledControlSummaryBuilder {
         self.control_identifier = input;
         self
     }
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_identifier
+    }
     /// Consumes the builder and constructs a [`EnabledControlSummary`](crate::types::EnabledControlSummary).
     pub fn build(self) -> crate::types::EnabledControlSummary {
         crate::types::EnabledControlSummary {

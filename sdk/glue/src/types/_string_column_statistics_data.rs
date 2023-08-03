@@ -64,6 +64,10 @@ impl StringColumnStatisticsDataBuilder {
         self.maximum_length = input;
         self
     }
+    /// <p>The size of the longest string in the column.</p>
+    pub fn get_maximum_length(&self) -> &::std::option::Option<i64> {
+        &self.maximum_length
+    }
     /// <p>The average string length in the column.</p>
     pub fn average_length(mut self, input: f64) -> Self {
         self.average_length = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl StringColumnStatisticsDataBuilder {
     pub fn set_average_length(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_length = input;
         self
+    }
+    /// <p>The average string length in the column.</p>
+    pub fn get_average_length(&self) -> &::std::option::Option<f64> {
+        &self.average_length
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl StringColumnStatisticsDataBuilder {
         self.number_of_nulls = input;
         self
     }
+    /// <p>The number of null values in the column.</p>
+    pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
+        &self.number_of_nulls
+    }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
         self.number_of_distinct_values = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl StringColumnStatisticsDataBuilder {
     pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_distinct_values = input;
         self
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn get_number_of_distinct_values(&self) -> &::std::option::Option<i64> {
+        &self.number_of_distinct_values
     }
     /// Consumes the builder and constructs a [`StringColumnStatisticsData`](crate::types::StringColumnStatisticsData).
     pub fn build(self) -> crate::types::StringColumnStatisticsData {

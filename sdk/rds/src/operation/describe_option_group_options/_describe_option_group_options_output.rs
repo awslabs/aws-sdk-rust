@@ -68,6 +68,12 @@ impl DescribeOptionGroupOptionsOutputBuilder {
         self.option_group_options = input;
         self
     }
+    /// <p>List of available option group options.</p>
+    pub fn get_option_group_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOption>> {
+        &self.option_group_options
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl DescribeOptionGroupOptionsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

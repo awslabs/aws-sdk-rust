@@ -54,6 +54,10 @@ impl EventAggregateBuilder {
         self.aggregate_value = input;
         self
     }
+    /// <p>The issue type for the associated count.</p>
+    pub fn get_aggregate_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregate_value
+    }
     /// <p>The number of events of the associated issue type.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl EventAggregateBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of events of the associated issue type.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`EventAggregate`](crate::types::EventAggregate).
     pub fn build(self) -> crate::types::EventAggregate {

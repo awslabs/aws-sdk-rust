@@ -48,6 +48,10 @@ impl S3ObjectBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p> The S3 bucket name. </p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p> The Amazon S3 key name. </p>
     pub fn s3key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3ObjectBuilder {
     pub fn set_s3key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3key = input;
         self
+    }
+    /// <p> The Amazon S3 key name. </p>
+    pub fn get_s3key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3key
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {

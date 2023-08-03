@@ -40,6 +40,10 @@ impl AcknowledgeActionConfigurationBuilder {
         self.note = input;
         self
     }
+    /// <p>The note that you can leave when you acknowledge the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
+    }
     /// Consumes the builder and constructs a [`AcknowledgeActionConfiguration`](crate::types::AcknowledgeActionConfiguration).
     pub fn build(self) -> crate::types::AcknowledgeActionConfiguration {
         crate::types::AcknowledgeActionConfiguration { note: self.note }

@@ -68,6 +68,10 @@ impl StartServiceSoftwareUpdateInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to update to the latest service software.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>When to start the service software update.</p>
     /// <ul>
     /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
@@ -93,6 +97,16 @@ impl StartServiceSoftwareUpdateInputBuilder {
         self.schedule_at = input;
         self
     }
+    /// <p>When to start the service software update.</p>
+    /// <ul>
+    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
+    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p>
+    pub fn get_schedule_at(&self) -> &::std::option::Option<crate::types::ScheduleAt> {
+        &self.schedule_at
+    }
     /// <p>The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
     pub fn desired_start_time(mut self, input: i64) -> Self {
         self.desired_start_time = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl StartServiceSoftwareUpdateInputBuilder {
     pub fn set_desired_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.desired_start_time = input;
         self
+    }
+    /// <p>The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
+    pub fn get_desired_start_time(&self) -> &::std::option::Option<i64> {
+        &self.desired_start_time
     }
     /// Consumes the builder and constructs a [`StartServiceSoftwareUpdateInput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput).
     pub fn build(

@@ -267,6 +267,10 @@ impl UtteranceSpecificationBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The identifier of the alias of the bot that the utterance was made to.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The version of the bot that the utterance was made to.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -276,6 +280,10 @@ impl UtteranceSpecificationBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that the utterance was made to.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The locale of the bot that the utterance was made to.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,6 +295,10 @@ impl UtteranceSpecificationBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The locale of the bot that the utterance was made to.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The identifier of the session that the utterance was made in.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -297,6 +309,10 @@ impl UtteranceSpecificationBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The identifier of the session that the utterance was made in.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The channel that is integrated with the bot that the utterance was made to.</p>
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
@@ -306,6 +322,10 @@ impl UtteranceSpecificationBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The channel that is integrated with the bot that the utterance was made to.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
@@ -332,6 +352,16 @@ impl UtteranceSpecificationBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode of the session. The possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Speech</code> – The session consisted of spoken dialogue.</p> </li>
+    /// <li> <p> <code>Text</code> – The session consisted of written dialogue.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session consisted of multiple modes.</p> </li>
+    /// </ul>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AnalyticsModality> {
+        &self.mode
+    }
     /// <p>The date and time when the conversation in which the utterance took place began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.conversation_start_time = ::std::option::Option::Some(input);
@@ -344,6 +374,12 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.conversation_start_time = input;
         self
+    }
+    /// <p>The date and time when the conversation in which the utterance took place began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.conversation_start_time
     }
     /// <p>The date and time when the conversation in which the utterance took place ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -358,6 +394,12 @@ impl UtteranceSpecificationBuilder {
         self.conversation_end_time = input;
         self
     }
+    /// <p>The date and time when the conversation in which the utterance took place ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.conversation_end_time
+    }
     /// <p>The text of the utterance.</p>
     pub fn utterance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.utterance = ::std::option::Option::Some(input.into());
@@ -367,6 +409,10 @@ impl UtteranceSpecificationBuilder {
     pub fn set_utterance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.utterance = input;
         self
+    }
+    /// <p>The text of the utterance.</p>
+    pub fn get_utterance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance
     }
     /// <p>The date and time when the utterance took place.</p>
     pub fn utterance_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -381,6 +427,10 @@ impl UtteranceSpecificationBuilder {
         self.utterance_timestamp = input;
         self
     }
+    /// <p>The date and time when the utterance took place.</p>
+    pub fn get_utterance_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.utterance_timestamp
+    }
     /// <p>The duration in milliseconds of the audio associated with the utterance.</p>
     pub fn audio_voice_duration_millis(mut self, input: i64) -> Self {
         self.audio_voice_duration_millis = ::std::option::Option::Some(input);
@@ -391,6 +441,10 @@ impl UtteranceSpecificationBuilder {
         self.audio_voice_duration_millis = input;
         self
     }
+    /// <p>The duration in milliseconds of the audio associated with the utterance.</p>
+    pub fn get_audio_voice_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.audio_voice_duration_millis
+    }
     /// <p>Specifies whether the bot understood the utterance or not.</p>
     pub fn utterance_understood(mut self, input: bool) -> Self {
         self.utterance_understood = ::std::option::Option::Some(input);
@@ -400,6 +454,10 @@ impl UtteranceSpecificationBuilder {
     pub fn set_utterance_understood(mut self, input: ::std::option::Option<bool>) -> Self {
         self.utterance_understood = input;
         self
+    }
+    /// <p>Specifies whether the bot understood the utterance or not.</p>
+    pub fn get_utterance_understood(&self) -> &::std::option::Option<bool> {
+        &self.utterance_understood
     }
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
@@ -443,6 +501,26 @@ impl UtteranceSpecificationBuilder {
         self.input_type = input;
         self
     }
+    /// <p>The input type of the utterance. The possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <ul>
+    /// <li> <p> <code>audio/l16; rate=16000; channels=1</code> </p> </li>
+    /// <li> <p> <code>audio/x-l16; sample-rate=16000; channel-count=1</code> </p> </li>
+    /// <li> <p> <code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Opus format</p>
+    /// <ul>
+    /// <li> <p> <code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Text format</p>
+    /// <ul>
+    /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_input_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_type
+    }
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>audio/mpeg</code> </p> </li>
@@ -467,6 +545,17 @@ impl UtteranceSpecificationBuilder {
         self.output_type = input;
         self
     }
+    /// <p>The output type of the utterance. The possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>audio/mpeg</code> </p> </li>
+    /// <li> <p> <code>audio/ogg</code> </p> </li>
+    /// <li> <p> <code>audio/pcm (16 KHz)</code> </p> </li>
+    /// <li> <p> <code>audio/</code> (defaults to <code>mpeg</code>)</p> </li>
+    /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
+    /// </ul>
+    pub fn get_output_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_type
+    }
     /// <p>The name of the intent that the utterance is associated to.</p>
     pub fn associated_intent_name(
         mut self,
@@ -482,6 +571,10 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.associated_intent_name = input;
         self
+    }
+    /// <p>The name of the intent that the utterance is associated to.</p>
+    pub fn get_associated_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_intent_name
     }
     /// <p>The name of the slot that the utterance is associated to.</p>
     pub fn associated_slot_name(
@@ -499,6 +592,10 @@ impl UtteranceSpecificationBuilder {
         self.associated_slot_name = input;
         self
     }
+    /// <p>The name of the slot that the utterance is associated to.</p>
+    pub fn get_associated_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_slot_name
+    }
     /// <p>The state of the intent that the utterance is associated to.</p>
     pub fn intent_state(mut self, input: crate::types::IntentState) -> Self {
         self.intent_state = ::std::option::Option::Some(input);
@@ -511,6 +608,10 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.intent_state = input;
         self
+    }
+    /// <p>The state of the intent that the utterance is associated to.</p>
+    pub fn get_intent_state(&self) -> &::std::option::Option<crate::types::IntentState> {
+        &self.intent_state
     }
     /// <p>The type of dialog action that the utterance is associated to. See the <code>type</code> field in <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DialogAction.html">DialogAction</a> for more information.</p>
     pub fn dialog_action_type(
@@ -528,6 +629,10 @@ impl UtteranceSpecificationBuilder {
         self.dialog_action_type = input;
         self
     }
+    /// <p>The type of dialog action that the utterance is associated to. See the <code>type</code> field in <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DialogAction.html">DialogAction</a> for more information.</p>
+    pub fn get_dialog_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dialog_action_type
+    }
     /// <p>The identifier for the audio of the bot response.</p>
     pub fn bot_response_audio_voice_id(
         mut self,
@@ -543,6 +648,10 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.bot_response_audio_voice_id = input;
         self
+    }
+    /// <p>The identifier for the audio of the bot response.</p>
+    pub fn get_bot_response_audio_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_response_audio_voice_id
     }
     /// <p>The slots that have been filled in the session by the time of the utterance.</p>
     pub fn slots_filled_in_session(
@@ -560,6 +669,10 @@ impl UtteranceSpecificationBuilder {
         self.slots_filled_in_session = input;
         self
     }
+    /// <p>The slots that have been filled in the session by the time of the utterance.</p>
+    pub fn get_slots_filled_in_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots_filled_in_session
+    }
     /// <p>The identifier of the request associated with the utterance.</p>
     pub fn utterance_request_id(
         mut self,
@@ -575,6 +688,10 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.utterance_request_id = input;
         self
+    }
+    /// <p>The identifier of the request associated with the utterance.</p>
+    pub fn get_utterance_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance_request_id
     }
     /// Appends an item to `bot_responses`.
     ///
@@ -594,6 +711,12 @@ impl UtteranceSpecificationBuilder {
     ) -> Self {
         self.bot_responses = input;
         self
+    }
+    /// <p>A list of objects containing information about the bot response to the utterance.</p>
+    pub fn get_bot_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceBotResponse>> {
+        &self.bot_responses
     }
     /// Consumes the builder and constructs a [`UtteranceSpecification`](crate::types::UtteranceSpecification).
     pub fn build(self) -> crate::types::UtteranceSpecification {

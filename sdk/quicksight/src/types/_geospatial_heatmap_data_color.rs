@@ -40,6 +40,10 @@ impl GeospatialHeatmapDataColorBuilder {
         self.color = input;
         self
     }
+    /// <p>The hex color to be used in the heatmap point style.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
+    }
     /// Consumes the builder and constructs a [`GeospatialHeatmapDataColor`](crate::types::GeospatialHeatmapDataColor).
     pub fn build(self) -> crate::types::GeospatialHeatmapDataColor {
         crate::types::GeospatialHeatmapDataColor { color: self.color }

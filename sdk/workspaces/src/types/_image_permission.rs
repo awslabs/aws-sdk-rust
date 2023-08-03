@@ -46,6 +46,10 @@ impl ImagePermissionBuilder {
         self.shared_account_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
+    }
     /// Consumes the builder and constructs a [`ImagePermission`](crate::types::ImagePermission).
     pub fn build(self) -> crate::types::ImagePermission {
         crate::types::ImagePermission {

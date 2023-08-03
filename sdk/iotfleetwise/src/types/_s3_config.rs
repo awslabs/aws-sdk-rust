@@ -77,6 +77,10 @@ impl S3ConfigBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
     /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
@@ -98,6 +102,14 @@ impl S3ConfigBuilder {
         self.data_format = input;
         self
     }
+    /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
+    /// <ul>
+    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
+    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// </ul>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        &self.data_format
+    }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
     pub fn storage_compression_format(
         mut self,
@@ -114,6 +126,12 @@ impl S3ConfigBuilder {
         self.storage_compression_format = input;
         self
     }
+    /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
+    pub fn get_storage_compression_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageCompressionFormat> {
+        &self.storage_compression_format
+    }
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +143,11 @@ impl S3ConfigBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     pub fn build(self) -> crate::types::S3Config {

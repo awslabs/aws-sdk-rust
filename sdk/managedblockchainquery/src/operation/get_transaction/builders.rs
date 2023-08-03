@@ -36,6 +36,12 @@ impl GetTransactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTransaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_transaction::builders::GetTransactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetTransactionFluentBuilder {
         self.inner = self.inner.set_transaction_hash(input);
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_hash()
+    }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.inner = self.inner.network(input);
@@ -133,5 +143,9 @@ impl GetTransactionFluentBuilder {
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
         self.inner = self.inner.set_network(input);
         self
+    }
+    /// <p>The blockchain network where the transaction occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        self.inner.get_network()
     }
 }

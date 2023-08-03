@@ -49,6 +49,10 @@ impl UpdateLaunchProfileMemberOutputBuilder {
         self.member = input;
         self
     }
+    /// <p>The updated member. </p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::LaunchProfileMembership> {
+        &self.member
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

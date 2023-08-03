@@ -56,6 +56,10 @@ impl ResumeWorkflowRunInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow to resume.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ResumeWorkflowRunInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The ID of the workflow run to resume.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Appends an item to `node_ids`.
     ///
@@ -84,6 +92,10 @@ impl ResumeWorkflowRunInputBuilder {
     ) -> Self {
         self.node_ids = input;
         self
+    }
+    /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
+    pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.node_ids
     }
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
     pub fn build(

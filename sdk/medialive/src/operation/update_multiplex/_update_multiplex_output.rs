@@ -47,6 +47,10 @@ impl UpdateMultiplexOutputBuilder {
         self.multiplex = input;
         self
     }
+    /// The updated multiplex.
+    pub fn get_multiplex(&self) -> &::std::option::Option<crate::types::Multiplex> {
+        &self.multiplex
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

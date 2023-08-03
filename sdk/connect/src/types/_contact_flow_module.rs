@@ -104,6 +104,10 @@ impl ContactFlowModuleBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl ContactFlowModuleBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the flow module.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl ContactFlowModuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the flow module.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The content of the flow module.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl ContactFlowModuleBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the flow module.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The description of the flow module.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -143,6 +159,10 @@ impl ContactFlowModuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the flow module.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of flow module.</p>
     pub fn state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
@@ -157,6 +177,10 @@ impl ContactFlowModuleBuilder {
         self.state = input;
         self
     }
+    /// <p>The type of flow module.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+        &self.state
+    }
     /// <p>The status of the flow module.</p>
     pub fn status(mut self, input: crate::types::ContactFlowModuleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -169,6 +193,10 @@ impl ContactFlowModuleBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the flow module.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactFlowModuleStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,6 +222,14 @@ impl ContactFlowModuleBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ContactFlowModule`](crate::types::ContactFlowModule).
     pub fn build(self) -> crate::types::ContactFlowModule {

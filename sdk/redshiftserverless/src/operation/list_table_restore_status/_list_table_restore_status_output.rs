@@ -60,6 +60,10 @@ impl ListTableRestoreStatusOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `table_restore_statuses`.
     ///
     /// To override the contents of this collection use [`set_table_restore_statuses`](Self::set_table_restore_statuses).
@@ -78,6 +82,12 @@ impl ListTableRestoreStatusOutputBuilder {
     ) -> Self {
         self.table_restore_statuses = input;
         self
+    }
+    /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
+    pub fn get_table_restore_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+        &self.table_restore_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -86,6 +86,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time when the configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The description of the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The revision number.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision number.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -139,6 +155,14 @@ impl DescribeConfigurationRevisionOutputBuilder {
     ) -> Self {
         self.server_properties = input;
         self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.server_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

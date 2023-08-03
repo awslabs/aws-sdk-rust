@@ -48,6 +48,10 @@ impl SessionCommandBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     pub fn python_version(
         mut self,
@@ -63,6 +67,10 @@ impl SessionCommandBuilder {
     ) -> Self {
         self.python_version = input;
         self
+    }
+    /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+    pub fn get_python_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.python_version
     }
     /// Consumes the builder and constructs a [`SessionCommand`](crate::types::SessionCommand).
     pub fn build(self) -> crate::types::SessionCommand {

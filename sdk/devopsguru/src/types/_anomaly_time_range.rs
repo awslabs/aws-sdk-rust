@@ -51,6 +51,10 @@ impl AnomalyTimeRangeBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The time when the anomalous behavior started. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The time when the anomalous behavior ended. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AnomalyTimeRangeBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p> The time when the anomalous behavior ended. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`AnomalyTimeRange`](crate::types::AnomalyTimeRange).
     pub fn build(self) -> crate::types::AnomalyTimeRange {

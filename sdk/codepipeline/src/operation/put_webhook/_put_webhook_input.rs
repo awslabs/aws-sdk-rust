@@ -50,6 +50,10 @@ impl PutWebhookInputBuilder {
         self.webhook = input;
         self
     }
+    /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+    pub fn get_webhook(&self) -> &::std::option::Option<crate::types::WebhookDefinition> {
+        &self.webhook
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -68,6 +72,10 @@ impl PutWebhookInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the webhook.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
     pub fn build(

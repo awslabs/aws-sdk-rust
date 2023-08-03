@@ -73,6 +73,10 @@ impl VpcDestinationConfigurationBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The subnet IDs of the VPC destination.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -95,6 +99,12 @@ impl VpcDestinationConfigurationBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups of the VPC destination.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl VpcDestinationConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +128,10 @@ impl VpcDestinationConfigurationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`VpcDestinationConfiguration`](crate::types::VpcDestinationConfiguration).
     pub fn build(self) -> crate::types::VpcDestinationConfiguration {

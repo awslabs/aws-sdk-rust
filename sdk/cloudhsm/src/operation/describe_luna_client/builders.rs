@@ -38,6 +38,12 @@ impl DescribeLunaClientFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLunaClient as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl DescribeLunaClientFluentBuilder {
         self.inner = self.inner.set_client_arn(input);
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_arn()
+    }
     /// <p>The certificate fingerprint.</p>
     pub fn certificate_fingerprint(
         mut self,
@@ -143,5 +153,9 @@ impl DescribeLunaClientFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_fingerprint(input);
         self
+    }
+    /// <p>The certificate fingerprint.</p>
+    pub fn get_certificate_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_fingerprint()
     }
 }

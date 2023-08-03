@@ -46,6 +46,10 @@ impl DescribeLabelGroupInputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> Returns the name of the label group. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
     pub fn build(
         self,

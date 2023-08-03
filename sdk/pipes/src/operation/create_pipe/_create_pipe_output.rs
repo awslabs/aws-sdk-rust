@@ -86,6 +86,10 @@ impl CreatePipeOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the pipe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the pipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreatePipeOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the pipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state the pipe should be in.</p>
     pub fn desired_state(mut self, input: crate::types::RequestedPipeState) -> Self {
@@ -109,6 +117,10 @@ impl CreatePipeOutputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>The state the pipe should be in.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeState> {
+        &self.desired_state
+    }
     /// <p>The state the pipe is in.</p>
     pub fn current_state(mut self, input: crate::types::PipeState) -> Self {
         self.current_state = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl CreatePipeOutputBuilder {
     ) -> Self {
         self.current_state = input;
         self
+    }
+    /// <p>The state the pipe is in.</p>
+    pub fn get_current_state(&self) -> &::std::option::Option<crate::types::PipeState> {
+        &self.current_state
     }
     /// <p>The time the pipe was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +151,10 @@ impl CreatePipeOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the pipe was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl CreatePipeOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

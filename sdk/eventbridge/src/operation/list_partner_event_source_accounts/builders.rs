@@ -36,6 +36,10 @@ impl ListPartnerEventSourceAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPartnerEventSourceAccounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListPartnerEventSourceAccountsFluentBuilder {
         self.inner = self.inner.set_event_source_name(input);
         self
     }
+    /// <p>The name of the partner event source to display account information about.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_source_name()
+    }
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -116,6 +124,10 @@ impl ListPartnerEventSourceAccountsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -125,5 +137,9 @@ impl ListPartnerEventSourceAccountsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

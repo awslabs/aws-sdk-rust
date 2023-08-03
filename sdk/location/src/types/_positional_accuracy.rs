@@ -40,6 +40,10 @@ impl PositionalAccuracyBuilder {
         self.horizontal = input;
         self
     }
+    /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
+    pub fn get_horizontal(&self) -> &::std::option::Option<f64> {
+        &self.horizontal
+    }
     /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::types::PositionalAccuracy).
     pub fn build(self) -> crate::types::PositionalAccuracy {
         crate::types::PositionalAccuracy {

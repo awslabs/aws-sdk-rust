@@ -36,6 +36,12 @@ impl DescribeReleaseLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReleaseLabel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeReleaseLabelFluentBuilder {
         self.inner = self.inner.set_release_label(input);
         self
     }
+    /// <p>The target release label to be described.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_release_label()
+    }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -142,6 +152,10 @@ impl DescribeReleaseLabelFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Reserved for future use. Currently set to null.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -151,5 +165,9 @@ impl DescribeReleaseLabelFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Reserved for future use. Currently set to null.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

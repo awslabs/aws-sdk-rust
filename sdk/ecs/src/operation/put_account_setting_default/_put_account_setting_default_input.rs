@@ -53,6 +53,11 @@ impl PutAccountSettingDefaultInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more information about FIPS-140 compliance with Fargate, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html"> Amazon Web Services Fargate Federal Information Processing Standard (FIPS) 140-2 compliance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
+        &self.name
+    }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -62,6 +67,10 @@ impl PutAccountSettingDefaultInputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`PutAccountSettingDefaultInput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultInput).
     pub fn build(

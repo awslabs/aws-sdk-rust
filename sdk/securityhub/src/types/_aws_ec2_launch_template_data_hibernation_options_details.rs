@@ -41,6 +41,10 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
         self.configured = input;
         self
     }
+    /// <p> If you set this parameter to <code>true</code>, the instance is enabled for hibernation. </p>
+    pub fn get_configured(&self) -> &::std::option::Option<bool> {
+        &self.configured
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {

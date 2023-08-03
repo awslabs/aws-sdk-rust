@@ -36,6 +36,10 @@ impl StartChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartChannel as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_channel::builders::StartChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl StartChannelFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// A request to start a channel
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
 }

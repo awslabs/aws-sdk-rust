@@ -36,6 +36,10 @@ impl DescribeAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_app::builders::DescribeAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DescribeAppFluentBuilder {
         self.inner = self.inner.set_simulation(input);
         self
     }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simulation()
+    }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -128,6 +136,10 @@ impl DescribeAppFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The name of the app.</p>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app(input.into());
@@ -137,5 +149,9 @@ impl DescribeAppFluentBuilder {
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app(input);
         self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app()
     }
 }

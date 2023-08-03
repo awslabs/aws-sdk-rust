@@ -72,6 +72,10 @@ impl AssetPropertySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the property.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl AssetPropertySummaryBuilder {
         self.alias = input;
         self
     }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl AssetPropertySummaryBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn notification(mut self, input: crate::types::PropertyNotification) -> Self {
@@ -104,6 +116,10 @@ impl AssetPropertySummaryBuilder {
     ) -> Self {
         self.notification = input;
         self
+    }
+    /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::PropertyNotification> {
+        &self.notification
     }
     /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn asset_composite_model_id(
@@ -120,6 +136,10 @@ impl AssetPropertySummaryBuilder {
     ) -> Self {
         self.asset_composite_model_id = input;
         self
+    }
+    /// <p> The ID of the composite model that contains the asset property. </p>
+    pub fn get_asset_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_composite_model_id
     }
     /// Consumes the builder and constructs a [`AssetPropertySummary`](crate::types::AssetPropertySummary).
     pub fn build(self) -> crate::types::AssetPropertySummary {

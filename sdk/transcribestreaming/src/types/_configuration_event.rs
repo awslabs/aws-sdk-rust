@@ -63,6 +63,12 @@ impl ConfigurationEventBuilder {
         self.channel_definitions = input;
         self
     }
+    /// <p>Indicates which speaker is on which audio channel.</p>
+    pub fn get_channel_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+        &self.channel_definitions
+    }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
     pub fn post_call_analytics_settings(
         mut self,
@@ -78,6 +84,12 @@ impl ConfigurationEventBuilder {
     ) -> Self {
         self.post_call_analytics_settings = input;
         self
+    }
+    /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
+    pub fn get_post_call_analytics_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostCallAnalyticsSettings> {
+        &self.post_call_analytics_settings
     }
     /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     pub fn build(self) -> crate::types::ConfigurationEvent {

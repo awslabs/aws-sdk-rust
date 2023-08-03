@@ -56,6 +56,10 @@ impl PivotTableFieldOptionBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the pivot table field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The custom label of the pivot table field.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_label = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PivotTableFieldOptionBuilder {
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
+    }
+    /// <p>The custom label of the pivot table field.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>The visibility of the pivot table field.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -78,6 +86,10 @@ impl PivotTableFieldOptionBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility of the pivot table field.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`PivotTableFieldOption`](crate::types::PivotTableFieldOption).
     pub fn build(self) -> crate::types::PivotTableFieldOption {

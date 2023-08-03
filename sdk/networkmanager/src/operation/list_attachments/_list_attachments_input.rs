@@ -85,6 +85,10 @@ impl ListAttachmentsInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The type of attachment.</p>
     pub fn attachment_type(mut self, input: crate::types::AttachmentType) -> Self {
         self.attachment_type = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl ListAttachmentsInputBuilder {
     ) -> Self {
         self.attachment_type = input;
         self
+    }
+    /// <p>The type of attachment.</p>
+    pub fn get_attachment_type(&self) -> &::std::option::Option<crate::types::AttachmentType> {
+        &self.attachment_type
     }
     /// <p>The Region where the edge is located.</p>
     pub fn edge_location(
@@ -114,6 +122,10 @@ impl ListAttachmentsInputBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The Region where the edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The state of the attachment.</p>
     pub fn state(mut self, input: crate::types::AttachmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ListAttachmentsInputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the attachment.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentState> {
+        &self.state
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl ListAttachmentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -146,6 +166,10 @@ impl ListAttachmentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAttachmentsInput`](crate::operation::list_attachments::ListAttachmentsInput).
     pub fn build(

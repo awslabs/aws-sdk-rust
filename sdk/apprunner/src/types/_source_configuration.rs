@@ -79,6 +79,11 @@ impl SourceConfigurationBuilder {
         self.code_repository = input;
         self
     }
+    /// <p>The description of a source code repository.</p>
+    /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepository> {
+        &self.code_repository
+    }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
     pub fn image_repository(mut self, input: crate::types::ImageRepository) -> Self {
@@ -94,6 +99,11 @@ impl SourceConfigurationBuilder {
         self.image_repository = input;
         self
     }
+    /// <p>The description of a source image repository.</p>
+    /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
+    pub fn get_image_repository(&self) -> &::std::option::Option<crate::types::ImageRepository> {
+        &self.image_repository
+    }
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
     pub fn auto_deployments_enabled(mut self, input: bool) -> Self {
@@ -105,6 +115,11 @@ impl SourceConfigurationBuilder {
     pub fn set_auto_deployments_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_deployments_enabled = input;
         self
+    }
+    /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
+    /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
+    pub fn get_auto_deployments_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_deployments_enabled
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub fn authentication_configuration(
@@ -121,6 +136,12 @@ impl SourceConfigurationBuilder {
     ) -> Self {
         self.authentication_configuration = input;
         self
+    }
+    /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
+    pub fn get_authentication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
+        &self.authentication_configuration
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {

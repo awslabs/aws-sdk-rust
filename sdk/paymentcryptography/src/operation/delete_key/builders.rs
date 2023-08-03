@@ -46,6 +46,10 @@ impl DeleteKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_key::builders::DeleteKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DeleteKeyFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
     pub fn delete_key_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.delete_key_in_days(input);
@@ -143,5 +151,9 @@ impl DeleteKeyFluentBuilder {
     pub fn set_delete_key_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_delete_key_in_days(input);
         self
+    }
+    /// <p>The waiting period for key deletion. The default value is seven days.</p>
+    pub fn get_delete_key_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_delete_key_in_days()
     }
 }

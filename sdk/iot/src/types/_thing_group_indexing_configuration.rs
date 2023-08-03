@@ -67,6 +67,12 @@ impl ThingGroupIndexingConfigurationBuilder {
         self.thing_group_indexing_mode = input;
         self
     }
+    /// <p>Thing group indexing mode.</p>
+    pub fn get_thing_group_indexing_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupIndexingMode> {
+        &self.thing_group_indexing_mode
+    }
     /// Appends an item to `managed_fields`.
     ///
     /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
@@ -85,6 +91,12 @@ impl ThingGroupIndexingConfigurationBuilder {
     ) -> Self {
         self.managed_fields = input;
         self
+    }
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    pub fn get_managed_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.managed_fields
     }
     /// Appends an item to `custom_fields`.
     ///
@@ -106,6 +118,13 @@ impl ThingGroupIndexingConfigurationBuilder {
     ) -> Self {
         self.custom_fields = input;
         self
+    }
+    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
+    /// <p>Contains custom field names and their data type.</p>
+    pub fn get_custom_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.custom_fields
     }
     /// Consumes the builder and constructs a [`ThingGroupIndexingConfiguration`](crate::types::ThingGroupIndexingConfiguration).
     pub fn build(self) -> crate::types::ThingGroupIndexingConfiguration {

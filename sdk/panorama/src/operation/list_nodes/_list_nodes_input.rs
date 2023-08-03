@@ -90,6 +90,10 @@ impl ListNodesInputBuilder {
         self.category = input;
         self
     }
+    /// <p>Search for nodes by category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::NodeCategory> {
+        &self.category
+    }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
     pub fn owner_account(
         mut self,
@@ -106,6 +110,10 @@ impl ListNodesInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>Search for nodes by the account ID of the nodes' owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>Search for nodes by name.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl ListNodesInputBuilder {
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
+    }
+    /// <p>Search for nodes by name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
     }
     /// <p>Search for nodes by version.</p>
     pub fn package_version(
@@ -132,6 +144,10 @@ impl ListNodesInputBuilder {
         self.package_version = input;
         self
     }
+    /// <p>Search for nodes by version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>Search for nodes by patch version.</p>
     pub fn patch_version(
         mut self,
@@ -148,6 +164,10 @@ impl ListNodesInputBuilder {
         self.patch_version = input;
         self
     }
+    /// <p>Search for nodes by patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -158,6 +178,10 @@ impl ListNodesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -167,6 +191,10 @@ impl ListNodesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of nodes to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
     pub fn build(

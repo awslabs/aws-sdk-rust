@@ -47,6 +47,10 @@ impl CreateAppMonitorOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the new app monitor.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

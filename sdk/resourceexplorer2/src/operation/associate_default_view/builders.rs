@@ -37,6 +37,12 @@ impl AssociateDefaultViewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDefaultView as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_default_view::builders::AssociateDefaultViewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +132,9 @@ impl AssociateDefaultViewFluentBuilder {
     pub fn set_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_view_arn(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_view_arn()
     }
 }

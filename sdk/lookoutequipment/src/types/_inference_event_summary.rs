@@ -86,6 +86,10 @@ impl InferenceEventSummaryBuilder {
         self.inference_scheduler_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
+    }
     /// <p>The name of the inference scheduler being used for the inference events. </p>
     pub fn inference_scheduler_name(
         mut self,
@@ -102,6 +106,10 @@ impl InferenceEventSummaryBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p>Indicates the starting time of an inference event. </p>
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_start_time = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl InferenceEventSummaryBuilder {
     ) -> Self {
         self.event_start_time = input;
         self
+    }
+    /// <p>Indicates the starting time of an inference event. </p>
+    pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_start_time
     }
     /// <p>Indicates the ending time of an inference event. </p>
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +140,10 @@ impl InferenceEventSummaryBuilder {
         self.event_end_time = input;
         self
     }
+    /// <p>Indicates the ending time of an inference event. </p>
+    pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_end_time
+    }
     /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn diagnostics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.diagnostics = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl InferenceEventSummaryBuilder {
         self.diagnostics = input;
         self
     }
+    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    pub fn get_diagnostics(&self) -> &::std::option::Option<::std::string::String> {
+        &self.diagnostics
+    }
     /// <p> Indicates the size of an inference event in seconds. </p>
     pub fn event_duration_in_seconds(mut self, input: i64) -> Self {
         self.event_duration_in_seconds = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl InferenceEventSummaryBuilder {
     pub fn set_event_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_duration_in_seconds = input;
         self
+    }
+    /// <p> Indicates the size of an inference event in seconds. </p>
+    pub fn get_event_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.event_duration_in_seconds
     }
     /// Consumes the builder and constructs a [`InferenceEventSummary`](crate::types::InferenceEventSummary).
     pub fn build(self) -> crate::types::InferenceEventSummary {

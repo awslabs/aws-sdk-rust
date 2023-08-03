@@ -57,6 +57,11 @@ impl MetricStreamFilterBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The name of the metric namespace for this filter.</p>
+    /// <p>The namespace can contain only ASCII printable characters (ASCII range 32 through 126). It must contain at least one non-whitespace character.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Appends an item to `metric_names`.
     ///
     /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
@@ -79,6 +84,14 @@ impl MetricStreamFilterBuilder {
     ) -> Self {
         self.metric_names = input;
         self
+    }
+    /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
+    /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
+    /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
+    pub fn get_metric_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_names
     }
     /// Consumes the builder and constructs a [`MetricStreamFilter`](crate::types::MetricStreamFilter).
     pub fn build(self) -> crate::types::MetricStreamFilter {

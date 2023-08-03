@@ -47,6 +47,10 @@ impl UpdateMyUserProfileInputBuilder {
         self.ssh_public_key = input;
         self
     }
+    /// <p>The user's SSH public key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
+    }
     /// Consumes the builder and constructs a [`UpdateMyUserProfileInput`](crate::operation::update_my_user_profile::UpdateMyUserProfileInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl CreateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_rule::builders::CreateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_retention_period(input);
         self
     }
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        self.inner.get_retention_period()
+    }
     /// <p>The retention rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -130,6 +138,10 @@ impl CreateRuleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The retention rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -148,6 +160,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Information about the tags to assign to the retention rule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -160,6 +176,10 @@ impl CreateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
     /// Appends an item to `ResourceTags`.
     ///
@@ -182,6 +202,14 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
+    /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+    /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+    /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        self.inner.get_resource_tags()
+    }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(mut self, input: crate::types::LockConfiguration) -> Self {
         self.inner = self.inner.lock_configuration(input);
@@ -194,5 +222,11 @@ impl CreateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lock_configuration(input);
         self
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn get_lock_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+        self.inner.get_lock_configuration()
     }
 }

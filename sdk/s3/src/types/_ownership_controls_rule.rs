@@ -55,6 +55,13 @@ impl OwnershipControlsRuleBuilder {
         self.object_ownership = input;
         self
     }
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    pub fn get_object_ownership(&self) -> &::std::option::Option<crate::types::ObjectOwnership> {
+        &self.object_ownership
+    }
     /// Consumes the builder and constructs a [`OwnershipControlsRule`](crate::types::OwnershipControlsRule).
     pub fn build(self) -> crate::types::OwnershipControlsRule {
         crate::types::OwnershipControlsRule {

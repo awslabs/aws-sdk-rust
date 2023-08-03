@@ -48,6 +48,10 @@ impl PathToObjectIdentifiersBuilder {
         self.path = input;
         self
     }
+    /// <p>The path that is used to identify the object starting from directory root.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Appends an item to `object_identifiers`.
     ///
     /// To override the contents of this collection use [`set_object_identifiers`](Self::set_object_identifiers).
@@ -69,6 +73,12 @@ impl PathToObjectIdentifiersBuilder {
     ) -> Self {
         self.object_identifiers = input;
         self
+    }
+    /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
+    pub fn get_object_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.object_identifiers
     }
     /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::types::PathToObjectIdentifiers).
     pub fn build(self) -> crate::types::PathToObjectIdentifiers {

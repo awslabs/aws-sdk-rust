@@ -105,6 +105,10 @@ impl UpdateApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application to update.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -114,6 +118,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
+    }
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// <p>Describes application configuration updates.</p>
     pub fn application_configuration_update(
@@ -131,6 +139,12 @@ impl UpdateApplicationInputBuilder {
         self.application_configuration_update = input;
         self
     }
+    /// <p>Describes application configuration updates.</p>
+    pub fn get_application_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationConfigurationUpdate> {
+        &self.application_configuration_update
+    }
     /// <p>Describes updates to the service execution role.</p>
     pub fn service_execution_role_update(
         mut self,
@@ -147,6 +161,12 @@ impl UpdateApplicationInputBuilder {
         self.service_execution_role_update = input;
         self
     }
+    /// <p>Describes updates to the service execution role.</p>
+    pub fn get_service_execution_role_update(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_execution_role_update
+    }
     /// <p>Describes updates to the application's starting parameters.</p>
     pub fn run_configuration_update(mut self, input: crate::types::RunConfigurationUpdate) -> Self {
         self.run_configuration_update = ::std::option::Option::Some(input);
@@ -159,6 +179,12 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.run_configuration_update = input;
         self
+    }
+    /// <p>Describes updates to the application's starting parameters.</p>
+    pub fn get_run_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
+        &self.run_configuration_update
     }
     /// Appends an item to `cloud_watch_logging_option_updates`.
     ///
@@ -182,6 +208,12 @@ impl UpdateApplicationInputBuilder {
         self.cloud_watch_logging_option_updates = input;
         self
     }
+    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
+    pub fn get_cloud_watch_logging_option_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
+        &self.cloud_watch_logging_option_updates
+    }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(
         mut self,
@@ -197,6 +229,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.conditional_token = input;
         self
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conditional_token
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

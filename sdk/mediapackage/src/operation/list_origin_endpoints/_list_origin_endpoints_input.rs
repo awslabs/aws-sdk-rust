@@ -57,6 +57,10 @@ impl ListOriginEndpointsInputBuilder {
         self.channel_id = input;
         self
     }
+    /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// The upper bound on the number of records to return.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ListOriginEndpointsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The upper bound on the number of records to return.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListOriginEndpointsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
     pub fn build(

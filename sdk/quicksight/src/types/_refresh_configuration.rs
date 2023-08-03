@@ -43,6 +43,12 @@ impl RefreshConfigurationBuilder {
         self.incremental_refresh = input;
         self
     }
+    /// <p>The incremental refresh for the dataset.</p>
+    pub fn get_incremental_refresh(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncrementalRefresh> {
+        &self.incremental_refresh
+    }
     /// Consumes the builder and constructs a [`RefreshConfiguration`](crate::types::RefreshConfiguration).
     pub fn build(self) -> crate::types::RefreshConfiguration {
         crate::types::RefreshConfiguration {

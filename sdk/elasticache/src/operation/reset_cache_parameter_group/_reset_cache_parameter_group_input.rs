@@ -70,6 +70,10 @@ impl ResetCacheParameterGroupInputBuilder {
         self.cache_parameter_group_name = input;
         self
     }
+    /// <p>The name of the cache parameter group to reset.</p>
+    pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_name
+    }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
@@ -81,6 +85,11 @@ impl ResetCacheParameterGroupInputBuilder {
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
+    }
+    /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        &self.reset_all_parameters
     }
     /// Appends an item to `parameter_name_values`.
     ///
@@ -100,6 +109,12 @@ impl ResetCacheParameterGroupInputBuilder {
     ) -> Self {
         self.parameter_name_values = input;
         self
+    }
+    /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
+    pub fn get_parameter_name_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+        &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`ResetCacheParameterGroupInput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput).
     pub fn build(

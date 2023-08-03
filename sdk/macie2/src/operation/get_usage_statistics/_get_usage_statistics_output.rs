@@ -63,6 +63,10 @@ impl GetUsageStatisticsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -82,6 +86,12 @@ impl GetUsageStatisticsOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+        &self.records
+    }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl GetUsageStatisticsOutputBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.time_range = input;
         self
+    }
+    /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

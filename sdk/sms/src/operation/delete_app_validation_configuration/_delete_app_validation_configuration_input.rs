@@ -39,6 +39,10 @@ impl DeleteAppValidationConfigurationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Consumes the builder and constructs a [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

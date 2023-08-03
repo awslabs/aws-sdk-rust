@@ -36,6 +36,12 @@ impl UpdateDomainConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_domain_config::builders::UpdateDomainConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that you're updating.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
     pub fn cluster_config(mut self, input: crate::types::ClusterConfig) -> Self {
         self.inner = self.inner.cluster_config(input);
@@ -138,6 +148,10 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_config(input);
         self
+    }
+    /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
+    pub fn get_cluster_config(&self) -> &::std::option::Option<crate::types::ClusterConfig> {
+        self.inner.get_cluster_config()
     }
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
@@ -152,6 +166,10 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_ebs_options(input);
         self
     }
+    /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
+    pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
+        self.inner.get_ebs_options()
+    }
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.inner = self.inner.snapshot_options(input);
@@ -164,6 +182,10 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
+    }
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
+    pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
+        self.inner.get_snapshot_options()
     }
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
@@ -178,6 +200,10 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_vpc_options(input);
         self
     }
+    /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        self.inner.get_vpc_options()
+    }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn cognito_options(mut self, input: crate::types::CognitoOptions) -> Self {
         self.inner = self.inner.cognito_options(input);
@@ -190,6 +216,10 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cognito_options(input);
         self
+    }
+    /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
+    pub fn get_cognito_options(&self) -> &::std::option::Option<crate::types::CognitoOptions> {
+        self.inner.get_cognito_options()
     }
     /// Adds a key-value pair to `AdvancedOptions`.
     ///
@@ -226,6 +256,20 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_advanced_options(input);
         self
     }
+    /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
+    pub fn get_advanced_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_advanced_options()
+    }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     pub fn access_policies(
         mut self,
@@ -241,6 +285,10 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
+    }
+    /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
+    pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_policies()
     }
     /// Adds a key-value pair to `LogPublishingOptions`.
     ///
@@ -265,6 +313,14 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_log_publishing_options(input);
         self
     }
+    /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
+    pub fn get_log_publishing_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    > {
+        self.inner.get_log_publishing_options()
+    }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn encryption_at_rest_options(
         mut self,
@@ -281,6 +337,12 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_encryption_at_rest_options(input);
         self
     }
+    /// <p>Encryption at rest options for the domain.</p>
+    pub fn get_encryption_at_rest_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        self.inner.get_encryption_at_rest_options()
+    }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.inner = self.inner.domain_endpoint_options(input);
@@ -293,6 +355,12 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
+    }
+    /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
+        self.inner.get_domain_endpoint_options()
     }
     /// <p>Node-to-node encryption options for the domain.</p>
     pub fn node_to_node_encryption_options(
@@ -310,6 +378,12 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_node_to_node_encryption_options(input);
         self
     }
+    /// <p>Node-to-node encryption options for the domain.</p>
+    pub fn get_node_to_node_encryption_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptions> {
+        self.inner.get_node_to_node_encryption_options()
+    }
     /// <p>Options for fine-grained access control.</p>
     pub fn advanced_security_options(
         mut self,
@@ -326,6 +400,12 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_advanced_security_options(input);
         self
     }
+    /// <p>Options for fine-grained access control.</p>
+    pub fn get_advanced_security_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
+        self.inner.get_advanced_security_options()
+    }
     /// <p>Options for Auto-Tune.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptions) -> Self {
         self.inner = self.inner.auto_tune_options(input);
@@ -339,6 +419,10 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_auto_tune_options(input);
         self
     }
+    /// <p>Options for Auto-Tune.</p>
+    pub fn get_auto_tune_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptions> {
+        self.inner.get_auto_tune_options()
+    }
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -348,6 +432,10 @@ impl UpdateDomainConfigFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The type of dry run to perform.</p>
     /// <ul>
@@ -370,6 +458,14 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_dry_run_mode(input);
         self
     }
+    /// <p>The type of dry run to perform.</p>
+    /// <ul>
+    /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+    /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
+    /// </ul>
+    pub fn get_dry_run_mode(&self) -> &::std::option::Option<crate::types::DryRunMode> {
+        self.inner.get_dry_run_mode()
+    }
     /// <p>Off-peak window options for the domain.</p>
     pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
         self.inner = self.inner.off_peak_window_options(input);
@@ -383,6 +479,12 @@ impl UpdateDomainConfigFluentBuilder {
         self.inner = self.inner.set_off_peak_window_options(input);
         self
     }
+    /// <p>Off-peak window options for the domain.</p>
+    pub fn get_off_peak_window_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::OffPeakWindowOptions> {
+        self.inner.get_off_peak_window_options()
+    }
     /// <p>Service software update options for the domain.</p>
     pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
         self.inner = self.inner.software_update_options(input);
@@ -395,5 +497,11 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_software_update_options(input);
         self
+    }
+    /// <p>Service software update options for the domain.</p>
+    pub fn get_software_update_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
+        self.inner.get_software_update_options()
     }
 }

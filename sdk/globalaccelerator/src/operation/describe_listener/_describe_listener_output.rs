@@ -47,6 +47,10 @@ impl DescribeListenerOutputBuilder {
         self.listener = input;
         self
     }
+    /// <p>The description of a listener.</p>
+    pub fn get_listener(&self) -> &::std::option::Option<crate::types::Listener> {
+        &self.listener
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

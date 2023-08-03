@@ -49,6 +49,10 @@ impl BucketInfoBuilder {
         self.buckets = input;
         self
     }
+    /// <p>A list of the calculated facet values and counts.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
+        &self.buckets
+    }
     /// Consumes the builder and constructs a [`BucketInfo`](crate::types::BucketInfo).
     pub fn build(self) -> crate::types::BucketInfo {
         crate::types::BucketInfo {

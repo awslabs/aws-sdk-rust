@@ -36,6 +36,10 @@ impl UpdateNotebookInstanceLifecycleConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNotebookInstanceLifecycleConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl UpdateNotebookInstanceLifecycleConfigFluentBuilder {
             .set_notebook_instance_lifecycle_config_name(input);
         self
     }
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_lifecycle_config_name()
+    }
     /// Appends an item to `OnCreate`.
     ///
     /// To override the contents of this collection use [`set_on_create`](Self::set_on_create).
@@ -127,6 +137,12 @@ impl UpdateNotebookInstanceLifecycleConfigFluentBuilder {
         self.inner = self.inner.set_on_create(input);
         self
     }
+    /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    pub fn get_on_create(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        self.inner.get_on_create()
+    }
     /// Appends an item to `OnStart`.
     ///
     /// To override the contents of this collection use [`set_on_start`](Self::set_on_start).
@@ -143,5 +159,11 @@ impl UpdateNotebookInstanceLifecycleConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_on_start(input);
         self
+    }
+    /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    pub fn get_on_start(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        self.inner.get_on_start()
     }
 }

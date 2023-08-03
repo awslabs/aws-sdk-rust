@@ -92,6 +92,12 @@ impl DescribeSavingsPlansInputBuilder {
         self.savings_plan_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
+    pub fn get_savings_plan_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.savings_plan_arns
+    }
     /// Appends an item to `savings_plan_ids`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
@@ -114,6 +120,12 @@ impl DescribeSavingsPlansInputBuilder {
         self.savings_plan_ids = input;
         self
     }
+    /// <p>The IDs of the Savings Plans.</p>
+    pub fn get_savings_plan_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.savings_plan_ids
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl DescribeSavingsPlansInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl DescribeSavingsPlansInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `states`.
     ///
@@ -153,6 +173,12 @@ impl DescribeSavingsPlansInputBuilder {
         self.states = input;
         self
     }
+    /// <p>The states.</p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
+        &self.states
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -171,6 +197,12 @@ impl DescribeSavingsPlansInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The filters.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
     pub fn build(

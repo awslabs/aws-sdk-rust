@@ -56,6 +56,10 @@ impl InsightHealthBuilder {
         self.open_proactive_insights = input;
         self
     }
+    /// <p> The number of open proactive insights. </p>
+    pub fn get_open_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_proactive_insights
+    }
     /// <p> The number of open reactive insights. </p>
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
         self.open_reactive_insights = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl InsightHealthBuilder {
     pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_reactive_insights = input;
         self
+    }
+    /// <p> The number of open reactive insights. </p>
+    pub fn get_open_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_reactive_insights
     }
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
     pub fn mean_time_to_recover_in_milliseconds(mut self, input: i64) -> Self {
@@ -78,6 +86,10 @@ impl InsightHealthBuilder {
     ) -> Self {
         self.mean_time_to_recover_in_milliseconds = input;
         self
+    }
+    /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
+    pub fn get_mean_time_to_recover_in_milliseconds(&self) -> &::std::option::Option<i64> {
+        &self.mean_time_to_recover_in_milliseconds
     }
     /// Consumes the builder and constructs a [`InsightHealth`](crate::types::InsightHealth).
     pub fn build(self) -> crate::types::InsightHealth {

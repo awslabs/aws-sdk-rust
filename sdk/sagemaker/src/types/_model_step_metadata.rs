@@ -40,6 +40,10 @@ impl ModelStepMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the created model.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`ModelStepMetadata`](crate::types::ModelStepMetadata).
     pub fn build(self) -> crate::types::ModelStepMetadata {
         crate::types::ModelStepMetadata { arn: self.arn }

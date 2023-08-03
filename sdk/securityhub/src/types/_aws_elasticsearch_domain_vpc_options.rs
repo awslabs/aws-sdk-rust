@@ -76,6 +76,12 @@ impl AwsElasticsearchDomainVpcOptionsBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The list of Availability Zones associated with the VPC subnets.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -98,6 +104,12 @@ impl AwsElasticsearchDomainVpcOptionsBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The list of security group IDs associated with the VPC endpoints for the domain.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -117,6 +129,10 @@ impl AwsElasticsearchDomainVpcOptionsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnet IDs associated with the VPC endpoints for the domain.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>ID for the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl AwsElasticsearchDomainVpcOptionsBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>ID for the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainVpcOptions`](crate::types::AwsElasticsearchDomainVpcOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainVpcOptions {

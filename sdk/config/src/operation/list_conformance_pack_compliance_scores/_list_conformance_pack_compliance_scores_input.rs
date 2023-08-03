@@ -82,6 +82,12 @@ impl ListConformancePackComplianceScoresInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceScoresFilters> {
+        &self.filters
+    }
     /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
     /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
     /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
@@ -96,6 +102,12 @@ impl ListConformancePackComplianceScoresInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+    /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
     /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
     pub fn sort_by(mut self, input: crate::types::SortBy) -> Self {
@@ -108,6 +120,11 @@ impl ListConformancePackComplianceScoresInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortBy> {
+        &self.sort_by
+    }
     /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -118,6 +135,10 @@ impl ListConformancePackComplianceScoresInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -127,6 +148,10 @@ impl ListConformancePackComplianceScoresInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConformancePackComplianceScoresInput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresInput, ::aws_smithy_http::operation::error::BuildError>{

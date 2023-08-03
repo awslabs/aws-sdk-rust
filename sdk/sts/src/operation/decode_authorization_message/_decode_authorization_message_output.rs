@@ -53,6 +53,10 @@ impl DecodeAuthorizationMessageOutputBuilder {
         self.decoded_message = input;
         self
     }
+    /// <p>The API returns a response with the decoded message.</p>
+    pub fn get_decoded_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoded_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

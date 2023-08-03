@@ -53,6 +53,12 @@ impl AllowedPublishersBuilder {
         self.signing_profile_version_arns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
+    pub fn get_signing_profile_version_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.signing_profile_version_arns
+    }
     /// Consumes the builder and constructs a [`AllowedPublishers`](crate::types::AllowedPublishers).
     pub fn build(self) -> crate::types::AllowedPublishers {
         crate::types::AllowedPublishers {

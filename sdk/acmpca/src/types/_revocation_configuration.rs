@@ -51,6 +51,10 @@ impl RevocationConfigurationBuilder {
         self.crl_configuration = input;
         self
     }
+    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, Amazon Web Services Private CA makes further attempts every 15 minutes.</p>
+    pub fn get_crl_configuration(&self) -> &::std::option::Option<crate::types::CrlConfiguration> {
+        &self.crl_configuration
+    }
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
     pub fn ocsp_configuration(mut self, input: crate::types::OcspConfiguration) -> Self {
         self.ocsp_configuration = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl RevocationConfigurationBuilder {
     ) -> Self {
         self.ocsp_configuration = input;
         self
+    }
+    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
+    pub fn get_ocsp_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OcspConfiguration> {
+        &self.ocsp_configuration
     }
     /// Consumes the builder and constructs a [`RevocationConfiguration`](crate::types::RevocationConfiguration).
     pub fn build(self) -> crate::types::RevocationConfiguration {

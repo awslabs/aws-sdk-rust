@@ -58,6 +58,10 @@ impl PutProtocolsListOutputBuilder {
         self.protocols_list = input;
         self
     }
+    /// <p>The details of the Firewall Manager protocols list.</p>
+    pub fn get_protocols_list(&self) -> &::std::option::Option<crate::types::ProtocolsListData> {
+        &self.protocols_list
+    }
     /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
     pub fn protocols_list_arn(
         mut self,
@@ -73,6 +77,10 @@ impl PutProtocolsListOutputBuilder {
     ) -> Self {
         self.protocols_list_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
+    pub fn get_protocols_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocols_list_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

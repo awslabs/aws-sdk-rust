@@ -65,6 +65,10 @@ impl ComponentDeploymentSpecificationBuilder {
         self.component_version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
+    }
     /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn configuration_update(
         mut self,
@@ -81,6 +85,12 @@ impl ComponentDeploymentSpecificationBuilder {
         self.configuration_update = input;
         self
     }
+    /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComponentConfigurationUpdate> {
+        &self.configuration_update
+    }
     /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn run_with(mut self, input: crate::types::ComponentRunWith) -> Self {
         self.run_with = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ComponentDeploymentSpecificationBuilder {
     ) -> Self {
         self.run_with = input;
         self
+    }
+    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_run_with(&self) -> &::std::option::Option<crate::types::ComponentRunWith> {
+        &self.run_with
     }
     /// Consumes the builder and constructs a [`ComponentDeploymentSpecification`](crate::types::ComponentDeploymentSpecification).
     pub fn build(self) -> crate::types::ComponentDeploymentSpecification {

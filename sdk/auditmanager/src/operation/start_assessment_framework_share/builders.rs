@@ -49,6 +49,10 @@ impl StartAssessmentFrameworkShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartAssessmentFrameworkShare as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,10 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self.inner = self.inner.set_framework_id(input);
         self
     }
+    /// <p> The unique identifier for the custom framework to be shared. </p>
+    pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_framework_id()
+    }
     /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn destination_account(
         mut self,
@@ -154,6 +162,10 @@ impl StartAssessmentFrameworkShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_account(input);
         self
+    }
+    /// <p> The Amazon Web Services account of the recipient. </p>
+    pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_account()
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn destination_region(
@@ -171,6 +183,10 @@ impl StartAssessmentFrameworkShareFluentBuilder {
         self.inner = self.inner.set_destination_region(input);
         self
     }
+    /// <p> The Amazon Web Services Region of the recipient. </p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_region()
+    }
     /// <p> An optional comment from the sender about the share request. </p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -180,5 +196,9 @@ impl StartAssessmentFrameworkShareFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p> An optional comment from the sender about the share request. </p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

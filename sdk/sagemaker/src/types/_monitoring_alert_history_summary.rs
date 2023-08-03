@@ -70,6 +70,10 @@ impl MonitoringAlertHistorySummaryBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The name of a monitoring alert.</p>
     pub fn monitoring_alert_name(
         mut self,
@@ -86,6 +90,10 @@ impl MonitoringAlertHistorySummaryBuilder {
         self.monitoring_alert_name = input;
         self
     }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_alert_name
+    }
     /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl MonitoringAlertHistorySummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The current alert status of an alert.</p>
     pub fn alert_status(mut self, input: crate::types::MonitoringAlertStatus) -> Self {
         self.alert_status = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl MonitoringAlertHistorySummaryBuilder {
     ) -> Self {
         self.alert_status = input;
         self
+    }
+    /// <p>The current alert status of an alert.</p>
+    pub fn get_alert_status(&self) -> &::std::option::Option<crate::types::MonitoringAlertStatus> {
+        &self.alert_status
     }
     /// Consumes the builder and constructs a [`MonitoringAlertHistorySummary`](crate::types::MonitoringAlertHistorySummary).
     pub fn build(self) -> crate::types::MonitoringAlertHistorySummary {

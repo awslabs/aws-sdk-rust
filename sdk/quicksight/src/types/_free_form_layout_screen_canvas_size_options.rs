@@ -46,6 +46,10 @@ impl FreeFormLayoutScreenCanvasSizeOptionsBuilder {
         self.optimized_view_port_width = input;
         self
     }
+    /// <p>The width that the view port will be optimized for when the layout renders.</p>
+    pub fn get_optimized_view_port_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.optimized_view_port_width
+    }
     /// Consumes the builder and constructs a [`FreeFormLayoutScreenCanvasSizeOptions`](crate::types::FreeFormLayoutScreenCanvasSizeOptions).
     pub fn build(self) -> crate::types::FreeFormLayoutScreenCanvasSizeOptions {
         crate::types::FreeFormLayoutScreenCanvasSizeOptions {

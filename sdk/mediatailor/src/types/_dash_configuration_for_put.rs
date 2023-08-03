@@ -48,6 +48,10 @@ impl DashConfigurationForPutBuilder {
         self.mpd_location = input;
         self
     }
+    /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the inclusion of the tag and is the default value.</p>
+    pub fn get_mpd_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mpd_location
+    }
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set it to <code>MULTI_PERIOD</code>.</p>
     pub fn origin_manifest_type(mut self, input: crate::types::OriginManifestType) -> Self {
         self.origin_manifest_type = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl DashConfigurationForPutBuilder {
     ) -> Self {
         self.origin_manifest_type = input;
         self
+    }
+    /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set it to <code>MULTI_PERIOD</code>.</p>
+    pub fn get_origin_manifest_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginManifestType> {
+        &self.origin_manifest_type
     }
     /// Consumes the builder and constructs a [`DashConfigurationForPut`](crate::types::DashConfigurationForPut).
     pub fn build(self) -> crate::types::DashConfigurationForPut {

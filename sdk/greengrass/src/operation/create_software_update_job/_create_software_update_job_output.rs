@@ -64,6 +64,10 @@ impl CreateSoftwareUpdateJobOutputBuilder {
         self.iot_job_arn = input;
         self
     }
+    /// The IoT Job ARN corresponding to this update.
+    pub fn get_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_arn
+    }
     /// The IoT Job Id corresponding to this update.
     pub fn iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateSoftwareUpdateJobOutputBuilder {
     pub fn set_iot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_job_id = input;
         self
+    }
+    /// The IoT Job Id corresponding to this update.
+    pub fn get_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_id
     }
     /// The software version installed on the device or devices after the update.
     pub fn platform_software_version(
@@ -89,6 +97,10 @@ impl CreateSoftwareUpdateJobOutputBuilder {
     ) -> Self {
         self.platform_software_version = input;
         self
+    }
+    /// The software version installed on the device or devices after the update.
+    pub fn get_platform_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_software_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

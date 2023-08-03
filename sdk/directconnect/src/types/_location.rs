@@ -88,6 +88,10 @@ impl LocationBuilder {
         self.location_code = input;
         self
     }
+    /// <p>The code for the location.</p>
+    pub fn get_location_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_code
+    }
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
     pub fn location_name(
         mut self,
@@ -104,6 +108,10 @@ impl LocationBuilder {
         self.location_name = input;
         self
     }
+    /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
+    }
     /// <p>The Amazon Web Services Region for the location.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl LocationBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region for the location.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `available_port_speeds`.
     ///
@@ -136,6 +148,12 @@ impl LocationBuilder {
         self.available_port_speeds = input;
         self
     }
+    /// <p>The available port speeds for the location.</p>
+    pub fn get_available_port_speeds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.available_port_speeds
+    }
     /// Appends an item to `available_providers`.
     ///
     /// To override the contents of this collection use [`set_available_providers`](Self::set_available_providers).
@@ -158,6 +176,12 @@ impl LocationBuilder {
         self.available_providers = input;
         self
     }
+    /// <p>The name of the service provider for the location.</p>
+    pub fn get_available_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.available_providers
+    }
     /// Appends an item to `available_mac_sec_port_speeds`.
     ///
     /// To override the contents of this collection use [`set_available_mac_sec_port_speeds`](Self::set_available_mac_sec_port_speeds).
@@ -179,6 +203,12 @@ impl LocationBuilder {
     ) -> Self {
         self.available_mac_sec_port_speeds = input;
         self
+    }
+    /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
+    pub fn get_available_mac_sec_port_speeds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.available_mac_sec_port_speeds
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {

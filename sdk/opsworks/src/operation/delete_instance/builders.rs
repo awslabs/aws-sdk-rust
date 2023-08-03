@@ -38,6 +38,12 @@ impl DeleteInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_instance::builders::DeleteInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl DeleteInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>Whether to delete the instance Elastic IP address.</p>
     pub fn delete_elastic_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_elastic_ip(input);
@@ -130,6 +140,10 @@ impl DeleteInstanceFluentBuilder {
         self.inner = self.inner.set_delete_elastic_ip(input);
         self
     }
+    /// <p>Whether to delete the instance Elastic IP address.</p>
+    pub fn get_delete_elastic_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_elastic_ip()
+    }
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
     pub fn delete_volumes(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_volumes(input);
@@ -139,5 +153,9 @@ impl DeleteInstanceFluentBuilder {
     pub fn set_delete_volumes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_volumes(input);
         self
+    }
+    /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
+    pub fn get_delete_volumes(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_volumes()
     }
 }

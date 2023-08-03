@@ -81,6 +81,10 @@ impl UpdateContactEvaluationInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn evaluation_id(
         mut self,
@@ -96,6 +100,10 @@ impl UpdateContactEvaluationInputBuilder {
     ) -> Self {
         self.evaluation_id = input;
         self
+    }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
     }
     /// Adds a key-value pair to `answers`.
     ///
@@ -122,6 +130,14 @@ impl UpdateContactEvaluationInputBuilder {
         self.answers = input;
         self
     }
+    /// <p>A map of question identifiers to answer value.</p>
+    pub fn get_answers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
+    > {
+        &self.answers
+    }
     /// Adds a key-value pair to `notes`.
     ///
     /// To override the contents of this collection use [`set_notes`](Self::set_notes).
@@ -146,6 +162,14 @@ impl UpdateContactEvaluationInputBuilder {
     ) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>A map of question identifiers to note value.</p>
+    pub fn get_notes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
+    > {
+        &self.notes
     }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationInput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationInput).
     pub fn build(

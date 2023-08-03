@@ -47,6 +47,10 @@ impl DeleteFileSystemInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system you want to delete.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
     pub fn build(
         self,

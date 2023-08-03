@@ -57,6 +57,10 @@ impl BatchDeleteTableRowsOutputBuilder {
         self.workbook_cursor = input;
         self
     }
+    /// <p>The updated workbook cursor after deleting the rows from the table.</p>
+    pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
+        &self.workbook_cursor
+    }
     /// Appends an item to `failed_batch_items`.
     ///
     /// To override the contents of this collection use [`set_failed_batch_items`](Self::set_failed_batch_items).
@@ -75,6 +79,12 @@ impl BatchDeleteTableRowsOutputBuilder {
     ) -> Self {
         self.failed_batch_items = input;
         self
+    }
+    /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
+    pub fn get_failed_batch_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
+        &self.failed_batch_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

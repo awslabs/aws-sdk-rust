@@ -72,6 +72,12 @@ impl AnalyzeIdOutputBuilder {
         self.identity_documents = input;
         self
     }
+    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
+    pub fn get_identity_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>> {
+        &self.identity_documents
+    }
     /// <p>Information about the input document.</p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
         self.document_metadata = ::std::option::Option::Some(input);
@@ -84,6 +90,10 @@ impl AnalyzeIdOutputBuilder {
     ) -> Self {
         self.document_metadata = input;
         self
+    }
+    /// <p>Information about the input document.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     pub fn analyze_id_model_version(
@@ -100,6 +110,10 @@ impl AnalyzeIdOutputBuilder {
     ) -> Self {
         self.analyze_id_model_version = input;
         self
+    }
+    /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+    pub fn get_analyze_id_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyze_id_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

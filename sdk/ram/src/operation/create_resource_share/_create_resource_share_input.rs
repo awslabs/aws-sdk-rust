@@ -121,6 +121,10 @@ impl CreateResourceShareInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Specifies the name of the resource share.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -142,6 +146,12 @@ impl CreateResourceShareInputBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Appends an item to `principals`.
     ///
@@ -182,6 +192,20 @@ impl CreateResourceShareInputBuilder {
         self.principals = input;
         self
     }
+    /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -201,6 +225,10 @@ impl CreateResourceShareInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn allow_external_principals(mut self, input: bool) -> Self {
         self.allow_external_principals = ::std::option::Option::Some(input);
@@ -210,6 +238,10 @@ impl CreateResourceShareInputBuilder {
     pub fn set_allow_external_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_external_principals = input;
         self
+    }
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
+    pub fn get_allow_external_principals(&self) -> &::std::option::Option<bool> {
+        &self.allow_external_principals
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -224,6 +256,12 @@ impl CreateResourceShareInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `permission_arns`.
     ///
@@ -247,6 +285,12 @@ impl CreateResourceShareInputBuilder {
         self.permission_arns = input;
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
+    pub fn get_permission_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permission_arns
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -265,6 +309,10 @@ impl CreateResourceShareInputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
     pub fn build(

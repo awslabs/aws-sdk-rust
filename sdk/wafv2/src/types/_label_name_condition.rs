@@ -40,6 +40,10 @@ impl LabelNameConditionBuilder {
         self.label_name = input;
         self
     }
+    /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
+    pub fn get_label_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_name
+    }
     /// Consumes the builder and constructs a [`LabelNameCondition`](crate::types::LabelNameCondition).
     pub fn build(self) -> crate::types::LabelNameCondition {
         crate::types::LabelNameCondition {

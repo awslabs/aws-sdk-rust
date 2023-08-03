@@ -47,6 +47,10 @@ impl UpdateSettingsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to update settings.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -65,6 +69,10 @@ impl UpdateSettingsInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The list of <code>Setting</code> objects.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Setting>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
     pub fn build(

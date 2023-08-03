@@ -61,6 +61,10 @@ impl CreateConnectorDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the connector definition.
     pub fn connector_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     ) -> Self {
         self.connector_definition_id = input;
         self
+    }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
     }
     /// Appends an item to `connectors`.
     ///
@@ -95,6 +103,12 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     ) -> Self {
         self.connectors = input;
         self
+    }
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn get_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+        &self.connectors
     }
     /// Consumes the builder and constructs a [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError>{

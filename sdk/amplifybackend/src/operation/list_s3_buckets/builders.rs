@@ -36,6 +36,12 @@ impl ListS3BucketsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListS3Buckets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_s3_buckets::builders::ListS3BucketsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl ListS3BucketsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

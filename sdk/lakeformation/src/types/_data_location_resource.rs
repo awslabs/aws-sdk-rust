@@ -48,6 +48,10 @@ impl DataLocationResourceBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DataLocationResourceBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DataLocationResource`](crate::types::DataLocationResource).
     pub fn build(self) -> crate::types::DataLocationResource {

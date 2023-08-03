@@ -86,6 +86,10 @@ impl NodeInfoBuilder {
         self.added_to_cluster_time = input;
         self
     }
+    /// <p>The start time.</p>
+    pub fn get_added_to_cluster_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.added_to_cluster_time
+    }
     /// <p>The broker node info.</p>
     pub fn broker_node_info(mut self, input: crate::types::BrokerNodeInfo) -> Self {
         self.broker_node_info = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl NodeInfoBuilder {
     ) -> Self {
         self.broker_node_info = input;
         self
+    }
+    /// <p>The broker node info.</p>
+    pub fn get_broker_node_info(&self) -> &::std::option::Option<crate::types::BrokerNodeInfo> {
+        &self.broker_node_info
     }
     /// <p>The instance type.</p>
     pub fn instance_type(
@@ -115,6 +123,10 @@ impl NodeInfoBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
     pub fn node_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl NodeInfoBuilder {
         self.node_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the node.</p>
+    pub fn get_node_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_arn
+    }
     /// <p>The node type.</p>
     pub fn node_type(mut self, input: crate::types::NodeType) -> Self {
         self.node_type = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl NodeInfoBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::NodeType>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The node type.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<crate::types::NodeType> {
+        &self.node_type
     }
     /// <p>The ZookeeperNodeInfo.</p>
     pub fn zookeeper_node_info(mut self, input: crate::types::ZookeeperNodeInfo) -> Self {
@@ -147,6 +167,12 @@ impl NodeInfoBuilder {
     ) -> Self {
         self.zookeeper_node_info = input;
         self
+    }
+    /// <p>The ZookeeperNodeInfo.</p>
+    pub fn get_zookeeper_node_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZookeeperNodeInfo> {
+        &self.zookeeper_node_info
     }
     /// Consumes the builder and constructs a [`NodeInfo`](crate::types::NodeInfo).
     pub fn build(self) -> crate::types::NodeInfo {

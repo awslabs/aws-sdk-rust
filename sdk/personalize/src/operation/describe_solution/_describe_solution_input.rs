@@ -40,6 +40,10 @@ impl DescribeSolutionInputBuilder {
         self.solution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
+    }
     /// Consumes the builder and constructs a [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
     pub fn build(
         self,

@@ -91,6 +91,12 @@ impl AuditCheckDetailsBuilder {
         self.check_run_status = input;
         self
     }
+    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+    pub fn get_check_run_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditCheckRunStatus> {
+        &self.check_run_status
+    }
     /// <p>True if the check is complete and found all resources compliant.</p>
     pub fn check_compliant(mut self, input: bool) -> Self {
         self.check_compliant = ::std::option::Option::Some(input);
@@ -100,6 +106,10 @@ impl AuditCheckDetailsBuilder {
     pub fn set_check_compliant(mut self, input: ::std::option::Option<bool>) -> Self {
         self.check_compliant = input;
         self
+    }
+    /// <p>True if the check is complete and found all resources compliant.</p>
+    pub fn get_check_compliant(&self) -> &::std::option::Option<bool> {
+        &self.check_compliant
     }
     /// <p>The number of resources on which the check was performed.</p>
     pub fn total_resources_count(mut self, input: i64) -> Self {
@@ -111,6 +121,10 @@ impl AuditCheckDetailsBuilder {
         self.total_resources_count = input;
         self
     }
+    /// <p>The number of resources on which the check was performed.</p>
+    pub fn get_total_resources_count(&self) -> &::std::option::Option<i64> {
+        &self.total_resources_count
+    }
     /// <p>The number of resources that were found noncompliant during the check.</p>
     pub fn non_compliant_resources_count(mut self, input: i64) -> Self {
         self.non_compliant_resources_count = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl AuditCheckDetailsBuilder {
     pub fn set_non_compliant_resources_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.non_compliant_resources_count = input;
         self
+    }
+    /// <p>The number of resources that were found noncompliant during the check.</p>
+    pub fn get_non_compliant_resources_count(&self) -> &::std::option::Option<i64> {
+        &self.non_compliant_resources_count
     }
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
     pub fn suppressed_non_compliant_resources_count(mut self, input: i64) -> Self {
@@ -134,6 +152,10 @@ impl AuditCheckDetailsBuilder {
         self.suppressed_non_compliant_resources_count = input;
         self
     }
+    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    pub fn get_suppressed_non_compliant_resources_count(&self) -> &::std::option::Option<i64> {
+        &self.suppressed_non_compliant_resources_count
+    }
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -144,6 +166,10 @@ impl AuditCheckDetailsBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -153,6 +179,10 @@ impl AuditCheckDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AuditCheckDetails`](crate::types::AuditCheckDetails).
     pub fn build(self) -> crate::types::AuditCheckDetails {

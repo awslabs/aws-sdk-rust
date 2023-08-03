@@ -69,6 +69,12 @@ impl BatchGetCollectionOutputBuilder {
         self.collection_details = input;
         self
     }
+    /// <p>Details about each collection.</p>
+    pub fn get_collection_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>> {
+        &self.collection_details
+    }
     /// Appends an item to `collection_error_details`.
     ///
     /// To override the contents of this collection use [`set_collection_error_details`](Self::set_collection_error_details).
@@ -87,6 +93,12 @@ impl BatchGetCollectionOutputBuilder {
     ) -> Self {
         self.collection_error_details = input;
         self
+    }
+    /// <p>Error information for the request.</p>
+    pub fn get_collection_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>> {
+        &self.collection_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

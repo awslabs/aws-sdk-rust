@@ -127,6 +127,10 @@ impl DataLakeSourceBuilder {
         self.account = input;
         self
     }
+    /// <p>The ID of the Security Lake account for which logs are collected.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl DataLakeSourceBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// Appends an item to `event_classes`.
     ///
@@ -221,6 +229,43 @@ impl DataLakeSourceBuilder {
         self.event_classes = input;
         self
     }
+    /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FILE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>KERNEL_EXTENSION</code> </p> </li>
+    /// <li> <p> <code>MEMORY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>MODULE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>PROCESS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_KEY_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>REGISTRY_VALUE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SCHEDULED_JOB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SECURITY_FINDING</code> </p> </li>
+    /// <li> <p> <code>ACCOUNT_CHANGE</code> </p> </li>
+    /// <li> <p> <code>AUTHENTICATION</code> </p> </li>
+    /// <li> <p> <code>AUTHORIZATION</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGEMENT_AUDIT</code> </p> </li>
+    /// <li> <p> <code>DHCP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>NETWORK_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>DNS_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>FTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>HTTP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>RDP_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SMB_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>SSH_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CONFIG_STATE</code> </p> </li>
+    /// <li> <p> <code>INVENTORY_INFO</code> </p> </li>
+    /// <li> <p> <code>EMAIL_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
+    /// <li> <p> <code>CLOUD_API</code> </p> </li>
+    /// </ul>
+    pub fn get_event_classes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_classes
+    }
     /// Appends an item to `source_statuses`.
     ///
     /// To override the contents of this collection use [`set_source_statuses`](Self::set_source_statuses).
@@ -239,6 +284,12 @@ impl DataLakeSourceBuilder {
     ) -> Self {
         self.source_statuses = input;
         self
+    }
+    /// <p>The log status for the Security Lake account.</p>
+    pub fn get_source_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>> {
+        &self.source_statuses
     }
     /// Consumes the builder and constructs a [`DataLakeSource`](crate::types::DataLakeSource).
     pub fn build(self) -> crate::types::DataLakeSource {

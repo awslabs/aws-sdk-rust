@@ -118,6 +118,10 @@ impl InstanceGroupConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>Friendly name given to the instance group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
         self.market = ::std::option::Option::Some(input);
@@ -127,6 +131,10 @@ impl InstanceGroupConfigBuilder {
     pub fn set_market(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
         self.market = input;
         self
+    }
+    /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+    pub fn get_market(&self) -> &::std::option::Option<crate::types::MarketType> {
+        &self.market
     }
     /// <p>The role of the instance group in the cluster.</p>
     pub fn instance_role(mut self, input: crate::types::InstanceRoleType) -> Self {
@@ -141,6 +149,10 @@ impl InstanceGroupConfigBuilder {
         self.instance_role = input;
         self
     }
+    /// <p>The role of the instance group in the cluster.</p>
+    pub fn get_instance_role(&self) -> &::std::option::Option<crate::types::InstanceRoleType> {
+        &self.instance_role
+    }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     pub fn bid_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bid_price = ::std::option::Option::Some(input.into());
@@ -150,6 +162,10 @@ impl InstanceGroupConfigBuilder {
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bid_price = input;
         self
+    }
+    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bid_price
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     pub fn instance_type(
@@ -167,6 +183,10 @@ impl InstanceGroupConfigBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>Target number of instances for the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -176,6 +196,10 @@ impl InstanceGroupConfigBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>Target number of instances for the instance group.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Appends an item to `configurations`.
     ///
@@ -202,6 +226,15 @@ impl InstanceGroupConfigBuilder {
         self.configurations = input;
         self
     }
+    /// <note>
+    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// </note>
+    /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
+    }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
     pub fn ebs_configuration(mut self, input: crate::types::EbsConfiguration) -> Self {
         self.ebs_configuration = ::std::option::Option::Some(input);
@@ -215,6 +248,10 @@ impl InstanceGroupConfigBuilder {
         self.ebs_configuration = input;
         self
     }
+    /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
+    pub fn get_ebs_configuration(&self) -> &::std::option::Option<crate::types::EbsConfiguration> {
+        &self.ebs_configuration
+    }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
     pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicy) -> Self {
         self.auto_scaling_policy = ::std::option::Option::Some(input);
@@ -227,6 +264,12 @@ impl InstanceGroupConfigBuilder {
     ) -> Self {
         self.auto_scaling_policy = input;
         self
+    }
+    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
+    pub fn get_auto_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
+        &self.auto_scaling_policy
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn custom_ami_id(
@@ -243,6 +286,10 @@ impl InstanceGroupConfigBuilder {
     ) -> Self {
         self.custom_ami_id = input;
         self
+    }
+    /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_ami_id
     }
     /// Consumes the builder and constructs a [`InstanceGroupConfig`](crate::types::InstanceGroupConfig).
     pub fn build(self) -> crate::types::InstanceGroupConfig {

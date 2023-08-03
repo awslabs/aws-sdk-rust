@@ -88,6 +88,16 @@ impl CalculateRouteMatrixSummaryBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
+    }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
     pub fn route_count(mut self, input: i32) -> Self {
         self.route_count = ::std::option::Option::Some(input);
@@ -98,6 +108,10 @@ impl CalculateRouteMatrixSummaryBuilder {
         self.route_count = input;
         self
     }
+    /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+    pub fn get_route_count(&self) -> &::std::option::Option<i32> {
+        &self.route_count
+    }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
     pub fn error_count(mut self, input: i32) -> Self {
         self.error_count = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl CalculateRouteMatrixSummaryBuilder {
     pub fn set_error_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_count = input;
         self
+    }
+    /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+    pub fn get_error_count(&self) -> &::std::option::Option<i32> {
+        &self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
@@ -120,6 +138,10 @@ impl CalculateRouteMatrixSummaryBuilder {
     ) -> Self {
         self.distance_unit = input;
         self
+    }
+    /// <p>The unit of measurement for route distances.</p>
+    pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
+        &self.distance_unit
     }
     /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::types::CalculateRouteMatrixSummary).
     pub fn build(self) -> crate::types::CalculateRouteMatrixSummary {

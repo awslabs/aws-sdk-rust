@@ -39,6 +39,10 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
     pub fn build(
         self,

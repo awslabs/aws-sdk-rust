@@ -55,6 +55,10 @@ impl GetWorkUnitsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl GetWorkUnitsInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The ID of the plan query operation.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl GetWorkUnitsInputBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
+    }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// Consumes the builder and constructs a [`GetWorkUnitsInput`](crate::operation::get_work_units::GetWorkUnitsInput).
     pub fn build(

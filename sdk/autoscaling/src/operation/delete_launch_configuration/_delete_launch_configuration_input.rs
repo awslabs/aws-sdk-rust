@@ -45,6 +45,10 @@ impl DeleteLaunchConfigurationInputBuilder {
         self.launch_configuration_name = input;
         self
     }
+    /// <p>The name of the launch configuration.</p>
+    pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_name
+    }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationInput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationInput).
     pub fn build(
         self,

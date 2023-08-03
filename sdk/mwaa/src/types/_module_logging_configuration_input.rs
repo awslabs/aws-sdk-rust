@@ -48,6 +48,10 @@ impl ModuleLoggingConfigurationInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn log_level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ModuleLoggingConfigurationInputBuilder {
     ) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
+        &self.log_level
     }
     /// Consumes the builder and constructs a [`ModuleLoggingConfigurationInput`](crate::types::ModuleLoggingConfigurationInput).
     pub fn build(self) -> crate::types::ModuleLoggingConfigurationInput {

@@ -105,6 +105,10 @@ impl UpgradeTargetBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the upgrade target database engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn engine_version(
         mut self,
@@ -121,6 +125,10 @@ impl UpgradeTargetBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version number of the upgrade target database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl UpgradeTargetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
@@ -141,6 +153,10 @@ impl UpgradeTargetBuilder {
         self.auto_upgrade = input;
         self
     }
+    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    pub fn get_auto_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_upgrade
+    }
     /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
         self.is_major_version_upgrade = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl UpgradeTargetBuilder {
     pub fn set_is_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_major_version_upgrade = input;
         self
+    }
+    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    pub fn get_is_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.is_major_version_upgrade
     }
     /// Appends an item to `supported_engine_modes`.
     ///
@@ -173,6 +193,12 @@ impl UpgradeTargetBuilder {
         self.supported_engine_modes = input;
         self
     }
+    /// <p>A list of the supported DB engine modes for the target engine version.</p>
+    pub fn get_supported_engine_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_engine_modes
+    }
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn supports_parallel_query(mut self, input: bool) -> Self {
         self.supports_parallel_query = ::std::option::Option::Some(input);
@@ -182,6 +208,10 @@ impl UpgradeTargetBuilder {
     pub fn set_supports_parallel_query(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_parallel_query = input;
         self
+    }
+    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    pub fn get_supports_parallel_query(&self) -> &::std::option::Option<bool> {
+        &self.supports_parallel_query
     }
     /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
@@ -193,6 +223,10 @@ impl UpgradeTargetBuilder {
         self.supports_global_databases = input;
         self
     }
+    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
+        &self.supports_global_databases
+    }
     /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn supports_babelfish(mut self, input: bool) -> Self {
         self.supports_babelfish = ::std::option::Option::Some(input);
@@ -202,6 +236,10 @@ impl UpgradeTargetBuilder {
     pub fn set_supports_babelfish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_babelfish = input;
         self
+    }
+    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
+        &self.supports_babelfish
     }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {

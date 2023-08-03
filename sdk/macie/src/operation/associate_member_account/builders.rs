@@ -36,6 +36,13 @@ impl AssociateMemberAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateMemberAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_member_account::builders::AssociateMemberAccountInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl AssociateMemberAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
+    }
+    /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_account_id()
     }
 }

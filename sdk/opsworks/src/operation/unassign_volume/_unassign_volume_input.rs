@@ -39,6 +39,10 @@ impl UnassignVolumeInputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// Consumes the builder and constructs a [`UnassignVolumeInput`](crate::operation::unassign_volume::UnassignVolumeInput).
     pub fn build(
         self,

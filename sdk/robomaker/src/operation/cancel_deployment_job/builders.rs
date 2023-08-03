@@ -41,6 +41,12 @@ impl CancelDeploymentJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelDeploymentJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +136,9 @@ impl CancelDeploymentJobFluentBuilder {
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job(input);
         self
+    }
+    /// <p>The deployment job ARN to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job()
     }
 }

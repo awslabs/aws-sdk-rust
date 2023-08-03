@@ -81,6 +81,10 @@ impl UserMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl UserMetadataBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The given name of the user before a rename operation.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl UserMetadataBuilder {
         self.given_name = input;
         self
     }
+    /// <p>The given name of the user before a rename operation.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
+    }
     /// <p>The surname of the user.</p>
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.surname = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl UserMetadataBuilder {
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.surname = input;
         self
+    }
+    /// <p>The surname of the user.</p>
+    pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.surname
     }
     /// <p>The email address of the user.</p>
     pub fn email_address(
@@ -126,6 +142,10 @@ impl UserMetadataBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>The email address of the user.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`UserMetadata`](crate::types::UserMetadata).
     pub fn build(self) -> crate::types::UserMetadata {

@@ -93,6 +93,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the custom verification email template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The email address that the custom verification email is sent from.</p>
     pub fn from_email_address(
         mut self,
@@ -108,6 +112,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
     ) -> Self {
         self.from_email_address = input;
         self
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_email_address
     }
     /// <p>The subject line of the custom verification email.</p>
     pub fn template_subject(
@@ -125,6 +133,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
         self.template_subject = input;
         self
     }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn get_template_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_subject
+    }
     /// <p>The content of the custom verification email.</p>
     pub fn template_content(
         mut self,
@@ -140,6 +152,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
     ) -> Self {
         self.template_content = input;
         self
+    }
+    /// <p>The content of the custom verification email.</p>
+    pub fn get_template_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_content
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(
@@ -157,6 +173,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
         self.success_redirection_url = input;
         self
     }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    pub fn get_success_redirection_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success_redirection_url
+    }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(
         mut self,
@@ -172,6 +192,10 @@ impl GetCustomVerificationEmailTemplateOutputBuilder {
     ) -> Self {
         self.failure_redirection_url = input;
         self
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    pub fn get_failure_redirection_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_redirection_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

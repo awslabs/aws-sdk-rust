@@ -131,6 +131,10 @@ impl AwsIamRoleDetailsBuilder {
         self.assume_role_policy_document = input;
         self
     }
+    /// <p>The trust policy that grants permission to assume the role.</p>
+    pub fn get_assume_role_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assume_role_policy_document
+    }
     /// Appends an item to `attached_managed_policies`.
     ///
     /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
@@ -153,6 +157,12 @@ impl AwsIamRoleDetailsBuilder {
         self.attached_managed_policies = input;
         self
     }
+    /// <p>The list of the managed policies that are attached to the role.</p>
+    pub fn get_attached_managed_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+        &self.attached_managed_policies
+    }
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +174,11 @@ impl AwsIamRoleDetailsBuilder {
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>Indicates when the role was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_date
     }
     /// Appends an item to `instance_profile_list`.
     ///
@@ -184,6 +199,12 @@ impl AwsIamRoleDetailsBuilder {
         self.instance_profile_list = input;
         self
     }
+    /// <p>The list of instance profiles that contain this role.</p>
+    pub fn get_instance_profile_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>> {
+        &self.instance_profile_list
+    }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
     pub fn permissions_boundary(mut self, input: crate::types::AwsIamPermissionsBoundary) -> Self {
         self.permissions_boundary = ::std::option::Option::Some(input);
@@ -197,6 +218,12 @@ impl AwsIamRoleDetailsBuilder {
         self.permissions_boundary = input;
         self
     }
+    /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
+    pub fn get_permissions_boundary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
+        &self.permissions_boundary
+    }
     /// <p>The stable and unique string identifying the role.</p>
     pub fn role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_id = ::std::option::Option::Some(input.into());
@@ -207,6 +234,10 @@ impl AwsIamRoleDetailsBuilder {
         self.role_id = input;
         self
     }
+    /// <p>The stable and unique string identifying the role.</p>
+    pub fn get_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_id
+    }
     /// <p>The friendly name that identifies the role.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -216,6 +247,10 @@ impl AwsIamRoleDetailsBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The friendly name that identifies the role.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Appends an item to `role_policy_list`.
     ///
@@ -236,6 +271,12 @@ impl AwsIamRoleDetailsBuilder {
         self.role_policy_list = input;
         self
     }
+    /// <p>The list of inline policies that are embedded in the role.</p>
+    pub fn get_role_policy_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>> {
+        &self.role_policy_list
+    }
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
     pub fn max_session_duration(mut self, input: i32) -> Self {
         self.max_session_duration = ::std::option::Option::Some(input);
@@ -246,6 +287,10 @@ impl AwsIamRoleDetailsBuilder {
         self.max_session_duration = input;
         self
     }
+    /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
+    pub fn get_max_session_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_session_duration
+    }
     /// <p>The path to the role.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -255,6 +300,10 @@ impl AwsIamRoleDetailsBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the role.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`AwsIamRoleDetails`](crate::types::AwsIamRoleDetails).
     pub fn build(self) -> crate::types::AwsIamRoleDetails {

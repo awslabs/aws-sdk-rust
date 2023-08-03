@@ -57,6 +57,10 @@ impl UpdateThingShadowInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shadow_name = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl UpdateThingShadowInputBuilder {
         self.shadow_name = input;
         self
     }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow_name
+    }
     /// <p>The state information, in JSON format.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl UpdateThingShadowInputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The state information, in JSON format.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
     pub fn build(

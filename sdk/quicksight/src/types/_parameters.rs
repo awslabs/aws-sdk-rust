@@ -80,6 +80,12 @@ impl ParametersBuilder {
         self.string_parameters = input;
         self
     }
+    /// <p>The parameters that have a data type of string.</p>
+    pub fn get_string_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringParameter>> {
+        &self.string_parameters
+    }
     /// Appends an item to `integer_parameters`.
     ///
     /// To override the contents of this collection use [`set_integer_parameters`](Self::set_integer_parameters).
@@ -98,6 +104,12 @@ impl ParametersBuilder {
     ) -> Self {
         self.integer_parameters = input;
         self
+    }
+    /// <p>The parameters that have a data type of integer.</p>
+    pub fn get_integer_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>> {
+        &self.integer_parameters
     }
     /// Appends an item to `decimal_parameters`.
     ///
@@ -118,6 +130,12 @@ impl ParametersBuilder {
         self.decimal_parameters = input;
         self
     }
+    /// <p>The parameters that have a data type of decimal.</p>
+    pub fn get_decimal_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DecimalParameter>> {
+        &self.decimal_parameters
+    }
     /// Appends an item to `date_time_parameters`.
     ///
     /// To override the contents of this collection use [`set_date_time_parameters`](Self::set_date_time_parameters).
@@ -136,6 +154,12 @@ impl ParametersBuilder {
     ) -> Self {
         self.date_time_parameters = input;
         self
+    }
+    /// <p>The parameters that have a data type of date-time.</p>
+    pub fn get_date_time_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeParameter>> {
+        &self.date_time_parameters
     }
     /// Consumes the builder and constructs a [`Parameters`](crate::types::Parameters).
     pub fn build(self) -> crate::types::Parameters {

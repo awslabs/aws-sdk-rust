@@ -37,6 +37,13 @@ impl ListEventSourceMappingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEventSourceMappings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -158,6 +165,18 @@ impl ListEventSourceMappingsFluentBuilder {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
+    /// </ul>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_source_arn()
+    }
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
@@ -190,6 +209,18 @@ impl ListEventSourceMappingsFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
+    }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -200,6 +231,10 @@ impl ListEventSourceMappingsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -209,5 +244,9 @@ impl ListEventSourceMappingsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

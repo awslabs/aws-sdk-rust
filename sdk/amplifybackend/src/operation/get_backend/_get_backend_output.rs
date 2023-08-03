@@ -101,6 +101,10 @@ impl GetBackendOutputBuilder {
         self.amplify_feature_flags = input;
         self
     }
+    /// <p>A stringified version of the cli.json file for your Amplify project.</p>
+    pub fn get_amplify_feature_flags(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amplify_feature_flags
+    }
     /// <p>A stringified version of the current configs for your Amplify project.</p>
     pub fn amplify_meta_config(
         mut self,
@@ -117,6 +121,10 @@ impl GetBackendOutputBuilder {
         self.amplify_meta_config = input;
         self
     }
+    /// <p>A stringified version of the current configs for your Amplify project.</p>
+    pub fn get_amplify_meta_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amplify_meta_config
+    }
     /// <p>The app ID.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl GetBackendOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl GetBackendOutputBuilder {
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_name = input;
         self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
     }
     /// Appends an item to `backend_environment_list`.
     ///
@@ -159,6 +175,12 @@ impl GetBackendOutputBuilder {
         self.backend_environment_list = input;
         self
     }
+    /// <p>A list of backend environments in an array.</p>
+    pub fn get_backend_environment_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.backend_environment_list
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -175,6 +197,10 @@ impl GetBackendOutputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>If the request failed, this is the returned error.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -184,6 +210,10 @@ impl GetBackendOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>If the request failed, this is the returned error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

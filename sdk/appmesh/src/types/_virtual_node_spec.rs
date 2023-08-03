@@ -75,6 +75,10 @@ impl VirtualNodeSpecBuilder {
         self.service_discovery = input;
         self
     }
+    /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
+    pub fn get_service_discovery(&self) -> &::std::option::Option<crate::types::ServiceDiscovery> {
+        &self.service_discovery
+    }
     /// Appends an item to `listeners`.
     ///
     /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
@@ -93,6 +97,10 @@ impl VirtualNodeSpecBuilder {
     ) -> Self {
         self.listeners = input;
         self
+    }
+    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Listener>> {
+        &self.listeners
     }
     /// Appends an item to `backends`.
     ///
@@ -113,6 +121,10 @@ impl VirtualNodeSpecBuilder {
         self.backends = input;
         self
     }
+    /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
+    pub fn get_backends(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Backend>> {
+        &self.backends
+    }
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub fn backend_defaults(mut self, input: crate::types::BackendDefaults) -> Self {
         self.backend_defaults = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl VirtualNodeSpecBuilder {
         self.backend_defaults = input;
         self
     }
+    /// <p>A reference to an object that represents the defaults for backends.</p>
+    pub fn get_backend_defaults(&self) -> &::std::option::Option<crate::types::BackendDefaults> {
+        &self.backend_defaults
+    }
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
     pub fn logging(mut self, input: crate::types::Logging) -> Self {
         self.logging = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl VirtualNodeSpecBuilder {
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>The inbound and outbound access logging information for the virtual node.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
+        &self.logging
     }
     /// Consumes the builder and constructs a [`VirtualNodeSpec`](crate::types::VirtualNodeSpec).
     pub fn build(self) -> crate::types::VirtualNodeSpec {

@@ -40,6 +40,10 @@ impl FontWeightBuilder {
         self.name = input;
         self
     }
+    /// <p>The lexical name for the level of boldness of the text display.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FontWeightName> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`FontWeight`](crate::types::FontWeight).
     pub fn build(self) -> crate::types::FontWeight {
         crate::types::FontWeight { name: self.name }

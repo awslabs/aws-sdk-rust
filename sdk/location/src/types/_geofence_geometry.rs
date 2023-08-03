@@ -83,6 +83,16 @@ impl GeofenceGeometryBuilder {
         self.polygon = input;
         self
     }
+    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
+    pub fn get_polygon(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+        &self.polygon
+    }
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
     pub fn circle(mut self, input: crate::types::Circle) -> Self {
         self.circle = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GeofenceGeometryBuilder {
     pub fn set_circle(mut self, input: ::std::option::Option<crate::types::Circle>) -> Self {
         self.circle = input;
         self
+    }
+    /// <p>A circle on the earth, as defined by a center point and a radius.</p>
+    pub fn get_circle(&self) -> &::std::option::Option<crate::types::Circle> {
+        &self.circle
     }
     /// Consumes the builder and constructs a [`GeofenceGeometry`](crate::types::GeofenceGeometry).
     pub fn build(self) -> crate::types::GeofenceGeometry {

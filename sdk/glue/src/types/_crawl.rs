@@ -80,6 +80,10 @@ impl CrawlBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the crawler.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CrawlState> {
+        &self.state
+    }
     /// <p>The date and time on which the crawl started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_on = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl CrawlBuilder {
         self.started_on = input;
         self
     }
+    /// <p>The date and time on which the crawl started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
+    }
     /// <p>The date and time on which the crawl completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_on = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl CrawlBuilder {
     ) -> Self {
         self.completed_on = input;
         self
+    }
+    /// <p>The date and time on which the crawl completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
     }
     /// <p>The error message associated with the crawl.</p>
     pub fn error_message(
@@ -122,6 +134,10 @@ impl CrawlBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message associated with the crawl.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The log group associated with the crawl.</p>
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
@@ -132,6 +148,10 @@ impl CrawlBuilder {
         self.log_group = input;
         self
     }
+    /// <p>The log group associated with the crawl.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
+    }
     /// <p>The log stream associated with the crawl.</p>
     pub fn log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl CrawlBuilder {
     pub fn set_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream = input;
         self
+    }
+    /// <p>The log stream associated with the crawl.</p>
+    pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream
     }
     /// Consumes the builder and constructs a [`Crawl`](crate::types::Crawl).
     pub fn build(self) -> crate::types::Crawl {

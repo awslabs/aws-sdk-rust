@@ -119,6 +119,10 @@ impl UpdateIndexInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the index you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the index you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl UpdateIndexInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the index you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +147,10 @@ impl UpdateIndexInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>A new description for the index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +160,10 @@ impl UpdateIndexInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A new description for the index.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `document_metadata_configuration_updates`.
     ///
@@ -173,6 +189,12 @@ impl UpdateIndexInputBuilder {
         self.document_metadata_configuration_updates = input;
         self
     }
+    /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
+    pub fn get_document_metadata_configuration_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>> {
+        &self.document_metadata_configuration_updates
+    }
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -187,6 +209,13 @@ impl UpdateIndexInputBuilder {
     ) -> Self {
         self.capacity_units = input;
         self
+    }
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        &self.capacity_units
     }
     /// Appends an item to `user_token_configurations`.
     ///
@@ -210,6 +239,12 @@ impl UpdateIndexInputBuilder {
         self.user_token_configurations = input;
         self
     }
+    /// <p>The user token configuration.</p>
+    pub fn get_user_token_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+        &self.user_token_configurations
+    }
     /// <p>The user context policy.</p>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
         self.user_context_policy = ::std::option::Option::Some(input);
@@ -222,6 +257,12 @@ impl UpdateIndexInputBuilder {
     ) -> Self {
         self.user_context_policy = input;
         self
+    }
+    /// <p>The user context policy.</p>
+    pub fn get_user_context_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserContextPolicy> {
+        &self.user_context_policy
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
@@ -238,6 +279,12 @@ impl UpdateIndexInputBuilder {
     ) -> Self {
         self.user_group_resolution_configuration = input;
         self
+    }
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    pub fn get_user_group_resolution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+        &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
     pub fn build(

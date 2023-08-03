@@ -45,6 +45,10 @@ impl CreateRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRoute as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_route::builders::CreateRouteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateRouteFluentBuilder {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
+    /// <p>The ID of the environment in which the route is created.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_identifier()
+    }
     /// <p>The ID of the application within which the route is being created.</p>
     pub fn application_identifier(
         mut self,
@@ -148,6 +156,10 @@ impl CreateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
+    }
+    /// <p>The ID of the application within which the route is being created.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_identifier()
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_identifier(
@@ -165,6 +177,10 @@ impl CreateRouteFluentBuilder {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
+    }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.inner = self.inner.route_type(input);
@@ -174,6 +190,10 @@ impl CreateRouteFluentBuilder {
     pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.inner = self.inner.set_route_type(input);
         self
+    }
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+    pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        self.inner.get_route_type()
     }
     /// <p> Configuration for the default route type. </p>
     pub fn default_route(mut self, input: crate::types::DefaultRouteInput) -> Self {
@@ -188,6 +208,10 @@ impl CreateRouteFluentBuilder {
         self.inner = self.inner.set_default_route(input);
         self
     }
+    /// <p> Configuration for the default route type. </p>
+    pub fn get_default_route(&self) -> &::std::option::Option<crate::types::DefaultRouteInput> {
+        self.inner.get_default_route()
+    }
     /// <p>The configuration for the URI path route type. </p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.inner = self.inner.uri_path_route(input);
@@ -200,6 +224,10 @@ impl CreateRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_uri_path_route(input);
         self
+    }
+    /// <p>The configuration for the URI path route type. </p>
+    pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
+        self.inner.get_uri_path_route()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -224,6 +252,14 @@ impl CreateRouteFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -233,5 +269,9 @@ impl CreateRouteFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

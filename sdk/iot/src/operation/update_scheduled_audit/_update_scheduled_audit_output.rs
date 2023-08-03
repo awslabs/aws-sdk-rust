@@ -53,6 +53,10 @@ impl UpdateScheduledAuditOutputBuilder {
         self.scheduled_audit_arn = input;
         self
     }
+    /// <p>The ARN of the scheduled audit.</p>
+    pub fn get_scheduled_audit_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_audit_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

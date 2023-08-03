@@ -36,6 +36,10 @@ impl CreateRecommenderConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRecommenderConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl CreateRecommenderConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_create_recommender_configuration(input);
         self
+    }
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn get_create_recommender_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateRecommenderConfigurationShape> {
+        self.inner.get_create_recommender_configuration()
     }
 }

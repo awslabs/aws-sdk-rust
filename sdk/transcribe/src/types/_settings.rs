@@ -141,6 +141,10 @@ impl SettingsBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom vocabulary you want to use in your transcription job request. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
@@ -157,6 +161,13 @@ impl SettingsBuilder {
         self.show_speaker_labels = input;
         self
     }
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
+    /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
+    /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
+    pub fn get_show_speaker_labels(&self) -> &::std::option::Option<bool> {
+        &self.show_speaker_labels
+    }
     /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
     /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
@@ -170,6 +181,12 @@ impl SettingsBuilder {
     pub fn set_max_speaker_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_speaker_labels = input;
         self
+    }
+    /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
+    /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+    pub fn get_max_speaker_labels(&self) -> &::std::option::Option<i32> {
+        &self.max_speaker_labels
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
@@ -187,6 +204,13 @@ impl SettingsBuilder {
         self.channel_identification = input;
         self
     }
+    /// <p>Enables channel identification in multi-channel audio.</p>
+    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
+    /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
+    pub fn get_channel_identification(&self) -> &::std::option::Option<bool> {
+        &self.channel_identification
+    }
     /// <p>To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code> in your transcription request.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript does not separate the speech by channel.</p>
     /// <p>If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>, which is the maximum number of alternative transcriptions you want Amazon Transcribe to generate.</p>
@@ -203,6 +227,13 @@ impl SettingsBuilder {
         self.show_alternatives = input;
         self
     }
+    /// <p>To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code> in your transcription request.</p>
+    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript does not separate the speech by channel.</p>
+    /// <p>If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>, which is the maximum number of alternative transcriptions you want Amazon Transcribe to generate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative transcriptions</a>.</p>
+    pub fn get_show_alternatives(&self) -> &::std::option::Option<bool> {
+        &self.show_alternatives
+    }
     /// <p>Indicate the maximum number of alternative transcriptions you want Amazon Transcribe to include in your transcript.</p>
     /// <p>If you select a number greater than the number of alternative transcriptions generated by Amazon Transcribe, only the actual number of alternative transcriptions are included.</p>
     /// <p>If you include <code>MaxAlternatives</code> in your request, you must also include <code>ShowAlternatives</code> with a value of <code>true</code>.</p>
@@ -218,6 +249,13 @@ impl SettingsBuilder {
     pub fn set_max_alternatives(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_alternatives = input;
         self
+    }
+    /// <p>Indicate the maximum number of alternative transcriptions you want Amazon Transcribe to include in your transcript.</p>
+    /// <p>If you select a number greater than the number of alternative transcriptions generated by Amazon Transcribe, only the actual number of alternative transcriptions are included.</p>
+    /// <p>If you include <code>MaxAlternatives</code> in your request, you must also include <code>ShowAlternatives</code> with a value of <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative transcriptions</a>.</p>
+    pub fn get_max_alternatives(&self) -> &::std::option::Option<i32> {
+        &self.max_alternatives
     }
     /// <p>The name of the custom vocabulary filter you want to use in your transcription job request. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
@@ -237,6 +275,11 @@ impl SettingsBuilder {
         self.vocabulary_filter_name = input;
         self
     }
+    /// <p>The name of the custom vocabulary filter you want to use in your transcription job request. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
+    /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
+    pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_filter_name
+    }
     /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
@@ -255,6 +298,15 @@ impl SettingsBuilder {
     ) -> Self {
         self.vocabulary_filter_method = input;
         self
+    }
+    /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
+    /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
+    /// <p>To delete words, choose <code>remove</code>.</p>
+    /// <p>To flag words without changing them, choose <code>tag</code>.</p>
+    pub fn get_vocabulary_filter_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
+        &self.vocabulary_filter_method
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {

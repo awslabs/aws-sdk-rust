@@ -71,6 +71,10 @@ impl CreateRuleInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// Appends an item to `conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -90,6 +94,12 @@ impl CreateRuleInputBuilder {
         self.conditions = input;
         self
     }
+    /// <p>The conditions.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+        &self.conditions
+    }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl CreateRuleInputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Appends an item to `actions`.
     ///
@@ -119,6 +133,10 @@ impl CreateRuleInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -137,6 +155,10 @@ impl CreateRuleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to assign to the rule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(

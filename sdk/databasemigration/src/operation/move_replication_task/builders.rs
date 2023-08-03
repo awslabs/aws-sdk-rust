@@ -36,6 +36,12 @@ impl MoveReplicationTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MoveReplicationTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl MoveReplicationTaskFluentBuilder {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_task_arn()
+    }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
     pub fn target_replication_instance_arn(
         mut self,
@@ -147,5 +157,11 @@ impl MoveReplicationTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_replication_instance_arn(input);
         self
+    }
+    /// <p>The ARN of the replication instance where you want to move the task to.</p>
+    pub fn get_target_replication_instance_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_replication_instance_arn()
     }
 }

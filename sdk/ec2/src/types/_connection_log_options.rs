@@ -56,6 +56,10 @@ impl ConnectionLogOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether connection logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
     pub fn cloudwatch_log_group(
         mut self,
@@ -72,6 +76,10 @@ impl ConnectionLogOptionsBuilder {
         self.cloudwatch_log_group = input;
         self
     }
+    /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
+    pub fn get_cloudwatch_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_group
+    }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
     pub fn cloudwatch_log_stream(
         mut self,
@@ -87,6 +95,10 @@ impl ConnectionLogOptionsBuilder {
     ) -> Self {
         self.cloudwatch_log_stream = input;
         self
+    }
+    /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
+    pub fn get_cloudwatch_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_stream
     }
     /// Consumes the builder and constructs a [`ConnectionLogOptions`](crate::types::ConnectionLogOptions).
     pub fn build(self) -> crate::types::ConnectionLogOptions {

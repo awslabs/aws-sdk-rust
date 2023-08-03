@@ -93,6 +93,10 @@ impl CreateRoomInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Room name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
         self.maximum_message_rate_per_second = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl CreateRoomInputBuilder {
         self.maximum_message_rate_per_second = input;
         self
     }
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    pub fn get_maximum_message_rate_per_second(&self) -> &::std::option::Option<i32> {
+        &self.maximum_message_rate_per_second
+    }
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub fn maximum_message_length(mut self, input: i32) -> Self {
         self.maximum_message_length = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl CreateRoomInputBuilder {
     pub fn set_maximum_message_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_message_length = input;
         self
+    }
+    /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
+    pub fn get_maximum_message_length(&self) -> &::std::option::Option<i32> {
+        &self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages.</p>
     pub fn message_review_handler(mut self, input: crate::types::MessageReviewHandler) -> Self {
@@ -128,6 +140,12 @@ impl CreateRoomInputBuilder {
     ) -> Self {
         self.message_review_handler = input;
         self
+    }
+    /// <p>Configuration information for optional review of messages.</p>
+    pub fn get_message_review_handler(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+        &self.message_review_handler
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -154,6 +172,14 @@ impl CreateRoomInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `logging_configuration_identifiers`.
     ///
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
@@ -175,6 +201,12 @@ impl CreateRoomInputBuilder {
     ) -> Self {
         self.logging_configuration_identifiers = input;
         self
+    }
+    /// <p>Array of logging-configuration identifiers attached to the room.</p>
+    pub fn get_logging_configuration_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
     pub fn build(

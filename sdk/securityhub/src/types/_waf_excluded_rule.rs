@@ -40,6 +40,10 @@ impl WafExcludedRuleBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The unique identifier for the rule to exclude from the rule group.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// Consumes the builder and constructs a [`WafExcludedRule`](crate::types::WafExcludedRule).
     pub fn build(self) -> crate::types::WafExcludedRule {
         crate::types::WafExcludedRule {

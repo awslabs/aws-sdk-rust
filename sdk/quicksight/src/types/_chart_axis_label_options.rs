@@ -76,6 +76,14 @@ impl ChartAxisLabelOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>VISIBLE</code>: Shows the axis.</p> </li>
+    /// <li> <p> <code>HIDDEN</code>: Hides the axis.</p> </li>
+    /// </ul>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The visibility configuration of the sort icon on a chart's axis label.</p>
     pub fn sort_icon_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.sort_icon_visibility = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl ChartAxisLabelOptionsBuilder {
     ) -> Self {
         self.sort_icon_visibility = input;
         self
+    }
+    /// <p>The visibility configuration of the sort icon on a chart's axis label.</p>
+    pub fn get_sort_icon_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.sort_icon_visibility
     }
     /// Appends an item to `axis_label_options`.
     ///
@@ -107,6 +119,12 @@ impl ChartAxisLabelOptionsBuilder {
     ) -> Self {
         self.axis_label_options = input;
         self
+    }
+    /// <p>The label options for a chart axis.</p>
+    pub fn get_axis_label_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AxisLabelOptions>> {
+        &self.axis_label_options
     }
     /// Consumes the builder and constructs a [`ChartAxisLabelOptions`](crate::types::ChartAxisLabelOptions).
     pub fn build(self) -> crate::types::ChartAxisLabelOptions {

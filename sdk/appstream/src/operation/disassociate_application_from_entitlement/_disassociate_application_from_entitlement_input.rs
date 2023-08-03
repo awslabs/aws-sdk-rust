@@ -55,6 +55,10 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The name of the entitlement.</p>
     pub fn entitlement_name(
         mut self,
@@ -71,6 +75,10 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         self.entitlement_name = input;
         self
     }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_name
+    }
     /// <p>The identifier of the application to remove from the entitlement.</p>
     pub fn application_identifier(
         mut self,
@@ -86,6 +94,10 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
     ) -> Self {
         self.application_identifier = input;
         self
+    }
+    /// <p>The identifier of the application to remove from the entitlement.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput, ::aws_smithy_http::operation::error::BuildError>{

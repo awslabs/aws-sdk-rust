@@ -49,6 +49,12 @@ impl ConnectorDefinitionVersionBuilder {
         self.connectors = input;
         self
     }
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn get_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+        &self.connectors
+    }
     /// Consumes the builder and constructs a [`ConnectorDefinitionVersion`](crate::types::ConnectorDefinitionVersion).
     pub fn build(self) -> crate::types::ConnectorDefinitionVersion {
         crate::types::ConnectorDefinitionVersion {

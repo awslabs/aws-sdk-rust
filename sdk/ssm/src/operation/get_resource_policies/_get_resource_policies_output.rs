@@ -60,6 +60,10 @@ impl GetResourcePoliciesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `policies`.
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
@@ -80,6 +84,13 @@ impl GetResourcePoliciesOutputBuilder {
     ) -> Self {
         self.policies = input;
         self
+    }
+    /// <p>An array of the <code>Policy</code> object.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>
+    {
+        &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

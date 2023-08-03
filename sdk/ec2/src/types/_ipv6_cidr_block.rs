@@ -46,6 +46,10 @@ impl Ipv6CidrBlockBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 CIDR block.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// Consumes the builder and constructs a [`Ipv6CidrBlock`](crate::types::Ipv6CidrBlock).
     pub fn build(self) -> crate::types::Ipv6CidrBlock {
         crate::types::Ipv6CidrBlock {

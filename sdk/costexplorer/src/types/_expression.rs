@@ -125,6 +125,10 @@ impl ExpressionBuilder {
         self.or = input;
         self
     }
+    /// <p>Return results that match either <code>Dimension</code> object.</p>
+    pub fn get_or(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Expression>> {
+        &self.or
+    }
     /// Appends an item to `and`.
     ///
     /// To override the contents of this collection use [`set_and`](Self::set_and).
@@ -144,6 +148,10 @@ impl ExpressionBuilder {
         self.and = input;
         self
     }
+    /// <p>Return results that match both <code>Dimension</code> objects.</p>
+    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Expression>> {
+        &self.and
+    }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
     pub fn not(
         mut self,
@@ -160,6 +168,10 @@ impl ExpressionBuilder {
         self.not = input;
         self
     }
+    /// <p>Return results that don't match a <code>Dimension</code> object.</p>
+    pub fn get_not(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Expression>> {
+        &self.not
+    }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionValues) -> Self {
         self.dimensions = ::std::option::Option::Some(input);
@@ -173,6 +185,10 @@ impl ExpressionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
+    pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::DimensionValues> {
+        &self.dimensions
+    }
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
     pub fn tags(mut self, input: crate::types::TagValues) -> Self {
         self.tags = ::std::option::Option::Some(input);
@@ -182,6 +198,10 @@ impl ExpressionBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::TagValues>) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::TagValues> {
+        &self.tags
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub fn cost_categories(mut self, input: crate::types::CostCategoryValues) -> Self {
@@ -195,6 +215,10 @@ impl ExpressionBuilder {
     ) -> Self {
         self.cost_categories = input;
         self
+    }
+    /// <p>The filter that's based on <code>CostCategory</code> values.</p>
+    pub fn get_cost_categories(&self) -> &::std::option::Option<crate::types::CostCategoryValues> {
+        &self.cost_categories
     }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {

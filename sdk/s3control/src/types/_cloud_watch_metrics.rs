@@ -41,6 +41,10 @@ impl CloudWatchMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// Consumes the builder and constructs a [`CloudWatchMetrics`](crate::types::CloudWatchMetrics).
     pub fn build(self) -> crate::types::CloudWatchMetrics {
         crate::types::CloudWatchMetrics {

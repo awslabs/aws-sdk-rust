@@ -36,6 +36,10 @@ impl SearchPlaceIndexForPositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchPlaceIndexForPosition as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl SearchPlaceIndexForPositionFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the place index resource you want to use for the search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// Appends an item to `Position`.
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
@@ -144,6 +152,12 @@ impl SearchPlaceIndexForPositionFluentBuilder {
         self.inner = self.inner.set_position(input);
         self
     }
+    /// <p>Specifies the longitude and latitude of the position to query.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_position()
+    }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,6 +169,11 @@ impl SearchPlaceIndexForPositionFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional parameter. The maximum number of results returned per request.</p>
+    /// <p>Default value: <code>50</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -174,6 +193,14 @@ impl SearchPlaceIndexForPositionFluentBuilder {
         self.inner = self.inner.set_language(input);
         self
     }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -183,5 +210,9 @@ impl SearchPlaceIndexForPositionFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

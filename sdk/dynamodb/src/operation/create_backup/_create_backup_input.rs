@@ -47,6 +47,10 @@ impl CreateBackupInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Specified name for the backup.</p>
     pub fn backup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl CreateBackupInputBuilder {
     pub fn set_backup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_name = input;
         self
+    }
+    /// <p>Specified name for the backup.</p>
+    pub fn get_backup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_name
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
     pub fn build(

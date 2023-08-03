@@ -72,6 +72,10 @@ impl CreateThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The thing group name to create.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The name of the parent thing group.</p>
     pub fn parent_group_name(
         mut self,
@@ -88,6 +92,10 @@ impl CreateThingGroupInputBuilder {
         self.parent_group_name = input;
         self
     }
+    /// <p>The name of the parent thing group.</p>
+    pub fn get_parent_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group_name
+    }
     /// <p>The thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
@@ -100,6 +108,12 @@ impl CreateThingGroupInputBuilder {
     ) -> Self {
         self.thing_group_properties = input;
         self
+    }
+    /// <p>The thing group properties.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        &self.thing_group_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -119,6 +133,10 @@ impl CreateThingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the thing group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
     pub fn build(

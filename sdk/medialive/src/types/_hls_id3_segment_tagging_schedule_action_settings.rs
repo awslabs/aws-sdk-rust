@@ -48,6 +48,10 @@ impl HlsId3SegmentTaggingScheduleActionSettingsBuilder {
         self.tag = input;
         self
     }
+    /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
+    pub fn get_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag
+    }
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     pub fn id3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id3 = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl HlsId3SegmentTaggingScheduleActionSettingsBuilder {
     pub fn set_id3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id3 = input;
         self
+    }
+    /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+    pub fn get_id3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id3
     }
     /// Consumes the builder and constructs a [`HlsId3SegmentTaggingScheduleActionSettings`](crate::types::HlsId3SegmentTaggingScheduleActionSettings).
     pub fn build(self) -> crate::types::HlsId3SegmentTaggingScheduleActionSettings {

@@ -36,6 +36,10 @@ impl ListPermissionAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPermissionAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
+    pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_arn()
+    }
     /// <p>Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.</p>
     pub fn permission_version(mut self, input: i32) -> Self {
         self.inner = self.inner.permission_version(input);
@@ -147,6 +155,10 @@ impl ListPermissionAssociationsFluentBuilder {
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_permission_version(input);
         self
+    }
+    /// <p>Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.</p>
+    pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_permission_version()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
     pub fn association_status(
@@ -164,6 +176,12 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_association_status(input);
         self
     }
+    /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+        self.inner.get_association_status()
+    }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
     pub fn resource_type(
         mut self,
@@ -180,6 +198,10 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
     pub fn feature_set(mut self, input: crate::types::PermissionFeatureSet) -> Self {
         self.inner = self.inner.feature_set(input);
@@ -193,6 +215,10 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_feature_set(input);
         self
     }
+    /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
+    pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::PermissionFeatureSet> {
+        self.inner.get_feature_set()
+    }
     /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
@@ -205,6 +231,11 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_default_version(input);
         self
     }
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
+    /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<bool> {
+        self.inner.get_default_version()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -215,6 +246,10 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -224,5 +259,9 @@ impl ListPermissionAssociationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

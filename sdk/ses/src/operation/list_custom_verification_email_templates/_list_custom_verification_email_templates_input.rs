@@ -49,6 +49,10 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{

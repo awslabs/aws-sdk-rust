@@ -53,6 +53,12 @@ impl DetailsMapBuilder {
         self.resource_share = input;
         self
     }
+    /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
+    pub fn get_resource_share(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_share
+    }
     /// Consumes the builder and constructs a [`DetailsMap`](crate::types::DetailsMap).
     pub fn build(self) -> crate::types::DetailsMap {
         crate::types::DetailsMap {

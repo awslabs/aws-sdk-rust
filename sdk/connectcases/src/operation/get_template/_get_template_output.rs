@@ -121,6 +121,10 @@ impl GetTemplateOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique identifier of a template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl GetTemplateOutputBuilder {
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
     }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +149,10 @@ impl GetTemplateOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A brief description of the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -150,6 +162,10 @@ impl GetTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn layout_configuration(mut self, input: crate::types::LayoutConfiguration) -> Self {
@@ -163,6 +179,12 @@ impl GetTemplateOutputBuilder {
     ) -> Self {
         self.layout_configuration = input;
         self
+    }
+    /// <p>Configuration of layouts associated to the template.</p>
+    pub fn get_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+        &self.layout_configuration
     }
     /// Appends an item to `required_fields`.
     ///
@@ -182,6 +204,12 @@ impl GetTemplateOutputBuilder {
     ) -> Self {
         self.required_fields = input;
         self
+    }
+    /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    pub fn get_required_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+        &self.required_fields
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -211,6 +239,17 @@ impl GetTemplateOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
+    }
     /// <p>The status of the template.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -223,6 +262,10 @@ impl GetTemplateOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the template.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

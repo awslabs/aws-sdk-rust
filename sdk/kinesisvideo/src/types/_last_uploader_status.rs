@@ -70,6 +70,10 @@ impl LastUploaderStatusBuilder {
         self.job_status_details = input;
         self
     }
+    /// <p>A description of an uploader job’s latest status.</p>
+    pub fn get_job_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_status_details
+    }
     /// <p>The timestamp at which the uploader job was last executed and media collected to the cloud.</p>
     pub fn last_collected_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_collected_time = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl LastUploaderStatusBuilder {
     ) -> Self {
         self.last_collected_time = input;
         self
+    }
+    /// <p>The timestamp at which the uploader job was last executed and media collected to the cloud.</p>
+    pub fn get_last_collected_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_collected_time
     }
     /// <p>The timestamp at which the uploader status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl LastUploaderStatusBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The timestamp at which the uploader status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The status of the latest uploader job.</p>
     pub fn uploader_status(mut self, input: crate::types::UploaderStatus) -> Self {
         self.uploader_status = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl LastUploaderStatusBuilder {
     ) -> Self {
         self.uploader_status = input;
         self
+    }
+    /// <p>The status of the latest uploader job.</p>
+    pub fn get_uploader_status(&self) -> &::std::option::Option<crate::types::UploaderStatus> {
+        &self.uploader_status
     }
     /// Consumes the builder and constructs a [`LastUploaderStatus`](crate::types::LastUploaderStatus).
     pub fn build(self) -> crate::types::LastUploaderStatus {

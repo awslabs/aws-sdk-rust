@@ -46,6 +46,10 @@ impl DatumBuilder {
         self.var_char_value = input;
         self
     }
+    /// <p>The value of the datum.</p>
+    pub fn get_var_char_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.var_char_value
+    }
     /// Consumes the builder and constructs a [`Datum`](crate::types::Datum).
     pub fn build(self) -> crate::types::Datum {
         crate::types::Datum {

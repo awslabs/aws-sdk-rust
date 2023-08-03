@@ -95,6 +95,10 @@ impl ListInventoryEntriesOutputBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The type of inventory item returned by the request.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl ListInventoryEntriesOutputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The managed node ID targeted by the request to query inventory information.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The inventory schema version used by the managed node(s).</p>
     pub fn schema_version(
@@ -121,6 +129,10 @@ impl ListInventoryEntriesOutputBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The inventory schema version used by the managed node(s).</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The time that inventory information was collected for the managed node(s).</p>
     pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capture_time = ::std::option::Option::Some(input.into());
@@ -130,6 +142,10 @@ impl ListInventoryEntriesOutputBuilder {
     pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capture_time = input;
         self
+    }
+    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capture_time
     }
     /// Appends an item to `entries`.
     ///
@@ -157,6 +173,14 @@ impl ListInventoryEntriesOutputBuilder {
         self.entries = input;
         self
     }
+    /// <p>A list of inventory items on the managed node(s).</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.entries
+    }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -166,6 +190,10 @@ impl ListInventoryEntriesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

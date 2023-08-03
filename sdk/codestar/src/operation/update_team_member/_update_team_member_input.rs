@@ -64,6 +64,10 @@ impl UpdateTeamMemberInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateTeamMemberInputBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
     pub fn project_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl UpdateTeamMemberInputBuilder {
         self.project_role = input;
         self
     }
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    pub fn get_project_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_role
+    }
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
     pub fn remote_access_allowed(mut self, input: bool) -> Self {
         self.remote_access_allowed = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl UpdateTeamMemberInputBuilder {
     pub fn set_remote_access_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remote_access_allowed = input;
         self
+    }
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
+    pub fn get_remote_access_allowed(&self) -> &::std::option::Option<bool> {
+        &self.remote_access_allowed
     }
     /// Consumes the builder and constructs a [`UpdateTeamMemberInput`](crate::operation::update_team_member::UpdateTeamMemberInput).
     pub fn build(

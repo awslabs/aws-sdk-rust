@@ -36,6 +36,10 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportResourcesToDraftAppVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self.inner = self.inner.set_app_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
+    }
     /// Appends an item to `sourceArns`.
     ///
     /// To override the contents of this collection use [`set_source_arns`](Self::set_source_arns).
@@ -116,6 +124,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_arns(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
+    pub fn get_source_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_arns()
     }
     /// Appends an item to `terraformSources`.
     ///
@@ -134,6 +148,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
         self.inner = self.inner.set_terraform_sources(input);
         self
     }
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
+    pub fn get_terraform_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
+        self.inner.get_terraform_sources()
+    }
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
     pub fn import_strategy(mut self, input: crate::types::ResourceImportStrategyType) -> Self {
         self.inner = self.inner.import_strategy(input);
@@ -146,6 +166,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_strategy(input);
         self
+    }
+    /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
+    pub fn get_import_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceImportStrategyType> {
+        self.inner.get_import_strategy()
     }
     /// Appends an item to `eksSources`.
     ///
@@ -163,5 +189,11 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_eks_sources(input);
         self
+    }
+    /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
+    pub fn get_eks_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
+        self.inner.get_eks_sources()
     }
 }

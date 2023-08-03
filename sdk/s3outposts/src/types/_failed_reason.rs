@@ -48,6 +48,10 @@ impl FailedReasonBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The failure code, if any, for a create or delete endpoint operation.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>Additional error details describing the endpoint failure and recommended action.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl FailedReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Additional error details describing the endpoint failure and recommended action.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FailedReason`](crate::types::FailedReason).
     pub fn build(self) -> crate::types::FailedReason {

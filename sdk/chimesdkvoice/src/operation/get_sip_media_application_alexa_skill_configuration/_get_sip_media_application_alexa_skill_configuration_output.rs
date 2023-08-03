@@ -57,6 +57,12 @@ impl GetSipMediaApplicationAlexaSkillConfigurationOutputBuilder {
         self.sip_media_application_alexa_skill_configuration = input;
         self
     }
+    /// <p>Returns the Alexa Skill configuration.</p>
+    pub fn get_sip_media_application_alexa_skill_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration> {
+        &self.sip_media_application_alexa_skill_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

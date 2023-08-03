@@ -36,6 +36,10 @@ impl ListModelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListModels as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_models::builders::ListModelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> Specifies the maximum number of ML models to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -134,6 +142,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> Specifies the maximum number of ML models to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The status of the ML model. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -143,6 +155,10 @@ impl ListModelsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the ML model. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        self.inner.get_status()
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
     pub fn model_name_begins_with(
@@ -160,6 +176,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_model_name_begins_with(input);
         self
     }
+    /// <p>The beginning of the name of the ML models being listed. </p>
+    pub fn get_model_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name_begins_with()
+    }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
     pub fn dataset_name_begins_with(
         mut self,
@@ -175,5 +195,9 @@ impl ListModelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_name_begins_with(input);
         self
+    }
+    /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
+    pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name_begins_with()
     }
 }

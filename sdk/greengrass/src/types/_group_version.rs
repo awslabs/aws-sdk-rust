@@ -94,6 +94,12 @@ impl GroupVersionBuilder {
         self.connector_definition_version_arn = input;
         self
     }
+    /// The ARN of the connector definition version for this group.
+    pub fn get_connector_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_version_arn
+    }
     /// The ARN of the core definition version for this group.
     pub fn core_definition_version_arn(
         mut self,
@@ -109,6 +115,10 @@ impl GroupVersionBuilder {
     ) -> Self {
         self.core_definition_version_arn = input;
         self
+    }
+    /// The ARN of the core definition version for this group.
+    pub fn get_core_definition_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_version_arn
     }
     /// The ARN of the device definition version for this group.
     pub fn device_definition_version_arn(
@@ -126,6 +136,12 @@ impl GroupVersionBuilder {
         self.device_definition_version_arn = input;
         self
     }
+    /// The ARN of the device definition version for this group.
+    pub fn get_device_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.device_definition_version_arn
+    }
     /// The ARN of the function definition version for this group.
     pub fn function_definition_version_arn(
         mut self,
@@ -141,6 +157,12 @@ impl GroupVersionBuilder {
     ) -> Self {
         self.function_definition_version_arn = input;
         self
+    }
+    /// The ARN of the function definition version for this group.
+    pub fn get_function_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.function_definition_version_arn
     }
     /// The ARN of the logger definition version for this group.
     pub fn logger_definition_version_arn(
@@ -158,6 +180,12 @@ impl GroupVersionBuilder {
         self.logger_definition_version_arn = input;
         self
     }
+    /// The ARN of the logger definition version for this group.
+    pub fn get_logger_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.logger_definition_version_arn
+    }
     /// The ARN of the resource definition version for this group.
     pub fn resource_definition_version_arn(
         mut self,
@@ -174,6 +202,12 @@ impl GroupVersionBuilder {
         self.resource_definition_version_arn = input;
         self
     }
+    /// The ARN of the resource definition version for this group.
+    pub fn get_resource_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_version_arn
+    }
     /// The ARN of the subscription definition version for this group.
     pub fn subscription_definition_version_arn(
         mut self,
@@ -189,6 +223,12 @@ impl GroupVersionBuilder {
     ) -> Self {
         self.subscription_definition_version_arn = input;
         self
+    }
+    /// The ARN of the subscription definition version for this group.
+    pub fn get_subscription_definition_version_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_version_arn
     }
     /// Consumes the builder and constructs a [`GroupVersion`](crate::types::GroupVersion).
     pub fn build(self) -> crate::types::GroupVersion {

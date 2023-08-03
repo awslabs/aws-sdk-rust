@@ -49,6 +49,12 @@ impl UpdateResultBuilder {
         self.generated_fields = input;
         self
     }
+    /// <p>Values for fields generated during the request.</p>
+    pub fn get_generated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.generated_fields
+    }
     /// Consumes the builder and constructs a [`UpdateResult`](crate::types::UpdateResult).
     pub fn build(self) -> crate::types::UpdateResult {
         crate::types::UpdateResult {

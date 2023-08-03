@@ -36,6 +36,10 @@ impl ListContactsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListContacts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_contacts::builders::ListContactsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListContactsFluentBuilder {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_list_name()
+    }
     /// <p>A filter that can be applied to a list of contacts.</p>
     pub fn filter(mut self, input: crate::types::ListContactsFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -148,6 +156,10 @@ impl ListContactsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>A filter that can be applied to a list of contacts.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListContactsFilter> {
+        self.inner.get_filter()
+    }
     /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -158,6 +170,10 @@ impl ListContactsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,5 +183,9 @@ impl ListContactsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -54,6 +54,10 @@ impl CustomerAgreementBuilder {
         self.agreement_name = input;
         self
     }
+    /// <p>The name of the agreement.</p>
+    pub fn get_agreement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_name
+    }
     /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CustomerAgreementBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CustomerAgreement`](crate::types::CustomerAgreement).
     pub fn build(self) -> crate::types::CustomerAgreement {

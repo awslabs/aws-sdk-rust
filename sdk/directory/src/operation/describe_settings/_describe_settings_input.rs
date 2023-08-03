@@ -56,6 +56,10 @@ impl DescribeSettingsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The status of the directory settings for which to retrieve information.</p>
     pub fn status(mut self, input: crate::types::DirectoryConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeSettingsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the directory settings for which to retrieve information.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DirectoryConfigurationStatus> {
+        &self.status
+    }
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl DescribeSettingsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeSettingsInput`](crate::operation::describe_settings::DescribeSettingsInput).
     pub fn build(

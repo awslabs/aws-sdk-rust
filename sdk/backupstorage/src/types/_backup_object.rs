@@ -83,6 +83,10 @@ impl BackupObjectBuilder {
         self.name = input;
         self
     }
+    /// Object name
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Number of chunks in object
     pub fn chunks_count(mut self, input: i64) -> Self {
         self.chunks_count = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl BackupObjectBuilder {
     pub fn set_chunks_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.chunks_count = input;
         self
+    }
+    /// Number of chunks in object
+    pub fn get_chunks_count(&self) -> &::std::option::Option<i64> {
+        &self.chunks_count
     }
     /// Metadata string associated with the Object
     pub fn metadata_string(
@@ -109,6 +117,10 @@ impl BackupObjectBuilder {
         self.metadata_string = input;
         self
     }
+    /// Metadata string associated with the Object
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_string
+    }
     /// Object checksum
     pub fn object_checksum(
         mut self,
@@ -124,6 +136,10 @@ impl BackupObjectBuilder {
     ) -> Self {
         self.object_checksum = input;
         self
+    }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
     }
     /// Checksum algorithm
     pub fn object_checksum_algorithm(
@@ -141,6 +157,12 @@ impl BackupObjectBuilder {
         self.object_checksum_algorithm = input;
         self
     }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
+    }
     /// Object token
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl BackupObjectBuilder {
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_token = input;
         self
+    }
+    /// Object token
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_token
     }
     /// Consumes the builder and constructs a [`BackupObject`](crate::types::BackupObject).
     pub fn build(self) -> crate::types::BackupObject {

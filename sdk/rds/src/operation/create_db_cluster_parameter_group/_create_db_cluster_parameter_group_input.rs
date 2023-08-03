@@ -138,6 +138,18 @@ impl CreateDbClusterParameterGroupInputBuilder {
         self.db_cluster_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+    /// </ul> <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_name
+    }
     /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code> </p>
@@ -198,6 +210,32 @@ impl CreateDbClusterParameterGroupInputBuilder {
         self.db_parameter_group_family = input;
         self
     }
+    /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
+    /// <p> <b>Aurora MySQL</b> </p>
+    /// <p>Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code> </p>
+    /// <p> <b>Aurora PostgreSQL</b> </p>
+    /// <p>Example: <code>aurora-postgresql14</code> </p>
+    /// <p> <b>RDS for MySQL</b> </p>
+    /// <p>Example: <code>mysql8.0</code> </p>
+    /// <p> <b>RDS for PostgreSQL</b> </p>
+    /// <p>Example: <code>postgres12</code> </p>
+    /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
+    /// <engine></engine></code> </p>
+    /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code> </p> <note>
+    /// <p>The output contains duplicates.</p>
+    /// </note>
+    /// <p>The following are the valid DB engine values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
+    }
     /// <p>The description for the DB cluster parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -207,6 +245,10 @@ impl CreateDbClusterParameterGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the DB cluster parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -226,6 +268,10 @@ impl CreateDbClusterParameterGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags to assign to the DB cluster parameter group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupInput`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupInput).
     pub fn build(

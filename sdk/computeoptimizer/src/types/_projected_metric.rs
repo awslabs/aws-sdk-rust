@@ -87,6 +87,17 @@ impl ProjectedMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the projected utilization metric.</p>
+    /// <p>The following projected utilization metrics are returned:</p>
+    /// <ul>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
+    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::MetricName> {
+        &self.name
+    }
     /// Appends an item to `timestamps`.
     ///
     /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
@@ -106,6 +117,12 @@ impl ProjectedMetricBuilder {
         self.timestamps = input;
         self
     }
+    /// <p>The timestamps of the projected utilization metric.</p>
+    pub fn get_timestamps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -121,6 +138,10 @@ impl ProjectedMetricBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values of the projected utilization metrics.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ProjectedMetric`](crate::types::ProjectedMetric).
     pub fn build(self) -> crate::types::ProjectedMetric {

@@ -53,6 +53,12 @@ impl BatchDeleteImportDataInputBuilder {
         self.import_task_ids = input;
         self
     }
+    /// <p>The IDs for the import tasks that you want to delete.</p>
+    pub fn get_import_task_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_task_ids
+    }
     /// Consumes the builder and constructs a [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
     pub fn build(
         self,

@@ -39,6 +39,10 @@ impl SendMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendMessage as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_message::builders::SendMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
+    }
     /// <p>The content of the message. </p>
     /// <ul>
     /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
@@ -141,6 +149,15 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The content of the message. </p>
+    /// <ul>
+    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// </ul>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -150,6 +167,10 @@ impl SendMessageFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the connection.</p>
     pub fn connection_token(
@@ -166,5 +187,9 @@ impl SendMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
+    }
+    /// <p>The authentication token associated with the connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_token()
     }
 }

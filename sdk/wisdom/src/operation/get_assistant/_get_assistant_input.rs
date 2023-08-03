@@ -39,6 +39,10 @@ impl GetAssistantInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// Consumes the builder and constructs a [`GetAssistantInput`](crate::operation::get_assistant::GetAssistantInput).
     pub fn build(
         self,

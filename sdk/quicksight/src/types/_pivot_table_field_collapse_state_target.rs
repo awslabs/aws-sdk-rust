@@ -49,6 +49,10 @@ impl PivotTableFieldCollapseStateTargetBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the pivot table that the collapse state needs to be set to.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// Appends an item to `field_data_path_values`.
     ///
     /// To override the contents of this collection use [`set_field_data_path_values`](Self::set_field_data_path_values).
@@ -67,6 +71,12 @@ impl PivotTableFieldCollapseStateTargetBuilder {
     ) -> Self {
         self.field_data_path_values = input;
         self
+    }
+    /// <p>The data path of the pivot table's header. Used to set the collapse state.</p>
+    pub fn get_field_data_path_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+        &self.field_data_path_values
     }
     /// Consumes the builder and constructs a [`PivotTableFieldCollapseStateTarget`](crate::types::PivotTableFieldCollapseStateTarget).
     pub fn build(self) -> crate::types::PivotTableFieldCollapseStateTarget {

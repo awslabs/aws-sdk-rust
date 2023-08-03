@@ -179,6 +179,10 @@ impl SimulationJobRequestBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The output location.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
+    }
     /// <p>The logging configuration.</p>
     pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
         self.logging_config = ::std::option::Option::Some(input);
@@ -192,6 +196,10 @@ impl SimulationJobRequestBuilder {
         self.logging_config = input;
         self
     }
+    /// <p>The logging configuration.</p>
+    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
+        &self.logging_config
+    }
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
         self.max_job_duration_in_seconds = ::std::option::Option::Some(input);
@@ -202,6 +210,10 @@ impl SimulationJobRequestBuilder {
         self.max_job_duration_in_seconds = input;
         self
     }
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
+    pub fn get_max_job_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.max_job_duration_in_seconds
+    }
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -211,6 +223,10 @@ impl SimulationJobRequestBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
@@ -253,6 +269,24 @@ impl SimulationJobRequestBuilder {
         self.failure_behavior = input;
         self
     }
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
+    /// <dt>
+    /// Continue
+    /// </dt>
+    /// <dd>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// </dd>
+    /// <dt>
+    /// Fail
+    /// </dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_behavior(&self) -> &::std::option::Option<crate::types::FailureBehavior> {
+        &self.failure_behavior
+    }
     /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn use_default_applications(mut self, input: bool) -> Self {
         self.use_default_applications = ::std::option::Option::Some(input);
@@ -262,6 +296,10 @@ impl SimulationJobRequestBuilder {
     pub fn set_use_default_applications(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_applications = input;
         self
+    }
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
+    pub fn get_use_default_applications(&self) -> &::std::option::Option<bool> {
+        &self.use_default_applications
     }
     /// Appends an item to `robot_applications`.
     ///
@@ -281,6 +319,12 @@ impl SimulationJobRequestBuilder {
     ) -> Self {
         self.robot_applications = input;
         self
+    }
+    /// <p>The robot applications to use in the simulation job.</p>
+    pub fn get_robot_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
+        &self.robot_applications
     }
     /// Appends an item to `simulation_applications`.
     ///
@@ -303,6 +347,12 @@ impl SimulationJobRequestBuilder {
     ) -> Self {
         self.simulation_applications = input;
         self
+    }
+    /// <p>The simulation applications to use in the simulation job.</p>
+    pub fn get_simulation_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
+        &self.simulation_applications
     }
     /// Appends an item to `data_sources`.
     ///
@@ -327,6 +377,14 @@ impl SimulationJobRequestBuilder {
         self.data_sources = input;
         self
     }
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
+    /// </note>
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
+        &self.data_sources
+    }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -337,6 +395,10 @@ impl SimulationJobRequestBuilder {
         self.vpc_config = input;
         self
     }
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
     /// <p>Compute information for the simulation job</p>
     pub fn compute(mut self, input: crate::types::Compute) -> Self {
         self.compute = ::std::option::Option::Some(input);
@@ -346,6 +408,10 @@ impl SimulationJobRequestBuilder {
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::Compute>) -> Self {
         self.compute = input;
         self
+    }
+    /// <p>Compute information for the simulation job</p>
+    pub fn get_compute(&self) -> &::std::option::Option<crate::types::Compute> {
+        &self.compute
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -371,6 +437,14 @@ impl SimulationJobRequestBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SimulationJobRequest`](crate::types::SimulationJobRequest).
     pub fn build(self) -> crate::types::SimulationJobRequest {

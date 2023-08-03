@@ -48,6 +48,10 @@ impl SavingsPlansSavingsBuilder {
         self.net_savings = input;
         self
     }
+    /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
+    pub fn get_net_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.net_savings
+    }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
     pub fn on_demand_cost_equivalent(
         mut self,
@@ -63,6 +67,10 @@ impl SavingsPlansSavingsBuilder {
     ) -> Self {
         self.on_demand_cost_equivalent = input;
         self
+    }
+    /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
+    pub fn get_on_demand_cost_equivalent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_cost_equivalent
     }
     /// Consumes the builder and constructs a [`SavingsPlansSavings`](crate::types::SavingsPlansSavings).
     pub fn build(self) -> crate::types::SavingsPlansSavings {

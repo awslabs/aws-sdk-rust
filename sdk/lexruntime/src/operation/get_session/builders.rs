@@ -36,6 +36,10 @@ impl GetSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_session::builders::GetSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the bot that contains the session data.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias(input.into());
@@ -128,6 +136,10 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_bot_alias(input);
         self
     }
+    /// <p>The alias in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias()
+    }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -137,6 +149,10 @@ impl GetSessionFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
@@ -155,5 +171,10 @@ impl GetSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checkpoint_label_filter(input);
         self
+    }
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+    /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
+    pub fn get_checkpoint_label_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checkpoint_label_filter()
     }
 }

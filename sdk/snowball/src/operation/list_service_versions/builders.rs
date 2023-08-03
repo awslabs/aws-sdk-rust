@@ -36,6 +36,12 @@ impl ListServiceVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListServiceVersionsFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service for which you're requesting supported versions.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        self.inner.get_service_name()
+    }
     /// Appends an item to `DependentServices`.
     ///
     /// To override the contents of this collection use [`set_dependent_services`](Self::set_dependent_services).
@@ -146,6 +156,12 @@ impl ListServiceVersionsFluentBuilder {
         self.inner = self.inner.set_dependent_services(input);
         self
     }
+    /// <p>A list of names and versions of dependant services of the requested service.</p>
+    pub fn get_dependent_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+        self.inner.get_dependent_services()
+    }
     /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +172,10 @@ impl ListServiceVersionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -165,5 +185,9 @@ impl ListServiceVersionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

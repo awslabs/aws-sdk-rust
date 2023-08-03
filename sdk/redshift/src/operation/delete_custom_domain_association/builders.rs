@@ -36,6 +36,10 @@ impl DeleteCustomDomainAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomDomainAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteCustomDomainAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The identifier of the cluster to delete a custom domain association for.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
 }

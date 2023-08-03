@@ -90,6 +90,10 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The name of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>Whether to boot from this disk or not.</p>
     pub fn is_boot_disk(mut self, input: bool) -> Self {
         self.is_boot_disk = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     pub fn set_is_boot_disk(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_boot_disk = input;
         self
+    }
+    /// <p>Whether to boot from this disk or not.</p>
+    pub fn get_is_boot_disk(&self) -> &::std::option::Option<bool> {
+        &self.is_boot_disk
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     pub fn staging_disk_type(
@@ -118,6 +126,13 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self.staging_disk_type = input;
         self
     }
+    /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    pub fn get_staging_disk_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    {
+        &self.staging_disk_type
+    }
     /// <p>The requested number of I/O operations per second (IOPS).</p>
     pub fn iops(mut self, input: i64) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -128,6 +143,10 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self.iops = input;
         self
     }
+    /// <p>The requested number of I/O operations per second (IOPS).</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i64> {
+        &self.iops
+    }
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
     pub fn throughput(mut self, input: i64) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -137,6 +156,10 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     pub fn set_throughput(mut self, input: ::std::option::Option<i64>) -> Self {
         self.throughput = input;
         self
+    }
+    /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i64> {
+        &self.throughput
     }
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     pub fn optimized_staging_disk_type(
@@ -155,6 +178,13 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     ) -> Self {
         self.optimized_staging_disk_type = input;
         self
+    }
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    pub fn get_optimized_staging_disk_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    {
+        &self.optimized_staging_disk_type
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::types::ReplicationConfigurationReplicatedDisk).
     pub fn build(self) -> crate::types::ReplicationConfigurationReplicatedDisk {

@@ -36,6 +36,10 @@ impl CreateStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStack as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_stack::builders::CreateStackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the stack.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The stack name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -137,6 +149,10 @@ impl CreateStackFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The stack name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// Appends an item to `StorageConnectors`.
     ///
@@ -155,6 +171,12 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_storage_connectors(input);
         self
     }
+    /// <p>The storage connectors to enable.</p>
+    pub fn get_storage_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+        self.inner.get_storage_connectors()
+    }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub fn redirect_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.redirect_url(input.into());
@@ -165,6 +187,10 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_redirect_url(input);
         self
     }
+    /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    pub fn get_redirect_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_redirect_url()
+    }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub fn feedback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feedback_url(input.into());
@@ -174,6 +200,10 @@ impl CreateStackFluentBuilder {
     pub fn set_feedback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_url(input);
         self
+    }
+    /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    pub fn get_feedback_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feedback_url()
     }
     /// Appends an item to `UserSettings`.
     ///
@@ -192,6 +222,12 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_user_settings(input);
         self
     }
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
+    pub fn get_user_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+        self.inner.get_user_settings()
+    }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn application_settings(mut self, input: crate::types::ApplicationSettings) -> Self {
         self.inner = self.inner.application_settings(input);
@@ -204,6 +240,12 @@ impl CreateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_settings(input);
         self
+    }
+    /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    pub fn get_application_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSettings> {
+        self.inner.get_application_settings()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -236,6 +278,18 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `AccessEndpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
@@ -252,6 +306,12 @@ impl CreateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        self.inner.get_access_endpoints()
     }
     /// Appends an item to `EmbedHostDomains`.
     ///
@@ -273,6 +333,12 @@ impl CreateStackFluentBuilder {
         self.inner = self.inner.set_embed_host_domains(input);
         self
     }
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    pub fn get_embed_host_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_embed_host_domains()
+    }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn streaming_experience_settings(
         mut self,
@@ -288,5 +354,11 @@ impl CreateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_streaming_experience_settings(input);
         self
+    }
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub fn get_streaming_experience_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
+        self.inner.get_streaming_experience_settings()
     }
 }

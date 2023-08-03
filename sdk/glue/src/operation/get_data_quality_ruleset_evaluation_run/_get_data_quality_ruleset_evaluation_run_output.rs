@@ -170,6 +170,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>The data source (an Glue table) associated with this evaluation run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
@@ -183,6 +187,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The data source (an Glue table) associated with this evaluation run.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -192,6 +200,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -203,6 +215,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.number_of_workers = input;
         self
     }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
+    }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -212,6 +228,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
     pub fn additional_run_options(
@@ -229,6 +249,12 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.additional_run_options = input;
         self
     }
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    pub fn get_additional_run_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+        &self.additional_run_options
+    }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -242,6 +268,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status for this run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
+        &self.status
+    }
     /// <p>The error strings that are associated with the run.</p>
     pub fn error_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_string = ::std::option::Option::Some(input.into());
@@ -251,6 +281,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub fn set_error_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_string = input;
         self
+    }
+    /// <p>The error strings that are associated with the run.</p>
+    pub fn get_error_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_string
     }
     /// <p>The date and time when this run started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -265,6 +299,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.started_on = input;
         self
     }
+    /// <p>The date and time when this run started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
+    }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
     pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_on = ::std::option::Option::Some(input);
@@ -277,6 +315,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     ) -> Self {
         self.last_modified_on = input;
         self
+    }
+    /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_on
     }
     /// <p>The date and time when this run was completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -291,6 +333,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.completed_on = input;
         self
     }
+    /// <p>The date and time when this run was completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
+    }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub fn execution_time(mut self, input: i32) -> Self {
         self.execution_time = ::std::option::Option::Some(input);
@@ -300,6 +346,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub fn set_execution_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_time = input;
         self
+    }
+    /// <p>The amount of time (in seconds) that the run consumed resources.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<i32> {
+        &self.execution_time
     }
     /// Appends an item to `ruleset_names`.
     ///
@@ -323,6 +373,12 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.ruleset_names = input;
         self
     }
+    /// <p>A list of ruleset names for the run.</p>
+    pub fn get_ruleset_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ruleset_names
+    }
     /// Appends an item to `result_ids`.
     ///
     /// To override the contents of this collection use [`set_result_ids`](Self::set_result_ids).
@@ -341,6 +397,10 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     ) -> Self {
         self.result_ids = input;
         self
+    }
+    /// <p>A list of result IDs for the data quality results for the run.</p>
+    pub fn get_result_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.result_ids
     }
     /// Adds a key-value pair to `additional_data_sources`.
     ///
@@ -366,6 +426,14 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     ) -> Self {
         self.additional_data_sources = input;
         self
+    }
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn get_additional_data_sources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+    > {
+        &self.additional_data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -125,6 +125,10 @@ impl NotebookInstanceSummaryBuilder {
         self.notebook_instance_name = input;
         self
     }
+    /// <p>The name of the notebook instance that you want a summary for.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
     pub fn notebook_instance_arn(
         mut self,
@@ -141,6 +145,10 @@ impl NotebookInstanceSummaryBuilder {
         self.notebook_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    pub fn get_notebook_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_arn
+    }
     /// <p>The status of the notebook instance.</p>
     pub fn notebook_instance_status(mut self, input: crate::types::NotebookInstanceStatus) -> Self {
         self.notebook_instance_status = ::std::option::Option::Some(input);
@@ -154,6 +162,12 @@ impl NotebookInstanceSummaryBuilder {
         self.notebook_instance_status = input;
         self
     }
+    /// <p>The status of the notebook instance.</p>
+    pub fn get_notebook_instance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
+        &self.notebook_instance_status
+    }
     /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -163,6 +177,10 @@ impl NotebookInstanceSummaryBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The type of ML compute instance that the notebook instance is running on.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -177,6 +195,10 @@ impl NotebookInstanceSummaryBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of ML compute instance that the notebook instance is running on.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>A timestamp that shows when the notebook instance was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -190,6 +212,10 @@ impl NotebookInstanceSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that shows when the notebook instance was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp that shows when the notebook instance was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -202,6 +228,10 @@ impl NotebookInstanceSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A timestamp that shows when the notebook instance was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
@@ -221,6 +251,13 @@ impl NotebookInstanceSummaryBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(
         mut self,
@@ -236,6 +273,10 @@ impl NotebookInstanceSummaryBuilder {
     ) -> Self {
         self.default_code_repository = input;
         self
+    }
+    /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    pub fn get_default_code_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_code_repository
     }
     /// Appends an item to `additional_code_repositories`.
     ///
@@ -258,6 +299,12 @@ impl NotebookInstanceSummaryBuilder {
     ) -> Self {
         self.additional_code_repositories = input;
         self
+    }
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    pub fn get_additional_code_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_code_repositories
     }
     /// Consumes the builder and constructs a [`NotebookInstanceSummary`](crate::types::NotebookInstanceSummary).
     pub fn build(self) -> crate::types::NotebookInstanceSummary {

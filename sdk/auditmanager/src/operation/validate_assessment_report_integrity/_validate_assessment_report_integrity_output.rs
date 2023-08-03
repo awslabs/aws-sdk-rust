@@ -78,6 +78,10 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
         self.signature_valid = input;
         self
     }
+    /// <p> Specifies whether the signature key is valid. </p>
+    pub fn get_signature_valid(&self) -> &::std::option::Option<bool> {
+        &self.signature_valid
+    }
     /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub fn signature_algorithm(
         mut self,
@@ -93,6 +97,10 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     ) -> Self {
         self.signature_algorithm = input;
         self
+    }
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
+    pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_algorithm
     }
     /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn signature_date_time(
@@ -110,6 +118,10 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
         self.signature_date_time = input;
         self
     }
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
+    pub fn get_signature_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_date_time
+    }
     /// <p> The unique identifier for the validation signature key. </p>
     pub fn signature_key_id(
         mut self,
@@ -125,6 +137,10 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     ) -> Self {
         self.signature_key_id = input;
         self
+    }
+    /// <p> The unique identifier for the validation signature key. </p>
+    pub fn get_signature_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_key_id
     }
     /// Appends an item to `validation_errors`.
     ///
@@ -147,6 +163,12 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     ) -> Self {
         self.validation_errors = input;
         self
+    }
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
+    pub fn get_validation_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

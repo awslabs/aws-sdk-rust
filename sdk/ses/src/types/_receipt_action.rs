@@ -89,6 +89,10 @@ impl ReceiptActionBuilder {
         self.s3_action = input;
         self
     }
+    /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
+    pub fn get_s3_action(&self) -> &::std::option::Option<crate::types::S3Action> {
+        &self.s3_action
+    }
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn bounce_action(mut self, input: crate::types::BounceAction) -> Self {
         self.bounce_action = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl ReceiptActionBuilder {
     ) -> Self {
         self.bounce_action = input;
         self
+    }
+    /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
+    pub fn get_bounce_action(&self) -> &::std::option::Option<crate::types::BounceAction> {
+        &self.bounce_action
     }
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
     pub fn workmail_action(mut self, input: crate::types::WorkmailAction) -> Self {
@@ -115,6 +123,10 @@ impl ReceiptActionBuilder {
         self.workmail_action = input;
         self
     }
+    /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
+    pub fn get_workmail_action(&self) -> &::std::option::Option<crate::types::WorkmailAction> {
+        &self.workmail_action
+    }
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
     pub fn lambda_action(mut self, input: crate::types::LambdaAction) -> Self {
         self.lambda_action = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ReceiptActionBuilder {
     ) -> Self {
         self.lambda_action = input;
         self
+    }
+    /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
+    pub fn get_lambda_action(&self) -> &::std::option::Option<crate::types::LambdaAction> {
+        &self.lambda_action
     }
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
     pub fn stop_action(mut self, input: crate::types::StopAction) -> Self {
@@ -141,6 +157,10 @@ impl ReceiptActionBuilder {
         self.stop_action = input;
         self
     }
+    /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
+    pub fn get_stop_action(&self) -> &::std::option::Option<crate::types::StopAction> {
+        &self.stop_action
+    }
     /// <p>Adds a header to the received email.</p>
     pub fn add_header_action(mut self, input: crate::types::AddHeaderAction) -> Self {
         self.add_header_action = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl ReceiptActionBuilder {
         self.add_header_action = input;
         self
     }
+    /// <p>Adds a header to the received email.</p>
+    pub fn get_add_header_action(&self) -> &::std::option::Option<crate::types::AddHeaderAction> {
+        &self.add_header_action
+    }
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
     pub fn sns_action(mut self, input: crate::types::SnsAction) -> Self {
         self.sns_action = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl ReceiptActionBuilder {
     pub fn set_sns_action(mut self, input: ::std::option::Option<crate::types::SnsAction>) -> Self {
         self.sns_action = input;
         self
+    }
+    /// <p>Publishes the email content within a notification to Amazon SNS.</p>
+    pub fn get_sns_action(&self) -> &::std::option::Option<crate::types::SnsAction> {
+        &self.sns_action
     }
     /// Consumes the builder and constructs a [`ReceiptAction`](crate::types::ReceiptAction).
     pub fn build(self) -> crate::types::ReceiptAction {

@@ -38,6 +38,12 @@ impl FailoverDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the FailoverDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,14 @@ impl FailoverDBClusterFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>A DB cluster identifier to force a failover for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Read Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
     pub fn target_db_instance_identifier(
@@ -159,5 +173,12 @@ impl FailoverDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_db_instance_identifier(input);
         self
+    }
+    /// <p>The name of the instance to promote to the primary instance.</p>
+    /// <p>You must specify the instance identifier for an Read Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
+    pub fn get_target_db_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_instance_identifier()
     }
 }

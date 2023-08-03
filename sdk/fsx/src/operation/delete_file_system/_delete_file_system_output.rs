@@ -94,6 +94,10 @@ impl DeleteFileSystemOutputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system that's being deleted.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::FileSystemLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl DeleteFileSystemOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileSystemLifecycle> {
+        &self.lifecycle
     }
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn windows_response(
@@ -123,6 +131,12 @@ impl DeleteFileSystemOutputBuilder {
         self.windows_response = input;
         self
     }
+    /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_windows_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemWindowsResponse> {
+        &self.windows_response
+    }
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn lustre_response(mut self, input: crate::types::DeleteFileSystemLustreResponse) -> Self {
         self.lustre_response = ::std::option::Option::Some(input);
@@ -135,6 +149,12 @@ impl DeleteFileSystemOutputBuilder {
     ) -> Self {
         self.lustre_response = input;
         self
+    }
+    /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_lustre_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemLustreResponse> {
+        &self.lustre_response
     }
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn open_zfs_response(
@@ -151,6 +171,12 @@ impl DeleteFileSystemOutputBuilder {
     ) -> Self {
         self.open_zfs_response = input;
         self
+    }
+    /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    pub fn get_open_zfs_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteFileSystemOpenZfsResponse> {
+        &self.open_zfs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

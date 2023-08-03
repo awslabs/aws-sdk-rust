@@ -40,6 +40,10 @@ impl ChannelBanSummaryBuilder {
         self.member = input;
         self
     }
+    /// <p>The member being banned from a channel.</p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.member
+    }
     /// Consumes the builder and constructs a [`ChannelBanSummary`](crate::types::ChannelBanSummary).
     pub fn build(self) -> crate::types::ChannelBanSummary {
         crate::types::ChannelBanSummary {

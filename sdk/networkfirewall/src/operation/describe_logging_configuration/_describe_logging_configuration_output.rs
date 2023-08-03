@@ -56,6 +56,10 @@ impl DescribeLoggingConfigurationOutputBuilder {
         self.firewall_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
+    }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl DescribeLoggingConfigurationOutputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

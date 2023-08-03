@@ -47,6 +47,10 @@ impl AssociateUserAccessLoggingSettingsInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn user_access_logging_settings_arn(
         mut self,
@@ -62,6 +66,12 @@ impl AssociateUserAccessLoggingSettingsInputBuilder {
     ) -> Self {
         self.user_access_logging_settings_arn = input;
         self
+    }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.user_access_logging_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsInput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput, ::aws_smithy_http::operation::error::BuildError>{

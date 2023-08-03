@@ -63,6 +63,10 @@ impl CreateDataSetImportTaskInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application for which you want to import data sets.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The data set import task configuration.</p>
     pub fn import_config(mut self, input: crate::types::DataSetImportConfig) -> Self {
         self.import_config = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateDataSetImportTaskInputBuilder {
         self.import_config = input;
         self
     }
+    /// <p>The data set import task configuration.</p>
+    pub fn get_import_config(&self) -> &::std::option::Option<crate::types::DataSetImportConfig> {
+        &self.import_config
+    }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl CreateDataSetImportTaskInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
     pub fn build(

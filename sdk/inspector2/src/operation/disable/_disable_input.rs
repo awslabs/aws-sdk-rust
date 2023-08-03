@@ -57,6 +57,12 @@ impl DisableInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `resource_types`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -75,6 +81,12 @@ impl DisableInputBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>The resource scan types you want to disable.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+        &self.resource_types
     }
     /// Consumes the builder and constructs a [`DisableInput`](crate::operation::disable::DisableInput).
     pub fn build(

@@ -40,6 +40,12 @@ impl DeleteProxySessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProxySession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl DeleteProxySessionFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(
         mut self,
@@ -151,5 +161,9 @@ impl DeleteProxySessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn get_proxy_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_proxy_session_id()
     }
 }

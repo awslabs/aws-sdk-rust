@@ -68,6 +68,12 @@ impl OutpostConfigResponseBuilder {
         self.outpost_arns = input;
         self
     }
+    /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+    pub fn get_outpost_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outpost_arns
+    }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
     pub fn control_plane_instance_type(
         mut self,
@@ -84,6 +90,10 @@ impl OutpostConfigResponseBuilder {
         self.control_plane_instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+    pub fn get_control_plane_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_plane_instance_type
+    }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn control_plane_placement(
         mut self,
@@ -99,6 +109,12 @@ impl OutpostConfigResponseBuilder {
     ) -> Self {
         self.control_plane_placement = input;
         self
+    }
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_control_plane_placement(
+        &self,
+    ) -> &::std::option::Option<crate::types::ControlPlanePlacementResponse> {
+        &self.control_plane_placement
     }
     /// Consumes the builder and constructs a [`OutpostConfigResponse`](crate::types::OutpostConfigResponse).
     pub fn build(self) -> crate::types::OutpostConfigResponse {

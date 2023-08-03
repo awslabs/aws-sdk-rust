@@ -71,6 +71,10 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>no-referrer</code> </p> </li>
@@ -105,6 +109,21 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     ) -> Self {
         self.referrer_policy = input;
         self
+    }
+    /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>no-referrer</code> </p> </li>
+    /// <li> <p> <code>no-referrer-when-downgrade</code> </p> </li>
+    /// <li> <p> <code>origin</code> </p> </li>
+    /// <li> <p> <code>origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>same-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin</code> </p> </li>
+    /// <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li>
+    /// <li> <p> <code>unsafe-url</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    pub fn get_referrer_policy(&self) -> &::std::option::Option<crate::types::ReferrerPolicyList> {
+        &self.referrer_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyReferrerPolicy`](crate::types::ResponseHeadersPolicyReferrerPolicy).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyReferrerPolicy {

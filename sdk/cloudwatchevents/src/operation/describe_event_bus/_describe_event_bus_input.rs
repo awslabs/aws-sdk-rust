@@ -40,6 +40,10 @@ impl DescribeEventBusInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
     pub fn build(
         self,

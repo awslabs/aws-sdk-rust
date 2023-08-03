@@ -52,6 +52,12 @@ impl BatchGetOnPremisesInstancesInputBuilder {
         self.instance_names = input;
         self
     }
+    /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
+    pub fn get_instance_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
+    }
     /// Consumes the builder and constructs a [`BatchGetOnPremisesInstancesInput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput).
     pub fn build(
         self,

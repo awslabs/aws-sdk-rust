@@ -36,6 +36,12 @@ impl DeregisterComputeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterCompute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeregisterComputeFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>The name of the compute resource you want to delete.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
@@ -135,5 +145,9 @@ impl DeregisterComputeFluentBuilder {
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
+    }
+    /// <p>The name of the compute resource you want to delete.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compute_name()
     }
 }

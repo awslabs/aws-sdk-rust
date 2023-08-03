@@ -75,6 +75,17 @@ impl SelfManagedEventSourceBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::EndPointType,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.endpoints
+    }
     /// Consumes the builder and constructs a [`SelfManagedEventSource`](crate::types::SelfManagedEventSource).
     pub fn build(self) -> crate::types::SelfManagedEventSource {
         crate::types::SelfManagedEventSource {

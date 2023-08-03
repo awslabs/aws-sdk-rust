@@ -50,6 +50,12 @@ impl GetComponentInputBuilder {
         self.recipe_output_format = input;
         self
     }
+    /// <p>The format of the recipe.</p>
+    pub fn get_recipe_output_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
+        &self.recipe_output_format
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -59,6 +65,10 @@ impl GetComponentInputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl PipelineStatusReasonBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of why a pipeline has a certain status.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`PipelineStatusReason`](crate::types::PipelineStatusReason).
     pub fn build(self) -> crate::types::PipelineStatusReason {
         crate::types::PipelineStatusReason {

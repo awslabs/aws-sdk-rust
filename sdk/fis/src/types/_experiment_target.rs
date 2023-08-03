@@ -103,6 +103,10 @@ impl ExperimentTargetBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -124,6 +128,12 @@ impl ExperimentTargetBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Adds a key-value pair to `resource_tags`.
     ///
@@ -150,6 +160,14 @@ impl ExperimentTargetBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>The tags for the target resources.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.resource_tags
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -169,6 +187,12 @@ impl ExperimentTargetBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetFilter>> {
+        &self.filters
+    }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn selection_mode(
         mut self,
@@ -184,6 +208,10 @@ impl ExperimentTargetBuilder {
     ) -> Self {
         self.selection_mode = input;
         self
+    }
+    /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    pub fn get_selection_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_mode
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -209,6 +237,14 @@ impl ExperimentTargetBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The resource type parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ExperimentTarget`](crate::types::ExperimentTarget).
     pub fn build(self) -> crate::types::ExperimentTarget {

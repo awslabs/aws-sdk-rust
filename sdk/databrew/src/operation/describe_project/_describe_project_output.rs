@@ -171,6 +171,10 @@ impl DescribeProjectOutputBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the project was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The identifier (user name) of the user who created the project.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -181,6 +185,10 @@ impl DescribeProjectOutputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who created the project.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The dataset associated with the project.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -190,6 +198,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>The dataset associated with the project.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The date and time that the project was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -203,6 +215,10 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date and time that the project was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The identifier (user name) of the user who last modified the project.</p>
     pub fn last_modified_by(
@@ -220,6 +236,10 @@ impl DescribeProjectOutputBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who last modified the project.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The name of the project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -229,6 +249,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The recipe associated with this job.</p>
     pub fn recipe_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -240,6 +264,10 @@ impl DescribeProjectOutputBuilder {
         self.recipe_name = input;
         self
     }
+    /// <p>The recipe associated with this job.</p>
+    pub fn get_recipe_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -249,6 +277,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(mut self, input: crate::types::Sample) -> Self {
@@ -260,6 +292,10 @@ impl DescribeProjectOutputBuilder {
         self.sample = input;
         self
     }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<crate::types::Sample> {
+        &self.sample
+    }
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -269,6 +305,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -295,6 +335,14 @@ impl DescribeProjectOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags associated with this project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
@@ -318,6 +366,15 @@ impl DescribeProjectOutputBuilder {
         self.session_status = input;
         self
     }
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
+    /// </ul>
+    pub fn get_session_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
+        &self.session_status
+    }
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
     pub fn opened_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opened_by = ::std::option::Option::Some(input.into());
@@ -327,6 +384,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_opened_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opened_by = input;
         self
+    }
+    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    pub fn get_opened_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opened_by
     }
     /// <p>The date and time when the project was opened. </p>
     pub fn open_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -340,6 +401,10 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.open_date = input;
         self
+    }
+    /// <p>The date and time when the project was opened. </p>
+    pub fn get_open_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.open_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -78,6 +78,10 @@ impl SignPayloadOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Unique identifier of the signing job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The AWS account ID of the job owner.</p>
     pub fn job_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_owner = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl SignPayloadOutputBuilder {
     pub fn set_job_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_owner = input;
         self
+    }
+    /// <p>The AWS account ID of the job owner.</p>
+    pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_owner
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -113,6 +121,14 @@ impl SignPayloadOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Information including the signing profile ARN and the signing job ID. Clients use metadata to signature records, for example, as annotations added to the signature manifest inside an OCI registry.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// <p>A cryptographic signature.</p>
     pub fn signature(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.signature = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl SignPayloadOutputBuilder {
     pub fn set_signature(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.signature = input;
         self
+    }
+    /// <p>A cryptographic signature.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.signature
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

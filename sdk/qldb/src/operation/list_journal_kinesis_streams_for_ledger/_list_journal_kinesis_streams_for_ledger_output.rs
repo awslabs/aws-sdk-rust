@@ -75,6 +75,13 @@ impl ListJournalKinesisStreamsForLedgerOutputBuilder {
         self.streams = input;
         self
     }
+    /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
+    pub fn get_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>
+    {
+        &self.streams
+    }
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
@@ -90,6 +97,13 @@ impl ListJournalKinesisStreamsForLedgerOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
+    /// </ul>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

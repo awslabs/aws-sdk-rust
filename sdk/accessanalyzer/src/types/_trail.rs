@@ -62,6 +62,10 @@ impl TrailBuilder {
         self.cloud_trail_arn = input;
         self
     }
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    pub fn get_cloud_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_trail_arn
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -81,6 +85,10 @@ impl TrailBuilder {
         self.regions = input;
         self
     }
+    /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(mut self, input: bool) -> Self {
         self.all_regions = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl TrailBuilder {
     pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.all_regions = input;
         self
+    }
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
+    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_regions
     }
     /// Consumes the builder and constructs a [`Trail`](crate::types::Trail).
     pub fn build(self) -> crate::types::Trail {

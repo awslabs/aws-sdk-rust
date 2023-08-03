@@ -40,6 +40,10 @@ impl DeleteStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_stream::builders::DeleteStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl DeleteStreamFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>Optional: The version of the stream that you want to delete. </p>
     /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
@@ -141,5 +149,11 @@ impl DeleteStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>Optional: The version of the stream that you want to delete. </p>
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
     }
 }

@@ -56,6 +56,10 @@ impl PosixProfileBuilder {
         self.uid = input;
         self
     }
+    /// <p>The POSIX user ID used for all EFS operations by this user.</p>
+    pub fn get_uid(&self) -> &::std::option::Option<i64> {
+        &self.uid
+    }
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
     pub fn gid(mut self, input: i64) -> Self {
         self.gid = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PosixProfileBuilder {
     pub fn set_gid(mut self, input: ::std::option::Option<i64>) -> Self {
         self.gid = input;
         self
+    }
+    /// <p>The POSIX group ID used for all EFS operations by this user.</p>
+    pub fn get_gid(&self) -> &::std::option::Option<i64> {
+        &self.gid
     }
     /// Appends an item to `secondary_gids`.
     ///
@@ -84,6 +92,10 @@ impl PosixProfileBuilder {
     ) -> Self {
         self.secondary_gids = input;
         self
+    }
+    /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
+    pub fn get_secondary_gids(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.secondary_gids
     }
     /// Consumes the builder and constructs a [`PosixProfile`](crate::types::PosixProfile).
     pub fn build(self) -> crate::types::PosixProfile {

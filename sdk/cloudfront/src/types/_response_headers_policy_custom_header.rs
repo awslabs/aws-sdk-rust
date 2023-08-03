@@ -56,6 +56,10 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
         self.header = input;
         self
     }
+    /// <p>The HTTP response header name.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header
+    }
     /// <p>The value for the HTTP response header.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for the HTTP response header.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#override = input;
         self
+    }
+    /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyCustomHeader {

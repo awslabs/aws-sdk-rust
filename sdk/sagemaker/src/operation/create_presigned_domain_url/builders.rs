@@ -40,6 +40,10 @@ impl CreatePresignedDomainUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePresignedDomainUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The name of the UserProfile to sign-in as.</p>
     pub fn user_profile_name(
         mut self,
@@ -146,6 +154,10 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }
+    /// <p>The name of the UserProfile to sign-in as.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_profile_name()
+    }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
     pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.session_expiration_duration_in_seconds(input);
@@ -159,6 +171,10 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
         self
     }
+    /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
+    pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_expiration_duration_in_seconds()
+    }
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.expires_in_seconds(input);
@@ -169,6 +185,10 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self.inner = self.inner.set_expires_in_seconds(input);
         self
     }
+    /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
+    pub fn get_expires_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expires_in_seconds()
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
@@ -178,5 +198,9 @@ impl CreatePresignedDomainUrlFluentBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name(input);
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
     }
 }

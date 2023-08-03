@@ -49,6 +49,10 @@ impl BatchDeleteWorldsInputBuilder {
         self.worlds = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.worlds
+    }
     /// Consumes the builder and constructs a [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
     pub fn build(
         self,

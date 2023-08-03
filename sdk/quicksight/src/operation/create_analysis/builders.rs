@@ -36,6 +36,12 @@ impl CreateAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAnalysis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_analysis::builders::CreateAnalysisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateAnalysisFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
@@ -134,6 +144,10 @@ impl CreateAnalysisFluentBuilder {
         self.inner = self.inner.set_analysis_id(input);
         self
     }
+    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analysis_id()
+    }
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +157,10 @@ impl CreateAnalysisFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
@@ -156,6 +174,10 @@ impl CreateAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
+        self.inner.get_parameters()
     }
     /// Appends an item to `Permissions`.
     ///
@@ -176,6 +198,13 @@ impl CreateAnalysisFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
+    /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_permissions()
+    }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(mut self, input: crate::types::AnalysisSourceEntity) -> Self {
@@ -191,6 +220,11 @@ impl CreateAnalysisFluentBuilder {
         self.inner = self.inner.set_source_entity(input);
         self
     }
+    /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
+    pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
+        self.inner.get_source_entity()
+    }
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_arn(input.into());
@@ -200,6 +234,10 @@ impl CreateAnalysisFluentBuilder {
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_arn(input);
         self
+    }
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -218,6 +256,10 @@ impl CreateAnalysisFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
@@ -234,5 +276,11 @@ impl CreateAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>The definition of an analysis.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::AnalysisDefinition> {
+        self.inner.get_definition()
     }
 }

@@ -56,6 +56,10 @@ impl ListStreamProcessorsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `stream_processors`.
     ///
     /// To override the contents of this collection use [`set_stream_processors`](Self::set_stream_processors).
@@ -74,6 +78,12 @@ impl ListStreamProcessorsOutputBuilder {
     ) -> Self {
         self.stream_processors = input;
         self
+    }
+    /// <p>List of stream processors that you have created.</p>
+    pub fn get_stream_processors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>> {
+        &self.stream_processors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -64,6 +64,10 @@ impl StateBuilder {
         self.state_name = input;
         self
     }
+    /// <p>The name of the state.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
+    }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub fn on_input(mut self, input: crate::types::OnInputLifecycle) -> Self {
         self.on_input = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl StateBuilder {
     ) -> Self {
         self.on_input = input;
         self
+    }
+    /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
+    pub fn get_on_input(&self) -> &::std::option::Option<crate::types::OnInputLifecycle> {
+        &self.on_input
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
     pub fn on_enter(mut self, input: crate::types::OnEnterLifecycle) -> Self {
@@ -90,6 +98,10 @@ impl StateBuilder {
         self.on_enter = input;
         self
     }
+    /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
+    pub fn get_on_enter(&self) -> &::std::option::Option<crate::types::OnEnterLifecycle> {
+        &self.on_enter
+    }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub fn on_exit(mut self, input: crate::types::OnExitLifecycle) -> Self {
         self.on_exit = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl StateBuilder {
     ) -> Self {
         self.on_exit = input;
         self
+    }
+    /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn get_on_exit(&self) -> &::std::option::Option<crate::types::OnExitLifecycle> {
+        &self.on_exit
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
     pub fn build(self) -> crate::types::State {

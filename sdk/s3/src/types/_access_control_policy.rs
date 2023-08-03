@@ -57,6 +57,10 @@ impl AccessControlPolicyBuilder {
         self.grants = input;
         self
     }
+    /// <p>A list of grants.</p>
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grant>> {
+        &self.grants
+    }
     /// <p>Container for the bucket owner's display name and ID.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AccessControlPolicyBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>Container for the bucket owner's display name and ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// Consumes the builder and constructs a [`AccessControlPolicy`](crate::types::AccessControlPolicy).
     pub fn build(self) -> crate::types::AccessControlPolicy {

@@ -53,6 +53,10 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance with the deployment to cancel.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl CancelServiceInstanceDeploymentInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service with the service instance deployment to cancel.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`CancelServiceInstanceDeploymentInput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput).
     pub fn build(

@@ -57,6 +57,10 @@ impl DataSourceVpcConfigurationBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl DataSourceVpcConfigurationBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::types::DataSourceVpcConfiguration).
     pub fn build(self) -> crate::types::DataSourceVpcConfiguration {

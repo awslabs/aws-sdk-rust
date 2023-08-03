@@ -43,6 +43,12 @@ impl GetServiceEndpointInputBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    pub fn get_service_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
+        &self.service_type
+    }
     /// Consumes the builder and constructs a [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
     pub fn build(
         self,

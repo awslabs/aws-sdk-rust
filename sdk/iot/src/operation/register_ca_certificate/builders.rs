@@ -37,6 +37,13 @@ impl RegisterCACertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterCACertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.set_ca_certificate(input);
         self
     }
+    /// <p>The CA certificate.</p>
+    pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ca_certificate()
+    }
     /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
     pub fn verification_certificate(
         mut self,
@@ -149,6 +160,10 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.set_verification_certificate(input);
         self
     }
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    pub fn get_verification_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_verification_certificate()
+    }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     pub fn set_as_active(mut self, input: bool) -> Self {
@@ -161,6 +176,11 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.set_set_as_active(input);
         self
     }
+    /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_set_as_active()
+    }
     /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub fn allow_auto_registration(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_auto_registration(input);
@@ -170,6 +190,10 @@ impl RegisterCACertificateFluentBuilder {
     pub fn set_allow_auto_registration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_auto_registration(input);
         self
+    }
+    /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
+    pub fn get_allow_auto_registration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_auto_registration()
     }
     /// <p>Information about the registration configuration.</p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
@@ -183,6 +207,12 @@ impl RegisterCACertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
+    }
+    /// <p>Information about the registration configuration.</p>
+    pub fn get_registration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+        self.inner.get_registration_config()
     }
     /// Appends an item to `tags`.
     ///
@@ -209,6 +239,14 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
     pub fn certificate_mode(mut self, input: crate::types::CertificateMode) -> Self {
         self.inner = self.inner.certificate_mode(input);
@@ -221,5 +259,9 @@ impl RegisterCACertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_mode(input);
         self
+    }
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::CertificateMode> {
+        self.inner.get_certificate_mode()
     }
 }

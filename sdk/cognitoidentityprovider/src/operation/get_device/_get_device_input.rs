@@ -54,6 +54,10 @@ impl GetDeviceInputBuilder {
         self.device_key = input;
         self
     }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetDeviceInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
     pub fn build(

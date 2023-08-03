@@ -166,6 +166,14 @@ impl DescribeDbClusterSnapshotsInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -191,6 +199,17 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     ) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
+    }
+    /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -223,6 +242,18 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     ) -> Self {
         self.snapshot_type = input;
         self
+    }
+    /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public DB cluster snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
+    /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_type
     }
     /// Appends an item to `filters`.
     ///
@@ -257,6 +288,17 @@ impl DescribeDbClusterSnapshotsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li>
+    /// <li> <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.</p> </li>
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB cluster snapshots.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -271,6 +313,12 @@ impl DescribeDbClusterSnapshotsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -280,6 +328,10 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
@@ -293,6 +345,11 @@ impl DescribeDbClusterSnapshotsInputBuilder {
         self.include_shared = input;
         self
     }
+    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
+        &self.include_shared
+    }
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub fn include_public(mut self, input: bool) -> Self {
@@ -304,6 +361,11 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_public = input;
         self
+    }
+    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    pub fn get_include_public(&self) -> &::std::option::Option<bool> {
+        &self.include_public
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsInput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput).
     pub fn build(

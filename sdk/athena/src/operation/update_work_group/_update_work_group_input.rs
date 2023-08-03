@@ -66,6 +66,10 @@ impl UpdateWorkGroupInputBuilder {
         self.work_group = input;
         self
     }
+    /// <p>The specified workgroup that will be updated.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateWorkGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The workgroup description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
     pub fn configuration_updates(
@@ -92,6 +100,12 @@ impl UpdateWorkGroupInputBuilder {
         self.configuration_updates = input;
         self
     }
+    /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
+    pub fn get_configuration_updates(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
+        &self.configuration_updates
+    }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -101,6 +115,10 @@ impl UpdateWorkGroupInputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkGroupState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The workgroup state that will be updated for the given workgroup.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkGroupState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
     pub fn build(

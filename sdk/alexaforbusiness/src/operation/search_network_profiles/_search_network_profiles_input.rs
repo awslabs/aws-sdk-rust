@@ -65,6 +65,10 @@ impl SearchNetworkProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl SearchNetworkProfilesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -94,6 +102,10 @@ impl SearchNetworkProfilesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Appends an item to `sort_criteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
@@ -112,6 +124,10 @@ impl SearchNetworkProfilesInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`SearchNetworkProfilesInput`](crate::operation::search_network_profiles::SearchNetworkProfilesInput).
     pub fn build(

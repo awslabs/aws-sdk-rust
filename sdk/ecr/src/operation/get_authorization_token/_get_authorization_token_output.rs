@@ -58,6 +58,12 @@ impl GetAuthorizationTokenOutputBuilder {
         self.authorization_data = input;
         self
     }
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
+    pub fn get_authorization_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>> {
+        &self.authorization_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

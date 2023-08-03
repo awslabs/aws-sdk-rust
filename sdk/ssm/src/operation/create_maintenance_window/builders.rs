@@ -39,6 +39,13 @@ impl CreateMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMaintenanceWindow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the maintenance window.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -138,6 +149,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +164,10 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_date()
+    }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.end_date(input.into());
@@ -159,6 +178,10 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_end_date(input);
         self
     }
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_date()
+    }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule(input.into());
@@ -168,6 +191,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
+    }
+    /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn schedule_timezone(
@@ -185,6 +212,10 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_schedule_timezone(input);
         self
     }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    pub fn get_schedule_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_timezone()
+    }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
     /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
@@ -201,6 +232,13 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_schedule_offset(input);
         self
     }
+    /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+    /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
+    /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
+    pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
+        self.inner.get_schedule_offset()
+    }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.inner = self.inner.duration(input);
@@ -211,6 +249,10 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_duration(input);
         self
     }
+    /// <p>The duration of the maintenance window in hours.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration()
+    }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn cutoff(mut self, input: i32) -> Self {
         self.inner = self.inner.cutoff(input);
@@ -220,6 +262,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     pub fn set_cutoff(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_cutoff(input);
         self
+    }
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    pub fn get_cutoff(&self) -> &::std::option::Option<i32> {
+        self.inner.get_cutoff()
     }
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
@@ -233,6 +279,11 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_allow_unassociated_targets(input);
         self
     }
+    /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
+    /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
+    pub fn get_allow_unassociated_targets(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_unassociated_targets()
+    }
     /// <p>User-provided idempotency token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -242,6 +293,10 @@ impl CreateMaintenanceWindowFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -273,5 +328,16 @@ impl CreateMaintenanceWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// </ul> <note>
+    /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

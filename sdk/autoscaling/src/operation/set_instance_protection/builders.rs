@@ -38,6 +38,13 @@ impl SetInstanceProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetInstanceProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,12 @@ impl SetInstanceProtectionFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -151,6 +164,10 @@ impl SetInstanceProtectionFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
         self.inner = self.inner.protected_from_scale_in(input);
@@ -160,5 +177,9 @@ impl SetInstanceProtectionFluentBuilder {
     pub fn set_protected_from_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_protected_from_scale_in(input);
         self
+    }
+    /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    pub fn get_protected_from_scale_in(&self) -> &::std::option::Option<bool> {
+        self.inner.get_protected_from_scale_in()
     }
 }

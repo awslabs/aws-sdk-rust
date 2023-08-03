@@ -41,6 +41,10 @@ impl DeleteHostedZoneInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the hosted zone you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteHostedZoneInput`](crate::operation::delete_hosted_zone::DeleteHostedZoneInput).
     pub fn build(
         self,

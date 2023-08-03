@@ -70,6 +70,10 @@ impl ListElasticsearchInstanceTypesInputBuilder {
         self.elasticsearch_version = input;
         self
     }
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elasticsearch_version
+    }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,6 +98,10 @@ impl ListElasticsearchInstanceTypesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListElasticsearchInstanceTypesInput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl PublishRecipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishRecipe as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::publish_recipe::builders::PublishRecipeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl PublishRecipeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the recipe to be published, for this version of the recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the recipe to be published.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,5 +137,9 @@ impl PublishRecipeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the recipe to be published.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

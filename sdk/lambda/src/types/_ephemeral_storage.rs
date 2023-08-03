@@ -40,6 +40,10 @@ impl EphemeralStorageBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the function's <code>/tmp</code> directory.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`EphemeralStorage`](crate::types::EphemeralStorage).
     pub fn build(self) -> crate::types::EphemeralStorage {
         crate::types::EphemeralStorage { size: self.size }

@@ -50,6 +50,12 @@ impl LineChartFieldWellsBuilder {
         self.line_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a line chart.</p>
+    pub fn get_line_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineChartAggregatedFieldWells> {
+        &self.line_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`LineChartFieldWells`](crate::types::LineChartFieldWells).
     pub fn build(self) -> crate::types::LineChartFieldWells {
         crate::types::LineChartFieldWells {

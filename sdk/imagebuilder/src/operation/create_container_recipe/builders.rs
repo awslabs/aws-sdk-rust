@@ -36,6 +36,13 @@ impl CreateContainerRecipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContainerRecipe as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_container_type(input);
         self
     }
+    /// <p>The type of container to create.</p>
+    pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
+        self.inner.get_container_type()
+    }
     /// <p>The name of the container recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +150,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the container recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the container recipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +163,10 @@ impl CreateContainerRecipeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the container recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -195,6 +214,25 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
+    }
     /// Appends an item to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
@@ -212,6 +250,12 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_components(input);
         self
     }
+    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+        self.inner.get_components()
+    }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub fn instance_configuration(mut self, input: crate::types::InstanceConfiguration) -> Self {
         self.inner = self.inner.instance_configuration(input);
@@ -224,6 +268,12 @@ impl CreateContainerRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
+    }
+    /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    pub fn get_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+        self.inner.get_instance_configuration()
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
     pub fn dockerfile_template_data(
@@ -241,6 +291,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_dockerfile_template_data(input);
         self
     }
+    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    pub fn get_dockerfile_template_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dockerfile_template_data()
+    }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
     pub fn dockerfile_template_uri(
         mut self,
@@ -257,6 +311,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_dockerfile_template_uri(input);
         self
     }
+    /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
+    pub fn get_dockerfile_template_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dockerfile_template_uri()
+    }
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
     pub fn platform_override(mut self, input: crate::types::Platform) -> Self {
         self.inner = self.inner.platform_override(input);
@@ -269,6 +327,10 @@ impl CreateContainerRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform_override(input);
         self
+    }
+    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    pub fn get_platform_override(&self) -> &::std::option::Option<crate::types::Platform> {
+        self.inner.get_platform_override()
     }
     /// <p>Specifies the operating system version for the base image.</p>
     pub fn image_os_version_override(
@@ -286,6 +348,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_image_os_version_override(input);
         self
     }
+    /// <p>Specifies the operating system version for the base image.</p>
+    pub fn get_image_os_version_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_os_version_override()
+    }
     /// <p>The base image for the container recipe.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_image(input.into());
@@ -295,6 +361,10 @@ impl CreateContainerRecipeFluentBuilder {
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_image(input);
         self
+    }
+    /// <p>The base image for the container recipe.</p>
+    pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_image()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -319,6 +389,14 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags that are attached to the container recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The working directory for use during build and test workflows.</p>
     pub fn working_directory(
         mut self,
@@ -335,6 +413,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_working_directory(input);
         self
     }
+    /// <p>The working directory for use during build and test workflows.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_working_directory()
+    }
     /// <p>The destination repository for the container image.</p>
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
         self.inner = self.inner.target_repository(input);
@@ -348,6 +430,12 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_target_repository(input);
         self
     }
+    /// <p>The destination repository for the container image.</p>
+    pub fn get_target_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetContainerRepository> {
+        self.inner.get_target_repository()
+    }
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -358,6 +446,10 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The client token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -367,5 +459,9 @@ impl CreateContainerRecipeFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

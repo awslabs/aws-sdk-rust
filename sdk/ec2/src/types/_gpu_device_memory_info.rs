@@ -40,6 +40,10 @@ impl GpuDeviceMemoryInfoBuilder {
         self.size_in_mi_b = input;
         self
     }
+    /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
+    pub fn get_size_in_mi_b(&self) -> &::std::option::Option<i32> {
+        &self.size_in_mi_b
+    }
     /// Consumes the builder and constructs a [`GpuDeviceMemoryInfo`](crate::types::GpuDeviceMemoryInfo).
     pub fn build(self) -> crate::types::GpuDeviceMemoryInfo {
         crate::types::GpuDeviceMemoryInfo {

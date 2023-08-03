@@ -56,6 +56,10 @@ impl MavenReferenceBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The group ID of the Maven reference.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The artifact ID of the Maven reference.</p>
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl MavenReferenceBuilder {
         self.artifact_id = input;
         self
     }
+    /// <p>The artifact ID of the Maven reference.</p>
+    pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_id
+    }
     /// <p>The version of the Maven reference.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl MavenReferenceBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the Maven reference.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`MavenReference`](crate::types::MavenReference).
     pub fn build(self) -> crate::types::MavenReference {

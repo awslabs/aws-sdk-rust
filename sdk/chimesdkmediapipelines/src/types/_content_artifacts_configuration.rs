@@ -48,6 +48,10 @@ impl ContentArtifactsConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsState> {
+        &self.state
+    }
     /// <p>The MUX type of the artifact configuration.</p>
     pub fn mux_type(mut self, input: crate::types::ContentMuxType) -> Self {
         self.mux_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ContentArtifactsConfigurationBuilder {
     ) -> Self {
         self.mux_type = input;
         self
+    }
+    /// <p>The MUX type of the artifact configuration.</p>
+    pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::ContentMuxType> {
+        &self.mux_type
     }
     /// Consumes the builder and constructs a [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
     pub fn build(self) -> crate::types::ContentArtifactsConfiguration {

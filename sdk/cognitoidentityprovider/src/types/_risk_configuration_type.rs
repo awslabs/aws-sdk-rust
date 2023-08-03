@@ -111,6 +111,10 @@ impl RiskConfigurationTypeBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The app client ID.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl RiskConfigurationTypeBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The app client ID.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
     pub fn compromised_credentials_risk_configuration(
@@ -137,6 +145,12 @@ impl RiskConfigurationTypeBuilder {
         self.compromised_credentials_risk_configuration = input;
         self
     }
+    /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
+    pub fn get_compromised_credentials_risk_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType> {
+        &self.compromised_credentials_risk_configuration
+    }
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
     pub fn account_takeover_risk_configuration(
         mut self,
@@ -152,6 +166,12 @@ impl RiskConfigurationTypeBuilder {
     ) -> Self {
         self.account_takeover_risk_configuration = input;
         self
+    }
+    /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
+    pub fn get_account_takeover_risk_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
+        &self.account_takeover_risk_configuration
     }
     /// <p>The configuration to override the risk decision.</p>
     pub fn risk_exception_configuration(
@@ -169,6 +189,12 @@ impl RiskConfigurationTypeBuilder {
         self.risk_exception_configuration = input;
         self
     }
+    /// <p>The configuration to override the risk decision.</p>
+    pub fn get_risk_exception_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
+        &self.risk_exception_configuration
+    }
     /// <p>The last modified date.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -181,6 +207,10 @@ impl RiskConfigurationTypeBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The last modified date.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`RiskConfigurationType`](crate::types::RiskConfigurationType).
     pub fn build(self) -> crate::types::RiskConfigurationType {

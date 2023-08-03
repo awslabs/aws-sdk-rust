@@ -55,6 +55,10 @@ impl CreateWorkloadOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The ARN for the workload.</p>
     pub fn workload_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateWorkloadOutputBuilder {
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_arn = input;
         self
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

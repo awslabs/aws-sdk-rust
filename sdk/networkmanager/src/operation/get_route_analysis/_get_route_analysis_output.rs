@@ -50,6 +50,10 @@ impl GetRouteAnalysisOutputBuilder {
         self.route_analysis = input;
         self
     }
+    /// <p>The route analysis.</p>
+    pub fn get_route_analysis(&self) -> &::std::option::Option<crate::types::RouteAnalysis> {
+        &self.route_analysis
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

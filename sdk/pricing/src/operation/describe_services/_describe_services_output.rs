@@ -72,6 +72,10 @@ impl DescribeServicesOutputBuilder {
         self.services = input;
         self
     }
+    /// <p>The service metadata for the service or services in the response.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Service>> {
+        &self.services
+    }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
     pub fn format_version(
         mut self,
@@ -88,6 +92,10 @@ impl DescribeServicesOutputBuilder {
         self.format_version = input;
         self
     }
+    /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
+    pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format_version
+    }
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl DescribeServicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token for the next set of retrievable results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

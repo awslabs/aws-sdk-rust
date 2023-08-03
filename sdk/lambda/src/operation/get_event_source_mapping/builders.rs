@@ -36,6 +36,13 @@ impl GetEventSourceMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEventSourceMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_event_source_mapping::builders::GetEventSourceMappingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl GetEventSourceMappingFluentBuilder {
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uuid(input);
         self
+    }
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_uuid()
     }
 }

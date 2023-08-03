@@ -97,6 +97,10 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self.trace_content = input;
         self
     }
+    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
+        &self.trace_content
+    }
     /// Appends an item to `wireless_devices`.
     ///
     /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
@@ -118,6 +122,12 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     ) -> Self {
         self.wireless_devices = input;
         self
+    }
+    /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    pub fn get_wireless_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.wireless_devices
     }
     /// Appends an item to `wireless_gateways`.
     ///
@@ -141,6 +151,12 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self.wireless_gateways = input;
         self
     }
+    /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    pub fn get_wireless_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.wireless_gateways
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +181,10 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -170,6 +194,10 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `multicast_groups`.
     ///
@@ -192,6 +220,12 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     ) -> Self {
         self.multicast_groups = input;
         self
+    }
+    /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
+    pub fn get_multicast_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.multicast_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

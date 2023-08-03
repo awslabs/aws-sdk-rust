@@ -48,6 +48,10 @@ impl EventBatchingConditionBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn batch_window(mut self, input: i32) -> Self {
         self.batch_window = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EventBatchingConditionBuilder {
     pub fn set_batch_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_window = input;
         self
+    }
+    /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
+    pub fn get_batch_window(&self) -> &::std::option::Option<i32> {
+        &self.batch_window
     }
     /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::types::EventBatchingCondition).
     pub fn build(self) -> crate::types::EventBatchingCondition {

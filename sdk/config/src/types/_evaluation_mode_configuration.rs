@@ -40,6 +40,10 @@ impl EvaluationModeConfigurationBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`EvaluationModeConfiguration`](crate::types::EvaluationModeConfiguration).
     pub fn build(self) -> crate::types::EvaluationModeConfiguration {
         crate::types::EvaluationModeConfiguration { mode: self.mode }

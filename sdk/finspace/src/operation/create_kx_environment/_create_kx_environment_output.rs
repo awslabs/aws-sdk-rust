@@ -96,6 +96,10 @@ impl CreateKxEnvironmentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the kdb environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the kdb environment.</p>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl CreateKxEnvironmentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the kdb environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
+        &self.status
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
@@ -125,6 +133,10 @@ impl CreateKxEnvironmentOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>A description for the kdb environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl CreateKxEnvironmentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the kdb environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN identifier of the environment.</p>
     pub fn environment_arn(
@@ -151,6 +167,10 @@ impl CreateKxEnvironmentOutputBuilder {
         self.environment_arn = input;
         self
     }
+    /// <p>The ARN identifier of the environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
+    }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -160,6 +180,10 @@ impl CreateKxEnvironmentOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +197,10 @@ impl CreateKxEnvironmentOutputBuilder {
     ) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

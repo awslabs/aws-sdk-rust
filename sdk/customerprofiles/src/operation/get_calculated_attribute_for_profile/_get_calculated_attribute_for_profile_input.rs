@@ -55,6 +55,10 @@ impl GetCalculatedAttributeForProfileInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetCalculatedAttributeForProfileInputBuilder {
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
@@ -80,6 +88,10 @@ impl GetCalculatedAttributeForProfileInputBuilder {
     ) -> Self {
         self.calculated_attribute_name = input;
         self
+    }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_attribute_name
     }
     /// Consumes the builder and constructs a [`GetCalculatedAttributeForProfileInput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput, ::aws_smithy_http::operation::error::BuildError>{

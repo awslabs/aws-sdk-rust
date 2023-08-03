@@ -143,6 +143,10 @@ impl EndpointBatchItemBuilder {
         self.address = input;
         self
     }
+    /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -173,6 +177,15 @@ impl EndpointBatchItemBuilder {
         self.attributes = input;
         self
     }
+    /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p>
+    /// <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.attributes
+    }
     /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
         self.channel_type = ::std::option::Option::Some(input);
@@ -186,6 +199,10 @@ impl EndpointBatchItemBuilder {
         self.channel_type = input;
         self
     }
+    /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
+    pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        &self.channel_type
+    }
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
     pub fn demographic(mut self, input: crate::types::EndpointDemographic) -> Self {
         self.demographic = ::std::option::Option::Some(input);
@@ -198,6 +215,10 @@ impl EndpointBatchItemBuilder {
     ) -> Self {
         self.demographic = input;
         self
+    }
+    /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
+    pub fn get_demographic(&self) -> &::std::option::Option<crate::types::EndpointDemographic> {
+        &self.demographic
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created or updated.</p>
     pub fn effective_date(
@@ -214,6 +235,10 @@ impl EndpointBatchItemBuilder {
     ) -> Self {
         self.effective_date = input;
         self
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint was created or updated.</p>
+    pub fn get_effective_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_date
     }
     /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
@@ -233,6 +258,11 @@ impl EndpointBatchItemBuilder {
         self.endpoint_status = input;
         self
     }
+    /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
+    /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_status
+    }
     /// <p>The unique identifier for the endpoint in the context of the batch.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -242,6 +272,10 @@ impl EndpointBatchItemBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the endpoint in the context of the batch.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The geographic information for the endpoint.</p>
     pub fn location(mut self, input: crate::types::EndpointLocation) -> Self {
@@ -255,6 +289,10 @@ impl EndpointBatchItemBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The geographic information for the endpoint.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::EndpointLocation> {
+        &self.location
     }
     /// Adds a key-value pair to `metrics`.
     ///
@@ -275,6 +313,12 @@ impl EndpointBatchItemBuilder {
         self.metrics = input;
         self
     }
+    /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.metrics
+    }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
     pub fn opt_out(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out = ::std::option::Option::Some(input.into());
@@ -284,6 +328,10 @@ impl EndpointBatchItemBuilder {
     pub fn set_opt_out(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out = input;
         self
+    }
+    /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
+    pub fn get_opt_out(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out
     }
     /// <p>The unique identifier for the request to create or update the endpoint.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -295,6 +343,10 @@ impl EndpointBatchItemBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The unique identifier for the request to create or update the endpoint.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
     pub fn user(mut self, input: crate::types::EndpointUser) -> Self {
         self.user = ::std::option::Option::Some(input);
@@ -304,6 +356,10 @@ impl EndpointBatchItemBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::EndpointUser>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::EndpointUser> {
+        &self.user
     }
     /// Consumes the builder and constructs a [`EndpointBatchItem`](crate::types::EndpointBatchItem).
     pub fn build(self) -> crate::types::EndpointBatchItem {

@@ -36,6 +36,10 @@ impl TagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_resource::builders::TagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>An ARN of a CloudFront resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource()
+    }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.inner = self.inner.tags(input);
@@ -127,5 +135,9 @@ impl TagResourceFluentBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        self.inner.get_tags()
     }
 }

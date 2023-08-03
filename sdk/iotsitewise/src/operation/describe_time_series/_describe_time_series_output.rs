@@ -121,6 +121,10 @@ impl DescribeTimeSeriesOutputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl DescribeTimeSeriesOutputBuilder {
         self.property_id = input;
         self
     }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
+    }
     /// <p>The alias that identifies the time series.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl DescribeTimeSeriesOutputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The ID of the time series.</p>
     pub fn time_series_id(
@@ -157,6 +169,10 @@ impl DescribeTimeSeriesOutputBuilder {
         self.time_series_id = input;
         self
     }
+    /// <p>The ID of the time series.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
+    }
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
@@ -171,6 +187,11 @@ impl DescribeTimeSeriesOutputBuilder {
     ) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the time series.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::PropertyDataType> {
+        &self.data_type
     }
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
@@ -190,6 +211,11 @@ impl DescribeTimeSeriesOutputBuilder {
         self.data_type_spec = input;
         self
     }
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    pub fn get_data_type_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type_spec
+    }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
     pub fn time_series_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_series_creation_date = ::std::option::Option::Some(input);
@@ -203,6 +229,12 @@ impl DescribeTimeSeriesOutputBuilder {
         self.time_series_creation_date = input;
         self
     }
+    /// <p>The date that the time series was created, in Unix epoch time.</p>
+    pub fn get_time_series_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_series_creation_date
+    }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     pub fn time_series_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_series_last_update_date = ::std::option::Option::Some(input);
@@ -215,6 +247,12 @@ impl DescribeTimeSeriesOutputBuilder {
     ) -> Self {
         self.time_series_last_update_date = input;
         self
+    }
+    /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    pub fn get_time_series_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_series_last_update_date
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
@@ -233,6 +271,11 @@ impl DescribeTimeSeriesOutputBuilder {
     ) -> Self {
         self.time_series_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    pub fn get_time_series_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

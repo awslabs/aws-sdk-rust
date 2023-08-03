@@ -91,6 +91,10 @@ impl AwsEfsAccessPointDetailsBuilder {
         self.access_point_id = input;
         self
     }
+    /// <p>The ID of the Amazon EFS access point. </p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl AwsEfsAccessPointDetailsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl AwsEfsAccessPointDetailsBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
     pub fn file_system_id(
@@ -127,6 +139,10 @@ impl AwsEfsAccessPointDetailsBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
     pub fn posix_user(mut self, input: crate::types::AwsEfsAccessPointPosixUserDetails) -> Self {
         self.posix_user = ::std::option::Option::Some(input);
@@ -139,6 +155,12 @@ impl AwsEfsAccessPointDetailsBuilder {
     ) -> Self {
         self.posix_user = input;
         self
+    }
+    /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
+    pub fn get_posix_user(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEfsAccessPointPosixUserDetails> {
+        &self.posix_user
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
     pub fn root_directory(
@@ -155,6 +177,12 @@ impl AwsEfsAccessPointDetailsBuilder {
     ) -> Self {
         self.root_directory = input;
         self
+    }
+    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
+    pub fn get_root_directory(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails> {
+        &self.root_directory
     }
     /// Consumes the builder and constructs a [`AwsEfsAccessPointDetails`](crate::types::AwsEfsAccessPointDetails).
     pub fn build(self) -> crate::types::AwsEfsAccessPointDetails {

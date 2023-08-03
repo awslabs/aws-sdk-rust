@@ -45,6 +45,12 @@ impl PublicDnsNamespacePropertiesBuilder {
         self.dns_properties = input;
         self
     }
+    /// <p>DNS properties for the public DNS namespace.</p>
+    pub fn get_dns_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicDnsPropertiesMutable> {
+        &self.dns_properties
+    }
     /// Consumes the builder and constructs a [`PublicDnsNamespaceProperties`](crate::types::PublicDnsNamespaceProperties).
     pub fn build(self) -> crate::types::PublicDnsNamespaceProperties {
         crate::types::PublicDnsNamespaceProperties {

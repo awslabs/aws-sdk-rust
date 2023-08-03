@@ -168,6 +168,10 @@ impl FileSystemDescriptionBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account that created the file system.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The opaque string specified in the request.</p>
     pub fn creation_token(
         mut self,
@@ -183,6 +187,10 @@ impl FileSystemDescriptionBuilder {
     ) -> Self {
         self.creation_token = input;
         self
+    }
+    /// <p>The opaque string specified in the request.</p>
+    pub fn get_creation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_token
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
     pub fn file_system_id(
@@ -200,6 +208,10 @@ impl FileSystemDescriptionBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
     pub fn file_system_arn(
         mut self,
@@ -216,6 +228,10 @@ impl FileSystemDescriptionBuilder {
         self.file_system_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
+    pub fn get_file_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_arn
+    }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -228,6 +244,10 @@ impl FileSystemDescriptionBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The lifecycle phase of the file system.</p>
     pub fn life_cycle_state(mut self, input: crate::types::LifeCycleState) -> Self {
@@ -242,6 +262,10 @@ impl FileSystemDescriptionBuilder {
         self.life_cycle_state = input;
         self
     }
+    /// <p>The lifecycle phase of the file system.</p>
+    pub fn get_life_cycle_state(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
+        &self.life_cycle_state
+    }
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -252,6 +276,10 @@ impl FileSystemDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
     pub fn number_of_mount_targets(mut self, input: i32) -> Self {
         self.number_of_mount_targets = ::std::option::Option::Some(input);
@@ -261,6 +289,10 @@ impl FileSystemDescriptionBuilder {
     pub fn set_number_of_mount_targets(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_mount_targets = input;
         self
+    }
+    /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
+    pub fn get_number_of_mount_targets(&self) -> &::std::option::Option<i32> {
+        &self.number_of_mount_targets
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
     pub fn size_in_bytes(mut self, input: crate::types::FileSystemSize) -> Self {
@@ -275,6 +307,10 @@ impl FileSystemDescriptionBuilder {
         self.size_in_bytes = input;
         self
     }
+    /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<crate::types::FileSystemSize> {
+        &self.size_in_bytes
+    }
     /// <p>The performance mode of the file system.</p>
     pub fn performance_mode(mut self, input: crate::types::PerformanceMode) -> Self {
         self.performance_mode = ::std::option::Option::Some(input);
@@ -288,6 +324,10 @@ impl FileSystemDescriptionBuilder {
         self.performance_mode = input;
         self
     }
+    /// <p>The performance mode of the file system.</p>
+    pub fn get_performance_mode(&self) -> &::std::option::Option<crate::types::PerformanceMode> {
+        &self.performance_mode
+    }
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -298,6 +338,10 @@ impl FileSystemDescriptionBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -307,6 +351,10 @@ impl FileSystemDescriptionBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     pub fn throughput_mode(mut self, input: crate::types::ThroughputMode) -> Self {
@@ -321,6 +369,10 @@ impl FileSystemDescriptionBuilder {
         self.throughput_mode = input;
         self
     }
+    /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
+    pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
+        &self.throughput_mode
+    }
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
         self.provisioned_throughput_in_mibps = ::std::option::Option::Some(input);
@@ -333,6 +385,10 @@ impl FileSystemDescriptionBuilder {
     ) -> Self {
         self.provisioned_throughput_in_mibps = input;
         self
+    }
+    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
+        &self.provisioned_throughput_in_mibps
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn availability_zone_name(
@@ -350,6 +406,10 @@ impl FileSystemDescriptionBuilder {
         self.availability_zone_name = input;
         self
     }
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn get_availability_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_name
+    }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub fn availability_zone_id(
         mut self,
@@ -365,6 +425,10 @@ impl FileSystemDescriptionBuilder {
     ) -> Self {
         self.availability_zone_id = input;
         self
+    }
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// Appends an item to `tags`.
     ///
@@ -384,6 +448,10 @@ impl FileSystemDescriptionBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`FileSystemDescription`](crate::types::FileSystemDescription).
     pub fn build(self) -> crate::types::FileSystemDescription {

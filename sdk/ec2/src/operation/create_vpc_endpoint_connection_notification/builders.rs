@@ -37,6 +37,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcEndpointConnectionNotification as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the endpoint service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
@@ -110,6 +118,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
+    }
+    /// <p>The ID of the endpoint service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
     }
     /// <p>The ID of the endpoint.</p>
     pub fn vpc_endpoint_id(
@@ -127,6 +139,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
         self.inner = self.inner.set_vpc_endpoint_id(input);
         self
     }
+    /// <p>The ID of the endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_endpoint_id()
+    }
     /// <p>The ARN of the SNS topic for the notifications.</p>
     pub fn connection_notification_arn(
         mut self,
@@ -142,6 +158,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_notification_arn(input);
         self
+    }
+    /// <p>The ARN of the SNS topic for the notifications.</p>
+    pub fn get_connection_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_notification_arn()
     }
     /// Appends an item to `ConnectionEvents`.
     ///
@@ -163,6 +183,12 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
         self.inner = self.inner.set_connection_events(input);
         self
     }
+    /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
+    pub fn get_connection_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_connection_events()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -172,5 +198,9 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -59,6 +59,10 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `instance_credit_specifications`.
     ///
@@ -92,6 +100,13 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
     ) -> Self {
         self.instance_credit_specifications = input;
         self
+    }
+    /// <p>Information about the credit option for CPU usage.</p>
+    pub fn get_instance_credit_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>
+    {
+        &self.instance_credit_specifications
     }
     /// Consumes the builder and constructs a [`ModifyInstanceCreditSpecificationInput`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput, ::aws_smithy_http::operation::error::BuildError>{

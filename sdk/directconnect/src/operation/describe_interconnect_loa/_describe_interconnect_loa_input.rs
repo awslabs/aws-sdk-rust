@@ -63,6 +63,10 @@ impl DescribeInterconnectLoaInputBuilder {
         self.interconnect_id = input;
         self
     }
+    /// <p>The ID of the interconnect.</p>
+    pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_id
+    }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub fn provider_name(
         mut self,
@@ -79,6 +83,10 @@ impl DescribeInterconnectLoaInputBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn loa_content_type(mut self, input: crate::types::LoaContentType) -> Self {
         self.loa_content_type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl DescribeInterconnectLoaInputBuilder {
     ) -> Self {
         self.loa_content_type = input;
         self
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn get_loa_content_type(&self) -> &::std::option::Option<crate::types::LoaContentType> {
+        &self.loa_content_type
     }
     /// Consumes the builder and constructs a [`DescribeInterconnectLoaInput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput).
     pub fn build(

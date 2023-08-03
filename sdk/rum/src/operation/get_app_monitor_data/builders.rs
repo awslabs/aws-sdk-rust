@@ -36,6 +36,12 @@ impl GetAppMonitorDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAppMonitorData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetAppMonitorDataFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.inner = self.inner.time_range(input);
@@ -146,6 +156,10 @@ impl GetAppMonitorDataFluentBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.inner = self.inner.set_time_range(input);
         self
+    }
+    /// <p>A structure that defines the time range that you want to retrieve results from.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        self.inner.get_time_range()
     }
     /// Appends an item to `Filters`.
     ///
@@ -164,6 +178,12 @@ impl GetAppMonitorDataFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -174,6 +194,10 @@ impl GetAppMonitorDataFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in one operation. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -183,5 +207,9 @@ impl GetAppMonitorDataFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

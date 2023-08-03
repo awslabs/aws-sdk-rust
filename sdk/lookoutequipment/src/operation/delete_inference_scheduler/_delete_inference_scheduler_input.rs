@@ -47,6 +47,10 @@ impl DeleteInferenceSchedulerInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler to be deleted. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// Consumes the builder and constructs a [`DeleteInferenceSchedulerInput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput).
     pub fn build(
         self,

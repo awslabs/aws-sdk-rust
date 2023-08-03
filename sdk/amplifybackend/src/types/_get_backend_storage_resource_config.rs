@@ -64,6 +64,10 @@ impl GetBackendStorageResourceConfigBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>Returns True if the storage resource has been imported.</p>
     pub fn imported(mut self, input: bool) -> Self {
         self.imported = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl GetBackendStorageResourceConfigBuilder {
     pub fn set_imported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.imported = input;
         self
+    }
+    /// <p>Returns True if the storage resource has been imported.</p>
+    pub fn get_imported(&self) -> &::std::option::Option<bool> {
+        &self.imported
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     pub fn permissions(mut self, input: crate::types::BackendStoragePermissions) -> Self {
@@ -87,6 +95,12 @@ impl GetBackendStorageResourceConfigBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The authorization configuration for the storage S3 bucket.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendStoragePermissions> {
+        &self.permissions
+    }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
@@ -99,6 +113,10 @@ impl GetBackendStorageResourceConfigBuilder {
     ) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`GetBackendStorageResourceConfig`](crate::types::GetBackendStorageResourceConfig).
     pub fn build(self) -> crate::types::GetBackendStorageResourceConfig {

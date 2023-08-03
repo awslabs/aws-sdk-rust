@@ -64,6 +64,13 @@ impl BatchStartRecommendationsOutputBuilder {
         self.error_entries = input;
         self
     }
+    /// <p>A list with error details about the analysis of each source database.</p>
+    pub fn get_error_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartRecommendationsErrorEntry>>
+    {
+        &self.error_entries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

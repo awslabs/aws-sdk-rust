@@ -76,6 +76,10 @@ impl MixedMeasureMappingBuilder {
         self.measure_name = input;
         self
     }
+    /// <p>Refers to the value of measure_name in a result row. This field is required if MeasureNameColumn is provided.</p>
+    pub fn get_measure_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_name
+    }
     /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
     pub fn source_column(
         mut self,
@@ -91,6 +95,10 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.source_column = input;
         self
+    }
+    /// <p>This field refers to the source column from which measure-value is to be read for result materialization.</p>
+    pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_column
     }
     /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
     pub fn target_measure_name(
@@ -108,6 +116,10 @@ impl MixedMeasureMappingBuilder {
         self.target_measure_name = input;
         self
     }
+    /// <p>Target measure name to be used. If not provided, the target measure name by default would be measure-name if provided, or sourceColumn otherwise. </p>
+    pub fn get_target_measure_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_measure_name
+    }
     /// <p>Type of the value that is to be read from sourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.</p>
     pub fn measure_value_type(mut self, input: crate::types::MeasureValueType) -> Self {
         self.measure_value_type = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.measure_value_type = input;
         self
+    }
+    /// <p>Type of the value that is to be read from sourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.</p>
+    pub fn get_measure_value_type(&self) -> &::std::option::Option<crate::types::MeasureValueType> {
+        &self.measure_value_type
     }
     /// Appends an item to `multi_measure_attribute_mappings`.
     ///
@@ -142,6 +158,12 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.multi_measure_attribute_mappings = input;
         self
+    }
+    /// <p>Required when measureValueType is MULTI. Attribute mappings for MULTI value measures.</p>
+    pub fn get_multi_measure_attribute_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+        &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MixedMeasureMapping`](crate::types::MixedMeasureMapping).
     pub fn build(self) -> crate::types::MixedMeasureMapping {

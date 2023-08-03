@@ -58,6 +58,10 @@ impl ModifyAquaConfigurationInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to be modified.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         mut self,
@@ -73,6 +77,12 @@ impl ModifyAquaConfigurationInputBuilder {
     ) -> Self {
         self.aqua_configuration_status = input;
         self
+    }
+    /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    pub fn get_aqua_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+        &self.aqua_configuration_status
     }
     /// Consumes the builder and constructs a [`ModifyAquaConfigurationInput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput).
     pub fn build(

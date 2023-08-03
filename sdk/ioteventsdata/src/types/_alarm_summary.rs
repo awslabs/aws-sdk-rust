@@ -102,6 +102,10 @@ impl AlarmSummaryBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// <p>The version of the alarm model.</p>
     pub fn alarm_model_version(
         mut self,
@@ -118,6 +122,10 @@ impl AlarmSummaryBuilder {
         self.alarm_model_version = input;
         self
     }
+    /// <p>The version of the alarm model.</p>
+    pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_version
+    }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl AlarmSummaryBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -157,6 +169,18 @@ impl AlarmSummaryBuilder {
         self.state_name = input;
         self
     }
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// </ul>
+    pub fn get_state_name(&self) -> &::std::option::Option<crate::types::AlarmStateName> {
+        &self.state_name
+    }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl AlarmSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the alarm was created, in the Unix epoch format.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -182,6 +210,10 @@ impl AlarmSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`AlarmSummary`](crate::types::AlarmSummary).
     pub fn build(self) -> crate::types::AlarmSummary {

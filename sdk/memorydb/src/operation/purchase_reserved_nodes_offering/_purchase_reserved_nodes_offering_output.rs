@@ -49,6 +49,10 @@ impl PurchaseReservedNodesOfferingOutputBuilder {
         self.reserved_node = input;
         self
     }
+    /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
+    pub fn get_reserved_node(&self) -> &::std::option::Option<crate::types::ReservedNode> {
+        &self.reserved_node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

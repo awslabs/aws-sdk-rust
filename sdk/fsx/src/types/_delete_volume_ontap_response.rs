@@ -54,6 +54,10 @@ impl DeleteVolumeOntapResponseBuilder {
         self.final_backup_id = input;
         self
     }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_final_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_backup_id
+    }
     /// Appends an item to `final_backup_tags`.
     ///
     /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
@@ -72,6 +76,12 @@ impl DeleteVolumeOntapResponseBuilder {
     ) -> Self {
         self.final_backup_tags = input;
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_final_backup_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteVolumeOntapResponse`](crate::types::DeleteVolumeOntapResponse).
     pub fn build(self) -> crate::types::DeleteVolumeOntapResponse {

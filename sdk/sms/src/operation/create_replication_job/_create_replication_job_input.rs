@@ -126,6 +126,10 @@ impl CreateReplicationJobInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The ID of the server.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The seed replication time.</p>
     pub fn seed_replication_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.seed_replication_time = ::std::option::Option::Some(input);
@@ -139,6 +143,12 @@ impl CreateReplicationJobInputBuilder {
         self.seed_replication_time = input;
         self
     }
+    /// <p>The seed replication time.</p>
+    pub fn get_seed_replication_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.seed_replication_time
+    }
     /// <p>The time between consecutive replication runs, in hours.</p>
     pub fn frequency(mut self, input: i32) -> Self {
         self.frequency = ::std::option::Option::Some(input);
@@ -149,6 +159,10 @@ impl CreateReplicationJobInputBuilder {
         self.frequency = input;
         self
     }
+    /// <p>The time between consecutive replication runs, in hours.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<i32> {
+        &self.frequency
+    }
     /// <p>Indicates whether to run the replication job one time.</p>
     pub fn run_once(mut self, input: bool) -> Self {
         self.run_once = ::std::option::Option::Some(input);
@@ -158,6 +172,10 @@ impl CreateReplicationJobInputBuilder {
     pub fn set_run_once(mut self, input: ::std::option::Option<bool>) -> Self {
         self.run_once = input;
         self
+    }
+    /// <p>Indicates whether to run the replication job one time.</p>
+    pub fn get_run_once(&self) -> &::std::option::Option<bool> {
+        &self.run_once
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
@@ -172,6 +190,10 @@ impl CreateReplicationJobInputBuilder {
         self.license_type = input;
         self
     }
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        &self.license_type
+    }
     /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -181,6 +203,10 @@ impl CreateReplicationJobInputBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// <p>The description of the replication job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +218,10 @@ impl CreateReplicationJobInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the replication job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
         self.number_of_recent_amis_to_keep = ::std::option::Option::Some(input);
@@ -202,6 +232,10 @@ impl CreateReplicationJobInputBuilder {
         self.number_of_recent_amis_to_keep = input;
         self
     }
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    pub fn get_number_of_recent_amis_to_keep(&self) -> &::std::option::Option<i32> {
+        &self.number_of_recent_amis_to_keep
+    }
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -211,6 +245,10 @@ impl CreateReplicationJobInputBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -235,6 +273,17 @@ impl CreateReplicationJobInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`CreateReplicationJobInput`](crate::operation::create_replication_job::CreateReplicationJobInput).
     pub fn build(

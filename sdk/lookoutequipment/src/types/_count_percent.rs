@@ -48,6 +48,10 @@ impl CountPercentBuilder {
         self.count = input;
         self
     }
+    /// <p> Indicates the count of occurences of the given statistic. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub fn percentage(mut self, input: f32) -> Self {
         self.percentage = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CountPercentBuilder {
     pub fn set_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percentage = input;
         self
+    }
+    /// <p> Indicates the percentage of occurances of the given statistic. </p>
+    pub fn get_percentage(&self) -> &::std::option::Option<f32> {
+        &self.percentage
     }
     /// Consumes the builder and constructs a [`CountPercent`](crate::types::CountPercent).
     pub fn build(self) -> crate::types::CountPercent {

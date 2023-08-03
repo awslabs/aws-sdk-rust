@@ -45,6 +45,10 @@ impl GetChannelGroupInputBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// Consumes the builder and constructs a [`GetChannelGroupInput`](crate::operation::get_channel_group::GetChannelGroupInput).
     pub fn build(
         self,

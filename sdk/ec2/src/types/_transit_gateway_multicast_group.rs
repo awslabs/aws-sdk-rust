@@ -129,6 +129,10 @@ impl TransitGatewayMulticastGroupBuilder {
         self.group_ip_address = input;
         self
     }
+    /// <p>The IP address assigned to the transit gateway multicast group.</p>
+    pub fn get_group_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_ip_address
+    }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -145,6 +149,12 @@ impl TransitGatewayMulticastGroupBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -155,6 +165,10 @@ impl TransitGatewayMulticastGroupBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -164,6 +178,10 @@ impl TransitGatewayMulticastGroupBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub fn resource_type(
@@ -181,6 +199,12 @@ impl TransitGatewayMulticastGroupBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource, for example a VPC attachment.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
+        &self.resource_type
+    }
     /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
     pub fn resource_owner_id(
         mut self,
@@ -196,6 +220,10 @@ impl TransitGatewayMulticastGroupBuilder {
     ) -> Self {
         self.resource_owner_id = input;
         self
+    }
+    /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
+    pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_id
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn network_interface_id(
@@ -213,6 +241,10 @@ impl TransitGatewayMulticastGroupBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
     pub fn group_member(mut self, input: bool) -> Self {
         self.group_member = ::std::option::Option::Some(input);
@@ -224,6 +256,10 @@ impl TransitGatewayMulticastGroupBuilder {
         self
     }
     /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
+    pub fn get_group_member(&self) -> &::std::option::Option<bool> {
+        &self.group_member
+    }
+    /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
     pub fn group_source(mut self, input: bool) -> Self {
         self.group_source = ::std::option::Option::Some(input);
         self
@@ -232,6 +268,10 @@ impl TransitGatewayMulticastGroupBuilder {
     pub fn set_group_source(mut self, input: ::std::option::Option<bool>) -> Self {
         self.group_source = input;
         self
+    }
+    /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
+    pub fn get_group_source(&self) -> &::std::option::Option<bool> {
+        &self.group_source
     }
     /// <p>The member type (for example, <code>static</code>).</p>
     pub fn member_type(mut self, input: crate::types::MembershipType) -> Self {
@@ -246,6 +286,10 @@ impl TransitGatewayMulticastGroupBuilder {
         self.member_type = input;
         self
     }
+    /// <p>The member type (for example, <code>static</code>).</p>
+    pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
+        &self.member_type
+    }
     /// <p>The source type.</p>
     pub fn source_type(mut self, input: crate::types::MembershipType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -258,6 +302,10 @@ impl TransitGatewayMulticastGroupBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`TransitGatewayMulticastGroup`](crate::types::TransitGatewayMulticastGroup).
     pub fn build(self) -> crate::types::TransitGatewayMulticastGroup {

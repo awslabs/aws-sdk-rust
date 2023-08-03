@@ -78,6 +78,12 @@ impl ReferenceLineDataConfigurationBuilder {
         self.static_configuration = input;
         self
     }
+    /// <p>The static data configuration of the reference line data configuration.</p>
+    pub fn get_static_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration> {
+        &self.static_configuration
+    }
     /// <p>The dynamic configuration of the reference line data configuration.</p>
     pub fn dynamic_configuration(
         mut self,
@@ -93,6 +99,12 @@ impl ReferenceLineDataConfigurationBuilder {
     ) -> Self {
         self.dynamic_configuration = input;
         self
+    }
+    /// <p>The dynamic configuration of the reference line data configuration.</p>
+    pub fn get_dynamic_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration> {
+        &self.dynamic_configuration
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
@@ -114,6 +126,14 @@ impl ReferenceLineDataConfigurationBuilder {
     ) -> Self {
         self.axis_binding = input;
         self
+    }
+    /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p>PrimaryY</p> </li>
+    /// <li> <p>SecondaryY</p> </li>
+    /// </ul>
+    pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
+        &self.axis_binding
     }
     /// Consumes the builder and constructs a [`ReferenceLineDataConfiguration`](crate::types::ReferenceLineDataConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineDataConfiguration {

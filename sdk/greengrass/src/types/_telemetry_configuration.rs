@@ -57,6 +57,12 @@ impl TelemetryConfigurationBuilder {
         self.configuration_sync_status = input;
         self
     }
+    /// Synchronization status of the device reported configuration with the desired configuration.
+    pub fn get_configuration_sync_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationSyncStatus> {
+        &self.configuration_sync_status
+    }
     /// Configure telemetry to be on or off.
     pub fn telemetry(mut self, input: crate::types::Telemetry) -> Self {
         self.telemetry = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl TelemetryConfigurationBuilder {
     pub fn set_telemetry(mut self, input: ::std::option::Option<crate::types::Telemetry>) -> Self {
         self.telemetry = input;
         self
+    }
+    /// Configure telemetry to be on or off.
+    pub fn get_telemetry(&self) -> &::std::option::Option<crate::types::Telemetry> {
+        &self.telemetry
     }
     /// Consumes the builder and constructs a [`TelemetryConfiguration`](crate::types::TelemetryConfiguration).
     pub fn build(self) -> crate::types::TelemetryConfiguration {

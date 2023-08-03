@@ -61,6 +61,12 @@ impl ExecutionResultsBuilder {
         self.steps = input;
         self
     }
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub fn get_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>> {
+        &self.steps
+    }
     /// Appends an item to `on_exception_steps`.
     ///
     /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
@@ -79,6 +85,12 @@ impl ExecutionResultsBuilder {
     ) -> Self {
         self.on_exception_steps = input;
         self
+    }
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    pub fn get_on_exception_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>> {
+        &self.on_exception_steps
     }
     /// Consumes the builder and constructs a [`ExecutionResults`](crate::types::ExecutionResults).
     pub fn build(self) -> crate::types::ExecutionResults {

@@ -105,6 +105,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self.channel_id = input;
         self
     }
+    /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -138,6 +150,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self.notify_on_create_or_reopen_case = input;
         self
     }
+    /// <p>Whether you want to get notified when a support case is created or reopened.</p>
+    pub fn get_notify_on_create_or_reopen_case(&self) -> &::std::option::Option<bool> {
+        &self.notify_on_create_or_reopen_case
+    }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
         self.notify_on_add_correspondence_to_case = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self.notify_on_add_correspondence_to_case = input;
         self
     }
+    /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
+    pub fn get_notify_on_add_correspondence_to_case(&self) -> &::std::option::Option<bool> {
+        &self.notify_on_add_correspondence_to_case
+    }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
         self.notify_on_resolve_case = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
     pub fn set_notify_on_resolve_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_on_resolve_case = input;
         self
+    }
+    /// <p>Whether you want to get notified when a support case is resolved.</p>
+    pub fn get_notify_on_resolve_case(&self) -> &::std::option::Option<bool> {
+        &self.notify_on_resolve_case
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     pub fn notify_on_case_severity(
@@ -177,6 +201,12 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
         self.notify_on_case_severity = input;
         self
     }
+    /// <p>The case severity for a support case that you want to receive notifications.</p>
+    pub fn get_notify_on_case_severity(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
+        &self.notify_on_case_severity
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(
         mut self,
@@ -192,6 +222,10 @@ impl UpdateSlackChannelConfigurationOutputBuilder {
     ) -> Self {
         self.channel_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+    pub fn get_channel_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

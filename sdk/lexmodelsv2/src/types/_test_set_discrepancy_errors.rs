@@ -68,6 +68,12 @@ impl TestSetDiscrepancyErrorsBuilder {
         self.intent_discrepancies = input;
         self
     }
+    /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
+    pub fn get_intent_discrepancies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>> {
+        &self.intent_discrepancies
+    }
     /// Appends an item to `slot_discrepancies`.
     ///
     /// To override the contents of this collection use [`set_slot_discrepancies`](Self::set_slot_discrepancies).
@@ -86,6 +92,12 @@ impl TestSetDiscrepancyErrorsBuilder {
     ) -> Self {
         self.slot_discrepancies = input;
         self
+    }
+    /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
+    pub fn get_slot_discrepancies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>> {
+        &self.slot_discrepancies
     }
     /// Consumes the builder and constructs a [`TestSetDiscrepancyErrors`](crate::types::TestSetDiscrepancyErrors).
     pub fn build(self) -> crate::types::TestSetDiscrepancyErrors {

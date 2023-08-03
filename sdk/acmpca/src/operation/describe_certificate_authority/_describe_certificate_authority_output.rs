@@ -51,6 +51,12 @@ impl DescribeCertificateAuthorityOutputBuilder {
         self.certificate_authority = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+    pub fn get_certificate_authority(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateAuthority> {
+        &self.certificate_authority
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

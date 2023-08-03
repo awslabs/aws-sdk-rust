@@ -53,6 +53,10 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.expiration_settings = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
     ) -> Self {
         self.expiration_settings = input;
         self
+    }
+    /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`PutAppInstanceUserExpirationSettingsInput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput, ::aws_smithy_http::operation::error::BuildError>{

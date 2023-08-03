@@ -37,6 +37,10 @@ impl PutInvitationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInvitationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl PutInvitationConfigurationFluentBuilder {
         self.inner = self.inner.set_organization_name(input);
         self
     }
+    /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_name()
+    }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(
         mut self,
@@ -148,6 +156,10 @@ impl PutInvitationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_contact_email(input);
         self
+    }
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
+    pub fn get_contact_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_email()
     }
     /// Appends an item to `PrivateSkillIds`.
     ///
@@ -168,5 +180,11 @@ impl PutInvitationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_private_skill_ids(input);
         self
+    }
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
+    pub fn get_private_skill_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_private_skill_ids()
     }
 }

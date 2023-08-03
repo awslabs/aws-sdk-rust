@@ -40,6 +40,10 @@ impl TcpRouteMatchBuilder {
         self.port = input;
         self
     }
+    /// <p>The port number to match on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// Consumes the builder and constructs a [`TcpRouteMatch`](crate::types::TcpRouteMatch).
     pub fn build(self) -> crate::types::TcpRouteMatch {
         crate::types::TcpRouteMatch { port: self.port }

@@ -67,6 +67,10 @@ impl SemtechGnssDetailBuilder {
         self.provider = input;
         self
     }
+    /// <p>The vendor of the solver object.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::PositionSolverProvider> {
+        &self.provider
+    }
     /// <p>The type of positioning solver used.</p>
     pub fn r#type(mut self, input: crate::types::PositionSolverType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl SemtechGnssDetailBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of positioning solver used.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PositionSolverType> {
+        &self.r#type
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn status(mut self, input: crate::types::PositionConfigurationStatus) -> Self {
@@ -93,6 +101,10 @@ impl SemtechGnssDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The status indicating whether the solver is enabled.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PositionConfigurationStatus> {
+        &self.status
+    }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
         self.fec = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl SemtechGnssDetailBuilder {
     ) -> Self {
         self.fec = input;
         self
+    }
+    /// <p>Whether forward error correction is enabled.</p>
+    pub fn get_fec(&self) -> &::std::option::Option<crate::types::PositionConfigurationFec> {
+        &self.fec
     }
     /// Consumes the builder and constructs a [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
     pub fn build(self) -> crate::types::SemtechGnssDetail {

@@ -39,6 +39,10 @@ impl DescribeEventsDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the events detection job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeEventsDetectionJobInput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput).
     pub fn build(
         self,

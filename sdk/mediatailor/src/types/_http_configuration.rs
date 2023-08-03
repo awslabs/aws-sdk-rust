@@ -40,6 +40,10 @@ impl HttpConfigurationBuilder {
         self.base_url = input;
         self
     }
+    /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
+    pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_url
+    }
     /// Consumes the builder and constructs a [`HttpConfiguration`](crate::types::HttpConfiguration).
     pub fn build(self) -> crate::types::HttpConfiguration {
         crate::types::HttpConfiguration {

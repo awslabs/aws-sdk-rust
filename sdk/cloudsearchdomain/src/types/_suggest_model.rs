@@ -56,6 +56,10 @@ impl SuggestModelBuilder {
         self.query = input;
         self
     }
+    /// <p>The query string specified in the suggest request.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>The number of documents that were found to match the query string.</p>
     pub fn found(mut self, input: i64) -> Self {
         self.found = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SuggestModelBuilder {
     pub fn set_found(mut self, input: ::std::option::Option<i64>) -> Self {
         self.found = input;
         self
+    }
+    /// <p>The number of documents that were found to match the query string.</p>
+    pub fn get_found(&self) -> &::std::option::Option<i64> {
+        &self.found
     }
     /// Appends an item to `suggestions`.
     ///
@@ -84,6 +92,12 @@ impl SuggestModelBuilder {
     ) -> Self {
         self.suggestions = input;
         self
+    }
+    /// <p>The documents that match the query string.</p>
+    pub fn get_suggestions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>> {
+        &self.suggestions
     }
     /// Consumes the builder and constructs a [`SuggestModel`](crate::types::SuggestModel).
     pub fn build(self) -> crate::types::SuggestModel {

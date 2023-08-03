@@ -50,6 +50,10 @@ impl UpdateResolverConfigOutputBuilder {
         self.resolver_config = input;
         self
     }
+    /// <p>An array that contains settings for the specified Resolver configuration.</p>
+    pub fn get_resolver_config(&self) -> &::std::option::Option<crate::types::ResolverConfig> {
+        &self.resolver_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

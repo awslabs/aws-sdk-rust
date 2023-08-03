@@ -76,6 +76,12 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    pub fn get_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedNodeExchangeActionType> {
+        &self.action_type
+    }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
     pub fn cluster_identifier(
         mut self,
@@ -91,6 +97,10 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     ) -> Self {
         self.cluster_identifier = input;
         self
+    }
+    /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
     pub fn snapshot_identifier(
@@ -108,6 +118,10 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -127,6 +145,10 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

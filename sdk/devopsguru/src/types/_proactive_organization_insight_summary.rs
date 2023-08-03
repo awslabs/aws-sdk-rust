@@ -114,6 +114,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the insight summary.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The ID of the organizational unit.</p>
     pub fn organizational_unit_id(
@@ -140,6 +148,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
         self.organizational_unit_id = input;
         self
     }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// <p>The name of the insight summary.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the insight summary.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::InsightSeverity) -> Self {
@@ -163,6 +179,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
         self.severity = input;
         self
     }
+    /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::InsightSeverity> {
+        &self.severity
+    }
     /// <p> An array of status values used to search for insights. </p>
     pub fn status(mut self, input: crate::types::InsightStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> An array of status values used to search for insights. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
+        &self.status
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(mut self, input: crate::types::InsightTimeRange) -> Self {
@@ -186,6 +210,10 @@ impl ProactiveOrganizationInsightSummaryBuilder {
         self.insight_time_range = input;
         self
     }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    pub fn get_insight_time_range(&self) -> &::std::option::Option<crate::types::InsightTimeRange> {
+        &self.insight_time_range
+    }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn prediction_time_range(mut self, input: crate::types::PredictionTimeRange) -> Self {
         self.prediction_time_range = ::std::option::Option::Some(input);
@@ -198,6 +226,12 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     ) -> Self {
         self.prediction_time_range = input;
         self
+    }
+    /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    pub fn get_prediction_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+        &self.prediction_time_range
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
@@ -212,6 +246,12 @@ impl ProactiveOrganizationInsightSummaryBuilder {
         self.resource_collection = input;
         self
     }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+        &self.resource_collection
+    }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn service_collection(mut self, input: crate::types::ServiceCollection) -> Self {
         self.service_collection = ::std::option::Option::Some(input);
@@ -224,6 +264,12 @@ impl ProactiveOrganizationInsightSummaryBuilder {
     ) -> Self {
         self.service_collection = input;
         self
+    }
+    /// <p>A collection of the names of Amazon Web Services services.</p>
+    pub fn get_service_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCollection> {
+        &self.service_collection
     }
     /// Consumes the builder and constructs a [`ProactiveOrganizationInsightSummary`](crate::types::ProactiveOrganizationInsightSummary).
     pub fn build(self) -> crate::types::ProactiveOrganizationInsightSummary {

@@ -51,6 +51,11 @@ impl PutMetricDataInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
+    /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Appends an item to `metric_data`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -69,6 +74,12 @@ impl PutMetricDataInputBuilder {
     ) -> Self {
         self.metric_data = input;
         self
+    }
+    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+        &self.metric_data
     }
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
     pub fn build(

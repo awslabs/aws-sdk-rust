@@ -36,6 +36,12 @@ impl AssociateLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_license::builders::AssociateLicenseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateLicenseFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace to associate the license with.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The type of license to associate with the workspace.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.inner = self.inner.license_type(input);
@@ -138,5 +148,9 @@ impl AssociateLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
+    }
+    /// <p>The type of license to associate with the workspace.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        self.inner.get_license_type()
     }
 }

@@ -46,6 +46,10 @@ impl StartAccessLoggingInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that you want to start access logging on.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
     pub fn build(
         self,

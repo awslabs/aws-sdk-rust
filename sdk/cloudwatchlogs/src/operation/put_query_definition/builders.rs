@@ -38,6 +38,12 @@ impl PutQueryDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutQueryDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_query_definition::builders::PutQueryDefinitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl PutQueryDefinitionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
     pub fn query_definition_id(
@@ -145,6 +155,11 @@ impl PutQueryDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_definition_id(input);
         self
+    }
+    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
+    pub fn get_query_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_definition_id()
     }
     /// Appends an item to `logGroupNames`.
     ///
@@ -168,6 +183,13 @@ impl PutQueryDefinitionFluentBuilder {
         self.inner = self.inner.set_log_group_names(input);
         self
     }
+    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
+    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    pub fn get_log_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_log_group_names()
+    }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -177,5 +199,9 @@ impl PutQueryDefinitionFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
 }

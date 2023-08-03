@@ -72,6 +72,10 @@ impl NodeInputPortBuilder {
         self.name = input;
         self
     }
+    /// <p>The input port's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The input port's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl NodeInputPortBuilder {
         self.description = input;
         self
     }
+    /// <p>The input port's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The input port's type.</p>
     pub fn r#type(mut self, input: crate::types::PortType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl NodeInputPortBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PortType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The input port's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PortType> {
+        &self.r#type
     }
     /// <p>The input port's default value.</p>
     pub fn default_value(
@@ -108,6 +120,10 @@ impl NodeInputPortBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The input port's default value.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The input port's max connections.</p>
     pub fn max_connections(mut self, input: i32) -> Self {
         self.max_connections = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl NodeInputPortBuilder {
     pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_connections = input;
         self
+    }
+    /// <p>The input port's max connections.</p>
+    pub fn get_max_connections(&self) -> &::std::option::Option<i32> {
+        &self.max_connections
     }
     /// Consumes the builder and constructs a [`NodeInputPort`](crate::types::NodeInputPort).
     pub fn build(self) -> crate::types::NodeInputPort {

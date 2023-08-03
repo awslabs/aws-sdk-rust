@@ -65,6 +65,10 @@ impl UpdateOutpostResolverInputBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique string that identifies Resolver on an Outpost.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Name of the Resolver on the Outpost.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateOutpostResolverInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the Resolver on the Outpost.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl UpdateOutpostResolverInputBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p> Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(
@@ -100,6 +112,10 @@ impl UpdateOutpostResolverInputBuilder {
     ) -> Self {
         self.preferred_instance_type = input;
         self
+    }
+    /// <p> Amazon EC2 instance type. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_instance_type
     }
     /// Consumes the builder and constructs a [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
     pub fn build(

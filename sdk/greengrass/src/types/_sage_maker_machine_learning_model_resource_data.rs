@@ -64,6 +64,10 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
         self.destination_path = input;
         self
     }
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_path
+    }
     /// The owner setting for downloaded machine learning resources.
     pub fn owner_setting(mut self, input: crate::types::ResourceDownloadOwnerSetting) -> Self {
         self.owner_setting = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     ) -> Self {
         self.owner_setting = input;
         self
+    }
+    /// The owner setting for downloaded machine learning resources.
+    pub fn get_owner_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDownloadOwnerSetting> {
+        &self.owner_setting
     }
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub fn sage_maker_job_arn(
@@ -92,6 +102,10 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     ) -> Self {
         self.sage_maker_job_arn = input;
         self
+    }
+    /// The ARN of the Amazon SageMaker training job that represents the source model.
+    pub fn get_sage_maker_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sage_maker_job_arn
     }
     /// Consumes the builder and constructs a [`SageMakerMachineLearningModelResourceData`](crate::types::SageMakerMachineLearningModelResourceData).
     pub fn build(self) -> crate::types::SageMakerMachineLearningModelResourceData {

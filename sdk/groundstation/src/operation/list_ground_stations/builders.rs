@@ -36,6 +36,12 @@ impl ListGroundStationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGroundStations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListGroundStationsFluentBuilder {
         self.inner = self.inner.set_satellite_id(input);
         self
     }
+    /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_satellite_id()
+    }
     /// <p>Maximum number of ground stations returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListGroundStationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of ground stations returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl ListGroundStationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

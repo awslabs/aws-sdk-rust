@@ -48,6 +48,10 @@ impl ActionHistoryDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p> A generic string.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The budget action resource. </p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ActionHistoryDetailsBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The budget action resource. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`ActionHistoryDetails`](crate::types::ActionHistoryDetails).
     pub fn build(self) -> crate::types::ActionHistoryDetails {

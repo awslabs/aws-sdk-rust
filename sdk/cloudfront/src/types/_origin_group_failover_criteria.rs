@@ -43,6 +43,10 @@ impl OriginGroupFailoverCriteriaBuilder {
         self.status_codes = input;
         self
     }
+    /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
+    pub fn get_status_codes(&self) -> &::std::option::Option<crate::types::StatusCodes> {
+        &self.status_codes
+    }
     /// Consumes the builder and constructs a [`OriginGroupFailoverCriteria`](crate::types::OriginGroupFailoverCriteria).
     pub fn build(self) -> crate::types::OriginGroupFailoverCriteria {
         crate::types::OriginGroupFailoverCriteria {

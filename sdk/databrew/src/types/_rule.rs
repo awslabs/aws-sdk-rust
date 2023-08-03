@@ -91,6 +91,10 @@ impl RuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl RuleBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
@@ -118,6 +126,11 @@ impl RuleBuilder {
     ) -> Self {
         self.check_expression = input;
         self
+    }
+    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
+    pub fn get_check_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_expression
     }
     /// Adds a key-value pair to `substitution_map`.
     ///
@@ -144,6 +157,14 @@ impl RuleBuilder {
         self.substitution_map = input;
         self
     }
+    /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
+    pub fn get_substitution_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.substitution_map
+    }
     /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
     pub fn threshold(mut self, input: crate::types::Threshold) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -153,6 +174,10 @@ impl RuleBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::Threshold>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<crate::types::Threshold> {
+        &self.threshold
     }
     /// Appends an item to `column_selectors`.
     ///
@@ -172,6 +197,12 @@ impl RuleBuilder {
     ) -> Self {
         self.column_selectors = input;
         self
+    }
+    /// <p>List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.</p>
+    pub fn get_column_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
+        &self.column_selectors
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

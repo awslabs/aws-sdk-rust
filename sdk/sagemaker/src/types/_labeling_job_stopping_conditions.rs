@@ -50,6 +50,10 @@ impl LabelingJobStoppingConditionsBuilder {
         self.max_human_labeled_object_count = input;
         self
     }
+    /// <p>The maximum number of objects that can be labeled by human workers.</p>
+    pub fn get_max_human_labeled_object_count(&self) -> &::std::option::Option<i32> {
+        &self.max_human_labeled_object_count
+    }
     /// <p>The maximum number of input data objects that should be labeled.</p>
     pub fn max_percentage_of_input_dataset_labeled(mut self, input: i32) -> Self {
         self.max_percentage_of_input_dataset_labeled = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl LabelingJobStoppingConditionsBuilder {
     ) -> Self {
         self.max_percentage_of_input_dataset_labeled = input;
         self
+    }
+    /// <p>The maximum number of input data objects that should be labeled.</p>
+    pub fn get_max_percentage_of_input_dataset_labeled(&self) -> &::std::option::Option<i32> {
+        &self.max_percentage_of_input_dataset_labeled
     }
     /// Consumes the builder and constructs a [`LabelingJobStoppingConditions`](crate::types::LabelingJobStoppingConditions).
     pub fn build(self) -> crate::types::LabelingJobStoppingConditions {

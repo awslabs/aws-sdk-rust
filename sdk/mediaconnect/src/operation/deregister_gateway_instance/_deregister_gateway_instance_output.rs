@@ -60,6 +60,10 @@ impl DeregisterGatewayInstanceOutputBuilder {
         self.gateway_instance_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the instance.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_instance_arn
+    }
     /// The status of the instance.
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
         self.instance_state = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DeregisterGatewayInstanceOutputBuilder {
     ) -> Self {
         self.instance_state = input;
         self
+    }
+    /// The status of the instance.
+    pub fn get_instance_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
+        &self.instance_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

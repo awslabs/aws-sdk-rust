@@ -36,6 +36,12 @@ impl DeleteImageBuilderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteImageBuilder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteImageBuilderFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

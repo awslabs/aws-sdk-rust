@@ -45,6 +45,12 @@ impl DescribeJobFlowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJobFlows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl DescribeJobFlowsFluentBuilder {
         self.inner = self.inner.set_created_after(input);
         self
     }
+    /// <p>Return only job flows created after this date and time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
+    }
     /// <p>Return only job flows created before this date and time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -150,6 +160,10 @@ impl DescribeJobFlowsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>Return only job flows created before this date and time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// Appends an item to `JobFlowIds`.
     ///
@@ -168,6 +182,12 @@ impl DescribeJobFlowsFluentBuilder {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
+    /// <p>Return only job flows whose job flow ID is contained in this list.</p>
+    pub fn get_job_flow_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_flow_ids()
+    }
     /// Appends an item to `JobFlowStates`.
     ///
     /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
@@ -184,5 +204,11 @@ impl DescribeJobFlowsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_flow_states(input);
         self
+    }
+    /// <p>Return only job flows whose state is contained in this list.</p>
+    pub fn get_job_flow_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+        self.inner.get_job_flow_states()
     }
 }

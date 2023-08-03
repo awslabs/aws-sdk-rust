@@ -54,6 +54,10 @@ impl QopConfigurationBuilder {
         self.rpc_protection = input;
         self
     }
+    /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
+    pub fn get_rpc_protection(&self) -> &::std::option::Option<crate::types::HdfsRpcProtection> {
+        &self.rpc_protection
+    }
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
     pub fn data_transfer_protection(
         mut self,
@@ -69,6 +73,12 @@ impl QopConfigurationBuilder {
     ) -> Self {
         self.data_transfer_protection = input;
         self
+    }
+    /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+    pub fn get_data_transfer_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::HdfsDataTransferProtection> {
+        &self.data_transfer_protection
     }
     /// Consumes the builder and constructs a [`QopConfiguration`](crate::types::QopConfiguration).
     pub fn build(self) -> crate::types::QopConfiguration {

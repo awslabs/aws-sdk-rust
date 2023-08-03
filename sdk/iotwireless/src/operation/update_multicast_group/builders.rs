@@ -36,6 +36,12 @@ impl UpdateMulticastGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMulticastGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateMulticastGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The name of the multicast group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl UpdateMulticastGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the multicast group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl UpdateMulticastGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticast) -> Self {
@@ -158,5 +176,9 @@ impl UpdateMulticastGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
+    }
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticast> {
+        self.inner.get_lo_ra_wan()
     }
 }

@@ -43,6 +43,10 @@ impl SheetControlsOptionBuilder {
         self.visibility_state = input;
         self
     }
+    /// <p>Visibility state.</p>
+    pub fn get_visibility_state(&self) -> &::std::option::Option<crate::types::DashboardUiState> {
+        &self.visibility_state
+    }
     /// Consumes the builder and constructs a [`SheetControlsOption`](crate::types::SheetControlsOption).
     pub fn build(self) -> crate::types::SheetControlsOption {
         crate::types::SheetControlsOption {

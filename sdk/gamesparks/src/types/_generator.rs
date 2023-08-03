@@ -64,6 +64,10 @@ impl GeneratorBuilder {
         self.target_platform = input;
         self
     }
+    /// <p>The platform that will be used to run the generated code.</p>
+    pub fn get_target_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_platform
+    }
     /// <p>The programming language for the generated code.</p>
     /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +79,11 @@ impl GeneratorBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The programming language for the generated code.</p>
+    /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// <p>The target version of the GameSparks Game SDK.</p>
     pub fn game_sdk_version(
@@ -91,6 +100,10 @@ impl GeneratorBuilder {
     ) -> Self {
         self.game_sdk_version = input;
         self
+    }
+    /// <p>The target version of the GameSparks Game SDK.</p>
+    pub fn get_game_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_sdk_version
     }
     /// Consumes the builder and constructs a [`Generator`](crate::types::Generator).
     pub fn build(self) -> crate::types::Generator {

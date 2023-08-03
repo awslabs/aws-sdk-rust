@@ -39,6 +39,10 @@ impl DescribeUserHierarchyStructureInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyStructureInput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput).
     pub fn build(
         self,

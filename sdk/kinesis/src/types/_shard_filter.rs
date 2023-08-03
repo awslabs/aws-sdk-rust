@@ -92,6 +92,19 @@ impl ShardFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
+    /// <p>You can specify the following valid values: </p>
+    /// <ul>
+    /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li>
+    /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li>
+    /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li>
+    /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li>
+    /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
+    /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ShardFilterType> {
+        &self.r#type
+    }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
@@ -101,6 +114,10 @@ impl ShardFilterBuilder {
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_id = input;
         self
+    }
+    /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
     }
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +131,10 @@ impl ShardFilterBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`ShardFilter`](crate::types::ShardFilter).
     pub fn build(self) -> crate::types::ShardFilter {

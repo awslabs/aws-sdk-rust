@@ -46,6 +46,10 @@ impl UpdateLinkOutputBuilder {
         self.link = input;
         self
     }
+    /// <p>Information about the link.</p>
+    pub fn get_link(&self) -> &::std::option::Option<crate::types::Link> {
+        &self.link
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -116,6 +116,14 @@ impl CopyClusterSnapshotInputBuilder {
         self.source_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
+    /// </ul>
+    pub fn get_source_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_identifier
+    }
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -139,6 +147,16 @@ impl CopyClusterSnapshotInputBuilder {
     ) -> Self {
         self.source_snapshot_cluster_identifier = input;
         self
+    }
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
+    /// </ul>
+    pub fn get_source_snapshot_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_cluster_identifier
     }
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
@@ -172,6 +190,18 @@ impl CopyClusterSnapshotInputBuilder {
         self.target_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank.</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
+    /// </ul>
+    pub fn get_target_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_snapshot_identifier
+    }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
@@ -188,6 +218,12 @@ impl CopyClusterSnapshotInputBuilder {
     ) -> Self {
         self.manual_snapshot_retention_period = input;
         self
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshot_retention_period
     }
     /// Consumes the builder and constructs a [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
     pub fn build(

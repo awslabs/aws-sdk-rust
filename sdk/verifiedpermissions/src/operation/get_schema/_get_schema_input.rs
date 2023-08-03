@@ -45,6 +45,10 @@ impl GetSchemaInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the schema.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
     pub fn build(
         self,

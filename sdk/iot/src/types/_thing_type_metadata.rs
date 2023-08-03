@@ -56,6 +56,10 @@ impl ThingTypeMetadataBuilder {
         self.deprecated = input;
         self
     }
+    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
+    pub fn get_deprecated(&self) -> &::std::option::Option<bool> {
+        &self.deprecated
+    }
     /// <p>The date and time when the thing type was deprecated.</p>
     pub fn deprecation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deprecation_date = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ThingTypeMetadataBuilder {
         self.deprecation_date = input;
         self
     }
+    /// <p>The date and time when the thing type was deprecated.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_date
+    }
     /// <p>The date and time when the thing type was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ThingTypeMetadataBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time when the thing type was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`ThingTypeMetadata`](crate::types::ThingTypeMetadata).
     pub fn build(self) -> crate::types::ThingTypeMetadata {

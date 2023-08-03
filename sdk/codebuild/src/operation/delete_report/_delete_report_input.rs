@@ -39,6 +39,10 @@ impl DeleteReportInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The ARN of the report to delete. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteReportInput`](crate::operation::delete_report::DeleteReportInput).
     pub fn build(
         self,

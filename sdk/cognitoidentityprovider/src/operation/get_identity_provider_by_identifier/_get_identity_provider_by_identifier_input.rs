@@ -47,6 +47,10 @@ impl GetIdentityProviderByIdentifierInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The IdP identifier.</p>
     pub fn idp_identifier(
         mut self,
@@ -62,6 +66,10 @@ impl GetIdentityProviderByIdentifierInputBuilder {
     ) -> Self {
         self.idp_identifier = input;
         self
+    }
+    /// <p>The IdP identifier.</p>
+    pub fn get_idp_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idp_identifier
     }
     /// Consumes the builder and constructs a [`GetIdentityProviderByIdentifierInput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput).
     pub fn build(

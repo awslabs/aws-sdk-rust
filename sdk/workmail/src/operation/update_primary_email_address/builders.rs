@@ -36,6 +36,10 @@ impl UpdatePrimaryEmailAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePrimaryEmailAddress as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdatePrimaryEmailAddressFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization that contains the user, group, or resource to update.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The user, group, or resource to update.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -142,6 +150,10 @@ impl UpdatePrimaryEmailAddressFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The user, group, or resource to update.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The value of the email to be updated as primary.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
@@ -151,5 +163,9 @@ impl UpdatePrimaryEmailAddressFluentBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
+    }
+    /// <p>The value of the email to be updated as primary.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
     }
 }

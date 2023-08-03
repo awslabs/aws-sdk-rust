@@ -43,6 +43,10 @@ impl ListControlSearchOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility configuration of the search options in a list control.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`ListControlSearchOptions`](crate::types::ListControlSearchOptions).
     pub fn build(self) -> crate::types::ListControlSearchOptions {
         crate::types::ListControlSearchOptions {

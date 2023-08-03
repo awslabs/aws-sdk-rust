@@ -37,6 +37,10 @@ impl DescribeJournalKinesisStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJournalKinesisStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DescribeJournalKinesisStreamFluentBuilder {
         self.inner = self.inner.set_ledger_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ledger_name()
+    }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
@@ -136,5 +144,9 @@ impl DescribeJournalKinesisStreamFluentBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
+    }
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
     }
 }

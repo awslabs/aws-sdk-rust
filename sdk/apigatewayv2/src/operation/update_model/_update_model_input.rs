@@ -80,6 +80,10 @@ impl UpdateModelInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UpdateModelInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content-type for the model, for example, "application/json".</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl UpdateModelInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The model ID.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl UpdateModelInputBuilder {
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
+    }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
     }
     /// <p>The name of the model.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl UpdateModelInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the model.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl UpdateModelInputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
     pub fn build(

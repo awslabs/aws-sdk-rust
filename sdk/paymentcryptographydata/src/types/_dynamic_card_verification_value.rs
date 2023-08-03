@@ -70,6 +70,10 @@ impl DynamicCardVerificationValueBuilder {
         self.pan_sequence_number = input;
         self
     }
+    /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pan_sequence_number
+    }
     /// <p>The expiry date of a payment card.</p>
     pub fn card_expiry_date(
         mut self,
@@ -86,6 +90,10 @@ impl DynamicCardVerificationValueBuilder {
         self.card_expiry_date = input;
         self
     }
+    /// <p>The expiry date of a payment card.</p>
+    pub fn get_card_expiry_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.card_expiry_date
+    }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl DynamicCardVerificationValueBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
+    }
+    /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
     pub fn application_transaction_counter(
@@ -111,6 +123,12 @@ impl DynamicCardVerificationValueBuilder {
     ) -> Self {
         self.application_transaction_counter = input;
         self
+    }
+    /// <p>The transaction counter value that comes from the terminal.</p>
+    pub fn get_application_transaction_counter(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
     pub fn build(self) -> crate::types::DynamicCardVerificationValue {

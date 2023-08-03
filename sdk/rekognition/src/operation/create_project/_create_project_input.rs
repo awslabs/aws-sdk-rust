@@ -39,6 +39,10 @@ impl CreateProjectInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project to create.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,

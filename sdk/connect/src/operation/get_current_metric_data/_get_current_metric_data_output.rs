@@ -77,6 +77,11 @@ impl GetCurrentMetricDataOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `metric_results`.
     ///
     /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
@@ -96,6 +101,12 @@ impl GetCurrentMetricDataOutputBuilder {
         self.metric_results = input;
         self
     }
+    /// <p>Information about the real-time metrics.</p>
+    pub fn get_metric_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>> {
+        &self.metric_results
+    }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub fn data_snapshot_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_snapshot_time = ::std::option::Option::Some(input);
@@ -109,6 +120,10 @@ impl GetCurrentMetricDataOutputBuilder {
         self.data_snapshot_time = input;
         self
     }
+    /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
+    pub fn get_data_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_snapshot_time
+    }
     /// <p>The total count of the result, regardless of the current page size. </p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
@@ -118,6 +133,10 @@ impl GetCurrentMetricDataOutputBuilder {
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
+    }
+    /// <p>The total count of the result, regardless of the current page size. </p>
+    pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
+        &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

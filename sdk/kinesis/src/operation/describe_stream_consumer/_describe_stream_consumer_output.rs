@@ -53,6 +53,12 @@ impl DescribeStreamConsumerOutputBuilder {
         self.consumer_description = input;
         self
     }
+    /// <p>An object that represents the details of the consumer.</p>
+    pub fn get_consumer_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConsumerDescription> {
+        &self.consumer_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

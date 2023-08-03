@@ -59,6 +59,10 @@ impl LensMetricBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The lens ARN.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// Appends an item to `pillars`.
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
@@ -78,6 +82,12 @@ impl LensMetricBuilder {
         self.pillars = input;
         self
     }
+    /// <p>The metrics for the pillars in a lens.</p>
+    pub fn get_pillars(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>> {
+        &self.pillars
+    }
     /// Adds a key-value pair to `risk_counts`.
     ///
     /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
@@ -96,6 +106,12 @@ impl LensMetricBuilder {
     ) -> Self {
         self.risk_counts = input;
         self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
     }
     /// Consumes the builder and constructs a [`LensMetric`](crate::types::LensMetric).
     pub fn build(self) -> crate::types::LensMetric {

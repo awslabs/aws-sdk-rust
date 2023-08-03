@@ -54,6 +54,10 @@ impl AuthorizeDataShareInputBuilder {
         self.data_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
+    }
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub fn consumer_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl AuthorizeDataShareInputBuilder {
     ) -> Self {
         self.consumer_identifier = input;
         self
+    }
+    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_identifier
     }
     /// Consumes the builder and constructs a [`AuthorizeDataShareInput`](crate::operation::authorize_data_share::AuthorizeDataShareInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl ParentEntityUpdateRequestBuilder {
         self.update_type = input;
         self
     }
+    /// <p>The type of the update.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::ParentEntityUpdateType> {
+        &self.update_type
+    }
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(
         mut self,
@@ -66,6 +70,10 @@ impl ParentEntityUpdateRequestBuilder {
     ) -> Self {
         self.parent_entity_id = input;
         self
+    }
+    /// <p>The ID of the parent entity.</p>
+    pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_entity_id
     }
     /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
     pub fn build(self) -> crate::types::ParentEntityUpdateRequest {

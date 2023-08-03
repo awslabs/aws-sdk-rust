@@ -77,6 +77,12 @@ impl ListBuiltInIntentsOutputBuilder {
         self.built_in_intent_summaries = input;
         self
     }
+    /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
+    pub fn get_built_in_intent_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>> {
+        &self.built_in_intent_summaries
+    }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +93,10 @@ impl ListBuiltInIntentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The language and locale of the intents in the list.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl ListBuiltInIntentsOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The language and locale of the intents in the list.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

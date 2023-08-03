@@ -37,7 +37,9 @@ impl ListResourceRecordSetsInput {
                 (::std::result::Result::Err(e), ::std::option::Option::None)
             }
         };
-        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
+        crate::route53_resource_id_preprocessor_middleware::trim_resource_id(
+            &mut self.hosted_zone_id,
+        );
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_resource_record_sets::ListResourceRecordSetsInput,
@@ -215,8 +217,8 @@ mod list_resource_record_sets_request_test {
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
         let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        // If the test case was missing endpoint parameters, default a region so it doesn't fail
         let mut config_builder = config_builder;
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
         if config_builder.region.is_none() {
             config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
         }

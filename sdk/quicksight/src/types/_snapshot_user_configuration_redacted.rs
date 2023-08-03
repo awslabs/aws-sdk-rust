@@ -53,6 +53,12 @@ impl SnapshotUserConfigurationRedactedBuilder {
         self.anonymous_users = input;
         self
     }
+    /// <p> An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded. </p>
+    pub fn get_anonymous_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>> {
+        &self.anonymous_users
+    }
     /// Consumes the builder and constructs a [`SnapshotUserConfigurationRedacted`](crate::types::SnapshotUserConfigurationRedacted).
     pub fn build(self) -> crate::types::SnapshotUserConfigurationRedacted {
         crate::types::SnapshotUserConfigurationRedacted {

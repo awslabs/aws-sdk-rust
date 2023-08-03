@@ -36,6 +36,10 @@ impl GetSyncJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSyncJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_sync_job::builders::GetSyncJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,12 @@ impl GetSyncJobFluentBuilder {
         self.inner = self.inner.set_sync_source(input);
         self
     }
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_source()
+    }
     /// <p>The workspace ID.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -131,5 +141,9 @@ impl GetSyncJobFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The workspace ID.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
 }

@@ -126,6 +126,10 @@ impl DescribeArchiveOutputBuilder {
         self.archive_arn = input;
         self
     }
+    /// <p>The ARN of the archive.</p>
+    pub fn get_archive_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_arn
+    }
     /// <p>The name of the archive.</p>
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl DescribeArchiveOutputBuilder {
     pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_name = input;
         self
+    }
+    /// <p>The name of the archive.</p>
+    pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_name
     }
     /// <p>The ARN of the event source associated with the archive.</p>
     pub fn event_source_arn(
@@ -152,6 +160,10 @@ impl DescribeArchiveOutputBuilder {
         self.event_source_arn = input;
         self
     }
+    /// <p>The ARN of the event source associated with the archive.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
+    }
     /// <p>The description of the archive.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -161,6 +173,10 @@ impl DescribeArchiveOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the archive.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The event pattern used to filter events sent to the archive.</p>
     pub fn event_pattern(
@@ -178,6 +194,10 @@ impl DescribeArchiveOutputBuilder {
         self.event_pattern = input;
         self
     }
+    /// <p>The event pattern used to filter events sent to the archive.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_pattern
+    }
     /// <p>The state of the archive.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl DescribeArchiveOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArchiveState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the archive.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArchiveState> {
+        &self.state
     }
     /// <p>The reason that the archive is in the state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,6 +222,10 @@ impl DescribeArchiveOutputBuilder {
         self.state_reason = input;
         self
     }
+    /// <p>The reason that the archive is in the state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
+    }
     /// <p>The number of days to retain events for in the archive.</p>
     pub fn retention_days(mut self, input: i32) -> Self {
         self.retention_days = ::std::option::Option::Some(input);
@@ -207,6 +235,10 @@ impl DescribeArchiveOutputBuilder {
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_days = input;
         self
+    }
+    /// <p>The number of days to retain events for in the archive.</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_days
     }
     /// <p>The size of the archive in bytes.</p>
     pub fn size_bytes(mut self, input: i64) -> Self {
@@ -218,6 +250,10 @@ impl DescribeArchiveOutputBuilder {
         self.size_bytes = input;
         self
     }
+    /// <p>The size of the archive in bytes.</p>
+    pub fn get_size_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_bytes
+    }
     /// <p>The number of events in the archive.</p>
     pub fn event_count(mut self, input: i64) -> Self {
         self.event_count = ::std::option::Option::Some(input);
@@ -227,6 +263,10 @@ impl DescribeArchiveOutputBuilder {
     pub fn set_event_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_count = input;
         self
+    }
+    /// <p>The number of events in the archive.</p>
+    pub fn get_event_count(&self) -> &::std::option::Option<i64> {
+        &self.event_count
     }
     /// <p>The time at which the archive was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -240,6 +280,10 @@ impl DescribeArchiveOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the archive was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

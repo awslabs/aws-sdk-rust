@@ -52,6 +52,10 @@ impl CreateWhatIfForecastExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWhatIfForecastExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +152,12 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self.inner = self.inner.set_what_if_forecast_export_name(input);
         self
     }
+    /// <p>The name of the what-if forecast to export.</p>
+    pub fn get_what_if_forecast_export_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_what_if_forecast_export_name()
+    }
     /// Appends an item to `WhatIfForecastArns`.
     ///
     /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
@@ -168,6 +178,12 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self.inner = self.inner.set_what_if_forecast_arns(input);
         self
     }
+    /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+    pub fn get_what_if_forecast_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_what_if_forecast_arns()
+    }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
@@ -182,6 +198,11 @@ impl CreateWhatIfForecastExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `Tags`.
     ///
@@ -200,6 +221,10 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format(input.into());
@@ -209,5 +234,9 @@ impl CreateWhatIfForecastExportFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_format()
     }
 }

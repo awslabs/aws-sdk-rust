@@ -54,6 +54,10 @@ impl CreateLayoutOutputBuilder {
         self.layout_id = input;
         self
     }
+    /// <p>The unique identifier of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn layout_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateLayoutOutputBuilder {
     pub fn set_layout_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layout_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
+    pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

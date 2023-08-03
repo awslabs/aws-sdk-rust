@@ -40,6 +40,10 @@ impl TimingInformationBuilder {
         self.processing_time_milliseconds = input;
         self
     }
+    /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
+    pub fn get_processing_time_milliseconds(&self) -> &::std::option::Option<i64> {
+        &self.processing_time_milliseconds
+    }
     /// Consumes the builder and constructs a [`TimingInformation`](crate::types::TimingInformation).
     pub fn build(self) -> crate::types::TimingInformation {
         crate::types::TimingInformation {

@@ -66,6 +66,11 @@ impl GetTemplateOutputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+    /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// Appends an item to `stages_available`.
     ///
     /// To override the contents of this collection use [`set_stages_available`](Self::set_stages_available).
@@ -84,6 +89,12 @@ impl GetTemplateOutputBuilder {
     ) -> Self {
         self.stages_available = input;
         self
+    }
+    /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
+    pub fn get_stages_available(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>> {
+        &self.stages_available
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

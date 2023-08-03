@@ -49,6 +49,10 @@ impl GetRepositoryPolicyInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub fn repository_name(
         mut self,
@@ -64,6 +68,10 @@ impl GetRepositoryPolicyInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository with the policy to retrieve.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
     pub fn build(

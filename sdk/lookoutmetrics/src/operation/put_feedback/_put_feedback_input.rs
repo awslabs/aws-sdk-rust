@@ -57,6 +57,10 @@ impl PutFeedbackInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>Feedback for an anomalous metric.</p>
     pub fn anomaly_group_time_series_feedback(
         mut self,
@@ -72,6 +76,12 @@ impl PutFeedbackInputBuilder {
     ) -> Self {
         self.anomaly_group_time_series_feedback = input;
         self
+    }
+    /// <p>Feedback for an anomalous metric.</p>
+    pub fn get_anomaly_group_time_series_feedback(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback> {
+        &self.anomaly_group_time_series_feedback
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
     pub fn build(

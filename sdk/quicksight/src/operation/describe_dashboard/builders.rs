@@ -36,6 +36,12 @@ impl DescribeDashboardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDashboard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeDashboardFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
@@ -141,6 +151,10 @@ impl DescribeDashboardFluentBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_id()
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -152,6 +166,10 @@ impl DescribeDashboardFluentBuilder {
         self.inner = self.inner.set_version_number(input);
         self
     }
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
+    }
     /// <p>The alias name.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias_name(input.into());
@@ -161,5 +179,9 @@ impl DescribeDashboardFluentBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_name(input);
         self
+    }
+    /// <p>The alias name.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
     }
 }

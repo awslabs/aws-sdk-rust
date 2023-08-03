@@ -58,6 +58,10 @@ impl LogSubscriptionBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(
         mut self,
@@ -74,6 +78,10 @@ impl LogSubscriptionBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The date and time that the log subscription was created.</p>
     pub fn subscription_created_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.subscription_created_date_time = ::std::option::Option::Some(input);
@@ -86,6 +94,12 @@ impl LogSubscriptionBuilder {
     ) -> Self {
         self.subscription_created_date_time = input;
         self
+    }
+    /// <p>The date and time that the log subscription was created.</p>
+    pub fn get_subscription_created_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.subscription_created_date_time
     }
     /// Consumes the builder and constructs a [`LogSubscription`](crate::types::LogSubscription).
     pub fn build(self) -> crate::types::LogSubscription {

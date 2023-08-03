@@ -53,6 +53,13 @@ impl OrganizationKubernetesConfigurationResultBuilder {
         self.audit_logs = input;
         self
     }
+    /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
+    pub fn get_audit_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>
+    {
+        &self.audit_logs
+    }
     /// Consumes the builder and constructs a [`OrganizationKubernetesConfigurationResult`](crate::types::OrganizationKubernetesConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationKubernetesConfigurationResult {
         crate::types::OrganizationKubernetesConfigurationResult {

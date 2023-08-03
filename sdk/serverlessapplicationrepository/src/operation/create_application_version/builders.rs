@@ -36,6 +36,13 @@ impl CreateApplicationVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApplicationVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The semantic version of the new version.</p>
     pub fn semantic_version(
         mut self,
@@ -147,6 +158,10 @@ impl CreateApplicationVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
+    }
+    /// <p>The semantic version of the new version.</p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
@@ -166,6 +181,11 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner = self.inner.set_source_code_archive_url(input);
         self
     }
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+    /// <p>Maximum size 50 MB</p>
+    pub fn get_source_code_archive_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_code_archive_url()
+    }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn source_code_url(
         mut self,
@@ -181,6 +201,10 @@ impl CreateApplicationVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_code_url(input);
         self
+    }
+    /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_code_url()
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
     pub fn template_body(
@@ -198,6 +222,10 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner = self.inner.set_template_body(input);
         self
     }
+    /// <p>The raw packaged AWS SAM template of your application.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
+    }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_url(input.into());
@@ -207,5 +235,9 @@ impl CreateApplicationVersionFluentBuilder {
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_url(input);
         self
+    }
+    /// <p>A link to the packaged AWS SAM template of your application.</p>
+    pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_url()
     }
 }

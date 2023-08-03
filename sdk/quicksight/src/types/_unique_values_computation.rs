@@ -62,6 +62,10 @@ impl UniqueValuesComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UniqueValuesComputationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
@@ -84,6 +92,10 @@ impl UniqueValuesComputationBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category field that is used in a computation.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`UniqueValuesComputation`](crate::types::UniqueValuesComputation).
     pub fn build(self) -> crate::types::UniqueValuesComputation {

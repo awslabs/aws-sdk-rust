@@ -58,6 +58,10 @@ impl GetGroupsForCapacityReservationOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `capacity_reservation_groups`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_groups`](Self::set_capacity_reservation_groups).
@@ -79,6 +83,12 @@ impl GetGroupsForCapacityReservationOutputBuilder {
     ) -> Self {
         self.capacity_reservation_groups = input;
         self
+    }
+    /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
+    pub fn get_capacity_reservation_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>> {
+        &self.capacity_reservation_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

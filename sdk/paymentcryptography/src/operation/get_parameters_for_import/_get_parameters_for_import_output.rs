@@ -108,6 +108,10 @@ impl GetParametersForImportOutputBuilder {
         self.wrapping_key_certificate = input;
         self
     }
+    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_certificate
+    }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
     pub fn wrapping_key_certificate_chain(
         mut self,
@@ -124,6 +128,12 @@ impl GetParametersForImportOutputBuilder {
         self.wrapping_key_certificate_chain = input;
         self
     }
+    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    pub fn get_wrapping_key_certificate_chain(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_certificate_chain
+    }
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
@@ -137,6 +147,10 @@ impl GetParametersForImportOutputBuilder {
         self.wrapping_key_algorithm = input;
         self
     }
+    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.wrapping_key_algorithm
+    }
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
@@ -146,6 +160,10 @@ impl GetParametersForImportOutputBuilder {
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_token = input;
         self
+    }
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_token
     }
     /// <p>The validity period of the import token.</p>
     pub fn parameters_valid_until_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +177,12 @@ impl GetParametersForImportOutputBuilder {
     ) -> Self {
         self.parameters_valid_until_timestamp = input;
         self
+    }
+    /// <p>The validity period of the import token.</p>
+    pub fn get_parameters_valid_until_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.parameters_valid_until_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

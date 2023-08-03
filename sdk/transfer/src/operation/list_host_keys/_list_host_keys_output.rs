@@ -62,6 +62,10 @@ impl ListHostKeysOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListHostKeysOutputBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>Returns the server identifier that contains the listed host keys.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// Appends an item to `host_keys`.
     ///
@@ -90,6 +98,12 @@ impl ListHostKeysOutputBuilder {
     ) -> Self {
         self.host_keys = input;
         self
+    }
+    /// <p>Returns an array, where each item contains the details of a host key.</p>
+    pub fn get_host_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>> {
+        &self.host_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

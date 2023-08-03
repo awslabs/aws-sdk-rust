@@ -36,6 +36,13 @@ impl DescribeSecurityPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSecurityPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_security_policy::builders::DescribeSecurityPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeSecurityPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_policy_name(input);
         self
+    }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_policy_name()
     }
 }

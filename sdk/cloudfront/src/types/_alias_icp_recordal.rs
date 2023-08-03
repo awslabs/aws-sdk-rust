@@ -61,6 +61,10 @@ impl AliasIcpRecordalBuilder {
         self.cname = input;
         self
     }
+    /// <p>A domain name associated with a distribution.</p>
+    pub fn get_cname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cname
+    }
     /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
@@ -85,6 +89,18 @@ impl AliasIcpRecordalBuilder {
     ) -> Self {
         self.icp_recordal_status = input;
         self
+    }
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The status values returned are the following:</p>
+    /// <ul>
+    /// <li> <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p> </li>
+    /// <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p> </li>
+    /// <li> <p> <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the distribution because there was an error in trying to determine the status. You can try again to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p> </li>
+    /// </ul>
+    pub fn get_icp_recordal_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::IcpRecordalStatus> {
+        &self.icp_recordal_status
     }
     /// Consumes the builder and constructs a [`AliasIcpRecordal`](crate::types::AliasIcpRecordal).
     pub fn build(self) -> crate::types::AliasIcpRecordal {

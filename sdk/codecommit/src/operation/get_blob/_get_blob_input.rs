@@ -54,6 +54,10 @@ impl GetBlobInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the blob.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetBlobInputBuilder {
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blob_id = input;
         self
+    }
+    /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
     }
     /// Consumes the builder and constructs a [`GetBlobInput`](crate::operation::get_blob::GetBlobInput).
     pub fn build(

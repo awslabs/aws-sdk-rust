@@ -156,6 +156,10 @@ impl ImageScanFindingBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the finding.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
     pub fn image_build_version_arn(
         mut self,
@@ -171,6 +175,10 @@ impl ImageScanFindingBuilder {
     ) -> Self {
         self.image_build_version_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
     pub fn image_pipeline_arn(
@@ -188,6 +196,10 @@ impl ImageScanFindingBuilder {
         self.image_pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
+    }
     /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -197,6 +209,10 @@ impl ImageScanFindingBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +224,10 @@ impl ImageScanFindingBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The title of the finding.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -217,6 +237,10 @@ impl ImageScanFindingBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the finding.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>An object that contains the details about how to remediate the finding.</p>
     pub fn remediation(mut self, input: crate::types::Remediation) -> Self {
@@ -231,6 +255,10 @@ impl ImageScanFindingBuilder {
         self.remediation = input;
         self
     }
+    /// <p>An object that contains the details about how to remediate the finding.</p>
+    pub fn get_remediation(&self) -> &::std::option::Option<crate::types::Remediation> {
+        &self.remediation
+    }
     /// <p>The severity of the finding.</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity = ::std::option::Option::Some(input.into());
@@ -240,6 +268,10 @@ impl ImageScanFindingBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of the finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
     }
     /// <p>The date and time when the finding was first observed.</p>
     pub fn first_observed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -254,6 +286,10 @@ impl ImageScanFindingBuilder {
         self.first_observed_at = input;
         self
     }
+    /// <p>The date and time when the finding was first observed.</p>
+    pub fn get_first_observed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_observed_at
+    }
     /// <p>The timestamp when the finding was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -267,6 +303,10 @@ impl ImageScanFindingBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The timestamp when the finding was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The score that Amazon Inspector assigned for the finding.</p>
     pub fn inspector_score(mut self, input: f64) -> Self {
         self.inspector_score = ::std::option::Option::Some(input);
@@ -276,6 +316,10 @@ impl ImageScanFindingBuilder {
     pub fn set_inspector_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inspector_score = input;
         self
+    }
+    /// <p>The score that Amazon Inspector assigned for the finding.</p>
+    pub fn get_inspector_score(&self) -> &::std::option::Option<f64> {
+        &self.inspector_score
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
     pub fn inspector_score_details(mut self, input: crate::types::InspectorScoreDetails) -> Self {
@@ -289,6 +333,12 @@ impl ImageScanFindingBuilder {
     ) -> Self {
         self.inspector_score_details = input;
         self
+    }
+    /// <p>An object that contains details of the Amazon Inspector score.</p>
+    pub fn get_inspector_score_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::InspectorScoreDetails> {
+        &self.inspector_score_details
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
     pub fn package_vulnerability_details(
@@ -306,6 +356,12 @@ impl ImageScanFindingBuilder {
         self.package_vulnerability_details = input;
         self
     }
+    /// <p>An object that contains the details of a package vulnerability finding.</p>
+    pub fn get_package_vulnerability_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVulnerabilityDetails> {
+        &self.package_vulnerability_details
+    }
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
     pub fn fix_available(
         mut self,
@@ -321,6 +377,10 @@ impl ImageScanFindingBuilder {
     ) -> Self {
         self.fix_available = input;
         self
+    }
+    /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
+    pub fn get_fix_available(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fix_available
     }
     /// Consumes the builder and constructs a [`ImageScanFinding`](crate::types::ImageScanFinding).
     pub fn build(self) -> crate::types::ImageScanFinding {

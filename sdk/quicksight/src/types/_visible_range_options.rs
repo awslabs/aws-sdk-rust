@@ -43,6 +43,10 @@ impl VisibleRangeOptionsBuilder {
         self.percent_range = input;
         self
     }
+    /// <p>The percent range in the visible range.</p>
+    pub fn get_percent_range(&self) -> &::std::option::Option<crate::types::PercentVisibleRange> {
+        &self.percent_range
+    }
     /// Consumes the builder and constructs a [`VisibleRangeOptions`](crate::types::VisibleRangeOptions).
     pub fn build(self) -> crate::types::VisibleRangeOptions {
         crate::types::VisibleRangeOptions {

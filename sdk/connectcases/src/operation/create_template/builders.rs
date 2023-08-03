@@ -36,6 +36,12 @@ impl CreateTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_template::builders::CreateTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateTemplateFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A name for the template. It must be unique per domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl CreateTemplateFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the template. It must be unique per domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A brief description of the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +151,10 @@ impl CreateTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A brief description of the template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn layout_configuration(mut self, input: crate::types::LayoutConfiguration) -> Self {
@@ -150,6 +168,12 @@ impl CreateTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layout_configuration(input);
         self
+    }
+    /// <p>Configuration of layouts associated to the template.</p>
+    pub fn get_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+        self.inner.get_layout_configuration()
     }
     /// Appends an item to `requiredFields`.
     ///
@@ -168,6 +192,12 @@ impl CreateTemplateFluentBuilder {
         self.inner = self.inner.set_required_fields(input);
         self
     }
+    /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    pub fn get_required_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+        self.inner.get_required_fields()
+    }
     /// <p>The status of the template.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -180,5 +210,9 @@ impl CreateTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the template.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
+        self.inner.get_status()
     }
 }

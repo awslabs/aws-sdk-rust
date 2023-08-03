@@ -39,6 +39,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProvisionedProductPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,14 @@ impl CreateProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The name of the plan.</p>
     pub fn plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.plan_name(input.into());
@@ -152,6 +164,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
     pub fn set_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_plan_name(input);
         self
+    }
+    /// <p>The name of the plan.</p>
+    pub fn get_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_plan_name()
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::ProvisionedProductPlanType) -> Self {
@@ -165,6 +181,12 @@ impl CreateProvisionedProductPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_plan_type(input);
         self
+    }
+    /// <p>The plan type.</p>
+    pub fn get_plan_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
+        self.inner.get_plan_type()
     }
     /// Appends an item to `NotificationArns`.
     ///
@@ -186,6 +208,12 @@ impl CreateProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+    pub fn get_notification_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_notification_arns()
+    }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_id(input.into());
@@ -196,6 +224,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_path_id(input);
         self
     }
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
+    pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path_id()
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
@@ -205,6 +237,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_id(input);
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(
@@ -222,6 +258,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioned_product_name()
+    }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -237,6 +277,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_artifact_id()
     }
     /// Appends an item to `ProvisioningParameters`.
     ///
@@ -258,6 +302,12 @@ impl CreateProvisionedProductPlanFluentBuilder {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
     }
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
+    pub fn get_provisioning_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
+        self.inner.get_provisioning_parameters()
+    }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
         mut self,
@@ -273,6 +323,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -292,5 +346,10 @@ impl CreateProvisionedProductPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tags.</p>
+    /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

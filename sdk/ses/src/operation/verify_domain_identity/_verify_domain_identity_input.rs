@@ -41,6 +41,10 @@ impl VerifyDomainIdentityInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain to be verified.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
     pub fn build(
         self,

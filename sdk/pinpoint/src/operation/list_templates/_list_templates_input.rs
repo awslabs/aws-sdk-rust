@@ -63,6 +63,10 @@ impl ListTemplatesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_size = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListTemplatesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
+    }
     /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ListTemplatesInputBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
     pub fn template_type(
@@ -98,6 +110,10 @@ impl ListTemplatesInputBuilder {
     ) -> Self {
         self.template_type = input;
         self
+    }
+    /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_type
     }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(

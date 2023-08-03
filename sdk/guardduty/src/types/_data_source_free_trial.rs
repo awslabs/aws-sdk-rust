@@ -40,6 +40,10 @@ impl DataSourceFreeTrialBuilder {
         self.free_trial_days_remaining = input;
         self
     }
+    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    pub fn get_free_trial_days_remaining(&self) -> &::std::option::Option<i32> {
+        &self.free_trial_days_remaining
+    }
     /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::types::DataSourceFreeTrial).
     pub fn build(self) -> crate::types::DataSourceFreeTrial {
         crate::types::DataSourceFreeTrial {

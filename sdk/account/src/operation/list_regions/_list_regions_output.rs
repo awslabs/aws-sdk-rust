@@ -54,6 +54,10 @@ impl ListRegionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there is more data to be returned, this will be populated. It should be passed into the <code>next-token</code> request parameter of <code>list-regions</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -72,6 +76,10 @@ impl ListRegionsOutputBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>This is a list of Regions for a given account, or if the filtered parameter was used, a list of Regions that match the filter criteria set in the <code>filter</code> parameter.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
+        &self.regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

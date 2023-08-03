@@ -88,6 +88,10 @@ impl MetricStreamEntryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the metric stream.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date that the metric stream was originally created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl MetricStreamEntryBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date that the metric stream was originally created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +122,10 @@ impl MetricStreamEntryBuilder {
         self.last_update_date = input;
         self
     }
+    /// <p>The date that the configuration of this metric stream was most recently updated.</p>
+    pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date
+    }
     /// <p>The name of the metric stream.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl MetricStreamEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the metric stream.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
     pub fn firehose_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +150,10 @@ impl MetricStreamEntryBuilder {
         self.firehose_arn = input;
         self
     }
+    /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
+    pub fn get_firehose_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firehose_arn
+    }
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -143,6 +163,10 @@ impl MetricStreamEntryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(mut self, input: crate::types::MetricStreamOutputFormat) -> Self {
@@ -156,6 +180,12 @@ impl MetricStreamEntryBuilder {
     ) -> Self {
         self.output_format = input;
         self
+    }
+    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    pub fn get_output_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
+        &self.output_format
     }
     /// Consumes the builder and constructs a [`MetricStreamEntry`](crate::types::MetricStreamEntry).
     pub fn build(self) -> crate::types::MetricStreamEntry {

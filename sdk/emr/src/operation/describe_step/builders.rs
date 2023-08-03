@@ -36,6 +36,10 @@ impl DescribeStepFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStep as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_step::builders::DescribeStepInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DescribeStepFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The identifier of the cluster with steps to describe.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The identifier of the step to describe.</p>
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_id(input.into());
@@ -127,5 +135,9 @@ impl DescribeStepFluentBuilder {
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_id(input);
         self
+    }
+    /// <p>The identifier of the step to describe.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_id()
     }
 }

@@ -39,6 +39,10 @@ impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
         self.finding_id = input;
         self
     }
+    /// <p>The unique identifier for the finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
+    }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

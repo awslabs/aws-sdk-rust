@@ -51,6 +51,12 @@ impl CostCategoryProcessingStatusBuilder {
         self.component = input;
         self
     }
+    /// <p>The Cost Management product name of the applied status. </p>
+    pub fn get_component(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostCategoryStatusComponent> {
+        &self.component
+    }
     /// <p>The process status for a specific cost category. </p>
     pub fn status(mut self, input: crate::types::CostCategoryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl CostCategoryProcessingStatusBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The process status for a specific cost category. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostCategoryStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CostCategoryProcessingStatus`](crate::types::CostCategoryProcessingStatus).
     pub fn build(self) -> crate::types::CostCategoryProcessingStatus {

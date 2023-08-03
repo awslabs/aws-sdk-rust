@@ -65,6 +65,10 @@ impl TestRoleInputBuilder {
         self.role = input;
         self
     }
+    /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_bucket = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl TestRoleInputBuilder {
     pub fn set_input_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_bucket = input;
         self
+    }
+    /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    pub fn get_input_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_bucket
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
     pub fn output_bucket(
@@ -90,6 +98,10 @@ impl TestRoleInputBuilder {
     ) -> Self {
         self.output_bucket = input;
         self
+    }
+    /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    pub fn get_output_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_bucket
     }
     /// Appends an item to `topics`.
     ///
@@ -109,6 +121,10 @@ impl TestRoleInputBuilder {
     ) -> Self {
         self.topics = input;
         self
+    }
+    /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.topics
     }
     /// Consumes the builder and constructs a [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
     pub fn build(

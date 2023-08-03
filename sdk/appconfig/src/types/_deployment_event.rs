@@ -76,6 +76,10 @@ impl DeploymentEventBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DeploymentEventType> {
+        &self.event_type
+    }
     /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
     pub fn triggered_by(mut self, input: crate::types::TriggeredBy) -> Self {
         self.triggered_by = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DeploymentEventBuilder {
         self.triggered_by = input;
         self
     }
+    /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+    pub fn get_triggered_by(&self) -> &::std::option::Option<crate::types::TriggeredBy> {
+        &self.triggered_by
+    }
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl DeploymentEventBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `action_invocations`.
     ///
@@ -118,6 +130,12 @@ impl DeploymentEventBuilder {
         self.action_invocations = input;
         self
     }
+    /// <p>The list of extensions that were invoked as part of the deployment.</p>
+    pub fn get_action_invocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>> {
+        &self.action_invocations
+    }
     /// <p>The date and time the event occurred.</p>
     pub fn occurred_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.occurred_at = ::std::option::Option::Some(input);
@@ -130,6 +148,10 @@ impl DeploymentEventBuilder {
     ) -> Self {
         self.occurred_at = input;
         self
+    }
+    /// <p>The date and time the event occurred.</p>
+    pub fn get_occurred_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.occurred_at
     }
     /// Consumes the builder and constructs a [`DeploymentEvent`](crate::types::DeploymentEvent).
     pub fn build(self) -> crate::types::DeploymentEvent {

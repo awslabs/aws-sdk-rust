@@ -56,6 +56,10 @@ impl ExecutionDetailsBuilder {
         self.summary = input;
         self
     }
+    /// <p>The summary of the current status of the actions.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
+    }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn external_execution_id(
         mut self,
@@ -72,6 +76,10 @@ impl ExecutionDetailsBuilder {
         self.external_execution_id = input;
         self
     }
+    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
+    pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_execution_id
+    }
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
     pub fn percent_complete(mut self, input: i32) -> Self {
         self.percent_complete = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ExecutionDetailsBuilder {
     pub fn set_percent_complete(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percent_complete = input;
         self
+    }
+    /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
+    pub fn get_percent_complete(&self) -> &::std::option::Option<i32> {
+        &self.percent_complete
     }
     /// Consumes the builder and constructs a [`ExecutionDetails`](crate::types::ExecutionDetails).
     pub fn build(self) -> crate::types::ExecutionDetails {

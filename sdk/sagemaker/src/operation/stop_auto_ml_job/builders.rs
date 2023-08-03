@@ -36,6 +36,12 @@ impl StopAutoMLJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopAutoMLJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_auto_ml_job::builders::StopAutoMlJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl StopAutoMLJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_ml_job_name(input);
         self
+    }
+    /// <p>The name of the object you are requesting.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_ml_job_name()
     }
 }

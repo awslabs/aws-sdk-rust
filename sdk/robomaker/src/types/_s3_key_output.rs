@@ -48,6 +48,10 @@ impl S3KeyOutputBuilder {
         self.s3_key = input;
         self
     }
+    /// <p>The S3 key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
+    }
     /// <p>The etag for the object.</p>
     pub fn etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.etag = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3KeyOutputBuilder {
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.etag = input;
         self
+    }
+    /// <p>The etag for the object.</p>
+    pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.etag
     }
     /// Consumes the builder and constructs a [`S3KeyOutput`](crate::types::S3KeyOutput).
     pub fn build(self) -> crate::types::S3KeyOutput {

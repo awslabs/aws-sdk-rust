@@ -36,6 +36,10 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkspaceConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration()
+    }
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -141,6 +149,10 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
@@ -161,5 +173,11 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_grafana_version(input);
         self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grafana_version()
     }
 }

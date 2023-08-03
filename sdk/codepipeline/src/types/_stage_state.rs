@@ -74,6 +74,10 @@ impl StageStateBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>Represents information about the run of a stage.</p>
     pub fn inbound_execution(mut self, input: crate::types::StageExecution) -> Self {
         self.inbound_execution = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl StageStateBuilder {
         self.inbound_execution = input;
         self
     }
+    /// <p>Represents information about the run of a stage.</p>
+    pub fn get_inbound_execution(&self) -> &::std::option::Option<crate::types::StageExecution> {
+        &self.inbound_execution
+    }
     /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
     pub fn inbound_transition_state(mut self, input: crate::types::TransitionState) -> Self {
         self.inbound_transition_state = ::std::option::Option::Some(input);
@@ -99,6 +107,12 @@ impl StageStateBuilder {
     ) -> Self {
         self.inbound_transition_state = input;
         self
+    }
+    /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
+    pub fn get_inbound_transition_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitionState> {
+        &self.inbound_transition_state
     }
     /// Appends an item to `action_states`.
     ///
@@ -119,6 +133,12 @@ impl StageStateBuilder {
         self.action_states = input;
         self
     }
+    /// <p>The state of the stage.</p>
+    pub fn get_action_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionState>> {
+        &self.action_states
+    }
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
     pub fn latest_execution(mut self, input: crate::types::StageExecution) -> Self {
         self.latest_execution = ::std::option::Option::Some(input);
@@ -131,6 +151,10 @@ impl StageStateBuilder {
     ) -> Self {
         self.latest_execution = input;
         self
+    }
+    /// <p>Information about the latest execution in the stage, including its ID and status.</p>
+    pub fn get_latest_execution(&self) -> &::std::option::Option<crate::types::StageExecution> {
+        &self.latest_execution
     }
     /// Consumes the builder and constructs a [`StageState`](crate::types::StageState).
     pub fn build(self) -> crate::types::StageState {

@@ -48,6 +48,10 @@ impl FieldBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FieldBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The data type of the field.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
     pub fn build(self) -> crate::types::Field {

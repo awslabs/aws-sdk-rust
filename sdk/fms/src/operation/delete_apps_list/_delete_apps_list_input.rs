@@ -39,6 +39,10 @@ impl DeleteAppsListInputBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// Consumes the builder and constructs a [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
     pub fn build(
         self,

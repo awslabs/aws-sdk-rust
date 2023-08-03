@@ -48,6 +48,10 @@ impl DataLakeSourceStatusBuilder {
         self.resource = input;
         self
     }
+    /// <p>Defines path the stored logs are available which has information on your systems, applications, and services.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>The health status of services, including error codes and patterns.</p>
     pub fn status(mut self, input: crate::types::SourceCollectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DataLakeSourceStatusBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The health status of services, including error codes and patterns.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SourceCollectionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DataLakeSourceStatus`](crate::types::DataLakeSourceStatus).
     pub fn build(self) -> crate::types::DataLakeSourceStatus {

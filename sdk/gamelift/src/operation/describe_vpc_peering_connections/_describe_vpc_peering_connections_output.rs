@@ -59,6 +59,12 @@ impl DescribeVpcPeeringConnectionsOutputBuilder {
         self.vpc_peering_connections = input;
         self
     }
+    /// <p>A collection of VPC peering connection records that match the request.</p>
+    pub fn get_vpc_peering_connections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>> {
+        &self.vpc_peering_connections
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

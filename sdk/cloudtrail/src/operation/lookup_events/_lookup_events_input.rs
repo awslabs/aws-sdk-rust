@@ -90,6 +90,12 @@ impl LookupEventsInputBuilder {
         self.lookup_attributes = input;
         self
     }
+    /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
+    pub fn get_lookup_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
+        &self.lookup_attributes
+    }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -102,6 +108,10 @@ impl LookupEventsInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +126,10 @@ impl LookupEventsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn event_category(mut self, input: crate::types::EventCategory) -> Self {
         self.event_category = ::std::option::Option::Some(input);
@@ -129,6 +143,10 @@ impl LookupEventsInputBuilder {
         self.event_category = input;
         self
     }
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    pub fn get_event_category(&self) -> &::std::option::Option<crate::types::EventCategory> {
+        &self.event_category
+    }
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -139,6 +157,10 @@ impl LookupEventsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -148,6 +170,10 @@ impl LookupEventsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
     pub fn build(

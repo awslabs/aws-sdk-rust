@@ -69,6 +69,10 @@ impl MasterUserOptionsBuilder {
         self.master_user_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
+    pub fn get_master_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_arn
+    }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
     pub fn master_user_name(
         mut self,
@@ -85,6 +89,10 @@ impl MasterUserOptionsBuilder {
         self.master_user_name = input;
         self
     }
+    /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
+    pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_name
+    }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
     pub fn master_user_password(
         mut self,
@@ -100,6 +108,10 @@ impl MasterUserOptionsBuilder {
     ) -> Self {
         self.master_user_password = input;
         self
+    }
+    /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
     }
     /// Consumes the builder and constructs a [`MasterUserOptions`](crate::types::MasterUserOptions).
     pub fn build(self) -> crate::types::MasterUserOptions {

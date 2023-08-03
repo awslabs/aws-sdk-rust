@@ -50,6 +50,10 @@ impl UpdateGameSessionOutputBuilder {
         self.game_session = input;
         self
     }
+    /// <p>The updated game session properties.</p>
+    pub fn get_game_session(&self) -> &::std::option::Option<crate::types::GameSession> {
+        &self.game_session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

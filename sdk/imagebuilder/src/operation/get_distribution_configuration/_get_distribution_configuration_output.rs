@@ -57,6 +57,10 @@ impl GetDistributionConfigurationOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The distribution configuration object.</p>
     pub fn distribution_configuration(
         mut self,
@@ -72,6 +76,12 @@ impl GetDistributionConfigurationOutputBuilder {
     ) -> Self {
         self.distribution_configuration = input;
         self
+    }
+    /// <p>The distribution configuration object.</p>
+    pub fn get_distribution_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfiguration> {
+        &self.distribution_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

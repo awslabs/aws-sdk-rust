@@ -38,6 +38,12 @@ impl TagDeliveryStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagDeliveryStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl TagDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -150,5 +160,9 @@ impl TagDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A set of key-value pairs to use to create the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

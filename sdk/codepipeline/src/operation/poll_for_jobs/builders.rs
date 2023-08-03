@@ -38,6 +38,10 @@ impl PollForJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PollForJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::poll_for_jobs::builders::PollForJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl PollForJobsFluentBuilder {
         self.inner = self.inner.set_action_type_id(input);
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        self.inner.get_action_type_id()
+    }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.inner = self.inner.max_batch_size(input);
@@ -132,6 +140,10 @@ impl PollForJobsFluentBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_batch_size(input);
         self
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_batch_size()
     }
     /// Adds a key-value pair to `queryParam`.
     ///
@@ -155,5 +167,13 @@ impl PollForJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_param(input);
         self
+    }
+    /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
+    pub fn get_query_param(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_query_param()
     }
 }

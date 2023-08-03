@@ -149,6 +149,12 @@ impl Av1SettingsBuilder {
         self.adaptive_quantization = input;
         self
     }
+    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization.
+    pub fn get_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Av1AdaptiveQuantization> {
+        &self.adaptive_quantization
+    }
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub fn bit_depth(mut self, input: crate::types::Av1BitDepth) -> Self {
         self.bit_depth = ::std::option::Option::Some(input);
@@ -162,6 +168,10 @@ impl Av1SettingsBuilder {
         self.bit_depth = input;
         self
     }
+    /// Specify the Bit depth. You can choose 8-bit or 10-bit.
+    pub fn get_bit_depth(&self) -> &::std::option::Option<crate::types::Av1BitDepth> {
+        &self.bit_depth
+    }
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn framerate_control(mut self, input: crate::types::Av1FramerateControl) -> Self {
         self.framerate_control = ::std::option::Option::Some(input);
@@ -174,6 +184,12 @@ impl Av1SettingsBuilder {
     ) -> Self {
         self.framerate_control = input;
         self
+    }
+    /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
+    pub fn get_framerate_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::Av1FramerateControl> {
+        &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn framerate_conversion_algorithm(
@@ -191,6 +207,12 @@ impl Av1SettingsBuilder {
         self.framerate_conversion_algorithm = input;
         self
     }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
+    pub fn get_framerate_conversion_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::Av1FramerateConversionAlgorithm> {
+        &self.framerate_conversion_algorithm
+    }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
         self.framerate_denominator = ::std::option::Option::Some(input);
@@ -200,6 +222,10 @@ impl Av1SettingsBuilder {
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_denominator = input;
         self
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
@@ -211,6 +237,10 @@ impl Av1SettingsBuilder {
         self.framerate_numerator = input;
         self
     }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_numerator
+    }
     /// Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
     pub fn gop_size(mut self, input: f64) -> Self {
         self.gop_size = ::std::option::Option::Some(input);
@@ -221,6 +251,10 @@ impl Av1SettingsBuilder {
         self.gop_size = input;
         self
     }
+    /// Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
+    pub fn get_gop_size(&self) -> &::std::option::Option<f64> {
+        &self.gop_size
+    }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
@@ -230,6 +264,10 @@ impl Av1SettingsBuilder {
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_bitrate = input;
         self
+    }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
     pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
@@ -244,6 +282,10 @@ impl Av1SettingsBuilder {
         self.number_b_frames_between_reference_frames = input;
         self
     }
+    /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
+    pub fn get_number_b_frames_between_reference_frames(&self) -> &::std::option::Option<i32> {
+        &self.number_b_frames_between_reference_frames
+    }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn qvbr_settings(mut self, input: crate::types::Av1QvbrSettings) -> Self {
         self.qvbr_settings = ::std::option::Option::Some(input);
@@ -256,6 +298,10 @@ impl Av1SettingsBuilder {
     ) -> Self {
         self.qvbr_settings = input;
         self
+    }
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    pub fn get_qvbr_settings(&self) -> &::std::option::Option<crate::types::Av1QvbrSettings> {
+        &self.qvbr_settings
     }
     /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
     pub fn rate_control_mode(mut self, input: crate::types::Av1RateControlMode) -> Self {
@@ -270,6 +316,12 @@ impl Av1SettingsBuilder {
         self.rate_control_mode = input;
         self
     }
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    pub fn get_rate_control_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::Av1RateControlMode> {
+        &self.rate_control_mode
+    }
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
     pub fn slices(mut self, input: i32) -> Self {
         self.slices = ::std::option::Option::Some(input);
@@ -279,6 +331,10 @@ impl Av1SettingsBuilder {
     pub fn set_slices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.slices = input;
         self
+    }
+    /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
+    pub fn get_slices(&self) -> &::std::option::Option<i32> {
+        &self.slices
     }
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub fn spatial_adaptive_quantization(
@@ -295,6 +351,12 @@ impl Av1SettingsBuilder {
     ) -> Self {
         self.spatial_adaptive_quantization = input;
         self
+    }
+    /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn get_spatial_adaptive_quantization(
+        &self,
+    ) -> &::std::option::Option<crate::types::Av1SpatialAdaptiveQuantization> {
+        &self.spatial_adaptive_quantization
     }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {

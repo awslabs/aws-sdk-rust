@@ -49,6 +49,10 @@ impl StartNetworkResourceUpdateOutputBuilder {
         self.network_resource = input;
         self
     }
+    /// <p>The network resource.</p>
+    pub fn get_network_resource(&self) -> &::std::option::Option<crate::types::NetworkResource> {
+        &self.network_resource
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

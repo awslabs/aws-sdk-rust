@@ -103,6 +103,10 @@ impl ListSigningJobsInputBuilder {
         self.status = input;
         self
     }
+    /// <p>A status value with which to filter your results.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SigningStatus> {
+        &self.status
+    }
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl ListSigningJobsInputBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self
+    }
+    /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
     }
     /// <p>The IAM principal that requested the signing job.</p>
     pub fn requested_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +131,10 @@ impl ListSigningJobsInputBuilder {
         self.requested_by = input;
         self
     }
+    /// <p>The IAM principal that requested the signing job.</p>
+    pub fn get_requested_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requested_by
+    }
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl ListSigningJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +159,10 @@ impl ListSigningJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
     pub fn is_revoked(mut self, input: bool) -> Self {
         self.is_revoked = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl ListSigningJobsInputBuilder {
     pub fn set_is_revoked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_revoked = input;
         self
+    }
+    /// <p>Filters results to return only signing jobs with revoked signatures.</p>
+    pub fn get_is_revoked(&self) -> &::std::option::Option<bool> {
+        &self.is_revoked
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     pub fn signature_expires_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -166,6 +190,12 @@ impl ListSigningJobsInputBuilder {
         self.signature_expires_before = input;
         self
     }
+    /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
+    pub fn get_signature_expires_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.signature_expires_before
+    }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
     pub fn signature_expires_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.signature_expires_after = ::std::option::Option::Some(input);
@@ -179,6 +209,12 @@ impl ListSigningJobsInputBuilder {
         self.signature_expires_after = input;
         self
     }
+    /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
+    pub fn get_signature_expires_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.signature_expires_after
+    }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub fn job_invoker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_invoker = ::std::option::Option::Some(input.into());
@@ -188,6 +224,10 @@ impl ListSigningJobsInputBuilder {
     pub fn set_job_invoker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_invoker = input;
         self
+    }
+    /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
+    pub fn get_job_invoker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_invoker
     }
     /// Consumes the builder and constructs a [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
     pub fn build(

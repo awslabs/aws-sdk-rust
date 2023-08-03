@@ -94,6 +94,10 @@ impl VoiceTemplateRequestBuilder {
         self.body = input;
         self
     }
+    /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub fn default_substitutions(
         mut self,
@@ -110,6 +114,10 @@ impl VoiceTemplateRequestBuilder {
         self.default_substitutions = input;
         self
     }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
+    }
     /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn language_code(
         mut self,
@@ -125,6 +133,10 @@ impl VoiceTemplateRequestBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -157,6 +169,17 @@ impl VoiceTemplateRequestBuilder {
         self.tags = input;
         self
     }
+    /// <note>
+    /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
+    /// </note>
+    /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A custom description of the message template.</p>
     pub fn template_description(
         mut self,
@@ -173,6 +196,10 @@ impl VoiceTemplateRequestBuilder {
         self.template_description = input;
         self
     }
+    /// <p>A custom description of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
+    }
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
@@ -182,6 +209,10 @@ impl VoiceTemplateRequestBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
     }
     /// Consumes the builder and constructs a [`VoiceTemplateRequest`](crate::types::VoiceTemplateRequest).
     pub fn build(self) -> crate::types::VoiceTemplateRequest {

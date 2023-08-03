@@ -83,6 +83,10 @@ impl LimitExceededExceptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Client</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>400 Bad Request</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl LimitExceededExceptionBuilder {
         self.code = input;
         self
     }
+    /// <p>400 Bad Request</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>Returned if the request results in a vault limit or tags limit being exceeded.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl LimitExceededExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Returned if the request results in a vault limit or tags limit being exceeded.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

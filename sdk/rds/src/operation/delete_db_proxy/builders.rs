@@ -36,6 +36,12 @@ impl DeleteDBProxyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBProxy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_db_proxy::builders::DeleteDbProxyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl DeleteDBProxyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
+    }
+    /// <p>The name of the DB proxy to delete.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
     }
 }

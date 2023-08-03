@@ -80,6 +80,10 @@ impl UpdateVpcEndpointDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the endpoint.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UpdateVpcEndpointDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the endpoint update process.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -102,6 +110,10 @@ impl UpdateVpcEndpointDetailBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the endpoint update process.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
+        &self.status
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -121,6 +133,10 @@ impl UpdateVpcEndpointDetailBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -144,6 +160,12 @@ impl UpdateVpcEndpointDetailBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The timestamp of when the endpoint was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -153,6 +175,10 @@ impl UpdateVpcEndpointDetailBuilder {
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The timestamp of when the endpoint was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointDetail`](crate::types::UpdateVpcEndpointDetail).
     pub fn build(self) -> crate::types::UpdateVpcEndpointDetail {

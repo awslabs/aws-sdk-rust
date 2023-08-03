@@ -69,6 +69,10 @@ impl EncryptionSettingBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
     pub fn bot_locale_export_password(
         mut self,
@@ -85,6 +89,10 @@ impl EncryptionSettingBuilder {
         self.bot_locale_export_password = input;
         self
     }
+    /// <p>The password used to encrypt the recommended bot recommendation file.</p>
+    pub fn get_bot_locale_export_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_locale_export_password
+    }
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub fn associated_transcripts_password(
         mut self,
@@ -100,6 +108,12 @@ impl EncryptionSettingBuilder {
     ) -> Self {
         self.associated_transcripts_password = input;
         self
+    }
+    /// <p>The password used to encrypt the associated transcript file.</p>
+    pub fn get_associated_transcripts_password(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.associated_transcripts_password
     }
     /// Consumes the builder and constructs a [`EncryptionSetting`](crate::types::EncryptionSetting).
     pub fn build(self) -> crate::types::EncryptionSetting {

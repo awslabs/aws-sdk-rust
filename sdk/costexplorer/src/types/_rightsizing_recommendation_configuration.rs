@@ -53,6 +53,12 @@ impl RightsizingRecommendationConfigurationBuilder {
         self.recommendation_target = input;
         self
     }
+    /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
+    pub fn get_recommendation_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationTarget> {
+        &self.recommendation_target
+    }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub fn benefits_considered(mut self, input: bool) -> Self {
         self.benefits_considered = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl RightsizingRecommendationConfigurationBuilder {
     pub fn set_benefits_considered(mut self, input: ::std::option::Option<bool>) -> Self {
         self.benefits_considered = input;
         self
+    }
+    /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
+    pub fn get_benefits_considered(&self) -> &::std::option::Option<bool> {
+        &self.benefits_considered
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationConfiguration`](crate::types::RightsizingRecommendationConfiguration).
     pub fn build(self) -> crate::types::RightsizingRecommendationConfiguration {

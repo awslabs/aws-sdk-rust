@@ -54,6 +54,10 @@ impl AwsS3BucketServerSideEncryptionByDefaultBuilder {
         self.sse_algorithm = input;
         self
     }
+    /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
+    pub fn get_sse_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_algorithm
+    }
     /// <p>KMS key ID to use for the default encryption.</p>
     pub fn kms_master_key_id(
         mut self,
@@ -69,6 +73,10 @@ impl AwsS3BucketServerSideEncryptionByDefaultBuilder {
     ) -> Self {
         self.kms_master_key_id = input;
         self
+    }
+    /// <p>KMS key ID to use for the default encryption.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
     }
     /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionByDefault`](crate::types::AwsS3BucketServerSideEncryptionByDefault).
     pub fn build(self) -> crate::types::AwsS3BucketServerSideEncryptionByDefault {

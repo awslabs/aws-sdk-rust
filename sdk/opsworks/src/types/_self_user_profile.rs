@@ -64,6 +64,10 @@ impl SelfUserProfileBuilder {
         self.iam_user_arn = input;
         self
     }
+    /// <p>The user's IAM ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_user_arn
+    }
     /// <p>The user's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl SelfUserProfileBuilder {
         self.name = input;
         self
     }
+    /// <p>The user's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The user's SSH user name.</p>
     pub fn ssh_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_username = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl SelfUserProfileBuilder {
     pub fn set_ssh_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_username = input;
         self
+    }
+    /// <p>The user's SSH user name.</p>
+    pub fn get_ssh_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_username
     }
     /// <p>The user's SSH public key.</p>
     pub fn ssh_public_key(
@@ -99,6 +111,10 @@ impl SelfUserProfileBuilder {
     ) -> Self {
         self.ssh_public_key = input;
         self
+    }
+    /// <p>The user's SSH public key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
     }
     /// Consumes the builder and constructs a [`SelfUserProfile`](crate::types::SelfUserProfile).
     pub fn build(self) -> crate::types::SelfUserProfile {

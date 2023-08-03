@@ -59,6 +59,12 @@ impl ArchiveGroupSettingsBuilder {
         self.archive_cdn_settings = input;
         self
     }
+    /// Parameters that control interactions with the CDN.
+    pub fn get_archive_cdn_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArchiveCdnSettings> {
+        &self.archive_cdn_settings
+    }
     /// A directory and base filename where archive files should be written.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl ArchiveGroupSettingsBuilder {
         self.destination = input;
         self
     }
+    /// A directory and base filename where archive files should be written.
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
+        &self.destination
+    }
     /// Number of seconds to write to archive file before closing and starting a new one.
     pub fn rollover_interval(mut self, input: i32) -> Self {
         self.rollover_interval = ::std::option::Option::Some(input);
@@ -81,6 +91,10 @@ impl ArchiveGroupSettingsBuilder {
     pub fn set_rollover_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rollover_interval = input;
         self
+    }
+    /// Number of seconds to write to archive file before closing and starting a new one.
+    pub fn get_rollover_interval(&self) -> &::std::option::Option<i32> {
+        &self.rollover_interval
     }
     /// Consumes the builder and constructs a [`ArchiveGroupSettings`](crate::types::ArchiveGroupSettings).
     pub fn build(self) -> crate::types::ArchiveGroupSettings {

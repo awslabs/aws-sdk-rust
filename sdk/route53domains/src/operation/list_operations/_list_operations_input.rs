@@ -93,6 +93,10 @@ impl ListOperationsInputBuilder {
         self.submitted_since = input;
         self
     }
+    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_submitted_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submitted_since
+    }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl ListOperationsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
@@ -114,6 +122,11 @@ impl ListOperationsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>Number of domains to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Appends an item to `status`.
     ///
@@ -134,6 +147,12 @@ impl ListOperationsInputBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the operations. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+        &self.status
+    }
     /// Appends an item to `r#type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
@@ -153,6 +172,10 @@ impl ListOperationsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p> An arrays of the domains operation types. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
+        &self.r#type
+    }
     /// <p> The sort type for returned values. </p>
     pub fn sort_by(mut self, input: crate::types::ListOperationsSortAttributeName) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -166,6 +189,12 @@ impl ListOperationsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p> The sort type for returned values. </p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
+        &self.sort_by
+    }
     /// <p> The sort order ofr returned values, either ascending or descending. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -175,6 +204,10 @@ impl ListOperationsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn build(

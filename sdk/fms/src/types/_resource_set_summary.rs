@@ -80,6 +80,10 @@ impl ResourceSetSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ResourceSetSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the resource set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ResourceSetSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the resource set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The last time that the resource set was changed.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,6 +124,10 @@ impl ResourceSetSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The last time that the resource set was changed.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
@@ -133,6 +149,16 @@ impl ResourceSetSummaryBuilder {
     ) -> Self {
         self.resource_set_status = input;
         self
+    }
+    /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
+    /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
+    /// </ul>
+    pub fn get_resource_set_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceSetStatus> {
+        &self.resource_set_status
     }
     /// Consumes the builder and constructs a [`ResourceSetSummary`](crate::types::ResourceSetSummary).
     pub fn build(self) -> crate::types::ResourceSetSummary {

@@ -46,6 +46,10 @@ impl DeleteCustomPluginInputBuilder {
         self.custom_plugin_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
     pub fn build(
         self,

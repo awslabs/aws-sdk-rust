@@ -48,6 +48,10 @@ impl DescribeFunctionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the function that you are getting information about.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.stage = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DescribeFunctionInputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
     pub fn build(

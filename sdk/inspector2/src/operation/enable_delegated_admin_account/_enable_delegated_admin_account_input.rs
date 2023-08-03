@@ -53,6 +53,10 @@ impl EnableDelegatedAdminAccountInputBuilder {
         self.delegated_admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
+    }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl EnableDelegatedAdminAccountInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountInput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput).
     pub fn build(

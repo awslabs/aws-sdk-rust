@@ -55,6 +55,10 @@ impl ListSharedProjectsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `projects`.
     ///
     /// To override the contents of this collection use [`set_projects`](Self::set_projects).
@@ -73,6 +77,10 @@ impl ListSharedProjectsOutputBuilder {
     ) -> Self {
         self.projects = input;
         self
+    }
+    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.projects
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

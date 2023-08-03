@@ -51,6 +51,10 @@ impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
     pub fn o_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,6 +66,11 @@ impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     pub fn set_o_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.o_id = input;
         self
+    }
+    /// <p>An object identifier (OID) for the extension value.</p>
+    /// <p>The format is numbers separated by periods.</p>
+    pub fn get_o_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.o_id
     }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::types::AwsCertificateManagerCertificateExtendedKeyUsage).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateExtendedKeyUsage {

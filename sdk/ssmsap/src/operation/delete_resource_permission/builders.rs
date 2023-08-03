@@ -36,6 +36,13 @@ impl DeleteResourcePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourcePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl DeleteResourcePermissionFluentBuilder {
         self.inner = self.inner.set_action_type(input);
         self
     }
+    /// <p>Delete or restore the permissions on the target database.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::PermissionActionType> {
+        self.inner.get_action_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub fn source_resource_arn(
         mut self,
@@ -145,6 +156,10 @@ impl DeleteResourcePermissionFluentBuilder {
         self.inner = self.inner.set_source_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
+    pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_resource_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -154,5 +169,9 @@ impl DeleteResourcePermissionFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

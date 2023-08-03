@@ -49,6 +49,12 @@ impl ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
         self.distribution_id_list = input;
         self
     }
+    /// <p>A list of distribution IDs.</p>
+    pub fn get_distribution_id_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionIdList> {
+        &self.distribution_id_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl RestoreBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreBackup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restore_backup::builders::RestoreBackupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl RestoreBackupFluentBuilder {
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
+    }
+    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
     }
 }

@@ -52,6 +52,10 @@ impl DescribeUserPoolClientOutputBuilder {
         self.user_pool_client = input;
         self
     }
+    /// <p>The user pool client from a server response to describe the user pool client.</p>
+    pub fn get_user_pool_client(&self) -> &::std::option::Option<crate::types::UserPoolClientType> {
+        &self.user_pool_client
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

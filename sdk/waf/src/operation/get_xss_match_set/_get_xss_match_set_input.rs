@@ -46,6 +46,10 @@ impl GetXssMatchSetInputBuilder {
         self.xss_match_set_id = input;
         self
     }
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    pub fn get_xss_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.xss_match_set_id
+    }
     /// Consumes the builder and constructs a [`GetXssMatchSetInput`](crate::operation::get_xss_match_set::GetXssMatchSetInput).
     pub fn build(
         self,

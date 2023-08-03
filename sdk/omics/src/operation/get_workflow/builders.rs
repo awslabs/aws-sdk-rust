@@ -36,6 +36,10 @@ impl GetWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflow as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_workflow::builders::GetWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetWorkflowFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The workflow's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The workflow's type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -127,6 +135,10 @@ impl GetWorkflowFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The workflow's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        self.inner.get_type()
     }
     /// Appends an item to `export`.
     ///
@@ -144,5 +156,11 @@ impl GetWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export(input);
         self
+    }
+    /// <p>The export format for the workflow.</p>
+    pub fn get_export(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
+        self.inner.get_export()
     }
 }

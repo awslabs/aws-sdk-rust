@@ -62,6 +62,10 @@ impl GetMapTileOutputBuilder {
         self.blob = input;
         self
     }
+    /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
+    pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.blob
+    }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl GetMapTileOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub fn cache_control(
@@ -87,6 +95,10 @@ impl GetMapTileOutputBuilder {
     ) -> Self {
         self.cache_control = input;
         self
+    }
+    /// <p>The HTTP Cache-Control directive for the value.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

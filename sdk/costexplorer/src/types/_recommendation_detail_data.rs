@@ -278,6 +278,10 @@ impl RecommendationDetailDataBuilder {
         self.account_scope = input;
         self
     }
+    /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to PAYER. If the value is LINKED, recommendations are calculated for individual member accounts only.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
         self.lookback_period_in_days = ::std::option::Option::Some(input);
@@ -290,6 +294,12 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.lookback_period_in_days = input;
         self
+    }
+    /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        &self.lookback_period_in_days
     }
     /// <p>The requested Savings Plan recommendation type.</p>
     pub fn savings_plans_type(mut self, input: crate::types::SupportedSavingsPlansType) -> Self {
@@ -304,6 +314,12 @@ impl RecommendationDetailDataBuilder {
         self.savings_plans_type = input;
         self
     }
+    /// <p>The requested Savings Plan recommendation type.</p>
+    pub fn get_savings_plans_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+        &self.savings_plans_type
+    }
     /// <p>The term of the commitment in years.</p>
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
         self.term_in_years = ::std::option::Option::Some(input);
@@ -316,6 +332,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.term_in_years = input;
         self
+    }
+    /// <p>The term of the commitment in years.</p>
+    pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
+        &self.term_in_years
     }
     /// <p>The payment option for the commitment (for example, All Upfront or No Upfront).</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -330,6 +350,10 @@ impl RecommendationDetailDataBuilder {
         self.payment_option = input;
         self
     }
+    /// <p>The payment option for the commitment (for example, All Upfront or No Upfront).</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     /// <p>The AccountID that the recommendation is generated for.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -339,6 +363,10 @@ impl RecommendationDetailDataBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The AccountID that the recommendation is generated for.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The currency code that Amazon Web Services used to generate the recommendation and present potential savings.</p>
     pub fn currency_code(
@@ -356,6 +384,10 @@ impl RecommendationDetailDataBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code that Amazon Web Services used to generate the recommendation and present potential savings.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>The instance family of the recommended Savings Plan.</p>
     pub fn instance_family(
         mut self,
@@ -372,6 +404,10 @@ impl RecommendationDetailDataBuilder {
         self.instance_family = input;
         self
     }
+    /// <p>The instance family of the recommended Savings Plan.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_family
+    }
     /// <p>The region the recommendation is generated for.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -382,6 +418,10 @@ impl RecommendationDetailDataBuilder {
         self.region = input;
         self
     }
+    /// <p>The region the recommendation is generated for.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -391,6 +431,10 @@ impl RecommendationDetailDataBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// <p>The period of time that you want the usage and costs for.</p>
     pub fn generation_timestamp(
@@ -409,6 +453,10 @@ impl RecommendationDetailDataBuilder {
         self
     }
     /// <p>The period of time that you want the usage and costs for.</p>
+    pub fn get_generation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_timestamp
+    }
+    /// <p>The period of time that you want the usage and costs for.</p>
     pub fn latest_usage_timestamp(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -423,6 +471,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.latest_usage_timestamp = input;
         self
+    }
+    /// <p>The period of time that you want the usage and costs for.</p>
+    pub fn get_latest_usage_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_usage_timestamp
     }
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
     pub fn current_average_hourly_on_demand_spend(
@@ -440,6 +492,12 @@ impl RecommendationDetailDataBuilder {
         self.current_average_hourly_on_demand_spend = input;
         self
     }
+    /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    pub fn get_current_average_hourly_on_demand_spend(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_average_hourly_on_demand_spend
+    }
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
     pub fn current_maximum_hourly_on_demand_spend(
         mut self,
@@ -455,6 +513,12 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.current_maximum_hourly_on_demand_spend = input;
         self
+    }
+    /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    pub fn get_current_maximum_hourly_on_demand_spend(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_maximum_hourly_on_demand_spend
     }
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
     pub fn current_minimum_hourly_on_demand_spend(
@@ -472,6 +536,12 @@ impl RecommendationDetailDataBuilder {
         self.current_minimum_hourly_on_demand_spend = input;
         self
     }
+    /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    pub fn get_current_minimum_hourly_on_demand_spend(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.current_minimum_hourly_on_demand_spend
+    }
     /// <p>The estimated utilization of the recommended Savings Plan.</p>
     pub fn estimated_average_utilization(
         mut self,
@@ -487,6 +557,12 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.estimated_average_utilization = input;
         self
+    }
+    /// <p>The estimated utilization of the recommended Savings Plan.</p>
+    pub fn get_estimated_average_utilization(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_average_utilization
     }
     /// <p>The estimated monthly savings amount based on the recommended Savings Plan.</p>
     pub fn estimated_monthly_savings_amount(
@@ -504,6 +580,12 @@ impl RecommendationDetailDataBuilder {
         self.estimated_monthly_savings_amount = input;
         self
     }
+    /// <p>The estimated monthly savings amount based on the recommended Savings Plan.</p>
+    pub fn get_estimated_monthly_savings_amount(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_savings_amount
+    }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
     pub fn estimated_on_demand_cost(
         mut self,
@@ -519,6 +601,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.estimated_on_demand_cost = input;
         self
+    }
+    /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
+    pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_on_demand_cost
     }
     /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
     pub fn estimated_on_demand_cost_with_current_commitment(
@@ -537,6 +623,12 @@ impl RecommendationDetailDataBuilder {
         self.estimated_on_demand_cost_with_current_commitment = input;
         self
     }
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    pub fn get_estimated_on_demand_cost_with_current_commitment(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_on_demand_cost_with_current_commitment
+    }
     /// <p>The estimated return on investment that's based on the recommended Savings Plan that you purchased. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub fn estimated_roi(
         mut self,
@@ -552,6 +644,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.estimated_roi = input;
         self
+    }
+    /// <p>The estimated return on investment that's based on the recommended Savings Plan that you purchased. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    pub fn get_estimated_roi(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_roi
     }
     /// <p>The cost of the recommended Savings Plan over the length of the lookback period.</p>
     pub fn estimated_sp_cost(
@@ -569,6 +665,10 @@ impl RecommendationDetailDataBuilder {
         self.estimated_sp_cost = input;
         self
     }
+    /// <p>The cost of the recommended Savings Plan over the length of the lookback period.</p>
+    pub fn get_estimated_sp_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_sp_cost
+    }
     /// <p>The estimated savings amount that's based on the recommended Savings Plan over the length of the lookback period.</p>
     pub fn estimated_savings_amount(
         mut self,
@@ -584,6 +684,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.estimated_savings_amount = input;
         self
+    }
+    /// <p>The estimated savings amount that's based on the recommended Savings Plan over the length of the lookback period.</p>
+    pub fn get_estimated_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_savings_amount
     }
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
     pub fn estimated_savings_percentage(
@@ -601,6 +705,12 @@ impl RecommendationDetailDataBuilder {
         self.estimated_savings_percentage = input;
         self
     }
+    /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
+    pub fn get_estimated_savings_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_savings_percentage
+    }
     /// <p>The existing hourly commitment for the Savings Plan type.</p>
     pub fn existing_hourly_commitment(
         mut self,
@@ -616,6 +726,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.existing_hourly_commitment = input;
         self
+    }
+    /// <p>The existing hourly commitment for the Savings Plan type.</p>
+    pub fn get_existing_hourly_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.existing_hourly_commitment
     }
     /// <p>The recommended hourly commitment level for the Savings Plan type and the configuration that's based on the usage during the lookback period.</p>
     pub fn hourly_commitment_to_purchase(
@@ -633,6 +747,12 @@ impl RecommendationDetailDataBuilder {
         self.hourly_commitment_to_purchase = input;
         self
     }
+    /// <p>The recommended hourly commitment level for the Savings Plan type and the configuration that's based on the usage during the lookback period.</p>
+    pub fn get_hourly_commitment_to_purchase(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hourly_commitment_to_purchase
+    }
     /// <p>The upfront cost of the recommended Savings Plan, based on the selected payment option.</p>
     pub fn upfront_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_cost = ::std::option::Option::Some(input.into());
@@ -642,6 +762,10 @@ impl RecommendationDetailDataBuilder {
     pub fn set_upfront_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_cost = input;
         self
+    }
+    /// <p>The upfront cost of the recommended Savings Plan, based on the selected payment option.</p>
+    pub fn get_upfront_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upfront_cost
     }
     /// <p>The average value of hourly coverage over the lookback period.</p>
     pub fn current_average_coverage(
@@ -659,6 +783,10 @@ impl RecommendationDetailDataBuilder {
         self.current_average_coverage = input;
         self
     }
+    /// <p>The average value of hourly coverage over the lookback period.</p>
+    pub fn get_current_average_coverage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_average_coverage
+    }
     /// <p>The estimated coverage of the recommended Savings Plan.</p>
     pub fn estimated_average_coverage(
         mut self,
@@ -674,6 +802,10 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.estimated_average_coverage = input;
         self
+    }
+    /// <p>The estimated coverage of the recommended Savings Plan.</p>
+    pub fn get_estimated_average_coverage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_average_coverage
     }
     /// Appends an item to `metrics_over_lookback_period`.
     ///
@@ -698,6 +830,13 @@ impl RecommendationDetailDataBuilder {
     ) -> Self {
         self.metrics_over_lookback_period = input;
         self
+    }
+    /// <p>The related hourly cost, coverage, and utilization metrics over the lookback period.</p>
+    pub fn get_metrics_over_lookback_period(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationDetailHourlyMetrics>>
+    {
+        &self.metrics_over_lookback_period
     }
     /// Consumes the builder and constructs a [`RecommendationDetailData`](crate::types::RecommendationDetailData).
     pub fn build(self) -> crate::types::RecommendationDetailData {

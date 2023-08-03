@@ -48,6 +48,10 @@ impl ActionTypeArtifactDetailsBuilder {
         self.minimum_count = input;
         self
     }
+    /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    pub fn get_minimum_count(&self) -> &::std::option::Option<i32> {
+        &self.minimum_count
+    }
     /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
     pub fn maximum_count(mut self, input: i32) -> Self {
         self.maximum_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ActionTypeArtifactDetailsBuilder {
     pub fn set_maximum_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_count = input;
         self
+    }
+    /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    pub fn get_maximum_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_count
     }
     /// Consumes the builder and constructs a [`ActionTypeArtifactDetails`](crate::types::ActionTypeArtifactDetails).
     pub fn build(self) -> crate::types::ActionTypeArtifactDetails {

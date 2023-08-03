@@ -39,6 +39,10 @@ impl GetSolNetworkPackageDescriptorInputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
     pub fn build(
         self,

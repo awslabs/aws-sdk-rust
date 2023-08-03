@@ -36,6 +36,10 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePullRequestApprovalState as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The system-generated ID of the revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -115,6 +123,10 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The system-generated ID of the revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
     pub fn approval_state(mut self, input: crate::types::ApprovalState) -> Self {
@@ -128,5 +140,9 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_approval_state(input);
         self
+    }
+    /// <p>The approval state to associate with the user on the pull request.</p>
+    pub fn get_approval_state(&self) -> &::std::option::Option<crate::types::ApprovalState> {
+        self.inner.get_approval_state()
     }
 }

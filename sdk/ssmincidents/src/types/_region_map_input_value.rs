@@ -46,6 +46,10 @@ impl RegionMapInputValueBuilder {
         self.sse_kms_key_id = input;
         self
     }
+    /// <p>The KMS key used to encrypt the data in your replication set.</p>
+    pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_kms_key_id
+    }
     /// Consumes the builder and constructs a [`RegionMapInputValue`](crate::types::RegionMapInputValue).
     pub fn build(self) -> crate::types::RegionMapInputValue {
         crate::types::RegionMapInputValue {

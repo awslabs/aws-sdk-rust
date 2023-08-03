@@ -38,6 +38,12 @@ impl CreateBulkImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBulkImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateBulkImportJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub fn job_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_role_arn(input.into());
@@ -137,6 +147,10 @@ impl CreateBulkImportJobFluentBuilder {
     pub fn set_job_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_role_arn(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    pub fn get_job_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_role_arn()
     }
     /// Appends an item to `files`.
     ///
@@ -155,6 +169,10 @@ impl CreateBulkImportJobFluentBuilder {
         self.inner = self.inner.set_files(input);
         self
     }
+    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
+        self.inner.get_files()
+    }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub fn error_report_location(mut self, input: crate::types::ErrorReportLocation) -> Self {
         self.inner = self.inner.error_report_location(input);
@@ -168,6 +186,12 @@ impl CreateBulkImportJobFluentBuilder {
         self.inner = self.inner.set_error_report_location(input);
         self
     }
+    /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    pub fn get_error_report_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorReportLocation> {
+        self.inner.get_error_report_location()
+    }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub fn job_configuration(mut self, input: crate::types::JobConfiguration) -> Self {
         self.inner = self.inner.job_configuration(input);
@@ -180,5 +204,9 @@ impl CreateBulkImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_configuration(input);
         self
+    }
+    /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    pub fn get_job_configuration(&self) -> &::std::option::Option<crate::types::JobConfiguration> {
+        self.inner.get_job_configuration()
     }
 }

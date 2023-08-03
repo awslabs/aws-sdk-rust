@@ -52,6 +52,11 @@ impl DisableSnapshotCopyInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
+    /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DisableSnapshotCopyInput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `group_names`.
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
@@ -65,6 +69,12 @@ impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     ) -> Self {
         self.group_names = input;
         self
+    }
+    /// <p>The sign-in delegate group names.</p>
+    pub fn get_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_names
     }
     /// Consumes the builder and constructs a [`DisassociateSigninDelegateGroupsFromAccountInput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput, ::aws_smithy_http::operation::error::BuildError>{

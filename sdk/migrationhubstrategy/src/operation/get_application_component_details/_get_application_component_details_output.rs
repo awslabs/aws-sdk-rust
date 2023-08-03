@@ -84,6 +84,12 @@ impl GetApplicationComponentDetailsOutputBuilder {
         self.application_component_detail = input;
         self
     }
+    /// <p> Detailed information about an application component. </p>
+    pub fn get_application_component_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationComponentDetail> {
+        &self.application_component_detail
+    }
     /// Appends an item to `associated_applications`.
     ///
     /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
@@ -103,6 +109,12 @@ impl GetApplicationComponentDetailsOutputBuilder {
         self.associated_applications = input;
         self
     }
+    /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
+    pub fn get_associated_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
+        &self.associated_applications
+    }
     /// <p> Set to true if the application component belongs to more than one application group. </p>
     pub fn more_application_resource(mut self, input: bool) -> Self {
         self.more_application_resource = ::std::option::Option::Some(input);
@@ -112,6 +124,10 @@ impl GetApplicationComponentDetailsOutputBuilder {
     pub fn set_more_application_resource(mut self, input: ::std::option::Option<bool>) -> Self {
         self.more_application_resource = input;
         self
+    }
+    /// <p> Set to true if the application component belongs to more than one application group. </p>
+    pub fn get_more_application_resource(&self) -> &::std::option::Option<bool> {
+        &self.more_application_resource
     }
     /// Appends an item to `associated_server_ids`.
     ///
@@ -134,6 +150,12 @@ impl GetApplicationComponentDetailsOutputBuilder {
     ) -> Self {
         self.associated_server_ids = input;
         self
+    }
+    /// <p> A list of the IDs of the servers on which the application component is running. </p>
+    pub fn get_associated_server_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_server_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

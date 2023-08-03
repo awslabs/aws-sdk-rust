@@ -36,6 +36,10 @@ impl JoinDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the JoinDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::join_domain::builders::JoinDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl JoinDomainFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The name of the domain that you want the gateway to join.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -127,6 +135,10 @@ impl JoinDomainFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the domain that you want the gateway to join.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
     pub fn organizational_unit(
@@ -143,6 +155,10 @@ impl JoinDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organizational_unit(input);
         self
+    }
+    /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
+    pub fn get_organizational_unit(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organizational_unit()
     }
     /// Appends an item to `DomainControllers`.
     ///
@@ -164,6 +180,12 @@ impl JoinDomainFluentBuilder {
         self.inner = self.inner.set_domain_controllers(input);
         self
     }
+    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    pub fn get_domain_controllers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_domain_controllers()
+    }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout_in_seconds(input);
@@ -173,6 +195,10 @@ impl JoinDomainFluentBuilder {
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_in_seconds(input);
         self
+    }
+    /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout_in_seconds()
     }
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +210,10 @@ impl JoinDomainFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -193,5 +223,9 @@ impl JoinDomainFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
 }

@@ -46,6 +46,10 @@ impl DeregisterOrganizationDelegatedAdminInputBuilder {
         self.delegated_admin_account_id = input;
         self
     }
+    /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
+    }
     /// Consumes the builder and constructs a [`DeregisterOrganizationDelegatedAdminInput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

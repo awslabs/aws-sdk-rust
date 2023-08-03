@@ -36,6 +36,10 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteQueuedReservedInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `ReservedInstancesIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
@@ -145,5 +153,11 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
+    }
+    /// <p>The IDs of the Reserved Instances.</p>
+    pub fn get_reserved_instances_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instances_ids()
     }
 }

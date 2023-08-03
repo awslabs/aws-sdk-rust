@@ -76,6 +76,10 @@ impl RealtimeEndpointInfoBuilder {
         self.peak_requests_per_second = input;
         self
     }
+    /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
+    pub fn get_peak_requests_per_second(&self) -> &::std::option::Option<i32> {
+        &self.peak_requests_per_second
+    }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl RealtimeEndpointInfoBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
     pub fn endpoint_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,11 @@ impl RealtimeEndpointInfoBuilder {
     pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_url = input;
         self
+    }
+    /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
+    /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
+    pub fn get_endpoint_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_url
     }
     /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
     /// <ul>
@@ -123,6 +136,17 @@ impl RealtimeEndpointInfoBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+    /// <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
+    /// </ul>
+    pub fn get_endpoint_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealtimeEndpointStatus> {
+        &self.endpoint_status
     }
     /// Consumes the builder and constructs a [`RealtimeEndpointInfo`](crate::types::RealtimeEndpointInfo).
     pub fn build(self) -> crate::types::RealtimeEndpointInfo {

@@ -36,6 +36,10 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateRoutingProfileQueues as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -115,6 +123,10 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_profile_id()
     }
     /// Appends an item to `QueueReferences`.
     ///
@@ -132,5 +144,11 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queue_references(input);
         self
+    }
+    /// <p>The queues to disassociate from this routing profile.</p>
+    pub fn get_queue_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
+        self.inner.get_queue_references()
     }
 }

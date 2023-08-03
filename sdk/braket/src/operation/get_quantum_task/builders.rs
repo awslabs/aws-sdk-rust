@@ -36,6 +36,12 @@ impl GetQuantumTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetQuantumTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_quantum_task::builders::GetQuantumTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetQuantumTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
+    }
+    /// <p>the ARN of the task to retrieve.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quantum_task_arn()
     }
 }

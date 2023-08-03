@@ -64,6 +64,10 @@ impl CreateWorkspaceImageInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new WorkSpace image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the new WorkSpace image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateWorkspaceImageInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the new WorkSpace image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The identifier of the source WorkSpace</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CreateWorkspaceImageInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The identifier of the source WorkSpace</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Appends an item to `tags`.
     ///
@@ -102,6 +114,10 @@ impl CreateWorkspaceImageInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
     pub fn build(

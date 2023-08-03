@@ -55,6 +55,10 @@ impl UpdateVpcEndpointInputBuilder {
         self.vpc_endpoint_id = input;
         self
     }
+    /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl UpdateVpcEndpointInputBuilder {
     ) -> Self {
         self.vpc_options = input;
         self
+    }
+    /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+    pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
+        &self.vpc_options
     }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
     pub fn build(

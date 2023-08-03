@@ -48,6 +48,10 @@ impl SuccessfulCampaignStateResponseBuilder {
         self.campaign_id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
+    }
     /// State of a campaign
     pub fn state(mut self, input: crate::types::CampaignState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SuccessfulCampaignStateResponseBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
         self.state = input;
         self
+    }
+    /// State of a campaign
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`SuccessfulCampaignStateResponse`](crate::types::SuccessfulCampaignStateResponse).
     pub fn build(self) -> crate::types::SuccessfulCampaignStateResponse {

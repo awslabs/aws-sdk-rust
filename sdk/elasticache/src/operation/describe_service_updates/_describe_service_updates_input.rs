@@ -75,6 +75,10 @@ impl DescribeServiceUpdatesInputBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// Appends an item to `service_update_status`.
     ///
     /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
@@ -94,6 +98,12 @@ impl DescribeServiceUpdatesInputBuilder {
         self.service_update_status = input;
         self
     }
+    /// <p>The status of the service update</p>
+    pub fn get_service_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+        &self.service_update_status
+    }
     /// <p>The maximum number of records to include in the response</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -104,6 +114,10 @@ impl DescribeServiceUpdatesInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -113,6 +127,10 @@ impl DescribeServiceUpdatesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
     pub fn build(

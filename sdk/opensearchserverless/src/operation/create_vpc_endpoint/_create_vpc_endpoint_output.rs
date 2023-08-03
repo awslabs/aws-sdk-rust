@@ -56,6 +56,12 @@ impl CreateVpcEndpointOutputBuilder {
         self.create_vpc_endpoint_detail = input;
         self
     }
+    /// <p>Details about the created interface VPC endpoint.</p>
+    pub fn get_create_vpc_endpoint_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateVpcEndpointDetail> {
+        &self.create_vpc_endpoint_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

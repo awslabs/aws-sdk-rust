@@ -54,6 +54,10 @@ impl DescribeLoadBalancerPoliciesInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `policy_names`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -72,6 +76,12 @@ impl DescribeLoadBalancerPoliciesInputBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>The names of the policies.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesInput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput).
     pub fn build(

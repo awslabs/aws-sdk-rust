@@ -64,6 +64,10 @@ impl OutlierDetectionBuilder {
         self.max_server_errors = input;
         self
     }
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
+    pub fn get_max_server_errors(&self) -> &::std::option::Option<i64> {
+        &self.max_server_errors
+    }
     /// <p>The time interval between ejection sweep analysis.</p>
     pub fn interval(mut self, input: crate::types::Duration) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl OutlierDetectionBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The time interval between ejection sweep analysis.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.interval
     }
     /// <p>The base amount of time for which a host is ejected.</p>
     pub fn base_ejection_duration(mut self, input: crate::types::Duration) -> Self {
@@ -87,6 +95,10 @@ impl OutlierDetectionBuilder {
         self.base_ejection_duration = input;
         self
     }
+    /// <p>The base amount of time for which a host is ejected.</p>
+    pub fn get_base_ejection_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.base_ejection_duration
+    }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn max_ejection_percent(mut self, input: i32) -> Self {
         self.max_ejection_percent = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl OutlierDetectionBuilder {
     pub fn set_max_ejection_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_ejection_percent = input;
         self
+    }
+    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
+    pub fn get_max_ejection_percent(&self) -> &::std::option::Option<i32> {
+        &self.max_ejection_percent
     }
     /// Consumes the builder and constructs a [`OutlierDetection`](crate::types::OutlierDetection).
     pub fn build(self) -> crate::types::OutlierDetection {

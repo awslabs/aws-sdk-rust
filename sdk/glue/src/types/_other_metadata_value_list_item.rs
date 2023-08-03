@@ -54,6 +54,10 @@ impl OtherMetadataValueListItemBuilder {
         self.metadata_value = input;
         self
     }
+    /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
+    pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_value
+    }
     /// <p>The time at which the entry was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl OtherMetadataValueListItemBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time at which the entry was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`OtherMetadataValueListItem`](crate::types::OtherMetadataValueListItem).
     pub fn build(self) -> crate::types::OtherMetadataValueListItem {

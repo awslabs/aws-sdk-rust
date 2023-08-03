@@ -39,6 +39,10 @@ impl DisableEbsEncryptionByDefaultInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DisableEbsEncryptionByDefaultInput`](crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultInput).
     pub fn build(
         self,

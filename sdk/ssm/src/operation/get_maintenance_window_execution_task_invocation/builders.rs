@@ -36,6 +36,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMaintenanceWindowExecutionTaskInvocation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
         self.inner = self.inner.set_window_execution_id(input);
         self
     }
+    /// <p>The ID of the maintenance window execution for which the task is a part.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_execution_id()
+    }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -115,6 +123,10 @@ impl GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
     /// <p>The invocation ID to retrieve.</p>
     pub fn invocation_id(
@@ -131,5 +143,9 @@ impl GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invocation_id(input);
         self
+    }
+    /// <p>The invocation ID to retrieve.</p>
+    pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invocation_id()
     }
 }

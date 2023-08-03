@@ -64,6 +64,10 @@ impl MatchingResponseBuilder {
         self.enabled = input;
         self
     }
+    /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
     pub fn job_schedule(mut self, input: crate::types::JobSchedule) -> Self {
         self.job_schedule = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl MatchingResponseBuilder {
     ) -> Self {
         self.job_schedule = input;
         self
+    }
+    /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    pub fn get_job_schedule(&self) -> &::std::option::Option<crate::types::JobSchedule> {
+        &self.job_schedule
     }
     /// <p>Configuration information about the auto-merging process.</p>
     pub fn auto_merging(mut self, input: crate::types::AutoMerging) -> Self {
@@ -90,6 +98,10 @@ impl MatchingResponseBuilder {
         self.auto_merging = input;
         self
     }
+    /// <p>Configuration information about the auto-merging process.</p>
+    pub fn get_auto_merging(&self) -> &::std::option::Option<crate::types::AutoMerging> {
+        &self.auto_merging
+    }
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(mut self, input: crate::types::ExportingConfig) -> Self {
         self.exporting_config = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl MatchingResponseBuilder {
     ) -> Self {
         self.exporting_config = input;
         self
+    }
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
+    pub fn get_exporting_config(&self) -> &::std::option::Option<crate::types::ExportingConfig> {
+        &self.exporting_config
     }
     /// Consumes the builder and constructs a [`MatchingResponse`](crate::types::MatchingResponse).
     pub fn build(self) -> crate::types::MatchingResponse {

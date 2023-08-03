@@ -51,6 +51,10 @@ impl CurrentMetricSortCriteriaBuilder {
         self.sort_by_metric = input;
         self
     }
+    /// <p>The current metric names.</p>
+    pub fn get_sort_by_metric(&self) -> &::std::option::Option<crate::types::CurrentMetricName> {
+        &self.sort_by_metric
+    }
     /// <p>The way to sort.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CurrentMetricSortCriteriaBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The way to sort.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`CurrentMetricSortCriteria`](crate::types::CurrentMetricSortCriteria).
     pub fn build(self) -> crate::types::CurrentMetricSortCriteria {

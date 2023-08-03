@@ -40,6 +40,10 @@ impl RelatedItemEventIncludedDataBuilder {
         self.include_content = input;
         self
     }
+    /// <p>Details of what related item data is published through the case event stream.</p>
+    pub fn get_include_content(&self) -> &::std::option::Option<bool> {
+        &self.include_content
+    }
     /// Consumes the builder and constructs a [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
     pub fn build(self) -> crate::types::RelatedItemEventIncludedData {
         crate::types::RelatedItemEventIncludedData {

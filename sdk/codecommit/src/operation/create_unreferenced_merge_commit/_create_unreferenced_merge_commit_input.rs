@@ -132,6 +132,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(
         mut self,
@@ -149,6 +153,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_specifier
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -164,6 +172,12 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.destination_commit_specifier = input;
         self
     }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_destination_commit_specifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_specifier
+    }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
@@ -176,6 +190,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
     ) -> Self {
         self.merge_option = input;
         self
+    }
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
+        &self.merge_option
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn conflict_detail_level(
@@ -193,6 +211,12 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.conflict_detail_level = input;
         self
     }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    pub fn get_conflict_detail_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+        &self.conflict_detail_level
+    }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn conflict_resolution_strategy(
         mut self,
@@ -209,6 +233,12 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.conflict_resolution_strategy = input;
         self
     }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn get_conflict_resolution_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+        &self.conflict_resolution_strategy
+    }
     /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
     pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author_name = ::std::option::Option::Some(input.into());
@@ -219,6 +249,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.author_name = input;
         self
     }
+    /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
+    pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author_name
+    }
     /// <p>The email address for the person who created the unreferenced commit.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -228,6 +262,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address for the person who created the unreferenced commit.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The commit message for the unreferenced commit.</p>
     pub fn commit_message(
@@ -245,6 +283,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self.commit_message = input;
         self
     }
+    /// <p>The commit message for the unreferenced commit.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_message
+    }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn keep_empty_folders(mut self, input: bool) -> Self {
         self.keep_empty_folders = ::std::option::Option::Some(input);
@@ -254,6 +296,10 @@ impl CreateUnreferencedMergeCommitInputBuilder {
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.keep_empty_folders = input;
         self
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
+        &self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -267,6 +313,12 @@ impl CreateUnreferencedMergeCommitInputBuilder {
     ) -> Self {
         self.conflict_resolution = input;
         self
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        &self.conflict_resolution
     }
     /// Consumes the builder and constructs a [`CreateUnreferencedMergeCommitInput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitInput).
     pub fn build(

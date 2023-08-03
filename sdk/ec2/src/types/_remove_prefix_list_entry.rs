@@ -40,6 +40,10 @@ impl RemovePrefixListEntryBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The CIDR block.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`RemovePrefixListEntry`](crate::types::RemovePrefixListEntry).
     pub fn build(self) -> crate::types::RemovePrefixListEntry {
         crate::types::RemovePrefixListEntry { cidr: self.cidr }

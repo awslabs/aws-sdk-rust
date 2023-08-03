@@ -90,6 +90,10 @@ impl ConfigureShardBuilder {
         self.node_group_id = input;
         self
     }
+    /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group_id
+    }
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
@@ -118,6 +122,19 @@ impl ConfigureShardBuilder {
         self.new_replica_count = input;
         self
     }
+    /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
+    /// <p>The minimum number of replicas in a shard or replication group is:</p>
+    /// <ul>
+    /// <li> <p>Redis (cluster mode disabled)</p>
+    /// <ul>
+    /// <li> <p>If Multi-AZ: 1</p> </li>
+    /// <li> <p>If Multi-AZ: 0</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
+    /// </ul>
+    pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
+        &self.new_replica_count
+    }
     /// Appends an item to `preferred_availability_zones`.
     ///
     /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
@@ -140,6 +157,12 @@ impl ConfigureShardBuilder {
         self.preferred_availability_zones = input;
         self
     }
+    /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
+    pub fn get_preferred_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.preferred_availability_zones
+    }
     /// Appends an item to `preferred_outpost_arns`.
     ///
     /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
@@ -161,6 +184,12 @@ impl ConfigureShardBuilder {
     ) -> Self {
         self.preferred_outpost_arns = input;
         self
+    }
+    /// <p>The outpost ARNs in which the cache cluster is created.</p>
+    pub fn get_preferred_outpost_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.preferred_outpost_arns
     }
     /// Consumes the builder and constructs a [`ConfigureShard`](crate::types::ConfigureShard).
     pub fn build(self) -> crate::types::ConfigureShard {

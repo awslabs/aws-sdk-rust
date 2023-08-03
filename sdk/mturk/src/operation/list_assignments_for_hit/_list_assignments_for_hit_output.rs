@@ -64,6 +64,10 @@ impl ListAssignmentsForHitOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn num_results(mut self, input: i32) -> Self {
         self.num_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListAssignmentsForHitOutputBuilder {
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_results = input;
         self
+    }
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    pub fn get_num_results(&self) -> &::std::option::Option<i32> {
+        &self.num_results
     }
     /// Appends an item to `assignments`.
     ///
@@ -92,6 +100,12 @@ impl ListAssignmentsForHitOutputBuilder {
     ) -> Self {
         self.assignments = input;
         self
+    }
+    /// <p> The collection of Assignment data structures returned by this call.</p>
+    pub fn get_assignments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Assignment>> {
+        &self.assignments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

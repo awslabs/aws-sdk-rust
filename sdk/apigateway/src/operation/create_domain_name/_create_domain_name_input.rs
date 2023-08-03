@@ -151,6 +151,10 @@ impl CreateDomainNameInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the DomainName resource.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     pub fn certificate_name(
         mut self,
@@ -166,6 +170,10 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.certificate_name = input;
         self
+    }
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
     }
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(
@@ -183,6 +191,10 @@ impl CreateDomainNameInputBuilder {
         self.certificate_body = input;
         self
     }
+    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_body
+    }
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn certificate_private_key(
         mut self,
@@ -198,6 +210,10 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.certificate_private_key = input;
         self
+    }
+    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    pub fn get_certificate_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_private_key
     }
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn certificate_chain(
@@ -215,6 +231,10 @@ impl CreateDomainNameInputBuilder {
         self.certificate_chain = input;
         self
     }
+    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
+    }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(
         mut self,
@@ -230,6 +250,10 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.certificate_arn = input;
         self
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
     pub fn regional_certificate_name(
@@ -247,6 +271,10 @@ impl CreateDomainNameInputBuilder {
         self.regional_certificate_name = input;
         self
     }
+    /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
+    pub fn get_regional_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regional_certificate_name
+    }
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(
         mut self,
@@ -263,6 +291,10 @@ impl CreateDomainNameInputBuilder {
         self.regional_certificate_arn = input;
         self
     }
+    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regional_certificate_arn
+    }
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
@@ -275,6 +307,12 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.endpoint_configuration = input;
         self
+    }
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
+    pub fn get_endpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointConfiguration> {
+        &self.endpoint_configuration
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -301,6 +339,14 @@ impl CreateDomainNameInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
@@ -313,6 +359,10 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.security_policy = input;
         self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        &self.security_policy
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(
@@ -330,6 +380,12 @@ impl CreateDomainNameInputBuilder {
         self.mutual_tls_authentication = input;
         self
     }
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    pub fn get_mutual_tls_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
+        &self.mutual_tls_authentication
+    }
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(
         mut self,
@@ -345,6 +401,12 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.ownership_verification_certificate_arn = input;
         self
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn get_ownership_verification_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.ownership_verification_certificate_arn
     }
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(

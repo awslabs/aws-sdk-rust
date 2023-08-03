@@ -72,6 +72,10 @@ impl TaskStatisticsForAuditCheckBuilder {
         self.total_findings_count = input;
         self
     }
+    /// <p>The total number of findings to which a task is being applied.</p>
+    pub fn get_total_findings_count(&self) -> &::std::option::Option<i64> {
+        &self.total_findings_count
+    }
     /// <p>The number of findings for which at least one of the actions failed when applied.</p>
     pub fn failed_findings_count(mut self, input: i64) -> Self {
         self.failed_findings_count = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl TaskStatisticsForAuditCheckBuilder {
     pub fn set_failed_findings_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_findings_count = input;
         self
+    }
+    /// <p>The number of findings for which at least one of the actions failed when applied.</p>
+    pub fn get_failed_findings_count(&self) -> &::std::option::Option<i64> {
+        &self.failed_findings_count
     }
     /// <p>The number of findings for which all mitigation actions succeeded when applied.</p>
     pub fn succeeded_findings_count(mut self, input: i64) -> Self {
@@ -92,6 +100,10 @@ impl TaskStatisticsForAuditCheckBuilder {
         self.succeeded_findings_count = input;
         self
     }
+    /// <p>The number of findings for which all mitigation actions succeeded when applied.</p>
+    pub fn get_succeeded_findings_count(&self) -> &::std::option::Option<i64> {
+        &self.succeeded_findings_count
+    }
     /// <p>The number of findings skipped because of filter conditions provided in the parameters to the command.</p>
     pub fn skipped_findings_count(mut self, input: i64) -> Self {
         self.skipped_findings_count = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl TaskStatisticsForAuditCheckBuilder {
         self.skipped_findings_count = input;
         self
     }
+    /// <p>The number of findings skipped because of filter conditions provided in the parameters to the command.</p>
+    pub fn get_skipped_findings_count(&self) -> &::std::option::Option<i64> {
+        &self.skipped_findings_count
+    }
     /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
     pub fn canceled_findings_count(mut self, input: i64) -> Self {
         self.canceled_findings_count = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl TaskStatisticsForAuditCheckBuilder {
     pub fn set_canceled_findings_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.canceled_findings_count = input;
         self
+    }
+    /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
+    pub fn get_canceled_findings_count(&self) -> &::std::option::Option<i64> {
+        &self.canceled_findings_count
     }
     /// Consumes the builder and constructs a [`TaskStatisticsForAuditCheck`](crate::types::TaskStatisticsForAuditCheck).
     pub fn build(self) -> crate::types::TaskStatisticsForAuditCheck {

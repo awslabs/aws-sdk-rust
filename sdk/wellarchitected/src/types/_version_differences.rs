@@ -50,6 +50,12 @@ impl VersionDifferencesBuilder {
         self.pillar_differences = input;
         self
     }
+    /// <p>The differences between the base and latest versions of the lens.</p>
+    pub fn get_pillar_differences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>> {
+        &self.pillar_differences
+    }
     /// Consumes the builder and constructs a [`VersionDifferences`](crate::types::VersionDifferences).
     pub fn build(self) -> crate::types::VersionDifferences {
         crate::types::VersionDifferences {

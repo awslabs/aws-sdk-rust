@@ -37,6 +37,13 @@ impl CreateClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +156,18 @@ impl CreateClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
+    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-snapshot-id</code> </p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
+    }
     /// <p>The cluster identifier for which you want a snapshot.</p>
     pub fn cluster_identifier(
         mut self,
@@ -164,6 +183,10 @@ impl CreateClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The cluster identifier for which you want a snapshot.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -182,6 +205,12 @@ impl CreateClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_manual_snapshot_retention_period()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -198,5 +227,9 @@ impl CreateClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

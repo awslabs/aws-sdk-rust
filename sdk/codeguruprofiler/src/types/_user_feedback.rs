@@ -40,6 +40,10 @@ impl UserFeedbackBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`UserFeedback`](crate::types::UserFeedback).
     pub fn build(self) -> crate::types::UserFeedback {
         crate::types::UserFeedback {

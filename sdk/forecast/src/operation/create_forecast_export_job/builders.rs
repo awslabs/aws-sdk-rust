@@ -53,6 +53,13 @@ impl CreateForecastExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateForecastExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +156,10 @@ impl CreateForecastExportJobFluentBuilder {
         self.inner = self.inner.set_forecast_export_job_name(input);
         self
     }
+    /// <p>The name for the forecast export job.</p>
+    pub fn get_forecast_export_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_forecast_export_job_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_arn(input.into());
@@ -158,6 +169,10 @@ impl CreateForecastExportJobFluentBuilder {
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_forecast_arn()
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
@@ -173,6 +188,11 @@ impl CreateForecastExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `Tags`.
     ///
@@ -211,6 +231,20 @@ impl CreateForecastExportJobFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format(input.into());
@@ -220,5 +254,9 @@ impl CreateForecastExportJobFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_format()
     }
 }

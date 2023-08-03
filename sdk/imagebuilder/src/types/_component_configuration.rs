@@ -54,6 +54,10 @@ impl ComponentConfigurationBuilder {
         self.component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -72,6 +76,12 @@ impl ComponentConfigurationBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::types::ComponentConfiguration).
     pub fn build(self) -> crate::types::ComponentConfiguration {

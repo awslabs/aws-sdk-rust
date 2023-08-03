@@ -101,6 +101,24 @@ impl OutboundConnectionStatusBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status code for the outbound connection. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>VALIDATING</b> - The outbound connection request is being validated.</p> </li>
+    /// <li> <p> <b>VALIDATION_FAILED</b> - Validation failed for the connection request.</p> </li>
+    /// <li> <p> <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet accepted by the remote domain owner.</p> </li>
+    /// <li> <p> <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner for getting provisioned.</p> </li>
+    /// <li> <p> <b>PROVISIONING</b> - Outbound connection request is in process.</p> </li>
+    /// <li> <p> <b>ACTIVE</b> - Outbound connection is active and ready to use.</p> </li>
+    /// <li> <p> <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.</p> </li>
+    /// <li> <p> <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.</p> </li>
+    /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
+    /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
+    /// </ul>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutboundConnectionStatusCode> {
+        &self.status_code
+    }
     /// <p>Verbose information for the outbound connection.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -110,6 +128,10 @@ impl OutboundConnectionStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Verbose information for the outbound connection.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`OutboundConnectionStatus`](crate::types::OutboundConnectionStatus).
     pub fn build(self) -> crate::types::OutboundConnectionStatus {

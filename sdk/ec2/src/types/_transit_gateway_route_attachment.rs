@@ -59,6 +59,10 @@ impl TransitGatewayRouteAttachmentBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -75,6 +79,12 @@ impl TransitGatewayRouteAttachmentBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
     pub fn resource_type(
         mut self,
@@ -90,6 +100,12 @@ impl TransitGatewayRouteAttachmentBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`TransitGatewayRouteAttachment`](crate::types::TransitGatewayRouteAttachment).
     pub fn build(self) -> crate::types::TransitGatewayRouteAttachment {

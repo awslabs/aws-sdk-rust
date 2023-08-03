@@ -62,6 +62,10 @@ impl AutoMlSecurityConfigBuilder {
         self.volume_kms_key_id = input;
         self
     }
+    /// <p>The key used to encrypt stored data.</p>
+    pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_kms_key_id
+    }
     /// <p>Whether to use traffic encryption between the container layers.</p>
     pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
         self.enable_inter_container_traffic_encryption = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AutoMlSecurityConfigBuilder {
         self.enable_inter_container_traffic_encryption = input;
         self
     }
+    /// <p>Whether to use traffic encryption between the container layers.</p>
+    pub fn get_enable_inter_container_traffic_encryption(&self) -> &::std::option::Option<bool> {
+        &self.enable_inter_container_traffic_encryption
+    }
     /// <p>The VPC configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AutoMlSecurityConfigBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// Consumes the builder and constructs a [`AutoMlSecurityConfig`](crate::types::AutoMlSecurityConfig).
     pub fn build(self) -> crate::types::AutoMlSecurityConfig {

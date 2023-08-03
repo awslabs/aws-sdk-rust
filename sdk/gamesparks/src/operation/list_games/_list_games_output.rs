@@ -65,6 +65,10 @@ impl ListGamesOutputBuilder {
         self.games = input;
         self
     }
+    /// <p>The list of games.</p>
+    pub fn get_games(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSummary>> {
+        &self.games
+    }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +80,11 @@ impl ListGamesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

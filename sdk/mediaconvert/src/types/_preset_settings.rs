@@ -78,6 +78,12 @@ impl PresetSettingsBuilder {
         self.audio_descriptions = input;
         self
     }
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
+    pub fn get_audio_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
+        &self.audio_descriptions
+    }
     /// Appends an item to `caption_descriptions`.
     ///
     /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
@@ -97,6 +103,12 @@ impl PresetSettingsBuilder {
         self.caption_descriptions = input;
         self
     }
+    /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
+    pub fn get_caption_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>> {
+        &self.caption_descriptions
+    }
     /// Container specific settings.
     pub fn container_settings(mut self, input: crate::types::ContainerSettings) -> Self {
         self.container_settings = ::std::option::Option::Some(input);
@@ -110,6 +122,12 @@ impl PresetSettingsBuilder {
         self.container_settings = input;
         self
     }
+    /// Container specific settings.
+    pub fn get_container_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerSettings> {
+        &self.container_settings
+    }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
     pub fn video_description(mut self, input: crate::types::VideoDescription) -> Self {
         self.video_description = ::std::option::Option::Some(input);
@@ -122,6 +140,10 @@ impl PresetSettingsBuilder {
     ) -> Self {
         self.video_description = input;
         self
+    }
+    /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
+    pub fn get_video_description(&self) -> &::std::option::Option<crate::types::VideoDescription> {
+        &self.video_description
     }
     /// Consumes the builder and constructs a [`PresetSettings`](crate::types::PresetSettings).
     pub fn build(self) -> crate::types::PresetSettings {

@@ -69,6 +69,15 @@ impl DescribeDetectorModelAnalysisOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AnalysisStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

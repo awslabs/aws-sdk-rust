@@ -66,6 +66,12 @@ impl ListVirtualClustersOutputBuilder {
         self.virtual_clusters = input;
         self
     }
+    /// <p>This output lists the specified virtual clusters.</p>
+    pub fn get_virtual_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>> {
+        &self.virtual_clusters
+    }
     /// <p>This output displays the token for the next set of virtual clusters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListVirtualClustersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>This output displays the token for the next set of virtual clusters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

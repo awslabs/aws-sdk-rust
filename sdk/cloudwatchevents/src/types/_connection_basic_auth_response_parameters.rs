@@ -40,6 +40,10 @@ impl ConnectionBasicAuthResponseParametersBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name to use for Basic authorization.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// Consumes the builder and constructs a [`ConnectionBasicAuthResponseParameters`](crate::types::ConnectionBasicAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionBasicAuthResponseParameters {
         crate::types::ConnectionBasicAuthResponseParameters {

@@ -36,6 +36,12 @@ impl CreateBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBillingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateBillingGroupFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p> The billing group name. The names must be unique. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl CreateBillingGroupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The billing group name. The names must be unique. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(mut self, input: crate::types::AccountGrouping) -> Self {
@@ -149,6 +163,10 @@ impl CreateBillingGroupFluentBuilder {
         self.inner = self.inner.set_account_grouping(input);
         self
     }
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
+    pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::AccountGrouping> {
+        self.inner.get_account_grouping()
+    }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.inner = self.inner.computation_preference(input);
@@ -161,6 +179,12 @@ impl CreateBillingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_computation_preference(input);
         self
+    }
+    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    pub fn get_computation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+        self.inner.get_computation_preference()
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
     pub fn primary_account_id(
@@ -178,6 +202,10 @@ impl CreateBillingGroupFluentBuilder {
         self.inner = self.inner.set_primary_account_id(input);
         self
     }
+    /// <p> The account ID that serves as the main account in a billing group. </p>
+    pub fn get_primary_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_account_id()
+    }
     /// <p>The description of the billing group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -187,6 +215,10 @@ impl CreateBillingGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the billing group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -210,5 +242,13 @@ impl CreateBillingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

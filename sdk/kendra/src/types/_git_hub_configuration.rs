@@ -277,6 +277,12 @@ impl GitHubConfigurationBuilder {
         self.saa_s_configuration = input;
         self
     }
+    /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+    pub fn get_saa_s_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SaaSConfiguration> {
+        &self.saa_s_configuration
+    }
     /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
     pub fn on_premise_configuration(mut self, input: crate::types::OnPremiseConfiguration) -> Self {
         self.on_premise_configuration = ::std::option::Option::Some(input);
@@ -290,6 +296,12 @@ impl GitHubConfigurationBuilder {
         self.on_premise_configuration = input;
         self
     }
+    /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+    pub fn get_on_premise_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnPremiseConfiguration> {
+        &self.on_premise_configuration
+    }
     /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -299,6 +311,10 @@ impl GitHubConfigurationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -316,6 +332,13 @@ impl GitHubConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
@@ -325,6 +348,10 @@ impl GitHubConfigurationBuilder {
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+    pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
+        &self.use_change_log
     }
     /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
     pub fn git_hub_document_crawl_properties(
@@ -341,6 +368,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.git_hub_document_crawl_properties = input;
         self
+    }
+    /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+    pub fn get_git_hub_document_crawl_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::GitHubDocumentCrawlProperties> {
+        &self.git_hub_document_crawl_properties
     }
     /// Appends an item to `repository_filter`.
     ///
@@ -364,6 +397,12 @@ impl GitHubConfigurationBuilder {
         self.repository_filter = input;
         self
     }
+    /// <p>A list of names of the specific repositories you want to index.</p>
+    pub fn get_repository_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.repository_filter
+    }
     /// Appends an item to `inclusion_folder_name_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_folder_name_patterns`](Self::set_inclusion_folder_name_patterns).
@@ -385,6 +424,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.inclusion_folder_name_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub fn get_inclusion_folder_name_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_folder_name_patterns
     }
     /// Appends an item to `inclusion_file_type_patterns`.
     ///
@@ -408,6 +453,12 @@ impl GitHubConfigurationBuilder {
         self.inclusion_file_type_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_file_type_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_file_type_patterns
+    }
     /// Appends an item to `inclusion_file_name_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_file_name_patterns`](Self::set_inclusion_file_name_patterns).
@@ -429,6 +480,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.inclusion_file_name_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_file_name_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_file_name_patterns
     }
     /// Appends an item to `exclusion_folder_name_patterns`.
     ///
@@ -452,6 +509,12 @@ impl GitHubConfigurationBuilder {
         self.exclusion_folder_name_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub fn get_exclusion_folder_name_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_folder_name_patterns
+    }
     /// Appends an item to `exclusion_file_type_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclusion_file_type_patterns`](Self::set_exclusion_file_type_patterns).
@@ -473,6 +536,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.exclusion_file_type_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_file_type_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_file_type_patterns
     }
     /// Appends an item to `exclusion_file_name_patterns`.
     ///
@@ -496,6 +565,12 @@ impl GitHubConfigurationBuilder {
         self.exclusion_file_name_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_file_name_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_file_name_patterns
+    }
     /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -508,6 +583,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Appends an item to `git_hub_repository_configuration_field_mappings`.
     ///
@@ -533,6 +614,12 @@ impl GitHubConfigurationBuilder {
         self.git_hub_repository_configuration_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_repository_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_repository_configuration_field_mappings
+    }
     /// Appends an item to `git_hub_commit_configuration_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_git_hub_commit_configuration_field_mappings`](Self::set_git_hub_commit_configuration_field_mappings).
@@ -556,6 +643,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.git_hub_commit_configuration_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_commit_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_commit_configuration_field_mappings
     }
     /// Appends an item to `git_hub_issue_document_configuration_field_mappings`.
     ///
@@ -581,6 +674,12 @@ impl GitHubConfigurationBuilder {
         self.git_hub_issue_document_configuration_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_issue_document_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_issue_document_configuration_field_mappings
+    }
     /// Appends an item to `git_hub_issue_comment_configuration_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_git_hub_issue_comment_configuration_field_mappings`](Self::set_git_hub_issue_comment_configuration_field_mappings).
@@ -605,6 +704,12 @@ impl GitHubConfigurationBuilder {
         self.git_hub_issue_comment_configuration_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_issue_comment_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_issue_comment_configuration_field_mappings
+    }
     /// Appends an item to `git_hub_issue_attachment_configuration_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_git_hub_issue_attachment_configuration_field_mappings`](Self::set_git_hub_issue_attachment_configuration_field_mappings).
@@ -628,6 +733,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.git_hub_issue_attachment_configuration_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_issue_attachment_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_issue_attachment_configuration_field_mappings
     }
     /// Appends an item to `git_hub_pull_request_comment_configuration_field_mappings`.
     ///
@@ -654,6 +765,12 @@ impl GitHubConfigurationBuilder {
         self.git_hub_pull_request_comment_configuration_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_pull_request_comment_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_pull_request_comment_configuration_field_mappings
+    }
     /// Appends an item to `git_hub_pull_request_document_configuration_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_git_hub_pull_request_document_configuration_field_mappings`](Self::set_git_hub_pull_request_document_configuration_field_mappings).
@@ -679,6 +796,12 @@ impl GitHubConfigurationBuilder {
         self.git_hub_pull_request_document_configuration_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_pull_request_document_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_pull_request_document_configuration_field_mappings
+    }
     /// Appends an item to `git_hub_pull_request_document_attachment_configuration_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_git_hub_pull_request_document_attachment_configuration_field_mappings`](Self::set_git_hub_pull_request_document_attachment_configuration_field_mappings).
@@ -703,6 +826,12 @@ impl GitHubConfigurationBuilder {
     ) -> Self {
         self.git_hub_pull_request_document_attachment_configuration_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn get_git_hub_pull_request_document_attachment_configuration_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.git_hub_pull_request_document_attachment_configuration_field_mappings
     }
     /// Consumes the builder and constructs a [`GitHubConfiguration`](crate::types::GitHubConfiguration).
     pub fn build(self) -> crate::types::GitHubConfiguration {

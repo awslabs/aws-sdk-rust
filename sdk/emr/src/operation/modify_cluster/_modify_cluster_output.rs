@@ -46,6 +46,10 @@ impl ModifyClusterOutputBuilder {
         self.step_concurrency_level = input;
         self
     }
+    /// <p>The number of steps that can be executed concurrently.</p>
+    pub fn get_step_concurrency_level(&self) -> &::std::option::Option<i32> {
+        &self.step_concurrency_level
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

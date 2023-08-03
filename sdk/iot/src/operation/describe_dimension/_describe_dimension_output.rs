@@ -87,6 +87,10 @@ impl DescribeDimensionOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique identifier for the dimension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl DescribeDimensionOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type of the dimension.</p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl DescribeDimensionOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the dimension.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
+        &self.r#type
     }
     /// Appends an item to `string_values`.
     ///
@@ -129,6 +141,12 @@ impl DescribeDimensionOutputBuilder {
         self.string_values = input;
         self
     }
+    /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
+    }
     /// <p>The date the dimension was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -142,6 +160,10 @@ impl DescribeDimensionOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the dimension was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date the dimension was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -154,6 +176,10 @@ impl DescribeDimensionOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date the dimension was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

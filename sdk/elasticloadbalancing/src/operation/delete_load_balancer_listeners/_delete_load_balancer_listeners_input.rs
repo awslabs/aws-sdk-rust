@@ -54,6 +54,10 @@ impl DeleteLoadBalancerListenersInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `load_balancer_ports`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_ports`](Self::set_load_balancer_ports).
@@ -72,6 +76,10 @@ impl DeleteLoadBalancerListenersInputBuilder {
     ) -> Self {
         self.load_balancer_ports = input;
         self
+    }
+    /// <p>The client port numbers of the listeners.</p>
+    pub fn get_load_balancer_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.load_balancer_ports
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersInput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput).
     pub fn build(

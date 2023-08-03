@@ -73,6 +73,10 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the replication config.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `replication_table_statistics`.
     ///
@@ -101,6 +109,12 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
     ) -> Self {
         self.replication_table_statistics = input;
         self
+    }
+    /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
+    pub fn get_replication_table_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
+        &self.replication_table_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

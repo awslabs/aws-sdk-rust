@@ -44,6 +44,10 @@ impl GetIdentityDkimAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentityDkimAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,5 +144,9 @@ impl GetIdentityDkimAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identities(input);
         self
+    }
+    /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identities()
     }
 }

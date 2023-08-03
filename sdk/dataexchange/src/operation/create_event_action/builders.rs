@@ -36,6 +36,12 @@ impl CreateEventActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEventAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_event_action::builders::CreateEventActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEventActionFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        self.inner.get_action()
+    }
     /// <p>What occurs to start an action.</p>
     pub fn event(mut self, input: crate::types::Event) -> Self {
         self.inner = self.inner.event(input);
@@ -135,5 +145,9 @@ impl CreateEventActionFluentBuilder {
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
         self.inner = self.inner.set_event(input);
         self
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        self.inner.get_event()
     }
 }

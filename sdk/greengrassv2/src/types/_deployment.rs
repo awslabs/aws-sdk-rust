@@ -96,6 +96,10 @@ impl DeploymentBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The revision number of the deployment.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl DeploymentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision number of the deployment.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The ID of the deployment.</p>
     pub fn deployment_id(
@@ -122,6 +130,10 @@ impl DeploymentBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The name of the deployment.</p>
     pub fn deployment_name(
         mut self,
@@ -138,6 +150,10 @@ impl DeploymentBuilder {
         self.deployment_name = input;
         self
     }
+    /// <p>The name of the deployment.</p>
+    pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_name
+    }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
     }
     /// <p>The status of the deployment.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -164,6 +184,10 @@ impl DeploymentBuilder {
         self.deployment_status = input;
         self
     }
+    /// <p>The status of the deployment.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.deployment_status
+    }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub fn is_latest_for_target(mut self, input: bool) -> Self {
         self.is_latest_for_target = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl DeploymentBuilder {
     pub fn set_is_latest_for_target(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest_for_target = input;
         self
+    }
+    /// <p>Whether or not the deployment is the latest revision for its target.</p>
+    pub fn get_is_latest_for_target(&self) -> &::std::option::Option<bool> {
+        &self.is_latest_for_target
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn parent_target_arn(
@@ -189,6 +217,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.parent_target_arn = input;
         self
+    }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn get_parent_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_target_arn
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {

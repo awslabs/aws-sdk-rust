@@ -112,6 +112,10 @@ impl OperationSummaryBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>Identifier returned to track the requested action.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl OperationSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the requested operation in the system.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.status
+    }
     /// <p>Type of the action requested.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -134,6 +142,10 @@ impl OperationSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of the action requested.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.r#type
     }
     /// <p>The date when the request was submitted.</p>
     pub fn submitted_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,6 +160,10 @@ impl OperationSummaryBuilder {
         self.submitted_date = input;
         self
     }
+    /// <p>The date when the request was submitted.</p>
+    pub fn get_submitted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submitted_date
+    }
     /// <p> Name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl OperationSummaryBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> Name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> Message about the operation. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl OperationSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p> Message about the operation. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
     /// <p> Valid values are:</p>
@@ -197,6 +221,18 @@ impl OperationSummaryBuilder {
         self.status_flag = input;
         self
     }
+    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
+    /// <p> Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// </ul>
+    pub fn get_status_flag(&self) -> &::std::option::Option<crate::types::StatusFlag> {
+        &self.status_flag
+    }
     /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -209,6 +245,10 @@ impl OperationSummaryBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {

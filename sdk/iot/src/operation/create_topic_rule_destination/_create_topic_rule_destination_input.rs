@@ -49,6 +49,12 @@ impl CreateTopicRuleDestinationInputBuilder {
         self.destination_configuration = input;
         self
     }
+    /// <p>The topic rule destination configuration.</p>
+    pub fn get_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRuleDestinationConfiguration> {
+        &self.destination_configuration
+    }
     /// Consumes the builder and constructs a [`CreateTopicRuleDestinationInput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput).
     pub fn build(
         self,

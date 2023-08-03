@@ -96,6 +96,10 @@ impl EcsClusterDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ECS Cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl EcsClusterDetailsBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status of the ECS cluster.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl EcsClusterDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the ECS cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
     pub fn active_services_count(mut self, input: i32) -> Self {
         self.active_services_count = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl EcsClusterDetailsBuilder {
     pub fn set_active_services_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_services_count = input;
         self
+    }
+    /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+    pub fn get_active_services_count(&self) -> &::std::option::Option<i32> {
+        &self.active_services_count
     }
     /// <p>The number of container instances registered into the cluster.</p>
     pub fn registered_container_instances_count(mut self, input: i32) -> Self {
@@ -139,6 +155,10 @@ impl EcsClusterDetailsBuilder {
         self.registered_container_instances_count = input;
         self
     }
+    /// <p>The number of container instances registered into the cluster.</p>
+    pub fn get_registered_container_instances_count(&self) -> &::std::option::Option<i32> {
+        &self.registered_container_instances_count
+    }
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
     pub fn running_tasks_count(mut self, input: i32) -> Self {
         self.running_tasks_count = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl EcsClusterDetailsBuilder {
     pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_tasks_count = input;
         self
+    }
+    /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+    pub fn get_running_tasks_count(&self) -> &::std::option::Option<i32> {
+        &self.running_tasks_count
     }
     /// Appends an item to `tags`.
     ///
@@ -168,6 +192,10 @@ impl EcsClusterDetailsBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags of the ECS Cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Contains information about the details of the ECS Task.</p>
     pub fn task_details(mut self, input: crate::types::EcsTaskDetails) -> Self {
         self.task_details = ::std::option::Option::Some(input);
@@ -180,6 +208,10 @@ impl EcsClusterDetailsBuilder {
     ) -> Self {
         self.task_details = input;
         self
+    }
+    /// <p>Contains information about the details of the ECS Task.</p>
+    pub fn get_task_details(&self) -> &::std::option::Option<crate::types::EcsTaskDetails> {
+        &self.task_details
     }
     /// Consumes the builder and constructs a [`EcsClusterDetails`](crate::types::EcsClusterDetails).
     pub fn build(self) -> crate::types::EcsClusterDetails {

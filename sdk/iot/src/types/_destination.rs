@@ -43,6 +43,10 @@ impl DestinationBuilder {
         self.s3_destination = input;
         self
     }
+    /// <p>Describes the location in S3 of the updated firmware.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
+    }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {
         crate::types::Destination {

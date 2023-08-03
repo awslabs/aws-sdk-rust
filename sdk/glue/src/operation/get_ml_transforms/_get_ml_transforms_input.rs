@@ -63,6 +63,10 @@ impl GetMlTransformsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GetMlTransformsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The filter transformation criteria.</p>
     pub fn filter(mut self, input: crate::types::TransformFilterCriteria) -> Self {
@@ -86,6 +94,10 @@ impl GetMlTransformsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filter transformation criteria.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TransformFilterCriteria> {
+        &self.filter
+    }
     /// <p>The sorting criteria.</p>
     pub fn sort(mut self, input: crate::types::TransformSortCriteria) -> Self {
         self.sort = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl GetMlTransformsInputBuilder {
     ) -> Self {
         self.sort = input;
         self
+    }
+    /// <p>The sorting criteria.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::TransformSortCriteria> {
+        &self.sort
     }
     /// Consumes the builder and constructs a [`GetMlTransformsInput`](crate::operation::get_ml_transforms::GetMlTransformsInput).
     pub fn build(

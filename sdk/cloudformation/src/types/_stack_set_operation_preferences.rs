@@ -110,6 +110,12 @@ impl StackSetOperationPreferencesBuilder {
         self.region_concurrency_type = input;
         self
     }
+    /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
+    pub fn get_region_concurrency_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegionConcurrencyType> {
+        &self.region_concurrency_type
+    }
     /// Appends an item to `region_order`.
     ///
     /// To override the contents of this collection use [`set_region_order`](Self::set_region_order).
@@ -129,6 +135,12 @@ impl StackSetOperationPreferencesBuilder {
         self.region_order = input;
         self
     }
+    /// <p>The order of the Regions where you want to perform the stack operation.</p>
+    pub fn get_region_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.region_order
+    }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
     /// <p>By default, <code>0</code> is specified.</p>
@@ -142,6 +154,12 @@ impl StackSetOperationPreferencesBuilder {
     pub fn set_failure_tolerance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_tolerance_count = input;
         self
+    }
+    /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
+    /// <p>By default, <code>0</code> is specified.</p>
+    pub fn get_failure_tolerance_count(&self) -> &::std::option::Option<i32> {
+        &self.failure_tolerance_count
     }
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
@@ -159,6 +177,13 @@ impl StackSetOperationPreferencesBuilder {
         self.failure_tolerance_percentage = input;
         self
     }
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
+    /// <p>By default, <code>0</code> is specified.</p>
+    pub fn get_failure_tolerance_percentage(&self) -> &::std::option::Option<i32> {
+        &self.failure_tolerance_percentage
+    }
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
@@ -174,6 +199,13 @@ impl StackSetOperationPreferencesBuilder {
     pub fn set_max_concurrent_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_count = input;
         self
+    }
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>By default, <code>1</code> is specified.</p>
+    pub fn get_max_concurrent_count(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_count
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
@@ -192,6 +224,14 @@ impl StackSetOperationPreferencesBuilder {
     pub fn set_max_concurrent_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_percentage = input;
         self
+    }
+    /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>By default, <code>1</code> is specified.</p>
+    pub fn get_max_concurrent_percentage(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_percentage
     }
     /// Consumes the builder and constructs a [`StackSetOperationPreferences`](crate::types::StackSetOperationPreferences).
     pub fn build(self) -> crate::types::StackSetOperationPreferences {

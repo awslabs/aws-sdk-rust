@@ -37,6 +37,13 @@ impl DescribeAccountOverviewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountOverview as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl DescribeAccountOverviewFluentBuilder {
         self.inner = self.inner.set_from_time(input);
         self
     }
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_from_time()
+    }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.to_time(input);
@@ -142,5 +153,9 @@ impl DescribeAccountOverviewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_to_time(input);
         self
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_to_time()
     }
 }

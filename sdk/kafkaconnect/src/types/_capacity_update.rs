@@ -53,6 +53,10 @@ impl CapacityUpdateBuilder {
         self.auto_scaling = input;
         self
     }
+    /// <p>The target auto scaling setting.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingUpdate> {
+        &self.auto_scaling
+    }
     /// <p>The target settings for provisioned capacity.</p>
     pub fn provisioned_capacity(mut self, input: crate::types::ProvisionedCapacityUpdate) -> Self {
         self.provisioned_capacity = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl CapacityUpdateBuilder {
     ) -> Self {
         self.provisioned_capacity = input;
         self
+    }
+    /// <p>The target settings for provisioned capacity.</p>
+    pub fn get_provisioned_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedCapacityUpdate> {
+        &self.provisioned_capacity
     }
     /// Consumes the builder and constructs a [`CapacityUpdate`](crate::types::CapacityUpdate).
     pub fn build(self) -> crate::types::CapacityUpdate {

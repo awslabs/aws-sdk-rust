@@ -58,6 +58,12 @@ impl TemporalFilterSettingsBuilder {
         self.post_filter_sharpening = input;
         self
     }
+    /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+    pub fn get_post_filter_sharpening(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemporalFilterPostFilterSharpening> {
+        &self.post_filter_sharpening
+    }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub fn strength(mut self, input: crate::types::TemporalFilterStrength) -> Self {
         self.strength = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl TemporalFilterSettingsBuilder {
     ) -> Self {
         self.strength = input;
         self
+    }
+    /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
+    pub fn get_strength(&self) -> &::std::option::Option<crate::types::TemporalFilterStrength> {
+        &self.strength
     }
     /// Consumes the builder and constructs a [`TemporalFilterSettings`](crate::types::TemporalFilterSettings).
     pub fn build(self) -> crate::types::TemporalFilterSettings {

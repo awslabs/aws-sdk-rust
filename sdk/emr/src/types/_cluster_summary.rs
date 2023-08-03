@@ -80,6 +80,10 @@ impl ClusterSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the cluster.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the cluster.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ClusterSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The details about the current status of the cluster.</p>
     pub fn status(mut self, input: crate::types::ClusterStatus) -> Self {
@@ -100,6 +108,10 @@ impl ClusterSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The details about the current status of the cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
+        &self.status
+    }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn normalized_instance_hours(mut self, input: i32) -> Self {
         self.normalized_instance_hours = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl ClusterSummaryBuilder {
     pub fn set_normalized_instance_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.normalized_instance_hours = input;
         self
+    }
+    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    pub fn get_normalized_instance_hours(&self) -> &::std::option::Option<i32> {
+        &self.normalized_instance_hours
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl ClusterSummaryBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl ClusterSummaryBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Consumes the builder and constructs a [`ClusterSummary`](crate::types::ClusterSummary).
     pub fn build(self) -> crate::types::ClusterSummary {

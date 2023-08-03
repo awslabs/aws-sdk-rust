@@ -131,6 +131,10 @@ impl SiteBuilder {
         self.site_id = input;
         self
     }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl SiteBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the site.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +159,10 @@ impl SiteBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the site.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -160,6 +172,10 @@ impl SiteBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -186,6 +202,14 @@ impl SiteBuilder {
         self.tags = input;
         self
     }
+    /// <p>The site tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub fn site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_arn = ::std::option::Option::Some(input.into());
@@ -196,6 +220,10 @@ impl SiteBuilder {
         self.site_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    pub fn get_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_arn
+    }
     /// <p> Notes about a site. </p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl SiteBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p> Notes about a site. </p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
     pub fn operating_address_country_code(
@@ -222,6 +254,12 @@ impl SiteBuilder {
         self.operating_address_country_code = input;
         self
     }
+    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    pub fn get_operating_address_country_code(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.operating_address_country_code
+    }
     /// <p> State or region where the hardware is installed and powered on. </p>
     pub fn operating_address_state_or_region(
         mut self,
@@ -237,6 +275,12 @@ impl SiteBuilder {
     ) -> Self {
         self.operating_address_state_or_region = input;
         self
+    }
+    /// <p> State or region where the hardware is installed and powered on. </p>
+    pub fn get_operating_address_state_or_region(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.operating_address_state_or_region
     }
     /// <p> City where the hardware is installed and powered on. </p>
     pub fn operating_address_city(
@@ -254,6 +298,10 @@ impl SiteBuilder {
         self.operating_address_city = input;
         self
     }
+    /// <p> City where the hardware is installed and powered on. </p>
+    pub fn get_operating_address_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_address_city
+    }
     /// <p> Information about the physical and logistical details for a rack at the site. </p>
     pub fn rack_physical_properties(mut self, input: crate::types::RackPhysicalProperties) -> Self {
         self.rack_physical_properties = ::std::option::Option::Some(input);
@@ -266,6 +314,12 @@ impl SiteBuilder {
     ) -> Self {
         self.rack_physical_properties = input;
         self
+    }
+    /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    pub fn get_rack_physical_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
+        &self.rack_physical_properties
     }
     /// Consumes the builder and constructs a [`Site`](crate::types::Site).
     pub fn build(self) -> crate::types::Site {

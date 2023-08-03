@@ -47,6 +47,10 @@ impl DescribeComputeInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet the compute is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeComputeInputBuilder {
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
     }
     /// Consumes the builder and constructs a [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
     pub fn build(

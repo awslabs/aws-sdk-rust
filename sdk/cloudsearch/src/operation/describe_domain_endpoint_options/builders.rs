@@ -36,6 +36,10 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDomainEndpointOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.inner = self.inner.deployed(input);
@@ -135,5 +143,9 @@ impl DescribeDomainEndpointOptionsFluentBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deployed(input);
         self
+    }
+    /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deployed()
     }
 }

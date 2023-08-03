@@ -122,6 +122,10 @@ impl AssociationExecutionBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The association version.</p>
     pub fn association_version(
         mut self,
@@ -138,6 +142,10 @@ impl AssociationExecutionBuilder {
         self.association_version = input;
         self
     }
+    /// <p>The association version.</p>
+    pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_version
+    }
     /// <p>The execution ID for the association.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -148,6 +156,10 @@ impl AssociationExecutionBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>The execution ID for the association.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>The status of the association execution.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -157,6 +169,10 @@ impl AssociationExecutionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the association execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Detailed status information about the execution.</p>
     pub fn detailed_status(
@@ -174,6 +190,10 @@ impl AssociationExecutionBuilder {
         self.detailed_status = input;
         self
     }
+    /// <p>Detailed status information about the execution.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_status
+    }
     /// <p>The time the execution started.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl AssociationExecutionBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time the execution started.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date of the last execution.</p>
     pub fn last_execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_execution_date = ::std::option::Option::Some(input);
@@ -199,6 +223,10 @@ impl AssociationExecutionBuilder {
     ) -> Self {
         self.last_execution_date = input;
         self
+    }
+    /// <p>The date of the last execution.</p>
+    pub fn get_last_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_execution_date
     }
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
     pub fn resource_count_by_status(
@@ -216,6 +244,10 @@ impl AssociationExecutionBuilder {
         self.resource_count_by_status = input;
         self
     }
+    /// <p>An aggregate status of the resources in the execution based on the status type.</p>
+    pub fn get_resource_count_by_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_count_by_status
+    }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.alarm_configuration = ::std::option::Option::Some(input);
@@ -228,6 +260,12 @@ impl AssociationExecutionBuilder {
     ) -> Self {
         self.alarm_configuration = input;
         self
+    }
+    /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
+    pub fn get_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+        &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
     ///
@@ -247,6 +285,12 @@ impl AssociationExecutionBuilder {
     ) -> Self {
         self.triggered_alarms = input;
         self
+    }
+    /// <p>The CloudWatch alarms that were invoked by the association.</p>
+    pub fn get_triggered_alarms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+        &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`AssociationExecution`](crate::types::AssociationExecution).
     pub fn build(self) -> crate::types::AssociationExecution {

@@ -80,6 +80,10 @@ impl DataSourceConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The S3 bucket where the data files are located.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DataSourceConfigBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>The S3 bucket where the data files are located.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// Appends an item to `s3_keys`.
     ///
@@ -109,6 +117,10 @@ impl DataSourceConfigBuilder {
         self.s3_keys = input;
         self
     }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_keys
+    }
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
@@ -120,6 +132,11 @@ impl DataSourceConfigBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
+    /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>The location where your files are mounted in the container image.</p>
     /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
@@ -136,6 +153,13 @@ impl DataSourceConfigBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`DataSourceConfig`](crate::types::DataSourceConfig).
     pub fn build(self) -> crate::types::DataSourceConfig {

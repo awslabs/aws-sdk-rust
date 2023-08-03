@@ -55,6 +55,10 @@ impl DeleteBackupOutputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup that was deleted.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::BackupLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl DeleteBackupOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::BackupLifecycle> {
+        &self.lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

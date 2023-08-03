@@ -72,6 +72,10 @@ impl DevEnvironmentSessionSummaryBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DevEnvironmentSessionSummaryBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn dev_environment_id(
@@ -98,6 +106,10 @@ impl DevEnvironmentSessionSummaryBuilder {
         self.dev_environment_id = input;
         self
     }
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    pub fn get_dev_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dev_environment_id
+    }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
     pub fn started_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl DevEnvironmentSessionSummaryBuilder {
         self.started_time = input;
         self
     }
+    /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
+    pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_time
+    }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl DevEnvironmentSessionSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment session.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSessionSummary`](crate::types::DevEnvironmentSessionSummary).
     pub fn build(self) -> crate::types::DevEnvironmentSessionSummary {

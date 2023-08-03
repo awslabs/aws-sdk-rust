@@ -82,6 +82,10 @@ impl StudioLifecycleConfigDetailsBuilder {
         self.studio_lifecycle_config_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    pub fn get_studio_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_arn
+    }
     /// <p>The name of the Studio Lifecycle Configuration.</p>
     pub fn studio_lifecycle_config_name(
         mut self,
@@ -98,6 +102,12 @@ impl StudioLifecycleConfigDetailsBuilder {
         self.studio_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the Studio Lifecycle Configuration.</p>
+    pub fn get_studio_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
+    }
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -111,6 +121,10 @@ impl StudioLifecycleConfigDetailsBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -123,6 +137,10 @@ impl StudioLifecycleConfigDetailsBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
     pub fn studio_lifecycle_config_app_type(
@@ -139,6 +157,12 @@ impl StudioLifecycleConfigDetailsBuilder {
     ) -> Self {
         self.studio_lifecycle_config_app_type = input;
         self
+    }
+    /// <p>The App type to which the Lifecycle Configuration is attached.</p>
+    pub fn get_studio_lifecycle_config_app_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+        &self.studio_lifecycle_config_app_type
     }
     /// Consumes the builder and constructs a [`StudioLifecycleConfigDetails`](crate::types::StudioLifecycleConfigDetails).
     pub fn build(self) -> crate::types::StudioLifecycleConfigDetails {

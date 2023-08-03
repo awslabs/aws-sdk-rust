@@ -59,6 +59,10 @@ impl BatchEvaluateGeofencesInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Appends an item to `device_position_updates`.
     ///
     /// To override the contents of this collection use [`set_device_position_updates`](Self::set_device_position_updates).
@@ -77,6 +81,12 @@ impl BatchEvaluateGeofencesInputBuilder {
     ) -> Self {
         self.device_position_updates = input;
         self
+    }
+    /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
+    pub fn get_device_position_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+        &self.device_position_updates
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePublicDnsNamespace as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the namespace being updated.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn updater_request_id(
         mut self,
@@ -142,6 +150,10 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self.inner = self.inner.set_updater_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    pub fn get_updater_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_updater_request_id()
+    }
     /// <p>Updated properties for the public DNS namespace.</p>
     pub fn namespace(mut self, input: crate::types::PublicDnsNamespaceChange) -> Self {
         self.inner = self.inner.namespace(input);
@@ -154,5 +166,9 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>Updated properties for the public DNS namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::PublicDnsNamespaceChange> {
+        self.inner.get_namespace()
     }
 }

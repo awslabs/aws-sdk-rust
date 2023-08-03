@@ -36,6 +36,12 @@ impl UpdateVoiceChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVoiceChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateVoiceChannelFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
     pub fn voice_channel_request(mut self, input: crate::types::VoiceChannelRequest) -> Self {
         self.inner = self.inner.voice_channel_request(input);
@@ -144,5 +154,11 @@ impl UpdateVoiceChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_channel_request(input);
         self
+    }
+    /// <p>Specifies the status and settings of the voice channel for an application.</p>
+    pub fn get_voice_channel_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceChannelRequest> {
+        self.inner.get_voice_channel_request()
     }
 }

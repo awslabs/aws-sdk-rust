@@ -37,6 +37,10 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetClusterCredentialsWithIAM as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self.inner = self.inner.set_db_name(input);
         self
     }
+    /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_name()
+    }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     pub fn cluster_identifier(
         mut self,
@@ -143,6 +151,10 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -154,6 +166,11 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_seconds(input);
         self
+    }
+    /// <p>The number of seconds until the returned temporary password expires.</p>
+    /// <p>Range: 900-3600. Default: 900.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_seconds()
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
     pub fn custom_domain_name(
@@ -170,5 +187,9 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
+    }
+    /// <p>The custom domain name for the IAM message cluster credentials.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
     }
 }

@@ -45,6 +45,10 @@ impl DeleteCustomDomainAssociationInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to delete a custom domain association for.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteCustomDomainAssociationInput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput).
     pub fn build(
         self,

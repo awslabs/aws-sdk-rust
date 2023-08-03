@@ -49,6 +49,10 @@ impl JobNodeDetailsBuilder {
         self.job_runs = input;
         self
     }
+    /// <p>The information for the job runs represented by the job node.</p>
+    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
+        &self.job_runs
+    }
     /// Consumes the builder and constructs a [`JobNodeDetails`](crate::types::JobNodeDetails).
     pub fn build(self) -> crate::types::JobNodeDetails {
         crate::types::JobNodeDetails {

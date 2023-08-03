@@ -73,6 +73,12 @@ impl ListControlDisplayOptionsBuilder {
         self.search_options = input;
         self
     }
+    /// <p>The configuration of the search options in a list control.</p>
+    pub fn get_search_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListControlSearchOptions> {
+        &self.search_options
+    }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
     pub fn select_all_options(mut self, input: crate::types::ListControlSelectAllOptions) -> Self {
         self.select_all_options = ::std::option::Option::Some(input);
@@ -86,6 +92,12 @@ impl ListControlDisplayOptionsBuilder {
         self.select_all_options = input;
         self
     }
+    /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
+    pub fn get_select_all_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListControlSelectAllOptions> {
+        &self.select_all_options
+    }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn title_options(mut self, input: crate::types::LabelOptions) -> Self {
         self.title_options = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl ListControlDisplayOptionsBuilder {
     ) -> Self {
         self.title_options = input;
         self
+    }
+    /// <p>The options to configure the title visibility, name, and font size.</p>
+    pub fn get_title_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.title_options
     }
     /// <p>The configuration of info icon label options.</p>
     pub fn info_icon_label_options(
@@ -114,6 +130,12 @@ impl ListControlDisplayOptionsBuilder {
     ) -> Self {
         self.info_icon_label_options = input;
         self
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn get_info_icon_label_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
+        &self.info_icon_label_options
     }
     /// Consumes the builder and constructs a [`ListControlDisplayOptions`](crate::types::ListControlDisplayOptions).
     pub fn build(self) -> crate::types::ListControlDisplayOptions {

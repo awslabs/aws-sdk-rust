@@ -46,6 +46,10 @@ impl GetInstanceOutputBuilder {
         self.instance = input;
         self
     }
+    /// <p>A complex type that contains information about a specified instance.</p>
+    pub fn get_instance(&self) -> &::std::option::Option<crate::types::Instance> {
+        &self.instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

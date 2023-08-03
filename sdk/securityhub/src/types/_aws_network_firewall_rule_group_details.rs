@@ -89,6 +89,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The maximum number of operating resources that this rule group can use.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i32> {
+        &self.capacity
+    }
     /// <p>A description of the rule group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the rule group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Details about the rule group.</p>
     pub fn rule_group(mut self, input: crate::types::RuleGroupDetails) -> Self {
@@ -111,6 +119,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     ) -> Self {
         self.rule_group = input;
         self
+    }
+    /// <p>Details about the rule group.</p>
+    pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroupDetails> {
+        &self.rule_group
     }
     /// <p>The ARN of the rule group.</p>
     pub fn rule_group_arn(
@@ -128,6 +140,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The ARN of the rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// <p>The identifier of the rule group.</p>
     pub fn rule_group_id(
         mut self,
@@ -143,6 +159,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     ) -> Self {
         self.rule_group_id = input;
         self
+    }
+    /// <p>The identifier of the rule group.</p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
     }
     /// <p>The descriptive name of the rule group.</p>
     pub fn rule_group_name(
@@ -160,6 +180,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
         self.rule_group_name = input;
         self
     }
+    /// <p>The descriptive name of the rule group.</p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_name
+    }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -169,6 +193,10 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallRuleGroupDetails {

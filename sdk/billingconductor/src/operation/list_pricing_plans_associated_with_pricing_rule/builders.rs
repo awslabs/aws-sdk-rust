@@ -36,6 +36,10 @@ impl ListPricingPlansAssociatedWithPricingRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPricingPlansAssociatedWithPricingRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListPricingPlansAssociatedWithPricingRuleFluentBuilder {
         self.inner = self.inner.set_billing_period(input);
         self
     }
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_period()
+    }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn pricing_rule_arn(
         mut self,
@@ -128,6 +136,10 @@ impl ListPricingPlansAssociatedWithPricingRuleFluentBuilder {
         self.inner = self.inner.set_pricing_rule_arn(input);
         self
     }
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
+    pub fn get_pricing_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pricing_rule_arn()
+    }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +150,10 @@ impl ListPricingPlansAssociatedWithPricingRuleFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The optional pagination token returned by a previous call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,5 +163,9 @@ impl ListPricingPlansAssociatedWithPricingRuleFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The optional pagination token returned by a previous call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -40,6 +40,10 @@ impl ClientPolicyBuilder {
         self.tls = input;
         self
     }
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::ClientPolicyTls> {
+        &self.tls
+    }
     /// Consumes the builder and constructs a [`ClientPolicy`](crate::types::ClientPolicy).
     pub fn build(self) -> crate::types::ClientPolicy {
         crate::types::ClientPolicy { tls: self.tls }

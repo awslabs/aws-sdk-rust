@@ -78,6 +78,10 @@ impl LambdaFunctionInfoBuilder {
         self.function_name = input;
         self
     }
+    /// <p> The name of a Lambda function. </p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
     pub fn function_alias(
         mut self,
@@ -93,6 +97,10 @@ impl LambdaFunctionInfoBuilder {
     ) -> Self {
         self.function_alias = input;
         self
+    }
+    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
+    pub fn get_function_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_alias
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
     pub fn current_version(
@@ -110,6 +118,10 @@ impl LambdaFunctionInfoBuilder {
         self.current_version = input;
         self
     }
+    /// <p> The version of a Lambda function that production traffic points to. </p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
     pub fn target_version(
         mut self,
@@ -126,6 +138,10 @@ impl LambdaFunctionInfoBuilder {
         self.target_version = input;
         self
     }
+    /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
+    pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_version
+    }
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
     pub fn target_version_weight(mut self, input: f64) -> Self {
         self.target_version_weight = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl LambdaFunctionInfoBuilder {
     pub fn set_target_version_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_version_weight = input;
         self
+    }
+    /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
+    pub fn get_target_version_weight(&self) -> &::std::option::Option<f64> {
+        &self.target_version_weight
     }
     /// Consumes the builder and constructs a [`LambdaFunctionInfo`](crate::types::LambdaFunctionInfo).
     pub fn build(self) -> crate::types::LambdaFunctionInfo {

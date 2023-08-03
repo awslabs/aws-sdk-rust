@@ -36,6 +36,13 @@ impl UpdateTypedLinkFacetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTypedLinkFacet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateTypedLinkFacetFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The unique name of the typed link facet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +146,10 @@ impl UpdateTypedLinkFacetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `AttributeUpdates`.
     ///
@@ -152,6 +167,12 @@ impl UpdateTypedLinkFacetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
+    }
+    /// <p>Attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>> {
+        self.inner.get_attribute_updates()
     }
     /// Appends an item to `IdentityAttributeOrder`.
     ///
@@ -172,5 +193,11 @@ impl UpdateTypedLinkFacetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_attribute_order(input);
         self
+    }
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_identity_attribute_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identity_attribute_order()
     }
 }

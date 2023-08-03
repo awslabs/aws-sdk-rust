@@ -51,6 +51,10 @@ impl EnvironmentPlatformBuilder {
         self.platform = input;
         self
     }
+    /// <p>The platform's name.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        &self.platform
+    }
     /// Appends an item to `languages`.
     ///
     /// To override the contents of this collection use [`set_languages`](Self::set_languages).
@@ -69,6 +73,12 @@ impl EnvironmentPlatformBuilder {
     ) -> Self {
         self.languages = input;
         self
+    }
+    /// <p>The list of programming languages that are available for the specified platform.</p>
+    pub fn get_languages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLanguage>> {
+        &self.languages
     }
     /// Consumes the builder and constructs a [`EnvironmentPlatform`](crate::types::EnvironmentPlatform).
     pub fn build(self) -> crate::types::EnvironmentPlatform {

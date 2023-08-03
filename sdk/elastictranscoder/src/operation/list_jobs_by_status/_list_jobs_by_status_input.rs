@@ -57,6 +57,10 @@ impl ListJobsByStatusInputBuilder {
         self.status = input;
         self
     }
+    /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
     pub fn ascending(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ascending = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListJobsByStatusInputBuilder {
         self.ascending = input;
         self
     }
+    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ascending
+    }
     /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListJobsByStatusInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
     pub fn build(

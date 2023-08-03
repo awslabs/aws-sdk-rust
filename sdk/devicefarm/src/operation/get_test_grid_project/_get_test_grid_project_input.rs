@@ -40,6 +40,10 @@ impl GetTestGridProjectInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// Consumes the builder and constructs a [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
     pub fn build(
         self,

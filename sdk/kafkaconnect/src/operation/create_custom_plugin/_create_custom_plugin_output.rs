@@ -77,6 +77,10 @@ impl CreateCustomPluginOutputBuilder {
         self.custom_plugin_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
+    }
     /// <p>The state of the custom plugin.</p>
     pub fn custom_plugin_state(mut self, input: crate::types::CustomPluginState) -> Self {
         self.custom_plugin_state = ::std::option::Option::Some(input);
@@ -90,6 +94,12 @@ impl CreateCustomPluginOutputBuilder {
         self.custom_plugin_state = input;
         self
     }
+    /// <p>The state of the custom plugin.</p>
+    pub fn get_custom_plugin_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginState> {
+        &self.custom_plugin_state
+    }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl CreateCustomPluginOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom plugin.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl CreateCustomPluginOutputBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

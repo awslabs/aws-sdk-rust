@@ -51,6 +51,10 @@ impl DeploymentStyleBuilder {
         self.deployment_type = input;
         self
     }
+    /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
+    }
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub fn deployment_option(mut self, input: crate::types::DeploymentOption) -> Self {
         self.deployment_option = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeploymentStyleBuilder {
     ) -> Self {
         self.deployment_option = input;
         self
+    }
+    /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
+    pub fn get_deployment_option(&self) -> &::std::option::Option<crate::types::DeploymentOption> {
+        &self.deployment_option
     }
     /// Consumes the builder and constructs a [`DeploymentStyle`](crate::types::DeploymentStyle).
     pub fn build(self) -> crate::types::DeploymentStyle {

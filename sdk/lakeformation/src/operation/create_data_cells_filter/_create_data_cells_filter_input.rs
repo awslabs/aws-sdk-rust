@@ -44,6 +44,10 @@ impl CreateDataCellsFilterInputBuilder {
         self.table_data = input;
         self
     }
+    /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    pub fn get_table_data(&self) -> &::std::option::Option<crate::types::DataCellsFilter> {
+        &self.table_data
+    }
     /// Consumes the builder and constructs a [`CreateDataCellsFilterInput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterInput).
     pub fn build(
         self,

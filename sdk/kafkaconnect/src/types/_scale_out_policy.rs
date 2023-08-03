@@ -40,6 +40,10 @@ impl ScaleOutPolicyBuilder {
         self.cpu_utilization_percentage = input;
         self
     }
+    /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    pub fn get_cpu_utilization_percentage(&self) -> &::std::option::Option<i32> {
+        &self.cpu_utilization_percentage
+    }
     /// Consumes the builder and constructs a [`ScaleOutPolicy`](crate::types::ScaleOutPolicy).
     pub fn build(self) -> crate::types::ScaleOutPolicy {
         crate::types::ScaleOutPolicy {

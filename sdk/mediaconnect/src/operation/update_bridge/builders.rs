@@ -36,6 +36,10 @@ impl UpdateBridgeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBridge as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bridge::builders::UpdateBridgeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateBridgeFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn egress_gateway_bridge(
         mut self,
@@ -135,6 +143,12 @@ impl UpdateBridgeFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_egress_gateway_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest> {
+        self.inner.get_egress_gateway_bridge()
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn ingress_gateway_bridge(
         mut self,
         input: crate::types::UpdateIngressGatewayBridgeRequest,
@@ -150,6 +164,12 @@ impl UpdateBridgeFluentBuilder {
         self.inner = self.inner.set_ingress_gateway_bridge(input);
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_ingress_gateway_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest> {
+        self.inner.get_ingress_gateway_bridge()
+    }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
@@ -162,5 +182,11 @@ impl UpdateBridgeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
+    }
+    /// The settings for source failover.
+    pub fn get_source_failover_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
+        self.inner.get_source_failover_config()
     }
 }

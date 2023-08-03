@@ -36,6 +36,10 @@ impl CreateFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFilter as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_filter::builders::CreateFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateFilterFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the filter to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -133,6 +141,10 @@ impl CreateFilterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
+    }
+    /// <p>The ARN of the dataset group that the filter will belong to.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
     }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn filter_expression(
@@ -150,6 +162,10 @@ impl CreateFilterFluentBuilder {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_expression()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -166,5 +182,9 @@ impl CreateFilterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

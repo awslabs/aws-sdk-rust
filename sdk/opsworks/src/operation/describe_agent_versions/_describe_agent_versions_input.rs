@@ -52,6 +52,10 @@ impl DescribeAgentVersionsInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(mut self, input: crate::types::StackConfigurationManager) -> Self {
         self.configuration_manager = ::std::option::Option::Some(input);
@@ -64,6 +68,12 @@ impl DescribeAgentVersionsInputBuilder {
     ) -> Self {
         self.configuration_manager = input;
         self
+    }
+    /// <p>The configuration manager.</p>
+    pub fn get_configuration_manager(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+        &self.configuration_manager
     }
     /// Consumes the builder and constructs a [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
     pub fn build(

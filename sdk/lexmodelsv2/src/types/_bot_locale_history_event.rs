@@ -48,6 +48,10 @@ impl BotLocaleHistoryEventBuilder {
         self.event = input;
         self
     }
+    /// <p>A description of the event that occurred.</p>
+    pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event
+    }
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn event_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_date = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl BotLocaleHistoryEventBuilder {
     ) -> Self {
         self.event_date = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the event occurred.</p>
+    pub fn get_event_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_date
     }
     /// Consumes the builder and constructs a [`BotLocaleHistoryEvent`](crate::types::BotLocaleHistoryEvent).
     pub fn build(self) -> crate::types::BotLocaleHistoryEvent {

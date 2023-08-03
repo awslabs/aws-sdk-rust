@@ -37,6 +37,12 @@ impl DescribeOpsItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOpsItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -181,6 +187,30 @@ impl DescribeOpsItemsFluentBuilder {
         self.inner = self.inner.set_ops_item_filters(input);
         self
     }
+    /// <p>One or more filters to limit the response.</p>
+    /// <ul>
+    /// <li> <p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+    /// <li> <p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li>
+    /// <li> <p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+    /// <li> <p>Key: Priority</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: Source</p> <p>Operations: Contains, Equals</p> </li>
+    /// <li> <p>Key: Status</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: Title*</p> <p>Operations: Equals,Contains</p> </li>
+    /// <li> <p>Key: OperationalData**</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: OperationalDataKey</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li>
+    /// <li> <p>Key: OpsItemId</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: ResourceId</p> <p>Operations: Contains</p> </li>
+    /// <li> <p>Key: AutomationId</p> <p>Operations: Equals</p> </li>
+    /// <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+    /// </ul>
+    /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
+    /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+    pub fn get_ops_item_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
+        self.inner.get_ops_item_filters()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -191,6 +221,10 @@ impl DescribeOpsItemsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -200,5 +234,9 @@ impl DescribeOpsItemsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

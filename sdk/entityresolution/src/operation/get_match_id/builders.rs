@@ -36,6 +36,10 @@ impl GetMatchIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMatchId as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_match_id::builders::GetMatchIdInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetMatchIdFluentBuilder {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_name()
+    }
     /// Adds a key-value pair to `record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -146,5 +154,13 @@ impl GetMatchIdFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_record(input);
         self
+    }
+    /// <p>The record to fetch the Match ID for.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_record()
     }
 }

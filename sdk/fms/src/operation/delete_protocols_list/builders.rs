@@ -36,6 +36,12 @@ impl DeleteProtocolsListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProtocolsList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteProtocolsListFluentBuilder {
     pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_list_id(input);
         self
+    }
+    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_list_id()
     }
 }

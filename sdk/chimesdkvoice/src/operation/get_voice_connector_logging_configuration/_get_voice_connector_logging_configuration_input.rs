@@ -45,6 +45,10 @@ impl GetVoiceConnectorLoggingConfigurationInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorLoggingConfigurationInput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

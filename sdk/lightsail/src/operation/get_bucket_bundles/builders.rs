@@ -38,6 +38,12 @@ impl GetBucketBundlesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBucketBundles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl GetBucketBundlesFluentBuilder {
     pub fn set_include_inactive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_inactive(input);
         self
+    }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_inactive()
     }
 }

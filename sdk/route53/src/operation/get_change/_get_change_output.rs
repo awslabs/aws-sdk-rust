@@ -50,6 +50,10 @@ impl GetChangeOutputBuilder {
         self.change_info = input;
         self
     }
+    /// <p>A complex type that contains information about the specified change batch.</p>
+    pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
+        &self.change_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

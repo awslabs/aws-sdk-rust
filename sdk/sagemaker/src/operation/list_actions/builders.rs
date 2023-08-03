@@ -36,6 +36,10 @@ impl ListActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListActions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_actions::builders::ListActionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListActionsFluentBuilder {
         self.inner = self.inner.set_source_uri(input);
         self
     }
+    /// <p>A filter that returns only actions with the specified source URI.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_uri()
+    }
     /// <p>A filter that returns only actions of the specified type.</p>
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_type(input.into());
@@ -136,6 +144,10 @@ impl ListActionsFluentBuilder {
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
+    }
+    /// <p>A filter that returns only actions of the specified type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_type()
     }
     /// <p>A filter that returns only actions created on or after the specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +162,10 @@ impl ListActionsFluentBuilder {
         self.inner = self.inner.set_created_after(input);
         self
     }
+    /// <p>A filter that returns only actions created on or after the specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
+    }
     /// <p>A filter that returns only actions created on or before the specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -162,6 +178,10 @@ impl ListActionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>A filter that returns only actions created on or before the specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortActionsBy) -> Self {
@@ -176,6 +196,10 @@ impl ListActionsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortActionsBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -185,6 +209,10 @@ impl ListActionsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,6 +224,10 @@ impl ListActionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -205,5 +237,9 @@ impl ListActionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

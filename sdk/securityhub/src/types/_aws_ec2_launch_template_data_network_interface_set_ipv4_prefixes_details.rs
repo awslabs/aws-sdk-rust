@@ -42,6 +42,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetailsBuilder {
         self.ipv4_prefix = input;
         self
     }
+    /// <p> The IPv4 prefix. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
+    pub fn get_ipv4_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_prefix
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails).
     pub fn build(
         self,

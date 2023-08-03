@@ -51,6 +51,12 @@ impl VerifiedAccessEndpointStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The status code of the Verified Access endpoint.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode> {
+        &self.code
+    }
     /// <p>The status message of the Verified Access endpoint.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl VerifiedAccessEndpointStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The status message of the Verified Access endpoint.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`VerifiedAccessEndpointStatus`](crate::types::VerifiedAccessEndpointStatus).
     pub fn build(self) -> crate::types::VerifiedAccessEndpointStatus {

@@ -54,6 +54,10 @@ impl MutualTlsAuthenticationInputBuilder {
         self.truststore_uri = input;
         self
     }
+    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
+    pub fn get_truststore_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.truststore_uri
+    }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
     pub fn truststore_version(
         mut self,
@@ -69,6 +73,10 @@ impl MutualTlsAuthenticationInputBuilder {
     ) -> Self {
         self.truststore_version = input;
         self
+    }
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
+    pub fn get_truststore_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.truststore_version
     }
     /// Consumes the builder and constructs a [`MutualTlsAuthenticationInput`](crate::types::MutualTlsAuthenticationInput).
     pub fn build(self) -> crate::types::MutualTlsAuthenticationInput {

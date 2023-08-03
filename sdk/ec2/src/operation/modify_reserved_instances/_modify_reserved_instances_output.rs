@@ -55,6 +55,12 @@ impl ModifyReservedInstancesOutputBuilder {
         self.reserved_instances_modification_id = input;
         self
     }
+    /// <p>The ID for the modification.</p>
+    pub fn get_reserved_instances_modification_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_modification_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

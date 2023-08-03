@@ -36,6 +36,10 @@ impl CreateStudioLifecycleConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStudioLifecycleConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
+    /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    pub fn get_studio_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_lifecycle_config_name()
+    }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn studio_lifecycle_config_content(
         mut self,
@@ -147,6 +157,12 @@ impl CreateStudioLifecycleConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_content(input);
         self
+    }
+    /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    pub fn get_studio_lifecycle_config_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_lifecycle_config_content()
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub fn studio_lifecycle_config_app_type(
@@ -164,6 +180,12 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self.inner = self.inner.set_studio_lifecycle_config_app_type(input);
         self
     }
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub fn get_studio_lifecycle_config_app_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+        self.inner.get_studio_lifecycle_config_app_type()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -180,5 +202,9 @@ impl CreateStudioLifecycleConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

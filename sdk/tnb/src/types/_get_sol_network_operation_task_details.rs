@@ -89,6 +89,10 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self.task_name = input;
         self
     }
+    /// <p>Task name.</p>
+    pub fn get_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_name
+    }
     /// Adds a key-value pair to `task_context`.
     ///
     /// To override the contents of this collection use [`set_task_context`](Self::set_task_context).
@@ -114,6 +118,14 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self.task_context = input;
         self
     }
+    /// <p>Context for the network operation task.</p>
+    pub fn get_task_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.task_context
+    }
     /// <p>Task error details.</p>
     pub fn task_error_details(mut self, input: crate::types::ErrorInfo) -> Self {
         self.task_error_details = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     ) -> Self {
         self.task_error_details = input;
         self
+    }
+    /// <p>Task error details.</p>
+    pub fn get_task_error_details(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
+        &self.task_error_details
     }
     /// <p>Task status.</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -140,6 +156,10 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self.task_status = input;
         self
     }
+    /// <p>Task status.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.task_status
+    }
     /// <p>Task start time.</p>
     pub fn task_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.task_start_time = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self.task_start_time = input;
         self
     }
+    /// <p>Task start time.</p>
+    pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_start_time
+    }
     /// <p>Task end time.</p>
     pub fn task_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.task_end_time = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     ) -> Self {
         self.task_end_time = input;
         self
+    }
+    /// <p>Task end time.</p>
+    pub fn get_task_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_end_time
     }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationTaskDetails`](crate::types::GetSolNetworkOperationTaskDetails).
     pub fn build(self) -> crate::types::GetSolNetworkOperationTaskDetails {

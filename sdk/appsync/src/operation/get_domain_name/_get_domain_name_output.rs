@@ -49,6 +49,10 @@ impl GetDomainNameOutputBuilder {
         self.domain_name_config = input;
         self
     }
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub fn get_domain_name_config(&self) -> &::std::option::Option<crate::types::DomainNameConfig> {
+        &self.domain_name_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

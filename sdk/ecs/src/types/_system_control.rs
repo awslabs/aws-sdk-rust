@@ -53,6 +53,10 @@ impl SystemControlBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl SystemControlBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SystemControl`](crate::types::SystemControl).
     pub fn build(self) -> crate::types::SystemControl {

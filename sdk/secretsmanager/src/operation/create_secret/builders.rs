@@ -45,6 +45,10 @@ impl CreateSecretFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSecret as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_secret::builders::CreateSecretInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,12 @@ impl CreateSecretFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new secret.</p>
+    /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
+    /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates an initial version for the secret, and this parameter specifies the unique identifier for the new version. </p> <note>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
     /// </note>
@@ -165,6 +175,19 @@ impl CreateSecretFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates an initial version for the secret, and this parameter specifies the unique identifier for the new version. </p> <note>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
+    /// </note>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>
+    /// <ul>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
+    /// </ul>
+    /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The description of the secret.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -174,6 +197,10 @@ impl CreateSecretFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the secret.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
     /// <p>To use a KMS key in a different account, use the key ARN or the alias ARN.</p>
@@ -191,6 +218,13 @@ impl CreateSecretFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
+    /// <p>To use a KMS key in a different account, use the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify this value, then Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value.</p>
+    /// <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed KMS key. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
@@ -207,6 +241,12 @@ impl CreateSecretFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secret_binary(input);
         self
+    }
+    /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
+    /// <p>This parameter is not available in the Secrets Manager console.</p>
+    pub fn get_secret_binary(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_secret_binary()
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
@@ -227,6 +267,12 @@ impl CreateSecretFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secret_string(input);
         self
+    }
+    /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
+    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_string()
     }
     /// Appends an item to `Tags`.
     ///
@@ -271,6 +317,23 @@ impl CreateSecretFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
+    /// <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>
+    /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
+    /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
+    /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per secret: 50</p> </li>
+    /// <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
+    /// <li> <p>If you use your tagging schema across multiple services and resources, other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `AddReplicaRegions`.
     ///
     /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
@@ -288,6 +351,12 @@ impl CreateSecretFluentBuilder {
         self.inner = self.inner.set_add_replica_regions(input);
         self
     }
+    /// <p>A list of Regions and KMS keys to replicate secrets.</p>
+    pub fn get_add_replica_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+        self.inner.get_add_replica_regions()
+    }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
         self.inner = self.inner.force_overwrite_replica_secret(input);
@@ -300,5 +369,9 @@ impl CreateSecretFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_force_overwrite_replica_secret(input);
         self
+    }
+    /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
+    pub fn get_force_overwrite_replica_secret(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_overwrite_replica_secret()
     }
 }

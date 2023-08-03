@@ -40,6 +40,10 @@ impl GetSamplingRulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`GetSamplingRulesInput`](crate::operation::get_sampling_rules::GetSamplingRulesInput).
     pub fn build(
         self,

@@ -63,6 +63,10 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
+        &self.r#type
+    }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput, ::aws_smithy_http::operation::error::BuildError>{

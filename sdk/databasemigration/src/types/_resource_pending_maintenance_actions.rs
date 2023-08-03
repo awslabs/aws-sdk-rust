@@ -58,6 +58,10 @@ impl ResourcePendingMaintenanceActionsBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// Appends an item to `pending_maintenance_action_details`.
     ///
     /// To override the contents of this collection use [`set_pending_maintenance_action_details`](Self::set_pending_maintenance_action_details).
@@ -79,6 +83,12 @@ impl ResourcePendingMaintenanceActionsBuilder {
     ) -> Self {
         self.pending_maintenance_action_details = input;
         self
+    }
+    /// <p>Detailed information about the pending maintenance action.</p>
+    pub fn get_pending_maintenance_action_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>> {
+        &self.pending_maintenance_action_details
     }
     /// Consumes the builder and constructs a [`ResourcePendingMaintenanceActions`](crate::types::ResourcePendingMaintenanceActions).
     pub fn build(self) -> crate::types::ResourcePendingMaintenanceActions {

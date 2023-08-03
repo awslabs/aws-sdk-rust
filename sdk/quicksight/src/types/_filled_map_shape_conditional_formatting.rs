@@ -48,6 +48,10 @@ impl FilledMapShapeConditionalFormattingBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the filled map shape.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub fn format(mut self, input: crate::types::ShapeConditionalFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FilledMapShapeConditionalFormattingBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ShapeConditionalFormat> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`FilledMapShapeConditionalFormatting`](crate::types::FilledMapShapeConditionalFormatting).
     pub fn build(self) -> crate::types::FilledMapShapeConditionalFormatting {

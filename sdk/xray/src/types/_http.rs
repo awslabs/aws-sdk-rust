@@ -72,6 +72,10 @@ impl HttpBuilder {
         self.http_url = input;
         self
     }
+    /// <p>The request URL.</p>
+    pub fn get_http_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_url
+    }
     /// <p>The response status.</p>
     pub fn http_status(mut self, input: i32) -> Self {
         self.http_status = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl HttpBuilder {
     pub fn set_http_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_status = input;
         self
+    }
+    /// <p>The response status.</p>
+    pub fn get_http_status(&self) -> &::std::option::Option<i32> {
+        &self.http_status
     }
     /// <p>The request method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl HttpBuilder {
         self.http_method = input;
         self
     }
+    /// <p>The request method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>The request's user agent string.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl HttpBuilder {
         self.user_agent = input;
         self
     }
+    /// <p>The request's user agent string.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
+    }
     /// <p>The IP address of the requestor.</p>
     pub fn client_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_ip = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl HttpBuilder {
     pub fn set_client_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_ip = input;
         self
+    }
+    /// <p>The IP address of the requestor.</p>
+    pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_ip
     }
     /// Consumes the builder and constructs a [`Http`](crate::types::Http).
     pub fn build(self) -> crate::types::Http {

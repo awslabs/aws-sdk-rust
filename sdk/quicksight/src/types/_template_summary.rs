@@ -80,6 +80,10 @@ impl TemplateSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>A summary of a template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl TemplateSummaryBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>A display name for the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl TemplateSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A structure containing a list of version numbers for the template summary.</p>
     pub fn latest_version_number(mut self, input: i64) -> Self {
         self.latest_version_number = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl TemplateSummaryBuilder {
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latest_version_number = input;
         self
+    }
+    /// <p>A structure containing a list of version numbers for the template summary.</p>
+    pub fn get_latest_version_number(&self) -> &::std::option::Option<i64> {
+        &self.latest_version_number
     }
     /// <p>The last time that this template was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl TemplateSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The last time that this template was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The last time that this template was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl TemplateSummaryBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The last time that this template was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {

@@ -36,6 +36,10 @@ impl BatchGetApplicationRevisionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetApplicationRevisions as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl BatchGetApplicationRevisionsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an CodeDeploy application about which to get revision information.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// Appends an item to `revisions`.
     ///
     /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
@@ -148,5 +156,11 @@ impl BatchGetApplicationRevisionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revisions(input);
         self
+    }
+    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
+    pub fn get_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
+        self.inner.get_revisions()
     }
 }

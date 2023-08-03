@@ -75,6 +75,14 @@ impl ChangeMessageVisibilityBatchOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
+    > {
+        &self.successful
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -93,6 +101,12 @@ impl ChangeMessageVisibilityBatchOutputBuilder {
     ) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>> {
+        &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

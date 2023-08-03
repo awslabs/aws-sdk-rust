@@ -47,6 +47,10 @@ impl VerifyEmailAddressInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address to be verified.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// Consumes the builder and constructs a [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
     pub fn build(
         self,

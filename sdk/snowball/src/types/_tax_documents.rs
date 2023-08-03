@@ -40,6 +40,10 @@ impl TaxDocumentsBuilder {
         self.ind = input;
         self
     }
+    /// <p>The tax documents required in Amazon Web Services Region in India.</p>
+    pub fn get_ind(&self) -> &::std::option::Option<crate::types::IndTaxDocuments> {
+        &self.ind
+    }
     /// Consumes the builder and constructs a [`TaxDocuments`](crate::types::TaxDocuments).
     pub fn build(self) -> crate::types::TaxDocuments {
         crate::types::TaxDocuments { ind: self.ind }

@@ -37,6 +37,13 @@ impl DeleteReplicationConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_replication_config::builders::DeleteReplicationConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteReplicationConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_config_arn(input);
         self
+    }
+    /// <p>The replication config to delete.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_config_arn()
     }
 }

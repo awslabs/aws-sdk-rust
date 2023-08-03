@@ -61,6 +61,10 @@ impl DescribeTopicRefreshScheduleInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DescribeTopicRefreshScheduleInputBuilder {
         self.topic_id = input;
         self
     }
+    /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
+    }
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DescribeTopicRefreshScheduleInputBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// Consumes the builder and constructs a [`DescribeTopicRefreshScheduleInput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleInput).
     pub fn build(

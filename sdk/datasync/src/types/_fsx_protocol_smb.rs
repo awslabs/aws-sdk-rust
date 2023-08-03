@@ -92,6 +92,10 @@ impl FsxProtocolSmbBuilder {
         self.domain = input;
         self
     }
+    /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl FsxProtocolSmbBuilder {
         self.mount_options = input;
         self
     }
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
+        &self.mount_options
+    }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl FsxProtocolSmbBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
     /// <p>If you provide a user in your Active Directory, note the following:</p>
@@ -144,6 +156,20 @@ impl FsxProtocolSmbBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+    /// </ul>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
     }
     /// Consumes the builder and constructs a [`FsxProtocolSmb`](crate::types::FsxProtocolSmb).
     pub fn build(self) -> crate::types::FsxProtocolSmb {

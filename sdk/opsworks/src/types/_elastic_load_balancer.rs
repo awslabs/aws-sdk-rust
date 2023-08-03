@@ -110,6 +110,10 @@ impl ElasticLoadBalancerBuilder {
         self.elastic_load_balancer_name = input;
         self
     }
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn get_elastic_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_load_balancer_name
+    }
     /// <p>The instance's AWS region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl ElasticLoadBalancerBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The instance's AWS region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The instance's public DNS name.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +138,10 @@ impl ElasticLoadBalancerBuilder {
         self.dns_name = input;
         self
     }
+    /// <p>The instance's public DNS name.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// <p>The ID of the stack that the instance is associated with.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl ElasticLoadBalancerBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The ID of the stack that the instance is associated with.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The ID of the layer that the instance is attached to.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +166,10 @@ impl ElasticLoadBalancerBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The ID of the layer that the instance is attached to.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// <p>The VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl ElasticLoadBalancerBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -182,6 +206,12 @@ impl ElasticLoadBalancerBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of Availability Zones.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -200,6 +230,10 @@ impl ElasticLoadBalancerBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `ec2_instance_ids`.
     ///
@@ -222,6 +256,12 @@ impl ElasticLoadBalancerBuilder {
     ) -> Self {
         self.ec2_instance_ids = input;
         self
+    }
+    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    pub fn get_ec2_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_instance_ids
     }
     /// Consumes the builder and constructs a [`ElasticLoadBalancer`](crate::types::ElasticLoadBalancer).
     pub fn build(self) -> crate::types::ElasticLoadBalancer {

@@ -36,6 +36,13 @@ impl DescribeReplicationTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReplicationTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,11 @@ impl DescribeReplicationTasksFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters applied to replication tasks.</p>
+    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -158,6 +170,12 @@ impl DescribeReplicationTasksFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -168,6 +186,10 @@ impl DescribeReplicationTasksFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
     pub fn without_settings(mut self, input: bool) -> Self {
         self.inner = self.inner.without_settings(input);
@@ -177,5 +199,9 @@ impl DescribeReplicationTasksFluentBuilder {
     pub fn set_without_settings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_without_settings(input);
         self
+    }
+    /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+    pub fn get_without_settings(&self) -> &::std::option::Option<bool> {
+        self.inner.get_without_settings()
     }
 }

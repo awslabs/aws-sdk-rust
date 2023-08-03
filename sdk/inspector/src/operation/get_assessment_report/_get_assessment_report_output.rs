@@ -56,6 +56,10 @@ impl GetAssessmentReportOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatus> {
+        &self.status
+    }
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetAssessmentReportOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

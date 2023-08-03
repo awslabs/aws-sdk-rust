@@ -75,6 +75,10 @@ impl ListAssetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -86,6 +90,11 @@ impl ListAssetsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
     pub fn asset_model_id(
@@ -102,6 +111,10 @@ impl ListAssetsInputBuilder {
     ) -> Self {
         self.asset_model_id = input;
         self
+    }
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
@@ -125,6 +138,15 @@ impl ListAssetsInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>ALL</code> </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetsFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
     pub fn build(

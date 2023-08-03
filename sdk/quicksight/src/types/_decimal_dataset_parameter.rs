@@ -67,6 +67,10 @@ impl DecimalDatasetParameterBuilder {
         self.id = input;
         self
     }
+    /// <p>An identifier for the decimal parameter created in the dataset.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the decimal parameter that is created in the dataset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl DecimalDatasetParameterBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the decimal parameter that is created in the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     pub fn value_type(mut self, input: crate::types::DatasetParameterValueType) -> Self {
@@ -89,6 +97,12 @@ impl DecimalDatasetParameterBuilder {
     ) -> Self {
         self.value_type = input;
         self
+    }
+    /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
+    pub fn get_value_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetParameterValueType> {
+        &self.value_type
     }
     /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
     pub fn default_values(
@@ -105,6 +119,12 @@ impl DecimalDatasetParameterBuilder {
     ) -> Self {
         self.default_values = input;
         self
+    }
+    /// <p>A list of default values for a given decimal parameter. This structure only accepts static values.</p>
+    pub fn get_default_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::DecimalDatasetParameterDefaultValues> {
+        &self.default_values
     }
     /// Consumes the builder and constructs a [`DecimalDatasetParameter`](crate::types::DecimalDatasetParameter).
     pub fn build(self) -> crate::types::DecimalDatasetParameter {

@@ -51,6 +51,10 @@ impl DescribeAppInstanceBotOutputBuilder {
         self.app_instance_bot = input;
         self
     }
+    /// <p>The detials of the <code>AppInstanceBot</code>.</p>
+    pub fn get_app_instance_bot(&self) -> &::std::option::Option<crate::types::AppInstanceBot> {
+        &self.app_instance_bot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

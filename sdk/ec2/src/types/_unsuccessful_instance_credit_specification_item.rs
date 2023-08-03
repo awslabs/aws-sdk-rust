@@ -53,6 +53,10 @@ impl UnsuccessfulInstanceCreditSpecificationItemBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
     pub fn error(
         mut self,
@@ -70,6 +74,13 @@ impl UnsuccessfulInstanceCreditSpecificationItemBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
+    pub fn get_error(
+        &self,
+    ) -> &::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>
+    {
+        &self.error
     }
     /// Consumes the builder and constructs a [`UnsuccessfulInstanceCreditSpecificationItem`](crate::types::UnsuccessfulInstanceCreditSpecificationItem).
     pub fn build(self) -> crate::types::UnsuccessfulInstanceCreditSpecificationItem {

@@ -54,6 +54,10 @@ impl AdminAccountBuilder {
         self.admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the account.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
     pub fn admin_status(mut self, input: crate::types::AdminStatus) -> Self {
         self.admin_status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AdminAccountBuilder {
     ) -> Self {
         self.admin_status = input;
         self
+    }
+    /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
+    pub fn get_admin_status(&self) -> &::std::option::Option<crate::types::AdminStatus> {
+        &self.admin_status
     }
     /// Consumes the builder and constructs a [`AdminAccount`](crate::types::AdminAccount).
     pub fn build(self) -> crate::types::AdminAccount {

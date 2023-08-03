@@ -49,6 +49,10 @@ impl StopExperimentOutputBuilder {
         self.ended_time = input;
         self
     }
+    /// <p>The date and time that the experiment stopped.</p>
+    pub fn get_ended_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

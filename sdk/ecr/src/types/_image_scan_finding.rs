@@ -72,6 +72,10 @@ impl ImageScanFindingBuilder {
         self.name = input;
         self
     }
+    /// <p>The name associated with the finding, usually a CVE number.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ImageScanFindingBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A link containing additional details about the security vulnerability.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ImageScanFindingBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>A link containing additional details about the security vulnerability.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The finding severity.</p>
     pub fn severity(mut self, input: crate::types::FindingSeverity) -> Self {
@@ -104,6 +116,10 @@ impl ImageScanFindingBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The finding severity.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::FindingSeverity> {
+        &self.severity
     }
     /// Appends an item to `attributes`.
     ///
@@ -123,6 +139,12 @@ impl ImageScanFindingBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A collection of attributes of the host from which the finding is generated.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ImageScanFinding`](crate::types::ImageScanFinding).
     pub fn build(self) -> crate::types::ImageScanFinding {

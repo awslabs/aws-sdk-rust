@@ -36,6 +36,13 @@ impl CheckoutBorrowLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckoutBorrowLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self.inner = self.inner.set_license_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_arn()
+    }
     /// Appends an item to `Entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -143,6 +154,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self.inner = self.inner.set_entitlements(input);
         self
     }
+    /// <p>License entitlements. Partial checkouts are not supported.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+        self.inner.get_entitlements()
+    }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub fn digital_signature_method(mut self, input: crate::types::DigitalSignatureMethod) -> Self {
         self.inner = self.inner.digital_signature_method(input);
@@ -156,6 +173,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self.inner = self.inner.set_digital_signature_method(input);
         self
     }
+    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    pub fn get_digital_signature_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::DigitalSignatureMethod> {
+        self.inner.get_digital_signature_method()
+    }
     /// <p>Node ID.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
@@ -165,6 +188,10 @@ impl CheckoutBorrowLicenseFluentBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
+    }
+    /// <p>Node ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
     }
     /// Appends an item to `CheckoutMetadata`.
     ///
@@ -183,6 +210,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
         self.inner = self.inner.set_checkout_metadata(input);
         self
     }
+    /// <p>Information about constraints.</p>
+    pub fn get_checkout_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        self.inner.get_checkout_metadata()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -192,5 +225,9 @@ impl CheckoutBorrowLicenseFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

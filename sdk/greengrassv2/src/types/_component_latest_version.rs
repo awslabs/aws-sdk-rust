@@ -80,6 +80,10 @@ impl ComponentLatestVersionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The version of the component.</p>
     pub fn component_version(
         mut self,
@@ -96,6 +100,10 @@ impl ComponentLatestVersionBuilder {
         self.component_version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
+    }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl ComponentLatestVersionBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The description of the component version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl ComponentLatestVersionBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the component version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The publisher of the component version.</p>
     pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl ComponentLatestVersionBuilder {
     pub fn set_publisher(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher = input;
         self
+    }
+    /// <p>The publisher of the component version.</p>
+    pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher
     }
     /// Appends an item to `platforms`.
     ///
@@ -147,6 +167,12 @@ impl ComponentLatestVersionBuilder {
     ) -> Self {
         self.platforms = input;
         self
+    }
+    /// <p>The platforms that the component version supports.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
+        &self.platforms
     }
     /// Consumes the builder and constructs a [`ComponentLatestVersion`](crate::types::ComponentLatestVersion).
     pub fn build(self) -> crate::types::ComponentLatestVersion {

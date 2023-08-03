@@ -59,6 +59,10 @@ impl AnalysisErrorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the analysis error.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AnalysisErrorType> {
+        &self.r#type
+    }
     /// <p>The message associated with the analysis error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl AnalysisErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message associated with the analysis error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `violated_entities`.
     ///
@@ -87,6 +95,12 @@ impl AnalysisErrorBuilder {
     ) -> Self {
         self.violated_entities = input;
         self
+    }
+    /// <p>Lists the violated entities that caused the analysis error</p>
+    pub fn get_violated_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.violated_entities
     }
     /// Consumes the builder and constructs a [`AnalysisError`](crate::types::AnalysisError).
     pub fn build(self) -> crate::types::AnalysisError {

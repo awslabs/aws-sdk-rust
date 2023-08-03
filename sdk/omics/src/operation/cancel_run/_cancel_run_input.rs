@@ -39,6 +39,10 @@ impl CancelRunInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`CancelRunInput`](crate::operation::cancel_run::CancelRunInput).
     pub fn build(
         self,

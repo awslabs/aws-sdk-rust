@@ -37,6 +37,10 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBlueGreenDeployments as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +151,16 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
+    /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn get_blue_green_deployment_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_blue_green_deployment_identifier()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -178,6 +192,17 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
+    /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
+    /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
+    /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -187,6 +212,10 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -209,5 +238,15 @@ impl DescribeBlueGreenDeploymentsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a minimum of 20.</p> </li>
+    /// <li> <p>Can't exceed 100.</p> </li>
+    /// </ul>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

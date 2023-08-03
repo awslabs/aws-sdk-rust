@@ -88,6 +88,10 @@ impl SparkConnectorSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn connection_name(
         mut self,
@@ -103,6 +107,10 @@ impl SparkConnectorSourceBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
     pub fn connector_name(
@@ -120,6 +128,10 @@ impl SparkConnectorSourceBuilder {
         self.connector_name = input;
         self
     }
+    /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_name
+    }
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
     pub fn connection_type(
         mut self,
@@ -135,6 +147,10 @@ impl SparkConnectorSourceBuilder {
     ) -> Self {
         self.connection_type = input;
         self
+    }
+    /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
     }
     /// Adds a key-value pair to `additional_options`.
     ///
@@ -161,6 +177,14 @@ impl SparkConnectorSourceBuilder {
         self.additional_options = input;
         self
     }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_options
+    }
     /// Appends an item to `output_schemas`.
     ///
     /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
@@ -179,6 +203,12 @@ impl SparkConnectorSourceBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies data schema for the custom spark source.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkConnectorSource`](crate::types::SparkConnectorSource).
     pub fn build(self) -> crate::types::SparkConnectorSource {

@@ -75,6 +75,12 @@ impl DescribeDocumentPermissionOutputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `account_sharing_info_list`.
     ///
     /// To override the contents of this collection use [`set_account_sharing_info_list`](Self::set_account_sharing_info_list).
@@ -94,6 +100,12 @@ impl DescribeDocumentPermissionOutputBuilder {
         self.account_sharing_info_list = input;
         self
     }
+    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
+    pub fn get_account_sharing_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>> {
+        &self.account_sharing_info_list
+    }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl DescribeDocumentPermissionOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -58,6 +58,10 @@ impl ListSolFunctionInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `function_instances`.
     ///
     /// To override the contents of this collection use [`set_function_instances`](Self::set_function_instances).
@@ -76,6 +80,12 @@ impl ListSolFunctionInstancesOutputBuilder {
     ) -> Self {
         self.function_instances = input;
         self
+    }
+    /// <p>Network function instances.</p>
+    pub fn get_function_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>> {
+        &self.function_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

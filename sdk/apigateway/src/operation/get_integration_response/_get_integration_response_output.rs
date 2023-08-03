@@ -101,6 +101,10 @@ impl GetIntegrationResponseOutputBuilder {
         self.status_code = input;
         self
     }
+    /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
+    }
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
     pub fn selection_pattern(
         mut self,
@@ -116,6 +120,10 @@ impl GetIntegrationResponseOutputBuilder {
     ) -> Self {
         self.selection_pattern = input;
         self
+    }
+    /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
+    pub fn get_selection_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_pattern
     }
     /// Adds a key-value pair to `response_parameters`.
     ///
@@ -142,6 +150,14 @@ impl GetIntegrationResponseOutputBuilder {
         self.response_parameters = input;
         self
     }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_parameters
+    }
     /// Adds a key-value pair to `response_templates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
@@ -167,6 +183,14 @@ impl GetIntegrationResponseOutputBuilder {
         self.response_templates = input;
         self
     }
+    /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn get_response_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_templates
+    }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn content_handling(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
@@ -181,6 +205,13 @@ impl GetIntegrationResponseOutputBuilder {
     ) -> Self {
         self.content_handling = input;
         self
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    pub fn get_content_handling(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+        &self.content_handling
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

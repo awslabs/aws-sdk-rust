@@ -72,6 +72,10 @@ impl LicenseConfigurationAssociationBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Type of server resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl LicenseConfigurationAssociationBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Type of server resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
     pub fn resource_owner_id(
@@ -101,6 +109,10 @@ impl LicenseConfigurationAssociationBuilder {
         self.resource_owner_id = input;
         self
     }
+    /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
+    pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_id
+    }
     /// <p>Time when the license configuration was associated with the resource.</p>
     pub fn association_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.association_time = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl LicenseConfigurationAssociationBuilder {
     ) -> Self {
         self.association_time = input;
         self
+    }
+    /// <p>Time when the license configuration was associated with the resource.</p>
+    pub fn get_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.association_time
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(
@@ -129,6 +145,10 @@ impl LicenseConfigurationAssociationBuilder {
     ) -> Self {
         self.ami_association_scope = input;
         self
+    }
+    /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    pub fn get_ami_association_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_association_scope
     }
     /// Consumes the builder and constructs a [`LicenseConfigurationAssociation`](crate::types::LicenseConfigurationAssociation).
     pub fn build(self) -> crate::types::LicenseConfigurationAssociation {

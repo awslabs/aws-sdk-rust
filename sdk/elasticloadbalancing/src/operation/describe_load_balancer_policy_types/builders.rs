@@ -38,6 +38,10 @@ impl DescribeLoadBalancerPolicyTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoadBalancerPolicyTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,5 +115,11 @@ impl DescribeLoadBalancerPolicyTypesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_type_names(input);
         self
+    }
+    /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    pub fn get_policy_type_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_type_names()
     }
 }

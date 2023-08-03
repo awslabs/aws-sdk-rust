@@ -143,6 +143,10 @@ impl DescribeEndpointOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint you asked for information about.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the endpoint you asked for information about.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl DescribeEndpointOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the endpoint you asked for information about.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the endpoint you asked for information about.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -162,6 +170,10 @@ impl DescribeEndpointOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the endpoint you asked for information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The routing configuration of the endpoint you asked for information about.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -176,6 +188,10 @@ impl DescribeEndpointOutputBuilder {
         self.routing_config = input;
         self
     }
+    /// <p>The routing configuration of the endpoint you asked for information about.</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::RoutingConfig> {
+        &self.routing_config
+    }
     /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.replication_config = ::std::option::Option::Some(input);
@@ -188,6 +204,12 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.replication_config = input;
         self
+    }
+    /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        &self.replication_config
     }
     /// Appends an item to `event_buses`.
     ///
@@ -208,6 +230,12 @@ impl DescribeEndpointOutputBuilder {
         self.event_buses = input;
         self
     }
+    /// <p>The event buses being used by the endpoint you asked for information about.</p>
+    pub fn get_event_buses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+        &self.event_buses
+    }
     /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -217,6 +245,10 @@ impl DescribeEndpointOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The ID of the endpoint you asked for information about.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +260,10 @@ impl DescribeEndpointOutputBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>The ID of the endpoint you asked for information about.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>The URL of the endpoint you asked for information about.</p>
     pub fn endpoint_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_url = ::std::option::Option::Some(input.into());
@@ -237,6 +273,10 @@ impl DescribeEndpointOutputBuilder {
     pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_url = input;
         self
+    }
+    /// <p>The URL of the endpoint you asked for information about.</p>
+    pub fn get_endpoint_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_url
     }
     /// <p>The current state of the endpoint you asked for information about.</p>
     pub fn state(mut self, input: crate::types::EndpointState) -> Self {
@@ -248,6 +288,10 @@ impl DescribeEndpointOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the endpoint you asked for information about.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EndpointState> {
+        &self.state
+    }
     /// <p>The reason the endpoint you asked for information about is in its current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -257,6 +301,10 @@ impl DescribeEndpointOutputBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason the endpoint you asked for information about is in its current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The time the endpoint you asked for information about was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -271,6 +319,10 @@ impl DescribeEndpointOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the endpoint you asked for information about was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the endpoint you asked for information about was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -283,6 +335,10 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last time the endpoint you asked for information about was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

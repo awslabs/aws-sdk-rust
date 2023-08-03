@@ -71,6 +71,10 @@ impl CreateGroupVersionOutputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the version.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The time, in milliseconds since the epoch, when the version was created.
     pub fn creation_timestamp(
         mut self,
@@ -87,6 +91,10 @@ impl CreateGroupVersionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_timestamp
+    }
     /// The ID of the parent definition that the version is associated with.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CreateGroupVersionOutputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The ID of the version.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl CreateGroupVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// The ID of the version.
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

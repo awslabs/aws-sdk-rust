@@ -52,6 +52,11 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
         self.percent_enabled = input;
         self
     }
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+    /// <p>Valid values: <code>0</code> - <code>100</code> </p>
+    pub fn get_percent_enabled(&self) -> &::std::option::Option<i32> {
+        &self.percent_enabled
+    }
     /// <p>The name of the playback configuration.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -67,6 +72,10 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     ) -> Self {
         self.playback_configuration_name = input;
         self
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationInput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

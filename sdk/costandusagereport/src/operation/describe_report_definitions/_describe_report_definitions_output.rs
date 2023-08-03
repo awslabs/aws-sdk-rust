@@ -65,6 +65,12 @@ impl DescribeReportDefinitionsOutputBuilder {
         self.report_definitions = input;
         self
     }
+    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    pub fn get_report_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
+        &self.report_definitions
+    }
     /// <p>A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl DescribeReportDefinitionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

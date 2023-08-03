@@ -49,6 +49,12 @@ impl AudioWatermarkSettingsBuilder {
         self.nielsen_watermarks_settings = input;
         self
     }
+    /// Settings to configure Nielsen Watermarks in the audio encode
+    pub fn get_nielsen_watermarks_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::NielsenWatermarksSettings> {
+        &self.nielsen_watermarks_settings
+    }
     /// Consumes the builder and constructs a [`AudioWatermarkSettings`](crate::types::AudioWatermarkSettings).
     pub fn build(self) -> crate::types::AudioWatermarkSettings {
         crate::types::AudioWatermarkSettings {

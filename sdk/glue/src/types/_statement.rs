@@ -88,6 +88,10 @@ impl StatementBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the statement.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p>The execution code of the statement.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl StatementBuilder {
         self.code = input;
         self
     }
+    /// <p>The execution code of the statement.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The state while request is actioned.</p>
     pub fn state(mut self, input: crate::types::StatementState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl StatementBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StatementState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state while request is actioned.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StatementState> {
+        &self.state
     }
     /// <p>The output in JSON.</p>
     pub fn output(mut self, input: crate::types::StatementOutput) -> Self {
@@ -121,6 +133,10 @@ impl StatementBuilder {
         self.output = input;
         self
     }
+    /// <p>The output in JSON.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::StatementOutput> {
+        &self.output
+    }
     /// <p>The code execution progress.</p>
     pub fn progress(mut self, input: f64) -> Self {
         self.progress = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl StatementBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The code execution progress.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<f64> {
+        &self.progress
     }
     /// <p>The unix time and date that the job definition was started.</p>
     pub fn started_on(mut self, input: i64) -> Self {
@@ -141,6 +161,10 @@ impl StatementBuilder {
         self.started_on = input;
         self
     }
+    /// <p>The unix time and date that the job definition was started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<i64> {
+        &self.started_on
+    }
     /// <p>The unix time and date that the job definition was completed.</p>
     pub fn completed_on(mut self, input: i64) -> Self {
         self.completed_on = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl StatementBuilder {
     pub fn set_completed_on(mut self, input: ::std::option::Option<i64>) -> Self {
         self.completed_on = input;
         self
+    }
+    /// <p>The unix time and date that the job definition was completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<i64> {
+        &self.completed_on
     }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     pub fn build(self) -> crate::types::Statement {

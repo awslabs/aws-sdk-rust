@@ -54,6 +54,10 @@ impl AssociateEnvironmentOperationsRoleInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment to which to set the operations role.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
     pub fn operations_role(
         mut self,
@@ -69,6 +73,10 @@ impl AssociateEnvironmentOperationsRoleInputBuilder {
     ) -> Self {
         self.operations_role = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
+    pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operations_role
     }
     /// Consumes the builder and constructs a [`AssociateEnvironmentOperationsRoleInput`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -38,6 +38,13 @@ impl DeactivateEventSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeactivateEventSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +134,9 @@ impl DeactivateEventSourceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the partner event source to deactivate.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

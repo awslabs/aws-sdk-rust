@@ -80,6 +80,17 @@ impl NameServersUpdateStateBuilder {
         self.code = input;
         self
     }
+    /// <p>The status code for the name servers update.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The name server records were successfully updated.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The name server record update is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::NameServersUpdateStateCode> {
+        &self.code
+    }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -89,6 +100,10 @@ impl NameServersUpdateStateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`NameServersUpdateState`](crate::types::NameServersUpdateState).
     pub fn build(self) -> crate::types::NameServersUpdateState {

@@ -56,6 +56,10 @@ impl S3BucketSourceBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>S3 bucket source s3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>S3 bucket source s3 key.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl S3BucketSourceBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>S3 bucket source s3 key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
     pub fn s3_bucket_owner(
@@ -81,6 +89,10 @@ impl S3BucketSourceBuilder {
     ) -> Self {
         self.s3_bucket_owner = input;
         self
+    }
+    /// <p>S3 bucket source s3 bucket owner.</p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`S3BucketSource`](crate::types::S3BucketSource).
     pub fn build(self) -> crate::types::S3BucketSource {

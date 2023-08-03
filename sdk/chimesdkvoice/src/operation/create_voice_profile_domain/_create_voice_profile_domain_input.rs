@@ -77,6 +77,10 @@ impl CreateVoiceProfileDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the voice profile domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the voice profile domain.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CreateVoiceProfileDomainInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the voice profile domain.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The server-side encryption configuration for the request.</p>
     pub fn server_side_encryption_configuration(
@@ -103,6 +111,12 @@ impl CreateVoiceProfileDomainInputBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The server-side encryption configuration for the request.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     pub fn client_request_token(
         mut self,
@@ -118,6 +132,10 @@ impl CreateVoiceProfileDomainInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -137,6 +155,10 @@ impl CreateVoiceProfileDomainInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the domain.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVoiceProfileDomainInput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput).
     pub fn build(

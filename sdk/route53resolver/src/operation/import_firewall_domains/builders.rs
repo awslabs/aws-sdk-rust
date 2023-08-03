@@ -42,6 +42,13 @@ impl ImportFirewallDomainsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportFirewallDomains as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_firewall_domains::builders::ImportFirewallDomainsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ImportFirewallDomainsFluentBuilder {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
+    /// <p>The ID of the domain list that you want to modify with the import operation.</p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_domain_list_id()
+    }
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
     pub fn operation(mut self, input: crate::types::FirewallDomainImportOperation) -> Self {
         self.inner = self.inner.operation(input);
@@ -150,6 +161,12 @@ impl ImportFirewallDomainsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operation(input);
         self
+    }
+    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    pub fn get_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallDomainImportOperation> {
+        self.inner.get_operation()
     }
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
@@ -168,5 +185,10 @@ impl ImportFirewallDomainsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_domain_file_url(input);
         self
+    }
+    /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
+    /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
+    pub fn get_domain_file_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_file_url()
     }
 }

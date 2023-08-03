@@ -40,6 +40,10 @@ impl OutputLocationBuilder {
         self.s3 = input;
         self
     }
+    /// <p>Describes an S3 location that will receive the results of the job request.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`OutputLocation`](crate::types::OutputLocation).
     pub fn build(self) -> crate::types::OutputLocation {
         crate::types::OutputLocation { s3: self.s3 }

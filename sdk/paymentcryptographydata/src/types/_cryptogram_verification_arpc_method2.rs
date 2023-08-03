@@ -54,6 +54,10 @@ impl CryptogramVerificationArpcMethod2Builder {
         self.card_status_update = input;
         self
     }
+    /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
+    pub fn get_card_status_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.card_status_update
+    }
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub fn proprietary_authentication_data(
         mut self,
@@ -69,6 +73,12 @@ impl CryptogramVerificationArpcMethod2Builder {
     ) -> Self {
         self.proprietary_authentication_data = input;
         self
+    }
+    /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
+    pub fn get_proprietary_authentication_data(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.proprietary_authentication_data
     }
     /// Consumes the builder and constructs a [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
     pub fn build(self) -> crate::types::CryptogramVerificationArpcMethod2 {

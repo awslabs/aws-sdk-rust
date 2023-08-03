@@ -36,6 +36,10 @@ impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateApprovalRuleTemplateWithRepository as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
+    /// <p>The name for the approval rule template. </p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
+    }
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub fn repository_name(
         mut self,
@@ -121,5 +129,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository that you want to associate with the template.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

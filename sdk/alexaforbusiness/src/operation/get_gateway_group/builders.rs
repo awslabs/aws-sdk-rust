@@ -37,6 +37,12 @@ impl GetGatewayGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGatewayGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_gateway_group::builders::GetGatewayGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl GetGatewayGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_group_arn(input);
         self
+    }
+    /// <p>The ARN of the gateway group to get.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_group_arn()
     }
 }

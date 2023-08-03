@@ -45,6 +45,10 @@ impl StartDbInstanceInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The user-supplied instance identifier.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Consumes the builder and constructs a [`StartDbInstanceInput`](crate::operation::start_db_instance::StartDbInstanceInput).
     pub fn build(
         self,

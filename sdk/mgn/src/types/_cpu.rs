@@ -48,6 +48,10 @@ impl CpuBuilder {
         self.cores = input;
         self
     }
+    /// <p>The number of CPU cores on the source server.</p>
+    pub fn get_cores(&self) -> &::std::option::Option<i64> {
+        &self.cores
+    }
     /// <p>The source server's CPU model name.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CpuBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>The source server's CPU model name.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// Consumes the builder and constructs a [`Cpu`](crate::types::Cpu).
     pub fn build(self) -> crate::types::Cpu {

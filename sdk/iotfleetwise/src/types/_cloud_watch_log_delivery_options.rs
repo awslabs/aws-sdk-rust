@@ -48,6 +48,10 @@ impl CloudWatchLogDeliveryOptionsBuilder {
         self.log_type = input;
         self
     }
+    /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn log_group_name(
         mut self,
@@ -63,6 +67,10 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDeliveryOptions`](crate::types::CloudWatchLogDeliveryOptions).
     pub fn build(self) -> crate::types::CloudWatchLogDeliveryOptions {

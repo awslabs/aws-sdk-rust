@@ -54,6 +54,10 @@ impl ListBranchesInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An enumeration token that allows the operation to batch the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ListBranchesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An enumeration token that allows the operation to batch the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBranchesInput`](crate::operation::list_branches::ListBranchesInput).
     pub fn build(

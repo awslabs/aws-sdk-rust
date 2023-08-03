@@ -54,6 +54,10 @@ impl CacheNodeTypeSpecificValueBuilder {
         self.cache_node_type = input;
         self
     }
+    /// <p>The cache node type for which this value applies.</p>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_type
+    }
     /// <p>The value for the cache node type.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CacheNodeTypeSpecificValueBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the cache node type.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CacheNodeTypeSpecificValue`](crate::types::CacheNodeTypeSpecificValue).
     pub fn build(self) -> crate::types::CacheNodeTypeSpecificValue {

@@ -61,6 +61,10 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn lifecycle_event_hook_execution_id(
         mut self,
@@ -77,6 +81,12 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
         self.lifecycle_event_hook_execution_id = input;
         self
     }
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
+    pub fn get_lifecycle_event_hook_execution_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_event_hook_execution_id
+    }
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
     pub fn status(mut self, input: crate::types::LifecycleEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecycleEventStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`PutLifecycleEventHookExecutionStatusInput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError>{

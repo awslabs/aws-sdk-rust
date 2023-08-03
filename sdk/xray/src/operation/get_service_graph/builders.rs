@@ -36,6 +36,12 @@ impl GetServiceGraphFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetServiceGraph as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_service_graph::builders::GetServiceGraphInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl GetServiceGraphFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time frame for which to generate a graph.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the timeframe for which to generate a graph.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -153,6 +163,10 @@ impl GetServiceGraphFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the timeframe for which to generate a graph.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The name of a group based on which you want to generate a graph.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -162,6 +176,10 @@ impl GetServiceGraphFluentBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The name of a group based on which you want to generate a graph.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +191,10 @@ impl GetServiceGraphFluentBuilder {
         self.inner = self.inner.set_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_arn()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -182,5 +204,9 @@ impl GetServiceGraphFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

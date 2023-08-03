@@ -69,6 +69,12 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
         self.delegations = input;
         self
     }
+    /// <p> The delegations that are associated with the assessment. </p>
+    pub fn get_delegations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
+        &self.delegations
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -89,6 +95,13 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>
+    {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

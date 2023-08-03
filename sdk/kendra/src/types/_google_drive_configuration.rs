@@ -94,6 +94,10 @@ impl GoogleDriveConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// Appends an item to `inclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
@@ -115,6 +119,12 @@ impl GoogleDriveConfigurationBuilder {
     ) -> Self {
         self.inclusion_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
     ///
@@ -138,6 +148,12 @@ impl GoogleDriveConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// Appends an item to `field_mappings`.
     ///
     /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
@@ -156,6 +172,12 @@ impl GoogleDriveConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>Maps Google Drive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Google Drive data source field names must exist in your Google Drive custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Appends an item to `exclude_mime_types`.
     ///
@@ -181,6 +203,13 @@ impl GoogleDriveConfigurationBuilder {
         self.exclude_mime_types = input;
         self
     }
+    /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
+    /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
+    pub fn get_exclude_mime_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_mime_types
+    }
     /// Appends an item to `exclude_user_accounts`.
     ///
     /// To override the contents of this collection use [`set_exclude_user_accounts`](Self::set_exclude_user_accounts).
@@ -203,6 +232,12 @@ impl GoogleDriveConfigurationBuilder {
         self.exclude_user_accounts = input;
         self
     }
+    /// <p>A list of email addresses of the users. Documents owned by these users are excluded from the index. Documents shared with excluded users are indexed unless they are excluded in another way.</p>
+    pub fn get_exclude_user_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_user_accounts
+    }
     /// Appends an item to `exclude_shared_drives`.
     ///
     /// To override the contents of this collection use [`set_exclude_shared_drives`](Self::set_exclude_shared_drives).
@@ -224,6 +259,12 @@ impl GoogleDriveConfigurationBuilder {
     ) -> Self {
         self.exclude_shared_drives = input;
         self
+    }
+    /// <p>A list of identifiers or shared drives to exclude from the index. All files and folders stored on the shared drive are excluded.</p>
+    pub fn get_exclude_shared_drives(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_shared_drives
     }
     /// Consumes the builder and constructs a [`GoogleDriveConfiguration`](crate::types::GoogleDriveConfiguration).
     pub fn build(self) -> crate::types::GoogleDriveConfiguration {

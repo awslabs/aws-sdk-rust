@@ -36,6 +36,10 @@ impl ListServiceTemplateVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceTemplateVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListServiceTemplateVersionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -141,6 +149,10 @@ impl ListServiceTemplateVersionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of major or minor versions of a service template to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The name of the service template.</p>
     pub fn template_name(
@@ -157,6 +169,10 @@ impl ListServiceTemplateVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
@@ -175,5 +191,10 @@ impl ListServiceTemplateVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
+    }
+    /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
     }
 }

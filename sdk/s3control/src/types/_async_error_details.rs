@@ -64,6 +64,10 @@ impl AsyncErrorDetailsBuilder {
         self.code = input;
         self
     }
+    /// <p>A string that uniquely identifies the error condition.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A generic description of the error condition in English.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AsyncErrorDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A generic description of the error condition in English.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The identifier of the resource associated with the error.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl AsyncErrorDetailsBuilder {
         self.resource = input;
         self
     }
+    /// <p>The identifier of the resource associated with the error.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>The ID of the request associated with the error.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl AsyncErrorDetailsBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The ID of the request associated with the error.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Consumes the builder and constructs a [`AsyncErrorDetails`](crate::types::AsyncErrorDetails).
     pub fn build(self) -> crate::types::AsyncErrorDetails {

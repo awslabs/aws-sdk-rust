@@ -37,6 +37,13 @@ impl DeleteGameSessionQueueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGameSessionQueue as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl DeleteGameSessionQueueFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

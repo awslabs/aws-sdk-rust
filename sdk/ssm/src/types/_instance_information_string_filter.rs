@@ -84,6 +84,19 @@ impl InstanceInformationStringFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The filter key name to describe your managed nodes.</p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <ul>
+    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
+    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
+    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
+    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
+    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
+    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// </ul>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -102,6 +115,10 @@ impl InstanceInformationStringFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`InstanceInformationStringFilter`](crate::types::InstanceInformationStringFilter).
     pub fn build(self) -> crate::types::InstanceInformationStringFilter {

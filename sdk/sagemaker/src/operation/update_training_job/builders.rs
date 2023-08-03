@@ -36,6 +36,12 @@ impl UpdateTrainingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrainingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_training_job::builders::UpdateTrainingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateTrainingJobFluentBuilder {
         self.inner = self.inner.set_training_job_name(input);
         self
     }
+    /// <p>The name of a training job to update the Debugger profiling configuration.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_job_name()
+    }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(mut self, input: crate::types::ProfilerConfigForUpdate) -> Self {
         self.inner = self.inner.profiler_config(input);
@@ -144,6 +154,12 @@ impl UpdateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profiler_config(input);
         self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn get_profiler_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProfilerConfigForUpdate> {
+        self.inner.get_profiler_config()
     }
     /// Appends an item to `ProfilerRuleConfigurations`.
     ///
@@ -165,6 +181,12 @@ impl UpdateTrainingJobFluentBuilder {
         self.inner = self.inner.set_profiler_rule_configurations(input);
         self
     }
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
+    pub fn get_profiler_rule_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
+        self.inner.get_profiler_rule_configurations()
+    }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     pub fn resource_config(mut self, input: crate::types::ResourceConfigForUpdate) -> Self {
         self.inner = self.inner.resource_config(input);
@@ -177,5 +199,11 @@ impl UpdateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_config(input);
         self
+    }
+    /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
+        self.inner.get_resource_config()
     }
 }

@@ -44,6 +44,10 @@ impl GetSolInstantiatedVnfInfoBuilder {
         self.vnf_state = input;
         self
     }
+    /// <p>State of the network function.</p>
+    pub fn get_vnf_state(&self) -> &::std::option::Option<crate::types::VnfOperationalState> {
+        &self.vnf_state
+    }
     /// Consumes the builder and constructs a [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
     pub fn build(self) -> crate::types::GetSolInstantiatedVnfInfo {
         crate::types::GetSolInstantiatedVnfInfo {

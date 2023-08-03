@@ -104,6 +104,24 @@ impl EksEmptyDirBuilder {
         self.medium = input;
         self
     }
+    /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
+    /// <dl>
+    /// <dt>
+    /// ""
+    /// </dt>
+    /// <dd>
+    /// <p> <b>(Default)</b> Use the disk storage of the node.</p>
+    /// </dd>
+    /// <dt>
+    /// "Memory"
+    /// </dt>
+    /// <dd>
+    /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_medium(&self) -> &::std::option::Option<::std::string::String> {
+        &self.medium
+    }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
     pub fn size_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_limit = ::std::option::Option::Some(input.into());
@@ -113,6 +131,10 @@ impl EksEmptyDirBuilder {
     pub fn set_size_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.size_limit = input;
         self
+    }
+    /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
+    pub fn get_size_limit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.size_limit
     }
     /// Consumes the builder and constructs a [`EksEmptyDir`](crate::types::EksEmptyDir).
     pub fn build(self) -> crate::types::EksEmptyDir {

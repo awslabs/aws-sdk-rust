@@ -69,6 +69,10 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         self.topic_id = input;
         self
     }
+    /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
+    }
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
@@ -101,6 +113,12 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     ) -> Self {
         self.refresh_schedule = input;
         self
+    }
+    /// <p>The definition of a refresh schedule.</p>
+    pub fn get_refresh_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+        &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`UpdateTopicRefreshScheduleInput`](crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput).
     pub fn build(

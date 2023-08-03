@@ -46,6 +46,10 @@ impl OutputLocationRefBuilder {
         self.destination_ref_id = input;
         self
     }
+    /// Placeholder documentation for __string
+    pub fn get_destination_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ref_id
+    }
     /// Consumes the builder and constructs a [`OutputLocationRef`](crate::types::OutputLocationRef).
     pub fn build(self) -> crate::types::OutputLocationRef {
         crate::types::OutputLocationRef {

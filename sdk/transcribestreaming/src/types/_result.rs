@@ -105,6 +105,10 @@ impl ResultBuilder {
         self.result_id = input;
         self
     }
+    /// <p>Provides a unique identifier for the <code>Result</code>.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn start_time(mut self, input: f64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl ResultBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<f64> {
+        &self.start_time
+    }
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -124,6 +132,10 @@ impl ResultBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<f64> {
+        &self.end_time
     }
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
@@ -136,6 +148,11 @@ impl ResultBuilder {
     pub fn set_is_partial(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_partial = input;
         self
+    }
+    /// <p>Indicates if the segment is complete.</p>
+    /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
+    pub fn get_is_partial(&self) -> &::std::option::Option<bool> {
+        &self.is_partial
     }
     /// Appends an item to `alternatives`.
     ///
@@ -156,6 +173,12 @@ impl ResultBuilder {
         self.alternatives = input;
         self
     }
+    /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
+    pub fn get_alternatives(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Alternative>> {
+        &self.alternatives
+    }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -165,6 +188,10 @@ impl ResultBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -178,6 +205,10 @@ impl ResultBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Appends an item to `language_identification`.
     ///
@@ -199,6 +230,13 @@ impl ResultBuilder {
     ) -> Self {
         self.language_identification = input;
         self
+    }
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
+    pub fn get_language_identification(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>> {
+        &self.language_identification
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {

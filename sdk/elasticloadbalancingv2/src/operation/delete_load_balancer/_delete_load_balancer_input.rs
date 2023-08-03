@@ -46,6 +46,10 @@ impl DeleteLoadBalancerInputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
     pub fn build(
         self,

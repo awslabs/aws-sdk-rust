@@ -293,6 +293,10 @@ impl BucketMetadataBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
     /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
@@ -321,6 +325,18 @@ impl BucketMetadataBuilder {
         self.allows_unencrypted_object_uploads = input;
         self
     }
+    /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
+    /// <ul>
+    /// <li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid server-side encryption header.</p></li>
+    /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid server-side encryption header.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
+    /// </ul>
+    /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
+    pub fn get_allows_unencrypted_object_uploads(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowsUnencryptedObjectUploads> {
+        &self.allows_unencrypted_object_uploads
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
@@ -330,6 +346,10 @@ impl BucketMetadataBuilder {
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket.</p>
     pub fn bucket_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -344,6 +364,10 @@ impl BucketMetadataBuilder {
         self.bucket_created_at = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket.</p>
+    pub fn get_bucket_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.bucket_created_at
+    }
     /// <p>The name of the bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -354,6 +378,10 @@ impl BucketMetadataBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn classifiable_object_count(mut self, input: i64) -> Self {
         self.classifiable_object_count = ::std::option::Option::Some(input);
@@ -363,6 +391,10 @@ impl BucketMetadataBuilder {
     pub fn set_classifiable_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.classifiable_object_count = input;
         self
+    }
+    /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    pub fn get_classifiable_object_count(&self) -> &::std::option::Option<i64> {
+        &self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
@@ -376,6 +408,11 @@ impl BucketMetadataBuilder {
         self.classifiable_size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    pub fn get_classifiable_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.classifiable_size_in_bytes
+    }
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
     pub fn error_code(mut self, input: crate::types::BucketMetadataErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -388,6 +425,10 @@ impl BucketMetadataBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BucketMetadataErrorCode> {
+        &self.error_code
     }
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
     pub fn error_message(
@@ -405,6 +446,10 @@ impl BucketMetadataBuilder {
         self.error_message = input;
         self
     }
+    /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn job_details(mut self, input: crate::types::JobDetails) -> Self {
         self.job_details = ::std::option::Option::Some(input);
@@ -417,6 +462,10 @@ impl BucketMetadataBuilder {
     ) -> Self {
         self.job_details = input;
         self
+    }
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
+        &self.job_details
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     pub fn last_automated_discovery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -431,6 +480,12 @@ impl BucketMetadataBuilder {
         self.last_automated_discovery_time = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    pub fn get_last_automated_discovery_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_automated_discovery_time
+    }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the bucket.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -444,6 +499,10 @@ impl BucketMetadataBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the bucket.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The total number of objects in the bucket.</p>
     pub fn object_count(mut self, input: i64) -> Self {
         self.object_count = ::std::option::Option::Some(input);
@@ -453,6 +512,10 @@ impl BucketMetadataBuilder {
     pub fn set_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_count = input;
         self
+    }
+    /// <p>The total number of objects in the bucket.</p>
+    pub fn get_object_count(&self) -> &::std::option::Option<i64> {
+        &self.object_count
     }
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
     pub fn object_count_by_encryption_type(
@@ -470,6 +533,12 @@ impl BucketMetadataBuilder {
         self.object_count_by_encryption_type = input;
         self
     }
+    /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
+    pub fn get_object_count_by_encryption_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectCountByEncryptionType> {
+        &self.object_count_by_encryption_type
+    }
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
     pub fn public_access(mut self, input: crate::types::BucketPublicAccess) -> Self {
         self.public_access = ::std::option::Option::Some(input);
@@ -483,6 +552,10 @@ impl BucketMetadataBuilder {
         self.public_access = input;
         self
     }
+    /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
+    pub fn get_public_access(&self) -> &::std::option::Option<crate::types::BucketPublicAccess> {
+        &self.public_access
+    }
     /// <p>The Amazon Web Services Region that hosts the bucket.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -492,6 +565,10 @@ impl BucketMetadataBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region that hosts the bucket.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
     pub fn replication_details(mut self, input: crate::types::ReplicationDetails) -> Self {
@@ -506,6 +583,12 @@ impl BucketMetadataBuilder {
         self.replication_details = input;
         self
     }
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
+    pub fn get_replication_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationDetails> {
+        &self.replication_details
+    }
     /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     pub fn sensitivity_score(mut self, input: i32) -> Self {
         self.sensitivity_score = ::std::option::Option::Some(input);
@@ -515,6 +598,10 @@ impl BucketMetadataBuilder {
     pub fn set_sensitivity_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sensitivity_score = input;
         self
+    }
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    pub fn get_sensitivity_score(&self) -> &::std::option::Option<i32> {
+        &self.sensitivity_score
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
     pub fn server_side_encryption(
@@ -531,6 +618,12 @@ impl BucketMetadataBuilder {
     ) -> Self {
         self.server_side_encryption = input;
         self
+    }
+    /// <p>The default server-side encryption settings for the bucket.</p>
+    pub fn get_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketServerSideEncryption> {
+        &self.server_side_encryption
     }
     /// <p>Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
     /// <ul>
@@ -559,6 +652,17 @@ impl BucketMetadataBuilder {
         self.shared_access = input;
         self
     }
+    /// <p>Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
+    /// <ul>
+    /// <li><p>EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie organization.</p></li>
+    /// <li><p>INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie organization. It isn't shared with a CloudFront OAI or OAC.</p></li>
+    /// <li><p>NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li>
+    /// </ul>
+    /// <p>An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
+    pub fn get_shared_access(&self) -> &::std::option::Option<crate::types::SharedAccess> {
+        &self.shared_access
+    }
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     pub fn size_in_bytes(mut self, input: i64) -> Self {
@@ -571,6 +675,11 @@ impl BucketMetadataBuilder {
         self.size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of the bucket.</p>
+    /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
@@ -582,6 +691,11 @@ impl BucketMetadataBuilder {
     pub fn set_size_in_bytes_compressed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_in_bytes_compressed = input;
         self
+    }
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
+    /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    pub fn get_size_in_bytes_compressed(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes_compressed
     }
     /// Appends an item to `tags`.
     ///
@@ -602,6 +716,10 @@ impl BucketMetadataBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+        &self.tags
+    }
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn unclassifiable_object_count(
         mut self,
@@ -617,6 +735,12 @@ impl BucketMetadataBuilder {
     ) -> Self {
         self.unclassifiable_object_count = input;
         self
+    }
+    /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_unclassifiable_object_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
+        &self.unclassifiable_object_count
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn unclassifiable_object_size_in_bytes(
@@ -634,6 +758,12 @@ impl BucketMetadataBuilder {
         self.unclassifiable_object_size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_unclassifiable_object_size_in_bytes(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
+        &self.unclassifiable_object_size_in_bytes
+    }
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
     pub fn versioning(mut self, input: bool) -> Self {
         self.versioning = ::std::option::Option::Some(input);
@@ -643,6 +773,10 @@ impl BucketMetadataBuilder {
     pub fn set_versioning(mut self, input: ::std::option::Option<bool>) -> Self {
         self.versioning = input;
         self
+    }
+    /// <p>Specifies whether versioning is enabled for the bucket.</p>
+    pub fn get_versioning(&self) -> &::std::option::Option<bool> {
+        &self.versioning
     }
     /// Consumes the builder and constructs a [`BucketMetadata`](crate::types::BucketMetadata).
     pub fn build(self) -> crate::types::BucketMetadata {

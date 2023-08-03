@@ -40,6 +40,10 @@ impl VerifyTrustInputBuilder {
         self.trust_id = input;
         self
     }
+    /// <p>The unique Trust ID of the trust relationship to verify.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_id
+    }
     /// Consumes the builder and constructs a [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
     pub fn build(
         self,

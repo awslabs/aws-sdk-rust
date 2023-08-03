@@ -123,6 +123,14 @@ impl DeleteBuilder {
         self.key = input;
         self
     }
+    /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
+    pub fn get_key(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.key
+    }
     /// <p>Name of the table in which the item to be deleted resides.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -132,6 +140,10 @@ impl DeleteBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Name of the table in which the item to be deleted resides.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
     pub fn condition_expression(
@@ -148,6 +160,10 @@ impl DeleteBuilder {
     ) -> Self {
         self.condition_expression = input;
         self
+    }
+    /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+    pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_expression
     }
     /// Adds a key-value pair to `expression_attribute_names`.
     ///
@@ -174,6 +190,14 @@ impl DeleteBuilder {
         self.expression_attribute_names = input;
         self
     }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn get_expression_attribute_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.expression_attribute_names
+    }
     /// Adds a key-value pair to `expression_attribute_values`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
@@ -199,6 +223,14 @@ impl DeleteBuilder {
         self.expression_attribute_values = input;
         self
     }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn get_expression_attribute_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.expression_attribute_values
+    }
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Delete</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
     pub fn return_values_on_condition_check_failure(
         mut self,
@@ -214,6 +246,12 @@ impl DeleteBuilder {
     ) -> Self {
         self.return_values_on_condition_check_failure = input;
         self
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Delete</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
+    pub fn get_return_values_on_condition_check_failure(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure> {
+        &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
     pub fn build(self) -> crate::types::Delete {

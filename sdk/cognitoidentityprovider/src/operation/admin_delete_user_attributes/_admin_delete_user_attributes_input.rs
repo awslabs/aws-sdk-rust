@@ -65,6 +65,10 @@ impl AdminDeleteUserAttributesInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name of the user from which you would like to delete attributes.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl AdminDeleteUserAttributesInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name of the user from which you would like to delete attributes.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `user_attribute_names`.
     ///
@@ -98,6 +106,13 @@ impl AdminDeleteUserAttributesInputBuilder {
     ) -> Self {
         self.user_attribute_names = input;
         self
+    }
+    /// <p>An array of strings representing the user attribute names you want to delete.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    pub fn get_user_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_attribute_names
     }
     /// Consumes the builder and constructs a [`AdminDeleteUserAttributesInput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput).
     pub fn build(

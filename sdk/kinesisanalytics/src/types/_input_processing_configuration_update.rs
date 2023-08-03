@@ -50,6 +50,12 @@ impl InputProcessingConfigurationUpdateBuilder {
         self.input_lambda_processor_update = input;
         self
     }
+    /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    pub fn get_input_lambda_processor_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputLambdaProcessorUpdate> {
+        &self.input_lambda_processor_update
+    }
     /// Consumes the builder and constructs a [`InputProcessingConfigurationUpdate`](crate::types::InputProcessingConfigurationUpdate).
     pub fn build(self) -> crate::types::InputProcessingConfigurationUpdate {
         crate::types::InputProcessingConfigurationUpdate {

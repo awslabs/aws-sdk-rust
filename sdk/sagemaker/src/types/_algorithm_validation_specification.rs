@@ -58,6 +58,10 @@ impl AlgorithmValidationSpecificationBuilder {
         self.validation_role = input;
         self
     }
+    /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
+    pub fn get_validation_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_role
+    }
     /// Appends an item to `validation_profiles`.
     ///
     /// To override the contents of this collection use [`set_validation_profiles`](Self::set_validation_profiles).
@@ -76,6 +80,12 @@ impl AlgorithmValidationSpecificationBuilder {
     ) -> Self {
         self.validation_profiles = input;
         self
+    }
+    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
+    pub fn get_validation_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>> {
+        &self.validation_profiles
     }
     /// Consumes the builder and constructs a [`AlgorithmValidationSpecification`](crate::types::AlgorithmValidationSpecification).
     pub fn build(self) -> crate::types::AlgorithmValidationSpecification {

@@ -49,6 +49,10 @@ impl CreateStorageLocationOutputBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket created.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -64,6 +64,10 @@ impl SystemInfoBuilder {
         self.os_info = input;
         self
     }
+    /// <p> Operating system corresponding to a server. </p>
+    pub fn get_os_info(&self) -> &::std::option::Option<crate::types::OsInfo> {
+        &self.os_info
+    }
     /// <p> File system type for the server. </p>
     pub fn file_system_type(
         mut self,
@@ -79,6 +83,10 @@ impl SystemInfoBuilder {
     ) -> Self {
         self.file_system_type = input;
         self
+    }
+    /// <p> File system type for the server. </p>
+    pub fn get_file_system_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_type
     }
     /// Appends an item to `network_info_list`.
     ///
@@ -99,6 +107,12 @@ impl SystemInfoBuilder {
         self.network_info_list = input;
         self
     }
+    /// <p> Networking information related to a server. </p>
+    pub fn get_network_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>> {
+        &self.network_info_list
+    }
     /// <p> CPU architecture type for the server. </p>
     pub fn cpu_architecture(
         mut self,
@@ -114,6 +128,10 @@ impl SystemInfoBuilder {
     ) -> Self {
         self.cpu_architecture = input;
         self
+    }
+    /// <p> CPU architecture type for the server. </p>
+    pub fn get_cpu_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_architecture
     }
     /// Consumes the builder and constructs a [`SystemInfo`](crate::types::SystemInfo).
     pub fn build(self) -> crate::types::SystemInfo {

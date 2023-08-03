@@ -74,6 +74,10 @@ impl FPortsBuilder {
         self
     }
     /// <p>The Fport value.</p>
+    pub fn get_fuota(&self) -> &::std::option::Option<i32> {
+        &self.fuota
+    }
+    /// <p>The Fport value.</p>
     pub fn multicast(mut self, input: i32) -> Self {
         self.multicast = ::std::option::Option::Some(input);
         self
@@ -84,6 +88,10 @@ impl FPortsBuilder {
         self
     }
     /// <p>The Fport value.</p>
+    pub fn get_multicast(&self) -> &::std::option::Option<i32> {
+        &self.multicast
+    }
+    /// <p>The Fport value.</p>
     pub fn clock_sync(mut self, input: i32) -> Self {
         self.clock_sync = ::std::option::Option::Some(input);
         self
@@ -92,6 +100,10 @@ impl FPortsBuilder {
     pub fn set_clock_sync(mut self, input: ::std::option::Option<i32>) -> Self {
         self.clock_sync = input;
         self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_clock_sync(&self) -> &::std::option::Option<i32> {
+        &self.clock_sync
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::Positioning) -> Self {
@@ -105,6 +117,10 @@ impl FPortsBuilder {
     ) -> Self {
         self.positioning = input;
         self
+    }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::Positioning> {
+        &self.positioning
     }
     /// Appends an item to `applications`.
     ///
@@ -124,6 +140,12 @@ impl FPortsBuilder {
     ) -> Self {
         self.applications = input;
         self
+    }
+    /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+        &self.applications
     }
     /// Consumes the builder and constructs a [`FPorts`](crate::types::FPorts).
     pub fn build(self) -> crate::types::FPorts {

@@ -45,6 +45,10 @@ impl GetAuthPolicyInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// Consumes the builder and constructs a [`GetAuthPolicyInput`](crate::operation::get_auth_policy::GetAuthPolicyInput).
     pub fn build(
         self,

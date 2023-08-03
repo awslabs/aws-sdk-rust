@@ -50,6 +50,10 @@ impl BatchCreateAttendeeInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Appends an item to `attendees`.
     ///
     /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
@@ -68,6 +72,12 @@ impl BatchCreateAttendeeInputBuilder {
     ) -> Self {
         self.attendees = input;
         self
+    }
+    /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    pub fn get_attendees(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+        &self.attendees
     }
     /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::operation::batch_create_attendee::BatchCreateAttendeeInput).
     pub fn build(

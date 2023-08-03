@@ -60,6 +60,10 @@ impl ScalingPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the scaling policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The type of scaling policy.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ScalingPolicyBuilder {
     ) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The type of scaling policy.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
     }
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     pub fn target_tracking_configuration(
@@ -88,6 +96,12 @@ impl ScalingPolicyBuilder {
     ) -> Self {
         self.target_tracking_configuration = input;
         self
+    }
+    /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+    pub fn get_target_tracking_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
+        &self.target_tracking_configuration
     }
     /// Consumes the builder and constructs a [`ScalingPolicy`](crate::types::ScalingPolicy).
     pub fn build(self) -> crate::types::ScalingPolicy {

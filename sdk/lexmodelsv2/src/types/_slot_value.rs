@@ -46,6 +46,10 @@ impl SlotValueBuilder {
         self.interpreted_value = input;
         self
     }
+    /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+    pub fn get_interpreted_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interpreted_value
+    }
     /// Consumes the builder and constructs a [`SlotValue`](crate::types::SlotValue).
     pub fn build(self) -> crate::types::SlotValue {
         crate::types::SlotValue {

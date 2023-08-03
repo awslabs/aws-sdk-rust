@@ -48,6 +48,10 @@ impl GatewayNetworkBuilder {
         self.cidr_block = input;
         self
     }
+    /// A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GatewayNetworkBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GatewayNetwork`](crate::types::GatewayNetwork).
     pub fn build(self) -> crate::types::GatewayNetwork {

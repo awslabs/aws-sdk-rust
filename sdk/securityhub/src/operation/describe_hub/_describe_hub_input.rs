@@ -39,6 +39,10 @@ impl DescribeHubInputBuilder {
         self.hub_arn = input;
         self
     }
+    /// <p>The ARN of the Hub resource to retrieve.</p>
+    pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_arn
+    }
     /// Consumes the builder and constructs a [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
     pub fn build(
         self,

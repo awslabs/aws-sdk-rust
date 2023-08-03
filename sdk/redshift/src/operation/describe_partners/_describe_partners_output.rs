@@ -63,6 +63,12 @@ impl DescribePartnersOutputBuilder {
         self.partner_integration_info_list = input;
         self
     }
+    /// <p>A list of partner integrations.</p>
+    pub fn get_partner_integration_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartnerIntegrationInfo>> {
+        &self.partner_integration_info_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

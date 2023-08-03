@@ -61,6 +61,10 @@ impl CreateAgentStatusOutputBuilder {
         self.agent_status_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub fn get_agent_status_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_arn
+    }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateAgentStatusOutputBuilder {
     ) -> Self {
         self.agent_status_id = input;
         self
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

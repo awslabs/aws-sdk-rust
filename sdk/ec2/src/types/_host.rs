@@ -199,6 +199,10 @@ impl HostBuilder {
         self.auto_placement = input;
         self
     }
+    /// <p>Whether auto-placement is on or off.</p>
+    pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
+        &self.auto_placement
+    }
     /// <p>The Availability Zone of the Dedicated Host.</p>
     pub fn availability_zone(
         mut self,
@@ -215,6 +219,10 @@ impl HostBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the Dedicated Host.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Information about the instances running on the Dedicated Host.</p>
     pub fn available_capacity(mut self, input: crate::types::AvailableCapacity) -> Self {
         self.available_capacity = ::std::option::Option::Some(input);
@@ -228,6 +236,12 @@ impl HostBuilder {
         self.available_capacity = input;
         self
     }
+    /// <p>Information about the instances running on the Dedicated Host.</p>
+    pub fn get_available_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvailableCapacity> {
+        &self.available_capacity
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -238,6 +252,10 @@ impl HostBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The ID of the Dedicated Host.</p>
     pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_id = ::std::option::Option::Some(input.into());
@@ -247,6 +265,10 @@ impl HostBuilder {
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_id = input;
         self
+    }
+    /// <p>The ID of the Dedicated Host.</p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
     }
     /// <p>The hardware specifications of the Dedicated Host.</p>
     pub fn host_properties(mut self, input: crate::types::HostProperties) -> Self {
@@ -260,6 +282,10 @@ impl HostBuilder {
     ) -> Self {
         self.host_properties = input;
         self
+    }
+    /// <p>The hardware specifications of the Dedicated Host.</p>
+    pub fn get_host_properties(&self) -> &::std::option::Option<crate::types::HostProperties> {
+        &self.host_properties
     }
     /// <p>The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't have an associated reservation.</p>
     pub fn host_reservation_id(
@@ -276,6 +302,10 @@ impl HostBuilder {
     ) -> Self {
         self.host_reservation_id = input;
         self
+    }
+    /// <p>The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't have an associated reservation.</p>
+    pub fn get_host_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_reservation_id
     }
     /// Appends an item to `instances`.
     ///
@@ -296,6 +326,12 @@ impl HostBuilder {
         self.instances = input;
         self
     }
+    /// <p>The IDs and instance type that are currently running on the Dedicated Host.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostInstance>> {
+        &self.instances
+    }
     /// <p>The Dedicated Host's state.</p>
     pub fn state(mut self, input: crate::types::AllocationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -308,6 +344,10 @@ impl HostBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The Dedicated Host's state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AllocationState> {
+        &self.state
     }
     /// <p>The time that the Dedicated Host was allocated.</p>
     pub fn allocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -322,6 +362,10 @@ impl HostBuilder {
         self.allocation_time = input;
         self
     }
+    /// <p>The time that the Dedicated Host was allocated.</p>
+    pub fn get_allocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.allocation_time
+    }
     /// <p>The time that the Dedicated Host was released.</p>
     pub fn release_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.release_time = ::std::option::Option::Some(input);
@@ -334,6 +378,10 @@ impl HostBuilder {
     ) -> Self {
         self.release_time = input;
         self
+    }
+    /// <p>The time that the Dedicated Host was released.</p>
+    pub fn get_release_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.release_time
     }
     /// Appends an item to `tags`.
     ///
@@ -354,6 +402,10 @@ impl HostBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the Dedicated Host.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Indicates whether host recovery is enabled or disabled for the Dedicated Host.</p>
     pub fn host_recovery(mut self, input: crate::types::HostRecovery) -> Self {
         self.host_recovery = ::std::option::Option::Some(input);
@@ -366,6 +418,10 @@ impl HostBuilder {
     ) -> Self {
         self.host_recovery = input;
         self
+    }
+    /// <p>Indicates whether host recovery is enabled or disabled for the Dedicated Host.</p>
+    pub fn get_host_recovery(&self) -> &::std::option::Option<crate::types::HostRecovery> {
+        &self.host_recovery
     }
     /// <p>Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is <code>off</code>, the Dedicated Host supports a single instance type only.</p>
     pub fn allows_multiple_instance_types(
@@ -383,6 +439,12 @@ impl HostBuilder {
         self.allows_multiple_instance_types = input;
         self
     }
+    /// <p>Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is <code>off</code>, the Dedicated Host supports a single instance type only.</p>
+    pub fn get_allows_multiple_instance_types(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowsMultipleInstanceTypes> {
+        &self.allows_multiple_instance_types
+    }
     /// <p>The ID of the Amazon Web Services account that owns the Dedicated Host.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -392,6 +454,10 @@ impl HostBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Dedicated Host.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The ID of the Availability Zone in which the Dedicated Host is allocated.</p>
     pub fn availability_zone_id(
@@ -409,6 +475,10 @@ impl HostBuilder {
         self.availability_zone_id = input;
         self
     }
+    /// <p>The ID of the Availability Zone in which the Dedicated Host is allocated.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group; otherwise, it is not.</p>
     pub fn member_of_service_linked_resource_group(mut self, input: bool) -> Self {
         self.member_of_service_linked_resource_group = ::std::option::Option::Some(input);
@@ -422,6 +492,10 @@ impl HostBuilder {
         self.member_of_service_linked_resource_group = input;
         self
     }
+    /// <p>Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group; otherwise, it is not.</p>
+    pub fn get_member_of_service_linked_resource_group(&self) -> &::std::option::Option<bool> {
+        &self.member_of_service_linked_resource_group
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated Host is allocated.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -431,6 +505,10 @@ impl HostBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated Host is allocated.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
     pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
@@ -445,6 +523,10 @@ impl HostBuilder {
         self.host_maintenance = input;
         self
     }
+    /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
+    pub fn get_host_maintenance(&self) -> &::std::option::Option<crate::types::HostMaintenance> {
+        &self.host_maintenance
+    }
     /// <p>The ID of the Outpost hardware asset on which the Dedicated Host is allocated.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
@@ -454,6 +536,10 @@ impl HostBuilder {
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
+    }
+    /// <p>The ID of the Outpost hardware asset on which the Dedicated Host is allocated.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {

@@ -85,6 +85,13 @@ impl StartRecoveryInputBuilder {
         self.source_servers = input;
         self
     }
+    /// <p>The Source Servers that we want to start a Recovery Job for.</p>
+    pub fn get_source_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>
+    {
+        &self.source_servers
+    }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn is_drill(mut self, input: bool) -> Self {
         self.is_drill = ::std::option::Option::Some(input);
@@ -94,6 +101,10 @@ impl StartRecoveryInputBuilder {
     pub fn set_is_drill(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_drill = input;
         self
+    }
+    /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
+    pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
+        &self.is_drill
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -119,6 +130,14 @@ impl StartRecoveryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be associated with the Recovery Job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
     pub fn build(

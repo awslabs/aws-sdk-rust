@@ -64,6 +64,12 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
         self.added_principals = input;
         self
     }
+    /// <p>Information about the added principals.</p>
+    pub fn get_added_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>> {
+        &self.added_principals
+    }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn return_value(mut self, input: bool) -> Self {
         self.return_value = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
     pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.return_value = input;
         self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

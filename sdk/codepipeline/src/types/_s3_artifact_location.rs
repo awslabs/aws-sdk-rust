@@ -48,6 +48,10 @@ impl S3ArtifactLocationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3ArtifactLocationBuilder {
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
+    }
+    /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
     }
     /// Consumes the builder and constructs a [`S3ArtifactLocation`](crate::types::S3ArtifactLocation).
     pub fn build(self) -> crate::types::S3ArtifactLocation {

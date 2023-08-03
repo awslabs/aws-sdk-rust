@@ -36,6 +36,10 @@ impl DeleteInfrastructureConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInfrastructureConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,11 @@ impl DeleteInfrastructureConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    pub fn get_infrastructure_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_infrastructure_configuration_arn()
     }
 }

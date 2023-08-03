@@ -72,6 +72,14 @@ impl DescribeConfigurationsOutputBuilder {
         self.configurations = input;
         self
     }
+    /// <p>A key in the response map. The value is an array of data.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

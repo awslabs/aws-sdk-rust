@@ -64,6 +64,10 @@ impl NetworkPathComponentBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The identifier of a component in the network path.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The type of component.</p>
     pub fn component_type(
         mut self,
@@ -80,6 +84,10 @@ impl NetworkPathComponentBuilder {
         self.component_type = input;
         self
     }
+    /// <p>The type of component.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
+    }
     /// <p>Information about the component that comes after the current component in the network path.</p>
     pub fn egress(mut self, input: crate::types::NetworkHeader) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl NetworkPathComponentBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<crate::types::NetworkHeader>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Information about the component that comes after the current component in the network path.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<crate::types::NetworkHeader> {
+        &self.egress
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
     pub fn ingress(mut self, input: crate::types::NetworkHeader) -> Self {
@@ -102,6 +114,10 @@ impl NetworkPathComponentBuilder {
     ) -> Self {
         self.ingress = input;
         self
+    }
+    /// <p>Information about the component that comes before the current node in the network path.</p>
+    pub fn get_ingress(&self) -> &::std::option::Option<crate::types::NetworkHeader> {
+        &self.ingress
     }
     /// Consumes the builder and constructs a [`NetworkPathComponent`](crate::types::NetworkPathComponent).
     pub fn build(self) -> crate::types::NetworkPathComponent {

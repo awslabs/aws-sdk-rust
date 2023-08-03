@@ -55,6 +55,10 @@ impl DeactivateKeySigningKeyInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>A unique string used to identify a hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>A string used to identify a key-signing key (KSK).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeactivateKeySigningKeyInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A string used to identify a key-signing key (KSK).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeactivateKeySigningKeyInput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput).
     pub fn build(

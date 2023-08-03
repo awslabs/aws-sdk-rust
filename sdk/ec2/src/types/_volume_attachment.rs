@@ -83,6 +83,10 @@ impl VolumeAttachmentBuilder {
         self.attach_time = input;
         self
     }
+    /// <p>The time stamp when the attachment initiated.</p>
+    pub fn get_attach_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.attach_time
+    }
     /// <p>The device name.</p>
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl VolumeAttachmentBuilder {
         self.device = input;
         self
     }
+    /// <p>The device name.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl VolumeAttachmentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The attachment state of the volume.</p>
     pub fn state(mut self, input: crate::types::VolumeAttachmentState) -> Self {
@@ -116,6 +128,10 @@ impl VolumeAttachmentBuilder {
         self.state = input;
         self
     }
+    /// <p>The attachment state of the volume.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VolumeAttachmentState> {
+        &self.state
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl VolumeAttachmentBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl VolumeAttachmentBuilder {
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
+    }
+    /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
     }
     /// Consumes the builder and constructs a [`VolumeAttachment`](crate::types::VolumeAttachment).
     pub fn build(self) -> crate::types::VolumeAttachment {

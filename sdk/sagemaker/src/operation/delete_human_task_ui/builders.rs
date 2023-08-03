@@ -37,6 +37,12 @@ impl DeleteHumanTaskUiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHumanTaskUi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteHumanTaskUiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_human_task_ui_name(input);
         self
+    }
+    /// <p>The name of the human task user interface (work task template) you want to delete.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_human_task_ui_name()
     }
 }

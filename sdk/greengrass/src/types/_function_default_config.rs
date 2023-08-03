@@ -45,6 +45,12 @@ impl FunctionDefaultConfigBuilder {
         self.execution = input;
         self
     }
+    /// Configuration information that specifies how a Lambda function runs.
+    pub fn get_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionDefaultExecutionConfig> {
+        &self.execution
+    }
     /// Consumes the builder and constructs a [`FunctionDefaultConfig`](crate::types::FunctionDefaultConfig).
     pub fn build(self) -> crate::types::FunctionDefaultConfig {
         crate::types::FunctionDefaultConfig {

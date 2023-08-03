@@ -62,6 +62,10 @@ impl DeleteSecretOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the secret.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the secret.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DeleteSecretOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
     pub fn deletion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl DeleteSecretOutputBuilder {
     ) -> Self {
         self.deletion_date = input;
         self
+    }
+    /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
+    pub fn get_deletion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deletion_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

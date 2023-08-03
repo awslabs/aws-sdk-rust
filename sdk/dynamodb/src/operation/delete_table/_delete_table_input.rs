@@ -40,6 +40,10 @@ impl DeleteTableInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table to delete.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
     pub fn build(
         self,
